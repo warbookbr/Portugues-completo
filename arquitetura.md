@@ -15,6 +15,8 @@ O projeto deve continuar simples de publicar, fácil de manter e organizado o su
 - Conteúdo pedagógico não deve ficar misturado ao código da interface.
 - Serviços como áudio, configurações, progresso e GitHub devem ficar isolados.
 - O progresso acadêmico e as preferências locais do dispositivo são tipos diferentes de dados e devem ser tratados separadamente.
+- Assets necessários para o funcionamento e identidade visual do frontend ficam no repositório.
+- Mídias pedagógicas pesadas podem ficar fora do repositório e ser referenciadas pelo conteúdo das aulas.
 
 ## Arquitetura geral
 
@@ -25,7 +27,14 @@ GitHub Pages
     |-- conteúdo do curso em JSON
     |-- interface de aulas e exercícios
     |-- configurações de áudio e aparência
+    |-- assets do frontend
     |-- XP, níveis e progresso visual
+    |
+    |-- Google Drive
+    |       |
+    |       `-- mídias pedagógicas externas
+    |           |-- vídeos
+    |           `-- imagens do curso
     |
     `-- GitHub REST API
             |
@@ -233,6 +242,126 @@ Exercícios ficam separados das lições e podem seguir um formato semelhante a:
 
 Os formatos definitivos de lições e exercícios devem ser documentados em `docs/`.
 
+## Mídia pedagógica externa
+
+Vídeos e imagens pertencentes ao conteúdo do curso podem ser armazenados fora do repositório, principalmente no Google Drive.
+
+O objetivo é evitar que arquivos pesados aumentem o tamanho do repositório e permitir que o conteúdo pedagógico referencie mídia externa sem copiar esses arquivos para o GitHub Pages.
+
+### Separação entre assets do frontend e mídia do curso
+
+A regra é:
+
+```text
+Assets necessários ao frontend
+→ repositório GitHub
+
+Exemplos:
+- logo
+- ícones
+- imagens da interface
+- fundos do layout
+- elementos visuais usados pelo sistema
+
+Mídia pedagógica pesada
+→ Google Drive
+
+Exemplos:
+- vídeos das unidades
+- fotografias usadas em aulas
+- ilustrações pedagógicas grandes
+- diagramas e imagens específicas do conteúdo
+```
+
+O Google Drive não deve ser usado como substituto de `assets/` para arquivos essenciais ao funcionamento ou identidade visual da aplicação.
+
+### Referência pelo conteúdo
+
+As lições não devem depender de nomes de arquivos ou da estrutura interna de pastas do Drive.
+
+Cada bloco de conteúdo deve armazenar apenas os dados necessários para localizar a mídia.
+
+Exemplo de vídeo:
+
+```json
+{
+  "tipo": "video",
+  "provider": "google-drive",
+  "fileId": "1AbCdEfGh123456"
+}
+```
+
+A aplicação é responsável por transformar esse identificador no player adequado.
+
+Para vídeo hospedado no Google Drive, o frontend pode montar uma URL de visualização no formato:
+
+```text
+https://drive.google.com/file/d/{FILE_ID}/preview
+```
+
+O vídeo pode então ser exibido dentro da lição por meio de um `iframe` responsivo.
+
+Exemplo de uma lição com texto e vídeo:
+
+```json
+{
+  "id": "001",
+  "titulo": "Introdução à língua portuguesa",
+  "blocos": [
+    {
+      "tipo": "texto",
+      "conteudo": "Nesta aula vamos começar pelos fundamentos."
+    },
+    {
+      "tipo": "video",
+      "provider": "google-drive",
+      "fileId": "1AbCdEfGh123456"
+    }
+  ]
+}
+```
+
+### Permissões
+
+Arquivos pedagógicos que precisarem ser carregados diretamente pelos alunos devem estar compartilhados de forma compatível com acesso público, por exemplo com a opção de leitura para qualquer pessoa com o link.
+
+Nenhuma credencial privada do Google Drive deve ser incluída no frontend ou no conteúdo JSON.
+
+### O que a aplicação não deve fazer
+
+A aplicação não deve depender de listar automaticamente uma pasta pública do Google Drive para descobrir quais arquivos existem.
+
+Não usar o Drive como um filesystem navegável do curso.
+
+Em vez disso, cada unidade ou lição declara explicitamente qual mídia utiliza.
+
+Isso mantém o conteúdo determinístico, reduz dependências da API do Google Drive e evita misturar organização editorial do curso com estrutura de armazenamento externo.
+
+### Abstração por provider
+
+O formato de conteúdo deve incluir um campo `provider` para não acoplar permanentemente as lições ao Google Drive.
+
+Exemplo:
+
+```json
+{
+  "tipo": "video",
+  "provider": "google-drive",
+  "fileId": "..."
+}
+```
+
+Isso permite adicionar outros provedores no futuro sem alterar o formato geral das unidades, por exemplo:
+
+```text
+google-drive
+youtube
+arquivo-local
+outro provedor futuro
+```
+
+A interface de lição decide como renderizar cada provider.
+
 ## Navegação
 
 A aplicação deve usar hash routing para permanecer compatível com GitHub Pages sem configuração de servidor.
@@ -408,6 +537,9 @@ Credencial temporária de sessão
 
 Progresso acadêmico
 → Gist do aluno no GitHub
+
+Mídia pedagógica pesada
+→ Google Drive ou provider externo declarado no conteúdo
 ```
 
 O Gist é a fonte oficial do progresso acadêmico.
@@ -434,6 +566,8 @@ docs/convencoes.md
 → IDs, nomes de arquivos, pastas e regras gerais
 ```
 
+A documentação de conteúdo deve incluir também as regras para blocos de mídia e providers externos.
+
 ## Vantagens
 
 - sem servidor próprio;
@@ -442,6 +576,8 @@ docs/convencoes.md
 - publicação simples pelo GitHub Pages;
 - código dividido por responsabilidade;
 - conteúdo separado da lógica da aplicação;
+- vídeos e imagens pedagógicas pesadas não aumentam o repositório;
+- conteúdo pode trocar de mídia sem alterar a lógica principal da aplicação;
 - possibilidade de centenas ou milhares de exercícios sem concentrá-los no JavaScript;
 - preferências visuais independentes do progresso acadêmico;
 - cada aluno possui seus próprios dados;
@@ -455,6 +591,8 @@ docs/convencoes.md
 - o GitHub passa a ser uma dependência da aplicação;
 - Gist é armazenamento simples de progresso, não banco relacional;
 - vozes de narração variam entre sistemas e navegadores;
+- mídias externas dependem da disponibilidade e das permissões do provider utilizado;
+- Google Drive não é tratado como CDN nem como filesystem da aplicação;
 - a arquitetura foi escolhida para um grupo pequeno de usuários, principalmente familiar, e não para milhares de alunos simultâneos.
 
 ## Regra principal
@@ -465,6 +603,7 @@ O projeto deve manter separadas as seguintes responsabilidades:
 interface
 conteúdo pedagógico
 exercícios
+mídia pedagógica
 configurações
 narração
 progresso
