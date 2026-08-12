@@ -38,11 +38,41 @@ Quando essas ferramentas estiverem disponíveis, o ChatGPT deve preferir validar
 
 ## GitHub Pages
 
-Quando a versão publicada estiver disponível, o ChatGPT pode validar diretamente a página publicada em:
+A URL pública do projeto é:
 
 `https://warbookbr.github.io/Portugues-completo/`
 
-Quando for mais conveniente testar antes da publicação, o ChatGPT pode renderizar uma cópia local dos arquivos do projeto com Playwright.
+Quando o ambiente do ChatGPT permitir acesso externo normal, o ChatGPT pode abrir essa URL diretamente no Chromium com Playwright e validar a versão publicada.
+
+### Limitação de rede observada
+
+Neste ambiente do ChatGPT já foi observado que o Chromium/Playwright pode funcionar normalmente para renderização, mas o processo local do navegador pode ficar sem resolução DNS ou acesso externo ao domínio `warbookbr.github.io`.
+
+Portanto, **não assumir que falha ao abrir a URL pública significa falha do frontend ou do GitHub Pages**.
+
+Quando o acesso direto ao domínio público estiver bloqueado, usar este procedimento:
+
+1. buscar no GitHub o HTML/CSS/JavaScript real da branch `main`;
+2. renderizar esse conteúdo com Chromium + Playwright;
+3. gerar e inspecionar screenshots normalmente;
+4. verificar separadamente, pela API do GitHub, se o GitHub Pages está configurado para `main:/` e se o status da publicação está `built`;
+5. deixar claro ao usuário que a inspeção visual foi feita sobre o conteúdo real da `main`, enquanto a publicação foi confirmada separadamente pelo GitHub.
+
+Isso é uma validação em duas partes:
+
+```text
+Código real da main -> Chromium/Playwright -> screenshot e inspeção visual
+
+GitHub Pages API -> status built -> confirmação de publicação
+```
+
+Quando o acesso de rede do Chromium estiver disponível, preferir a validação ponta a ponta abrindo diretamente a URL pública.
+
+## Teste local antes da publicação
+
+Quando for mais conveniente testar antes da publicação, o ChatGPT pode renderizar os próprios arquivos do projeto com Playwright.
+
+Se o ambiente bloquear navegação `file://`, carregar o HTML por outro método compatível, como conteúdo injetado diretamente na página ou servidor HTTP local, em vez de interpretar esse bloqueio como falha do Playwright.
 
 ## Viewports recomendados
 
@@ -58,8 +88,14 @@ Não é necessário gerar screenshots de todos os tamanhos para cada pequena alt
 
 Para mudanças visuais relevantes, não considerar o frontend concluído apenas porque o código parece correto. Sempre que possível, renderizar e inspecionar o resultado real.
 
+Nunca afirmar que a URL pública foi aberta diretamente pelo Chromium quando isso não aconteceu. Distinguir claramente entre:
+
+- renderização local do conteúdo real do repositório;
+- confirmação de publicação pelo GitHub;
+- navegação direta no site público.
+
 ## Limitações
 
-Esta skill documenta um procedimento de trabalho do ChatGPT. A disponibilidade de Chromium, Playwright ou acesso à página publicada deve ser confirmada no ambiente atual antes do uso.
+Esta skill documenta um procedimento de trabalho do ChatGPT. A disponibilidade de Chromium, Playwright, DNS, acesso externo e acesso à página publicada deve ser confirmada no ambiente atual antes do uso.
 
 Ela não define nem presume capacidades do Codex.
