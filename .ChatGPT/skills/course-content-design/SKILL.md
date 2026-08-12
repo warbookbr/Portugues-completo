@@ -118,6 +118,85 @@ A progressão geral atualmente é:
 
 Tratar `docs/mapa-curso.md` como fonte oficial para a evolução desses níveis.
 
+## Dimensionamento por camada
+
+Planejar o curso de cima para baixo, sem saltar prematuramente para aulas detalhadas.
+
+A hierarquia conceitual atual é:
+
+```text
+Nível
+→ Área
+→ Unidade
+→ Lição
+→ Checagens / Exercícios
+```
+
+Cada camada deve responder a perguntas compatíveis com seu nível de abstração. Não reutilizar mecanicamente o mesmo conjunto de perguntas em todas as camadas.
+
+### Dimensionamento de um nível
+
+Antes de detalhar as áreas de um nível, definir:
+
+```text
+Objetivo geral
+→ onde queremos que o aluno chegue ao concluir o nível
+
+Competências de saída
+→ o que ele precisa conseguir fazer sozinho
+
+Grandes áreas
+→ quais blocos de conhecimento precisam existir para produzir essas competências
+```
+
+As competências de saída devem ser, sempre que possível, observáveis e verificáveis. Elas servirão posteriormente para orientar unidades, exercícios e critérios de conclusão.
+
+Não transformar a lista de grandes áreas em unidades automaticamente. Primeiro verificar se as áreas cobrem adequadamente o objetivo e as competências do nível.
+
+### Dimensionamento de uma área
+
+Antes de dividir uma área em unidades, definir:
+
+```text
+Objetivo da área
+→ o que essa área precisa construir dentro do nível
+
+Competências ao concluir
+→ o que o aluno consegue fazer depois de concluir a área
+
+Conteúdos essenciais
+→ o que obrigatoriamente precisa ser ensinado para alcançar essas competências
+
+Limites
+→ o que ainda não entra aqui e deve ficar para outra área ou etapa posterior
+```
+
+Os limites são parte importante do planejamento. Eles evitam que uma área cresça indefinidamente ou antecipe conhecimentos que serão melhor ensinados depois.
+
+### Dimensionamento de unidade
+
+O molde definitivo de unidade ainda **não está formalizado**.
+
+Não congelar agora um conjunto rígido de campos ou perguntas apenas por simetria com Nível e Área.
+
+Quando o projeto chegar à primeira divisão real de uma área em unidades, definir o molde a partir da necessidade pedagógica observada e então registrá-lo nesta skill e na documentação apropriada, caso precise sobreviver à conversa.
+
+### Regra de progressão
+
+Antes de descer uma camada, verificar se a camada atual está suficientemente consolidada.
+
+Fluxo preferido:
+
+```text
+definir
+→ verificar cobertura e limites
+→ consolidar
+→ documentar quando necessário
+→ descer uma camada
+```
+
+Evitar produzir dezenas de unidades ou lições para compensar uma camada superior ainda mal definida.
+
 ## Regra final
 
 A tecnologia serve à aprendizagem.
