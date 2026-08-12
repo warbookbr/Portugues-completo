@@ -1,0 +1,56 @@
+.app-shell {
+  width: min(1120px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 96px 0 48px;
+}
+
+.page-card {
+  width: min(900px, 100%);
+  margin: 0 auto;
+  padding: 48px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  box-shadow: var(--shadow);
+}
+
+.page-card h1 {
+  margin: 18px 0 12px;
+  color: var(--reading-text);
+  font-family: var(--reading-font);
+  font-size: calc(clamp(42px, 7vw, 76px) * var(--font-scale));
+  line-height: 0.98;
+  letter-spacing: -0.05em;
+}
+
+.page-card .hero-copy {
+  margin: 0;
+  max-width: 720px;
+  color: var(--reading-text);
+  font-family: var(--reading-font);
+  font-size: calc(clamp(18px, 2vw, 24px) * var(--font-scale));
+  line-height: 1.55;
+}
+
+.status-card {
+  margin-top: 34px;
+  padding: 18px 20px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: var(--surface-muted);
+  color: var(--text-muted);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 14px;
+}
+
+@media (max-width: 600px) {
+  .app-shell {
+    width: min(100% - 28px, 1120px);
+    padding-top: 84px;
+  }
+
+  .page-card {
+    padding: 30px 24px;
+    border-radius: 18px;
+  }
+}
