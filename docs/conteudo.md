@@ -98,7 +98,7 @@ Boas aplicações incluem:
 
 Não inserir imagem apenas para preencher espaço ou deixar a página mais decorativa.
 
-Imagens do conteúdo podem ser hospedadas externamente conforme as regras de mídia definidas em `arquitetura.md`.
+Imagens do conteúdo podem ser hospedadas externamente conforme as regras de mídia definidas em `docs/arquitetura.md`.
 
 Quando adequado, uma imagem deve poder possuir legenda e descrição.
 

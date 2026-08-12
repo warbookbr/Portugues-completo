@@ -2,13 +2,29 @@
 
 ## Objetivo
 
-Este diretório reúne instruções específicas para o ChatGPT trabalhar de forma consistente no projeto `Português-completo`.
+Este diretório reúne instruções específicas para o ChatGPT trabalhar de forma consistente no projeto `Portugues-completo`.
 
 Antes de executar uma tarefa que dependa da estrutura do projeto, consultar primeiro:
 
 - `PROJECT_INDEX.md`
 
 Depois, ler apenas os documentos e skills relevantes para a área atual.
+
+## Estrutura do projeto
+
+A arquitetura oficial fica em:
+
+- `docs/arquitetura.md`
+
+O código da aplicação fica em:
+
+- `app/`
+
+O conteúdo pedagógico fica em:
+
+- `content/`
+
+Não assumir caminhos antigos como `css/`, `js/` ou `arquitetura.md` na raiz.
 
 ## Skills disponíveis
 
@@ -50,7 +66,7 @@ Objetivo:
 PROJECT_INDEX.md
 → mapa geral do projeto
 
-arquitetura.md
+docs/arquitetura.md
 → decisões técnicas e responsabilidades
 
 docs/mapa-curso.md
@@ -59,6 +75,17 @@ docs/mapa-curso.md
 docs/conteudo.md
 → regras pedagógicas, lições e uso de mídia
 ```
+
+## Validação estrutural
+
+Mudanças de caminhos, entrada da aplicação ou organização do repositório devem respeitar:
+
+- `scripts/validate-project.mjs`
+- `.github/workflows/validate-project.yml`
+
+Antes de concluir uma mudança estrutural importante, verificar se o validador continua passando.
+
+O validador complementa as skills; ele não substitui revisão visual nem revisão pedagógica.
 
 ## Como adicionar novas skills
 

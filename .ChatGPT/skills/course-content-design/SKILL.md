@@ -12,7 +12,7 @@ Antes de propor estrutura curricular, unidades, lições ou materiais de apoio, 
 
 - `docs/mapa-curso.md` para níveis e progressão geral;
 - `docs/conteudo.md` para estrutura pedagógica e critérios de apresentação;
-- `arquitetura.md` para limitações técnicas, mídia externa, TTS e organização do projeto.
+- `docs/arquitetura.md` para limitações técnicas, mídia externa, TTS e organização do projeto.
 
 Se uma nova decisão relevante entrar em conflito com esses documentos, não assumir silenciosamente a mudança. Explicar a razão e atualizar a documentação quando a nova decisão for adotada.
 
