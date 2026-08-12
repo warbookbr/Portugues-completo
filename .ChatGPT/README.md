@@ -74,18 +74,25 @@ docs/mapa-curso.md
 
 docs/conteudo.md
 → regras pedagógicas, lições e uso de mídia
+
+docs/validacoes.md
+→ política e roadmap dos guard rails automáticos
 ```
 
-## Validação estrutural
+## Validação automática
 
-Mudanças de caminhos, entrada da aplicação ou organização do repositório devem respeitar:
+Mudanças de caminhos, entrada da aplicação, organização do repositório ou conteúdo JSON devem respeitar:
 
 - `scripts/validate-project.mjs`
+- `scripts/validate-json.mjs`
 - `.github/workflows/validate-project.yml`
+- `docs/validacoes.md`
 
-Antes de concluir uma mudança estrutural importante, verificar se o validador continua passando.
+Antes de concluir uma mudança estrutural importante, verificar se os validadores aplicáveis continuam passando.
 
-O validador complementa as skills; ele não substitui revisão visual nem revisão pedagógica.
+Não criar schemas ou regras rígidas para formatos pedagógicos ainda provisórios. Formalizar primeiro a estrutura correspondente e então transformar a decisão em guard rail.
+
+Os validadores complementam as skills; eles não substituem revisão visual nem revisão pedagógica.
 
 ## Como adicionar novas skills
 

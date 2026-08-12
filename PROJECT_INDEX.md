@@ -24,7 +24,7 @@ Português Completo
 |-- Documentação
 |   `-- docs/
 |
-|-- Validação estrutural
+|-- Validação automática
 |   |-- scripts/
 |   `-- .github/workflows/
 |
@@ -91,6 +91,7 @@ Ler:
 - `docs/mapa-curso.md`
 - `docs/conteudo.md`
 - `docs/arquitetura.md` quando houver mídia ou limitações técnicas
+- `docs/validacoes.md` antes de formalizar novos formatos estruturados
 
 Conteúdo fica em:
 
@@ -101,6 +102,7 @@ Conteúdo fica em:
 Quando esta área for implementada, consultar:
 
 - `docs/exercicios.md` (quando criado)
+- `docs/validacoes.md`
 - skill específica de exercícios, se existir
 
 Os arquivos de exercícios devem ficar dentro da estrutura de `content/` definida pela arquitetura.
@@ -133,11 +135,27 @@ Código relacionado:
 - `app/js/ui/audio-settings.js`
 - `app/js/ui/appearance-settings.js`
 
+### Validações e guard rails
+
+Ler:
+
+- `docs/validacoes.md`
+
+Executar:
+
+- `scripts/validate-project.mjs`
+- `scripts/validate-json.mjs`
+
+Workflow:
+
+- `.github/workflows/validate-project.yml`
+
 ## Documentação oficial existente
 
 - `docs/arquitetura.md` — arquitetura e responsabilidades técnicas.
 - `docs/mapa-curso.md` — níveis e progressão curricular.
 - `docs/conteudo.md` — estrutura pedagógica e uso de mídia.
+- `docs/validacoes.md` — estratégia, severidade e roadmap dos guard rails automáticos.
 
 Documentos previstos:
 
@@ -183,17 +201,15 @@ Skills atuais:
 - `.ChatGPT/skills/frontend-visual-check/SKILL.md`
 - `.ChatGPT/skills/course-content-design/SKILL.md`
 
-## Validação estrutural
+## Validação automática
+
+### Estrutura e referências
 
 Validador:
 
 - `scripts/validate-project.mjs`
 
-Workflow:
-
-- `.github/workflows/validate-project.yml`
-
-O validador protege principalmente:
+Protege principalmente:
 
 - referências explícitas do `PROJECT_INDEX.md`;
 - cobertura das áreas principais da raiz;
@@ -205,7 +221,25 @@ O validador protege principalmente:
 - referências locais de CSS;
 - risco de caminhos absolutos incompatíveis com o subcaminho do GitHub Pages.
 
-Módulos JavaScript e folhas CSS que existam mas não sejam alcançáveis a partir do `index.html` geram aviso.
+Módulos JavaScript e folhas CSS que existam mas não sejam alcançáveis a partir do `index.html` geram warning.
+
+### JSON
+
+Validador:
+
+- `scripts/validate-json.mjs`
+
+Valida sintaticamente os JSON de `content/` e, quando existir, `schemas/`.
+
+Schemas estruturais de curso, unidade, lição e exercício serão adicionados somente depois que seus formatos oficiais forem definidos.
+
+### Política e roadmap
+
+Fonte oficial:
+
+- `docs/validacoes.md`
+
+O documento define o que deve bloquear o CI, o que deve gerar apenas warning e em que momento adicionar schemas, integridade curricular, detecção de conteúdo órfão, acessibilidade, performance e segurança.
 
 O `PROJECT_INDEX.md` não deve listar cada aula ou exercício individual. Ele mapeia áreas estruturais, documentos e pontos de entrada.
 
@@ -222,6 +256,9 @@ Progressão curricular
 
 Forma de ensinar e usar mídia
 → docs/conteudo.md
+
+Política de validação automática
+→ docs/validacoes.md
 
 Procedimento específico de trabalho do ChatGPT
 → .ChatGPT/skills/
@@ -258,12 +295,13 @@ Atualizar `PROJECT_INDEX.md` quando surgir:
 - um novo ponto de entrada estrutural;
 - uma mudança significativa de responsabilidade entre pastas.
 
-Depois de mudanças estruturais, executar:
+Depois de mudanças estruturais ou de conteúdo JSON, executar:
 
 ```text
 node scripts/validate-project.mjs
+node scripts/validate-json.mjs
 ```
 
-O workflow do GitHub também executa essa validação automaticamente em pushes para `main` e em pull requests.
+O workflow do GitHub executa essas validações automaticamente em pushes para `main` e em pull requests.
 
 Este arquivo deve permanecer curto o suficiente para ser consultado rapidamente.

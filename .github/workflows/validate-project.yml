@@ -26,3 +26,6 @@ jobs:
 
       - name: Validate repository structure
         run: node scripts/validate-project.mjs
+
+      - name: Validate JSON syntax
+        run: node scripts/validate-json.mjs
