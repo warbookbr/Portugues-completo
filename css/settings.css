@@ -1,0 +1,129 @@
+.settings-trigger {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 30;
+}
+
+.settings-trigger svg {
+  width: 23px;
+  height: 23px;
+}
+
+.settings-panel {
+  position: fixed;
+  top: 78px;
+  right: 20px;
+  z-index: 30;
+  width: min(380px, calc(100vw - 40px));
+  max-height: calc(100vh - 98px);
+  overflow: auto;
+  padding: 20px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  box-shadow: 0 24px 70px rgba(20, 27, 41, 0.20);
+}
+
+.settings-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.settings-header h2 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.settings-subtitle {
+  margin: 4px 0 0;
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
+.settings-back {
+  border: 0;
+  background: transparent;
+  color: var(--accent);
+  font-weight: 800;
+  cursor: pointer;
+  padding: 4px 0;
+}
+
+.settings-row {
+  display: grid;
+  gap: 7px;
+  margin-top: 16px;
+}
+
+.settings-inline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.settings-row label,
+.settings-inline label {
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 750;
+}
+
+.settings-row select,
+.settings-row input[type="range"],
+.settings-row input[type="color"] {
+  width: 100%;
+}
+
+.settings-row select {
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface);
+  color: var(--text);
+}
+
+.settings-value {
+  color: var(--text-muted);
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+}
+
+.settings-actions {
+  display: grid;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.color-control {
+  display: grid;
+  grid-template-columns: 1fr 54px;
+  align-items: center;
+  gap: 12px;
+}
+
+.color-control input[type="color"] {
+  height: 38px;
+  padding: 2px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface);
+}
+
+@media (max-width: 600px) {
+  .settings-trigger {
+    top: 14px;
+    right: 14px;
+  }
+
+  .settings-panel {
+    top: 70px;
+    right: 14px;
+    width: calc(100vw - 28px);
+    max-height: calc(100vh - 84px);
+  }
+}
