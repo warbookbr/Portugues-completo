@@ -160,10 +160,10 @@ Esta área não deve tentar ensinar todo o sistema de escrita do português. Ela
 Ficam para etapas posteriores:
 
 ```text
-separação e classificação de sílabas
+percepção, segmentação e combinação de sílabas
 → Área 2 — Sílabas e formação de palavras
 
-formação sistemática de palavras
+formação inicial de palavras pela combinação de sílabas
 → Área 2 — Sílabas e formação de palavras
 
 significado das palavras
@@ -198,6 +198,183 @@ Também não devem ser aprofundados aqui:
 Esses elementos podem aparecer incidentalmente em exemplos quando forem necessários para ensinar algo mais simples, mas não devem ser exigidos como domínio do aluno nesta área.
 
 Ao concluir a Área 1, o aluno deve compreender o princípio básico de que a fala é percebida por sons e que a escrita utiliza letras e outros sinais para representá-la. A etapa seguinte passa a explorar como esses elementos se combinam em estruturas maiores, começando por sílabas e formação de palavras.
+
+#### Área 2 — Sílabas e formação de palavras
+
+##### Objetivo da área
+
+Construir a compreensão de que palavras faladas podem ser percebidas e segmentadas em unidades sonoras maiores que sons isolados — as sílabas — e que a escrita representa essas unidades por meio de combinações de letras, permitindo ao aluno segmentar, combinar, reconhecer e começar a formar palavras simples.
+
+A sílaba deve ser apresentada primeiro como uma unidade percebida na fala, e não como mero grupo de letras. A escrita entra como representação dessa organização sonora.
+
+A ideia central da área é:
+
+```text
+palavra falada
+→ pode ser percebida em sílabas
+
+sílabas percebidas
+↕
+representações escritas
+
+segmentar + combinar
+→ reconhecer, ler e formar palavras simples
+```
+
+Nesta área, **formação de palavras** significa construção e reconhecimento inicial de palavras pela combinação de sílabas e de suas representações escritas. Não significa o estudo morfológico de derivação, composição, prefixos ou sufixos, que pertence a etapas posteriores.
+
+##### Competências ao concluir
+
+Ao concluir esta área, o aluno deve conseguir:
+
+- perceber sílabas em palavras simples faladas;
+- segmentar oralmente palavras conhecidas em sílabas;
+- combinar oralmente sílabas apresentadas separadamente para reconhecer uma palavra simples;
+- reconhecer sílabas escritas em palavras simples;
+- segmentar e combinar sílabas com apoio da escrita;
+- decompor palavras simples em suas sílabas e realizar o movimento inverso;
+- reconhecer sílabas iniciais e finais em palavras simples;
+- identificar sílabas iguais em palavras diferentes;
+- perceber que sílabas podem apresentar quantidades e organizações diferentes de letras;
+- perceber que palavras podem ter quantidades diferentes de sílabas, sem exigir a memorização das classificações correspondentes;
+- identificar a ordem correta das sílabas dentro de uma palavra;
+- completar palavras simples quando uma sílaba estiver faltando;
+- comparar palavras observando semelhanças e diferenças em sua organização silábica;
+- ler palavras simples usando a segmentação silábica como apoio quando necessário e avançando progressivamente para o reconhecimento da palavra como um todo;
+- formar palavras simples a partir de sílabas ou letras fornecidas, quando houver apoio suficiente.
+
+Essas competências priorizam o uso funcional das sílabas para percepção, leitura e formação inicial de palavras. Nomenclaturas classificatórias não devem substituir a capacidade prática de segmentar, combinar e reconhecer.
+
+##### Conteúdos essenciais
+
+A área deve cobrir obrigatoriamente os seguintes núcleos:
+
+**1. A sílaba como unidade percebida na fala**
+
+- percepção de que palavras faladas podem ser segmentadas em partes sonoras;
+- introdução do conceito de sílaba a partir de exemplos concretos;
+- relação entre segmentação oral e representação escrita;
+- cuidado para não definir sílaba apenas como "pedaço escrito da palavra".
+
+**2. Segmentação silábica oral**
+
+- separação oral de palavras simples em sílabas;
+- percepção da quantidade de sílabas em palavras conhecidas;
+- comparação de palavras com diferentes extensões silábicas;
+- prática auditiva antes ou junto do apoio gráfico.
+
+**3. Representação escrita das sílabas**
+
+- reconhecimento de grupos de letras que representam sílabas percebidas na fala;
+- compreensão de que sílabas não têm sempre a mesma quantidade de letras;
+- contato progressivo com estruturas silábicas variadas;
+- evitar ensinar `consoante + vogal` como fórmula universal de sílaba.
+
+Exemplos podem incluir estruturas simples e progressivamente variadas, como:
+
+```text
+a
+pa
+sol
+flor
+```
+
+Os códigos técnicos de estrutura silábica podem ser usados internamente no planejamento, mas não precisam ser ensinados ao aluno neste estágio.
+
+**4. Segmentação e combinação**
+
+Os dois movimentos devem ser trabalhados explicitamente:
+
+```text
+segmentar
+casa → ca + sa
+
+combinar
+ca + sa → casa
+```
+
+Esses movimentos devem aparecer tanto na oralidade quanto com apoio da escrita.
+
+O aluno deve aprender a decompor quando precisar e a recompor em seguida, sem transformar a leitura silabada no objetivo final.
+
+**5. Sílabas em posições diferentes**
+
+- reconhecimento de sílabas no início e no final de palavras simples;
+- identificação da mesma sílaba em palavras diferentes;
+- comparação de palavras por semelhanças e diferenças silábicas;
+- percepção de que trocar, retirar ou reorganizar uma sílaba pode produzir outra sequência ou outra palavra.
+
+O objetivo aqui é fortalecer reconhecimento e decodificação, não introduzir formalmente rima, morfologia ou famílias de palavras.
+
+**6. Formação e reconhecimento inicial de palavras**
+
+- combinação de sílabas para reconhecer palavras simples;
+- decomposição de palavras simples em sílabas;
+- ordenação de sílabas para formar uma palavra conhecida;
+- preenchimento de sílabas ausentes;
+- formação guiada de palavras a partir de elementos fornecidos;
+- leitura progressiva de palavras simples.
+
+A formação deve caminhar de combinações controladas para maior reconhecimento da palavra inteira.
+
+**7. Estruturas silábicas progressivamente variadas**
+
+- começar por padrões perceptivamente simples;
+- introduzir gradualmente sílabas com organizações diferentes;
+- não restringir a aprendizagem às chamadas famílias silábicas;
+- usar sequências como `ba, be, bi, bo, bu` como recurso de prática quando útil, mas não como arquitetura pedagógica da área.
+
+##### Limites da área
+
+Esta área desenvolve a percepção e o uso funcional das sílabas para iniciar a leitura e a formação de palavras. Ela não deve se transformar em um curso completo de classificação silábica, ortografia ou morfologia.
+
+Ficam para etapas posteriores:
+
+```text
+significado, relações de sentido e uso contextual das palavras
+→ Área 3 — Palavras e significado
+
+função e organização das palavras em frases
+→ Área 4 — Frases e construção de sentido
+
+compreensão contextual de textos
+→ Área 5 — Leitura e compreensão inicial
+
+produção escrita mais livre e organizada
+→ Área 6 — Escrita inicial
+
+pontuação e convenções gráficas sistemáticas
+→ Área 7 — Pontuação e convenções básicas
+```
+
+Não constituem domínio obrigatório desta área:
+
+- nomenclatura de monossílaba, dissílaba, trissílaba e polissílaba;
+- sílaba tônica como estudo sistemático;
+- classificações como oxítona, paroxítona e proparoxítona;
+- regras completas de divisão silábica;
+- encontros vocálicos como sistema classificatório;
+- encontros consonantais como sistema classificatório;
+- dígrafos como conteúdo classificatório sistemático;
+- hiato, ditongo e tritongo como terminologia obrigatória;
+- regras ortográficas extensas;
+- morfemas, prefixos e sufixos;
+- derivação e composição de palavras;
+- classes gramaticais.
+
+Esses fenômenos podem aparecer naturalmente em palavras reais ou em exemplos necessários à aprendizagem, mas não devem ser exigidos como conteúdo formal antes de terem utilidade pedagógica clara.
+
+A leitura silabada deve ser tratada como apoio transitório:
+
+```text
+ca + sa
+→ ca-sa
+→ casa
+```
+
+O objetivo é permitir que o aluno decomponha uma palavra quando necessário e, progressivamente, passe a reconhecê-la e lê-la como um todo.
+
+Ao concluir a Área 2, o aluno deve conseguir perceber, segmentar e combinar sílabas para reconhecer, ler e formar palavras simples, compreendendo que as palavras possuem uma organização sonora e uma representação escrita. A etapa seguinte passa a explorar essas palavras como unidades de significado.
 
 ### Nível 1 — Básico
 
