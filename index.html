@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Português Completo</title>
+  <style>
+    :root { color-scheme: light; }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: linear-gradient(135deg, #f5f7fb, #e8eef9);
+      color: #172033;
+      padding: 24px;
+    }
+    main {
+      width: min(900px, 100%);
+      background: white;
+      border: 1px solid #dfe5ef;
+      border-radius: 24px;
+      padding: 48px;
+      box-shadow: 0 24px 70px rgba(31, 50, 81, 0.12);
+    }
+    .tag {
+      display: inline-block;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: #eef3ff;
+      color: #3157a4;
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: .02em;
+    }
+    h1 {
+      margin: 18px 0 12px;
+      font-size: clamp(42px, 7vw, 78px);
+      line-height: .95;
+      letter-spacing: -0.05em;
+    }
+    p {
+      margin: 0;
+      max-width: 680px;
+      font-size: clamp(18px, 2vw, 24px);
+      line-height: 1.55;
+      color: #536078;
+    }
+    .status {
+      margin-top: 36px;
+      padding: 18px 20px;
+      border-radius: 16px;
+      background: #f7f9fc;
+      border: 1px solid #e5eaf2;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 15px;
+    }
+    @media (max-width: 600px) {
+      main { padding: 30px 24px; border-radius: 18px; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <span class="tag">TESTE DE RENDERIZAÇÃO</span>
+    <h1>Português Completo</h1>
+    <p>Esta página foi criada para provar que o ChatGPT consegue publicar no GitHub Pages, abrir o site em Chromium com Playwright e inspecionar o frontend renderizado.</p>
+    <div class="status">Status visual: página inicial publicada ✓</div>
+  </main>
+</body>
+</html>
