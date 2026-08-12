@@ -1,0 +1,30 @@
+html[data-theme="dark"] {
+  color-scheme: dark;
+  --background: #090a0d;
+  --background-accent: #111318;
+  --surface: #15171c;
+  --surface-muted: #1d2027;
+  --text: #f4f6f8;
+  --text-muted: #a7afbd;
+  --reading-text: #f4f6f8;
+  --border: #2a2f38;
+  --accent: #86a8ff;
+  --accent-contrast: #10182b;
+  --shadow: 0 24px 70px rgba(0, 0, 0, 0.42);
+}
+
+html[data-font-size="small"] {
+  --font-scale: 0.88;
+}
+
+html[data-font-size="normal"] {
+  --font-scale: 1;
+}
+
+html[data-font-size="large"] {
+  --font-scale: 1.16;
+}
+
+html[data-font-size="xlarge"] {
+  --font-scale: 1.32;
+}
