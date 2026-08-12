@@ -26,6 +26,68 @@ O conteúdo pedagógico fica em:
 
 Não assumir caminhos antigos como `css/`, `js/` ou `arquitetura.md` na raiz.
 
+## Disciplina de documentação
+
+Nem toda conclusão de conversa deve gerar documentação.
+
+Documentar quando a informação:
+
+- altera uma decisão do projeto;
+- define uma regra que deve continuar valendo;
+- será necessária em trabalhos futuros;
+- evita que uma discussão importante precise ser refeita;
+- muda uma fonte de verdade, convenção, contrato ou procedimento recorrente.
+
+Não documentar quando a informação:
+
+- for apenas hipótese ou possibilidade ainda não adotada;
+- for explicação temporária sem consequência futura;
+- duplicar algo já registrado em uma fonte oficial;
+- existir apenas para registrar que uma conversa aconteceu.
+
+Regra central:
+
+```text
+Se uma decisão precisa sobreviver à conversa,
+ela deve ser sintetizada na fonte oficial apropriada.
+
+Se não precisa sobreviver à conversa,
+não criar documentação apenas para registrá-la.
+```
+
+Antes de criar um novo documento, verificar se já existe uma fonte de verdade responsável pelo assunto e preferir atualizá-la.
+
+Exemplos:
+
+```text
+decisão técnica
+→ docs/arquitetura.md
+
+decisão curricular
+→ docs/mapa-curso.md
+
+decisão pedagógica
+→ docs/conteudo.md
+
+guard rail ou política de validação
+→ docs/validacoes.md
+
+procedimento recorrente do ChatGPT
+→ skill apropriada
+```
+
+A distinção principal é:
+
+```text
+Docs
+→ registram o que foi decidido e quais regras pertencem ao projeto.
+
+Skills
+→ descrevem como o ChatGPT deve executar repetidamente um tipo de trabalho.
+```
+
+Quando uma decisão nova conflitar com documentação existente, não manter as duas versões silenciosamente. Atualizar a fonte oficial correspondente e remover ou corrigir a informação obsoleta quando necessário.
+
 ## Skills disponíveis
 
 ### Frontend Visual Check
