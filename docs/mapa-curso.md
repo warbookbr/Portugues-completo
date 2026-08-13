@@ -537,6 +537,204 @@ Sequências inventadas ou palavras desconhecidas podem ser usadas em exercícios
 
 Ao concluir a Área 3, o aluno deve compreender que palavras participam da construção de significados, conseguem representar diferentes tipos de conceitos e estabelecer relações de sentido, e que o uso e o contexto ajudam a determinar o que uma palavra significa. A etapa seguinte passa a explorar como palavras organizadas em frases constroem sentidos mais completos.
 
+#### Área 4 — Frases e construção de sentido
+
+##### Objetivo da área
+
+Construir a compreensão de que uma frase comunica uma mensagem por meio da escolha, da forma, da organização e das relações entre palavras, em conjunto com o contexto, permitindo ao aluno compreender, organizar e modificar frases simples sem depender de análise gramatical formal.
+
+A área deve evitar ensinar que frase é apenas "um conjunto de palavras" ou que toda frase precisa seguir uma fórmula fixa. Uma única palavra pode funcionar como frase em determinada situação, e diferentes estruturas podem comunicar mensagens completas.
+
+A ideia central da área é:
+
+```text
+escolha das palavras
++
+forma das palavras
++
+ordem e relações
++
+contexto
+→ sentido da frase
+```
+
+##### Competências ao concluir
+
+Ao concluir esta área, o aluno deve conseguir:
+
+- reconhecer uma frase como uma expressão que, em determinada situação, comunica uma mensagem compreensível;
+- distinguir a palavra enquanto unidade lexical de seu uso, sozinha ou combinada com outras palavras, para comunicar uma mensagem;
+- compreender frases simples formadas principalmente por vocabulário conhecido;
+- organizar palavras fornecidas para construir frases simples com sentido;
+- perceber quando a organização de uma sequência de palavras dificulta ou altera a compreensão;
+- perceber que mudanças na ordem das palavras podem alterar o sentido ou o foco da mensagem;
+- perceber que substituir, acrescentar, retirar ou modificar palavras pode alterar a mensagem;
+- perceber relações simples entre os elementos de uma frase, como sobre quem ou sobre o que se comunica algo e quais informações são apresentadas, quando essas relações forem facilmente observáveis;
+- perceber que algumas palavras ajudam a relacionar, negar ou modificar informações dentro da frase;
+- reconhecer, pelo uso e pelo contexto, mensagens simples que informam, perguntam, pedem, ordenam ou exclamam, sem exigir classificação formal;
+- compreender o efeito básico da negação em frases simples;
+- completar ou reconstruir frases simples quando houver pistas suficientes;
+- perceber que uma frase pode fazer sentido sem seguir um único modelo estrutural.
+
+Essas competências devem priorizar compreensão e manipulação funcional de frases. A capacidade de nomear funções sintáticas não deve ser exigida como prova de compreensão neste estágio.
+
+##### Conteúdos essenciais
+
+A área deve cobrir obrigatoriamente os seguintes núcleos:
+
+**1. Da palavra à frase**
+
+- passagem de palavras consideradas isoladamente para expressões que comunicam mensagens;
+- percepção de que o sentido de uma frase não é apenas a soma dos significados individuais das palavras;
+- comparação entre palavras soltas e palavras relacionadas em uma mensagem;
+- retomada do significado lexical aprendido na Área 3 como base para construir sentidos maiores.
+
+A transição pode ser resumida assim:
+
+```text
+Área 3
+O que palavras podem significar?
+
+Área 4
+Como palavras, formas, relações e contexto constroem uma mensagem?
+```
+
+**2. Frase como unidade de comunicação**
+
+- frase entendida funcionalmente como expressão capaz de comunicar uma mensagem em determinada situação;
+- reconhecimento de frases formadas por várias palavras e de usos em que uma única palavra pode comunicar uma mensagem completa;
+- exemplos simples como `Socorro!`, `Silêncio!`, `Pare!` ou `Obrigado!`, sem exigir classificação gramatical;
+- distinção entre reconhecer uma palavra e observar seu uso como mensagem em contexto.
+
+A área não deve ensinar que uma frase precisa obrigatoriamente ter duas ou mais palavras ou conter uma estrutura sintática específica previamente memorizada.
+
+**3. Organização, forma e relações entre palavras**
+
+- percepção de que a ordem das palavras pode contribuir para determinar relações e sentidos;
+- percepção de que a forma assumida pelas palavras também pode fornecer informações importantes;
+- comparação de frases simples em que mudanças de ordem, forma ou escolha alteram a mensagem;
+- observação funcional dessas diferenças sem introduzir concordância, morfologia ou sintaxe como sistemas formais.
+
+Exemplos podem incluir contrastes como:
+
+```text
+O cachorro mordeu o homem.
+O homem mordeu o cachorro.
+
+O menino corre.
+Os meninos correm.
+```
+
+O objetivo é perceber relações, não memorizar uma única ordem correta para o português.
+
+**4. Construção e reconstrução de frases**
+
+- organização de palavras fornecidas para construir mensagens simples;
+- reconstrução de frases desorganizadas quando houver pistas suficientes;
+- comparação entre mais de uma organização possível quando apropriado;
+- progressão de atividades altamente guiadas para construções com maior autonomia.
+
+Atividades de ordenação devem funcionar como apoio à percepção das relações entre palavras, e não como treinamento de uma fórmula fixa.
+
+**5. Mudanças dentro da frase**
+
+- substituição de uma palavra e observação da mudança de sentido;
+- adição ou retirada de palavras em frases simples;
+- alteração de formas das palavras em exemplos claros;
+- introdução funcional da negação;
+- comparação da mensagem antes e depois de uma modificação.
+
+Exemplos:
+
+```text
+O gato dorme.
+O cachorro dorme.
+
+O gato dorme.
+O gato corre.
+
+O gato corre.
+O gato não corre.
+```
+
+**6. Relações percebidas antes das classificações**
+
+- percepção intuitiva de sobre quem ou sobre o que se comunica algo, quando isso for observável;
+- identificação das informações apresentadas sobre pessoas, objetos, situações ou acontecimentos;
+- percepção de que palavras podem cumprir papéis diferentes dentro da frase;
+- contato com frases que não apresentam o modelo simples de "alguém fazendo algo", evitando transformá-lo em regra universal.
+
+Exemplos como `Ana corre.` podem ser usados para tornar relações visíveis, mas devem coexistir com construções como `Chove.`, `Está frio.` e `Que bonito!` para evitar uma generalização incorreta.
+
+A terminologia `sujeito`, `predicado`, `verbo`, `complemento` ou classificações semelhantes não precisa ser exigida nesta área.
+
+**7. Diferentes mensagens e intenções básicas**
+
+- percepção de que frases podem informar, perguntar, pedir, ordenar ou expressar reações;
+- comparação de exemplos simples em situações claras;
+- observação de diferenças na forma e na entonação quando pedagogicamente útil;
+- uso natural de sinais de pontuação em exemplos, sem transformar esta área em estudo sistemático das regras de pontuação.
+
+O estudo formal dos sinais e das convenções gráficas pertence à Área 7.
+
+**8. Contexto necessário para compreender a frase**
+
+- uso de contexto imediato para identificar referentes ou completar informações necessárias à compreensão;
+- percepção de que palavras como `ele`, `ela`, `aqui` ou outras expressões podem depender da situação ou de informação anterior;
+- comparação de frases curtas cujo sentido fica mais claro quando se conhece o contexto;
+- manutenção do foco na compreensão da frase, sem aprofundar intenções indiretas, implícitos sociais ou pragmática complexa.
+
+Questões sobre o que uma pessoa pretende insinuar, solicitar indiretamente ou realizar socialmente com uma fala devem ser aprofundadas principalmente na Área 8 — Uso da língua no cotidiano.
+
+##### Limites da área
+
+Esta área desenvolve a compreensão de como palavras e suas relações constroem mensagens em frases simples. Ela não deve se transformar em um curso formal de sintaxe, pontuação, interpretação textual ou pragmática.
+
+Ficam para etapas posteriores:
+
+```text
+compreensão de várias frases relacionadas e de pequenos textos
+→ Área 5 — Leitura e compreensão inicial
+
+produção autônoma e progressivamente organizada de frases e textos
+→ Área 6 — Escrita inicial
+
+marcação gráfica de começo, fim e tipos de frase e regras de pontuação
+→ Área 7 — Pontuação e convenções básicas
+
+intenções comunicativas, adequação e uso da língua em situações cotidianas
+→ Área 8 — Uso da língua no cotidiano
+```
+
+Não constituem domínio obrigatório desta área:
+
+- análise formal de sujeito e predicado;
+- classificação de termos da oração;
+- oração e período como sistema;
+- transitividade verbal;
+- complementos verbais e nominais;
+- regência;
+- coordenação e subordinação;
+- classificação sistemática de classes gramaticais;
+- concordância como sistema formal;
+- análise sintática completa;
+- classificação formal dos tipos de frase;
+- regras sistemáticas de pontuação;
+- pragmática, implicaturas ou interpretação aprofundada de intenções indiretas.
+
+Esses fenômenos podem aparecer naturalmente em exemplos simples quando forem necessários para mostrar como uma mensagem funciona, mas não devem ser exigidos como domínio técnico neste estágio.
+
+A área também deve evitar uma regra implícita de ordem única. Construções mais frequentes e transparentes devem ser priorizadas para iniciantes, mas variações simples podem mostrar que o português permite diferentes organizações:
+
+```text
+Maria chegou hoje.
+Hoje Maria chegou.
+```
+
+O objetivo é perceber que a organização contribui para o sentido e para o foco da mensagem, não decidir que existe uma única sequência possível para qualquer frase.
+
+Ao concluir a Área 4, o aluno deve compreender que uma frase comunica uma mensagem pela escolha, pela forma, pela organização e pelas relações entre palavras, conseguindo compreender, organizar e modificar frases simples sem ainda precisar realizar análise gramatical formal. A etapa seguinte passa a explorar como várias frases se relacionam para formar e compreender pequenos textos.
+
 ### Nível 1 — Básico
 
 Consolidação dos fundamentos e desenvolvimento das competências essenciais de leitura, escrita e uso da língua.
