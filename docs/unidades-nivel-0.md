@@ -2,6 +2,16 @@
 
 Este documento detalha as unidades do Nível 0. `docs/mapa-curso.md` permanece como fonte oficial da estrutura geral do nível, das áreas e da sequência das seis unidades.
 
+Regra transversal de oralidade:
+
+```text
+oralidade iniciada nas unidades anteriores
+→ continua sendo praticada quando pedagogicamente útil
+→ mesmo quando não é o objetivo central da unidade
+```
+
+Essa continuidade vale também para unidades com foco predominante em leitura ou escrita, sem obrigar cada lição ou atividade a incluir produção oral.
+
 ## Unidade 1 — Fala, sons e escrita
 
 ### Objetivo da unidade
@@ -150,7 +160,7 @@ O aluno deve conseguir:
 - organizar palavras fornecidas para construir frases compreensíveis;
 - perceber como ordem, escolha, retirada, acréscimo ou modificação de palavras podem alterar a mensagem;
 - compreender o efeito básico da negação;
-- perceber relações simples entre elementos da frase sem precisar nomeá-las gramaticalmente;
+- perceber relações simples entre elementos da frase e que palavras podem cumprir papéis diferentes dentro dela, sem precisar nomear ou classificar esses papéis gramaticalmente;
 - reconhecer funcionalmente mensagens que informam, perguntam, pedem, ordenam ou expressam reação;
 - completar, reconstruir e modificar frases quando houver pistas suficientes;
 - produzir frases próprias curtas a partir de imagem, situação, pergunta ou ideia simples;
@@ -213,7 +223,7 @@ frases compreendidas → relações entre frases → pequenos textos
 As primeiras frases próprias desta unidade também preparam a produção e revisão que serão ampliadas na Unidade 5.
 
 ### Evidências de conclusão
-A conclusão deve mostrar que o aluno consegue operar sobre o sentido, e não apenas reconhecer palavras isoladas. São evidências adequadas: associar e agrupar palavras por relações simples; usar contexto claro para escolher um sentido; identificar mudanças de mensagem após alterar palavras; reconstruir frases; compreender negação; comparar organizações possíveis; completar frases coerentemente; associar frases a situações; e produzir frases simples próprias.
+A conclusão deve mostrar que o aluno consegue operar sobre o sentido, e não apenas reconhecer palavras isoladas. São evidências adequadas: associar e agrupar palavras por relações simples; usar contexto claro para escolher um sentido; identificar mudanças de mensagem após alterar palavras; reconstruir frases; compreender negação; perceber funcionalmente papéis diferentes que palavras podem cumprir dentro de frases; comparar organizações possíveis; completar frases coerentemente; associar frases a situações; e produzir frases simples próprias.
 
 Definir termos gramaticais ou semânticos não deve substituir o desempenho funcional como principal evidência.
 
@@ -304,6 +314,8 @@ se a atividade avalia leitura
 ### Retomadas e conexões
 Retoma significado das palavras, contexto, compreensão de frases, ordem, relações, negação e diferentes tipos funcionais de mensagem da Unidade 3. A segmentação silábica continua disponível como estratégia diante de palavras difíceis, mas não volta a ser objetivo central.
 
+A oralidade continua sendo praticada quando houver valor pedagógico — por exemplo, em compreensão oral simples, leitura em voz alta como recurso ou resposta breve — sem deslocar o foco principal da compreensão leitora.
+
 A progressão é:
 
 ```text
@@ -337,6 +349,7 @@ Construir a capacidade de transformar ideias simples em frases e pequenas mensag
 
 ### Competências ao concluir
 O aluno deve conseguir:
+- escrever palavras simples conhecidas com autonomia crescente, recorrendo a apoio quando a produção exigir conhecimentos ainda não ensinados;
 - produzir frases próprias que comuniquem ideias simples;
 - combinar duas ou mais frases relacionadas quando a mensagem precisar disso;
 - manter uma ideia básica compreensível em uma sequência curta;
@@ -348,6 +361,7 @@ O aluno deve conseguir:
 - reler o que escreveu e verificar se corresponde ao que pretendia comunicar;
 - modificar palavras, ordem ou informações para tornar uma mensagem mais clara;
 - realizar revisões simples quando recebe um foco claro;
+- reconhecer, em contextos simples, onde uma frase começa e termina, usando organização gráfica e pontuação já ensinadas como pistas;
 - iniciar frases com maiúscula nos contextos ensinados e separar palavras adequadamente por espaços;
 - usar ponto final em afirmações simples quando apropriado, ponto de interrogação em perguntas diretas e ponto de exclamação em situações simples adequadas;
 - perceber que trocar o sinal final pode modificar a interpretação;
@@ -363,7 +377,7 @@ O aluno deve conseguir:
 4. **Escrita com propósito** — legenda, bilhete, lista, resposta, descrição, instrução e outras mensagens simples como usos funcionais.
 5. **Apoio progressivamente reduzido e autonomia** — modelos, bancos de palavras e outros apoios como andaimes temporários.
 6. **Releitura e revisão orientada** — observar um foco claro, identificar problema simples, ajustar e ampliar gradualmente a autonomia de revisão.
-7. **Organização gráfica e pontuação fundamental** — espaçamento, maiúscula inicial, `.`, `?` e `!` aplicados à própria produção.
+7. **Organização gráfica e pontuação fundamental** — reconhecimento de começo e fim de frases em contextos simples, espaçamento, maiúscula inicial, `.`, `?` e `!` aplicados à leitura e à própria produção.
 8. **Primeiro contato controlado com a vírgula** — reconhecimento e uso apoiado, principalmente em enumerações simples, sem domínio geral.
 
 Os oito núcleos não correspondem automaticamente a oito lições.
@@ -427,6 +441,8 @@ A vírgula permanece em escopo introdutório e controlado. Seu domínio geral n�
 ### Retomadas e conexões
 Retoma da Unidade 3 a produção de frases, a escolha de palavras, a ordem, a negação e diferentes tipos de mensagem. Retoma da Unidade 4 a sequência, as relações entre informações e formatos como avisos, bilhetes e instruções, agora pelo lado da produção escrita.
 
+A oralidade continua disponível em práticas de compreensão, planejamento, leitura ou resposta quando isso apoiar a produção, sem transformar a Unidade 5 em unidade de oralidade nem exigir fala em toda atividade.
+
 A progressão é:
 
 ```text
@@ -444,7 +460,7 @@ usar essas mensagens considerando situação + finalidade + pessoas
 ```
 
 ### Evidências de conclusão
-A conclusão deve incluir produção real em situações novas, mas compatíveis com o que foi ensinado. O aluno deve conseguir produzir frase própria, pequena mensagem funcional e, quando necessário, uma produção com duas ou mais frases relacionadas. Também deve reler, melhorar informação, ajustar palavra ou ordem, corrigir convenções já ensinadas e selecionar sinais básicos em situações claras.
+A conclusão deve incluir produção real em situações novas, mas compatíveis com o que foi ensinado. O aluno deve conseguir escrever palavras simples conhecidas, produzir frase própria, pequena mensagem funcional e, quando necessário, uma produção com duas ou mais frases relacionadas. Também deve reconhecer começo e fim de frases em contextos simples, reler, melhorar informação, ajustar palavra ou ordem, corrigir convenções já ensinadas e selecionar sinais básicos em situações claras.
 
 Uma produção compreensível pode comprovar competência mesmo contendo erro relacionado a conteúdo ainda não sistematizado. Em contrapartida, uma frase perfeita apenas copiada não comprova, sozinha, produção autônoma.
 
@@ -452,7 +468,7 @@ Uma produção compreensível pode comprovar competência mesmo contendo erro re
 Não são domínio obrigatório: redações longas; estrutura formal de introdução, desenvolvimento e conclusão; produção argumentativa; parágrafos como sistema aprofundado; análise formal de coesão e coerência; conectivos como taxonomia; concordância como sistema; domínio ortográfico ou de acentuação completo; revisão gramatical ampla; estilo formal; taxonomia de gêneros; sistema completo de maiúsculas; domínio geral da vírgula; ponto e vírgula; sistema completo de dois-pontos; travessão; aspas; parênteses; reticências como sistema; pontuação formal de diálogos; pontuação sintaticamente complexa.
 
 ### Síntese
-Ao concluir a Unidade 5, o aluno deve conseguir transformar ideias simples em frases e pequenas mensagens escritas compreensíveis, organizar informações, produzir com autonomia inicial, reler e realizar melhorias orientadas e utilizar convenções gráficas fundamentais — especialmente espaçamento, maiúscula inicial, ponto final, interrogação e exclamação — mantendo a vírgula como primeiro contato funcional e controlado.
+Ao concluir a Unidade 5, o aluno deve conseguir transformar ideias simples em palavras, frases e pequenas mensagens escritas compreensíveis, organizar informações, produzir com autonomia inicial, reconhecer a delimitação básica de frases, reler e realizar melhorias orientadas e utilizar convenções gráficas fundamentais — especialmente espaçamento, maiúscula inicial, ponto final, interrogação e exclamação — mantendo a vírgula como primeiro contato funcional e controlado.
 
 ## Unidade 6 — Usando a língua no cotidiano
 
@@ -577,7 +593,7 @@ uso integrado em situações reais
 ### Evidências de conclusão
 A conclusão deve exigir uso em situações novas e acessíveis, e não apenas respostas sobre conceitos. O aluno deve demonstrar que consegue compreender aviso ou mensagem simples, responder oralmente ou por escrito, formular pergunta para obter informação, produzir pequena mensagem adequada a um objetivo, escolher formas compatíveis com uma situação clara e recorrer a repetição, esclarecimento, confirmação ou reformulação quando necessário.
 
-Por ser a última unidade, o fechamento deve também verificar de forma integrada as competências de saída do Nível 0: ler e compreender palavras, frases e pequenos textos; escrever pequenas mensagens; compreender mensagens orais curtas; perguntar, responder, pedir e informar; seguir instruções simples; usar pontuação básica; revisar aspectos já ensinados; pedir esclarecimento e reformular quando a comunicação não funciona.
+Por ser a última unidade, o fechamento deve também verificar de forma integrada as competências de saída do Nível 0: reconhecer, ler e compreender palavras, frases e pequenos textos; escrever palavras, frases e pequenas mensagens; distinguir, em nível introdutório e por desempenho, palavra, frase, pequeno texto e significado; compreender mensagens orais curtas; perguntar, responder, pedir e informar; seguir instruções simples; usar pontuação básica; revisar aspectos já ensinados; pedir esclarecimento e reformular quando a comunicação não funciona.
 
 Essa verificação não precisa ocorrer em uma única prova extensa. Evidências distribuídas ao longo do fechamento podem demonstrar as competências desde que sejam observáveis e suficientes.
 
