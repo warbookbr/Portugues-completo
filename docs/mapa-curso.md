@@ -376,6 +376,167 @@ O objetivo é permitir que o aluno decomponha uma palavra quando necessário e, 
 
 Ao concluir a Área 2, o aluno deve conseguir perceber, segmentar e combinar sílabas para reconhecer, ler e formar palavras simples, compreendendo que as palavras possuem uma organização sonora e uma representação escrita. A etapa seguinte passa a explorar essas palavras como unidades de significado.
 
+#### Área 3 — Palavras e significado
+
+##### Objetivo da área
+
+Construir a compreensão de que palavras não são apenas formas sonoras ou escritas: elas participam da construção de significados e podem representar conceitos, ações, características, estados, ideias ou estabelecer relações dentro daquilo que comunicamos.
+
+A área deve evitar ensinar que toda palavra simplesmente "nomeia uma coisa". Algumas palavras podem representar elementos de forma mais direta; outras contribuem para organizar relações e sentidos sem nomear um referente isolado.
+
+A ideia central da área é:
+
+```text
+palavra
+→ possui forma sonora e/ou escrita
+→ participa da construção de significado
+→ ganha sentido no uso e no contexto
+```
+
+O aluno deve começar a perceber que conhecer a forma de uma palavra não garante, por si só, compreender o que ela significa.
+
+##### Competências ao concluir
+
+Ao concluir esta área, o aluno deve conseguir:
+
+- associar palavras simples a objetos, seres, ações, características, estados, lugares, situações e ideias conhecidas;
+- demonstrar compreensão de palavras familiares por associação, escolha, exemplo, uso ou explicação simples;
+- escolher uma palavra adequada para representar algo apresentado por imagem, ação ou contexto simples;
+- reconhecer palavras diferentes com significados próximos, sem assumir que sejam sempre perfeitamente intercambiáveis;
+- reconhecer palavras que expressam ideias opostas em situações simples;
+- agrupar palavras por relações simples de significado;
+- ampliar vocabulário relacionando palavras novas a conceitos já conhecidos;
+- perceber que uma mesma palavra pode assumir significados diferentes dependendo do uso;
+- usar pistas fortes de um contexto curto para formular uma hipótese simples sobre o significado de uma palavra;
+- perceber que palavras desconhecidas não devem ser tratadas automaticamente como sequências sem significado;
+- distinguir, em nível introdutório, a forma de uma palavra do conceito ou significado que ela pode representar.
+
+Essas competências devem ser demonstradas principalmente por reconhecimento e uso funcional. A capacidade de formular definições verbais completas não deve ser exigida como única prova de compreensão.
+
+##### Conteúdos essenciais
+
+A área deve cobrir obrigatoriamente os seguintes núcleos:
+
+**1. Palavra e significado**
+
+- diferença entre reconhecer a forma de uma palavra e compreender seu significado;
+- palavra como elemento que participa da construção de significado;
+- compreensão de que a palavra não é a própria coisa, ação ou ideia que pode representar;
+- contato com palavras familiares de significado concreto e progressivamente mais abstrato.
+
+A transição em relação à Área 2 pode ser resumida assim:
+
+```text
+Área 2
+Como a palavra é percebida, segmentada, combinada e reconhecida?
+
+Área 3
+O que essa palavra pode significar e como esse significado é percebido?
+```
+
+**2. Relações entre palavras e conceitos**
+
+- associação de palavras a objetos, seres, ações, características, estados, lugares e ideias simples;
+- compreensão por meio de imagens, ações, exemplos, escolhas e situações conhecidas;
+- percepção de que nem toda palavra precisa nomear diretamente um objeto ou ser.
+
+Não é necessário introduzir formalmente classes gramaticais para trabalhar essas diferenças.
+
+**3. Vocabulário e agrupamento por sentido**
+
+- agrupamento de palavras por relações de significado simples;
+- categorias cotidianas, como animais, alimentos, cores, lugares e ações;
+- ampliação de vocabulário a partir de conhecimentos já consolidados;
+- comparação entre palavras pertencentes ou não ao mesmo grupo de sentido.
+
+O objetivo é construir redes de significado, não introduzir taxonomias linguísticas formais.
+
+**4. Semelhança de significado**
+
+- percepção de que palavras diferentes podem transmitir ideias próximas;
+- comparação de palavras de sentido semelhante em exemplos concretos;
+- cuidado para não apresentar palavras próximas como equivalentes em todos os contextos.
+
+A noção deve vir antes da exigência de terminologia como `sinônimo`.
+
+**5. Oposição de significado**
+
+- reconhecimento de relações simples de oposição, como `alto` e `baixo`, `cheio` e `vazio`, `entrar` e `sair`;
+- comparação de palavras que expressam ideias contrastantes;
+- uso funcional da oposição antes da formalização da terminologia `antônimo`.
+
+**6. Significado e contexto**
+
+- percepção de que uma palavra isolada nem sempre possui um único sentido possível;
+- comparação de uma mesma palavra em contextos simples diferentes;
+- uso de exemplos curtos para mostrar que o contexto ajuda a determinar o sentido;
+- introdução intuitiva à possibilidade de múltiplos sentidos sem exigir terminologia técnica.
+
+Exemplos podem mostrar contrastes simples, como:
+
+```text
+Sentei no banco.
+Fui ao banco.
+```
+
+O objetivo não é estudar polissemia formalmente, mas evitar a ideia de que toda palavra possui um significado único e fixo.
+
+**7. Inferência simples pelo contexto**
+
+- uso de frases ou pares de frases curtas com pistas fortes;
+- formulação de hipóteses simples sobre o significado de uma palavra a partir da situação apresentada;
+- confirmação do significado por associação, escolha ou explicação guiada;
+- reconhecimento de que uma hipótese pode precisar ser revista quando surgem novas pistas.
+
+Neste estágio, a expectativa deve permanecer limitada:
+
+```text
+contexto curto
++
+pistas fortes
+→ hipótese simples de significado
+```
+
+A compreensão do sentido global de textos pertence à Área 5.
+
+##### Limites da área
+
+Esta área desenvolve a compreensão inicial de significado e relações de sentido entre palavras. Ela não deve se transformar em um curso completo de semântica, classes gramaticais ou interpretação textual.
+
+Ficam para etapas posteriores:
+
+```text
+função e organização das palavras dentro de frases
+→ Área 4 — Frases e construção de sentido
+
+compreensão do sentido global e de relações em textos maiores
+→ Área 5 — Leitura e compreensão inicial
+
+uso produtivo mais amplo do vocabulário na escrita
+→ Área 6 — Escrita inicial
+```
+
+Não constituem domínio obrigatório desta área:
+
+- substantivo, verbo, adjetivo, advérbio e demais classes como sistema formal;
+- sujeito, predicado ou outras funções sintáticas;
+- sinonímia e antonímia como classificação técnica extensa;
+- homonímia, paronímia e polissemia como terminologia obrigatória;
+- sentido literal e figurado como estudo sistemático;
+- conotação e denotação;
+- campos lexicais e campos semânticos como nomenclatura;
+- relações morfológicas entre palavras;
+- etimologia;
+- formação morfológica de palavras;
+- análise aprofundada de verbetes de dicionário;
+- interpretação textual complexa.
+
+Esses fenômenos podem aparecer incidentalmente em exemplos simples quando ajudarem a compreensão, mas não devem ser exigidos como domínio formal do aluno neste estágio.
+
+Sequências inventadas ou palavras desconhecidas podem ser usadas em exercícios controlados, mas distinguir "palavra verdadeira" de "sequência sem significado" não deve ser competência central. O aluno deve aprender que desconhecer uma palavra não significa que ela não exista ou não possua significado.
+
+Ao concluir a Área 3, o aluno deve compreender que palavras participam da construção de significados, conseguem representar diferentes tipos de conceitos e estabelecer relações de sentido, e que o uso e o contexto ajudam a determinar o que uma palavra significa. A etapa seguinte passa a explorar como palavras organizadas em frases constroem sentidos mais completos.
+
 ### Nível 1 — Básico
 
 Consolidação dos fundamentos e desenvolvimento das competências essenciais de leitura, escrita e uso da língua.
