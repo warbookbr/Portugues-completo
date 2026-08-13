@@ -21,14 +21,17 @@ O Nível 0 não deve funcionar como uma versão simplificada de um curso tradici
 Ao concluir o Nível 0, o aluno deve conseguir, sozinho:
 
 - reconhecer letras, sons, sílabas, palavras, frases e pequenos textos;
-- ler palavras e frases simples com compreensão;
-- escrever palavras e frases simples de forma compreensível;
-- identificar começo e fim de frases;
+- ler palavras, frases e pequenos textos acessíveis com compreensão;
+- escrever palavras, frases e pequenas mensagens de forma compreensível;
+- compreender mensagens orais curtas e responder de forma simples em situações familiares;
+- identificar começo e fim de frases em contextos apropriados;
 - usar pontuação básica em situações simples;
 - distinguir, em nível introdutório, conceitos como palavra, frase, texto e significado;
 - perceber que palavras podem cumprir funções diferentes dentro de uma frase;
-- compreender instruções simples de leitura e exercício;
-- revisar erros básicos quando recebe uma indicação clara do que observar.
+- compreender e seguir instruções simples escritas ou orais;
+- perguntar, responder, pedir e fornecer informações simples, considerando de forma introdutória a situação e as pessoas envolvidas;
+- pedir esclarecimento ou reformular uma mensagem simples quando a comunicação não funcionar;
+- revisar aspectos básicos já ensinados quando recebe uma indicação clara do que observar.
 
 As competências de saída devem permanecer observáveis e verificáveis, para que posteriormente possam ser associadas a exercícios, critérios de conclusão e mecanismos de revisão.
 
