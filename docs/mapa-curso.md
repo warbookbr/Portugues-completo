@@ -955,6 +955,248 @@ Esses elementos podem aparecer incidentalmente quando ajudarem a aprendizagem, m
 
 Ao concluir a Área 5, o aluno deve conseguir construir o sentido de pequenos textos escritos, localizar e relacionar informações, distinguir o que está explicitamente apresentado do que pode ser concluído por pistas claras e usar estratégias como releitura e busca de evidências quando não compreender de imediato. A etapa seguinte passa da compreensão para a produção escrita inicial.
 
+#### Área 6 — Escrita inicial
+
+##### Objetivo da área
+
+Construir a capacidade de transformar ideias simples em palavras, frases e pequenas mensagens escritas compreensíveis, desenvolvendo autonomia progressiva para planejar o que comunicar, escrever, reler e realizar melhorias básicas orientadas.
+
+A escrita deve ser apresentada como processo de construção e comunicação, e não apenas como reprodução correta de uma forma pronta.
+
+A ideia central da área é:
+
+```text
+algo para comunicar
+→ escolher palavras
+→ organizar a mensagem
+→ escrever
+→ reler
+→ ajustar quando necessário
+```
+
+##### Competências ao concluir
+
+Ao concluir esta área, o aluno deve conseguir:
+
+- escrever palavras simples conhecidas com autonomia crescente;
+- produzir frases simples próprias que comuniquem uma ideia compreensível;
+- completar ou transformar frases quando houver contexto e objetivo claros;
+- produzir uma frase a partir de imagem, situação, pergunta ou tema simples;
+- combinar duas ou mais frases relacionadas para construir uma pequena mensagem;
+- manter uma ideia básica compreensível ao longo de uma sequência muito curta de frases;
+- organizar informações simples em uma sequência coerente;
+- produzir pequenas mensagens funcionais, como bilhete, legenda, resposta curta, lista, descrição ou instrução simples;
+- perceber que quem escreve precisa fornecer informação suficiente para que outra pessoa compreenda a mensagem;
+- distinguir atividades de cópia ou reprodução de situações em que precisa tomar decisões próprias de escrita;
+- reler o que escreveu para verificar se a mensagem corresponde ao que pretendia comunicar;
+- realizar revisões simples quando recebe indicação clara do que observar;
+- modificar palavras, ordem ou informações para tornar uma frase ou pequena mensagem mais clara;
+- aplicar com autonomia crescente convenções que já tenham sido ensinadas, sem exigir domínio de conteúdos ainda não sistematizados;
+- compreender que uma primeira versão pode ser melhorada e que revisar faz parte do processo de escrever.
+
+As competências de conclusão devem incluir produção com alguma decisão própria do aluno. Copiar corretamente uma frase, preencher uma lacuna ou substituir uma única palavra em um modelo são atividades úteis de preparação, mas não constituem, sozinhas, evidência suficiente de produção autônoma.
+
+##### Princípio pedagógico da escrita inicial
+
+A avaliação e a prática desta área devem distinguir eficácia comunicativa de correção formal.
+
+A regra central é:
+
+```text
+escrever bem no Nível 0
+≠ escrever muito
+≠ escrever sem nenhum erro
+```
+
+E também:
+
+```text
+escrita compreensível
+≠ escrita sem nenhum erro
+```
+
+Nesta etapa, o primeiro critério é verificar se a produção consegue comunicar de maneira compreensível aquilo que o aluno pretendia expressar, dentro das habilidades já ensinadas. Problemas de ortografia, pontuação ou forma gramatical devem ser observados e trabalhados de acordo com o que já foi ensinado, mas não devem transformar automaticamente uma mensagem compreensível em fracasso total.
+
+A progressão esperada é:
+
+```text
+primeiro
+→ conseguir comunicar por escrito
+
+depois, progressivamente
+→ tornar essa escrita mais clara, convencional e precisa
+```
+
+##### Conteúdos essenciais
+
+A área deve cobrir obrigatoriamente os seguintes núcleos:
+
+**1. Da intenção à escrita**
+
+- percepção de que escrever começa por algo que se pretende comunicar;
+- transformação de uma ideia simples em palavras e frases;
+- escolha de informações suficientes para tornar a mensagem compreensível;
+- diferença entre saber o que se quer dizer e conseguir organizar isso por escrito.
+
+Situações concretas, imagens, perguntas e temas simples podem oferecer apoio inicial, mas o objetivo é caminhar progressivamente para decisões próprias de escrita.
+
+**2. Produção de frases simples**
+
+- construção de frases a partir de ideias, imagens, situações ou perguntas;
+- uso de modelos e perguntas-guia como andaimes temporários;
+- retomada funcional das relações entre palavras trabalhadas na Área 4;
+- produção de frases que comuniquem uma mensagem, sem ensinar um único molde estrutural como regra universal.
+
+Perguntas como `quem?`, `o que aconteceu?` ou `onde?` podem ajudar em situações apropriadas, mas não devem ser transformadas em fórmula obrigatória de frase.
+
+**3. Expansão e transformação de frases**
+
+- substituição, inclusão ou retirada de palavras para alterar a mensagem;
+- acréscimo de informações simples;
+- comparação entre versões mais curtas e mais informativas;
+- percepção de que mudanças na forma das palavras podem acompanhar mudanças no sentido.
+
+Exemplos podem mostrar progressões como:
+
+```text
+O gato corre.
+O gato corre rápido.
+O gato corre rápido no quintal.
+```
+
+O foco é ampliar a capacidade de expressão, não antecipar um curso formal de sintaxe ou concordância.
+
+**4. Relação entre frases e pequenas mensagens**
+
+- combinação de duas ou mais frases relacionadas;
+- manutenção de um mesmo assunto ou acontecimento em uma sequência curta;
+- uso intuitivo de referências simples para evitar repetições desnecessárias quando isso já for acessível;
+- percepção de que várias frases só formam uma mensagem organizada quando mantêm relações compreensíveis.
+
+O objetivo é iniciar produção conectada sem exigir domínio formal de coesão e coerência.
+
+**5. Sequência e organização das informações**
+
+- produção de acontecimentos em ordem simples;
+- pequenas instruções em etapas;
+- relatos ou descrições muito curtos;
+- uso funcional de marcas como `primeiro`, `depois` e `por fim` quando forem úteis e já compreendidas.
+
+Essa produção retoma, pelo lado da escrita, competências de sequência trabalhadas na Área 5.
+
+**6. Escrita com propósito simples**
+
+- produção de legenda, bilhete, resposta curta, lista, descrição, pequena narrativa, instrução ou mensagem simples;
+- percepção de que diferentes situações pedem informações diferentes;
+- contato funcional com formatos variados sem exigir classificação sistemática de gêneros textuais;
+- escrita como ação de comunicar, e não apenas como resposta a um exercício escolar.
+
+A adequação mais ampla ao interlocutor, ao contexto social e ao registro será aprofundada na Área 8.
+
+**7. Apoio progressivamente reduzido e autonomia real**
+
+A progressão pode seguir movimentos como:
+
+```text
+modelo forte
+→ apoio parcial
+→ produção guiada
+→ pequena produção com decisões próprias
+```
+
+- completar frases e organizar elementos como preparação;
+- usar bancos de palavras ou modelos quando conhecimentos ainda não estão consolidados;
+- reduzir apoios à medida que o aluno ganha domínio;
+- incluir atividades finais em que o aluno precise escolher palavras e organizar ao menos uma frase ou pequena mensagem por conta própria.
+
+Cópia, reprodução e preenchimento continuam úteis, mas não devem ser confundidos com produção autônoma.
+
+**8. Releitura e revisão orientada**
+
+A revisão inicial deve ter foco definido. Comandos amplos como `revise seu texto` não são suficientes para quem ainda está aprendendo o que observar.
+
+A prática deve incluir orientações como:
+
+```text
+Releia e veja se falta alguma palavra.
+Releia e veja se a frase diz o que você queria dizer.
+Observe o começo da frase.
+Veja se as duas frases falam sobre o mesmo acontecimento.
+```
+
+A progressão deve ser:
+
+```text
+revisão com foco indicado
+→ percepção de problemas simples
+→ ajuste
+→ autonomia de revisão progressivamente maior
+```
+
+Revisar deve ser apresentado como parte normal da escrita, e não como punição ou simples caça a erros.
+
+##### Apoio para conhecimentos ainda não consolidados
+
+A produção própria pode exigir palavras ou convenções que o aluno ainda não estudou sistematicamente. Nesses casos, apoio não deve ser confundido com incapacidade de produzir uma mensagem.
+
+Podem ser usados, quando pedagogicamente úteis:
+
+- banco de palavras;
+- palavra disponível para consulta;
+- modelo parcial;
+- associação entre imagem e palavra;
+- correção posterior orientada.
+
+A regra é:
+
+```text
+o que já foi ensinado
+→ autonomia crescente esperada
+
+o que ainda não foi ensinado
+→ apoio permitido
+```
+
+Dificuldades ortográficas ainda não sistematizadas podem receber apoio ou correção orientada sem invalidar, por si só, a competência de produção escrita que estiver sendo avaliada.
+
+##### Limites da área
+
+Esta área desenvolve produção escrita inicial e compreensível. Ela não deve se transformar em curso de redação formal, ortografia completa, pontuação sistemática ou revisão gramatical ampla.
+
+Ficam para etapas posteriores:
+
+```text
+uso sistemático de pontuação, maiúsculas e convenções gráficas básicas
+→ Área 7 — Pontuação e convenções básicas
+
+adequação da mensagem à situação, ao interlocutor e à finalidade cotidiana
+→ Área 8 — Uso da língua no cotidiano
+```
+
+Não constituem domínio obrigatório desta área:
+
+- redações longas;
+- estrutura formal de introdução, desenvolvimento e conclusão;
+- dissertação ou produção argumentativa;
+- descrição técnica;
+- planejamento textual complexo;
+- parágrafos como sistema aprofundado;
+- coesão e coerência como terminologia formal;
+- conectivos como classificação sistemática;
+- concordância como sistema gramatical;
+- domínio ortográfico completo;
+- revisão gramatical ampla;
+- estilo como objeto sistemático;
+- registro formal complexo;
+- gêneros textuais como taxonomia;
+- criatividade literária como requisito.
+
+Esses elementos podem aparecer incidentalmente quando forem naturais para uma atividade, mas não devem ser exigidos como domínio formal no Nível 0.
+
+A produção deve permanecer proporcional a esta etapa: frases e pequenas mensagens são o foco principal. Pequenos textos podem aparecer quando forem muito curtos e acessíveis, sem criar expectativa de domínio amplo de produção textual.
+
+Ao concluir a Área 6, o aluno deve conseguir transformar ideias simples em frases e pequenas mensagens escritas compreensíveis, com autonomia crescente, usando apoios quando necessários para conhecimentos ainda não consolidados e relendo sua produção para realizar melhorias básicas orientadas. A etapa seguinte passa a sistematizar convenções gráficas e pontuação básicas que ajudam a organizar e tornar a escrita mais clara.
+
 ### Nível 1 — Básico
 
 Consolidação dos fundamentos e desenvolvimento das competências essenciais de leitura, escrita e uso da língua.
