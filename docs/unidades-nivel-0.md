@@ -131,3 +131,94 @@ Não são domínio obrigatório: classificações por quantidade de sílabas; s�
 
 ### Síntese
 Ao concluir a Unidade 2, o aluno deve conseguir perceber, segmentar e combinar sílabas oralmente e com apoio da escrita para reconhecer, ler e formar palavras simples, avançando progressivamente do apoio silábico para o reconhecimento da palavra como um todo e relacionando as palavras trabalhadas a significados familiares.
+
+## Unidade 3 — Palavras, frases e sentido
+
+### Objetivo da unidade
+Construir a capacidade de compreender palavras pelo significado e pelo contexto e perceber como a escolha, a forma, a organização e as relações entre palavras constroem mensagens em frases simples, permitindo ao aluno compreender, modificar, reconstruir e começar a produzir frases próprias.
+
+### Competências ao concluir
+O aluno deve conseguir:
+- demonstrar compreensão de palavras familiares por associação, escolha, exemplo ou uso;
+- relacionar palavras a objetos, seres, ações, características, estados, lugares e ideias simples;
+- agrupar palavras por relações simples de significado e perceber relações de proximidade ou oposição sem depender de terminologia técnica;
+- perceber que uma palavra pode assumir sentidos diferentes conforme o contexto;
+- usar pistas fortes de contexto curto para formular hipóteses simples sobre significado;
+- compreender frases simples formadas principalmente por vocabulário acessível;
+- reconhecer frase como expressão que comunica uma mensagem em contexto, sem exigir uma fórmula estrutural fixa;
+- perceber que uma única palavra pode funcionar como mensagem completa em certas situações;
+- organizar palavras fornecidas para construir frases compreensíveis;
+- perceber como ordem, escolha, retirada, acréscimo ou modificação de palavras podem alterar a mensagem;
+- compreender o efeito básico da negação;
+- perceber relações simples entre elementos da frase sem precisar nomeá-las gramaticalmente;
+- reconhecer funcionalmente mensagens que informam, perguntam, pedem, ordenam ou expressam reação;
+- completar, reconstruir e modificar frases quando houver pistas suficientes;
+- produzir frases próprias curtas a partir de imagem, situação, pergunta ou ideia simples;
+- usar frases simples também na oralidade quando a atividade exigir comunicação funcional.
+
+### Conteúdos nucleares
+1. **Palavra e significado** — forma da palavra, conceito e compreensão funcional.
+2. **Relações simples de significado** — agrupamentos, proximidades, oposições e ampliação de vocabulário sem taxonomia técnica como objetivo.
+3. **Palavra e contexto** — múltiplos sentidos possíveis e inferência simples com pistas fortes.
+4. **Da palavra à frase** — passagem de palavras isoladas para relações que constroem mensagens.
+5. **Frase como unidade de comunicação** — diferentes estruturas podem comunicar mensagens completas, inclusive usos de uma única palavra em contexto.
+6. **Ordem, forma e mudança de sentido** — comparação, substituição, adição, retirada, negação e reorganização de palavras.
+7. **Construção, reconstrução e primeira produção própria** — progressão de atividades guiadas para frases curtas com decisões do aluno.
+8. **Mensagem, entonação e pontuação como contato funcional** — uso natural de `.`, `?` e `!` em exemplos e produções, sem sistematizar ainda as regras de pontuação.
+
+Os oito núcleos não correspondem automaticamente a oito lições.
+
+### Guard rails pedagógicos
+A unidade não deve ensinar frase como fórmula sintática universal. Estruturas frequentes podem ser usadas por clareza, mas devem coexistir com outros formatos simples de mensagem.
+
+```text
+frase
+≠ fórmula sintática fixa
+```
+
+Também deve permanecer explícito:
+
+```text
+compreender uma frase
+≠ conseguir nomear suas partes gramaticais
+```
+
+No Nível 0, a prioridade é perceber o que está sendo comunicado, quais relações são relevantes e como mudanças alteram a mensagem. Terminologia como sujeito, predicado, verbo ou complemento não é requisito desta unidade.
+
+Pontuação pode aparecer funcionalmente desde agora:
+
+```text
+pontuação presente
+≠ pontuação já sistematizada
+```
+
+A sistematização das convenções permanece para a Unidade 5.
+
+### Retomadas e conexões
+A segmentação silábica da Unidade 2 continua disponível como estratégia de leitura, mas perde protagonismo à medida que palavras passam a ser reconhecidas como um todo. Oralidade, relações som–escrita, maiúsculas/minúsculas, espaços e vocabulário familiar continuam sendo praticados.
+
+A progressão é:
+
+```text
+Unidade 2
+sílabas → palavras reconhecidas
+
+Unidade 3
+palavras → significados → frases → mensagens
+
+Unidade 4
+frases compreendidas → relações entre frases → pequenos textos
+```
+
+As primeiras frases próprias desta unidade também preparam a produção e revisão que serão ampliadas na Unidade 5.
+
+### Evidências de conclusão
+A conclusão deve mostrar que o aluno consegue operar sobre o sentido, e não apenas reconhecer palavras isoladas. São evidências adequadas: associar e agrupar palavras por relações simples; usar contexto claro para escolher um sentido; identificar mudanças de mensagem após alterar palavras; reconstruir frases; compreender negação; comparar organizações possíveis; completar frases coerentemente; associar frases a situações; e produzir frases simples próprias.
+
+Definir termos gramaticais ou semânticos não deve substituir o desempenho funcional como principal evidência.
+
+### Limites
+Não são domínio obrigatório: classes gramaticais como sistema; sujeito e predicado; análise sintática; concordância como sistema; transitividade; oração e período; coordenação e subordinação; sinonímia, antonímia e polissemia como taxonomias técnicas; conotação e denotação; figuras de linguagem; inferências complexas; compreensão de pequenos textos como foco central; produção organizada de pequenos textos; regras sistemáticas de pontuação; pragmática complexa; adequação social aprofundada; intenção indireta; ironia e implícitos.
+
+### Síntese
+Ao concluir a Unidade 3, o aluno deve conseguir compreender palavras e relações simples de significado, usar contexto claro para interpretar sentidos, compreender como escolha, forma, ordem e relações entre palavras constroem mensagens e compreender, modificar, reconstruir e produzir frases simples, sem depender ainda de análise gramatical formal.
