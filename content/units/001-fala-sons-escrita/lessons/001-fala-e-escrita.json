@@ -1,0 +1,135 @@
+{
+  "schemaVersion": 1,
+  "id": "N0-U01-L01",
+  "title": "Fala e escrita: duas formas relacionadas",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Distinguir a realização sonora da língua de sua representação escrita e compreender que fala e escrita podem transmitir mensagens relacionadas sem serem a mesma coisa.",
+  "competencies": [
+    "identificar quando uma mensagem é apresentada pela fala e quando é apresentada pela escrita",
+    "reconhecer que uma mensagem falada pode ter uma representação escrita",
+    "reconhecer que fala e escrita são relacionadas, mas não idênticas"
+  ],
+  "prerequisites": [],
+  "limits": [
+    "não exigir conhecimento prévio do alfabeto",
+    "não exigir leitura autônoma",
+    "não ensinar sílabas ou ortografia",
+    "não tratar escrita como cópia exata dos sons da fala",
+    "não antecipar nome da letra versus som representado"
+  ],
+  "media": {
+    "tts": "obrigatorio para exemplos falados e apoio às instruções",
+    "controlledAudio": "nao necessario",
+    "video": "nao necessario",
+    "images": "nao necessarias"
+  },
+  "sequence": [
+    {
+      "id": "L01-B01",
+      "type": "objective",
+      "focus": "read-or-listen",
+      "title": "Duas maneiras de encontrar uma mensagem",
+      "text": "Algumas mensagens chegam até nós pelos sons da fala; outras aparecem diante dos nossos olhos como escrita. As duas formas podem estar relacionadas."
+    },
+    {
+      "id": "L01-B02",
+      "type": "demonstration",
+      "focus": "listen",
+      "title": "Primeiro, ouça",
+      "ttsText": "Bom dia!",
+      "explanation": "A mensagem chegou por sons produzidos por uma voz. Isso é fala."
+    },
+    {
+      "id": "L01-B03",
+      "type": "demonstration",
+      "focus": "observe",
+      "title": "Agora, observe",
+      "visibleText": "Bom dia!",
+      "explanation": "A mensagem aparece por marcas gráficas que podemos ver. Isso é escrita."
+    },
+    {
+      "id": "L01-B04",
+      "type": "explanation",
+      "focus": "read-or-listen",
+      "title": "Relacionadas, mas diferentes",
+      "text": "Nos dois exemplos, a mensagem está relacionada à mesma expressão. A forma mudou: na fala percebemos sons; na escrita percebemos marcas gráficas. A escrita pode representar o que dizemos, mas fala e escrita não são a mesma coisa."
+    },
+    {
+      "id": "L01-C01",
+      "type": "quick-check",
+      "focus": "respond",
+      "interaction": "single-choice",
+      "prompt": "Se a mensagem chega pelos sons de uma voz, qual forma está sendo usada?",
+      "options": ["fala", "escrita"],
+      "correct": "fala",
+      "feedback": "A fala chega por sons que ouvimos."
+    },
+    {
+      "id": "L01-B05",
+      "type": "paired-example",
+      "focus": "listen-then-observe",
+      "title": "A mesma mensagem pode mudar de forma",
+      "spoken": "Meu nome é Ana.",
+      "written": "Meu nome é Ana.",
+      "conclusion": "A primeira apresentação usa sons; a segunda usa escrita. Elas podem comunicar a mesma mensagem usando formas diferentes."
+    },
+    {
+      "id": "L01-C02",
+      "type": "quick-check",
+      "focus": "respond",
+      "interaction": "single-choice",
+      "prompt": "Se você olha para “Meu nome é Ana.” na tela sem ativar a voz, o que está diante dos seus olhos?",
+      "options": ["fala", "escrita"],
+      "correct": "escrita",
+      "feedback": "Marcas visíveis na tela formam a escrita."
+    },
+    {
+      "id": "L01-A01",
+      "type": "guided-activity",
+      "focus": "respond",
+      "interaction": "classify",
+      "title": "Fala ou escrita?",
+      "instruction": "Classifique cada situação pela forma principal apresentada.",
+      "categories": ["fala", "escrita"],
+      "items": [
+        {"id": "a1", "stimulus": {"type": "tts", "text": "Olá!"}, "correct": "fala"},
+        {"id": "a2", "stimulus": {"type": "visible-text", "text": "Olá!"}, "correct": "escrita"},
+        {"id": "a3", "stimulus": {"type": "tts", "text": "Até amanhã."}, "correct": "fala"},
+        {"id": "a4", "stimulus": {"type": "visible-text", "text": "Até amanhã."}, "correct": "escrita"}
+      ],
+      "feedbackRule": "feedback imediato e nova tentativa sem penalidade"
+    },
+    {
+      "id": "L01-C03",
+      "type": "quick-check",
+      "focus": "respond",
+      "interaction": "single-choice",
+      "prompt": "Qual afirmação descreve melhor a relação entre fala e escrita?",
+      "options": [
+        "Fala e escrita são exatamente a mesma coisa.",
+        "Fala e escrita não têm relação entre si.",
+        "Fala e escrita são formas relacionadas, mas diferentes."
+      ],
+      "correctIndex": 2,
+      "feedback": "Elas podem transmitir mensagens relacionadas, mas uma usa sons e a outra usa marcas gráficas."
+    },
+    {
+      "id": "L01-B06",
+      "type": "summary",
+      "focus": "read-or-listen",
+      "title": "O que você descobriu",
+      "points": [
+        "Na fala, a língua é realizada por sons que ouvimos.",
+        "Na escrita, a língua é representada por marcas gráficas que vemos.",
+        "Uma mensagem pode aparecer de forma falada e escrita.",
+        "Fala e escrita são relacionadas, mas não são a mesma coisa."
+      ],
+      "bridgeToNextLesson": "Na próxima lição, o foco passa para os sons que conseguimos perceber na fala."
+    }
+  ],
+  "completionEvidence": {
+    "observablePerformance": "Distinguir situações de fala e escrita e reconhecer explicitamente que as duas formas são relacionadas, mas diferentes.",
+    "criterion": "acertar L01-C03 e classificar corretamente pelo menos 3 dos 4 itens de L01-A01, com possibilidade de correção após feedback",
+    "notSufficient": "apenas percorrer os blocos ou ouvir a narração"
+  }
+}
