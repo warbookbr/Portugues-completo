@@ -453,3 +453,136 @@ Não são domínio obrigatório: redações longas; estrutura formal de introdu�
 
 ### Síntese
 Ao concluir a Unidade 5, o aluno deve conseguir transformar ideias simples em frases e pequenas mensagens escritas compreensíveis, organizar informações, produzir com autonomia inicial, reler e realizar melhorias orientadas e utilizar convenções gráficas fundamentais — especialmente espaçamento, maiúscula inicial, ponto final, interrogação e exclamação — mantendo a vírgula como primeiro contato funcional e controlado.
+
+## Unidade 6 — Usando a língua no cotidiano
+
+### Objetivo da unidade
+Construir a capacidade de compreender e produzir mensagens simples em situações cotidianas, integrando ouvir, falar, ler e escrever e considerando, de maneira introdutória, o que se pretende comunicar, para quem, em qual situação e com qual finalidade, além de recorrer a estratégias simples quando a comunicação não funciona de imediato.
+
+### Competências ao concluir
+O aluno deve conseguir:
+- compreender mensagens simples em situações cotidianas claramente apresentadas;
+- perceber intuitivamente quem comunica, para quem e com qual finalidade básica;
+- compreender e produzir mensagens simples que informam, perguntam, pedem, orientam, avisam, agradecem ou cumprimentam;
+- formular perguntas simples para obter informações e responder perguntas simples oralmente ou por escrito;
+- fazer pedidos simples e fornecer informações básicas;
+- compreender e seguir avisos e instruções simples;
+- compreender mensagens orais curtas e identificar sua informação principal;
+- responder oralmente de maneira compreensível, mesmo com hesitações compatíveis com o nível;
+- relacionar mensagens escritas ou orais ao contexto em que aparecem;
+- perceber que uma mesma intenção pode ser expressa de mais de uma maneira;
+- escolher, em situações claras, uma forma mais adequada ao contexto, à finalidade e às pessoas envolvidas;
+- perceber diferenças introdutórias entre usos mais formais e mais informais sem tratar maior formalidade como automaticamente melhor;
+- reconhecer que fala e escrita possuem recursos e convenções próprios;
+- perceber que existem diferentes maneiras legítimas de usar o português sem concluir que qualquer forma serve igualmente em qualquer situação;
+- pedir repetição ou esclarecimento quando não compreende;
+- confirmar aquilo que acredita ter compreendido;
+- reformular uma mensagem simples quando percebe que não foi compreendido;
+- usar pistas contextuais claras para interpretar mensagens;
+- integrar leitura, escrita, escuta e produção oral ao longo de situações comunicativas simples.
+
+### Conteúdos nucleares
+1. **Língua como ação de comunicação** — compreender que falar, ouvir, ler e escrever servem para agir em situações concretas: informar, perguntar, pedir, avisar, orientar, agradecer, cumprimentar e outras funções simples.
+2. **Pessoas, situação e finalidade** — perceber quem comunica, para quem, em qual situação e com qual objetivo imediato, sem exigir terminologia pragmática formal.
+3. **Funções comunicativas cotidianas** — perguntar, responder, pedir, oferecer, informar, avisar, orientar, agradecer, pedir desculpas e confirmar, sem associar cada intenção a uma única frase obrigatória.
+4. **Oralidade funcional** — compreender mensagens e perguntas curtas, responder, perguntar e pedir esclarecimento sem exigir fluência ampla, velocidade ou pronúncia idealizada.
+5. **Diferentes maneiras de comunicar e adequação** — comparar formas simples de expressar uma ideia e considerar situação, finalidade e pessoas envolvidas; formalidade é apenas um dos fatores possíveis.
+6. **Variação linguística e fala/escrita** — perceber diferentes usos legítimos da língua, mantendo simultaneamente a existência de convenções e adequação contextual; fala e escrita não são versões defeituosas uma da outra.
+7. **Textos e mensagens do cotidiano** — placas, avisos, bilhetes, mensagens curtas, horários, listas, legendas, instruções, rótulos simples e convites curtos como recursos de comunicação contextual.
+8. **Estratégias de reparo comunicativo** — pedir repetição, esclarecimento ou confirmação e reformular mensagens simples quando a comunicação não funciona de imediato.
+
+Os oito núcleos não correspondem automaticamente a oito lições.
+
+### Guard rails pedagógicos
+A Unidade 6 não deve se transformar em revisão geral disfarçada. Ela retoma competências anteriores para colocá-las em situações novas de uso contextual.
+
+```text
+Unidade 6
+≠ revisão geral disfarçada
+```
+
+Adequação não deve ser confundida com uma escala automática de formalidade:
+
+```text
+mais formal
+≠ automaticamente melhor
+```
+
+A variação linguística deve ser tratada sem cair em nenhum dos extremos:
+
+```text
+diferença
+≠ automaticamente erro
+
+mas
+
+existência de variação
+≠ ausência de convenções
+≠ qualquer forma adequada em qualquer situação
+```
+
+Estratégias de reparo são competências comunicativas:
+
+```text
+pedir repetição
+pedir esclarecimento
+confirmar
+reformular
+→ competências comunicativas
+≠ fracassos
+```
+
+A oralidade deve ser avaliada pela compreensão e eficácia proporcionais ao nível:
+
+```text
+comunicação oral compreensível
+≠ fala rápida
+≠ fala sem hesitação
+≠ pronúncia idealizada
+```
+
+A integração das modalidades ocorre ao longo da unidade, não obrigatoriamente dentro de cada atividade:
+
+```text
+avaliar uso da língua
+≠ obrigar toda atividade a usar
+ouvir + falar + ler + escrever ao mesmo tempo
+```
+
+### Retomadas e conexões
+A Unidade 6 integra competências das cinco unidades anteriores: relações entre fala e escrita, reconhecimento de palavras, compreensão de frases e textos, produção de mensagens, pontuação básica e revisão. Oralidade, perguntas, respostas e mensagens cotidianas não começam aqui; recebem tratamento contextual e integração mais explícitos.
+
+A progressão do nível pode ser resumida assim:
+
+```text
+Unidade 1
+sons e escrita
+↓
+Unidade 2
+sílabas e palavras
+↓
+Unidade 3
+palavras, frases e sentido
+↓
+Unidade 4
+pequenos textos e compreensão
+↓
+Unidade 5
+produção e organização escrita
+↓
+Unidade 6
+uso integrado em situações reais
+```
+
+### Evidências de conclusão
+A conclusão deve exigir uso em situações novas e acessíveis, e não apenas respostas sobre conceitos. O aluno deve demonstrar que consegue compreender aviso ou mensagem simples, responder oralmente ou por escrito, formular pergunta para obter informação, produzir pequena mensagem adequada a um objetivo, escolher formas compatíveis com uma situação clara e recorrer a repetição, esclarecimento, confirmação ou reformulação quando necessário.
+
+Por ser a última unidade, o fechamento deve também verificar de forma integrada as competências de saída do Nível 0: ler e compreender palavras, frases e pequenos textos; escrever pequenas mensagens; compreender mensagens orais curtas; perguntar, responder, pedir e informar; seguir instruções simples; usar pontuação básica; revisar aspectos já ensinados; pedir esclarecimento e reformular quando a comunicação não funciona.
+
+Essa verificação não precisa ocorrer em uma única prova extensa. Evidências distribuídas ao longo do fechamento podem demonstrar as competências desde que sejam observáveis e suficientes.
+
+### Limites
+Não são domínio obrigatório: fluência conversacional ampla; conversa longa sustentada; velocidade alta de resposta; pronúncia padronizada; ausência de hesitação; pragmática formal; teoria de atos de fala; implicaturas complexas; ironia; sarcasmo; humor contextual complexo; intenções ambíguas; argumentação; persuasão; retórica; etiqueta como sistema; protocolo social complexo; registros como classificação sistemática; norma-padrão como sistema aprofundado; classificação formal de variedades linguísticas; sociolinguística teórica; análise do discurso; comunicação profissional especializada.
+
+### Síntese
+Ao concluir a Unidade 6, o aluno deve conseguir compreender e produzir mensagens simples em situações cotidianas por meio da fala e da escrita, considerar de forma introdutória a situação, a finalidade e as pessoas envolvidas, perceber diferentes maneiras de expressar uma ideia e recorrer a estratégias simples de repetição, esclarecimento, confirmação ou reformulação quando a comunicação não funciona de imediato.
