@@ -1,122 +1,74 @@
 # Fila de produção de mídia
 
-Esta é a lista oficial das mídias pedagógicas que precisam ser produzidas ou curadas manualmente.
-
-Antes de trabalhar nesta fila, ler `producao-midia/README.md`.
+Lista oficial das mídias pedagógicas que precisam ser produzidas manualmente. Ler `producao-midia/README.md` antes de produzir.
 
 ## Resumo
 
-Nenhuma mídia foi solicitada ainda.
+| Lote | Uso | Prioridade | Obrigatório | Status |
+|---|---|---|---|---|
+| `N0-U01-L02-AUD-*` | U1 L2; reutiliza na L7 | ALTA | SIM | A_PRODUZIR |
+| `N0-U01-L03-AUD-*` | U1 L3; reutiliza na L7 | ALTA | SIM | A_PRODUZIR |
+| `N0-U01-L08-AUD-*` | U1 L8 | NORMAL | SIM | A_PRODUZIR |
 
-As primeiras demandas serão adicionadas quando as lições começarem a ser dimensionadas e uma necessidade pedagógica real de áudio controlado, vídeo curado ou imagem curada for identificada.
+Os exercícios ainda não foram dimensionados. Quando forem, estes mesmos IDs serão ligados às posições exatas; não renumerar.
 
-| ID | Onde será usado | Tipo | Prioridade | Obrigatório para publicação | Status |
-|---|---|---|---|---|---|
-| — | — | — | — | — | — |
+## Lote L2 — palavras para percepção auditiva
 
-## Como usar esta fila
+**Tipo:** `AUDIO_CONTROLADO`  
+**Destino:** `Português Completo/Nível 0/Unidade 01/Lição 02/Audio/`
 
-Para produzir uma mídia:
+Objetivo: fornecer estímulos fixos para comparar sons claros sem depender do TTS.
 
-1. procure no resumo um item com status `A_PRODUZIR`;
-2. priorize itens marcados como `ALTA`;
-3. abra a ficha correspondente pelo ID;
-4. siga o roteiro e as orientações sem depender de contexto externo;
-5. salve o arquivo com o nome solicitado;
-6. coloque no destino indicado no Drive;
-7. marque ou comunique o item como `PRONTO_PARA_VALIDAR`.
+| ID | Gravar |
+|---|---|
+| `N0-U01-L02-AUD-001` | `pato` |
+| `N0-U01-L02-AUD-002` | `pipa` |
+| `N0-U01-L02-AUD-003` | `mala` |
+| `N0-U01-L02-AUD-004` | `mesa` |
+| `N0-U01-L02-AUD-005` | `sol` |
+| `N0-U01-L02-AUD-006` | `sapo` |
+| `N0-U01-L02-AUD-007` | `gato` |
+| `N0-U01-L02-AUD-008` | `bola` |
 
-Uma mídia obrigatória ainda pendente não impede que outras partes do curso continuem sendo desenvolvidas, mas impede que a atividade correspondente seja considerada pronta para publicação.
+Gravar **uma palavra por arquivo**, uma única vez. Usar português brasileiro claro, mesma voz, ritmo natural moderado, volume/ambiente consistentes, sem música, efeitos ou ênfase artificial no som observado. Arquivo: `ID.wav`.
 
----
+Validar: palavra correta, alta inteligibilidade, sem cortes, sem ruído perceptível e sem pistas de volume/entonação entre arquivos.
 
-# Demandas
+## Lote L3 — nomes das 26 letras
 
-Ainda não há demandas cadastradas.
+**Tipo:** `AUDIO_CONTROLADO`  
+**Destino:** `Português Completo/Nível 0/Unidade 01/Lição 03/Audio/`
 
-Quando surgir a primeira, ela deverá seguir o modelo abaixo.
+Objetivo: servir de referência fixa quando o aluno ouvir o nome isolado e precisar identificar a letra.
 
----
+| ID final | Roteiro em ordem A–Z |
+|---|---|
+| `N0-U01-L03-AUD-001` a `026` | `a`; `bê`; `cê`; `dê`; `e`; `efe`; `gê`; `agá`; `i`; `jota`; `cá`; `ele`; `eme`; `ene`; `o`; `pê`; `quê`; `erre`; `esse`; `tê`; `u`; `vê`; `dáblio`; `xis`; `ípsilon`; `zê` |
 
-## MODELO — ID — Título curto da mídia
+A numeração corresponde exatamente à ordem A=001, B=002 ... Z=026. Cada arquivo contém somente o nome da letra, sem dizer `letra`. Usar a mesma voz e padrão acústico do Lote L2 quando possível. As formas listadas são referência do curso e não significam que variantes legítimas sejam automaticamente erros.
 
-**Status:** `ROTEIRO_PRONTO`  
-**Prioridade:** `NORMAL`  
-**Tipo:** `AUDIO_CONTROLADO` / `VIDEO_CURADO` / `IMAGEM_CURADA`  
-**Obrigatório para publicação:** `SIM` / `NÃO`
+Validar: 26 arquivos presentes, conteúdo correspondente, volume consistente, sem cortes ou efeitos.
 
-### Onde será usado
+## Lote L8 — contrastes letra–som
 
-- **Nível:**
-- **Unidade:**
-- **Lição:**
-- **Bloco / atividade / exercício:**
-- **Posição exata:**
-- **Referência lógica:** `mediaId: ID`
+**Tipo:** `AUDIO_CONTROLADO`  
+**Destino:** `Português Completo/Nível 0/Unidade 01/Lição 08/Audio/`
 
-### Objetivo pedagógico
+| ID | Gravar |
+|---|---|
+| `N0-U01-L08-AUD-001` | `casa` |
+| `N0-U01-L08-AUD-002` | `cidade` |
+| `N0-U01-L08-AUD-003` | `gelo` |
+| `N0-U01-L08-AUD-004` | `quilo` |
 
-Explicar o que esta mídia permite ensinar, demonstrar ou avaliar e por que o recurso é necessário ou vantajoso.
+Reutilizar `gato` (`N0-U01-L02-AUD-007`) e `sapo` (`N0-U01-L02-AUD-006`). Não regravar.
 
-### Conteúdo / roteiro
+Contrastes planejados: `casa/cidade`, `gato/gelo`, `sapo/cidade` e `casa/quilo`. O aluno deve perceber a variação; não precisa explicar ainda as regras ortográficas.
 
-Registrar aqui o conteúdo exato que deve ser produzido.
+Usar as mesmas boas práticas do Lote L2. Validar também se os novos clipes combinam acusticamente com os reutilizados.
 
-Para áudio, incluir palavras, frases, pausas, ordem dos estímulos e repetições necessárias.
+## Entrega
 
-Para vídeo, incluir cenas, narração, texto em tela, ações e sequência.
+Quando concluir um lote: salvar como `ID.wav`, colocar na pasta indicada, preservar o master de melhor qualidade e mudar/comunicar o status para `PRONTO_PARA_VALIDAR`.
 
-Para imagem, descrever exatamente o que precisa aparecer e quais elementos devem ser evitados.
-
-### Orientações de produção
-
-Registrar os requisitos específicos desta mídia, por exemplo:
-
-- variante de português desejada;
-- ritmo ou entonação;
-- necessidade de manter a mesma voz;
-- duração aproximada;
-- proporção do vídeo ou imagem;
-- presença ou ausência de fundo;
-- restrições que evitem entregar uma resposta;
-- cuidados de acessibilidade;
-- quaisquer elementos que precisam permanecer consistentes entre arquivos relacionados.
-
-### Arquivo esperado
-
-```text
-ID.extensão
-```
-
-### Destino no Drive
-
-```text
-Português Completo/
-Nível X/
-Unidade XX/
-Lição XX/
-Tipo/
-```
-
-### Critérios para validação
-
-Listar critérios observáveis que permitam aprovar ou rejeitar a mídia sem depender de interpretação subjetiva ampla.
-
-Exemplos:
-
-- conteúdo corresponde ao roteiro;
-- áudio está inteligível;
-- estímulos comparados têm volume equivalente;
-- não há pista involuntária que entregue a resposta;
-- texto em tela está legível;
-- duração está compatível com a atividade;
-- imagem comunica o conceito sem acrescentar informação incorreta.
-
-### Entrega
-
-Quando terminar:
-
-1. salvar com o nome indicado;
-2. colocar no destino de Drive indicado;
-3. manter o original de maior qualidade quando aplicável;
-4. alterar ou comunicar o status para `PRONTO_PARA_VALIDAR`.
+Mídia obrigatória pendente não bloqueia o restante do desenvolvimento, mas impede que a atividade dependente seja considerada pronta para publicação.
