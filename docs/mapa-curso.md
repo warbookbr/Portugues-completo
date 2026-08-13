@@ -1804,6 +1804,80 @@ usar a língua
 
 As oito áreas do Nível 0 formam, em conjunto, uma base para que o aluno reconheça elementos da língua, construa significados, compreenda e produza estruturas simples e comece a usar esses recursos em situações reais. O Nível 1 passa a consolidar esses fundamentos e ampliar precisão, autonomia e alcance de leitura, escrita e uso da língua.
 
+#### Unidades principais do Nível 0
+
+As oito áreas anteriores são blocos de conhecimento. Elas não devem ser convertidas mecanicamente em oito unidades. A sequência de aprendizagem do Nível 0 será organizada em seis unidades principais, que combinam e retomam conhecimentos de diferentes áreas quando isso produz uma progressão pedagógica mais natural.
+
+**Unidade 1 — Fala, sons e escrita**
+
+Parte do zero e constrói a distinção inicial entre fala e escrita, percepção de sons, reconhecimento do alfabeto, maiúsculas e minúsculas, relações iniciais entre letras e sons e organização visual básica da escrita. A oralidade já participa desta unidade por meio de escuta e percepção sonora.
+
+**Unidade 2 — Das sílabas às palavras**
+
+Desenvolve percepção, segmentação e combinação de sílabas para reconhecer, ler e formar palavras simples. Introduz significados familiares e concretos enquanto as palavras são aprendidas, mas não concentra toda a Área 3 nesta etapa.
+
+**Unidade 3 — Palavras, frases e sentido**
+
+Aprofunda relações de significado, vocabulário e uso contextual das palavras e conduz o aluno para a construção e compreensão de frases. Trabalha organização, relações, negação, mudanças de sentido e primeiras produções próprias de frases. Ponto final, interrogação e exclamação podem aparecer funcionalmente nos exemplos e produções, sem que a pontuação seja ainda sistematizada como conteúdo completo.
+
+**Unidade 4 — Lendo e compreendendo pequenos textos**
+
+Faz a passagem da compreensão de frases para a construção do sentido de pequenos textos. Trabalha informações explícitas, relações entre partes, sequência, inferências simples, releitura e busca de evidências. Respostas breves e pequenas produções escritas podem aparecer como apoio, assim como situações cotidianas e compreensão oral simples.
+
+**Unidade 5 — Escrevendo e organizando mensagens**
+
+Consolida a produção de frases e pequenas mensagens com autonomia crescente e sistematiza as convenções gráficas fundamentais já encontradas ao longo do percurso. Trabalha intenção, organização, escrita, releitura, revisão, maiúscula inicial, espaçamento, ponto final, interrogação e exclamação. A vírgula permanece apenas como primeiro contato controlado, principalmente em enumerações simples, sem domínio geral como requisito do Nível 0.
+
+**Unidade 6 — Usando a língua no cotidiano**
+
+Integra as competências do nível em situações reais e simples envolvendo ouvir, falar, ler e escrever. Consolida perguntas, respostas, pedidos, informações, avisos e instruções, além da percepção introdutória de situação, finalidade, adequação, variação linguística e estratégias de reparo comunicativo. Não é apenas uma revisão geral: é a etapa em que o uso contextual da língua recebe tratamento mais explícito.
+
+##### Competências transversais entre unidades
+
+A distribuição em unidades não significa que cada competência pertença exclusivamente a uma delas. No Nível 0, uma habilidade pode seguir o movimento:
+
+```text
+ser apresentada
+→ praticada
+→ retomada
+→ consolidada
+```
+
+em unidades diferentes.
+
+Por isso:
+
+```text
+oralidade
+≠ conteúdo exclusivo da Unidade 6
+
+escrita
+≠ conteúdo exclusivo da Unidade 5
+
+pontuação
+≠ invisível antes da Unidade 5
+
+uso cotidiano
+≠ conteúdo exclusivo da Unidade 6
+```
+
+A Unidade 5 sistematiza escrita e convenções que já começaram a aparecer antes. A Unidade 6 consolida o uso cotidiano e contextual de competências que também atravessam o nível inteiro.
+
+##### Regra para detalhamento das unidades
+
+Cada unidade deverá ser detalhada antes de ser dividida em lições, considerando:
+
+```text
+Objetivo da unidade
+Competências ao concluir
+Conteúdos nucleares
+Retomadas e conexões
+Evidências de conclusão
+Limites
+```
+
+O número de lições não deve ser definido por simetria entre unidades. Ele será decidido conforme a densidade do conteúdo, as dependências pedagógicas e a necessidade real de prática.
+
 ### Nível 1 — Básico
 
 Consolidação dos fundamentos e desenvolvimento das competências essenciais de leitura, escrita e uso da língua.
