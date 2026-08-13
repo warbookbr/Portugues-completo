@@ -1473,6 +1473,334 @@ regras extensas de grafia e acentuação
 
 Ao concluir a Área 7, o aluno deve conseguir utilizar convenções gráficas fundamentais para organizar frases e pequenas mensagens, especialmente maiúscula inicial, espaçamento, ponto final, interrogação e exclamação; reconhecer introdutoriamente o uso da vírgula em situações simples; e revisar convenções já ensinadas quando recebe um foco claro, sem ainda precisar dominar o sistema completo de pontuação, maiúsculas ou ortografia. A etapa seguinte passa a explorar o uso da língua em situações reais de comunicação.
 
+#### Área 8 — Uso da língua no cotidiano
+
+##### Objetivo da área
+
+Construir a capacidade de compreender e utilizar estruturas simples da língua em situações cotidianas de comunicação, percebendo que o sentido e a forma de uma mensagem dependem não apenas das palavras empregadas, mas também da situação, da finalidade e das pessoas envolvidas.
+
+A área fecha o Nível 0 integrando competências construídas anteriormente em leitura, escrita, compreensão de frases, pontuação e relação entre fala e escrita. Seu foco não é classificar fenômenos pragmáticos, mas permitir uso funcional da língua em situações acessíveis.
+
+A ideia central da área é:
+
+```text
+o que quero comunicar
++
+para quem
++
+em qual situação
++
+como expresso
+→ uso da língua
+```
+
+##### Competências ao concluir
+
+Ao concluir esta área, o aluno deve conseguir:
+
+- compreender mensagens simples em situações cotidianas claramente apresentadas;
+- perceber, de modo intuitivo, quem comunica, para quem e com qual finalidade básica;
+- reconhecer funcionalmente mensagens que informam, perguntam, pedem, orientam, avisam, agradecem, cumprimentam ou realizam outras ações comunicativas simples, sem depender da classificação pelo nome;
+- produzir respostas simples e compreensíveis em situações muito familiares;
+- formular perguntas simples quando precisa obter uma informação;
+- fazer pedidos simples e fornecer informações básicas;
+- compreender e seguir avisos e instruções cotidianas simples;
+- perceber que uma mesma ideia pode ser expressa de maneiras diferentes;
+- perceber que uma forma de falar ou escrever pode ser mais ou menos adequada dependendo da situação, da finalidade e das pessoas envolvidas;
+- distinguir de maneira introdutória usos mais informais e mais formais sem assumir que maior formalidade significa automaticamente melhor uso da língua;
+- perceber que fala e escrita possuem recursos e convenções próprios e que uma não deve ser tratada simplesmente como versão defeituosa da outra;
+- perceber que existem diferentes maneiras legítimas de usar o português e que diferença não significa automaticamente erro;
+- compreender, ao mesmo tempo, que a existência de variação não elimina convenções nem torna qualquer forma igualmente adequada em qualquer situação;
+- compreender mensagens orais curtas de vocabulário e estrutura acessíveis, identificando sua informação principal;
+- responder oralmente a perguntas simples de forma compreensível, sem exigir fluência conversacional ampla ou ausência de hesitação;
+- pedir repetição, esclarecimento ou confirmação quando não compreende uma mensagem simples;
+- reformular de maneira simples aquilo que disse ou escreveu quando percebe que não foi compreendido;
+- usar pistas contextuais claras para interpretar mensagens cotidianas.
+
+Essas competências devem permanecer proporcionais ao Nível 0. Fluência conversacional ampla, velocidade de resposta, pronúncia idealizada ou domínio de registros complexos não são critérios de conclusão desta área.
+
+##### Princípios pedagógicos de uso e adequação
+
+A área deve evitar dois extremos:
+
+```text
+mais formal
+→ automaticamente melhor ou mais correto
+```
+
+E:
+
+```text
+se existe variação
+→ qualquer forma serve igualmente em qualquer situação
+```
+
+A noção central é:
+
+```text
+uso adequado
+→ depende da mensagem
+→ da situação
+→ da finalidade
+→ das pessoas envolvidas
+```
+
+Formalidade é apenas um dos fatores possíveis de adequação.
+
+Também deve permanecer explícito:
+
+```text
+diferença
+≠ automaticamente erro
+
+mas
+
+existência de variação
+≠ ausência de convenções
+≠ qualquer forma adequada em qualquer situação
+```
+
+O objetivo é construir percepção inicial de adequação e variação sem antecipar um curso formal de sociolinguística, norma-padrão ou pragmática.
+
+##### Conteúdos essenciais
+
+A área deve cobrir obrigatoriamente os seguintes núcleos:
+
+**1. Língua como ação de comunicação**
+
+- percepção de que falar, ouvir, ler e escrever são formas de agir por meio da língua em situações concretas;
+- compreensão de mensagens como ações de informar, perguntar, pedir, avisar, orientar, agradecer ou cumprimentar;
+- observação da função da mensagem em contexto antes de qualquer classificação técnica;
+- integração das estruturas aprendidas nas áreas anteriores em situações comunicativas simples.
+
+O aluno não precisa conhecer termos como `ato de fala` ou categorias pragmáticas formais para demonstrar essa competência.
+
+**2. Pessoas, situação e finalidade**
+
+- percepção de quem está falando ou escrevendo;
+- identificação intuitiva de para quem a mensagem é dirigida;
+- compreensão da finalidade imediata quando ela estiver clara;
+- percepção de que informações disponíveis na situação ajudam a interpretar aquilo que foi dito ou escrito.
+
+Perguntas pedagógicas podem incluir:
+
+```text
+Quem está falando ou escrevendo?
+Para quem?
+O que essa pessoa precisa comunicar?
+```
+
+Termos como `emissor`, `receptor`, `enunciador` e classificações semelhantes não precisam ser exigidos neste estágio.
+
+**3. Intenções comunicativas cotidianas**
+
+- cumprimentar e despedir-se;
+- perguntar e responder;
+- pedir e oferecer;
+- informar e avisar;
+- agradecer e pedir desculpas;
+- orientar ou confirmar informações simples.
+
+Exemplos podem incluir:
+
+```text
+Bom dia.
+Onde fica o banheiro?
+Pode me ajudar?
+Obrigado.
+Cuidado!
+A aula começa às oito.
+```
+
+A capacidade de compreender e agir de acordo com a mensagem é mais importante do que nomear tecnicamente sua intenção.
+
+A área também deve evitar ensinar que cada intenção possui uma única frase ou estrutura correta. Um mesmo objetivo pode ser expresso de formas diferentes.
+
+**4. Situação, adequação e grau de formalidade**
+
+- comparação de maneiras diferentes de expressar uma mesma ideia;
+- percepção de que escolhas linguísticas produzem efeitos diferentes;
+- consideração inicial da relação entre participantes e da situação;
+- contato com usos mais informais e mais formais quando a diferença for clara e pedagogicamente útil;
+- compreensão de que formalidade não é sinônimo de qualidade linguística.
+
+Contrastes como:
+
+```text
+Me ajuda aqui?
+Você poderia me ajudar, por favor?
+```
+
+podem ser usados para discutir diferenças de adequação sem apresentar uma forma como universalmente correta e a outra como errada.
+
+A área não deve se transformar em aula de etiqueta ou em julgamento moral sobre maneiras de falar.
+
+**5. Fala, escrita e oralidade funcional**
+
+- retomada da distinção entre fala e escrita apresentada desde a Área 1;
+- percepção de que fala e escrita dispõem de recursos próprios;
+- compreensão auditiva de mensagens e perguntas simples;
+- produção oral de respostas, perguntas e pedidos simples;
+- uso de entonação e contexto como apoio à compreensão sem exigir treinamento fonético avançado;
+- aceitação de hesitação e ritmo ainda inicial quando a mensagem permanece compreensível.
+
+A expectativa de oralidade pode ser resumida assim:
+
+```text
+ouvir mensagem curta
+→ compreender informação principal
+
+ouvir pergunta simples
+→ responder de forma compreensível
+
+precisar de informação
+→ formular pergunta simples
+
+não compreender
+→ pedir repetição ou esclarecimento
+```
+
+Não são critérios desta área conversa longa, fala sem hesitação, pronúncia idealizada, velocidade alta de resposta ou vocabulário amplo.
+
+**6. Primeira percepção de variação linguística**
+
+- contato com diferentes maneiras legítimas de expressar significados semelhantes;
+- percepção de que palavras, construções e formas de tratamento podem variar;
+- compreensão introdutória de que diferença não significa automaticamente erro;
+- percepção simultânea de que diferentes situações podem exigir escolhas diferentes.
+
+Exemplos simples podem comparar cumprimentos como:
+
+```text
+Olá.
+Oi.
+Bom dia.
+```
+
+A variação entra no Nível 0 como contato e percepção, não como sistema classificatório.
+
+Não é necessário exigir termos como `dialeto`, `registro`, `variação regional`, `variação social`, `variação histórica` ou `norma-padrão` nesta área.
+
+**7. Textos e mensagens do cotidiano**
+
+- leitura e compreensão de placas, avisos, bilhetes, mensagens curtas, horários, listas, legendas, instruções, rótulos simples e convites curtos;
+- identificação do que a mensagem comunica e para que serve na situação apresentada;
+- integração entre leitura, contexto e ação esperada;
+- produção de respostas ou mensagens simples quando apropriado.
+
+Exemplos podem incluir:
+
+```text
+NÃO ENTRE
+
+Fechado hoje.
+
+Volto às 14h.
+
+Lave as mãos antes de comer.
+```
+
+A classificação formal de gêneros textuais não é objetivo central desta área.
+
+**8. Estratégias de reparo comunicativo**
+
+A capacidade de lidar com falhas simples de comunicação deve ser tratada como competência funcional, e não como sinal de fracasso.
+
+O aluno deve aprender movimentos como:
+
+```text
+não entendi
+→ peço repetição
+→ peço esclarecimento
+→ confirmo o que compreendi
+```
+
+E:
+
+```text
+não fui compreendido
+→ reformulo de maneira simples
+```
+
+Expressões úteis podem incluir:
+
+```text
+Pode repetir?
+O que significa isso?
+Você pode falar de outro jeito?
+Você quis dizer...?
+Não entendi.
+Vou explicar de outro jeito.
+```
+
+Esse núcleo fecha uma progressão que atravessa o nível:
+
+```text
+Área 5
+não compreendi o texto
+→ releio e procuro pistas
+
+Área 6
+minha escrita não ficou clara
+→ releio e ajusto
+
+Área 8
+a comunicação não funcionou
+→ pergunto, confirmo ou reformulo
+```
+
+##### Limites da área
+
+Esta área desenvolve uso funcional e contextual da língua em situações cotidianas simples. Ela não deve se transformar em curso formal de pragmática, sociolinguística, etiqueta, retórica ou análise do discurso.
+
+Não constituem domínio obrigatório desta área:
+
+- análise pragmática formal;
+- teoria de atos de fala;
+- implicaturas complexas;
+- ironia e sarcasmo;
+- humor dependente de contexto complexo;
+- duplo sentido sofisticado;
+- manipulação discursiva;
+- argumentação e persuasão;
+- retórica;
+- adequação formal avançada;
+- tratamento protocolar complexo;
+- estudo sistemático de registros;
+- norma-padrão como sistema aprofundado;
+- classificação de variedades regionais, sociais ou históricas;
+- preconceito linguístico como conteúdo teórico aprofundado;
+- gêneros discursivos como sistema;
+- análise do discurso;
+- interpretação de intenções ambíguas;
+- comunicação profissional especializada;
+- fluência conversacional ampla;
+- pronúncia padronizada como critério de domínio.
+
+Esses fenômenos podem aparecer incidentalmente quando necessários para uma situação simples, mas não devem ser exigidos como domínio formal no Nível 0.
+
+A área também não deve virar aula de boas maneiras. Expressões como `por favor`, `obrigado`, `com licença` ou `desculpe` podem ser trabalhadas porque cumprem funções linguísticas cotidianas, mas o foco permanece na comunicação e na compreensão dos efeitos de uso, não em julgamentos morais sobre pessoas ou formas de falar.
+
+##### Síntese do Nível 0
+
+Ao concluir a Área 8, o aluno deve conseguir compreender e produzir mensagens simples em situações cotidianas, perceber finalidades comunicativas básicas, considerar de forma introdutória a situação e as pessoas envolvidas, reconhecer que existem diferentes maneiras de usar a língua e recorrer a estratégias simples de pergunta, confirmação ou reformulação quando a comunicação não funciona de imediato.
+
+O fechamento do Nível 0 pode ser resumido assim:
+
+```text
+conhecer a língua
+≠ apenas conhecer suas partes
+
+usar a língua
+→ compreender
+→ escolher
+→ comunicar
+→ adaptar
+→ verificar se houve entendimento
+```
+
+As oito áreas do Nível 0 formam, em conjunto, uma base para que o aluno reconheça elementos da língua, construa significados, compreenda e produza estruturas simples e comece a usar esses recursos em situações reais. O Nível 1 passa a consolidar esses fundamentos e ampliar precisão, autonomia e alcance de leitura, escrita e uso da língua.
+
 ### Nível 1 — Básico
 
 Consolidação dos fundamentos e desenvolvimento das competências essenciais de leitura, escrita e uso da língua.
