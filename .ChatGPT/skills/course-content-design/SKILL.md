@@ -13,7 +13,9 @@ Antes de propor estrutura curricular, unidades, lições ou materiais de apoio, 
 - `docs/mapa-curso.md` para níveis, áreas, competências de saída e progressão geral;
 - `docs/unidades-nivel-0.md` para o detalhamento pedagógico já consolidado das unidades do Nível 0;
 - `docs/conteudo.md` para estrutura pedagógica e critérios de apresentação;
-- `docs/arquitetura.md` para limitações técnicas, mídia externa, TTS e organização do projeto.
+- `docs/arquitetura.md` para limitações técnicas, mídia externa, TTS e organização do projeto;
+- `producao-midia/README.md` para o contrato operacional de produção/curadoria de mídia;
+- `producao-midia/FILA-MIDIA.md` para as demandas concretas de mídia já identificadas.
 
 Se uma nova decisão relevante entrar em conflito com esses documentos, não assumir silenciosamente a mudança. Explicar a razão e atualizar a documentação quando a nova decisão for adotada.
 
@@ -68,11 +70,13 @@ Usar imagens quando elas reduzirem esforço de compreensão ou adicionarem infor
 
 Evitar imagens meramente decorativas dentro do conteúdo didático.
 
-## Narração
+## Narração e áudio controlado
 
-A narração do curso usa TTS do navegador/dispositivo.
+A narração geral do curso usa TTS do navegador/dispositivo.
 
 Pensar o texto de narração em trechos coerentes e controláveis pelo aluno, não como uma gravação longa obrigatória da página inteira.
+
+TTS variável é adequado quando pequenas diferenças entre vozes não alteram o objeto pedagógico. Quando características específicas do som forem parte da aprendizagem ou quando a resposta correta depender precisamente do estímulo auditivo, não depender apenas do TTS do dispositivo: planejar `AUDIO_CONTROLADO` e registrar a demanda em `producao-midia/FILA-MIDIA.md`.
 
 ## Checagem e exercício
 
@@ -212,6 +216,71 @@ ser apresentada
 ```
 
 em momentos diferentes do percurso. Não adiar oralidade, escrita, pontuação ou uso cotidiano apenas porque sua sistematização ou consolidação principal ocorre em uma unidade posterior.
+
+### Dimensionamento de lição
+
+Ao dimensionar uma lição, não definir apenas um título. Registrar, em nível adequado de detalhe:
+
+```text
+Objetivo
+→ o que a lição precisa construir
+
+Competências
+→ o que o aluno deve conseguir fazer após a lição
+
+Conteúdo e dependências
+→ o que precisa ser ensinado e o que já pode ser pressuposto
+
+Modalidade principal
+→ ler / observar / ouvir / assistir / responder, conforme o momento
+
+Recursos necessários
+→ texto, TTS, áudio controlado, imagem, vídeo ou interação somente quando houver ganho pedagógico
+
+Tipos de prática
+→ como o aluno opera sobre o conteúdo
+
+Evidência de conclusão
+→ qual desempenho mostra que a lição cumpriu seu objetivo
+```
+
+Não congelar ainda todas as telas ou quantidades exatas de exercícios se isso não for necessário para decidir a progressão.
+
+### Mídia durante o planejamento de lições
+
+Mídia curada deve entrar no planejamento como dependência explícita, sem bloquear a continuação do desenvolvimento.
+
+Fluxo obrigatório quando uma necessidade real de mídia for identificada:
+
+```text
+necessidade pedagógica
+→ verificar se TTS/recurso existente é suficiente
+→ se exigir produção humana, criar ID permanente
+→ registrar ficha completa em producao-midia/FILA-MIDIA.md
+→ referenciar a mídia pelo ID no planejamento/conteúdo
+→ continuar desenvolvendo o restante da lição e do curso
+```
+
+Não deixar uma demanda de mídia apenas em conversa ou em descrição solta da lição.
+
+IDs seguem o padrão documentado em `producao-midia/README.md`, por exemplo:
+
+```text
+N0-U01-L03-AUD-001
+```
+
+Cada demanda precisa informar ao produtor, sem depender de contexto da conversa:
+
+- onde será usada;
+- objetivo pedagógico;
+- roteiro/conteúdo exato;
+- orientações de produção;
+- nome esperado;
+- destino de produção;
+- critérios de validação;
+- prioridade, status e obrigatoriedade para publicação.
+
+Uma mídia obrigatória pendente não bloqueia planejamento ou implementação das partes independentes, mas o conteúdo dependente dela não deve ser considerado pronto para publicação.
 
 ### Regra de progressão
 
