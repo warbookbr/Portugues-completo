@@ -21,6 +21,9 @@ Português Completo
 |-- Conteúdo do curso
 |   `-- content/
 |
+|-- Produção de mídia
+|   `-- producao-midia/
+|
 |-- Documentação
 |   `-- docs/
 |
@@ -93,11 +96,29 @@ Ler:
 - `docs/unidades-nivel-0.md` para unidades já detalhadas do Nível 0
 - `docs/conteudo.md`
 - `docs/arquitetura.md` quando houver mídia ou limitações técnicas
+- `producao-midia/README.md` quando a lição exigir mídia produzida/curada
+- `producao-midia/FILA-MIDIA.md` para reutilizar IDs existentes e registrar novas demandas de mídia
 - `docs/validacoes.md` antes de formalizar novos formatos estruturados
 
 Conteúdo fica em:
 
 - `content/`
+
+### Produção e curadoria de mídia pedagógica
+
+Manual operacional:
+
+- `producao-midia/README.md`
+
+Fila oficial do que precisa ser produzido:
+
+- `producao-midia/FILA-MIDIA.md`
+
+Usar esta área para roteiros, IDs, prioridade, status, destino de produção e critérios de validação de áudio controlado, vídeo curado e imagem pedagógica curada.
+
+As regras pedagógicas gerais de uso de mídia permanecem em `docs/conteudo.md` e as regras técnicas de providers/carregamento permanecem em `docs/arquitetura.md`.
+
+Arquivos pesados de produção não devem ser commitados aqui apenas para servir como área de trabalho.
 
 ### Exercícios
 
@@ -129,6 +150,11 @@ Ler:
 
 - `docs/arquitetura.md`
 - `docs/configuracoes.md` (quando criado)
+
+Para produção de áudio pedagógico controlado, consultar também:
+
+- `producao-midia/README.md`
+- `producao-midia/FILA-MIDIA.md`
 
 Código relacionado:
 
@@ -192,6 +218,13 @@ Mídia pedagógica pesada não pertence a `app/assets/`; ela segue as regras de 
 - `content/units/` (quando criado)
 
 `content/` contém aquilo que o aplicativo ensina. `app/` contém o programa que apresenta e executa esse conteúdo.
+
+## Produção de mídia
+
+- `producao-midia/README.md` — contrato operacional, IDs, estados, boas práticas e fluxo de entrega/validação.
+- `producao-midia/FILA-MIDIA.md` — visão viva das mídias que precisam ser produzidas, com roteiro e localização pedagógica.
+
+Esta pasta coordena produção; não substitui `docs/conteudo.md`, `docs/arquitetura.md` nem o conteúdo final em `content/`.
 
 ## Instruções do ChatGPT
 
@@ -262,6 +295,9 @@ Detalhamento das unidades do Nível 0
 
 Forma de ensinar e usar mídia
 → docs/conteudo.md
+
+Produção e curadoria de mídia
+→ producao-midia/README.md + producao-midia/FILA-MIDIA.md
 
 Política de validação automática
 → docs/validacoes.md
