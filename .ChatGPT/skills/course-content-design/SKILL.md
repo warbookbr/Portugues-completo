@@ -10,7 +10,8 @@ Ajudar o ChatGPT a planejar e produzir conteúdo pedagógico do curso sem perder
 
 Antes de propor estrutura curricular, unidades, lições ou materiais de apoio, considerar como referência principal:
 
-- `docs/mapa-curso.md` para níveis e progressão geral;
+- `docs/mapa-curso.md` para níveis, áreas, competências de saída e progressão geral;
+- `docs/unidades-nivel-0.md` para o detalhamento pedagógico já consolidado das unidades do Nível 0;
 - `docs/conteudo.md` para estrutura pedagógica e critérios de apresentação;
 - `docs/arquitetura.md` para limitações técnicas, mídia externa, TTS e organização do projeto.
 
