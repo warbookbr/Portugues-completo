@@ -78,6 +78,7 @@ Arquivos principais:
 Ler:
 
 - `docs/mapa-curso.md`
+- `docs/unidades-nivel-0.md` quando o trabalho envolver o detalhamento das unidades do Nível 0
 - `docs/conteudo.md`
 
 Usar:
@@ -89,6 +90,7 @@ Usar:
 Ler:
 
 - `docs/mapa-curso.md`
+- `docs/unidades-nivel-0.md` para unidades já detalhadas do Nível 0
 - `docs/conteudo.md`
 - `docs/arquitetura.md` quando houver mídia ou limitações técnicas
 - `docs/validacoes.md` antes de formalizar novos formatos estruturados
@@ -153,7 +155,8 @@ Workflow:
 ## Documentação oficial existente
 
 - `docs/arquitetura.md` — arquitetura e responsabilidades técnicas.
-- `docs/mapa-curso.md` — níveis e progressão curricular.
+- `docs/mapa-curso.md` — níveis, áreas e progressão curricular geral.
+- `docs/unidades-nivel-0.md` — detalhamento pedagógico consolidado das unidades do Nível 0.
 - `docs/conteudo.md` — estrutura pedagógica e uso de mídia.
 - `docs/validacoes.md` — estratégia, severidade e roadmap dos guard rails automáticos.
 
@@ -251,8 +254,11 @@ Quando houver dúvida, considerar esta ordem:
 Decisão arquitetural
 → docs/arquitetura.md
 
-Progressão curricular
+Progressão curricular geral
 → docs/mapa-curso.md
+
+Detalhamento das unidades do Nível 0
+→ docs/unidades-nivel-0.md
 
 Forma de ensinar e usar mídia
 → docs/conteudo.md
