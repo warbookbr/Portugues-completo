@@ -222,3 +222,110 @@ Não são domínio obrigatório: classes gramaticais como sistema; sujeito e pre
 
 ### Síntese
 Ao concluir a Unidade 3, o aluno deve conseguir compreender palavras e relações simples de significado, usar contexto claro para interpretar sentidos, compreender como escolha, forma, ordem e relações entre palavras constroem mensagens e compreender, modificar, reconstruir e produzir frases simples, sem depender ainda de análise gramatical formal.
+
+## Unidade 4 — Lendo e compreendendo pequenos textos
+
+### Objetivo da unidade
+Construir a capacidade de ler e compreender pequenos textos escritos acessíveis, relacionando palavras, frases e outros elementos relevantes para identificar a mensagem global, localizar informações explícitas, acompanhar relações simples, realizar inferências apoiadas por pistas claras e recorrer à releitura e à verificação quando necessário.
+
+### Competências ao concluir
+O aluno deve conseguir:
+- ler pequenos textos formados principalmente por palavras e estruturas já acessíveis;
+- identificar o assunto ou a mensagem principal em situações claras;
+- localizar informações explicitamente apresentadas e voltar ao texto para confirmá-las;
+- relacionar informações presentes em frases ou partes diferentes;
+- acompanhar sequências simples de acontecimentos, ações ou instruções;
+- identificar referências simples como `ele`, `ela`, `isso` e `lá` quando houver pistas suficientes;
+- perceber relações simples de tempo, sequência, causa ou consequência quando forem claras;
+- distinguir intuitivamente informação apresentada diretamente de conclusão obtida por pistas;
+- realizar inferências simples quando o texto fornecer evidências fortes;
+- perceber quando uma interpretação não é sustentada pelo texto e revisá-la;
+- usar títulos, imagens, legendas e outros elementos quando contribuírem para a compreensão;
+- compreender avisos, bilhetes, legendas, instruções, diálogos e outros textos curtos acessíveis;
+- seguir instruções escritas simples;
+- reler e procurar pistas relevantes quando não compreender de imediato;
+- demonstrar compreensão por escolha, associação, ordenação, localização, resposta curta ou explicação breve.
+
+### Conteúdos nucleares
+1. **Ler é construir sentido** — decodificação, fluência e compreensão se relacionam, mas não são equivalentes.
+2. **Da frase ao pequeno texto** — relações entre partes constroem uma mensagem maior; texto não é definido apenas pela quantidade de frases.
+3. **Informação explícita e evidência** — localizar, retornar ao trecho relevante e confirmar respostas no texto.
+4. **Relações entre partes** — referências simples, continuidade, tempo, sequência, causa e consequência em situações claras.
+5. **Sequência e organização** — ordenar acontecimentos e acompanhar instruções simples.
+6. **Informação explícita e inferência** — distinguir o que o texto diz diretamente do que pode ser concluído por pistas fortes.
+7. **Estratégias de compreensão** — reler, procurar pistas, testar hipóteses e revisar interpretações.
+8. **Variedade inicial de textos e elementos de apoio** — narrativas curtas, avisos, bilhetes, legendas, instruções, descrições e diálogos simples, sem classificação formal de gêneros como objetivo.
+
+Os oito núcleos não correspondem automaticamente a oito lições.
+
+### Guard rails pedagógicos
+A unidade deve manter explícito:
+
+```text
+compreensão
+≠ velocidade
+≠ memória
+≠ capacidade de escrever resposta longa
+```
+
+Ler lentamente, precisar consultar o texto ou responder de forma breve não constitui, por si só, falta de compreensão.
+
+Também:
+
+```text
+reler
+≠ falha
+
+reler
+→ estratégia legítima de compreensão
+```
+
+Inferência precisa permanecer apoiada pelo texto:
+
+```text
+inferência
+→ precisa de pistas do texto
+
+chute plausível
+≠ inferência comprovada
+```
+
+Elementos visuais podem apoiar a leitura, mas não substituí-la quando a atividade pretende avaliar leitura:
+
+```text
+imagem pode apoiar a leitura
+
+mas
+
+se a atividade avalia leitura
+→ a imagem não pode tornar o texto desnecessário
+```
+
+### Retomadas e conexões
+Retoma significado das palavras, contexto, compreensão de frases, ordem, relações, negação e diferentes tipos funcionais de mensagem da Unidade 3. A segmentação silábica continua disponível como estratégia diante de palavras difíceis, mas não volta a ser objetivo central.
+
+A progressão é:
+
+```text
+Unidade 3
+frases compreendidas
+
+Unidade 4
+frases + relações → pequenos textos compreendidos
+
+Unidade 5
+pequenas mensagens compreendidas → produção e organização de pequenas mensagens
+```
+
+A escrita continua presente em respostas curtas, legendas, complementações e reconstruções, sem deslocar o foco principal da compreensão leitora.
+
+### Evidências de conclusão
+A conclusão deve ser demonstrada diante de textos novos, mas compatíveis com o que foi ensinado. O aluno deve conseguir identificar a mensagem principal, localizar informações explícitas, relacionar partes, identificar referências simples, ordenar acontecimentos ou instruções, distinguir informação explícita de inferência, realizar inferências simples sustentadas, reconhecer interpretações incompatíveis e recorrer à releitura e à busca de evidências.
+
+As formas de resposta devem variar entre seleção, associação, ordenação, localização, complementação e explicação breve. Um único formato, como múltipla escolha, não deve constituir sozinho toda a evidência de compreensão.
+
+### Limites
+Não são domínio obrigatório: textos longos ou estruturalmente complexos; análise literária; classificação formal de gêneros; tema e tese como sistemas; argumentação; ironia ou humor implícito complexo; duplo sentido complexo; figuras de linguagem como sistema; inferências ambíguas ou distantes; análise formal de coesão e coerência; intenção autoral aprofundada; avaliação crítica de fontes; resumo formal; análise gramatical do texto; produção autônoma extensa; velocidade de leitura como critério isolado; memorização do texto; leitura oral perfeita ou pronúncia idealizada.
+
+### Síntese
+Ao concluir a Unidade 4, o aluno deve conseguir ler e compreender pequenos textos acessíveis, construir sua mensagem global, localizar e relacionar informações, distinguir informações explícitas de inferências simples apoiadas por pistas claras e recorrer à releitura, à busca de evidências e à revisão da própria interpretação quando necessário.
