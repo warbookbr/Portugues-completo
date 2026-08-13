@@ -735,6 +735,226 @@ O objetivo é perceber que a organização contribui para o sentido e para o foc
 
 Ao concluir a Área 4, o aluno deve compreender que uma frase comunica uma mensagem pela escolha, pela forma, pela organização e pelas relações entre palavras, conseguindo compreender, organizar e modificar frases simples sem ainda precisar realizar análise gramatical formal. A etapa seguinte passa a explorar como várias frases se relacionam para formar e compreender pequenos textos.
 
+#### Área 5 — Leitura e compreensão inicial
+
+##### Objetivo da área
+
+Construir a capacidade de ler e compreender pequenos textos escritos acessíveis, relacionando suas partes para construir o sentido global, localizar informações explicitamente apresentadas e realizar inferências simples apoiadas por pistas claras.
+
+A área deve consolidar a compreensão de que ler não é apenas reconhecer ou pronunciar palavras. Decodificação, fluência e compreensão se relacionam, mas não são equivalentes, e o foco principal desta área é a construção de sentido.
+
+A ideia central da área é:
+
+```text
+palavras reconhecidas
++
+sentido das palavras
++
+sentido das frases
++
+relações entre partes do texto
+→ compreensão do texto
+```
+
+##### Competências ao concluir
+
+Ao concluir esta área, o aluno deve conseguir:
+
+- ler pequenos textos escritos formados principalmente por palavras e estruturas já acessíveis;
+- demonstrar, de forma simples, compreensão do assunto ou da mensagem principal de um pequeno texto;
+- localizar informações explicitamente apresentadas no texto;
+- relacionar informações apresentadas em frases ou partes diferentes;
+- acompanhar sequências simples de acontecimentos, ações ou instruções;
+- identificar, em situações claras, a quem ou a que expressões como `ele`, `ela`, `isso` e semelhantes se referem;
+- perceber relações simples de continuidade, tempo, causa e consequência quando estiverem claramente apoiadas pelo texto;
+- distinguir, de forma intuitiva, uma informação que o texto apresenta diretamente de uma conclusão obtida por pistas;
+- realizar inferências simples quando houver pistas fortes e suficientes;
+- usar título, imagem e outros elementos de apoio quando eles contribuírem para a compreensão, sem substituir a leitura do texto;
+- retornar ao texto para localizar evidências, confirmar respostas ou revisar uma interpretação;
+- perceber quando não compreendeu algo e recorrer a estratégias simples, como reler um trecho e procurar pistas relevantes;
+- seguir instruções escritas simples;
+- demonstrar compreensão por diferentes formas de resposta, como escolha, associação, ordenação, identificação ou explicação breve.
+
+A compreensão não deve ser medida apenas pela capacidade de responder de memória, ler rapidamente ou produzir respostas escritas longas.
+
+##### Princípio pedagógico de compreensão
+
+A avaliação e a prática desta área devem obedecer à seguinte regra:
+
+```text
+compreensão
+≠ velocidade
+≠ memorização
+≠ capacidade de escrever uma resposta longa
+```
+
+Um aluno pode compreender corretamente mesmo lendo em ritmo ainda lento. Da mesma forma, dificuldade para recordar todos os detalhes sem consultar o texto ou para formular uma resposta extensa não deve ser confundida automaticamente com falta de compreensão.
+
+Quando a tarefa pretende verificar compreensão, o aluno deve poder retornar ao texto sempre que isso fizer sentido. A releitura, a busca de evidências e a revisão de uma interpretação são comportamentos de leitura que devem ser ensinados e valorizados, e não tratados como falhas.
+
+##### Conteúdos essenciais
+
+A área deve cobrir obrigatoriamente os seguintes núcleos:
+
+**1. Decodificação, fluência e compreensão**
+
+- decodificação como acesso ao que está escrito;
+- fluência como capacidade que pode facilitar o processamento da leitura;
+- compreensão como construção de sentido a partir do texto;
+- percepção de que essas dimensões se relacionam, mas não são equivalentes;
+- prioridade da compreensão como objeto central desta área.
+
+A leitura oral, o ritmo e a entonação podem aparecer como apoio e evoluir ao longo do curso, mas velocidade de leitura não deve ser critério central de conclusão desta área.
+
+**2. Do sentido da frase ao sentido do texto**
+
+- relação entre informações apresentadas em várias frases;
+- compreensão de que o sentido global depende de acompanhar conexões entre partes do texto;
+- retomada das competências da Área 4 como base para compreender estruturas maiores;
+- contato principalmente com textos escritos curtos e acessíveis.
+
+A transição pode ser resumida assim:
+
+```text
+Área 4
+Como uma frase constrói uma mensagem?
+
+Área 5
+Como partes de um texto se relacionam para construir uma mensagem maior?
+```
+
+A área deve evitar definir texto simplesmente como "um conjunto de várias frases". Produções curtas, como avisos e legendas, também podem funcionar como textos quando comunicam algo em uma situação.
+
+**3. Informações explícitas e busca de evidências**
+
+- localização de informações apresentadas diretamente;
+- retorno ao trecho relevante para confirmar uma resposta;
+- identificação de pessoas, objetos, lugares, ações e acontecimentos mencionados;
+- comparação entre afirmações compatíveis e incompatíveis com o que o texto diz.
+
+A prática deve ensinar o aluno a consultar o texto, e não transformar compreensão em teste de memória.
+
+**4. Relações entre partes do texto**
+
+- identificação de referências simples entre frases, como `ele`, `ela`, `isso`, `lá` e expressões semelhantes;
+- percepção de continuidade entre acontecimentos ou informações;
+- relações simples de tempo, sequência, causa e consequência;
+- integração de informações que aparecem separadas no texto.
+
+Essas relações devem ser trabalhadas funcionalmente, sem exigir análise formal de coesão textual.
+
+**5. Sequência e organização das informações**
+
+- identificação do que acontece primeiro, depois e por último em sequências claras;
+- ordenação de acontecimentos simples;
+- acompanhamento de instruções em etapas;
+- percepção de que a ordem das informações pode ser necessária para compreender ações ou acontecimentos.
+
+Narrativas curtas, instruções e outros textos simples podem ser usados para essa finalidade sem antecipar classificações formais de estrutura textual.
+
+**6. Informação explícita e inferência simples**
+
+A área deve distinguir dois movimentos de compreensão:
+
+```text
+informação explícita
+→ o texto apresenta diretamente
+
+inferência
+→ o texto fornece pistas suficientes para concluir
+```
+
+- localização de informação explícita;
+- combinação de duas ou mais pistas claras;
+- formulação de inferências simples e próximas do que foi apresentado;
+- revisão da inferência quando ela não é sustentada pelo texto.
+
+Inferências ambíguas, muito distantes ou dependentes de conhecimento especializado não devem ser exigidas neste estágio.
+
+**7. Estratégias iniciais de compreensão**
+
+- reler quando uma parte não foi compreendida;
+- retornar ao trecho relevante diante de uma pergunta;
+- procurar palavras e informações conhecidas;
+- usar o contexto para testar uma hipótese;
+- revisar uma interpretação quando novas pistas entram em conflito com ela;
+- reconhecer que não compreender de imediato faz parte do processo de leitura.
+
+O aluno deve aprender progressivamente um movimento como:
+
+```text
+não compreendi
+→ releio
+→ procuro pistas
+→ verifico no texto
+→ ajusto minha interpretação
+```
+
+**8. Elementos de apoio e variedade inicial de textos**
+
+- uso de títulos, imagens, legendas e outros elementos quando fornecem informação relevante;
+- compreensão de que esses elementos apoiam, mas não substituem, a leitura;
+- contato com pequena variedade funcional de textos, como narrativa curta, descrição, aviso, legenda, instrução, bilhete e diálogo simples;
+- reconhecimento de propósitos imediatos sem exigir classificação sistemática de gêneros textuais.
+
+Quando uma atividade pretende avaliar leitura, a resposta deve depender pelo menos parcialmente de informação presente no texto. Imagens ou outros elementos não devem permitir que o aluno acerte sem precisar ler aquilo que está sendo avaliado.
+
+##### Formas de demonstrar compreensão
+
+Responder perguntas é apenas uma das formas de verificar compreensão, e não o objetivo final da leitura.
+
+O aluno pode demonstrar compreensão, conforme o caso, ao:
+
+- localizar uma informação;
+- ordenar acontecimentos ou instruções;
+- associar partes relacionadas;
+- selecionar uma interpretação compatível com o texto;
+- identificar uma afirmação incompatível;
+- fazer uma inferência simples sustentada por pistas;
+- associar texto e imagem quando ambos forem necessários;
+- recontar ou explicar brevemente quando essa forma de resposta for apropriada.
+
+Nenhuma dessas formas deve, isoladamente, substituir a própria capacidade de construir sentido durante a leitura.
+
+##### Limites da área
+
+Esta área desenvolve compreensão inicial de pequenos textos escritos. Ela não deve se transformar em estudo de leitura avançada, análise literária, produção textual ou avaliação de velocidade.
+
+Ficam para etapas posteriores:
+
+```text
+produção autônoma e progressivamente organizada de frases e textos
+→ Área 6 — Escrita inicial
+
+regras formais que organizam graficamente a escrita
+→ Área 7 — Pontuação e convenções básicas
+
+uso, propósito, adequação e interpretação da língua em situações cotidianas
+→ Área 8 — Uso da língua no cotidiano
+```
+
+Não constituem domínio obrigatório desta área:
+
+- interpretação de textos longos ou estruturalmente complexos;
+- análise literária;
+- tema, tese e argumentação como sistemas formais;
+- ironia, humor implícito ou duplo sentido complexo;
+- figuras de linguagem como sistema;
+- inferências distantes, ambíguas ou altamente subjetivas;
+- análise formal de coesão e coerência;
+- classificação extensa de gêneros textuais;
+- estruturas narrativas formais;
+- análise aprofundada de intenção autoral;
+- avaliação crítica de fontes;
+- produção de resumo formal;
+- análise gramatical sistemática do texto;
+- velocidade de leitura como medida isolada de compreensão;
+- memorização do texto como requisito para demonstrar compreensão.
+
+Esses elementos podem aparecer incidentalmente quando ajudarem a aprendizagem, mas não devem ser exigidos como domínio formal no Nível 0.
+
+Ao concluir a Área 5, o aluno deve conseguir construir o sentido de pequenos textos escritos, localizar e relacionar informações, distinguir o que está explicitamente apresentado do que pode ser concluído por pistas claras e usar estratégias como releitura e busca de evidências quando não compreender de imediato. A etapa seguinte passa da compreensão para a produção escrita inicial.
+
 ### Nível 1 — Básico
 
 Consolidação dos fundamentos e desenvolvimento das competências essenciais de leitura, escrita e uso da língua.
