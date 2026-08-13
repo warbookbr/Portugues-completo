@@ -82,6 +82,7 @@ Ler:
 
 - `docs/mapa-curso.md`
 - `docs/unidades-nivel-0.md` quando o trabalho envolver o detalhamento das unidades do Nível 0
+- `docs/licoes-nivel-0.md` quando o trabalho envolver lições já dimensionadas do Nível 0
 - `docs/conteudo.md`
 
 Usar:
@@ -94,6 +95,7 @@ Ler:
 
 - `docs/mapa-curso.md`
 - `docs/unidades-nivel-0.md` para unidades já detalhadas do Nível 0
+- `docs/licoes-nivel-0.md` para lições já consolidadas do Nível 0
 - `docs/conteudo.md`
 - `docs/arquitetura.md` quando houver mídia ou limitações técnicas
 - `producao-midia/README.md` quando a lição exigir mídia produzida/curada
@@ -183,6 +185,7 @@ Workflow:
 - `docs/arquitetura.md` — arquitetura e responsabilidades técnicas.
 - `docs/mapa-curso.md` — níveis, áreas e progressão curricular geral.
 - `docs/unidades-nivel-0.md` — detalhamento pedagógico consolidado das unidades do Nível 0.
+- `docs/licoes-nivel-0.md` — dimensionamento pedagógico consolidado das lições já definidas do Nível 0.
 - `docs/conteudo.md` — estrutura pedagógica e uso de mídia.
 - `docs/validacoes.md` — estratégia, severidade e roadmap dos guard rails automáticos.
 
@@ -292,6 +295,9 @@ Progressão curricular geral
 
 Detalhamento das unidades do Nível 0
 → docs/unidades-nivel-0.md
+
+Detalhamento das lições do Nível 0
+→ docs/licoes-nivel-0.md
 
 Forma de ensinar e usar mídia
 → docs/conteudo.md
