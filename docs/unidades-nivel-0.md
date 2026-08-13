@@ -77,3 +77,57 @@ conteúdo presente no material
 
 ### Síntese
 Ao concluir a Unidade 1, o aluno deve compreender que fala e escrita são relacionadas, mas diferentes; reconhecer as letras do alfabeto e suas formas básicas; perceber sons simples da fala e estabelecer primeiras relações entre sons e letras; e compreender elementos fundamentais da organização visual da escrita, estando preparado para avançar à Unidade 2 — Das sílabas às palavras.
+
+## Unidade 2 — Das sílabas às palavras
+
+### Objetivo da unidade
+Construir a capacidade de perceber, segmentar e combinar sílabas na fala e na escrita para reconhecer, ler e formar palavras simples, avançando progressivamente da decomposição silábica para o reconhecimento da palavra como um todo e associando as palavras trabalhadas a significados familiares.
+
+### Competências ao concluir
+O aluno deve conseguir:
+- perceber, segmentar e combinar sílabas oralmente;
+- relacionar sílabas percebidas a suas representações escritas em palavras simples;
+- decompor e recompor palavras simples;
+- reconhecer sílabas iniciais, finais e repetidas em palavras diferentes;
+- perceber que sílabas podem ter organizações e quantidades de letras diferentes;
+- ordenar e completar sílabas para formar palavras conhecidas;
+- ler palavras simples usando segmentação quando necessário e avançar para o reconhecimento da palavra inteira;
+- formar palavras simples com apoio compatível com o que já foi ensinado;
+- associar palavras trabalhadas a significados familiares por imagem, ação, situação ou outro apoio simples.
+
+### Conteúdos nucleares
+1. **Palavra falada e sílabas** — sílaba como unidade percebida na fala.
+2. **Segmentação e recomposição** — decompor e reconstruir palavras oralmente e por escrito.
+3. **Representação escrita das sílabas** — relações entre sílabas percebidas e combinações de letras, sem fórmula única.
+4. **Posição e comparação** — sílabas iniciais, finais, repetidas, ausentes e ordenação em situações controladas.
+5. **Formação de palavras** — combinação progressiva de sílabas para reconhecer e construir palavras simples.
+6. **Da leitura silabada à palavra inteira** — segmentação como apoio transitório, não como objetivo final.
+7. **Significado familiar** — relação funcional entre palavra lida e significado conhecido, sem antecipar o estudo semântico da Unidade 3.
+
+Os sete núcleos não correspondem automaticamente a sete lições.
+
+### Guard rails pedagógicos
+Não ensinar sílaba apenas como pedaço escrito nem `consoante + vogal` como fórmula universal. Estruturas variadas devem aparecer progressivamente.
+
+Séries como `ba, be, bi, bo, bu` podem ser usadas como prática, mas não devem constituir a arquitetura da unidade nem substituir leitura e formação de palavras reais.
+
+```text
+segmentar → ferramenta
+reconhecer e ler a palavra inteira → objetivo progressivo
+```
+
+A unidade não deve transformar sílabas em fim em si mesmas. Elas são a ponte entre a base sonora/gráfica da Unidade 1 e a leitura significativa de palavras, ampliada na Unidade 3.
+
+### Retomadas e conexões
+Retoma percepção sonora, letras, relações som–letra, maiúsculas/minúsculas, direção da escrita e espaços da Unidade 1. Oralidade continua ativa pela escuta, segmentação e combinação. A Unidade 3 aprofundará significado, contexto e relações entre palavras antes da passagem para frases.
+
+### Evidências de conclusão
+O aluno deve demonstrar, em palavras acessíveis e não apenas em séries decoradas, que consegue segmentar e recombinar oralmente, decompor e reconstruir por escrito, identificar posições silábicas, ordenar ou completar palavras, ler com apoio silábico quando necessário e reconhecer progressivamente algumas palavras como um todo. Deve também relacionar palavras lidas a significados familiares.
+
+Recitar séries silábicas, sozinho, não constitui evidência suficiente de conclusão.
+
+### Limites
+Não são domínio obrigatório: classificações por quantidade de sílabas; sílaba tônica e classificações associadas; divisão silábica completa; ditongo, tritongo, hiato, encontros ou dígrafos como sistemas classificatórios; famílias silábicas como arquitetura; ortografia extensa; morfologia; classes gramaticais; relações semânticas complexas; leitura de frases como competência central; fluência ampla.
+
+### Síntese
+Ao concluir a Unidade 2, o aluno deve conseguir perceber, segmentar e combinar sílabas oralmente e com apoio da escrita para reconhecer, ler e formar palavras simples, avançando progressivamente do apoio silábico para o reconhecimento da palavra como um todo e relacionando as palavras trabalhadas a significados familiares.
