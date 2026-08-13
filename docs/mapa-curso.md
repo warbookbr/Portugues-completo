@@ -1197,6 +1197,282 @@ A produção deve permanecer proporcional a esta etapa: frases e pequenas mensag
 
 Ao concluir a Área 6, o aluno deve conseguir transformar ideias simples em frases e pequenas mensagens escritas compreensíveis, com autonomia crescente, usando apoios quando necessários para conhecimentos ainda não consolidados e relendo sua produção para realizar melhorias básicas orientadas. A etapa seguinte passa a sistematizar convenções gráficas e pontuação básicas que ajudam a organizar e tornar a escrita mais clara.
 
+#### Área 7 — Pontuação e convenções básicas
+
+##### Objetivo da área
+
+Construir a compreensão de que a escrita utiliza sinais e convenções gráficas para delimitar, organizar e ajudar a interpretar mensagens, permitindo ao aluno reconhecer e usar recursos básicos como maiúscula inicial, espaçamento e sinais de pontuação fundamentais em situações simples.
+
+A pontuação deve ser ensinada como parte da organização e da construção de sentido da escrita, e não como decoração ou simples transcrição de pausas da fala.
+
+A ideia central da área é:
+
+```text
+mensagem escrita
++
+organização gráfica
++
+pontuação básica
+→ leitura mais clara e sentido melhor sinalizado
+```
+
+##### Competências ao concluir
+
+Ao concluir esta área, o aluno deve conseguir:
+
+- reconhecer visualmente o começo e o fim de frases simples em texto corrido;
+- iniciar frases com letra maiúscula em situações já ensinadas;
+- usar ponto final para encerrar afirmações simples quando apropriado;
+- usar ponto de interrogação em perguntas diretas simples;
+- usar ponto de exclamação em situações simples quando esse sinal for apropriado;
+- perceber, em exemplos claros, que a troca do sinal final pode alterar a interpretação da mensagem;
+- separar palavras adequadamente por espaços;
+- reconhecer que sinais de pontuação organizam a escrita e não fazem parte das palavras;
+- observar o posicionamento gráfico básico de sinais como `.`, `,`, `?` e `!`, evitando espaço inadequado antes deles;
+- usar maiúsculas em início de frase e reconhecer usos básicos em nomes específicos de pessoas e lugares conhecidos;
+- reconhecer e experimentar, com apoio, o uso da vírgula em enumerações simples;
+- reler pequenas produções observando um aspecto de pontuação ou convenção previamente indicado;
+- corrigir problemas básicos de pontuação e organização gráfica quando recebe uma indicação clara do que observar.
+
+O domínio da vírgula não é critério central de conclusão desta área. No Nível 0, ela entra como primeiro contato funcional em situações controladas, especialmente enumerações simples, e não como domínio equivalente ao ponto final, ao ponto de interrogação e ao ponto de exclamação.
+
+##### Princípio pedagógico da pontuação
+
+A área deve obedecer ao princípio:
+
+```text
+pontuação
+≠ decoração
+≠ transcrição mecânica de pausas
+
+pontuação
+→ ajuda a organizar
+→ delimitar
+→ relacionar
+→ interpretar a escrita
+```
+
+A progressão deve privilegiar:
+
+```text
+casos claros primeiro
+→ compreensão da função
+→ uso funcional
+→ autonomia crescente
+→ complexidade depois
+```
+
+Fala e escrita se relacionam, mas não são idênticas. Entonação e pausas podem ajudar na percepção de certos efeitos, porém não devem ser transformadas em regras mecânicas de pontuação.
+
+##### Conteúdos essenciais
+
+A área deve cobrir obrigatoriamente os seguintes núcleos:
+
+**1. Função da pontuação e das convenções gráficas**
+
+- percepção de que a escrita utiliza sinais e convenções para organizar mensagens;
+- comparação entre sequências pouco delimitadas e versões graficamente organizadas;
+- compreensão de que pontuar ajuda o leitor a perceber como a mensagem está estruturada;
+- retomada da produção escrita da Área 6 como base para aplicar convenções.
+
+A transição pode ser resumida assim:
+
+```text
+Área 6
+Consigo produzir uma mensagem escrita.
+
+Área 7
+Como marco e organizo graficamente essa mensagem para facilitar sua leitura?
+```
+
+**2. Delimitação gráfica de frases**
+
+- reconhecimento do início e do encerramento de frases em texto corrido;
+- uso de maiúscula inicial em situações já ensinadas;
+- percepção dos sinais finais como recursos que ajudam a delimitar e interpretar frases;
+- cuidado para não definir frase apenas como "tudo o que existe entre dois pontos".
+
+A área não deve ensinar que toda frase em qualquer contexto precisa obrigatoriamente terminar com `.`, `?` ou `!`. Títulos, placas, rótulos e outras produções podem funcionar sem pontuação final. O foco é a delimitação gráfica adequada nos contextos trabalhados, especialmente em texto corrido.
+
+**3. Ponto final**
+
+- reconhecimento do ponto final;
+- uso em afirmações simples quando apropriado;
+- percepção de encerramento gráfico de uma mensagem em texto corrido;
+- comparação entre frases consecutivas para perceber sua delimitação.
+
+Não é necessário aprofundar abreviações, usos estilísticos ou relações com conceitos formais como oração e período.
+
+**4. Interrogação e exclamação**
+
+- uso do ponto de interrogação em perguntas diretas simples;
+- uso do ponto de exclamação em reações, chamadas, ordens ou outras mensagens simples quando apropriado;
+- comparação entre mensagens semelhantes com sinais finais diferentes;
+- percepção de que pontuação, forma da mensagem e contexto atuam juntos na interpretação.
+
+Exemplos como:
+
+```text
+Você chegou.
+Você chegou?
+Você chegou!
+```
+
+podem mostrar mudanças de interpretação sem criar uma tabela rígida em que cada intenção comunicativa corresponda obrigatoriamente a um único sinal.
+
+Da mesma forma:
+
+```text
+Feche a porta.
+Feche a porta!
+```
+
+mostra que uma ordem não precisa obrigatoriamente receber ponto de exclamação.
+
+**5. Primeiro contato com a vírgula**
+
+A vírgula deve aparecer de maneira introdutória e controlada, principalmente em enumerações simples:
+
+```text
+Comprei pão, leite, arroz e frutas.
+```
+
+- reconhecimento visual da vírgula;
+- percepção de sua função em listas simples dentro da frase;
+- experimentação de uso com apoio;
+- comparação entre uma enumeração organizada e uma sequência difícil de interpretar.
+
+A regra pedagógica é explícita:
+
+```text
+vírgula
+≠ lugar onde o leitor precisa respirar
+```
+
+Pausas da fala podem coincidir com certas marcações, mas não são uma regra confiável para decidir onde usar vírgula.
+
+O aluno não precisa dominar o sistema geral de vírgulas no Nível 0. Casos sintáticos mais complexos pertencem a etapas posteriores.
+
+**6. Maiúsculas, espaços e organização gráfica**
+
+- maiúscula no início de frase;
+- contato com maiúsculas em nomes específicos de pessoas e lugares conhecidos, como `Ana`, `Pedro`, `Brasil` ou `Recife`;
+- separação adequada entre palavras;
+- percepção de que sinais como `.`, `,`, `?` e `!` normalmente ficam ligados à palavra anterior;
+- distinção entre organização gráfica básica e regras ortográficas mais amplas.
+
+A área não deve exigir neste estágio o domínio completo da categoria gramatical `substantivo próprio` nem de todos os usos possíveis de maiúsculas.
+
+Exemplos básicos de organização:
+
+```text
+Maria chegou.
+Você vem?
+```
+
+em vez de formas com espaço inadequado antes do sinal final.
+
+**7. Revisão orientada das convenções aprendidas**
+
+A revisão deve continuar seguindo o princípio já adotado na Área 6: iniciantes recebem um foco claro sobre o que observar.
+
+Exemplos de orientação:
+
+```text
+Observe o começo e o fim das frases.
+Procure as perguntas e veja o sinal usado.
+Veja se há espaço antes do ponto final.
+```
+
+A progressão deve ser:
+
+```text
+revisão com foco definido
+→ identificação do aspecto aprendido
+→ correção
+→ autonomia progressivamente maior
+```
+
+Comandos amplos como `corrija toda a pontuação` não devem ser usados como expectativa principal enquanto o aluno ainda não domina os diferentes sistemas envolvidos.
+
+##### Relação entre fala e pontuação
+
+A área deve preservar uma distinção importante:
+
+```text
+pontuação
+→ sistema gráfico da escrita
+
+entonação
+→ participa da organização e interpretação da fala
+
+pausa
+→ fenômeno possível da fala
+```
+
+Essas dimensões podem se relacionar, mas não são equivalentes.
+
+Devem ser evitadas regras falsas como:
+
+```text
+vírgula = pausa
+ponto = respirar mais
+exclamação = gritar
+```
+
+A leitura em voz alta pode ser usada como recurso pedagógico para perceber efeitos, mas não como definição dos sinais.
+
+##### Limites da área
+
+Esta área consolida apenas convenções gráficas e sinais de pontuação fundamentais para o Nível 0. Ela não deve se transformar em curso completo de pontuação, ortografia ou sintaxe.
+
+Ficam para etapas posteriores:
+
+```text
+adequação da língua à situação, ao interlocutor e à finalidade cotidiana
+→ Área 8 — Uso da língua no cotidiano
+
+usos complexos de pontuação, ortografia e organização sintática
+→ níveis posteriores
+```
+
+Não constituem domínio obrigatório desta área:
+
+- domínio geral da vírgula;
+- ponto e vírgula;
+- dois-pontos como sistema completo;
+- travessão;
+- aspas;
+- parênteses;
+- colchetes;
+- reticências como sistema;
+- hífen;
+- pontuação de diálogos como sistema;
+- vírgula em estruturas sintáticas complexas;
+- vocativo e aposto como classificações formais;
+- coordenação e subordinação;
+- regras estilísticas avançadas de pontuação;
+- sistema completo de maiúsculas e minúsculas;
+- regras ortográficas extensas;
+- acentuação gráfica como sistema completo.
+
+Esses elementos podem aparecer naturalmente em textos e exemplos, mas não devem ser exigidos como domínio formal neste estágio.
+
+Também permanece válida a fronteira com ortografia:
+
+```text
+maiúscula inicial
+espaçamento básico
+pontuação fundamental
+primeiros usos de maiúsculas
+→ Área 7
+
+regras extensas de grafia e acentuação
+→ níveis posteriores
+```
+
+Ao concluir a Área 7, o aluno deve conseguir utilizar convenções gráficas fundamentais para organizar frases e pequenas mensagens, especialmente maiúscula inicial, espaçamento, ponto final, interrogação e exclamação; reconhecer introdutoriamente o uso da vírgula em situações simples; e revisar convenções já ensinadas quando recebe um foco claro, sem ainda precisar dominar o sistema completo de pontuação, maiúsculas ou ortografia. A etapa seguinte passa a explorar o uso da língua em situações reais de comunicação.
+
 ### Nível 1 — Básico
 
 Consolidação dos fundamentos e desenvolvimento das competências essenciais de leitura, escrita e uso da língua.
