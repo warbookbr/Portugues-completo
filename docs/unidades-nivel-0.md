@@ -329,3 +329,127 @@ Não são domínio obrigatório: textos longos ou estruturalmente complexos; an�
 
 ### Síntese
 Ao concluir a Unidade 4, o aluno deve conseguir ler e compreender pequenos textos acessíveis, construir sua mensagem global, localizar e relacionar informações, distinguir informações explícitas de inferências simples apoiadas por pistas claras e recorrer à releitura, à busca de evidências e à revisão da própria interpretação quando necessário.
+
+## Unidade 5 — Escrevendo e organizando mensagens
+
+### Objetivo da unidade
+Construir a capacidade de transformar ideias simples em frases e pequenas mensagens escritas compreensíveis, organizando informações, relendo e realizando melhorias orientadas, enquanto consolida convenções gráficas básicas como espaçamento, maiúscula inicial e pontuação fundamental.
+
+### Competências ao concluir
+O aluno deve conseguir:
+- produzir frases próprias que comuniquem ideias simples;
+- combinar duas ou mais frases relacionadas quando a mensagem precisar disso;
+- manter uma ideia básica compreensível em uma sequência curta;
+- organizar acontecimentos ou informações simples em ordem compreensível;
+- produzir pequenas mensagens funcionais, como bilhete, legenda, resposta, lista, descrição ou instrução;
+- tomar decisões próprias sobre parte das palavras e informações usadas, sem depender sempre de frase pronta;
+- perceber quando falta informação necessária para outra pessoa compreender;
+- distinguir cópia ou preenchimento de uma produção em que tomou decisões próprias;
+- reler o que escreveu e verificar se corresponde ao que pretendia comunicar;
+- modificar palavras, ordem ou informações para tornar uma mensagem mais clara;
+- realizar revisões simples quando recebe um foco claro;
+- iniciar frases com maiúscula nos contextos ensinados e separar palavras adequadamente por espaços;
+- usar ponto final em afirmações simples quando apropriado, ponto de interrogação em perguntas diretas e ponto de exclamação em situações simples adequadas;
+- perceber que trocar o sinal final pode modificar a interpretação;
+- observar o posicionamento gráfico básico de `.`, `,`, `?` e `!`;
+- experimentar a vírgula, com apoio, especialmente em enumerações simples;
+- reconhecer usos básicos de maiúscula em nomes conhecidos de pessoas e lugares;
+- aplicar com autonomia crescente apenas as convenções que já tenham sido ensinadas.
+
+### Conteúdos nucleares
+1. **Da intenção à mensagem escrita** — definir o que comunicar e selecionar informações suficientes para tornar a mensagem compreensível.
+2. **Produção própria de frases** — progressão de modelos e apoios para frases curtas com decisões reais do aluno, sem fórmula estrutural universal.
+3. **De frases isoladas a pequenas mensagens** — relacionar duas ou mais frases quando a comunicação exigir, sem impor quantidade fixa.
+4. **Escrita com propósito** — legenda, bilhete, lista, resposta, descrição, instrução e outras mensagens simples como usos funcionais.
+5. **Apoio progressivamente reduzido e autonomia** — modelos, bancos de palavras e outros apoios como andaimes temporários.
+6. **Releitura e revisão orientada** — observar um foco claro, identificar problema simples, ajustar e ampliar gradualmente a autonomia de revisão.
+7. **Organização gráfica e pontuação fundamental** — espaçamento, maiúscula inicial, `.`, `?` e `!` aplicados à própria produção.
+8. **Primeiro contato controlado com a vírgula** — reconhecimento e uso apoiado, principalmente em enumerações simples, sem domínio geral.
+
+Os oito núcleos não correspondem automaticamente a oito lições.
+
+### Guard rails pedagógicos
+A prioridade do Nível 0 permanece sendo a comunicação compreensível:
+
+```text
+escrita compreensível
+≠ escrita sem nenhum erro
+```
+
+A progressão esperada é:
+
+```text
+primeiro
+→ conseguir comunicar
+
+depois
+→ tornar a escrita progressivamente mais clara, convencional e precisa
+```
+
+Atividades preparatórias não devem ser confundidas com evidência suficiente de autonomia:
+
+```text
+copiar / preencher
+→ pode ensinar
+
+mas
+
+copiar / preencher
+≠ provar produção autônoma
+```
+
+A revisão de iniciante precisa de foco claro. Comandos amplos como `corrija tudo` não devem substituir orientações específicas sobre o que observar.
+
+Pontuação deve ser ensinada como parte da organização e do sentido da escrita:
+
+```text
+pontuação
+→ organiza a escrita e participa do sentido
+
+pontuação
+≠ transcrição automática de pausas da fala
+```
+
+Devem ser evitadas regras falsas como `vírgula = pausa`, `ponto = respirar` ou `exclamação = gritar`.
+
+Também permanece a regra de apoio proporcional ao currículo:
+
+```text
+conteúdo ainda não ensinado
+→ apoio permitido
+
+conteúdo já ensinado
+→ autonomia crescente pode ser exigida
+```
+
+A vírgula permanece em escopo introdutório e controlado. Seu domínio geral não é equivalente ao de `.`, `?` e `!` no Nível 0.
+
+### Retomadas e conexões
+Retoma da Unidade 3 a produção de frases, a escolha de palavras, a ordem, a negação e diferentes tipos de mensagem. Retoma da Unidade 4 a sequência, as relações entre informações e formatos como avisos, bilhetes e instruções, agora pelo lado da produção escrita.
+
+A progressão é:
+
+```text
+Unidade 3
+produzir frases simples
+
+Unidade 4
+compreender pequenos textos e mensagens
+
+Unidade 5
+produzir, organizar e revisar pequenas mensagens
+
+Unidade 6
+usar essas mensagens considerando situação + finalidade + pessoas
+```
+
+### Evidências de conclusão
+A conclusão deve incluir produção real em situações novas, mas compatíveis com o que foi ensinado. O aluno deve conseguir produzir frase própria, pequena mensagem funcional e, quando necessário, uma produção com duas ou mais frases relacionadas. Também deve reler, melhorar informação, ajustar palavra ou ordem, corrigir convenções já ensinadas e selecionar sinais básicos em situações claras.
+
+Uma produção compreensível pode comprovar competência mesmo contendo erro relacionado a conteúdo ainda não sistematizado. Em contrapartida, uma frase perfeita apenas copiada não comprova, sozinha, produção autônoma.
+
+### Limites
+Não são domínio obrigatório: redações longas; estrutura formal de introdução, desenvolvimento e conclusão; produção argumentativa; parágrafos como sistema aprofundado; análise formal de coesão e coerência; conectivos como taxonomia; concordância como sistema; domínio ortográfico ou de acentuação completo; revisão gramatical ampla; estilo formal; taxonomia de gêneros; sistema completo de maiúsculas; domínio geral da vírgula; ponto e vírgula; sistema completo de dois-pontos; travessão; aspas; parênteses; reticências como sistema; pontuação formal de diálogos; pontuação sintaticamente complexa.
+
+### Síntese
+Ao concluir a Unidade 5, o aluno deve conseguir transformar ideias simples em frases e pequenas mensagens escritas compreensíveis, organizar informações, produzir com autonomia inicial, reler e realizar melhorias orientadas e utilizar convenções gráficas fundamentais — especialmente espaçamento, maiúscula inicial, ponto final, interrogação e exclamação — mantendo a vírgula como primeiro contato funcional e controlado.
