@@ -175,11 +175,42 @@ Os limites são parte importante do planejamento. Eles evitam que uma área cres
 
 ### Dimensionamento de unidade
 
-O molde definitivo de unidade ainda **não está formalizado**.
+O primeiro molde de unidade foi formalizado a partir da divisão real do Nível 0. Usar, como estrutura de planejamento:
 
-Não congelar agora um conjunto rígido de campos ou perguntas apenas por simetria com Nível e Área.
+```text
+Objetivo da unidade
+→ o que esta etapa precisa construir
 
-Quando o projeto chegar à primeira divisão real de uma área em unidades, definir o molde a partir da necessidade pedagógica observada e então registrá-lo nesta skill e na documentação apropriada, caso precise sobreviver à conversa.
+Competências ao concluir
+→ o que o aluno consegue fazer sozinho ao final da unidade
+
+Conteúdos nucleares
+→ o que precisa ser ensinado nesta unidade para produzir essas competências
+
+Retomadas e conexões
+→ conhecimentos anteriores que continuam sendo praticados ou que se conectam ao novo conteúdo
+
+Evidências de conclusão
+→ quais desempenhos observáveis mostram que as competências da unidade foram atingidas
+
+Limites
+→ o que pode aparecer como apoio ou contato, mas ainda não precisa ser dominado nesta unidade
+```
+
+Esse molde organiza a decisão pedagógica da unidade, mas não determina quantidade fixa de lições, exercícios ou componentes visuais. O número de lições deve ser definido depois, conforme densidade, dependências e necessidade de prática.
+
+Uma área não corresponde obrigatoriamente a uma unidade. Uma unidade pode combinar conhecimentos de mais de uma área quando isso produzir uma sequência de aprendizagem mais natural.
+
+Da mesma forma, competências transversais podem atravessar várias unidades. Uma habilidade pode:
+
+```text
+ser apresentada
+→ praticada
+→ retomada
+→ consolidada
+```
+
+em momentos diferentes do percurso. Não adiar oralidade, escrita, pontuação ou uso cotidiano apenas porque sua sistematização ou consolidação principal ocorre em uma unidade posterior.
 
 ### Regra de progressão
 
