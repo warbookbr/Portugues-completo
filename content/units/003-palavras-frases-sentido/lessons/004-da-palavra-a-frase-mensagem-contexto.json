@@ -192,7 +192,7 @@
       "type": "quick-check",
       "focus": "compare-and-respond",
       "interaction": "recognize-one-and-multiword-messages",
-      "prompt": "Qual afirmação combina com os exemplos PARE! e O ÔNIBUS CHEGOU.?",
+      "prompt": "Considere os exemplos PARE! e O ÔNIBUS CHEGOU. Qual afirmação combina com os dois?",
       "options": [
         "Só O ÔNIBUS CHEGOU. pode funcionar como frase porque tem várias palavras.",
         "Só PARE! pode funcionar como frase porque é mais curta.",
