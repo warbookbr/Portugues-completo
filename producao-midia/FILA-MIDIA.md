@@ -12,8 +12,9 @@ Lista oficial das mídias pedagógicas que precisam ser produzidas manualmente. 
 | `N0-U01-V01-AUD-*` | Verificação integrada da U1 | ALTA | SIM | A_PRODUZIR |
 | `N0-U02-L01-AUD-*` | U2 L1 — percepção inicial de sílabas | ALTA | SIM | A_PRODUZIR |
 | `N0-U02-L02-AUD-*` | U2 L2 — segmentação e recombinação oral; reutiliza na U2 L3 | ALTA | SIM | A_PRODUZIR |
+| `N0-U02-L08-IMG-*` | U2 L8 — associação entre palavra lida e significado familiar | ALTA | SIM | A_PRODUZIR |
 
-As ligações pedagógicas das Lições 2, 3, 7 e 8, da verificação integrada da Unidade 1 e das Lições 1, 2 e 3 da Unidade 2 já estão dimensionadas abaixo. Exercícios formais futuros podem reutilizar estes mesmos IDs quando fizer sentido; não renumerar mídias existentes. As Lições 1, 4, 5 e 6 da Unidade 1 não exigem mídia humana na fila: usam TTS e/ou recursos visuais renderizados pela própria interface. A Lição 7 não cria novos arquivos e reutiliza subconjuntos dos lotes L2 e L3. A Lição 8 usa quatro novos arquivos já reservados no lote L8 e reutiliza `sapo` e `gato` do lote L2. A Lição 1 da Unidade 2 reutiliza `pato`, `mala` e `sol` como palavras inteiras e cria apenas os estímulos novos/segmentados que não existem nos lotes anteriores. A Lição 2 reutiliza `gato`, `mala` e `pato` como palavras inteiras e cria fichas de sílabas contextuais, além das palavras novas `boneca` e `tomate`. A Lição 3 não cria novo lote: reutiliza os mesmos estímulos auditivos da Lição 2 e as palavras inteiras `gato`, `mala`, `pato` e `sol`, acrescentando apenas trechos escritos renderizados pela interface.
+As ligações pedagógicas das Lições 2, 3, 7 e 8, da verificação integrada da Unidade 1 e das Lições 1, 2, 3 e 8 da Unidade 2 já estão dimensionadas abaixo. Exercícios formais futuros podem reutilizar estes mesmos IDs quando fizer sentido; não renumerar mídias existentes. As Lições 1, 4, 5 e 6 da Unidade 1 não exigem mídia humana na fila: usam TTS e/ou recursos visuais renderizados pela própria interface. A Lição 7 não cria novos arquivos e reutiliza subconjuntos dos lotes L2 e L3. A Lição 8 usa quatro novos arquivos já reservados no lote L8 e reutiliza `sapo` e `gato` do lote L2. A Lição 1 da Unidade 2 reutiliza `pato`, `mala` e `sol` como palavras inteiras e cria apenas os estímulos novos/segmentados que não existem nos lotes anteriores. A Lição 2 reutiliza `gato`, `mala` e `pato` como palavras inteiras e cria fichas de sílabas contextuais, além das palavras novas `boneca` e `tomate`. A Lição 3 não cria novo lote: reutiliza os mesmos estímulos auditivos da Lição 2 e as palavras inteiras `gato`, `mala`, `pato` e `sol`, acrescentando apenas trechos escritos renderizados pela interface. As Lições 4, 5, 6 e 7 da Unidade 2 não criam mídia humana nova. A Lição 8 da Unidade 2 cria sete imagens curadas de referentes concretos para verificar significado sem impor leitura adicional de definições como modalidade principal.
 
 Para verificações integradas que ficam fora da contagem de lições, usar `V01`, `V02` etc. no segmento que normalmente identifica a lição. Exemplo: `N0-U01-V01-AUD-001` significa Nível 0, Unidade 1, Verificação integrada 1, áudio 001. Não criar uma `L09` apenas para representar a verificação.
 
@@ -301,8 +302,63 @@ Validar:
 - volume e condições acústicas são consistentes o suficiente para que diferenças técnicas não entreguem respostas;
 - as fichas contextuais não sejam substituídas entre palavras apenas por coincidência de grafia.
 
+## Lote U2 L8 — imagens para significado familiar
+
+**Família:** `N0-U02-L08-IMG-*`  
+**Tipo:** `IMAGEM_CURADA`  
+**Prioridade:** `ALTA`  
+**Obrigatório para publicação:** `SIM`  
+**Status:** `A_PRODUZIR`  
+**Destino:** `Português Completo/Nível 0/Unidade 02/Lição 08/Imagem/`
+
+Objetivo: fornecer referentes visuais concretos e inequívocos para que o aluno relacione uma palavra lida ao seu significado sem precisar ler outra definição como modalidade principal da atividade.
+
+| ID | Referente | Brief visual | Localização pedagógica |
+|---|---|---|---|
+| `N0-U02-L08-IMG-001` | `gato` | um único gato doméstico claramente reconhecível, corpo ou silhueta suficientemente visível, sem outros animais e sem texto | `L08-C01`; `L08-A01`; `L08-A02` |
+| `N0-U02-L08-IMG-002` | `pato` | um único pato claramente reconhecível, com bico e corpo visíveis, sem outros animais e sem texto | `L08-B03`; `L08-C01`; `L08-C02`; `L08-A01`; `L08-A02` |
+| `N0-U02-L08-IMG-003` | `prato` | um único prato de mesa simples e claramente visível; evitar comida que vire o referente principal; sem texto | `L08-B03`; `L08-C02`; `L08-A01`; `L08-A02` |
+| `N0-U02-L08-IMG-004` | `mala` | uma única mala de viagem fechada e claramente reconhecível, sem marcas e sem outros objetos dominantes | `L08-C03`; `L08-A01`; `L08-A02` |
+| `N0-U02-L08-IMG-005` | `mesa` | uma única mesa simples, com tampo e apoio claramente identificáveis, sem objetos que dominem a cena e sem texto | `L08-C02`; `L08-C03`; `L08-A01`; `L08-A02` |
+| `N0-U02-L08-IMG-006` | `uva` | um cacho de uvas claramente reconhecível, sem outras frutas concorrentes e sem texto | `L08-B04`; `L08-C03`; `L08-A01`; `L08-A02` |
+| `N0-U02-L08-IMG-007` | `casa` | uma casa residencial simples vista de modo claramente reconhecível, sem placas, números ou texto | `L08-B02`; `L08-C01`; `L08-A01`; `L08-A02` |
+
+### Orientações de produção
+
+Produzir as sete imagens como **um conjunto visual coerente**. Pode ser fotografia, ilustração ou outra linguagem visual, desde que o referente seja mais importante do que o estilo e que todos os itens mantenham nível semelhante de detalhe, enquadramento e contraste.
+
+Regras obrigatórias:
+
+- não incorporar a palavra-alvo, letras, legendas, marcas d'água, placas ou pistas textuais;
+- preferir um único referente principal e fundo simples;
+- evitar objetos secundários que possam se tornar uma resposta concorrente;
+- não depender de marca comercial, contexto cultural específico ou detalhe raro para reconhecer o item;
+- `pato` e `prato` precisam ser imediatamente distinguíveis mesmo em miniatura;
+- `mala` e `mesa` precisam ter silhuetas e enquadramentos suficientemente distintos;
+- manter resolução e proporção adequadas para cartões de escolha responsivos em celular e desktop;
+- não colocar borda, número da alternativa, letra A/B/C ou estado de correto/incorreto dentro do arquivo; isso pertence à interface.
+
+A palavra-alvo permanece texto real da interface. Estas imagens representam **significado**, não a grafia.
+
+Para acessibilidade, a implementação deve oferecer uma alternativa não visual por descrições semânticas curtas. Não usar o `alt` da própria imagem como uma resposta escondida que revele diretamente o item durante a avaliação visual.
+
+### Critérios de validação
+
+Validar:
+
+- cada ID representa exatamente o referente previsto;
+- ausência total de texto ou pistas ortográficas incorporadas;
+- alta reconhecibilidade do referente em tamanho de cartão;
+- ausência de ambiguidade relevante entre as sete imagens;
+- consistência suficiente de estilo, iluminação/contraste e complexidade para que uma imagem não se destaque apenas pela produção;
+- nenhum arquivo contém elemento visual que entregue sua posição como resposta correta;
+- `gato`, `pato`, `prato`, `mala`, `mesa`, `uva` e `casa` são identificáveis sem depender do nome do arquivo;
+- as imagens continuam claras em tela pequena e não exigem interpretação de detalhes finos.
+
 ## Entrega
 
-Quando concluir um lote: salvar como `ID.wav`, colocar na pasta indicada, preservar o master de melhor qualidade e mudar/comunicar o status para `PRONTO_PARA_VALIDAR`.
+Quando concluir um lote: salvar com o ID correspondente, colocar na pasta indicada, preservar o master de melhor qualidade e mudar/comunicar o status para `PRONTO_PARA_VALIDAR`.
+
+Para áudio, o nome esperado é `ID.wav`. Para imagem curada, usar o ID como base do nome e preservar um formato mestre adequado; a versão de publicação poderá ser otimizada conforme a arquitetura sem mudar o ID lógico.
 
 Mídia obrigatória pendente não bloqueia o restante do desenvolvimento, mas impede que a atividade dependente seja considerada pronta para publicação.
