@@ -6,13 +6,14 @@ Lista oficial das mídias pedagógicas que precisam ser produzidas manualmente. 
 
 | Lote | Uso | Prioridade | Obrigatório | Status |
 |---|---|---|---|---|
-| `N0-U01-L02-AUD-*` | U1 L2; reutiliza nas L7, L8 e U2 L1 | ALTA | SIM | A_PRODUZIR |
+| `N0-U01-L02-AUD-*` | U1 L2; reutiliza nas L7, L8 e U2 L1/L2 | ALTA | SIM | A_PRODUZIR |
 | `N0-U01-L03-AUD-*` | U1 L3; reutiliza na L7 e na verificação integrada | ALTA | SIM | A_PRODUZIR |
 | `N0-U01-L08-AUD-*` | U1 L8 | NORMAL | SIM | A_PRODUZIR |
 | `N0-U01-V01-AUD-*` | Verificação integrada da U1 | ALTA | SIM | A_PRODUZIR |
 | `N0-U02-L01-AUD-*` | U2 L1 — percepção inicial de sílabas | ALTA | SIM | A_PRODUZIR |
+| `N0-U02-L02-AUD-*` | U2 L2 — segmentação e recombinação oral | ALTA | SIM | A_PRODUZIR |
 
-As ligações pedagógicas das Lições 2, 3, 7 e 8, da verificação integrada da Unidade 1 e da Lição 1 da Unidade 2 já estão dimensionadas abaixo. Exercícios formais futuros podem reutilizar estes mesmos IDs quando fizer sentido; não renumerar mídias existentes. As Lições 1, 4, 5 e 6 da Unidade 1 não exigem mídia humana na fila: usam TTS e/ou recursos visuais renderizados pela própria interface. A Lição 7 não cria novos arquivos e reutiliza subconjuntos dos lotes L2 e L3. A Lição 8 usa quatro novos arquivos já reservados no lote L8 e reutiliza `sapo` e `gato` do lote L2. A Lição 1 da Unidade 2 reutiliza `pato`, `mala` e `sol` como palavras inteiras e cria apenas os estímulos novos/segmentados que não existem nos lotes anteriores.
+As ligações pedagógicas das Lições 2, 3, 7 e 8, da verificação integrada da Unidade 1 e das Lições 1 e 2 da Unidade 2 já estão dimensionadas abaixo. Exercícios formais futuros podem reutilizar estes mesmos IDs quando fizer sentido; não renumerar mídias existentes. As Lições 1, 4, 5 e 6 da Unidade 1 não exigem mídia humana na fila: usam TTS e/ou recursos visuais renderizados pela própria interface. A Lição 7 não cria novos arquivos e reutiliza subconjuntos dos lotes L2 e L3. A Lição 8 usa quatro novos arquivos já reservados no lote L8 e reutiliza `sapo` e `gato` do lote L2. A Lição 1 da Unidade 2 reutiliza `pato`, `mala` e `sol` como palavras inteiras e cria apenas os estímulos novos/segmentados que não existem nos lotes anteriores. A Lição 2 reutiliza `gato`, `mala` e `pato` como palavras inteiras e cria fichas de sílabas contextuais, além das palavras novas `boneca` e `tomate`.
 
 Para verificações integradas que ficam fora da contagem de lições, usar `V01`, `V02` etc. no segmento que normalmente identifica a lição. Exemplo: `N0-U01-V01-AUD-001` significa Nível 0, Unidade 1, Verificação integrada 1, áudio 001. Não criar uma `L09` apenas para representar a verificação.
 
@@ -38,13 +39,13 @@ Objetivo: fornecer estímulos fixos para comparar sons claros sem depender do TT
 
 | ID | Localização pedagógica atual |
 |---|---|
-| `N0-U01-L02-AUD-001` | `L02-B02`; `L02-A01` itens 1 e 4; U2 `L01-B02` como palavra inteira |
+| `N0-U01-L02-AUD-001` | `L02-B02`; `L02-A01` itens 1 e 4; U2 `L01-B02` como palavra inteira; U2 `L02-B03`; `L02-C03`; `L02-A02` item 1 e opções relacionadas |
 | `N0-U01-L02-AUD-002` | `L02-B02`; `L02-A01` item 1 |
-| `N0-U01-L02-AUD-003` | `L02-C01`; `L02-A01` item 2; U2 `L01-C01` como palavra inteira |
+| `N0-U01-L02-AUD-003` | `L02-C01`; `L02-A01` item 2; U2 `L01-C01` como palavra inteira; U2 `L02-C01`; `L02-C02` opção; `L02-A01` item 2; `L02-A02` itens 1 e 4 |
 | `N0-U01-L02-AUD-004` | `L02-C01` |
 | `N0-U01-L02-AUD-005` | `L02-A01` item 3; U2 `L01-B04`; U2 `L01-A01` item 5 |
 | `N0-U01-L02-AUD-006` | `L02-A01` item 3; reutilização em L7; `L08-B04`; `L08-A01` item 3 |
-| `N0-U01-L02-AUD-007` | `L02-B03`; `L02-A01` item 2; reutilização em L7; `L08-C01`; `L08-A01` item 2 |
+| `N0-U01-L02-AUD-007` | `L02-B03`; `L02-A01` item 2; reutilização em L7; `L08-C01`; `L08-A01` item 2; U2 `L02-B02`; `L02-C02`; `L02-P01`; `L02-A01` item 1; `L02-A02` itens 1 e 3 |
 | `N0-U01-L02-AUD-008` | `L02-B03`; `L02-A01` item 4; reutilização em L7 |
 
 ### Ligações já dimensionadas na Lição 7
@@ -210,6 +211,72 @@ Validar:
 - `pa — to`, `ma — la` e `bo — la` claramente percebidos como duas partes;
 - `ba — na — na` e `ja — ne — la` claramente percebidos como três partes;
 - versões inteira e segmentada de `banana` e `janela` reconhecíveis como a mesma palavra.
+
+## Lote U2 L2 — segmentação e recombinação oral
+
+**Família:** `N0-U02-L02-AUD-*`  
+**Tipo:** `AUDIO_CONTROLADO`  
+**Prioridade:** `ALTA`  
+**Obrigatório para publicação:** `SIM`  
+**Status:** `A_PRODUZIR`  
+**Destino:** `Português Completo/Nível 0/Unidade 02/Lição 02/Audio/`
+
+Objetivo: permitir que o aluno opere sobre as sílabas pela escuta, selecionando e ordenando fichas sonoras para separar palavras e juntando fichas para recuperar a palavra inteira, ainda sem apoio de grafia silabificada.
+
+As fichas são **contextuais à palavra de origem**. Não reutilizar automaticamente uma gravação apenas porque duas sílabas teriam a mesma grafia. A realização sonora precisa ser compatível com a palavra-alvo e com a voz de referência usada no conjunto.
+
+| ID | Gravar | Palavra de origem / função | Localização pedagógica |
+|---|---|---|---|
+| `N0-U02-L02-AUD-001` | `ga` | 1ª sílaba de `gato` | `L02-B02`; `L02-C01` como distrator; `L02-C02`; `L02-P01`; `L02-A01` itens 1 e 4; `L02-A02` item 3 como opção relacionada |
+| `N0-U02-L02-AUD-002` | `to` | 2ª sílaba de `gato` | `L02-B02`; `L02-C02`; `L02-P01`; `L02-A01` itens 1 e 3; `L02-A02` item 3 como opção relacionada |
+| `N0-U02-L02-AUD-003` | `ma` | 1ª sílaba de `mala` | `L02-C01`; `L02-A01` itens 1 e 2; `L02-A02` item 4 |
+| `N0-U02-L02-AUD-004` | `la` | 2ª sílaba de `mala` | `L02-C01`; `L02-A01` item 2; `L02-A02` item 4 |
+| `N0-U02-L02-AUD-005` | `pa` | 1ª sílaba de `pato` | `L02-B03`; `L02-C03`; `L02-A01` item 2 como distrator; `L02-A02` item 1 |
+| `N0-U02-L02-AUD-006` | `to` | 2ª sílaba de `pato` | `L02-B03`; `L02-C03`; `L02-A02` item 1 |
+| `N0-U02-L02-AUD-007` | `bo` | 1ª sílaba de `boneca` | `L02-A01` item 3; `L02-A02` item 2 |
+| `N0-U02-L02-AUD-008` | `ne` | 2ª sílaba de `boneca` | `L02-A01` item 3; `L02-A02` item 2 |
+| `N0-U02-L02-AUD-009` | `ca` | 3ª sílaba de `boneca` | `L02-A01` item 3; `L02-A02` item 2 |
+| `N0-U02-L02-AUD-010` | `to` | 1ª sílaba de `tomate` | `L02-A01` item 4; `L02-A02` item 3 |
+| `N0-U02-L02-AUD-011` | `ma` | 2ª sílaba de `tomate` | `L02-A01` item 4; `L02-A02` item 3 |
+| `N0-U02-L02-AUD-012` | `te` | 3ª sílaba de `tomate` | `L02-A01` item 4; `L02-A02` item 3 |
+| `N0-U02-L02-AUD-013` | `boneca` | palavra inteira nova | `L02-A01` item 3; `L02-A02` itens 2 e 3 como opção |
+| `N0-U02-L02-AUD-014` | `tomate` | palavra inteira nova | `L02-A01` item 4; `L02-A02` itens 2 e 3 |
+
+Reutilizar, sem regravar:
+
+| ID existente | Conteúdo | Uso na U2 L2 |
+|---|---|---|
+| `N0-U01-L02-AUD-007` | `gato` | `L02-B02`; `L02-C02`; `L02-P01`; `L02-A01` item 1; opções de `L02-A02` |
+| `N0-U01-L02-AUD-003` | `mala` | `L02-C01`; `L02-C02` como opção; `L02-A01` item 2; opções de `L02-A02` |
+| `N0-U01-L02-AUD-001` | `pato` | `L02-B03`; `L02-C02` como opção; `L02-C03`; opções de `L02-A02` |
+
+### Orientações de produção
+
+Cada arquivo `AUD-001` a `AUD-012` contém **somente uma sílaba**, sem dizer o nome da palavra, sem explicação e sem soletração. Gravar a sílaba com a mesma voz de referência e com uma realização compatível com a palavra de origem indicada na tabela. O objetivo não é criar um banco abstrato de sílabas universais, mas fichas sonoras confiáveis para operar sobre palavras concretas desta lição.
+
+Quando houver a mesma grafia em contextos diferentes, manter IDs distintos se a ficha estiver ligada a palavras diferentes. Por exemplo, os três registros de `to` pertencem respectivamente a `gato`, `pato` e `tomate`; a produção e a validação devem verificar a compatibilidade acústica com cada palavra, sem forçar uma pronúncia única artificial.
+
+Para `boneca` e `tomate`, gravar a palavra inteira (`AUD-013` e `AUD-014`) na mesma sessão ou em condições equivalentes às fichas de suas sílabas. Variantes legítimas do português brasileiro não devem ser tratadas como erro por si só; dentro deste conjunto, porém, as fichas precisam combinar com a realização escolhida para a palavra inteira.
+
+Usar ritmo natural, volume consistente e ausência de música/efeitos. Não adicionar silêncio excessivo no começo ou fim dos clips. Pequenas pausas entre fichas serão controladas pela interface quando uma sequência for reproduzida.
+
+As fichas visuais do aplicativo são neutras: não colocar `GA`, `TO`, `MA` etc. em imagem ou asset. O roteiro escrito existe somente para produção e rastreabilidade.
+
+### Critérios de validação
+
+Validar:
+
+- cada arquivo contém exatamente o conteúdo previsto;
+- alta inteligibilidade, sem cortes, ruído ou efeitos;
+- sílabas isoladas soam naturais o suficiente para serem reconhecidas como partes da palavra-alvo, sem virar nomes de letras ou soletração;
+- cada ficha corresponde à posição indicada na palavra de origem;
+- a sequência `AUD-001` + `AUD-002` é compatível com `gato`;
+- `AUD-003` + `AUD-004` é compatível com `mala`;
+- `AUD-005` + `AUD-006` é compatível com `pato`;
+- `AUD-007` + `AUD-008` + `AUD-009` é compatível com `boneca` (`AUD-013`);
+- `AUD-010` + `AUD-011` + `AUD-012` é compatível com `tomate` (`AUD-014`);
+- volume e condições acústicas são consistentes o suficiente para que diferenças técnicas não entreguem respostas;
+- as fichas contextuais não sejam substituídas entre palavras apenas por coincidência de grafia.
 
 ## Entrega
 
