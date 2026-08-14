@@ -10,7 +10,7 @@ Lista oficial das mídias pedagógicas que precisam ser produzidas manualmente. 
 | `N0-U01-L03-AUD-*` | U1 L3; reutiliza na L7 | ALTA | SIM | A_PRODUZIR |
 | `N0-U01-L08-AUD-*` | U1 L8 | NORMAL | SIM | A_PRODUZIR |
 
-As ligações pedagógicas das Lições 2 e 3 já estão dimensionadas abaixo. Exercícios formais futuros podem reutilizar estes mesmos IDs quando fizer sentido; não renumerar mídias existentes. As Lições 1 e 4 foram revisadas e não exigem mídia humana na fila: usam TTS e/ou recursos visuais renderizados pela própria interface.
+As ligações pedagógicas das Lições 2, 3 e 7 já estão dimensionadas abaixo. Exercícios formais futuros podem reutilizar estes mesmos IDs quando fizer sentido; não renumerar mídias existentes. As Lições 1, 4, 5 e 6 não exigem mídia humana na fila: usam TTS e/ou recursos visuais renderizados pela própria interface. A Lição 7 também não cria novos arquivos: reutiliza subconjuntos dos lotes L2 e L3.
 
 ## Lote L2 — palavras para percepção auditiva
 
@@ -39,9 +39,21 @@ Objetivo: fornecer estímulos fixos para comparar sons claros sem depender do TT
 | `N0-U01-L02-AUD-003` | `L02-C01`; `L02-A01` item 2 |
 | `N0-U01-L02-AUD-004` | `L02-C01` |
 | `N0-U01-L02-AUD-005` | `L02-A01` item 3 |
-| `N0-U01-L02-AUD-006` | `L02-A01` item 3; reutilização planejada em L7 e L8 |
-| `N0-U01-L02-AUD-007` | `L02-B03`; `L02-A01` item 2; reutilização planejada em L7 e L8 |
-| `N0-U01-L02-AUD-008` | `L02-B03`; `L02-A01` item 4 |
+| `N0-U01-L02-AUD-006` | `L02-A01` item 3; reutilização em L7 e planejada em L8 |
+| `N0-U01-L02-AUD-007` | `L02-B03`; `L02-A01` item 2; reutilização em L7 e planejada em L8 |
+| `N0-U01-L02-AUD-008` | `L02-B03`; `L02-A01` item 4; reutilização em L7 |
+
+### Ligações já dimensionadas na Lição 7
+
+| ID | Localização pedagógica atual |
+|---|---|
+| `N0-U01-L02-AUD-001` (`pato`) | `L07-B02`; `L07-C01` segundo áudio; `L07-A02` item 4 |
+| `N0-U01-L02-AUD-003` (`mala`) | `L07-B03`; `L07-A02` item 5 |
+| `N0-U01-L02-AUD-006` (`sapo`) | `L07-A01` item 2; `L07-A02` item 1 |
+| `N0-U01-L02-AUD-007` (`gato`) | `L07-A02` item 3 |
+| `N0-U01-L02-AUD-008` (`bola`) | `L07-A01` item 4; `L07-A02` item 2 |
+
+Os clipes de palavra usados em `L07-A02` devem ser apresentados sem a forma escrita antes da resposta. A palavra e o destaque da letra inicial podem ser revelados somente depois da escolha, para não fornecer uma pista visual decisiva em uma tarefa de associação auditiva.
 
 Gravar **uma palavra por arquivo**, uma única vez. Usar português brasileiro claro, mesma voz, ritmo natural moderado, volume/ambiente consistentes, sem música, efeitos ou ênfase artificial no som observado. Arquivo: `ID.wav`.
 
@@ -61,6 +73,18 @@ Objetivo: servir de referência fixa quando o aluno ouvir o nome isolado e preci
 ### Ligações já dimensionadas na Lição 3
 
 Todos os 26 IDs alimentam o `letterSet` da lição e são usados em `L03-B02`, `L03-B03` e `L03-A01`. O ID `N0-U01-L03-AUD-011` também é o estímulo explícito de `L03-C01`. As letras devem aparecer visualmente como texto/interface; não produzir uma imagem estática do alfabeto para substituir essa renderização.
+
+### Ligações já dimensionadas na Lição 7
+
+| ID | Letra | Localização pedagógica atual |
+|---|---|---|
+| `N0-U01-L03-AUD-002` | B | `L07-A01` item 3 |
+| `N0-U01-L03-AUD-007` | G | `L07-A01` item 5 |
+| `N0-U01-L03-AUD-013` | M | `L07-B03` |
+| `N0-U01-L03-AUD-016` | P | `L07-B02`; `L07-C01` primeiro áudio |
+| `N0-U01-L03-AUD-019` | S | `L07-A01` item 1 |
+
+Na Lição 7 esses arquivos representam explicitamente **o nome da letra**. Não usar TTS no lugar deles nas tarefas em que o aluno precisa distinguir nome de letra de som representado em palavra.
 
 A numeração corresponde exatamente à ordem A=001, B=002 ... Z=026. Cada arquivo contém somente o nome da letra, sem dizer `letra`. Usar a mesma voz e padrão acústico do Lote L2 quando possível. As formas listadas são referência do curso e não significam que variantes legítimas sejam automaticamente erros.
 
