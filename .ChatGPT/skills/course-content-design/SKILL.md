@@ -283,6 +283,77 @@ Cada demanda precisa informar ao produtor, sem depender de contexto da conversa:
 
 Uma mídia obrigatória pendente não bloqueia planejamento ou implementação das partes independentes, mas o conteúdo dependente dela não deve ser considerado pronto para publicação.
 
+### Contrato operacional de material de apoio por lição
+
+Ao desenvolver uma lição em detalhe, **avaliar material de apoio explicitamente mesmo quando a conclusão for não criar mídia**. A ausência de imagem, vídeo ou áudio humano deve ser uma decisão pedagógica consciente, não uma omissão acidental.
+
+Usar este checklist em toda lição:
+
+```text
+1. Mídia curada / produção humana
+→ existe áudio controlado, vídeo ou imagem que realmente precisa ser produzido?
+→ se sim: quais IDs, onde entram e são obrigatórios para publicação?
+
+2. Recursos de runtime
+→ TTS, texto, controles ou outro recurso fornecido pela aplicação são suficientes?
+→ registrar onde são usados quando isso for relevante para implementação.
+
+3. Recursos visuais gerados pela interface
+→ algo deve ser renderizado como texto/componente da UI em vez de virar arquivo de imagem?
+→ preferir UI quando ela for mais acessível, responsiva, reutilizável e fiel ao objetivo.
+
+4. Dependência de publicação
+→ o que pode ser implementado agora?
+→ o que não pode ser considerado publicável enquanto uma mídia obrigatória estiver pendente?
+
+5. Justificativa
+→ por que a composição escolhida é pedagogicamente adequada?
+→ por que mídias não escolhidas não acrescentariam valor suficiente?
+```
+
+Quando o formato de conteúdo da lição permitir, registrar essas decisões em um bloco conceitual equivalente a `supportMaterials`, sem tratar os nomes abaixo como schema global congelado enquanto os schemas oficiais ainda não existirem:
+
+```text
+supportMaterials
+├── curatedMedia
+│   └── mediaIds + tipo + finalidade + localizações + requiredForPublication
+├── runtimeResources
+│   └── TTS/recursos da aplicação + localizações + finalidade
+├── generatedVisualResources
+│   └── recursos que a própria UI deve renderizar
+├── productionQueueRequired
+├── publicationDependency
+└── decisionRationale
+```
+
+Regras:
+
+- `curatedMedia` vazio é válido quando nenhuma produção humana traz ganho real;
+- não criar `IMG` ou `VID` apenas porque a lição ainda não tem imagem ou vídeo;
+- letras, palavras, tabelas simples e outros elementos que funcionem melhor como conteúdo acessível da interface não devem ser convertidos em imagem sem necessidade;
+- se uma mídia humana for necessária, criar o ID **antes** de o arquivo existir;
+- ligar cada `mediaId` às posições pedagógicas exatas assim que a lição estiver detalhada;
+- atualizar `producao-midia/FILA-MIDIA.md` quando essas posições se tornarem conhecidas, sem esperar exercícios formais futuros;
+- reutilizar IDs existentes quando a mesma mídia cumprir a mesma função; não regravar nem renumerar sem motivo;
+- a implementação deve depender do ID lógico, não do nome físico ou da pasta de produção;
+- mídia obrigatória pendente não interrompe a criação das próximas lições, mas impede declarar como publicada/concluída a parte que depende dela.
+
+### Inicialização em uma conversa sem contexto
+
+Se a instância não tiver contexto anterior do projeto e a tarefa envolver criação/revisão de conteúdo:
+
+```text
+1. ler PROJECT_INDEX.md
+2. ler esta skill
+3. ler os documentos de nível/unidade/lição relevantes
+4. ler docs/conteudo.md
+5. se houver qualquer possibilidade de mídia ou material de apoio, ler producao-midia/README.md e FILA-MIDIA.md
+6. inspecionar o conteúdo já existente para não duplicar IDs, decisões ou formatos
+7. só então criar ou alterar a próxima unidade/lição
+```
+
+Não depender da conversa anterior para descobrir padrões de material de apoio, IDs de mídia, critérios de publicação ou limites pedagógicos. Se uma decisão precisa sobreviver à conversa, ela deve estar nas fontes do repositório.
+
 ### Regra de progressão
 
 Antes de descer uma camada, verificar se a camada atual está suficientemente consolidada.
