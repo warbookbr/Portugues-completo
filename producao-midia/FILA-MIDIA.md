@@ -13,8 +13,10 @@ Lista oficial das mídias pedagógicas que precisam ser produzidas manualmente. 
 | `N0-U02-L01-AUD-*` | U2 L1 — percepção inicial de sílabas | ALTA | SIM | A_PRODUZIR |
 | `N0-U02-L02-AUD-*` | U2 L2 — segmentação e recombinação oral; reutiliza na U2 L3 | ALTA | SIM | A_PRODUZIR |
 | `N0-U02-L08-IMG-*` | U2 L8 — associação entre palavra lida e significado familiar | ALTA | SIM | A_PRODUZIR |
+| `N0-U02-V01-AUD-*` | Verificação integrada da U2 — percepção e operação silábica com exemplos novos | ALTA | SIM | A_PRODUZIR |
+| `N0-U02-V01-IMG-*` | Verificação integrada da U2 — significado de palavras novas por referentes concretos | ALTA | SIM | A_PRODUZIR |
 
-As ligações pedagógicas das Lições 2, 3, 7 e 8, da verificação integrada da Unidade 1 e das Lições 1, 2, 3 e 8 da Unidade 2 já estão dimensionadas abaixo. Exercícios formais futuros podem reutilizar estes mesmos IDs quando fizer sentido; não renumerar mídias existentes. As Lições 1, 4, 5 e 6 da Unidade 1 não exigem mídia humana na fila: usam TTS e/ou recursos visuais renderizados pela própria interface. A Lição 7 não cria novos arquivos e reutiliza subconjuntos dos lotes L2 e L3. A Lição 8 usa quatro novos arquivos já reservados no lote L8 e reutiliza `sapo` e `gato` do lote L2. A Lição 1 da Unidade 2 reutiliza `pato`, `mala` e `sol` como palavras inteiras e cria apenas os estímulos novos/segmentados que não existem nos lotes anteriores. A Lição 2 reutiliza `gato`, `mala` e `pato` como palavras inteiras e cria fichas de sílabas contextuais, além das palavras novas `boneca` e `tomate`. A Lição 3 não cria novo lote: reutiliza os mesmos estímulos auditivos da Lição 2 e as palavras inteiras `gato`, `mala`, `pato` e `sol`, acrescentando apenas trechos escritos renderizados pela interface. As Lições 4, 5, 6 e 7 da Unidade 2 não criam mídia humana nova. A Lição 8 da Unidade 2 cria sete imagens curadas de referentes concretos para verificar significado sem impor leitura adicional de definições como modalidade principal.
+As ligações pedagógicas das Lições 2, 3, 7 e 8, da verificação integrada da Unidade 1 e das Lições 1, 2, 3 e 8 da Unidade 2 já estão dimensionadas abaixo. Exercícios formais futuros podem reutilizar estes mesmos IDs quando fizer sentido; não renumerar mídias existentes. As Lições 1, 4, 5 e 6 da Unidade 1 não exigem mídia humana na fila: usam TTS e/ou recursos visuais renderizados pela própria interface. A Lição 7 não cria novos arquivos e reutiliza subconjuntos dos lotes L2 e L3. A Lição 8 usa quatro novos arquivos já reservados no lote L8 e reutiliza `sapo` e `gato` do lote L2. A Lição 1 da Unidade 2 reutiliza `pato`, `mala` e `sol` como palavras inteiras e cria apenas os estímulos novos/segmentados que não existem nos lotes anteriores. A Lição 2 reutiliza `gato`, `mala` e `pato` como palavras inteiras e cria fichas de sílabas contextuais, além das palavras novas `boneca` e `tomate`. A Lição 3 não cria novo lote: reutiliza os mesmos estímulos auditivos da Lição 2 e as palavras inteiras `gato`, `mala`, `pato` e `sol`, acrescentando apenas trechos escritos renderizados pela interface. As Lições 4, 5, 6 e 7 da Unidade 2 não criam mídia humana nova. A Lição 8 da Unidade 2 cria sete imagens curadas de referentes concretos para verificar significado sem impor leitura adicional de definições como modalidade principal. A verificação integrada da Unidade 2 cria nove áudios controlados com `cama`, `mapa` e `bota` e suas fichas silábicas contextuais, além de três imagens novas (`cama`, `mapa`, `lata`) para que a evidência final não dependa apenas dos mesmos exemplos usados nas lições.
 
 Para verificações integradas que ficam fora da contagem de lições, usar `V01`, `V02` etc. no segmento que normalmente identifica a lição. Exemplo: `N0-U01-V01-AUD-001` significa Nível 0, Unidade 1, Verificação integrada 1, áudio 001. Não criar uma `L09` apenas para representar a verificação.
 
@@ -354,6 +356,85 @@ Validar:
 - nenhum arquivo contém elemento visual que entregue sua posição como resposta correta;
 - `gato`, `pato`, `prato`, `mala`, `mesa`, `uva` e `casa` são identificáveis sem depender do nome do arquivo;
 - as imagens continuam claras em tela pequena e não exigem interpretação de detalhes finos.
+
+## Lote U2 V01 — áudios da verificação integrada
+
+**Família:** `N0-U02-V01-AUD-*`  
+**Tipo:** `AUDIO_CONTROLADO`  
+**Prioridade:** `ALTA`  
+**Obrigatório para publicação:** `SIM`  
+**Status:** `A_PRODUZIR`  
+**Destino:** `Português Completo/Nível 0/Unidade 02/Verificação 01/Audio/`
+
+Objetivo: fornecer exemplos novos para verificar percepção de partes sonoras, segmentação, recomposição e relação entre sílaba ouvida e trecho escrito sem depender da memorização dos estímulos centrais das oito lições.
+
+| ID | Gravar | Palavra de origem / função | Localização pedagógica |
+|---|---|---|---|
+| `N0-U02-V01-AUD-001` | `cama` | palavra inteira | `V01-Q01` apresentação inteira; `V01-Q03` opção de palavra inteira |
+| `N0-U02-V01-AUD-002` | `ca` | 1ª sílaba contextual de `cama` | `V01-Q01` primeira ficha da apresentação segmentada; `V01-Q02` distrator; `V01-Q04` estímulo auditivo |
+| `N0-U02-V01-AUD-003` | `ma` | 2ª sílaba contextual de `cama` | `V01-Q01` segunda ficha da apresentação segmentada |
+| `N0-U02-V01-AUD-004` | `mapa` | palavra inteira | `V01-Q02` palavra-alvo; `V01-Q03` opção de palavra inteira |
+| `N0-U02-V01-AUD-005` | `ma` | 1ª sílaba contextual de `mapa` | `V01-Q02` primeira ficha correta |
+| `N0-U02-V01-AUD-006` | `pa` | 2ª sílaba contextual de `mapa` | `V01-Q02` segunda ficha correta |
+| `N0-U02-V01-AUD-007` | `bota` | palavra inteira | `V01-Q03` resposta correta |
+| `N0-U02-V01-AUD-008` | `bo` | 1ª sílaba contextual de `bota` | `V01-Q02` distrator; `V01-Q03` primeira ficha da sequência |
+| `N0-U02-V01-AUD-009` | `ta` | 2ª sílaba contextual de `bota` | `V01-Q03` segunda ficha da sequência |
+
+### Orientações de produção
+
+As palavras inteiras `cama`, `mapa` e `bota` devem ser gravadas de forma natural e isolada, sem frase introdutória. As fichas `ca`, `ma`, `ma`, `pa`, `bo` e `ta` são **contextuais à palavra de origem indicada** e não formam um banco universal de sílabas. Manter IDs distintos mesmo quando a grafia coincidir com uma ficha existente ou com outra palavra.
+
+Produzir, quando possível, cada palavra inteira e suas duas fichas na mesma sessão, voz e condições acústicas. As fichas devem soar como partes reconhecíveis da palavra-alvo, sem virar nomes de letras, soletração ou pronúncia exagerada. A pausa entre duas fichas é responsabilidade da interface; não adicionar música, bipes, palmas ou outros marcadores dentro dos arquivos.
+
+Em `V01-Q01`, `V01-Q02`, `V01-Q03` e `V01-Q04`, não fornecer grafia dentro do áudio. A escrita fica oculta antes dos julgamentos auditivos nos pontos indicados pelo JSON da verificação.
+
+### Critérios de validação
+
+Validar:
+
+- conteúdo exato de cada um dos nove arquivos;
+- alta inteligibilidade, ausência de cortes, ruído e efeitos;
+- volume e condições acústicas consistentes o suficiente para não criarem pistas artificiais entre alternativas;
+- `AUD-002` + `AUD-003` compatíveis com `cama` (`AUD-001`);
+- `AUD-005` + `AUD-006` compatíveis com `mapa` (`AUD-004`);
+- `AUD-008` + `AUD-009` compatíveis com `bota` (`AUD-007`);
+- cada ficha contextual preserva a realização adequada à palavra de origem;
+- nenhuma ficha é substituída por gravação de outra palavra apenas por coincidência de grafia.
+
+## Lote U2 V01 — imagens da verificação integrada
+
+**Família:** `N0-U02-V01-IMG-*`  
+**Tipo:** `IMAGEM_CURADA`  
+**Prioridade:** `ALTA`  
+**Obrigatório para publicação:** `SIM`  
+**Status:** `A_PRODUZIR`  
+**Destino:** `Português Completo/Nível 0/Unidade 02/Verificação 01/Imagem/`
+
+Objetivo: fornecer referentes visuais novos para verificar a compreensão de uma palavra lida sem reutilizar o conjunto visual da Lição 8 e sem exigir leitura de definições como modalidade principal.
+
+| ID | Referente | Brief visual | Localização pedagógica |
+|---|---|---|---|
+| `N0-U02-V01-IMG-001` | `cama` | uma única cama claramente reconhecível, com colchão/estrutura visíveis, fundo simples, sem pessoas, marcas ou texto | `V01-Q09` opção de significado |
+| `N0-U02-V01-IMG-002` | `mapa` | um mapa físico ou de papel claramente reconhecível como representação de lugares/caminhos, sem rótulos legíveis, nomes de locais ou texto que entregue a resposta | `V01-Q09` resposta correta |
+| `N0-U02-V01-IMG-003` | `lata` | uma única lata metálica cilíndrica, simples e sem rótulo, marca, palavra ou outros objetos dominantes | `V01-Q09` opção de significado |
+
+### Orientações de produção
+
+Produzir as três imagens como um conjunto coerente, com nível semelhante de detalhe, enquadramento e contraste. O referente deve ser imediatamente reconhecível em cartão pequeno e em tela de celular. Não incorporar a palavra-alvo, letras, números, legendas, marcas d'água ou pistas textuais. No mapa, traços, caminhos e formas gráficas podem existir, mas não devem existir nomes de lugares ou rótulos legíveis.
+
+A grade visual deve ser acompanhada por uma modalidade não visual equivalente com descrições semânticas curtas. Durante a avaliação visual, não usar o `alt` do arquivo para revelar diretamente `cama`, `mapa` ou `lata`; o controle pode ter nome neutro de alternativa e a modalidade semântica acessível deve ser oferecida separadamente.
+
+### Critérios de validação
+
+Validar:
+
+- correspondência exata entre ID e referente;
+- ausência de texto ou pistas ortográficas incorporadas;
+- alta reconhecibilidade em miniatura e em tela pequena;
+- `cama`, `mapa` e `lata` visualmente inequívocos entre si;
+- consistência de estilo/complexidade suficiente para nenhuma opção se destacar apenas pela produção;
+- mapa reconhecível como mapa mesmo sem texto legível;
+- nenhum arquivo contém número, letra de alternativa ou estado de acerto/erro.
 
 ## Entrega
 
