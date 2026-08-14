@@ -64,7 +64,7 @@
     {"word": "PORTA", "segments": ["POR", "TA"], "ttsCue": "porta"},
     {"word": "BONECA", "segments": ["BO", "NE", "CA"], "ttsCue": "boneca"},
     {"word": "TOMATE", "segments": ["TO", "MA", "TE"], "ttsCue": "tomate"},
-    {"word": "SAPATO", "segments": ["SA", "PA", "TO"], "ttsCue": "sapato", "role": "transfer-new-combination"}
+    {"word": "MATO", "segments": ["MA", "TO"], "ttsCue": "mato", "role": "transfer-new-combination"}
   ],
   "sequence": [
     {
@@ -192,15 +192,15 @@
       "interaction": "recombine-known-syllables-into-new-word",
       "title": "Use partes conhecidas em uma nova combinação",
       "instruction": "Ouça uma palavra familiar que ainda não montamos nesta lição. As fichas necessárias já apareceram em outros exemplos do curso. Selecione e ordene as partes corretas.",
-      "ttsCue": "sapato",
+      "ttsCue": "mato",
       "writtenTargetVisibleBeforeResponse": false,
-      "availableTiles": ["PA", "GA", "TO", "SA"],
-      "requiredTileCount": 3,
-      "correctOrder": ["SA", "PA", "TO"],
+      "availableTiles": ["TO", "GA", "MA", "LA"],
+      "requiredTileCount": 2,
+      "correctOrder": ["MA", "TO"],
       "allowReplayWithoutPenalty": true,
-      "revealWordAfterResponse": "SAPATO",
-      "feedback": "SA | PA | TO forma SAPATO. Você reutilizou partes conhecidas em uma combinação nova.",
-      "feedbackTts": "sapato"
+      "revealWordAfterResponse": "MATO",
+      "feedback": "MA | TO forma MATO. Você reutilizou partes conhecidas em uma combinação nova.",
+      "feedbackTts": "mato"
     },
     {
       "id": "L06-B05",
@@ -211,7 +211,7 @@
         "A ordem das fichas importa: as mesmas partes em outra sequência não representam automaticamente a mesma palavra.",
         "Uma palavra também pode ser completada escolhendo a sílaba que falta em uma segmentação fornecida.",
         "Fichas como U, PRA e POR continuam inteiras mesmo tendo quantidades diferentes de letras.",
-        "Podemos reutilizar sílabas já conhecidas para formar novas combinações, como SA + PA + TO em SAPATO."
+        "Podemos reutilizar sílabas já conhecidas para formar novas combinações, como MA + TO em MATO."
       ],
       "bridgeToNextLesson": "Na próxima lição, as sílabas deixam de ser apenas peças de montagem e passam a funcionar como apoio para ler palavras, até reduzir gradualmente essa ajuda."
     }
