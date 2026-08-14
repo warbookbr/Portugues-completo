@@ -1,0 +1,401 @@
+{
+  "schemaVersion": 1,
+  "id": "N0-U03-L01",
+  "title": "Palavra e significado: além da forma",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Aprofundar a compreensão de que reconhecer a forma escrita de uma palavra não é o mesmo que compreender seu significado e perceber, por exemplos funcionais, que palavras podem representar seres, objetos, ações, características, estados, lugares e ideias ou relações simples sem que essas diferenças precisem ser classificadas gramaticalmente.",
+  "competencies": [
+    "distinguir a forma escrita de uma palavra do ser, objeto, ação, estado, lugar, característica ou ideia que ela pode representar",
+    "demonstrar compreensão de palavras familiares por associação com descrições, situações ou exemplos simples",
+    "perceber que nem toda palavra funciona apenas como nome de uma coisa concreta",
+    "relacionar palavras a diferentes tipos de significado sem depender de terminologia gramatical",
+    "ler a palavra-alvo antes de receber sua pronúncia quando a leitura fizer parte da evidência, usando apoio silábico quando necessário"
+  ],
+  "prerequisites": ["N0-U02-V01"],
+  "limits": [
+    "não ensinar classes gramaticais como substantivo, verbo ou adjetivo",
+    "não ensinar que toda palavra apenas nomeia uma pessoa, animal, objeto ou lugar",
+    "não transformar ser, objeto, ação, característica, estado, lugar e ideia em taxonomia para memorização",
+    "não aprofundar relações de proximidade ou oposição de sentido; isso pertence à Lição 2",
+    "não aprofundar mudança de sentido pelo contexto; isso pertence à Lição 3",
+    "não usar frases ou pequenos textos como competência central de leitura nesta lição",
+    "não exigir definições verbais longas para provar compreensão",
+    "não reproduzir a palavra-alvo por TTS antes da resposta quando isso substituir a leitura necessária",
+    "não penalizar o uso de apoio silábico por si só",
+    "não usar velocidade de leitura ou tempo de resposta como critério de domínio"
+  ],
+  "media": {
+    "tts": "instruções, explicações, feedback e descrições semânticas curtas. A palavra-alvo só deve ser pronunciada antes da resposta em blocos explicitamente demonstrativos; nas checagens e atividades de leitura-significado, sua pronúncia fica disponível depois da tentativa.",
+    "controlledAudio": [],
+    "video": "nao necessario",
+    "images": "nao necessarias"
+  },
+  "supportMaterials": {
+    "curatedMedia": [],
+    "runtimeResources": [
+      {
+        "type": "TTS_OK",
+        "locations": ["instruções", "L01-B02", "L01-B03", "L01-C02", "L01-B04", "L01-C03", "L01-A01", "L01-A02", "L01-A03", "feedback", "resumo"],
+        "purpose": "narrar explicações e descrições curtas de significado sem exigir que o aluno leia definições maiores; pequenas diferenças de voz não determinam a resposta"
+      }
+    ],
+    "generatedVisualResources": [
+      {
+        "type": "UI_RENDERED_TARGET_WORD_CARD",
+        "locations": ["L01-B02", "L01-C01", "L01-B03", "L01-C02", "L01-B04", "L01-C03", "L01-A01", "L01-A02", "L01-A03"],
+        "purpose": "manter cada palavra-alvo como texto real da interface, separada visualmente de sua descrição ou exemplo de significado"
+      },
+      {
+        "type": "UI_RENDERED_SEMANTIC_DESCRIPTION_CHOICES",
+        "locations": ["L01-C02", "L01-C03", "L01-A01", "L01-A03"],
+        "purpose": "apresentar opções A/B/C com descrições semânticas curtas que podem ser lidas e ouvidas por TTS sem pronunciar a palavra-alvo dentro da descrição"
+      },
+      {
+        "type": "UI_RENDERED_MEANING_REVEAL_CARD",
+        "locations": ["L01-B02", "L01-B03", "L01-B04", "feedback"],
+        "purpose": "mostrar depois da leitura ou da resposta uma associação explícita entre a forma escrita e um exemplo de significado, sem sugerir que a descrição seja a única definição possível em todos os contextos"
+      },
+      {
+        "type": "UI_RENDERED_SYLLABLE_SUPPORT_TOGGLE",
+        "locations": ["L01-C02", "L01-C03", "L01-A01", "L01-A03"],
+        "purpose": "permitir que palavras menos familiares sejam temporariamente segmentadas como estratégia de leitura herdada da Unidade 2, registrando o uso do apoio separadamente do acerto"
+      }
+    ],
+    "productionQueueRequired": false,
+    "publicationDependency": "não há nova mídia humana obrigatória para esta lição; texto da interface, TTS e controles de apoio silábico são suficientes para o objetivo pedagógico",
+    "decisionRationale": "a Unidade 2 já demonstrou associação direta entre palavra e referente visual. Nesta lição, o objetivo se amplia para ações, estados, características e ideias, que não devem ser reduzidos a uma única figura. Descrições semânticas curtas narráveis por TTS permitem trabalhar significado com baixa carga de leitura adicional e evitam criar imagens apenas por variedade visual."
+  },
+  "semanticExamples": [
+    {
+      "word": "GATO",
+      "segments": ["GA", "TO"],
+      "semanticFocus": "ser",
+      "meaningDescription": "um animal doméstico que mia"
+    },
+    {
+      "word": "MESA",
+      "segments": ["ME", "SA"],
+      "semanticFocus": "objeto",
+      "meaningDescription": "um móvel com tampo apoiado por pés ou por uma base"
+    },
+    {
+      "word": "CORRER",
+      "segments": ["COR", "RER"],
+      "semanticFocus": "ação",
+      "meaningDescription": "deslocar o corpo rapidamente usando as pernas"
+    },
+    {
+      "word": "AZUL",
+      "segments": ["A", "ZUL"],
+      "semanticFocus": "característica",
+      "meaningDescription": "uma cor que aparece, por exemplo, em um céu limpo"
+    },
+    {
+      "word": "CANSADO",
+      "segments": ["CAN", "SA", "DO"],
+      "semanticFocus": "estado",
+      "meaningDescription": "estar com pouca energia e vontade de descansar"
+    },
+    {
+      "word": "CASA",
+      "segments": ["CA", "SA"],
+      "semanticFocus": "lugar",
+      "meaningDescription": "um lugar construído para pessoas morarem"
+    },
+    {
+      "word": "AMIZADE",
+      "segments": ["A", "MI", "ZA", "DE"],
+      "semanticFocus": "ideia-ou-relacao",
+      "meaningDescription": "uma relação em que pessoas gostam umas das outras, convivem e se apoiam"
+    }
+  ],
+  "sequence": [
+    {
+      "id": "L01-B01",
+      "type": "objective",
+      "focus": "read-or-listen",
+      "text": "Na unidade anterior, você ligou palavras lidas a significados familiares. Agora vamos observar uma ideia maior: reconhecer as letras de uma palavra não é a mesma coisa que compreender o que ela significa. E palavras podem falar de muito mais do que objetos."
+    },
+    {
+      "id": "L01-B02",
+      "type": "form-versus-meaning-demonstration",
+      "focus": "read-then-understand",
+      "title": "A palavra não é a própria coisa",
+      "word": "GATO",
+      "segments": ["GA", "TO"],
+      "meaningDescription": "um animal doméstico que mia",
+      "targetTtsAllowed": true,
+      "explanation": "GATO é uma forma escrita. O animal real não está dentro das letras G, A, T e O. Usamos essa palavra para representar um significado que conhecemos. Por isso, reconhecer a forma da palavra e compreender seu significado são habilidades relacionadas, mas diferentes."
+    },
+    {
+      "id": "L01-C01",
+      "type": "quick-check",
+      "focus": "read-and-respond",
+      "interaction": "concept-choice",
+      "prompt": "Qual afirmação combina melhor com o exemplo GATO?",
+      "options": [
+        "As letras da palavra são o próprio animal.",
+        "A forma escrita GATO é usada para representar um significado relacionado ao animal.",
+        "Se reconheço as letras de qualquer palavra, já conheço automaticamente todos os seus significados."
+      ],
+      "correctIndex": 1,
+      "feedback": "A palavra escrita é uma forma que usamos para representar significado; ela não é o próprio ser, objeto, ação ou ideia."
+    },
+    {
+      "id": "L01-B03",
+      "type": "semantic-range-demonstration",
+      "focus": "read-or-listen-then-compare",
+      "title": "Palavras podem participar de significados diferentes",
+      "examples": [
+        {"word": "GATO", "meaningDescription": "um animal doméstico que mia", "semanticFocus": "ser"},
+        {"word": "MESA", "meaningDescription": "um móvel com tampo apoiado por pés ou uma base", "semanticFocus": "objeto"},
+        {"word": "CORRER", "meaningDescription": "deslocar o corpo rapidamente usando as pernas", "semanticFocus": "ação"},
+        {"word": "AZUL", "meaningDescription": "uma cor que pode caracterizar algo", "semanticFocus": "característica"},
+        {"word": "CANSADO", "meaningDescription": "estar com pouca energia e vontade de descansar", "semanticFocus": "estado"},
+        {"word": "CASA", "meaningDescription": "um lugar construído para pessoas morarem", "semanticFocus": "lugar"},
+        {"word": "AMIZADE", "meaningDescription": "uma relação em que pessoas gostam umas das outras e se apoiam", "semanticFocus": "ideia-ou-relacao"}
+      ],
+      "explanation": "Esses rótulos ajudam apenas a perceber a variedade. Você não precisa decorar uma classificação. O ponto importante é que palavras podem contribuir para significados de tipos diferentes; nem todas apenas dão nome a uma coisa que podemos pegar ou apontar."
+    },
+    {
+      "id": "L01-C02",
+      "type": "quick-check",
+      "focus": "read-then-listen-and-respond",
+      "interaction": "written-word-to-semantic-description",
+      "prompt": "Leia CORRER. Qual descrição combina melhor com a palavra?",
+      "word": "CORRER",
+      "segments": ["COR", "RER"],
+      "syllableSupportAvailable": true,
+      "supportUseIsError": false,
+      "targetTtsBeforeResponse": false,
+      "descriptionTtsAvailable": true,
+      "options": [
+        "deslocar o corpo rapidamente usando as pernas",
+        "um móvel usado para apoiar objetos",
+        "um lugar construído para pessoas morarem"
+      ],
+      "correctIndex": 0,
+      "feedbackTtsAfterResponse": "correr"
+    },
+    {
+      "id": "L01-B04",
+      "type": "concrete-versus-nonconcrete-meaning-demonstration",
+      "focus": "compare",
+      "title": "Nem todo significado é uma coisa que podemos pegar",
+      "examples": [
+        {
+          "word": "MESA",
+          "meaningDescription": "um móvel concreto",
+          "observation": "podemos apontar para uma mesa específica"
+        },
+        {
+          "word": "CORRER",
+          "meaningDescription": "uma ação",
+          "observation": "podemos observar alguém correndo, mas a palavra representa a ação, não um objeto"
+        },
+        {
+          "word": "AMIZADE",
+          "meaningDescription": "uma relação ou ideia",
+          "observation": "podemos perceber exemplos de amizade nas relações entre pessoas, mas não é um objeto que seguramos nas mãos"
+        }
+      ],
+      "explanation": "Compreender uma palavra é perceber o significado que ela ajuda a construir. Esse significado pode ser concreto ou não."
+    },
+    {
+      "id": "L01-C03",
+      "type": "quick-check-set",
+      "focus": "read-then-listen-and-respond",
+      "interaction": "written-word-to-semantic-description",
+      "items": [
+        {
+          "word": "CANSADO",
+          "segments": ["CAN", "SA", "DO"],
+          "prompt": "Qual descrição combina melhor com CANSADO?",
+          "options": [
+            "estar com pouca energia e vontade de descansar",
+            "um lugar onde pessoas moram",
+            "mover o corpo rapidamente usando as pernas"
+          ],
+          "correctIndex": 0
+        },
+        {
+          "word": "AMIZADE",
+          "segments": ["A", "MI", "ZA", "DE"],
+          "prompt": "Qual descrição combina melhor com AMIZADE?",
+          "options": [
+            "um móvel com tampo",
+            "uma relação em que pessoas gostam umas das outras e se apoiam",
+            "uma cor do céu em muitos dias"
+          ],
+          "correctIndex": 1
+        }
+      ],
+      "syllableSupportAvailable": true,
+      "supportUseIsError": false,
+      "targetTtsBeforeResponse": false,
+      "descriptionTtsAvailable": true,
+      "feedbackTtsAfterResponse": true
+    },
+    {
+      "id": "L01-B05",
+      "type": "strategy-reminder",
+      "focus": "read-or-listen",
+      "title": "Você ainda pode usar as partes da palavra",
+      "text": "Se uma palavra estiver difícil de ler, você pode mostrar suas sílabas como apoio. Usar esse recurso não significa que você não compreendeu o significado. Nesta unidade, a segmentação continua disponível, mas o foco começa a passar da forma para o sentido."
+    },
+    {
+      "id": "L01-A01",
+      "type": "guided-activity",
+      "focus": "read-then-listen-and-respond",
+      "interaction": "written-word-to-semantic-description",
+      "title": "Leia e escolha o significado",
+      "instruction": "Leia a palavra primeiro. Se precisar, mostre suas partes. Você pode ler ou ouvir cada descrição. A palavra-alvo não é falada antes da resposta.",
+      "targetTtsBeforeResponse": false,
+      "descriptionTtsAvailable": true,
+      "syllableSupportAvailable": true,
+      "supportUseIsError": false,
+      "items": [
+        {
+          "word": "GATO",
+          "segments": ["GA", "TO"],
+          "options": ["um animal doméstico que mia", "um móvel com tampo", "uma cor"],
+          "correctIndex": 0
+        },
+        {
+          "word": "MESA",
+          "segments": ["ME", "SA"],
+          "options": ["uma ação de deslocamento rápido", "um móvel com tampo apoiado por pés ou uma base", "uma relação entre pessoas"],
+          "correctIndex": 1
+        },
+        {
+          "word": "CORRER",
+          "segments": ["COR", "RER"],
+          "options": ["deslocar o corpo rapidamente usando as pernas", "estar com pouca energia", "um lugar onde pessoas moram"],
+          "correctIndex": 0
+        },
+        {
+          "word": "AZUL",
+          "segments": ["A", "ZUL"],
+          "options": ["uma cor que aparece, por exemplo, em um céu limpo", "um animal doméstico", "uma ação de movimento"],
+          "correctIndex": 0
+        },
+        {
+          "word": "CANSADO",
+          "segments": ["CAN", "SA", "DO"],
+          "options": ["estar com pouca energia e vontade de descansar", "um móvel concreto", "uma cor"],
+          "correctIndex": 0
+        },
+        {
+          "word": "CASA",
+          "segments": ["CA", "SA"],
+          "options": ["um lugar construído para pessoas morarem", "uma ação", "uma relação de amizade"],
+          "correctIndex": 0
+        },
+        {
+          "word": "AMIZADE",
+          "segments": ["A", "MI", "ZA", "DE"],
+          "options": ["um animal", "uma relação em que pessoas gostam umas das outras e se apoiam", "um móvel"],
+          "correctIndex": 1
+        }
+      ],
+      "feedbackTtsAfterResponse": true
+    },
+    {
+      "id": "L01-A02",
+      "type": "concept-application",
+      "focus": "read-and-respond",
+      "interaction": "identify-non-object-meaning",
+      "title": "Nem toda palavra nomeia um objeto",
+      "instruction": "Em cada pergunta, escolha a palavra que representa o tipo de significado pedido. Estes nomes servem apenas para ajudar a perceber a diferença, não como classificação gramatical.",
+      "items": [
+        {
+          "prompt": "Qual palavra representa mais diretamente uma ação?",
+          "options": ["MESA", "CORRER", "CASA"],
+          "correctIndex": 1
+        },
+        {
+          "prompt": "Qual palavra representa mais diretamente um estado?",
+          "options": ["GATO", "CANSADO", "MESA"],
+          "correctIndex": 1
+        },
+        {
+          "prompt": "Qual palavra representa mais diretamente uma ideia ou relação entre pessoas?",
+          "options": ["AMIZADE", "CASA", "AZUL"],
+          "correctIndex": 0
+        }
+      ]
+    },
+    {
+      "id": "L01-A03",
+      "type": "transfer-activity",
+      "focus": "read-then-listen-and-respond",
+      "interaction": "new-written-word-to-semantic-description",
+      "title": "Use a mesma ideia em palavras novas",
+      "instruction": "Leia cada palavra e escolha a descrição que melhor combina com ela. As palavras são novas nesta lição, mas os tipos de significado já foram trabalhados.",
+      "targetTtsBeforeResponse": false,
+      "descriptionTtsAvailable": true,
+      "syllableSupportAvailable": true,
+      "supportUseIsError": false,
+      "items": [
+        {
+          "word": "PULAR",
+          "segments": ["PU", "LAR"],
+          "options": ["sair do chão com um impulso e voltar a cair", "um lugar onde produtos são vendidos", "um sentimento de receio"],
+          "correctIndex": 0
+        },
+        {
+          "word": "LOJA",
+          "segments": ["LO", "JA"],
+          "options": ["um lugar onde produtos são vendidos", "uma ação de saltar", "um sentimento de carinho"],
+          "correctIndex": 0
+        },
+        {
+          "word": "MEDO",
+          "segments": ["ME", "DO"],
+          "options": ["um móvel", "uma sensação de receio diante de perigo ou ameaça", "um lugar de venda"],
+          "correctIndex": 1
+        },
+        {
+          "word": "AMOR",
+          "segments": ["A", "MOR"],
+          "options": ["um sentimento forte de carinho e afeto", "uma ação de correr", "um objeto com tampo"],
+          "correctIndex": 0
+        }
+      ],
+      "feedbackTtsAfterResponse": true
+    },
+    {
+      "id": "L01-B06",
+      "type": "summary",
+      "focus": "read-or-listen",
+      "text": "Uma palavra tem uma forma que podemos ver ou ouvir e participa da construção de significado. Reconhecer a forma não garante, sozinho, que entendemos o sentido. Palavras podem representar seres, objetos, ações, características, estados, lugares, sentimentos, ideias e relações. Nas próximas lições, vamos observar também como os significados das palavras se relacionam e como o contexto ajuda a interpretá-las."
+    }
+  ],
+  "assessmentBehavior": {
+    "targetWordAudio": "nas checagens e atividades em que a leitura da palavra faz parte da evidência, não disponibilizar a pronúncia da palavra-alvo antes da resposta; descrições de significado podem ser narradas porque não contêm a palavra-alvo",
+    "syllableSupport": "permitido onde declarado e registrado separadamente do acerto; pedir apoio não é automaticamente erro",
+    "descriptionReplay": "permitido sem penalidade",
+    "timeLimit": false,
+    "longDefinitionRequired": false,
+    "grammarTerminologyRequired": false,
+    "retryPolicy": "permitir nova tentativa após feedback e variar a ordem das opções quando o renderer suportar isso sem alterar a competência medida"
+  },
+  "completionEvidence": {
+    "observablePerformance": "Distinguir forma de significado e demonstrar compreensão funcional de palavras que representam tipos variados de experiência, incluindo exemplos que não sejam apenas objetos concretos.",
+    "criteria": {
+      "formVersusMeaning": "acertar L01-C01",
+      "meaningAssociation": "acertar pelo menos 5 dos 7 itens de L01-A01",
+      "beyondConcreteNaming": "acertar pelo menos 2 dos 3 itens de L01-A02, incluindo pelo menos um entre estado ou ideia/relação",
+      "transfer": "acertar pelo menos 3 dos 4 itens de L01-A03"
+    },
+    "completionRule": "considerar a lição concluída quando os quatro critérios forem atingidos; reconhecer apenas palavras ligadas a objetos concretos não compensa ausência de compreensão de ações, estados ou ideias",
+    "notSufficient": [
+      "percorrer todas as telas",
+      "reconhecer apenas as letras das palavras",
+      "decorar os rótulos ser, objeto, ação, estado, lugar ou ideia",
+      "acertar somente exemplos de objetos concretos",
+      "responder rapidamente",
+      "repetir uma definição longa sem conseguir associar a palavra a um significado funcional"
+    ]
+  }
+}
