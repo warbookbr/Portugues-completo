@@ -6,14 +6,14 @@ Lista oficial das mídias pedagógicas que precisam ser produzidas manualmente. 
 
 | Lote | Uso | Prioridade | Obrigatório | Status |
 |---|---|---|---|---|
-| `N0-U01-L02-AUD-*` | U1 L2; reutiliza nas L7, L8 e U2 L1/L2 | ALTA | SIM | A_PRODUZIR |
+| `N0-U01-L02-AUD-*` | U1 L2; reutiliza nas L7, L8 e U2 L1/L2/L3 | ALTA | SIM | A_PRODUZIR |
 | `N0-U01-L03-AUD-*` | U1 L3; reutiliza na L7 e na verificação integrada | ALTA | SIM | A_PRODUZIR |
 | `N0-U01-L08-AUD-*` | U1 L8 | NORMAL | SIM | A_PRODUZIR |
 | `N0-U01-V01-AUD-*` | Verificação integrada da U1 | ALTA | SIM | A_PRODUZIR |
 | `N0-U02-L01-AUD-*` | U2 L1 — percepção inicial de sílabas | ALTA | SIM | A_PRODUZIR |
-| `N0-U02-L02-AUD-*` | U2 L2 — segmentação e recombinação oral | ALTA | SIM | A_PRODUZIR |
+| `N0-U02-L02-AUD-*` | U2 L2 — segmentação e recombinação oral; reutiliza na U2 L3 | ALTA | SIM | A_PRODUZIR |
 
-As ligações pedagógicas das Lições 2, 3, 7 e 8, da verificação integrada da Unidade 1 e das Lições 1 e 2 da Unidade 2 já estão dimensionadas abaixo. Exercícios formais futuros podem reutilizar estes mesmos IDs quando fizer sentido; não renumerar mídias existentes. As Lições 1, 4, 5 e 6 da Unidade 1 não exigem mídia humana na fila: usam TTS e/ou recursos visuais renderizados pela própria interface. A Lição 7 não cria novos arquivos e reutiliza subconjuntos dos lotes L2 e L3. A Lição 8 usa quatro novos arquivos já reservados no lote L8 e reutiliza `sapo` e `gato` do lote L2. A Lição 1 da Unidade 2 reutiliza `pato`, `mala` e `sol` como palavras inteiras e cria apenas os estímulos novos/segmentados que não existem nos lotes anteriores. A Lição 2 reutiliza `gato`, `mala` e `pato` como palavras inteiras e cria fichas de sílabas contextuais, além das palavras novas `boneca` e `tomate`.
+As ligações pedagógicas das Lições 2, 3, 7 e 8, da verificação integrada da Unidade 1 e das Lições 1, 2 e 3 da Unidade 2 já estão dimensionadas abaixo. Exercícios formais futuros podem reutilizar estes mesmos IDs quando fizer sentido; não renumerar mídias existentes. As Lições 1, 4, 5 e 6 da Unidade 1 não exigem mídia humana na fila: usam TTS e/ou recursos visuais renderizados pela própria interface. A Lição 7 não cria novos arquivos e reutiliza subconjuntos dos lotes L2 e L3. A Lição 8 usa quatro novos arquivos já reservados no lote L8 e reutiliza `sapo` e `gato` do lote L2. A Lição 1 da Unidade 2 reutiliza `pato`, `mala` e `sol` como palavras inteiras e cria apenas os estímulos novos/segmentados que não existem nos lotes anteriores. A Lição 2 reutiliza `gato`, `mala` e `pato` como palavras inteiras e cria fichas de sílabas contextuais, além das palavras novas `boneca` e `tomate`. A Lição 3 não cria novo lote: reutiliza os mesmos estímulos auditivos da Lição 2 e as palavras inteiras `gato`, `mala`, `pato` e `sol`, acrescentando apenas trechos escritos renderizados pela interface.
 
 Para verificações integradas que ficam fora da contagem de lições, usar `V01`, `V02` etc. no segmento que normalmente identifica a lição. Exemplo: `N0-U01-V01-AUD-001` significa Nível 0, Unidade 1, Verificação integrada 1, áudio 001. Não criar uma `L09` apenas para representar a verificação.
 
@@ -39,13 +39,13 @@ Objetivo: fornecer estímulos fixos para comparar sons claros sem depender do TT
 
 | ID | Localização pedagógica atual |
 |---|---|
-| `N0-U01-L02-AUD-001` | `L02-B02`; `L02-A01` itens 1 e 4; U2 `L01-B02` como palavra inteira; U2 `L02-B03`; `L02-C03`; `L02-A02` item 1 e opções relacionadas |
+| `N0-U01-L02-AUD-001` | `L02-B02`; `L02-A01` itens 1 e 4; U2 `L01-B02` como palavra inteira; U2 `L02-B03`; `L02-C03`; `L02-A02` item 1 e opções relacionadas; U2 `L03-C02`; `L03-A01` item 3 |
 | `N0-U01-L02-AUD-002` | `L02-B02`; `L02-A01` item 1 |
-| `N0-U01-L02-AUD-003` | `L02-C01`; `L02-A01` item 2; U2 `L01-C01` como palavra inteira; U2 `L02-C01`; `L02-C02` opção; `L02-A01` item 2; `L02-A02` itens 1 e 4 |
+| `N0-U01-L02-AUD-003` | `L02-C01`; `L02-A01` item 2; U2 `L01-C01` como palavra inteira; U2 `L02-C01`; `L02-C02` opção; `L02-A01` item 2; `L02-A02` itens 1 e 4; U2 `L03-C01`; `L03-A01` item 2 |
 | `N0-U01-L02-AUD-004` | `L02-C01` |
-| `N0-U01-L02-AUD-005` | `L02-A01` item 3; U2 `L01-B04`; U2 `L01-A01` item 5 |
+| `N0-U01-L02-AUD-005` | `L02-A01` item 3; U2 `L01-B04`; U2 `L01-A01` item 5; U2 `L03-B03`; `L03-A01` item 5 |
 | `N0-U01-L02-AUD-006` | `L02-A01` item 3; reutilização em L7; `L08-B04`; `L08-A01` item 3 |
-| `N0-U01-L02-AUD-007` | `L02-B03`; `L02-A01` item 2; reutilização em L7; `L08-C01`; `L08-A01` item 2; U2 `L02-B02`; `L02-C02`; `L02-P01`; `L02-A01` item 1; `L02-A02` itens 1 e 3 |
+| `N0-U01-L02-AUD-007` | `L02-B03`; `L02-A01` item 2; reutilização em L7; `L08-C01`; `L08-A01` item 2; U2 `L02-B02`; `L02-C02`; `L02-P01`; `L02-A01` item 1; `L02-A02` itens 1 e 3; U2 `L03-B02`; `L03-A01` item 1; `L03-A02` item 1 |
 | `N0-U01-L02-AUD-008` | `L02-B03`; `L02-A01` item 4; reutilização em L7 |
 
 ### Ligações já dimensionadas na Lição 7
@@ -249,6 +249,29 @@ Reutilizar, sem regravar:
 | `N0-U01-L02-AUD-007` | `gato` | `L02-B02`; `L02-C02`; `L02-P01`; `L02-A01` item 1; opções de `L02-A02` |
 | `N0-U01-L02-AUD-003` | `mala` | `L02-C01`; `L02-C02` como opção; `L02-A01` item 2; opções de `L02-A02` |
 | `N0-U01-L02-AUD-001` | `pato` | `L02-B03`; `L02-C02` como opção; `L02-C03`; opções de `L02-A02` |
+
+### Reutilização na U2 L3 — ligação entre sílaba ouvida e trecho escrito
+
+A Lição 3 não cria novos áudios. Ela reutiliza as fichas contextuais deste lote e acrescenta a escrita apenas como texto/componentes da interface. Manter a contextualização por palavra definida na Lição 2; não substituir uma ficha por outra de grafia semelhante.
+
+| ID | Uso adicional na U2 L3 |
+|---|---|
+| `N0-U02-L02-AUD-001` | mapa `GATO → GA`; `L03-B02`; `L03-A01` item 1; `L03-A02` item 1 |
+| `N0-U02-L02-AUD-002` | mapa `GATO → TO`; `L03-B02`; `L03-A02` item 1 |
+| `N0-U02-L02-AUD-003` | mapa de referência `MALA → MA` em `writtenExamples` |
+| `N0-U02-L02-AUD-004` | mapa `MALA → LA`; `L03-C01`; `L03-A01` item 2 |
+| `N0-U02-L02-AUD-005` | mapa `PATO → PA`; `L03-C02`; `L03-A01` item 3 |
+| `N0-U02-L02-AUD-006` | mapa `PATO → TO`; `L03-C02` |
+| `N0-U02-L02-AUD-007` | mapa `BONECA → BO`; `L03-B04`; `L03-A02` item 2 |
+| `N0-U02-L02-AUD-008` | mapa `BONECA → NE`; `L03-B04`; `L03-A01` item 4; `L03-A02` item 2 |
+| `N0-U02-L02-AUD-009` | mapa `BONECA → CA`; `L03-B04`; `L03-A02` item 2 |
+| `N0-U02-L02-AUD-010` | mapa `TOMATE → TO`; `L03-C03`; `L03-A02` item 3 |
+| `N0-U02-L02-AUD-011` | mapa `TOMATE → MA`; `L03-C03`; `L03-A02` item 3 |
+| `N0-U02-L02-AUD-012` | mapa `TOMATE → TE`; `L03-C03`; `L03-A02` item 3 |
+| `N0-U02-L02-AUD-013` | palavra inteira `boneca`; `L03-B04`; `L03-A01` item 4; `L03-A02` item 2 |
+| `N0-U02-L02-AUD-014` | palavra inteira `tomate`; `L03-C03`; `L03-A02` item 3 |
+
+Na U2 L3, os trechos `GA`, `TO`, `MA`, `LA`, `PA`, `BO`, `NE`, `CA`, `TE` e `SOL` são **texto da interface**, não arquivos de imagem. Quando uma tarefa medir a associação auditiva, ouvir primeiro e revelar/realçar a escrita depois, conforme o JSON da lição. O exemplo `SOL` existe para evitar a falsa inferência de que toda sílaba escrita possui duas letras; a sistematização da variedade de estruturas permanece reservada à Lição 5.
 
 ### Orientações de produção
 
