@@ -1,0 +1,307 @@
+{
+  "schemaVersion": 1,
+  "id": "N0-U03-L03",
+  "title": "O contexto ajuda a entender a palavra",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Perceber que o contexto ajuda a determinar qual sentido de uma palavra está sendo usado e utilizar pistas fortes de situações curtas para escolher, formular e revisar hipóteses simples de significado.",
+  "competencies": [
+    "reconhecer que a mesma forma escrita pode assumir sentidos diferentes em contextos diferentes",
+    "selecionar o sentido de uma palavra que melhor se ajusta a um contexto curto com pistas claras",
+    "usar pistas próximas para formular uma hipótese simples sobre o significado de uma palavra ainda não compreendida",
+    "identificar quando um contexto ainda não fornece informação suficiente para decidir entre sentidos possíveis",
+    "revisar ou confirmar uma hipótese depois que uma nova pista relevante é apresentada",
+    "apontar qual trecho do contexto oferece evidência importante para a interpretação"
+  ],
+  "prerequisites": ["N0-U03-L02"],
+  "limits": [
+    "não exigir os termos polissemia, homonímia, denotação ou conotação",
+    "não ensinar uma lista de significados isolados para cada palavra como se ela tivesse um único sentido fixo",
+    "não transformar a lição em compreensão de pequenos textos ou em relação entre várias frases como objetivo central",
+    "não exigir inferências com pistas fracas, conhecimento especializado ou informação cultural pouco acessível",
+    "não penalizar uma resposta de incerteza quando o contexto apresentado for deliberadamente insuficiente",
+    "não exigir que o aluno produza definições longas de palavras desconhecidas",
+    "não usar imagens como atalho que revele o sentido sem necessidade de observar o contexto verbal",
+    "não introduzir análise gramatical de frase; as frases aparecem apenas como contexto para interpretar palavras",
+    "não usar velocidade ou tempo de resposta como critério de domínio"
+  ],
+  "media": {
+    "tts": "instruções, explicações, contextos curtos, opções e feedback. Nesta lição o TTS pode ler o contexto e a palavra-alvo antes da resposta, porque a evidência central é interpretar o sentido pelas pistas contextuais e não decodificar a palavra sem apoio oral.",
+    "controlledAudio": [],
+    "video": "nao necessario",
+    "images": "nao necessarias"
+  },
+  "supportMaterials": {
+    "curatedMedia": [],
+    "runtimeResources": [
+      {
+        "type": "TTS_OK",
+        "locations": ["instruções", "L03-B02", "L03-C01", "L03-B03", "L03-C02", "L03-B04", "L03-C03", "L03-B05", "L03-C04", "L03-A01", "L03-A02", "L03-A03", "L03-A04", "feedback", "resumo"],
+        "purpose": "permitir que o aluno ouça contextos curtos e opções sem transformar dificuldade de decodificação da frase em obstáculo para a competência semântica; pequenas diferenças entre vozes não alteram a resposta correta"
+      }
+    ],
+    "generatedVisualResources": [
+      {
+        "type": "UI_RENDERED_CONTEXT_CARD",
+        "locations": ["L03-B02", "L03-C01", "L03-B03", "L03-C02", "L03-B04", "L03-C03", "L03-B05", "L03-C04", "L03-A01", "L03-A02", "L03-A03", "L03-A04"],
+        "purpose": "renderizar cada contexto curto como texto real e manter a palavra-alvo destacada sem transformar a frase em imagem"
+      },
+      {
+        "type": "UI_RENDERED_TARGET_WORD_SUPPORT",
+        "locations": ["L03-C01", "L03-C02", "L03-C03", "L03-C04", "L03-A01", "L03-A02", "L03-A03", "L03-A04"],
+        "purpose": "mostrar a palavra-alvo separadamente com apoio silábico opcional quando necessário, sem alterar o contexto original"
+      },
+      {
+        "type": "UI_RENDERED_MEANING_CHOICES",
+        "locations": ["L03-C01", "L03-C02", "L03-C03", "L03-C04", "L03-A01", "L03-A02", "L03-A03"],
+        "purpose": "apresentar sentidos possíveis em opções curtas e acessíveis, com ordem variável quando isso não prejudicar a comparação"
+      },
+      {
+        "type": "UI_RENDERED_PROGRESSIVE_CLUE",
+        "locations": ["L03-B05", "L03-C04", "L03-A03"],
+        "purpose": "revelar uma pista adicional somente depois da primeira decisão, permitindo observar quando a interpretação deve permanecer provisória e quando uma nova pista permite confirmar ou revisar a hipótese"
+      },
+      {
+        "type": "UI_RENDERED_CONTEXT_EVIDENCE_HIGHLIGHT",
+        "locations": ["L03-B04", "L03-A04", "feedback"],
+        "purpose": "destacar depois da resposta a palavra ou trecho do contexto que forneceu a pista mais forte para a interpretação"
+      }
+    ],
+    "productionQueueRequired": false,
+    "publicationDependency": "não há nova mídia humana obrigatória; texto real da interface, TTS e componentes de revelação de pistas são suficientes para ensinar e avaliar a competência desta lição",
+    "decisionRationale": "o contexto verbal é o próprio objeto pedagógico. Imagens poderiam permitir que o aluno acertasse sem usar as pistas linguísticas; áudio controlado não é necessário porque pronúncia ou entonação específica não determina nenhum item. O TTS reduz carga de leitura da frase sem entregar o significado por si só."
+  },
+  "wordSupport": [
+    {"word": "BANCO", "segments": ["BAN", "CO"]},
+    {"word": "MANGA", "segments": ["MAN", "GA"]},
+    {"word": "PONTO", "segments": ["PON", "TO"]},
+    {"word": "ENSOPADO", "segments": ["EN", "SO", "PA", "DO"]},
+    {"word": "APRESSADO", "segments": ["A", "PRES", "SA", "DO"]},
+    {"word": "ABRIGO", "segments": ["A", "BRI", "GO"]},
+    {"word": "ESCORREGADIO", "segments": ["ES", "COR", "RE", "GA", "DI", "O"]},
+    {"word": "FAMINTO", "segments": ["FA", "MIN", "TO"]}
+  ],
+  "sequence": [
+    {
+      "id": "L03-B01",
+      "type": "objective",
+      "focus": "read-or-listen",
+      "text": "Na lição anterior, você comparou significados de palavras. Agora vamos observar outra ideia: uma palavra pode não trazer todo o seu sentido sozinha. As palavras e informações ao redor ajudam a entender qual significado está sendo usado."
+    },
+    {
+      "id": "L03-B02",
+      "type": "same-word-different-context-demonstration",
+      "focus": "read-or-listen-then-compare",
+      "title": "A mesma palavra pode apontar para sentidos diferentes",
+      "targetWord": "BANCO",
+      "contexts": [
+        {"text": "Sentei no BANCO da praça.", "meaning": "assento onde uma pessoa pode se sentar", "strongClue": "da praça"},
+        {"text": "Fui ao BANCO guardar dinheiro.", "meaning": "instituição que oferece serviços relacionados a dinheiro", "strongClue": "guardar dinheiro"}
+      ],
+      "contextTtsAvailableBeforeResponse": true,
+      "explanation": "A forma BANCO é igual nos dois exemplos. O que muda é o contexto. Em um caso, a situação aponta para um assento; no outro, para uma instituição ligada a dinheiro. Por isso, não precisamos escolher um único significado para a palavra fora de qualquer situação."
+    },
+    {
+      "id": "L03-C01",
+      "type": "quick-check-set",
+      "focus": "read-or-listen-and-respond",
+      "interaction": "context-to-meaning-choice",
+      "instruction": "Observe cada contexto e escolha o sentido de BANCO que combina com ele.",
+      "targetWord": "BANCO",
+      "targetSegments": ["BAN", "CO"],
+      "items": [
+        {"context": "O BANCO de madeira da praça está molhado.", "options": ["um assento", "uma instituição ligada a dinheiro"], "correctIndex": 0, "strongClue": "de madeira da praça"},
+        {"context": "O BANCO abre às dez e recebe clientes para serviços com dinheiro.", "options": ["um assento", "uma instituição ligada a dinheiro"], "correctIndex": 1, "strongClue": "recebe clientes para serviços com dinheiro"}
+      ],
+      "contextTtsAvailableBeforeResponse": true,
+      "syllableSupportAvailable": true,
+      "supportUseIsError": false
+    },
+    {
+      "id": "L03-B03",
+      "type": "same-word-different-context-demonstration",
+      "focus": "read-or-listen-then-compare",
+      "title": "O contexto também distingue sentidos de outras palavras",
+      "targetWord": "MANGA",
+      "contexts": [
+        {"text": "Comi uma MANGA doce.", "meaning": "uma fruta", "strongClue": "comi"},
+        {"text": "A MANGA da camisa rasgou.", "meaning": "a parte da roupa que cobre o braço", "strongClue": "da camisa"}
+      ],
+      "contextTtsAvailableBeforeResponse": true,
+      "explanation": "Em vez de perguntar qual é o significado verdadeiro de MANGA fora de qualquer situação, observamos as pistas. COMI aproxima a palavra de uma fruta; DA CAMISA aponta para uma parte da roupa."
+    },
+    {
+      "id": "L03-C02",
+      "type": "quick-check-set",
+      "focus": "read-or-listen-and-respond",
+      "interaction": "context-to-meaning-choice",
+      "instruction": "Escolha o sentido de MANGA que combina com cada contexto.",
+      "targetWord": "MANGA",
+      "targetSegments": ["MAN", "GA"],
+      "items": [
+        {"context": "A MANGA estava madura e muito doce.", "options": ["uma fruta", "a parte da roupa que cobre o braço"], "correctIndex": 0, "strongClue": "madura e muito doce"},
+        {"context": "A MANGA da blusa ficou molhada até o cotovelo.", "options": ["uma fruta", "a parte da roupa que cobre o braço"], "correctIndex": 1, "strongClue": "da blusa"}
+      ],
+      "contextTtsAvailableBeforeResponse": true,
+      "syllableSupportAvailable": true,
+      "supportUseIsError": false
+    },
+    {
+      "id": "L03-B04",
+      "type": "strong-context-inference-demonstration",
+      "focus": "read-or-listen-then-infer",
+      "title": "Uma pista forte pode ajudar com uma palavra ainda não compreendida",
+      "targetWord": "ENSOPADO",
+      "targetSegments": ["EN", "SO", "PA", "DO"],
+      "context": "Depois da chuva, o casaco ficou ENSOPADO, todo molhado.",
+      "strongClue": "todo molhado",
+      "meaning": "muito molhado, encharcado de água",
+      "contextTtsAvailableBeforeResponse": true,
+      "explanation": "Mesmo que ENSOPADO seja uma palavra nova para alguém, a expressão TODO MOLHADO oferece uma pista forte. A hipótese vem do contexto; não é necessário adivinhar pela aparência da palavra."
+    },
+    {
+      "id": "L03-C03",
+      "type": "quick-check",
+      "focus": "read-or-listen-and-respond",
+      "interaction": "infer-meaning-from-strong-context",
+      "targetWord": "APRESSADO",
+      "targetSegments": ["A", "PRES", "SA", "DO"],
+      "context": "Rui estava atrasado e correu para chegar a tempo. Ele saiu APRESSADO.",
+      "prompt": "Pelas pistas do contexto, o que APRESSADO provavelmente quer dizer aqui?",
+      "options": ["com pressa", "com muito sono", "sem saber para onde ir"],
+      "correctIndex": 0,
+      "strongClues": ["estava atrasado", "correu para chegar a tempo"],
+      "contextTtsAvailableBeforeResponse": true,
+      "syllableSupportAvailable": true,
+      "supportUseIsError": false,
+      "feedback": "Estar atrasado e correr para chegar a tempo são pistas fortes de que APRESSADO significa estar com pressa nessa situação."
+    },
+    {
+      "id": "L03-B05",
+      "type": "progressive-context-demonstration",
+      "focus": "read-or-listen-decide-then-revise",
+      "title": "Às vezes ainda não há informação suficiente",
+      "targetWord": "PONTO",
+      "targetSegments": ["PON", "TO"],
+      "stage1": {"context": "Ana chegou ao PONTO.", "question": "Só com essa frase, qual é a decisão mais segura?", "options": ["PONTO certamente é um local de ônibus.", "PONTO certamente é uma pequena marca feita em uma superfície.", "Ainda não há pista suficiente para ter certeza."], "correctIndex": 2},
+      "stage2": {"additionalClue": "Ela ficou esperando o ônibus.", "question": "Com a nova pista, qual sentido fica mais provável?", "options": ["local onde passageiros esperam o ônibus", "pequena marca feita em uma superfície"], "correctIndex": 0, "strongClue": "esperando o ônibus"},
+      "contextTtsAvailableBeforeResponse": true,
+      "explanation": "Usar contexto também significa reconhecer quando ainda não sabemos. Uma hipótese pode ficar provisória até aparecer uma pista suficiente. Isso é melhor do que escolher um sentido sem evidência."
+    },
+    {
+      "id": "L03-C04",
+      "type": "progressive-context-check",
+      "focus": "read-or-listen-decide-then-revise",
+      "interaction": "insufficient-context-then-resolve",
+      "targetWord": "BANCO",
+      "targetSegments": ["BAN", "CO"],
+      "stage1": {"context": "Rafa esperou no BANCO.", "options": ["é um assento", "é uma instituição ligada a dinheiro", "ainda não há pista suficiente"], "correctIndex": 2},
+      "stage2": {"additionalClue": "Ele queria sacar dinheiro e aguardava o atendimento.", "options": ["é um assento", "é uma instituição ligada a dinheiro"], "correctIndex": 1, "strongClue": "sacar dinheiro e aguardava o atendimento"},
+      "contextTtsAvailableBeforeResponse": true,
+      "syllableSupportAvailable": true,
+      "supportUseIsError": false
+    },
+    {
+      "id": "L03-A01",
+      "type": "guided-activity",
+      "focus": "read-or-listen-and-respond",
+      "interaction": "context-to-meaning-choice",
+      "title": "Escolha o sentido pelo contexto",
+      "instruction": "Leia ou ouça cada contexto. A mesma palavra pode aparecer em mais de um item com sentidos diferentes.",
+      "items": [
+        {"targetWord": "BANCO", "segments": ["BAN", "CO"], "context": "Sentei no BANCO da praça para descansar.", "options": ["assento", "instituição ligada a dinheiro"], "correctIndex": 0, "strongClue": "sentei"},
+        {"targetWord": "BANCO", "segments": ["BAN", "CO"], "context": "Ela foi ao BANCO pagar uma conta.", "options": ["assento", "instituição ligada a dinheiro"], "correctIndex": 1, "strongClue": "pagar uma conta"},
+        {"targetWord": "MANGA", "segments": ["MAN", "GA"], "context": "A MANGA da camisa está comprida.", "options": ["fruta", "parte da roupa que cobre o braço"], "correctIndex": 1, "strongClue": "da camisa"},
+        {"targetWord": "MANGA", "segments": ["MAN", "GA"], "context": "Comi uma MANGA madura no almoço.", "options": ["fruta", "parte da roupa que cobre o braço"], "correctIndex": 0, "strongClue": "comi"},
+        {"targetWord": "PONTO", "segments": ["PON", "TO"], "context": "Esperei o ônibus no PONTO.", "options": ["local de parada de ônibus", "pequena marca em uma superfície"], "correctIndex": 0, "strongClue": "esperei o ônibus"},
+        {"targetWord": "PONTO", "segments": ["PON", "TO"], "context": "Faça um PONTO no papel com o lápis.", "options": ["local de parada de ônibus", "pequena marca em uma superfície"], "correctIndex": 1, "strongClue": "no papel com o lápis"}
+      ],
+      "contextTtsAvailableBeforeResponse": true,
+      "syllableSupportAvailable": true,
+      "supportUseIsError": false,
+      "shuffleOptions": true
+    },
+    {
+      "id": "L03-A02",
+      "type": "guided-activity",
+      "focus": "read-or-listen-and-infer",
+      "interaction": "infer-new-word-from-strong-context",
+      "title": "Use pistas para entender palavras novas",
+      "instruction": "Você não precisa conhecer a palavra antes. Use as informações ao redor para escolher a hipótese mais bem sustentada.",
+      "items": [
+        {"targetWord": "ABRIGO", "segments": ["A", "BRI", "GO"], "context": "Começou a chover muito. Eles correram para um ABRIGO e ficaram protegidos da chuva.", "options": ["um lugar que oferece proteção", "uma comida quente", "um tipo de chuva"], "correctIndex": 0, "strongClue": "ficaram protegidos da chuva"},
+        {"targetWord": "ENSOPADO", "segments": ["EN", "SO", "PA", "DO"], "context": "O pano caiu na água e ficou ENSOPADO, completamente molhado.", "options": ["muito molhado", "muito seco", "muito leve"], "correctIndex": 0, "strongClue": "completamente molhado"},
+        {"targetWord": "ESCORREGADIO", "segments": ["ES", "COR", "RE", "GA", "DI", "O"], "context": "O chão molhado estava ESCORREGADIO. João pisou nele e quase caiu.", "options": ["difícil de enxergar", "fácil de escorregar", "muito quente"], "correctIndex": 1, "strongClue": "quase caiu"},
+        {"targetWord": "FAMINTO", "segments": ["FA", "MIN", "TO"], "context": "Depois de muitas horas sem comer, Paulo estava FAMINTO e procurou comida.", "options": ["com muita fome", "com muito frio", "com vontade de dormir"], "correctIndex": 0, "strongClues": ["muitas horas sem comer", "procurou comida"]}
+      ],
+      "contextTtsAvailableBeforeResponse": true,
+      "syllableSupportAvailable": true,
+      "supportUseIsError": false,
+      "shuffleOptions": true
+    },
+    {
+      "id": "L03-A03",
+      "type": "progressive-clue-activity",
+      "focus": "read-or-listen-decide-then-revise",
+      "interaction": "insufficient-context-then-resolve",
+      "title": "Espere por evidência quando for preciso",
+      "instruction": "Primeiro responda apenas com a informação disponível. Depois abra a nova pista e decida novamente.",
+      "items": [
+        {"targetWord": "BANCO", "segments": ["BAN", "CO"], "stage1": {"context": "Bia ficou no BANCO.", "options": ["assento", "instituição ligada a dinheiro", "ainda não há pista suficiente"], "correctIndex": 2}, "stage2": {"additionalClue": "Ela aguardava o gerente para falar sobre dinheiro.", "options": ["assento", "instituição ligada a dinheiro"], "correctIndex": 1, "strongClue": "gerente para falar sobre dinheiro"}},
+        {"targetWord": "PONTO", "segments": ["PON", "TO"], "stage1": {"context": "Paulo parou no PONTO.", "options": ["local de parada de ônibus", "pequena marca em uma superfície", "ainda não há pista suficiente"], "correctIndex": 2}, "stage2": {"additionalClue": "O ônibus chegou alguns minutos depois.", "options": ["local de parada de ônibus", "pequena marca em uma superfície"], "correctIndex": 0, "strongClue": "o ônibus chegou"}}
+      ],
+      "contextTtsAvailableBeforeResponse": true,
+      "syllableSupportAvailable": true,
+      "supportUseIsError": false
+    },
+    {
+      "id": "L03-A04",
+      "type": "context-evidence-activity",
+      "focus": "read-or-listen-and-identify-evidence",
+      "interaction": "choose-strong-context-clue",
+      "title": "Qual pista ajudou mais?",
+      "instruction": "Depois de interpretar a palavra, identifique qual trecho oferece a pista mais forte para esse sentido.",
+      "items": [
+        {"targetWord": "MANGA", "context": "A MANGA da camisa ficou suja.", "meaning": "parte da roupa que cobre o braço", "options": ["da camisa", "ficou", "a"], "correctIndex": 0},
+        {"targetWord": "BANCO", "context": "O BANCO de madeira da praça quebrou.", "meaning": "assento", "options": ["quebrou", "de madeira da praça", "o"], "correctIndex": 1},
+        {"targetWord": "FAMINTO", "context": "Depois de muitas horas sem comer, ele estava FAMINTO.", "meaning": "com muita fome", "options": ["ele estava", "muitas horas sem comer", "depois de"], "correctIndex": 1}
+      ],
+      "contextTtsAvailableBeforeResponse": true,
+      "feedbackHighlightCorrectClue": true
+    },
+    {
+      "id": "L03-B06",
+      "type": "summary",
+      "focus": "read-or-listen",
+      "text": "O contexto ajuda a escolher o sentido de uma palavra. A mesma forma pode ter sentidos diferentes, e palavras novas podem ser compreendidas quando as pistas são fortes. Também é importante reconhecer quando ainda falta informação: uma hipótese deve seguir as evidências e pode ser confirmada ou revista quando aparece uma nova pista."
+    }
+  ],
+  "assessmentBehavior": {
+    "contextTts": "permitido antes da resposta e repetível sem penalidade, porque a competência central é interpretação contextual; ouvir a frase não invalida a evidência",
+    "targetWordTts": "pode ocorrer como parte da leitura do contexto; a pronúncia específica não determina nenhuma resposta",
+    "syllableSupport": "permitido onde declarado e registrado separadamente do acerto; pedir apoio não é automaticamente erro",
+    "insufficientContextOption": "quando o item é deliberadamente ambíguo, a opção de reconhecer informação insuficiente é uma resposta válida e esperada; não forçar uma interpretação sem evidência",
+    "progressiveClue": "a pista adicional só deve aparecer depois do registro da primeira decisão, para que o sistema possa observar se o aluno diferencia incerteza de interpretação sustentada",
+    "timeLimit": false,
+    "technicalTerminologyRequired": false,
+    "longDefinitionRequired": false,
+    "retryPolicy": "permitir nova tentativa após feedback; em itens de pista progressiva, reiniciar o estágio para evitar que a pista adicional permaneça aberta na nova primeira tentativa"
+  },
+  "completionEvidence": {
+    "observablePerformance": "Usar pistas de contexto curto para selecionar sentidos, inferir significados simples e controlar a própria hipótese, inclusive reconhecendo quando a informação ainda é insuficiente.",
+    "criteria": {
+      "sameWordDifferentSense": "acertar pelo menos 5 dos 6 itens de L03-A01, incluindo itens de pelo menos duas palavras-alvo diferentes",
+      "strongContextInference": "acertar pelo menos 3 dos 4 itens de L03-A02",
+      "uncertaintyAndRevision": "concluir corretamente as duas sequências de L03-A03, escolhendo informação insuficiente no primeiro estágio e o sentido sustentado depois da pista adicional",
+      "contextEvidence": "identificar a pista mais forte em pelo menos 2 dos 3 itens de L03-A04"
+    },
+    "completionRule": "considerar a lição concluída quando os quatro critérios forem atingidos; acertar significados conhecidos por memória não compensa ausência de evidência de inferência ou de controle da hipótese",
+    "notSufficient": [
+      "decorar os dois sentidos de BANCO ou MANGA sem usar as pistas apresentadas",
+      "escolher sempre um sentido mesmo quando o contexto ainda é insuficiente",
+      "adivinhar palavras novas pela aparência da escrita sem relacioná-las às informações ao redor",
+      "recitar termos técnicos de semântica",
+      "responder rapidamente",
+      "compreender apenas uma frase decorada sem transferir a estratégia para outros contextos"
+    ]
+  }
+}
