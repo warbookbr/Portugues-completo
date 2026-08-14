@@ -1,0 +1,301 @@
+{
+  "schemaVersion": 1,
+  "id": "N0-U02-L02",
+  "title": "Separando e juntando palavras faladas",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Operar sobre sílabas percebidas na fala: separar palavras simples em partes sonoras ordenadas e recombinar essas partes para recuperar a palavra inteira, ainda sem depender da escrita.",
+  "competencies": [
+    "selecionar, entre fichas de áudio, as sílabas que compõem uma palavra falada e mantê-las na ordem correta",
+    "recombinar duas ou três sílabas ouvidas para identificar a palavra inteira correspondente",
+    "perceber que a ordem das partes importa para reconstruir a palavra",
+    "usar a segmentação oral como ferramenta sem depender de grafia silabificada"
+  ],
+  "prerequisites": ["N0-U02-L01"],
+  "limits": [
+    "não mostrar grafia silabificada como pista antes da Lição 3",
+    "não exigir escrita ou leitura das palavras usadas nas tarefas",
+    "não exigir uso de microfone nem avaliar pronúncia do aluno",
+    "não introduzir famílias silábicas como arquitetura de aprendizagem",
+    "não ensinar consoante + vogal como fórmula universal",
+    "não introduzir divisão silábica normativa, sílaba tônica ou classificações por quantidade de sílabas",
+    "não usar velocidade de resposta como critério de domínio"
+  ],
+  "media": {
+    "tts": "instruções, explicações, feedback e convite opcional para repetição em voz alta",
+    "controlledAudio": [
+      "N0-U02-L02-AUD-001 a N0-U02-L02-AUD-010",
+      "N0-U01-L02-AUD-004",
+      "N0-U01-L02-AUD-007",
+      "N0-U01-L08-AUD-001"
+    ],
+    "video": "nao necessario",
+    "images": "nao necessarias"
+  },
+  "supportMaterials": {
+    "curatedMedia": [
+      {
+        "mediaIds": [
+          "N0-U02-L02-AUD-001",
+          "N0-U02-L02-AUD-002",
+          "N0-U02-L02-AUD-003",
+          "N0-U02-L02-AUD-004",
+          "N0-U02-L02-AUD-005",
+          "N0-U02-L02-AUD-006",
+          "N0-U02-L02-AUD-007",
+          "N0-U02-L02-AUD-008",
+          "N0-U02-L02-AUD-009",
+          "N0-U02-L02-AUD-010"
+        ],
+        "type": "AUDIO_CONTROLADO",
+        "requiredForPublication": true,
+        "purpose": "fornecer sílabas isoladas com realização consistente e duas palavras inteiras novas para atividades de segmentação e recombinação auditiva",
+        "locations": ["L02-B02", "L02-C01", "L02-B03", "L02-C02", "L02-C03", "L02-A01", "L02-A02", "L02-P01"],
+        "productionSource": "producao-midia/FILA-MIDIA.md"
+      },
+      {
+        "mediaIds": [
+          "N0-U01-L02-AUD-004",
+          "N0-U01-L02-AUD-007",
+          "N0-U01-L08-AUD-001"
+        ],
+        "type": "AUDIO_CONTROLADO",
+        "requiredForPublication": true,
+        "purpose": "reutilizar as palavras inteiras mesa, gato e casa já previstas em lotes anteriores, evitando duplicação de gravação",
+        "locations": ["L02-B02", "L02-C01", "L02-B03", "L02-C02", "L02-C03", "L02-A01", "L02-A02"],
+        "productionSource": "producao-midia/FILA-MIDIA.md"
+      }
+    ],
+    "runtimeResources": [
+      {
+        "type": "TTS_OK",
+        "locations": ["instruções", "explicações", "feedback", "resumo", "L02-P01"],
+        "purpose": "dar suporte textual e convidar à repetição oral opcional sem substituir os estímulos auditivos que determinam as respostas"
+      }
+    ],
+    "generatedVisualResources": [
+      {
+        "type": "UI_RENDERED_AUDIO_TOKENS",
+        "locations": ["L02-B02", "L02-C01", "L02-B03", "L02-C02", "L02-C03", "L02-A01", "L02-A02", "L02-P01"],
+        "purpose": "representar cada sílaba como ficha neutra clicável que reproduz áudio; a ficha não deve exibir letras ou grafia da sílaba"
+      }
+    ],
+    "productionQueueRequired": true,
+    "publicationDependency": "a estrutura da lição pode ser implementada antes dos arquivos, mas as atividades auditivas não podem ser consideradas publicáveis até os dez áudios da família U02-L02 e os três áudios reutilizados estarem produzidos, validados e ligados aos IDs",
+    "decisionRationale": "esta lição precisa que o aluno opere sobre partes sonoras sem apoio da escrita. Fichas de áudio isoladas permitem selecionar, ordenar e juntar sílabas, enquanto TTS variável não é adequado para os estímulos que determinam a resposta. Não há ganho pedagógico em imagem ou vídeo."
+  },
+  "audioTokenSet": [
+    {"mediaId": "N0-U02-L02-AUD-001", "spokenContent": "ca", "context": "como a primeira sílaba de casa"},
+    {"mediaId": "N0-U02-L02-AUD-002", "spokenContent": "sa", "context": "como a segunda sílaba de casa e a primeira de sapato"},
+    {"mediaId": "N0-U02-L02-AUD-003", "spokenContent": "ga", "context": "como a primeira sílaba de gato"},
+    {"mediaId": "N0-U02-L02-AUD-004", "spokenContent": "to", "context": "como a segunda sílaba de gato e a terceira de sapato"},
+    {"mediaId": "N0-U02-L02-AUD-005", "spokenContent": "me", "context": "como a primeira sílaba de mesa"},
+    {"mediaId": "N0-U02-L02-AUD-006", "spokenContent": "bo", "context": "como a primeira sílaba de boneca"},
+    {"mediaId": "N0-U02-L02-AUD-007", "spokenContent": "ne", "context": "como a segunda sílaba de boneca"},
+    {"mediaId": "N0-U02-L02-AUD-008", "spokenContent": "pa", "context": "como a segunda sílaba de sapato"},
+    {"mediaId": "N0-U02-L02-AUD-009", "spokenContent": "boneca", "role": "whole-word-new"},
+    {"mediaId": "N0-U02-L02-AUD-010", "spokenContent": "sapato", "role": "whole-word-new"}
+  ],
+  "wholeWordReuse": [
+    {"mediaId": "N0-U01-L08-AUD-001", "spokenContent": "casa"},
+    {"mediaId": "N0-U01-L02-AUD-007", "spokenContent": "gato"},
+    {"mediaId": "N0-U01-L02-AUD-004", "spokenContent": "mesa"}
+  ],
+  "sequence": [
+    {
+      "id": "L02-B01",
+      "type": "objective",
+      "focus": "read-or-listen",
+      "text": "Na lição anterior, você percebeu as sílabas dentro das palavras. Agora vamos fazer duas ações com essas partes: separar uma palavra em sílabas e juntar sílabas para recuperar a palavra inteira. Continuamos trabalhando principalmente pelo que ouvimos."
+    },
+    {
+      "id": "L02-B02",
+      "type": "audio-token-segmentation-demonstration",
+      "focus": "listen-then-operate",
+      "title": "Separar é encontrar as partes e manter a ordem",
+      "wholeWordAudio": "N0-U01-L08-AUD-001",
+      "spokenContent": "casa",
+      "availableAudioTokens": ["N0-U02-L02-AUD-001", "N0-U02-L02-AUD-002"],
+      "correctTokenOrder": ["N0-U02-L02-AUD-001", "N0-U02-L02-AUD-002"],
+      "writtenWordVisible": false,
+      "explanation": "Ouvimos casa. Depois ouvimos duas fichas: ca e sa. Quando reconhecemos essas duas partes na mesma ordem, estamos separando a palavra em sílabas.",
+      "guardRail": "as fichas devem mostrar apenas um controle neutro de áudio; não exibir CA ou SA"
+    },
+    {
+      "id": "L02-C01",
+      "type": "quick-check",
+      "focus": "listen-and-respond",
+      "interaction": "whole-word-to-ordered-audio-tokens",
+      "prompt": "Ouça gato. Entre as fichas de áudio disponíveis, escolha as duas partes que formam a palavra e coloque-as na ordem em que você ouve.",
+      "wholeWordAudio": "N0-U01-L02-AUD-007",
+      "spokenContent": "gato",
+      "availableAudioTokens": ["N0-U02-L02-AUD-003", "N0-U02-L02-AUD-004", "N0-U02-L02-AUD-005"],
+      "correctTokenOrder": ["N0-U02-L02-AUD-003", "N0-U02-L02-AUD-004"],
+      "writtenWordVisibleBeforeResponse": false,
+      "repeatAudio": true,
+      "feedback": "As partes corretas são ga e to, nessa ordem. Juntas, elas recuperam gato."
+    },
+    {
+      "id": "L02-B03",
+      "type": "audio-token-recombination-demonstration",
+      "focus": "listen-then-identify",
+      "title": "Juntar é recuperar a palavra inteira",
+      "audioTokens": ["N0-U02-L02-AUD-005", "N0-U02-L02-AUD-002"],
+      "tokenSpokenContent": ["me", "sa"],
+      "wholeWordAudio": "N0-U01-L02-AUD-004",
+      "wholeSpokenContent": "mesa",
+      "writtenWordVisible": false,
+      "explanation": "Primeiro ouvimos me e sa separadamente. Quando juntamos as duas partes na mesma ordem, reconhecemos mesa como a palavra inteira."
+    },
+    {
+      "id": "L02-C02",
+      "type": "quick-check",
+      "focus": "listen-and-respond",
+      "interaction": "ordered-audio-tokens-to-whole-word",
+      "prompt": "Ouça as duas fichas na ordem apresentada. Qual palavra inteira elas formam?",
+      "audioTokens": ["N0-U02-L02-AUD-001", "N0-U02-L02-AUD-002"],
+      "tokenSpokenContent": ["ca", "sa"],
+      "wholeWordOptions": ["N0-U01-L08-AUD-001", "N0-U01-L02-AUD-007", "N0-U01-L02-AUD-004"],
+      "optionSpokenContent": ["casa", "gato", "mesa"],
+      "correctIndex": 0,
+      "writtenWordsVisibleBeforeResponse": false,
+      "repeatAudio": true,
+      "feedback": "Ca e sa, nessa ordem, formam casa."
+    },
+    {
+      "id": "L02-B04",
+      "type": "explanation",
+      "focus": "read-or-listen",
+      "title": "A ordem das partes importa",
+      "text": "Não basta escolher as partes certas: elas precisam ficar na ordem em que aparecem na palavra. Ao separar e ao juntar, mantemos a sequência sonora."
+    },
+    {
+      "id": "L02-C03",
+      "type": "quick-check",
+      "focus": "listen-and-respond",
+      "interaction": "audio-token-order-choice",
+      "prompt": "Ouça mesa. Qual ordem de fichas reconstrói a palavra?",
+      "wholeWordAudio": "N0-U01-L02-AUD-004",
+      "spokenContent": "mesa",
+      "options": [
+        ["N0-U02-L02-AUD-005", "N0-U02-L02-AUD-002"],
+        ["N0-U02-L02-AUD-002", "N0-U02-L02-AUD-005"]
+      ],
+      "correctIndex": 0,
+      "writtenWordVisibleBeforeResponse": false,
+      "repeatAudio": true,
+      "feedback": "Me vem antes de sa em mesa. A ordem das sílabas faz parte da palavra."
+    },
+    {
+      "id": "L02-P01",
+      "type": "optional-speak-aloud-practice",
+      "focus": "listen-and-optionally-speak",
+      "title": "Se quiser, experimente falar junto",
+      "instruction": "Ouça as fichas ca e sa. Se puder e quiser, diga as duas partes em voz alta e depois diga casa sem pausa. Em seguida, ouça a palavra inteira para se conferir.",
+      "audioTokens": ["N0-U02-L02-AUD-001", "N0-U02-L02-AUD-002"],
+      "wholeWordAudio": "N0-U01-L08-AUD-001",
+      "requiredForCompletion": false,
+      "microphoneRequired": false,
+      "guardRail": "não pontuar pronúncia nem exigir gravação de voz; esta prática é apoio oral, não condição de aprovação"
+    },
+    {
+      "id": "L02-A01",
+      "type": "guided-activity",
+      "focus": "listen-and-operate",
+      "interaction": "whole-word-to-ordered-audio-tokens",
+      "title": "Separe a palavra",
+      "instruction": "Ouça a palavra inteira e selecione, na ordem, as fichas de áudio que representam suas sílabas. Você pode ouvir tudo novamente quantas vezes precisar.",
+      "writtenWordsVisibleBeforeResponse": false,
+      "items": [
+        {
+          "wholeWordAudio": "N0-U01-L02-AUD-004",
+          "spokenContent": "mesa",
+          "availableAudioTokens": ["N0-U02-L02-AUD-005", "N0-U02-L02-AUD-002", "N0-U02-L02-AUD-003"],
+          "correctTokenOrder": ["N0-U02-L02-AUD-005", "N0-U02-L02-AUD-002"]
+        },
+        {
+          "wholeWordAudio": "N0-U01-L08-AUD-001",
+          "spokenContent": "casa",
+          "availableAudioTokens": ["N0-U02-L02-AUD-001", "N0-U02-L02-AUD-002", "N0-U02-L02-AUD-004"],
+          "correctTokenOrder": ["N0-U02-L02-AUD-001", "N0-U02-L02-AUD-002"]
+        },
+        {
+          "wholeWordAudio": "N0-U02-L02-AUD-009",
+          "spokenContent": "boneca",
+          "availableAudioTokens": ["N0-U02-L02-AUD-006", "N0-U02-L02-AUD-007", "N0-U02-L02-AUD-001", "N0-U02-L02-AUD-002"],
+          "correctTokenOrder": ["N0-U02-L02-AUD-006", "N0-U02-L02-AUD-007", "N0-U02-L02-AUD-001"]
+        },
+        {
+          "wholeWordAudio": "N0-U02-L02-AUD-010",
+          "spokenContent": "sapato",
+          "availableAudioTokens": ["N0-U02-L02-AUD-002", "N0-U02-L02-AUD-008", "N0-U02-L02-AUD-004", "N0-U02-L02-AUD-005"],
+          "correctTokenOrder": ["N0-U02-L02-AUD-002", "N0-U02-L02-AUD-008", "N0-U02-L02-AUD-004"]
+        }
+      ],
+      "repeatAudio": true,
+      "feedbackRule": "feedback imediato, repetição livre e nova tentativa sem penalidade; não revelar grafia das sílabas"
+    },
+    {
+      "id": "L02-A02",
+      "type": "guided-activity",
+      "focus": "listen-and-respond",
+      "interaction": "ordered-audio-tokens-to-whole-word",
+      "title": "Junte as partes",
+      "instruction": "Ouça as fichas na ordem apresentada e escolha qual palavra inteira elas formam. Todas as opções são apresentadas por áudio, sem depender da escrita.",
+      "writtenWordsVisibleBeforeResponse": false,
+      "items": [
+        {
+          "audioTokens": ["N0-U02-L02-AUD-003", "N0-U02-L02-AUD-004"],
+          "tokenSpokenContent": ["ga", "to"],
+          "wholeWordOptions": ["N0-U01-L02-AUD-007", "N0-U01-L08-AUD-001", "N0-U01-L02-AUD-004"],
+          "correctIndex": 0
+        },
+        {
+          "audioTokens": ["N0-U02-L02-AUD-006", "N0-U02-L02-AUD-007", "N0-U02-L02-AUD-001"],
+          "tokenSpokenContent": ["bo", "ne", "ca"],
+          "wholeWordOptions": ["N0-U02-L02-AUD-009", "N0-U02-L02-AUD-010", "N0-U01-L08-AUD-001"],
+          "correctIndex": 0
+        },
+        {
+          "audioTokens": ["N0-U02-L02-AUD-002", "N0-U02-L02-AUD-008", "N0-U02-L02-AUD-004"],
+          "tokenSpokenContent": ["sa", "pa", "to"],
+          "wholeWordOptions": ["N0-U02-L02-AUD-010", "N0-U01-L02-AUD-007", "N0-U02-L02-AUD-009"],
+          "correctIndex": 0
+        },
+        {
+          "audioTokens": ["N0-U02-L02-AUD-005", "N0-U02-L02-AUD-002"],
+          "tokenSpokenContent": ["me", "sa"],
+          "wholeWordOptions": ["N0-U01-L02-AUD-004", "N0-U01-L08-AUD-001", "N0-U01-L02-AUD-007"],
+          "correctIndex": 0
+        }
+      ],
+      "repeatAudio": true,
+      "feedbackRule": "feedback imediato, repetição livre e nova tentativa sem penalidade; não mostrar a palavra escrita como pista antes da resposta"
+    },
+    {
+      "id": "L02-B05",
+      "type": "summary",
+      "focus": "read-or-listen",
+      "points": [
+        "Separar uma palavra é perceber suas sílabas e mantê-las na ordem.",
+        "Juntar as sílabas na ordem correta permite recuperar a palavra inteira.",
+        "A ordem das partes importa.",
+        "Podemos praticar essas ações apenas pela escuta, sem depender da escrita.",
+        "Na próxima lição, vamos começar a relacionar as sílabas ouvidas às partes da palavra escrita."
+      ],
+      "bridgeToNextLesson": "Na próxima lição, a escrita entra de forma controlada: vamos ligar cada parte que ouvimos ao trecho correspondente da palavra escrita."
+    }
+  ],
+  "completionEvidence": {
+    "observablePerformance": "Selecionar e ordenar sílabas em áudio para segmentar palavras faladas e identificar palavras inteiras formadas pela recombinação de duas ou três sílabas, sem depender de grafia.",
+    "criterion": "acertar L02-C01, L02-C02 e L02-C03 e pelo menos 3 dos 4 itens de L02-A01 e 3 dos 4 itens de L02-A02 após oportunidade de repetir os áudios e corrigir erros",
+    "notSufficient": "apenas contar sílabas, reconhecer palavras pela escrita, repetir uma sequência decorada ou concluir a prática oral opcional sem demonstrar segmentação e recombinação nas atividades"
+  },
+  "implementationGuardRails": [
+    "spokenContent e context são metadados pedagógicos e não devem ser exibidos automaticamente antes das respostas auditivas",
+    "as fichas de áudio devem ser visualmente neutras e não conter letras, sílabas escritas ou imagens que revelem a resposta",
+    "ao tocar uma sequência de fichas, respeitar a ordem selecionada pelo aluno e deixar pequenas separações entre clips sem criar sobreposição",
+    "não avaliar sincronização motora, rapidez ou qualidade de pronúncia",
+    "a prática em voz alta é opcional e não usa microfone como requisito",
+    "não antecipar grafia silabificada; essa relação começa na Lição 3"
+  ]
+}
