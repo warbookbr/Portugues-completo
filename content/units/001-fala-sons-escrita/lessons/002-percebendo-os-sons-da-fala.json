@@ -21,6 +21,27 @@
     "video": "nao necessario",
     "images": "nao necessarias"
   },
+  "supportMaterials": {
+    "curatedMedia": [
+      {
+        "mediaIds": "N0-U01-L02-AUD-001 a N0-U01-L02-AUD-008",
+        "type": "AUDIO_CONTROLADO",
+        "requiredForPublication": true,
+        "purpose": "fornecer estímulos auditivos fixos para comparação sonora sem pistas da escrita",
+        "locations": ["L02-B02", "L02-C01", "L02-B03", "L02-A01"],
+        "productionSource": "producao-midia/FILA-MIDIA.md"
+      }
+    ],
+    "runtimeResources": [
+      {
+        "type": "TTS_OK",
+        "locations": ["instruções", "explicações", "feedback"],
+        "purpose": "apoio de acesso ao texto; não determina sozinho respostas de discriminação sonora"
+      }
+    ],
+    "publicationDependency": "a estrutura da lição pode ser implementada antes dos arquivos, mas os blocos auditivos não podem ser publicados como concluídos enquanto os oito áudios controlados não estiverem validados e ligados aos IDs",
+    "decisionRationale": "imagem e vídeo não ajudam o objetivo central e podem introduzir pistas visuais indevidas"
+  },
   "sequence": [
     {
       "id": "L02-B01",
