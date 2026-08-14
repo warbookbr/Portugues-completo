@@ -23,7 +23,7 @@
   "media": {
     "tts": "instruções, explicações, feedback e convite opcional para repetição em voz alta",
     "controlledAudio": [
-      "N0-U02-L02-AUD-001 a N0-U02-L02-AUD-011",
+      "N0-U02-L02-AUD-001 a N0-U02-L02-AUD-014",
       "N0-U01-L02-AUD-001",
       "N0-U01-L02-AUD-003",
       "N0-U01-L02-AUD-007"
@@ -45,11 +45,14 @@
           "N0-U02-L02-AUD-008",
           "N0-U02-L02-AUD-009",
           "N0-U02-L02-AUD-010",
-          "N0-U02-L02-AUD-011"
+          "N0-U02-L02-AUD-011",
+          "N0-U02-L02-AUD-012",
+          "N0-U02-L02-AUD-013",
+          "N0-U02-L02-AUD-014"
         ],
         "type": "AUDIO_CONTROLADO",
         "requiredForPublication": true,
-        "purpose": "fornecer nove sílabas isoladas com realização consistente e duas palavras inteiras novas para atividades de segmentação e recombinação auditiva",
+        "purpose": "fornecer fichas de sílabas contextuais às palavras-alvo e duas palavras inteiras novas, mantendo a realização sonora de cada parte coerente com a palavra de origem",
         "locations": ["L02-B02", "L02-C01", "L02-B03", "L02-C02", "L02-C03", "L02-A01", "L02-A02", "L02-P01"],
         "productionSource": "producao-midia/FILA-MIDIA.md"
       },
@@ -81,21 +84,24 @@
       }
     ],
     "productionQueueRequired": true,
-    "publicationDependency": "a estrutura da lição pode ser implementada antes dos arquivos, mas as atividades auditivas não podem ser consideradas publicáveis até os onze áudios da família U02-L02 e os três áudios reutilizados estarem produzidos, validados e ligados aos IDs",
-    "decisionRationale": "esta lição precisa que o aluno opere sobre partes sonoras sem apoio da escrita. Fichas de áudio isoladas permitem selecionar, ordenar e juntar sílabas, enquanto TTS variável não é adequado para os estímulos que determinam a resposta. O conjunto evita reutilizar uma única ficha para sílabas grafadas de forma igual mas realizadas de maneira diferente em palavras distintas. Não há ganho pedagógico em imagem ou vídeo."
+    "publicationDependency": "a estrutura da lição pode ser implementada antes dos arquivos, mas as atividades auditivas não podem ser consideradas publicáveis até os quatorze áudios da família U02-L02 e os três áudios reutilizados estarem produzidos, validados e ligados aos IDs",
+    "decisionRationale": "esta lição precisa que o aluno opere sobre partes sonoras sem apoio da escrita. As fichas são contextuais à palavra para evitar supor que sílabas grafadas de modo igual tenham automaticamente a mesma realização em contextos diferentes. TTS variável não é adequado para os estímulos que determinam a resposta. Não há ganho pedagógico em imagem ou vídeo."
   },
   "audioTokenSet": [
-    {"mediaId": "N0-U02-L02-AUD-001", "spokenContent": "ga", "context": "como a primeira sílaba de gato"},
-    {"mediaId": "N0-U02-L02-AUD-002", "spokenContent": "to", "context": "como a segunda sílaba de gato e pato e a primeira de tomate"},
-    {"mediaId": "N0-U02-L02-AUD-003", "spokenContent": "ma", "context": "como a primeira sílaba de mala e a segunda de tomate"},
-    {"mediaId": "N0-U02-L02-AUD-004", "spokenContent": "la", "context": "como a segunda sílaba de mala"},
-    {"mediaId": "N0-U02-L02-AUD-005", "spokenContent": "pa", "context": "como a primeira sílaba de pato"},
-    {"mediaId": "N0-U02-L02-AUD-006", "spokenContent": "bo", "context": "como a primeira sílaba de boneca"},
-    {"mediaId": "N0-U02-L02-AUD-007", "spokenContent": "ne", "context": "como a segunda sílaba de boneca"},
-    {"mediaId": "N0-U02-L02-AUD-008", "spokenContent": "ca", "context": "como a terceira sílaba de boneca"},
-    {"mediaId": "N0-U02-L02-AUD-009", "spokenContent": "te", "context": "como a terceira sílaba de tomate"},
-    {"mediaId": "N0-U02-L02-AUD-010", "spokenContent": "boneca", "role": "whole-word-new"},
-    {"mediaId": "N0-U02-L02-AUD-011", "spokenContent": "tomate", "role": "whole-word-new"}
+    {"mediaId": "N0-U02-L02-AUD-001", "spokenContent": "ga", "sourceWord": "gato", "position": 1},
+    {"mediaId": "N0-U02-L02-AUD-002", "spokenContent": "to", "sourceWord": "gato", "position": 2},
+    {"mediaId": "N0-U02-L02-AUD-003", "spokenContent": "ma", "sourceWord": "mala", "position": 1},
+    {"mediaId": "N0-U02-L02-AUD-004", "spokenContent": "la", "sourceWord": "mala", "position": 2},
+    {"mediaId": "N0-U02-L02-AUD-005", "spokenContent": "pa", "sourceWord": "pato", "position": 1},
+    {"mediaId": "N0-U02-L02-AUD-006", "spokenContent": "to", "sourceWord": "pato", "position": 2},
+    {"mediaId": "N0-U02-L02-AUD-007", "spokenContent": "bo", "sourceWord": "boneca", "position": 1},
+    {"mediaId": "N0-U02-L02-AUD-008", "spokenContent": "ne", "sourceWord": "boneca", "position": 2},
+    {"mediaId": "N0-U02-L02-AUD-009", "spokenContent": "ca", "sourceWord": "boneca", "position": 3},
+    {"mediaId": "N0-U02-L02-AUD-010", "spokenContent": "to", "sourceWord": "tomate", "position": 1},
+    {"mediaId": "N0-U02-L02-AUD-011", "spokenContent": "ma", "sourceWord": "tomate", "position": 2},
+    {"mediaId": "N0-U02-L02-AUD-012", "spokenContent": "te", "sourceWord": "tomate", "position": 3},
+    {"mediaId": "N0-U02-L02-AUD-013", "spokenContent": "boneca", "role": "whole-word-new"},
+    {"mediaId": "N0-U02-L02-AUD-014", "spokenContent": "tomate", "role": "whole-word-new"}
   ],
   "wholeWordReuse": [
     {"mediaId": "N0-U01-L02-AUD-007", "spokenContent": "gato"},
@@ -119,7 +125,7 @@
       "availableAudioTokens": ["N0-U02-L02-AUD-001", "N0-U02-L02-AUD-002"],
       "correctTokenOrder": ["N0-U02-L02-AUD-001", "N0-U02-L02-AUD-002"],
       "writtenWordVisible": false,
-      "explanation": "Ouvimos gato. Depois ouvimos duas fichas: ga e to. Quando reconhecemos essas duas partes na mesma ordem, estamos separando a palavra em sílabas.",
+      "explanation": "Ouvimos gato. Depois ouvimos duas fichas com as duas partes sonoras da palavra. Quando reconhecemos essas partes na mesma ordem, estamos separando a palavra em sílabas.",
       "guardRail": "as fichas devem mostrar apenas um controle neutro de áudio; não exibir GA ou TO"
     },
     {
@@ -134,19 +140,18 @@
       "correctTokenOrder": ["N0-U02-L02-AUD-003", "N0-U02-L02-AUD-004"],
       "writtenWordVisibleBeforeResponse": false,
       "repeatAudio": true,
-      "feedback": "As partes corretas são ma e la, nessa ordem. Juntas, elas recuperam mala."
+      "feedback": "As duas fichas corretas apresentam as partes de mala na ordem certa."
     },
     {
       "id": "L02-B03",
       "type": "audio-token-recombination-demonstration",
       "focus": "listen-then-identify",
       "title": "Juntar é recuperar a palavra inteira",
-      "audioTokens": ["N0-U02-L02-AUD-005", "N0-U02-L02-AUD-002"],
-      "tokenSpokenContent": ["pa", "to"],
+      "audioTokens": ["N0-U02-L02-AUD-005", "N0-U02-L02-AUD-006"],
       "wholeWordAudio": "N0-U01-L02-AUD-001",
       "wholeSpokenContent": "pato",
       "writtenWordVisible": false,
-      "explanation": "Primeiro ouvimos pa e to separadamente. Quando juntamos as duas partes na mesma ordem, reconhecemos pato como a palavra inteira."
+      "explanation": "Primeiro ouvimos as duas partes de pato separadamente. Quando juntamos as duas na mesma ordem, reconhecemos pato como a palavra inteira."
     },
     {
       "id": "L02-C02",
@@ -155,13 +160,12 @@
       "interaction": "ordered-audio-tokens-to-whole-word",
       "prompt": "Ouça as duas fichas na ordem apresentada. Qual palavra inteira elas formam?",
       "audioTokens": ["N0-U02-L02-AUD-001", "N0-U02-L02-AUD-002"],
-      "tokenSpokenContent": ["ga", "to"],
       "wholeWordOptions": ["N0-U01-L02-AUD-007", "N0-U01-L02-AUD-003", "N0-U01-L02-AUD-001"],
       "optionSpokenContent": ["gato", "mala", "pato"],
       "correctIndex": 0,
       "writtenWordsVisibleBeforeResponse": false,
       "repeatAudio": true,
-      "feedback": "Ga e to, nessa ordem, formam gato."
+      "feedback": "As duas fichas, nessa ordem, formam gato."
     },
     {
       "id": "L02-B04",
@@ -179,20 +183,20 @@
       "wholeWordAudio": "N0-U01-L02-AUD-001",
       "spokenContent": "pato",
       "options": [
-        ["N0-U02-L02-AUD-005", "N0-U02-L02-AUD-002"],
-        ["N0-U02-L02-AUD-002", "N0-U02-L02-AUD-005"]
+        ["N0-U02-L02-AUD-005", "N0-U02-L02-AUD-006"],
+        ["N0-U02-L02-AUD-006", "N0-U02-L02-AUD-005"]
       ],
       "correctIndex": 0,
       "writtenWordVisibleBeforeResponse": false,
       "repeatAudio": true,
-      "feedback": "Pa vem antes de to em pato. A ordem das sílabas faz parte da palavra."
+      "feedback": "A primeira ordem mantém as partes na sequência em que aparecem em pato."
     },
     {
       "id": "L02-P01",
       "type": "optional-speak-aloud-practice",
       "focus": "listen-and-optionally-speak",
       "title": "Se quiser, experimente falar junto",
-      "instruction": "Ouça as fichas ga e to. Se puder e quiser, diga as duas partes em voz alta e depois diga gato sem pausa. Em seguida, ouça a palavra inteira para se conferir.",
+      "instruction": "Ouça as duas fichas de gato. Se puder e quiser, repita as duas partes em voz alta e depois diga a palavra inteira sem pausa. Em seguida, ouça gato para se conferir.",
       "audioTokens": ["N0-U02-L02-AUD-001", "N0-U02-L02-AUD-002"],
       "wholeWordAudio": "N0-U01-L02-AUD-007",
       "requiredForCompletion": false,
@@ -221,16 +225,16 @@
           "correctTokenOrder": ["N0-U02-L02-AUD-003", "N0-U02-L02-AUD-004"]
         },
         {
-          "wholeWordAudio": "N0-U02-L02-AUD-010",
+          "wholeWordAudio": "N0-U02-L02-AUD-013",
           "spokenContent": "boneca",
-          "availableAudioTokens": ["N0-U02-L02-AUD-006", "N0-U02-L02-AUD-007", "N0-U02-L02-AUD-008", "N0-U02-L02-AUD-002"],
-          "correctTokenOrder": ["N0-U02-L02-AUD-006", "N0-U02-L02-AUD-007", "N0-U02-L02-AUD-008"]
+          "availableAudioTokens": ["N0-U02-L02-AUD-007", "N0-U02-L02-AUD-008", "N0-U02-L02-AUD-009", "N0-U02-L02-AUD-002"],
+          "correctTokenOrder": ["N0-U02-L02-AUD-007", "N0-U02-L02-AUD-008", "N0-U02-L02-AUD-009"]
         },
         {
-          "wholeWordAudio": "N0-U02-L02-AUD-011",
+          "wholeWordAudio": "N0-U02-L02-AUD-014",
           "spokenContent": "tomate",
-          "availableAudioTokens": ["N0-U02-L02-AUD-002", "N0-U02-L02-AUD-003", "N0-U02-L02-AUD-009", "N0-U02-L02-AUD-001"],
-          "correctTokenOrder": ["N0-U02-L02-AUD-002", "N0-U02-L02-AUD-003", "N0-U02-L02-AUD-009"]
+          "availableAudioTokens": ["N0-U02-L02-AUD-010", "N0-U02-L02-AUD-011", "N0-U02-L02-AUD-012", "N0-U02-L02-AUD-001"],
+          "correctTokenOrder": ["N0-U02-L02-AUD-010", "N0-U02-L02-AUD-011", "N0-U02-L02-AUD-012"]
         }
       ],
       "repeatAudio": true,
@@ -246,26 +250,22 @@
       "writtenWordsVisibleBeforeResponse": false,
       "items": [
         {
-          "audioTokens": ["N0-U02-L02-AUD-005", "N0-U02-L02-AUD-002"],
-          "tokenSpokenContent": ["pa", "to"],
+          "audioTokens": ["N0-U02-L02-AUD-005", "N0-U02-L02-AUD-006"],
           "wholeWordOptions": ["N0-U01-L02-AUD-001", "N0-U01-L02-AUD-007", "N0-U01-L02-AUD-003"],
           "correctIndex": 0
         },
         {
-          "audioTokens": ["N0-U02-L02-AUD-006", "N0-U02-L02-AUD-007", "N0-U02-L02-AUD-008"],
-          "tokenSpokenContent": ["bo", "ne", "ca"],
-          "wholeWordOptions": ["N0-U02-L02-AUD-010", "N0-U02-L02-AUD-011", "N0-U01-L02-AUD-001"],
+          "audioTokens": ["N0-U02-L02-AUD-007", "N0-U02-L02-AUD-008", "N0-U02-L02-AUD-009"],
+          "wholeWordOptions": ["N0-U02-L02-AUD-013", "N0-U02-L02-AUD-014", "N0-U01-L02-AUD-001"],
           "correctIndex": 0
         },
         {
-          "audioTokens": ["N0-U02-L02-AUD-002", "N0-U02-L02-AUD-003", "N0-U02-L02-AUD-009"],
-          "tokenSpokenContent": ["to", "ma", "te"],
-          "wholeWordOptions": ["N0-U02-L02-AUD-011", "N0-U02-L02-AUD-010", "N0-U01-L02-AUD-007"],
+          "audioTokens": ["N0-U02-L02-AUD-010", "N0-U02-L02-AUD-011", "N0-U02-L02-AUD-012"],
+          "wholeWordOptions": ["N0-U02-L02-AUD-014", "N0-U02-L02-AUD-013", "N0-U01-L02-AUD-007"],
           "correctIndex": 0
         },
         {
           "audioTokens": ["N0-U02-L02-AUD-003", "N0-U02-L02-AUD-004"],
-          "tokenSpokenContent": ["ma", "la"],
           "wholeWordOptions": ["N0-U01-L02-AUD-003", "N0-U01-L02-AUD-001", "N0-U01-L02-AUD-007"],
           "correctIndex": 0
         }
@@ -293,9 +293,10 @@
     "notSufficient": "apenas contar sílabas, reconhecer palavras pela escrita, repetir uma sequência decorada ou concluir a prática oral opcional sem demonstrar segmentação e recombinação nas atividades"
   },
   "implementationGuardRails": [
-    "spokenContent e context são metadados pedagógicos e não devem ser exibidos automaticamente antes das respostas auditivas",
+    "spokenContent, sourceWord e position são metadados pedagógicos e não devem ser exibidos automaticamente antes das respostas auditivas",
     "as fichas de áudio devem ser visualmente neutras e não conter letras, sílabas escritas ou imagens que revelem a resposta",
     "ao tocar uma sequência de fichas, respeitar a ordem selecionada pelo aluno e deixar pequenas separações entre clips sem criar sobreposição",
+    "não substituir automaticamente fichas contextuais por outra ficha apenas porque a transcrição ortográfica da sílaba seria igual",
     "não avaliar sincronização motora, rapidez ou qualidade de pronúncia",
     "a prática em voz alta é opcional e não usa microfone como requisito",
     "não antecipar grafia silabificada; essa relação começa na Lição 3"
