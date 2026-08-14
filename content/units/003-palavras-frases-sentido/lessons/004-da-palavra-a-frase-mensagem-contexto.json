@@ -1,0 +1,384 @@
+{
+  "schemaVersion": 1,
+  "id": "N0-U03-L04",
+  "title": "Da palavra à frase: uma mensagem em contexto",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Compreender funcionalmente que uma frase é uma expressão usada para comunicar uma mensagem em uma situação e que essa mensagem pode ser formada por uma ou por várias palavras, sem depender de uma fórmula sintática fixa ou de uma quantidade mínima de palavras.",
+  "competencies": [
+    "reconhecer quando uma expressão está funcionando como mensagem completa em uma situação simples",
+    "perceber que uma frase pode ter uma única palavra quando essa palavra comunica uma mensagem completa no contexto",
+    "reconhecer também frases simples formadas por várias palavras sem tratar o número de palavras como critério definidor",
+    "relacionar uma expressão ao que ela comunica na situação apresentada",
+    "distinguir uma palavra apenas apresentada como item de estudo de uma palavra usada para comunicar algo em uma situação",
+    "usar o contexto para decidir a função comunicativa da expressão sem depender de análise gramatical formal"
+  ],
+  "prerequisites": ["N0-U03-L03"],
+  "limits": [
+    "não definir frase como sequência obrigatória de duas ou mais palavras",
+    "não exigir presença de verbo como condição para reconhecer uma frase nesta etapa",
+    "não ensinar sujeito, predicado, verbo, oração ou período",
+    "não transformar pontuação em critério único para decidir se existe uma mensagem; sua sistematização pertence a etapas posteriores",
+    "não aprofundar tipos de frase por intenção comunicativa; informar, perguntar, pedir, ordenar e reagir serão trabalhados explicitamente na Lição 8",
+    "não antecipar a análise de ordem e relações entre palavras da Lição 5",
+    "não exigir produção autônoma de frases; a produção própria será construída progressivamente até a Lição 10",
+    "não transformar a atividade em compreensão de pequenos textos ou de várias frases relacionadas",
+    "não usar velocidade ou tempo de resposta como critério de domínio"
+  ],
+  "media": {
+    "tts": "instruções, descrições curtas de situação, expressões e feedback. O TTS pode ler a expressão antes da resposta porque a competência central é reconhecer sua função como mensagem no contexto, e não decodificá-la de forma independente.",
+    "controlledAudio": [],
+    "video": "nao necessario",
+    "images": "nao necessarias"
+  },
+  "supportMaterials": {
+    "curatedMedia": [],
+    "runtimeResources": [
+      {
+        "type": "TTS_OK",
+        "locations": ["instruções", "L04-B02", "L04-C01", "L04-B03", "L04-C02", "L04-B04", "L04-C03", "L04-B05", "L04-A01", "L04-A02", "L04-A03", "L04-A04", "feedback", "resumo"],
+        "purpose": "narrar situações e expressões curtas para que a dificuldade de leitura de uma frase ainda nova não impeça a compreensão funcional de mensagem; a entonação exata não determina nenhuma resposta"
+      }
+    ],
+    "generatedVisualResources": [
+      {
+        "type": "UI_RENDERED_SITUATION_CARD",
+        "locations": ["L04-B02", "L04-C01", "L04-B03", "L04-C02", "L04-B04", "L04-C03", "L04-B05", "L04-A01", "L04-A02", "L04-A03", "L04-A04"],
+        "purpose": "apresentar a situação em texto curto e narrável separadamente da expressão que será interpretada"
+      },
+      {
+        "type": "UI_RENDERED_MESSAGE_CARD",
+        "locations": ["L04-B02", "L04-C01", "L04-B03", "L04-C02", "L04-B04", "L04-C03", "L04-B05", "L04-A01", "L04-A02", "L04-A03", "L04-A04"],
+        "purpose": "renderizar a expressão como texto real, permitindo comparar mensagens de uma ou várias palavras sem convertê-las em imagem"
+      },
+      {
+        "type": "UI_RENDERED_CONTEXT_ROLE_COMPARISON",
+        "locations": ["L04-B03", "L04-C02", "L04-A02"],
+        "purpose": "comparar a mesma palavra apresentada apenas como item de estudo e usada como mensagem em uma situação, deixando o contexto explícito"
+      },
+      {
+        "type": "UI_RENDERED_MESSAGE_MEANING_CHOICES",
+        "locations": ["L04-C01", "L04-C02", "L04-C03", "L04-A01", "L04-A02", "L04-A03", "L04-A04"],
+        "purpose": "oferecer opções curtas sobre o que a expressão comunica, com ordem variável quando isso não prejudicar a comparação"
+      }
+    ],
+    "productionQueueRequired": false,
+    "publicationDependency": "não há nova mídia humana obrigatória; texto real da interface, descrições de situação, TTS e componentes de comparação são suficientes para ensinar e avaliar a competência",
+    "decisionRationale": "a situação precisa estar acessível, mas não exige uma imagem produzida: uma descrição curta narrada por TTS fornece o contexto sem adicionar dependência de mídia. Áudio controlado também não é necessário porque nenhuma resposta depende de entonação exata. A interface deve manter situação e expressão visualmente separadas para tornar observável a função da expressão como mensagem."
+  },
+  "sequence": [
+    {
+      "id": "L04-B01",
+      "type": "objective",
+      "focus": "read-or-listen",
+      "text": "Até agora, usamos palavras e pequenos contextos para construir significado. Nesta lição, vamos observar quando uma expressão comunica uma mensagem completa em uma situação. Vamos chamar essa expressão de frase. Uma frase pode ter uma palavra ou várias palavras."
+    },
+    {
+      "id": "L04-B02",
+      "type": "one-word-message-demonstration",
+      "focus": "listen-or-read-then-understand",
+      "title": "Uma palavra pode formar uma mensagem completa",
+      "examples": [
+        {
+          "situation": "Uma pessoa está prestes a atravessar enquanto um veículo se aproxima. Outra pessoa quer que ela pare imediatamente.",
+          "expression": "Pare!",
+          "messageMeaning": "interrompa o que está fazendo e pare"
+        },
+        {
+          "situation": "Uma pessoa está em perigo e precisa chamar alguém para ajudar.",
+          "expression": "Socorro!",
+          "messageMeaning": "preciso de ajuda"
+        },
+        {
+          "situation": "Alguém recebeu ajuda de outra pessoa e quer agradecer.",
+          "expression": "Obrigado!",
+          "messageMeaning": "estou agradecendo"
+        }
+      ],
+      "ttsAvailableBeforeResponse": true,
+      "explanation": "PARE!, SOCORRO! e OBRIGADO! têm apenas uma palavra, mas em suas situações comunicam mensagens completas. Por isso, quantidade de palavras não é uma boa regra para decidir se uma expressão funciona como frase."
+    },
+    {
+      "id": "L04-C01",
+      "type": "quick-check-set",
+      "focus": "listen-or-read-and-respond",
+      "interaction": "situation-message-meaning-choice",
+      "instruction": "Observe a situação e escolha o que a expressão comunica.",
+      "items": [
+        {
+          "situation": "Uma criança vai tocar em uma panela muito quente. Um adulto percebe o perigo e diz:",
+          "expression": "Cuidado!",
+          "options": ["existe um perigo e é preciso ter atenção", "a panela já está fria", "a pessoa está agradecendo"],
+          "correctIndex": 0
+        },
+        {
+          "situation": "Alguém recebe um presente e quer agradecer. A pessoa diz:",
+          "expression": "Obrigado!",
+          "options": ["preciso de socorro", "estou agradecendo", "quero que você pare"],
+          "correctIndex": 1
+        }
+      ],
+      "ttsAvailableBeforeResponse": true
+    },
+    {
+      "id": "L04-B03",
+      "type": "same-word-different-role-demonstration",
+      "focus": "compare",
+      "title": "A situação ajuda a decidir se a palavra está sendo usada como mensagem",
+      "targetWord": "FOGO",
+      "cases": [
+        {
+          "situation": "A palavra FOGO aparece sozinha em uma ficha de vocabulário para o aluno observar e estudar.",
+          "display": "FOGO",
+          "role": "palavra apresentada como item de estudo",
+          "functionsAsContextualMessage": false
+        },
+        {
+          "situation": "Uma pessoa vê chamas começando em uma sala e grita para alertar quem está por perto.",
+          "display": "Fogo!",
+          "role": "aviso de que há fogo e perigo",
+          "functionsAsContextualMessage": true
+        }
+      ],
+      "explanation": "A forma da palavra é praticamente a mesma, mas o uso muda. Na ficha, FOGO está sendo apresentado como palavra para estudo. No segundo caso, FOGO! comunica um aviso completo naquela situação. O contexto é decisivo; o ponto de exclamação pode ajudar a leitura, mas não é sozinho o que cria a mensagem."
+    },
+    {
+      "id": "L04-C02",
+      "type": "quick-check-set",
+      "focus": "listen-or-read-and-respond",
+      "interaction": "identify-contextual-message-use",
+      "instruction": "Em qual caso a palavra destacada está sendo usada para comunicar uma mensagem completa na situação?",
+      "items": [
+        {
+          "targetWord": "SILÊNCIO",
+          "cases": [
+            "SILÊNCIO aparece como palavra-alvo em uma lista de estudo.",
+            "Durante uma apresentação, alguém pede que o grupo pare de conversar e diz: SILÊNCIO!"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "targetWord": "SOCORRO",
+          "cases": [
+            "Uma pessoa presa pede ajuda gritando: SOCORRO!",
+            "SOCORRO aparece em um cartão para o aluno observar a escrita."
+          ],
+          "correctIndex": 0
+        }
+      ],
+      "ttsAvailableBeforeResponse": true
+    },
+    {
+      "id": "L04-B04",
+      "type": "multiword-message-demonstration",
+      "focus": "listen-or-read-then-understand",
+      "title": "Frases também podem ter várias palavras",
+      "examples": [
+        {
+          "situation": "Uma pessoa percebe que o ônibus esperado acabou de chegar.",
+          "expression": "O ônibus chegou.",
+          "messageMeaning": "o ônibus esperado chegou"
+        },
+        {
+          "situation": "Alguém percebe que a porta da sala está aberta e informa outra pessoa.",
+          "expression": "A porta está aberta.",
+          "messageMeaning": "a porta encontra-se aberta"
+        }
+      ],
+      "ttsAvailableBeforeResponse": true,
+      "explanation": "Essas mensagens usam várias palavras. Elas continuam sendo frases porque comunicam algo na situação. Não precisamos escolher entre a regra 'uma palavra' ou 'várias palavras': os dois formatos podem funcionar."
+    },
+    {
+      "id": "L04-C03",
+      "type": "quick-check",
+      "focus": "compare-and-respond",
+      "interaction": "recognize-one-and-multiword-messages",
+      "prompt": "Considere os exemplos PARE! e O ÔNIBUS CHEGOU. Qual afirmação combina com os dois?",
+      "options": [
+        "Só O ÔNIBUS CHEGOU. pode funcionar como frase porque tem várias palavras.",
+        "Só PARE! pode funcionar como frase porque é mais curta.",
+        "As duas podem funcionar como frases porque cada uma comunica uma mensagem completa em sua situação."
+      ],
+      "correctIndex": 2,
+      "feedback": "Uma frase pode ter uma ou várias palavras. O que importa aqui é a expressão funcionar como mensagem na situação."
+    },
+    {
+      "id": "L04-B05",
+      "type": "guard-rail-demonstration",
+      "focus": "read-or-listen",
+      "title": "Não procure uma fórmula pela quantidade de palavras",
+      "observations": [
+        "Pare! pode comunicar uma mensagem completa com uma palavra.",
+        "O ônibus chegou. comunica uma mensagem com três palavras.",
+        "A porta está aberta. comunica uma mensagem com quatro palavras.",
+        "Uma palavra apenas mostrada para estudo não precisa estar funcionando como mensagem naquele momento."
+      ],
+      "explanation": "Nesta etapa, frase é uma ideia funcional: uma expressão usada para comunicar uma mensagem em uma situação. Mais adiante vamos observar como palavras se organizam dentro de frases, mas não precisamos dessa análise para reconhecer a mensagem agora."
+    },
+    {
+      "id": "L04-A01",
+      "type": "guided-activity",
+      "focus": "listen-or-read-and-respond",
+      "interaction": "match-message-to-situation",
+      "title": "Qual mensagem combina com a situação?",
+      "instruction": "Leia ou ouça a situação e escolha a expressão que comunica a mensagem adequada.",
+      "items": [
+        {
+          "situation": "Uma pessoa percebe que outra vai continuar andando para uma área perigosa e precisa fazê-la parar.",
+          "options": ["Pare!", "Obrigado!", "A loja abriu."],
+          "correctIndex": 0
+        },
+        {
+          "situation": "Uma pessoa precisa avisar que o estabelecimento acabou de abrir.",
+          "options": ["Socorro!", "A loja abriu.", "Cuidado!"],
+          "correctIndex": 1
+        },
+        {
+          "situation": "Uma pessoa está em perigo e precisa chamar ajuda.",
+          "options": ["O ônibus chegou.", "Obrigado!", "Socorro!"],
+          "correctIndex": 2
+        },
+        {
+          "situation": "Alguém percebe que o ônibus esperado chegou e informa outra pessoa.",
+          "options": ["O ônibus chegou.", "Silêncio!", "Pare!"],
+          "correctIndex": 0
+        }
+      ],
+      "ttsAvailableBeforeResponse": true,
+      "shuffleOptions": true
+    },
+    {
+      "id": "L04-A02",
+      "type": "guided-activity",
+      "focus": "compare-and-respond",
+      "interaction": "message-use-versus-study-use",
+      "title": "Palavra em estudo ou mensagem na situação?",
+      "instruction": "Em cada caso, decida se a expressão destacada está sendo usada para comunicar uma mensagem naquela situação.",
+      "items": [
+        {
+          "situation": "CUIDADO aparece sozinho em um cartão de leitura, sem alguém estar alertando outra pessoa.",
+          "expression": "CUIDADO",
+          "correctAnswer": "nao-esta-funcionando-como-mensagem-na-situacao"
+        },
+        {
+          "situation": "Uma pessoa vê um piso molhado e alerta quem está chegando.",
+          "expression": "Cuidado!",
+          "correctAnswer": "esta-funcionando-como-mensagem-na-situacao"
+        },
+        {
+          "situation": "SOCORRO aparece como palavra-alvo em um exercício de leitura.",
+          "expression": "SOCORRO",
+          "correctAnswer": "nao-esta-funcionando-como-mensagem-na-situacao"
+        },
+        {
+          "situation": "Uma pessoa presa pede ajuda em voz alta.",
+          "expression": "Socorro!",
+          "correctAnswer": "esta-funcionando-como-mensagem-na-situacao"
+        }
+      ],
+      "ttsAvailableBeforeResponse": true
+    },
+    {
+      "id": "L04-A03",
+      "type": "guided-activity",
+      "focus": "listen-or-read-and-respond",
+      "interaction": "message-meaning-choice",
+      "title": "O que a frase comunica?",
+      "items": [
+        {
+          "situation": "Uma pessoa olha pela janela e informa o que começou a acontecer.",
+          "expression": "A chuva começou.",
+          "options": ["começou a chover", "a chuva terminou", "alguém está pedindo silêncio"],
+          "correctIndex": 0
+        },
+        {
+          "situation": "Uma pessoa percebe uma porta aberta e informa isso a outra.",
+          "expression": "A porta está aberta.",
+          "options": ["a porta está fechada", "a porta está aberta", "alguém precisa de ajuda"],
+          "correctIndex": 1
+        },
+        {
+          "situation": "Alguém vê um risco imediato e alerta outra pessoa.",
+          "expression": "Perigo!",
+          "options": ["há risco e é preciso atenção", "a pessoa está agradecendo", "um ônibus chegou"],
+          "correctIndex": 0
+        }
+      ],
+      "ttsAvailableBeforeResponse": true
+    },
+    {
+      "id": "L04-A04",
+      "type": "transfer-activity",
+      "focus": "listen-or-read-and-respond",
+      "title": "Reconheça mensagens em exemplos novos",
+      "items": [
+        {
+          "interaction": "recognize-message-format",
+          "situation": "Durante um jogo, uma pessoa quer que todos parem por um momento e diz:",
+          "expression": "Pausa!",
+          "prompt": "Essa expressão pode funcionar como mensagem completa nessa situação?",
+          "options": ["sim", "não, porque tem só uma palavra"],
+          "correctIndex": 0
+        },
+        {
+          "interaction": "recognize-message-format",
+          "situation": "Uma pessoa avisa que a comida está pronta.",
+          "expression": "A comida está pronta.",
+          "prompt": "Essa expressão pode funcionar como mensagem completa nessa situação?",
+          "options": ["sim", "não, porque tem várias palavras"],
+          "correctIndex": 0
+        },
+        {
+          "interaction": "message-meaning-choice",
+          "situation": "Uma pessoa vê outra se aproximar de um buraco e diz:",
+          "expression": "Atenção!",
+          "options": ["é um alerta para prestar atenção", "é um agradecimento", "é uma informação de que uma loja abriu"],
+          "correctIndex": 0
+        },
+        {
+          "interaction": "context-role-choice",
+          "prompt": "Em qual caso SAÍDA está funcionando mais claramente como uma mensagem ou indicação para orientar alguém?",
+          "cases": [
+            "SAÍDA aparece como palavra isolada em uma ficha de estudo.",
+            "SAÍDA aparece em uma indicação no corredor para mostrar por onde as pessoas devem sair."
+          ],
+          "correctIndex": 1
+        }
+      ],
+      "ttsAvailableBeforeResponse": true
+    },
+    {
+      "id": "L04-B06",
+      "type": "summary",
+      "focus": "read-or-listen",
+      "text": "Uma frase é uma expressão que comunica uma mensagem em uma situação. Ela pode ter uma palavra, como PARE!, ou várias, como O ÔNIBUS CHEGOU. O contexto ajuda a entender o que a expressão está fazendo. Na próxima lição, vamos observar como a organização das palavras dentro de frases ajuda a construir relações e sentido."
+    }
+  ],
+  "assessmentBehavior": {
+    "contextAndExpressionTts": "permitido antes da resposta porque a competência medida é a função da expressão como mensagem em contexto; nenhuma atividade depende de entonação exata",
+    "punctuation": "pode aparecer naturalmente nos exemplos, mas não deve ser tratada como critério único de frase nem como conteúdo de classificação nesta lição",
+    "wordCount": "não usar quantidade mínima ou máxima de palavras como regra de correção",
+    "syllableSupport": "pode continuar disponível no nível de palavra quando o renderer oferecer esse recurso, sem transformá-lo em critério de domínio da lição",
+    "timeLimit": false,
+    "grammarTerminologyRequired": false,
+    "longWrittenResponseRequired": false,
+    "retryPolicy": "permitir nova tentativa após feedback e variar a ordem das opções quando isso não alterar a competência medida"
+  },
+  "completionEvidence": {
+    "observablePerformance": "Reconhecer funcionalmente expressões de uma ou várias palavras como mensagens em situações simples e usar o contexto para distinguir uso comunicativo de mera apresentação da palavra.",
+    "criteria": {
+      "oneWordMessages": "acertar os dois itens de L04-C01 e pelo menos 3 dos 4 itens de L04-A01",
+      "contextualRole": "acertar os dois itens de L04-C02 e pelo menos 3 dos 4 itens de L04-A02",
+      "oneVersusManyWords": "acertar L04-C03 e os dois itens correspondentes a formato de mensagem em L04-A04",
+      "messageMeaningAndTransfer": "acertar pelo menos 2 dos 3 itens de L04-A03 e pelo menos 3 dos 4 itens de L04-A04 no total"
+    },
+    "completionRule": "considerar a lição concluída quando os quatro critérios forem atingidos; acertar apenas mensagens de várias palavras não compensa não reconhecer mensagens de uma palavra, e reconhecer pontuação visualmente não substitui interpretar a função da expressão na situação",
+    "notSufficient": [
+      "percorrer todas as telas",
+      "afirmar que toda frase precisa ter duas ou mais palavras",
+      "classificar uma expressão como frase apenas porque termina com ponto, exclamação ou outra marca",
+      "reconhecer somente exemplos de várias palavras",
+      "decorar uma definição sem conseguir relacionar expressão e situação",
+      "responder rapidamente"
+    ]
+  }
+}
