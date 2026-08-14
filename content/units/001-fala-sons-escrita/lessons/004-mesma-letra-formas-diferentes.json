@@ -1,0 +1,169 @@
+{
+  "schemaVersion": 1,
+  "id": "N0-U01-L04",
+  "title": "A mesma letra em formas diferentes",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Reconhecer que letras maiúsculas e minúsculas são formas relacionadas da mesma letra e associá-las visualmente sem ainda estudar regras de uso de maiúsculas.",
+  "competencies": [
+    "associar letras maiúsculas às minúsculas correspondentes",
+    "reconhecer pares mesmo quando as duas formas são visualmente bastante diferentes",
+    "distinguir mudança de forma gráfica de mudança de identidade da letra"
+  ],
+  "prerequisites": ["N0-U01-L03"],
+  "limits": [
+    "não ensinar regras de quando usar maiúsculas",
+    "não exigir escrita caligráfica",
+    "não introduzir ainda relações sistemáticas entre letra e som",
+    "não transformar diferenças entre fontes tipográficas em conteúdo obrigatório"
+  ],
+  "media": {
+    "tts": "apoio opcional para instrucoes e explicacoes",
+    "controlledAudio": "nao necessario",
+    "video": "nao necessario",
+    "images": "nao necessarias; as proprias formas tipograficas das letras sao o material visual"
+  },
+  "supportMaterials": {
+    "curatedMedia": [],
+    "runtimeResources": [
+      {
+        "type": "TTS_OK",
+        "locations": ["instruções", "explicações", "feedback"],
+        "purpose": "apoio opcional de acesso ao texto; não faz parte do objeto visual avaliado"
+      }
+    ],
+    "generatedVisualResources": [
+      {
+        "type": "UI_RENDERED_LETTER_PAIRS",
+        "locations": ["L04-B02", "L04-B03", "L04-B04", "L04-A01", "L04-A02"],
+        "purpose": "renderizar as formas maiúscula e minúscula diretamente na interface em tamanho legível, sem converter letras em imagens"
+      }
+    ],
+    "productionQueueRequired": false,
+    "publicationDependency": "nenhuma mídia humana precisa ser produzida; a qualidade visual depende da implementação tipográfica e responsiva da interface",
+    "decisionRationale": "uma imagem estática de letras duplicaria o conteúdo, seria menos acessível e dificultaria adaptação de tamanho; vídeo não acrescenta informação necessária"
+  },
+  "letterPairs": [
+    {"upper": "A", "lower": "a"}, {"upper": "B", "lower": "b"}, {"upper": "C", "lower": "c"},
+    {"upper": "D", "lower": "d"}, {"upper": "E", "lower": "e"}, {"upper": "F", "lower": "f"},
+    {"upper": "G", "lower": "g"}, {"upper": "H", "lower": "h"}, {"upper": "I", "lower": "i"},
+    {"upper": "J", "lower": "j"}, {"upper": "K", "lower": "k"}, {"upper": "L", "lower": "l"},
+    {"upper": "M", "lower": "m"}, {"upper": "N", "lower": "n"}, {"upper": "O", "lower": "o"},
+    {"upper": "P", "lower": "p"}, {"upper": "Q", "lower": "q"}, {"upper": "R", "lower": "r"},
+    {"upper": "S", "lower": "s"}, {"upper": "T", "lower": "t"}, {"upper": "U", "lower": "u"},
+    {"upper": "V", "lower": "v"}, {"upper": "W", "lower": "w"}, {"upper": "X", "lower": "x"},
+    {"upper": "Y", "lower": "y"}, {"upper": "Z", "lower": "z"}
+  ],
+  "sequence": [
+    {
+      "id": "L04-B01",
+      "type": "objective",
+      "focus": "read-or-listen",
+      "text": "Uma mesma letra pode aparecer em uma forma maiúscula e em uma forma minúscula. Nesta lição, você vai aprender a reconhecer os pares. Ainda não precisamos estudar quando cada forma deve ser usada."
+    },
+    {
+      "id": "L04-B02",
+      "type": "visual-demonstration",
+      "focus": "observe",
+      "title": "Alguns pares se parecem bastante",
+      "pairs": [
+        {"upper": "C", "lower": "c"},
+        {"upper": "O", "lower": "o"},
+        {"upper": "S", "lower": "s"},
+        {"upper": "V", "lower": "v"}
+      ],
+      "explanation": "A forma muda de tamanho ou de traço, mas continua sendo a mesma letra."
+    },
+    {
+      "id": "L04-B03",
+      "type": "visual-demonstration",
+      "focus": "observe",
+      "title": "Outros pares mudam bastante de aparência",
+      "pairs": [
+        {"upper": "A", "lower": "a"},
+        {"upper": "D", "lower": "d"},
+        {"upper": "G", "lower": "g"},
+        {"upper": "Q", "lower": "q"},
+        {"upper": "R", "lower": "r"}
+      ],
+      "explanation": "Mesmo quando as formas parecem bem diferentes, cada par representa a mesma letra em maiúscula e minúscula."
+    },
+    {
+      "id": "L04-C01",
+      "type": "quick-check",
+      "focus": "respond",
+      "interaction": "single-choice",
+      "prompt": "Qual minúscula corresponde à letra A?",
+      "options": ["a", "d", "o"],
+      "correct": "a"
+    },
+    {
+      "id": "L04-B04",
+      "type": "pair-grid",
+      "focus": "observe",
+      "title": "Os 26 pares",
+      "source": "letterPairs",
+      "presentationRule": "mostrar em grupos pequenos, não como uma parede visual única; permitir avançar e voltar entre os grupos",
+      "groupingSuggestion": ["A-F", "G-L", "M-R", "S-Z"]
+    },
+    {
+      "id": "L04-A01",
+      "type": "guided-activity",
+      "focus": "respond",
+      "interaction": "match-pairs",
+      "title": "Encontre a outra forma",
+      "instruction": "Para cada letra mostrada, escolha a forma correspondente.",
+      "rounds": [
+        {"prompt": "B", "options": ["b", "d", "p"], "correct": "b"},
+        {"prompt": "d", "options": ["B", "D", "P"], "correct": "D"},
+        {"prompt": "G", "options": ["g", "q", "j"], "correct": "g"},
+        {"prompt": "q", "options": ["G", "P", "Q"], "correct": "Q"},
+        {"prompt": "R", "options": ["r", "n", "k"], "correct": "r"},
+        {"prompt": "t", "options": ["F", "T", "I"], "correct": "T"},
+        {"prompt": "Y", "options": ["y", "v", "x"], "correct": "y"},
+        {"prompt": "l", "options": ["I", "L", "J"], "correct": "L"}
+      ],
+      "feedbackRule": "feedback imediato e nova tentativa sem penalidade"
+    },
+    {
+      "id": "L04-C02",
+      "type": "quick-check",
+      "focus": "respond",
+      "interaction": "single-choice",
+      "prompt": "Se A e a têm aparências diferentes, o que isso significa nesta lição?",
+      "options": [
+        "São duas letras diferentes.",
+        "São duas formas da mesma letra.",
+        "Uma delas não faz parte do alfabeto."
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "L04-A02",
+      "type": "coverage-check",
+      "focus": "respond",
+      "interaction": "randomized-pair-recognition",
+      "title": "Reconhecendo todos os pares",
+      "source": "letterPairs",
+      "instruction": "Associe cada maiúscula à minúscula correspondente. A ordem deve ser embaralhada.",
+      "presentationRule": "apresentar em rodadas curtas para evitar sobrecarga visual; todas as 26 letras devem aparecer ao menos uma vez antes da conclusão da lição",
+      "distractorRule": "usar principalmente letras visualmente plausíveis como distratores, sem depender de pegadinhas tipográficas"
+    },
+    {
+      "id": "L04-B05",
+      "type": "summary",
+      "focus": "read-or-listen",
+      "points": [
+        "Cada letra do alfabeto possui uma forma maiúscula e uma forma minúscula.",
+        "Alguns pares se parecem bastante; outros mudam bastante de aparência.",
+        "A mudança de forma não transforma uma letra em outra.",
+        "As regras de quando usar maiúsculas serão estudadas mais adiante."
+      ],
+      "bridgeToNextLesson": "Na próxima lição, vamos separar letras em vogais e consoantes e também distingui-las de números e outros sinais."
+    }
+  ],
+  "completionEvidence": {
+    "observablePerformance": "Associar corretamente formas maiúsculas e minúsculas das 26 letras, inclusive pares visualmente menos semelhantes.",
+    "criterion": "concluir L04-A02 com todas as 26 letras apresentadas e atingir pelo menos 22 associações corretas na primeira tentativa ou corrigir os pares restantes após feedback; acertar também L04-C02",
+    "notSufficient": "reconhecer apenas pares visualmente óbvios ou repetir uma tabela sem conseguir associar letras em ordem embaralhada"
+  }
+}
