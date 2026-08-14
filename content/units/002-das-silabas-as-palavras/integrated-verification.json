@@ -1,0 +1,284 @@
+{
+  "schemaVersion": 1,
+  "id": "N0-U02-V01",
+  "type": "integrated-unit-verification",
+  "title": "Verificação integrada — Unidade 2",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Verificar de forma integrada se o aluno consolidou as competências essenciais da Unidade 2, passando da percepção e manipulação oral de sílabas à leitura de palavras e à compreensão de significados familiares, sem depender de memorização dos exemplos centrais das lições nem antecipar conteúdos das unidades seguintes.",
+  "prerequisites": ["N0-U02-L01", "N0-U02-L02", "N0-U02-L03", "N0-U02-L04", "N0-U02-L05", "N0-U02-L06", "N0-U02-L07", "N0-U02-L08"],
+  "designPrinciples": [
+    "usar palavras e combinações novas em relação às atividades centrais das lições sempre que isso aumentar a validade da transferência",
+    "usar áudio controlado quando a segmentação ou recombinação auditiva determinar a resposta",
+    "ocultar a escrita enquanto ela puder entregar uma resposta auditiva",
+    "bloquear o áudio da palavra-alvo antes da tentativa visual quando a competência avaliada for leitura",
+    "permitir repetição de áudio e solicitação de apoio silábico sem penalidade automática",
+    "registrar separadamente acerto e uso de apoio, porque apoio não é sinônimo de erro",
+    "não exigir microfone, pronúncia observada, velocidade, escrita livre longa ou leitura de frases",
+    "usar imagens para significado apenas quando reduzirem carga de leitura e oferecer alternativa não visual equivalente"
+  ],
+  "limits": [
+    "não avaliar classificação de palavras pelo número de sílabas",
+    "não avaliar sílaba tônica",
+    "não exigir regras completas de divisão silábica",
+    "não exigir nomes técnicos de estruturas silábicas",
+    "não transformar a verificação em treino de famílias silábicas",
+    "não exigir ortografia autônoma de palavras novas",
+    "não exigir leitura de frases ou textos",
+    "não usar velocidade de resposta como critério de aprovação",
+    "não afirmar que pronúncia ou fluência oral foram validadas sem observação por microfone"
+  ],
+  "coverage": [
+    {"competency": "perceber palavra inteira e sequência de partes sonoras", "evidence": ["V01-Q01"]},
+    {"competency": "segmentar oralmente uma palavra em sílabas ordenadas", "evidence": ["V01-Q02"]},
+    {"competency": "recombinar sílabas ouvidas para recuperar a palavra inteira", "evidence": ["V01-Q03"]},
+    {"competency": "relacionar sílaba ouvida ao trecho escrito correspondente", "evidence": ["V01-Q04"]},
+    {"competency": "reconhecer sílabas no começo, no fim e repetidas em palavras", "evidence": ["V01-Q05"]},
+    {"competency": "compreender que sílabas escritas podem ter formatos diferentes", "evidence": ["V01-Q06"]},
+    {"competency": "ordenar e completar sílabas fornecidas para formar palavras", "evidence": ["V01-Q07"]},
+    {"competency": "ler palavra compatível com apoio silábico apenas se necessário e reconhecer sua forma falada", "evidence": ["V01-Q08"]},
+    {"competency": "relacionar palavra lida a significado familiar", "evidence": ["V01-Q09"]}
+  ],
+  "media": {
+    "tts": "instruções, feedback final, alvo oral de montagem em V01-Q07 e opções auditivas posteriores à tentativa visual em V01-Q08; não deve antecipar a palavra-alvo em tarefas de leitura ou significado",
+    "controlledAudio": ["N0-U02-V01-AUD-001 a N0-U02-V01-AUD-009"],
+    "video": "nao necessario",
+    "images": ["N0-U02-V01-IMG-001", "N0-U02-V01-IMG-002", "N0-U02-V01-IMG-003"]
+  },
+  "supportMaterials": {
+    "curatedMedia": [
+      {
+        "mediaIds": ["N0-U02-V01-AUD-001", "N0-U02-V01-AUD-002", "N0-U02-V01-AUD-003", "N0-U02-V01-AUD-004", "N0-U02-V01-AUD-005", "N0-U02-V01-AUD-006", "N0-U02-V01-AUD-007", "N0-U02-V01-AUD-008", "N0-U02-V01-AUD-009"],
+        "type": "AUDIO_CONTROLADO",
+        "requiredForPublication": true,
+        "purpose": "fornecer palavras e fichas silábicas novas e acusticamente consistentes para verificar percepção, segmentação, recomposição e associação som-escrita sem reutilizar os exemplos centrais das lições",
+        "locations": ["V01-Q01", "V01-Q02", "V01-Q03", "V01-Q04"],
+        "productionSource": "producao-midia/FILA-MIDIA.md"
+      },
+      {
+        "mediaIds": ["N0-U02-V01-IMG-001", "N0-U02-V01-IMG-002", "N0-U02-V01-IMG-003"],
+        "type": "IMAGEM_CURADA",
+        "requiredForPublication": true,
+        "purpose": "fornecer referentes concretos novos para verificar significado de palavra lida sem exigir leitura de uma definição como modalidade principal",
+        "locations": ["V01-Q09"],
+        "productionSource": "producao-midia/FILA-MIDIA.md"
+      }
+    ],
+    "runtimeResources": [
+      {
+        "type": "TTS_OK",
+        "locations": ["instruções", "V01-Q07", "V01-Q08", "feedback final"],
+        "purpose": "fornecer instruções, um alvo oral não sensível para montagem e opções de confirmação apenas depois da tentativa visual de leitura"
+      }
+    ],
+    "generatedVisualResources": [
+      {"type": "UI_RENDERED_AUDIO_TOKENS", "locations": ["V01-Q01", "V01-Q02", "V01-Q03"], "purpose": "representar fichas auditivas por controles neutros sem revelar sua grafia"},
+      {"type": "UI_RENDERED_SYLLABLE_SPANS_AND_TILES", "locations": ["V01-Q04", "V01-Q05", "V01-Q06", "V01-Q07", "V01-Q08"], "purpose": "renderizar palavras, trechos e fichas como texto acessível, com segmentação apenas quando a tarefa ou o apoio solicitado exigir"},
+      {"type": "UI_RENDERED_SYLLABLE_SUPPORT_TOGGLE", "locations": ["V01-Q08", "V01-Q09"], "purpose": "permitir mostrar as partes depois de uma tentativa inicial, registrando o uso do apoio separadamente do acerto"},
+      {"type": "UI_RENDERED_IMAGE_CHOICE_GRID", "locations": ["V01-Q09"], "purpose": "apresentar referentes visuais em ordem variável e sem texto incorporado"},
+      {"type": "UI_RENDERED_NONVISUAL_MEANING_CHOICES", "locations": ["V01-Q09"], "purpose": "oferecer alternativa equivalente por descrições semânticas curtas para quem não utiliza a grade visual, sem usar o alt da imagem como resposta escondida"}
+    ],
+    "productionQueueRequired": true,
+    "publicationDependency": "a verificação pode ser implementada estruturalmente, mas não deve ser considerada publicável até os nove áudios N0-U02-V01-AUD-* e as três imagens N0-U02-V01-IMG-* estarem produzidos, validados e ligados aos IDs",
+    "decisionRationale": "exemplos novos reduzem dependência de memória das lições. O áudio controlado é necessário apenas nos blocos em que a forma das partes sonoras determina a resposta; TTS continua suficiente para instruções e para tarefas em que a voz exata não é o objeto. As imagens são justificadas no bloco semântico porque evitam exigir uma segunda leitura como prova principal de compreensão."
+  },
+  "audioSet": [
+    {"mediaId": "N0-U02-V01-AUD-001", "spokenContent": "cama", "role": "whole-word"},
+    {"mediaId": "N0-U02-V01-AUD-002", "spokenContent": "ca", "originWord": "cama", "role": "first-syllable-contextual"},
+    {"mediaId": "N0-U02-V01-AUD-003", "spokenContent": "ma", "originWord": "cama", "role": "second-syllable-contextual"},
+    {"mediaId": "N0-U02-V01-AUD-004", "spokenContent": "mapa", "role": "whole-word"},
+    {"mediaId": "N0-U02-V01-AUD-005", "spokenContent": "ma", "originWord": "mapa", "role": "first-syllable-contextual"},
+    {"mediaId": "N0-U02-V01-AUD-006", "spokenContent": "pa", "originWord": "mapa", "role": "second-syllable-contextual"},
+    {"mediaId": "N0-U02-V01-AUD-007", "spokenContent": "bota", "role": "whole-word"},
+    {"mediaId": "N0-U02-V01-AUD-008", "spokenContent": "bo", "originWord": "bota", "role": "first-syllable-contextual"},
+    {"mediaId": "N0-U02-V01-AUD-009", "spokenContent": "ta", "originWord": "bota", "role": "second-syllable-contextual"}
+  ],
+  "imageSet": [
+    {"mediaId": "N0-U02-V01-IMG-001", "referent": "cama", "nonVisualMeaning": "um móvel usado para dormir"},
+    {"mediaId": "N0-U02-V01-IMG-002", "referent": "mapa", "nonVisualMeaning": "uma representação de lugares e caminhos"},
+    {"mediaId": "N0-U02-V01-IMG-003", "referent": "lata", "nonVisualMeaning": "um recipiente cilíndrico de metal"}
+  ],
+  "items": [
+    {
+      "id": "V01-Q01",
+      "type": "whole-versus-segmented-audio",
+      "focus": "listen-and-respond",
+      "prompt": "Ouça as duas apresentações. Qual delas mostra a palavra cama em partes sonoras?",
+      "writtenWordVisibleBeforeResponse": false,
+      "presentations": [
+        {"label": "A", "stimuli": ["N0-U02-V01-AUD-001"], "mode": "whole"},
+        {"label": "B", "stimuli": ["N0-U02-V01-AUD-002", "N0-U02-V01-AUD-003"], "mode": "segmented", "interfacePauseBetweenTokens": true}
+      ],
+      "options": ["A", "B"],
+      "correct": "B",
+      "repeatAudio": true,
+      "guardRail": "não revelar CAMA, CA ou MA antes da resposta"
+    },
+    {
+      "id": "V01-Q02",
+      "type": "spoken-word-to-ordered-audio-tokens",
+      "focus": "listen-and-operate",
+      "prompt": "Ouça a palavra inteira e escolha, na ordem, as duas fichas sonoras que formam essa palavra.",
+      "targetStimulus": "N0-U02-V01-AUD-004",
+      "spokenTarget": "mapa",
+      "writtenTargetVisibleBeforeResponse": false,
+      "availableTokens": ["N0-U02-V01-AUD-008", "N0-U02-V01-AUD-006", "N0-U02-V01-AUD-005", "N0-U02-V01-AUD-002"],
+      "correctOrder": ["N0-U02-V01-AUD-005", "N0-U02-V01-AUD-006"],
+      "repeatAudio": true,
+      "guardRail": "fichas permanecem neutras e sem MA, PA, BO ou CA escritos"
+    },
+    {
+      "id": "V01-Q03",
+      "type": "audio-tokens-to-whole-word",
+      "focus": "listen-and-respond",
+      "prompt": "Ouça as duas partes na ordem apresentada. Qual palavra inteira corresponde a elas?",
+      "tokenSequence": ["N0-U02-V01-AUD-008", "N0-U02-V01-AUD-009"],
+      "wholeWordOptions": [
+        {"label": "A", "stimulus": "N0-U02-V01-AUD-001", "spokenContent": "cama"},
+        {"label": "B", "stimulus": "N0-U02-V01-AUD-007", "spokenContent": "bota"},
+        {"label": "C", "stimulus": "N0-U02-V01-AUD-004", "spokenContent": "mapa"}
+      ],
+      "writtenLabelsVisible": false,
+      "correctIndex": 1,
+      "repeatAudio": true
+    },
+    {
+      "id": "V01-Q04",
+      "type": "heard-syllable-to-written-span",
+      "focus": "listen-then-observe-and-respond",
+      "prompt": "Ouça uma parte sonora de uma palavra. Qual trecho escrito corresponde à parte que você ouviu?",
+      "stimulus": "N0-U02-V01-AUD-002",
+      "spokenContent": "ca",
+      "originWord": "cama",
+      "originWordVisibleBeforeResponse": false,
+      "options": ["MA", "TA", "CA"],
+      "correctIndex": 2,
+      "afterResponseReveal": {"word": "CAMA", "segments": ["CA", "MA"], "highlight": "CA"},
+      "repeatAudio": true
+    },
+    {
+      "id": "V01-Q05",
+      "type": "syllable-position-and-recurrence",
+      "focus": "observe-and-respond",
+      "instruction": "As divisões já estão fornecidas. Use a posição das partes para responder.",
+      "items": [
+        {"prompt": "Em MAPA = MA | PA, qual parte aparece no começo?", "word": "MAPA", "segments": ["MA", "PA"], "options": ["PA", "MA"], "correct": "MA"},
+        {"prompt": "Em BOTA = BO | TA, qual parte aparece no fim?", "word": "BOTA", "segments": ["BO", "TA"], "options": ["BO", "TA"], "correct": "TA"},
+        {
+          "prompt": "Observe BOTA = BO | TA e LATA = LA | TA. Qual sílaba aparece nas duas palavras?",
+          "words": [{"word": "BOTA", "segments": ["BO", "TA"]}, {"word": "LATA", "segments": ["LA", "TA"]}],
+          "options": ["LA", "BO", "TA"],
+          "correct": "TA",
+          "followUp": {"prompt": "Onde TA aparece nessas duas palavras?", "options": ["no começo das duas", "no fim das duas", "no começo de uma e no fim da outra"], "correctIndex": 1}
+        }
+      ],
+      "guardRail": "não exigir que o aluno descubra a divisão; a segmentação é parte do estímulo"
+    },
+    {
+      "id": "V01-Q06",
+      "type": "syllable-shape-generalization",
+      "focus": "observe-and-respond",
+      "prompt": "Observe os exemplos já divididos. Qual conclusão é segura?",
+      "examples": [
+        {"word": "AVE", "segments": ["A", "VE"], "highlight": "A"},
+        {"word": "CAMA", "segments": ["CA", "MA"], "highlight": "CA"},
+        {"word": "TREM", "segments": ["TREM"], "highlight": "TREM"}
+      ],
+      "options": [
+        "Uma sílaba escrita pode aparecer com quantidades e organizações diferentes de letras.",
+        "Toda sílaba escrita precisa ter exatamente duas letras.",
+        "Contar letras sempre informa quantas sílabas a palavra possui."
+      ],
+      "correctIndex": 0,
+      "guardRail": "não pedir classificação técnica de A, CA ou TREM e não usar os exemplos como fórmulas universais"
+    },
+    {
+      "id": "V01-Q07",
+      "type": "word-construction-and-completion",
+      "focus": "operate-and-respond",
+      "items": [
+        {
+          "mode": "spoken-target-to-written-tiles",
+          "prompt": "Ouça a palavra e monte-a com as fichas fornecidas.",
+          "ttsCue": "capa",
+          "writtenTargetVisibleBeforeResponse": false,
+          "availableTiles": ["PA", "MA", "CA"],
+          "correctOrder": ["CA", "PA"],
+          "revealWordAfterResponse": "CAPA",
+          "ttsReplayAllowed": true
+        },
+        {
+          "mode": "complete-segmented-written-word",
+          "prompt": "Observe CAMA = CA | __. Qual ficha completa a palavra?",
+          "writtenTarget": "CAMA",
+          "segments": ["CA", null],
+          "availableTiles": ["TA", "PA", "MA"],
+          "correctTile": "MA",
+          "ttsBeforeResponse": false
+        }
+      ],
+      "guardRail": "arrastar não é requisito; permitir seleção por toque, clique e teclado"
+    },
+    {
+      "id": "V01-Q08",
+      "type": "whole-written-word-to-post-attempt-audio-choice",
+      "focus": "read-then-listen-and-respond",
+      "prompt": "Leia GATA primeiro. Se precisar, você pode mostrar as partes. Depois marque que tentou e escolha o áudio correspondente.",
+      "word": "GATA",
+      "segments": ["GA", "TA"],
+      "initialSupportLevel": "whole-word",
+      "syllableSupportAvailable": true,
+      "supportUseIsError": false,
+      "attemptGateRequired": true,
+      "audioOptionsVisibleBeforeAttemptGate": false,
+      "audioOptionTextVisible": false,
+      "audioOptions": [{"label": "A", "ttsText": "gato"}, {"label": "B", "ttsText": "gata"}, {"label": "C", "ttsText": "lata"}],
+      "correctIndex": 1,
+      "assessmentNote": "registrar acerto e uso do apoio separadamente; não afirmar que a leitura oral produzida pelo aluno foi observada"
+    },
+    {
+      "id": "V01-Q09",
+      "type": "written-word-to-meaning-choice",
+      "focus": "read-and-respond",
+      "prompt": "Leia mapa. Qual opção representa o significado da palavra?",
+      "wordDisplay": "mapa",
+      "canonicalWord": "MAPA",
+      "segments": ["ma", "pa"],
+      "syllableSupportAvailable": true,
+      "supportUseIsError": false,
+      "targetTtsBeforeResponse": false,
+      "visualOptions": ["N0-U02-V01-IMG-001", "N0-U02-V01-IMG-003", "N0-U02-V01-IMG-002"],
+      "nonVisualOptions": ["um móvel usado para dormir", "um recipiente cilíndrico de metal", "uma representação de lugares e caminhos"],
+      "correctIndex": 2,
+      "feedbackTtsAfterResponse": "mapa",
+      "accessibilityGuardRail": "na modalidade visual, o nome acessível da alternativa não deve revelar cama, lata ou mapa; usuários de tecnologia assistiva devem receber a modalidade não visual equivalente"
+    }
+  ],
+  "assessmentBehavior": {
+    "feedbackTiming": "mostrar correção detalhada apenas ao final, para evitar que uma resposta revele outra; feedback operacional mínimo pode apenas confirmar que a resposta foi registrada",
+    "audioReplay": "permitido sem penalidade",
+    "timeLimit": false,
+    "syllableSupport": "permitido onde declarado; registrar uso separadamente de acerto",
+    "microphoneRequired": false,
+    "longWrittenResponseRequired": false,
+    "retryPolicy": "permitir nova tentativa após revisão; quando o renderer suportar variantes, embaralhar opções e ordem de alternativas sem alterar a competência medida"
+  },
+  "completionEvidence": {
+    "observablePerformance": "Demonstrar, com exemplos novos ou novas combinações, que consegue perceber e operar sobre sílabas na fala, relacioná-las à escrita, manipular partes fornecidas, usar segmentação como apoio de leitura sem depender dela em todas as tentativas e ligar uma palavra lida a significado familiar.",
+    "clusterCriteria": {
+      "auditorySyllableOperation": "acertar V01-Q01, formar corretamente MAPA em V01-Q02 e reconhecer BOTA em V01-Q03",
+      "soundWritingAndPosition": "acertar V01-Q04 e pelo menos 2 dos 3 itens principais de V01-Q05; no item de recorrência, o follow-up de posição conta como evidência adicional, não como compensação de todos os demais",
+      "structureAndConstruction": "acertar V01-Q06 e os dois subitens de V01-Q07",
+      "readingAndMeaning": "acertar V01-Q08 e V01-Q09 e concluir pelo menos um desses dois blocos sem abrir o apoio silábico antes da resposta"
+    },
+    "completionRule": "considerar a Unidade 2 concluída apenas quando os quatro critérios por agrupamento forem atingidos; desempenho forte em leitura não compensa ausência de segmentação oral, e desempenho auditivo não compensa ausência de compreensão da palavra lida",
+    "notSufficient": [
+      "percorrer todas as telas",
+      "responder rapidamente",
+      "recitar famílias silábicas",
+      "memorizar palavras exatas das lições anteriores",
+      "acertar tarefas de montagem sem demonstrar leitura",
+      "identificar figuras depois de ouvir previamente a palavra-alvo",
+      "usar sempre a segmentação sem demonstrar ao menos uma tentativa bem-sucedida de leitura/compreensão sem abrir o apoio"
+    ]
+  }
+}
