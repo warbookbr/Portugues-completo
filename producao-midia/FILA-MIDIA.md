@@ -6,12 +6,13 @@ Lista oficial das mídias pedagógicas que precisam ser produzidas manualmente. 
 
 | Lote | Uso | Prioridade | Obrigatório | Status |
 |---|---|---|---|---|
-| `N0-U01-L02-AUD-*` | U1 L2; reutiliza nas L7 e L8 | ALTA | SIM | A_PRODUZIR |
+| `N0-U01-L02-AUD-*` | U1 L2; reutiliza nas L7, L8 e U2 L1 | ALTA | SIM | A_PRODUZIR |
 | `N0-U01-L03-AUD-*` | U1 L3; reutiliza na L7 e na verificação integrada | ALTA | SIM | A_PRODUZIR |
 | `N0-U01-L08-AUD-*` | U1 L8 | NORMAL | SIM | A_PRODUZIR |
 | `N0-U01-V01-AUD-*` | Verificação integrada da U1 | ALTA | SIM | A_PRODUZIR |
+| `N0-U02-L01-AUD-*` | U2 L1 — percepção inicial de sílabas | ALTA | SIM | A_PRODUZIR |
 
-As ligações pedagógicas das Lições 2, 3, 7 e 8 e da verificação integrada da Unidade 1 já estão dimensionadas abaixo. Exercícios formais futuros podem reutilizar estes mesmos IDs quando fizer sentido; não renumerar mídias existentes. As Lições 1, 4, 5 e 6 não exigem mídia humana na fila: usam TTS e/ou recursos visuais renderizados pela própria interface. A Lição 7 não cria novos arquivos e reutiliza subconjuntos dos lotes L2 e L3. A Lição 8 usa quatro novos arquivos já reservados no lote L8 e reutiliza `sapo` e `gato` do lote L2.
+As ligações pedagógicas das Lições 2, 3, 7 e 8, da verificação integrada da Unidade 1 e da Lição 1 da Unidade 2 já estão dimensionadas abaixo. Exercícios formais futuros podem reutilizar estes mesmos IDs quando fizer sentido; não renumerar mídias existentes. As Lições 1, 4, 5 e 6 da Unidade 1 não exigem mídia humana na fila: usam TTS e/ou recursos visuais renderizados pela própria interface. A Lição 7 não cria novos arquivos e reutiliza subconjuntos dos lotes L2 e L3. A Lição 8 usa quatro novos arquivos já reservados no lote L8 e reutiliza `sapo` e `gato` do lote L2. A Lição 1 da Unidade 2 reutiliza `pato`, `mala` e `sol` como palavras inteiras e cria apenas os estímulos novos/segmentados que não existem nos lotes anteriores.
 
 Para verificações integradas que ficam fora da contagem de lições, usar `V01`, `V02` etc. no segmento que normalmente identifica a lição. Exemplo: `N0-U01-V01-AUD-001` significa Nível 0, Unidade 1, Verificação integrada 1, áudio 001. Não criar uma `L09` apenas para representar a verificação.
 
@@ -37,11 +38,11 @@ Objetivo: fornecer estímulos fixos para comparar sons claros sem depender do TT
 
 | ID | Localização pedagógica atual |
 |---|---|
-| `N0-U01-L02-AUD-001` | `L02-B02`; `L02-A01` itens 1 e 4 |
+| `N0-U01-L02-AUD-001` | `L02-B02`; `L02-A01` itens 1 e 4; U2 `L01-B02` como palavra inteira |
 | `N0-U01-L02-AUD-002` | `L02-B02`; `L02-A01` item 1 |
-| `N0-U01-L02-AUD-003` | `L02-C01`; `L02-A01` item 2 |
+| `N0-U01-L02-AUD-003` | `L02-C01`; `L02-A01` item 2; U2 `L01-C01` como palavra inteira |
 | `N0-U01-L02-AUD-004` | `L02-C01` |
-| `N0-U01-L02-AUD-005` | `L02-A01` item 3 |
+| `N0-U01-L02-AUD-005` | `L02-A01` item 3; U2 `L01-B04`; U2 `L01-A01` item 5 |
 | `N0-U01-L02-AUD-006` | `L02-A01` item 3; reutilização em L7; `L08-B04`; `L08-A01` item 3 |
 | `N0-U01-L02-AUD-007` | `L02-B03`; `L02-A01` item 2; reutilização em L7; `L08-C01`; `L08-A01` item 2 |
 | `N0-U01-L02-AUD-008` | `L02-B03`; `L02-A01` item 4; reutilização em L7 |
@@ -156,6 +157,59 @@ Em `V01-Q02`, `V01-Q08`, `V01-Q09`, `V01-Q10` e `V01-Q11`, não mostrar a palavr
 Produzir uma palavra por arquivo, sem frase introdutória. Usar português brasileiro claro, ritmo natural moderado, volume e condições acústicas consistentes entre os sete arquivos e, quando possível, compatíveis com os lotes L2 e L8. Não enfatizar artificialmente o som inicial.
 
 Validar: palavra correta, alta inteligibilidade, ausência de cortes/ruído/efeitos, consistência de volume e ausência de pistas artificiais. Confirmar pedagogicamente que `foca/fita` oferecem começo sonoro claramente semelhante, `vaca/rato` claramente diferente, `copo/cego` evidenciam variação com C e `cego/sino` permitem perceber começo sonoro semelhante com escrita inicial diferente.
+
+## Lote U2 L1 — percepção inicial de sílabas
+
+**Família:** `N0-U02-L01-AUD-*`  
+**Tipo:** `AUDIO_CONTROLADO`  
+**Prioridade:** `ALTA`  
+**Obrigatório para publicação:** `SIM`  
+**Status:** `A_PRODUZIR`  
+**Destino:** `Português Completo/Nível 0/Unidade 02/Lição 01/Audio/`
+
+Objetivo: fornecer versões segmentadas de palavras e duas palavras novas em versões natural e segmentada para ensinar a percepção inicial de sílabas sem depender de pausas imprevisíveis do TTS.
+
+| ID | Gravar | Função | Localização pedagógica |
+|---|---|---|---|
+| `N0-U02-L01-AUD-001` | `pa — to` | `pato` segmentado em duas sílabas | `L01-B02`; `L01-A01` item 1 |
+| `N0-U02-L01-AUD-002` | `ma — la` | `mala` segmentado em duas sílabas | `L01-C01` segundo áudio |
+| `N0-U02-L01-AUD-003` | `bo — la` | `bola` segmentado em duas sílabas | `L01-A01` item 2 |
+| `N0-U02-L01-AUD-004` | `banana` | palavra inteira nova | `L01-B04` segundo exemplo |
+| `N0-U02-L01-AUD-005` | `ba — na — na` | `banana` segmentado em três sílabas | `L01-B04` segundo exemplo; `L01-A01` item 3 |
+| `N0-U02-L01-AUD-006` | `janela` | palavra inteira nova | `L01-C02` primeiro áudio |
+| `N0-U02-L01-AUD-007` | `ja — ne — la` | `janela` segmentado em três sílabas | `L01-C02` segundo áudio; `L01-A01` item 4 |
+
+Reutilizar, sem regravar:
+
+| ID existente | Conteúdo | Uso na U2 L1 |
+|---|---|---|
+| `N0-U01-L02-AUD-001` | `pato` | `L01-B02` como palavra inteira |
+| `N0-U01-L02-AUD-003` | `mala` | `L01-C01` primeiro áudio |
+| `N0-U01-L02-AUD-005` | `sol` | `L01-B04` primeiro exemplo; `L01-A01` item 5 |
+
+### Orientações de produção
+
+Nos arquivos segmentados, o travessão do roteiro indica **pausa entre sílabas** e não deve ser pronunciado. Gravar as sílabas de forma clara e natural, mantendo a identidade sonora da palavra, com uma pausa curta e consistente entre partes — suficiente para a separação ser percebida, mas sem transformar cada sílaba em soletração ou fala artificialmente exagerada.
+
+Quando possível, usar a mesma voz e condições acústicas do lote `N0-U01-L02-AUD-*`, porque `pato`, `mala` e `sol` serão reutilizados como palavras inteiras. Para `banana` e `janela`, a versão inteira e a segmentada devem ter voz, intensidade e ritmo-base compatíveis entre si.
+
+Não dizer `duas sílabas`, `três sílabas`, nomes de letras ou qualquer explicação dentro do arquivo. Não adicionar palmas, bipes, música ou efeitos. Os pulsos visuais pertencem à interface e não ao áudio.
+
+Não produzir imagem com `PA | TO`, `MA | LA` ou outra grafia segmentada para esta lição. A Lição 1 trabalha percepção auditiva; a relação sistemática entre sílaba ouvida e trecho escrito começa na Lição 3.
+
+### Critérios de validação
+
+Validar:
+
+- conteúdo correto e português brasileiro claro;
+- nenhuma sílaba ausente, fundida de forma indevida ou acrescida;
+- pausas suficientemente perceptíveis e aproximadamente consistentes entre arquivos segmentados;
+- pronúncia natural das partes, sem soletração e sem ênfase artificial;
+- volume e ambiente consistentes;
+- ausência de cortes, ruído, efeitos ou pistas extrapedagógicas;
+- `pa — to`, `ma — la` e `bo — la` claramente percebidos como duas partes;
+- `ba — na — na` e `ja — ne — la` claramente percebidos como três partes;
+- versões inteira e segmentada de `banana` e `janela` reconhecíveis como a mesma palavra.
 
 ## Entrega
 
