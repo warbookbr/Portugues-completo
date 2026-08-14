@@ -22,6 +22,26 @@
     "video": "nao necessario",
     "images": "nao necessarias; as proprias formas tipograficas das letras sao o material visual"
   },
+  "supportMaterials": {
+    "curatedMedia": [],
+    "runtimeResources": [
+      {
+        "type": "TTS_OK",
+        "locations": ["instruções", "explicações", "feedback"],
+        "purpose": "apoio opcional de acesso ao texto; não faz parte do objeto visual avaliado"
+      }
+    ],
+    "generatedVisualResources": [
+      {
+        "type": "UI_RENDERED_LETTER_PAIRS",
+        "locations": ["L04-B02", "L04-B03", "L04-B04", "L04-A01", "L04-A02"],
+        "purpose": "renderizar as formas maiúscula e minúscula diretamente na interface em tamanho legível, sem converter letras em imagens"
+      }
+    ],
+    "productionQueueRequired": false,
+    "publicationDependency": "nenhuma mídia humana precisa ser produzida; a qualidade visual depende da implementação tipográfica e responsiva da interface",
+    "decisionRationale": "uma imagem estática de letras duplicaria o conteúdo, seria menos acessível e dificultaria adaptação de tamanho; vídeo não acrescenta informação necessária"
+  },
   "letterPairs": [
     {"upper": "A", "lower": "a"}, {"upper": "B", "lower": "b"}, {"upper": "C", "lower": "c"},
     {"upper": "D", "lower": "d"}, {"upper": "E", "lower": "e"}, {"upper": "F", "lower": "f"},
