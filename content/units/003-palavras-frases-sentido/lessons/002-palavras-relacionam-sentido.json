@@ -1,0 +1,401 @@
+{
+  "schemaVersion": 1,
+  "id": "N0-U03-L02",
+  "title": "Palavras que se relacionam pelo sentido",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Construir a percepção de que palavras podem se relacionar pelo significado de maneiras diferentes, permitindo ao aluno formar agrupamentos cotidianos, reconhecer ideias próximas e perceber oposições simples sem depender de terminologia semântica formal.",
+  "competencies": [
+    "agrupar palavras familiares quando compartilham uma relação cotidiana clara de significado",
+    "identificar uma palavra que não pertence a um agrupamento semântico simples",
+    "reconhecer palavras de sentido próximo em exemplos controlados sem assumir que sejam substitutas perfeitas em qualquer uso",
+    "reconhecer pares que expressam oposições simples e claras",
+    "transferir essas relações para palavras novas compatíveis com o repertório da unidade",
+    "usar apoio silábico quando necessário sem confundir dificuldade de leitura com ausência de compreensão semântica"
+  ],
+  "prerequisites": ["N0-U03-L01"],
+  "limits": [
+    "não exigir os termos sinônimo, antônimo, campo lexical ou campo semântico",
+    "não transformar grupos cotidianos como animais, lugares ou ações em taxonomias linguísticas para memorização",
+    "não ensinar que palavras de sentido próximo são intercambiáveis em todos os contextos",
+    "não aprofundar como a mesma palavra muda de sentido conforme o contexto; isso pertence à Lição 3",
+    "não introduzir classes gramaticais para justificar os agrupamentos",
+    "não exigir definições longas das relações entre palavras",
+    "não usar pequenos textos como objeto central de compreensão",
+    "não reproduzir a palavra-alvo por TTS antes da resposta quando isso substituir a leitura necessária",
+    "não penalizar o uso de apoio silábico por si só",
+    "não usar velocidade ou tempo de resposta como critério de domínio"
+  ],
+  "media": {
+    "tts": "instruções, explicações, nomes de grupos, descrições semânticas curtas e feedback. Quando a leitura da palavra fizer parte da evidência, a pronúncia da palavra-alvo fica disponível apenas depois da tentativa.",
+    "controlledAudio": [],
+    "video": "nao necessario",
+    "images": "nao necessarias"
+  },
+  "supportMaterials": {
+    "curatedMedia": [],
+    "runtimeResources": [
+      {
+        "type": "TTS_OK",
+        "locations": ["instruções", "L02-B02", "L02-C01", "L02-B03", "L02-C02", "L02-B04", "L02-C03", "L02-B05", "L02-A01", "L02-A02", "L02-A03", "L02-A04", "feedback", "resumo"],
+        "purpose": "narrar explicações, nomes de agrupamentos e descrições curtas sem exigir leitura adicional extensa; a voz exata não determina nenhuma resposta"
+      }
+    ],
+    "generatedVisualResources": [
+      {
+        "type": "UI_RENDERED_WORD_CARDS",
+        "locations": ["L02-B02", "L02-C01", "L02-B03", "L02-C02", "L02-B04", "L02-C03", "L02-B05", "L02-A01", "L02-A02", "L02-A03", "L02-A04"],
+        "purpose": "renderizar palavras como texto real em cartões manipuláveis ou selecionáveis, sem produzir imagens apenas para mostrar texto"
+      },
+      {
+        "type": "UI_RENDERED_GROUP_ZONES",
+        "locations": ["L02-B02", "L02-C01", "L02-A01", "L02-A04"],
+        "purpose": "permitir agrupar ou excluir palavras por relações de significado com rótulos acessíveis e ordem variável"
+      },
+      {
+        "type": "UI_RENDERED_RELATION_PAIR_CARDS",
+        "locations": ["L02-B03", "L02-C02", "L02-B04", "L02-C03", "L02-B05", "L02-A02", "L02-A03", "L02-A04"],
+        "purpose": "comparar pares de palavras lado a lado e destacar a relação sem transformar a atividade em memorização de nomenclatura técnica"
+      },
+      {
+        "type": "UI_RENDERED_SYLLABLE_SUPPORT_TOGGLE",
+        "locations": ["L02-C01", "L02-C02", "L02-C03", "L02-A01", "L02-A02", "L02-A03", "L02-A04"],
+        "purpose": "manter a segmentação da Unidade 2 disponível como apoio de leitura, registrando seu uso separadamente do acerto semântico"
+      }
+    ],
+    "productionQueueRequired": false,
+    "publicationDependency": "não há nova mídia humana obrigatória para esta lição; texto real da interface, TTS e componentes de agrupamento/comparação são suficientes",
+    "decisionRationale": "o objeto da lição é a relação de significado entre palavras, e não a identificação visual de referentes. Cartões de texto, agrupamentos e descrições curtas preservam o foco sem criar imagens desnecessárias. Áudio controlado e vídeo não acrescentam informação relevante porque a realização sonora específica não decide nenhuma resposta."
+  },
+  "wordSupport": [
+    {"word": "GATO", "segments": ["GA", "TO"]},
+    {"word": "PATO", "segments": ["PA", "TO"]},
+    {"word": "CAVALO", "segments": ["CA", "VA", "LO"]},
+    {"word": "MESA", "segments": ["ME", "SA"]},
+    {"word": "CASA", "segments": ["CA", "SA"]},
+    {"word": "LOJA", "segments": ["LO", "JA"]},
+    {"word": "ESCOLA", "segments": ["ES", "CO", "LA"]},
+    {"word": "CORRER", "segments": ["COR", "RER"]},
+    {"word": "FELIZ", "segments": ["FE", "LIZ"]},
+    {"word": "CONTENTE", "segments": ["CON", "TEN", "TE"]},
+    {"word": "RÁPIDO", "segments": ["RÁ", "PI", "DO"]},
+    {"word": "VELOZ", "segments": ["VE", "LOZ"]},
+    {"word": "CHEIO", "segments": ["CHEI", "O"]},
+    {"word": "VAZIO", "segments": ["VA", "ZI", "O"]},
+    {"word": "ENTRAR", "segments": ["EN", "TRAR"]},
+    {"word": "SAIR", "segments": ["SA", "IR"]},
+    {"word": "ALTO", "segments": ["AL", "TO"]},
+    {"word": "BAIXO", "segments": ["BAI", "XO"]},
+    {"word": "ABERTO", "segments": ["A", "BER", "TO"]},
+    {"word": "FECHADO", "segments": ["FE", "CHA", "DO"]},
+    {"word": "BANANA", "segments": ["BA", "NA", "NA"]},
+    {"word": "UVA", "segments": ["U", "VA"]},
+    {"word": "PERA", "segments": ["PE", "RA"]},
+    {"word": "PULAR", "segments": ["PU", "LAR"]},
+    {"word": "NADAR", "segments": ["NA", "DAR"]},
+    {"word": "BONITO", "segments": ["BO", "NI", "TO"]},
+    {"word": "BELO", "segments": ["BE", "LO"]},
+    {"word": "QUENTE", "segments": ["QUEN", "TE"]},
+    {"word": "FRIO", "segments": ["FRI", "O"]}
+  ],
+  "sequence": [
+    {
+      "id": "L02-B01",
+      "type": "objective",
+      "focus": "read-or-listen",
+      "text": "Na lição anterior, você observou que palavras participam da construção de significados diferentes. Agora vamos perceber que esses significados também podem se relacionar: algumas palavras pertencem a um mesmo grupo de ideias, algumas expressam ideias próximas e outras mostram contrastes claros."
+    },
+    {
+      "id": "L02-B02",
+      "type": "semantic-group-demonstration",
+      "focus": "read-then-compare",
+      "title": "Palavras podem formar um grupo pelo significado",
+      "groupLabel": "animais",
+      "members": [
+        {"word": "GATO", "segments": ["GA", "TO"]},
+        {"word": "PATO", "segments": ["PA", "TO"]},
+        {"word": "CAVALO", "segments": ["CA", "VA", "LO"]}
+      ],
+      "nonMember": {"word": "MESA", "segments": ["ME", "SA"]},
+      "explanation": "GATO, PATO e CAVALO podem ser reunidos porque todos representam animais. MESA tem significado, mas não pertence a esse mesmo grupo. O que une as três palavras aqui é uma relação de sentido, não letras iguais ou sílabas iguais."
+    },
+    {
+      "id": "L02-C01",
+      "type": "quick-check",
+      "focus": "read-and-respond",
+      "interaction": "semantic-group-odd-one-out",
+      "prompt": "CASA, LOJA e ESCOLA podem formar um grupo de lugares. Qual palavra não pertence a esse grupo?",
+      "options": [
+        {"word": "CASA", "segments": ["CA", "SA"]},
+        {"word": "CORRER", "segments": ["COR", "RER"]},
+        {"word": "ESCOLA", "segments": ["ES", "CO", "LA"]},
+        {"word": "LOJA", "segments": ["LO", "JA"]}
+      ],
+      "correctIndex": 1,
+      "syllableSupportAvailable": true,
+      "supportUseIsError": false,
+      "targetTtsBeforeResponse": false,
+      "feedback": "CORRER representa uma ação. CASA, LOJA e ESCOLA podem ser entendidas como lugares neste agrupamento."
+    },
+    {
+      "id": "L02-B03",
+      "type": "close-meaning-demonstration",
+      "focus": "read-then-compare",
+      "title": "Palavras diferentes podem expressar ideias próximas",
+      "pairs": [
+        {
+          "words": ["FELIZ", "CONTENTE"],
+          "sharedIdea": "sentir alegria ou satisfação"
+        },
+        {
+          "words": ["RÁPIDO", "VELOZ"],
+          "sharedIdea": "algo que se move ou acontece com rapidez"
+        }
+      ],
+      "explanation": "FELIZ e CONTENTE podem expressar ideias próximas. RÁPIDO e VELOZ também podem ficar próximos em muitos usos. Isso não significa que duas palavras próximas possam sempre trocar de lugar em qualquer situação. Aqui basta perceber a proximidade do significado."
+    },
+    {
+      "id": "L02-C02",
+      "type": "quick-check-set",
+      "focus": "read-and-respond",
+      "interaction": "choose-close-meaning-word",
+      "instruction": "Escolha a palavra cuja ideia fica mais próxima da palavra-alvo.",
+      "items": [
+        {
+          "target": "FELIZ",
+          "targetSegments": ["FE", "LIZ"],
+          "options": ["CONTENTE", "VAZIO", "SAIR"],
+          "correctIndex": 0
+        },
+        {
+          "target": "RÁPIDO",
+          "targetSegments": ["RÁ", "PI", "DO"],
+          "options": ["CHEIO", "VELOZ", "CASA"],
+          "correctIndex": 1
+        }
+      ],
+      "syllableSupportAvailable": true,
+      "supportUseIsError": false,
+      "targetTtsBeforeResponse": false,
+      "feedbackTtsAfterResponse": true
+    },
+    {
+      "id": "L02-B04",
+      "type": "opposite-meaning-demonstration",
+      "focus": "read-then-compare",
+      "title": "Algumas palavras expressam contrastes",
+      "pairs": [
+        {
+          "words": ["CHEIO", "VAZIO"],
+          "explanation": "um recipiente pode estar cheio ou vazio"
+        },
+        {
+          "words": ["ENTRAR", "SAIR"],
+          "explanation": "entrar e sair indicam movimentos em direções contrastantes em uma situação simples"
+        }
+      ],
+      "explanation": "Esses pares mostram ideias que se opõem de maneira clara. Você não precisa decorar um nome técnico para reconhecer o contraste."
+    },
+    {
+      "id": "L02-C03",
+      "type": "quick-check-set",
+      "focus": "read-and-respond",
+      "interaction": "choose-opposite-meaning-word",
+      "instruction": "Escolha a palavra que expressa o contraste mais claro com a palavra-alvo.",
+      "items": [
+        {
+          "target": "ALTO",
+          "targetSegments": ["AL", "TO"],
+          "options": ["FELIZ", "BAIXO", "RÁPIDO"],
+          "correctIndex": 1
+        },
+        {
+          "target": "ABERTO",
+          "targetSegments": ["A", "BER", "TO"],
+          "options": ["FECHADO", "VELOZ", "PATO"],
+          "correctIndex": 0
+        }
+      ],
+      "syllableSupportAvailable": true,
+      "supportUseIsError": false,
+      "targetTtsBeforeResponse": false,
+      "feedbackTtsAfterResponse": true
+    },
+    {
+      "id": "L02-B05",
+      "type": "relation-comparison",
+      "focus": "compare",
+      "title": "Nem toda relação de sentido é igual",
+      "examples": [
+        {
+          "words": ["GATO", "PATO"],
+          "relation": "pertencem a um mesmo grupo cotidiano: animais"
+        },
+        {
+          "words": ["FELIZ", "CONTENTE"],
+          "relation": "expressam ideias próximas"
+        },
+        {
+          "words": ["CHEIO", "VAZIO"],
+          "relation": "expressam ideias opostas"
+        }
+      ],
+      "explanation": "Perceber a relação é mais importante do que decorar o nome da relação. Em atividades reais, uma palavra pode participar de várias redes de significado; nesta lição usamos casos claros para aprender a comparar."
+    },
+    {
+      "id": "L02-A01",
+      "type": "guided-activity",
+      "focus": "read-sort-and-respond",
+      "interaction": "sort-words-into-semantic-groups",
+      "title": "Organize por significado",
+      "instruction": "Coloque cada palavra no grupo que combina melhor com seu significado.",
+      "groups": [
+        {"id": "animals", "label": "animais"},
+        {"id": "places", "label": "lugares"}
+      ],
+      "items": [
+        {"word": "GATO", "segments": ["GA", "TO"], "correctGroup": "animals"},
+        {"word": "CAVALO", "segments": ["CA", "VA", "LO"], "correctGroup": "animals"},
+        {"word": "PATO", "segments": ["PA", "TO"], "correctGroup": "animals"},
+        {"word": "CASA", "segments": ["CA", "SA"], "correctGroup": "places"},
+        {"word": "LOJA", "segments": ["LO", "JA"], "correctGroup": "places"},
+        {"word": "ESCOLA", "segments": ["ES", "CO", "LA"], "correctGroup": "places"}
+      ],
+      "syllableSupportAvailable": true,
+      "supportUseIsError": false,
+      "targetTtsBeforeResponse": false,
+      "shuffleItems": true
+    },
+    {
+      "id": "L02-A02",
+      "type": "guided-activity",
+      "focus": "read-and-respond",
+      "interaction": "choose-close-meaning-word",
+      "title": "Encontre a ideia mais próxima",
+      "items": [
+        {
+          "target": "FELIZ",
+          "options": ["CONTENTE", "FECHADO", "CAVALO"],
+          "correctIndex": 0
+        },
+        {
+          "target": "RÁPIDO",
+          "options": ["VELOZ", "VAZIO", "ESCOLA"],
+          "correctIndex": 0
+        },
+        {
+          "target": "BONITO",
+          "options": ["SAIR", "BELO", "CHEIO"],
+          "correctIndex": 1
+        }
+      ],
+      "syllableSupportAvailable": true,
+      "supportUseIsError": false,
+      "targetTtsBeforeResponse": false,
+      "feedbackTtsAfterResponse": true
+    },
+    {
+      "id": "L02-A03",
+      "type": "guided-activity",
+      "focus": "read-and-respond",
+      "interaction": "choose-opposite-meaning-word",
+      "title": "Encontre o contraste",
+      "items": [
+        {
+          "target": "CHEIO",
+          "options": ["VAZIO", "CONTENTE", "LOJA"],
+          "correctIndex": 0
+        },
+        {
+          "target": "ENTRAR",
+          "options": ["VELOZ", "SAIR", "GATO"],
+          "correctIndex": 1
+        },
+        {
+          "target": "ALTO",
+          "options": ["BAIXO", "PATO", "FELIZ"],
+          "correctIndex": 0
+        },
+        {
+          "target": "ABERTO",
+          "options": ["RÁPIDO", "FECHADO", "CASA"],
+          "correctIndex": 1
+        }
+      ],
+      "syllableSupportAvailable": true,
+      "supportUseIsError": false,
+      "targetTtsBeforeResponse": false,
+      "feedbackTtsAfterResponse": true
+    },
+    {
+      "id": "L02-A04",
+      "type": "transfer-activity",
+      "focus": "read-and-respond",
+      "title": "Use as relações em exemplos novos",
+      "items": [
+        {
+          "interaction": "semantic-group-odd-one-out",
+          "prompt": "BANANA, UVA e PERA pertencem a um grupo de frutas. Qual palavra não pertence a esse grupo?",
+          "options": ["BANANA", "MESA", "PERA", "UVA"],
+          "correctIndex": 1
+        },
+        {
+          "interaction": "choose-semantic-relation",
+          "prompt": "Qual palavra expressa uma ideia próxima de BONITO?",
+          "target": "BONITO",
+          "options": ["VAZIO", "BELO", "SAIR"],
+          "correctIndex": 1
+        },
+        {
+          "interaction": "choose-semantic-relation",
+          "prompt": "Qual palavra expressa o contraste mais claro com QUENTE?",
+          "target": "QUENTE",
+          "options": ["FRIO", "FELIZ", "LOJA"],
+          "correctIndex": 0
+        },
+        {
+          "interaction": "semantic-group-odd-one-out",
+          "prompt": "CORRER, PULAR e NADAR formam um grupo de ações. Qual palavra não pertence a esse grupo?",
+          "options": ["PULAR", "LOJA", "NADAR", "CORRER"],
+          "correctIndex": 1
+        }
+      ],
+      "syllableSupportAvailable": true,
+      "supportUseIsError": false,
+      "targetTtsBeforeResponse": false,
+      "feedbackTtsAfterResponse": true
+    },
+    {
+      "id": "L02-B06",
+      "type": "summary",
+      "focus": "read-or-listen",
+      "text": "Palavras podem se relacionar porque pertencem a um mesmo grupo de significados, porque expressam ideias próximas ou porque mostram contrastes. Você não precisa decorar nomes técnicos para perceber essas relações. Na próxima lição, vamos observar uma nova ideia: o contexto também pode ajudar a decidir qual sentido de uma palavra está sendo usado."
+    }
+  ],
+  "assessmentBehavior": {
+    "targetWordAudio": "quando a leitura da palavra participar da evidência, a pronúncia não fica disponível antes da primeira resposta; depois da tentativa, TTS pode confirmar a palavra e apoiar revisão",
+    "syllableSupport": "permitido onde declarado e registrado separadamente do acerto; usar o apoio não é automaticamente erro",
+    "groupLabelsTts": "permitido antes da resposta porque o rótulo do grupo faz parte da instrução e não revela sozinho qual cartão deve ser colocado nele",
+    "timeLimit": false,
+    "technicalTerminologyRequired": false,
+    "longDefinitionRequired": false,
+    "retryPolicy": "permitir nova tentativa após feedback e variar a ordem dos cartões/opções quando o renderer suportar isso sem alterar a competência medida"
+  },
+  "completionEvidence": {
+    "observablePerformance": "Estabelecer relações simples de significado entre palavras familiares e novas compatíveis, distinguindo agrupamento, proximidade e oposição sem depender de nomenclatura técnica.",
+    "criteria": {
+      "semanticGrouping": "classificar corretamente pelo menos 5 dos 6 cartões de L02-A01",
+      "closeMeaning": "acertar pelo menos 2 dos 3 itens de L02-A02",
+      "opposition": "acertar pelo menos 3 dos 4 itens de L02-A03",
+      "transfer": "acertar pelo menos 3 dos 4 itens de L02-A04, incluindo pelo menos um agrupamento e uma relação por proximidade ou oposição"
+    },
+    "completionRule": "considerar a lição concluída quando os quatro critérios forem atingidos; desempenho forte em agrupamento não compensa ausência total de reconhecimento de proximidade ou oposição, e vice-versa",
+    "notSufficient": [
+      "percorrer todas as telas",
+      "decorar os termos sinônimo ou antônimo",
+      "agrupar palavras apenas por letras ou sílabas parecidas",
+      "acertar somente os exemplos demonstrados sem transferir para palavras novas",
+      "responder rapidamente",
+      "recitar listas de categorias sem conseguir relacionar palavras pelo significado"
+    ]
+  }
+}
