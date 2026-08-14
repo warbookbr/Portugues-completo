@@ -6,11 +6,11 @@ Lista oficial das mídias pedagógicas que precisam ser produzidas manualmente. 
 
 | Lote | Uso | Prioridade | Obrigatório | Status |
 |---|---|---|---|---|
-| `N0-U01-L02-AUD-*` | U1 L2; reutiliza na L7 | ALTA | SIM | A_PRODUZIR |
+| `N0-U01-L02-AUD-*` | U1 L2; reutiliza nas L7 e L8 | ALTA | SIM | A_PRODUZIR |
 | `N0-U01-L03-AUD-*` | U1 L3; reutiliza na L7 | ALTA | SIM | A_PRODUZIR |
 | `N0-U01-L08-AUD-*` | U1 L8 | NORMAL | SIM | A_PRODUZIR |
 
-As ligações pedagógicas das Lições 2, 3 e 7 já estão dimensionadas abaixo. Exercícios formais futuros podem reutilizar estes mesmos IDs quando fizer sentido; não renumerar mídias existentes. As Lições 1, 4, 5 e 6 não exigem mídia humana na fila: usam TTS e/ou recursos visuais renderizados pela própria interface. A Lição 7 também não cria novos arquivos: reutiliza subconjuntos dos lotes L2 e L3.
+As ligações pedagógicas das Lições 2, 3, 7 e 8 já estão dimensionadas abaixo. Exercícios formais futuros podem reutilizar estes mesmos IDs quando fizer sentido; não renumerar mídias existentes. As Lições 1, 4, 5 e 6 não exigem mídia humana na fila: usam TTS e/ou recursos visuais renderizados pela própria interface. A Lição 7 não cria novos arquivos e reutiliza subconjuntos dos lotes L2 e L3. A Lição 8 usa quatro novos arquivos já reservados no lote L8 e reutiliza `sapo` e `gato` do lote L2.
 
 ## Lote L2 — palavras para percepção auditiva
 
@@ -39,8 +39,8 @@ Objetivo: fornecer estímulos fixos para comparar sons claros sem depender do TT
 | `N0-U01-L02-AUD-003` | `L02-C01`; `L02-A01` item 2 |
 | `N0-U01-L02-AUD-004` | `L02-C01` |
 | `N0-U01-L02-AUD-005` | `L02-A01` item 3 |
-| `N0-U01-L02-AUD-006` | `L02-A01` item 3; reutilização em L7 e planejada em L8 |
-| `N0-U01-L02-AUD-007` | `L02-B03`; `L02-A01` item 2; reutilização em L7 e planejada em L8 |
+| `N0-U01-L02-AUD-006` | `L02-A01` item 3; reutilização em L7; `L08-B04`; `L08-A01` item 3 |
+| `N0-U01-L02-AUD-007` | `L02-B03`; `L02-A01` item 2; reutilização em L7; `L08-C01`; `L08-A01` item 2 |
 | `N0-U01-L02-AUD-008` | `L02-B03`; `L02-A01` item 4; reutilização em L7 |
 
 ### Ligações já dimensionadas na Lição 7
@@ -104,7 +104,20 @@ Validar: 26 arquivos presentes, conteúdo correspondente, volume consistente, se
 
 Reutilizar `gato` (`N0-U01-L02-AUD-007`) e `sapo` (`N0-U01-L02-AUD-006`). Não regravar.
 
-Contrastes planejados: `casa/cidade`, `gato/gelo`, `sapo/cidade` e `casa/quilo`. O aluno deve perceber a variação; não precisa explicar ainda as regras ortográficas.
+Contrastes dimensionados: `casa/cidade`, `gato/gelo`, `sapo/cidade` e `casa/quilo`. O aluno deve perceber a variação; não precisa explicar ainda as regras ortográficas.
+
+### Ligações já dimensionadas na Lição 8
+
+| ID | Conteúdo | Localização pedagógica atual |
+|---|---|---|
+| `N0-U01-L08-AUD-001` | `casa` | `L08-B02`; `L08-C02`; `L08-A01` itens 1 e 4 |
+| `N0-U01-L08-AUD-002` | `cidade` | `L08-B02`; `L08-B04`; `L08-A01` itens 1 e 3 |
+| `N0-U01-L08-AUD-003` | `gelo` | `L08-C01`; `L08-A01` item 2 |
+| `N0-U01-L08-AUD-004` | `quilo` | `L08-C02`; `L08-A01` item 4 |
+| `N0-U01-L02-AUD-006` | `sapo` | `L08-B04`; `L08-A01` item 3 |
+| `N0-U01-L02-AUD-007` | `gato` | `L08-C01`; `L08-A01` item 2 |
+
+Em `L08-B02`, `L08-C01`, `L08-B04`, `L08-C02` e no primeiro estágio de cada item de `L08-A01`, a forma escrita não deve aparecer antes do julgamento auditivo quando isso puder transformar a tarefa em reconhecimento visual. Depois da resposta auditiva, revelar as palavras como texto da interface e destacar apenas o começo relevante (`C`, `G`, `S` ou `QU`). Não introduzir classificação formal de `QU` nesta lição.
 
 Usar as mesmas boas práticas do Lote L2. Validar também se os novos clipes combinam acusticamente com os reutilizados.
 
