@@ -24,6 +24,34 @@
     "video": "nao necessario",
     "images": "nao necessarias"
   },
+  "supportMaterials": {
+    "curatedMedia": [
+      {
+        "mediaIds": "N0-U01-L03-AUD-001 a N0-U01-L03-AUD-026",
+        "type": "AUDIO_CONTROLADO",
+        "requiredForPublication": true,
+        "purpose": "fornecer referência auditiva fixa para os nomes das 26 letras",
+        "locations": ["L03-B02", "L03-B03", "L03-A01", "L03-C01"],
+        "productionSource": "producao-midia/FILA-MIDIA.md"
+      }
+    ],
+    "runtimeResources": [
+      {
+        "type": "TTS_OK",
+        "locations": ["instruções", "explicações", "feedback"],
+        "purpose": "apoio de acesso ao texto sem substituir os áudios controlados dos nomes das letras"
+      }
+    ],
+    "generatedVisualResources": [
+      {
+        "type": "UI_RENDERED_LETTERS",
+        "locations": ["L03-B02", "L03-B03", "L03-A01", "L03-A02"],
+        "purpose": "as letras devem ser renderizadas como texto/interface, não como imagens, preservando legibilidade, acessibilidade e adaptação de tela"
+      }
+    ],
+    "publicationDependency": "a lição pode ser implementada estruturalmente antes da produção, mas as tarefas que pedem reconhecer uma letra pelo nome ouvido dependem dos 26 áudios validados e ligados aos IDs",
+    "decisionRationale": "não criar imagem de alfabeto nem vídeo: a própria interface oferece uma referência visual mais acessível e reutilizável; o único material humano necessário é o conjunto de nomes controlados"
+  },
   "letterSet": [
     {"letter":"A","mediaId":"N0-U01-L03-AUD-001"},
     {"letter":"B","mediaId":"N0-U01-L03-AUD-002"},
