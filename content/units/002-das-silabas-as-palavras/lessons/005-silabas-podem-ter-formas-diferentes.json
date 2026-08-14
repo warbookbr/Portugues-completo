@@ -1,0 +1,202 @@
+{
+  "schemaVersion": 1,
+  "id": "N0-U02-L05",
+  "title": "Sílabas podem ter formas diferentes",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Reconhecer, por comparação de palavras segmentadas de forma controlada, que uma sílaba escrita pode ser representada por agrupamentos de letras com tamanhos e organizações diferentes, sem transformar esses exemplos em uma classificação técnica.",
+  "competencies": [
+    "reconhecer que uma sílaba escrita não precisa ter exatamente duas letras",
+    "aceitar como uma única sílaba trechos escritos com uma, duas, três ou mais letras quando o exemplo apresentado mostra essa correspondência",
+    "comparar agrupamentos silábicos visualmente diferentes sem concluir que apenas o padrão consoante + vogal é válido",
+    "usar a segmentação visual fornecida como apoio de compreensão sem precisar nomear estruturas silábicas"
+  ],
+  "prerequisites": ["N0-U02-L04"],
+  "limits": [
+    "não ensinar nomes formais de estruturas silábicas",
+    "não introduzir encontro consonantal, dígrafo, ditongo, tritongo ou hiato como sistemas classificatórios",
+    "não ensinar regras completas de divisão silábica",
+    "não pedir que o aluno deduza sozinho a segmentação normativa de palavras novas",
+    "não transformar exemplos como U, PRA ou FLOR em fórmulas produtivas universais",
+    "não exigir leitura autônoma rápida nem velocidade de resposta",
+    "não usar quantidade de letras como atalho para decidir quantas sílabas uma palavra possui"
+  ],
+  "media": {
+    "tts": "apoio opcional para ouvir as palavras inteiras apresentadas; a resposta principal depende da observação dos recortes silábicos fornecidos, não de uma realização sonora exata",
+    "controlledAudio": [],
+    "video": "nao necessario",
+    "images": "nao necessarias"
+  },
+  "supportMaterials": {
+    "curatedMedia": [],
+    "runtimeResources": [
+      {
+        "type": "TTS_OK",
+        "locations": ["L05-B02", "L05-B03", "L05-C01", "L05-B04", "L05-C02", "L05-A01", "L05-A02", "resumo"],
+        "purpose": "permitir que o aluno ouça a palavra inteira quando isso ajudar a relacionar o recorte escrito à fala, sem tornar a voz do TTS parte da resposta correta"
+      }
+    ],
+    "generatedVisualResources": [
+      {
+        "type": "UI_RENDERED_SYLLABLE_SPANS",
+        "locations": ["L05-B02", "L05-B03", "L05-C01", "L05-B04", "L05-C02", "L05-A01", "L05-A02"],
+        "purpose": "renderizar palavras como texto segmentado em blocos silábicos acessíveis, preservando cada agrupamento de letras como unidade visual sem converter texto em imagem"
+      },
+      {
+        "type": "UI_RENDERED_LETTER_COUNT_HINT",
+        "locations": ["L05-B03", "L05-B04", "L05-A01"],
+        "purpose": "mostrar, depois que o recorte silábico já estiver visível, quantas letras há no trecho destacado para apoiar a comparação; a contagem não deve funcionar como regra para descobrir sílabas"
+      }
+    ],
+    "productionQueueRequired": false,
+    "publicationDependency": "não há mídia humana obrigatória para esta lição; texto, segmentação visual e TTS do dispositivo são suficientes para o objetivo pedagógico",
+    "decisionRationale": "a competência nova é visual-conceitual: perceber variedade no tamanho e na organização gráfica dos trechos que já foram apresentados como sílabas. Áudio controlado não altera a resposta esperada, e imagem ou vídeo apenas duplicariam texto que a interface pode renderizar de forma mais acessível."
+  },
+  "exampleSet": [
+    {"word": "CASA", "segments": ["CA", "SA"], "focusSegment": "CA", "focusLetterCount": 2, "ttsText": "casa"},
+    {"word": "UVA", "segments": ["U", "VA"], "focusSegment": "U", "focusLetterCount": 1, "ttsText": "uva"},
+    {"word": "PRATO", "segments": ["PRA", "TO"], "focusSegment": "PRA", "focusLetterCount": 3, "ttsText": "prato"},
+    {"word": "FLOR", "segments": ["FLOR"], "focusSegment": "FLOR", "focusLetterCount": 4, "ttsText": "flor"},
+    {"word": "PORTA", "segments": ["POR", "TA"], "focusSegment": "POR", "focusLetterCount": 3, "ttsText": "porta"},
+    {"word": "SOL", "segments": ["SOL"], "focusSegment": "SOL", "focusLetterCount": 3, "ttsText": "sol"}
+  ],
+  "sequence": [
+    {
+      "id": "L05-B01",
+      "type": "objective",
+      "focus": "read-or-listen",
+      "text": "Nas lições anteriores, muitas sílabas apareceram como trechos de duas letras, como CA, SA, GA e TO. Agora vamos observar uma coisa importante: esse formato não é o único possível."
+    },
+    {
+      "id": "L05-B02",
+      "type": "comparison-demonstration",
+      "focus": "observe",
+      "title": "Duas letras são apenas um dos formatos que encontramos",
+      "examples": [
+        {"word": "CASA", "segments": ["CA", "SA"], "highlight": "CA", "ttsText": "casa"},
+        {"word": "SOL", "segments": ["SOL"], "highlight": "SOL", "ttsText": "sol"}
+      ],
+      "explanation": "Em CASA, CA é uma sílaba escrita com duas letras. Em SOL, a palavra inteira corresponde a uma única sílaba e aparece com três letras. Portanto, o número de letras de uma sílaba pode variar.",
+      "guardRail": "não apresentar SOL como uma categoria técnica; ele é apenas um contraexemplo à falsa regra de duas letras"
+    },
+    {
+      "id": "L05-B03",
+      "type": "progressive-comparison",
+      "focus": "observe",
+      "title": "Uma sílaba pode aparecer com uma, duas ou três letras",
+      "examples": [
+        {"word": "UVA", "segments": ["U", "VA"], "highlight": "U", "letterCountAfterReveal": 1, "ttsText": "uva"},
+        {"word": "CASA", "segments": ["CA", "SA"], "highlight": "CA", "letterCountAfterReveal": 2, "ttsText": "casa"},
+        {"word": "PRATO", "segments": ["PRA", "TO"], "highlight": "PRA", "letterCountAfterReveal": 3, "ttsText": "prato"}
+      ],
+      "explanation": "U, CA e PRA têm quantidades diferentes de letras, mas cada trecho destacado corresponde a uma sílaba dentro do exemplo em que aparece. Não precisamos dar um nome técnico para cada formato agora."
+    },
+    {
+      "id": "L05-C01",
+      "type": "quick-check",
+      "focus": "observe-and-respond",
+      "interaction": "select-correct-statement",
+      "prompt": "Observe UVA dividida como U | VA. Qual afirmação está de acordo com o exemplo?",
+      "writtenWord": "UVA",
+      "segments": ["U", "VA"],
+      "highlight": "U",
+      "ttsText": "uva",
+      "options": [
+        "U pode corresponder a uma sílaba mesmo tendo apenas uma letra.",
+        "Uma sílaba precisa ter sempre duas letras.",
+        "U não pode ser uma sílaba porque é uma vogal."
+      ],
+      "correctIndex": 0,
+      "feedback": "Neste exemplo, U é uma sílaba de UVA. Uma sílaba escrita não precisa ter duas letras."
+    },
+    {
+      "id": "L05-B04",
+      "type": "comparison-demonstration",
+      "focus": "observe",
+      "title": "O agrupamento pode ser ainda maior",
+      "examples": [
+        {"word": "PRATO", "segments": ["PRA", "TO"], "highlight": "PRA", "letterCountAfterReveal": 3, "ttsText": "prato"},
+        {"word": "FLOR", "segments": ["FLOR"], "highlight": "FLOR", "letterCountAfterReveal": 4, "ttsText": "flor"}
+      ],
+      "explanation": "PRA aparece como uma sílaba de PRATO com três letras. FLOR aparece aqui como uma palavra de uma única sílaba escrita com quatro letras. O formato visual pode mudar bastante sem deixar de representar uma sílaba.",
+      "guardRail": "não explicar neste momento por que os agrupamentos internos de PRA ou FLOR funcionam dessa forma; classificações ficam para etapas posteriores do curso"
+    },
+    {
+      "id": "L05-C02",
+      "type": "quick-check",
+      "focus": "observe-and-respond",
+      "interaction": "reject-false-universal-rule",
+      "prompt": "Depois de observar CA, U, PRA e FLOR, qual conclusão é segura?",
+      "options": [
+        "Sílabas escritas podem ter diferentes quantidades e organizações de letras.",
+        "Toda sílaba precisa seguir exatamente consoante + vogal.",
+        "A quantidade de letras sempre informa quantas sílabas há na palavra."
+      ],
+      "correctIndex": 0,
+      "feedback": "Os exemplos mostram formatos diferentes. Não usamos uma única fórmula para todas as sílabas."
+    },
+    {
+      "id": "L05-A01",
+      "type": "guided-activity",
+      "focus": "observe-and-respond",
+      "interaction": "recognize-valid-syllable-span",
+      "title": "Formatos diferentes, mesma ideia",
+      "instruction": "Cada palavra já está dividida em sílabas. Observe o trecho destacado e responda à afirmação. Você pode ouvir a palavra inteira pelo TTS se isso ajudar.",
+      "items": [
+        {"word": "UVA", "segments": ["U", "VA"], "highlight": "U", "statement": "O trecho destacado é uma sílaba mesmo tendo uma letra.", "correct": true, "ttsText": "uva"},
+        {"word": "CASA", "segments": ["CA", "SA"], "highlight": "CA", "statement": "O trecho destacado é uma sílaba com duas letras.", "correct": true, "ttsText": "casa"},
+        {"word": "PRATO", "segments": ["PRA", "TO"], "highlight": "PRA", "statement": "O trecho destacado pode ser uma sílaba mesmo tendo três letras.", "correct": true, "ttsText": "prato"},
+        {"word": "FLOR", "segments": ["FLOR"], "highlight": "FLOR", "statement": "Como há quatro letras, esta palavra obrigatoriamente tem quatro sílabas.", "correct": false, "ttsText": "flor"},
+        {"word": "SOL", "segments": ["SOL"], "highlight": "SOL", "statement": "SOL mostra que três letras podem aparecer juntas em uma única sílaba.", "correct": true, "ttsText": "sol"}
+      ],
+      "feedbackRule": "feedback imediato deve apontar para o recorte já fornecido, sem introduzir nomes técnicos de estrutura silábica"
+    },
+    {
+      "id": "L05-A02",
+      "type": "transfer-activity",
+      "focus": "observe-and-respond",
+      "interaction": "apply-generalization-to-new-presented-segmentation",
+      "title": "A regra falsa ainda funciona?",
+      "instruction": "Observe um exemplo novo já dividido pela interface. Não é preciso descobrir a divisão: apenas use o que aprendeu sobre formatos diferentes.",
+      "word": "PORTA",
+      "segments": ["POR", "TA"],
+      "highlight": "POR",
+      "ttsText": "porta",
+      "prompt": "POR aparece como uma sílaba de PORTA. O que este exemplo acrescenta?",
+      "options": [
+        "Confirma que uma sílaba pode aparecer com três letras e não precisa seguir sempre o mesmo formato.",
+        "Prova que toda sílaba tem três letras.",
+        "Mostra que só palavras começadas por P podem ter sílabas maiores."
+      ],
+      "correctIndex": 0,
+      "feedback": "POR é mais um exemplo de sílaba escrita com três letras. Ele amplia os exemplos sem criar uma nova regra universal."
+    },
+    {
+      "id": "L05-B05",
+      "type": "summary",
+      "focus": "read-or-listen",
+      "points": [
+        "Uma sílaba é uma parte sonora da palavra e pode aparecer na escrita com agrupamentos diferentes de letras.",
+        "Nos exemplos desta lição vimos trechos com uma, duas, três e quatro letras correspondendo a uma sílaba.",
+        "Consoante + vogal é um formato que aparece muitas vezes, mas não é uma fórmula para todas as sílabas.",
+        "Contar letras não é o mesmo que contar sílabas.",
+        "Ainda não precisamos classificar esses formatos nem aprender todas as regras de divisão silábica."
+      ],
+      "bridgeToNextLesson": "Na próxima lição, vamos usar sílabas fornecidas como peças para montar e completar palavras familiares."
+    }
+  ],
+  "completionEvidence": {
+    "observablePerformance": "Reconhecer, em exemplos já segmentados e em um exemplo de transferência também segmentado pela interface, que trechos escritos com quantidades e organizações diferentes de letras podem corresponder a uma sílaba.",
+    "criterion": "acertar L05-C01 e L05-C02, pelo menos 4 dos 5 itens de L05-A01 e L05-A02 após oportunidade de revisar os exemplos",
+    "notSufficient": "apenas contar letras, memorizar os exemplos isoladamente ou repetir que sílabas podem ser diferentes sem reconhecer a falsa regra de tamanho/formato único"
+  },
+  "implementationGuardRails": [
+    "a interface deve fornecer a segmentação dos exemplos; esta lição não avalia descoberta autônoma de divisão silábica normativa",
+    "os segmentos são texto real e devem permanecer selecionáveis/acessíveis, não imagens",
+    "não depender exclusivamente de cor para indicar o trecho destacado; usar contorno, posição, rótulo ou outro sinal acessível",
+    "a contagem de letras deve aparecer como observação posterior ao recorte silábico, nunca como algoritmo para determinar a sílaba",
+    "TTS pode ler a palavra inteira, mas não deve anunciar previamente qual alternativa está correta",
+    "não introduzir siglas como CV, CVC, CCV ou termos técnicos equivalentes",
+    "não transformar PRA, FLOR, POR ou outros exemplos em famílias para memorização",
+    "não usar tempo de resposta como critério de conclusão"
+  ]
+}
