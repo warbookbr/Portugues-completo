@@ -27,8 +27,7 @@
       "N0-U02-L01-AUD-001 a N0-U02-L01-AUD-007",
       "N0-U01-L02-AUD-001",
       "N0-U01-L02-AUD-003",
-      "N0-U01-L02-AUD-005",
-      "N0-U01-L02-AUD-008"
+      "N0-U01-L02-AUD-005"
     ],
     "video": "nao necessario",
     "images": "nao necessarias"
@@ -55,12 +54,11 @@
         "mediaIds": [
           "N0-U01-L02-AUD-001",
           "N0-U01-L02-AUD-003",
-          "N0-U01-L02-AUD-005",
-          "N0-U01-L02-AUD-008"
+          "N0-U01-L02-AUD-005"
         ],
         "type": "AUDIO_CONTROLADO",
         "requiredForPublication": true,
-        "purpose": "reutilizar as gravações naturais já previstas de pato, mala, sol e bola como versões de palavra inteira, sem duplicar mídia",
+        "purpose": "reutilizar as gravações naturais já previstas de pato, mala e sol como versões de palavra inteira, sem duplicar mídia",
         "locations": ["L01-B02", "L01-C01", "L01-B04", "L01-A01"],
         "productionSource": "producao-midia/FILA-MIDIA.md"
       }
@@ -80,7 +78,7 @@
       }
     ],
     "productionQueueRequired": true,
-    "publicationDependency": "a estrutura da lição pode ser implementada antes da produção dos arquivos, mas as demonstrações e atividades auditivas não podem ser consideradas publicáveis até os sete áudios da família U02-L01 e os quatro áudios reutilizados da U01-L02 estarem produzidos, validados e ligados aos IDs",
+    "publicationDependency": "a estrutura da lição pode ser implementada antes da produção dos arquivos, mas as demonstrações e atividades auditivas não podem ser consideradas publicáveis até os sete áudios da família U02-L01 e os três áudios reutilizados da U01-L02 estarem produzidos, validados e ligados aos IDs",
     "decisionRationale": "a segmentação em sílabas é o próprio objeto de aprendizagem, então as pausas e a realização das partes precisam ser consistentes. TTS continua adequado para instruções. Palavras escritas, imagens e vídeo não são necessários nesta etapa e poderiam deslocar o foco da escuta para a leitura antes do momento previsto."
   },
   "audioSet": [
@@ -105,11 +103,6 @@
       "spokenContent": "ma — la",
       "role": "segmented-word",
       "syllableCount": 2
-    },
-    {
-      "mediaId": "N0-U01-L02-AUD-008",
-      "spokenContent": "bola",
-      "role": "whole-word-reuse"
     },
     {
       "mediaId": "N0-U02-L01-AUD-003",
