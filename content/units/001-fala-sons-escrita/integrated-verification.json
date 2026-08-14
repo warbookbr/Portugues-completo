@@ -1,0 +1,345 @@
+{
+  "schemaVersion": 1,
+  "id": "N0-U01-V01",
+  "type": "integrated-unit-verification",
+  "title": "Verificação integrada — Unidade 1",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Verificar de forma integrada se o aluno consolidou as competências essenciais da Unidade 1 sem depender de memorização das atividades já vistas nem antecipar conteúdos da Unidade 2.",
+  "prerequisites": [
+    "N0-U01-L01",
+    "N0-U01-L02",
+    "N0-U01-L03",
+    "N0-U01-L04",
+    "N0-U01-L05",
+    "N0-U01-L06",
+    "N0-U01-L07",
+    "N0-U01-L08"
+  ],
+  "designPrinciples": [
+    "usar exemplos novos em relação às atividades centrais das lições sempre que a competência puder ser verificada sem reutilização",
+    "não depender de recitação do alfabeto",
+    "não medir velocidade como evidência de domínio",
+    "não exigir resposta escrita longa quando uma seleção, ordenação ou reprodução curta mede melhor a competência",
+    "ocultar a forma escrita antes de julgamentos auditivos quando a escrita revelaria a resposta",
+    "permitir repetição de estímulos auditivos sem penalidade",
+    "não introduzir sílabas, leitura sistemática de palavras, ortografia ou terminologia fonética como requisito"
+  ],
+  "limits": [
+    "não avaliar domínio de sílabas ou leitura sistemática de palavras",
+    "não exigir ortografia de palavras novas",
+    "não exigir regras de uso de maiúsculas",
+    "não exigir classificação de dígrafos ou encontros",
+    "não exigir terminologia de fonemas",
+    "não exigir memorização perfeita da ordem alfabética",
+    "não usar tempo de resposta como critério de aprovação"
+  ],
+  "coverage": [
+    {
+      "competency": "distinguir fala e escrita",
+      "evidence": ["V01-Q01"]
+    },
+    {
+      "competency": "perceber semelhanças e diferenças sonoras claras em palavras ouvidas",
+      "evidence": ["V01-Q02"]
+    },
+    {
+      "competency": "reconhecer letras fora da ordem alfabética",
+      "evidence": ["V01-Q03"]
+    },
+    {
+      "competency": "associar maiúscula e minúscula da mesma letra",
+      "evidence": ["V01-Q04"]
+    },
+    {
+      "competency": "reconhecer vogais e consoantes introdutoriamente e distinguir letras de outros sinais",
+      "evidence": ["V01-Q05"]
+    },
+    {
+      "competency": "acompanhar organização da escrita da esquerda para a direita e perceber espaços",
+      "evidence": ["V01-Q06"]
+    },
+    {
+      "competency": "reproduzir pequena sequência a partir de modelo",
+      "evidence": ["V01-Q07"]
+    },
+    {
+      "competency": "distinguir nome de letra de palavra em que a letra representa um som",
+      "evidence": ["V01-Q08"]
+    },
+    {
+      "competency": "associar som inicial claro a uma letra já trabalhada",
+      "evidence": ["V01-Q09"]
+    },
+    {
+      "competency": "perceber que uma mesma letra pode representar sons diferentes",
+      "evidence": ["V01-Q10"]
+    },
+    {
+      "competency": "perceber que começos sonoros semelhantes podem ter representações escritas diferentes",
+      "evidence": ["V01-Q11"]
+    },
+    {
+      "competency": "compreender que a relação letra-som não é fixa de um para um",
+      "evidence": ["V01-Q12"]
+    }
+  ],
+  "media": {
+    "tts": "instruções e estímulo simples de modalidade em V01-Q01, quando a realização específica da voz não determina a resposta",
+    "controlledAudio": [
+      "N0-U01-V01-AUD-001 a N0-U01-V01-AUD-007",
+      "N0-U01-L03-AUD-006"
+    ],
+    "video": "nao necessario",
+    "images": "nao necessarias"
+  },
+  "supportMaterials": {
+    "curatedMedia": [
+      {
+        "mediaIds": [
+          "N0-U01-V01-AUD-001",
+          "N0-U01-V01-AUD-002",
+          "N0-U01-V01-AUD-003",
+          "N0-U01-V01-AUD-004",
+          "N0-U01-V01-AUD-005",
+          "N0-U01-V01-AUD-006",
+          "N0-U01-V01-AUD-007"
+        ],
+        "type": "AUDIO_CONTROLADO",
+        "requiredForPublication": true,
+        "purpose": "fornecer exemplos novos e acusticamente consistentes para a verificação auditiva da unidade, reduzindo acerto por memorização das atividades das lições",
+        "locations": ["V01-Q02", "V01-Q08", "V01-Q09", "V01-Q10", "V01-Q11"],
+        "productionSource": "producao-midia/FILA-MIDIA.md"
+      },
+      {
+        "mediaIds": ["N0-U01-L03-AUD-006"],
+        "type": "AUDIO_CONTROLADO",
+        "requiredForPublication": true,
+        "purpose": "reutilizar a referência validada do nome da letra F na distinção entre nome de letra e palavra",
+        "locations": ["V01-Q08"],
+        "productionSource": "producao-midia/FILA-MIDIA.md"
+      }
+    ],
+    "runtimeResources": [
+      {
+        "type": "TTS_OK",
+        "locations": ["instruções", "V01-Q01", "feedback final"],
+        "purpose": "fornecer acessibilidade e um exemplo simples de fala quando diferenças específicas de pronúncia não determinam a resposta"
+      }
+    ],
+    "generatedVisualResources": [
+      {
+        "type": "UI_RENDERED_TEXT_TOKENS_AND_HIGHLIGHTS",
+        "locations": ["V01-Q01", "V01-Q03", "V01-Q04", "V01-Q05", "V01-Q06", "V01-Q07", "V01-Q08", "V01-Q09", "V01-Q10", "V01-Q11"],
+        "purpose": "renderizar letras, sinais, sequências, palavras reveladas e destaques como conteúdo acessível da interface em vez de imagens"
+      }
+    ],
+    "productionQueueRequired": true,
+    "publicationDependency": "a verificação pode ser implementada estruturalmente, mas não pode ser considerada publicável até os sete novos áudios V01 e o áudio reutilizado do nome da letra F estarem produzidos ou já validados e ligados aos IDs",
+    "decisionRationale": "a verificação precisa de exemplos novos para reduzir dependência de memória e de áudio controlado onde a percepção sonora decide a resposta; imagens e vídeo não acrescentariam validade à avaliação"
+  },
+  "audioSet": [
+    {"mediaId": "N0-U01-V01-AUD-001", "spokenContent": "foca"},
+    {"mediaId": "N0-U01-V01-AUD-002", "spokenContent": "fita"},
+    {"mediaId": "N0-U01-V01-AUD-003", "spokenContent": "vaca"},
+    {"mediaId": "N0-U01-V01-AUD-004", "spokenContent": "rato"},
+    {"mediaId": "N0-U01-V01-AUD-005", "spokenContent": "copo"},
+    {"mediaId": "N0-U01-V01-AUD-006", "spokenContent": "cego"},
+    {"mediaId": "N0-U01-V01-AUD-007", "spokenContent": "sino"}
+  ],
+  "items": [
+    {
+      "id": "V01-Q01",
+      "type": "modality-identification",
+      "focus": "respond",
+      "prompt": "Uma opção é apresentada como fala e a outra como escrita. Qual delas é a escrita?",
+      "stimuli": [
+        {"mode": "tts", "content": "lua"},
+        {"mode": "text", "content": "LUA"}
+      ],
+      "options": ["a opção que eu ouço", "a opção que eu vejo escrita"],
+      "correctIndex": 1,
+      "guardRail": "o conteúdo lexical não é o alvo; a resposta deve depender apenas de distinguir realização sonora de representação gráfica"
+    },
+    {
+      "id": "V01-Q02",
+      "type": "audio-pair-classify",
+      "focus": "listen-and-respond",
+      "instruction": "Ouça cada par e indique se os começos soam parecidos ou diferentes.",
+      "writtenWordsVisibleBeforeResponse": false,
+      "options": ["parecidos", "diferentes"],
+      "items": [
+        {
+          "stimuli": ["N0-U01-V01-AUD-001", "N0-U01-V01-AUD-002"],
+          "spokenContent": ["foca", "fita"],
+          "correct": "parecidos"
+        },
+        {
+          "stimuli": ["N0-U01-V01-AUD-003", "N0-U01-V01-AUD-004"],
+          "spokenContent": ["vaca", "rato"],
+          "correct": "diferentes"
+        }
+      ],
+      "repeatAudio": true
+    },
+    {
+      "id": "V01-Q03",
+      "type": "letter-recognition",
+      "focus": "respond",
+      "prompt": "Selecione a letra G.",
+      "options": ["Q", "G", "C"],
+      "correctIndex": 1,
+      "guardRail": "não apresentar letras em sequência alfabética previsível"
+    },
+    {
+      "id": "V01-Q04",
+      "type": "case-matching",
+      "focus": "respond",
+      "prompt": "Qual minúscula corresponde à letra R?",
+      "model": "R",
+      "options": ["n", "r", "p"],
+      "correctIndex": 1
+    },
+    {
+      "id": "V01-Q05",
+      "type": "symbol-classification",
+      "focus": "respond",
+      "instruction": "Classifique cada sinal.",
+      "categories": ["vogal", "consoante", "número", "pontuação", "outro símbolo"],
+      "items": [
+        {"stimulus": "A", "correct": "vogal"},
+        {"stimulus": "T", "correct": "consoante"},
+        {"stimulus": "7", "correct": "número"},
+        {"stimulus": "?", "correct": "pontuação"},
+        {"stimulus": "@", "correct": "outro símbolo"}
+      ]
+    },
+    {
+      "id": "V01-Q06",
+      "type": "visual-organization-choice",
+      "focus": "observe-and-respond",
+      "prompt": "O modelo é M A R, seguindo da esquerda para a direita e mantendo os espaços. Qual opção conserva essa organização?",
+      "model": ["M", "A", "R"],
+      "options": [
+        {"tokens": ["M", "A", "R"], "spaces": true},
+        {"tokens": ["R", "A", "M"], "spaces": true},
+        {"tokens": ["M", "A", "R"], "spaces": false}
+      ],
+      "correctIndex": 0,
+      "guardRail": "a tarefa verifica direção, ordem e espaços; não depende de ler uma palavra"
+    },
+    {
+      "id": "V01-Q07",
+      "type": "sequence-reproduction",
+      "focus": "observe-and-respond",
+      "prompt": "Reproduza a sequência exatamente como aparece no modelo.",
+      "model": ["B", "4", "a", "?"],
+      "availableTokens": ["?", "a", "B", "4"],
+      "correctSequence": ["B", "4", "a", "?"],
+      "guardRail": "não exigir escrita manual nem memorização após ocultar o modelo"
+    },
+    {
+      "id": "V01-Q08",
+      "type": "letter-name-versus-word",
+      "focus": "listen-and-respond",
+      "prompt": "Você está vendo a letra F. Qual áudio apresenta o nome da letra?",
+      "letter": "F",
+      "stimuli": ["N0-U01-L03-AUD-006", "N0-U01-V01-AUD-001"],
+      "spokenContent": ["efe", "foca"],
+      "options": ["primeiro áudio", "segundo áudio"],
+      "correctIndex": 0,
+      "writtenWordVisibleBeforeResponse": false,
+      "repeatAudio": true
+    },
+    {
+      "id": "V01-Q09",
+      "type": "initial-sound-to-letter",
+      "focus": "listen-and-respond",
+      "prompt": "Ouça a palavra sem vê-la escrita. Qual letra pode representar o som inicial que você ouviu?",
+      "stimulus": "N0-U01-V01-AUD-003",
+      "spokenContent": "vaca",
+      "options": ["B", "V", "M"],
+      "correct": "V",
+      "writtenWordVisibleBeforeResponse": false,
+      "afterResponseReveal": "vaca",
+      "highlight": "V",
+      "repeatAudio": true
+    },
+    {
+      "id": "V01-Q10",
+      "type": "same-letter-different-sound",
+      "focus": "listen-then-observe-and-respond",
+      "prompt": "Ouça copo e cego sem ver a escrita. Os começos soam iguais ou diferentes? Depois, observe como as duas palavras começam.",
+      "stimuli": ["N0-U01-V01-AUD-005", "N0-U01-V01-AUD-006"],
+      "spokenContent": ["copo", "cego"],
+      "auditoryOptions": ["iguais", "diferentes"],
+      "auditoryCorrect": "diferentes",
+      "writtenWordsVisibleBeforeAuditoryResponse": false,
+      "afterResponseReveal": ["copo", "cego"],
+      "highlightedStarts": ["C", "C"],
+      "relationPrompt": "O que este par mostra?",
+      "relationOptions": [
+        "a mesma letra aparece no começo, mas o som pode mudar",
+        "cada letra possui sempre um único som"
+      ],
+      "relationCorrectIndex": 0,
+      "repeatAudio": true
+    },
+    {
+      "id": "V01-Q11",
+      "type": "similar-sound-different-writing",
+      "focus": "listen-then-observe-and-respond",
+      "prompt": "Ouça cego e sino sem ver a escrita. Os começos soam parecidos ou diferentes? Depois, observe como as palavras começam.",
+      "stimuli": ["N0-U01-V01-AUD-006", "N0-U01-V01-AUD-007"],
+      "spokenContent": ["cego", "sino"],
+      "auditoryOptions": ["parecidos", "diferentes"],
+      "auditoryCorrect": "parecidos",
+      "writtenWordsVisibleBeforeAuditoryResponse": false,
+      "afterResponseReveal": ["cego", "sino"],
+      "highlightedStarts": ["C", "S"],
+      "relationPrompt": "O que este par mostra?",
+      "relationOptions": [
+        "um começo sonoro parecido pode aparecer escrito de formas diferentes",
+        "sons parecidos precisam sempre começar com a mesma letra"
+      ],
+      "relationCorrectIndex": 0,
+      "repeatAudio": true
+    },
+    {
+      "id": "V01-Q12",
+      "type": "concept-consolidation",
+      "focus": "respond",
+      "prompt": "Qual afirmação combina melhor com o que foi verificado nesta unidade?",
+      "options": [
+        "Cada letra sempre representa um único som e cada som sempre usa uma única letra.",
+        "Letras e sons se relacionam, mas essa relação pode variar conforme a palavra.",
+        "Para entender a escrita, basta decorar a ordem do alfabeto."
+      ],
+      "correctIndex": 1
+    }
+  ],
+  "assessmentBehavior": {
+    "feedbackTiming": "mostrar correção detalhada somente após concluir a verificação, evitando que um item revele diretamente a resposta de outro",
+    "audioReplay": "permitido sem penalidade",
+    "timeLimit": false,
+    "alphabetRecitationRequired": false,
+    "longWrittenResponseRequired": false,
+    "retryPolicy": "permitir nova tentativa após revisão; quando o renderer suportar variantes, embaralhar ordem de opções e itens sem alterar a competência medida"
+  },
+  "completionEvidence": {
+    "observablePerformance": "Demonstrar de forma integrada reconhecimento gráfico básico, percepção auditiva inicial, organização visual da escrita e compreensão funcional das relações entre letras e sons, usando exemplos diferentes das atividades centrais das lições.",
+    "clusterCriteria": {
+      "auditoryAndModality": "acertar V01-Q01 e pelo menos 1 dos 2 pares de V01-Q02",
+      "graphicSystem": "acertar pelo menos 2 de V01-Q03 e V01-Q04 e classificar corretamente pelo menos 4 dos 5 itens de V01-Q05",
+      "visualOrganization": "acertar V01-Q06 e reproduzir corretamente V01-Q07 com o modelo visível",
+      "soundWritingRelations": "acertar pelo menos 4 dos 5 blocos V01-Q08 a V01-Q12, incluindo pelo menos um dos dois blocos de variação V01-Q10 ou V01-Q11"
+    },
+    "completionRule": "considerar a Unidade 1 concluída apenas quando todos os quatro critérios por agrupamento forem atingidos; desempenho forte em um agrupamento não compensa ausência de evidência em outro",
+    "notSufficient": [
+      "percorrer todas as telas",
+      "recitar o alfabeto",
+      "responder rapidamente",
+      "memorizar pares exatos das lições anteriores",
+      "acertar apenas tarefas visuais sem demonstrar percepção auditiva"
+    ]
+  }
+}

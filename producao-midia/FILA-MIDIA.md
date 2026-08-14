@@ -7,10 +7,13 @@ Lista oficial das mídias pedagógicas que precisam ser produzidas manualmente. 
 | Lote | Uso | Prioridade | Obrigatório | Status |
 |---|---|---|---|---|
 | `N0-U01-L02-AUD-*` | U1 L2; reutiliza nas L7 e L8 | ALTA | SIM | A_PRODUZIR |
-| `N0-U01-L03-AUD-*` | U1 L3; reutiliza na L7 | ALTA | SIM | A_PRODUZIR |
+| `N0-U01-L03-AUD-*` | U1 L3; reutiliza na L7 e na verificação integrada | ALTA | SIM | A_PRODUZIR |
 | `N0-U01-L08-AUD-*` | U1 L8 | NORMAL | SIM | A_PRODUZIR |
+| `N0-U01-V01-AUD-*` | Verificação integrada da U1 | ALTA | SIM | A_PRODUZIR |
 
-As ligações pedagógicas das Lições 2, 3, 7 e 8 já estão dimensionadas abaixo. Exercícios formais futuros podem reutilizar estes mesmos IDs quando fizer sentido; não renumerar mídias existentes. As Lições 1, 4, 5 e 6 não exigem mídia humana na fila: usam TTS e/ou recursos visuais renderizados pela própria interface. A Lição 7 não cria novos arquivos e reutiliza subconjuntos dos lotes L2 e L3. A Lição 8 usa quatro novos arquivos já reservados no lote L8 e reutiliza `sapo` e `gato` do lote L2.
+As ligações pedagógicas das Lições 2, 3, 7 e 8 e da verificação integrada da Unidade 1 já estão dimensionadas abaixo. Exercícios formais futuros podem reutilizar estes mesmos IDs quando fizer sentido; não renumerar mídias existentes. As Lições 1, 4, 5 e 6 não exigem mídia humana na fila: usam TTS e/ou recursos visuais renderizados pela própria interface. A Lição 7 não cria novos arquivos e reutiliza subconjuntos dos lotes L2 e L3. A Lição 8 usa quatro novos arquivos já reservados no lote L8 e reutiliza `sapo` e `gato` do lote L2.
+
+Para verificações integradas que ficam fora da contagem de lições, usar `V01`, `V02` etc. no segmento que normalmente identifica a lição. Exemplo: `N0-U01-V01-AUD-001` significa Nível 0, Unidade 1, Verificação integrada 1, áudio 001. Não criar uma `L09` apenas para representar a verificação.
 
 ## Lote L2 — palavras para percepção auditiva
 
@@ -84,7 +87,13 @@ Todos os 26 IDs alimentam o `letterSet` da lição e são usados em `L03-B02`, `
 | `N0-U01-L03-AUD-016` | P | `L07-B02`; `L07-C01` primeiro áudio |
 | `N0-U01-L03-AUD-019` | S | `L07-A01` item 1 |
 
-Na Lição 7 esses arquivos representam explicitamente **o nome da letra**. Não usar TTS no lugar deles nas tarefas em que o aluno precisa distinguir nome de letra de som representado em palavra.
+### Reutilização na verificação integrada da Unidade 1
+
+| ID | Letra | Localização pedagógica atual |
+|---|---|---|
+| `N0-U01-L03-AUD-006` | F | `V01-Q08` |
+
+Na Lição 7 e na verificação integrada esses arquivos representam explicitamente **o nome da letra**. Não usar TTS no lugar deles nas tarefas em que o aluno precisa distinguir nome de letra de som representado em palavra.
 
 A numeração corresponde exatamente à ordem A=001, B=002 ... Z=026. Cada arquivo contém somente o nome da letra, sem dizer `letra`. Usar a mesma voz e padrão acústico do Lote L2 quando possível. As formas listadas são referência do curso e não significam que variantes legítimas sejam automaticamente erros.
 
@@ -120,6 +129,33 @@ Contrastes dimensionados: `casa/cidade`, `gato/gelo`, `sapo/cidade` e `casa/quil
 Em `L08-B02`, `L08-C01`, `L08-B04`, `L08-C02` e no primeiro estágio de cada item de `L08-A01`, a forma escrita não deve aparecer antes do julgamento auditivo quando isso puder transformar a tarefa em reconhecimento visual. Depois da resposta auditiva, revelar as palavras como texto da interface e destacar apenas o começo relevante (`C`, `G`, `S` ou `QU`). Não introduzir classificação formal de `QU` nesta lição.
 
 Usar as mesmas boas práticas do Lote L2. Validar também se os novos clipes combinam acusticamente com os reutilizados.
+
+## Lote V01 — exemplos novos para a verificação integrada da Unidade 1
+
+**Tipo:** `AUDIO_CONTROLADO`  
+**Prioridade:** `ALTA`  
+**Obrigatório para publicação:** `SIM`  
+**Destino:** `Português Completo/Nível 0/Unidade 01/Verificação 01/Audio/`
+
+Objetivo: fornecer exemplos auditivos novos para verificar as competências da Unidade 1 sem depender de memorização dos pares e palavras usados nas atividades centrais das lições.
+
+| ID | Gravar | Localização pedagógica |
+|---|---|---|
+| `N0-U01-V01-AUD-001` | `foca` | `V01-Q02` primeiro par; `V01-Q08` segundo áudio |
+| `N0-U01-V01-AUD-002` | `fita` | `V01-Q02` primeiro par |
+| `N0-U01-V01-AUD-003` | `vaca` | `V01-Q02` segundo par; `V01-Q09` |
+| `N0-U01-V01-AUD-004` | `rato` | `V01-Q02` segundo par |
+| `N0-U01-V01-AUD-005` | `copo` | `V01-Q10` |
+| `N0-U01-V01-AUD-006` | `cego` | `V01-Q10`; `V01-Q11` |
+| `N0-U01-V01-AUD-007` | `sino` | `V01-Q11` |
+
+Reutilizar o nome da letra F (`N0-U01-L03-AUD-006`) em `V01-Q08`. Não regravar.
+
+Em `V01-Q02`, `V01-Q08`, `V01-Q09`, `V01-Q10` e `V01-Q11`, não mostrar a palavra escrita antes do julgamento auditivo quando a escrita puder revelar a resposta. Em `V01-Q10` e `V01-Q11`, revelar as palavras somente depois da primeira resposta para então verificar a relação entre som e escrita.
+
+Produzir uma palavra por arquivo, sem frase introdutória. Usar português brasileiro claro, ritmo natural moderado, volume e condições acústicas consistentes entre os sete arquivos e, quando possível, compatíveis com os lotes L2 e L8. Não enfatizar artificialmente o som inicial.
+
+Validar: palavra correta, alta inteligibilidade, ausência de cortes/ruído/efeitos, consistência de volume e ausência de pistas artificiais. Confirmar pedagogicamente que `foca/fita` oferecem começo sonoro claramente semelhante, `vaca/rato` claramente diferente, `copo/cego` evidenciam variação com C e `cego/sino` permitem perceber começo sonoro semelhante com escrita inicial diferente.
 
 ## Entrega
 

@@ -40,10 +40,14 @@ depois
 
 ### Verificação integrada da Unidade 1
 
-A verificação deve usar exemplos novos e observar: fala versus escrita; diferenças sonoras claras; reconhecimento de letras fora da ordem; maiúscula/minúscula; vogais/consoantes; letras versus outros sinais; direção e espaços; reprodução de pequena sequência; nome da letra versus som; associações som–letra trabalhadas; e percepção de variação.
+A verificação usa exemplos novos e observa: fala versus escrita; diferenças sonoras claras; reconhecimento de letras fora da ordem; maiúscula/minúscula; vogais/consoantes; letras versus outros sinais; direção e espaços; reprodução de pequena sequência; nome da letra versus som; associações som–letra trabalhadas; e percepção de variação.
 
-Ela não deve depender de recitar o alfabeto nem exigir conteúdo reservado à Unidade 2.
+Ela não depende de recitar o alfabeto nem exige conteúdo reservado à Unidade 2. Seu conteúdo detalhado fica em:
+
+- `content/units/001-fala-sons-escrita/integrated-verification.json`
+
+Os estímulos auditivos novos da verificação usam a família `N0-U01-V01-AUD-*`; `V01` identifica a verificação integrada e não representa uma nona lição. A aprovação deve exigir evidência em todos os agrupamentos essenciais da unidade, evitando que desempenho forte apenas em tarefas visuais compense ausência de evidência auditiva ou vice-versa.
 
 ### Regra de mídia
 
-Vídeo não é obrigatório em nenhuma lição da Unidade 1 neste dimensionamento. TTS permanece adequado para instruções e narração geral. Quando o estímulo auditivo determinar a aprendizagem ou a resposta correta, usar áudio controlado conforme `producao-midia/FILA-MIDIA.md`.
+Vídeo não é obrigatório em nenhuma lição da Unidade 1 nem na verificação integrada. TTS permanece adequado para instruções, narração geral e situações em que a realização específica da voz não determina a resposta. Quando o estímulo auditivo determinar a aprendizagem ou a resposta correta, usar áudio controlado conforme `producao-midia/FILA-MIDIA.md`.
