@@ -1,0 +1,160 @@
+{
+  "schemaVersion": 1,
+  "id": "N0-U01-L03",
+  "title": "Conhecendo o alfabeto",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Reconhecer visualmente as 26 letras do alfabeto, associá-las a seus nomes e perceber que existe uma ordem alfabética convencional sem depender de recitação decorada.",
+  "competencies": [
+    "reconhecer as 26 letras apresentadas isoladamente e fora da ordem alfabética",
+    "selecionar uma letra ao ouvir seu nome",
+    "perceber que as letras possuem uma ordem convencional de A a Z",
+    "usar a ordem alfabética como referência sem precisar recitá-la de memória"
+  ],
+  "prerequisites": ["N0-U01-L01", "N0-U01-L02"],
+  "limits": [
+    "não ensinar ainda regras de uso de maiúsculas e minúsculas",
+    "não confundir o nome da letra com o som que ela pode representar",
+    "não exigir recitação perfeita do alfabeto",
+    "não transformar cada letra em uma minilição isolada",
+    "não antecipar famílias silábicas ou ortografia"
+  ],
+  "media": {
+    "tts": "instrucoes, explicacoes e feedback",
+    "controlledAudio": "N0-U01-L03-AUD-001 a N0-U01-L03-AUD-026 para os nomes isolados das letras",
+    "video": "nao necessario",
+    "images": "nao necessarias"
+  },
+  "letterSet": [
+    {"letter":"A","mediaId":"N0-U01-L03-AUD-001"},
+    {"letter":"B","mediaId":"N0-U01-L03-AUD-002"},
+    {"letter":"C","mediaId":"N0-U01-L03-AUD-003"},
+    {"letter":"D","mediaId":"N0-U01-L03-AUD-004"},
+    {"letter":"E","mediaId":"N0-U01-L03-AUD-005"},
+    {"letter":"F","mediaId":"N0-U01-L03-AUD-006"},
+    {"letter":"G","mediaId":"N0-U01-L03-AUD-007"},
+    {"letter":"H","mediaId":"N0-U01-L03-AUD-008"},
+    {"letter":"I","mediaId":"N0-U01-L03-AUD-009"},
+    {"letter":"J","mediaId":"N0-U01-L03-AUD-010"},
+    {"letter":"K","mediaId":"N0-U01-L03-AUD-011"},
+    {"letter":"L","mediaId":"N0-U01-L03-AUD-012"},
+    {"letter":"M","mediaId":"N0-U01-L03-AUD-013"},
+    {"letter":"N","mediaId":"N0-U01-L03-AUD-014"},
+    {"letter":"O","mediaId":"N0-U01-L03-AUD-015"},
+    {"letter":"P","mediaId":"N0-U01-L03-AUD-016"},
+    {"letter":"Q","mediaId":"N0-U01-L03-AUD-017"},
+    {"letter":"R","mediaId":"N0-U01-L03-AUD-018"},
+    {"letter":"S","mediaId":"N0-U01-L03-AUD-019"},
+    {"letter":"T","mediaId":"N0-U01-L03-AUD-020"},
+    {"letter":"U","mediaId":"N0-U01-L03-AUD-021"},
+    {"letter":"V","mediaId":"N0-U01-L03-AUD-022"},
+    {"letter":"W","mediaId":"N0-U01-L03-AUD-023"},
+    {"letter":"X","mediaId":"N0-U01-L03-AUD-024"},
+    {"letter":"Y","mediaId":"N0-U01-L03-AUD-025"},
+    {"letter":"Z","mediaId":"N0-U01-L03-AUD-026"}
+  ],
+  "sequence": [
+    {
+      "id": "L03-B01",
+      "type": "objective",
+      "focus": "read-or-listen",
+      "text": "A escrita do português usa um conjunto de 26 letras chamado alfabeto. Nesta lição, você vai aprender a reconhecer essas letras e ouvir seus nomes."
+    },
+    {
+      "id": "L03-B02",
+      "type": "interactive-alphabet-overview",
+      "focus": "observe-and-listen",
+      "title": "As 26 letras",
+      "display": "A B C D E F G H I J K L M N O P Q R S T U V W X Y Z",
+      "interaction": "tocar em qualquer letra reproduz o audio controlado correspondente",
+      "note": "A ordem mostrada é a ordem alfabética convencional. O objetivo inicial é reconhecer as letras, não decorar uma recitação."
+    },
+    {
+      "id": "L03-B03",
+      "type": "guided-exploration",
+      "focus": "observe-and-listen",
+      "title": "Reconheça em grupos, depois misture",
+      "groups": [
+        ["A","B","C","D","E","F","G"],
+        ["H","I","J","K","L","M","N"],
+        ["O","P","Q","R","S","T"],
+        ["U","V","W","X","Y","Z"]
+      ],
+      "instruction": "Em cada grupo, observe as letras e toque nelas para ouvir seus nomes. Depois, as mesmas letras devem reaparecer em ordem embaralhada.",
+      "guardRail": "não avançar apenas por exposição; cada grupo inclui reconhecimento ativo antes de seguir"
+    },
+    {
+      "id": "L03-A01",
+      "type": "guided-activity",
+      "focus": "respond",
+      "interaction": "audio-to-letter",
+      "title": "Ouça o nome e encontre a letra",
+      "instruction": "Ouça o nome da letra e toque na letra correspondente.",
+      "source": "letterSet",
+      "presentation": "rodadas curtas com 3 ou 4 alternativas visuais; embaralhar posições e letras",
+      "coverageRule": "ao longo da atividade, todas as 26 letras devem aparecer como resposta correta pelo menos uma vez; dividir em rodadas curtas para evitar uma tela longa",
+      "repeatAudio": true,
+      "feedbackRule": "feedback imediato, nova tentativa sem penalidade e retomada posterior das letras erradas",
+      "important": "o audio diz o nome da letra; não apresentar esse nome como se fosse o som que a letra representa em palavras"
+    },
+    {
+      "id": "L03-C01",
+      "type": "quick-check",
+      "focus": "respond",
+      "interaction": "audio-to-letter",
+      "prompt": "Ouça o nome e escolha a letra.",
+      "stimulus": "N0-U01-L03-AUD-011",
+      "options": ["K","H","X"],
+      "correct": "K"
+    },
+    {
+      "id": "L03-B04",
+      "type": "explanation",
+      "focus": "observe",
+      "title": "Existe uma ordem convencional",
+      "text": "Além de terem formas e nomes, as letras costumam ser organizadas em uma ordem conhecida como ordem alfabética. Essa ordem ajuda a localizar e organizar informações. Você não precisa recitar tudo de memória para começar a usá-la."
+    },
+    {
+      "id": "L03-A02",
+      "type": "guided-activity",
+      "focus": "respond",
+      "interaction": "alphabet-neighbor",
+      "title": "Qual vem entre elas?",
+      "instruction": "Observe um pequeno trecho da ordem alfabética e complete a letra que falta.",
+      "items": [
+        {"sequence":["A","?","C"],"options":["B","D","F"],"correct":"B"},
+        {"sequence":["H","?","J"],"options":["G","I","L"],"correct":"I"},
+        {"sequence":["M","?","O"],"options":["N","P","R"],"correct":"N"},
+        {"sequence":["V","?","X"],"options":["U","W","Y"],"correct":"W"}
+      ],
+      "note": "a atividade usa trechos pequenos; não exige recitar o alfabeto inteiro"
+    },
+    {
+      "id": "L03-C02",
+      "type": "quick-check",
+      "focus": "respond",
+      "interaction": "single-choice",
+      "prompt": "Para mostrar que você reconhece as letras, é obrigatório saber cantar ou recitar o alfabeto inteiro sem parar?",
+      "options": ["Sim.","Não."],
+      "correctIndex": 1,
+      "feedback": "Não. O mais importante aqui é reconhecer as letras e seus nomes, inclusive quando aparecem fora da ordem."
+    },
+    {
+      "id": "L03-B05",
+      "type": "summary",
+      "focus": "read-or-listen",
+      "points": [
+        "O alfabeto usado na escrita do português tem 26 letras.",
+        "Cada letra possui um nome que você pode aprender a reconhecer.",
+        "As letras têm uma ordem convencional de A a Z.",
+        "Reconhecer letras fora da ordem é mais importante do que apenas repetir uma sequência decorada.",
+        "O nome de uma letra não deve ser confundido com os sons que ela pode representar nas palavras."
+      ],
+      "bridgeToNextLesson": "Na próxima lição, você vai perceber que a mesma letra pode aparecer em formas diferentes, como maiúscula e minúscula."
+    }
+  ],
+  "completionEvidence": {
+    "observablePerformance": "Reconhecer as 26 letras fora da ordem, selecionar cada letra ao ouvir seu nome e usar pequenos trechos da ordem alfabética como referência.",
+    "criterion": "concluir a cobertura das 26 letras em L03-A01 com retomada das letras erradas e acertar pelo menos 3 dos 4 itens de L03-A02; recitação integral do alfabeto não é requisito",
+    "notSufficient": "apenas ouvir a sequência A-Z ou decorar uma música do alfabeto"
+  }
+}
