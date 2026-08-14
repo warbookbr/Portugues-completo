@@ -23,6 +23,19 @@
     "video": "nao necessario",
     "images": "nao necessarias"
   },
+  "supportMaterials": {
+    "curatedMedia": [],
+    "runtimeResources": [
+      {
+        "type": "TTS_OK",
+        "locations": ["L01-B02", "L01-B05", "L01-A01"],
+        "purpose": "apresentar exemplos pela modalidade falada sem transformar características específicas da voz em objeto de avaliação"
+      }
+    ],
+    "productionQueueRequired": false,
+    "publicationDependency": "nenhuma mídia humana precisa ser produzida; a lição depende apenas do TTS disponível na aplicação",
+    "decisionRationale": "imagens ou vídeos não acrescentariam informação pedagógica relevante; o contraste necessário é entre ouvir fala e observar escrita"
+  },
   "sequence": [
     {
       "id": "L01-B01",
