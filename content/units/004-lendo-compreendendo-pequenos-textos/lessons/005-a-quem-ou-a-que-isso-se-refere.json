@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "id": "N0-U04-L05",
+  "title": "A quem ou a que isso se refere?",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Identificar referentes simples de expressões de retomada em pequenos textos, usando pistas próximas e suficientes para acompanhar a continuidade da mensagem sem exigir análise gramatical formal.",
+  "competencies": [
+    "relacionar expressões como ele, ela, isso e lá ao referente correto em textos claros",
+    "usar proximidade e sentido para testar uma referência",
+    "rejeitar uma referência incompatível com o texto",
+    "perceber que uma expressão pode retomar informação já apresentada",
+    "acompanhar continuidade sem depender de repetir sempre o mesmo nome"
+  ],
+  "prerequisites": ["N0-U04-L04"],
+  "limits": [
+    "não exigir terminologia como pronome, anáfora, coesão ou referenciação",
+    "não usar referentes ambíguos como item avaliativo central",
+    "não exigir cadeias longas de retomadas",
+    "não ensinar que a expressão sempre se refere ao nome mais próximo",
+    "não usar conhecimento externo para resolver referência que o texto não esclarece"
+  ],
+  "media": {"tts": "instruções, textos sob demanda e feedback", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {
+    "curatedMedia": [],
+    "runtimeResources": [{"type": "TTS_OK", "locations": ["instruções", "textos", "feedback"], "purpose": "apoio de acesso"}],
+    "generatedVisualResources": [
+      {"type": "UI_RENDERED_REFERENCE_LINK", "locations": ["L05-B02", "L05-C01", "L05-A01", "L05-A02"], "purpose": "ligar visualmente expressão e referente depois da tentativa"},
+      {"type": "UI_RENDERED_READING_CARD", "locations": ["L05-B02", "L05-C01", "L05-A01", "L05-A02"], "purpose": "manter contexto completo visível"}
+    ],
+    "productionQueueRequired": false,
+    "publicationDependency": "nenhuma nova mídia humana obrigatória",
+    "decisionRationale": "relações referenciais podem ser demonstradas com texto e conexão visual acessível gerada pela interface."
+  },
+  "sequence": [
+    {
+      "id": "L05-B01",
+      "type": "objective",
+      "focus": "track-reference",
+      "text": "Textos nem sempre repetem o mesmo nome. Algumas palavras apontam para pessoas, lugares ou ideias já mencionadas. O contexto ajuda a descobrir para quê elas apontam."
+    },
+    {
+      "id": "L05-B02",
+      "type": "demonstration",
+      "focus": "person-reference",
+      "text": "Carla encontrou Bruno no portão. Ela entregou a ele uma chave.",
+      "items": [
+        {"expression": "Ela", "refersTo": "Carla"},
+        {"expression": "ele", "refersTo": "Bruno"}
+      ],
+      "explanation": "O sentido do texto mostra quem entregou e quem recebeu a chave. Não basta escolher o nome mais próximo."
+    },
+    {
+      "id": "L05-C01",
+      "type": "quick-check",
+      "focus": "place-reference",
+      "text": "Rui foi ao mercado depois do trabalho. Lá comprou arroz e café.",
+      "question": "A palavra 'Lá' se refere a quê?",
+      "options": ["ao mercado", "ao trabalho", "ao arroz"],
+      "correctIndex": 0,
+      "textRemainsVisible": true
+    },
+    {
+      "id": "L05-B03",
+      "type": "demonstration",
+      "focus": "idea-reference",
+      "text": "A rua ficou alagada depois da chuva. Isso atrasou os ônibus.",
+      "question": "O que 'Isso' retoma?",
+      "answer": "o fato de a rua ter ficado alagada",
+      "explanation": "Uma expressão pode retomar uma situação inteira, não apenas uma palavra."
+    },
+    {
+      "id": "L05-B04",
+      "type": "guard-rail",
+      "focus": "ambiguity-awareness",
+      "text": "Se o texto não deixa claro a quem uma palavra se refere, 'não dá para saber com segurança' pode ser a resposta correta. Nesta unidade, as avaliações usam referências claras."
+    },
+    {
+      "id": "L05-A01",
+      "type": "assessment",
+      "focus": "reference-transfer",
+      "text": "Marta colocou o bolo na mesa. Depois ela chamou os convidados.",
+      "question": "Quem 'ela' representa?",
+      "options": ["Marta", "a mesa", "os convidados"],
+      "correctIndex": 0,
+      "textRemainsVisible": true
+    },
+    {
+      "id": "L05-A02",
+      "type": "assessment-set",
+      "focus": "mixed-reference-transfer",
+      "text": "Paulo deixou o carro na oficina. O mecânico disse que ele ficaria pronto à tarde. Paulo voltou lá depois das quatro.",
+      "items": [
+        {"question": "No trecho 'ele ficaria pronto', o que ficaria pronto?", "options": ["o carro", "o mecânico", "Paulo"], "correctIndex": 0},
+        {"question": "A palavra 'lá' se refere a quê?", "options": ["à oficina", "à tarde", "ao carro"], "correctIndex": 0}
+      ],
+      "textRemainsVisible": true
+    }
+  ],
+  "assessmentBehavior": {"textVisibility": "sempre disponível", "readingSupport": "TTS opcional", "ambiguityPolicy": "itens avaliativos devem ter referente suficientemente claro", "timeLimit": false},
+  "completionEvidence": {
+    "clusters": {
+      "personPlaceReference": {"evidence": ["L05-C01", "L05-A01", "L05-A02"], "rule": "resolver corretamente pelo menos três referências claras, incluindo pessoa e lugar"},
+      "contextUse": {"evidence": ["L05-A02"], "rule": "usar o sentido do contexto para escolher o referente e não apenas proximidade gráfica"}
+    },
+    "completionRule": "os dois agrupamentos são obrigatórios.",
+    "notSufficient": ["escolher sempre o nome mais próximo", "decorar que ele ou ela apontam para uma categoria fixa", "responder com confiança quando o texto é ambíguo"]
+  }
+}
