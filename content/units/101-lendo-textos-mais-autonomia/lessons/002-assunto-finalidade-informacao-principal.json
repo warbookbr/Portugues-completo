@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 1,
+  "id": "N1-U01-L02",
+  "title": "Assunto, finalidade e informação principal",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Distinguir o assunto de um texto, sua finalidade imediata e a informação principal que organiza sua mensagem, sem confundir detalhes verdadeiros com o núcleo da compreensão.",
+  "competencies": [
+    "identificar de que tema ou situação o texto trata",
+    "reconhecer para que o texto foi produzido em situações claras",
+    "selecionar a informação principal entre detalhes verdadeiros",
+    "apontar trecho que sustenta a interpretação global",
+    "revisar uma escolha quando ela se apoia apenas em detalhe secundário"
+  ],
+  "prerequisites": ["N1-U01-L01"],
+  "limits": [
+    "não introduzir tese como conteúdo formal",
+    "não exigir uma formulação literal única da mensagem principal",
+    "não considerar todo primeiro período automaticamente principal",
+    "não usar apenas o título como resposta quando o corpo do texto modifica ou amplia o sentido",
+    "não medir compreensão por memória"
+  ],
+  "media": {"tts": "instruções e textos sob demanda quando o alvo for compreensão", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {
+    "curatedMedia": [],
+    "runtimeResources": [{"type": "TTS_OK", "locations": ["instruções", "textos", "feedback"], "purpose": "apoio de leitura"}],
+    "generatedVisualResources": [
+      {"type": "UI_RENDERED_READING_CARD", "locations": ["L02-B02", "L02-C01", "L02-A01", "L02-A02"], "purpose": "texto consultável"},
+      {"type": "UI_RENDERED_MAIN_VS_DETAIL_CHOICES", "locations": ["L02-B02", "L02-C01", "L02-A01"], "purpose": "contrastar núcleo e detalhes"},
+      {"type": "UI_RENDERED_EVIDENCE_SELECTOR", "locations": ["L02-A02"], "purpose": "ligar interpretação global a trecho"}
+    ],
+    "productionQueueRequired": false,
+    "publicationDependency": "nenhuma nova mídia humana obrigatória",
+    "decisionRationale": "o alvo é compreensão global e finalidade; texto e seleção de evidência são suficientes."
+  },
+  "sequence": [
+    {"id": "L02-B01", "type": "objective", "text": "Um texto pode trazer muitos detalhes. Para compreendê-lo bem, precisamos perceber do que ele trata, para que serve e qual informação organiza o conjunto."},
+    {
+      "id": "L02-B02",
+      "type": "demonstration",
+      "text": "A partir de segunda-feira, o posto do bairro passará a atender até as sete da noite. A mudança pretende facilitar o atendimento de quem trabalha durante o dia. Os demais serviços continuam nos mesmos dias.",
+      "answers": {"subject": "mudança no horário do posto", "purpose": "informar a ampliação do horário e seu motivo", "mainInformation": "o posto passará a atender até as sete da noite a partir de segunda-feira"},
+      "detail": "os demais serviços continuam nos mesmos dias"
+    },
+    {
+      "id": "L02-C01",
+      "type": "quick-check",
+      "text": "A escola fará uma campanha de arrecadação de livros durante todo o mês. Os livros serão enviados à biblioteca comunitária. Podem ser doados romances, livros infantis e obras de referência em bom estado.",
+      "question": "Qual opção representa melhor a informação principal?",
+      "options": ["a escola realizará uma campanha de arrecadação de livros para a biblioteca comunitária", "romances são um tipo de livro", "o mês tem várias semanas"],
+      "correctIndex": 0,
+      "textRemainsVisible": true
+    },
+    {
+      "id": "L02-B03",
+      "type": "contrast",
+      "text": "O ônibus 410 terá seu ponto final transferido para a Rua das Flores a partir de amanhã. O itinerário restante não muda.",
+      "detailTrueButNotMain": "o itinerário restante não muda",
+      "main": "o ponto final será transferido para a Rua das Flores",
+      "explanation": "Um detalhe pode ser verdadeiro sem resumir o que mudou no texto."
+    },
+    {
+      "id": "L02-A01",
+      "type": "assessment",
+      "text": "Neste domingo, o parque receberá uma feira de troca de sementes. A entrada é gratuita e cada visitante pode levar sementes identificadas para trocar com outras pessoas. Haverá também uma conversa sobre cultivo doméstico.",
+      "items": [
+        {"question": "Qual é o assunto?", "options": ["uma feira de troca de sementes no parque", "o preço da entrada de parques", "uma viagem de ônibus"], "correctIndex": 0},
+        {"question": "Qual é a finalidade principal do texto?", "options": ["informar sobre a feira e como participar", "ensinar toda a técnica de cultivo", "contar uma história fictícia"], "correctIndex": 0}
+      ],
+      "textRemainsVisible": true
+    },
+    {
+      "id": "L02-A02",
+      "type": "assessment-evidence",
+      "text": "A unidade de saúde começou a oferecer vacinação também aos sábados pela manhã. O objetivo é ampliar o acesso para pessoas que não conseguem comparecer durante a semana.",
+      "question": "Qual é a mudança principal?",
+      "options": ["a vacinação também passa a ocorrer aos sábados pela manhã", "a unidade fechará aos sábados", "a vacinação só acontecerá durante a semana"],
+      "correctIndex": 0,
+      "requiredEvidence": "começou a oferecer vacinação também aos sábados pela manhã",
+      "textRemainsVisible": true
+    }
+  ],
+  "assessmentBehavior": {"textVisibility": "sempre disponível", "evidence": "pelo menos um item exige apoio em trecho", "readingSupport": "TTS opcional", "timeLimit": false},
+  "completionEvidence": {
+    "clusters": {
+      "globalMeaning": {"evidence": ["L02-C01", "L02-A01", "L02-A02"], "rule": "identificar assunto/finalidade/principal nos exemplos novos"},
+      "mainVsDetail": {"evidence": ["L02-C01", "L02-A02"], "rule": "não substituir o núcleo por detalhe secundário e apontar evidência em ao menos um item"}
+    },
+    "completionRule": "os dois agrupamentos são obrigatórios.",
+    "notSufficient": ["repetir o título sem ler o texto", "selecionar qualquer detalhe verdadeiro", "decorar a primeira frase"]
+  }
+}

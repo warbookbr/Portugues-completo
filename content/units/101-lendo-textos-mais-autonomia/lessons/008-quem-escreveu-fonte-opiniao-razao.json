@@ -1,0 +1,103 @@
+{
+  "schemaVersion": 1,
+  "id": "N1-U01-L08",
+  "title": "Quem escreveu? De onde veio? Opinião e razão",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Reconhecer autoria ou origem explicitada de uma informação e distinguir, em exemplos transparentes, uma opinião simples da razão apresentada para sustentá-la, sem antecipar avaliação avançada de fontes ou argumentação formal.",
+  "competencies": [
+    "localizar autor, instituição ou veículo quando a informação estiver explicitada",
+    "distinguir conteúdo do texto de sua autoria/origem",
+    "reconhecer uma opinião simples em contexto",
+    "identificar a razão apresentada para apoiar uma opinião",
+    "perceber quando uma frase apenas informa e não apresenta opinião",
+    "registrar de onde veio uma informação simples sem exigir citação acadêmica"
+  ],
+  "prerequisites": ["N1-U01-L02", "N1-U01-L03", "N1-U01-L06"],
+  "limits": [
+    "não avaliar viés, confiabilidade ou credibilidade de forma avançada",
+    "não ensinar tese, evidência argumentativa formal ou contra-argumento",
+    "não afirmar que toda frase com eu acho é automaticamente uma opinião bem sustentada",
+    "não exigir formato acadêmico de referência",
+    "não tratar nome da fonte como garantia automática de verdade"
+  ],
+  "media": {"tts": "instruções e textos sob demanda", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {
+    "curatedMedia": [],
+    "runtimeResources": [{"type": "TTS_OK", "locations": ["instruções", "textos", "feedback"], "purpose": "apoio de leitura"}],
+    "generatedVisualResources": [
+      {"type": "UI_RENDERED_SOURCE_METADATA", "locations": ["L08-B02", "L08-C01", "L08-A01", "L08-A02"], "purpose": "separar conteúdo de autoria/origem"},
+      {"type": "UI_RENDERED_OPINION_REASON_LINK", "locations": ["L08-B03", "L08-C01", "L08-A02"], "purpose": "ligar opinião à razão apresentada"},
+      {"type": "UI_RENDERED_SOURCE_NOTE_FIELD", "locations": ["L08-A01"], "purpose": "registrar origem de informação simples"}
+    ],
+    "productionQueueRequired": false,
+    "publicationDependency": "nenhuma nova mídia humana obrigatória",
+    "decisionRationale": "metadados textuais e ligação opinião→razão permitem introduzir fonte e argumentação inicial sem simular pesquisa complexa."
+  },
+  "sequence": [
+    {"id": "L08-B01", "type": "objective", "text": "Textos têm uma origem. Também podem apresentar informações, opiniões e razões. Neste nível, vamos aprender a reconhecer essas partes quando estão claras."},
+    {
+      "id": "L08-B02",
+      "type": "source-demonstration",
+      "sourceMetadata": {"title": "Novo horário da biblioteca", "authorOrInstitution": "Biblioteca Comunitária do Bairro", "date": "12 de março"},
+      "text": "A partir de abril, a biblioteca abrirá também aos sábados pela manhã.",
+      "questions": [
+        {"question": "Qual instituição aparece como origem da informação?", "answer": "Biblioteca Comunitária do Bairro"},
+        {"question": "O nome da instituição faz parte do conteúdo do novo horário?", "answer": "não; ele indica a origem/autoria apresentada"}
+      ]
+    },
+    {
+      "id": "L08-B03",
+      "type": "opinion-reason-demonstration",
+      "text": "Na opinião de Diego, o parque deveria ter mais bancos porque muitas pessoas idosas precisam parar para descansar durante a caminhada.",
+      "analysis": {"opinion": "o parque deveria ter mais bancos", "reason": "muitas pessoas idosas precisam parar para descansar durante a caminhada"},
+      "explanation": "A razão está relacionada ao motivo apresentado para a opinião."
+    },
+    {
+      "id": "L08-C01",
+      "type": "quick-check",
+      "sourceMetadata": {"author": "Lúcia Ramos", "section": "Carta de leitores"},
+      "text": "A praça precisa de mais iluminação à noite porque o caminho entre o ponto de ônibus e as casas fica muito escuro.",
+      "items": [
+        {"question": "Quem aparece como autora?", "options": ["Lúcia Ramos", "o ponto de ônibus", "a praça"], "correctIndex": 0},
+        {"question": "Qual é a razão apresentada?", "options": ["o caminho fica muito escuro à noite", "a praça existe", "a autora se chama Lúcia"], "correctIndex": 0}
+      ]
+    },
+    {
+      "id": "L08-B04",
+      "type": "contrast",
+      "items": [
+        {"text": "A feira começa às nove.", "classification": "informação"},
+        {"text": "A feira deveria começar mais tarde porque muitos trabalhadores ainda estão no transporte às nove.", "classification": "opinião + razão"}
+      ],
+      "explanation": "Nem todo texto apresenta opinião; algumas frases apenas informam algo."
+    },
+    {
+      "id": "L08-A01",
+      "type": "assessment-source",
+      "sourceMetadata": {"title": "Calendário de vacinação", "institution": "Secretaria Municipal de Saúde", "date": "5 de maio"},
+      "text": "A vacinação no bairro ocorrerá terça e quinta, das 8h às 16h.",
+      "items": [
+        {"question": "Qual é a origem explicitada?", "options": ["Secretaria Municipal de Saúde", "o bairro", "terça-feira"], "correctIndex": 0},
+        {"question": "Registre de forma simples de onde veio a informação.", "responseMode": "short-text", "acceptedCore": "Secretaria Municipal de Saúde", "note": "não exigir formato acadêmico"}
+      ]
+    },
+    {
+      "id": "L08-A02",
+      "type": "assessment-opinion-reason",
+      "text": "Rafael considera importante ampliar o horário do centro esportivo porque muita gente só consegue praticar atividades depois do trabalho.",
+      "items": [
+        {"question": "Qual é a opinião?", "options": ["é importante ampliar o horário do centro esportivo", "o trabalho termina sempre no mesmo horário", "o centro esportivo não existe"], "correctIndex": 0},
+        {"question": "Qual é a razão?", "options": ["muita gente só consegue praticar atividades depois do trabalho", "Rafael tem um nome", "o centro esportivo possui portas"], "correctIndex": 0}
+      ]
+    }
+  ],
+  "assessmentBehavior": {"sourceScope": "reconhecimento/localização, não avaliação avançada", "argumentationScope": "opinião + razão relacionada", "readingSupport": "TTS opcional", "timeLimit": false},
+  "completionEvidence": {
+    "clusters": {
+      "sourceRecognition": {"evidence": ["L08-C01", "L08-A01"], "rule": "identificar autoria/origem explicitada e registrar fonte simples"},
+      "opinionAndReason": {"evidence": ["L08-C01", "L08-A02"], "rule": "identificar corretamente opinião e razão em exemplos claros"}
+    },
+    "completionRule": "os dois agrupamentos são obrigatórios.",
+    "notSufficient": ["tratar fonte como garantia automática de verdade", "confundir razão com qualquer detalhe", "exigir tese formal"]
+  }
+}

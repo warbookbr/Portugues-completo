@@ -1,0 +1,96 @@
+{
+  "schemaVersion": 1,
+  "id": "N1-U01-L01",
+  "title": "Ler com um objetivo",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Perceber que a forma de ler pode mudar conforme aquilo que se precisa descobrir, escolhendo estratégias adequadas sem transformar leitura em corrida ou teste de memória.",
+  "competencies": [
+    "identificar o objetivo de uma leitura simples",
+    "distinguir leitura para localizar informação de leitura para compreender o conjunto",
+    "voltar a uma parte específica quando a pergunta exige um detalhe",
+    "reler o texto inteiro quando a compreensão global ainda não estiver suficiente",
+    "escolher estratégia de leitura compatível com a tarefa"
+  ],
+  "prerequisites": ["N0-U04-V01", "N0-EXIT-V01"],
+  "limits": [
+    "não usar velocidade como evidência de boa estratégia",
+    "não exigir leitura linear completa quando a tarefa pede apenas localizar um dado",
+    "não ensinar que procurar uma informação específica substitui compreender o texto quando o objetivo é global",
+    "não esconder o texto para medir memória",
+    "não exigir terminologia técnica de estratégias de leitura"
+  ],
+  "media": {"tts": "instruções e textos sob demanda quando decodificação visual independente não for o alvo", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {
+    "curatedMedia": [],
+    "runtimeResources": [{"type": "TTS_OK", "locations": ["instruções", "textos sob demanda", "feedback"], "purpose": "apoio de acesso; uso registrado separadamente quando relevante"}],
+    "generatedVisualResources": [
+      {"type": "UI_RENDERED_READING_GOAL_CARD", "locations": ["L01-B02", "L01-C01", "L01-A01", "L01-A02"], "purpose": "manter o objetivo da leitura visível"},
+      {"type": "UI_RENDERED_READING_CARD", "locations": ["L01-B02", "L01-C01", "L01-A01", "L01-A02"], "purpose": "manter o texto consultável durante a resposta"}
+    ],
+    "productionQueueRequired": false,
+    "publicationDependency": "nenhuma nova mídia humana obrigatória",
+    "decisionRationale": "o alvo é selecionar e aplicar estratégia de leitura; texto real da UI é suficiente."
+  },
+  "sequence": [
+    {"id": "L01-B01", "type": "objective", "text": "Antes de ler, pergunte: o que eu preciso descobrir? Às vezes você procura um dado. Em outras situações precisa compreender a mensagem inteira."},
+    {
+      "id": "L01-B02",
+      "type": "demonstration",
+      "readingGoal": "descobrir o horário de encerramento",
+      "text": "A feira abre às oito da manhã. Durante o dia haverá apresentações e oficinas. O encerramento será às cinco da tarde.",
+      "strategy": "procurar no texto a parte que informa o encerramento",
+      "answer": "às cinco da tarde",
+      "textRemainsVisible": true
+    },
+    {
+      "id": "L01-C01",
+      "type": "quick-check",
+      "readingGoal": "compreender de que trata o aviso como um todo",
+      "text": "Nesta sexta-feira, a biblioteca fechará às quatro para manutenção. Os empréstimos com devolução prevista para sexta poderão ser entregues na segunda sem multa.",
+      "question": "Qual estratégia é mais adequada primeiro?",
+      "options": ["ler o aviso inteiro para compreender a mudança e sua consequência", "procurar apenas uma palavra sem considerar o restante", "tentar responder sem ler"],
+      "correctIndex": 0,
+      "textRemainsVisible": true
+    },
+    {
+      "id": "L01-B03",
+      "type": "contrast",
+      "items": [
+        {"goal": "qual é o endereço?", "usefulStrategy": "localizar a parte com o endereço"},
+        {"goal": "qual é a mensagem principal?", "usefulStrategy": "ler as partes necessárias para construir o sentido global"}
+      ],
+      "explanation": "A mesma estratégia não serve igualmente para todo objetivo."
+    },
+    {
+      "id": "L01-A01",
+      "type": "assessment",
+      "readingGoal": "descobrir quais documentos levar",
+      "text": "Para fazer a inscrição, leve documento com foto e comprovante de endereço. O atendimento ocorre de segunda a quinta, das nove às quinze horas.",
+      "question": "O que você deve fazer para responder com eficiência?",
+      "options": ["localizar a parte que lista os documentos", "decorar todo o texto antes de responder", "procurar apenas o horário"],
+      "correctIndex": 0,
+      "followUp": {"question": "Quais documentos são pedidos?", "answer": "documento com foto e comprovante de endereço"},
+      "textRemainsVisible": true
+    },
+    {
+      "id": "L01-A02",
+      "type": "assessment",
+      "readingGoal": "explicar a mudança principal comunicada",
+      "text": "O treino de sábado foi transferido para domingo por causa da previsão de chuva. O horário permanece às dez da manhã.",
+      "question": "Qual estratégia é mais adequada?",
+      "options": ["ler o texto suficiente para relacionar o dia antigo, o novo dia e o horário", "procurar apenas a palavra sábado", "responder pelo que costuma acontecer nos fins de semana"],
+      "correctIndex": 0,
+      "followUp": {"question": "Qual foi a mudança principal?", "options": ["o treino passou de sábado para domingo e continua às dez", "o treino foi cancelado", "o horário mudou para sábado à noite"], "correctIndex": 0},
+      "textRemainsVisible": true
+    }
+  ],
+  "assessmentBehavior": {"textVisibility": "sempre disponível", "rereading": "permitida e ensinada", "readingSupport": "TTS opcional quando compatível com o alvo", "timeLimit": false},
+  "completionEvidence": {
+    "clusters": {
+      "strategySelection": {"evidence": ["L01-C01", "L01-A01", "L01-A02"], "rule": "selecionar estratégia compatível nas três tarefas"},
+      "strategyApplication": {"evidence": ["L01-A01", "L01-A02"], "rule": "obter a informação ou compreensão pedida usando o texto disponível"}
+    },
+    "completionRule": "os dois agrupamentos são obrigatórios.",
+    "notSufficient": ["ler rapidamente sem responder ao objetivo", "memorizar o texto", "usar uma única estratégia para toda tarefa"]
+  }
+}
