@@ -1,0 +1,101 @@
+{
+  "schemaVersion": 1,
+  "id": "N0-U04-L04",
+  "title": "Ligando informações entre frases",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Integrar informações apresentadas em frases ou partes diferentes de um pequeno texto para compreender relações que não aparecem completas em uma única frase isolada.",
+  "competencies": [
+    "combinar duas informações explícitas distribuídas no texto",
+    "responder perguntas que exigem consultar mais de uma parte",
+    "identificar quais trechos precisam ser ligados para sustentar uma resposta",
+    "rejeitar uma conclusão que combina partes incompatíveis",
+    "preservar a distinção entre integrar informações explícitas e realizar inferência mais distante"
+  ],
+  "prerequisites": ["N0-U04-L03"],
+  "limits": [
+    "não exigir inferências ambíguas ou conhecimento externo",
+    "não tratar qualquer proximidade entre frases como relação significativa",
+    "não introduzir análise formal de coesão",
+    "não exigir textos longos",
+    "não esconder o texto durante a resposta"
+  ],
+  "media": {"tts": "instruções, textos sob demanda e feedback", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {
+    "curatedMedia": [],
+    "runtimeResources": [{"type": "TTS_OK", "locations": ["instruções", "textos", "feedback"], "purpose": "apoio de acesso quando o foco é integrar informação"}],
+    "generatedVisualResources": [
+      {"type": "UI_RENDERED_READING_CARD", "locations": ["L04-B02", "L04-C01", "L04-A01", "L04-A02"], "purpose": "manter as partes consultáveis"},
+      {"type": "UI_RENDERED_MULTI_EVIDENCE_LINK", "locations": ["L04-B02", "L04-A01", "L04-A02"], "purpose": "permitir selecionar duas partes e visualizar a relação depois da tentativa"}
+    ],
+    "productionQueueRequired": false,
+    "publicationDependency": "nenhuma nova mídia humana obrigatória",
+    "decisionRationale": "a competência é relacionar trechos escritos; conexões geradas pela UI tornam a evidência observável sem substituir leitura."
+  },
+  "sequence": [
+    {
+      "id": "L04-B01",
+      "type": "objective",
+      "focus": "connect-information",
+      "text": "Às vezes uma pergunta não é respondida por uma frase sozinha. É preciso ligar informações que aparecem em partes diferentes do texto."
+    },
+    {
+      "id": "L04-B02",
+      "type": "demonstration",
+      "focus": "combine-two-parts",
+      "text": "Beto trabalha perto da estação. Hoje ele saiu do trabalho às cinco. O trem para seu bairro parte às cinco e meia.",
+      "question": "Beto saiu do trabalho antes do horário do trem?",
+      "answer": "sim",
+      "evidenceParts": ["Hoje ele saiu do trabalho às cinco.", "O trem para seu bairro parte às cinco e meia."],
+      "explanation": "A resposta exige comparar duas informações que aparecem separadamente."
+    },
+    {
+      "id": "L04-C01",
+      "type": "quick-check",
+      "focus": "integrate-explicit-information",
+      "text": "A aula de música é na sala azul. Diego tem aula de música hoje. Ele chegou à escola alguns minutos antes.",
+      "question": "Em qual sala Diego terá aula?",
+      "options": ["sala azul", "sala verde", "o texto não permite saber"],
+      "correctIndex": 0,
+      "supportingParts": ["A aula de música é na sala azul.", "Diego tem aula de música hoje."],
+      "textRemainsVisible": true
+    },
+    {
+      "id": "L04-B03",
+      "type": "contrast",
+      "focus": "compatible-versus-incompatible-connection",
+      "text": "A loja da esquina vende frutas. Marina foi à loja da avenida comprar um caderno.",
+      "wrongConclusion": "Marina comprou frutas.",
+      "explanation": "O texto fala de duas lojas diferentes. Juntar palavras próximas sem respeitar as relações produz uma conclusão que o texto não sustenta."
+    },
+    {
+      "id": "L04-A01",
+      "type": "assessment",
+      "focus": "multi-part-transfer",
+      "text": "A consulta de Paulo é às dez. A clínica fica a quinze minutos de sua casa. Paulo saiu de casa às nove e meia.",
+      "question": "Se o trajeto levar os quinze minutos informados, Paulo pode chegar antes das dez?",
+      "options": ["sim", "não", "o texto não informa a hora da consulta"],
+      "correctIndex": 0,
+      "requiredEvidenceParts": ["A consulta de Paulo é às dez.", "A clínica fica a quinze minutos de sua casa.", "Paulo saiu de casa às nove e meia."],
+      "note": "o cálculo é simples e transparente; o foco continua sendo integrar informações do texto"
+    },
+    {
+      "id": "L04-A02",
+      "type": "assessment",
+      "focus": "choose-supported-integration",
+      "text": "A oficina de bicicleta fica fechada aos domingos. Hoje é domingo. A bicicleta de Nara precisa de conserto.",
+      "question": "Qual conclusão é sustentada pelo texto?",
+      "options": ["Nara não poderá levar a bicicleta a essa oficina hoje enquanto ela estiver fechada.", "Nara já consertou a bicicleta.", "A oficina abre todos os domingos."],
+      "correctIndex": 0,
+      "requiredEvidenceParts": ["A oficina de bicicleta fica fechada aos domingos.", "Hoje é domingo."]
+    }
+  ],
+  "assessmentBehavior": {"textVisibility": "sempre disponível", "multiEvidence": "itens-chave pedem mais de um trecho", "readingSupport": "TTS opcional", "timeLimit": false},
+  "completionEvidence": {
+    "clusters": {
+      "integration": {"evidence": ["L04-C01", "L04-A01", "L04-A02"], "rule": "acertar pelo menos dois dos três itens, incluindo um item com seleção de múltiplas evidências"},
+      "relationDiscipline": {"evidence": ["L04-A02"], "rule": "não combinar partes incompatíveis e selecionar conclusão sustentada"}
+    },
+    "completionRule": "os dois agrupamentos são obrigatórios.",
+    "notSufficient": ["localizar apenas uma frase quando a resposta depende de duas", "combinar palavras sem respeitar relações", "usar informação externa não necessária"]
+  }
+}
