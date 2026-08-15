@@ -111,8 +111,8 @@ Nível 0 — Fundamentos
     ├── Lição 5 — concluída
     ├── Lição 6 — concluída
     ├── Lição 7 — concluída
-    ├── Lição 8 — PRÓXIMO PASSO
-    ├── Lição 9 — pendente
+    ├── Lição 8 — concluída
+    ├── Lição 9 — PRÓXIMO PASSO
     ├── Lição 10 — pendente
     └── Verificação integrada — pendente
 ```
@@ -120,13 +120,13 @@ Nível 0 — Fundamentos
 Último marco curricular concluído:
 
 ```text
-N0-U03-L07 — O efeito da negação
+N0-U03-L08 — Mensagens diferentes: informar, perguntar, pedir, ordenar e reagir
 ```
 
 Próximo passo imediato:
 
 ```text
-N0-U03-L08 — Mensagens diferentes: informar, perguntar, pedir, ordenar e reagir
+N0-U03-L09 — Completando e reconstruindo frases
 ```
 
 ## Checkpoint estrutural após a Unidade 3
@@ -252,22 +252,21 @@ Correções editoriais ou técnicas que não mudem o estado curricular não prec
 ## Sequência de desenvolvimento prevista a partir do estado atual
 
 ```text
-1. concluir N0-U03-L08
-2. concluir N0-U03-L09
-3. concluir N0-U03-L10
-4. criar e concluir a verificação integrada da Unidade 3
+1. concluir N0-U03-L09
+2. concluir N0-U03-L10
+3. criar e concluir a verificação integrada da Unidade 3
 
 CHECKPOINT GLOBAL
-5. elevar Nível 1 de M0 para M1
-6. elevar Nível 2 de M0 para M1
-7. elevar Nível 3 de M0 para M1
-8. elevar Nível 4 de M0 para M1
-9. consolidar a distribuição dos grandes domínios na matriz de progressão
-10. revisar se alguma lacuna descoberta exige ajuste do mapa já construído
+4. elevar Nível 1 de M0 para M1
+5. elevar Nível 2 de M0 para M1
+6. elevar Nível 3 de M0 para M1
+7. elevar Nível 4 de M0 para M1
+8. consolidar a distribuição dos grandes domínios na matriz de progressão
+9. revisar se alguma lacuna descoberta exige ajuste do mapa já construído
 
 RETORNO AO DESENVOLVIMENTO DO NÍVEL 0
-11. dimensionar as lições da Unidade 4
-12. desenvolver a Unidade 4 e seguir pelos próximos marcos do Nível 0
+10. dimensionar as lições da Unidade 4
+11. desenvolver a Unidade 4 e seguir pelos próximos marcos do Nível 0
 ```
 
 A sequência após o checkpoint pode ser ajustada se a análise global revelar dependências melhores, mas qualquer mudança significativa deve ser registrada aqui.
