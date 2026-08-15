@@ -1,0 +1,470 @@
+{
+  "schemaVersion": 1,
+  "id": "N0-U03-L09",
+  "title": "Completando e reconstruindo frases",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Usar pistas de sentido, situação e organização para completar e reconstruir frases simples, escolhendo palavras ou sequências coerentes e reconhecendo quando mais de uma solução pode ser aceitável, como preparação para a produção própria da Lição 10.",
+  "competencies": [
+    "completar uma frase simples com uma palavra ou trecho coerente quando a situação fornece pista suficiente",
+    "reconstruir uma frase simples a partir de palavras fornecidas em ordem desorganizada",
+    "escolher uma continuação coerente para uma frase ou situação curta",
+    "rejeitar uma opção que forma sequência possível de palavras, mas não comunica a ideia pedida",
+    "reconhecer em exemplos controlados que mais de uma continuação pode ser semanticamente aceitável",
+    "usar contexto e sentido para decidir entre alternativas em vez de depender apenas de posição, tamanho ou aparência das palavras",
+    "revisar uma frase reconstruída perguntando se ela comunica a ideia pretendida e se falta informação essencial para aquela tarefa",
+    "transferir completamento e reconstrução para exemplos novos sem depender de frases memorizadas"
+  ],
+  "prerequisites": [
+    "N0-U03-L05",
+    "N0-U03-L06",
+    "N0-U03-L07",
+    "N0-U03-L08"
+  ],
+  "limits": [
+    "não exigir produção livre de frase com vocabulário aberto; essa passagem é o foco da Lição 10",
+    "não ensinar uma única ordem universal como fórmula de frase",
+    "não corrigir rigidamente como errada uma solução semanticamente coerente quando a atividade deliberadamente admite mais de uma resposta",
+    "não usar exercícios de lacuna para introduzir classes gramaticais ou pedir nomes como substantivo, verbo, adjetivo ou advérbio",
+    "não transformar completamento em treino sistemático de concordância, regência, flexão ou ortografia",
+    "não exigir compreensão de pequenos textos ou relações globais entre várias frases",
+    "não transformar pontuação em objeto de estudo sistemático",
+    "não usar TTS da frase completa correta antes da primeira tentativa em tarefas de reconstrução ou lacuna quando isso entregar a resposta",
+    "não considerar uso de apoio de leitura como erro automático",
+    "não usar velocidade, tempo de resposta ou extensão da frase como critério de domínio"
+  ],
+  "media": {
+    "tts": "instruções, situações, opções, fichas isoladas, feedback e frases completas após a tentativa. Em reconstruções e lacunas, o TTS não deve narrar previamente a frase correta completa nem preencher oralmente a resposta ausente.",
+    "controlledAudio": [],
+    "video": "nao necessario",
+    "images": "nao necessarias"
+  },
+  "supportMaterials": {
+    "curatedMedia": [],
+    "runtimeResources": [
+      {
+        "type": "TTS_OK",
+        "locations": [
+          "instruções",
+          "situações curtas",
+          "opções visíveis",
+          "fichas isoladas sob demanda",
+          "frase montada após tentativa",
+          "feedback",
+          "resumo"
+        ],
+        "purpose": "reduzir carga de leitura sem entregar previamente a palavra ausente ou a ordem-alvo nas tarefas em que completar ou reconstruir é a evidência"
+      }
+    ],
+    "generatedVisualResources": [
+      {
+        "type": "UI_RENDERED_SENTENCE_BLANK",
+        "locations": ["L09-B02", "L09-C01", "L09-A01", "L09-A04"],
+        "purpose": "renderizar frases com lacuna como texto real e permitir inserir uma opção fornecida sem converter a atividade em imagem"
+      },
+      {
+        "type": "UI_RENDERED_WORD_TILES",
+        "locations": ["L09-B03", "L09-C02", "L09-A02", "L09-A04"],
+        "purpose": "renderizar palavras fornecidas como fichas manipuláveis para reconstrução de frases"
+      },
+      {
+        "type": "UI_RENDERED_ORDERING_ZONE",
+        "locations": ["L09-B03", "L09-C02", "L09-A02", "L09-A04"],
+        "purpose": "permitir organizar fichas, revisar a sequência montada e só então receber feedback ou TTS da frase completa"
+      },
+      {
+        "type": "UI_RENDERED_CONTINUATION_CHOICES",
+        "locations": ["L09-B04", "L09-C03", "L09-A03", "L09-A04"],
+        "purpose": "apresentar continuações curtas e permitir escolher a que melhor corresponde à pista de sentido"
+      },
+      {
+        "type": "UI_RENDERED_MULTI_ACCEPTABLE_RESPONSE",
+        "locations": ["L09-B05", "L09-C04", "L09-A03"],
+        "purpose": "registrar explicitamente atividades em que duas ou mais respostas fornecidas são coerentes, evitando um gabarito artificialmente único"
+      },
+      {
+        "type": "UI_RENDERED_REVIEW_PROMPT",
+        "locations": ["L09-B06", "L09-A04"],
+        "purpose": "oferecer revisão funcional por perguntas como comunica a ideia pedida e falta informação necessária para esta tarefa, sem análise gramatical formal"
+      }
+    ],
+    "productionQueueRequired": false,
+    "publicationDependency": "não há nova mídia humana obrigatória; lacunas, fichas, opções, situações curtas e TTS controlado pela interface são suficientes para ensinar e avaliar a competência",
+    "decisionRationale": "o objeto pedagógico é completar e reconstruir linguagem escrita a partir de pistas. Componentes textuais manipuláveis tornam a evidência diretamente observável. Imagens não são necessárias porque as situações verbais foram mantidas curtas e claras; áudio controlado não é necessário porque nenhuma resposta depende de uma realização sonora específica."
+  },
+  "sequence": [
+    {
+      "id": "L09-B01",
+      "type": "objective",
+      "focus": "read-or-listen",
+      "text": "Nas últimas lições, você observou como palavras se organizam, mudam mensagens, negam informações e cumprem funções diferentes. Agora vamos usar essas pistas para completar e reconstruir frases. Ainda vamos trabalhar com opções e fichas fornecidas; na próxima lição, você começará a escolher suas próprias palavras."
+    },
+    {
+      "id": "L09-B02",
+      "type": "completion-demonstration",
+      "focus": "use-clue-to-complete",
+      "title": "A situação pode indicar o que falta",
+      "examples": [
+        {
+          "situation": "O gato está dormindo.",
+          "sentenceWithBlank": "O gato ___.",
+          "options": ["dorme", "mesa", "azul"],
+          "correctIndexes": [0],
+          "completedSentence": "O gato dorme.",
+          "explanation": "A situação pede uma mensagem sobre o que o gato está fazendo. DORME completa essa ideia."
+        },
+        {
+          "situation": "A loja começou a atender agora.",
+          "sentenceWithBlank": "A loja ___.",
+          "options": ["abriu", "cadeira", "feliz"],
+          "correctIndexes": [0],
+          "completedSentence": "A loja abriu.",
+          "explanation": "ABRIU corresponde à informação dada pela situação."
+        }
+      ],
+      "ttsPolicy": "narrar situação e instrução; não narrar a frase completa preenchida antes da resposta"
+    },
+    {
+      "id": "L09-C01",
+      "type": "quick-check-set",
+      "focus": "complete-and-respond",
+      "interaction": "choose-completion-from-strong-clue",
+      "instruction": "Use a situação para escolher o que completa a frase.",
+      "items": [
+        {
+          "situation": "Bia acabou de chegar em casa.",
+          "sentenceWithBlank": "Bia ___.",
+          "options": ["chegou", "porta", "vazio"],
+          "correctIndexes": [0],
+          "completedSentence": "Bia chegou."
+        },
+        {
+          "situation": "O cachorro está bebendo água.",
+          "sentenceWithBlank": "O cachorro ___ água.",
+          "options": ["bebe", "janela", "alto"],
+          "correctIndexes": [0],
+          "completedSentence": "O cachorro bebe água."
+        },
+        {
+          "situation": "A porta continuou fechada depois da tentativa de abrir.",
+          "sentenceWithBlank": "A porta ___ abriu.",
+          "options": ["não", "hoje", "azul"],
+          "correctIndexes": [0],
+          "completedSentence": "A porta não abriu."
+        }
+      ],
+      "fullSentenceTtsBeforeResponse": false,
+      "optionTtsAvailable": true,
+      "supportUseIsError": false
+    },
+    {
+      "id": "L09-B03",
+      "type": "reconstruction-demonstration",
+      "focus": "order-and-understand",
+      "title": "Reconstruir é recuperar uma mensagem",
+      "situation": "Rui está ajudando Ana.",
+      "tiles": ["Ana", "ajuda", "Rui"],
+      "acceptedSequences": [["Rui", "ajuda", "Ana"]],
+      "renderedSentence": "Rui ajuda Ana.",
+      "explanation": "As palavras já estavam disponíveis. O trabalho foi organizá-las de modo que a frase comunicasse a situação pedida. Não basta formar qualquer sequência: ela precisa preservar a relação de sentido.",
+      "fullSentenceTtsBeforeResponse": false,
+      "tileTtsAvailable": true
+    },
+    {
+      "id": "L09-C02",
+      "type": "quick-check-set",
+      "focus": "reconstruct-and-respond",
+      "interaction": "order-word-tiles-to-match-clue",
+      "instruction": "Reconstrua a frase para comunicar a situação.",
+      "items": [
+        {
+          "situation": "Lia está chamando Beto.",
+          "tiles": ["Beto", "Lia", "chama"],
+          "acceptedSequences": [["Lia", "chama", "Beto"]],
+          "renderedSentence": "Lia chama Beto."
+        },
+        {
+          "situation": "O pato está nadando.",
+          "tiles": ["nada", "O", "pato"],
+          "acceptedSequences": [["O", "pato", "nada"]],
+          "renderedSentence": "O pato nada."
+        },
+        {
+          "situation": "A mensagem precisa negar que Caio saiu.",
+          "tiles": ["saiu", "não", "Caio"],
+          "acceptedSequences": [["Caio", "não", "saiu"]],
+          "renderedSentence": "Caio não saiu."
+        }
+      ],
+      "fullSentenceTtsBeforeResponse": false,
+      "tileTtsAvailable": true,
+      "supportUseIsError": false
+    },
+    {
+      "id": "L09-B04",
+      "type": "continuation-demonstration",
+      "focus": "choose-coherent-continuation",
+      "title": "Uma pista pode orientar a continuação",
+      "examples": [
+        {
+          "situation": "Rui quer saber a hora.",
+          "beginning": "Rui pergunta:",
+          "options": ["Que horas são?", "A porta abriu.", "Que surpresa!"],
+          "correctIndexes": [0],
+          "reason": "a situação pede uma pergunta sobre a hora"
+        },
+        {
+          "situation": "Bia viu um presente inesperado e ficou surpresa.",
+          "beginning": "Bia reage:",
+          "options": ["Que surpresa!", "A loja fecha cedo.", "Você mora onde?"],
+          "correctIndexes": [0],
+          "reason": "a opção escolhida funciona como reação clara naquela situação"
+        }
+      ]
+    },
+    {
+      "id": "L09-C03",
+      "type": "quick-check-set",
+      "focus": "choose-and-respond",
+      "interaction": "choose-continuation-matching-situation",
+      "instruction": "Escolha a continuação que combina com a situação.",
+      "items": [
+        {
+          "situation": "Caio precisa pedir que Lia abra a janela.",
+          "prompt": "Qual mensagem completa melhor essa situação?",
+          "options": ["Lia, por favor, abra a janela.", "A janela é azul.", "Que janela!"],
+          "correctIndexes": [0]
+        },
+        {
+          "situation": "Ana quer informar que o ônibus chegou.",
+          "prompt": "Qual mensagem corresponde à intenção?",
+          "options": ["O ônibus chegou.", "O ônibus chegou?", "Abra o ônibus."],
+          "correctIndexes": [0]
+        },
+        {
+          "situation": "Rui quer perguntar onde fica a saída.",
+          "prompt": "Qual mensagem corresponde à intenção?",
+          "options": ["Onde fica a saída?", "A saída fica ali.", "Que saída!"],
+          "correctIndexes": [0]
+        }
+      ],
+      "optionTtsAvailable": true,
+      "supportUseIsError": false
+    },
+    {
+      "id": "L09-B05",
+      "type": "multiple-valid-completions-demonstration",
+      "focus": "recognize-variation",
+      "title": "Às vezes existe mais de uma continuação coerente",
+      "sentenceWithBlank": "Rui corre ___.",
+      "options": [
+        {"text": "no parque", "acceptable": true, "effect": "acrescenta onde Rui corre"},
+        {"text": "cedo", "acceptable": true, "effect": "acrescenta uma informação de tempo"},
+        {"text": "hoje", "acceptable": true, "effect": "acrescenta quando a ação ocorre"},
+        {"text": "cadeira", "acceptable": false, "effect": "não forma, neste exercício, uma continuação cotidiana coerente para a mensagem pretendida"}
+      ],
+      "explanation": "Sem uma situação que exija uma informação específica, várias continuações podem funcionar. O sistema não deve escolher uma delas como a única resposta correta só porque foi a primeira imaginada pelo autor."
+    },
+    {
+      "id": "L09-C04",
+      "type": "quick-check",
+      "focus": "recognize-multiple-valid-options",
+      "interaction": "select-all-coherent-completions",
+      "instruction": "Selecione todas as opções que formam uma mensagem coerente neste contexto aberto.",
+      "sentenceWithBlank": "A criança bebeu ___.",
+      "options": [
+        {"text": "água", "acceptable": true},
+        {"text": "suco", "acceptable": true},
+        {"text": "a janela", "acceptable": false}
+      ],
+      "correctIndexes": [0, 1],
+      "feedback": "ÁGUA e SUCO produzem mensagens cotidianas coerentes. A atividade não fornece uma pista que permita escolher apenas uma delas."
+    },
+    {
+      "id": "L09-B06",
+      "type": "functional-review-demonstration",
+      "focus": "review",
+      "title": "Depois de completar, revise a mensagem",
+      "reviewPrompts": [
+        "A frase comunica a ideia pedida?",
+        "As palavras estão organizadas de modo que a relação pretendida fique clara?",
+        "A tarefa pediu alguma informação que ficou faltando?"
+      ],
+      "example": {
+        "situation": "A mensagem precisa dizer que Ana não saiu.",
+        "candidate": "Ana saiu.",
+        "review": "A frase é compreensível, mas não comunica a ideia pedida porque falta a negação.",
+        "revised": "Ana não saiu."
+      },
+      "explanation": "Revisar não significa procurar uma fórmula gramatical escondida. Primeiro verificamos se a mensagem produzida corresponde ao que queríamos comunicar."
+    },
+    {
+      "id": "L09-A01",
+      "type": "guided-activity",
+      "focus": "complete-from-clue",
+      "interaction": "choose-completion-from-strong-clue",
+      "title": "Complete com a pista da situação",
+      "items": [
+        {
+          "situation": "O bebê está dormindo.",
+          "sentenceWithBlank": "O bebê ___.",
+          "options": ["dorme", "mesa", "verde"],
+          "correctIndexes": [0]
+        },
+        {
+          "situation": "A lâmpada continuou apagada depois do interruptor ser acionado.",
+          "sentenceWithBlank": "A lâmpada ___ acendeu.",
+          "options": ["não", "ontem", "porta"],
+          "correctIndexes": [0]
+        },
+        {
+          "situation": "Leo está ajudando Bia.",
+          "sentenceWithBlank": "Leo ___ Bia.",
+          "options": ["ajuda", "cama", "azul"],
+          "correctIndexes": [0]
+        },
+        {
+          "situation": "A loja começou a atender pela manhã.",
+          "sentenceWithBlank": "A loja abriu ___.",
+          "options": ["cedo", "cadeira", "pato"],
+          "correctIndexes": [0]
+        }
+      ],
+      "fullSentenceTtsBeforeResponse": false,
+      "optionTtsAvailable": true,
+      "supportUseIsError": false
+    },
+    {
+      "id": "L09-A02",
+      "type": "guided-activity",
+      "focus": "reconstruct",
+      "interaction": "order-word-tiles-to-match-clue",
+      "title": "Reconstrua a mensagem",
+      "items": [
+        {
+          "situation": "Bia está seguindo Rui.",
+          "tiles": ["Rui", "segue", "Bia"],
+          "acceptedSequences": [["Bia", "segue", "Rui"]]
+        },
+        {
+          "situation": "O gato não está correndo; a mensagem deve negar a corrida.",
+          "tiles": ["corre", "gato", "não", "O"],
+          "acceptedSequences": [["O", "gato", "não", "corre"]]
+        },
+        {
+          "situation": "A porta está aberta.",
+          "tiles": ["aberta", "está", "A", "porta"],
+          "acceptedSequences": [["A", "porta", "está", "aberta"]]
+        },
+        {
+          "situation": "Caio está chamando Ana.",
+          "tiles": ["Ana", "Caio", "chama"],
+          "acceptedSequences": [["Caio", "chama", "Ana"]]
+        }
+      ],
+      "fullSentenceTtsBeforeResponse": false,
+      "tileTtsAvailable": true,
+      "supportUseIsError": false
+    },
+    {
+      "id": "L09-A03",
+      "type": "guided-activity",
+      "focus": "choose-and-judge-coherence",
+      "title": "Escolha quando a pista restringe — e reconheça quando não restringe",
+      "items": [
+        {
+          "interaction": "choose-continuation-matching-situation",
+          "situation": "Mia quer perguntar se a loja está aberta.",
+          "options": ["A loja está aberta?", "A loja está aberta.", "Feche a loja!"],
+          "correctIndexes": [0]
+        },
+        {
+          "interaction": "select-all-coherent-completions",
+          "sentenceWithBlank": "O gato dorme ___.",
+          "context": "nenhum lugar específico foi informado",
+          "options": ["na cama", "na cadeira", "no sofá", "a janela"],
+          "correctIndexes": [0, 1, 2]
+        },
+        {
+          "interaction": "choose-continuation-matching-situation",
+          "situation": "Rui viu algo inesperado e quer reagir com surpresa.",
+          "options": ["Que surpresa!", "Onde fica a rua?", "A rua está vazia."],
+          "correctIndexes": [0]
+        }
+      ],
+      "optionTtsAvailable": true,
+      "supportUseIsError": false
+    },
+    {
+      "id": "L09-A04",
+      "type": "transfer-activity",
+      "focus": "complete-reconstruct-review",
+      "title": "Use as pistas em exemplos novos",
+      "items": [
+        {
+          "interaction": "choose-completion-from-strong-clue",
+          "situation": "O trem acabou de chegar à estação.",
+          "sentenceWithBlank": "O trem ___.",
+          "options": ["chegou", "janela", "leve"],
+          "correctIndexes": [0]
+        },
+        {
+          "interaction": "order-word-tiles-to-match-clue",
+          "situation": "Nina está ajudando Leo.",
+          "tiles": ["Leo", "Nina", "ajuda"],
+          "acceptedSequences": [["Nina", "ajuda", "Leo"]]
+        },
+        {
+          "interaction": "choose-continuation-matching-situation",
+          "situation": "Beto quer pedir água a Ana de maneira clara.",
+          "options": ["Ana, por favor, me dê água.", "A água está fria.", "Onde está Ana?"],
+          "correctIndexes": [0]
+        },
+        {
+          "interaction": "review-message-against-goal",
+          "goal": "comunicar que Nina não chegou",
+          "candidate": "Nina chegou.",
+          "options": ["A frase já comunica o objetivo.", "Falta negar a chegada: Nina não chegou.", "É preciso trocar Nina por Leo."],
+          "correctIndexes": [1]
+        }
+      ],
+      "fullTargetSentenceTtsBeforeResponse": false,
+      "supportUseIsError": false
+    },
+    {
+      "id": "L09-B07",
+      "type": "summary",
+      "focus": "read-or-listen",
+      "text": "Completar e reconstruir frases exige observar a ideia pedida, o sentido das palavras e a organização da mensagem. Às vezes uma pista leva a uma resposta bem definida; em outras situações, mais de uma continuação pode ser coerente. Na próxima lição, os apoios diminuem e você começa a escolher suas próprias palavras para criar frases curtas."
+    }
+  ],
+  "assessmentBehavior": {
+    "completionAudio": "não narrar a frase completa já preenchida antes da primeira resposta; situação, instrução e opções podem ser narradas, e a frase completa pode ser lida por TTS depois da tentativa",
+    "reconstructionAudio": "não reproduzir previamente a sequência correta; fichas isoladas podem ter TTS sob demanda, e a frase montada pode ser narrada depois da tentativa",
+    "continuationAudio": "as opções visíveis podem ser narradas, pois a competência é decidir coerência e função a partir das pistas, não provar leitura independente sem apoio",
+    "multipleValidAnswers": "quando correctIndexes ou acceptedSequences contiverem múltiplas soluções, o renderer deve aceitar explicitamente todas as registradas e não reduzir o item a uma única resposta por conveniência técnica",
+    "readingSupport": "apoio de leitura é permitido e registrado separadamente; não é erro automático",
+    "timeLimit": false,
+    "technicalTerminologyRequired": false,
+    "longWrittenResponseRequired": false,
+    "retryPolicy": "permitir nova tentativa após feedback; embaralhar opções e fichas quando isso não alterar a competência medida"
+  },
+  "completionEvidence": {
+    "observablePerformance": "Completar, reconstruir e revisar frases simples usando pistas de sentido e organização, distinguindo tarefas com resposta restrita de situações em que mais de uma solução fornecida é coerente.",
+    "criteria": {
+      "completionFromClues": "acertar pelo menos 3 dos 4 itens de L09-A01, incluindo o item com negação",
+      "reconstruction": "acertar pelo menos 3 dos 4 itens de L09-A02, incluindo pelo menos um item com duas pessoas e a relação entre elas",
+      "coherenceAndVariation": "acertar os 3 itens de L09-A03, incluindo o item que exige reconhecer múltiplas continuações aceitáveis",
+      "transferAndReview": "acertar pelo menos 3 dos 4 itens de L09-A04, incluindo o item de reconstrução ou o item de revisão contra o objetivo"
+    },
+    "completionRule": "considerar a lição concluída quando os quatro critérios forem atingidos. Acertar apenas lacunas por exclusão visual não compensa incapacidade de reconstruir relações ou reconhecer quando mais de uma resposta é coerente.",
+    "notSufficient": [
+      "percorrer todas as telas",
+      "escolher sempre a primeira opção semanticamente possível quando a atividade admite várias",
+      "memorizar frases demonstradas",
+      "ordenar fichas sem compreender a situação que a sequência precisa comunicar",
+      "acertar apenas pela forma ou tamanho das palavras",
+      "usar pontuação como único critério",
+      "responder rapidamente"
+    ]
+  }
+}
