@@ -50,7 +50,7 @@ currículo fechado
 - **M2 concluído** — 11 áreas em `docs/areas-nivel-2.md`;
 - **M3 concluído** — 9 unidades em `docs/unidades-nivel-2.md`;
 - **M4 concluído** — **87 lições + 9 verificações integradas** em `docs/licoes-nivel-2.md` e documentos U1–U9;
-- **M5 em andamento** — **U1 concluída**; U2–U9 pendentes.
+- **M5 em andamento** — **U1 e U2 concluídas**; U3–U9 pendentes.
 
 Arquitetura M4:
 
@@ -101,6 +101,47 @@ Revisão implementada antes do fechamento:
 
 - um item de referenciação foi corrigido para usar dois referentes femininos realmente concorrentes (`a planilha` / `a ficha`), removendo uma ambiguidade artificial que a concordância de gênero resolvia sozinha.
 
+### N2-U2 — Palavras em sistema: ortografia, acentuação, morfologia e precisão — CONCLUÍDA
+
+```text
+11 lições + N2-U02-V01
+```
+
+Escopo normativo: `docs/referencias-ortografia-nivel-2.md`.
+
+Cobertura:
+
+- decisão entre regra/padrão, pista morfológica e consulta lexical;
+- ampliação de `c/qu/ç` e fronteiras de `g/gu/g/j` e `ch/x` sem falsas regras fonéticas universais;
+- grafias lexicalmente condicionadas e consulta responsável;
+- paroxítonas em recorte produtivo e revisão de `ideia`, `assembleia`, `heroico`, `jiboia` sem acento no padrão atual;
+- `i/u` tônicos em hiatos centrais e limites como `rainha`, `moinho`, `raiz`, `juiz`;
+- radical/base e famílias transparentes sem confundir semelhança gráfica com parentesco;
+- prefixos/sufixos, derivação e composição por efeito de sentido;
+- advérbio, preposição, conjunção e numeral em uso contextual;
+- sinonímia aproximada, polissemia, ambiguidade e precisão lexical;
+- literal/figurado e escolha de acepção por contexto, distinguindo consulta ortográfica de recurso de definições.
+
+A verificação integrada mantém nove agrupamentos obrigatórios: estratégia ortográfica, regularidades, paroxítonas, hiatos, família, formação, classes ampliadas, semântica/precisão e figurado/acepção contextual.
+
+Regras preservadas:
+
+- padrão parcial nunca vira regra universal;
+- quando o som/posição não decide a grafia, consulta é evidência de autonomia;
+- VOLP/consulta ortográfica não é tratado como dicionário completo de significados;
+- acentuação só é avaliada dentro do recorte normativo documentado;
+- classes são avaliadas em contexto, não por definição isolada;
+- sinônimo não significa intercambiabilidade perfeita;
+- mais precisão só é desejável quando a informação está disponível;
+- primeira acepção do verbete não é automaticamente a correta.
+
+Revisões implementadas antes do fechamento:
+
+- exemplo de ambiguidade lexical em L10 foi reescrito para um contexto genuinamente neutro (`Ela segurou a manga.`), evitando uma frase que favorecia quase toda a leitura de fruta;
+- item de cedilha da verificação foi refeito para não entregar a grafia correta no próprio enunciado, passando a exigir aplicação em `O la__o da fita soltou.`.
+
+Nenhuma nova mídia humana obrigatória foi criada.
+
 ### Níveis 3 e 4
 
 **M1 concluído.** M2–M5 ainda pendentes.
@@ -113,22 +154,21 @@ NÍVEL 1 — M5 ✓
 NÍVEL 2 — M1–M4 ✓
 └── M5 — MARCO ATIVO
     ├── U1 ✓
-    └── U2 — PRÓXIMO SUBPASSO
+    ├── U2 ✓
+    └── U3 — PRÓXIMO SUBPASSO
 ```
 
 Próximo subpasso:
 
 ```text
-N2-U02 — Palavras em sistema: ortografia, acentuação, morfologia e precisão
-11 lições + verificação integrada
+N2-U03 — Oração e termos: construindo e revisando relações sintáticas
+10 lições + verificação integrada
 ```
-
-Antes do M5 da U2, o recorte normativo exato de ortografia/acentuação deve ser conferido e registrado a partir de fontes normativas primárias adequadas.
 
 Depois:
 
 ```text
-N2-U3 → U4 → U5 → U6 → U7 → U8 → U9
+N2-U4 → U5 → U6 → U7 → U8 → U9
 → verificação de saída N2
 → checkpoint N2→N3
 ```
@@ -189,6 +229,7 @@ N1→N2 → docs/transicao-n1-n2.md
 N2 M2 → docs/areas-nivel-2.md
 N2 M3 → docs/unidades-nivel-2.md
 N2 M4 → docs/licoes-nivel-2.md + docs/licoes-nivel-2-u*.md
+N2-U02 escopo normativo → docs/referencias-ortografia-nivel-2.md
 
 estado atual → docs/roadmap-curricular.md
 conteúdo desenvolvido → content/
