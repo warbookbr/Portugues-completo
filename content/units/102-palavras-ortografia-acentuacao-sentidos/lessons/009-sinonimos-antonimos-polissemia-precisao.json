@@ -5,43 +5,35 @@
   "status": "conteudo-pronto-para-implementacao",
   "objective": "Compreender relações básicas de sentido em contexto — proximidade, oposição e polissemia — e escolher palavras com maior precisão, reconhecendo que palavras próximas não são substitutas perfeitas em qualquer situação e iniciando a distinção entre uso literal e figurado em casos transparentes.",
   "competencies": [
-    "identificar palavras de sentido próximo quando o contexto permite",
-    "identificar relações de oposição em contextos claros",
-    "reconhecer que uma mesma palavra pode assumir sentidos diferentes em contextos diferentes",
-    "avaliar se uma substituição preserva o sentido da frase naquele contexto",
-    "escolher entre palavras próximas aquela que comunica com maior precisão uma informação dada",
-    "distinguir uso literal de uso figurado em exemplos transparentes",
-    "evitar tratar sinônimos como equivalentes absolutos"
+    "identificar proximidade e oposição de sentido em contextos claros",
+    "reconhecer sentidos diferentes de uma mesma palavra conforme o contexto",
+    "avaliar se uma substituição preserva o sentido naquele uso",
+    "escolher formulação lexical mais precisa para uma finalidade dada",
+    "distinguir uso literal de figurado em exemplos transparentes",
+    "não tratar sinônimos ou antônimos como pares absolutos fora de contexto"
   ],
   "prerequisites": ["N1-U01-L06", "N1-U02-L01"],
   "limits": [
     "não exigir taxonomia semântica extensa",
-    "não ensinar que sinônimos podem ser trocados livremente em qualquer contexto",
-    "não reduzir antônimo a pares fixos fora do uso real",
-    "não introduzir ironia, ambiguidade sofisticada ou figuras de linguagem como sistema",
-    "não exigir nomenclatura técnica para demonstrar compreensão quando a escolha contextual já produz evidência",
-    "não usar listas descontextualizadas como única evidência"
+    "não ensinar substituição automática de sinônimos",
+    "não reduzir oposição a listas fixas descontextualizadas",
+    "não introduzir ironia, ambiguidades sofisticadas ou figuras de linguagem como sistema",
+    "não usar nomenclatura decorada como evidência suficiente"
   ],
-  "media": {
-    "tts": "permitido para instruções, frases e feedback; o alvo é interpretação semântica, não pronúncia exata",
-    "controlledAudio": [],
-    "video": "nao necessario",
-    "images": "nao necessarias"
-  },
+  "media": {"tts": "permitido para instruções, frases e feedback", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
   "supportMaterials": {
     "curatedMedia": [],
-    "runtimeResources": [
-      {"type": "TTS_OK", "locations": ["instruções", "frases", "feedback"], "purpose": "apoio de leitura"}
-    ],
+    "runtimeResources": [{"type": "TTS_OK", "locations": ["instruções", "frases", "feedback"], "purpose": "apoio de leitura"}],
     "generatedVisualResources": [
-      {"type": "UI_RENDERED_CONTEXT_PAIR", "locations": ["L09-B02", "L09-C02", "L09-A02"], "purpose": "comparar o sentido da mesma palavra em contextos diferentes"},
-      {"type": "UI_RENDERED_REPLACEMENT_COMPARISON", "locations": ["L09-B01", "L09-C01", "L09-A01"], "purpose": "testar substituições dentro da frase"},
-      {"type": "UI_RENDERED_PRECISION_CHOICES", "locations": ["L09-B03", "L09-A03"], "purpose": "escolher formulação que comunica a informação com maior precisão"},
-      {"type": "UI_RENDERED_LITERAL_FIGURATIVE_CARD", "locations": ["L09-B04", "L09-A04"], "purpose": "contrastar uso literal e figurado transparente"}
+      {"type": "UI_RENDERED_REPLACEMENT_COMPARISON", "locations": ["L09-B01", "L09-C01", "L09-A01"], "purpose": "testar proximidade de sentido dentro da frase"},
+      {"type": "UI_RENDERED_OPPOSITION_CONTEXT", "locations": ["L09-B02", "L09-C02", "L09-A02"], "purpose": "comparar oposição sustentada pelo contexto"},
+      {"type": "UI_RENDERED_CONTEXT_PAIR", "locations": ["L09-B03", "L09-A03"], "purpose": "comparar sentidos da mesma palavra"},
+      {"type": "UI_RENDERED_PRECISION_CHOICES", "locations": ["L09-B04", "L09-A04"], "purpose": "escolher formulação mais precisa"},
+      {"type": "UI_RENDERED_LITERAL_FIGURATIVE_CARD", "locations": ["L09-B05", "L09-A05"], "purpose": "contrastar uso literal e figurado transparente"}
     ],
     "productionQueueRequired": false,
     "publicationDependency": "nenhuma nova mídia humana obrigatória",
-    "decisionRationale": "a competência depende de contexto verbal e comparação de formulações; texto e componentes semânticos da interface são suficientes."
+    "decisionRationale": "as competências são demonstráveis por contexto verbal e comparação de formulações."
   },
   "sequence": [
     {
@@ -49,110 +41,100 @@
       "type": "demonstration",
       "title": "Sentido próximo não significa troca automática",
       "examples": [
-        {
-          "original": "A reunião foi rápida.",
-          "candidate": "A reunião foi breve.",
-          "judgment": "a substituição preserva aproximadamente o sentido neste contexto",
-          "note": "rápida e breve não precisam funcionar do mesmo modo em todas as frases"
-        },
-        {
-          "original": "O corredor é rápido.",
-          "candidate": "O corredor é breve.",
-          "judgment": "a substituição não preserva o sentido",
-          "note": "o contexto decide se a proximidade entre palavras é útil"
-        }
-      ]
+        {"original": "A reunião foi rápida.", "candidate": "A reunião foi breve.", "judgment": "aproximação aceitável neste contexto"},
+        {"original": "O corredor é rápido.", "candidate": "O corredor é breve.", "judgment": "a substituição não preserva o sentido"}
+      ],
+      "conclusion": "o contexto decide se a proximidade entre palavras permite a substituição"
     },
     {
       "id": "L09-C01",
-      "type": "quick-check-set",
-      "instruction": "Escolha a palavra que pode substituir a destacada sem mudar de forma importante o sentido desta frase.",
+      "type": "quick-check-proximity",
       "items": [
         {"sentence": "O aviso foi claro.", "target": "claro", "options": ["compreensível", "escuro", "barulhento"], "correctIndex": 0},
-        {"sentence": "A caixa está vazia.", "target": "vazia", "options": ["sem conteúdo", "cheia", "aberta"], "correctIndex": 0},
-        {"sentence": "O atendimento começou cedo.", "target": "cedo", "options": ["antes do horário tardio esperado", "devagar", "ontem"], "correctIndex": 0}
+        {"sentence": "A caixa está vazia.", "target": "vazia", "options": ["sem conteúdo", "cheia", "aberta"], "correctIndex": 0}
       ]
     },
     {
       "id": "L09-B02",
-      "type": "demonstration",
-      "title": "A mesma palavra pode ter sentidos diferentes",
+      "type": "opposition-demonstration",
+      "examples": [
+        {"context": "A porta estava aberta e depois foi fechada.", "pair": ["aberta", "fechada"], "relation": "oposição relevante neste contexto"},
+        {"context": "A caixa que antes estava vazia agora está cheia.", "pair": ["vazia", "cheia"], "relation": "oposição relevante neste contexto"}
+      ],
+      "guardRail": "o contexto continua importante: nem toda palavra possui um único oposto válido para qualquer uso"
+    },
+    {
+      "id": "L09-C02",
+      "type": "quick-check-opposition",
+      "items": [
+        {"sentence": "O caminho antes era estreito; depois da obra ficou ____.", "options": ["largo", "curto", "rápido"], "correctIndex": 0},
+        {"sentence": "O atendimento estava fechado pela manhã e ficou ____ à tarde.", "options": ["aberto", "longe", "cedo"], "correctIndex": 0}
+      ]
+    },
+    {
+      "id": "L09-B03",
+      "type": "polysemy-demonstration",
       "targetWord": "banco",
       "contexts": [
         {"sentence": "Sentei no banco da praça.", "meaning": "assento"},
         {"sentence": "Fui ao banco resolver um pagamento.", "meaning": "instituição financeira"}
       ],
-      "conclusion": "não basta olhar a palavra isolada; o restante da mensagem ajuda a escolher o sentido adequado"
+      "conclusion": "o restante da mensagem ajuda a selecionar o sentido"
     },
     {
-      "id": "L09-C02",
-      "type": "context-meaning-set",
-      "items": [
-        {
-          "targetWord": "linha",
-          "sentence": "Esperei na linha do ônibus 410.",
-          "options": ["trajeto/serviço de transporte", "traço feito no papel", "fio de costura"],
-          "correctIndex": 0
-        },
-        {
-          "targetWord": "linha",
-          "sentence": "Trace uma linha abaixo do título.",
-          "options": ["traço", "serviço de ônibus", "conversa telefônica"],
-          "correctIndex": 0
-        }
-      ]
-    },
-    {
-      "id": "L09-B03",
+      "id": "L09-B04",
       "type": "precision-demonstration",
       "situation": "A encomenda chegou exatamente às 14h, horário combinado.",
       "choices": ["A encomenda chegou.", "A encomenda chegou às 14h, no horário combinado."],
       "preferredIndex": 1,
-      "reason": "a segunda formulação preserva a informação de horário necessária quando esse detalhe importa"
+      "reason": "a segunda preserva o detalhe necessário quando o horário importa"
     },
     {
-      "id": "L09-B04",
+      "id": "L09-B05",
       "type": "literal-figurative-introduction",
       "examples": [
-        {"sentence": "A porta está aberta.", "use": "literal", "reason": "fala diretamente do estado físico da porta"},
-        {"sentence": "A empresa abriu as portas para novas ideias.", "use": "figurado", "reason": "não descreve portas físicas; comunica abertura/aceitação de ideias"}
+        {"sentence": "A porta está aberta.", "use": "literal"},
+        {"sentence": "A empresa abriu as portas para novas ideias.", "use": "figurado", "meaning": "passou a aceitar/acolher novas ideias"}
       ],
-      "guardRail": "o objetivo é perceber um efeito transparente pelo contexto, não memorizar nomes de figuras de linguagem"
+      "guardRail": "perceber o efeito contextual é o objetivo; não memorizar uma lista de figuras"
     },
     {
       "id": "L09-A01",
-      "type": "assessment-replacement",
+      "type": "assessment-proximity",
       "items": [
         {"sentence": "A resposta foi correta.", "target": "correta", "options": ["certa", "distante", "demorada"], "correctIndex": 0},
-        {"sentence": "O caminho é curto.", "target": "curto", "options": ["pequeno em extensão", "breve em duração em qualquer frase", "alto"], "correctIndex": 0},
-        {"sentence": "Ele deu uma resposta curta.", "target": "curta", "options": ["breve", "baixa", "estreita"], "correctIndex": 0}
+        {"sentence": "Ele deu uma resposta curta.", "target": "curta", "options": ["breve", "baixa", "estreita"], "correctIndex": 0},
+        {"sentence": "O caminho é curto.", "target": "curto", "options": ["pequeno em extensão", "breve em qualquer uso", "alto"], "correctIndex": 0}
       ]
     },
     {
       "id": "L09-A02",
-      "type": "assessment-polysemy",
+      "type": "assessment-opposition",
       "items": [
-        {"sentence": "A cabeça do parafuso ficou danificada.", "targetWord": "cabeça", "options": ["parte superior do parafuso", "parte do corpo humano", "chefe de uma equipe"], "correctIndex": 0},
-        {"sentence": "Ela é a cabeça da equipe neste projeto.", "targetWord": "cabeça", "options": ["pessoa que lidera", "parte do parafuso", "dor física"], "correctIndex": 0}
+        {"sentence": "A sala estava escura; acenderam as luzes e ela ficou ____.", "options": ["clara", "vazia", "silenciosa"], "correctIndex": 0},
+        {"sentence": "A inscrição estava incompleta; depois dos dados acrescentados ficou ____.", "options": ["completa", "rápida", "distante"], "correctIndex": 0}
       ]
     },
     {
       "id": "L09-A03",
-      "type": "assessment-precision",
-      "situation": "Você precisa avisar a uma pessoa que a consulta foi remarcada de terça para quinta-feira às 10h.",
-      "options": [
-        "A consulta mudou.",
-        "Sua consulta foi remarcada de terça para quinta-feira, às 10h.",
-        "Quinta-feira existe uma consulta."
-      ],
-      "correctIndex": 1,
-      "reason": "a formulação preserva as informações necessárias para a finalidade"
+      "type": "assessment-polysemy",
+      "items": [
+        {"sentence": "A cabeça do parafuso ficou danificada.", "targetWord": "cabeça", "options": ["parte superior do parafuso", "parte do corpo humano", "líder"], "correctIndex": 0},
+        {"sentence": "Ela é a cabeça da equipe neste projeto.", "targetWord": "cabeça", "options": ["pessoa que lidera", "parte do parafuso", "dor física"], "correctIndex": 0}
+      ]
     },
     {
       "id": "L09-A04",
+      "type": "assessment-precision",
+      "situation": "Você precisa avisar que a consulta foi remarcada de terça para quinta-feira às 10h.",
+      "options": ["A consulta mudou.", "Sua consulta foi remarcada de terça para quinta-feira, às 10h.", "Quinta-feira existe uma consulta."],
+      "correctIndex": 1
+    },
+    {
+      "id": "L09-A05",
       "type": "assessment-literal-figurative",
       "items": [
-        {"sentence": "Depois da notícia, ele ficou com um peso nos ombros.", "context": "O texto explica que ele assumiu uma responsabilidade difícil, sem carregar objeto algum.", "options": ["uso figurado relacionado a responsabilidade", "uso literal de um objeto pesado"], "correctIndex": 0},
+        {"sentence": "Depois da notícia, ele ficou com um peso nos ombros.", "context": "Ele assumiu uma responsabilidade difícil, sem carregar objeto algum.", "options": ["uso figurado relacionado a responsabilidade", "uso literal de objeto pesado"], "correctIndex": 0},
         {"sentence": "Ele colocou a caixa pesada nos ombros.", "options": ["uso literal", "uso figurado obrigatório"], "correctIndex": 0}
       ]
     }
@@ -160,17 +142,18 @@
   "assessmentBehavior": {
     "contextAlwaysVisible": true,
     "ttsPolicy": "permitido porque o alvo é sentido contextual",
-    "terminologyPolicy": "os termos sinônimo, antônimo e polissemia podem ser apresentados, mas acerto conceitual não depende apenas de nomeá-los",
+    "terminologyPolicy": "sinônimo, antônimo e polissemia podem ser nomeados, mas demonstrar a relação em contexto vale mais que recitar o termo",
     "timeLimit": false
   },
   "completionEvidence": {
     "clusters": {
-      "contextualRelations": {"evidence": ["L09-A01"], "rule": "acertar pelo menos dois dos três casos de substituição contextual"},
-      "polysemy": {"evidence": ["L09-A02"], "rule": "interpretar corretamente os dois sentidos contextuais"},
-      "precision": {"evidence": ["L09-A03"], "rule": "escolher a formulação que preserva as informações necessárias à situação"},
-      "literalFigurative": {"evidence": ["L09-A04"], "rule": "distinguir os dois usos transparentes"}
+      "proximity": {"evidence": ["L09-A01"], "rule": "acertar pelo menos dois dos três casos"},
+      "opposition": {"evidence": ["L09-A02"], "rule": "acertar os dois casos de oposição contextual"},
+      "polysemy": {"evidence": ["L09-A03"], "rule": "interpretar corretamente os dois sentidos"},
+      "precision": {"evidence": ["L09-A04"], "rule": "escolher formulação que preserva as informações necessárias"},
+      "literalFigurative": {"evidence": ["L09-A05"], "rule": "distinguir os dois usos transparentes"}
     },
-    "completionRule": "todos os quatro agrupamentos são obrigatórios.",
-    "notSufficient": ["decorar pares de palavras fora de contexto", "tratar sinônimos como equivalentes absolutos", "nomear polissemia sem interpretar os contextos"]
+    "completionRule": "todos os cinco agrupamentos são obrigatórios.",
+    "notSufficient": ["decorar pares fora de contexto", "tratar sinônimos ou antônimos como equivalentes absolutos", "nomear polissemia sem interpretar o uso"]
   }
 }
