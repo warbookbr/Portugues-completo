@@ -35,7 +35,7 @@ currículo fechado
 - **M2 concluído** — 10 áreas em `docs/areas-nivel-1.md`;
 - **M3 concluído** — 7 unidades em `docs/unidades-nivel-1.md`;
 - **M4 concluído** — 64 lições + 7 verificações integradas em `docs/licoes-nivel-1.md` e documentos U1–U7;
-- **M5 em andamento** — **U1, U2, U3 e U4 concluídas**; U5–U7 pendentes.
+- **M5 em andamento** — **U1–U5 concluídas**; U6–U7 pendentes.
 
 A passagem N0→N1 foi auditada em `docs/transicao-n0-n1.md`.
 
@@ -46,61 +46,73 @@ A passagem N0→N1 foi auditada em `docs/transicao-n0-n1.md`.
 ## N1 — M5
 
 ### U1 — Lendo textos com mais autonomia — CONCLUÍDA
-
-```text
-9 lições + N1-U01-V01
-```
+`9 lições + N1-U01-V01`
 
 ### U2 — Palavras: ortografia, acentuação e sentidos — CONCLUÍDA
-
-```text
-10 lições + N1-U02-V01
-```
+`10 lições + N1-U02-V01`
 
 Escopo normativo: `docs/referencias-ortografia-nivel-1.md`.
 
 ### U3 — Classes, flexões e construção da frase — CONCLUÍDA
-
-```text
-10 lições + N1-U03-V01
-```
+`10 lições + N1-U03-V01`
 
 ### U4 — Da frase ao parágrafo: conectando e pontuando ideias — CONCLUÍDA
+`9 lições + N1-U04-V01`
+
+### U5 — Produzindo textos curtos para diferentes finalidades — CONCLUÍDA
 
 ```text
-9 lições + N1-U04-V01
+10 lições + N1-U05-V01
 ```
 
 Cobertura:
 
-- parágrafo como bloco gráfico/de sentido sem tamanho fixo;
-- continuidade, ordenação, frase intrusa e contradição apenas quando sustentada;
-- referência por pronome, expressão nominal e repetição funcional;
-- adição, sequência, causa, resultado, contraste e explicação com conectores escolhidos pelo sentido;
-- ponto final, interrogação e exclamação em textos;
-- vírgula apenas nos usos estudados: enumeração e chamamento direto;
-- dois-pontos para lista anunciada, explicação e fala em casos transparentes;
-- fala/citação simples com travessão ou aspas;
-- revisão em passes: sentido → continuidade/referência → conectores → pontuação;
-- verificação integrada com tarefa real de edição.
+- planejamento proporcional por finalidade, leitor e informação necessária;
+- organização de texto curto e decisão funcional de parágrafos;
+- mensagens, bilhetes e avisos com produção própria;
+- relato/narrativa curta com sequência e referência;
+- descrição guiada pela finalidade, sem premiar quantidade de adjetivos;
+- instruções/procedimentos com executabilidade básica;
+- pequeno texto informativo com fonte fornecida e registro simples de origem;
+- resumo/anotação com seleção do essencial e palavras próprias;
+- opinião simples acompanhada de razão relacionada;
+- revisão em camadas, preservação de versão anterior e reescrita.
 
-Guard rails consolidados:
+A verificação integrada exige **duas produções próprias com finalidades diferentes**:
 
-- parágrafo não tem número obrigatório de frases;
-- repetição não é erro automático;
-- conector é escolhido pela relação, não para enfeitar o texto;
-- sequência temporal não é automaticamente causa;
-- pontuação não é regra de respiração;
-- não inserir vírgula entre sujeito simples e verbo por analogia com chamamento;
-- somente os usos de pontuação efetivamente ensinados são avaliados;
-- versões equivalentes de revisão são aceitas quando preservam sentido e convenções estudadas.
+1. texto funcional/informativo baseado em fonte fornecida;
+2. opinião própria acompanhada de razão.
+
+Ao menos a primeira percorre `plano → rascunho → revisão → reescrita`, preservando histórico. Questões fechadas não compensam produção ausente.
+
+Limite de validação registrado na própria verificação:
+
+```text
+processo/evidência registrada pela aplicação
+≠
+qualidade linguística global validada automaticamente
+```
+
+A aplicação pode verificar presença de etapas, decisões objetivas, histórico e checklists. Compreensibilidade global, fidelidade de paráfrase aberta, adequação global e correção linguística plena dependem de avaliador confiável.
 
 Revisões implementadas antes do fechamento:
 
-- modelos de edição foram tornados mais naturais (`O curso também oferece...`, `Os participantes também devem...`);
-- exemplo de retomada nominal foi explicitado para reduzir ambiguidade conceitual.
+- procedimento digital reescrito com sequência executável e não ambígua;
+- exemplo de enumeração em revisão corrigido para não misturar ações semanticamente incompatíveis.
 
 Nenhuma nova mídia humana obrigatória foi criada.
+
+## Guard rails acumulados do N1
+
+- parágrafo não tem tamanho fixo;
+- repetição não é erro automático;
+- conector é escolhido pela relação;
+- pontuação não é regra de respiração;
+- não separar sujeito simples e verbo por vírgula;
+- classes/gramática servem a uso, compreensão e revisão;
+- regra ortográfica parcial não vira regra universal;
+- produção aberta não recebe selo automático de qualidade por tamanho, palavras-chave ou semelhança com modelo;
+- revisão preserva trechos corretos e pode aceitar soluções equivalentes.
 
 ## Foco curricular atual
 
@@ -112,20 +124,21 @@ NÍVEL 1 — M1–M4 concluídos
     ├── U2 ✓
     ├── U3 ✓
     ├── U4 ✓
-    └── U5 — PRÓXIMO SUBPASSO
+    ├── U5 ✓
+    └── U6 — PRÓXIMO SUBPASSO
 ```
 
 Próximo marco:
 
 ```text
-N1-U05 — Produzindo textos curtos para diferentes finalidades
-10 lições + verificação integrada
+N1-U06 — Língua em interação: oralidade, registros e variação
+8 lições + verificação integrada
 ```
 
 Depois:
 
 ```text
-U6 → U7
+U7
 → verificação de saída do N1
 → checkpoint N1→N2
 ```
@@ -134,14 +147,11 @@ U6 → U7
 
 1. Nenhuma unidade entra em M5 sem M4 consolidado.
 2. Descobertas locais devem ser conferidas contra `docs/matriz-progressao-global.md`.
-3. Ortografia e gramática não devem virar taxonomia isolada: uso, compreensão, aplicação e revisão continuam centrais.
-4. Produções abertas e orais não podem receber validação automática falsa quando não há avaliador confiável.
-5. Atualizar este roadmap no mesmo PR que alterar materialmente o estado curricular.
-6. Em ortografia/acentuação, ensinar regularidades com escopo explícito e nunca transformar padrão parcial em regra universal.
-7. Terminologia gramatical no N1 deve funcionar como ferramenta de compreensão/revisão, não como fim classificatório.
-8. Em sintaxe básica, apresentar contraexemplos cedo quando uma regra simplificada puder virar falsa generalização.
-9. Em pontuação, ensinar função textual/sintática; não usar pausa respiratória como regra.
-10. Em revisão, preservar trechos corretos e aceitar soluções equivalentes quando a competência não exige uma única formulação.
+3. Atualizar este roadmap no mesmo PR que alterar materialmente o estado curricular.
+4. Produções abertas e orais não podem receber validação automática falsa.
+5. Terminologia deve produzir ganho de compreensão/revisão, não ser fim classificatório.
+6. Contraexemplos devem aparecer cedo quando uma simplificação puder virar regra falsa.
+7. Em revisão, preservar trechos corretos e aceitar soluções equivalentes quando a competência permitir.
 
 ## Dependências não curriculares ainda abertas
 

@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "id": "N1-U05-L05",
+  "title": "Descrever para informar melhor",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Selecionar e organizar características relevantes de pessoa, lugar, objeto ou situação conforme a finalidade do texto, usando vocabulário suficientemente preciso sem associar qualidade a excesso de adjetivos.",
+  "competencies": ["selecionar características relevantes", "distinguir detalhe útil de lista aleatória", "usar palavras mais precisas quando disponíveis", "integrar descrição a uma mensagem maior", "produzir descrição própria curta", "revisar se a descrição ajuda a finalidade"],
+  "prerequisites": ["N1-U02-L09", "N1-U03-L03", "N1-U05-L01", "N1-U05-L02"],
+  "limits": ["não premiar quantidade de adjetivos", "não exigir linguagem literária", "não reduzir descrição a aparência física", "não avaliar texto livre por contagem lexical", "não usar características irrelevantes apenas para alongar"],
+  "media": {"tts": "permitido", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["situações", "modelos", "feedback"], "purpose": "apoio"}], "generatedVisualResources": [{"type": "UI_RENDERED_RELEVANT_DETAIL_SORT", "locations": ["L05-B01", "L05-C01", "L05-A01"], "purpose": "selecionar detalhes pela finalidade"}, {"type": "UI_RENDERED_WRITING_EDITOR_WITH_CHECKLIST", "locations": ["L05-P01"], "purpose": "produção própria"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória; texto livre não recebe validação plena automática", "decisionRationale": "situações verbais permitem avaliar seleção de características sem depender de imagem."
+  },
+  "sequence": [
+    {"id": "L05-B01", "type": "purpose-comparison", "object": "uma mochila", "situations": [{"purpose": "ajudar alguém a encontrá-la", "useful": ["preta", "tem uma faixa vermelha", "estava perto da recepção"]}, {"purpose": "informar se cabe um notebook grande", "useful": ["tamanho aproximado", "compartimento disponível"]}], "teachingPoint": "a finalidade decide quais características importam"},
+    {"id": "L05-B02", "type": "precision-contrast", "pairs": [{"generic": "O corredor é ruim.", "morePrecise": "O corredor é estreito e pouco iluminado.", "reason": "informa quais características são relevantes"}, {"generic": "A caixa é boa.", "morePrecise": "A caixa é resistente e tem tampa firme.", "reason": "detalha a propriedade útil"}]},
+    {"id": "L05-C01", "type": "guided-selection", "situation": "Descrever uma sala para uma pessoa que precisa saber se comporta uma reunião de dez pessoas.", "options": [{"text": "há doze cadeiras", "useful": true}, {"text": "há uma mesa grande", "useful": true}, {"text": "a parede foi pintada em 2019", "useful": false}, {"text": "há espaço de circulação", "useful": true}]},
+    {"id": "L05-A01", "type": "description-plan", "situation": "Descrever um pacote para facilitar sua identificação na recepção: caixa média, etiqueta azul, nome 'Rita Alves' e canto amassado.", "requiredRelevantFeatures": ["caixa média", "etiqueta azul", "Rita Alves", "canto amassado"], "task": "selecionar e ordenar os detalhes úteis"},
+    {"id": "L05-P01", "type": "open-production", "prompt": "Escreva uma descrição curta do pacote para que outra pessoa consiga identificá-lo. Depois revise se cada detalhe ajuda a finalidade.", "recordResponse": true, "automaticValidation": false, "selfCheck": ["o objeto está identificável?", "os detalhes são relevantes?", "as palavras são suficientemente precisas?", "há excesso de detalhe que distrai?", "concordância e pontuação ensinadas foram revisadas?"]}
+  ],
+  "assessmentBehavior": {"relevanceOverAdjectiveCount": true, "openTextAutoValidated": false, "ttsPolicy": "permitido", "timeLimit": false},
+  "completionEvidence": {"clusters": {"relevantSelection": {"evidence": ["L05-A01"], "rule": "preservar os quatro detalhes necessários ao cenário"}, "ownDescription": {"evidence": ["L05-P01"], "rule": "produção própria registrada + autochecagem"}}, "completionRule": "produção própria obrigatória.", "notSufficient": ["empilhar adjetivos", "listar detalhes irrelevantes", "copiar modelo"]}
+}

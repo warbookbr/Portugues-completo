@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "id": "N1-U05-L03",
+  "title": "Mensagens, bilhetes e avisos com mais informação",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Produzir mensagens, bilhetes e avisos curtos que organizem várias informações relevantes com clareza, adequando escolhas básicas ao leitor e à finalidade sem reduzir o gênero a um molde fixo.",
+  "competencies": ["selecionar informações necessárias para aviso/mensagem", "organizar mudança de horário/local/prazo", "usar saudação/identificação quando a situação pede", "ajustar registro básico ao interlocutor", "produzir mensagem própria funcional", "reler com checklist de suficiência"],
+  "prerequisites": ["N1-U05-L01", "N1-U05-L02"],
+  "limits": ["não impor saudação/despedida em todo aviso", "não exigir molde único de bilhete", "não avaliar formalidade como superioridade", "não validar automaticamente compreensibilidade plena de texto livre"],
+  "media": {"tts": "permitido para modelos/instruções", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["modelos", "feedback"], "purpose": "apoio"}], "generatedVisualResources": [{"type": "UI_RENDERED_MESSAGE_PLAN", "locations": ["L03-B01", "L03-A01", "L03-P01"], "purpose": "ligar situação a informações necessárias"}, {"type": "UI_RENDERED_WRITING_EDITOR_WITH_CHECKLIST", "locations": ["L03-P01"], "purpose": "registrar produção e autochecagem"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória; avaliação plena do texto livre requer avaliador confiável", "decisionRationale": "gêneros são escritos e podem ser produzidos diretamente na interface."},
+  "sequence": [
+    {"id": "L03-B01", "type": "model-analysis", "situation": "Avisar usuários que o atendimento de amanhã mudou da sala 2 para a sala 7 e começará às 10h.", "model": "Aviso: amanhã o atendimento será na sala 7, a partir das 10h. A sala 2 não será utilizada.", "analysis": ["identifica o dia", "informa novo local", "informa horário", "elimina dúvida relevante"]},
+    {"id": "L03-B02", "type": "genre-flexibility", "examples": [{"situation": "mensagem a colega conhecido", "possibleOpening": "Oi, Marcos."}, {"situation": "aviso afixado para público geral", "possibleOpening": "Aviso"}], "teachingPoint": "a forma muda conforme situação; nenhum elemento superficial define sozinho o gênero"},
+    {"id": "L03-C01", "type": "information-check", "situation": "Lembrar a equipe de levar crachá para reunião amanhã às 9h.", "options": ["amanhã às 9h", "levar crachá", "qual reunião/equipe quando necessário", "cor do crachá de uma pessoa"], "expectedNecessary": [0, 1, 2]},
+    {"id": "L03-A01", "type": "controlled-draft-plan", "situation": "Avisar moradores que a água ficará interrompida na terça, das 13h às 16h, por manutenção.", "requiredIdeas": ["terça", "13h–16h", "interrupção de água", "manutenção"], "task": "organizar as ideias em uma sequência adequada antes de escrever"},
+    {"id": "L03-P01", "type": "open-production", "prompt": "Escreva o aviso para os moradores usando o plano. Depois revise se uma pessoa que não viu o planejamento consegue saber o que acontecerá e quando.", "recordResponse": true, "automaticValidation": false, "selfCheck": ["a finalidade está clara?", "o leitor sabe dia e horário?", "o serviço afetado está identificado?", "há informação irrelevante que atrapalha?", "a pontuação ensinada foi revisada?"]}
+  ],
+  "assessmentBehavior": {"openProductionRequired": true, "automaticValidationOfFreeText": false, "controlledPlanCanBeAutoChecked": true, "ttsPolicy": "permitido", "timeLimit": false},
+  "completionEvidence": {"clusters": {"contentSelection": {"evidence": ["L03-A01"], "rule": "preservar as quatro informações centrais no plano"}, "ownProduction": {"evidence": ["L03-P01"], "rule": "produção própria registrada + checklist concluído; aprovação linguística plena não é automática"}}, "completionRule": "a produção própria é obrigatória e não pode ser substituída por tarefas fechadas.", "notSufficient": ["copiar o modelo", "preencher apenas checklist", "ter boa pontuação sem informar o essencial"]}
+}

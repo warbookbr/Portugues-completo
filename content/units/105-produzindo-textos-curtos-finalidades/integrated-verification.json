@@ -1,0 +1,169 @@
+{
+  "schemaVersion": 1,
+  "id": "N1-U05-V01",
+  "type": "integrated-unit-verification",
+  "title": "Verificação integrada — Nível 1, Unidade 5",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Verificar se o aluno planeja, organiza, produz, revisa e reescreve textos curtos próprios para finalidades diferentes, incluindo um texto funcional/informativo e uma opinião acompanhada de razão, usando as convenções já ensinadas sem depender de validação automática falsa.",
+  "prerequisites": ["N1-U05-L01", "N1-U05-L02", "N1-U05-L03", "N1-U05-L04", "N1-U05-L05", "N1-U05-L06", "N1-U05-L07", "N1-U05-L08", "N1-U05-L09", "N1-U05-L10"],
+  "designPrinciples": [
+    "exigir pelo menos duas produções próprias com finalidades diferentes",
+    "planejamento deve servir ao texto, não ser burocracia",
+    "uma produção funcional/informativa deve preservar todas as informações essenciais",
+    "uma produção opinativa deve conter posição própria e razão relacionada",
+    "ao menos uma produção deve ter versão inicial e versão revisada preservadas",
+    "questões fechadas verificam decisões locais, mas não substituem escrita",
+    "não usar comprimento, palavras-chave ou semelhança com modelo para declarar texto livre correto",
+    "convenções avaliadas ficam restritas ao conteúdo já ensinado",
+    "ausência absoluta de erros não é requisito de conclusão curricular"
+  ],
+  "validationBoundary": {
+    "applicationCanVerify": ["existência de plano", "presença de respostas nos campos obrigatórios", "seleções objetivas de informação", "histórico antes/depois", "conclusão do checklist", "itens fechados de convenção/relação"],
+    "requiresReliableEvaluatorForFullValidation": ["compreensibilidade global do texto livre", "fidelidade semântica de paráfrase aberta", "adequação global de registro", "qualidade da razão produzida além de verificações estruturais", "correção linguística plena"],
+    "rule": "registrar produção como evidência realizada sem transformá-la automaticamente em competência linguística validada"
+  },
+  "limits": ["sem texto acadêmico", "sem síntese multifuente", "sem argumentação formal", "sem gênero de molde único", "sem exigência de perfeição normativa", "sem pontuação/gramática além do já ensinado"],
+  "media": {"tts": "permitido para instruções e fontes fornecidas; produção continua escrita pelo aluno", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {
+    "curatedMedia": [],
+    "runtimeResources": [{"type": "TTS_OK", "locations": ["situações", "fonte fornecida", "feedback"], "purpose": "apoio de leitura"}],
+    "generatedVisualResources": [
+      {"type": "UI_RENDERED_WRITING_PLAN", "locations": ["V01-P01-PLAN", "V01-P02-PLAN"], "purpose": "planejamento proporcional"},
+      {"type": "UI_RENDERED_WRITING_EDITOR", "locations": ["V01-P01-DRAFT", "V01-P02-DRAFT"], "purpose": "produção própria"},
+      {"type": "UI_RENDERED_REVISION_LAYERS", "locations": ["V01-P01-REVIEW", "V01-P02-REVIEW"], "purpose": "revisão por camadas"},
+      {"type": "UI_RENDERED_VERSION_DIFF", "locations": ["V01-P01-REWRITE"], "purpose": "preservar e comparar versões"},
+      {"type": "UI_RENDERED_SOURCE_LABEL", "locations": ["V01-P01-SOURCE"], "purpose": "preservar origem da informação"}
+    ],
+    "productionQueueRequired": false,
+    "publicationDependency": "nenhuma nova mídia humana obrigatória; fechamento linguístico de produções abertas requer avaliador confiável",
+    "decisionRationale": "a evidência central é escrita; recursos de interface organizam processo e preservam histórico."
+  },
+  "tasks": [
+    {
+      "id": "V01-P01",
+      "cluster": "functionalInformativeProduction",
+      "title": "Produção 1 — aviso informativo baseado em fonte fornecida",
+      "source": {
+        "id": "V01-P01-SOURCE",
+        "label": "Comunicado do Espaço Comunitário",
+        "content": [
+          "A oficina de informática foi transferida para quinta-feira, 18 de setembro.",
+          "O horário será das 19h às 21h.",
+          "A atividade ocorrerá na sala 4.",
+          "Quem já estava inscrito não precisa fazer nova inscrição.",
+          "A participação continua gratuita."
+        ]
+      },
+      "scenario": "Escreva um aviso curto para participantes já inscritos, comunicando a mudança sem acrescentar informação que a fonte não fornece.",
+      "steps": [
+        {
+          "id": "V01-P01-PLAN",
+          "type": "planning",
+          "requiredFields": ["finalidade", "leitor", "informações essenciais", "ordem inicial"],
+          "objectiveChecks": [
+            {"target": "novo dia", "required": true},
+            {"target": "horário", "required": true},
+            {"target": "sala", "required": true},
+            {"target": "não precisa nova inscrição", "required": true},
+            {"target": "gratuidade", "required": "useful-but-not-central"}
+          ]
+        },
+        {
+          "id": "V01-P01-DRAFT",
+          "type": "open-writing",
+          "recordResponse": true,
+          "automaticValidation": false,
+          "requireSourceLabel": true,
+          "sourceLabelExample": "Fonte: Comunicado do Espaço Comunitário."
+        },
+        {
+          "id": "V01-P01-REVIEW",
+          "type": "self-review",
+          "layers": ["finalidade/informação", "organização/parágrafo", "clareza/referência", "gramática ensinada", "ortografia/pontuação ensinadas"],
+          "requiredDecisions": ["informações essenciais preservadas", "nenhum fato inventado", "fonte registrada", "pontuação ensinada revisada"]
+        },
+        {
+          "id": "V01-P01-REWRITE",
+          "type": "open-rewrite",
+          "preserveOriginal": true,
+          "recordResponse": true,
+          "automaticValidation": false,
+          "requiredReflection": ["uma mudança feita e motivo", "uma parte mantida e motivo"]
+        }
+      ]
+    },
+    {
+      "id": "V01-P02",
+      "cluster": "opinionReasonProduction",
+      "title": "Produção 2 — opinião com razão",
+      "scenario": "Uma biblioteca do bairro estuda manter atendimento presencial até 21h em dois dias da semana. Escreva uma resposta curta dizendo se considera a mudança útil ou não e apresente pelo menos uma razão relacionada.",
+      "steps": [
+        {
+          "id": "V01-P02-PLAN",
+          "type": "planning",
+          "requiredFields": ["posição", "razão principal", "leitor/finalidade"],
+          "closedCheck": {"question": "Qual item é indispensável nesta tarefa além da posição?", "options": ["uma razão relacionada", "uma lista de cinco adjetivos", "uma citação acadêmica"], "correctIndex": 0}
+        },
+        {
+          "id": "V01-P02-DRAFT",
+          "type": "open-writing",
+          "recordResponse": true,
+          "automaticValidation": false,
+          "opinionContentNotScored": true
+        },
+        {
+          "id": "V01-P02-REVIEW",
+          "type": "self-review",
+          "requiredDecisions": ["posição identificável", "ao menos uma razão relacionada", "sem fato inventado apresentado como prova", "clareza e pontuação revisadas"],
+          "reasonRelevanceExamples": [
+            {"position": "é útil ampliar o horário", "reason": "pessoas que saem tarde do trabalho terão mais oportunidade de usar o espaço", "related": true},
+            {"position": "é útil ampliar o horário", "reason": "as paredes da biblioteca são brancas", "related": false}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "V01-Q03",
+      "cluster": "localRevisionDecisions",
+      "type": "closed-revision-set",
+      "items": [
+        {"before": "O curso começa amanhã. Por isso leve documento caneta e caderno.", "question": "Se não há relação causal, qual revisão é adequada?", "options": ["O curso começa amanhã. Leve documento, caneta e caderno.", "manter Por isso e retirar a pontuação"], "correctIndex": 0},
+        {"before": "Carlos envie o formulário.", "options": ["Carlos, envie o formulário.", "Carlos, enviou o formulário."], "correctIndex": 0, "focus": "chamamento"},
+        {"text": "Marina falou com Ana. Ela enviou o arquivo.", "question": "Sem mais contexto, a referência de ela é plenamente clara?", "options": ["não", "sim"], "correctIndex": 0},
+        {"question": "Uma reescrita precisa alterar toda frase correta para contar como revisão?", "options": ["não", "sim"], "correctIndex": 0}
+      ]
+    }
+  ],
+  "assessmentBehavior": {
+    "twoDifferentOwnProductionsRequired": true,
+    "oneVersionHistoryRequired": true,
+    "openTextAutoValidated": false,
+    "closedQuestionsCannotCompensateMissingWriting": true,
+    "sourceVisibleDuringTask": true,
+    "noLengthThresholdAsQuality": true,
+    "ttsPolicy": "permitido",
+    "timeLimit": false
+  },
+  "completionEvidence": {
+    "clusters": {
+      "planningAndOrganization": {"evidence": ["V01-P01-PLAN", "V01-P02-PLAN"], "rule": "os dois planos devem ser registrados e proporcionais às finalidades"},
+      "functionalInformativeProduction": {"evidence": ["V01-P01-DRAFT"], "rule": "produção própria registrada, fonte preservada e checklist executado; validação linguística plena fica pendente de avaliador confiável"},
+      "opinionReasonProduction": {"evidence": ["V01-P02-DRAFT"], "rule": "produção própria registrada com posição e razão; conteúdo da opinião não é pontuado"},
+      "revisionRewrite": {"evidence": ["V01-P01-REVIEW", "V01-P01-REWRITE", "V01-P02-REVIEW"], "rule": "histórico antes/depois preservado para P01 e autochecagem concluída em ambas"},
+      "localConventions": {"evidence": ["V01-Q03"], "rule": "acertar pelo menos três dos quatro itens, incluindo pontuação/conector e clareza referencial"}
+    },
+    "completionRule": "nenhuma produção pode ser substituída por pontuação em tarefas fechadas. O sistema pode marcar o processo como completo; competência global de escrita permanece `evidencia-registrada-pendente-validacao-linguistica` até haver avaliador confiável.",
+    "notSufficient": ["somente planejar", "somente múltipla escolha", "copiar modelo", "uma única produção", "posição sem razão", "reescrever sem preservar versão anterior", "aprovação automática por palavras-chave ou tamanho"]
+  },
+  "remediationRoutes": [
+    {"when": "planejamento", "review": ["N1-U05-L01", "N1-U05-L02"]},
+    {"when": "mensagem funcional", "review": ["N1-U05-L03"]},
+    {"when": "sequência/narrativa", "review": ["N1-U05-L04"]},
+    {"when": "descrição", "review": ["N1-U05-L05"]},
+    {"when": "instrução", "review": ["N1-U05-L06"]},
+    {"when": "fonte/texto informativo", "review": ["N1-U05-L07"]},
+    {"when": "resumo", "review": ["N1-U05-L08"]},
+    {"when": "opinião+razão", "review": ["N1-U05-L09"]},
+    {"when": "revisão/reescrita", "review": ["N1-U05-L10"]}
+  ]
+}
