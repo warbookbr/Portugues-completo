@@ -368,7 +368,7 @@ Lição 10
 
 - **Objetivo:** reconhecer funcionalmente diferentes usos básicos de mensagens e observar pistas de contexto, entonação e pontuação que ajudam a interpretá-las.
 - **Dependências:** Lições 4 a 7.
-- **Modalidade e recursos:** ler, ouvir e relacionar a situações. TTS é suficiente quando a resposta não depende de uma entonação exata; se uma atividade detalhada exigir distinguir intonações específicas como estímulo decisivo, deverá usar áudio controlado. Vídeo só será considerado se uma situação comunicativa em movimento trouxer ganho real.
+- **Modalidade e recursos:** ler, ouvir e relacionar a situações. TTS é suficiente quando a resposta não depende de uma entonação exata; se uma atividade detalhada exigir distinguir entonações específicas como estímulo decisivo, deverá usar áudio controlado. Vídeo só será considerado se uma situação comunicativa em movimento trouxer ganho real.
 - **Prática:** associar mensagens a situações de informar, perguntar, pedir, ordenar ou reagir; comparar `.`, `?` e `!` em uso natural; observar que pontuação e entonação ajudam, mas não substituir o contexto por uma tabela de regras.
 - **Evidência:** reconhecer a função comunicativa mais provável em situações claras e relacionar uma mensagem simples à situação correspondente sem depender de classificação formal de tipos de frase.
 
@@ -448,3 +448,351 @@ Imagem pedagógica tende a ser útil quando representa um referente, situação 
 TTS continua adequado para instruções, narração, exemplos e feedback quando pequenas variações de voz não mudam a resposta. Áudio controlado deverá ser usado se entonação, contraste oral ou outra característica sonora específica se tornar o estímulo que decide uma atividade. Vídeo permanece opcional e só deverá ser proposto quando movimento, sequência ou interação comunicativa acrescentarem informação que texto, imagem ou áudio não transmitam com a mesma clareza.
 
 As demandas concretas de mídia serão registradas em `producao-midia/FILA-MIDIA.md` no detalhamento de cada lição, antes da produção humana.
+
+## Unidade 4 — Lendo e compreendendo pequenos textos
+
+A Unidade 4 possui **9 lições planejadas** e termina com uma **verificação integrada que não conta como lição**.
+
+A unidade faz a passagem explícita da compreensão de frases para a construção do sentido de pequenos textos. O aluno aprende que compreender um texto exige integrar informações, localizar evidências, acompanhar relações, distinguir o que está dito do que é inferido e retornar ao texto quando necessário.
+
+1. **Ler é construir sentido** — distinguir reconhecer palavras de compreender a mensagem construída pelo conjunto do texto, sem usar velocidade como sinônimo de compreensão.
+2. **Assunto e mensagem principal** — identificar de que trata um pequeno texto e qual informação ou mensagem é central em exemplos claros, sem transformar `tema` e `tese` em terminologia obrigatória.
+3. **Encontrando informações no texto** — localizar informações explicitamente apresentadas e retornar ao trecho relevante para confirmar respostas.
+4. **Ligando informações entre frases** — combinar informações apresentadas em partes diferentes para compreender uma relação ou completar a mensagem global.
+5. **A quem ou a que isso se refere?** — acompanhar referências simples como `ele`, `ela`, `isso` e `lá` quando o texto fornece pistas suficientes.
+6. **A ordem dos acontecimentos e das instruções** — acompanhar sequência e ordenar acontecimentos, ações ou etapas em narrativas e instruções curtas.
+7. **Tempo, causa e consequência em relações claras** — perceber relações simples entre quando algo acontece, por que acontece e o que acontece em seguida, somente quando apoiadas claramente pelo texto.
+8. **O texto diz ou dá pistas?** — distinguir informação explícita de inferência simples e realizar conclusões sustentadas por evidências fortes, sem premiar chute plausível.
+9. **Reler, procurar evidências e revisar a interpretação** — usar releitura e busca de pistas como estratégias legítimas, rejeitar interpretações sem sustentação e ajustar uma resposta quando o texto contradiz a hipótese inicial.
+
+### Progressão central
+
+```text
+palavras e frases compreendidas
+→ texto como mensagem maior
+→ assunto e informação principal
+→ localizar evidências explícitas
+→ integrar partes
+→ acompanhar referências
+→ acompanhar sequência e relações
+→ distinguir dito de inferido
+→ reler, verificar e revisar a interpretação
+```
+
+### Separações deliberadas
+
+A Lição 2 não substitui a Lição 3:
+
+```text
+Lição 2
+→ construir visão global do texto
+
+Lição 3
+→ localizar uma informação específica e provar onde ela aparece
+```
+
+As Lições 4 e 5 também permanecem separadas:
+
+```text
+Lição 4
+→ integrar informações entre partes
+
+Lição 5
+→ resolver a quem ou a que uma expressão retoma
+```
+
+Sequência e causa não devem ser confundidas:
+
+```text
+primeiro/depois
+≠ automaticamente causa/consequência
+```
+
+Por isso a Lição 6 trabalha ordem e a Lição 7 trabalha relações de tempo, causa e consequência em exemplos controlados.
+
+A inferência só entra depois de o aluno ter praticado localizar e relacionar evidências. A Lição 9 fecha a unidade transformando releitura em estratégia consciente, não em sinal de fracasso.
+
+### Dimensionamento das lições
+
+#### Lição 1 — Ler é construir sentido
+
+- **Objetivo:** compreender que ler um pequeno texto significa construir sua mensagem a partir das palavras, frases e relações entre partes, e não apenas pronunciar ou reconhecer elementos isolados.
+- **Dependências:** conclusão da Unidade 3; leitura de frases simples e vocabulário acessível.
+- **Modalidade e recursos:** leitura visual como foco. TTS pode apoiar instruções e, quando a tarefa medir compreensão e não decodificação independente, pode narrar o texto em uma modalidade claramente marcada como apoio. Textos permanecem texto real da interface.
+- **Prática:** comparar reconhecimento de palavras com compreensão da mensagem; escolher qual resumo simples corresponde ao conjunto de duas ou três frases; retornar ao texto para confirmar.
+- **Evidência:** demonstrar compreensão global de pequenos textos novos sem depender de velocidade, memorização ou resposta longa.
+
+#### Lição 2 — Assunto e mensagem principal
+
+- **Objetivo:** identificar, em pequenos textos claros, de que o texto trata e qual informação ou mensagem organiza o conjunto.
+- **Dependências:** Lição 1.
+- **Modalidade e recursos:** ler e responder. Títulos podem aparecer quando forem informação legítima do texto, mas não devem entregar mecanicamente a resposta em toda atividade.
+- **Prática:** escolher assunto entre alternativas suficientemente distintas; selecionar a frase que melhor resume a mensagem principal; distinguir detalhe verdadeiro de informação central.
+- **Evidência:** identificar assunto e mensagem principal em textos novos, sem exigir definição formal de tema, tópico ou tese.
+
+#### Lição 3 — Encontrando informações no texto
+
+- **Objetivo:** localizar informações explicitamente apresentadas e usar o próprio texto como evidência para confirmar uma resposta.
+- **Dependências:** Lição 2.
+- **Modalidade e recursos:** ler, procurar e marcar. A interface deve permitir destacar trecho ou frase de evidência sem transformar o texto em imagem.
+- **Prática:** responder `quem?`, `onde?`, `quando?` ou `o que aconteceu?` quando a resposta estiver escrita; marcar o trecho correspondente; comparar resposta lembrada com resposta confirmada no texto.
+- **Evidência:** localizar informação explícita e apontar evidência compatível, com releitura permitida.
+
+#### Lição 4 — Ligando informações entre frases
+
+- **Objetivo:** integrar duas ou mais informações apresentadas separadamente para construir uma conclusão diretamente sustentada pelo pequeno texto.
+- **Dependências:** Lição 3.
+- **Modalidade e recursos:** ler, relacionar e responder. A interface pode realçar duas partes selecionadas depois da tentativa para mostrar a conexão.
+- **Prática:** combinar pessoa + ação, lugar + acontecimento, condição + resultado explícito ou outras relações simples distribuídas entre frases.
+- **Evidência:** responder corretamente a questões que não podem ser resolvidas por uma única frase isolada, usando relações transparentes entre partes do texto.
+
+#### Lição 5 — A quem ou a que isso se refere?
+
+- **Objetivo:** identificar referentes simples de expressões como `ele`, `ela`, `isso`, `lá` e repetições substituídas, usando pistas próximas e inequívocas.
+- **Dependências:** Lição 4.
+- **Modalidade e recursos:** ler, selecionar e conectar visualmente expressão e referente. Linhas, realces ou chips devem ser gerados pela UI.
+- **Prática:** relacionar pronome ou expressão de retomada ao referente; testar uma leitura incompatível; observar como a retomada evita repetição excessiva sem introduzir teoria formal de coesão.
+- **Evidência:** resolver referências simples em textos novos quando houver pistas suficientes, sem exigir nomenclatura gramatical.
+
+#### Lição 6 — A ordem dos acontecimentos e das instruções
+
+- **Objetivo:** acompanhar e reconstruir sequências simples de acontecimentos, ações ou etapas.
+- **Dependências:** Lições 3 a 5.
+- **Modalidade e recursos:** ler, ordenar e responder. Etapas devem aparecer como texto manipulável; imagens só entram se forem necessárias ao gênero, não para substituir a leitura.
+- **Prática:** identificar primeiro/depois/por último; ordenar eventos; seguir instrução escrita em duas ou três etapas; detectar uma ordem incompatível com o texto.
+- **Evidência:** reconstruir sequência sustentada pelo texto, sem inferir causalidade apenas porque um evento veio antes do outro.
+
+#### Lição 7 — Tempo, causa e consequência em relações claras
+
+- **Objetivo:** perceber relações simples de tempo, causa e consequência quando o texto oferece conectores ou pistas inequívocas.
+- **Dependências:** Lição 6.
+- **Modalidade e recursos:** ler, comparar e responder. A interface pode destacar expressões como `depois`, `porque`, `por isso`, `quando` após a resposta como apoio explicativo, sem exigir classificação gramatical.
+- **Prática:** distinguir sequência de causa; escolher por que um evento ocorreu quando o texto informa a razão; ligar causa apresentada ao resultado correspondente.
+- **Evidência:** interpretar relações transparentes sem criar causa onde o texto apenas apresenta ordem temporal.
+
+#### Lição 8 — O texto diz ou dá pistas?
+
+- **Objetivo:** distinguir informação explícita de inferência simples e concluir algo apenas quando as pistas do texto forem suficientes.
+- **Dependências:** Lições 3, 4 e 7.
+- **Modalidade e recursos:** ler, julgar e justificar por seleção de evidências. Resposta escrita longa não é necessária; o aluno pode marcar pistas e escolher a conclusão sustentada.
+- **Prática:** classificar `está escrito` versus `posso concluir pelas pistas`; comparar inferência sustentada com chute plausível; reconhecer `não há informação suficiente` como resposta válida.
+- **Evidência:** realizar inferências próximas e fortes e rejeitar conclusões não sustentadas, sem exigir interpretação ambígua ou conhecimento especializado.
+
+#### Lição 9 — Reler, procurar evidências e revisar a interpretação
+
+- **Objetivo:** usar conscientemente releitura, busca de pistas e revisão de hipótese quando a compreensão inicial estiver incompleta ou incompatível com o texto.
+- **Dependências:** Lições 1 a 8.
+- **Modalidade e recursos:** ler, reler, marcar e revisar. A interface deve preservar primeira resposta e revisão quando isso tornar a estratégia observável.
+- **Prática:** voltar ao trecho relevante; comparar duas interpretações; localizar a evidência que confirma ou contradiz uma resposta; ajustar uma hipótese depois de reler.
+- **Evidência:** demonstrar pelo menos uma revisão de interpretação orientada por evidência textual e selecionar estratégias adequadas diante de dificuldade de compreensão.
+
+### Guard rails da Unidade 4
+
+```text
+compreensão
+≠ velocidade
+≠ memorização
+≠ resposta escrita longa
+```
+
+Também:
+
+```text
+reler
+→ estratégia legítima
+
+inferir
+→ concluir com base em pistas
+
+chutar algo possível
+≠ inferir com evidência
+```
+
+Não constituem domínio obrigatório:
+
+- textos longos ou estruturalmente complexos;
+- análise literária formal;
+- classificação sistemática de gêneros;
+- tese e argumentação como sistemas;
+- ironia ou humor implícito complexo;
+- figuras de linguagem como sistema;
+- inferências ambíguas ou distantes;
+- análise formal de coesão e coerência;
+- intenção autoral aprofundada;
+- avaliação crítica de fontes;
+- resumo formal como gênero;
+- análise gramatical do texto;
+- produção autônoma extensa;
+- leitura oral perfeita;
+- velocidade como critério de domínio.
+
+### Verificação integrada da Unidade 4
+
+A verificação fica fora da contagem das nove lições e deve usar textos novos, curtos e acessíveis.
+
+Ela observa em agrupamentos distintos:
+
+- compreensão global: assunto e mensagem principal;
+- informação explícita e uso de evidência;
+- integração de informações e referências simples;
+- sequência, tempo, causa e consequência em relações claras;
+- distinção entre explícito e inferido;
+- inferência simples sustentada;
+- releitura e revisão de interpretação.
+
+A aprovação não pode ser reduzida a um placar global que permita compensar ausência de compreensão global com muitos acertos de localização, ou vice-versa. Releitura é permitida. Nenhuma questão deve depender de memorizar o texto depois de escondê-lo.
+
+### Regra preliminar de mídia
+
+A Unidade 4 pode ser desenvolvida sem nova mídia humana obrigatória. Os pequenos textos, títulos, marcações de evidência, cartões de sequência e conexões devem ser texto/componentes da interface.
+
+TTS pode narrar instruções e pode oferecer leitura de apoio quando a atividade mede compreensão do conteúdo e não decodificação independente; o uso desse apoio deve ser distinguido quando a evidência de leitura visual for relevante. Áudio controlado não é necessário enquanto nenhuma questão depender de uma realização sonora exata.
+
+Imagens podem aparecer dentro de gêneros reais, como legenda ou aviso ilustrado, mas não devem entregar a resposta quando a atividade pretende medir leitura. Não reservar arquivos de imagem apenas para tornar os textos visualmente variados.
+
+## Unidade 5 — Escrevendo e organizando mensagens
+
+A Unidade 5 possui **10 lições planejadas** e deverá terminar com uma **verificação integrada que não conta como lição**.
+
+A unidade parte das frases próprias da U3 e da compreensão de pequenos textos da U4 para construir mensagens escritas com mais de uma frase, propósito claro, informação suficiente, releitura e convenções gráficas fundamentais.
+
+1. **Da ideia à mensagem: o que preciso comunicar?** — transformar uma intenção simples em informações necessárias antes de escrever.
+2. **Escrevendo frases com mais autonomia** — ampliar a produção própria com apoios progressivamente reduzidos.
+3. **Duas ou mais frases que se relacionam** — combinar frases quando uma única frase não basta, mantendo continuidade simples.
+4. **Escrever para um propósito** — produzir bilhete, legenda, lista, resposta, descrição ou instrução curta pelo que precisam fazer na situação, sem taxonomia de gêneros como fim.
+5. **Informação suficiente para quem vai ler** — perceber e completar mensagens em que falta informação essencial para o objetivo.
+6. **Reler: escrevi o que eu queria dizer?** — comparar intenção e mensagem produzida, mantendo foco primeiro na compreensibilidade.
+7. **Revisando palavras, ordem e clareza** — fazer alterações orientadas para melhorar informação e organização, sem comando genérico `corrija tudo`.
+8. **Organizando a escrita: espaços, maiúscula e limites da frase** — sistematizar convenções gráficas fundamentais já encontradas anteriormente.
+9. **Ponto final, interrogação e exclamação em uso** — consolidar sinais finais em situações claras sem associar cada função comunicativa a um único sinal obrigatório.
+10. **Primeiro contato com a vírgula em enumerações** — usar a vírgula de forma introdutória e controlada em listas simples, sem ensinar `vírgula = pausa` ou antecipar o sistema completo.
+
+### Progressão central
+
+```text
+intenção
+→ selecionar informação
+→ escrever com autonomia
+→ relacionar frases
+→ adequar ao propósito
+→ verificar se há informação suficiente
+→ reler
+→ revisar clareza
+→ organizar graficamente
+→ consolidar sinais finais
+→ primeiro uso controlado da vírgula
+```
+
+### Separações deliberadas
+
+Produção e revisão não são a mesma competência. O aluno primeiro precisa conseguir comunicar; depois aprende a revisar com critérios compatíveis com o que já foi ensinado.
+
+A organização gráfica também não deve dominar a unidade desde o começo:
+
+```text
+primeiro
+→ mensagem compreensível
+
+depois
+→ mensagem progressivamente mais convencional e fácil de ler
+```
+
+Ponto final, interrogação e exclamação recebem consolidação antes da vírgula porque já aparecem funcionalmente desde unidades anteriores. A vírgula permanece deliberadamente restrita a enumerações simples.
+
+### Dimensionamento das lições
+
+#### Lição 1 — Da ideia à mensagem: o que preciso comunicar?
+- **Objetivo:** selecionar informações necessárias para transformar uma intenção simples em mensagem compreensível.
+- **Dependências:** U3-L10 e compreensão de pequenos textos da U4.
+- **Modalidade e recursos:** ler situação, planejar e escolher informações. UI com cartões de informação; TTS de apoio.
+- **Prática:** distinguir detalhe útil de informação essencial; identificar o que falta antes da escrita.
+- **Evidência:** selecionar conjunto suficiente de informações para objetivos novos e simples.
+
+#### Lição 2 — Escrevendo frases com mais autonomia
+- **Objetivo:** produzir frases próprias com menor dependência de modelos e bancos de palavras.
+- **Dependências:** Lição 1.
+- **Modalidade e recursos:** campo livre e apoio opcional sob demanda.
+- **Prática:** escrever resposta, informação, descrição ou instrução curta e depois comparar com o objetivo.
+- **Evidência:** produzir frases próprias compreensíveis sem exigir perfeição em conteúdos ainda não sistematizados.
+
+#### Lição 3 — Duas ou mais frases que se relacionam
+- **Objetivo:** organizar uma mensagem curta com mais de uma frase quando necessário.
+- **Dependências:** Lição 2 e relações entre partes trabalhadas na U4.
+- **Modalidade e recursos:** escrever, ordenar e relacionar frases; UI textual.
+- **Prática:** continuar informação, ordenar duas ou três frases, evitar contradição simples e manter o mesmo foco.
+- **Evidência:** produzir ou reconstruir sequência curta de frases relacionadas e compreensíveis.
+
+#### Lição 4 — Escrever para um propósito
+- **Objetivo:** escolher forma e conteúdo compatíveis com uma finalidade cotidiana simples.
+- **Dependências:** Lições 1 a 3.
+- **Modalidade e recursos:** situações de uso + produção curta.
+- **Prática:** bilhete, legenda, lista, resposta, descrição e instrução sem exigir nomear formalmente o gênero.
+- **Evidência:** produzir mensagem que cumpra a finalidade apresentada em situação nova.
+
+#### Lição 5 — Informação suficiente para quem vai ler
+- **Objetivo:** perceber quando uma mensagem deixa de comunicar informação necessária e completá-la.
+- **Dependências:** Lição 4.
+- **Modalidade e recursos:** comparar mensagens e situações; campos de complementação e produção.
+- **Prática:** identificar `o que falta?`, acrescentar informação e comparar versões.
+- **Evidência:** completar mensagem de modo funcional sem transformar detalhamento excessivo em critério de qualidade.
+
+#### Lição 6 — Reler: escrevi o que eu queria dizer?
+- **Objetivo:** comparar intenção inicial com texto produzido e reconhecer necessidade de ajuste.
+- **Dependências:** Lições 1 a 5 e estratégias de releitura da U4.
+- **Modalidade e recursos:** antes/depois, autochecagem e objetivo visível.
+- **Prática:** verificar mensagem, informação principal e correspondência com o objetivo.
+- **Evidência:** detectar ao menos um desajuste claro e decidir se precisa revisar.
+
+#### Lição 7 — Revisando palavras, ordem e clareza
+- **Objetivo:** alterar aspectos específicos já acessíveis para tornar mensagem mais clara.
+- **Dependências:** Lição 6 e manipulação de frases da U3.
+- **Modalidade e recursos:** edição orientada com comparação de versões.
+- **Prática:** substituir palavra, reorganizar trecho, remover repetição desnecessária ou acrescentar informação faltante em casos transparentes.
+- **Evidência:** justificar por escolha funcional qual versão comunica melhor o objetivo e produzir revisão orientada.
+
+#### Lição 8 — Organizando a escrita: espaços, maiúscula e limites da frase
+- **Objetivo:** consolidar espaçamento, maiúscula inicial e delimitação gráfica de frases em contextos simples.
+- **Dependências:** capacidade de produzir mensagens curtas; conhecimentos gráficos das U1 e U3.
+- **Modalidade e recursos:** texto editável e marcação visual pela UI.
+- **Prática:** separar palavras, reconhecer começo/fim de frase, aplicar maiúscula inicial e corrigir espaço inadequado antes de sinais.
+- **Evidência:** organizar graficamente pequena mensagem aplicando somente convenções já ensinadas.
+
+#### Lição 9 — Ponto final, interrogação e exclamação em uso
+- **Objetivo:** consolidar usos funcionais de `.`, `?` e `!` e seus efeitos de interpretação em situações claras.
+- **Dependências:** Lição 8 e contato funcional da U3.
+- **Modalidade e recursos:** comparar, pontuar e interpretar mensagens.
+- **Prática:** escolher sinal final, comparar versões e reconhecer que ordem ou pedido não exigem sempre `!`.
+- **Evidência:** usar e interpretar sinais finais adequadamente nos contextos ensinados sem depender de tabela rígida de intenções.
+
+#### Lição 10 — Primeiro contato com a vírgula em enumerações
+- **Objetivo:** reconhecer e experimentar a vírgula em enumerações simples sem generalizá-la como marca de pausa.
+- **Dependências:** Lição 9.
+- **Modalidade e recursos:** ler, comparar e editar listas dentro de frase.
+- **Prática:** organizar enumeração simples, comparar versão sem separação e versão adequada e revisar com foco explícito.
+- **Evidência:** usar a vírgula em enumeração nova e simples com apoio compatível, sem exigir domínio de outros usos.
+
+### Guard rails da Unidade 5
+
+```text
+escrita compreensível
+≠ escrita sem nenhum erro
+
+copiar ou preencher
+→ pode ensinar
+mas
+→ não prova produção autônoma
+```
+
+Não usar `corrija tudo` como expectativa principal. A revisão deve indicar o aspecto já ensinado que precisa ser observado.
+
+Não constituem domínio obrigatório: redações longas; estrutura fixa de introdução/desenvolvimento/conclusão; produção argumentativa; parágrafo como sistema aprofundado; análise formal de coesão; concordância como sistema; ortografia e acentuação completas; revisão gramatical ampla; estilo formal; taxonomia de gêneros; domínio geral da vírgula; ponto e vírgula; dois-pontos como sistema; pontuação complexa de diálogo; regras sintáticas avançadas.
+
+### Verificação integrada da Unidade 5 — arquitetura preliminar
+
+A verificação deverá exigir produção real, não apenas seleção e correção de frases prontas. Deve observar: planejamento da mensagem, produção própria, relação entre frases, adequação a propósito simples, suficiência de informação, releitura, revisão orientada, espaçamento, maiúscula inicial, sinais finais e primeiro uso controlado da vírgula.
+
+A produção aberta deverá ser avaliada com a mesma honestidade já adotada na U3: uma interface pode registrar que o aluno escreveu e revisou, mas não deve afirmar correção linguística plena por heurísticas superficiais quando não houver avaliador confiável.
+
+### Regra preliminar de mídia
+
+A U5 pode ser desenvolvida prioritariamente com texto real, campos de escrita, cartões, comparadores de versão e TTS. Não há razão pedagógica para criar imagens de frases, listas ou bilhetes quando a UI pode renderizá-los de forma mais acessível. Mídia humana só deverá ser criada se uma futura atividade concreta depender dela.
