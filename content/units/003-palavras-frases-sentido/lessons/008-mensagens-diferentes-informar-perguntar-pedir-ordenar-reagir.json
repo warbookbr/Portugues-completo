@@ -1,0 +1,652 @@
+{
+  "schemaVersion": 1,
+  "id": "N0-U03-L08",
+  "title": "Mensagens diferentes: informar, perguntar, pedir, ordenar e reagir",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Reconhecer funcionalmente diferentes usos básicos de mensagens — informar, perguntar, pedir, ordenar e reagir — relacionando cada mensagem a uma situação clara e usando contexto, pontuação e entonação apenas como pistas, sem reduzir a interpretação a uma tabela rígida de tipos de frase.",
+  "competencies": [
+    "reconhecer quando uma mensagem principalmente informa algo em uma situação clara",
+    "reconhecer quando uma mensagem principalmente faz uma pergunta",
+    "distinguir pedidos claros de ordens claras em situações controladas sem exigir terminologia gramatical",
+    "reconhecer reações simples expressas por uma ou mais palavras",
+    "relacionar uma mensagem à função comunicativa mais provável considerando situação e conteúdo",
+    "usar ponto final, ponto de interrogação e ponto de exclamação como pistas funcionais sem tratá-los como critérios suficientes por si só",
+    "perceber que mensagens reais podem combinar funções e que a classificação desta lição usa exemplos deliberadamente claros",
+    "transferir a identificação funcional para exemplos novos sem depender de decorar uma forma fixa para cada função"
+  ],
+  "prerequisites": [
+    "N0-U03-L07"
+  ],
+  "limits": [
+    "não ensinar tipos de frase como taxonomia gramatical obrigatória",
+    "não ensinar que ponto final sempre significa informar, ponto de interrogação sempre esgota o sentido de perguntar ou ponto de exclamação determina sozinho reação ou ordem",
+    "não exigir os rótulos declarativa, interrogativa, imperativa, exclamativa ou optativa",
+    "não tratar pedir e ordenar como categorias definidas apenas por presença ou ausência de por favor; contexto e formulação participam da interpretação",
+    "não aprofundar atos de fala, pragmática, indiretas, ironia, sarcasmo, pressuposição ou intenção implícita",
+    "não criar atividades cuja resposta dependa exclusivamente de distinguir entonações específicas",
+    "não transformar pontuação em conteúdo sistemático de regras; ela aparece apenas como pista funcional",
+    "não exigir produção livre extensa; o foco ainda é reconhecer e relacionar mensagens a situações",
+    "não transformar a atividade em compreensão de pequenos textos ou cadeias de várias frases",
+    "não usar velocidade ou tempo de resposta como critério de domínio"
+  ],
+  "media": {
+    "tts": "instruções, mensagens, situações e feedback. O TTS pode ser usado antes da resposta quando a situação e o conteúdo verbal já tornam a função identificável; nenhuma questão deve depender da entonação produzida pelo TTS para ter uma única resposta correta.",
+    "controlledAudio": [],
+    "video": "nao necessario",
+    "images": "nao necessarias"
+  },
+  "supportMaterials": {
+    "curatedMedia": [],
+    "runtimeResources": [
+      {
+        "type": "TTS_OK",
+        "locations": [
+          "instruções",
+          "situações",
+          "mensagens",
+          "comparações",
+          "feedback",
+          "resumo"
+        ],
+        "purpose": "reduzir carga de leitura e oferecer contato oral com mensagens cotidianas sem tornar uma entonação específica o estímulo decisivo"
+      }
+    ],
+    "generatedVisualResources": [
+      {
+        "type": "UI_RENDERED_FUNCTION_CARDS",
+        "locations": [
+          "L08-B02",
+          "L08-B03",
+          "L08-B04",
+          "L08-A01",
+          "L08-A03"
+        ],
+        "purpose": "apresentar as funções informar, perguntar, pedir, ordenar e reagir como cartões funcionais com exemplos, sem convertê-las em classes gramaticais formais"
+      },
+      {
+        "type": "UI_RENDERED_MESSAGE_SITUATION_MATCH",
+        "locations": [
+          "L08-C01",
+          "L08-C02",
+          "L08-C03",
+          "L08-A01",
+          "L08-A02",
+          "L08-A04"
+        ],
+        "purpose": "relacionar mensagens a situações curtas e claras, mantendo o contexto visível durante a decisão"
+      },
+      {
+        "type": "UI_RENDERED_PUNCTUATION_CLUE_HIGHLIGHT",
+        "locations": [
+          "L08-B05",
+          "L08-C04",
+          "L08-A03"
+        ],
+        "purpose": "destacar sinais de pontuação como pistas auxiliares com explicação textual, sem depender apenas de cor e sem transformá-los em regra automática"
+      },
+      {
+        "type": "UI_RENDERED_PRIMARY_FUNCTION_CHOICE",
+        "locations": [
+          "L08-C01",
+          "L08-C02",
+          "L08-C03",
+          "L08-C04",
+          "L08-A01",
+          "L08-A02",
+          "L08-A03",
+          "L08-A04"
+        ],
+        "purpose": "permitir escolher a função comunicativa principal em exemplos deliberadamente claros e registrar separadamente casos que poderiam admitir mais de uma leitura em contextos reais"
+      }
+    ],
+    "productionQueueRequired": false,
+    "publicationDependency": "não há nova mídia humana obrigatória; situações curtas, mensagens em texto real, TTS e pistas visuais da própria interface são suficientes porque nenhuma resposta depende de entonação exata ou movimento.",
+    "decisionRationale": "o objetivo é interpretar o uso comunicativo de mensagens. Contexto textual curto e componentes da interface permitem controlar a evidência sem adicionar imagens decorativas ou vídeos. Áudio controlado seria necessário apenas se uma entonação específica determinasse a resposta; o desenho desta lição evita esse tipo de item."
+  },
+  "sequence": [
+    {
+      "id": "L08-B01",
+      "type": "objective",
+      "focus": "read-or-listen",
+      "text": "Até aqui, vimos como palavras e frases constroem mensagens e como mudanças como a negação alteram o sentido. Agora vamos observar para que uma mensagem está sendo usada em uma situação: informar, perguntar, pedir, ordenar ou reagir."
+    },
+    {
+      "id": "L08-B02",
+      "type": "functional-message-overview",
+      "focus": "observe-and-understand",
+      "title": "A mesma língua serve para fazer coisas diferentes",
+      "examples": [
+        {
+          "function": "informar",
+          "situation": "Alguém avisa uma novidade.",
+          "message": "O ônibus chegou.",
+          "why": "a mensagem apresenta uma informação"
+        },
+        {
+          "function": "perguntar",
+          "situation": "Alguém quer saber o horário.",
+          "message": "Que horas o ônibus chega?",
+          "why": "a mensagem busca uma resposta"
+        },
+        {
+          "function": "pedir",
+          "situation": "Uma pessoa solicita ajuda.",
+          "message": "Pode me ajudar, por favor?",
+          "why": "a pessoa solicita que alguém faça algo"
+        },
+        {
+          "function": "ordenar",
+          "situation": "Um responsável dá uma instrução direta numa emergência.",
+          "message": "Saia daqui agora.",
+          "why": "a mensagem determina diretamente uma ação"
+        },
+        {
+          "function": "reagir",
+          "situation": "Alguém recebe uma boa notícia.",
+          "message": "Oba!",
+          "why": "a mensagem expressa uma reação à situação"
+        }
+      ],
+      "explanation": "Esses nomes ajudam a observar o uso da mensagem. Eles não são caixas perfeitas para toda conversa real. Nesta lição, usamos situações claras para perceber a função principal sem precisar decorar uma definição gramatical."
+    },
+    {
+      "id": "L08-C01",
+      "type": "quick-check-set",
+      "focus": "situation-message-and-respond",
+      "interaction": "identify-primary-communicative-function",
+      "instruction": "Leia ou ouça a situação e a mensagem. Escolha o que a pessoa está fazendo principalmente com essa mensagem.",
+      "items": [
+        {
+          "situation": "Lia olha pela janela e avisa Caio sobre o tempo.",
+          "message": "Está chovendo.",
+          "options": [
+            "informar",
+            "perguntar",
+            "pedir"
+          ],
+          "correctIndex": 0
+        },
+        {
+          "situation": "Caio quer saber onde deixou a chave.",
+          "message": "Onde está a chave?",
+          "options": [
+            "reagir",
+            "perguntar",
+            "ordenar"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "situation": "Bia recebe um presente que queria muito.",
+          "message": "Que legal!",
+          "options": [
+            "reagir",
+            "informar",
+            "pedir"
+          ],
+          "correctIndex": 0
+        }
+      ],
+      "ttsAvailable": true,
+      "exactIntonationRequired": false
+    },
+    {
+      "id": "L08-B03",
+      "type": "request-order-comparison",
+      "focus": "compare",
+      "title": "Pedir e ordenar podem buscar uma ação, mas não são a mesma situação",
+      "examples": [
+        {
+          "situation": "Uma pessoa pede ajuda a um colega.",
+          "message": "Você pode fechar a janela, por favor?",
+          "primaryFunction": "pedir",
+          "note": "a mensagem solicita a ação"
+        },
+        {
+          "situation": "Durante uma emergência, um responsável determina uma ação imediata.",
+          "message": "Feche a janela agora.",
+          "primaryFunction": "ordenar",
+          "note": "a mensagem determina diretamente a ação naquela situação"
+        }
+      ],
+      "explanation": "Não basta procurar uma única palavra para decidir. 'Por favor' pode ajudar a perceber um pedido, mas o contexto e a forma da mensagem também importam. Em conversas reais existem graus de polidez e força; aqui usamos casos claros, sem tentar explicar toda essa variedade."
+    },
+    {
+      "id": "L08-C02",
+      "type": "quick-check-set",
+      "focus": "compare-and-respond",
+      "interaction": "distinguish-request-from-order-in-clear-context",
+      "instruction": "Escolha a função principal da mensagem na situação apresentada.",
+      "items": [
+        {
+          "situation": "Em casa, Ana solicita que o irmão alcance um copo.",
+          "message": "Pode pegar o copo para mim, por favor?",
+          "options": [
+            "pedido",
+            "ordem",
+            "informação"
+          ],
+          "correctIndex": 0
+        },
+        {
+          "situation": "Um instrutor interrompe imediatamente uma ação perigosa.",
+          "message": "Pare agora.",
+          "options": [
+            "pergunta",
+            "ordem",
+            "reação"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "situation": "Rui pede licença para usar um objeto.",
+          "message": "Posso usar esta cadeira?",
+          "options": [
+            "pedido",
+            "informação",
+            "reação"
+          ],
+          "correctIndex": 0,
+          "note": "neste contexto, a pergunta funciona como pedido de permissão; a situação é necessária para interpretar a função principal"
+        }
+      ],
+      "ttsAvailable": true,
+      "exactIntonationRequired": false
+    },
+    {
+      "id": "L08-B04",
+      "type": "reaction-demonstration",
+      "focus": "observe-and-understand",
+      "title": "Uma reação pode ser uma mensagem muito curta",
+      "examples": [
+        {
+          "situation": "Algo surpreende a pessoa.",
+          "message": "Nossa!",
+          "function": "reagir"
+        },
+        {
+          "situation": "A pessoa sente dor de repente.",
+          "message": "Ai!",
+          "function": "reagir"
+        },
+        {
+          "situation": "A pessoa comemora uma boa notícia.",
+          "message": "Oba!",
+          "function": "reagir"
+        },
+        {
+          "situation": "A pessoa vê algo assustador.",
+          "message": "Que susto!",
+          "function": "reagir"
+        }
+      ],
+      "connection": "Isso retoma a Lição 4: uma única palavra pode funcionar como mensagem completa quando a situação lhe dá função comunicativa."
+    },
+    {
+      "id": "L08-C03",
+      "type": "quick-check-set",
+      "focus": "situation-message-and-respond",
+      "interaction": "identify-function-from-clear-situation",
+      "instruction": "Escolha a função principal.",
+      "items": [
+        {
+          "situation": "Leo descobre que passou em uma prova.",
+          "message": "Oba!",
+          "options": [
+            "reagir",
+            "perguntar",
+            "ordenar"
+          ],
+          "correctIndex": 0
+        },
+        {
+          "situation": "Mia avisa ao grupo que a porta está aberta.",
+          "message": "A porta está aberta.",
+          "options": [
+            "informar",
+            "pedir",
+            "reagir"
+          ],
+          "correctIndex": 0
+        },
+        {
+          "situation": "Beto quer saber se a loja já abriu.",
+          "message": "A loja já abriu?",
+          "options": [
+            "perguntar",
+            "ordenar",
+            "informar"
+          ],
+          "correctIndex": 0
+        }
+      ],
+      "ttsAvailable": true,
+      "exactIntonationRequired": false
+    },
+    {
+      "id": "L08-B05",
+      "type": "punctuation-as-clue-demonstration",
+      "focus": "observe-clues",
+      "title": "Pontuação ajuda, mas não decide tudo sozinha",
+      "examples": [
+        {
+          "message": "A loja abriu.",
+          "visibleClue": ".",
+          "possibleUseInThisExample": "informar",
+          "note": "o conteúdo e a situação confirmam que alguém está apresentando uma informação"
+        },
+        {
+          "message": "A loja abriu?",
+          "visibleClue": "?",
+          "possibleUseInThisExample": "perguntar",
+          "note": "o sinal ajuda a mostrar que a pessoa busca uma resposta"
+        },
+        {
+          "message": "Que bom!",
+          "visibleClue": "!",
+          "possibleUseInThisExample": "reagir",
+          "note": "o sinal combina com a reação, mas o conteúdo da mensagem também importa"
+        },
+        {
+          "message": "Pare!",
+          "visibleClue": "!",
+          "possibleUseInThisExample": "ordenar",
+          "note": "o mesmo sinal aparece aqui numa função diferente; por isso ! sozinho não diz se a mensagem é reação ou ordem"
+        }
+      ],
+      "explanation": "Ponto final, interrogação e exclamação são pistas importantes da escrita. Mas interpretar uma mensagem exige olhar também para as palavras e para a situação. As regras completas de pontuação serão estudadas em outra etapa."
+    },
+    {
+      "id": "L08-C04",
+      "type": "quick-check-set",
+      "focus": "use-multiple-clues",
+      "interaction": "reject-punctuation-only-rule",
+      "instruction": "Escolha a conclusão mais segura.",
+      "items": [
+        {
+          "messages": [
+            "Que ótimo!",
+            "Pare!"
+          ],
+          "question": "As duas terminam com !. Isso significa que têm a mesma função?",
+          "options": [
+            "Não. A primeira pode ser reação e a segunda pode ser uma ordem; precisamos observar conteúdo e situação.",
+            "Sim. Toda mensagem com ! tem exatamente a mesma função.",
+            "Sim. Toda mensagem com ! é sempre uma pergunta."
+          ],
+          "correctIndex": 0
+        },
+        {
+          "situation": "Uma pessoa quer saber se Rui chegou.",
+          "message": "Rui chegou?",
+          "question": "Qual pista ajuda, junto com a situação, a perceber a pergunta?",
+          "options": [
+            "o ponto de interrogação",
+            "o tamanho da palavra Rui",
+            "a presença da letra R"
+          ],
+          "correctIndex": 0
+        }
+      ],
+      "ttsAvailable": true,
+      "exactIntonationRequired": false
+    },
+    {
+      "id": "L08-B06",
+      "type": "functions-can-overlap-guard-rail",
+      "focus": "read-or-listen",
+      "title": "Na vida real, uma mensagem pode fazer mais de uma coisa",
+      "examples": [
+        {
+          "situation": "Alguém vê fumaça e avisa outras pessoas.",
+          "message": "Fogo!",
+          "possibleEffects": [
+            "reagir ao perigo",
+            "alertar outras pessoas"
+          ],
+          "lessonUse": "não usar como item de classificação com uma única resposta obrigatória"
+        },
+        {
+          "situation": "Uma pessoa pergunta se pode entrar.",
+          "message": "Posso entrar?",
+          "possibleEffects": [
+            "formular uma pergunta",
+            "pedir permissão"
+          ],
+          "lessonUse": "quando houver situação clara de permissão, a lição pode tratar funcionalmente como pedido; fora desse contexto, evitar correção rígida"
+        }
+      ],
+      "explanation": "As cinco funções desta lição são ferramentas para compreender mensagens claras, não etiquetas capazes de resolver qualquer conversa sem contexto. Quando mais de uma interpretação for realmente válida, a atividade não deve fingir que só uma é possível."
+    },
+    {
+      "id": "L08-A01",
+      "type": "guided-activity",
+      "focus": "classify-in-context",
+      "interaction": "match-message-to-primary-function",
+      "title": "O que a mensagem faz aqui?",
+      "items": [
+        {
+          "situation": "Um funcionário avisa que o elevador chegou.",
+          "message": "O elevador chegou.",
+          "correctFunction": "informar"
+        },
+        {
+          "situation": "Uma pessoa quer saber o nome de alguém.",
+          "message": "Qual é o seu nome?",
+          "correctFunction": "perguntar"
+        },
+        {
+          "situation": "Uma pessoa solicita ajuda para abrir uma porta.",
+          "message": "Pode abrir a porta para mim, por favor?",
+          "correctFunction": "pedir"
+        },
+        {
+          "situation": "Um responsável manda todos saírem de uma área de risco.",
+          "message": "Saiam daqui agora.",
+          "correctFunction": "ordenar"
+        },
+        {
+          "situation": "Uma pessoa vê o resultado que esperava.",
+          "message": "Finalmente!",
+          "correctFunction": "reagir"
+        }
+      ],
+      "availableFunctions": [
+        "informar",
+        "perguntar",
+        "pedir",
+        "ordenar",
+        "reagir"
+      ],
+      "ttsAvailable": true,
+      "exactIntonationRequired": false
+    },
+    {
+      "id": "L08-A02",
+      "type": "guided-activity",
+      "focus": "choose-message-for-situation",
+      "interaction": "select-message-matching-communicative-goal",
+      "title": "Escolha uma mensagem adequada à intenção clara",
+      "items": [
+        {
+          "goal": "perguntar onde fica o banheiro",
+          "options": [
+            "Onde fica o banheiro?",
+            "O banheiro fica ali.",
+            "Que susto!"
+          ],
+          "correctIndex": 0
+        },
+        {
+          "goal": "informar que a reunião começou",
+          "options": [
+            "A reunião começou.",
+            "A reunião começou?",
+            "Comece a reunião agora."
+          ],
+          "correctIndex": 0
+        },
+        {
+          "goal": "pedir que alguém espere um momento",
+          "options": [
+            "Pode esperar um momento, por favor?",
+            "Você esperou ontem.",
+            "Que momento!"
+          ],
+          "correctIndex": 0
+        },
+        {
+          "goal": "dar uma ordem direta para parar em uma situação de segurança",
+          "options": [
+            "Pare agora.",
+            "Você pode parar quando quiser?",
+            "Você parou ontem."
+          ],
+          "correctIndex": 0
+        }
+      ],
+      "ttsAvailable": true
+    },
+    {
+      "id": "L08-A03",
+      "type": "guided-activity",
+      "focus": "use-context-content-and-punctuation",
+      "interaction": "interpret-clues-without-single-sign-rule",
+      "title": "Use mais de uma pista",
+      "items": [
+        {
+          "situation": "Bia quer uma informação.",
+          "message": "Que horas são?",
+          "question": "O que sustenta melhor a interpretação?",
+          "options": [
+            "A situação, as palavras da mensagem e o ponto de interrogação trabalham juntos.",
+            "Apenas a letra Q.",
+            "Apenas o tamanho da frase."
+          ],
+          "correctIndex": 0
+        },
+        {
+          "situation": "Um adulto vê uma criança avançando para uma rua movimentada.",
+          "message": "Pare!",
+          "question": "Por que não basta dizer que ! significa reação?",
+          "options": [
+            "Porque aqui o conteúdo e a situação mostram uma ordem direta.",
+            "Porque ! sempre significa pergunta.",
+            "Porque pontuação nunca ajuda em nada."
+          ],
+          "correctIndex": 0
+        },
+        {
+          "situation": "Leo recebe uma notícia excelente.",
+          "message": "Que bom!",
+          "question": "Qual é a função principal neste exemplo?",
+          "options": [
+            "reagir",
+            "ordenar",
+            "perguntar"
+          ],
+          "correctIndex": 0
+        }
+      ],
+      "ttsAvailable": true
+    },
+    {
+      "id": "L08-A04",
+      "type": "transfer-activity",
+      "focus": "transfer-in-new-situations",
+      "interaction": "identify-primary-function-and-justify-by-selection",
+      "title": "Use a função em exemplos novos",
+      "items": [
+        {
+          "situation": "Nina quer confirmar se o ônibus já passou.",
+          "message": "O ônibus já passou?",
+          "options": [
+            "perguntar",
+            "reagir",
+            "ordenar"
+          ],
+          "correctIndex": 0
+        },
+        {
+          "situation": "Caio conta a Nina que o mercado fecha às seis.",
+          "message": "O mercado fecha às seis.",
+          "options": [
+            "informar",
+            "pedir",
+            "ordenar"
+          ],
+          "correctIndex": 0
+        },
+        {
+          "situation": "Uma pessoa solicita que a outra fale mais devagar.",
+          "message": "Pode falar mais devagar, por favor?",
+          "options": [
+            "pedir",
+            "informar",
+            "reagir"
+          ],
+          "correctIndex": 0
+        },
+        {
+          "situation": "Um segurança manda que uma pessoa não ultrapasse uma faixa.",
+          "message": "Não passe daqui.",
+          "options": [
+            "ordenar",
+            "perguntar",
+            "reagir"
+          ],
+          "correctIndex": 0,
+          "connectionToL07": "a negação participa do conteúdo da ordem, mas a competência avaliada aqui é a função comunicativa da mensagem"
+        },
+        {
+          "situation": "Mia abre uma caixa e encontra algo que a surpreende.",
+          "message": "Uau!",
+          "options": [
+            "reagir",
+            "informar",
+            "pedir"
+          ],
+          "correctIndex": 0
+        }
+      ],
+      "ttsAvailable": true,
+      "exactIntonationRequired": false
+    },
+    {
+      "id": "L08-B07",
+      "type": "summary",
+      "focus": "read-or-listen",
+      "text": "Mensagens podem ser usadas para informar, perguntar, pedir, ordenar e reagir. Para compreender a função principal, observamos a situação, as palavras e pistas como pontuação e entonação. Nenhuma pista isolada resolve todos os casos, e algumas mensagens reais podem cumprir mais de uma função. Na próxima lição, vamos usar essas relações para completar e reconstruir frases de forma coerente."
+    }
+  ],
+  "assessmentBehavior": {
+    "ttsUse": "TTS pode narrar situações e mensagens antes da resposta; nenhuma atividade deve depender de entonação específica para diferenciar funções",
+    "controlledAudioPolicy": "se uma futura variante exigir que duas mensagens idênticas sejam distinguidas apenas por entonação, essa variante não pode usar TTS como estímulo decisivo e deverá reservar áudio controlado antes de publicação",
+    "contextPriority": "em tarefas de função comunicativa, manter a situação visível ou narrável; não corrigir apenas pela pontuação",
+    "overlapHandling": "usar como itens avaliativos apenas casos em que uma função principal é suficientemente clara. Casos genuinamente multifuncionais devem ser demonstrações, aceitar múltiplas respostas ou ser excluídos da pontuação",
+    "punctuationPolicy": "pontuação é pista funcional, não tabela de classificação automática",
+    "terminologyRequired": false,
+    "timeLimit": false,
+    "longWrittenResponseRequired": false,
+    "retryPolicy": "permitir nova tentativa após feedback e embaralhar opções quando isso não alterar a clareza do caso"
+  },
+  "completionEvidence": {
+    "observablePerformance": "Relacionar mensagens novas a seus usos comunicativos principais em situações claras, distinguindo informar, perguntar, pedir, ordenar e reagir sem depender de uma regra automática de pontuação.",
+    "criteria": {
+      "coreFunctions": "acertar pelo menos 4 dos 5 itens de L08-A01, incluindo obrigatoriamente pelo menos um dos dois casos pedir/ordenar",
+      "goalToMessage": "acertar pelo menos 3 dos 4 itens de L08-A02",
+      "multipleClues": "acertar pelo menos 2 dos 3 itens de L08-A03, incluindo o item que rejeita a regra de que ! significa sempre a mesma função",
+      "transfer": "acertar pelo menos 4 dos 5 itens de L08-A04, incluindo pelo menos uma pergunta e um caso de pedir ou ordenar"
+    },
+    "completionRule": "considerar a lição concluída quando os quatro critérios forem atingidos; reconhecer apenas sinais de pontuação ou memorizar um exemplo por função não compensa incapacidade de interpretar a mensagem dentro de uma situação",
+    "notSufficient": [
+      "percorrer todas as telas",
+      "decorar que . = informar, ? = perguntar e ! = reagir",
+      "acertar apenas mensagens de informar e perguntar",
+      "confundir sistematicamente pedido e ordem em situações claras",
+      "usar uma palavra isolada como por favor para decidir sem considerar o restante da mensagem e a situação",
+      "classificar casos ambíguos por força da correção automática",
+      "responder rapidamente"
+    ]
+  }
+}
