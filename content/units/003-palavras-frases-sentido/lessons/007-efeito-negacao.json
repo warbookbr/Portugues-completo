@@ -1,0 +1,283 @@
+{
+  "schemaVersion": 1,
+  "id": "N0-U03-L07",
+  "title": "O efeito da negação",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Compreender o efeito básico da negação em mensagens simples, distinguindo uma afirmação de sua versão negada, relacionando a presença ou retirada de NÃO à mudança principal de sentido e reconhecendo que negar uma informação não significa automaticamente afirmar o seu oposto.",
+  "competencies": [
+    "comparar uma mensagem afirmativa e sua versão com NÃO e identificar qual informação passou a ser negada",
+    "interpretar corretamente mensagens negativas simples em contextos cotidianos claros",
+    "escolher entre uma frase afirmativa e uma negativa de acordo com uma situação apresentada",
+    "inserir NÃO em uma frase simples fornecida para negar a informação central quando essa transformação estiver explicitamente indicada",
+    "retirar NÃO de uma frase simples para recuperar a afirmação correspondente quando essa transformação estiver explicitamente indicada",
+    "reconhecer que negar uma ação, estado ou característica não informa necessariamente qual alternativa é verdadeira",
+    "transferir a compreensão da negação para exemplos novos sem depender de classificação gramatical formal"
+  ],
+  "prerequisites": ["N0-U03-L06"],
+  "limits": [
+    "não ensinar negação como sistema gramatical completo nem exigir termos como advérbio, operador, escopo ou polaridade",
+    "não ensinar outras formas negativas como nunca, ninguém, nada, nem ou sem como conteúdo sistemático",
+    "não trabalhar dupla negação ou diferenças entre variedades do português",
+    "não aprofundar perguntas negativas, ordens negativas ou efeitos pragmáticos complexos",
+    "não ensinar uma regra universal de posição de NÃO a partir dos poucos modelos controlados desta lição",
+    "não tratar a simples presença da palavra NÃO como prova suficiente de compreensão; o aluno precisa interpretar qual informação foi negada",
+    "não afirmar que negar uma informação equivale sempre a afirmar seu contrário, como NÃO ESTÁ CHEIO = ESTÁ VAZIO",
+    "não transformar a lição em estudo de antônimos, já trabalhados funcionalmente na Lição 2",
+    "não transformar pontuação ou entonação em objeto central de estudo",
+    "não exigir produção livre de frases negativas; a manipulação permanece controlada nesta etapa",
+    "não transformar a atividade em compreensão de pequenos textos ou várias frases relacionadas",
+    "não usar velocidade ou tempo de resposta como critério de domínio"
+  ],
+  "media": {
+    "tts": "instruções, frases afirmativas e negativas, situações e feedback. O TTS pode ler as frases antes da resposta porque a competência medida é interpretar o efeito da negação, e nenhuma resposta depende de uma entonação específica.",
+    "controlledAudio": [],
+    "video": "nao necessario",
+    "images": "nao necessarias"
+  },
+  "supportMaterials": {
+    "curatedMedia": [],
+    "runtimeResources": [
+      {
+        "type": "TTS_OK",
+        "locations": ["instruções", "pares afirmativo/negativo", "situações", "transformações", "feedback", "resumo"],
+        "purpose": "reduzir a carga de leitura enquanto o aluno interpreta a mudança de sentido; a realização sonora exata de NÃO não determina a resposta"
+      }
+    ],
+    "generatedVisualResources": [
+      {
+        "type": "UI_RENDERED_AFFIRMATIVE_NEGATIVE_COMPARISON",
+        "locations": ["L07-B02", "L07-C01", "L07-B03", "L07-C02", "L07-B05", "L07-C04", "L07-A01", "L07-A04"],
+        "purpose": "comparar frases afirmativas e negativas como texto real, preservando o restante da frase para tornar observável o efeito de NÃO"
+      },
+      {
+        "type": "UI_RENDERED_ACCESSIBLE_NEGATION_HIGHLIGHT",
+        "locations": ["L07-B02", "L07-C01", "L07-B03", "L07-C02", "L07-B05", "L07-C04", "L07-A01", "L07-A03", "L07-A04"],
+        "purpose": "destacar a presença ou retirada de NÃO com marcação textual e sem depender apenas de cor"
+      },
+      {
+        "type": "UI_RENDERED_SENTENCE_SITUATION_MATCH",
+        "locations": ["L07-B04", "L07-C03", "L07-A02"],
+        "purpose": "relacionar afirmação/negação a uma situação curta sem exigir imagens que possam ser ambíguas para representar a ausência de uma ação"
+      },
+      {
+        "type": "UI_RENDERED_NEGATION_INSERT_REMOVE_CONTROL",
+        "locations": ["L07-B05", "L07-C04", "L07-A03"],
+        "purpose": "permitir inserir ou retirar a ficha textual NÃO em transformações controladas e comparar a mensagem antes/depois"
+      }
+    ],
+    "productionQueueRequired": false,
+    "publicationDependency": "não há nova mídia humana obrigatória; pares textuais, situações curtas, TTS e controles de inserção/retirada são suficientes",
+    "decisionRationale": "a competência depende de perceber como NÃO altera a mensagem. Texto comparável e manipulável mostra esse efeito diretamente. Imagens seriam fracas para representar a ausência de uma ação ou estado sem ambiguidade, e áudio controlado não é necessário porque a resposta não depende de entonação específica."
+  },
+  "sequence": [
+    {
+      "id": "L07-B01",
+      "type": "objective",
+      "focus": "read-or-listen",
+      "text": "Na lição anterior, vimos que acrescentar ou retirar palavras pode mudar uma mensagem. Agora vamos observar uma mudança especialmente importante: o que acontece quando usamos NÃO para negar uma informação."
+    },
+    {
+      "id": "L07-B02",
+      "type": "affirmative-negative-demonstration",
+      "focus": "compare",
+      "title": "NÃO muda a informação que a frase apresenta",
+      "examples": [
+        {"affirmative": "O gato corre.", "negative": "O gato não corre.", "effect": "a primeira mensagem apresenta o gato correndo; a segunda nega que o gato corre"},
+        {"affirmative": "A loja abriu.", "negative": "A loja não abriu.", "effect": "a primeira mensagem apresenta a abertura da loja; a segunda nega essa abertura"}
+      ],
+      "explanation": "NÃO não é apenas uma palavra acrescentada para deixar a frase maior. Ele muda uma informação central da mensagem. Por isso precisamos compreender o que passou a ser negado, e não apenas localizar a palavra."
+    },
+    {
+      "id": "L07-C01",
+      "type": "quick-check-set",
+      "focus": "compare-and-respond",
+      "interaction": "identify-effect-of-negation",
+      "instruction": "Compare as duas frases e escolha o que mudou na mensagem.",
+      "items": [
+        {"affirmative": "Rui chegou.", "negative": "Rui não chegou.", "options": ["A segunda frase nega que Rui chegou.", "A segunda frase informa onde Rui chegou.", "A segunda frase troca Rui por outra pessoa."], "correctIndex": 0},
+        {"affirmative": "A porta abriu.", "negative": "A porta não abriu.", "options": ["A segunda frase nega que a porta abriu.", "A segunda frase diz que a porta é maior.", "A segunda frase apenas acrescenta um horário."], "correctIndex": 0}
+      ],
+      "sentenceTtsAvailable": true,
+      "supportUseIsError": false
+    },
+    {
+      "id": "L07-B03",
+      "type": "negation-not-opposite-demonstration",
+      "focus": "compare-and-reason",
+      "title": "Negar uma informação não diz automaticamente qual é a alternativa",
+      "examples": [
+        {"sentence": "A caixa não está cheia.", "supportedMeaning": "a frase nega que a caixa esteja cheia", "unsupportedConclusion": "a frase não prova, sozinha, que a caixa está completamente vazia"},
+        {"sentence": "O gato não corre.", "supportedMeaning": "a frase nega que o gato corre", "unsupportedConclusion": "a frase não informa, sozinha, se ele dorme, anda, está parado ou faz outra coisa"}
+      ],
+      "explanation": "Negar algo é dizer que aquela informação não vale para a situação apresentada. Isso não significa automaticamente escolher um contrário. NÃO ESTÁ CHEIA, por exemplo, também pode descrever uma caixa pela metade."
+    },
+    {
+      "id": "L07-C02",
+      "type": "quick-check-set",
+      "focus": "interpret-and-respond",
+      "interaction": "choose-only-supported-conclusion",
+      "instruction": "Escolha apenas o que a frase permite concluir.",
+      "items": [
+        {"sentence": "A garrafa não está cheia.", "options": ["A garrafa não está cheia.", "A garrafa está necessariamente vazia.", "A garrafa está necessariamente quebrada."], "correctIndex": 0},
+        {"sentence": "Bia não correu.", "options": ["A frase nega que Bia correu.", "A frase prova que Bia dormiu.", "A frase prova que Bia nadou."], "correctIndex": 0}
+      ],
+      "sentenceTtsAvailable": true,
+      "supportUseIsError": false
+    },
+    {
+      "id": "L07-B04",
+      "type": "situation-matching-demonstration",
+      "focus": "situation-and-message",
+      "title": "A situação ajuda a escolher entre afirmar e negar",
+      "examples": [
+        {"situation": "Alguém tentou abrir a porta, mas ela continuou fechada.", "options": ["A porta abriu.", "A porta não abriu."], "correctIndex": 1},
+        {"situation": "Depois do sinal, a loja levantou a porta e começou a atender.", "options": ["A loja abriu.", "A loja não abriu."], "correctIndex": 0}
+      ]
+    },
+    {
+      "id": "L07-C03",
+      "type": "quick-check-set",
+      "focus": "match-and-respond",
+      "interaction": "choose-affirmative-or-negative-for-situation",
+      "instruction": "Leia ou ouça a situação e escolha a mensagem que corresponde a ela.",
+      "items": [
+        {"situation": "Caio ficou em casa durante toda a manhã; ele permaneceu lá.", "options": ["Caio saiu de casa.", "Caio não saiu de casa."], "correctIndex": 1},
+        {"situation": "A lâmpada acendeu quando Lia apertou o interruptor.", "options": ["A lâmpada acendeu.", "A lâmpada não acendeu."], "correctIndex": 0},
+        {"situation": "O ônibus permaneceu parado no ponto e não iniciou a viagem.", "options": ["O ônibus partiu.", "O ônibus não partiu."], "correctIndex": 1}
+      ],
+      "sentenceTtsAvailable": true,
+      "supportUseIsError": false
+    },
+    {
+      "id": "L07-B05",
+      "type": "insert-remove-negation-demonstration",
+      "focus": "transform-and-compare",
+      "title": "Inserir ou retirar NÃO transforma a mensagem",
+      "examples": [
+        {"operation": "insert", "before": "Rui corre.", "after": "Rui não corre.", "effect": "a informação sobre Rui correr passa a ser negada"},
+        {"operation": "remove", "before": "A loja não abriu.", "after": "A loja abriu.", "effect": "ao retirar NÃO, a mensagem volta a apresentar a abertura da loja"}
+      ],
+      "explanation": "Nesta lição usamos frases simples em que a transformação é clara. Isso não deve ser memorizado como uma regra completa para toda frase do português; o objetivo é perceber o efeito básico da negação."
+    },
+    {
+      "id": "L07-C04",
+      "type": "quick-check-set",
+      "focus": "transform-and-respond",
+      "interaction": "insert-or-remove-nao-for-target-meaning",
+      "instruction": "Faça apenas a alteração indicada para produzir a mensagem pedida.",
+      "items": [
+        {"baseSentence": "O pato nada.", "targetMeaning": "negar que o pato nada", "operation": "insert-nao", "acceptedResult": "O pato não nada."},
+        {"baseSentence": "Lia não chegou.", "targetMeaning": "afirmar que Lia chegou", "operation": "remove-nao", "acceptedResult": "Lia chegou."},
+        {"baseSentence": "A porta fechou.", "targetMeaning": "negar que a porta fechou", "operation": "insert-nao", "acceptedResult": "A porta não fechou."}
+      ],
+      "sentenceTtsAvailable": true,
+      "supportUseIsError": false
+    },
+    {
+      "id": "L07-B06",
+      "type": "scope-guard-rail",
+      "focus": "read-or-listen",
+      "title": "Procure a informação negada, não um contrário automático",
+      "examples": [
+        {"sentence": "A sopa não está quente.", "safeInterpretation": "nega que a sopa esteja quente", "notGuaranteed": "não garante que a sopa esteja gelada"},
+        {"sentence": "Rui não está dormindo.", "safeInterpretation": "nega que Rui esteja dormindo", "notGuaranteed": "não informa sozinho o que Rui está fazendo"}
+      ],
+      "explanation": "Quando encontramos uma negação, primeiro identificamos qual informação está sendo rejeitada. Só depois usamos o contexto, se houver, para descobrir outras informações."
+    },
+    {
+      "id": "L07-A01",
+      "type": "guided-activity",
+      "focus": "interpret-and-respond",
+      "interaction": "interpret-affirmative-negative-pairs",
+      "title": "O que a negação mudou?",
+      "items": [
+        {"affirmative": "Bia sorriu.", "negative": "Bia não sorriu.", "options": ["A segunda frase nega que Bia sorriu.", "A segunda frase muda Bia por outra pessoa.", "A segunda frase informa onde Bia estava."], "correctIndex": 0},
+        {"affirmative": "O cachorro latiu.", "negative": "O cachorro não latiu.", "options": ["A segunda frase nega o latido.", "A segunda frase prova que o cachorro dormiu.", "A segunda frase informa que existem dois cachorros."], "correctIndex": 0},
+        {"affirmative": "A chuva parou.", "negative": "A chuva não parou.", "options": ["A segunda frase nega que a chuva parou.", "A segunda frase informa onde choveu.", "A segunda frase troca chuva por vento."], "correctIndex": 0},
+        {"affirmative": "Leo entrou.", "negative": "Leo não entrou.", "options": ["A segunda frase nega que Leo entrou.", "A segunda frase afirma que Leo saiu.", "A segunda frase afirma que Leo dormiu."], "correctIndex": 0}
+      ],
+      "sentenceTtsAvailable": true,
+      "supportUseIsError": false
+    },
+    {
+      "id": "L07-A02",
+      "type": "guided-activity",
+      "focus": "match-and-respond",
+      "interaction": "match-situation-to-polarity",
+      "title": "Escolha a mensagem adequada",
+      "items": [
+        {"situation": "A janela permaneceu fechada depois que Caio tentou empurrá-la.", "options": ["A janela abriu.", "A janela não abriu."], "correctIndex": 1},
+        {"situation": "Mia terminou a refeição e deixou o prato vazio.", "options": ["Mia comeu.", "Mia não comeu."], "correctIndex": 0},
+        {"situation": "A campainha ficou silenciosa durante toda a espera.", "options": ["A campainha tocou.", "A campainha não tocou."], "correctIndex": 1},
+        {"situation": "O trem deixou a estação no horário marcado.", "options": ["O trem partiu.", "O trem não partiu."], "correctIndex": 0}
+      ],
+      "sentenceTtsAvailable": true,
+      "supportUseIsError": false
+    },
+    {
+      "id": "L07-A03",
+      "type": "guided-activity",
+      "focus": "transform-and-respond",
+      "interaction": "insert-remove-nao",
+      "title": "Transforme a mensagem",
+      "items": [
+        {"baseSentence": "Caio saiu.", "instruction": "Negue que Caio saiu.", "operation": "insert-nao", "acceptedResult": "Caio não saiu."},
+        {"baseSentence": "A luz não apagou.", "instruction": "Afirme que a luz apagou.", "operation": "remove-nao", "acceptedResult": "A luz apagou."},
+        {"baseSentence": "O gato dormiu.", "instruction": "Negue que o gato dormiu.", "operation": "insert-nao", "acceptedResult": "O gato não dormiu."},
+        {"baseSentence": "Bia não chegou.", "instruction": "Afirme que Bia chegou.", "operation": "remove-nao", "acceptedResult": "Bia chegou."}
+      ],
+      "sentenceTtsAvailable": true,
+      "supportUseIsError": false
+    },
+    {
+      "id": "L07-A04",
+      "type": "transfer-activity",
+      "focus": "interpret-transform-and-reason",
+      "title": "Use a negação em exemplos novos",
+      "items": [
+        {"interaction": "choose-only-supported-conclusion", "sentence": "O copo não está cheio.", "options": ["O copo não está cheio.", "O copo está necessariamente vazio.", "O copo está necessariamente quebrado."], "correctIndex": 0},
+        {"interaction": "identify-effect-of-negation", "affirmative": "Nina cantou.", "negative": "Nina não cantou.", "options": ["A segunda mensagem nega o canto de Nina.", "A segunda mensagem prova que Nina dançou.", "A segunda mensagem troca Nina por outra pessoa."], "correctIndex": 0},
+        {"interaction": "choose-affirmative-or-negative-for-situation", "situation": "A máquina permaneceu desligada depois que o botão foi pressionado.", "options": ["A máquina ligou.", "A máquina não ligou."], "correctIndex": 1},
+        {"interaction": "insert-nao-for-target-meaning", "baseSentence": "O bebê acordou.", "targetMeaning": "negar que o bebê acordou", "acceptedResult": "O bebê não acordou."}
+      ],
+      "sentenceTtsAvailable": true,
+      "supportUseIsError": false
+    },
+    {
+      "id": "L07-B07",
+      "type": "summary",
+      "focus": "read-or-listen",
+      "text": "NÃO pode mudar uma afirmação para negar uma informação. Para compreender uma frase negativa, precisamos perceber exatamente o que está sendo negado. Negar algo não significa automaticamente afirmar o contrário: O COPO NÃO ESTÁ CHEIO não prova que ele está vazio. Na próxima lição, vamos observar como mensagens podem servir para informar, perguntar, pedir, ordenar e reagir em situações diferentes."
+    }
+  ],
+  "assessmentBehavior": {
+    "tts": "frases, situações e instruções podem ser narradas antes da resposta porque a competência central é interpretação da negação, não decodificação independente; não usar entonação exagerada de NÃO como pista artificial",
+    "readingSupport": "TTS e apoio de leitura são permitidos e seu uso não conta automaticamente como erro",
+    "negationHighlight": "a interface pode destacar NÃO para comparação, mas tarefas de conclusão precisam exigir interpretação do efeito e não apenas localização visual da palavra",
+    "situationMatching": "situações devem tornar afirmação ou negação sustentada por evidência clara; evitar cenários em que a ausência de uma ação seja apenas uma suposição",
+    "oppositeInference": "não aceitar como regra que a negação de uma propriedade ou ação implique automaticamente seu antônimo ou uma ação alternativa",
+    "timeLimit": false,
+    "technicalTerminologyRequired": false,
+    "longWrittenResponseRequired": false,
+    "retryPolicy": "permitir nova tentativa após feedback; alternar a posição das opções quando isso não alterar a competência medida"
+  },
+  "completionEvidence": {
+    "observablePerformance": "Interpretar e transformar mensagens negativas simples, relacionando a presença ou retirada de NÃO ao efeito correto no sentido e evitando inferir automaticamente um contrário não apresentado.",
+    "criteria": {
+      "negationInterpretation": "acertar pelo menos 3 dos 4 itens de L07-A01",
+      "situationMatching": "acertar pelo menos 3 dos 4 itens de L07-A02",
+      "controlledTransformation": "realizar corretamente pelo menos 3 das 4 transformações de L07-A03, incluindo ao menos uma inserção e uma retirada de NÃO",
+      "transfer": "acertar pelo menos 3 dos 4 itens de L07-A04, obrigatoriamente incluindo o item que rejeita a inferência automática de que NÃO ESTÁ CHEIO significa ESTÁ VAZIO"
+    },
+    "completionRule": "considerar a lição concluída quando os quatro critérios forem atingidos; localizar ou inserir a palavra NÃO mecanicamente não compensa interpretar incorretamente o efeito da negação",
+    "notSufficient": [
+      "percorrer todas as telas",
+      "apenas localizar visualmente a palavra NÃO",
+      "decorar pares afirmativo/negativo já apresentados",
+      "tratar toda negação como afirmação automática do contrário",
+      "acertar apenas transformações mecânicas sem compreender a mensagem resultante",
+      "nomear uma classe gramatical",
+      "responder rapidamente"
+    ]
+  }
+}
