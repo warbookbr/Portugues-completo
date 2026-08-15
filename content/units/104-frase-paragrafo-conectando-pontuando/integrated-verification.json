@@ -11,108 +11,15 @@
   "media": {"tts": "permitido como apoio de leitura; não determina pontuação", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
   "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["textos", "feedback"], "purpose": "apoio"}], "generatedVisualResources": [{"type": "UI_RENDERED_PARAGRAPH_GROUPER", "locations": ["V01-Q01"], "purpose": "organizar foco/continuidade"}, {"type": "UI_RENDERED_REFERENCE_LINK", "locations": ["V01-Q02"], "purpose": "avaliar referência"}, {"type": "UI_RENDERED_RELATION_CONNECTOR_MATCH", "locations": ["V01-Q03"], "purpose": "avaliar conectores"}, {"type": "UI_RENDERED_PUNCTUATION_EDITOR", "locations": ["V01-Q04", "V01-Q05", "V01-Q06"], "purpose": "aplicar sinais ensinados"}, {"type": "UI_RENDERED_REVISION_PASSES", "locations": ["V01-Q07"], "purpose": "executar edição integrada"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "todos os alvos são textuais e podem ser editados diretamente."},
   "items": [
-    {
-      "id": "V01-Q01",
-      "cluster": "paragraphContinuity",
-      "type": "group-order-intruder",
-      "items": [
-        {"sentences": ["O posto inicia atendimento às sete.", "A distribuição de senhas começa no mesmo horário.", "O parque municipal fecha às vinte horas."], "sameParagraph": [0, 1], "differentFocus": [2]},
-        {"sentences": ["Por fim, confirmou o envio.", "Primeiro, revisou o endereço.", "Depois, anexou o comprovante."], "oneCoherentOrder": [1, 2, 0]},
-        {"question": "Todo parágrafo precisa ter o mesmo número de frases?", "options": ["não", "sim"], "correctIndex": 0}
-      ]
-    },
-    {
-      "id": "V01-Q02",
-      "cluster": "referenceRepetition",
-      "type": "reference-and-revision",
-      "items": [
-        {"text": "A oficina publicou o cronograma. Ela também informou os materiais necessários.", "target": "Ela", "options": ["A oficina", "cronograma", "materiais"], "correctIndex": 0},
-        {"text": "Luiza encontrou Carla quando ela saiu.", "question": "Sem contexto adicional, a referência é totalmente clara?", "options": ["não", "sim"], "correctIndex": 0},
-        {"situation": "Quem saiu foi Carla.", "options": ["Luiza encontrou Carla quando Carla saiu.", "Luiza encontrou Carla quando ela saiu."], "correctIndex": 0},
-        {"question": "Repetição é sempre erro?", "options": ["não; pode preservar clareza", "sim; deve sempre virar pronome"], "correctIndex": 0}
-      ]
-    },
-    {
-      "id": "V01-Q03",
-      "cluster": "connectorsByMeaning",
-      "type": "relation-connector-set",
-      "items": [
-        {"stem": "O atendimento foi suspenso ____ faltou energia.", "options": ["porque", "mas", "depois"], "correctIndex": 0, "relation": "causa"},
-        {"stem": "Faltou energia. ____, o atendimento foi suspenso.", "options": ["Por isso", "Também", "Mas"], "correctIndex": 0, "relation": "resultado"},
-        {"stem": "A sala é pequena, ____ atende bem ao grupo.", "options": ["mas", "porque", "depois"], "correctIndex": 0, "relation": "contraste"},
-        {"stem": "O serviço funciona à noite. ____ há atendimento aos sábados.", "options": ["Também", "Por isso", "Porque"], "correctIndex": 0, "relation": "adição"},
-        {"text": "A porta abriu. Depois, todos entraram.", "question": "'Depois' afirma por si só que abrir a porta causou a entrada?", "options": ["não; marca sequência", "sim; depois sempre marca causa"], "correctIndex": 0}
-      ]
-    },
-    {
-      "id": "V01-Q04",
-      "cluster": "finalPunctuation",
-      "type": "sentence-boundary-edit",
-      "unpunctuated": "O atendimento começa às oito você trouxe sua senha ótimo podemos continuar",
-      "oneAcceptedRevision": "O atendimento começa às oito. Você trouxe sua senha? Ótimo! Podemos continuar.",
-      "requiredFunctions": ["declaração", "pergunta direta", "reação/ênfase", "declaração"]
-    },
-    {
-      "id": "V01-Q05",
-      "cluster": "commaUses",
-      "type": "comma-edit",
-      "items": [
-        {"before": "Leve identidade comprovante caneta e pasta.", "after": "Leve identidade, comprovante, caneta e pasta.", "function": "enumeração"},
-        {"before": "Renata confirme o endereço.", "after": "Renata, confirme o endereço.", "function": "chamamento"},
-        {"sentence": "Renata confirmou o endereço.", "question": "Deve haver vírgula entre Renata e confirmou pelo uso estudado?", "options": ["não", "sim"], "correctIndex": 0},
-        {"question": "A regra 'coloque vírgula onde respirar' é válida?", "options": ["não", "sim"], "correctIndex": 0}
-      ]
-    },
-    {
-      "id": "V01-Q06",
-      "cluster": "colonSpeechQuote",
-      "type": "mark-function-set",
-      "items": [
-        {"stem": "O formulário pede três dados ____ nome, telefone e e-mail.", "options": [":", "?", "!"], "correctIndex": 0, "function": "lista anunciada"},
-        {"stem": "Há uma razão para a mudança ____ o prédio será reformado.", "options": [":", "?", ","], "correctIndex": 0, "function": "explicação"},
-        {"situation": "reprodução exata de frase curta do comunicado", "options": ["O comunicado diz: “O acesso será liberado às nove.”", "O comunicado diz O acesso será liberado às nove."], "correctIndex": 0},
-        {"situation": "fala em diálogo simples", "options": ["— O arquivo chegou? — perguntou Bia.", "O arquivo chegou perguntou Bia sem separação."], "correctIndex": 0}
-      ]
-    },
-    {
-      "id": "V01-Q07",
-      "cluster": "integratedRevision",
-      "type": "real-editing-task",
-      "original": "O treinamento começa terça. O treinamento terá duas turmas. O jardim do prédio recebeu novas plantas. Por isso os participantes devem levar documento caneta e caderno. Paulo confirme sua turma",
-      "requiredEdits": [
-        {"target": "O jardim do prédio recebeu novas plantas.", "action": "remover por salto de foco"},
-        {"target": "segunda ocorrência de O treinamento", "action": "pode ser retomada com pronome claro ou mantida; repetição não é erro obrigatório"},
-        {"target": "Por isso", "action": "substituir por relação de adição/orientação compatível, como Também"},
-        {"target": "documento caneta e caderno", "action": "pontuar enumeração"},
-        {"target": "Paulo", "action": "usar vírgula de chamamento"},
-        {"target": "limites de frase", "action": "usar pontuação final adequada"}
-      ],
-      "oneAcceptedRevision": "O treinamento começa terça. Ele terá duas turmas. Também os participantes devem levar documento, caneta e caderno. Paulo, confirme sua turma.",
-      "acceptEquivalent": true,
-      "note": "não exigir exatamente a versão-modelo quando outra edição preserva foco, relações e pontuação estudada"
-    }
+    {"id": "V01-Q01", "cluster": "paragraphContinuity", "type": "group-order-intruder", "items": [{"sentences": ["O posto inicia atendimento às sete.", "A distribuição de senhas começa no mesmo horário.", "O parque municipal fecha às vinte horas."], "sameParagraph": [0, 1], "differentFocus": [2]}, {"sentences": ["Por fim, confirmou o envio.", "Primeiro, revisou o endereço.", "Depois, anexou o comprovante."], "oneCoherentOrder": [1, 2, 0]}, {"question": "Todo parágrafo precisa ter o mesmo número de frases?", "options": ["não", "sim"], "correctIndex": 0}]},
+    {"id": "V01-Q02", "cluster": "referenceRepetition", "type": "reference-and-revision", "items": [{"text": "A oficina publicou o cronograma. Ela também informou os materiais necessários.", "target": "Ela", "options": ["A oficina", "cronograma", "materiais"], "correctIndex": 0}, {"text": "Luiza encontrou Carla quando ela saiu.", "question": "Sem contexto adicional, a referência é totalmente clara?", "options": ["não", "sim"], "correctIndex": 0}, {"situation": "Quem saiu foi Carla.", "options": ["Luiza encontrou Carla quando Carla saiu.", "Luiza encontrou Carla quando ela saiu."], "correctIndex": 0}, {"question": "Repetição é sempre erro?", "options": ["não; pode preservar clareza", "sim; deve sempre virar pronome"], "correctIndex": 0}]},
+    {"id": "V01-Q03", "cluster": "connectorsByMeaning", "type": "relation-connector-set", "items": [{"stem": "O atendimento foi suspenso ____ faltou energia.", "options": ["porque", "mas", "depois"], "correctIndex": 0, "relation": "causa"}, {"stem": "Faltou energia. ____, o atendimento foi suspenso.", "options": ["Por isso", "Também", "Mas"], "correctIndex": 0, "relation": "resultado"}, {"stem": "A sala é pequena, ____ atende bem ao grupo.", "options": ["mas", "porque", "depois"], "correctIndex": 0, "relation": "contraste"}, {"stem": "O serviço funciona à noite. ____ há atendimento aos sábados.", "options": ["Também", "Por isso", "Porque"], "correctIndex": 0, "relation": "adição"}, {"text": "A porta abriu. Depois, todos entraram.", "question": "'Depois' afirma por si só que abrir a porta causou a entrada?", "options": ["não; marca sequência", "sim; depois sempre marca causa"], "correctIndex": 0}]},
+    {"id": "V01-Q04", "cluster": "finalPunctuation", "type": "sentence-boundary-edit", "unpunctuated": "O atendimento começa às oito você trouxe sua senha ótimo podemos continuar", "oneAcceptedRevision": "O atendimento começa às oito. Você trouxe sua senha? Ótimo! Podemos continuar.", "requiredFunctions": ["declaração", "pergunta direta", "reação/ênfase", "declaração"]},
+    {"id": "V01-Q05", "cluster": "commaUses", "type": "comma-edit", "items": [{"before": "Leve identidade comprovante caneta e pasta.", "after": "Leve identidade, comprovante, caneta e pasta.", "function": "enumeração"}, {"before": "Renata confirme o endereço.", "after": "Renata, confirme o endereço.", "function": "chamamento"}, {"sentence": "Renata confirmou o endereço.", "question": "Deve haver vírgula entre Renata e confirmou pelo uso estudado?", "options": ["não", "sim"], "correctIndex": 0}, {"question": "A regra 'coloque vírgula onde respirar' é válida?", "options": ["não", "sim"], "correctIndex": 0}]},
+    {"id": "V01-Q06", "cluster": "colonSpeechQuote", "type": "mark-function-set", "items": [{"stem": "O formulário pede três dados ____ nome, telefone e e-mail.", "options": [":", "?", "!"], "correctIndex": 0, "function": "lista anunciada"}, {"stem": "Há uma razão para a mudança ____ o prédio será reformado.", "options": [":", "?", ","], "correctIndex": 0, "function": "explicação"}, {"situation": "reprodução exata de frase curta do comunicado", "options": ["O comunicado diz: “O acesso será liberado às nove.”", "O comunicado diz O acesso será liberado às nove."], "correctIndex": 0}, {"situation": "fala em diálogo simples", "options": ["— O arquivo chegou? — perguntou Bia.", "O arquivo chegou perguntou Bia sem separação."], "correctIndex": 0}]},
+    {"id": "V01-Q07", "cluster": "integratedRevision", "type": "real-editing-task", "original": "O treinamento começa terça. O treinamento terá duas turmas. O jardim do prédio recebeu novas plantas. Por isso os participantes devem levar documento caneta e caderno. Paulo confirme sua turma", "requiredEdits": [{"target": "O jardim do prédio recebeu novas plantas.", "action": "remover por salto de foco"}, {"target": "segunda ocorrência de O treinamento", "action": "pode ser retomada com pronome claro ou mantida; repetição não é erro obrigatório"}, {"target": "Por isso", "action": "substituir por relação de adição/orientação compatível, como também"}, {"target": "documento caneta e caderno", "action": "pontuar enumeração"}, {"target": "Paulo", "action": "usar vírgula de chamamento"}, {"target": "limites de frase", "action": "usar pontuação final adequada"}], "oneAcceptedRevision": "O treinamento começa terça. Ele terá duas turmas. Os participantes também devem levar documento, caneta e caderno. Paulo, confirme sua turma.", "acceptEquivalent": true, "note": "não exigir exatamente a versão-modelo quando outra edição preserva foco, relações e pontuação estudada"}
   ],
   "assessmentBehavior": {"realEditingRequired": true, "acceptEquivalentEdits": true, "noBreathCommaRule": true, "ttsPolicy": "apoio, não resposta", "timeLimit": false},
-  "completionEvidence": {
-    "clusters": {
-      "paragraphContinuity": {"evidence": ["V01-Q01"], "rule": "resolver agrupamento, ordem e princípio"},
-      "referenceRepetition": {"evidence": ["V01-Q02"], "rule": "resolver os quatro itens, incluindo ambiguidade"},
-      "connectorsByMeaning": {"evidence": ["V01-Q03"], "rule": "acertar pelo menos quatro dos cinco itens, sem confundir causa e sequência"},
-      "finalPunctuation": {"evidence": ["V01-Q04"], "rule": "delimitar as quatro funções do trecho"},
-      "commaUses": {"evidence": ["V01-Q05"], "rule": "aplicar enumeração/chamamento, preservar sujeito sem vírgula e rejeitar regra de respiração"},
-      "colonSpeechQuote": {"evidence": ["V01-Q06"], "rule": "acertar pelo menos três dos quatro itens, cobrindo dois-pontos e marcação de fala/citação"},
-      "integratedRevision": {"evidence": ["V01-Q07"], "rule": "resolver salto de foco, conector, enumeração, chamamento e limites de frase sem introduzir alteração prejudicial"}
-    },
-    "completionRule": "todos os sete agrupamentos são obrigatórios; a tarefa real de edição é indispensável.",
-    "notSufficient": ["múltipla escolha sem editar texto", "pontuar por pausa", "trocar toda repetição", "usar conectores como enfeite"]
-  },
-  "remediationRoutes": [
-    {"when": "parágrafo/continuidade", "review": ["N1-U04-L01", "N1-U04-L02"]},
-    {"when": "referência/repetição", "review": ["N1-U04-L03"]},
-    {"when": "conectores", "review": ["N1-U04-L04", "N1-U04-L05"]},
-    {"when": "pontuação final", "review": ["N1-U04-L06"]},
-    {"when": "vírgula", "review": ["N1-U04-L07"]},
-    {"when": "dois-pontos/fala/citação", "review": ["N1-U04-L08"]},
-    {"when": "revisão integrada", "review": ["N1-U04-L09"]}
-  ]
+  "completionEvidence": {"clusters": {"paragraphContinuity": {"evidence": ["V01-Q01"], "rule": "resolver agrupamento, ordem e princípio"}, "referenceRepetition": {"evidence": ["V01-Q02"], "rule": "resolver os quatro itens, incluindo ambiguidade"}, "connectorsByMeaning": {"evidence": ["V01-Q03"], "rule": "acertar pelo menos quatro dos cinco itens, sem confundir causa e sequência"}, "finalPunctuation": {"evidence": ["V01-Q04"], "rule": "delimitar as quatro funções do trecho"}, "commaUses": {"evidence": ["V01-Q05"], "rule": "aplicar enumeração/chamamento, preservar sujeito sem vírgula e rejeitar regra de respiração"}, "colonSpeechQuote": {"evidence": ["V01-Q06"], "rule": "acertar pelo menos três dos quatro itens, cobrindo dois-pontos e marcação de fala/citação"}, "integratedRevision": {"evidence": ["V01-Q07"], "rule": "resolver salto de foco, conector, enumeração, chamamento e limites de frase sem introduzir alteração prejudicial"}}, "completionRule": "todos os sete agrupamentos são obrigatórios; a tarefa real de edição é indispensável.", "notSufficient": ["múltipla escolha sem editar texto", "pontuar por pausa", "trocar toda repetição", "usar conectores como enfeite"]},
+  "remediationRoutes": [{"when": "parágrafo/continuidade", "review": ["N1-U04-L01", "N1-U04-L02"]}, {"when": "referência/repetição", "review": ["N1-U04-L03"]}, {"when": "conectores", "review": ["N1-U04-L04", "N1-U04-L05"]}, {"when": "pontuação final", "review": ["N1-U04-L06"]}, {"when": "vírgula", "review": ["N1-U04-L07"]}, {"when": "dois-pontos/fala/citação", "review": ["N1-U04-L08"]}, {"when": "revisão integrada", "review": ["N1-U04-L09"]}]
 }
