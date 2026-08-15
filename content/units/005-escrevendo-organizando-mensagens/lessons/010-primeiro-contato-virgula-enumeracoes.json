@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 1,
+  "id": "N0-U05-L10",
+  "title": "Primeiro contato com a vírgula em enumerações",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Reconhecer e usar a vírgula de forma introdutória em enumerações simples, compreendendo sua função gráfica de separar itens sem generalizar a falsa regra de que vírgula é lugar de respirar.",
+  "competencies": [
+    "reconhecer enumeração simples dentro de frase",
+    "usar vírgula para separar itens anteriores ao último elemento ligado por e em exemplos controlados",
+    "comparar enumeração organizada e sequência difícil de ler",
+    "revisar vírgulas em listas simples com foco explícito",
+    "rejeitar a regra vírgula igual a pausa ou respiração"
+  ],
+  "prerequisites": ["N0-U05-L09"],
+  "limits": [
+    "não ensinar sistema geral da vírgula",
+    "não introduzir vocativo, aposto, orações subordinadas ou adjuntos como regras de vírgula",
+    "não exigir vírgula antes de e como regra geral",
+    "não ensinar vírgula como transcrição de pausa",
+    "não aprofundar ponto e vírgula ou outros sinais"
+  ],
+  "media": {"tts": "instruções e feedback; a fala não deve ser usada como regra para decidir a vírgula", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {
+    "curatedMedia": [],
+    "runtimeResources": [{"type": "TTS_OK", "locations": ["instruções", "feedback"], "purpose": "apoio geral sem definir pontuação por pausa"}],
+    "generatedVisualResources": [
+      {"type": "UI_RENDERED_ENUMERATION_EDITOR", "locations": ["L10-B02", "L10-C01", "L10-A01", "L10-A02"], "purpose": "inserir e remover vírgulas em texto real"},
+      {"type": "UI_RENDERED_LIST_ITEM_HIGHLIGHT", "locations": ["L10-B02", "L10-B03"], "purpose": "mostrar quais palavras funcionam como itens da enumeração"}
+    ],
+    "productionQueueRequired": false,
+    "publicationDependency": "nenhuma nova mídia humana obrigatória",
+    "decisionRationale": "a convenção é gráfica e deve ser manipulada diretamente no texto da interface."
+  },
+  "sequence": [
+    {
+      "id": "L10-B01",
+      "type": "objective",
+      "focus": "comma-in-simple-list",
+      "text": "A vírgula tem muitos usos no português. Aqui vamos aprender apenas um primeiro uso claro: separar itens de uma enumeração simples."
+    },
+    {
+      "id": "L10-B02",
+      "type": "demonstration",
+      "focus": "simple-enumeration",
+      "before": "Comprei pão leite arroz e frutas.",
+      "items": ["pão", "leite", "arroz", "frutas"],
+      "after": "Comprei pão, leite, arroz e frutas.",
+      "explanation": "As vírgulas ajudam a separar os primeiros itens da enumeração."
+    },
+    {
+      "id": "L10-B03",
+      "type": "contrast",
+      "focus": "comma-is-not-breath",
+      "falseRule": "Coloque vírgula sempre que precisar respirar.",
+      "correctPrinciple": "Nesta lição, a vírgula é usada porque há uma enumeração escrita, não porque alguém fez uma pausa ao falar."
+    },
+    {
+      "id": "L10-C01",
+      "type": "quick-check",
+      "focus": "punctuate-list",
+      "before": "Na mochila há caderno lápis borracha e régua.",
+      "options": [
+        "Na mochila há caderno, lápis, borracha e régua.",
+        "Na mochila, há, caderno lápis, borracha e régua.",
+        "Na mochila há caderno lápis borracha e régua,"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "L10-B04",
+      "type": "guard-rail",
+      "focus": "do-not-generalize",
+      "text": "A vírgula aparece em muitos outros casos, mas eles serão estudados depois. Saber usar uma enumeração simples não significa já dominar todas as vírgulas."
+    },
+    {
+      "id": "L10-A01",
+      "type": "assessment-edit",
+      "focus": "enumeration-transfer",
+      "before": "Para o passeio leve água boné protetor solar e lanche.",
+      "expected": "Para o passeio leve água, boné, protetor solar e lanche.",
+      "interaction": "insert-commas",
+      "automaticCheck": "comparação controlada para esta enumeração"
+    },
+    {
+      "id": "L10-A02",
+      "type": "assessment-principle",
+      "focus": "reject-false-rule",
+      "question": "Por que usamos vírgulas em 'A caixa tem livros, revistas, cartas e fotos'?",
+      "options": [
+        "porque a frase apresenta uma enumeração de itens",
+        "porque toda pausa na fala precisa virar vírgula",
+        "porque toda frase com quatro palavras usa vírgula"
+      ],
+      "correctIndex": 0
+    }
+  ],
+  "completionEvidence": {
+    "clusters": {
+      "use": {"evidence": ["L10-C01", "L10-A01"], "rule": "organizar corretamente as duas enumerações simples"},
+      "principle": {"evidence": ["L10-A02"], "rule": "reconhecer a função de enumeração e rejeitar vírgula igual a pausa"}
+    },
+    "completionRule": "os dois agrupamentos são obrigatórios.",
+    "notSufficient": ["colocar vírgulas ao acaso", "usar pausa da fala como regra", "generalizar a lição para todos os usos da vírgula"]
+  }
+}
