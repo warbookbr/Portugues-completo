@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "id": "N1-U05-L04",
+  "title": "Relato e narrativa curta",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Produzir relato ou narrativa curta organizando acontecimentos em sequência compreensível, mantendo participantes e referências claros e usando marcas temporais quando ajudam o leitor.",
+  "competencies": ["selecionar acontecimentos relevantes", "ordenar eventos", "manter referência aos participantes", "usar marcas temporais sem redundância", "produzir relato/narrativa própria curta", "revisar continuidade e clareza"],
+  "prerequisites": ["N1-U05-L01", "N1-U05-L02", "N1-U01-L05", "N1-U04-L02", "N1-U04-L04"],
+  "limits": ["não exigir clímax ou estrutura narrativa universal", "não aprofundar narrador/foco narrativo", "não medir qualidade por extensão", "não exigir conectores em toda frase", "não autoavaliar criatividade ou qualidade literária de texto livre"],
+  "media": {"tts": "permitido", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["modelos", "feedback"], "purpose": "apoio"}], "generatedVisualResources": [{"type": "UI_RENDERED_EVENT_TIMELINE", "locations": ["L04-B01", "L04-C01", "L04-A01"], "purpose": "ordenar acontecimentos"}, {"type": "UI_RENDERED_WRITING_EDITOR_WITH_CHECKLIST", "locations": ["L04-P01"], "purpose": "produção e autochecagem"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória; texto aberto requer avaliador confiável para validação plena", "decisionRationale": "sequência e produção narrativa podem ser registradas textualmente."},
+  "sequence": [
+    {"id": "L04-B01", "type": "model-analysis", "events": ["o ônibus atrasou", "Rita avisou a equipe", "a reunião começou quinze minutos depois"], "model": "O ônibus de Rita atrasou. Ela avisou a equipe pelo celular. Por isso, a reunião começou quinze minutos depois.", "analysis": ["ordem compreensível", "referência clara", "relação causal explicitada"]},
+    {"id": "L04-B02", "type": "sequence-guard-rail", "pairs": [{"text": "Primeiro fechou a loja. Depois fez o balanço.", "effect": "sequência"}, {"text": "A loja fechou porque faltou energia.", "effect": "causa"}], "teachingPoint": "marca temporal e relação causal não são a mesma coisa"},
+    {"id": "L04-C01", "type": "guided-order", "events": ["João percebeu que esqueceu o crachá", "voltou para casa", "pegou o crachá", "chegou ao trabalho"], "task": "ordenar e escolher marcas temporais somente onde ajudam"},
+    {"id": "L04-A01", "type": "controlled-story-plan", "situation": "Relatar um pequeno imprevisto: uma pessoa chegou ao ponto, percebeu que havia perdido o ônibus, avisou que se atrasaria e pegou o ônibus seguinte.", "requiredEvents": ["chegada ao ponto", "ônibus perdido", "aviso do atraso", "ônibus seguinte"], "task": "organizar os acontecimentos e escolher um referente claro para a pessoa"},
+    {"id": "L04-P01", "type": "open-production", "prompt": "Escreva um relato curto a partir do plano, com palavras próprias. Depois releia procurando saltos, referência confusa e marca temporal desnecessária ou ausente.", "recordResponse": true, "automaticValidation": false, "selfCheck": ["os acontecimentos podem ser acompanhados?", "fica claro quem participa?", "as relações de tempo/causa estão corretas?", "há frase intrusa?", "a pontuação estudada foi revisada?"]}
+  ],
+  "assessmentBehavior": {"ownTextRequired": true, "openTextAutoValidated": false, "alternativeCoherentSequencesAllowed": true, "ttsPolicy": "permitido", "timeLimit": false},
+  "completionEvidence": {"clusters": {"eventPlanning": {"evidence": ["L04-A01"], "rule": "preservar os quatro acontecimentos em sequência compreensível"}, "ownNarrative": {"evidence": ["L04-P01"], "rule": "texto próprio registrado + autochecagem; validação qualitativa plena não é automática"}}, "completionRule": "produção própria obrigatória.", "notSufficient": ["ordenar cartões sem escrever", "copiar modelo", "usar muitos conectores sem continuidade"]}
+}
