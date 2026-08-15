@@ -46,7 +46,13 @@ Português Completo
 - `docs/areas-nivel-1.md` — M2, dez áreas dimensionadas.
 - `docs/unidades-nivel-1.md` — M3, sete unidades dimensionadas.
 - `docs/licoes-nivel-1.md` — consolidação M4.
-- `docs/licoes-nivel-1-u1.md` ... `docs/licoes-nivel-1-u7.md` — M4 por unidade.
+- `docs/licoes-nivel-1-u1.md` — M4 da U1.
+- `docs/licoes-nivel-1-u2.md` — M4 da U2.
+- `docs/licoes-nivel-1-u3.md` — M4 da U3.
+- `docs/licoes-nivel-1-u4.md` — M4 da U4.
+- `docs/licoes-nivel-1-u5.md` — M4 da U5.
+- `docs/licoes-nivel-1-u6.md` — M4 da U6.
+- `docs/licoes-nivel-1-u7.md` — M4 da U7.
 - `docs/referencias-ortografia-nivel-1.md` — escopo normativo da N1-U02.
 - `docs/checkpoint-saida-nivel-1.md` — auditoria das competências de saída.
 - `content/levels/001-basico/exit-verification.json` — `N1-EXIT-V01`.
@@ -124,7 +130,7 @@ N1 M3
 → docs/unidades-nivel-1.md
 
 N1 M4
-→ docs/licoes-nivel-1.md + docs/licoes-nivel-1-u*.md
+→ docs/licoes-nivel-1.md + docs/licoes-nivel-1-u1.md ... docs/licoes-nivel-1-u7.md
 
 N1 saída
 → docs/checkpoint-saida-nivel-1.md + content/levels/001-basico/exit-verification.json
@@ -139,7 +145,7 @@ N2 M3
 → docs/unidades-nivel-2.md
 
 N2 M4
-→ docs/licoes-nivel-2.md + docs/licoes-nivel-2-u*.md
+→ docs/licoes-nivel-2.md + docs/licoes-nivel-2-u1.md ... docs/licoes-nivel-2-u9.md
 
 estado/marcos
 → docs/roadmap-curricular.md
