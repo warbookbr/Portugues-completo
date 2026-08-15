@@ -1,0 +1,96 @@
+{
+  "schemaVersion": 1,
+  "id": "N0-U06-L09",
+  "title": "Quando não entendo: repetir, esclarecer e confirmar",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Usar estratégias simples de reparo quando uma mensagem não foi compreendida, pedindo repetição, esclarecimento ou confirmação em vez de depender de adivinhação.",
+  "competencies": [
+    "reconhecer quando falta compreensão suficiente para agir",
+    "pedir repetição de mensagem curta",
+    "pedir esclarecimento sobre palavra ou informação desconhecida",
+    "confirmar horário, local ou informação que acredita ter compreendido",
+    "escolher estratégia de reparo compatível com a dificuldade",
+    "perceber reparo comunicativo como competência, não como fracasso"
+  ],
+  "prerequisites": ["N0-U06-L06", "N0-U06-L08"],
+  "limits": [
+    "não exigir pragmática formal",
+    "não exigir conversas longas",
+    "não tratar pedir repetição como erro",
+    "não exigir uma fórmula única para esclarecimento",
+    "não usar adivinhação como estratégia preferencial"
+  ],
+  "media": {"tts": "mensagens, situações de diálogo e feedback; replay também participa como recurso de compreensão", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {
+    "curatedMedia": [],
+    "runtimeResources": [
+      {"type": "TTS_OK", "locations": ["mensagens", "diálogos", "feedback"], "purpose": "simular situações simples sem depender de voz específica"},
+      {"type": "REPLAY_CONTROL", "locations": ["situações auditivas"], "purpose": "permitir repetição direta quando suficiente"}
+    ],
+    "generatedVisualResources": [
+      {"type": "UI_RENDERED_REPAIR_STRATEGY_CHOICES", "locations": ["L09-B02", "L09-C01", "L09-A01", "L09-A02"], "purpose": "relacionar dificuldade à estratégia"},
+      {"type": "UI_RENDERED_OPEN_RESPONSE_FIELD", "locations": ["L09-A03"], "purpose": "produção própria de pedido de esclarecimento"},
+      {"type": "UI_RENDERED_SELF_REVIEW_CHECKLIST", "locations": ["L09-A03"], "purpose": "verificar se a mensagem pede a informação necessária"}
+    ],
+    "productionQueueRequired": false,
+    "publicationDependency": "nenhuma nova mídia humana obrigatória",
+    "decisionRationale": "TTS e diálogo textual são suficientes para praticar reparo; a função da resposta, não a performance cênica, é o alvo."
+  },
+  "sequence": [
+    {"id": "L09-B01", "type": "objective", "text": "Quando não compreendemos, podemos agir: pedir para repetir, perguntar o significado ou confirmar o que entendemos."},
+    {
+      "id": "L09-B02",
+      "type": "strategy-map",
+      "situations": [
+        {"difficulty": "você não ouviu uma parte", "strategy": "Pode repetir, por favor?"},
+        {"difficulty": "você ouviu uma palavra, mas não sabe o significado", "strategy": "O que significa essa palavra?"},
+        {"difficulty": "você acha que entendeu o horário, mas quer confirmar", "strategy": "Então é às três, certo?"}
+      ]
+    },
+    {
+      "id": "L09-C01",
+      "type": "quick-check",
+      "situation": "Você ouviu o aviso, mas não conseguiu entender o número da sala.",
+      "options": ["Pode repetir o número da sala?", "Vou escolher qualquer sala.", "Não preciso saber a sala."],
+      "correctIndex": 0
+    },
+    {
+      "id": "L09-B03",
+      "type": "guard-rail",
+      "text": "Pedir repetição ou esclarecimento não significa que a comunicação fracassou. É uma forma de fazer a comunicação continuar."
+    },
+    {
+      "id": "L09-A01",
+      "type": "assessment",
+      "situation": "A pessoa disse um endereço, mas você não ouviu o número.",
+      "options": ["Qual é o número, por favor?", "Vou imaginar um número.", "A rua é bonita."],
+      "correctIndex": 0
+    },
+    {
+      "id": "L09-A02",
+      "type": "assessment",
+      "situation": "Você entendeu que a consulta é sexta-feira às duas e quer confirmar.",
+      "options": ["A consulta é sexta às duas, certo?", "Que cor é a sala?", "Não preciso confirmar nada."],
+      "correctIndex": 0
+    },
+    {
+      "id": "L09-A03",
+      "type": "assessment-open",
+      "situation": "Uma pessoa usou uma palavra que você não conhece. Escreva uma frase curta para pedir esclarecimento.",
+      "responseMode": "free-text",
+      "selfReview": ["Minha mensagem deixa claro que eu quero entender a palavra?", "Ela permite que a outra pessoa explique?"],
+      "modelExamplesAfterSubmission": ["O que essa palavra significa?", "Você pode explicar essa palavra?"],
+      "automaticObservations": ["há texto livre", "autochecagem concluída"],
+      "notAutomaticallyJudged": ["formulação única", "cortesia perfeita", "correção linguística plena"]
+    }
+  ],
+  "assessmentBehavior": {"openResponsePolicy": "produção registrada e autorrevisada; validação plena exige avaliador confiável", "timeLimit": false},
+  "completionEvidence": {
+    "clusters": {
+      "chooseRepair": {"evidence": ["L09-C01", "L09-A01", "L09-A02"], "rule": "selecionar estratégia adequada nas três situações"},
+      "ownRepairMessage": {"evidence": ["L09-A03"], "rule": "produzir pedido de esclarecimento e concluir autochecagem"}
+    },
+    "completionRule": "os dois agrupamentos são obrigatórios.",
+    "notSufficient": ["adivinhar informação ausente", "pedir repetição sem relação com a dificuldade", "copiar modelo posterior"]
+  }
+}
