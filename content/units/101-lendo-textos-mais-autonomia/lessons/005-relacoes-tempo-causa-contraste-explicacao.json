@@ -1,0 +1,92 @@
+{
+  "schemaVersion": 1,
+  "id": "N1-U01-L05",
+  "title": "Relações entre as partes: tempo, causa, contraste e explicação",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Compreender relações claras de tempo, causa, consequência, contraste e explicação entre partes de um texto, usando palavras e organização textual como pistas sem transformar conectores em lista decorada.",
+  "competencies": [
+    "identificar relação temporal e sequência",
+    "identificar causa e consequência quando sustentadas",
+    "reconhecer contraste entre informações",
+    "reconhecer uma explicação ou detalhamento de informação anterior",
+    "selecionar o conector ou relação compatível com o sentido",
+    "distinguir sequência temporal de causalidade"
+  ],
+  "prerequisites": ["N1-U01-L03", "N1-U01-L04", "N0-U04-L07"],
+  "limits": [
+    "não ensinar conectores como taxonomia exaustiva",
+    "não assumir que toda sequência cronológica é causal",
+    "não exigir relações implícitas ou controversas",
+    "não introduzir coordenação/subordinação formal",
+    "não exigir terminologia como conjunção adversativa ou causal"
+  ],
+  "media": {"tts": "instruções e textos sob demanda", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {
+    "curatedMedia": [],
+    "runtimeResources": [{"type": "TTS_OK", "locations": ["instruções", "textos", "feedback"], "purpose": "apoio de leitura"}],
+    "generatedVisualResources": [
+      {"type": "UI_RENDERED_RELATION_HIGHLIGHT", "locations": ["L05-B02", "L05-C01", "L05-A01", "L05-A02"], "purpose": "destacar pistas após a tentativa"},
+      {"type": "UI_RENDERED_RELATION_CHOICES", "locations": ["L05-C01", "L05-A01", "L05-A02"], "purpose": "escolher relação pelo sentido"}
+    ],
+    "productionQueueRequired": false,
+    "publicationDependency": "nenhuma nova mídia humana obrigatória",
+    "decisionRationale": "as relações são textuais e ficam mais válidas quando o aluno pode consultar as partes relacionadas."
+  },
+  "sequence": [
+    {"id": "L05-B01", "type": "objective", "text": "Partes de um texto podem indicar quando algo aconteceu, por que aconteceu, um resultado, uma diferença ou uma explicação. Precisamos observar o sentido da relação, não só decorar palavras."},
+    {
+      "id": "L05-B02",
+      "type": "demonstration-set",
+      "items": [
+        {"text": "Primeiro, confira os dados. Depois, envie o formulário.", "relation": "sequência"},
+        {"text": "A aula foi transferida porque a sala estava em manutenção.", "relation": "causa"},
+        {"text": "O atendimento termina às cinco, mas a recepção fecha às quatro e meia.", "relation": "contraste"},
+        {"text": "A biblioteca terá horário especial: abrirá apenas das nove às três.", "relation": "explicação/especificação"}
+      ]
+    },
+    {
+      "id": "L05-C01",
+      "type": "quick-check",
+      "text": "A rua ficou alagada porque choveu durante muitas horas. Por isso, os ônibus usaram um caminho diferente.",
+      "question": "Qual relação o texto apresenta?",
+      "options": ["causa e consequência", "apenas uma lista sem relação", "contraste entre duas opiniões"],
+      "correctIndex": 0,
+      "textRemainsVisible": true
+    },
+    {
+      "id": "L05-B03",
+      "type": "guard-rail",
+      "text": "Rui saiu de casa às sete. Às oito começou a chover.",
+      "question": "O texto prova que Rui sair de casa causou a chuva?",
+      "answer": "não",
+      "explanation": "O texto apresenta uma sequência de horários, não uma relação de causa."
+    },
+    {
+      "id": "L05-A01",
+      "type": "assessment-set",
+      "items": [
+        {"text": "O prédio é antigo, mas recebeu novos elevadores neste ano.", "question": "Que relação 'mas' ajuda a construir?", "options": ["contraste", "causa", "sequência"], "correctIndex": 0},
+        {"text": "O ônibus atrasou porque houve um acidente na avenida.", "question": "O que é apresentado como causa do atraso?", "options": ["o acidente na avenida", "o ônibus", "o horário"], "correctIndex": 0}
+      ]
+    },
+    {
+      "id": "L05-A02",
+      "type": "assessment",
+      "text": "O evento terá duas atividades principais. Pela manhã, haverá uma oficina. À tarde, os participantes poderão visitar a exposição. A entrada é gratuita, mas as vagas da oficina são limitadas.",
+      "items": [
+        {"question": "Qual relação existe entre 'pela manhã' e 'à tarde'?", "options": ["organização temporal", "causa", "opinião"], "correctIndex": 0},
+        {"question": "O que é contrastado na última frase?", "options": ["a entrada gratuita e o limite de vagas da oficina", "manhã e tarde como causas", "a oficina e a exposição como a mesma atividade"], "correctIndex": 0}
+      ],
+      "textRemainsVisible": true
+    }
+  ],
+  "assessmentBehavior": {"textVisibility": "sempre disponível", "readingSupport": "TTS opcional", "timeLimit": false},
+  "completionEvidence": {
+    "clusters": {
+      "relations": {"evidence": ["L05-C01", "L05-A01", "L05-A02"], "rule": "acertar pelo menos quatro dos cinco subitens de relação"},
+      "sequenceVsCause": {"evidence": ["L05-B03", "L05-A02"], "rule": "não inferir causalidade apenas por ordem temporal"}
+    },
+    "completionRule": "os dois agrupamentos são obrigatórios.",
+    "notSufficient": ["decorar o significado de uma palavra sem compreender o trecho", "tratar todo depois como causa", "classificar conector sem interpretar a relação"]
+  }
+}

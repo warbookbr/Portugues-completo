@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 1,
+  "id": "N1-U01-L09",
+  "title": "Resumindo a ideia principal com palavras próprias",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Produzir um resumo breve da ideia principal de texto acessível, selecionando o essencial e reformulando com palavras próprias sem copiar o texto integralmente nem distorcer sua mensagem.",
+  "competencies": [
+    "selecionar informações essenciais para um resumo breve",
+    "distinguir detalhe secundário de informação necessária à ideia central",
+    "reformular a mensagem principal sem copiar todas as frases",
+    "reconhecer resumo que distorce ou acrescenta informação não sustentada",
+    "produzir resumo próprio escrito ou oral curto",
+    "autorrevisar fidelidade e suficiência do resumo"
+  ],
+  "prerequisites": ["N1-U01-L02", "N1-U01-L03", "N1-U01-L06", "N1-U01-L08"],
+  "limits": [
+    "não exigir resumo formal extenso",
+    "não usar quantidade mínima fixa de palavras como critério de qualidade",
+    "não exigir substituir toda palavra do texto por sinônimo",
+    "não aceitar acréscimo de opinião pessoal como se fizesse parte do resumo",
+    "não validar automaticamente fidelidade de resposta aberta por palavras-chave",
+    "não considerar cópia literal extensa como evidência suficiente de síntese"
+  ],
+  "media": {"tts": "instruções, textos e leitura do próprio resumo sob demanda", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {
+    "curatedMedia": [],
+    "runtimeResources": [{"type": "TTS_OK", "locations": ["instruções", "textos", "resposta do aluno sob demanda", "feedback"], "purpose": "apoio de leitura e revisão"}],
+    "generatedVisualResources": [
+      {"type": "UI_RENDERED_ESSENTIAL_DETAIL_SORT", "locations": ["L09-B02", "L09-C01", "L09-A01"], "purpose": "separar informação essencial e detalhe"},
+      {"type": "UI_RENDERED_OPEN_RESPONSE_FIELD", "locations": ["L09-C01", "L09-A01", "L09-A02"], "purpose": "resumo próprio"},
+      {"type": "UI_RENDERED_SELF_REVIEW_CHECKLIST", "locations": ["L09-C01", "L09-A01", "L09-A02"], "purpose": "autorrevisar fidelidade e suficiência"},
+      {"type": "UI_RENDERED_VERSION_COMPARISON", "locations": ["L09-B03", "L09-A02"], "purpose": "comparar resumo fiel, incompleto e distorcido"}
+    ],
+    "productionQueueRequired": false,
+    "publicationDependency": "nenhuma nova mídia humana obrigatória",
+    "decisionRationale": "resumir exige seleção e reformulação; campos abertos e autochecagem são mais válidos do que imagem ou mídia adicional."
+  },
+  "sequence": [
+    {"id": "L09-B01", "type": "objective", "text": "Resumir é dizer o essencial de forma mais breve e fiel. Não é copiar tudo, nem inventar o que o texto não disse."},
+    {
+      "id": "L09-B02",
+      "type": "demonstration",
+      "text": "A biblioteca do bairro criou um serviço de empréstimo aos domingos. O atendimento ocorrerá das nove ao meio-dia e começa no próximo mês. A medida foi adotada após pedidos de moradores que trabalham durante a semana.",
+      "essential": ["a biblioteca passará a oferecer empréstimo aos domingos", "o serviço começa no próximo mês"],
+      "detailsUsefulDependingOnGoal": ["horário das nove ao meio-dia", "motivo ligado aos pedidos dos moradores"],
+      "exampleSummary": "A biblioteca começará no próximo mês a oferecer empréstimo aos domingos, ampliando o atendimento para quem tem dificuldade durante a semana.",
+      "explanation": "O resumo preserva a mudança central e seu propósito sem repetir cada frase."
+    },
+    {
+      "id": "L09-C01",
+      "type": "quick-open-summary",
+      "text": "O centro comunitário abrirá uma sala de estudos na segunda-feira. O espaço terá mesas, acesso à internet e funcionará das oito às seis. A entrada será gratuita.",
+      "planningPrompt": "Antes de escrever, selecione o que é essencial para explicar a novidade.",
+      "responseMode": "free-text",
+      "selfReview": ["Meu resumo informa qual é a novidade?", "Evitei acrescentar algo que o texto não diz?", "Usei minhas próprias palavras em vez de copiar tudo?"],
+      "modelExamplesAfterSubmission": ["O centro comunitário abrirá na segunda uma sala de estudos gratuita, com mesas e internet, que funcionará das oito às seis."],
+      "automaticObservations": ["há texto livre", "autochecagem concluída", "planejamento foi realizado"],
+      "notAutomaticallyJudged": ["fidelidade semântica plena", "qualidade global", "paráfrase real por comparação superficial"]
+    },
+    {
+      "id": "L09-B03",
+      "type": "contrast",
+      "sourceText": "O posto passará a atender aos sábados pela manhã para ampliar o acesso à vacinação.",
+      "versions": [
+        {"text": "O posto terá atendimento de vacinação também aos sábados pela manhã.", "classification": "resumo fiel"},
+        {"text": "O posto ficará aberto todos os dias até a noite.", "classification": "distorção"},
+        {"text": "Há um posto.", "classification": "insuficiente para a ideia central"}
+      ]
+    },
+    {
+      "id": "L09-A01",
+      "type": "assessment-open",
+      "text": "A prefeitura iniciou um programa de coleta de óleo de cozinha usado. Os moradores podem levar o óleo em garrafas fechadas a cinco pontos de coleta. O material será encaminhado para reciclagem e não deve ser despejado na pia.",
+      "planningPrompt": "Selecione a novidade e o que as pessoas podem fazer.",
+      "responseMode": "free-text",
+      "selfReview": ["Meu resumo explica o programa?", "Informa a ação principal para os moradores?", "Evitei inventar informação?"],
+      "modelExamplesAfterSubmission": ["A prefeitura criou pontos para receber óleo de cozinha usado e encaminhá-lo à reciclagem, evitando que seja jogado na pia."],
+      "automaticObservations": ["há texto livre", "planejamento e autochecagem concluídos"],
+      "notAutomaticallyJudged": ["compreensibilidade plena", "fidelidade global por palavra-chave", "extensão ideal"]
+    },
+    {
+      "id": "L09-A02",
+      "type": "assessment-selection-and-revision",
+      "text": "Neste mês, a escola oferecerá oficinas gratuitas de informática aos sábados. As inscrições são feitas na secretaria e há 20 vagas por turma.",
+      "question": "Qual opção resume melhor a ideia principal sem inventar informação?",
+      "options": ["A escola oferecerá oficinas gratuitas de informática aos sábados, com inscrição na secretaria e vagas limitadas.", "A escola venderá computadores aos sábados.", "A secretaria possui 20 funcionários."],
+      "correctIndex": 0,
+      "followUp": "Explique brevemente ou selecione qual detalhe tornou as outras opções inadequadas.",
+      "textRemainsVisible": true
+    }
+  ],
+  "assessmentBehavior": {
+    "openResponsePolicy": "registrar produção, planejamento e autochecagem sem declarar automaticamente fidelidade/compreensibilidade plena",
+    "models": "somente depois da primeira tentativa",
+    "textVisibility": "fonte permanece disponível",
+    "timeLimit": false
+  },
+  "completionEvidence": {
+    "clusters": {
+      "summaryJudgment": {"evidence": ["L09-A02"], "rule": "reconhecer resumo fiel e rejeitar distorção"},
+      "ownSummary": {"evidence": ["L09-A01"], "rule": "realizar resumo próprio, planejamento e autochecagem"},
+      "selectionOfEssential": {"evidence": ["L09-C01", "L09-A01"], "rule": "demonstrar seleção do núcleo antes da produção"}
+    },
+    "completionRule": "os três agrupamentos são obrigatórios; questões fechadas não compensam ausência do resumo próprio.",
+    "notSufficient": ["copiar todo o texto", "produzir opinião pessoal em lugar de resumo", "cumprir número de palavras sem preservar o sentido"]
+  }
+}
