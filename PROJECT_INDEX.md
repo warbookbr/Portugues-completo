@@ -40,22 +40,33 @@ Português Completo
 - `docs/licoes-nivel-0-unidade-6.md` — arquitetura U6.
 - `docs/checkpoint-saida-nivel-0.md` — auditoria de saída.
 - `content/levels/000-fundamentos/exit-verification.json` — verificação de saída.
-- `content/units/` — conteúdo detalhado.
 
 ### Nível 1
 
 - `docs/areas-nivel-1.md` — M2, dez áreas dimensionadas.
 - `docs/unidades-nivel-1.md` — M3, sete unidades dimensionadas.
+- `docs/licoes-nivel-1.md` — consolidação M4.
+- `docs/licoes-nivel-1-u1.md` ... `docs/licoes-nivel-1-u7.md` — M4 por unidade.
+- `docs/referencias-ortografia-nivel-1.md` — escopo normativo da N1-U02.
+- `docs/checkpoint-saida-nivel-1.md` — auditoria das competências de saída.
+- `content/levels/001-basico/exit-verification.json` — `N1-EXIT-V01`.
 - `docs/transicao-n0-n1.md` — auditoria N0→N1.
-- `docs/licoes-nivel-1.md` — consolidação M4 do nível.
-- `docs/licoes-nivel-1-u1.md` — arquitetura M4 da U1.
-- `docs/licoes-nivel-1-u2.md` — arquitetura M4 da U2.
-- `docs/licoes-nivel-1-u3.md` — arquitetura M4 da U3.
-- `docs/licoes-nivel-1-u4.md` — arquitetura M4 da U4.
-- `docs/licoes-nivel-1-u5.md` — arquitetura M4 da U5.
-- `docs/licoes-nivel-1-u6.md` — arquitetura M4 da U6.
-- `docs/licoes-nivel-1-u7.md` — arquitetura M4 da U7.
-- `docs/referencias-ortografia-nivel-1.md` — escopo normativo e limites das regularidades/acentuação da N1-U02.
+- `docs/transicao-n1-n2.md` — auditoria N1→N2 e fronteira do N2.
+
+### Nível 2
+
+- `docs/areas-nivel-2.md` — M2, onze áreas dimensionadas.
+- `docs/unidades-nivel-2.md` — M3, nove unidades dimensionadas + arquitetura antecipada da saída.
+- `docs/licoes-nivel-2.md` — consolidação M4, 87 lições + 9 verificações integradas.
+- `docs/licoes-nivel-2-u1.md` — M4 da U1.
+- `docs/licoes-nivel-2-u2.md` — M4 da U2.
+- `docs/licoes-nivel-2-u3.md` — M4 da U3.
+- `docs/licoes-nivel-2-u4.md` — M4 da U4.
+- `docs/licoes-nivel-2-u5.md` — M4 da U5.
+- `docs/licoes-nivel-2-u6.md` — M4 da U6.
+- `docs/licoes-nivel-2-u7.md` — M4 da U7.
+- `docs/licoes-nivel-2-u8.md` — M4 da U8.
+- `docs/licoes-nivel-2-u9.md` — M4 da U9.
 
 ## Arquitetura e frontend
 
@@ -113,19 +124,25 @@ N1 M3
 → docs/unidades-nivel-1.md
 
 N1 M4
-→ docs/licoes-nivel-1.md + docs/licoes-nivel-1-u1.md ... docs/licoes-nivel-1-u7.md
+→ docs/licoes-nivel-1.md + docs/licoes-nivel-1-u*.md
 
-escopo normativo N1-U02
-→ docs/referencias-ortografia-nivel-1.md
+N1 saída
+→ docs/checkpoint-saida-nivel-1.md + content/levels/001-basico/exit-verification.json
+
+N1→N2
+→ docs/transicao-n1-n2.md
+
+N2 M2
+→ docs/areas-nivel-2.md
+
+N2 M3
+→ docs/unidades-nivel-2.md
+
+N2 M4
+→ docs/licoes-nivel-2.md + docs/licoes-nivel-2-u*.md
 
 estado/marcos
 → docs/roadmap-curricular.md
-
-transição N0→N1
-→ docs/transicao-n0-n1.md
-
-execução contínua
-→ docs/execucao-continua.md
 
 conteúdo detalhado
 → content/
