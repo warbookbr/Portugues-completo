@@ -6,19 +6,19 @@
   "objective": "Aplicar padrões ortográficos frequentes de c/qu e g/gu em palavras acessíveis, observando as letras seguintes e reconhecendo que a regularidade ensinada não cobre todas as relações entre som e grafia.",
   "competencies": [
     "reconhecer c em padrões frequentes antes de a, o e u",
-    "reconhecer qu em padrões frequentes antes de e e i nas palavras estudadas",
+    "reconhecer qu em padrões frequentes antes de e e i nas palavras selecionadas",
     "reconhecer g em padrões frequentes antes de a, o e u",
-    "reconhecer gu em padrões frequentes antes de e e i nas palavras estudadas",
-    "aplicar o padrão em palavras novas compatíveis",
-    "reconhecer que qu e gu também possuem outros comportamentos em palavras fora do escopo atual"
+    "reconhecer gu em padrões frequentes antes de e e i no conjunto selecionado",
+    "aplicar os padrões em palavras novas compatíveis",
+    "reconhecer que qu, gu e a letra u apresentam outros comportamentos fora do escopo atual"
   ],
   "prerequisites": ["N1-U02-L01", "N1-U02-L02"],
   "limits": [
     "não apresentar qu/gu como fórmulas universais",
-    "não exigir regras completas de pronúncia do u",
+    "não exigir regras completas de pronúncia ou presença sonora do u",
     "não aprofundar c/ç ou g/j como sistemas completos",
     "não usar transcrição fonética",
-    "não afirmar que apenas observar uma letra resolve toda grafia lexical"
+    "não afirmar que a letra seguinte resolve toda grafia lexical"
   ],
   "normativeScopeRef": "docs/referencias-ortografia-nivel-1.md",
   "media": {"tts": "apoio opcional; a decisão central usa padrão gráfico e palavra em contexto", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
@@ -31,24 +31,24 @@
     ],
     "productionQueueRequired": false,
     "publicationDependency": "nenhuma nova mídia humana obrigatória",
-    "decisionRationale": "o padrão é visual e contextual; TTS é apoio, não regra normativa."
+    "decisionRationale": "o padrão é visual/contextual; TTS é apoio, não regra normativa."
   },
   "sequence": [
-    {"id": "L03-B01", "type": "objective", "text": "Algumas grafias mudam conforme as letras que vêm depois. Vamos estudar padrões frequentes de C/QU e G/GU sem fingir que eles explicam todas as palavras do português."},
+    {"id": "L03-B01", "type": "objective", "text": "Algumas grafias podem ser organizadas por padrões ligados às letras vizinhas. Vamos estudar casos frequentes de C/QU e G/GU sem fingir que eles explicam todas as palavras."},
     {
       "id": "L03-B02",
       "type": "pattern-demonstration",
       "groups": [
         {"pattern": "c antes de a/o/u em palavras frequentes", "examples": ["casa", "copo", "cultura"]},
-        {"pattern": "qu antes de e/i em palavras do padrão estudado", "examples": ["queijo", "quilo", "pequeno"]},
+        {"pattern": "qu antes de e/i no conjunto estudado", "examples": ["queijo", "quilo", "pequeno"]},
         {"pattern": "g antes de a/o/u em palavras frequentes", "examples": ["gato", "gota", "gula"]},
-        {"pattern": "gu antes de e/i em palavras do padrão estudado", "examples": ["guerra", "guitarra", "guia"]}
+        {"pattern": "gu antes de e/i no conjunto estudado", "examples": ["guerra", "guitarra", "guincho"]}
       ]
     },
     {
       "id": "L03-B03",
       "type": "guard-rail",
-      "text": "QU e GU não funcionam exatamente do mesmo jeito em todas as palavras. Nesta lição, você aplica apenas os padrões explicitamente estudados; quando o caso não estiver coberto, consulta continua sendo uma estratégia válida."
+      "text": "QU e GU não funcionam exatamente do mesmo jeito em todas as palavras; o U inclusive pode participar da pronúncia em outros casos. Aplique somente o padrão estudado e consulte quando ele não resolver a dúvida."
     },
     {
       "id": "L03-C01",
@@ -78,10 +78,10 @@
   ],
   "completionEvidence": {
     "clusters": {
-      "patternUse": {"evidence": ["L03-C01", "L03-A01"], "rule": "acertar pelo menos cinco dos seis itens de padrão"},
-      "scopeAwareness": {"evidence": ["L03-A02"], "rule": "reconhecer o limite da regularidade ensinada"}
+      "patternUse": {"evidence": ["L03-C01", "L03-A01"], "rule": "acertar pelo menos cinco dos seis itens"},
+      "scopeAwareness": {"evidence": ["L03-A02"], "rule": "reconhecer o limite da regularidade"}
     },
     "completionRule": "os dois agrupamentos são obrigatórios.",
-    "notSufficient": ["decorar exemplos sem observar contexto gráfico", "generalizar qu/gu para qualquer palavra", "usar TTS como regra única"]
+    "notSufficient": ["decorar exemplos sem observar contexto gráfico", "generalizar qu/gu", "usar TTS como regra única"]
   }
 }
