@@ -1,0 +1,85 @@
+{
+  "schemaVersion": 1,
+  "id": "N0-U06-L07",
+  "title": "Mais formal ou mais informal?",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Perceber diferenças simples de formalidade e escolher formulações compatíveis com situações claras, sem ensinar que maior formalidade é automaticamente melhor ou mais correta.",
+  "competencies": [
+    "comparar formulações mais formais e mais informais de uma intenção semelhante",
+    "considerar interlocutor, situação e meio ao escolher uma formulação",
+    "reconhecer que duas formas podem ser adequadas com efeitos diferentes",
+    "rejeitar a ideia de que mais formal significa sempre melhor",
+    "usar registro como escolha funcional, não como julgamento moral"
+  ],
+  "prerequisites": ["N0-U06-L01", "N0-U06-L04", "N0-U06-L06"],
+  "limits": [
+    "não exigir taxonomia formal de registros",
+    "não apresentar linguagem informal como errada por definição",
+    "não apresentar linguagem formal como universalmente superior",
+    "não aprofundar protocolo profissional ou tratamento cerimonial",
+    "não confundir adequação com obediência a etiqueta"
+  ],
+  "media": {"tts": "instruções, situações e mensagens; voz exata não define adequação", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {
+    "curatedMedia": [],
+    "runtimeResources": [{"type": "TTS_OK", "locations": ["instruções", "situações", "mensagens", "feedback"], "purpose": "apoio de acesso"}],
+    "generatedVisualResources": [
+      {"type": "UI_RENDERED_REGISTER_COMPARISON", "locations": ["L07-B02", "L07-C01", "L07-A01", "L07-A02"], "purpose": "comparar formulações sem rotular uma delas como superior universalmente"}
+    ],
+    "productionQueueRequired": false,
+    "publicationDependency": "nenhuma nova mídia humana obrigatória",
+    "decisionRationale": "o contraste de registro é representável por texto e situação; encenação ou mídia humana não acrescentaria evidência necessária."
+  },
+  "sequence": [
+    {"id": "L07-B01", "type": "objective", "text": "Uma mesma ideia pode ser expressa de maneiras mais informais ou mais formais. A melhor escolha depende da situação, não de uma escala automática de certo e errado."},
+    {
+      "id": "L07-B02",
+      "type": "comparison",
+      "goal": "pedir ajuda",
+      "forms": ["Me ajuda aqui?", "Você poderia me ajudar, por favor?"],
+      "explanation": "As duas podem funcionar. Relação entre as pessoas, situação e meio ajudam a escolher."
+    },
+    {
+      "id": "L07-C01",
+      "type": "quick-check",
+      "situation": "Você escreve uma mensagem rápida para um amigo próximo perguntando se ele chega às oito.",
+      "options": ["Você chega às oito?", "Vossa Senhoria comparecerá às oito horas?", "A reunião está encerrada."],
+      "correctIndex": 0,
+      "explanation": "A primeira é compatível com a situação simples e próxima."
+    },
+    {
+      "id": "L07-B03",
+      "type": "guard-rail",
+      "question": "Uma forma mais informal é automaticamente errada?",
+      "answer": "não",
+      "explanation": "A adequação depende do contexto. Convenções continuam existindo, mas formalidade e correção não são a mesma coisa."
+    },
+    {
+      "id": "L07-A01",
+      "type": "assessment",
+      "situation": "Você envia uma mensagem para uma instituição pedindo informação sobre um atendimento.",
+      "options": ["Olá. Poderia informar o horário de atendimento, por favor?", "E aí, manda o horário aí.", "O atendimento terminou ontem."],
+      "correctIndex": 0,
+      "note": "o item usa contraste deliberadamente claro; não declara que a segunda forma é gramaticalmente errada, apenas menos compatível com esta situação institucional"
+    },
+    {
+      "id": "L07-A02",
+      "type": "assessment-principle",
+      "question": "Qual afirmação está de acordo com a lição?",
+      "options": [
+        "Uma forma mais formal não é automaticamente melhor; é preciso considerar a situação.",
+        "A linguagem informal é sempre errada.",
+        "Quanto mais difícil o vocabulário, melhor a mensagem."
+      ],
+      "correctIndex": 0
+    }
+  ],
+  "completionEvidence": {
+    "clusters": {
+      "contextualChoice": {"evidence": ["L07-C01", "L07-A01"], "rule": "selecionar formas compatíveis com duas situações claras"},
+      "principle": {"evidence": ["L07-A02"], "rule": "rejeitar formalidade como hierarquia automática de qualidade"}
+    },
+    "completionRule": "os dois agrupamentos são obrigatórios.",
+    "notSufficient": ["escolher sempre a forma mais formal", "tratar informalidade como erro", "usar vocabulário difícil como critério de qualidade"]
+  }
+}
