@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "id": "N1-U04-L04",
+  "title": "Conectando por adição e sequência",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Usar conectores frequentes de adição e sequência para explicitar relações entre informações quando isso melhora a leitura, escolhendo pelo efeito no contexto em vez de decorar listas.",
+  "competencies": ["reconhecer relação de adição", "reconhecer relação de sequência temporal/procedimental", "usar e/também em casos claros de acréscimo", "usar depois/em seguida em sequência clara", "rejeitar conector que altera a relação pretendida", "reconhecer que conector não é obrigatório entre todas as frases"],
+  "prerequisites": ["N1-U04-L01", "N1-U04-L02", "N1-U04-L03"],
+  "limits": ["não transformar conectores em lista decorada", "não afirmar que e expressa somente adição em todo português", "não exigir conector em toda passagem", "não sistematizar coordenação/subordinação"],
+  "media": {"tts": "permitido", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["frases", "feedback"], "purpose": "apoio"}], "generatedVisualResources": [{"type": "UI_RENDERED_RELATION_CONNECTOR_MATCH", "locations": ["L04-B01", "L04-C01", "L04-A01"], "purpose": "ligar relação e conector"}, {"type": "UI_RENDERED_SEQUENCE_ORDER", "locations": ["L04-B02", "L04-A02"], "purpose": "visualizar sequência"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "relações são textuais e podem ser verificadas em contexto controlado."},
+  "sequence": [
+    {"id": "L04-B01", "type": "addition-demonstration", "examples": [{"before": "O curso oferece aulas noturnas. O curso também oferece atendimento on-line.", "connector": "também", "relation": "adição"}, {"before": "A equipe conferiu os dados e enviou o relatório.", "connector": "e", "relation": "adição de ação neste contexto"}]},
+    {"id": "L04-B02", "type": "sequence-demonstration", "text": "Primeiro, preencha o formulário. Depois, revise os dados. Em seguida, envie o pedido.", "relation": "sequência", "teachingPoint": "os conectores ajudam a acompanhar a ordem quando a ordem importa"},
+    {"id": "L04-C01", "type": "quick-check", "items": [{"relation": "adição", "stem": "A biblioteca empresta livros. ____ oferece acesso a computadores.", "options": ["Também", "Depois", "Mas"], "correctIndex": 0}, {"relation": "sequência", "stem": "O técnico desligou a máquina. ____, iniciou a manutenção.", "options": ["Depois", "Também", "Porque"], "correctIndex": 0}]},
+    {"id": "L04-A01", "type": "assessment-connector", "items": [{"relation": "adição", "stem": "O evento terá palestra. ____ haverá uma oficina.", "options": ["Também", "Por isso", "Depois obrigatoriamente"], "correctIndex": 0}, {"relation": "sequência", "stem": "Ela abriu o arquivo. ____, conferiu os valores.", "options": ["Em seguida", "Mas", "Porque"], "correctIndex": 0}, {"relation": "adição", "stem": "O serviço atende por telefone ____ por mensagem.", "options": ["e", "depois", "porque"], "correctIndex": 0}]},
+    {"id": "L04-A02", "type": "assessment-effect", "items": [{"text": "Primeiro lave as mãos. Depois prepare os alimentos.", "question": "O que 'Depois' sinaliza?", "options": ["sequência", "contraste", "causa"], "correctIndex": 0}, {"text": "A sala possui projetor. Também possui caixas de som.", "question": "O que 'Também' sinaliza?", "options": ["adição", "negação", "causa"], "correctIndex": 0}]},
+    {"id": "L04-A03", "type": "assessment-boundary", "question": "Todo par de frases relacionadas precisa de um conector explícito?", "options": ["não; a relação pode estar clara sem ele", "sim; toda frase deve começar com um conector"], "correctIndex": 0}
+  ],
+  "assessmentBehavior": {"relationBeforeConnector": true, "contextVisible": true, "ttsPolicy": "permitido", "timeLimit": false},
+  "completionEvidence": {"clusters": {"connectorUse": {"evidence": ["L04-A01"], "rule": "acertar pelo menos dois dos três usos"}, "relationInterpretation": {"evidence": ["L04-A02"], "rule": "interpretar adição e sequência"}, "boundary": {"evidence": ["L04-A03"], "rule": "rejeitar obrigatoriedade universal"}}, "completionRule": "os três agrupamentos são obrigatórios.", "notSufficient": ["decorar lista", "escolher pelo som da palavra", "inserir conector em toda frase"]}
+}
