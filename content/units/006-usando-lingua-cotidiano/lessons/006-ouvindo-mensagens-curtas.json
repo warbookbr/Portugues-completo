@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "id": "N0-U06-L06",
+  "title": "Ouvindo mensagens curtas e identificando o principal",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Compreender a informação principal de mensagens orais curtas com vocabulário acessível, usando repetição quando necessário e sem transformar memória detalhada, velocidade ou características específicas da voz em critério de domínio.",
+  "competencies": [
+    "ouvir mensagem curta e identificar a informação principal",
+    "compreender pergunta, aviso, orientação ou informação oral simples",
+    "usar replay como estratégia legítima",
+    "distinguir informação ouvida de alternativa não apresentada",
+    "consultar a versão escrita depois da tentativa para revisar a compreensão"
+  ],
+  "prerequisites": ["N0-U06-L05"],
+  "limits": [
+    "não exigir uma voz, sotaque ou velocidade específicos",
+    "não usar entonação exata como fator que decide a resposta",
+    "não exigir lembrar todos os detalhes após uma única escuta",
+    "não penalizar automaticamente uso de replay",
+    "não mostrar o texto escrito antes da primeira resposta quando o alvo é compreensão oral",
+    "não exigir produção oral nesta lição"
+  ],
+  "media": {"tts": "estímulo principal das mensagens orais e instruções. TTS é suficiente porque diferenças naturais de voz não alteram a resposta esperada.", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {
+    "curatedMedia": [],
+    "runtimeResources": [
+      {"type": "TTS_OK", "locations": ["L06-B02", "L06-C01", "L06-A01", "L06-A02"], "purpose": "apresentar mensagens orais cujo significado, e não a realização fonética, define a resposta"},
+      {"type": "REPLAY_CONTROL", "locations": ["todos os estímulos auditivos"], "purpose": "permitir repetição sem penalidade automática"}
+    ],
+    "generatedVisualResources": [
+      {"type": "UI_AUDIO_FIRST_CARD", "locations": ["L06-B02", "L06-C01", "L06-A01", "L06-A02"], "purpose": "ocultar transcrição antes da primeira resposta e permitir revelação posterior"},
+      {"type": "UI_TRANSCRIPT_AFTER_ATTEMPT", "locations": ["L06-B02", "L06-C01", "L06-A01", "L06-A02"], "purpose": "revisar compreensão após tentativa"}
+    ],
+    "productionQueueRequired": false,
+    "publicationDependency": "nenhum áudio humano obrigatório",
+    "decisionRationale": "o alvo é significado de mensagens curtas; TTS variável é adequado porque prosódia e pronúncia específicas não determinam a resposta."
+  },
+  "sequence": [
+    {"id": "L06-B01", "type": "objective", "text": "Você ouvirá mensagens curtas. Pode repetir quando precisar. Primeiro responda pelo que ouviu; depois poderá conferir o texto."},
+    {
+      "id": "L06-B02",
+      "type": "audio-first-demonstration",
+      "ttsText": "A reunião começa às três na sala dois.",
+      "transcriptHiddenUntilAttempt": true,
+      "question": "Qual é a informação principal?",
+      "options": ["a reunião começa às três na sala dois", "a sala dois fecha às três", "a reunião foi cancelada"],
+      "correctIndex": 0,
+      "replayAllowed": true,
+      "transcriptAfterAttempt": "A reunião começa às três na sala dois."
+    },
+    {
+      "id": "L06-C01",
+      "type": "audio-first-check",
+      "ttsText": "Por favor, espere no corredor até chamarem seu nome.",
+      "transcriptHiddenUntilAttempt": true,
+      "question": "O que a pessoa deve fazer?",
+      "options": ["esperar no corredor", "ir embora", "chamar todos os nomes"],
+      "correctIndex": 0,
+      "replayAllowed": true
+    },
+    {
+      "id": "L06-B03",
+      "type": "strategy",
+      "text": "Repetir uma mensagem para confirmar o que ouviu é uma estratégia de compreensão. Quantidade de replays pode ser registrada para acompanhamento, mas não é erro automático."
+    },
+    {
+      "id": "L06-A01",
+      "type": "audio-first-assessment",
+      "ttsText": "O ônibus para o centro sai da plataforma quatro às oito e meia.",
+      "transcriptHiddenUntilAttempt": true,
+      "items": [
+        {"question": "De onde sai o ônibus?", "options": ["da plataforma quatro", "da plataforma oito", "o áudio não informa"], "correctIndex": 0},
+        {"question": "Que horas ele sai?", "options": ["oito e meia", "quatro horas", "meio-dia"], "correctIndex": 0}
+      ],
+      "replayAllowed": true,
+      "transcriptAfterAttempt": "O ônibus para o centro sai da plataforma quatro às oito e meia."
+    },
+    {
+      "id": "L06-A02",
+      "type": "audio-first-assessment",
+      "ttsText": "Hoje a farmácia fecha mais cedo, às cinco da tarde.",
+      "transcriptHiddenUntilAttempt": true,
+      "question": "O que mudou hoje?",
+      "options": ["a farmácia fecha mais cedo, às cinco", "a farmácia abre às cinco", "a farmácia não abre hoje"],
+      "correctIndex": 0,
+      "replayAllowed": true,
+      "transcriptAfterAttempt": "Hoje a farmácia fecha mais cedo, às cinco da tarde."
+    }
+  ],
+  "assessmentBehavior": {
+    "audioFirst": "transcrição não aparece antes da primeira resposta nos itens de evidência oral",
+    "replay": "permitido sem penalidade automática; registrar quantidade separadamente se útil",
+    "ttsPolicy": "TTS é estímulo válido porque a resposta não depende de características acústicas específicas",
+    "timeLimit": false
+  },
+  "completionEvidence": {
+    "clusters": {
+      "mainInformation": {"evidence": ["L06-C01", "L06-A02"], "rule": "compreender informação/ação principal nos dois estímulos"},
+      "specificOralInformation": {"evidence": ["L06-A01"], "rule": "identificar local e horário corretamente com replay permitido"}
+    },
+    "completionRule": "os dois agrupamentos são obrigatórios; replay e velocidade não entram como critérios de reprovação.",
+    "notSufficient": ["ler a transcrição antes da primeira tentativa", "memorizar voz específica", "acertar por informação visual inexistente"]
+  }
+}
