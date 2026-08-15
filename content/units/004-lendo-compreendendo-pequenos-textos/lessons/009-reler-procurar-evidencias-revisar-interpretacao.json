@@ -1,0 +1,124 @@
+{
+  "schemaVersion": 1,
+  "id": "N0-U04-L09",
+  "title": "Reler, procurar evidências e revisar a interpretação",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Usar conscientemente releitura, busca de evidências e revisão de hipótese para corrigir ou fortalecer a compreensão de pequenos textos quando a primeira interpretação estiver incompleta ou incompatível com o que foi escrito.",
+  "competencies": [
+    "escolher releitura como estratégia diante de dúvida",
+    "voltar ao trecho relevante em vez de reler mecanicamente tudo quando não for necessário",
+    "comparar primeira interpretação com evidência textual",
+    "revisar uma resposta quando o texto a contradiz",
+    "manter uma interpretação quando a releitura fornece evidência suficiente",
+    "explicar por seleção simples qual pista motivou a revisão"
+  ],
+  "prerequisites": ["N0-U04-L01", "N0-U04-L02", "N0-U04-L03", "N0-U04-L04", "N0-U04-L05", "N0-U04-L06", "N0-U04-L07", "N0-U04-L08"],
+  "limits": [
+    "não tratar primeira resposta incorreta como fracasso definitivo se o aluno consegue revisar com evidência",
+    "não exigir metacognição em resposta longa",
+    "não ensinar releitura como repetição obrigatória de todo texto em toda questão",
+    "não premiar mudança de resposta sem relação com evidência",
+    "não exigir textos ambíguos ou interpretações literárias complexas"
+  ],
+  "media": {"tts": "instruções, textos sob demanda, critérios de revisão e feedback", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {
+    "curatedMedia": [],
+    "runtimeResources": [{"type": "TTS_OK", "locations": ["instruções", "textos sob demanda", "feedback"], "purpose": "apoio de acesso sem alterar o processo de revisão"}],
+    "generatedVisualResources": [
+      {"type": "UI_RENDERED_BEFORE_AFTER_INTERPRETATION", "locations": ["L09-B02", "L09-C01", "L09-A01", "L09-A02"], "purpose": "preservar primeira resposta e versão revisada"},
+      {"type": "UI_RENDERED_EVIDENCE_SELECTOR", "locations": ["L09-B02", "L09-C01", "L09-A01", "L09-A02"], "purpose": "ligar revisão a evidência textual"},
+      {"type": "UI_RENDERED_STRATEGY_CHOICES", "locations": ["L09-B03", "L09-A03"], "purpose": "selecionar estratégia adequada diante da dificuldade"}
+    ],
+    "productionQueueRequired": false,
+    "publicationDependency": "nenhuma nova mídia humana obrigatória",
+    "decisionRationale": "a competência é o processo de voltar ao texto e ajustar interpretação; preservar versões e evidências na UI torna esse processo observável."
+  },
+  "sequence": [
+    {
+      "id": "L09-B01",
+      "type": "objective",
+      "focus": "reread-and-revise",
+      "text": "Compreender pode exigir voltar ao texto. Releitura é uma estratégia: você procura a parte que pode confirmar, completar ou corrigir sua interpretação."
+    },
+    {
+      "id": "L09-B02",
+      "type": "demonstration",
+      "focus": "revise-by-evidence",
+      "text": "A lanchonete abre às seis da manhã nos dias úteis. Aos sábados, abre às oito. Hoje é sábado.",
+      "firstInterpretation": "A lanchonete abre hoje às seis.",
+      "evidence": ["Aos sábados, abre às oito.", "Hoje é sábado."],
+      "revisedInterpretation": "A lanchonete abre hoje às oito.",
+      "explanation": "A revisão ocorre porque a evidência contradiz a primeira resposta."
+    },
+    {
+      "id": "L09-B03",
+      "type": "strategy-demonstration",
+      "focus": "targeted-rereading",
+      "situation": "Você esqueceu onde a reunião vai acontecer, mas lembra que o texto dizia o horário e o local.",
+      "options": ["procurar no texto o trecho sobre local e horário", "tentar adivinhar o local", "responder rapidamente sem consultar"],
+      "correctIndex": 0,
+      "explanation": "A releitura pode ser direcionada à informação necessária."
+    },
+    {
+      "id": "L09-C01",
+      "type": "quick-review-check",
+      "focus": "correct-interpretation",
+      "text": "A aula de Ana começa às nove. Ela chegou à escola às oito e cinquenta.",
+      "firstAnswer": "Ana chegou depois de a aula começar.",
+      "question": "Depois de reler, a resposta deve ser mantida ou revisada?",
+      "options": ["revisada", "mantida"],
+      "correctIndex": 0,
+      "requiredEvidence": ["começa às nove", "chegou às oito e cinquenta"],
+      "revisedAnswer": "Ana chegou antes de a aula começar."
+    },
+    {
+      "id": "L09-B04",
+      "type": "contrast",
+      "focus": "do-not-change-without-reason",
+      "text": "O aviso diz claramente: 'Entrada pela porta lateral'. Você respondeu que a entrada é pela porta lateral.",
+      "question": "É preciso mudar a resposta só porque você releu?",
+      "answer": "não",
+      "explanation": "Releitura também pode confirmar uma interpretação já sustentada."
+    },
+    {
+      "id": "L09-A01",
+      "type": "assessment-revision",
+      "focus": "revise-transfer",
+      "text": "A biblioteca fecha às cinco de segunda a sexta. Na quarta-feira desta semana, fechará às quatro para manutenção. Hoje é quarta-feira.",
+      "firstAnswer": "A biblioteca fecha hoje às cinco.",
+      "question": "O que deve acontecer depois da releitura?",
+      "options": ["revisar para quatro horas", "manter cinco horas", "dizer que o texto não informa"],
+      "correctIndex": 0,
+      "requiredEvidence": ["Na quarta-feira desta semana, fechará às quatro", "Hoje é quarta-feira"]
+    },
+    {
+      "id": "L09-A02",
+      "type": "assessment-confirmation",
+      "focus": "confirm-transfer",
+      "text": "O bilhete diz: 'Pedro, deixei sua chave na gaveta da cozinha. — Marta'.",
+      "firstAnswer": "A chave está na gaveta da cozinha.",
+      "question": "Depois de reler, a resposta deve ser mantida ou revisada?",
+      "options": ["mantida", "revisada"],
+      "correctIndex": 0,
+      "requiredEvidence": "deixei sua chave na gaveta da cozinha"
+    },
+    {
+      "id": "L09-A03",
+      "type": "assessment-strategy",
+      "focus": "choose-reading-strategy",
+      "situation": "Você não sabe a quem a palavra 'ela' se refere em um pequeno texto.",
+      "options": ["reler a frase e as partes próximas procurando quem faz sentido como referente", "escolher sempre o nome mais próximo", "ignorar a palavra e responder por sorte"],
+      "correctIndex": 0
+    }
+  ],
+  "assessmentBehavior": {"textVisibility": "sempre disponível", "versionPreservation": "guardar primeira resposta e revisão em itens-chave", "readingSupport": "TTS opcional", "timeLimit": false},
+  "completionEvidence": {
+    "clusters": {
+      "revision": {"evidence": ["L09-C01", "L09-A01"], "rule": "revisar interpretações contraditas por evidência"},
+      "confirmation": {"evidence": ["L09-A02"], "rule": "manter interpretação já sustentada após releitura"},
+      "strategy": {"evidence": ["L09-A03"], "rule": "selecionar estratégia de releitura adequada"}
+    },
+    "completionRule": "os três agrupamentos são obrigatórios; mudar resposta sem evidência não conta como revisão competente.",
+    "notSufficient": ["reler sem procurar informação relevante", "mudar resposta ao acaso", "recusar consultar o texto porque já leu uma vez"]
+  }
+}

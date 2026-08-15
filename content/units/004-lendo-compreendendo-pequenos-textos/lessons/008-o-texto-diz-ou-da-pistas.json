@@ -1,0 +1,111 @@
+{
+  "schemaVersion": 1,
+  "id": "N0-U04-L08",
+  "title": "O texto diz ou dá pistas?",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Distinguir informações explicitamente apresentadas de conclusões obtidas por pistas e realizar inferências simples somente quando o pequeno texto fornecer evidência suficiente.",
+  "competencies": [
+    "distinguir o que está escrito diretamente do que pode ser concluído",
+    "combinar pistas fortes para realizar inferência simples",
+    "marcar evidências que sustentam uma conclusão",
+    "rejeitar conclusão apenas plausível quando faltam pistas",
+    "reconhecer não há informação suficiente como resposta legítima"
+  ],
+  "prerequisites": ["N0-U04-L03", "N0-U04-L04", "N0-U04-L07"],
+  "limits": [
+    "não exigir inferências distantes, ambíguas ou dependentes de conhecimento especializado",
+    "não aceitar chute plausível como inferência comprovada",
+    "não exigir identificar intenção autoral complexa",
+    "não trabalhar ironia, sarcasmo ou duplo sentido sofisticado",
+    "não exigir resposta argumentativa longa para justificar inferência"
+  ],
+  "media": {"tts": "instruções, textos sob demanda e feedback", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {
+    "curatedMedia": [],
+    "runtimeResources": [{"type": "TTS_OK", "locations": ["instruções", "textos", "feedback"], "purpose": "apoio de leitura"}],
+    "generatedVisualResources": [
+      {"type": "UI_RENDERED_EXPLICIT_OR_INFERRED_SELECTOR", "locations": ["L08-B02", "L08-C01", "L08-A01"], "purpose": "distinguir dito e inferido"},
+      {"type": "UI_RENDERED_MULTI_EVIDENCE_SELECTOR", "locations": ["L08-B03", "L08-A01", "L08-A02"], "purpose": "marcar pistas que sustentam a inferência"},
+      {"type": "UI_RENDERED_INSUFFICIENT_EVIDENCE_OPTION", "locations": ["L08-B04", "L08-A02"], "purpose": "permitir explicitamente reconhecer insuficiência de informação"}
+    ],
+    "productionQueueRequired": false,
+    "publicationDependency": "nenhuma nova mídia humana obrigatória",
+    "decisionRationale": "inferência é melhor observada mantendo texto e evidências visíveis; recursos de UI tornam a relação entre pista e conclusão verificável."
+  },
+  "sequence": [
+    {
+      "id": "L08-B01",
+      "type": "objective",
+      "focus": "explicit-versus-inferred",
+      "text": "Algumas respostas aparecem diretamente no texto. Outras precisam ser concluídas a partir de pistas. Inferir não é adivinhar: a conclusão precisa ser sustentada."
+    },
+    {
+      "id": "L08-B02",
+      "type": "demonstration",
+      "focus": "classify-information",
+      "text": "Marcos entrou em casa com o casaco pingando. Deixou o guarda-chuva aberto perto da porta.",
+      "items": [
+        {"statement": "Marcos deixou o guarda-chuva perto da porta.", "classification": "explicita"},
+        {"statement": "Marcos provavelmente esteve na chuva.", "classification": "inferida", "evidence": ["casaco pingando", "guarda-chuva aberto"]}
+      ]
+    },
+    {
+      "id": "L08-B03",
+      "type": "demonstration",
+      "focus": "strong-clues",
+      "text": "A luz do quarto estava apagada. A cama estava arrumada e a porta, trancada por fora. Ana ainda não tinha chegado do trabalho.",
+      "question": "É sustentado concluir que Ana estava dentro do quarto?",
+      "answer": "não",
+      "explanation": "As pistas apontam para ausência, e o texto diz que Ana ainda não havia chegado."
+    },
+    {
+      "id": "L08-C01",
+      "type": "quick-check",
+      "focus": "simple-inference",
+      "text": "O chão da entrada estava cheio de pegadas molhadas. Ao lado da porta havia três guarda-chuvas abertos.",
+      "question": "Qual conclusão é melhor sustentada?",
+      "options": ["algumas pessoas entraram molhadas ou com objetos molhados", "a casa foi pintada", "faltou energia"],
+      "correctIndex": 0,
+      "requiredEvidence": ["pegadas molhadas", "três guarda-chuvas abertos"]
+    },
+    {
+      "id": "L08-B04",
+      "type": "guard-rail",
+      "focus": "insufficient-information",
+      "text": "Bia saiu de casa às oito.",
+      "question": "Bia foi trabalhar?",
+      "answer": "não há informação suficiente",
+      "explanation": "Ir trabalhar é possível, mas o texto não fornece pista suficiente. Possível não é o mesmo que sustentado."
+    },
+    {
+      "id": "L08-A01",
+      "type": "assessment-set",
+      "focus": "explicit-and-inferred-transfer",
+      "text": "A porta da loja estava fechada. Um aviso dizia: 'Voltamos às 14h'. Eram 13h30.",
+      "items": [
+        {"statement": "O aviso informa que a loja volta a atender às 14h.", "options": ["está escrito", "é inferência"], "correctIndex": 0},
+        {"statement": "Naquele momento, a loja ainda não tinha reaberto.", "options": ["é uma conclusão pelas pistas", "está escrito exatamente assim"], "correctIndex": 0, "requiredEvidence": ["porta fechada", "Voltamos às 14h", "Eram 13h30"]}
+      ]
+    },
+    {
+      "id": "L08-A02",
+      "type": "assessment",
+      "focus": "evidence-discipline",
+      "text": "Davi colocou uma mochila no carro e fechou a porta de casa. Cinco minutos depois, o carro ainda estava na garagem.",
+      "question": "Para onde Davi vai?",
+      "options": ["não há informação suficiente", "para o trabalho", "para a escola"],
+      "correctIndex": 0,
+      "followUp": "O texto permite imaginar destinos, mas não fornece pistas suficientes para escolher um deles."
+    }
+  ],
+  "assessmentBehavior": {"textVisibility": "sempre disponível", "evidenceRequirement": "inferências avaliativas devem permitir seleção de pistas", "readingSupport": "TTS opcional", "timeLimit": false},
+  "completionEvidence": {
+    "clusters": {
+      "explicitVsInferred": {"evidence": ["L08-A01"], "rule": "distinguir corretamente informação explícita e conclusão por pistas"},
+      "supportedInference": {"evidence": ["L08-C01", "L08-A01"], "rule": "realizar inferência sustentada e relacioná-la a pistas"},
+      "insufficientEvidence": {"evidence": ["L08-A02"], "rule": "reconhecer quando a informação não permite concluir"}
+    },
+    "completionRule": "os três agrupamentos são obrigatórios.",
+    "notSufficient": ["escolher a opção mais provável sem evidência", "usar conhecimento de mundo como prova", "marcar uma pista que não sustenta a conclusão"]
+  }
+}

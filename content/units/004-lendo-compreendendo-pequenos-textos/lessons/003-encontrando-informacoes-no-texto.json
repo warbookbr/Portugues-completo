@@ -1,0 +1,106 @@
+{
+  "schemaVersion": 1,
+  "id": "N0-U04-L03",
+  "title": "Encontrando informações no texto",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Localizar informações explicitamente apresentadas em pequenos textos e retornar ao trecho relevante para confirmar a resposta com evidência textual.",
+  "competencies": [
+    "localizar informações sobre pessoas, lugares, tempos, ações e objetos quando estão escritas de forma clara",
+    "distinguir uma resposta presente no texto de uma resposta apenas plausível",
+    "marcar o trecho que sustenta uma resposta",
+    "reler a parte necessária em vez de depender de memória",
+    "corrigir uma resposta quando a evidência do texto mostrar outra informação"
+  ],
+  "prerequisites": ["N0-U04-L02"],
+  "limits": [
+    "não esconder o texto para transformar compreensão em memória",
+    "não exigir inferência quando o objetivo é localizar informação explícita",
+    "não aceitar conhecimento de mundo como substituto da evidência textual",
+    "não exigir copiar frases inteiras como única forma de demonstrar localização",
+    "não medir velocidade de busca"
+  ],
+  "media": {"tts": "instruções, textos sob demanda e feedback", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {
+    "curatedMedia": [],
+    "runtimeResources": [{"type": "TTS_OK", "locations": ["instruções", "textos sob demanda", "feedback"], "purpose": "apoio de acesso sem substituir a busca textual"}],
+    "generatedVisualResources": [
+      {"type": "UI_RENDERED_READING_CARD", "locations": ["L03-B02", "L03-C01", "L03-A01", "L03-A02"], "purpose": "texto permanece consultável"},
+      {"type": "UI_RENDERED_TEXT_EVIDENCE_SELECTOR", "locations": ["L03-B02", "L03-C01", "L03-A01", "L03-A02"], "purpose": "permitir marcar palavra, trecho ou frase que sustenta a resposta"}
+    ],
+    "productionQueueRequired": false,
+    "publicationDependency": "nenhuma nova mídia humana obrigatória",
+    "decisionRationale": "a habilidade depende de consultar texto real e apontar evidência; marcação interativa é mais válida que imagens ou memorização."
+  },
+  "sequence": [
+    {
+      "id": "L03-B01",
+      "type": "objective",
+      "focus": "find-and-confirm",
+      "text": "Quando a resposta está escrita no texto, você pode voltar a ele, localizar a informação e confirmar antes de responder."
+    },
+    {
+      "id": "L03-B02",
+      "type": "demonstration",
+      "focus": "explicit-information",
+      "text": "A reunião será na sala 4, às três da tarde. Cada pessoa deve levar um documento com foto.",
+      "items": [
+        {"question": "Onde será a reunião?", "answer": "na sala 4", "evidence": "na sala 4"},
+        {"question": "Que horas começa?", "answer": "às três da tarde", "evidence": "às três da tarde"},
+        {"question": "O que cada pessoa deve levar?", "answer": "um documento com foto", "evidence": "um documento com foto"}
+      ],
+      "explanation": "As três respostas aparecem diretamente no texto."
+    },
+    {
+      "id": "L03-C01",
+      "type": "quick-check",
+      "focus": "answer-and-mark-evidence",
+      "text": "O ônibus para o centro sai às oito da plataforma 2. A passagem custa cinco reais.",
+      "question": "De qual plataforma o ônibus sai?",
+      "options": ["plataforma 2", "plataforma 5", "o texto não informa"],
+      "correctIndex": 0,
+      "requiredEvidence": "plataforma 2",
+      "textRemainsVisible": true
+    },
+    {
+      "id": "L03-B03",
+      "type": "contrast",
+      "focus": "text-versus-plausibility",
+      "text": "A oficina começa às nove. Os participantes receberão o material no local.",
+      "question": "A oficina termina ao meio-dia?",
+      "correctResponse": "o texto não informa",
+      "explanation": "Meio-dia pode parecer possível, mas não está escrito. Nesta lição, possibilidade não substitui informação explícita."
+    },
+    {
+      "id": "L03-A01",
+      "type": "assessment",
+      "focus": "explicit-information-transfer",
+      "text": "Clara deixou a bicicleta na garagem e entrou em casa. O capacete ficou pendurado no guidão.",
+      "items": [
+        {"question": "Onde Clara deixou a bicicleta?", "options": ["na garagem", "na rua", "no quintal"], "correctIndex": 0, "requiredEvidence": "na garagem"},
+        {"question": "Onde ficou o capacete?", "options": ["no guidão", "dentro de casa", "na mochila"], "correctIndex": 0, "requiredEvidence": "pendurado no guidão"}
+      ],
+      "textRemainsVisible": true
+    },
+    {
+      "id": "L03-A02",
+      "type": "assessment-correction",
+      "focus": "revise-by-evidence",
+      "text": "A farmácia abre às sete e fecha às dez. Aos domingos, fecha às seis.",
+      "initialClaim": "A farmácia fecha às dez todos os dias.",
+      "question": "A afirmação está de acordo com o texto?",
+      "options": ["não", "sim"],
+      "correctIndex": 0,
+      "requiredEvidence": "Aos domingos, fecha às seis.",
+      "followUp": "Selecione a parte que mostra por que a afirmação precisa ser corrigida."
+    }
+  ],
+  "assessmentBehavior": {"textVisibility": "sempre disponível", "evidenceSelection": "parte da resposta em itens-chave", "readingSupport": "TTS opcional", "timeLimit": false},
+  "completionEvidence": {
+    "clusters": {
+      "location": {"evidence": ["L03-C01", "L03-A01"], "rule": "localizar corretamente as informações solicitadas"},
+      "evidenceUse": {"evidence": ["L03-A01", "L03-A02"], "rule": "marcar evidência compatível e revisar uma afirmação contradita pelo texto"}
+    },
+    "completionRule": "os dois agrupamentos são obrigatórios.",
+    "notSufficient": ["responder por memória sem conseguir localizar evidência", "usar conhecimento externo quando o texto não informa", "copiar qualquer trecho sem relação com a pergunta"]
+  }
+}

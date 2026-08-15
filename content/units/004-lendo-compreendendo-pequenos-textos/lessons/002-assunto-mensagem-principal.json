@@ -1,0 +1,111 @@
+{
+  "schemaVersion": 1,
+  "id": "N0-U04-L02",
+  "title": "Assunto e mensagem principal",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Identificar de que trata um pequeno texto e qual informação ou mensagem organiza o conjunto, distinguindo a ideia central de detalhes verdadeiros mas secundários.",
+  "competencies": [
+    "identificar o assunto de pequenos textos claros",
+    "selecionar uma formulação simples que represente a mensagem principal",
+    "distinguir detalhe verdadeiro de informação central",
+    "usar título apenas como uma pista entre outras quando ele existir",
+    "retornar ao texto para confirmar a escolha"
+  ],
+  "prerequisites": ["N0-U04-L01"],
+  "limits": [
+    "não exigir terminologia formal como tema, tópico ou tese",
+    "não usar textos em que várias interpretações centrais sejam igualmente plausíveis",
+    "não aceitar uma frase apenas por conter palavras repetidas do texto",
+    "não transformar título em resposta automática",
+    "não exigir resumo escrito longo"
+  ],
+  "media": {"tts": "instruções, textos sob demanda e feedback", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {
+    "curatedMedia": [],
+    "runtimeResources": [{"type": "TTS_OK", "locations": ["instruções", "textos", "feedback"], "purpose": "apoio de acesso quando o alvo é compreensão"}],
+    "generatedVisualResources": [
+      {"type": "UI_RENDERED_READING_CARD", "locations": ["L02-B02", "L02-C01", "L02-A01", "L02-A02"], "purpose": "manter texto visível"},
+      {"type": "UI_RENDERED_MAIN_VS_DETAIL_CHOICES", "locations": ["L02-B03", "L02-A02"], "purpose": "comparar informação central e detalhe sem depender de resposta longa"}
+    ],
+    "productionQueueRequired": false,
+    "publicationDependency": "nenhuma nova mídia humana obrigatória",
+    "decisionRationale": "a competência é semântica e textual; pequenos textos reais e escolhas contrastivas são suficientes."
+  },
+  "sequence": [
+    {
+      "id": "L02-B01",
+      "type": "objective",
+      "focus": "read-or-listen",
+      "text": "Um texto pode ter muitos detalhes. Nesta lição você vai perceber de que ele trata e qual informação é mais importante para compreender o conjunto."
+    },
+    {
+      "id": "L02-B02",
+      "type": "demonstration",
+      "focus": "topic-and-main-message",
+      "text": "No sábado, a praça recebeu uma feira de livros. Havia bancas com histórias, revistas e livros usados. Muitas famílias passaram pela feira durante a manhã.",
+      "topicQuestion": "De que o texto trata?",
+      "topicOptions": ["de uma feira de livros na praça", "de uma viagem de ônibus", "de uma aula de matemática"],
+      "topicCorrectIndex": 0,
+      "mainMessageQuestion": "Qual opção representa melhor o conjunto?",
+      "mainMessageOptions": ["A praça recebeu uma feira de livros visitada por famílias.", "Havia revistas em uma banca.", "Era sábado."],
+      "mainMessageCorrectIndex": 0,
+      "explanation": "Os detalhes podem ser verdadeiros sem representar a mensagem principal."
+    },
+    {
+      "id": "L02-B03",
+      "type": "contrast",
+      "focus": "main-versus-detail",
+      "text": "A escola plantou uma pequena horta. Os alunos cuidam das verduras toda semana. A horta já tem alface e cheiro-verde.",
+      "central": "A escola tem uma horta cuidada pelos alunos.",
+      "detail": "A horta tem alface.",
+      "explanation": "O detalhe participa do texto, mas a primeira frase representa melhor o conjunto."
+    },
+    {
+      "id": "L02-C01",
+      "type": "quick-check",
+      "focus": "identify-main-message",
+      "text": "O posto de saúde mudou o horário de atendimento. Agora abre às sete e fecha às cinco. O novo horário começa na segunda-feira.",
+      "question": "Qual é a mensagem principal?",
+      "options": ["O posto terá um novo horário de atendimento a partir de segunda-feira.", "O posto abre às sete.", "Hoje é segunda-feira."],
+      "correctIndex": 0,
+      "textRemainsVisible": true
+    },
+    {
+      "id": "L02-B04",
+      "type": "strategy",
+      "focus": "test-main-message",
+      "text": "Uma boa mensagem principal combina com o texto inteiro. Se a opção fala apenas de um pequeno detalhe, releia e compare com as outras partes."
+    },
+    {
+      "id": "L02-A01",
+      "type": "assessment",
+      "focus": "topic-transfer",
+      "text": "Lucas encontrou um cachorro perto de casa. A coleira tinha um telefone. Ele ligou para o número e o dono veio buscar o animal.",
+      "question": "De que o texto trata?",
+      "options": ["de Lucas ajudando a devolver um cachorro ao dono", "de Lucas comprando uma coleira", "de um telefone quebrado"],
+      "correctIndex": 0,
+      "textRemainsVisible": true
+    },
+    {
+      "id": "L02-A02",
+      "type": "assessment",
+      "focus": "main-versus-detail-transfer",
+      "text": "A biblioteca recebeu novos computadores. Eles serão usados para pesquisas e atividades de estudo. Antes de usar, cada pessoa deve fazer um cadastro simples.",
+      "question": "Qual opção representa melhor a mensagem principal?",
+      "options": ["A biblioteca disponibilizou novos computadores para estudo e pesquisa.", "É preciso fazer cadastro antes de usar os computadores.", "Os computadores são novos."],
+      "correctIndex": 0,
+      "followUp": "Qual das outras opções é um detalhe verdadeiro, mas não a mensagem principal?",
+      "acceptableDetailIndexes": [1, 2],
+      "textRemainsVisible": true
+    }
+  ],
+  "assessmentBehavior": {"textVisibility": "sempre disponível", "readingSupport": "TTS opcional e registrado separadamente", "timeLimit": false},
+  "completionEvidence": {
+    "clusters": {
+      "topic": {"evidence": ["L02-A01"], "rule": "identificar corretamente o assunto"},
+      "mainMessage": {"evidence": ["L02-C01", "L02-A02"], "rule": "identificar mensagem principal e distinguir detalhe verdadeiro"}
+    },
+    "completionRule": "os dois agrupamentos são obrigatórios.",
+    "notSufficient": ["escolher opção apenas por repetir palavras do texto", "identificar somente um detalhe", "responder sem relação com o conjunto"]
+  }
+}

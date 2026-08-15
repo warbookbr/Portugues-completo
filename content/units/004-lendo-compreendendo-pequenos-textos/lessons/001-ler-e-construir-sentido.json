@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 1,
+  "id": "N0-U04-L01",
+  "title": "Ler é construir sentido",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Compreender que ler um pequeno texto significa construir uma mensagem a partir das palavras, frases e relações entre partes, e não apenas reconhecer ou pronunciar elementos isolados.",
+  "competencies": [
+    "distinguir reconhecimento de palavras de compreensão da mensagem do texto",
+    "identificar qual interpretação simples corresponde ao conjunto de um pequeno texto",
+    "usar o texto visível para confirmar uma resposta em vez de depender de memória",
+    "aceitar releitura e apoio de leitura como estratégias sem confundi-los automaticamente com falta de compreensão",
+    "demonstrar compreensão por seleção ou explicação breve sem depender de velocidade"
+  ],
+  "prerequisites": ["N0-U03-V01"],
+  "limits": [
+    "não usar velocidade de leitura como critério de domínio",
+    "não exigir memorização do texto depois de ocultá-lo",
+    "não exigir resumo formal ou resposta escrita longa",
+    "não introduzir tema, tese, coesão ou análise gramatical como sistemas",
+    "não exigir leitura oral perfeita ou pronúncia idealizada",
+    "não usar imagem para tornar o texto dispensável quando a atividade mede leitura"
+  ],
+  "media": {
+    "tts": "instruções, feedback e leitura de apoio quando a tarefa medir compreensão. O uso de TTS deve ser registrado separadamente quando a evidência de leitura visual independente for relevante.",
+    "controlledAudio": [],
+    "video": "nao necessario",
+    "images": "nao necessarias"
+  },
+  "supportMaterials": {
+    "curatedMedia": [],
+    "runtimeResources": [
+      {"type": "TTS_OK", "locations": ["instruções", "textos sob demanda", "feedback"], "purpose": "reduzir carga de decodificação quando o alvo é compreensão"}
+    ],
+    "generatedVisualResources": [
+      {"type": "UI_RENDERED_READING_CARD", "locations": ["L01-B02", "L01-C01", "L01-A01", "L01-A02"], "purpose": "manter o pequeno texto visível durante resposta e releitura"},
+      {"type": "UI_RENDERED_EVIDENCE_HIGHLIGHT", "locations": ["L01-B03", "L01-A02"], "purpose": "mostrar depois da tentativa quais partes sustentam a interpretação"}
+    ],
+    "productionQueueRequired": false,
+    "publicationDependency": "nenhuma nova mídia humana obrigatória",
+    "decisionRationale": "o objeto central é integrar texto escrito e sentido; texto real da interface e TTS opcional são mais acessíveis e precisos do que imagens decorativas ou áudio controlado."
+  },
+  "sequence": [
+    {
+      "id": "L01-B01",
+      "type": "objective",
+      "focus": "read-or-listen",
+      "text": "Reconhecer palavras ajuda a ler, mas compreender um texto exige perceber o que suas partes comunicam juntas. Você poderá voltar ao texto sempre que precisar."
+    },
+    {
+      "id": "L01-B02",
+      "type": "demonstration",
+      "focus": "build-global-meaning",
+      "text": "A padaria abriu cedo. Rosa comprou pão e leite. Depois voltou para casa.",
+      "question": "Qual opção combina com o texto inteiro?",
+      "options": ["Rosa fez compras na padaria e voltou para casa.", "A padaria ficou fechada.", "Rosa vendeu leite."],
+      "correctIndex": 0,
+      "explanation": "A primeira opção reúne informações do texto. As outras contradizem o que foi lido."
+    },
+    {
+      "id": "L01-B03",
+      "type": "contrast",
+      "focus": "words-versus-message",
+      "text": "O ônibus chegou. Paulo entrou e sentou perto da janela.",
+      "knownWords": ["ônibus", "Paulo", "janela"],
+      "prompt": "Conhecer essas palavras ajuda, mas qual mensagem o conjunto comunica?",
+      "answer": "Paulo entrou no ônibus e se sentou perto da janela.",
+      "explanation": "A mensagem depende de ligar as informações, não de apenas apontar palavras conhecidas."
+    },
+    {
+      "id": "L01-C01",
+      "type": "quick-check",
+      "focus": "global-comprehension",
+      "text": "Lia regou as plantas. A terra estava seca. Depois guardou o regador.",
+      "question": "O que aconteceu nesse pequeno texto?",
+      "options": ["Lia cuidou das plantas e depois guardou o regador.", "Lia jogou as plantas fora.", "O regador estava quebrado."],
+      "correctIndex": 0,
+      "textRemainsVisible": true
+    },
+    {
+      "id": "L01-B04",
+      "type": "strategy",
+      "focus": "reread",
+      "title": "Voltar ao texto faz parte da leitura",
+      "text": "Se você não tiver certeza, releia a parte necessária. Compreender não é provar que decorou tudo na primeira leitura."
+    },
+    {
+      "id": "L01-A01",
+      "type": "assessment",
+      "focus": "global-comprehension-transfer",
+      "text": "O mercado fecha às oito. Carlos chegou às sete. Ele conseguiu fazer as compras.",
+      "question": "Qual frase corresponde ao conjunto do texto?",
+      "options": ["Carlos chegou antes de o mercado fechar e conseguiu comprar.", "Carlos encontrou o mercado fechado.", "O mercado abre às oito."],
+      "correctIndex": 0,
+      "textRemainsVisible": true
+    },
+    {
+      "id": "L01-A02",
+      "type": "assessment-with-evidence",
+      "focus": "understand-and-confirm",
+      "text": "Marta lavou a roupa pela manhã. À tarde, as roupas já estavam secas. Marta então as guardou.",
+      "question": "Qual opção resume o que ocorreu?",
+      "options": ["Marta lavou, esperou secar e guardou as roupas.", "Marta comprou roupas novas.", "As roupas continuaram molhadas."],
+      "correctIndex": 0,
+      "followUp": "Volte ao texto e marque uma parte que confirma sua escolha.",
+      "acceptableEvidence": ["Marta lavou a roupa pela manhã.", "À tarde, as roupas já estavam secas.", "Marta então as guardou."],
+      "textRemainsVisible": true
+    }
+  ],
+  "assessmentBehavior": {
+    "textVisibility": "o texto permanece disponível durante as respostas",
+    "readingSupport": "TTS opcional; registrar uso quando relevante, sem marcar automaticamente como erro",
+    "timeLimit": false,
+    "longWrittenResponseRequired": false
+  },
+  "completionEvidence": {
+    "clusters": {
+      "globalMeaning": {"evidence": ["L01-C01", "L01-A01"], "rule": "acertar os dois itens de compreensão global"},
+      "confirmationByText": {"evidence": ["L01-A02"], "rule": "selecionar interpretação compatível e retornar ao texto para indicar evidência válida"}
+    },
+    "completionRule": "os dois agrupamentos são obrigatórios; velocidade e ausência de TTS não entram no critério.",
+    "notSufficient": ["reconhecer palavras isoladas sem compreender a mensagem", "percorrer as telas", "decorar o texto", "ler rapidamente sem demonstrar compreensão"]
+  }
+}

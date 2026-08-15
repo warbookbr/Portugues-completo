@@ -1,0 +1,223 @@
+{
+  "schemaVersion": 1,
+  "id": "N0-U04-V01",
+  "type": "integrated-unit-verification",
+  "title": "Verificação integrada — Unidade 4",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Verificar se o aluno compreende pequenos textos novos de forma global e localizada, integra informações, acompanha referências e relações simples, distingue informação explícita de inferência e usa releitura e evidências para revisar a interpretação.",
+  "prerequisites": [
+    "N0-U04-L01", "N0-U04-L02", "N0-U04-L03", "N0-U04-L04", "N0-U04-L05", "N0-U04-L06", "N0-U04-L07", "N0-U04-L08", "N0-U04-L09"
+  ],
+  "designPrinciples": [
+    "usar pequenos textos novos em relação aos exemplos centrais das lições",
+    "manter o texto visível durante respostas e releitura",
+    "não transformar compreensão em teste de memória",
+    "exigir evidência em agrupamentos distintos em vez de média global",
+    "usar informação insuficiente como resposta legítima quando o texto não sustenta uma conclusão",
+    "distinguir sequência de causa e inferência de possibilidade",
+    "permitir TTS de apoio quando o alvo for compreensão e registrar o uso separadamente quando relevante",
+    "não usar velocidade, resposta longa ou terminologia técnica como substitutos de compreensão"
+  ],
+  "limits": [
+    "não exigir textos longos ou densos",
+    "não exigir análise gramatical, classificação de gêneros ou resumo formal",
+    "não exigir inferências ambíguas, ironia ou intenção autoral complexa",
+    "não exigir avaliação crítica de fontes",
+    "não exigir produção textual extensa",
+    "não esconder textos depois da leitura",
+    "não exigir leitura oral perfeita"
+  ],
+  "media": {"tts": "instruções, textos sob demanda e feedback", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {
+    "curatedMedia": [],
+    "runtimeResources": [{"type": "TTS_OK", "locations": ["instruções", "todos os textos sob demanda", "feedback"], "purpose": "apoio de leitura sem alterar o alvo de compreensão"}],
+    "generatedVisualResources": [
+      {"type": "UI_RENDERED_READING_CARD", "locations": ["V01-T01", "V01-T02", "V01-T03", "V01-T04", "V01-T05", "V01-T06"], "purpose": "manter cada texto consultável"},
+      {"type": "UI_RENDERED_EVIDENCE_SELECTOR", "locations": ["V01-Q03", "V01-Q05", "V01-Q08", "V01-Q10", "V01-Q12"], "purpose": "ligar resposta a trecho de evidência"},
+      {"type": "UI_RENDERED_SEQUENCE_CARDS", "locations": ["V01-Q07"], "purpose": "reconstruir sequência a partir do texto"},
+      {"type": "UI_RENDERED_BEFORE_AFTER_INTERPRETATION", "locations": ["V01-Q12"], "purpose": "registrar revisão orientada por evidência"}
+    ],
+    "productionQueueRequired": false,
+    "publicationDependency": "nenhuma nova mídia humana obrigatória",
+    "decisionRationale": "a unidade avalia leitura e compreensão de texto; conteúdo textual acessível e ferramentas de evidência da UI são suficientes."
+  },
+  "texts": [
+    {
+      "id": "V01-T01",
+      "text": "A associação do bairro organizou uma troca de livros no domingo. Cada pessoa podia levar um livro e escolher outro. A atividade aconteceu na praça durante a manhã."
+    },
+    {
+      "id": "V01-T02",
+      "text": "O atendimento de Júlia é às duas. Ela chegou ao posto à uma e quarenta. A recepção pediu que aguardasse na sala 3."
+    },
+    {
+      "id": "V01-T03",
+      "text": "Renato deixou a encomenda com Cida. Ela guardou o pacote na estante e avisou Renato pelo telefone. Depois ele voltou para buscar a encomenda."
+    },
+    {
+      "id": "V01-T04",
+      "text": "Para usar a máquina, primeiro coloque o papel na bandeja. Depois escolha o número de cópias. Por último, aperte o botão verde."
+    },
+    {
+      "id": "V01-T05",
+      "text": "A quadra ficou molhada porque choveu durante a madrugada. Por isso, o jogo da manhã foi transferido para o ginásio."
+    },
+    {
+      "id": "V01-T06",
+      "text": "A porta do consultório estava fechada. Um aviso dizia: 'Atendimento a partir das 13h'. Eram 12h40."
+    }
+  ],
+  "items": [
+    {
+      "id": "V01-Q01",
+      "textRef": "V01-T01",
+      "competency": "assunto e mensagem principal",
+      "question": "De que o texto trata principalmente?",
+      "options": ["de uma troca de livros organizada no bairro", "de uma venda de alimentos", "de uma aula na escola"],
+      "correctIndex": 0
+    },
+    {
+      "id": "V01-Q02",
+      "textRef": "V01-T01",
+      "competency": "detalhe versus informação central",
+      "question": "Qual informação é um detalhe verdadeiro do texto?",
+      "options": ["A atividade aconteceu na praça durante a manhã.", "A atividade aconteceu à noite.", "Ninguém levou livros."],
+      "correctIndex": 0
+    },
+    {
+      "id": "V01-Q03",
+      "textRef": "V01-T02",
+      "competency": "informação explícita e evidência",
+      "question": "Em qual sala Júlia deve aguardar?",
+      "options": ["sala 3", "sala 2", "o texto não informa"],
+      "correctIndex": 0,
+      "requiredEvidence": "A recepção pediu que aguardasse na sala 3."
+    },
+    {
+      "id": "V01-Q04",
+      "textRef": "V01-T02",
+      "competency": "integração de informações",
+      "question": "Júlia chegou antes do horário do atendimento?",
+      "options": ["sim", "não", "não há horário no texto"],
+      "correctIndex": 0,
+      "supportingParts": ["O atendimento de Júlia é às duas.", "Ela chegou ao posto à uma e quarenta."]
+    },
+    {
+      "id": "V01-Q05",
+      "textRef": "V01-T03",
+      "competency": "referência simples",
+      "question": "Quem a palavra 'Ela' representa?",
+      "options": ["Cida", "Renato", "a encomenda"],
+      "correctIndex": 0,
+      "requiredEvidence": ["Renato deixou a encomenda com Cida.", "Ela guardou o pacote"]
+    },
+    {
+      "id": "V01-Q06",
+      "textRef": "V01-T03",
+      "competency": "referência simples",
+      "question": "Quem voltou para buscar a encomenda?",
+      "options": ["Renato", "Cida", "o texto não informa"],
+      "correctIndex": 0
+    },
+    {
+      "id": "V01-Q07",
+      "textRef": "V01-T04",
+      "competency": "sequência",
+      "question": "Coloque as etapas na ordem do texto.",
+      "cards": ["apertar o botão verde", "colocar o papel", "escolher o número de cópias"],
+      "correctOrder": ["colocar o papel", "escolher o número de cópias", "apertar o botão verde"]
+    },
+    {
+      "id": "V01-Q08",
+      "textRef": "V01-T05",
+      "competency": "causa e consequência",
+      "question": "Por que o jogo foi transferido para o ginásio?",
+      "options": ["porque a quadra ficou molhada após a chuva", "porque o ginásio estava fechado", "porque era domingo"],
+      "correctIndex": 0,
+      "requiredEvidence": ["A quadra ficou molhada porque choveu durante a madrugada.", "Por isso, o jogo da manhã foi transferido para o ginásio."]
+    },
+    {
+      "id": "V01-Q09",
+      "textRef": "V01-T05",
+      "competency": "sequência versus causa",
+      "question": "O texto apresenta apenas uma ordem de acontecimentos ou também informa uma relação de causa?",
+      "options": ["também informa uma relação de causa", "apenas informa horários", "não apresenta relação entre as frases"],
+      "correctIndex": 0
+    },
+    {
+      "id": "V01-Q10",
+      "textRef": "V01-T06",
+      "competency": "inferência sustentada",
+      "question": "É sustentado concluir que, naquele momento, o atendimento ainda não tinha começado?",
+      "options": ["sim", "não", "o texto diz que já terminou"],
+      "correctIndex": 0,
+      "requiredEvidence": ["A porta do consultório estava fechada.", "Atendimento a partir das 13h", "Eram 12h40."]
+    },
+    {
+      "id": "V01-Q11",
+      "competency": "informação insuficiente",
+      "standaloneText": "Nara saiu de casa com uma bolsa às nove.",
+      "question": "Para onde Nara foi?",
+      "options": ["não há informação suficiente", "ao trabalho", "ao mercado"],
+      "correctIndex": 0
+    },
+    {
+      "id": "V01-Q12",
+      "competency": "releitura e revisão",
+      "standaloneText": "O centro esportivo fecha às seis nos dias úteis. Nesta sexta-feira, fechará às cinco para manutenção. Hoje é sexta-feira.",
+      "firstAnswer": "O centro esportivo fecha hoje às seis.",
+      "question": "Depois de reler, o que deve acontecer com a primeira resposta?",
+      "options": ["deve ser revisada para cinco horas", "deve ser mantida", "deve ser apagada sem nova resposta"],
+      "correctIndex": 0,
+      "requiredEvidence": ["Nesta sexta-feira, fechará às cinco para manutenção.", "Hoje é sexta-feira."],
+      "revisedAnswer": "O centro esportivo fecha hoje às cinco."
+    }
+  ],
+  "coverage": [
+    {"competency": "compreensão global e mensagem principal", "evidence": ["V01-Q01", "V01-Q02"]},
+    {"competency": "localização de informação explícita e evidência", "evidence": ["V01-Q03"]},
+    {"competency": "integração de informações", "evidence": ["V01-Q04"]},
+    {"competency": "referências simples", "evidence": ["V01-Q05", "V01-Q06"]},
+    {"competency": "sequência", "evidence": ["V01-Q07"]},
+    {"competency": "tempo, causa e consequência", "evidence": ["V01-Q08", "V01-Q09"]},
+    {"competency": "explícito, inferência e insuficiência de evidência", "evidence": ["V01-Q10", "V01-Q11"]},
+    {"competency": "releitura e revisão de interpretação", "evidence": ["V01-Q12"]}
+  ],
+  "assessmentBehavior": {
+    "textVisibility": "textos permanecem disponíveis durante as respostas",
+    "rereading": "sempre permitida",
+    "readingSupport": "TTS opcional; registrar uso separadamente quando relevante",
+    "evidenceSelection": "obrigatória nos itens indicados",
+    "timeLimit": false,
+    "technicalTerminologyRequired": false,
+    "longWrittenResponseRequired": false
+  },
+  "completionEvidence": {
+    "clusters": {
+      "globalComprehension": {"evidence": ["V01-Q01", "V01-Q02"], "rule": "acertar os dois itens"},
+      "explicitAndIntegration": {"evidence": ["V01-Q03", "V01-Q04"], "rule": "acertar os dois, incluindo evidência explícita correta"},
+      "reference": {"evidence": ["V01-Q05", "V01-Q06"], "rule": "acertar pelo menos um dos dois e não errar ambos"},
+      "sequenceAndRelations": {"evidence": ["V01-Q07", "V01-Q08", "V01-Q09"], "rule": "acertar pelo menos dois dos três, incluindo V01-Q08 ou V01-Q09"},
+      "inferenceDiscipline": {"evidence": ["V01-Q10", "V01-Q11"], "rule": "acertar os dois: uma inferência sustentada e um caso de informação insuficiente"},
+      "rereadingAndRevision": {"evidence": ["V01-Q12"], "rule": "revisar a interpretação com base na evidência indicada"}
+    },
+    "completionRule": "todos os seis agrupamentos são obrigatórios; não usar média global para compensar ausência de um tipo de compreensão.",
+    "notSufficient": [
+      "memorizar textos depois de ocultá-los",
+      "acertar apenas questões de localização",
+      "inferir por plausibilidade sem evidência",
+      "mudar resposta sem relação com o texto",
+      "ler rapidamente sem demonstrar compreensão"
+    ]
+  },
+  "remediationRoutes": [
+    {"when": "dificuldade em compreensão global", "review": ["N0-U04-L01", "N0-U04-L02"]},
+    {"when": "dificuldade em localizar evidência", "review": ["N0-U04-L03"]},
+    {"when": "dificuldade em integrar partes", "review": ["N0-U04-L04"]},
+    {"when": "dificuldade em referências", "review": ["N0-U04-L05"]},
+    {"when": "dificuldade em sequência", "review": ["N0-U04-L06"]},
+    {"when": "dificuldade em tempo, causa e consequência", "review": ["N0-U04-L07"]},
+    {"when": "dificuldade em inferência ou insuficiência de evidência", "review": ["N0-U04-L08"]},
+    {"when": "dificuldade em releitura e revisão", "review": ["N0-U04-L09"]}
+  ]
+}

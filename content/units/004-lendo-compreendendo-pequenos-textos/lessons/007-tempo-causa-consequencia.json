@@ -1,0 +1,109 @@
+{
+  "schemaVersion": 1,
+  "id": "N0-U04-L07",
+  "title": "Tempo, causa e consequência em relações claras",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Perceber relações simples de tempo, causa e consequência quando pequenos textos apresentam pistas claras, sem confundir sequência com causalidade nem exigir terminologia gramatical.",
+  "competencies": [
+    "identificar quando uma informação indica momento ou sequência",
+    "identificar uma razão explicitamente apresentada",
+    "relacionar uma causa clara ao resultado correspondente",
+    "distinguir sequência temporal de relação causal",
+    "usar palavras e trechos do texto como pistas sem precisar classificar conectores"
+  ],
+  "prerequisites": ["N0-U04-L06"],
+  "limits": [
+    "não exigir relações causais implícitas ou controversas",
+    "não ensinar porque, por isso, quando ou depois como classes gramaticais",
+    "não usar correlação temporal como prova automática de causa",
+    "não exigir cadeias causais longas",
+    "não introduzir argumentação formal"
+  ],
+  "media": {"tts": "instruções, textos sob demanda e feedback", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {
+    "curatedMedia": [],
+    "runtimeResources": [{"type": "TTS_OK", "locations": ["instruções", "textos", "feedback"], "purpose": "apoio de leitura"}],
+    "generatedVisualResources": [
+      {"type": "UI_RENDERED_RELATION_HIGHLIGHT", "locations": ["L07-B02", "L07-B03", "L07-A01", "L07-A02"], "purpose": "destacar pistas temporais ou causais depois da tentativa"},
+      {"type": "UI_RENDERED_CAUSE_EFFECT_PAIR", "locations": ["L07-C01", "L07-A01"], "purpose": "relacionar causa e consequência como partes textuais"}
+    ],
+    "productionQueueRequired": false,
+    "publicationDependency": "nenhuma nova mídia humana obrigatória",
+    "decisionRationale": "relações simples podem ser ensinadas por contraste textual explícito; mídia adicional não melhora a validade."
+  },
+  "sequence": [
+    {
+      "id": "L07-B01",
+      "type": "objective",
+      "focus": "relation-reading",
+      "text": "Um texto pode mostrar quando algo aconteceu, por que aconteceu ou o que aconteceu como resultado. Essas relações precisam vir das pistas do próprio texto."
+    },
+    {
+      "id": "L07-B02",
+      "type": "demonstration",
+      "focus": "time",
+      "text": "Quando terminou o almoço, Vera lavou os pratos. Depois guardou a louça.",
+      "question": "O que o texto informa principalmente com 'quando' e 'depois'?",
+      "options": ["a ordem e o momento das ações", "a causa de Vera ter almoçado", "a opinião de Vera"],
+      "correctIndex": 0
+    },
+    {
+      "id": "L07-B03",
+      "type": "demonstration",
+      "focus": "explicit-cause",
+      "text": "A rua ficou interditada porque uma árvore caiu. Por isso, os ônibus usaram outra rua.",
+      "cause": "uma árvore caiu e a rua ficou interditada",
+      "consequence": "os ônibus usaram outra rua",
+      "explanation": "O texto apresenta a razão e o resultado de forma clara."
+    },
+    {
+      "id": "L07-C01",
+      "type": "quick-check",
+      "focus": "cause-effect",
+      "text": "Faltou energia no prédio. Por isso, o elevador parou.",
+      "question": "Qual relação o texto apresenta?",
+      "options": ["a falta de energia levou à parada do elevador", "o elevador fez faltar energia", "o texto apenas informa dois horários"],
+      "correctIndex": 0,
+      "textRemainsVisible": true
+    },
+    {
+      "id": "L07-B04",
+      "type": "contrast",
+      "focus": "sequence-versus-cause",
+      "text": "Rita fechou a janela. Depois começou a chover.",
+      "question": "O texto prova que Rita fechar a janela fez chover?",
+      "answer": "não",
+      "explanation": "Há sequência, mas nenhuma pista de causa."
+    },
+    {
+      "id": "L07-A01",
+      "type": "assessment",
+      "focus": "causal-transfer",
+      "text": "O chão estava molhado porque o cano vazou durante a noite. A equipe fechou o registro, então o vazamento parou.",
+      "items": [
+        {"question": "Por que o chão estava molhado?", "options": ["porque o cano vazou", "porque a equipe chegou", "porque era noite"], "correctIndex": 0},
+        {"question": "O que aconteceu depois de fechar o registro?", "options": ["o vazamento parou", "o cano começou a vazar", "o chão desapareceu"], "correctIndex": 0}
+      ],
+      "textRemainsVisible": true
+    },
+    {
+      "id": "L07-A02",
+      "type": "assessment",
+      "focus": "distinguish-relations",
+      "text": "Paulo tomou café às sete. Às oito saiu de casa. Na rua, abriu o guarda-chuva porque começou a chover.",
+      "items": [
+        {"question": "A relação entre tomar café e sair de casa é apresentada como causa?", "options": ["não; o texto apenas informa horários e sequência", "sim; o café causou a saída"], "correctIndex": 0},
+        {"question": "Por que Paulo abriu o guarda-chuva?", "options": ["porque começou a chover", "porque eram oito horas", "porque tomou café"], "correctIndex": 0}
+      ]
+    }
+  ],
+  "assessmentBehavior": {"textVisibility": "sempre disponível", "readingSupport": "TTS opcional", "relationPolicy": "aceitar causa somente quando sustentada por pista clara", "timeLimit": false},
+  "completionEvidence": {
+    "clusters": {
+      "timeAndSequence": {"evidence": ["L07-A02"], "rule": "identificar relação temporal sem inventar causa"},
+      "causeAndEffect": {"evidence": ["L07-C01", "L07-A01", "L07-A02"], "rule": "acertar pelo menos três subitens causais claros"}
+    },
+    "completionRule": "os dois agrupamentos são obrigatórios.",
+    "notSufficient": ["associar toda palavra depois a causa", "confundir ordem com explicação", "responder por plausibilidade quando o texto não sustenta a relação"]
+  }
+}

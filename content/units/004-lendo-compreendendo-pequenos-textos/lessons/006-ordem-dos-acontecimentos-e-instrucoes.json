@@ -1,0 +1,97 @@
+{
+  "schemaVersion": 1,
+  "id": "N0-U04-L06",
+  "title": "A ordem dos acontecimentos e das instruções",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Acompanhar e reconstruir sequências simples de acontecimentos, ações ou etapas em pequenos textos, distinguindo ordem temporal de causalidade.",
+  "competencies": [
+    "identificar o que acontece primeiro, depois e por último em sequências claras",
+    "ordenar acontecimentos com base no texto",
+    "seguir instruções escritas de duas ou três etapas",
+    "reconhecer uma sequência incompatível com o texto",
+    "não concluir automaticamente que o primeiro acontecimento causou o segundo"
+  ],
+  "prerequisites": ["N0-U04-L05"],
+  "limits": [
+    "não exigir sequências longas ou cronologias complexas",
+    "não confundir antes/depois com causa/consequência",
+    "não depender de imagem para fornecer a ordem quando a leitura é o alvo",
+    "não exigir classificação formal de conectores temporais",
+    "não usar velocidade de ordenação como critério"
+  ],
+  "media": {"tts": "instruções, textos sob demanda e feedback", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {
+    "curatedMedia": [],
+    "runtimeResources": [{"type": "TTS_OK", "locations": ["instruções", "textos", "feedback"], "purpose": "apoio de leitura"}],
+    "generatedVisualResources": [
+      {"type": "UI_RENDERED_SEQUENCE_CARDS", "locations": ["L06-B02", "L06-C01", "L06-A01", "L06-A02"], "purpose": "ordenar trechos como texto manipulável"},
+      {"type": "UI_RENDERED_READING_CARD", "locations": ["L06-B02", "L06-C01", "L06-A01", "L06-A02"], "purpose": "manter texto-fonte visível"}
+    ],
+    "productionQueueRequired": false,
+    "publicationDependency": "nenhuma nova mídia humana obrigatória",
+    "decisionRationale": "sequência pode ser observada diretamente em texto e cartões de UI; vídeo não acrescenta evidência necessária."
+  },
+  "sequence": [
+    {
+      "id": "L06-B01",
+      "type": "objective",
+      "focus": "track-order",
+      "text": "Alguns textos mostram acontecimentos ou instruções em uma ordem importante. Ler bem também significa acompanhar essa sequência."
+    },
+    {
+      "id": "L06-B02",
+      "type": "demonstration",
+      "focus": "narrative-sequence",
+      "text": "Léo acordou cedo. Primeiro tomou café. Depois escovou os dentes. Por último saiu para trabalhar.",
+      "orderedEvents": ["tomou café", "escovou os dentes", "saiu para trabalhar"],
+      "explanation": "As expressões do texto ajudam a acompanhar a ordem."
+    },
+    {
+      "id": "L06-C01",
+      "type": "quick-check",
+      "focus": "instruction-sequence",
+      "text": "Para preparar o suco: lave as frutas, corte-as e depois bata com água.",
+      "cards": ["bater com água", "lavar as frutas", "cortar as frutas"],
+      "correctOrder": ["lavar as frutas", "cortar as frutas", "bater com água"],
+      "textRemainsVisible": true
+    },
+    {
+      "id": "L06-B03",
+      "type": "guard-rail",
+      "focus": "order-is-not-cause",
+      "text": "João abriu a porta. Depois o telefone tocou.",
+      "question": "O texto diz que abrir a porta fez o telefone tocar?",
+      "answer": "não",
+      "explanation": "O texto informa uma ordem. Ele não apresenta causa."
+    },
+    {
+      "id": "L06-A01",
+      "type": "assessment",
+      "focus": "sequence-transfer",
+      "text": "Sara chegou à estação, comprou a passagem e então entrou no trem.",
+      "cards": ["entrou no trem", "chegou à estação", "comprou a passagem"],
+      "correctOrder": ["chegou à estação", "comprou a passagem", "entrou no trem"],
+      "textRemainsVisible": true
+    },
+    {
+      "id": "L06-A02",
+      "type": "assessment-set",
+      "focus": "instructions-and-order-discipline",
+      "text": "Antes de ligar o aparelho, coloque-o sobre uma mesa firme. Em seguida, conecte o cabo. Só depois aperte o botão de ligar.",
+      "items": [
+        {"question": "Qual é a primeira ação?", "options": ["colocar o aparelho sobre uma mesa firme", "apertar o botão", "conectar o cabo"], "correctIndex": 0},
+        {"question": "A ordem apresentada prova que conectar o cabo é a causa de o aparelho estar sobre a mesa?", "options": ["não", "sim"], "correctIndex": 0}
+      ],
+      "textRemainsVisible": true
+    }
+  ],
+  "assessmentBehavior": {"textVisibility": "sempre disponível", "readingSupport": "TTS opcional", "timeLimit": false},
+  "completionEvidence": {
+    "clusters": {
+      "sequence": {"evidence": ["L06-C01", "L06-A01", "L06-A02"], "rule": "ordenar corretamente narrativa e instrução simples"},
+      "orderVsCause": {"evidence": ["L06-A02"], "rule": "não transformar sequência em relação causal sem evidência"}
+    },
+    "completionRule": "os dois agrupamentos são obrigatórios.",
+    "notSufficient": ["ordenar por conhecimento de mundo ignorando o texto", "concluir causa apenas por vir antes", "decorar palavras como primeiro e depois sem acompanhar a sequência"]
+  }
+}
