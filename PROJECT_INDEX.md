@@ -74,6 +74,7 @@ Português Completo
 - `docs/licoes-nivel-2-u8.md` — M4 da U8.
 - `docs/licoes-nivel-2-u9.md` — M4 da U9.
 - `docs/referencias-ortografia-nivel-2.md` — escopo normativo da N2-U02 para ortografia e acentuação.
+- `docs/referencias-gramatica-nivel-2-u4.md` — escopo normativo da N2-U04 para regência, crase, colocação e pontuação do período.
 
 ## Arquitetura e frontend
 
@@ -150,6 +151,9 @@ N2 M4
 
 escopo normativo N2-U02
 → docs/referencias-ortografia-nivel-2.md
+
+escopo normativo N2-U04
+→ docs/referencias-gramatica-nivel-2-u4.md
 
 estado/marcos
 → docs/roadmap-curricular.md
