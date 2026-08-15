@@ -8,6 +8,7 @@ Este arquivo é o mapa mestre do projeto. Ele localiza as fontes oficiais antes 
 
 ```text
 Português Completo
+├── README.md                  → apresentação pública do repositório
 ├── index.html + app/          → aplicação
 ├── content/                   → conteúdo pedagógico
 ├── producao-midia/            → coordenação de mídia
