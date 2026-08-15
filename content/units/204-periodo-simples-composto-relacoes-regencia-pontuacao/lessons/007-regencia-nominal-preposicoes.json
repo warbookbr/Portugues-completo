@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "id": "N2-U04-L07",
+  "title": "Regência nominal e preposições exigidas em usos selecionados",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Reconhecer e usar relações de regência nominal frequentes em que nomes ou adjetivos selecionam preposições, preparando a compreensão estrutural da crase sem exigir inventário enciclopédico.",
+  "competencies": ["usar favorável a", "usar contrário a", "usar compatível com", "usar incompatível com", "usar necessidade de", "reconhecer que a preposição pertence à construção e não é escolhida por som", "consultar caso fora do recorte"],
+  "prerequisites": ["N2-U04-L06", "N2-U03-L04"],
+  "limits": ["não ensinar lista extensa de regências nominais", "não avaliar usos controversos", "não antecipar crase como memorização de acento", "não generalizar uma preposição para todos os nomes/adjetivos"],
+  "normativeScopeRef": "docs/referencias-gramatica-nivel-2-u4.md",
+  "media": {"tts": "opcional", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["frases", "feedback"], "purpose": "apoio"}], "generatedVisualResources": [{"type": "UI_RENDERED_NOMINAL_PREPOSITION_PATTERN", "locations": ["L07-B01", "L07-C01", "L07-A01"], "purpose": "ligar nome/adjetivo à preposição"}], "productionQueueRequired": false, "publicationDependency": "nenhuma mídia humana obrigatória", "decisionRationale": "corpus pequeno de relações nominais pode ser praticado textualmente."},
+  "sequence": [
+    {"id": "L07-B01", "type": "pattern-demonstration", "items": [{"text": "A comissão foi favorável ao projeto.", "pattern": "favorável a + o"}, {"text": "O grupo é contrário ao plano.", "pattern": "contrário a + o"}, {"text": "A medida é compatível com o regulamento.", "pattern": "compatível com"}, {"text": "O procedimento é incompatível com a regra.", "pattern": "incompatível com"}, {"text": "Há necessidade de revisão.", "pattern": "necessidade de"}]},
+    {"id": "L07-B02", "type": "structural-preparation", "pairs": [{"masculine": "favorável ao projeto", "decomposition": "favorável a + o projeto"}, {"masculine": "contrário ao plano", "decomposition": "contrário a + o plano"}], "teachingPoint": "na próxima lição, a mesma lógica será observada quando o elemento seguinte admitir artigo feminino a"},
+    {"id": "L07-C01", "type": "quick-check", "items": [{"stem": "A proposta é compatível ___ regulamento.", "options": ["com o", "ao", "de o"], "correctIndex": 0}, {"stem": "O grupo é contrário ___ projeto.", "options": ["ao", "com o", "do"], "correctIndex": 0}, {"stem": "Há necessidade ___ revisão.", "options": ["de", "a", "com"], "correctIndex": 0}]},
+    {"id": "L07-A01", "type": "assessment", "items": [{"stem": "A comissão foi favorável ___ plano.", "options": ["ao", "do", "com o"], "correctIndex": 0}, {"stem": "A solução é incompatível ___ regra atual.", "options": ["com a", "à", "da"], "correctIndex": 0}, {"stem": "Existe necessidade ___ ajuste.", "options": ["de", "a", "por"], "correctIndex": 0}]},
+    {"id": "L07-A02", "type": "assessment-principle", "question": "Como escolher a preposição num caso não estudado?", "options": ["observar a construção e consultar uma referência adequada se necessário", "usar a preposição mais frequente das outras palavras"], "correctIndex": 0}
+  ],
+  "assessmentBehavior": {"formalRegisterScope": true, "consultationAllowed": true, "ttsPolicy": "opcional", "timeLimit": false},
+  "completionEvidence": {"clusters": {"regencyUse": {"evidence": ["L07-C01", "L07-A01"], "rule": "aplicar as cinco relações do recorte"}, "scope": {"evidence": ["L07-A02"], "rule": "não generalizar preposição"}}, "completionRule": "os dois agrupamentos são obrigatórios.", "notSufficient": ["escolher por som", "decorar sem reconhecer a construção"]}
+}

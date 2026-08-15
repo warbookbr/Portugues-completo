@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "id": "N2-U04-L01",
+  "title": "Período simples e período composto",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Reconhecer como um período pode organizar uma ou mais orações e comparar maneiras de separar ou combinar informações, sem contar mecanicamente cada forma verbal como uma oração independente.",
+  "competencies": ["distinguir período simples e composto em casos transparentes", "reconhecer locução verbal sem multiplicar orações por contagem bruta", "separar duas orações em períodos quando o sentido permanece claro", "combinar orações mantendo a relação pretendida", "usar a estrutura para revisar frase real"],
+  "prerequisites": ["N2-U03-V01"],
+  "limits": ["não contar formas verbais mecanicamente", "não exigir classificação completa de orações", "não ensinar período composto como necessariamente melhor", "não usar tamanho como critério"],
+  "media": {"tts": "opcional", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["frases", "feedback"], "purpose": "apoio"}], "generatedVisualResources": [{"type": "UI_RENDERED_CLAUSE_PERIOD_MAP", "locations": ["L01-B01", "L01-C01", "L01-A01"], "purpose": "mapear orações no período"}, {"type": "UI_RENDERED_SPLIT_COMBINE_SENTENCE", "locations": ["L01-B02", "L01-A02"], "purpose": "comparar separação e combinação"}], "productionQueueRequired": false, "publicationDependency": "nenhuma mídia humana obrigatória", "decisionRationale": "estrutura textual é suficiente."},
+  "sequence": [
+    {"id": "L01-B01", "type": "demonstration", "items": [{"text": "A equipe revisou o relatório.", "analysis": "período simples; uma oração"}, {"text": "A equipe revisou o relatório e publicou a versão.", "analysis": "período composto; duas predicações coordenadas"}, {"text": "A equipe vai revisar o relatório.", "analysis": "'vai revisar' funciona como grupo verbal; não se contam duas orações apenas pelas duas formas"}]},
+    {"id": "L01-B02", "type": "split-combine", "pairs": [{"combined": "O sistema voltou e os usuários entraram.", "split": "O sistema voltou. Os usuários entraram.", "point": "ambas podem ser claras; a versão combinada explicita uma ligação mais estreita"}, {"combined": "A porta abriu, mas o atendimento não começou.", "split": "A porta abriu. O atendimento não começou.", "point": "a separação mantém os fatos, mas enfraquece a marca explícita de contraste"}]},
+    {"id": "L01-C01", "type": "quick-check", "items": [{"text": "Os técnicos chegaram.", "options": ["período simples", "período composto"], "correctIndex": 0}, {"text": "Os técnicos chegaram e a reunião começou.", "options": ["período composto", "locução verbal única"], "correctIndex": 0}, {"text": "Os técnicos estão chegando.", "options": ["grupo verbal no recorte; não duas orações por contagem bruta", "duas orações obrigatórias"], "correctIndex": 0}]},
+    {"id": "L01-A01", "type": "assessment", "items": [{"text": "A oficina terminou cedo.", "correct": "simples"}, {"text": "A oficina terminou e o salão foi fechado.", "correct": "composto"}, {"text": "A equipe pode enviar o arquivo amanhã.", "correct": "simples no recorte, com grupo verbal"}]},
+    {"id": "L01-A02", "type": "assessment-principle", "question": "Qual princípio é correto?", "options": ["é preciso observar o funcionamento verbal e as relações; não basta contar palavras com forma de verbo", "todo período com duas formas verbais tem duas orações"], "correctIndex": 0}
+  ],
+  "assessmentBehavior": {"rawVerbCounting": false, "ttsPolicy": "opcional", "timeLimit": false},
+  "completionEvidence": {"clusters": {"structure": {"evidence": ["L01-C01", "L01-A01"], "rule": "distinguir períodos e locuções transparentes"}, "principle": {"evidence": ["L01-A02"], "rule": "rejeitar contagem mecânica"}}, "completionRule": "os dois agrupamentos são obrigatórios.", "notSufficient": ["contar verbos", "preferir sempre período composto"]}
+}

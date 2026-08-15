@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "id": "N2-U04-L06",
+  "title": "Regência verbal em construções de alta frequência",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Usar um pequeno conjunto de relações de regência verbal frequentes na escrita monitorada, observando verbo, sentido e preposição em contexto e reconhecendo quando um caso fora do recorte exige consulta.",
+  "competencies": ["usar precisar de", "usar depender de", "usar gostar de", "usar referir-se a", "usar assistir a no sentido de ver/presenciar no padrão formal do recorte", "reconhecer que mudança de sentido pode alterar a construção", "consultar verbo/sentido não sistematizado"],
+  "prerequisites": ["N2-U03-L05", "N2-U04-L01", "N2-U04-L05"],
+  "limits": ["não ensinar lista extensa de verbos", "não avaliar regências controversas", "não usar perguntas mecânicas como única regra", "não antecipar crase como alvo", "não tratar variação informal como defeito humano"],
+  "normativeScopeRef": "docs/referencias-gramatica-nivel-2-u4.md",
+  "media": {"tts": "opcional", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["frases", "feedback"], "purpose": "apoio"}], "generatedVisualResources": [{"type": "UI_RENDERED_VERB_PREPOSITION_PATTERN", "locations": ["L06-B01", "L06-C01", "L06-A01"], "purpose": "ligar verbo/sentido à preposição"}, {"type": "UI_RENDERED_REGISTRY_SCOPE", "locations": ["L06-B02", "L06-A02"], "purpose": "marcar recorte formal e consulta"}], "productionQueueRequired": false, "publicationDependency": "nenhuma mídia humana obrigatória", "decisionRationale": "regência é trabalhada em corpus textual pequeno e explícito."},
+  "sequence": [
+    {"id": "L06-B01", "type": "pattern-demonstration", "items": [{"text": "A equipe precisa de autorização.", "pattern": "precisar de"}, {"text": "O projeto depende de aprovação.", "pattern": "depender de"}, {"text": "Ela gosta de literatura.", "pattern": "gostar de"}, {"text": "O aviso se refere ao cadastro.", "pattern": "referir-se a + o = ao"}, {"text": "Assistimos ao filme durante a oficina.", "pattern": "assistir a, no sentido de ver/presenciar, + o = ao"}]},
+    {"id": "L06-B02", "type": "meaning-contrast", "items": [{"text": "O profissional assistiu o paciente durante a recuperação.", "meaning": "prestou assistência ao paciente", "point": "o sentido é diferente do de 'assistir ao filme'; mudança de sentido pode mudar a construção"}], "guardRail": "o N2 avalia apenas os sentidos/construções explicitamente ensinados"},
+    {"id": "L06-C01", "type": "quick-check", "items": [{"stem": "A equipe precisa ___ autorização.", "options": ["de", "a", "sem preposição"], "correctIndex": 0}, {"stem": "O projeto depende ___ aprovação.", "options": ["de", "com", "por"], "correctIndex": 0}, {"stem": "O aviso se refere ___ regulamento.", "options": ["ao", "do", "no"], "correctIndex": 0}]},
+    {"id": "L06-A01", "type": "assessment", "items": [{"stem": "Ela gosta ___ música.", "options": ["de", "a", "com"], "correctIndex": 0}, {"stem": "Assistimos ___ documentário ontem.", "options": ["ao", "o", "do"], "correctIndex": 0, "meaning": "ver/presenciar"}, {"stem": "A proposta depende ___ aprovação da comissão.", "options": ["de", "para", "em"], "correctIndex": 0}, {"stem": "O texto se refere ___ capítulo anterior.", "options": ["ao", "do", "pelo"], "correctIndex": 0}]},
+    {"id": "L06-A02", "type": "assessment-principle", "question": "O que fazer com um verbo ou sentido que não pertence ao recorte estudado?", "options": ["consultar uma referência adequada em vez de generalizar a preposição de outro verbo", "usar de em todo verbo porque aparece em vários exemplos"], "correctIndex": 0}
+  ],
+  "assessmentBehavior": {"formalRegisterScope": true, "meaningSensitive": true, "consultationAllowed": true, "ttsPolicy": "opcional", "timeLimit": false},
+  "completionEvidence": {"clusters": {"regencyUse": {"evidence": ["L06-C01", "L06-A01"], "rule": "aplicar as construções do corpus"}, "scope": {"evidence": ["L06-A02"], "rule": "reconhecer limite e consulta"}}, "completionRule": "os dois agrupamentos são obrigatórios.", "notSufficient": ["decorar lista extensa", "usar mesma preposição em todo verbo", "ignorar mudança de sentido"]}
+}
