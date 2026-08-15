@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "id": "N0-U05-L02",
+  "title": "Escrevendo frases com mais autonomia",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Produzir frases próprias para cumprir objetivos simples com menos dependência de modelos, mantendo apoios opcionais sem confundir produção enviada com correção linguística plena.",
+  "competencies": [
+    "escrever frase própria a partir de objetivo simples",
+    "usar palavras próprias em vez de apenas reorganizar fichas",
+    "recorrer a apoio opcional quando necessário e continuar reduzindo-o",
+    "reconhecer que mais de uma formulação pode cumprir o mesmo objetivo",
+    "autorrevisar se a frase comunica a informação principal"
+  ],
+  "prerequisites": ["N0-U05-L01", "N0-U03-L10"],
+  "limits": [
+    "não exigir frase longa",
+    "não usar contagem de palavras como prova de qualidade",
+    "não exigir ortografia e pontuação perfeitas como único critério",
+    "não validar automaticamente compreensibilidade por palavra-chave",
+    "não fornecer frase-modelo antes da primeira tentativa aberta em itens centrais"
+  ],
+  "media": {"tts": "instruções, objetivos, autochecagem e feedback; modelos apenas após tentativa", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {
+    "curatedMedia": [],
+    "runtimeResources": [{"type": "TTS_OK", "locations": ["instruções", "objetivos", "autochecagem", "feedback"], "purpose": "apoio sem ditar a frase"}],
+    "generatedVisualResources": [
+      {"type": "UI_RENDERED_OPEN_RESPONSE_FIELD", "locations": ["L02-C01", "L02-A01", "L02-A02"], "purpose": "produção livre"},
+      {"type": "UI_RENDERED_OPTIONAL_SCAFFOLD", "locations": ["L02-C01", "L02-A01"], "purpose": "apoio sob demanda registrado separadamente"},
+      {"type": "UI_RENDERED_SELF_REVIEW_CHECKLIST", "locations": ["L02-C01", "L02-A01", "L02-A02"], "purpose": "autorrevisão funcional"}
+    ],
+    "productionQueueRequired": false,
+    "publicationDependency": "nenhuma nova mídia humana obrigatória",
+    "decisionRationale": "a competência exige campo livre e redução de apoio, não mídia adicional."
+  },
+  "sequence": [
+    {
+      "id": "L02-B01",
+      "type": "objective",
+      "focus": "write-own-sentence",
+      "text": "Você já criou frases na Unidade 3. Agora o objetivo é fazer isso com mais autonomia e pensando primeiro no que precisa comunicar."
+    },
+    {
+      "id": "L02-B02",
+      "type": "multiple-valid-demonstration",
+      "focus": "accept-variation",
+      "goal": "informar que o ônibus chegou cedo",
+      "possibleResponses": ["O ônibus chegou cedo.", "Hoje o ônibus chegou cedo."],
+      "explanation": "As duas formulações cumprem o objetivo. Produzir não significa adivinhar uma frase única."
+    },
+    {
+      "id": "L02-C01",
+      "type": "quick-open-production",
+      "focus": "write-with-optional-support",
+      "goal": "informar que a biblioteca está fechada hoje",
+      "optionalScaffold": {"starter": "A biblioteca...", "wordBank": ["está", "fechada", "hoje"], "availableOnDemand": true},
+      "responseMode": "free-text",
+      "modelExamplesAfterSubmission": ["A biblioteca está fechada hoje.", "Hoje a biblioteca está fechada."],
+      "selfReview": ["Minha frase informa que a biblioteca está fechada?", "Fica claro que é hoje?"],
+      "automaticObservations": ["há texto além de espaços/sinais", "campo livre foi usado", "apoio opcional foi ou não aberto", "autochecagem foi concluída"],
+      "notAutomaticallyJudged": ["correção gramatical global", "ortografia perfeita", "compreensibilidade plena"]
+    },
+    {
+      "id": "L02-B03",
+      "type": "strategy",
+      "focus": "fade-support",
+      "text": "Usar apoio não é erro. O importante é conseguir tomar mais decisões próprias ao longo das tentativas."
+    },
+    {
+      "id": "L02-A01",
+      "type": "assessment-open",
+      "focus": "independent-information",
+      "goal": "informar que Marta chega às seis",
+      "optionalScaffold": {"starter": null, "wordBank": ["Marta", "chega", "às seis"], "availableOnDemand": true},
+      "responseMode": "free-text",
+      "selfReviewRequired": true,
+      "modelExamplesAfterSubmission": ["Marta chega às seis."]
+    },
+    {
+      "id": "L02-A02",
+      "type": "assessment-open",
+      "focus": "independent-question",
+      "goal": "escrever uma pergunta curta para saber onde fica o banheiro",
+      "optionalScaffold": null,
+      "responseMode": "free-text",
+      "selfReviewRequired": true,
+      "modelExamplesAfterSubmission": ["Onde fica o banheiro?", "Você sabe onde fica o banheiro?"],
+      "automaticObservations": ["resposta em campo livre", "autochecagem concluída"],
+      "notAutomaticallyJudged": ["equivalência com um modelo único", "pontuação como prova exclusiva da função"]
+    }
+  ],
+  "assessmentBehavior": {
+    "openResponsePolicy": "registrar produção e autochecagem sem declarar automaticamente correção linguística plena",
+    "supportTracking": "apoios opcionais são registrados separadamente e não viram erro automático",
+    "timeLimit": false
+  },
+  "completionEvidence": {
+    "clusters": {
+      "ownWords": {"evidence": ["L02-A01", "L02-A02"], "rule": "realizar as duas produções em campo livre, sendo pelo menos uma sem abrir apoio opcional"},
+      "selfReview": {"evidence": ["L02-A01", "L02-A02"], "rule": "concluir autochecagem das duas produções"}
+    },
+    "completionRule": "os dois agrupamentos são obrigatórios; o resultado autônomo significa produzido e autorrevisado, não linguisticamente validado.",
+    "notSufficient": ["rearranjar fichas apenas", "copiar modelo exibido depois", "enviar campo vazio", "cumprir contagem de palavras sem comunicar o objetivo"]
+  }
+}
