@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "id": "N2-U04-L03",
+  "title": "Subordinação inicial: causa, condição, tempo e finalidade",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Interpretar e construir relações subordinadas iniciais de causa, condição, tempo e finalidade em contextos acessíveis, percebendo dependência de sentido sem exigir taxonomia completa.",
+  "competencies": ["reconhecer causa introduzida por porque", "reconhecer condição com se sem tratá-la como fato confirmado", "reconhecer relação temporal com quando", "reconhecer finalidade com para que", "relacionar oração dependente à informação principal", "comparar mudança de relação quando o marcador muda"],
+  "prerequisites": ["N2-U04-L01", "N2-U04-L02", "N2-U01-L06"],
+  "limits": ["não exigir nomenclatura completa das subordinadas", "não tratar condição como certeza", "não afirmar que toda oração pode ser deslocada livremente", "não ensinar conectores como etiquetas fora de contexto"],
+  "media": {"tts": "opcional", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["frases", "feedback"], "purpose": "apoio"}], "generatedVisualResources": [{"type": "UI_RENDERED_MAIN_DEPENDENT_CLAUSE_MAP", "locations": ["L03-B01", "L03-C01", "L03-A01"], "purpose": "ligar oração dependente à principal"}], "productionQueueRequired": false, "publicationDependency": "nenhuma mídia humana obrigatória", "decisionRationale": "as relações são textuais e transparentes."},
+  "sequence": [
+    {"id": "L03-B01", "type": "demonstration", "items": [{"text": "A aula foi transferida porque faltou energia.", "relation": "causa"}, {"text": "Se chover, a atividade será no salão.", "relation": "condição", "guardRail": "não afirma que choverá"}, {"text": "Quando o ônibus chegar, avise.", "relation": "tempo"}, {"text": "A equipe revisou o aviso para que as instruções ficassem claras.", "relation": "finalidade"}]},
+    {"id": "L03-B02", "type": "contrast", "items": [{"pair": ["A atividade mudou porque faltou energia.", "A atividade mudará se faltar energia."], "point": "a primeira apresenta causa do fato; a segunda apresenta condição"}, {"pair": ["Quando a reunião terminar, enviaremos a ata.", "Enviaremos a ata para que todos tenham o registro."], "point": "tempo e finalidade respondem a relações diferentes"}]},
+    {"id": "L03-C01", "type": "quick-check", "items": [{"text": "Se houver vaga, chamaremos outro participante.", "options": ["condição", "certeza de que há vaga"], "correctIndex": 0}, {"text": "O evento foi adiado porque o salão alagou.", "options": ["causa", "finalidade"], "correctIndex": 0}, {"text": "Quando a porta abrir, entre.", "options": ["tempo", "contraste"], "correctIndex": 0}]},
+    {"id": "L03-A01", "type": "assessment", "items": [{"stem": "A equipe chegou cedo ____ pudesse organizar a sala.", "options": ["para que", "se", "mas"], "correctIndex": 0, "relation": "finalidade"}, {"stem": "____ o sistema voltar, enviaremos os arquivos.", "options": ["Quando", "Porque", "Mas"], "correctIndex": 0, "relation": "tempo"}, {"stem": "____ a chuva continuar, o jogo será cancelado.", "options": ["Se", "Porque", "E"], "correctIndex": 0, "relation": "condição"}]},
+    {"id": "L03-A02", "type": "assessment-principle", "question": "Em 'Se o ônibus atrasar, avisaremos', o atraso está confirmado?", "options": ["não; é condição", "sim; a frase afirma o atraso"], "correctIndex": 0}
+  ],
+  "assessmentBehavior": {"relationOverTaxonomy": true, "conditionNotCertainty": true, "ttsPolicy": "opcional", "timeLimit": false},
+  "completionEvidence": {"clusters": {"relations": {"evidence": ["L03-C01", "L03-A01"], "rule": "distinguir causa, condição, tempo e finalidade"}, "conditionLimit": {"evidence": ["L03-A02"], "rule": "não converter condição em fato"}}, "completionRule": "os dois agrupamentos são obrigatórios.", "notSufficient": ["decorar nomes", "tratar se como certeza"]}
+}
