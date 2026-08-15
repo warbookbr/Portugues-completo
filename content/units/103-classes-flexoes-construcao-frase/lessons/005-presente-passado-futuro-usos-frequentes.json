@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "id": "N1-U03-L05",
+  "title": "Presente, passado e futuro em usos frequentes",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Relacionar formas verbais frequentes ao tempo da mensagem e reconhecer ordens/pedidos simples como usos verbais, sem exigir o sistema completo de tempos e modos.",
+  "competencies": [
+    "escolher forma verbal compatível com contexto presente, passado ou futuro",
+    "usar marcadores temporais como hoje, ontem e amanhã junto à forma verbal",
+    "perceber que futuro pode aparecer em formas frequentes como vai chegar além de formas simples",
+    "reconhecer ordem/pedido em mensagens claras",
+    "revisar incompatibilidade temporal básica"
+  ],
+  "prerequisites": ["N1-U03-L04"],
+  "limits": ["não exigir paradigma completo", "não sistematizar tempos compostos", "não sistematizar subjuntivo ou modos verbais", "não tratar futuro perifrástico como inferior", "não confundir marcador temporal com verbo"],
+  "media": {"tts": "permitido", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["frases", "feedback"], "purpose": "apoio"}], "generatedVisualResources": [{"type": "UI_RENDERED_TIME_CONTEXT_MATCH", "locations": ["L05-B01", "L05-C01", "L05-A01"], "purpose": "ligar tempo contextual e forma verbal"}, {"type": "UI_RENDERED_MESSAGE_FUNCTION", "locations": ["L05-B02", "L05-A02"], "purpose": "reconhecer ordem/pedido sem taxonomia completa"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "tempo e função podem ser avaliados em contexto escrito."},
+  "sequence": [
+    {"id": "L05-B01", "type": "demonstration", "sets": [{"context": "hoje", "sentence": "Hoje Ana trabalha em casa.", "form": "trabalha"}, {"context": "ontem", "sentence": "Ontem Ana trabalhou em casa.", "form": "trabalhou"}, {"context": "amanhã", "sentence": "Amanhã Ana vai trabalhar em casa.", "form": "vai trabalhar"}], "teachingPoint": "o tempo da mensagem resulta da relação entre contexto e forma verbal"},
+    {"id": "L05-B02", "type": "function-demonstration", "examples": [{"sentence": "Feche a porta, por favor.", "function": "pedido/instrução"}, {"sentence": "Envie o formulário até sexta-feira.", "function": "orientação/ordem em contexto"}], "limit": "não nomear modos verbais como requisito"},
+    {"id": "L05-C01", "type": "quick-check-time", "items": [{"prompt": "Ontem eles ____ cedo.", "options": ["chegaram", "chegam", "vão chegar"], "correctIndex": 0}, {"prompt": "Amanhã nós ____ o documento.", "options": ["vamos enviar", "enviamos ontem", "enviava"], "correctIndex": 0}, {"prompt": "Hoje a loja ____ às nove.", "options": ["abre", "abriu ontem", "vai abrir amanhã"], "correctIndex": 0}]},
+    {"id": "L05-A01", "type": "assessment-time", "items": [{"prompt": "Ontem o técnico ____ o equipamento.", "options": ["revisou", "revisa", "vai revisar"], "correctIndex": 0}, {"prompt": "Amanhã o técnico ____ o equipamento.", "options": ["vai revisar", "revisou", "revisa ontem"], "correctIndex": 0}, {"prompt": "Agora o técnico ____ o equipamento.", "options": ["revisa", "revisou ontem", "vai revisar amanhã"], "correctIndex": 0}]},
+    {"id": "L05-A02", "type": "assessment-message-function", "items": [{"sentence": "Por favor, aguarde aqui.", "options": ["pedido/orientação", "relato de passado", "nome de objeto"], "correctIndex": 0}, {"sentence": "Entregue o crachá na saída.", "options": ["instrução", "descrição de característica", "pergunta"], "correctIndex": 0}]}
+  ],
+  "assessmentBehavior": {"contextRequired": true, "acceptFrequentFuturePeriphrasis": true, "ttsPolicy": "permitido", "timeLimit": false},
+  "completionEvidence": {"clusters": {"timeCompatibility": {"evidence": ["L05-A01"], "rule": "acertar os três contextos temporais"}, "orderRequest": {"evidence": ["L05-A02"], "rule": "interpretar os dois usos"}}, "completionRule": "os dois agrupamentos são obrigatórios.", "notSufficient": ["decorar nomes dos tempos", "usar marcador temporal sem forma compatível", "exigir futuro simples como única forma válida"]}
+}
