@@ -1,0 +1,136 @@
+{
+  "schemaVersion": 1,
+  "id": "N2-U01-V01",
+  "type": "integrated-unit-verification",
+  "title": "Verificação integrada — Nível 2, Unidade 1",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Verificar transferência integrada de leitura de vários parágrafos: estrutura e hierarquia, integração de explícitos, referenciação, relações lógicas, inferência com pistas distribuídas, perspectiva/evidência, informação insuficiente e síntese própria.",
+  "prerequisites": ["N2-U01-L01", "N2-U01-L02", "N2-U01-L03", "N2-U01-L04", "N2-U01-L05", "N2-U01-L06", "N2-U01-L07", "N2-U01-L08", "N2-U01-L09", "N2-U01-L10"],
+  "designPrinciples": ["usar texto novo", "manter texto disponível para releitura", "exigir evidência para inferência/perspectiva", "incluir informação insuficiente legítima", "não confundir integração de explícitos com inferência", "não usar velocidade ou número de releituras como nota", "síntese própria é obrigatória e não recebe falsa validação semântica automática"],
+  "limits": ["sem conhecimento externo necessário", "sem ironia sofisticada", "sem intenção autoral secreta", "sem memória como alvo", "sem resposta aberta validada apenas por palavras-chave"],
+  "media": {"tts": "opcional; texto pode ser lido sob demanda quando decodificação visual não é alvo", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["texto-base", "instruções", "feedback"], "purpose": "apoio de acesso"}], "generatedVisualResources": [{"type": "UI_RENDERED_PARAGRAPH_READING_CARD", "locations": ["V01-T01", "V01-Q01", "V01-Q02", "V01-Q03", "V01-Q04", "V01-Q05", "V01-Q06", "V01-Q07", "V01-P01"], "purpose": "texto permanentemente consultável"}, {"type": "UI_RENDERED_MULTI_EVIDENCE_LINK", "locations": ["V01-Q02", "V01-Q05", "V01-Q06"], "purpose": "associar resposta a mais de um trecho"}, {"type": "UI_RENDERED_EVIDENCE_SELECTOR", "locations": ["V01-Q05", "V01-Q06"], "purpose": "selecionar evidência pertinente"}, {"type": "UI_RENDERED_OPEN_SUMMARY_EDITOR", "locations": ["V01-P01"], "purpose": "registrar síntese própria"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória; síntese aberta exige avaliador confiável para validação semântica plena", "decisionRationale": "todos os alvos são textuais e podem ser avaliados com texto acessível, seleção de evidência e produção registrada."},
+  "sourceText": {
+    "id": "V01-T01",
+    "title": "Ateliê aberto aos domingos",
+    "sourceLabel": "texto didático original do curso",
+    "paragraphs": [
+      "O Centro de Artes do bairro iniciou um projeto-piloto de ateliê aberto aos domingos. Durante oito semanas, pessoas cadastradas podem reservar gratuitamente uma bancada de cerâmica para praticar técnicas já conhecidas. O espaço não oferece aula nesse horário, mas um monitor permanece disponível para orientar sobre uso seguro dos equipamentos.",
+      "No primeiro mês, cada domingo teve uma sessão pela manhã e outra à tarde, com dezesseis vagas em cada horário. As sessões da tarde ocuparam todas as vagas nas quatro semanas. Pela manhã, a ocupação variou entre oito e dez participantes.",
+      "Para o segundo mês do teste, o centro decidiu transformar duas das quatro sessões da manhã em sessões adicionais à tarde. Pelo menos duas manhãs continuarão disponíveis. As regras de cadastro e o momento de abertura das reservas não mudaram.",
+      "A coordenadora do projeto afirmou que o ajuste permite oferecer mais vagas no período de maior procura sem eliminar completamente a opção matinal. Uma participante comentou que prefere a manhã porque o espaço fica mais tranquilo e disse esperar que esse horário continue existindo.",
+      "Ao fim das oito semanas, a equipe comparará ocupação, desistências e comentários dos usuários antes de decidir o formato do próximo semestre. Até agora, o centro não anunciou se manterá o projeto de forma permanente nem se comprará novos equipamentos."
+    ]
+  },
+  "items": [
+    {
+      "id": "V01-Q01",
+      "cluster": "structureHierarchy",
+      "type": "paragraph-function-and-main-information",
+      "items": [
+        {"question": "Qual é a função principal do primeiro parágrafo?", "options": ["apresentar o projeto-piloto e explicar como funciona", "informar a decisão para o próximo semestre", "comparar opiniões sobre o turno da manhã"], "correctIndex": 0},
+        {"question": "O que o segundo parágrafo acrescenta?", "options": ["dados de ocupação dos horários no primeiro mês", "uma regra nova de segurança", "a decisão definitiva do projeto"], "correctIndex": 0},
+        {"question": "Qual informação é central para compreender a mudança do segundo mês?", "options": ["as tardes lotaram e parte das manhãs será transferida para a tarde", "o monitor orienta sobre segurança", "a participante gosta de tranquilidade"], "correctIndex": 0}
+      ]
+    },
+    {
+      "id": "V01-Q02",
+      "cluster": "explicitIntegration",
+      "type": "multi-paragraph-explicit",
+      "question": "Uma pessoa quer usar o ateliê no segundo mês. O que o texto informa sobre custo, reserva e horários?",
+      "options": [
+        "o uso é gratuito para cadastrados; as regras e abertura das reservas não mudam; haverá mais sessões à tarde e pelo menos duas manhãs permanecerão",
+        "o uso passa a ser pago e todas as manhãs são canceladas",
+        "não será mais necessário cadastro e o centro funcionará apenas à noite"
+      ],
+      "correctIndex": 0,
+      "evidenceParagraphs": [1, 3],
+      "classification": "integração de informações explícitas"
+    },
+    {
+      "id": "V01-Q03",
+      "cluster": "reference",
+      "type": "reference-chain",
+      "items": [
+        {"target": "o ajuste", "paragraph": 4, "options": ["a transformação de parte das sessões da manhã em sessões adicionais à tarde", "a compra de novos equipamentos", "o encerramento do projeto"], "correctIndex": 0},
+        {"target": "esse horário", "paragraph": 4, "options": ["o horário da manhã", "o próximo semestre", "o horário de cadastro"], "correctIndex": 0},
+        {"target": "o formato", "paragraph": 5, "options": ["a organização futura do projeto/horários", "o formato físico das bancadas", "a forma do equipamento de cerâmica"], "correctIndex": 0}
+      ]
+    },
+    {
+      "id": "V01-Q04",
+      "cluster": "logicalRelations",
+      "type": "relation-set",
+      "items": [
+        {"question": "Qual relação existe entre os dados do segundo parágrafo e a mudança do terceiro?", "options": ["a procura maior à tarde funciona como motivo para redistribuir parte das sessões", "a mudança prova que as manhãs estavam sempre vazias", "não existe relação textual"], "correctIndex": 0},
+        {"text": "mais vagas no período de maior procura sem eliminar completamente a opção matinal", "relation": "contraste/equilíbrio entre ampliar tardes e manter manhãs", "options": ["contraste/equilíbrio", "sequência sem relação", "condição impossível"], "correctIndex": 0},
+        {"text": "antes de decidir o formato do próximo semestre", "question": "A decisão já está tomada?", "options": ["não; a equipe ainda avaliará dados", "sim; o próximo formato é definitivo"], "correctIndex": 0}
+      ]
+    },
+    {
+      "id": "V01-Q05",
+      "cluster": "distributedInference",
+      "type": "inference-with-evidence",
+      "question": "Qual inferência é mais bem sustentada sobre a procura pelos dois horários no primeiro mês?",
+      "options": ["o período da tarde teve procura maior do que o da manhã", "ninguém queria usar o ateliê pela manhã", "a equipe proibiu reservas matinais"],
+      "correctIndex": 0,
+      "requiredEvidence": ["tarde: 16/16 vagas nas quatro semanas", "manhã: 8 a 10 de 16 vagas"],
+      "guardRail": "maior procura não permite dizer que ninguém prefere manhã"
+    },
+    {
+      "id": "V01-Q06",
+      "cluster": "viewpointEvidence",
+      "type": "viewpoint-and-evidence",
+      "items": [
+        {"question": "Como a coordenadora apresenta a mudança?", "options": ["como ajuste para aumentar vagas no período mais procurado preservando opção matinal", "como cancelamento completo das manhãs", "como compra imediata de novos equipamentos"], "correctIndex": 0, "evidence": "'mais vagas no período de maior procura sem eliminar completamente a opção matinal'"},
+        {"question": "Qual é a perspectiva da participante?", "options": ["valoriza a manhã por considerar o espaço mais tranquilo e quer que ela continue", "é contra qualquer sessão à tarde", "quer encerrar o projeto"], "correctIndex": 0, "evidence": "prefere a manhã porque o espaço fica mais tranquilo"},
+        {"question": "As duas perspectivas são necessariamente incompatíveis?", "options": ["não; a coordenadora mantém manhãs e a participante pede justamente que a opção continue", "sim; qualquer diferença de ênfase é contradição"], "correctIndex": 0}
+      ]
+    },
+    {
+      "id": "V01-Q07",
+      "cluster": "insufficientInformation",
+      "type": "explicit-inference-insufficient",
+      "items": [
+        {"statement": "o centro manterá permanentemente o projeto no próximo semestre", "options": ["não há informação suficiente", "está confirmado", "está cancelado"], "correctIndex": 0},
+        {"statement": "serão comprados exatamente quatro novos equipamentos", "options": ["não há informação suficiente", "é inferência forte", "está explícito"], "correctIndex": 0},
+        {"statement": "as sessões da tarde ocuparam todas as vagas no primeiro mês", "options": ["está explícito", "é apenas inferência", "não é informado"], "correctIndex": 0}
+      ]
+    },
+    {
+      "id": "V01-P01",
+      "cluster": "ownSynthesis",
+      "type": "open-synthesis",
+      "prompt": "Escreva uma síntese curta explicando como funcionou o primeiro mês, qual mudança será testada no segundo e o que ainda não foi decidido para o futuro do projeto.",
+      "requiredContentSelection": ["projeto-piloto gratuito para cadastrados", "tarde teve ocupação maior que manhã", "duas manhãs viram sessões extras à tarde, mantendo pelo menos duas manhãs", "decisão do próximo semestre ainda depende de avaliação"],
+      "recordResponse": true,
+      "automaticValidation": false,
+      "selfCheck": ["preservei a mudança principal?", "liguei a mudança aos dados de procura sem exagerar?", "deixei claro o que ainda não foi decidido?", "usei formulação própria?", "não acrescentei informação externa?"]
+    }
+  ],
+  "assessmentBehavior": {"textVisibility": "sempre disponível", "rereading": "permitida", "evidenceRequired": ["V01-Q05", "V01-Q06"], "openSynthesisAutoValidated": false, "ttsPolicy": "opcional", "timeLimit": false},
+  "completionEvidence": {
+    "clusters": {
+      "structureHierarchy": {"evidence": ["V01-Q01"], "rule": "resolver os três itens de estrutura/hierarquia"},
+      "explicitIntegration": {"evidence": ["V01-Q02"], "rule": "combinar corretamente os parágrafos 1 e 3"},
+      "reference": {"evidence": ["V01-Q03"], "rule": "resolver as três retomadas"},
+      "logicalRelations": {"evidence": ["V01-Q04"], "rule": "resolver os três itens sem confundir decisão futura com fato"},
+      "distributedInference": {"evidence": ["V01-Q05"], "rule": "selecionar a inferência e as duas pistas quantitativas pertinentes"},
+      "viewpointEvidence": {"evidence": ["V01-Q06"], "rule": "identificar as duas perspectivas e reconhecer compatibilidade possível"},
+      "insufficientInformation": {"evidence": ["V01-Q07"], "rule": "distinguir insuficiência de explícito nos três itens"},
+      "ownSynthesis": {"evidence": ["V01-P01"], "rule": "síntese própria registrada + autochecagem; validação semântica plena depende de avaliador confiável"}
+    },
+    "completionRule": "todos os oito agrupamentos são obrigatórios; síntese própria não pode ser compensada por acertos fechados.",
+    "notSufficient": ["responder rápido", "decorar o texto", "inferir sem pistas", "usar 'não há informação' para evitar análise", "copiar trechos como síntese"]
+  },
+  "remediationRoutes": [
+    {"when": "estrutura/hierarquia", "review": ["N2-U01-L01", "N2-U01-L02", "N2-U01-L03"]},
+    {"when": "integração", "review": ["N2-U01-L04"]},
+    {"when": "referência", "review": ["N2-U01-L05"]},
+    {"when": "relações", "review": ["N2-U01-L06"]},
+    {"when": "inferência", "review": ["N2-U01-L07"]},
+    {"when": "perspectiva", "review": ["N2-U01-L08"]},
+    {"when": "insuficiência", "review": ["N2-U01-L09"]},
+    {"when": "síntese", "review": ["N2-U01-L10"]}
+  ]
+}
