@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 1,
+  "id": "N0-U06-L08",
+  "title": "Maneiras diferentes de usar o português",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Reconhecer introdutoriamente que o português pode variar entre pessoas, lugares, grupos e situações, distinguindo diferença linguística de erro automático sem concluir que qualquer forma é igualmente adequada em qualquer contexto.",
+  "competencies": [
+    "reconhecer diferentes formulações legítimas para funções semelhantes",
+    "perceber variação lexical e de tratamento em exemplos acessíveis",
+    "rejeitar diferença igual a erro como regra automática",
+    "reconhecer que convenções ensinadas continuam relevantes",
+    "considerar contexto e finalidade ao avaliar adequação"
+  ],
+  "prerequisites": ["N0-U06-L07"],
+  "limits": [
+    "não exigir termos como dialeto, variedade regional, social ou histórica",
+    "não imitar sotaques nem usar caricaturas de fala",
+    "não transformar a lição em teoria sociolinguística",
+    "não ensinar que toda forma serve igualmente em qualquer situação",
+    "não usar variação para apagar convenções gráficas já ensinadas",
+    "não classificar grupos ou pessoas como falantes melhores ou piores"
+  ],
+  "media": {"tts": "instruções e exemplos em voz neutra do dispositivo; não imitar variedades ou sotaques", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {
+    "curatedMedia": [],
+    "runtimeResources": [{"type": "TTS_OK", "locations": ["instruções", "exemplos", "feedback"], "purpose": "apoio de acesso, sem representar sotaques"}],
+    "generatedVisualResources": [
+      {"type": "UI_RENDERED_VARIATION_COMPARISON", "locations": ["L08-B02", "L08-B03", "L08-C01", "L08-A01"], "purpose": "comparar formas e contextos sem hierarquia automática"},
+      {"type": "UI_RENDERED_PRINCIPLE_CHECK", "locations": ["L08-A02"], "purpose": "testar simultaneamente diversidade e adequação"}
+    ],
+    "productionQueueRequired": false,
+    "publicationDependency": "nenhuma nova mídia humana obrigatória",
+    "decisionRationale": "o conteúdo deve evitar encenações estereotipadas; comparação textual é mais controlada e respeitosa."
+  },
+  "sequence": [
+    {"id": "L08-B01", "type": "objective", "text": "As pessoas podem usar palavras e formas diferentes para comunicar significados parecidos. Diferença não é automaticamente erro, mas contexto e convenções continuam importando."},
+    {
+      "id": "L08-B02",
+      "type": "demonstration",
+      "focus": "different-greetings",
+      "examples": ["Oi.", "Olá.", "Bom dia."],
+      "explanation": "São maneiras diferentes de cumprimentar. A escolha pode depender do momento e da situação."
+    },
+    {
+      "id": "L08-B03",
+      "type": "demonstration",
+      "focus": "lexical-variation",
+      "examples": ["Em diferentes lugares e grupos, uma mesma coisa pode receber palavras diferentes.", "O curso não exige que uma palavra regional seja abandonada para reconhecer outra forma usada em outro contexto."],
+      "explanation": "Aprender outras formas amplia a compreensão; não precisa transformar a forma familiar em defeito."
+    },
+    {
+      "id": "L08-C01",
+      "type": "quick-check",
+      "situation": "Duas pessoas cumprimentam alguém: uma diz 'Oi' e outra diz 'Olá'.",
+      "question": "Qual conclusão é adequada?",
+      "options": ["As duas formas podem funcionar como cumprimento.", "Uma das pessoas obrigatoriamente falou português errado.", "Nenhuma das formas é português."],
+      "correctIndex": 0
+    },
+    {
+      "id": "L08-B04",
+      "type": "guard-rail",
+      "examples": [
+        {"principle": "diferença ≠ automaticamente erro", "meaning": "variedade não deve ser julgada por preconceito"},
+        {"principle": "variação ≠ qualquer forma adequada em qualquer situação", "meaning": "contexto, finalidade e convenções continuam orientando escolhas"}
+      ]
+    },
+    {
+      "id": "L08-A01",
+      "type": "assessment",
+      "situation": "Uma pessoa conhece a palavra usada em sua família para determinado objeto e encontra outra palavra para o mesmo objeto em um texto de outra região.",
+      "question": "Qual atitude combina com o que foi ensinado?",
+      "options": ["compreender que formas diferentes podem coexistir e aprender o sentido da nova palavra", "concluir que toda palavra diferente da sua é erro", "decidir que nenhuma convenção de escrita importa"],
+      "correctIndex": 0
+    },
+    {
+      "id": "L08-A02",
+      "type": "assessment-principles",
+      "question": "Selecione a afirmação que preserva os dois princípios da lição.",
+      "options": [
+        "O português varia, e ainda assim situação, finalidade e convenções podem orientar a escolha de uma forma.",
+        "Só existe uma maneira legítima de usar português em qualquer lugar.",
+        "Como existe variação, qualquer forma serve igualmente em toda situação."
+      ],
+      "correctIndex": 0
+    }
+  ],
+  "completionEvidence": {
+    "clusters": {
+      "recognizeVariation": {"evidence": ["L08-C01", "L08-A01"], "rule": "reconhecer diferença linguística sem erro automático"},
+      "balanceVariationAndAdequacy": {"evidence": ["L08-A02"], "rule": "preservar simultaneamente diversidade, contexto e convenções"}
+    },
+    "completionRule": "os dois agrupamentos são obrigatórios.",
+    "notSufficient": ["memorizar nomes de variedades", "tratar diferença como inferioridade", "usar variação para dizer que contexto e convenções não importam"]
+  }
+}
