@@ -35,7 +35,7 @@ currículo fechado
 - **M2 concluído** — 10 áreas em `docs/areas-nivel-1.md`;
 - **M3 concluído** — 7 unidades em `docs/unidades-nivel-1.md`;
 - **M4 concluído** — 64 lições + 7 verificações integradas em `docs/licoes-nivel-1.md` e documentos U1–U7;
-- **M5 em andamento** — **U1, U2 e U3 concluídas**; U4–U7 pendentes.
+- **M5 em andamento** — **U1, U2, U3 e U4 concluídas**; U5–U7 pendentes.
 
 A passagem N0→N1 foi auditada em `docs/transicao-n0-n1.md`.
 
@@ -51,15 +51,11 @@ A passagem N0→N1 foi auditada em `docs/transicao-n0-n1.md`.
 9 lições + N1-U01-V01
 ```
 
-Cobertura: objetivo de leitura; assunto/finalidade/principal; explícitos; referenciação; relações; inferência/insuficiência; multimodalidade acessível; autoria/fonte/opinião/razão; resumo próprio.
-
 ### U2 — Palavras: ortografia, acentuação e sentidos — CONCLUÍDA
 
 ```text
 10 lições + N1-U02-V01
 ```
-
-Cobertura: regularidades ortográficas delimitadas; tonicidade; primeira sistematização de acentuação; relações de sentido; polissemia/precisão/figuratividade transparente; famílias/formação introdutória; consulta contextual.
 
 Escopo normativo: `docs/referencias-ortografia-nivel-1.md`.
 
@@ -69,29 +65,40 @@ Escopo normativo: `docs/referencias-ortografia-nivel-1.md`.
 10 lições + N1-U03-V01
 ```
 
+### U4 — Da frase ao parágrafo: conectando e pontuando ideias — CONCLUÍDA
+
+```text
+9 lições + N1-U04-V01
+```
+
 Cobertura:
 
-- classes como ferramentas de funcionamento, não definições isoladas;
-- substantivos e artigos em uso;
-- adjetivos, gênero/número e limite de adjetivos sem variação de gênero;
-- verbos como ação, estado ou acontecimento; pessoa e número em formas frequentes;
-- presente/passado/futuro em usos frequentes e primeiro contato funcional com ordem/pedido;
-- pronomes pessoais, possessivos e demonstrativos com foco em referência e ambiguidade;
-- frase x oração sem fórmula rígida;
-- sujeito/predicado em casos básicos com contraexemplo sem sujeito explícito a inventar;
-- expansão/complementação conforme finalidade, sem transitividade formal;
-- concordância nominal/verbal básica e revisão orientada.
+- parágrafo como bloco gráfico/de sentido sem tamanho fixo;
+- continuidade, ordenação, frase intrusa e contradição apenas quando sustentada;
+- referência por pronome, expressão nominal e repetição funcional;
+- adição, sequência, causa, resultado, contraste e explicação com conectores escolhidos pelo sentido;
+- ponto final, interrogação e exclamação em textos;
+- vírgula apenas nos usos estudados: enumeração e chamamento direto;
+- dois-pontos para lista anunciada, explicação e fala em casos transparentes;
+- fala/citação simples com travessão ou aspas;
+- revisão em passes: sentido → continuidade/referência → conectores → pontuação;
+- verificação integrada com tarefa real de edição.
 
 Guard rails consolidados:
 
-- classe não é decidida apenas pelo significado isolado;
-- verbo não é somente palavra de ação;
-- nem todo adjetivo muda de forma por gênero;
-- demonstrativos e formas de tratamento não recebem regra regional artificialmente rígida;
-- nem toda frase precisa ter verbo;
-- sujeito/predicado não equivalem a `alguém faz alguma coisa`;
-- frase mais longa não é automaticamente melhor;
-- produção aberta de revisão não recebe falsa validação automática.
+- parágrafo não tem número obrigatório de frases;
+- repetição não é erro automático;
+- conector é escolhido pela relação, não para enfeitar o texto;
+- sequência temporal não é automaticamente causa;
+- pontuação não é regra de respiração;
+- não inserir vírgula entre sujeito simples e verbo por analogia com chamamento;
+- somente os usos de pontuação efetivamente ensinados são avaliados;
+- versões equivalentes de revisão são aceitas quando preservam sentido e convenções estudadas.
+
+Revisões implementadas antes do fechamento:
+
+- modelos de edição foram tornados mais naturais (`O curso também oferece...`, `Os participantes também devem...`);
+- exemplo de retomada nominal foi explicitado para reduzir ambiguidade conceitual.
 
 Nenhuma nova mídia humana obrigatória foi criada.
 
@@ -104,20 +111,21 @@ NÍVEL 1 — M1–M4 concluídos
     ├── U1 ✓
     ├── U2 ✓
     ├── U3 ✓
-    └── U4 — PRÓXIMO SUBPASSO
+    ├── U4 ✓
+    └── U5 — PRÓXIMO SUBPASSO
 ```
 
 Próximo marco:
 
 ```text
-N1-U04 — Da frase ao parágrafo: conectando e pontuando ideias
-9 lições + verificação integrada
+N1-U05 — Produzindo textos curtos para diferentes finalidades
+10 lições + verificação integrada
 ```
 
 Depois:
 
 ```text
-U5 → U6 → U7
+U6 → U7
 → verificação de saída do N1
 → checkpoint N1→N2
 ```
@@ -132,6 +140,8 @@ U5 → U6 → U7
 6. Em ortografia/acentuação, ensinar regularidades com escopo explícito e nunca transformar padrão parcial em regra universal.
 7. Terminologia gramatical no N1 deve funcionar como ferramenta de compreensão/revisão, não como fim classificatório.
 8. Em sintaxe básica, apresentar contraexemplos cedo quando uma regra simplificada puder virar falsa generalização.
+9. Em pontuação, ensinar função textual/sintática; não usar pausa respiratória como regra.
+10. Em revisão, preservar trechos corretos e aceitar soluções equivalentes quando a competência não exige uma única formulação.
 
 ## Dependências não curriculares ainda abertas
 
