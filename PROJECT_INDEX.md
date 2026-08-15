@@ -86,7 +86,8 @@ Ler:
 - `docs/mapa-niveis-1-4.md` para objetivo, competências, grandes áreas, responsabilidades e limites dos Níveis 1–4 em `M1`;
 - `docs/matriz-progressao-global.md` para verificar a progressão transversal dos grandes domínios do português entre N0–N4;
 - `docs/unidades-nivel-0.md` quando o trabalho envolver as unidades do Nível 0;
-- `docs/licoes-nivel-0.md` quando o trabalho envolver lições já dimensionadas do Nível 0;
+- `docs/licoes-nivel-0.md` para a arquitetura consolidada das lições das Unidades 1–5;
+- `docs/licoes-nivel-0-unidade-6.md` quando o trabalho envolver a arquitetura ou o desenvolvimento da Unidade 6;
 - `docs/conteudo.md`.
 
 Usar:
@@ -103,7 +104,8 @@ Ler:
 - `docs/mapa-curso.md`;
 - `docs/mapa-niveis-1-4.md` e `docs/matriz-progressao-global.md` quando a decisão puder afetar níveis superiores ou distribuição global de cobertura;
 - `docs/unidades-nivel-0.md` para unidades já detalhadas do Nível 0;
-- `docs/licoes-nivel-0.md` para lições já consolidadas do Nível 0;
+- `docs/licoes-nivel-0.md` para U1–U5;
+- `docs/licoes-nivel-0-unidade-6.md` para U6;
 - `docs/conteudo.md`;
 - `docs/arquitetura.md` quando houver mídia ou limitações técnicas;
 - `producao-midia/README.md` quando a lição exigir mídia produzida/curada;
@@ -208,7 +210,8 @@ Workflow:
 - `docs/mapa-niveis-1-4.md` — camada `M1` dos Níveis 1–4.
 - `docs/matriz-progressao-global.md` — progressão transversal e revisão de cobertura dos grandes domínios entre N0–N4.
 - `docs/unidades-nivel-0.md` — detalhamento pedagógico consolidado das unidades do Nível 0.
-- `docs/licoes-nivel-0.md` — dimensionamento pedagógico consolidado das lições já definidas do Nível 0.
+- `docs/licoes-nivel-0.md` — dimensionamento pedagógico das lições das Unidades 1–5 do Nível 0.
+- `docs/licoes-nivel-0-unidade-6.md` — dimensionamento pedagógico da Unidade 6 e seu limite técnico de oralidade.
 - `docs/conteudo.md` — estrutura pedagógica e uso de mídia.
 - `docs/validacoes.md` — estratégia, severidade e roadmap dos guard rails automáticos.
 
@@ -332,8 +335,11 @@ Protocolo de execução contínua
 Detalhamento das unidades do Nível 0
 → docs/unidades-nivel-0.md
 
-Detalhamento das lições do Nível 0
+Detalhamento das lições do Nível 0 — U1–U5
 → docs/licoes-nivel-0.md
+
+Detalhamento das lições do Nível 0 — U6
+→ docs/licoes-nivel-0-unidade-6.md
 
 Forma de ensinar e usar mídia
 → docs/conteudo.md
