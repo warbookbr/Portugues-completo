@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 1,
+  "id": "N0-U05-L09",
+  "title": "Ponto final, interrogação e exclamação em uso",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Consolidar usos funcionais de ponto final, interrogação e exclamação em mensagens simples, relacionando sinal, forma e contexto sem criar uma tabela rígida em que cada intenção possua um único sinal obrigatório.",
+  "competencies": [
+    "usar ponto final para encerrar afirmações simples em texto corrido quando apropriado",
+    "usar ponto de interrogação em perguntas diretas simples",
+    "reconhecer usos de exclamação em reação, chamada ou ênfase em contextos claros",
+    "perceber que ordens e pedidos podem aparecer com ponto final ou exclamação dependendo do efeito",
+    "comparar versões com sinais finais diferentes e interpretar mudanças possíveis",
+    "revisar sinal final em exemplos controlados"
+  ],
+  "prerequisites": ["N0-U05-L08", "N0-U03-L08"],
+  "limits": [
+    "não ensinar que exclamação significa gritar",
+    "não ensinar que toda ordem exige ponto de exclamação",
+    "não ensinar que pontuação sozinha determina toda intenção comunicativa",
+    "não aprofundar reticências, ponto e vírgula ou dois-pontos nesta lição",
+    "não exigir classificação formal de tipos de frase"
+  ],
+  "media": {"tts": "instruções, exemplos e feedback quando a entonação exata não determinar a resposta", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {
+    "curatedMedia": [],
+    "runtimeResources": [{"type": "TTS_OK", "locations": ["instruções", "exemplos", "feedback"], "purpose": "apoio geral; a resposta não depende de uma entonação específica"}],
+    "generatedVisualResources": [
+      {"type": "UI_RENDERED_PUNCTUATION_CHOICES", "locations": ["L09-B02", "L09-C01", "L09-A01", "L09-A02"], "purpose": "selecionar e comparar sinais em texto real"},
+      {"type": "UI_RENDERED_SENTENCE_COMPARISON", "locations": ["L09-B03", "L09-B04"], "purpose": "comparar efeitos de pontuação sem transformar o sinal em regra isolada"}
+    ],
+    "productionQueueRequired": false,
+    "publicationDependency": "nenhuma nova mídia humana obrigatória",
+    "decisionRationale": "o conteúdo é gráfico e contextual; texto e TTS opcional são suficientes."
+  },
+  "sequence": [
+    {
+      "id": "L09-B01",
+      "type": "objective",
+      "focus": "punctuation-in-context",
+      "text": "Sinais finais ajudam a organizar e interpretar a escrita, mas trabalham junto com as palavras e com a situação."
+    },
+    {
+      "id": "L09-B02",
+      "type": "demonstration",
+      "focus": "basic-final-signs",
+      "items": [
+        {"message": "A aula começa às nove", "context": "informação simples", "suggestedSign": "."},
+        {"message": "Onde fica a saída", "context": "pergunta direta", "suggestedSign": "?"},
+        {"message": "Que surpresa", "context": "reação clara", "suggestedSign": "!"}
+      ],
+      "explanation": "O sinal participa da interpretação, mas o contexto continua importante."
+    },
+    {
+      "id": "L09-C01",
+      "type": "quick-check-set",
+      "focus": "choose-final-sign",
+      "items": [
+        {"message": "Você vem amanhã", "context": "uma pessoa está perguntando se a outra virá", "options": ["?", ".", "!"], "correctIndex": 0},
+        {"message": "O mercado fecha às seis", "context": "aviso informativo simples", "options": [".", "?", "!"], "correctIndex": 0}
+      ]
+    },
+    {
+      "id": "L09-B03",
+      "type": "comparison",
+      "focus": "same-words-different-effect",
+      "versions": ["Você chegou.", "Você chegou?", "Você chegou!"],
+      "explanation": "Os sinais podem contribuir para interpretações diferentes, mas a situação e a forma de uso continuam relevantes."
+    },
+    {
+      "id": "L09-B04",
+      "type": "guard-rail",
+      "focus": "order-not-equal-exclamation",
+      "versions": ["Feche a porta.", "Feche a porta!"],
+      "explanation": "As duas podem funcionar como ordem. A exclamação pode acrescentar ênfase, mas não é obrigatória para toda ordem."
+    },
+    {
+      "id": "L09-A01",
+      "type": "assessment-set",
+      "focus": "punctuation-transfer",
+      "items": [
+        {"message": "Qual é o seu nome", "context": "pergunta direta", "options": ["?", ".", "!"], "correctIndex": 0},
+        {"message": "A reunião foi cancelada", "context": "informação em aviso", "options": [".", "?", "!"], "correctIndex": 0},
+        {"message": "Cuidado", "context": "alerta forte em situação de risco", "options": ["!", "?", "."], "correctIndex": 0}
+      ]
+    },
+    {
+      "id": "L09-A02",
+      "type": "assessment-interpretation",
+      "focus": "avoid-rigid-rule",
+      "question": "Qual afirmação está de acordo com o que foi ensinado?",
+      "options": [
+        "Uma ordem pode aparecer com ponto final ou exclamação, conforme o contexto e o efeito.",
+        "Toda ordem precisa terminar com exclamação.",
+        "Um ponto de interrogação transforma qualquer sequência de palavras em uma boa pergunta."
+      ],
+      "correctIndex": 0
+    }
+  ],
+  "completionEvidence": {
+    "clusters": {
+      "basicUse": {"evidence": ["L09-C01", "L09-A01"], "rule": "acertar pelo menos quatro dos cinco itens de uso básico"},
+      "contextualUnderstanding": {"evidence": ["L09-A02"], "rule": "rejeitar a regra rígida de que cada função exige sempre um único sinal"}
+    },
+    "completionRule": "os dois agrupamentos são obrigatórios.",
+    "notSufficient": ["decorar ponto=afirmação e exclamação=ordem sem contexto", "usar exclamação como sinônimo de grito", "pontuar sem compreender a mensagem"]
+  }
+}
