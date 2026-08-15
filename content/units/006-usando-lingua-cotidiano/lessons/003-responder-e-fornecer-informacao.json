@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "id": "N0-U06-L03",
+  "title": "Responder e fornecer informação",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Responder perguntas simples e fornecer informação suficiente para a necessidade apresentada, sem alongar a resposta desnecessariamente nem exigir uma única formulação correta.",
+  "competencies": [
+    "identificar qual informação uma pergunta solicita",
+    "selecionar resposta suficiente e relacionada",
+    "distinguir resposta insuficiente de detalhe irrelevante",
+    "produzir resposta curta própria em situação cotidiana",
+    "reconhecer que diferentes formulações podem fornecer a mesma informação"
+  ],
+  "prerequisites": ["N0-U06-L02", "N0-U05-L05"],
+  "limits": [
+    "não exigir resposta longa quando uma informação curta resolve a necessidade",
+    "não tratar detalhe extra como prova de resposta melhor",
+    "não exigir formalidade fixa",
+    "não validar automaticamente resposta aberta por correspondência literal",
+    "não exigir conversação sustentada"
+  ],
+  "media": {"tts": "perguntas, situações, opções e feedback", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {
+    "curatedMedia": [],
+    "runtimeResources": [{"type": "TTS_OK", "locations": ["perguntas", "situações", "feedback"], "purpose": "permitir prática também com pergunta ouvida"}],
+    "generatedVisualResources": [
+      {"type": "UI_RENDERED_QUESTION_NEED_CARD", "locations": ["L03-B02", "L03-C01", "L03-A01", "L03-A02"], "purpose": "manter clara a informação pedida"},
+      {"type": "UI_RENDERED_OPEN_RESPONSE_FIELD", "locations": ["L03-A02"], "purpose": "resposta própria curta"},
+      {"type": "UI_RENDERED_SELF_REVIEW_CHECKLIST", "locations": ["L03-A02"], "purpose": "verificar suficiência da resposta"}
+    ],
+    "productionQueueRequired": false,
+    "publicationDependency": "nenhuma nova mídia humana obrigatória",
+    "decisionRationale": "pergunta e resposta podem ser praticadas com texto/TTS; o alvo é suficiência da informação."
+  },
+  "sequence": [
+    {"id": "L03-B01", "type": "objective", "text": "Uma boa resposta fornece a informação que foi pedida. Nem toda resposta precisa ser longa."},
+    {
+      "id": "L03-B02",
+      "type": "demonstration",
+      "question": "Que horas começa a reunião?",
+      "responses": [
+        {"text": "Às três.", "adequate": true},
+        {"text": "Na sala 2.", "adequate": false, "reason": "responde ao local, não ao horário"},
+        {"text": "Às três. A sala tem quatro janelas e fica perto da escada.", "adequate": true, "note": "contém a resposta, mas os detalhes extras não eram necessários"}
+      ]
+    },
+    {
+      "id": "L03-C01",
+      "type": "quick-check",
+      "question": "Onde fica o banheiro?",
+      "options": ["No fim do corredor, à direita.", "Às nove horas.", "O prédio é antigo."],
+      "correctIndex": 0
+    },
+    {
+      "id": "L03-B03",
+      "type": "contrast",
+      "question": "Qual é o número da sala?",
+      "insufficient": "É no segundo andar.",
+      "sufficient": "É a sala 12, no segundo andar.",
+      "explanation": "A primeira resposta pode ser útil, mas não fornece o número pedido."
+    },
+    {
+      "id": "L03-A01",
+      "type": "assessment-selection",
+      "question": "Quando o ônibus sai?",
+      "options": ["Às sete e meia.", "Da plataforma 3.", "Ele é azul."],
+      "correctIndex": 0
+    },
+    {
+      "id": "L03-A02",
+      "type": "assessment-open",
+      "situation": "Uma pessoa pergunta: 'Onde posso retirar o documento?'. A informação disponível é: balcão 4.",
+      "responseMode": "free-text",
+      "selfReview": ["Minha resposta informa o local?", "Evitei trocar o local por outra informação?"],
+      "modelExamplesAfterSubmission": ["No balcão 4.", "Você pode retirar no balcão 4."],
+      "automaticObservations": ["há texto livre", "autochecagem concluída"],
+      "notAutomaticallyJudged": ["compreensibilidade plena", "formulação única", "formalidade"]
+    }
+  ],
+  "assessmentBehavior": {"openResponsePolicy": "produção própria registrada e autorrevisada; validação plena exige avaliador confiável", "timeLimit": false},
+  "completionEvidence": {
+    "clusters": {
+      "responseSelection": {"evidence": ["L03-C01", "L03-A01"], "rule": "selecionar respostas que fornecem exatamente a informação pedida"},
+      "ownResponse": {"evidence": ["L03-A02"], "rule": "produzir resposta livre e concluir autochecagem"}
+    },
+    "completionRule": "os dois agrupamentos são obrigatórios.",
+    "notSufficient": ["responder informação diferente", "alongar resposta sem fornecer o dado necessário", "copiar modelo posterior"]
+  }
+}
