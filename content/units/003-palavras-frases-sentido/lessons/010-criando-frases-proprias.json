@@ -1,0 +1,454 @@
+{
+  "schemaVersion": 1,
+  "id": "N0-U03-L10",
+  "title": "Criando frases próprias",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Produzir frases próprias curtas e compreensíveis a partir de situações, perguntas ou ideias simples, reduzindo progressivamente os apoios das lições anteriores e revisando a própria mensagem por critérios funcionais, sem fingir que uma interface automática consegue julgar com precisão toda resposta aberta.",
+  "competencies": [
+    "passar de uma intenção comunicativa simples para uma frase escrita própria",
+    "produzir uma frase curta a partir de uma situação clara sem depender de reorganizar fichas já fornecidas",
+    "escolher palavras próprias para informar, perguntar, pedir ou expressar outra mensagem simples compatível com o repertório da unidade",
+    "usar apoio parcial, como início de frase ou banco opcional de palavras, quando necessário e depois tentar produzir com menos apoio",
+    "revisar a própria frase perguntando se ela comunica a ideia pretendida, se a organização está clara e se falta informação essencial para aquela tarefa",
+    "reformular uma frase própria quando a autochecagem indicar que a mensagem não corresponde ao objetivo pretendido",
+    "reconhecer que mais de uma frase pode comunicar adequadamente uma mesma intenção",
+    "distinguir produção realizada de produção linguisticamente validada quando não existe avaliador humano ou mecanismo confiável para julgar resposta aberta"
+  ],
+  "prerequisites": [
+    "N0-U03-L01",
+    "N0-U03-L02",
+    "N0-U03-L03",
+    "N0-U03-L04",
+    "N0-U03-L05",
+    "N0-U03-L06",
+    "N0-U03-L07",
+    "N0-U03-L08",
+    "N0-U03-L09"
+  ],
+  "limits": [
+    "não transformar a lição em produção de parágrafo ou pequeno texto; uma frase ou mensagem curta continua sendo a unidade principal",
+    "não exigir terminologia gramatical, identificação de classes de palavras ou análise sintática para produzir ou revisar a frase",
+    "não exigir ortografia, concordância ou pontuação perfeitas como condição única de conclusão desta etapa inicial de produção",
+    "não ensinar que existe uma única formulação correta para cada intenção comunicativa",
+    "não usar contagem mínima de palavras como critério de qualidade da frase",
+    "não usar presença de ponto final, ponto de interrogação ou ponto de exclamação como prova automática de função comunicativa",
+    "não usar palavras-chave como gabarito completo para respostas abertas quando paráfrases ou formulações diferentes puderem ser válidas",
+    "não afirmar que uma resposta aberta é compreensível ou linguisticamente correta apenas porque passou por verificações superficiais de interface",
+    "não exigir resposta longa; o objetivo é comunicar uma ideia simples de modo curto e funcional",
+    "não usar velocidade ou tempo de resposta como critério de domínio",
+    "não exigir uso de microfone ou reconhecimento de fala; oralidade pode ser ensaiada opcionalmente, mas não é condição técnica para concluir a lição",
+    "não introduzir compreensão ou produção de várias frases relacionadas como competência central; essa progressão pertence à Unidade 4"
+  ],
+  "media": {
+    "tts": "instruções, situações, perguntas, critérios de revisão, feedback e exemplos revelados depois da produção. O TTS pode narrar o estímulo antes da resposta, mas não deve oferecer uma frase-modelo antes da primeira produção aberta quando isso substituiria a escolha de palavras do aluno.",
+    "controlledAudio": [],
+    "video": "nao necessario",
+    "images": "nao necessarias"
+  },
+  "supportMaterials": {
+    "curatedMedia": [],
+    "runtimeResources": [
+      {
+        "type": "TTS_OK",
+        "locations": [
+          "instruções",
+          "situações curtas",
+          "perguntas e intenções comunicativas",
+          "critérios de autochecagem",
+          "feedback",
+          "exemplos após tentativa",
+          "resumo"
+        ],
+        "purpose": "reduzir carga de leitura do estímulo sem fornecer previamente a frase que o aluno precisa criar"
+      }
+    ],
+    "generatedVisualResources": [
+      {
+        "type": "UI_RENDERED_OPEN_RESPONSE_FIELD",
+        "locations": ["L10-C02", "L10-A01", "L10-A02", "L10-A03", "L10-A04"],
+        "purpose": "permitir digitação livre de uma frase, sem limitar a produção a fichas ou opções predeterminadas"
+      },
+      {
+        "type": "UI_RENDERED_OPTIONAL_SCAFFOLD",
+        "locations": ["L10-B03", "L10-C02", "L10-A01"],
+        "purpose": "oferecer início de frase ou pequeno banco de palavras somente sob demanda e registrar uso do apoio separadamente da qualidade da produção"
+      },
+      {
+        "type": "UI_RENDERED_PROMPT_CARD",
+        "locations": ["L10-B02", "L10-B03", "L10-C01", "L10-C02", "L10-A01", "L10-A02", "L10-A03", "L10-A04"],
+        "purpose": "manter visível a situação, pergunta ou intenção que a frase precisa comunicar durante a produção e revisão"
+      },
+      {
+        "type": "UI_RENDERED_SELF_REVIEW_CHECKLIST",
+        "locations": ["L10-B04", "L10-C03", "L10-A01", "L10-A02", "L10-A03", "L10-A04"],
+        "purpose": "orientar revisão funcional por perguntas simples sem fingir correção automática de gramática ou estilo"
+      },
+      {
+        "type": "UI_RENDERED_BEFORE_AFTER_REVISION",
+        "locations": ["L10-B05", "L10-C03", "L10-A03"],
+        "purpose": "preservar a primeira versão e a versão revisada para tornar observável que o aluno pode ajustar a própria mensagem"
+      },
+      {
+        "type": "UI_RENDERED_POST_RESPONSE_EXAMPLE_REVEAL",
+        "locations": ["L10-B02", "L10-C02", "L10-A01", "L10-A02", "L10-A04"],
+        "purpose": "mostrar uma ou mais formulações possíveis somente depois da resposta, como referência e não como gabarito único"
+      }
+    ],
+    "productionQueueRequired": false,
+    "publicationDependency": "não há nova mídia humana obrigatória; situações textuais curtas, campos de resposta livre, apoios opcionais, autochecagem e TTS são suficientes para esta primeira etapa de produção própria",
+    "decisionRationale": "a competência central é escolher e organizar palavras próprias. Imagens poderiam servir de estímulo, mas não são necessárias para demonstrar essa competência e poderiam aumentar a produção de mídia sem ganho proporcional. Situações e intenções textuais curtas permitem múltiplas respostas válidas, enquanto TTS reduz a carga de leitura. Áudio controlado e vídeo não são necessários porque nenhuma resposta depende de entonação ou movimento específicos."
+  },
+  "sequence": [
+    {
+      "id": "L10-B01",
+      "type": "objective",
+      "focus": "read-or-listen",
+      "text": "Até agora você trabalhou com palavras, opções e fichas fornecidas. Nesta lição, os apoios diminuem: você vai criar frases curtas escolhendo suas próprias palavras e depois revisar se a mensagem comunica aquilo que pretendia."
+    },
+    {
+      "id": "L10-B02",
+      "type": "multiple-valid-productions-demonstration",
+      "focus": "observe-and-understand",
+      "title": "Uma mesma ideia pode ser escrita de mais de um jeito",
+      "prompt": "Informe que Bia chegou cedo.",
+      "possibleResponses": [
+        "Bia chegou cedo.",
+        "Bia chegou pela manhã."
+      ],
+      "explanation": "As frases não são idênticas, mas podem comunicar uma ideia compatível com o objetivo. Nesta etapa, produzir não significa adivinhar uma frase secreta do autor.",
+      "revealPolicy": "os exemplos desta demonstração são explicativos; em tarefas abertas posteriores, exemplos equivalentes só aparecem depois da primeira resposta"
+    },
+    {
+      "id": "L10-C01",
+      "type": "quick-check-set",
+      "focus": "judge-message-against-goal",
+      "interaction": "select-responses-that-meet-goal",
+      "instruction": "Escolha todas as frases que podem cumprir o objetivo apresentado.",
+      "items": [
+        {
+          "goal": "informar que Caio está no parque",
+          "options": [
+            {"text": "Caio está no parque.", "acceptable": true},
+            {"text": "Caio ficou no parque.", "acceptable": true},
+            {"text": "Onde está Caio?", "acceptable": false}
+          ],
+          "correctIndexes": [0, 1]
+        },
+        {
+          "goal": "perguntar onde fica a saída",
+          "options": [
+            {"text": "Onde fica a saída?", "acceptable": true},
+            {"text": "Você sabe onde fica a saída?", "acceptable": true},
+            {"text": "A saída fica ali.", "acceptable": false}
+          ],
+          "correctIndexes": [0, 1]
+        }
+      ],
+      "purpose": "preparar a produção aberta mostrando explicitamente que diferentes formulações podem cumprir a mesma intenção"
+    },
+    {
+      "id": "L10-B03",
+      "type": "progressive-scaffold-demonstration",
+      "focus": "move-from-support-to-own-words",
+      "title": "O apoio pode diminuir aos poucos",
+      "stages": [
+        {
+          "stage": 1,
+          "prompt": "Informe que Rui chegou em casa.",
+          "starter": "Rui...",
+          "optionalWordBank": ["chegou", "casa", "em"],
+          "note": "o aluno ainda precisa organizar e completar a frase"
+        },
+        {
+          "stage": 2,
+          "prompt": "Informe que Lia não saiu.",
+          "starter": null,
+          "optionalWordBank": ["Lia", "não", "saiu"],
+          "note": "o banco de palavras existe somente sob demanda"
+        },
+        {
+          "stage": 3,
+          "prompt": "Faça uma pergunta curta para saber a hora.",
+          "starter": null,
+          "optionalWordBank": [],
+          "note": "nenhuma formulação é fornecida antes da resposta"
+        }
+      ],
+      "explanation": "Usar apoio quando necessário não é erro. O objetivo é conseguir, progressivamente, escolher e organizar palavras com menos ajuda."
+    },
+    {
+      "id": "L10-C02",
+      "type": "quick-open-production",
+      "focus": "write-own-sentence",
+      "interaction": "free-text-response-with-optional-scaffold",
+      "prompt": "Uma pessoa quer informar que a loja abriu cedo. Escreva uma frase curta que comunique essa ideia.",
+      "optionalScaffold": {
+        "starter": "A loja...",
+        "wordBank": ["abriu", "cedo"],
+        "availableOnDemand": true
+      },
+      "responseMode": "free-text",
+      "modelExamplesAfterSubmission": [
+        "A loja abriu cedo.",
+        "A loja abriu bem cedo."
+      ],
+      "automaticObservations": [
+        "a resposta contém texto digitado pelo aluno e não apenas espaços ou sinais",
+        "a resposta foi produzida em campo livre, não por rearranjo de fichas",
+        "se o apoio opcional foi aberto antes da resposta"
+      ],
+      "notAutomaticallyJudged": [
+        "se a frase é plenamente compreensível",
+        "se a escolha lexical é a melhor possível",
+        "se ortografia, concordância e pontuação estão corretas",
+        "se uma formulação diferente dos exemplos é aceitável"
+      ]
+    },
+    {
+      "id": "L10-B04",
+      "type": "self-review-demonstration",
+      "focus": "review-own-message",
+      "title": "Revise primeiro pelo que você queria comunicar",
+      "reviewPrompts": [
+        "Minha frase comunica a ideia que eu queria?",
+        "As palavras estão na ordem que eu pretendia?",
+        "Falta alguma informação essencial para esta tarefa?",
+        "Quem ler ou ouvir consegue perceber a mensagem principal?"
+      ],
+      "explanation": "Essas perguntas ajudam a revisar a mensagem sem exigir análise gramatical formal. Ortografia e outras convenções serão trabalhadas progressivamente em etapas próprias do curso."
+    },
+    {
+      "id": "L10-B05",
+      "type": "revision-demonstration",
+      "focus": "revise-after-check",
+      "title": "Se a mensagem não corresponde ao objetivo, você pode ajustar",
+      "example": {
+        "goal": "informar que Ana não saiu",
+        "firstDraft": "Ana saiu.",
+        "selfCheck": "a frase comunica o contrário da ideia pedida",
+        "revisedDraft": "Ana não saiu."
+      },
+      "explanation": "Revisar não significa que a primeira tentativa foi inútil. A comparação entre a intenção e o que foi escrito ajuda a perceber o que precisa mudar."
+    },
+    {
+      "id": "L10-C03",
+      "type": "quick-review-check",
+      "focus": "review-and-decide",
+      "interaction": "review-candidate-against-goal",
+      "goal": "pedir a Rui que feche a porta",
+      "candidate": "Rui, por favor, feche a porta.",
+      "questions": [
+        {
+          "text": "A frase comunica um pedido claro relacionado à porta?",
+          "options": ["sim", "não"],
+          "correctIndex": 0
+        },
+        {
+          "text": "Falta alguma informação essencial para cumprir este objetivo simples?",
+          "options": ["não", "sim"],
+          "correctIndex": 0
+        }
+      ],
+      "purpose": "treinar os critérios de revisão antes de aplicá-los à própria produção"
+    },
+    {
+      "id": "L10-A01",
+      "type": "guided-open-production",
+      "focus": "write-with-fading-support",
+      "interaction": "free-text-response-with-optional-scaffold",
+      "title": "Escreva com apoio somente se precisar",
+      "items": [
+        {
+          "prompt": "Informe que Caio está em casa.",
+          "optionalScaffold": {
+            "starter": "Caio...",
+            "wordBank": ["está", "em", "casa"],
+            "availableOnDemand": true
+          },
+          "modelExamplesAfterSubmission": ["Caio está em casa."]
+        },
+        {
+          "prompt": "Negue que a porta abriu.",
+          "optionalScaffold": {
+            "starter": null,
+            "wordBank": ["A", "porta", "não", "abriu"],
+            "availableOnDemand": true
+          },
+          "modelExamplesAfterSubmission": ["A porta não abriu."]
+        },
+        {
+          "prompt": "Faça uma pergunta curta para saber onde fica a saída.",
+          "optionalScaffold": {
+            "starter": null,
+            "wordBank": [],
+            "availableOnDemand": false
+          },
+          "modelExamplesAfterSubmission": ["Onde fica a saída?", "Você sabe onde fica a saída?"]
+        }
+      ],
+      "responseMode": "free-text",
+      "selfReviewRequired": true,
+      "supportUseIsError": false
+    },
+    {
+      "id": "L10-A02",
+      "type": "independent-open-production",
+      "focus": "choose-own-content-and-words",
+      "interaction": "free-text-response",
+      "title": "Agora a ideia também é sua",
+      "prompt": "Escreva uma frase curta sobre uma ação que você faz no dia a dia. Escolha a ação e as palavras que quiser.",
+      "responseMode": "free-text",
+      "preResponseModel": null,
+      "wordBank": [],
+      "starter": null,
+      "selfReviewRequired": true,
+      "automaticObservations": [
+        "há uma resposta textual não vazia",
+        "a resposta foi digitada livremente sem fichas fornecidas",
+        "o aluno concluiu a autochecagem"
+      ],
+      "notAutomaticallyJudged": [
+        "veracidade pessoal da informação",
+        "compreensibilidade linguística",
+        "correção gramatical global",
+        "ortografia e pontuação",
+        "adequação estilística"
+      ],
+      "humanReview": {
+        "recommendedWhenAvailable": true,
+        "purpose": "validar se a frase comunica uma ideia compreensível sem reduzir respostas abertas a palavras-chave"
+      }
+    },
+    {
+      "id": "L10-A03",
+      "type": "open-production-with-revision",
+      "focus": "write-review-revise",
+      "interaction": "free-text-draft-and-revision",
+      "title": "Escreva, confira e ajuste se quiser",
+      "prompt": "Imagine que você precisa pedir algo simples a outra pessoa. Escreva uma frase curta que faça esse pedido de maneira clara.",
+      "responseMode": "free-text",
+      "preResponseModel": null,
+      "starter": null,
+      "wordBank": [],
+      "revisionFlow": {
+        "preserveFirstDraft": true,
+        "showSelfReviewBeforeRevision": true,
+        "revisionOptionalWhenLearnerConfirmsMessageAlreadyMeetsGoal": true
+      },
+      "selfReviewRequired": true,
+      "automaticObservations": [
+        "há uma primeira versão textual",
+        "a autochecagem foi realizada",
+        "se houve ou não revisão depois da autochecagem"
+      ],
+      "notAutomaticallyJudged": [
+        "se o pedido é socialmente ideal em todos os contextos",
+        "se a frase é linguisticamente perfeita",
+        "se a ausência de revisão significa automaticamente domínio"
+      ]
+    },
+    {
+      "id": "L10-A04",
+      "type": "transfer-open-production",
+      "focus": "independent-short-message",
+      "interaction": "choose-prompt-and-write-free-text",
+      "title": "Escolha uma intenção e crie sua mensagem",
+      "promptChoices": [
+        {
+          "id": "inform",
+          "instruction": "Escreva uma frase curta para informar algo que aconteceu hoje ou costuma acontecer no seu dia."
+        },
+        {
+          "id": "ask",
+          "instruction": "Escreva uma pergunta curta que você poderia fazer a outra pessoa."
+        },
+        {
+          "id": "request",
+          "instruction": "Escreva uma frase curta para pedir algo de que você precisa."
+        }
+      ],
+      "responseMode": "free-text",
+      "preResponseModel": null,
+      "starter": null,
+      "wordBank": [],
+      "selfReviewRequired": true,
+      "modelExampleReveal": "mostrar exemplos apenas depois da resposta e deixar explícito que são possibilidades, não gabaritos",
+      "automaticObservations": [
+        "uma das intenções foi escolhida",
+        "há resposta textual não vazia em campo livre",
+        "a autochecagem foi concluída"
+      ],
+      "notAutomaticallyJudged": [
+        "se a resposta cumpre perfeitamente a intenção escolhida",
+        "compreensibilidade linguística",
+        "correção gramatical, ortográfica ou estilística global"
+      ]
+    },
+    {
+      "id": "L10-B06",
+      "type": "summary",
+      "focus": "read-or-listen",
+      "text": "Criar uma frase própria é escolher palavras para comunicar uma ideia, não descobrir um gabarito escondido. Você pode usar apoio quando precisar, escrever, comparar a frase com sua intenção e revisar. A próxima etapa da unidade será uma verificação integrada com exemplos novos, incluindo pelo menos uma produção curta própria."
+    }
+  ],
+  "assessmentBehavior": {
+    "openResponsePolicy": "respostas abertas não recebem um rótulo automático de linguisticamente corretas ou compreensíveis apenas por heurísticas superficiais",
+    "automaticChecksAllowed": [
+      "detectar resposta vazia ou formada somente por espaços/sinais",
+      "registrar que a resposta foi digitada em campo livre",
+      "registrar abertura de apoio opcional",
+      "registrar conclusão da autochecagem",
+      "registrar existência de revisão e preservar versões quando aplicável"
+    ],
+    "automaticChecksNotSufficient": [
+      "contagem de palavras",
+      "presença de uma palavra-chave",
+      "presença de pontuação específica",
+      "comparação literal com uma frase-modelo",
+      "detecção superficial de maiúscula inicial ou ponto final"
+    ],
+    "selfReview": {
+      "requiredForOpenTasks": true,
+      "questions": [
+        "comunica a ideia pretendida?",
+        "a organização das palavras representa o que eu queria dizer?",
+        "falta informação essencial para esta tarefa?",
+        "a mensagem principal pode ser entendida?"
+      ],
+      "statusAfterCompletion": "produzida-e-autorrevisada"
+    },
+    "humanOrExternalReview": {
+      "requiredForClaimOfValidatedComprehensibility": true,
+      "statusWhenApproved": "validada-compreensivel",
+      "note": "o fluxo autônomo pode registrar produção e autochecagem, mas não deve converter isso em alegação de validação linguística precisa sem avaliador capaz de fazê-la"
+    },
+    "ttsPolicy": "TTS pode narrar instruções e estímulos antes da resposta; exemplos de formulação para uma tarefa aberta específica só aparecem depois da primeira tentativa",
+    "readingSupport": "apoios opcionais são permitidos e registrados separadamente; uso de apoio não é erro automático",
+    "timeLimit": false,
+    "technicalTerminologyRequired": false,
+    "longWrittenResponseRequired": false,
+    "retryPolicy": "permitir editar e tentar novamente; preservar a primeira versão quando a atividade mede revisão"
+  },
+  "completionEvidence": {
+    "observablePerformance": "Produzir frases curtas em campo livre a partir de intenções simples, incluindo pelo menos uma situação sem banco de palavras nem início fornecido, e realizar autochecagem funcional da própria mensagem.",
+    "criteria": {
+      "understandsMultipleValidFormulations": "acertar os 2 itens de L10-C01, reconhecendo que mais de uma formulação pode cumprir a mesma intenção",
+      "guidedOpenProduction": "produzir respostas nos 3 itens de L10-A01 e concluir a autochecagem; uso de apoio é registrado, mas não invalida a resposta",
+      "ownWordsProduction": "produzir L10-A02 sem fichas, banco de palavras ou início fornecido e concluir a autochecagem",
+      "revisionProcess": "produzir uma primeira versão em L10-A03, realizar a autochecagem e registrar revisão quando o aluno indicar necessidade de ajuste",
+      "transferOpenProduction": "escolher uma intenção em L10-A04, produzir uma frase em campo livre sem formulação prévia e concluir a autochecagem"
+    },
+    "completionRule": "no fluxo autônomo, considerar a lição percorrida com evidência suficiente quando todos os critérios forem cumpridos e registrar as produções abertas como produzidas-e-autorrevisadas. Não registrar automaticamente que são linguisticamente validadas ou plenamente compreensíveis. Quando houver revisão humana ou externa confiável, a produção pode receber validação adicional.",
+    "requiresAtLeastOneOwnWordChoice": true,
+    "requiresAtLeastOneUnscaffoldedOpenResponse": true,
+    "notSufficient": [
+      "apenas rearranjar fichas fornecidas",
+      "apenas copiar uma frase-modelo",
+      "enviar campo vazio ou somente pontuação",
+      "marcar a autochecagem sem ter produzido texto",
+      "produzir apenas respostas fechadas",
+      "usar uma quantidade mínima de palavras como substituto para compreensibilidade",
+      "responder rapidamente"
+    ]
+  }
+}
