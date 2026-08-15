@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "id": "N1-U04-L06",
+  "title": "Ponto final, interrogação e exclamação dentro de textos",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Consolidar ponto final, interrogação e exclamação na delimitação e interpretação de frases dentro de mensagens e parágrafos, relacionando sinais ao efeito no contexto sem fórmulas rígidas.",
+  "competencies": ["delimitar frases declarativas simples com ponto final", "marcar perguntas diretas com interrogação", "reconhecer exclamação em reações/ênfases claras", "interpretar mudança de efeito ao trocar sinal em pares controlados", "pontuar trecho curto respeitando unidades de sentido", "não usar pontuação apenas como marca de pausa respiratória"],
+  "prerequisites": ["N0-U05-V01", "N1-U04-L01", "N1-U04-L05"],
+  "limits": ["não ensinar função = sinal único em todo contexto", "não usar entonação como única regra", "não introduzir reticências ou combinações expressivas como sistema", "não tratar ponto final como pausa para respirar"],
+  "media": {"tts": "permitido como apoio; entonação não decide sozinha a resposta", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["textos", "feedback"], "purpose": "apoio"}], "generatedVisualResources": [{"type": "UI_RENDERED_SENTENCE_BOUNDARY_EDITOR", "locations": ["L06-B01", "L06-C01", "L06-A01"], "purpose": "delimitar frases"}, {"type": "UI_RENDERED_PUNCTUATION_EFFECT_COMPARE", "locations": ["L06-B02", "L06-A02"], "purpose": "comparar efeito de sinais"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "o foco é gráfico/semântico; mídia controlada não é necessária."},
+  "sequence": [
+    {"id": "L06-B01", "type": "demonstration", "unpunctuated": "O atendimento começa às nove você trouxe o documento ótimo podemos iniciar", "oneRevision": "O atendimento começa às nove. Você trouxe o documento? Ótimo! Podemos iniciar.", "explanation": "os sinais ajudam a delimitar unidades e indicar como cada trecho funciona no contexto"},
+    {"id": "L06-B02", "type": "effect-comparison", "pairs": [{"a": "Você terminou.", "b": "Você terminou?", "effect": "a primeira apresenta a informação; a segunda pergunta diretamente"}, {"a": "Conseguimos.", "b": "Conseguimos!", "effect": "a segunda acrescenta ênfase/reação no contexto"}], "guardRail": "um sinal participa do efeito, mas uso real não se reduz a uma tabela de emoções"},
+    {"id": "L06-C01", "type": "guided-punctuation", "items": [{"text": "Qual é o horário", "options": ["?", ".", "!"], "correctIndex": 0}, {"text": "A reunião termina às cinco", "options": [".", "?", "!"], "correctIndex": 0}, {"text": "Que boa notícia", "options": ["!", ".", "?"], "correctIndex": 0}]},
+    {"id": "L06-A01", "type": "assessment-edit", "unpunctuated": "O arquivo chegou você consegue abrir excelente vamos continuar", "expectedOneRevision": "O arquivo chegou. Você consegue abrir? Excelente! Vamos continuar.", "requiredFunctions": ["declaração", "pergunta direta", "reação/ênfase", "declaração/instrução contextual"]},
+    {"id": "L06-A02", "type": "assessment-effect", "items": [{"versions": ["A entrega chegou.", "A entrega chegou?"], "question": "Qual versão pede confirmação?", "correctIndex": 1}, {"versions": ["Ótimo.", "Ótimo!"], "question": "Qual versão marca mais explicitamente reação/ênfase neste par?", "correctIndex": 1}]},
+    {"id": "L06-A03", "type": "assessment-principle", "question": "Qual explicação deve ser rejeitada?", "options": ["A pontuação serve apenas para indicar onde respirar.", "A pontuação ajuda a organizar a escrita e participa do sentido."], "correctIndex": 0}
+  ],
+  "assessmentBehavior": {"meaningAndStructure": true, "allowEquivalentPunctuationWhenFunctionPreserved": true, "ttsPolicy": "apoio, não resposta", "timeLimit": false},
+  "completionEvidence": {"clusters": {"editing": {"evidence": ["L06-A01"], "rule": "delimitar corretamente as funções previstas no trecho"}, "effect": {"evidence": ["L06-A02"], "rule": "interpretar os dois contrastes"}, "principle": {"evidence": ["L06-A03"], "rule": "rejeitar vício de pausa respiratória"}}, "completionRule": "os três agrupamentos são obrigatórios.", "notSufficient": ["contar pausas", "decorar sinal sem função", "pontuar palavra por palavra"]}
+}

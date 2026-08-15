@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "id": "N1-U04-L01",
+  "title": "O parágrafo como bloco de sentido",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Perceber o parágrafo como unidade gráfica que reúne frases relacionadas por um foco de sentido, sem impor tamanho ou fórmula universal.",
+  "competencies": ["reconhecer frases que tratam do mesmo foco", "agrupar frases relacionadas em um parágrafo simples", "separar mudança clara de foco em outro bloco", "rejeitar divisão arbitrária apenas por quantidade de linhas", "reconhecer começo/fim de parágrafo na interface"],
+  "prerequisites": ["N1-U01-V01", "N1-U03-V01"],
+  "limits": ["não ensinar número ideal de frases", "não exigir tópico frasal como fórmula", "não afirmar que todo parágrafo trata de uma única ideia isolada", "não usar extensão como critério de qualidade"],
+  "media": {"tts": "permitido", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["frases", "parágrafos", "feedback"], "purpose": "apoio"}], "generatedVisualResources": [{"type": "UI_RENDERED_PARAGRAPH_GROUPER", "locations": ["L01-B01", "L01-C01", "L01-A01"], "purpose": "agrupar frases por foco"}, {"type": "UI_RENDERED_PARAGRAPH_BOUNDARY", "locations": ["L01-B02", "L01-A02"], "purpose": "comparar divisão útil e arbitrária"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "a organização é textual/gráfica e não requer mídia curada."},
+  "sequence": [
+    {"id": "L01-B01", "type": "demonstration", "sentences": ["A biblioteca abre às oito.", "O atendimento de empréstimos começa no mesmo horário.", "A cafeteria do prédio vizinho fecha às seis."], "grouping": {"paragraphA": [0, 1], "separate": [2]}, "reason": "as duas primeiras tratam do funcionamento da biblioteca; a terceira muda o foco"},
+    {"id": "L01-B02", "type": "comparison", "versionA": "O curso começa segunda-feira. As aulas ocorrerão à noite.\n\nA inscrição pode ser feita pela internet.", "versionB": "O curso começa segunda-feira.\n\nAs aulas ocorrerão à noite.\n\nA inscrição pode ser feita pela internet.", "preferred": "A", "reason": "a divisão acompanha melhor os focos do exemplo; quebrar após cada frase não é regra"},
+    {"id": "L01-C01", "type": "guided-grouping", "items": [{"sentences": ["A sala foi reformada.", "Novas mesas foram instaladas.", "O estacionamento ficará fechado amanhã."], "sameParagraph": [0, 1], "differentFocus": [2]}]},
+    {"id": "L01-A01", "type": "assessment-grouping", "items": [{"sentences": ["O posto atende até 18h.", "A retirada de senhas termina às 17h30.", "A previsão indica chuva no sábado."], "sameParagraph": [0, 1], "differentFocus": [2]}, {"sentences": ["O relatório apresenta três resultados.", "O primeiro mostra queda de custos.", "O segundo mostra aumento de produção."], "sameParagraph": [0, 1, 2]}]},
+    {"id": "L01-A02", "type": "assessment-principle", "question": "Qual princípio é adequado?", "options": ["A divisão de parágrafos ajuda a organizar focos relacionados; não existe número fixo de frases para todo parágrafo.", "Todo parágrafo deve ter exatamente três frases.", "Cada frase precisa ser um parágrafo separado."], "correctIndex": 0}
+  ],
+  "assessmentBehavior": {"meaningBeforeLength": true, "ttsPolicy": "permitido", "timeLimit": false},
+  "completionEvidence": {"clusters": {"grouping": {"evidence": ["L01-A01"], "rule": "organizar corretamente os dois conjuntos"}, "principle": {"evidence": ["L01-A02"], "rule": "rejeitar tamanho/fórmula fixa"}}, "completionRule": "os dois agrupamentos são obrigatórios.", "notSufficient": ["contar frases", "quebrar por tamanho visual", "memorizar definição"]}
+}

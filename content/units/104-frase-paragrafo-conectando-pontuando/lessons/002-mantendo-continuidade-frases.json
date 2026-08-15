@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "id": "N1-U04-L02",
+  "title": "Mantendo continuidade entre frases",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Construir continuidade simples entre frases de um parágrafo, evitando saltos de foco e contradições claras sem transformar coerência em taxonomia abstrata.",
+  "competencies": ["ordenar frases em sequência compreensível", "escolher continuação que mantém o foco", "identificar frase intrusa", "detectar contradição explícita não explicada", "acrescentar informação compatível com o parágrafo"],
+  "prerequisites": ["N1-U04-L01"],
+  "limits": ["não formalizar teoria completa de coerência", "não exigir uma única ordem quando mais de uma é plausível", "não chamar toda mudança de assunto de erro", "não confundir continuidade com repetição da mesma frase"],
+  "media": {"tts": "permitido", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["parágrafos", "feedback"], "purpose": "apoio"}], "generatedVisualResources": [{"type": "UI_RENDERED_SENTENCE_ORDER", "locations": ["L02-B01", "L02-C01", "L02-A01"], "purpose": "ordenar sequência"}, {"type": "UI_RENDERED_INTRUDER_CHECK", "locations": ["L02-B02", "L02-A02"], "purpose": "detectar salto de foco/contradição"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "continuidade é avaliada pela relação entre frases e pode ser trabalhada textualmente."},
+  "sequence": [
+    {"id": "L02-B01", "type": "ordering-demonstration", "unordered": ["Depois, conferiu os dados.", "Rita abriu o formulário.", "Por fim, enviou o documento."], "oneCoherentOrder": [1, 0, 2], "note": "o contexto e as marcas de sequência sustentam esta ordem"},
+    {"id": "L02-B02", "type": "intruder-demonstration", "paragraph": ["O prédio terá manutenção elétrica na terça-feira.", "Durante o serviço, algumas salas ficarão sem energia.", "A receita do bolo leva três ovos."], "intruderIndex": 2, "reason": "a terceira frase muda de foco sem relação construída"},
+    {"id": "L02-C01", "type": "guided-continuation", "stem": "A equipe recebeu os materiais pela manhã.", "options": ["Em seguida, conferiu a quantidade recebida.", "A praia estava cheia no domingo.", "A equipe nunca recebeu material algum."], "correctIndex": 0},
+    {"id": "L02-C02", "type": "contradiction-check", "text": "O atendimento será encerrado às 18h. O atendimento continuará normalmente até 20h.", "question": "Sem explicação adicional, existe uma contradição clara?", "options": ["sim", "não"], "correctIndex": 0},
+    {"id": "L02-A01", "type": "assessment-ordering", "items": [{"sentences": ["Por fim, assinou o pedido.", "Primeiro, leu as condições.", "Depois, preencheu os dados."], "oneCoherentOrder": [1, 2, 0]}, {"sentences": ["O ônibus saiu do terminal.", "Minutos depois, chegou ao primeiro ponto.", "Os passageiros embarcaram antes da saída."], "oneCoherentOrder": [2, 0, 1]}]},
+    {"id": "L02-A02", "type": "assessment-continuity", "items": [{"paragraph": ["A oficina começa às 14h.", "Os participantes devem chegar quinze minutos antes.", "O preço do combustível caiu ontem."], "intruderIndex": 2}, {"paragraph": ["A sala estava vazia às oito.", "Às oito e dez, todos os participantes já estavam presentes."], "question": "Há contradição obrigatória?", "options": ["não; o intervalo permite mudança da situação", "sim; duas situações diferentes nunca podem ocorrer"], "correctIndex": 0}]}
+  ],
+  "assessmentBehavior": {"allowAlternativeOrderWhenSupported": true, "contextVisible": true, "ttsPolicy": "permitido", "timeLimit": false},
+  "completionEvidence": {"clusters": {"ordering": {"evidence": ["L02-A01"], "rule": "organizar os dois conjuntos de forma sustentada"}, "continuity": {"evidence": ["L02-A02"], "rule": "identificar intruso e não inventar contradição"}}, "completionRule": "os dois agrupamentos são obrigatórios.", "notSufficient": ["seguir posição original", "marcar toda mudança temporal como contradição", "repetir a mesma informação"]}
+}
