@@ -1,0 +1,103 @@
+{
+  "schemaVersion": 1,
+  "id": "N0-U05-L08",
+  "title": "Organizando a escrita: espaços, maiúscula e limites da frase",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Consolidar convenções gráficas fundamentais que ajudam o leitor a reconhecer palavras e limites de frases em mensagens simples, especialmente espaçamento e maiúscula inicial nos contextos já ensinados.",
+  "competencies": [
+    "separar palavras por espaços em mensagens simples",
+    "reconhecer e corrigir espaço inadequado antes de sinais finais",
+    "usar maiúscula no início de frase em texto corrido nos contextos ensinados",
+    "reconhecer onde uma frase termina e outra começa em mensagens simples",
+    "perceber que títulos, placas e rótulos podem seguir convenções diferentes e não definem frase apenas pela presença de ponto"
+  ],
+  "prerequisites": ["N0-U05-L07", "N0-U01-L06"],
+  "limits": [
+    "não ensinar sistema completo de maiúsculas e minúsculas",
+    "não reduzir frase a tudo que fica entre dois pontos",
+    "não exigir ponto final em títulos, placas ou rótulos quando o gênero não pedir",
+    "não ensinar pontuação final completa nesta lição",
+    "não transformar espaçamento em exercício de digitação rápida"
+  ],
+  "media": {"tts": "instruções e feedback; não usar TTS para entregar antecipadamente uma segmentação gráfica avaliada", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {
+    "curatedMedia": [],
+    "runtimeResources": [{"type": "TTS_OK", "locations": ["instruções", "feedback"], "purpose": "apoio sem entregar a organização gráfica"}],
+    "generatedVisualResources": [
+      {"type": "UI_RENDERED_EDITABLE_TEXT", "locations": ["L08-B02", "L08-C01", "L08-A01", "L08-A02"], "purpose": "corrigir espaços e maiúsculas como texto real"},
+      {"type": "UI_RENDERED_SENTENCE_BOUNDARY_MARKER", "locations": ["L08-B03", "L08-A02"], "purpose": "marcar limites de frase sem substituir a escrita"}
+    ],
+    "productionQueueRequired": false,
+    "publicationDependency": "nenhuma nova mídia humana obrigatória",
+    "decisionRationale": "a própria interface deve renderizar e editar as convenções gráficas; convertê-las em imagem reduziria acessibilidade."
+  },
+  "sequence": [
+    {
+      "id": "L08-B01",
+      "type": "objective",
+      "focus": "graphic-organization",
+      "text": "A escrita usa espaços, maiúsculas e sinais para ajudar o leitor a perceber como a mensagem está organizada."
+    },
+    {
+      "id": "L08-B02",
+      "type": "demonstration",
+      "focus": "word-spacing",
+      "before": "Oônibuschegoucedo.",
+      "after": "O ônibus chegou cedo.",
+      "explanation": "Os espaços ajudam a separar visualmente as palavras."
+    },
+    {
+      "id": "L08-B03",
+      "type": "demonstration",
+      "focus": "sentence-boundary",
+      "before": "a loja abriu cedo os clientes entraram",
+      "after": "A loja abriu cedo. Os clientes entraram.",
+      "explanation": "No texto corrido, a organização gráfica ajuda a perceber duas frases."
+    },
+    {
+      "id": "L08-C01",
+      "type": "quick-check",
+      "focus": "spacing-and-capitalization",
+      "before": "maria chegou . depois entrou em casa .",
+      "options": [
+        "Maria chegou. Depois entrou em casa.",
+        "mariachegou.Depoisentrouemcasa.",
+        "Maria chegou . Depois entrou em casa ."
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "L08-B04",
+      "type": "guard-rail",
+      "focus": "context-sensitive-ending",
+      "examples": ["SAÍDA", "Mercado Central", "A loja fecha às seis."],
+      "explanation": "Uma placa ou título pode funcionar sem ponto final. Aqui estamos consolidando organização de frases em texto corrido, não criando uma regra para todo tipo de escrita."
+    },
+    {
+      "id": "L08-A01",
+      "type": "assessment-edit",
+      "focus": "spacing-transfer",
+      "before": "Hojeaacademiafechaàssete.",
+      "expected": "Hoje a academia fecha às sete.",
+      "interaction": "insert-spaces",
+      "automaticCheck": "comparação controlada de espaçamento neste exemplo específico"
+    },
+    {
+      "id": "L08-A02",
+      "type": "assessment-edit",
+      "focus": "sentence-boundary-transfer",
+      "before": "o mercado abriu às oito joana fez as compras",
+      "expected": "O mercado abriu às oito. Joana fez as compras.",
+      "interaction": "edit-capitalization-and-boundary",
+      "automaticCheck": "aceitar a organização-alvo controlada; não generalizar que toda mensagem deva usar exatamente dois pontos finais"
+    }
+  ],
+  "completionEvidence": {
+    "clusters": {
+      "spacing": {"evidence": ["L08-C01", "L08-A01"], "rule": "organizar adequadamente espaços nos exemplos controlados"},
+      "sentenceBoundary": {"evidence": ["L08-A02"], "rule": "marcar começo e fim das duas frases e aplicar maiúscula inicial"}
+    },
+    "completionRule": "os dois agrupamentos são obrigatórios.",
+    "notSufficient": ["memorizar que toda linha precisa de ponto", "usar ponto sem separar palavras", "corrigir apenas aparência sem perceber limites de frase"]
+  }
+}
