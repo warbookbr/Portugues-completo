@@ -109,8 +109,8 @@ Nível 0 — Fundamentos
     ├── Lição 3 — concluída
     ├── Lição 4 — concluída
     ├── Lição 5 — concluída
-    ├── Lição 6 — PRÓXIMO PASSO
-    ├── Lição 7 — pendente
+    ├── Lição 6 — concluída
+    ├── Lição 7 — PRÓXIMO PASSO
     ├── Lição 8 — pendente
     ├── Lição 9 — pendente
     ├── Lição 10 — pendente
@@ -120,13 +120,13 @@ Nível 0 — Fundamentos
 Último marco curricular concluído:
 
 ```text
-N0-U03-L05 — Organizando palavras para construir sentido
+N0-U03-L06 — Mudando palavras, mudando a mensagem
 ```
 
 Próximo passo imediato:
 
 ```text
-N0-U03-L06 — Mudando palavras, mudando a mensagem
+N0-U03-L07 — O efeito da negação
 ```
 
 ## Checkpoint estrutural após a Unidade 3
@@ -252,24 +252,23 @@ Correções editoriais ou técnicas que não mudem o estado curricular não prec
 ## Sequência de desenvolvimento prevista a partir do estado atual
 
 ```text
-1. concluir N0-U03-L06
-2. concluir N0-U03-L07
-3. concluir N0-U03-L08
-4. concluir N0-U03-L09
-5. concluir N0-U03-L10
-6. criar e concluir a verificação integrada da Unidade 3
+1. concluir N0-U03-L07
+2. concluir N0-U03-L08
+3. concluir N0-U03-L09
+4. concluir N0-U03-L10
+5. criar e concluir a verificação integrada da Unidade 3
 
 CHECKPOINT GLOBAL
-7. elevar Nível 1 de M0 para M1
-8. elevar Nível 2 de M0 para M1
-9. elevar Nível 3 de M0 para M1
-10. elevar Nível 4 de M0 para M1
-11. consolidar a distribuição dos grandes domínios na matriz de progressão
-12. revisar se alguma lacuna descoberta exige ajuste do mapa já construído
+6. elevar Nível 1 de M0 para M1
+7. elevar Nível 2 de M0 para M1
+8. elevar Nível 3 de M0 para M1
+9. elevar Nível 4 de M0 para M1
+10. consolidar a distribuição dos grandes domínios na matriz de progressão
+11. revisar se alguma lacuna descoberta exige ajuste do mapa já construído
 
 RETORNO AO DESENVOLVIMENTO DO NÍVEL 0
-13. dimensionar as lições da Unidade 4
-14. desenvolver a Unidade 4 e seguir pelos próximos marcos do Nível 0
+12. dimensionar as lições da Unidade 4
+13. desenvolver a Unidade 4 e seguir pelos próximos marcos do Nível 0
 ```
 
 A sequência após o checkpoint pode ser ajustada se a análise global revelar dependências melhores, mas qualquer mudança significativa deve ser registrada aqui.
