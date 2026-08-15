@@ -1,0 +1,188 @@
+{
+  "schemaVersion": 1,
+  "id": "N2-U05-V01",
+  "type": "integrated-unit-verification",
+  "title": "Verificação integrada — Nível 2, Unidade 5",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Verificar se o aluno mantém e revisa coesão e coerência em textos de vários parágrafos por progressão temática, referenciação, repetição/substituição/elipse, conectores, continuidade, consistência, organização global e edição real.",
+  "prerequisites": ["N2-U05-L01", "N2-U05-L02", "N2-U05-L03", "N2-U05-L04", "N2-U05-L05", "N2-U05-L06", "N2-U05-L07", "N2-U05-L08", "N2-U05-L09"],
+  "designPrinciples": [
+    "coesão e coerência são dimensões relacionadas, mas diferentes",
+    "quantidade de conectores não pontua",
+    "repetição não é erro automático",
+    "elipse só é útil quando recuperável",
+    "referente não é escolhido apenas pela proximidade",
+    "divergência de perspectivas não é contradição automática",
+    "revisão não autoriza inventar fatos",
+    "ordem e transição não seguem fórmula universal",
+    "tarefa real de edição é obrigatória",
+    "soluções equivalentes claras são aceitas"
+  ],
+  "limits": [
+    "sem teoria formal completa de coesão/coerência",
+    "sem progressão temática avançada",
+    "sem estilística profissional",
+    "sem fórmula fixa de parágrafo",
+    "sem validação automática plena de reescrita livre"
+  ],
+  "media": {"tts": "opcional", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {
+    "curatedMedia": [],
+    "runtimeResources": [{"type": "TTS_OK", "locations": ["texto-base", "instruções", "feedback"], "purpose": "apoio de leitura"}],
+    "generatedVisualResources": [
+      {"type": "UI_RENDERED_COHESION_COHERENCE_COMPARE", "locations": ["V01-Q01"], "purpose": "distinguir dimensões"},
+      {"type": "UI_RENDERED_TOPIC_PROGRESSION_MAP", "locations": ["V01-Q02"], "purpose": "avaliar progressão"},
+      {"type": "UI_RENDERED_REFERENCE_CHAIN", "locations": ["V01-Q03", "V01-Q04"], "purpose": "avaliar referenciação/substituição/elipse"},
+      {"type": "UI_RENDERED_PARAGRAPH_RELATION_CONNECTOR", "locations": ["V01-Q05"], "purpose": "avaliar conectores"},
+      {"type": "UI_RENDERED_CONTINUITY_GAP", "locations": ["V01-Q06"], "purpose": "avaliar lacunas/saltos"},
+      {"type": "UI_RENDERED_CONSISTENCY_COMPARE", "locations": ["V01-Q07"], "purpose": "avaliar contradição/contexto"},
+      {"type": "UI_RENDERED_PARAGRAPH_FUNCTION_MAP", "locations": ["V01-Q08"], "purpose": "avaliar organização/transição"},
+      {"type": "UI_RENDERED_COHESION_COHERENCE_REVISION_PASSES", "locations": ["V01-Q09"], "purpose": "edição integrada"}
+    ],
+    "productionQueueRequired": false,
+    "publicationDependency": "nenhuma nova mídia humana obrigatória; reescrita aberta equivalente exige avaliador confiável para validação semântica plena",
+    "decisionRationale": "todos os alvos são textuais e podem ser avaliados com texto visível, manipulação e revisão controlada."
+  },
+  "sourceText": {
+    "id": "V01-T01",
+    "title": "Teste de armários para retirada de materiais",
+    "paragraphs": [
+      "O centro de formação iniciou um teste com armários de autoatendimento para retirada de materiais reservados. Durante seis semanas, alunos cadastrados podem buscar apostilas depois do fechamento da secretaria.",
+      "Na primeira semana, metade das retiradas ocorreu depois das 18h. A equipe também registrou dúvidas sobre onde encontrar o código de abertura do armário.",
+      "Para reduzir esse problema, as mensagens de confirmação passaram a mostrar o código em destaque e a indicar o número exato do armário. Na semana seguinte, diminuíram os pedidos de ajuda relacionados à abertura.",
+      "A coordenação considera que o sistema amplia as opções de horário. Alguns alunos, porém, preferem retirar o material na secretaria quando precisam confirmar alguma informação sobre a reserva.",
+      "Ao fim das seis semanas, a equipe comparará horários de retirada, pedidos de ajuda e comentários dos alunos. Só depois dessa análise decidirá se mantém os armários como opção permanente."
+    ]
+  },
+  "items": [
+    {
+      "id": "V01-Q01",
+      "cluster": "cohesionVsCoherence",
+      "type": "dimension-set",
+      "items": [
+        {"question": "O texto-base precisa começar todo parágrafo com um conector para ser coerente?", "options": ["não; a progressão e as relações podem estar claras sem isso", "sim"], "correctIndex": 0},
+        {"text": "Os armários ampliam o horário. Além disso, a Lua possui crateras. Portanto, o sistema continuará em teste.", "question": "Qual problema principal aparece?", "options": ["há informação sem relação com o assunto e conclusão não sustentada", "faltam ainda mais conectores"], "correctIndex": 0}
+      ]
+    },
+    {
+      "id": "V01-Q02",
+      "cluster": "thematicProgression",
+      "type": "progression-set",
+      "items": [
+        {"question": "Qual sequência resume a progressão dos parágrafos 1–3?", "options": ["teste do serviço → dado/dúvida observada → ajuste e efeito inicial", "opinião → história do prédio → cancelamento"], "correctIndex": 0},
+        {"question": "Qual informação do parágrafo 2 prepara diretamente a mudança do parágrafo 3?", "options": ["as dúvidas sobre localizar o código", "o fechamento da secretaria mencionado no início"], "correctIndex": 0}
+      ]
+    },
+    {
+      "id": "V01-Q03",
+      "cluster": "referenceChains",
+      "type": "reference-set",
+      "items": [
+        {"target": "esse problema", "paragraph": 3, "options": ["as dúvidas sobre onde encontrar o código de abertura", "o uso depois das 18h", "o fechamento da secretaria"], "correctIndex": 0},
+        {"target": "o sistema", "paragraph": 4, "options": ["os armários de autoatendimento/serviço de retirada", "a secretaria", "o código"], "correctIndex": 0},
+        {"target": "dessa análise", "paragraph": 5, "options": ["a comparação final de dados e comentários", "a mensagem de confirmação", "a primeira semana"], "correctIndex": 0}
+      ]
+    },
+    {
+      "id": "V01-Q04",
+      "cluster": "repetitionSubstitutionEllipsis",
+      "type": "revision-mechanism-set",
+      "items": [
+        {"before": "O centro iniciou o teste. O centro acompanhará as retiradas. O centro decidirá depois das seis semanas.", "options": ["O centro iniciou o teste. Ele acompanhará as retiradas e decidirá depois das seis semanas.", "toda repetição deve permanecer obrigatoriamente"], "correctIndex": 0},
+        {"text": "A primeira turma apresentou às oito; a segunda, às dez.", "question": "Qual informação é recuperável?", "options": ["a segunda turma apresentou às dez", "a segunda turma chegou às dez"], "correctIndex": 0},
+        {"question": "Se dois referentes possíveis tornam 'ela' ambíguo, repetir o nome pode ser uma boa revisão?", "options": ["sim", "não; repetição é sempre defeito"], "correctIndex": 0}
+      ]
+    },
+    {
+      "id": "V01-Q05",
+      "cluster": "connectorsByMeaning",
+      "type": "connector-set",
+      "items": [
+        {"stem": "Havia muitas dúvidas sobre o código. ____, a equipe destacou essa informação nas mensagens.", "options": ["Por isso", "Por outro lado", "Depois apenas como tempo"], "correctIndex": 0},
+        {"stem": "A coordenação avalia o sistema positivamente. ____, alguns alunos ainda preferem a secretaria em certas situações.", "options": ["Por outro lado", "Por isso", "Primeiro"], "correctIndex": 0},
+        {"question": "Acumular 'por isso, portanto, consequentemente' para a mesma relação melhora automaticamente a coesão?", "options": ["não", "sim"], "correctIndex": 0}
+      ]
+    },
+    {
+      "id": "V01-Q06",
+      "cluster": "gapsAndJumps",
+      "type": "continuity-problem-set",
+      "items": [
+        {"paragraphs": ["A equipe testou os armários por seis semanas.", "O jardim do centro recebeu novas mudas de árvores.", "Ao final, os dados das retiradas serão comparados."], "question": "Qual trecho rompe o foco sem relação construída?", "options": ["o parágrafo sobre o jardim", "o parágrafo sobre comparação de dados"], "correctIndex": 0},
+        {"text": "O local de retirada mudou. Por isso, todos devem chegar vinte minutos antes.", "question": "Sem outra informação, a relação causal está plenamente sustentada?", "options": ["não; falta explicar por que a mudança exige antecedência", "sim; toda mudança de local exige vinte minutos"], "correctIndex": 0},
+        {"question": "A revisão pode inventar que o novo local fica longe para resolver a lacuna?", "options": ["não", "sim"], "correctIndex": 0}
+      ]
+    },
+    {
+      "id": "V01-Q07",
+      "cluster": "consistency",
+      "type": "consistency-set",
+      "items": [
+        {"text": "Na primeira semana, o código aparecia no fim da mensagem. A partir da segunda, passou a aparecer em destaque no início.", "options": ["compatível: houve mudança temporal", "contradição"], "correctIndex": 0},
+        {"text": "A coordenação considera o serviço útil. Alguns alunos preferem a secretaria quando têm dúvidas.", "options": ["perspectivas compatíveis como vozes distintas", "contradição que exige apagar uma das opiniões"], "correctIndex": 0},
+        {"text": "O relatório afirma que não houve nenhum pedido de ajuda na terceira semana e, depois, afirma que houve doze pedidos na mesma semana, sem distinguir categorias.", "options": ["há incompatibilidade a esclarecer", "as duas frases são automaticamente compatíveis"], "correctIndex": 0}
+      ]
+    },
+    {
+      "id": "V01-Q08",
+      "cluster": "globalOrganization",
+      "type": "paragraph-order-transition",
+      "blocks": [
+        {"id": "a", "text": "Com os resultados, a equipe decidirá se amplia o serviço."},
+        {"id": "b", "text": "O teste começou com dois armários disponíveis para alunos cadastrados."},
+        {"id": "c", "text": "Nas primeiras semanas, foram registrados horários de uso e principais dúvidas."},
+        {"id": "d", "text": "Depois das dúvidas, as mensagens foram ajustadas para mostrar o código com mais clareza."}
+      ],
+      "oneCoherentOrder": ["b", "c", "d", "a"],
+      "followUp": {"question": "Todo texto do curso precisa seguir exatamente essa sequência de quatro funções?", "options": ["não; essa organização atende a este relato de teste", "sim"], "correctIndex": 0}
+    },
+    {
+      "id": "V01-Q09",
+      "cluster": "integratedRevision",
+      "type": "real-editing-task",
+      "original": [
+        "O centro testará um novo serviço de retirada por seis semanas.",
+        "Na primeira fase, duas salas terão armários. A fachada do prédio foi pintada no ano passado. Os alunos receberão um código por mensagem.",
+        "Muitos alunos disseram que o código era difícil de localizar. No entanto, a equipe passou a colocá-lo em destaque no início da mensagem.",
+        "A coordenação considera que a mudança facilita a retirada. Alguns alunos ainda preferem falar com a secretaria quando têm dúvidas. Ela será analisada ao final do teste.",
+        "A decisão sobre manter o serviço será tomada depois da comparação dos dados."
+      ],
+      "requiredEdits": [
+        {"target": "A fachada do prédio foi pintada no ano passado.", "action": "remover", "reason": "salto de foco"},
+        {"target": "No entanto, a equipe passou...", "action": "substituir por relação de consequência/continuidade, como 'Por isso' ou formulação sem conector", "reason": "o ajuste responde à dificuldade; não há contraste"},
+        {"target": "Ela será analisada ao final do teste.", "action": "explicitar o referente pretendido fornecido pela interface, por exemplo 'Essa diferença de preferência será analisada...'", "reason": "'Ela' pode retomar mais de um elemento feminino"},
+        {"target": "coordenação considera... / alunos preferem...", "action": "manter", "reason": "perspectivas distintas podem coexistir"},
+        {"target": "A decisão sobre manter o serviço...", "action": "manter", "reason": "fecha a progressão com decisão futura"}
+      ],
+      "acceptEquivalent": true,
+      "noInventedFacts": true
+    }
+  ],
+  "assessmentBehavior": {"textVisibility": "sempre disponível", "realEditingRequired": true, "connectorCountNotScore": true, "repetitionNotAutomaticError": true, "acceptEquivalentRevisions": true, "noInventedFacts": true, "ttsPolicy": "opcional", "timeLimit": false},
+  "completionEvidence": {
+    "clusters": {
+      "cohesionVsCoherence": {"evidence": ["V01-Q01"], "rule": "distinguir ligação textual de sentido global"},
+      "thematicProgression": {"evidence": ["V01-Q02"], "rule": "reconhecer a progressão e informação que prepara o avanço"},
+      "referenceChains": {"evidence": ["V01-Q03"], "rule": "resolver as três retomadas"},
+      "repetitionSubstitutionEllipsis": {"evidence": ["V01-Q04"], "rule": "usar mecanismos sem sacrificar clareza"},
+      "connectorsByMeaning": {"evidence": ["V01-Q05"], "rule": "selecionar relações e rejeitar acúmulo"},
+      "gapsAndJumps": {"evidence": ["V01-Q06"], "rule": "diagnosticar salto/lacuna sem inventar fato"},
+      "consistency": {"evidence": ["V01-Q07"], "rule": "distinguir mudança, perspectiva e contradição real"},
+      "globalOrganization": {"evidence": ["V01-Q08"], "rule": "organizar o texto e rejeitar fórmula universal"},
+      "integratedRevision": {"evidence": ["V01-Q09"], "rule": "resolver três problemas reais e preservar os dois trechos corretos"}
+    },
+    "completionRule": "todos os nove agrupamentos são obrigatórios; a tarefa real de edição é indispensável.",
+    "notSufficient": ["adicionar conectores", "eliminar repetição", "mudar toda frase", "inventar contexto", "apagar perspectivas divergentes"]
+  },
+  "remediationRoutes": [
+    {"when": "coesão/coerência", "review": ["N2-U05-L01"]},
+    {"when": "progressão", "review": ["N2-U05-L02"]},
+    {"when": "referência", "review": ["N2-U05-L03"]},
+    {"when": "repetição/substituição/elipse", "review": ["N2-U05-L04"]},
+    {"when": "conectores", "review": ["N2-U05-L05"]},
+    {"when": "lacunas/saltos", "review": ["N2-U05-L06"]},
+    {"when": "consistência", "review": ["N2-U05-L07"]},
+    {"when": "organização", "review": ["N2-U05-L08"]},
+    {"when": "revisão integrada", "review": ["N2-U05-L09"]}
+  ]
+}
