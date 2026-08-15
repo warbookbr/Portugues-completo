@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "id": "N0-U06-L10",
+  "title": "Reformular e confirmar que a comunicação funcionou",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Reformular uma mensagem simples quando há sinal de que ela não foi compreendida, tornando a informação necessária mais clara e confirmando se a nova formulação preserva a intenção.",
+  "competencies": [
+    "reconhecer um sinal simples de que a mensagem não foi compreendida",
+    "trocar palavra, reorganizar mensagem ou acrescentar informação necessária para reformular",
+    "preservar a intenção principal na nova formulação",
+    "confirmar se a outra pessoa compreendeu a informação relevante",
+    "produzir pelo menos uma reformulação própria e autorrevisada",
+    "ensaiar oralmente uma reformulação sem confundir ensaio registrado com oralidade validada"
+  ],
+  "prerequisites": ["N0-U06-L09", "N0-U05-L06", "N0-U05-L07"],
+  "limits": [
+    "não exigir explicação linguística formal da mudança",
+    "não exigir conversa longa ou negociação complexa",
+    "não exigir pronúncia padronizada",
+    "não declarar automaticamente produção oral compreensível sem observação confiável",
+    "não exigir uma única reformulação correta",
+    "não transformar reformular em falar mais formalmente por padrão"
+  ],
+  "media": {"tts": "instruções, falas simuladas e feedback; nenhum estímulo depende de prosódia específica", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {
+    "curatedMedia": [],
+    "runtimeResources": [{"type": "TTS_OK", "locations": ["situações", "falas simuladas", "feedback"], "purpose": "simular interlocução simples"}],
+    "generatedVisualResources": [
+      {"type": "UI_RENDERED_BEFORE_AFTER_REFORMULATION", "locations": ["L10-B02", "L10-C01", "L10-A01", "L10-A02"], "purpose": "comparar intenção e reformulação"},
+      {"type": "UI_RENDERED_OPEN_RESPONSE_FIELD", "locations": ["L10-A02"], "purpose": "reformulação própria"},
+      {"type": "UI_RENDERED_ORAL_REHEARSAL_CHECK", "locations": ["L10-A02"], "purpose": "permitir ensaio oral/autochecagem sem alegar validação externa"},
+      {"type": "UI_RENDERED_SELF_REVIEW_CHECKLIST", "locations": ["L10-A02"], "purpose": "verificar preservação da intenção e informação"}
+    ],
+    "productionQueueRequired": false,
+    "publicationDependency": "nenhuma nova mídia humana obrigatória; validação de produção oral continua dependendo de mecanismo humano/externo futuro",
+    "decisionRationale": "a reformulação textual é observável agora; o ensaio oral pode ser registrado, mas o sistema não possui base para julgar compreensibilidade da fala."
+  },
+  "sequence": [
+    {"id": "L10-B01", "type": "objective", "text": "Se outra pessoa não entendeu, podemos dizer de outro jeito. Reformular não é repetir mecanicamente: é tentar tornar a informação necessária mais clara."},
+    {
+      "id": "L10-B02",
+      "type": "demonstration",
+      "situation": "Você diz: 'Encontro você lá depois'. A outra pessoa pergunta: 'Onde? Que horas?'",
+      "before": "Encontro você lá depois.",
+      "reformulated": "Encontro você na entrada do mercado às três.",
+      "changes": ["substitui 'lá' por um local claro", "substitui 'depois' por um horário claro"],
+      "explanation": "A intenção de marcar o encontro foi preservada, mas a informação ficou suficiente."
+    },
+    {
+      "id": "L10-C01",
+      "type": "quick-check",
+      "situation": "Você diz 'Pegue aquilo'. A pessoa responde 'O quê?'. O objeto pretendido é o formulário azul sobre a mesa.",
+      "options": ["Pegue o formulário azul sobre a mesa.", "Pegue aquilo.", "A mesa é grande."],
+      "correctIndex": 0
+    },
+    {
+      "id": "L10-B03",
+      "type": "confirmation",
+      "situation": "Depois de reformular um horário, você quer verificar se a pessoa compreendeu.",
+      "examples": ["Então, ficou claro que é às quatro?", "Você entendeu que o horário mudou para quatro?"],
+      "explanation": "Confirmar pode verificar uma informação específica sem exigir conversa longa."
+    },
+    {
+      "id": "L10-A01",
+      "type": "assessment-selection",
+      "situation": "Você disse 'A entrega é amanhã'. A pessoa pergunta 'Que horas?'. A entrega será às nove.",
+      "options": ["A entrega é amanhã às nove.", "A entrega é amanhã.", "Amanhã existe entrega."],
+      "correctIndex": 0
+    },
+    {
+      "id": "L10-A02",
+      "type": "assessment-open-reformulation",
+      "situation": "Você escreveu para uma pessoa: 'Me encontre ali mais tarde'. Ela responde: 'Não sei onde nem quando'. O encontro será na porta da biblioteca às cinco.",
+      "responseMode": "free-text",
+      "requiredIntent": "marcar o encontro na porta da biblioteca às cinco",
+      "selfReview": ["Minha nova mensagem informa o local?", "Ela informa o horário?", "A intenção de marcar o encontro foi preservada?"],
+      "oralRehearsal": {"available": true, "instruction": "Se quiser, diga sua reformulação em voz alta e marque quando terminar o ensaio.", "automaticValidation": false, "meaning": "ensaio realizado não equivale a oralidade validada"},
+      "modelExamplesAfterSubmission": ["Me encontre na porta da biblioteca às cinco.", "A gente se encontra às cinco na porta da biblioteca."],
+      "automaticObservations": ["há texto livre", "autochecagem concluída", "ensaio oral foi marcado ou não"],
+      "notAutomaticallyJudged": ["compreensibilidade linguística plena", "produção oral compreensível", "pronúncia", "formulação única"]
+    },
+    {
+      "id": "L10-A03",
+      "type": "assessment-confirmation",
+      "situation": "Depois de explicar que a consulta mudou para terça às duas, qual frase ajuda a confirmar o entendimento?",
+      "options": ["Ficou claro que agora é terça às duas?", "Qual é sua cor favorita?", "A consulta existe."],
+      "correctIndex": 0
+    }
+  ],
+  "assessmentBehavior": {
+    "openResponsePolicy": "reformulação escrita é registrada e autorrevisada; validação plena exige avaliador confiável",
+    "oralPolicy": "ensaio oral pode ser registrado, mas não recebe status de compreensibilidade validada sem observação humana/externa",
+    "timeLimit": false
+  },
+  "completionEvidence": {
+    "clusters": {
+      "reformulationChoice": {"evidence": ["L10-C01", "L10-A01"], "rule": "selecionar reformulações que resolvem informação ausente"},
+      "ownReformulation": {"evidence": ["L10-A02"], "rule": "realizar reformulação em campo livre e autochecagem"},
+      "confirmation": {"evidence": ["L10-A03"], "rule": "selecionar confirmação relacionada à informação reformulada"}
+    },
+    "completionRule": "os três agrupamentos são obrigatórios; ensaio oral é prática registrada, não validação oral.",
+    "notSufficient": ["repetir a mesma mensagem sem resolver a dificuldade", "mudar a intenção principal", "marcar ensaio oral como substituto de evidência escrita/revisão", "copiar modelo posterior"]
+  }
+}
