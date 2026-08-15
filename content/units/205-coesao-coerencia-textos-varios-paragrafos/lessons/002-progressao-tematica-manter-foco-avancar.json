@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 1,
+  "id": "N2-U05-L02",
+  "title": "Progressão temática: manter o foco e fazer o texto avançar",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Construir progressão temática em textos de vários parágrafos, mantendo um eixo reconhecível e acrescentando informação nova relacionada sem repetir o mesmo conteúdo nem introduzir saltos arbitrários.",
+  "competencies": [
+    "identificar o eixo temático de um trecho",
+    "distinguir retomada útil de repetição que não faz o texto avançar",
+    "selecionar informação nova relacionada ao que já foi apresentado",
+    "identificar frase ou parágrafo que muda de foco sem preparação",
+    "ordenar informações para produzir avanço compreensível",
+    "reconhecer que progressão não exige sempre um conector no início do parágrafo"
+  ],
+  "prerequisites": ["N2-U05-L01", "N2-U01-L02", "N2-U01-L03"],
+  "limits": [
+    "não exigir tópico frasal explícito em todo parágrafo",
+    "não impor estrutura fixa de introdução-desenvolvimento-conclusão",
+    "não tratar qualquer informação nova como quebra de foco",
+    "não confundir progressão com aumento de tamanho",
+    "não exigir conector em toda transição"
+  ],
+  "media": {"tts": "opcional", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {
+    "curatedMedia": [],
+    "runtimeResources": [{"type": "TTS_OK", "locations": ["textos", "feedback"], "purpose": "apoio"}],
+    "generatedVisualResources": [
+      {"type": "UI_RENDERED_TOPIC_PROGRESSION_MAP", "locations": ["L02-B01", "L02-C01", "L02-A01"], "purpose": "mostrar informação retomada e nova"},
+      {"type": "UI_RENDERED_PARAGRAPH_ORDER", "locations": ["L02-B02", "L02-A02"], "purpose": "reordenar progressão global"}
+    ],
+    "productionQueueRequired": false,
+    "publicationDependency": "nenhuma nova mídia humana obrigatória",
+    "decisionRationale": "progressão temática é observável pela sequência de informações do texto."
+  },
+  "sequence": [
+    {
+      "id": "L02-B01",
+      "type": "model-analysis",
+      "textTitle": "Nova coleta seletiva",
+      "paragraphs": [
+        "O bairro começou um novo sistema de coleta seletiva em três ruas-piloto. Cada casa recebeu dois recipientes identificados por tipo de material.",
+        "Na primeira semana, a equipe acompanhou a separação dos resíduos e percebeu dúvidas frequentes sobre embalagens sujas. Por isso, produziu um guia curto com exemplos.",
+        "Na segunda semana, o número de recipientes misturados caiu. A equipe continuará acompanhando as ruas antes de decidir se o sistema será ampliado para outras regiões."
+      ],
+      "progression": [
+        {"paragraph": 1, "given": "novo sistema", "new": "ruas-piloto + recipientes"},
+        {"paragraph": 2, "given": "uso do sistema", "new": "dúvida observada + guia criado"},
+        {"paragraph": 3, "given": "efeito do acompanhamento/guia", "new": "queda de mistura + decisão futura"}
+      ]
+    },
+    {
+      "id": "L02-B02",
+      "type": "non-progression-contrast",
+      "versions": [
+        {"text": "A equipe criou um guia. O guia explica embalagens sujas. O guia é um guia produzido pela equipe.", "judgment": "há retomada, mas quase nenhuma informação nova"},
+        {"text": "A equipe criou um guia sobre embalagens sujas. Depois da distribuição, diminuiu a quantidade de recipientes com materiais misturados.", "judgment": "a segunda frase acrescenta resultado relacionado"}
+      ],
+      "guardRail": "repetição pode ser necessária; o problema aqui é repetir sem acrescentar função ou informação"
+    },
+    {
+      "id": "L02-C01",
+      "type": "quick-check",
+      "paragraphs": [
+        "A escola instalou bebedouros novos no pátio.",
+        "Depois da instalação, os estudantes passaram a usar menos copos descartáveis.",
+        "A direção vai comparar o consumo de copos por dois meses."
+      ],
+      "question": "Qual descrição da progressão é adequada?",
+      "options": [
+        "mudança instalada → efeito observado → acompanhamento futuro",
+        "três assuntos sem relação",
+        "o texto repete exatamente a mesma informação"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "L02-A01",
+      "type": "assessment-intruder",
+      "paragraphs": [
+        "A biblioteca criou uma área silenciosa para estudo individual.",
+        "Nas primeiras semanas, a maior procura ocorreu no período da tarde.",
+        "A praça em frente ao prédio recebeu novas árvores ornamentais.",
+        "Por causa da procura, a biblioteca passou a permitir reserva antecipada das mesas."
+      ],
+      "question": "Qual parágrafo interrompe a progressão construída?",
+      "options": ["3", "2", "4"],
+      "correctIndex": 0,
+      "reason": "a informação sobre árvores não foi ligada ao uso da área de estudo"
+    },
+    {
+      "id": "L02-A02",
+      "type": "assessment-order",
+      "blocks": [
+        {"id": "a", "text": "Com os dados do teste, a equipe decidirá se amplia o serviço."},
+        {"id": "b", "text": "O serviço começou em duas ruas para observar como funcionaria em escala pequena."},
+        {"id": "c", "text": "Durante quatro semanas, foram registrados horários de maior procura e principais dúvidas dos usuários."}
+      ],
+      "question": "Qual ordem constrói uma progressão clara neste caso?",
+      "options": ["b → c → a", "a → b → c", "c → a → b"],
+      "correctIndex": 0,
+      "followUp": {"question": "Todo texto precisa dessa mesma ordem?", "options": ["não; ela funciona para este texto de teste e avaliação", "sim; todo texto precisa seguir esse molde"], "correctIndex": 0}
+    }
+  ],
+  "assessmentBehavior": {"textVisibility": "sempre disponível", "fixedParagraphFormula": false, "ttsPolicy": "opcional", "timeLimit": false},
+  "completionEvidence": {
+    "clusters": {
+      "thematicProgression": {"evidence": ["L02-C01", "L02-A01"], "rule": "reconhecer progressão e identificar salto de foco"},
+      "globalOrder": {"evidence": ["L02-A02"], "rule": "ordenar o texto pelo sentido sem transformar a ordem em fórmula universal"}
+    },
+    "completionRule": "os dois agrupamentos são obrigatórios.",
+    "notSufficient": ["repetir o tema sem acrescentar informação", "iniciar todo parágrafo com conector", "usar tamanho como sinal de progressão"]
+  }
+}
