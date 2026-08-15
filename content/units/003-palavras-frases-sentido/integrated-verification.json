@@ -1,0 +1,651 @@
+{
+  "schemaVersion": 1,
+  "id": "N0-U03-V01",
+  "type": "integrated-unit-verification",
+  "title": "Verificação integrada — Unidade 3",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Verificar de forma integrada se o aluno consolidou as competências essenciais da Unidade 3, compreendendo palavras e mensagens em contexto, manipulando frases simples e produzindo pelo menos uma mensagem curta com palavras próprias, sem depender de memorização dos exemplos centrais das lições nem antecipar leitura de pequenos textos ou gramática formal.",
+  "prerequisites": [
+    "N0-U03-L01",
+    "N0-U03-L02",
+    "N0-U03-L03",
+    "N0-U03-L04",
+    "N0-U03-L05",
+    "N0-U03-L06",
+    "N0-U03-L07",
+    "N0-U03-L08",
+    "N0-U03-L09",
+    "N0-U03-L10"
+  ],
+  "designPrinciples": [
+    "usar palavras, situações e frases novas em relação aos exemplos centrais das lições sempre que isso aumentar a validade da transferência",
+    "avaliar significado e contexto, construção e manipulação de frases e compreensão e produção de mensagens como agrupamentos distintos",
+    "não permitir que desempenho alto em tarefas fechadas compense ausência total de produção própria",
+    "usar contexto suficiente para restringir respostas quando o item exigir uma solução específica e registrar múltiplas respostas quando a atividade admitir variação",
+    "tratar pontuação, ordem e palavras isoladas como pistas ou recursos da mensagem, não como regras automáticas de classificação",
+    "permitir TTS para instruções, contextos e opções quando isso não entregar a resposta avaliada",
+    "não reproduzir por TTS a frase-alvo correta antes da tentativa em tarefas de reconstrução",
+    "em produção aberta, permitir TTS do estímulo, mas não fornecer frase-modelo antes da primeira resposta",
+    "registrar separadamente produção realizada, autochecagem e eventual validação humana ou externa de compreensibilidade",
+    "não usar velocidade, extensão, ortografia perfeita ou terminologia gramatical como substitutos das competências da unidade"
+  ],
+  "limits": [
+    "não exigir classes gramaticais, sujeito, predicado, verbo, complemento, oração, período ou análise sintática",
+    "não exigir regras sistemáticas de pontuação, concordância, regência, flexão ou ortografia",
+    "não exigir compreensão global de pequenos textos ou relações entre várias frases como competência central",
+    "não exigir produção de parágrafo ou resposta longa",
+    "não exigir nomes técnicos como sinônimo, antônimo, polissemia, declarativa, interrogativa, imperativa ou exclamativa",
+    "não tratar uma ordem incomum mas possível do português como regra universalmente errada fora do contexto controlado da tarefa",
+    "não inferir intenção comunicativa apenas pelo sinal de pontuação",
+    "não afirmar que resposta aberta é linguisticamente correta ou plenamente compreensível apenas por palavras-chave, contagem de palavras ou comparação literal com modelo",
+    "não exigir microfone, pronúncia observada ou reconhecimento de fala",
+    "não usar tempo de resposta como critério de aprovação"
+  ],
+  "coverage": [
+    {
+      "competency": "relacionar palavras simples ao que representam ou fazem em contexto",
+      "evidence": [
+        "V01-Q01"
+      ]
+    },
+    {
+      "competency": "perceber proximidade e oposição simples de sentido sem terminologia técnica obrigatória",
+      "evidence": [
+        "V01-Q02"
+      ]
+    },
+    {
+      "competency": "usar contexto forte para interpretar uma palavra com mais de um significado possível",
+      "evidence": [
+        "V01-Q03"
+      ]
+    },
+    {
+      "competency": "reconhecer frase ou expressão como mensagem em situação, inclusive mensagem de uma palavra",
+      "evidence": [
+        "V01-Q04"
+      ]
+    },
+    {
+      "competency": "organizar palavras fornecidas para comunicar uma relação simples",
+      "evidence": [
+        "V01-Q05"
+      ]
+    },
+    {
+      "competency": "perceber efeito de substituição, acréscimo ou modificação na mensagem",
+      "evidence": [
+        "V01-Q06"
+      ]
+    },
+    {
+      "competency": "compreender o efeito básico da negação sem concluir automaticamente o contrário",
+      "evidence": [
+        "V01-Q07"
+      ]
+    },
+    {
+      "competency": "reconhecer funcionalmente mensagens que informam, perguntam, pedem, ordenam ou reagem",
+      "evidence": [
+        "V01-Q08"
+      ]
+    },
+    {
+      "competency": "completar e reconstruir frases usando pistas de sentido e organização",
+      "evidence": [
+        "V01-Q09"
+      ]
+    },
+    {
+      "competency": "produzir e autorrevisar pelo menos uma mensagem curta com palavras próprias",
+      "evidence": [
+        "V01-Q10"
+      ]
+    }
+  ],
+  "media": {
+    "tts": "instruções, contextos, opções, feedback e estímulo da produção aberta. Em reconstrução, não narrar previamente a frase-alvo completa; em produção aberta, não oferecer modelo antes da primeira resposta.",
+    "controlledAudio": [],
+    "video": "nao necessario",
+    "images": "nao necessarias"
+  },
+  "supportMaterials": {
+    "curatedMedia": [],
+    "runtimeResources": [
+      {
+        "type": "TTS_OK",
+        "locations": [
+          "instruções",
+          "V01-Q01",
+          "V01-Q02",
+          "V01-Q03",
+          "V01-Q04",
+          "V01-Q06",
+          "V01-Q07",
+          "V01-Q08",
+          "V01-Q09",
+          "V01-Q10",
+          "feedback final"
+        ],
+        "purpose": "reduzir carga de leitura sem transformar entonação em estímulo decisivo nem fornecer a frase-alvo antes de tarefas de organização ou produção"
+      }
+    ],
+    "generatedVisualResources": [
+      {
+        "type": "UI_RENDERED_CONTEXT_CARD",
+        "locations": [
+          "V01-Q03",
+          "V01-Q04",
+          "V01-Q05",
+          "V01-Q07",
+          "V01-Q08",
+          "V01-Q09",
+          "V01-Q10"
+        ],
+        "purpose": "manter a situação curta visível durante a decisão ou produção"
+      },
+      {
+        "type": "UI_RENDERED_WORD_RELATION_CHOICES",
+        "locations": [
+          "V01-Q01",
+          "V01-Q02",
+          "V01-Q03"
+        ],
+        "purpose": "apresentar palavras e relações sem imagens incorporadas ou terminologia técnica obrigatória"
+      },
+      {
+        "type": "UI_RENDERED_WORD_TILES_AND_ORDERING_ZONE",
+        "locations": [
+          "V01-Q05",
+          "V01-Q09"
+        ],
+        "purpose": "permitir reconstrução textual acessível sem imagem estática e sem revelar a frase pronta"
+      },
+      {
+        "type": "UI_RENDERED_BEFORE_AFTER_COMPARISON",
+        "locations": [
+          "V01-Q06",
+          "V01-Q07"
+        ],
+        "purpose": "comparar mensagens e destacar textualmente o que mudou sem depender apenas de cor"
+      },
+      {
+        "type": "UI_RENDERED_FUNCTION_CHOICE",
+        "locations": [
+          "V01-Q08"
+        ],
+        "purpose": "relacionar mensagem e situação à função comunicativa principal em exemplos claros"
+      },
+      {
+        "type": "UI_RENDERED_OPEN_RESPONSE_FIELD",
+        "locations": [
+          "V01-Q10"
+        ],
+        "purpose": "registrar uma produção curta realmente aberta, sem banco de palavras ou fichas"
+      },
+      {
+        "type": "UI_RENDERED_SELF_REVIEW_CHECKLIST",
+        "locations": [
+          "V01-Q10"
+        ],
+        "purpose": "registrar autochecagem funcional sem fingir correção linguística automática"
+      }
+    ],
+    "productionQueueRequired": false,
+    "publicationDependency": "não há nova mídia humana obrigatória; a verificação pode ser implementada com texto real da interface, TTS e componentes interativos porque nenhuma resposta depende de estímulo sonoro controlado, movimento ou referente visual indispensável.",
+    "decisionRationale": "as competências da Unidade 3 são semânticas, contextuais e de construção de mensagens simples. Situações textuais curtas permitem evidência direta e transferível sem aumentar a fila de mídia. Imagens poderiam ilustrar alguns contextos, mas não são necessárias para decidir as respostas desta verificação e acrescentariam dependência sem ganho proporcional."
+  },
+  "items": [
+    {
+      "id": "V01-Q01",
+      "type": "word-meaning-function",
+      "focus": "read-or-listen-and-respond",
+      "instruction": "Escolha a palavra que combina com o que foi pedido.",
+      "items": [
+        {
+          "prompt": "Qual palavra indica uma ação?",
+          "options": [
+            "PULAR",
+            "JANELA",
+            "AMARELO"
+          ],
+          "correctIndex": 0
+        },
+        {
+          "prompt": "Qual palavra indica um lugar?",
+          "options": [
+            "PRAÇA",
+            "CORRER",
+            "MACIO"
+          ],
+          "correctIndex": 0
+        }
+      ],
+      "ttsAvailable": true
+    },
+    {
+      "id": "V01-Q02",
+      "type": "simple-meaning-relations",
+      "focus": "compare-and-respond",
+      "instruction": "Compare os sentidos das palavras.",
+      "items": [
+        {
+          "prompt": "Qual palavra comunica uma ideia mais próxima de FELIZ?",
+          "options": [
+            "ALEGRE",
+            "PESADO",
+            "FECHAR"
+          ],
+          "correctIndex": 0
+        },
+        {
+          "prompt": "Qual palavra comunica uma ideia mais contrária a QUENTE?",
+          "options": [
+            "FRIO",
+            "MORNO",
+            "CLARO"
+          ],
+          "correctIndex": 0
+        }
+      ],
+      "technicalLabelsRequired": false
+    },
+    {
+      "id": "V01-Q03",
+      "type": "contextual-word-meaning",
+      "focus": "use-context-and-respond",
+      "targetWord": "MANGA",
+      "contexts": [
+        {
+          "text": "Dora cortou a manga e colocou os pedaços no prato.",
+          "question": "Nesse contexto, MANGA é:",
+          "options": [
+            "uma fruta",
+            "uma parte da camisa"
+          ],
+          "correctIndex": 0
+        },
+        {
+          "text": "A manga da camisa de Hugo rasgou perto do punho.",
+          "question": "Nesse contexto, MANGA é:",
+          "options": [
+            "uma fruta",
+            "uma parte da camisa"
+          ],
+          "correctIndex": 1
+        }
+      ],
+      "conclusion": "a mesma forma escrita pode ter sentidos diferentes, e o contexto fornece pistas para decidir",
+      "ttsAvailable": true
+    },
+    {
+      "id": "V01-Q04",
+      "type": "message-in-context",
+      "focus": "judge-communicative-role",
+      "items": [
+        {
+          "context": "Uma ficha de estudo mostra apenas a palavra CALMA para o aluno observar sua escrita.",
+          "expression": "CALMA",
+          "question": "Aqui, CALMA está sendo usada principalmente como:",
+          "options": [
+            "uma palavra apresentada para estudo",
+            "uma mensagem dirigida a alguém"
+          ],
+          "correctIndex": 0
+        },
+        {
+          "context": "Durante uma discussão, uma pessoa tenta interromper a agitação e diz: Calma!",
+          "expression": "Calma!",
+          "question": "Aqui, CALMA pode funcionar como:",
+          "options": [
+            "uma mensagem completa na situação",
+            "somente uma palavra sem função comunicativa"
+          ],
+          "correctIndex": 0
+        },
+        {
+          "context": "Alguém avisa a quem esperava do lado de fora.",
+          "expression": "O portão abriu.",
+          "question": "Essa expressão comunica uma mensagem completa?",
+          "options": [
+            "sim",
+            "não"
+          ],
+          "correctIndex": 0
+        }
+      ],
+      "guardRail": "quantidade de palavras e pontuação não são usadas sozinhas como critério"
+    },
+    {
+      "id": "V01-Q05",
+      "type": "word-order-to-match-situation",
+      "focus": "order-and-understand",
+      "instruction": "Organize as fichas do jeito mais claro e comum para comunicar a situação apresentada.",
+      "situation": "Mara está seguindo Davi.",
+      "tiles": [
+        "Davi",
+        "segue",
+        "Mara"
+      ],
+      "acceptedSequences": [
+        [
+          "Mara",
+          "segue",
+          "Davi"
+        ]
+      ],
+      "renderedSentence": "Mara segue Davi.",
+      "fullSentenceTtsBeforeResponse": false,
+      "tileTtsAvailable": true,
+      "guardRail": "o gabarito representa a organização-alvo deste exercício controlado e não uma regra de que toda outra ordem possível do português é universalmente errada"
+    },
+    {
+      "id": "V01-Q06",
+      "type": "message-change-effects",
+      "focus": "compare-and-explain-by-choice",
+      "items": [
+        {
+          "before": "A caixa está leve.",
+          "after": "A caixa está pesada.",
+          "question": "O que mudou principalmente na mensagem?",
+          "options": [
+            "a característica atribuída à caixa",
+            "quem está sendo mencionado",
+            "a mensagem virou uma pergunta"
+          ],
+          "correctIndex": 0
+        },
+        {
+          "before": "O ônibus chegou.",
+          "after": "O ônibus chegou hoje.",
+          "question": "O que a segunda frase acrescenta?",
+          "options": [
+            "uma informação de quando",
+            "uma negação da chegada",
+            "outra pessoa"
+          ],
+          "correctIndex": 0
+        }
+      ],
+      "diffHighlight": "textual-and-accessible"
+    },
+    {
+      "id": "V01-Q07",
+      "type": "negation-interpretation",
+      "focus": "interpret-and-respond",
+      "items": [
+        {
+          "context": "A luz continuou apagada depois de alguém apertar o interruptor.",
+          "question": "Qual frase corresponde melhor à situação?",
+          "options": [
+            "A luz acendeu.",
+            "A luz não acendeu."
+          ],
+          "correctIndex": 1
+        },
+        {
+          "message": "O pacote não chegou.",
+          "question": "O que essa frase permite concluir?",
+          "options": [
+            "ela nega que o pacote tenha chegado",
+            "ela prova que o pacote foi perdido",
+            "ela informa onde o pacote está"
+          ],
+          "correctIndex": 0
+        }
+      ],
+      "guardRail": "negar uma afirmação não autoriza concluir automaticamente um contrário mais específico"
+    },
+    {
+      "id": "V01-Q08",
+      "type": "communicative-function-in-context",
+      "focus": "match-message-function",
+      "instruction": "Considere a situação e escolha a função principal da mensagem.",
+      "functions": [
+        "informar",
+        "perguntar",
+        "pedir",
+        "ordenar",
+        "reagir"
+      ],
+      "items": [
+        {
+          "context": "Ivo avisa uma novidade a Rosa.",
+          "message": "A médica chegou.",
+          "correctFunction": "informar"
+        },
+        {
+          "context": "Rosa quer saber onde fica a farmácia.",
+          "message": "Onde fica a farmácia?",
+          "correctFunction": "perguntar"
+        },
+        {
+          "context": "Ivo quer ajuda para alcançar um copo.",
+          "message": "Você pode me passar o copo, por favor?",
+          "correctFunction": "pedir"
+        },
+        {
+          "context": "Um responsável precisa interromper imediatamente uma ação perigosa.",
+          "message": "Pare agora.",
+          "correctFunction": "ordenar"
+        },
+        {
+          "context": "Rosa leva um susto inesperado.",
+          "message": "Que susto!",
+          "correctFunction": "reagir"
+        }
+      ],
+      "punctuationIsSufficientCriterion": false,
+      "ttsAvailable": true
+    },
+    {
+      "id": "V01-Q09",
+      "type": "completion-and-reconstruction",
+      "focus": "complete-order-and-understand",
+      "items": [
+        {
+          "interaction": "choose-completion-from-strong-clue",
+          "context": "O forno continua desligado.",
+          "sentenceWithBlank": "O forno ___ ligou.",
+          "options": [
+            "não",
+            "azul",
+            "mesa"
+          ],
+          "correctIndex": 0,
+          "fullSentenceTtsBeforeResponse": false
+        },
+        {
+          "interaction": "order-word-tiles-to-match-clue",
+          "context": "Rosa está chamando Ivo.",
+          "tiles": [
+            "Ivo",
+            "Rosa",
+            "chama"
+          ],
+          "acceptedSequences": [
+            [
+              "Rosa",
+              "chama",
+              "Ivo"
+            ]
+          ],
+          "fullSentenceTtsBeforeResponse": false,
+          "tileTtsAvailable": true
+        }
+      ],
+      "supportUseIsError": false
+    },
+    {
+      "id": "V01-Q10",
+      "type": "required-open-production",
+      "focus": "write-review-own-message",
+      "interaction": "free-text-response-and-self-review",
+      "prompt": "Você precisa pedir a outra pessoa que espere um momento. Escreva uma mensagem curta que faça esse pedido de maneira compreensível.",
+      "responseMode": "free-text",
+      "starter": null,
+      "wordBank": [],
+      "preResponseModel": null,
+      "ttsPromptAvailable": true,
+      "selfReviewRequired": true,
+      "selfReviewQuestions": [
+        "Minha mensagem faz um pedido relacionado a esperar?",
+        "As palavras estão organizadas do jeito que eu queria?",
+        "Falta alguma informação essencial para esse pedido simples?",
+        "Outra pessoa conseguiria perceber a mensagem principal?"
+      ],
+      "modelExamplesAfterSubmission": [
+        "Espere um momento, por favor.",
+        "Pode esperar um pouco, por favor?"
+      ],
+      "automaticObservations": [
+        "há texto digitado além de espaços ou sinais isolados",
+        "a resposta foi produzida em campo livre sem fichas, banco de palavras ou início fornecido",
+        "a autochecagem foi concluída",
+        "se houve revisão depois da autochecagem"
+      ],
+      "notAutomaticallyJudged": [
+        "compreensibilidade linguística plena",
+        "correção gramatical global",
+        "ortografia e pontuação",
+        "adequação social perfeita em todos os contextos",
+        "equivalência literal com os exemplos posteriores"
+      ],
+      "humanOrExternalReview": {
+        "requiredForClaimOfValidatedComprehensibility": true,
+        "statusWhenApproved": "validada-compreensivel"
+      }
+    }
+  ],
+  "assessmentBehavior": {
+    "ttsPolicy": "TTS pode narrar instruções, contextos e opções quando isso não entrega o alvo; não narrar a frase correta antes da resposta em reconstrução e não oferecer frase-modelo antes da produção aberta.",
+    "readingSupport": "apoio de leitura é permitido e registrado separadamente; não é erro automático.",
+    "multipleValidAnswers": "quando uma tarefa admitir mais de uma solução, todas as soluções aceitas devem ser registradas; não reduzir variação real a gabarito único por conveniência técnica.",
+    "openResponsePolicy": "a produção aberta obrigatória não recebe julgamento automático de correção linguística por heurísticas superficiais.",
+    "automaticChecksAllowedForOpenResponse": [
+      "detectar campo vazio ou somente espaços/sinais",
+      "registrar uso de campo livre",
+      "registrar conclusão da autochecagem",
+      "registrar revisão e preservar versões quando houver"
+    ],
+    "automaticChecksNotSufficientForOpenResponse": [
+      "contagem de palavras",
+      "palavra-chave",
+      "pontuação específica",
+      "comparação literal com frase-modelo",
+      "maiúscula inicial ou ponto final"
+    ],
+    "timeLimit": false,
+    "technicalTerminologyRequired": false,
+    "longWrittenResponseRequired": false,
+    "retryPolicy": "permitir nova tentativa após feedback nas tarefas fechadas e edição/revisão na produção aberta; embaralhar opções quando isso não alterar a competência medida."
+  },
+  "completionEvidence": {
+    "clusters": {
+      "meaningAndContext": {
+        "evidence": [
+          "V01-Q01",
+          "V01-Q02",
+          "V01-Q03"
+        ],
+        "rule": "acertar pelo menos 5 dos 6 subitens, incluindo os dois contextos de MANGA em V01-Q03"
+      },
+      "constructionAndManipulation": {
+        "evidence": [
+          "V01-Q05",
+          "V01-Q06",
+          "V01-Q09"
+        ],
+        "rule": "acertar V01-Q05 e pelo menos 3 dos 4 subitens de V01-Q06 e V01-Q09, incluindo a reconstrução de relação entre Rosa e Ivo"
+      },
+      "messageComprehensionAndProduction": {
+        "evidence": [
+          "V01-Q04",
+          "V01-Q07",
+          "V01-Q08",
+          "V01-Q10"
+        ],
+        "rule": "acertar pelo menos 2 dos 3 itens de V01-Q04, os 2 itens de V01-Q07, pelo menos 4 dos 5 itens de V01-Q08 e realizar V01-Q10 em campo livre com autochecagem concluída"
+      }
+    },
+    "completionRule": "os três agrupamentos são obrigatórios. Não usar média global para compensar ausência em um agrupamento, e nenhuma quantidade de acertos fechados compensa a ausência da produção aberta V01-Q10.",
+    "autonomousOutcome": {
+      "whenAllClusterRulesMet": "verificacao-autonoma-concluida-com-producao-autorrevisada",
+      "meaning": "as evidências fechadas foram aprovadas e a produção aberta foi realizada e autorrevisada; isso não equivale a afirmar que a resposta aberta foi linguisticamente validada"
+    },
+    "validatedOutcome": {
+      "additionalRequirement": "revisão humana ou externa confiável confirma que V01-Q10 comunica de modo compreensível o pedido proposto",
+      "status": "verificacao-validada"
+    },
+    "notSufficient": [
+      "percorrer todas as telas",
+      "atingir uma porcentagem global sem atender aos três agrupamentos",
+      "acertar apenas questões de múltipla escolha",
+      "enviar produção aberta vazia, somente com sinais ou copiada de modelo apresentado depois",
+      "usar velocidade ou extensão da resposta como prova de domínio",
+      "memorizar exemplos das lições anteriores"
+    ]
+  },
+  "remediationRoutes": [
+    {
+      "when": "dificuldade em V01-Q01",
+      "review": [
+        "N0-U03-L01"
+      ]
+    },
+    {
+      "when": "dificuldade em V01-Q02",
+      "review": [
+        "N0-U03-L02"
+      ]
+    },
+    {
+      "when": "dificuldade em V01-Q03",
+      "review": [
+        "N0-U03-L03"
+      ]
+    },
+    {
+      "when": "dificuldade em V01-Q04",
+      "review": [
+        "N0-U03-L04"
+      ]
+    },
+    {
+      "when": "dificuldade em V01-Q05",
+      "review": [
+        "N0-U03-L05"
+      ]
+    },
+    {
+      "when": "dificuldade em V01-Q06",
+      "review": [
+        "N0-U03-L06"
+      ]
+    },
+    {
+      "when": "dificuldade em V01-Q07",
+      "review": [
+        "N0-U03-L07"
+      ]
+    },
+    {
+      "when": "dificuldade em V01-Q08",
+      "review": [
+        "N0-U03-L08"
+      ]
+    },
+    {
+      "when": "dificuldade em V01-Q09",
+      "review": [
+        "N0-U03-L09"
+      ]
+    },
+    {
+      "when": "dificuldade em produzir ou revisar V01-Q10",
+      "review": [
+        "N0-U03-L10"
+      ]
+    }
+  ]
+}
