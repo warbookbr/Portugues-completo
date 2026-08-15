@@ -80,6 +80,7 @@ Arquivos principais:
 
 Ler:
 
+- `docs/roadmap-curricular.md` para estado atual, próximo passo, maturidade dos níveis e checkpoints de cobertura global
 - `docs/mapa-curso.md`
 - `docs/unidades-nivel-0.md` quando o trabalho envolver o detalhamento das unidades do Nível 0
 - `docs/licoes-nivel-0.md` quando o trabalho envolver lições já dimensionadas do Nível 0
@@ -93,6 +94,7 @@ Usar:
 
 Ler:
 
+- `docs/roadmap-curricular.md` para confirmar o foco atual, próximo passo e eventual checkpoint estrutural antes de aprofundar a camada
 - `docs/mapa-curso.md`
 - `docs/unidades-nivel-0.md` para unidades já detalhadas do Nível 0
 - `docs/licoes-nivel-0.md` para lições já consolidadas do Nível 0
@@ -183,6 +185,7 @@ Workflow:
 ## Documentação oficial existente
 
 - `docs/arquitetura.md` — arquitetura e responsabilidades técnicas.
+- `docs/roadmap-curricular.md` — estado do desenvolvimento curricular, próximo passo, maturidade dos níveis e checkpoints de cobertura global.
 - `docs/mapa-curso.md` — níveis, áreas e progressão curricular geral.
 - `docs/unidades-nivel-0.md` — detalhamento pedagógico consolidado das unidades do Nível 0.
 - `docs/licoes-nivel-0.md` — dimensionamento pedagógico consolidado das lições já definidas do Nível 0.
@@ -280,7 +283,7 @@ Fonte oficial:
 
 O documento define o que deve bloquear o CI, o que deve gerar apenas warning e em que momento adicionar schemas, integridade curricular, detecção de conteúdo órfão, acessibilidade, performance e segurança.
 
-O `PROJECT_INDEX.md` não deve listar cada aula ou exercício individual. Ele mapeia áreas estruturais, documentos e pontos de entrada.
+O `PROJECT_INDEX.md` não deve listar cada aula ou exercício individual. Ele mapeia áreas estruturais, documentos e pontos de entrada. O estado detalhado e o próximo passo curricular pertencem a `docs/roadmap-curricular.md`.
 
 ## Fontes de verdade
 
@@ -292,6 +295,9 @@ Decisão arquitetural
 
 Progressão curricular geral
 → docs/mapa-curso.md
+
+Estado curricular, próximo passo e checkpoints de cobertura
+→ docs/roadmap-curricular.md
 
 Detalhamento das unidades do Nível 0
 → docs/unidades-nivel-0.md
