@@ -1,0 +1,143 @@
+{
+  "schemaVersion": 1,
+  "id": "N2-U02-V01",
+  "type": "integrated-unit-verification",
+  "title": "Verificação integrada — Nível 2, Unidade 2",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Verificar uso integrado de estratégia ortográfica, regularidades do recorte, acentuação de paroxítonas e hiatos, famílias/formação de palavras, classes ampliadas e interpretação lexical contextual sem transformar padrões parciais em regras universais.",
+  "prerequisites": ["N2-U02-L01", "N2-U02-L02", "N2-U02-L03", "N2-U02-L04", "N2-U02-L05", "N2-U02-L06", "N2-U02-L07", "N2-U02-L08", "N2-U02-L09", "N2-U02-L10", "N2-U02-L11"],
+  "normativeScopeRef": "docs/referencias-ortografia-nivel-2.md",
+  "designPrinciples": ["avaliar apenas regras pertencentes ao recorte normativo", "usar exemplos de transferência e não somente os modelos das lições", "caso lexical pode exigir consulta como resposta correta", "não usar pronúncia como regra ortográfica única", "classes são avaliadas em contexto", "sinônimos não são equivalência perfeita", "acepção é escolhida pelo contexto, não pela posição no verbete", "não usar média global para esconder lacuna normativa"],
+  "limits": ["sem hífen como sistema", "sem todas as grafias de s/z/x/ch/g/j", "sem etimologia", "sem acentuação exaustiva", "sem taxonomia completa de formação/classes", "sem ironia sofisticada"],
+  "media": {"tts": "opcional; nunca é a única regra para grafia", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["instruções", "frases", "feedback"], "purpose": "apoio"}], "generatedVisualResources": [{"type": "UI_RENDERED_ORTHOGRAPHIC_DECISION_PATH", "locations": ["V01-Q01", "V01-Q02"], "purpose": "avaliar estratégia/padrão/consulta"}, {"type": "UI_RENDERED_ACCENT_RULE_PATH", "locations": ["V01-Q03", "V01-Q04"], "purpose": "avaliar acentuação"}, {"type": "UI_RENDERED_WORD_FORMATION_TREE", "locations": ["V01-Q05", "V01-Q06"], "purpose": "avaliar família/formação"}, {"type": "UI_RENDERED_FUNCTION_IN_SENTENCE", "locations": ["V01-Q07"], "purpose": "avaliar classes em uso"}, {"type": "UI_RENDERED_MULTIPLE_SENSE_CARD", "locations": ["V01-Q08", "V01-Q09"], "purpose": "avaliar semântica/acepção"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "todos os alvos são textuais/gráficos e podem ser avaliados por componentes acessíveis."},
+  "items": [
+    {
+      "id": "V01-Q01",
+      "cluster": "orthographicStrategy",
+      "type": "strategy-set",
+      "items": [
+        {"case": "ta__bém", "options": ["aplicar m antes de p/b", "consultar porque não existe regularidade"], "correctIndex": 0},
+        {"case": "uma palavra desconhecida pode plausivelmente ser grafada com ch ou x e nenhuma família conhecida resolve", "options": ["consultar a grafia", "inventar uma regra pela pronúncia"], "correctIndex": 0},
+        {"case": "há uma regra que cobre exatamente o padrão observado", "options": ["aplicar a regra e conferir se o caso realmente pertence ao recorte", "ignorar a regra e memorizar a palavra isolada"], "correctIndex": 0}
+      ]
+    },
+    {
+      "id": "V01-Q02",
+      "cluster": "orthographicRegularities",
+      "type": "scope-and-position-set",
+      "items": [
+        {"sentence": "O __enário foi montado cedo.", "options": ["c", "ç"], "correctIndex": 0, "result": "cenário", "target": "ç não ocorre antes de e/i"},
+        {"sentence": "O la__o da fita soltou.", "options": ["ç", "c"], "correctIndex": 0, "result": "laço", "target": "no contraste c/ç oferecido, ç preserva o valor sibilante pretendido antes de o"},
+        {"question": "Som e posição bastam para decidir entre g e j em qualquer palavra diante de e/i?", "options": ["não", "sim"], "correctIndex": 0},
+        {"question": "Som e posição bastam para decidir entre ch e x em toda palavra?", "options": ["não", "sim"], "correctIndex": 0}
+      ]
+    },
+    {
+      "id": "V01-Q03",
+      "cluster": "paroxytoneAccent",
+      "type": "accentuation-set",
+      "items": [
+        {"base": "dificil", "options": ["difícil", "dificil"], "correctIndex": 0, "rule": "paroxítona terminada em l"},
+        {"base": "impar", "options": ["ímpar", "impar"], "correctIndex": 0, "rule": "paroxítona terminada em r"},
+        {"base": "forum", "options": ["fórum", "forum"], "correctIndex": 0, "rule": "paroxítona terminada em um"},
+        {"base": "orfao", "options": ["órfão", "orfão"], "correctIndex": 0, "rule": "paroxítona terminada em ão"},
+        {"base": "plateia", "options": ["plateia", "platéia"], "correctIndex": 0, "rule": "ditongo aberto ei em paroxítona sem acento no padrão atual"}
+      ]
+    },
+    {
+      "id": "V01-Q04",
+      "cluster": "hiatusAccent",
+      "type": "hiatus-set",
+      "items": [
+        {"base": "saude", "options": ["saúde", "saude"], "correctIndex": 0},
+        {"base": "faisca", "options": ["faísca", "faisca"], "correctIndex": 0},
+        {"base": "paraiso", "options": ["paraíso", "paraiso"], "correctIndex": 0},
+        {"base": "rainha", "options": ["rainha", "raínha"], "correctIndex": 0},
+        {"base": "juiz", "options": ["juiz", "juíz"], "correctIndex": 0}
+      ]
+    },
+    {
+      "id": "V01-Q05",
+      "cluster": "wordFamily",
+      "type": "family-set",
+      "items": [
+        {"group": ["jornal", "jornalista", "jornalismo"], "question": "Há família transparente?", "options": ["sim; compartilham base e núcleo de sentido ligado a jornal", "não; letras iguais nunca indicam família"], "correctIndex": 0},
+        {"groups": [["pedra", "pedreiro", "pedrinha"], ["mar", "martelo", "margem"]], "question": "Qual grupo mostra família transparente no recorte?", "correctIndex": 0},
+        {"question": "Semelhança gráfica sozinha prova parentesco?", "options": ["não", "sim"], "correctIndex": 0}
+      ]
+    },
+    {
+      "id": "V01-Q06",
+      "cluster": "formation",
+      "type": "formation-and-effect-set",
+      "items": [
+        {"word": "recontar", "parts": ["re-", "contar"], "process": "derivação", "effectOptions": ["contar novamente no contexto", "diminuir o tamanho"], "correctIndex": 0},
+        {"word": "calmamente", "parts": ["calma", "-mente"], "process": "derivação", "sentence": "Ela respondeu calmamente.", "effectOptions": ["indica modo", "indica quantidade"], "correctIndex": 0},
+        {"word": "guarda-chuva", "parts": ["guarda", "chuva"], "question": "Quanto ao processo de formação no recorte, é um caso transparente de quê?", "options": ["composição", "flexão de número"], "correctIndex": 0, "note": "o hífen é fornecido; não é alvo de avaliação"},
+        {"question": "Conhecer as partes garante todo o sentido de qualquer palavra nova?", "options": ["não; contexto e uso lexical continuam necessários", "sim"], "correctIndex": 0}
+      ]
+    },
+    {
+      "id": "V01-Q07",
+      "cluster": "expandedClasses",
+      "type": "class-in-context-set",
+      "items": [
+        {"sentence": "Voltaremos amanhã.", "target": "amanhã", "options": ["advérbio", "numeral", "preposição"], "correctIndex": 0},
+        {"sentence": "O arquivo de Ana chegou.", "target": "de", "options": ["preposição", "adjetivo", "verbo"], "correctIndex": 0},
+        {"sentence": "Queria ir, mas estava doente.", "target": "mas", "options": ["conjunção", "numeral", "substantivo"], "correctIndex": 0},
+        {"sentence": "A quarta etapa começa hoje.", "target": "quarta", "options": ["numeral", "advérbio", "preposição"], "correctIndex": 0}
+      ]
+    },
+    {
+      "id": "V01-Q08",
+      "cluster": "semanticsPrecision",
+      "type": "meaning-and-precision-set",
+      "items": [
+        {"sentence": "A manga estava madura e doce.", "target": "manga", "options": ["fruta", "parte de roupa"], "correctIndex": 0},
+        {"sentence": "O banco da praça estava molhado.", "target": "banco", "options": ["assento", "instituição financeira"], "correctIndex": 0},
+        {"context": "o texto já informa que o veículo era um ônibus", "before": "O veículo parou no ponto.", "options": ["O ônibus parou no ponto.", "O objeto parou no ponto."], "correctIndex": 0},
+        {"question": "É correto escolher uma palavra mais específica se o texto não fornece o detalhe?", "options": ["não", "sim; especificidade é sempre melhor"], "correctIndex": 0}
+      ]
+    },
+    {
+      "id": "V01-Q09",
+      "cluster": "figurativeContextualSense",
+      "type": "figurative-and-dictionary-set",
+      "entry": {"word": "raiz", "senses": [{"n": 1, "definition": "parte da planta"}, {"n": 2, "definition": "origem/fundamento/causa de algo"}]},
+      "items": [
+        {"sentence": "Precisamos encontrar a raiz do problema.", "correctSense": 2, "reading": "figurado"},
+        {"sentence": "A raiz da árvore apareceu na superfície.", "correctSense": 1, "reading": "literal"},
+        {"sentence": "O projeto deu seus primeiros passos.", "context": "as primeiras ações começaram", "options": ["uso figurado ligado a início/avanço", "o projeto possui pernas"], "correctIndex": 0},
+        {"question": "Se uma frase não fornece contexto suficiente para escolher entre duas acepções, o que fazer?", "options": ["registrar a insuficiência ou buscar mais contexto", "escolher automaticamente a primeira definição"], "correctIndex": 0}
+      ]
+    }
+  ],
+  "assessmentBehavior": {"consultationAllowedWhereLexical": true, "normativeCorpusBound": true, "contextRequiredForClassesAndMeaning": true, "ttsPolicy": "opcional", "timeLimit": false},
+  "completionEvidence": {
+    "clusters": {
+      "orthographicStrategy": {"evidence": ["V01-Q01"], "rule": "resolver os três casos de estratégia"},
+      "orthographicRegularities": {"evidence": ["V01-Q02"], "rule": "aplicar restrições e reconhecer limites sem universalizar"},
+      "paroxytoneAccent": {"evidence": ["V01-Q03"], "rule": "acertar pelo menos quatro dos cinco itens, incluindo plateia sem acento"},
+      "hiatusAccent": {"evidence": ["V01-Q04"], "rule": "acertar pelo menos quatro dos cinco itens, incluindo um caso sem acento"},
+      "wordFamily": {"evidence": ["V01-Q05"], "rule": "resolver família, falso parentesco e princípio"},
+      "formation": {"evidence": ["V01-Q06"], "rule": "resolver processo/efeito e limite contextual"},
+      "expandedClasses": {"evidence": ["V01-Q07"], "rule": "reconhecer as quatro classes em contexto"},
+      "semanticsPrecision": {"evidence": ["V01-Q08"], "rule": "resolver polissemia/precisão sem inventar detalhe"},
+      "figurativeContextualSense": {"evidence": ["V01-Q09"], "rule": "usar contexto para literal/figurado/acepção e reconhecer insuficiência"}
+    },
+    "completionRule": "todos os nove agrupamentos são obrigatórios; acertos lexicais não compensam falha em aplicar regras, e regras não compensam incapacidade de reconhecer quando consultar.",
+    "notSufficient": ["memorizar palavras do modelo", "escrever pelo som", "acentuar por aparência", "classificar palavra fora de contexto", "escolher primeira acepção do verbete"]
+  },
+  "remediationRoutes": [
+    {"when": "estratégia/consulta", "review": ["N2-U02-L01", "N2-U02-L03"]},
+    {"when": "regularidades ortográficas", "review": ["N2-U02-L02"]},
+    {"when": "paroxítonas", "review": ["N2-U02-L04"]},
+    {"when": "hiatos", "review": ["N2-U02-L05"]},
+    {"when": "famílias", "review": ["N2-U02-L06"]},
+    {"when": "formação", "review": ["N2-U02-L07", "N2-U02-L08"]},
+    {"when": "classes", "review": ["N2-U02-L09"]},
+    {"when": "semântica/precisão", "review": ["N2-U02-L10"]},
+    {"when": "figurado/acepção", "review": ["N2-U02-L11"]}
+  ]
+}

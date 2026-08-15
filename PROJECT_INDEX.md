@@ -73,6 +73,7 @@ Português Completo
 - `docs/licoes-nivel-2-u7.md` — M4 da U7.
 - `docs/licoes-nivel-2-u8.md` — M4 da U8.
 - `docs/licoes-nivel-2-u9.md` — M4 da U9.
+- `docs/referencias-ortografia-nivel-2.md` — escopo normativo da N2-U02 para ortografia e acentuação.
 
 ## Arquitetura e frontend
 
@@ -146,6 +147,9 @@ N2 M3
 
 N2 M4
 → docs/licoes-nivel-2.md + docs/licoes-nivel-2-u1.md ... docs/licoes-nivel-2-u9.md
+
+escopo normativo N2-U02
+→ docs/referencias-ortografia-nivel-2.md
 
 estado/marcos
 → docs/roadmap-curricular.md
