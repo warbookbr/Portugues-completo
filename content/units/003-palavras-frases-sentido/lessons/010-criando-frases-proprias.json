@@ -113,9 +113,9 @@
       "prompt": "Informe que Bia chegou cedo.",
       "possibleResponses": [
         "Bia chegou cedo.",
-        "Bia chegou pela manhã."
+        "Bia chegou bem cedo."
       ],
-      "explanation": "As frases não são idênticas, mas podem comunicar uma ideia compatível com o objetivo. Nesta etapa, produzir não significa adivinhar uma frase secreta do autor.",
+      "explanation": "As frases não são idênticas, mas comunicam a ideia pedida. Nesta etapa, produzir não significa adivinhar uma frase secreta do autor.",
       "revealPolicy": "os exemplos desta demonstração são explicativos; em tarefas abertas posteriores, exemplos equivalentes só aparecem depois da primeira resposta"
     },
     {
@@ -129,7 +129,7 @@
           "goal": "informar que Caio está no parque",
           "options": [
             {"text": "Caio está no parque.", "acceptable": true},
-            {"text": "Caio ficou no parque.", "acceptable": true},
+            {"text": "Caio está lá no parque.", "acceptable": true},
             {"text": "Onde está Caio?", "acceptable": false}
           ],
           "correctIndexes": [0, 1]
