@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "id": "N1-U03-L07",
+  "title": "Frase, oração e verbo: distinções que ajudam",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Distinguir frase e oração em exemplos claros, compreendendo que uma frase pode comunicar sem verbo e que uma oração se organiza em torno de verbo ou locução verbal, usando a distinção como ferramenta de análise e revisão.",
+  "competencies": [
+    "reconhecer frases com e sem verbo em contextos claros",
+    "localizar verbo ou locução verbal em oração simples",
+    "reconhecer oração em casos transparentes",
+    "evitar definir frase como sequência obrigatória de sujeito + verbo + complemento",
+    "usar a distinção para explicar por que mensagens como Silêncio! podem funcionar como frase"
+  ],
+  "prerequisites": ["N0-U03-L04", "N1-U03-L04", "N1-U03-L06"],
+  "limits": ["não contar orações em períodos complexos", "não sistematizar período simples/composto", "não introduzir orações coordenadas/subordinadas", "não exigir análise de elipse", "não redefinir frase por fórmula sintática rígida"],
+  "media": {"tts": "permitido", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["exemplos", "feedback"], "purpose": "apoio"}], "generatedVisualResources": [{"type": "UI_RENDERED_VERB_LOCATOR", "locations": ["L07-B02", "L07-C01", "L07-A01"], "purpose": "localizar verbo antes de classificar oração"}, {"type": "UI_RENDERED_PHRASE_OR_CLAUSE_COMPARE", "locations": ["L07-B01", "L07-A02"], "purpose": "comparar mensagens com e sem verbo"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "a distinção é estrutural e pode ser demonstrada por texto curto."},
+  "sequence": [
+    {"id": "L07-B01", "type": "demonstration", "examples": [{"text": "Silêncio!", "isPhrase": true, "hasVerb": false}, {"text": "Que surpresa!", "isPhrase": true, "hasVerb": false}, {"text": "A loja abriu.", "isPhrase": true, "hasVerb": true, "isClause": true}], "teachingPoint": "frase é uma unidade comunicativa no contexto; não precisa obrigatoriamente ter verbo"},
+    {"id": "L07-B02", "type": "clause-demonstration", "examples": [{"text": "A loja abriu.", "verb": "abriu"}, {"text": "O ônibus vai chegar.", "verbPhrase": "vai chegar"}], "definition": "neste nível, chamamos de oração a estrutura organizada em torno de verbo ou locução verbal"},
+    {"id": "L07-C01", "type": "quick-check", "items": [{"text": "Atenção!", "hasVerb": false, "isPhrase": true, "isClause": false}, {"text": "O prazo terminou.", "verb": "terminou", "isPhrase": true, "isClause": true}, {"text": "Boa viagem!", "hasVerb": false, "isPhrase": true, "isClause": false}]},
+    {"id": "L07-A01", "type": "assessment-verb-clause", "items": [{"text": "A equipe chegou.", "verb": "chegou", "question": "Há oração?", "correct": true}, {"text": "O atendimento vai começar.", "verbPhrase": "vai começar", "question": "Há oração?", "correct": true}]},
+    {"id": "L07-A02", "type": "assessment-phrase-without-verb", "items": [{"text": "Cuidado!", "question": "Pode funcionar como frase mesmo sem verbo?", "options": ["sim", "não"], "correctIndex": 0}, {"text": "Que ótimo!", "question": "Pode funcionar como frase mesmo sem verbo?", "options": ["sim", "não"], "correctIndex": 0}, {"question": "Qual definição deve ser rejeitada?", "options": ["Toda frase precisa ter sujeito e verbo.", "Uma frase pode comunicar no contexto mesmo sem verbo."], "correctIndex": 0}]}
+  ],
+  "assessmentBehavior": {"locateVerbBeforeClauseLabel": true, "contextualPhraseConcept": true, "ttsPolicy": "permitido", "timeLimit": false},
+  "completionEvidence": {"clusters": {"clauseRecognition": {"evidence": ["L07-A01"], "rule": "localizar verbo/locução e reconhecer as duas orações"}, "phraseConcept": {"evidence": ["L07-A02"], "rule": "reconhecer frases sem verbo e rejeitar fórmula rígida"}}, "completionRule": "os dois agrupamentos são obrigatórios.", "notSufficient": ["decorar que oração tem verbo sem localizá-lo", "afirmar que frase sempre tem verbo", "contar estruturas complexas não ensinadas"]}
+}
