@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 1,
+  "id": "N1-U02-L06",
+  "title": "Sílaba tônica e acento gráfico não são a mesma coisa",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Perceber a sílaba tônica em palavras tônicas familiares selecionadas e distinguir o destaque sonoro da presença de acento gráfico na escrita.",
+  "competencies": [
+    "perceber a sílaba de maior destaque em palavras tônicas familiares selecionadas",
+    "distinguir sílaba tônica de acento gráfico",
+    "reconhecer palavras tônicas sem acento escrito",
+    "usar pronúncia familiar como apoio sem julgar sotaque",
+    "preparar a classificação oxítona/paroxítona/proparoxítona"
+  ],
+  "prerequisites": ["N0-U02-V01", "N1-U02-L01"],
+  "limits": [
+    "não ensinar que toda sílaba tônica recebe acento gráfico",
+    "não afirmar que toda palavra da língua é tônica; a sequência trabalha palavras tônicas selecionadas",
+    "não julgar pronúncia regional ou qualidade de voz",
+    "não usar palavras com tonicidade variável como núcleo da evidência",
+    "não exigir transcrição fonética",
+    "não introduzir ainda todas as regras de acentuação"
+  ],
+  "normativeScopeRef": "docs/referencias-ortografia-nivel-1.md",
+  "media": {"tts": "apoio opcional; não é padrão de sotaque nem evidência única", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {
+    "curatedMedia": [],
+    "runtimeResources": [{"type": "TTS_OK", "locations": ["palavras sob demanda", "feedback"], "purpose": "apoio opcional"}],
+    "generatedVisualResources": [
+      {"type": "UI_RENDERED_SYLLABLE_TILES", "locations": ["L06-B02", "L06-C01", "L06-A01"], "purpose": "selecionar a sílaba percebida como tônica"},
+      {"type": "UI_RENDERED_STRESS_VS_ACCENT_COMPARISON", "locations": ["L06-B03", "L06-A02"], "purpose": "contrastar tonicidade e marca gráfica"}
+    ],
+    "productionQueueRequired": false,
+    "publicationDependency": "nenhuma nova mídia humana obrigatória; evitar corpus com variação de tonicidade relevante",
+    "decisionRationale": "a própria pronúncia de palavras familiares pode apoiar a percepção; TTS é apenas recurso adicional."
+  },
+  "sequence": [
+    {"id": "L06-B01", "type": "objective", "text": "Nas palavras tônicas que vamos estudar, uma sílaba recebe maior destaque. Esse destaque não é a mesma coisa que ter um acento escrito."},
+    {
+      "id": "L06-B02",
+      "type": "demonstration",
+      "words": [
+        {"word": "janela", "syllables": ["ja", "ne", "la"], "stressedIndex": 1, "writtenAccent": false},
+        {"word": "papel", "syllables": ["pa", "pel"], "stressedIndex": 1, "writtenAccent": false},
+        {"word": "médico", "syllables": ["mé", "di", "co"], "stressedIndex": 0, "writtenAccent": true}
+      ],
+      "instruction": "Diga a palavra naturalmente ou use o apoio de áudio; depois selecione a parte de maior destaque."
+    },
+    {
+      "id": "L06-B03",
+      "type": "concept-contrast",
+      "pairs": [
+        {"word": "caderno", "stressedSyllable": "der", "writtenAccent": false},
+        {"word": "café", "stressedSyllable": "fé", "writtenAccent": true}
+      ],
+      "conclusion": "As duas palavras são tônicas e possuem uma sílaba de maior destaque; apenas uma recebe acento gráfico."
+    },
+    {
+      "id": "L06-C01",
+      "type": "quick-check-set",
+      "items": [
+        {"word": "telefone", "syllables": ["te", "le", "fo", "ne"], "correctIndex": 2},
+        {"word": "animal", "syllables": ["a", "ni", "mal"], "correctIndex": 2},
+        {"word": "lâmpada", "syllables": ["lâm", "pa", "da"], "correctIndex": 0}
+      ],
+      "support": "pronúncia própria; TTS opcional"
+    },
+    {
+      "id": "L06-A01",
+      "type": "assessment-stress",
+      "items": [
+        {"word": "cidade", "syllables": ["ci", "da", "de"], "correctIndex": 1},
+        {"word": "sofá", "syllables": ["so", "fá"], "correctIndex": 1},
+        {"word": "abóbora", "syllables": ["a", "bó", "bo", "ra"], "correctIndex": 1}
+      ],
+      "support": "pronúncia própria; TTS opcional"
+    },
+    {
+      "id": "L06-A02",
+      "type": "assessment-principle",
+      "question": "Qual afirmação corresponde ao que foi estudado?",
+      "options": [
+        "Nas palavras tônicas trabalhadas, há destaque sonoro; esse destaque pode existir sem acento gráfico.",
+        "Se não há acento escrito, não existe sílaba de maior destaque.",
+        "Sílaba tônica e acento gráfico são exatamente a mesma coisa."
+      ],
+      "correctIndex": 0
+    }
+  ],
+  "assessmentBehavior": {"pronunciationPolicy": "não avaliar sotaque; usar corpus tônico sem variação relevante", "ttsPolicy": "apoio opcional", "timeLimit": false},
+  "completionEvidence": {
+    "clusters": {
+      "stressPerception": {"evidence": ["L06-C01", "L06-A01"], "rule": "identificar corretamente pelo menos cinco das seis palavras"},
+      "conceptDistinction": {"evidence": ["L06-A02"], "rule": "distinguir tonicidade de acento gráfico sem generalizar para toda palavra da língua"}
+    },
+    "completionRule": "os dois agrupamentos são obrigatórios.",
+    "notSufficient": ["procurar apenas acento gráfico", "imitar TTS", "classificar sotaque como erro"]
+  }
+}

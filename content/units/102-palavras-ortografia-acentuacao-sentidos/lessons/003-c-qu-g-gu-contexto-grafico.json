@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "id": "N1-U02-L03",
+  "title": "C/QU e G/GU: quando o contexto gráfico orienta",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Aplicar padrões ortográficos frequentes de c/qu e g/gu em palavras acessíveis, observando as letras seguintes e reconhecendo que a regularidade ensinada não cobre todas as relações entre som e grafia.",
+  "competencies": [
+    "reconhecer c em padrões frequentes antes de a, o e u",
+    "reconhecer qu em padrões frequentes antes de e e i nas palavras selecionadas",
+    "reconhecer g em padrões frequentes antes de a, o e u",
+    "reconhecer gu em padrões frequentes antes de e e i no conjunto selecionado",
+    "aplicar os padrões em palavras novas compatíveis",
+    "reconhecer que qu, gu e a letra u apresentam outros comportamentos fora do escopo atual"
+  ],
+  "prerequisites": ["N1-U02-L01", "N1-U02-L02"],
+  "limits": [
+    "não apresentar qu/gu como fórmulas universais",
+    "não exigir regras completas de pronúncia ou presença sonora do u",
+    "não aprofundar c/ç ou g/j como sistemas completos",
+    "não usar transcrição fonética",
+    "não afirmar que a letra seguinte resolve toda grafia lexical"
+  ],
+  "normativeScopeRef": "docs/referencias-ortografia-nivel-1.md",
+  "media": {"tts": "apoio opcional; a decisão central usa padrão gráfico e palavra em contexto", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {
+    "curatedMedia": [],
+    "runtimeResources": [{"type": "TTS_OK", "locations": ["instruções", "palavras", "feedback"], "purpose": "apoio de leitura"}],
+    "generatedVisualResources": [
+      {"type": "UI_RENDERED_ORTHOGRAPHIC_PATTERN", "locations": ["L03-B02", "L03-B03", "L03-C01", "L03-A01"], "purpose": "destacar grafia e letra seguinte"},
+      {"type": "UI_RENDERED_WORD_IN_SENTENCE", "locations": ["L03-C01", "L03-A01"], "purpose": "aplicar em contexto"}
+    ],
+    "productionQueueRequired": false,
+    "publicationDependency": "nenhuma nova mídia humana obrigatória",
+    "decisionRationale": "o padrão é visual/contextual; TTS é apoio, não regra normativa."
+  },
+  "sequence": [
+    {"id": "L03-B01", "type": "objective", "text": "Algumas grafias podem ser organizadas por padrões ligados às letras vizinhas. Vamos estudar casos frequentes de C/QU e G/GU sem fingir que eles explicam todas as palavras."},
+    {
+      "id": "L03-B02",
+      "type": "pattern-demonstration",
+      "groups": [
+        {"pattern": "c antes de a/o/u em palavras frequentes", "examples": ["casa", "copo", "cultura"]},
+        {"pattern": "qu antes de e/i no conjunto estudado", "examples": ["queijo", "quilo", "pequeno"]},
+        {"pattern": "g antes de a/o/u em palavras frequentes", "examples": ["gato", "gota", "gula"]},
+        {"pattern": "gu antes de e/i no conjunto estudado", "examples": ["guerra", "guitarra", "guincho"]}
+      ]
+    },
+    {
+      "id": "L03-B03",
+      "type": "guard-rail",
+      "text": "QU e GU não funcionam exatamente do mesmo jeito em todas as palavras; o U inclusive pode participar da pronúncia em outros casos. Aplique somente o padrão estudado e consulte quando ele não resolver a dúvida."
+    },
+    {
+      "id": "L03-C01",
+      "type": "quick-check-set",
+      "items": [
+        {"sentence": "O __eijo está na mesa.", "options": ["qu", "c"], "correctIndex": 0, "result": "queijo"},
+        {"sentence": "O __ato dorme na cadeira.", "options": ["g", "gu"], "correctIndex": 0, "result": "gato"},
+        {"sentence": "Ela toca __itarra.", "options": ["gu", "g"], "correctIndex": 0, "result": "guitarra"}
+      ]
+    },
+    {
+      "id": "L03-A01",
+      "type": "assessment-set",
+      "items": [
+        {"sentence": "A __ultura da região é diversa.", "options": ["c", "qu"], "correctIndex": 0, "result": "cultura"},
+        {"sentence": "O pacote é pe__eno.", "options": ["qu", "c"], "correctIndex": 0, "result": "pequeno"},
+        {"sentence": "A __erra terminou há muitos anos.", "options": ["gu", "g"], "correctIndex": 0, "result": "guerra"}
+      ]
+    },
+    {
+      "id": "L03-A02",
+      "type": "assessment-principle",
+      "question": "O que fazer quando uma palavra com C/QU ou G/GU não pertence ao padrão estudado?",
+      "options": ["não inventar regra; consultar ou aprender o caso adequado", "forçar qu antes de qualquer vogal", "usar gu em toda palavra iniciada por g"],
+      "correctIndex": 0
+    }
+  ],
+  "completionEvidence": {
+    "clusters": {
+      "patternUse": {"evidence": ["L03-C01", "L03-A01"], "rule": "acertar pelo menos cinco dos seis itens"},
+      "scopeAwareness": {"evidence": ["L03-A02"], "rule": "reconhecer o limite da regularidade"}
+    },
+    "completionRule": "os dois agrupamentos são obrigatórios.",
+    "notSufficient": ["decorar exemplos sem observar contexto gráfico", "generalizar qu/gu", "usar TTS como regra única"]
+  }
+}

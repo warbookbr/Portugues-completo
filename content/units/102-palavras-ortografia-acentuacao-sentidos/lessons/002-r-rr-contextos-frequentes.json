@@ -1,0 +1,94 @@
+{
+  "schemaVersion": 1,
+  "id": "N1-U02-L02",
+  "title": "R e RR em contextos frequentes",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Aplicar padrões gráficos frequentes de r e rr em palavras acessíveis, observando posição e grafia sem transformar diferenças regionais de pronúncia em erro.",
+  "competencies": [
+    "reconhecer que rr aparece entre vogais em palavras do padrão estudado",
+    "reconhecer r simples no início de palavra e em outros contextos frequentes",
+    "distinguir pares gráficos como caro/carro em contexto",
+    "completar e revisar palavras pertencentes ao padrão ensinado",
+    "evitar decidir toda grafia apenas por uma ideia simplificada de som forte/fraco"
+  ],
+  "prerequisites": ["N1-U02-L01"],
+  "limits": [
+    "não julgar sotaques ou realizações regionais do r",
+    "não afirmar que som forte/fraco resolve toda grafia",
+    "não aprofundar encontros consonantais ou fonética articulatória",
+    "não tratar rr fora de sua posição entre vogais como possibilidade regular",
+    "não usar palavras raras como núcleo da aprendizagem"
+  ],
+  "normativeScopeRef": "docs/referencias-ortografia-nivel-1.md",
+  "media": {"tts": "apoio opcional, sem usar a voz do dispositivo como padrão fonético normativo", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {
+    "curatedMedia": [],
+    "runtimeResources": [{"type": "TTS_OK", "locations": ["instruções", "palavras", "feedback"], "purpose": "apoio de leitura; a decisão principal é gráfica/contextual"}],
+    "generatedVisualResources": [
+      {"type": "UI_RENDERED_ORTHOGRAPHIC_PATTERN", "locations": ["L02-B02", "L02-B03", "L02-C01", "L02-A01"], "purpose": "destacar posição de r/rr entre letras"},
+      {"type": "UI_RENDERED_WORD_IN_SENTENCE", "locations": ["L02-C01", "L02-A01", "L02-A02"], "purpose": "usar grafia em contexto, não apenas lista"}
+    ],
+    "productionQueueRequired": false,
+    "publicationDependency": "nenhuma nova mídia humana obrigatória",
+    "decisionRationale": "a regularidade pode ser ensinada principalmente pela posição gráfica, evitando dependência de uma pronúncia única."
+  },
+  "sequence": [
+    {"id": "L02-B01", "type": "objective", "text": "R e RR não aparecem nas mesmas posições. Vamos observar padrões de escrita em palavras frequentes, sem usar uma única pronúncia como regra para todos os falantes."},
+    {
+      "id": "L02-B02",
+      "type": "pattern-demonstration",
+      "groups": [
+        {"pattern": "rr entre vogais", "examples": ["carro", "terra", "correr", "garrafa"]},
+        {"pattern": "r no início", "examples": ["rua", "rato", "roupa"]},
+        {"pattern": "r simples entre vogais em outras palavras", "examples": ["caro", "parede", "barata"]}
+      ],
+      "explanation": "RR é um grupo gráfico usado entre vogais; R simples aparece em várias posições."
+    },
+    {
+      "id": "L02-B03",
+      "type": "contrast",
+      "pairs": [
+        {"a": "caro", "b": "carro", "sentences": ["O produto ficou caro.", "O carro está na garagem."]},
+        {"a": "moro", "b": "morro", "sentences": ["Eu moro aqui.", "O morro fica perto do bairro."]}
+      ],
+      "explanation": "Trocar r e rr pode formar outra palavra. O contexto ajuda a perceber qual grafia é necessária."
+    },
+    {
+      "id": "L02-C01",
+      "type": "quick-check-set",
+      "items": [
+        {"sentence": "O ca__o está estacionado.", "options": ["rr", "r"], "correctIndex": 0, "result": "carro"},
+        {"sentence": "O ingresso ficou ca__o.", "options": ["r", "rr"], "correctIndex": 0, "result": "caro"},
+        {"sentence": "A __ua está movimentada.", "options": ["r", "rr"], "correctIndex": 0, "result": "rua"}
+      ]
+    },
+    {
+      "id": "L02-A01",
+      "type": "assessment-set",
+      "items": [
+        {"sentence": "A ga__afa está vazia.", "options": ["rr", "r"], "correctIndex": 0, "result": "garrafa"},
+        {"sentence": "Eles vão co__er no parque.", "options": ["rr", "r"], "correctIndex": 0, "result": "correr"},
+        {"sentence": "A pa__ede foi pintada.", "options": ["r", "rr"], "correctIndex": 0, "result": "parede"}
+      ]
+    },
+    {
+      "id": "L02-A02",
+      "type": "assessment-principle",
+      "question": "Qual afirmação é adequada ao padrão estudado?",
+      "options": [
+        "RR aparece entre vogais nas palavras do padrão estudado; a grafia não deve ser decidida por julgamento de sotaque.",
+        "Sempre que uma pessoa pronunciar um r de maneira diferente, a escrita deve mudar.",
+        "RR pode aparecer normalmente no início de qualquer palavra."
+      ],
+      "correctIndex": 0
+    }
+  ],
+  "completionEvidence": {
+    "clusters": {
+      "patternUse": {"evidence": ["L02-C01", "L02-A01"], "rule": "acertar pelo menos cinco dos seis itens de aplicação"},
+      "principle": {"evidence": ["L02-A02"], "rule": "rejeitar pronúncia regional como regra ortográfica automática"}
+    },
+    "completionRule": "os dois agrupamentos são obrigatórios.",
+    "notSufficient": ["decorar lista sem transferir", "julgar sotaque", "usar rr no início por analogia"]
+  }
+}

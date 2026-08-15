@@ -1,0 +1,96 @@
+{
+  "schemaVersion": 1,
+  "id": "N1-U02-L04",
+  "title": "Marcas frequentes de nasalidade e grupos de letras",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Reconhecer e aplicar regularidades frequentes de m/n em contextos consonantais selecionados e grupos gráficos como nh, lh e ch, usando-os para leitura, escrita e revisão sem transformar a lição em classificação fonológica.",
+  "competencies": [
+    "usar m antes de p e b em palavras frequentes do padrão estudado",
+    "reconhecer n em outros contextos consonantais frequentes trabalhados",
+    "reconhecer nh, lh e ch como grupos gráficos recorrentes em palavras comuns",
+    "completar e revisar palavras pertencentes aos padrões ensinados",
+    "reconhecer que nasalidade e grupos de letras possuem outros casos não sistematizados nesta lição"
+  ],
+  "prerequisites": ["N1-U02-L01", "N1-U02-L03"],
+  "limits": [
+    "não ensinar fonemas, dígrafos e encontros como taxonomia exaustiva",
+    "não afirmar que toda nasalidade se escreve apenas com m ou n",
+    "não introduzir regras completas de til ou terminações nasais",
+    "não usar pronúncia regional como erro",
+    "não incluir palavras raras apenas para aumentar a lista"
+  ],
+  "normativeScopeRef": "docs/referencias-ortografia-nivel-1.md",
+  "media": {"tts": "apoio opcional; a decisão principal é gráfica", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {
+    "curatedMedia": [],
+    "runtimeResources": [{"type": "TTS_OK", "locations": ["instruções", "palavras", "feedback"], "purpose": "apoio de leitura"}],
+    "generatedVisualResources": [
+      {"type": "UI_RENDERED_ORTHOGRAPHIC_PATTERN", "locations": ["L04-B02", "L04-B03", "L04-C01", "L04-A01"], "purpose": "destacar contexto de m/n e grupos de letras"},
+      {"type": "UI_RENDERED_WORD_IN_SENTENCE", "locations": ["L04-C01", "L04-A01"], "purpose": "usar grafias em contexto"}
+    ],
+    "productionQueueRequired": false,
+    "publicationDependency": "nenhuma nova mídia humana obrigatória",
+    "decisionRationale": "a finalidade é grafia funcional; texto e destaque gráfico são suficientes."
+  },
+  "sequence": [
+    {"id": "L04-B01", "type": "objective", "text": "Alguns contextos da escrita oferecem pistas úteis. Vamos observar um padrão frequente de M/N e reconhecer grupos de letras que aparecem em muitas palavras."},
+    {
+      "id": "L04-B02",
+      "type": "pattern-demonstration",
+      "groups": [
+        {"pattern": "m antes de p/b", "examples": ["campo", "tempo", "também", "bomba", "comprar"]},
+        {"pattern": "n em outros contextos consonantais frequentes", "examples": ["canto", "venda", "longe", "cinco"]}
+      ],
+      "explanation": "Nesta regularidade, observar a consoante seguinte ajuda a escolher m ou n em muitos casos."
+    },
+    {
+      "id": "L04-B03",
+      "type": "group-demonstration",
+      "groups": [
+        {"letters": "nh", "examples": ["ninho", "manhã", "dinheiro"]},
+        {"letters": "lh", "examples": ["filho", "trabalho", "milho"]},
+        {"letters": "ch", "examples": ["chave", "chuva", "fechar"]}
+      ],
+      "explanation": "A meta é reconhecer e escrever grupos frequentes, não decorar uma classificação técnica."
+    },
+    {
+      "id": "L04-C01",
+      "type": "quick-check-set",
+      "items": [
+        {"sentence": "O ca__po está molhado.", "options": ["m", "n"], "correctIndex": 0, "result": "campo"},
+        {"sentence": "A ve__da começa amanhã.", "options": ["n", "m"], "correctIndex": 0, "result": "venda"},
+        {"sentence": "A __ave está na mesa.", "options": ["ch", "lh", "nh"], "correctIndex": 0, "result": "chave"}
+      ]
+    },
+    {
+      "id": "L04-A01",
+      "type": "assessment-set",
+      "items": [
+        {"sentence": "Eles vão co__prar frutas.", "options": ["m", "n"], "correctIndex": 0, "result": "comprar"},
+        {"sentence": "O ca__to começou cedo.", "options": ["n", "m"], "correctIndex": 0, "result": "canto"},
+        {"sentence": "O fi__o chegou do trabalho.", "options": ["lh", "nh", "ch"], "correctIndex": 0, "result": "filho"},
+        {"sentence": "Ela guardou o di__eiro.", "options": ["nh", "lh", "ch"], "correctIndex": 0, "result": "dinheiro"}
+      ]
+    },
+    {
+      "id": "L04-A02",
+      "type": "assessment-principle",
+      "question": "Qual afirmação corresponde ao escopo da lição?",
+      "options": [
+        "O padrão m antes de p/b ajuda em muitos casos, mas não explica todas as formas de nasalidade da escrita.",
+        "Toda nasalidade do português é sempre escrita apenas com m.",
+        "NH, LH e CH só servem para decorar nomes de classificação."
+      ],
+      "correctIndex": 0
+    }
+  ],
+  "completionEvidence": {
+    "clusters": {
+      "mnPattern": {"evidence": ["L04-C01", "L04-A01"], "rule": "aplicar m/n corretamente nos itens pertencentes à regularidade"},
+      "letterGroups": {"evidence": ["L04-C01", "L04-A01"], "rule": "reconhecer nh/lh/ch nos exemplos novos"},
+      "scope": {"evidence": ["L04-A02"], "rule": "não generalizar o padrão para toda nasalidade"}
+    },
+    "completionRule": "os três agrupamentos são obrigatórios.",
+    "notSufficient": ["memorizar rótulos", "usar m antes de qualquer consoante", "confundir pronúncia com regra universal"]
+  }
+}

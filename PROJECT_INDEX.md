@@ -55,6 +55,7 @@ Português Completo
 - `docs/licoes-nivel-1-u5.md` — arquitetura M4 da U5.
 - `docs/licoes-nivel-1-u6.md` — arquitetura M4 da U6.
 - `docs/licoes-nivel-1-u7.md` — arquitetura M4 da U7.
+- `docs/referencias-ortografia-nivel-1.md` — escopo normativo e limites das regularidades/acentuação da N1-U02.
 
 ## Arquitetura e frontend
 
@@ -113,6 +114,9 @@ N1 M3
 
 N1 M4
 → docs/licoes-nivel-1.md + docs/licoes-nivel-1-u1.md ... docs/licoes-nivel-1-u7.md
+
+escopo normativo N1-U02
+→ docs/referencias-ortografia-nivel-1.md
 
 estado/marcos
 → docs/roadmap-curricular.md

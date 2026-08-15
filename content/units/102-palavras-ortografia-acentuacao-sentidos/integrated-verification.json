@@ -1,0 +1,170 @@
+{
+  "schemaVersion": 1,
+  "id": "N1-U02-V01",
+  "type": "integrated-unit-verification",
+  "title": "Verificação integrada — Nível 1, Unidade 2",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Verificar se o aluno aplica as regularidades ortográficas e regras de acentuação explicitamente ensinadas, interpreta relações de sentido em contexto, reconhece formação transparente de palavras e usa consulta de modo autônomo sem extrapolar regras parciais.",
+  "prerequisites": ["N1-U02-L01", "N1-U02-L02", "N1-U02-L03", "N1-U02-L04", "N1-U02-L05", "N1-U02-L06", "N1-U02-L07", "N1-U02-L08", "N1-U02-L09", "N1-U02-L10"],
+  "normativeScopeRef": "docs/referencias-ortografia-nivel-1.md",
+  "designPrinciples": [
+    "usar exemplos de transferência diferentes dos principais itens das lições",
+    "avaliar somente regras efetivamente sistematizadas",
+    "distinguir erro em regra ensinada de caso ainda não coberto",
+    "incluir decisão correta de consulta",
+    "avaliar tonicidade antes da nomenclatura",
+    "avaliar semântica em contexto e formação como pista, não fórmula",
+    "ditado não é evidência única nem obrigatória",
+    "não usar velocidade"
+  ],
+  "limits": [
+    "não cobrar sistema completo de s/z/c/ç/x/ch",
+    "não cobrar paroxítonas acentuadas, hiatos, ditongos ou casos especiais fora da L8",
+    "não cobrar análise morfológica formal",
+    "não cobrar figuratividade além de usos transparentes",
+    "não considerar consulta fracasso quando a regra atual não decide o caso"
+  ],
+  "media": {"tts": "permitido para instruções e contextos; tonicidade usa palavras familiares e marcação silábica", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {
+    "curatedMedia": [],
+    "runtimeResources": [{"type": "TTS_OK", "locations": ["instruções", "contextos", "feedback"], "purpose": "apoio de leitura"}],
+    "generatedVisualResources": [
+      {"type": "UI_RENDERED_ORTHOGRAPHIC_REVISION", "locations": ["V01-Q01", "V01-Q02"], "purpose": "aplicar padrões e reconhecer limites"},
+      {"type": "UI_RENDERED_STRESS_AND_ENDING_ANALYZER", "locations": ["V01-Q03", "V01-Q04"], "purpose": "separar tonicidade, classificação e regra"},
+      {"type": "UI_RENDERED_CONTEXT_PAIR", "locations": ["V01-Q05", "V01-Q06"], "purpose": "avaliar relações de sentido"},
+      {"type": "UI_RENDERED_WORD_FAMILY_MAP", "locations": ["V01-Q07"], "purpose": "avaliar formação transparente"},
+      {"type": "UI_RENDERED_DICTIONARY_ENTRY", "locations": ["V01-Q08"], "purpose": "avaliar consulta contextual"}
+    ],
+    "productionQueueRequired": false,
+    "publicationDependency": "nenhuma nova mídia humana obrigatória",
+    "decisionRationale": "texto, revisão controlada, análise de palavra e verbetes didáticos produzem toda a evidência necessária."
+  },
+  "items": [
+    {
+      "id": "V01-Q01",
+      "cluster": "orthographicRegularities",
+      "type": "spelling-application-set",
+      "instruction": "Escolha a grafia adequada usando apenas as regularidades estudadas.",
+      "items": [
+        {"context": "A chuva deixou muito ____ na estrada.", "options": ["baro", "barro"], "correctIndex": 1, "focus": "r/rr entre vogais"},
+        {"context": "Comprei ____ para o lanche.", "options": ["queijo", "ceijo"], "correctIndex": 0, "focus": "qu antes de e no padrão estudado"},
+        {"context": "O músico levou a ____ para o ensaio.", "options": ["guitarra", "gitarra"], "correctIndex": 0, "focus": "gu antes de i no padrão estudado"},
+        {"context": "O atleta permaneceu no ____ durante a atividade.", "options": ["campo", "canpo"], "correctIndex": 0, "focus": "m antes de p"},
+        {"context": "O ____ foi marcado para amanhã.", "options": ["encontro", "emcontro"], "correctIndex": 0, "focus": "n em contexto selecionado"},
+        {"context": "A ____ ficou sobre a mesa.", "options": ["chave", "xave"], "correctIndex": 0, "focus": "grupo ch estudado"},
+        {"context": "O ____ estava pronto para a colheita.", "options": ["milho", "milio"], "correctIndex": 0, "focus": "grupo lh estudado"},
+        {"context": "A ____ do pão ficou pronta.", "options": ["massa", "masa"], "correctIndex": 0, "focus": "ss entre vogais"}
+      ]
+    },
+    {
+      "id": "V01-Q02",
+      "cluster": "orthographicRegularities",
+      "type": "rule-scope-and-consultation",
+      "items": [
+        {"question": "Nenhuma regularidade estudada decide uma dúvida de grafia. Qual estratégia é adequada?", "options": ["consultar fonte ortográfica confiável", "inventar pela pronúncia", "usar sempre a grafia mais curta"], "correctIndex": 0},
+        {"question": "O padrão s/ss estudado resolve sozinho todas as grafias associadas aos sons representados por s?", "options": ["não", "sim"], "correctIndex": 0},
+        {"question": "Diferença regional de pronúncia do r é automaticamente erro de fala?", "options": ["não", "sim"], "correctIndex": 0},
+        {"question": "Os padrões c/qu e g/gu estudados resolvem todas as palavras do português?", "options": ["não; o escopo é delimitado", "sim; não é preciso consultar outros casos"], "correctIndex": 0}
+      ]
+    },
+    {
+      "id": "V01-Q03",
+      "cluster": "stressAndAccentuation",
+      "type": "stress-classification-set",
+      "flow": "selecionar sílaba tônica antes de classificar",
+      "items": [
+        {"word": "caju", "syllables": ["ca", "ju"], "stressedIndex": 1, "classification": "oxítona"},
+        {"word": "janela", "syllables": ["ja", "ne", "la"], "stressedIndex": 1, "classification": "paroxítona"},
+        {"word": "máquina", "syllables": ["má", "qui", "na"], "stressedIndex": 0, "classification": "proparoxítona"}
+      ]
+    },
+    {
+      "id": "V01-Q04",
+      "cluster": "stressAndAccentuation",
+      "type": "accent-rule-transfer",
+      "items": [
+        {"options": ["voce", "você"], "correctIndex": 1, "reason": "oxítona terminada em e"},
+        {"options": ["ninguem", "ninguém"], "correctIndex": 1, "reason": "oxítona terminada em em"},
+        {"options": ["maquina", "máquina"], "correctIndex": 1, "reason": "proparoxítona"},
+        {"context": "Nós chegaremos cedo.", "options": ["nos", "nós"], "correctIndex": 1, "reason": "monossílabo tônico terminado em os"},
+        {"word": "lápis", "question": "As regras sistematizadas nesta unidade bastam para justificar este acento?", "options": ["não; precisa de outra regra/consulta", "sim; toda paroxítona recebe acento"], "correctIndex": 0}
+      ]
+    },
+    {
+      "id": "V01-Q05",
+      "cluster": "semanticsAndPrecision",
+      "type": "meaning-relations",
+      "items": [
+        {"sentence": "O relatório está correto.", "question": "Qual palavra se aproxima de 'correto' neste contexto?", "options": ["certo", "longo", "antigo"], "correctIndex": 0},
+        {"sentence": "A porta estava fechada e depois ficou ____.", "question": "Qual palavra estabelece oposição adequada?", "options": ["aberta", "pesada", "azul"], "correctIndex": 0},
+        {"question": "Uma palavra considerada sinônima pode substituir outra com segurança em qualquer frase?", "options": ["não; é preciso conferir o contexto", "sim; sinônimos são sempre equivalentes"], "correctIndex": 0}
+      ]
+    },
+    {
+      "id": "V01-Q06",
+      "cluster": "semanticsAndPrecision",
+      "type": "polysemy-precision-figurative",
+      "items": [
+        {"targetWord": "chave", "sentence": "A chave do problema está no último dado do relatório.", "options": ["elemento principal para resolver/compreender", "objeto de fechadura obrigatoriamente"], "correctIndex": 0},
+        {"targetWord": "chave", "sentence": "A chave da porta ficou com o porteiro.", "options": ["objeto usado na fechadura", "explicação de um problema"], "correctIndex": 0},
+        {"situation": "É necessário informar que o curso começa na segunda às 19h, na sala 4.", "options": ["O curso começa.", "O curso começa na segunda, às 19h, na sala 4."], "correctIndex": 1, "focus": "precisão"},
+        {"sentence": "A notícia acendeu uma esperança na equipe.", "context": "Nenhuma chama foi acesa; a equipe passou a esperar um resultado melhor.", "options": ["uso figurado transparente", "uso literal de fogo"], "correctIndex": 0}
+      ]
+    },
+    {
+      "id": "V01-Q07",
+      "cluster": "formationAndConsultation",
+      "type": "word-family-and-formation",
+      "items": [
+        {"reference": "limpar", "options": ["limpeza", "limite", "linha"], "correctIndex": 0},
+        {"word": "refazer", "context": "O formulário saiu errado e será preciso refazer o preenchimento.", "options": ["fazer novamente", "deixar de fazer", "fazer lentamente"], "correctIndex": 0},
+        {"word": "desmontar", "context": "Antes da mudança, vamos desmontar a mesa.", "options": ["desfazer a montagem", "montar uma segunda vez", "limpar a mesa"], "correctIndex": 0},
+        {"word": "pintor", "context": "O pintor preparou a parede.", "options": ["pessoa associada a pintar", "ação de pintar novamente", "objeto para pintar"], "correctIndex": 0}
+      ]
+    },
+    {
+      "id": "V01-Q08",
+      "cluster": "formationAndConsultation",
+      "type": "dictionary-and-revision",
+      "entry": {
+        "headword": "quadro",
+        "senses": [
+          {"number": 1, "meaning": "peça, painel ou superfície usada para escrever, expor ou representar algo", "example": "A professora escreveu no quadro."},
+          {"number": 2, "meaning": "situação ou conjunto de condições observadas", "example": "O quadro melhorou depois da manutenção."}
+        ]
+      },
+      "items": [
+        {"sentence": "O técnico avaliou o quadro da máquina e anotou os problemas.", "options": ["sentido 1", "sentido 2"], "correctIndex": 1},
+        {"question": "Se o contexto não permitisse escolher entre duas acepções plausíveis, qual atitude é adequada?", "options": ["buscar mais contexto ou outra informação", "escolher sempre a primeira acepção"], "correctIndex": 0}
+      ]
+    }
+  ],
+  "assessmentBehavior": {
+    "ruleScopeVisible": true,
+    "consultationAllowed": "quando o item avalia reconhecimento do limite; não substitui aplicação de regra ensinada",
+    "ttsPolicy": "apoio de leitura; tonicidade não depende de áudio exato",
+    "timeLimit": false,
+    "dictationRequired": false
+  },
+  "completionEvidence": {
+    "clusters": {
+      "orthographicRegularities": {"evidence": ["V01-Q01", "V01-Q02"], "rule": "acertar pelo menos sete dos oito itens de aplicação e todos os quatro itens de limite/consulta"},
+      "stressAndAccentuation": {"evidence": ["V01-Q03", "V01-Q04"], "rule": "identificar/classificar as três tonicidades e acertar pelo menos quatro dos cinco itens de acentuação, incluindo o caso fora do escopo"},
+      "semanticsAndPrecision": {"evidence": ["V01-Q05", "V01-Q06"], "rule": "demonstrar proximidade, oposição, polissemia, precisão e figuratividade transparente; falha em um subdomínio exige retomada correspondente"},
+      "formationAndConsultation": {"evidence": ["V01-Q07", "V01-Q08"], "rule": "acertar pelo menos três dos quatro itens de família/formação e os dois itens de consulta"}
+    },
+    "completionRule": "os quatro agrupamentos são obrigatórios; não usar média global compensatória.",
+    "notSufficient": ["memorizar lista sem aplicar", "tratar regra parcial como universal", "nomear tonicidade sem localizá-la", "usar primeira acepção automaticamente"]
+  },
+  "remediationRoutes": [
+    {"when": "estratégia ortográfica/consulta", "review": ["N1-U02-L01"]},
+    {"when": "r/rr", "review": ["N1-U02-L02"]},
+    {"when": "c/qu/g/gu", "review": ["N1-U02-L03"]},
+    {"when": "nasalidade/grupos", "review": ["N1-U02-L04"]},
+    {"when": "s/ss", "review": ["N1-U02-L05"]},
+    {"when": "tonicidade", "review": ["N1-U02-L06", "N1-U02-L07"]},
+    {"when": "acentuação", "review": ["N1-U02-L08"]},
+    {"when": "semântica/precisão", "review": ["N1-U02-L09"]},
+    {"when": "famílias/formação/consulta", "review": ["N1-U02-L10"]}
+  ]
+}

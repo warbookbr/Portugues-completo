@@ -1,0 +1,152 @@
+{
+  "schemaVersion": 1,
+  "id": "N1-U02-L08",
+  "title": "Primeiras regras de acentuação e revisão",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Aplicar um conjunto deliberadamente limitado de regras de acentuação — proparoxítonas, oxítonas terminadas em a(s), e(s), o(s), em, ens e monossílabos tônicos terminados em a(s), e(s), o(s) — relacionando posição tônica, terminação e revisão sem supor que essas regras esgotam a acentuação do português.",
+  "competencies": [
+    "reconhecer que todas as proparoxítonas do conjunto estudado recebem acento gráfico",
+    "aplicar a regra estudada às oxítonas terminadas em a(s), e(s), o(s), em e ens",
+    "aplicar a regra estudada a monossílabos tônicos terminados em a(s), e(s) e o(s)",
+    "usar tonicidade e terminação em conjunto antes de decidir se a regra estudada se aplica",
+    "revisar palavras em frases usando somente regras já ensinadas",
+    "reconhecer quando uma palavra não pertence ao escopo atual e deve ser mantida como caso ainda não sistematizado/consultável"
+  ],
+  "prerequisites": ["N1-U02-L06", "N1-U02-L07"],
+  "normativeScopeRef": "docs/referencias-ortografia-nivel-1.md",
+  "limits": [
+    "não sistematizar o conjunto completo das paroxítonas acentuadas",
+    "não ensinar hiatos, ditongos, encontros vocálicos ou acentos diferenciais como sistemas nesta lição",
+    "não afirmar que toda oxítona recebe acento",
+    "não afirmar que toda palavra sem acento gráfico é paroxítona",
+    "não usar palavras fora do conjunto para marcar o aluno como errado por regra ainda não ensinada",
+    "não exigir memorização de listas de terminações sem relação com tonicidade e uso"
+  ],
+  "media": {
+    "tts": "apoio opcional para leitura de instruções e palavras familiares; não é a única evidência de tonicidade",
+    "controlledAudio": [],
+    "video": "nao necessario",
+    "images": "nao necessarias"
+  },
+  "supportMaterials": {
+    "curatedMedia": [],
+    "runtimeResources": [
+      {"type": "TTS_OK", "locations": ["instruções", "palavras sob demanda", "feedback"], "purpose": "apoio de acesso"}
+    ],
+    "generatedVisualResources": [
+      {"type": "UI_RENDERED_STRESS_AND_ENDING_ANALYZER", "locations": ["L08-B02", "L08-C01", "L08-A01"], "purpose": "separar posição tônica e terminação antes de aplicar a regra"},
+      {"type": "UI_RENDERED_ACCENT_RULE_CARD", "locations": ["L08-B02", "L08-C01"], "purpose": "manter as três regras estudadas consultáveis"},
+      {"type": "UI_RENDERED_SENTENCE_REVISION", "locations": ["L08-A02"], "purpose": "revisar acentuação dentro de uso real"},
+      {"type": "UI_RENDERED_SCOPE_CHOICE", "locations": ["L08-B03", "L08-A03"], "purpose": "distinguir regra estudada de caso ainda não coberto"}
+    ],
+    "productionQueueRequired": false,
+    "publicationDependency": "nenhuma nova mídia humana obrigatória",
+    "decisionRationale": "as regras são gráficas e podem ser ensinadas com palavras, análise visual e revisão; áudio controlado não acrescentaria evidência necessária."
+  },
+  "sequence": [
+    {
+      "id": "L08-B01",
+      "type": "bridge",
+      "text": "Saber onde está a sílaba tônica ajuda, mas ainda precisamos olhar o tipo de palavra e sua terminação. Hoje entra apenas um primeiro conjunto de regras."
+    },
+    {
+      "id": "L08-B02",
+      "type": "demonstration",
+      "rules": [
+        {
+          "name": "proparoxítonas",
+          "rule": "Quando a antepenúltima sílaba é tônica, a palavra recebe acento gráfico.",
+          "examples": [
+            {"word": "médico", "syllables": ["mé", "di", "co"], "stressedIndex": 0},
+            {"word": "lâmpada", "syllables": ["lâm", "pa", "da"], "stressedIndex": 0},
+            {"word": "número", "syllables": ["nú", "me", "ro"], "stressedIndex": 0}
+          ]
+        },
+        {
+          "name": "oxítonas do conjunto estudado",
+          "rule": "Oxítonas terminadas em a(s), e(s), o(s), em ou ens recebem acento gráfico.",
+          "examples": [
+            {"word": "sofá", "ending": "a"},
+            {"word": "café", "ending": "e"},
+            {"word": "cipó", "ending": "o"},
+            {"word": "também", "ending": "em"},
+            {"word": "parabéns", "ending": "ens"}
+          ]
+        },
+        {
+          "name": "monossílabos tônicos do conjunto estudado",
+          "rule": "Monossílabos tônicos terminados em a(s), e(s) ou o(s) recebem acento gráfico.",
+          "examples": [
+            {"word": "pá", "ending": "a"},
+            {"word": "pé", "ending": "e"},
+            {"word": "pó", "ending": "o"}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "L08-C01",
+      "type": "guided-rule-application",
+      "instruction": "Para cada palavra, identifique primeiro a posição tônica e a terminação; só depois escolha a regra que explica o acento.",
+      "items": [
+        {"word": "avó", "classification": "oxítona", "ending": "o", "rule": "oxítona do conjunto estudado"},
+        {"word": "armazém", "classification": "oxítona", "ending": "em", "rule": "oxítona do conjunto estudado"},
+        {"word": "pássaro", "classification": "proparoxítona", "ending": "o", "rule": "proparoxítona"},
+        {"word": "três", "classification": "monossílabo tônico", "ending": "es", "rule": "monossílabo tônico do conjunto estudado"}
+      ]
+    },
+    {
+      "id": "L08-B03",
+      "type": "scope-guard-rail",
+      "text": "Uma regra pode ser correta e ainda não explicar todas as palavras. Se a palavra não pertence aos grupos estudados, a resposta adequada neste momento pode ser: esta regra ainda não decide; preciso consultar ou aprender a regra correspondente depois.",
+      "examples": [
+        {"word": "fácil", "expectedDecision": "fora do conjunto de regras sistematizado nesta lição"},
+        {"word": "saída", "expectedDecision": "fora do conjunto de regras sistematizado nesta lição"}
+      ]
+    },
+    {
+      "id": "L08-A01",
+      "type": "assessment-set",
+      "instruction": "Escolha a grafia correta e a regra estudada que a justifica.",
+      "items": [
+        {"options": ["cafe", "café"], "correctIndex": 1, "rule": "oxítona terminada em e"},
+        {"options": ["medico", "médico"], "correctIndex": 1, "rule": "proparoxítona"},
+        {"options": ["parabens", "parabéns"], "correctIndex": 1, "rule": "oxítona terminada em ens"},
+        {"options": ["po", "pó"], "correctIndex": 1, "rule": "monossílabo tônico terminado em o"},
+        {"options": ["sofa", "sofá"], "correctIndex": 1, "rule": "oxítona terminada em a"}
+      ]
+    },
+    {
+      "id": "L08-A02",
+      "type": "revision-set",
+      "instruction": "Revise apenas as palavras cuja acentuação pode ser decidida pelas regras estudadas.",
+      "items": [
+        {"before": "O medico chegou e sentou no sofa.", "after": "O médico chegou e sentou no sofá.", "targets": ["médico", "sofá"]},
+        {"before": "Ela recebeu os parabens do avô.", "after": "Ela recebeu os parabéns do avô.", "targets": ["parabéns"], "note": "avô já aparece corretamente e não deve ser alterado"}
+      ]
+    },
+    {
+      "id": "L08-A03",
+      "type": "scope-transfer",
+      "items": [
+        {"word": "fácil", "question": "As três regras desta lição bastam para justificar o acento desta palavra?", "options": ["não; é preciso outra regra/consulta", "sim; toda paroxítona recebe acento"], "correctIndex": 0},
+        {"word": "saída", "question": "As três regras desta lição bastam para justificar o acento desta palavra?", "options": ["não; é preciso outra regra/consulta", "sim; toda palavra com três sílabas recebe acento"], "correctIndex": 0}
+      ]
+    }
+  ],
+  "assessmentBehavior": {
+    "ruleCardsVisibleDuringPractice": true,
+    "classificationBeforeRule": true,
+    "uncoveredCases": "não contam como erro de aplicação das regras estudadas quando o aluno reconhece corretamente o limite",
+    "timeLimit": false
+  },
+  "completionEvidence": {
+    "clusters": {
+      "ruleApplication": {"evidence": ["L08-A01"], "rule": "acertar pelo menos quatro dos cinco casos e associar cada acerto ao grupo correto"},
+      "revision": {"evidence": ["L08-A02"], "rule": "corrigir os alvos cobertos sem introduzir alteração indevida"},
+      "scopeAwareness": {"evidence": ["L08-A03"], "rule": "reconhecer os dois casos ainda não cobertos"}
+    },
+    "completionRule": "os três agrupamentos são obrigatórios; acertos por aparência sem reconhecer a regra e seu limite não bastam.",
+    "notSufficient": ["decorar que palavras com acento são fortes", "afirmar que toda oxítona recebe acento", "tratar casos fora do escopo como erro do aluno"]
+  }
+}
