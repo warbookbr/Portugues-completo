@@ -11,6 +11,7 @@ Ajudar o ChatGPT a planejar e produzir conteúdo pedagógico do curso sem perder
 Antes de propor estrutura curricular, unidades, lições ou materiais de apoio, considerar como referência principal:
 
 - `docs/mapa-curso.md` para níveis, áreas, competências de saída e progressão geral;
+- `docs/roadmap-curricular.md` para estado atual, próximo passo, maturidade dos níveis e checkpoints de cobertura global;
 - `docs/unidades-nivel-0.md` para o detalhamento pedagógico já consolidado das unidades do Nível 0;
 - `docs/licoes-nivel-0.md` para o dimensionamento de lições já consolidado do Nível 0;
 - `docs/conteudo.md` para estrutura pedagógica e critérios de apresentação;
@@ -122,7 +123,9 @@ A progressão geral atualmente é:
 4 — Domínio
 ```
 
-Tratar `docs/mapa-curso.md` como fonte oficial para a evolução desses níveis.
+Tratar `docs/mapa-curso.md` como fonte oficial para a evolução desses níveis e `docs/roadmap-curricular.md` como fonte oficial para saber **onde o desenvolvimento está, qual é o próximo passo e quando um checkpoint estrutural deve ocorrer**.
+
+O detalhamento local não deve avançar indefinidamente ignorando a maturidade das camadas superiores. Quando o roadmap estabelecer um checkpoint, concluí-lo antes de iniciar a próxima rodada extensa de autoria detalhada.
 
 ## Dimensionamento por camada
 
@@ -345,18 +348,19 @@ Se a instância não tiver contexto anterior do projeto e a tarefa envolver cria
 ```text
 1. ler PROJECT_INDEX.md
 2. ler esta skill
-3. ler os documentos de nível/unidade/lição relevantes
-4. ler docs/conteudo.md
-5. se houver qualquer possibilidade de mídia ou material de apoio, ler producao-midia/README.md e FILA-MIDIA.md
-6. inspecionar o conteúdo já existente para não duplicar IDs, decisões ou formatos
-7. só então criar ou alterar a próxima unidade/lição
+3. ler docs/roadmap-curricular.md
+4. ler os documentos de nível/unidade/lição relevantes
+5. ler docs/conteudo.md
+6. se houver qualquer possibilidade de mídia ou material de apoio, ler producao-midia/README.md e FILA-MIDIA.md
+7. inspecionar o conteúdo já existente para não duplicar IDs, decisões ou formatos
+8. só então criar ou alterar a próxima unidade/lição
 ```
 
-Não depender da conversa anterior para descobrir padrões de material de apoio, IDs de mídia, critérios de publicação ou limites pedagógicos. Se uma decisão precisa sobreviver à conversa, ela deve estar nas fontes do repositório.
+Não depender da conversa anterior para descobrir o próximo passo curricular, padrões de material de apoio, IDs de mídia, critérios de publicação ou limites pedagógicos. Se uma decisão precisa sobreviver à conversa, ela deve estar nas fontes do repositório.
 
 ### Regra de progressão
 
-Antes de descer uma camada, verificar se a camada atual está suficientemente consolidada.
+Antes de descer uma camada, verificar se a camada atual está suficientemente consolidada e se `docs/roadmap-curricular.md` não exige um checkpoint estrutural antes do próximo aprofundamento.
 
 Fluxo preferido:
 
@@ -365,10 +369,13 @@ definir
 → verificar cobertura e limites
 → consolidar
 → documentar quando necessário
+→ atualizar o estado/roadmap quando houver avanço material
 → descer uma camada
 ```
 
 Evitar produzir dezenas de unidades ou lições para compensar uma camada superior ainda mal definida.
+
+Toda PR que altere materialmente o avanço curricular deve verificar se o foco atual, próximo passo ou maturidade registrados em `docs/roadmap-curricular.md` precisam ser atualizados na mesma mudança. Correções puramente editoriais ou técnicas não precisam mover o roadmap.
 
 ## Regra final
 
