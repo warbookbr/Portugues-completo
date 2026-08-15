@@ -1,0 +1,275 @@
+{
+  "schemaVersion": 1,
+  "id": "N1-EXIT-V01",
+  "type": "level-exit-verification",
+  "levelId": "N1",
+  "title": "Verificação de saída — Nível 1 — Básico",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Verificar transferência integrada das competências centrais do Nível 1 em leitura, uso e revisão da língua, produção escrita, compreensão oral, produção oral, adequação, literatura, multimodalidade e leitura inicial de fontes, sem repetir mecanicamente as sete verificações de unidade.",
+  "principles": [
+    "usar textos, situações e exemplos novos em relação às verificações de unidade",
+    "avaliar transferência e integração, não memorização de exemplos",
+    "permitir releitura e replay quando a competência não é memória ou velocidade",
+    "exigir produção escrita própria e revisão com histórico",
+    "exigir prática oral própria sem declarar automaticamente inteligibilidade",
+    "exigir evidência para inferência e interpretação",
+    "avaliar apenas ortografia, acentuação, gramática e pontuação efetivamente sistematizadas no Nível 1",
+    "não usar média global para compensar ausência de uma competência central",
+    "separar conclusão curricular do nível de validação automática de respostas abertas e produção oral"
+  ],
+  "validationBoundary": {
+    "autonomouslyCheckable": [
+      "respostas de leitura com evidência",
+      "itens fechados de ortografia, acentuação, gramática, coesão e pontuação",
+      "decisões objetivas de planejamento e revisão",
+      "compreensão oral baseada no significado",
+      "decisões de registro, variação, multimodalidade e fonte",
+      "existência de plano, rascunho, revisão, reescrita e tentativa oral"
+    ],
+    "requiresReliableEvaluator": [
+      "qualidade global e compreensibilidade do texto livre",
+      "fidelidade semântica completa de resumo ou paráfrase aberta",
+      "adequação global de registro em produção aberta",
+      "qualidade de uma justificativa literária aberta",
+      "inteligibilidade, pronúncia e organização percebida da produção oral"
+    ],
+    "studentEvidenceStates": {
+      "openWriting": "evidencia-registrada-validacao-linguistica-pendente",
+      "oralProduction": "pratica-realizada-validacao-oral-externa-pendente",
+      "openLiteraryResponse": "evidencia-registrada-validacao-interpretativa-pendente"
+    }
+  },
+  "media": {
+    "tts": "permitido; em compreensão oral o áudio vem antes da transcrição e a voz exata não determina a resposta",
+    "controlledAudio": [],
+    "video": "nao necessario",
+    "images": "nao obrigatorias; tarefas multimodais usam componentes semânticos acessíveis"
+  },
+  "supportMaterials": {
+    "curatedMedia": [],
+    "runtimeResources": [
+      {"type": "TTS_OK", "locations": ["instruções", "textos", "feedback"], "purpose": "acessibilidade de leitura"},
+      {"type": "TTS_AUDIO_FIRST", "locations": ["N1-EXIT-Q04"], "purpose": "estímulo de compreensão oral"},
+      {"type": "TRANSCRIPT_AFTER_ATTEMPT", "locations": ["N1-EXIT-Q04"], "purpose": "revisão posterior à tentativa de escuta"}
+    ],
+    "generatedVisualResources": [
+      {"type": "UI_RENDERED_TEXT_EVIDENCE_LINK", "locations": ["N1-EXIT-Q01"], "purpose": "ligar resposta a evidência"},
+      {"type": "UI_RENDERED_INTEGRATED_REVISION_EDITOR", "locations": ["N1-EXIT-Q02"], "purpose": "editar linguagem em contexto"},
+      {"type": "UI_RENDERED_WRITING_PLAN", "locations": ["N1-EXIT-P03"], "purpose": "planejar produção escrita"},
+      {"type": "UI_RENDERED_VERSION_HISTORY", "locations": ["N1-EXIT-P03"], "purpose": "preservar rascunho e reescrita"},
+      {"type": "UI_RENDERED_AUDIO_REPLAY", "locations": ["N1-EXIT-Q04"], "purpose": "replay sem penalização"},
+      {"type": "UI_RENDERED_ORAL_PLAN", "locations": ["N1-EXIT-P05"], "purpose": "planejar orientação oral"},
+      {"type": "UI_RENDERED_REGISTER_VARIATION_COMPARE", "locations": ["N1-EXIT-Q06"], "purpose": "adequação e variação"},
+      {"type": "UI_RENDERED_SEMANTIC_POSTER", "locations": ["N1-EXIT-Q07"], "purpose": "multimodalidade acessível"},
+      {"type": "UI_RENDERED_SOURCE_CARD", "locations": ["N1-EXIT-Q07"], "purpose": "autoria, data e fonte"}
+    ],
+    "productionQueueRequired": false,
+    "publicationDependency": "nenhuma nova mídia humana obrigatória; validação plena de escrita aberta e fala permanece dependente de avaliador confiável",
+    "decisionRationale": "a verificação mede transferência por textos e situações novas; multimodalidade é semântica/acessível e compreensão oral pode usar TTS."
+  },
+  "tasks": [
+    {
+      "id": "N1-EXIT-Q01",
+      "cluster": "readingAndEvidence",
+      "type": "integrated-reading",
+      "source": {
+        "title": "Biblioteca amplia atendimento em dois dias da semana",
+        "author": "Biblioteca do Bairro",
+        "date": "18 de novembro",
+        "paragraphs": [
+          "A partir da próxima semana, a Biblioteca do Bairro ficará aberta até as 21h nas terças e quintas-feiras. Nos outros dias úteis, o fechamento continuará às 18h.",
+          "Segundo o comunicado, a mudança foi feita após pedidos de usuários que trabalham durante o dia. O empréstimo de livros funcionará durante todo o novo horário, mas o atendimento para emissão de carteirinhas continuará somente até as 18h.",
+          "A biblioteca informou ainda que avaliará o movimento durante dois meses antes de decidir se o horário ampliado será mantido."
+        ]
+      },
+      "items": [
+        {"skill": "assunto/finalidade", "question": "Qual é o assunto principal?", "options": ["a ampliação experimental do horário da biblioteca", "a venda de livros usados", "a reforma do prédio"], "correctIndex": 0},
+        {"skill": "informação explícita", "question": "Em quais dias a biblioteca ficará aberta até 21h?", "options": ["terças e quintas", "todos os dias", "segundas e sextas"], "correctIndex": 0},
+        {"skill": "referência", "question": "Em 'a mudança foi feita', a que mudança o texto se refere?", "options": ["ao horário ampliado", "à emissão de carteirinhas", "ao empréstimo de livros"], "correctIndex": 0},
+        {"skill": "causa", "question": "Qual motivo o comunicado apresenta para a mudança?", "options": ["pedidos de usuários que trabalham durante o dia", "falta de funcionários", "reforma da biblioteca"], "correctIndex": 0},
+        {"skill": "contraste", "question": "Que serviço NÃO acompanha todo o horário ampliado?", "options": ["emissão de carteirinhas", "empréstimo de livros", "entrada na biblioteca"], "correctIndex": 0},
+        {"skill": "inferência simples", "claim": "A ampliação ainda não foi definida como permanente.", "options": ["inferência sustentada", "afirmação sem apoio"], "correctIndex": 0, "evidenceRequired": "a biblioteca avaliará o movimento durante dois meses antes de decidir se o horário ampliado será mantido"},
+        {"skill": "fonte", "question": "Qual autoria/fonte está declarada na atividade?", "options": ["Biblioteca do Bairro", "usuários que trabalham durante o dia", "dois meses"], "correctIndex": 0}
+      ],
+      "reReadingAllowed": true
+    },
+    {
+      "id": "N1-EXIT-Q02",
+      "cluster": "languageInRevision",
+      "type": "integrated-language-revision",
+      "instruction": "Revise apenas problemas pertencentes ao conteúdo estudado no Nível 1; não altere trechos corretos apenas para produzir mudanças.",
+      "original": "As inscrição nova começa terça. O atendimento vai funcionar até às nove. Por isso a biblioteca também terá empréstimos até esse horário. Marina confirme o recebimento e leve documento caneta e comprovante.",
+      "targets": [
+        {"area": "concordância nominal", "before": "As inscrição nova", "after": "As inscrições novas"},
+        {"area": "concordância verbal", "before": "As inscrições novas começa", "after": "As inscrições novas começam"},
+        {"area": "formulação temporal", "before": "até às nove", "after": "até as nove", "note": "tratar como revisão lexical/formulacional do exemplo; não transformar crase em sistema do N1"},
+        {"area": "conector", "before": "Por isso a biblioteca também terá empréstimos até esse horário.", "afterPrinciple": "usar formulação aditiva, pois a frase acrescenta informação e não apresenta resultado causal; por exemplo: 'A biblioteca também terá empréstimos até esse horário.'"},
+        {"area": "vírgula de chamamento", "before": "Marina confirme", "after": "Marina, confirme"},
+        {"area": "enumeração", "before": "documento caneta e comprovante", "after": "documento, caneta e comprovante"}
+      ],
+      "protectedCorrectContent": ["terça", "até nove", "Marina como pessoa chamada"],
+      "acceptEquivalentEdits": true
+    },
+    {
+      "id": "N1-EXIT-P03",
+      "cluster": "ownWritingAndRewrite",
+      "type": "own-writing-with-version-history",
+      "source": {
+        "label": "Comunicado do Centro de Formação",
+        "facts": [
+          "curso de atendimento começa em 2 de dezembro",
+          "aulas às terças e quintas, das 19h às 20h30",
+          "local: sala 5",
+          "material básico será fornecido",
+          "inscrições terminam em 28 de novembro"
+        ]
+      },
+      "scenario": "Escreva um pequeno texto informativo para pessoas interessadas no curso. O gênero pede pelo menos um parágrafo desenvolvido que reúna mais de uma informação relacionada; você pode usar outro parágrafo se isso melhorar a organização.",
+      "steps": [
+        {"id": "N1-EXIT-P03-PLAN", "type": "planning", "required": ["finalidade", "leitor", "informações essenciais", "ordem/agrupamento"]},
+        {"id": "N1-EXIT-P03-DRAFT", "type": "open-writing", "recordResponse": true, "automaticValidation": false, "sourceVisible": true},
+        {"id": "N1-EXIT-P03-REVIEW", "type": "layered-self-review", "layers": ["finalidade e suficiência", "organização/parágrafo", "clareza/referência", "gramática e concordância estudadas", "ortografia/acentuação estudadas", "pontuação estudada"], "required": true},
+        {"id": "N1-EXIT-P03-REWRITE", "type": "open-rewrite", "preserveOriginal": true, "recordResponse": true, "automaticValidation": false, "requiredReflection": ["uma mudança feita e por quê", "uma parte mantida e por quê"]}
+      ],
+      "sourceRecord": "Fonte: Comunicado do Centro de Formação.",
+      "validationStateAfterAutonomousCompletion": "evidencia-registrada-validacao-linguistica-pendente"
+    },
+    {
+      "id": "N1-EXIT-P03B",
+      "cluster": "opinionAndReason",
+      "type": "short-own-opinion",
+      "prompt": "Para um curso noturno, você considera mais útil oferecer material apenas impresso ou também em formato digital? Registre sua posição e ao menos uma razão relacionada.",
+      "recordResponse": true,
+      "automaticValidation": false,
+      "opinionContentNotScored": true,
+      "requiredStructure": ["posição identificável", "ao menos uma razão relacionada"],
+      "validationStateAfterAutonomousCompletion": "evidencia-registrada-validacao-linguistica-pendente"
+    },
+    {
+      "id": "N1-EXIT-Q04",
+      "cluster": "oralComprehension",
+      "type": "audio-first-comprehension",
+      "audioText": "O atendimento de sábado começará às oito e meia na sala dois. Às onze horas, a equipe fará uma pausa de trinta minutos e depois continuará até uma da tarde. Quem precisar apenas entregar documentos poderá usar a caixa da recepção durante todo o período.",
+      "replayAllowed": true,
+      "transcriptTiming": "after-attempt",
+      "items": [
+        {"question": "Onde começa o atendimento?", "options": ["na sala dois", "na caixa da recepção", "na sala onze"], "correctIndex": 0},
+        {"question": "O que acontece às onze horas?", "options": ["uma pausa de trinta minutos", "o atendimento termina", "a sala muda"], "correctIndex": 0},
+        {"question": "Até que horas o atendimento continua depois da pausa?", "options": ["13h", "11h30", "8h30"], "correctIndex": 0},
+        {"question": "Quem só precisa entregar documentos tem uma alternativa durante o período?", "options": ["sim, a caixa da recepção", "não", "somente depois das 13h"], "correctIndex": 0}
+      ]
+    },
+    {
+      "id": "N1-EXIT-P05",
+      "cluster": "oralProductionTransfer",
+      "type": "oral-orientation-plan-and-attempt",
+      "scenario": "Explique oralmente a uma pessoa como entregar um formulário: primeiro preencher nome e telefone, depois conferir os dados e, por fim, deixar o formulário no balcão da recepção.",
+      "planRequired": ["preencher nome e telefone", "conferir os dados", "entregar no balcão da recepção"],
+      "attempt": {
+        "required": true,
+        "recordingRequired": false,
+        "recordAttemptMetadata": true,
+        "automaticSpeechValidation": false
+      },
+      "selfCheck": ["as três etapas apareceram?", "a ordem ficou compreensível para mim?", "usei palavras próprias em vez de apenas ler o enunciado?", "se algo ficou confuso, reformulei?"],
+      "validationStateAfterAutonomousCompletion": "pratica-realizada-validacao-oral-externa-pendente"
+    },
+    {
+      "id": "N1-EXIT-Q06",
+      "cluster": "registerVariation",
+      "type": "register-variation-decisions",
+      "items": [
+        {"situation": "comunicado institucional pedindo confirmação até sexta", "options": ["Por favor, confirme o recebimento até sexta-feira.", "E aí, me dá um toque qualquer hora."], "preferredIndex": 0},
+        {"situation": "mensagem a amigo próximo avisando chegada aproximada", "options": ["Oi! Chego por volta das oito.", "Comunico que minha chegada ocorrerá aproximadamente às vinte horas."], "preferredIndex": 0},
+        {"statement": "Quem fala uma variedade regional diferente é menos inteligente.", "options": ["preconceito linguístico", "orientação de adequação"], "correctIndex": 0},
+        {"statement": "Um documento formal pode pedir convenções da norma-padrão.", "options": ["afirmação contextual adequada", "prova de que outras variedades não são português"], "correctIndex": 0},
+        {"question": "Formalidade é automaticamente melhor em qualquer situação?", "options": ["não", "sim"], "correctIndex": 0}
+      ]
+    },
+    {
+      "id": "N1-EXIT-Q07",
+      "cluster": "literatureMultimodalSource",
+      "type": "integrated-literary-multimodal-source",
+      "literaryText": "Quando o último ônibus passou sem parar, Elisa olhou a rua vazia e riu sozinha. 'Hoje a cidade quer que eu caminhe', pensou. Guardou o celular e seguiu sob as luzes dos postes.",
+      "literaryItems": [
+        {"claim": "Elisa transforma um contratempo em uma leitura bem-humorada da situação.", "options": ["interpretação sustentada", "afirmação sem apoio"], "correctIndex": 0, "evidence": "riu sozinha / 'a cidade quer que eu caminhe'"},
+        {"target": "a cidade quer que eu caminhe", "options": ["uso figurado que atribui intenção à cidade", "informação literal de que a cidade é uma pessoa"], "correctIndex": 0}
+      ],
+      "semanticPoster": {
+        "title": "Oficina de escrita",
+        "prominentDate": "Sábado — 6 de dezembro",
+        "prominentTime": "14h",
+        "body": "20 vagas. Inscrição gratuita.",
+        "footer": "Centro Cultural — sala 3",
+        "accessibleDescription": "Cartaz de Oficina de escrita no sábado 6 de dezembro às 14h, com 20 vagas, inscrição gratuita, no Centro Cultural, sala 3."
+      },
+      "multimodalItems": [
+        {"question": "Quando e onde ocorre?", "options": ["sábado 6 de dezembro às 14h, Centro Cultural, sala 3", "domingo às 20h", "não informado"], "correctIndex": 0},
+        {"claim": "Haverá certificado.", "options": ["não sustentado", "sustentado"], "correctIndex": 0},
+        {"question": "A informação destacada visualmente deve estar disponível no equivalente acessível?", "options": ["sim", "não"], "correctIndex": 0}
+      ],
+      "sourceCards": [
+        {"label": "Comunicado do Centro Cultural", "date": "1º de dezembro", "content": "A oficina começará às 14h."},
+        {"label": "Atualização do Centro Cultural", "date": "3 de dezembro", "content": "A oficina foi remarcada para 15h."}
+      ],
+      "sourceItems": [
+        {"question": "As duas fontes concordam no horário?", "options": ["não", "sim"], "correctIndex": 0},
+        {"question": "Qual é a atualização mais recente?", "options": ["a de 3 de dezembro", "a de 1º de dezembro"], "correctIndex": 0},
+        {"statement": "Uma página bonita é garantia de informação verdadeira.", "options": ["não", "sim"], "correctIndex": 0}
+      ]
+    },
+    {
+      "id": "N1-EXIT-P07B",
+      "cluster": "ownLiteraryResponse",
+      "type": "open-literary-response",
+      "prompt": "Registre uma interpretação ou reação própria ao texto de Elisa e indique uma palavra ou trecho que se relaciona à sua leitura.",
+      "recordResponse": true,
+      "automaticValidation": false,
+      "personalReactionNotScored": true,
+      "validationStateAfterAutonomousCompletion": "evidencia-registrada-validacao-interpretativa-pendente"
+    }
+  ],
+  "assessmentBehavior": {
+    "reReadingAllowed": true,
+    "replayAllowed": true,
+    "openWritingRequired": true,
+    "versionHistoryRequired": true,
+    "oralAttemptRequired": true,
+    "openLiteraryResponseRequired": true,
+    "closedTasksCannotCompensateOpenProduction": true,
+    "timeLimit": false,
+    "speedNotScored": true
+  },
+  "completionEvidence": {
+    "clusters": {
+      "readingAndEvidence": {"evidence": ["N1-EXIT-Q01"], "rule": "demonstrar compreensão global, explícitos, referência, relação e inferência com evidência"},
+      "languageInRevision": {"evidence": ["N1-EXIT-Q02"], "rule": "resolver os alvos dentro do escopo ensinado sem alterar conteúdo correto ao acaso"},
+      "ownWritingAndRewrite": {"evidence": ["N1-EXIT-P03"], "rule": "plano, texto próprio com parágrafo desenvolvido, revisão e reescrita registrados; validação linguística plena permanece pendente"},
+      "opinionAndReason": {"evidence": ["N1-EXIT-P03B"], "rule": "posição e razão próprias registradas; opinião escolhida não é pontuada"},
+      "oralComprehension": {"evidence": ["N1-EXIT-Q04"], "rule": "compreender a mensagem oral; replay não penaliza"},
+      "oralProductionTransfer": {"evidence": ["N1-EXIT-P05"], "rule": "plano, tentativa e autochecagem registrados; inteligibilidade permanece pendente de validação externa"},
+      "registerVariation": {"evidence": ["N1-EXIT-Q06"], "rule": "resolver adequação, norma contextual e preconceito sem hierarquizar variedades"},
+      "literatureMultimodalSource": {"evidence": ["N1-EXIT-Q07"], "rule": "interpretar literatura com evidência, integrar multimodalidade acessível e ler divergência simples de fonte"},
+      "ownLiteraryResponse": {"evidence": ["N1-EXIT-P07B"], "rule": "resposta própria ligada ao texto registrada; qualidade interpretativa aberta permanece pendente"}
+    },
+    "curricularCompletionRule": "todos os nove agrupamentos devem existir como evidência no desenho da verificação. Para o aluno, clusters fechados podem ser avaliados autonomamente; produções abertas/orais mantêm seus estados de validação explícitos e não podem ser convertidas em aprovação automática por heurística.",
+    "notSufficient": [
+      "média global compensando ausência de escrita",
+      "média global compensando ausência de prática oral",
+      "questões fechadas substituindo resposta literária própria",
+      "texto sem revisão/histórico",
+      "inferência sem evidência",
+      "uso de regra não ensinada para penalizar o aluno",
+      "clique de conclusão tratado como fala compreensível"
+    ]
+  },
+  "remediationRoutes": [
+    {"when": "leitura/evidência", "review": ["N1-U01-V01"]},
+    {"when": "ortografia/acentuação", "review": ["N1-U02-V01"]},
+    {"when": "classes/flexões/concordância", "review": ["N1-U03-V01"]},
+    {"when": "parágrafo/conectores/pontuação", "review": ["N1-U04-V01"]},
+    {"when": "produção/revisão/opinião", "review": ["N1-U05-V01"]},
+    {"when": "oralidade/registro/variação", "review": ["N1-U06-V01"]},
+    {"when": "literatura/multimodalidade/fontes", "review": ["N1-U07-V01"]}
+  ]
+}
