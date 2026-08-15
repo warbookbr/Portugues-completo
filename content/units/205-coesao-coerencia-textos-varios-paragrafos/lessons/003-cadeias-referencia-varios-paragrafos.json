@@ -1,0 +1,110 @@
+{
+  "schemaVersion": 1,
+  "id": "N2-U05-L03",
+  "title": "Cadeias de referência ao longo de vários parágrafos",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Manter e recuperar referentes ao longo de vários parágrafos por repetição funcional, pronomes e expressões nominais, preservando clareza quando há mudança de foco ou mais de um referente plausível.",
+  "competencies": [
+    "seguir uma cadeia referencial entre parágrafos",
+    "usar pronome quando o referente permanece claro",
+    "usar expressão nominal para retomar e recategorizar um referente",
+    "repetir nome quando isso evita ambiguidade",
+    "detectar retomada sem antecedente claro",
+    "reparar cadeia referencial quebrada sem variar palavras por obrigação"
+  ],
+  "prerequisites": ["N2-U05-L01", "N2-U05-L02", "N2-U01-L05", "N2-U03-L09"],
+  "limits": [
+    "não proibir repetição",
+    "não exigir pronome em toda retomada",
+    "não assumir que o referente é sempre o nome mais próximo",
+    "não exigir terminologia de cadeia anafórica",
+    "não aceitar expressão nominal que muda o referente"
+  ],
+  "media": {"tts": "opcional", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {
+    "curatedMedia": [],
+    "runtimeResources": [{"type": "TTS_OK", "locations": ["textos", "feedback"], "purpose": "apoio"}],
+    "generatedVisualResources": [
+      {"type": "UI_RENDERED_REFERENCE_CHAIN", "locations": ["L03-B01", "L03-C01", "L03-A01"], "purpose": "ligar retomadas ao referente"},
+      {"type": "UI_RENDERED_REFERENCE_REPAIR", "locations": ["L03-B02", "L03-A02"], "purpose": "comparar cadeia clara e ambígua"}
+    ],
+    "productionQueueRequired": false,
+    "publicationDependency": "nenhuma nova mídia humana obrigatória",
+    "decisionRationale": "referenciação entre parágrafos é uma relação textual diretamente observável."
+  },
+  "sequence": [
+    {
+      "id": "L03-B01",
+      "type": "model-analysis",
+      "paragraphs": [
+        "O centro cultural abriu uma sala de ensaio para grupos do bairro. O novo espaço pode ser reservado por até duas horas.",
+        "A sala possui mesa de som, caixas acústicas e suportes. Esses equipamentos devem permanecer no local depois do uso.",
+        "Os grupos recebem uma lista de cuidados antes da primeira reserva. O documento também informa como comunicar problemas encontrados nos aparelhos.",
+        "A equipe técnica analisa cada comunicado. Ela registra o defeito e informa ao grupo quando o equipamento volta a ficar disponível."
+      ],
+      "chains": [
+        {"referent": "sala de ensaio", "forms": ["O novo espaço", "A sala"]},
+        {"referent": "mesa de som, caixas e suportes", "forms": ["Esses equipamentos", "aparelhos"]},
+        {"referent": "lista de cuidados", "forms": ["O documento"]},
+        {"referent": "equipe técnica", "forms": ["A equipe técnica", "Ela"]}
+      ]
+    },
+    {
+      "id": "L03-B02",
+      "type": "ambiguity-repair",
+      "before": "A coordenadora falou com a técnica sobre a nova sala. No dia seguinte, ela publicou as orientações.",
+      "problem": "coordenadora e técnica são referentes femininos plausíveis",
+      "clearVersions": [
+        "A coordenadora falou com a técnica sobre a nova sala. No dia seguinte, a coordenadora publicou as orientações.",
+        "A coordenadora falou com a técnica sobre a nova sala. No dia seguinte, a técnica publicou as orientações."
+      ],
+      "teachingPoint": "a repetição explícita é preferível quando o pronome apaga a referência pretendida"
+    },
+    {
+      "id": "L03-C01",
+      "type": "quick-check",
+      "paragraphs": [
+        "A associação recebeu uma van para transportar materiais. O veículo será usado nos projetos comunitários.",
+        "Antes de cada saída, um responsável confere os itens carregados. Essa verificação fica registrada numa ficha digital."
+      ],
+      "items": [
+        {"target": "O veículo", "options": ["a van", "a associação", "os materiais"], "correctIndex": 0},
+        {"target": "Essa verificação", "options": ["a conferência dos itens", "a saída", "a ficha digital"], "correctIndex": 0}
+      ]
+    },
+    {
+      "id": "L03-A01",
+      "type": "assessment-chain",
+      "paragraphs": [
+        "A escola recebeu novos computadores para o laboratório. Os equipamentos serão instalados em duas etapas.",
+        "Primeiro, a equipe de tecnologia vai configurar as máquinas. Esse trabalho inclui atualização do sistema e criação das contas de acesso.",
+        "Depois, os professores testarão os programas usados nas aulas. Eles registrarão eventuais problemas num formulário.",
+        "A equipe de tecnologia receberá esses registros e fará os ajustes necessários. O grupo só liberará as máquinas depois dos testes."
+      ],
+      "items": [
+        {"target": "Os equipamentos", "options": ["os novos computadores", "os professores", "os programas"], "correctIndex": 0},
+        {"target": "Esse trabalho", "options": ["a configuração das máquinas", "a entrega dos computadores", "o teste dos professores"], "correctIndex": 0},
+        {"target": "Eles", "options": ["os professores", "os programas", "os computadores"], "correctIndex": 0},
+        {"target": "esses registros", "options": ["os problemas/formulários registrados pelos professores", "as contas de acesso", "as etapas de instalação"], "correctIndex": 0},
+        {"target": "O grupo", "options": ["a equipe de tecnologia", "os professores", "os computadores"], "correctIndex": 0}
+      ]
+    },
+    {
+      "id": "L03-A02",
+      "type": "assessment-repair",
+      "items": [
+        {"before": "Marina apresentou Paula à diretora. Ela explicou o projeto.", "situation": "Quem explicou foi Paula.", "options": ["Marina apresentou Paula à diretora. Paula explicou o projeto.", "Marina apresentou Paula à diretora. Ela explicou o projeto."], "correctIndex": 0},
+        {"question": "Repetir 'Paula' nessa versão é falha de coesão?", "options": ["não; a repetição resolve a referência", "sim; todo nome repetido deve virar pronome"], "correctIndex": 0}
+      ]
+    }
+  ],
+  "assessmentBehavior": {"clarityOverridesVariation": true, "textVisibility": "sempre disponível", "ttsPolicy": "opcional", "timeLimit": false},
+  "completionEvidence": {
+    "clusters": {
+      "chainRecovery": {"evidence": ["L03-C01", "L03-A01"], "rule": "recuperar corretamente as retomadas avaliadas"},
+      "referenceRepair": {"evidence": ["L03-A02"], "rule": "reparar ambiguidade e aceitar repetição funcional"}
+    },
+    "completionRule": "os dois agrupamentos são obrigatórios.",
+    "notSufficient": ["trocar toda repetição por pronome", "seguir apenas proximidade", "variar expressão sem preservar o referente"]
+  }
+}
