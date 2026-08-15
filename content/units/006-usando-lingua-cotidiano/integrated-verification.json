@@ -1,0 +1,205 @@
+{
+  "schemaVersion": 1,
+  "id": "N0-U06-V01",
+  "type": "integrated-unit-verification",
+  "title": "Verificação integrada — Unidade 6",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Verificar se o aluno integra leitura, escrita, compreensão oral e uso contextual da língua em situações cotidianas simples, incluindo finalidade, pergunta/resposta, pedidos e orientações, adequação, variação e reparo comunicativo, distinguindo evidência autônoma da aplicação de oralidade que exige observação externa.",
+  "prerequisites": ["N0-U06-L01", "N0-U06-L02", "N0-U06-L03", "N0-U06-L04", "N0-U06-L05", "N0-U06-L06", "N0-U06-L07", "N0-U06-L08", "N0-U06-L09", "N0-U06-L10"],
+  "designPrinciples": [
+    "usar situações novas e funcionais",
+    "não usar média global para compensar ausência de um agrupamento",
+    "exigir produção escrita própria em pergunta ou reformulação",
+    "avaliar compreensão oral com estímulo TTS apresentado sem transcrição antes da tentativa",
+    "permitir replay sem penalidade automática",
+    "não declarar produção oral validada sem observação humana ou externa confiável",
+    "avaliar adequação sem transformar formalidade em hierarquia de qualidade",
+    "avaliar variação preservando simultaneamente diversidade, contexto e convenções",
+    "tratar pedido de esclarecimento e reformulação como competências comunicativas"
+  ],
+  "limits": [
+    "não exigir conversação longa",
+    "não exigir pronúncia padronizada ou fala sem hesitação",
+    "não exigir teoria pragmática ou sociolinguística",
+    "não exigir argumentação ou persuasão",
+    "não usar etiqueta como conteúdo avaliativo",
+    "não validar texto aberto por palavra-chave",
+    "não inferir competência oral a partir de uma resposta digitada"
+  ],
+  "media": {"tts": "estímulos de compreensão oral, instruções e falas simuladas", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {
+    "curatedMedia": [],
+    "runtimeResources": [
+      {"type": "TTS_OK", "locations": ["V01-Q06", "V01-Q07", "instruções e falas simuladas"], "purpose": "avaliar significado oral sem depender de características acústicas específicas"},
+      {"type": "REPLAY_CONTROL", "locations": ["V01-Q06", "V01-Q07"], "purpose": "permitir repetição sem penalidade automática"}
+    ],
+    "generatedVisualResources": [
+      {"type": "UI_RENDERED_SITUATION_CARD", "locations": ["V01-Q01", "V01-Q02", "V01-Q03", "V01-Q04", "V01-Q05", "V01-Q08", "V01-Q09", "V01-Q10", "V01-Q11"], "purpose": "manter contexto funcional visível"},
+      {"type": "UI_AUDIO_FIRST_CARD", "locations": ["V01-Q06", "V01-Q07"], "purpose": "avaliar compreensão oral antes da transcrição"},
+      {"type": "UI_RENDERED_OPEN_RESPONSE_FIELD", "locations": ["V01-Q02", "V01-Q11"], "purpose": "produção própria obrigatória"},
+      {"type": "UI_RENDERED_ORAL_REHEARSAL_CHECK", "locations": ["V01-Q12"], "purpose": "registrar prática oral sem alegar validação"}
+    ],
+    "productionQueueRequired": false,
+    "publicationDependency": "nenhuma nova mídia humana obrigatória; produção oral validada depende de mecanismo externo futuro",
+    "decisionRationale": "TTS mede compreensão oral de conteúdo; produção oral não pode ser julgada pelo sistema atual e permanece explicitamente separada."
+  },
+  "items": [
+    {
+      "id": "V01-Q01",
+      "competency": "participantes e finalidade",
+      "situation": "Laura envia ao colega: 'A reunião de hoje mudou para a sala 7.'",
+      "question": "Qual é a finalidade principal?",
+      "options": ["informar ao colega uma mudança de sala", "pedir que o colega compre algo", "contar uma história sobre Laura"],
+      "correctIndex": 0
+    },
+    {
+      "id": "V01-Q02",
+      "competency": "formular pergunta",
+      "situation": "Você sabe que haverá atendimento amanhã, mas não sabe o horário. Escreva uma pergunta curta para obter essa informação.",
+      "responseMode": "free-text",
+      "selfReview": ["Minha pergunta busca o horário?", "A necessidade está clara?"],
+      "modelExamplesAfterSubmission": ["Que horas é o atendimento amanhã?", "Qual é o horário do atendimento amanhã?"],
+      "automaticObservations": ["há texto livre", "autochecagem concluída"],
+      "notAutomaticallyJudged": ["funcionalidade linguística plena", "formulação única", "correção gramatical global"]
+    },
+    {
+      "id": "V01-Q03",
+      "competency": "responder e fornecer informação",
+      "question": "Onde fica a sala de vacinação?",
+      "availableInformation": "primeiro andar, sala 4",
+      "options": ["No primeiro andar, sala 4.", "Às quatro horas.", "O prédio é grande."],
+      "correctIndex": 0
+    },
+    {
+      "id": "V01-Q04",
+      "competency": "pedido/oferta/orientação",
+      "situation": "Uma pessoa procura a saída. Você sabe que ela fica no fim do corredor à esquerda.",
+      "options": ["Siga até o fim do corredor e vire à esquerda.", "O corredor foi pintado.", "Quer um café?"],
+      "correctIndex": 0
+    },
+    {
+      "id": "V01-Q05",
+      "competency": "mensagem cotidiana",
+      "message": "RETIRADA DE DOCUMENTOS: 9h às 16h — balcão 2.",
+      "question": "Qual informação a mensagem fornece?",
+      "options": ["horário e local para retirar documentos", "horário de uma aula", "preço de um documento"],
+      "correctIndex": 0
+    },
+    {
+      "id": "V01-Q06",
+      "competency": "compreensão oral — informação principal",
+      "ttsText": "Hoje o posto fecha mais cedo, às quatro da tarde.",
+      "transcriptHiddenUntilAttempt": true,
+      "question": "Qual é a informação principal?",
+      "options": ["o posto fecha hoje às quatro", "o posto abre às quatro", "o posto ficará aberto a noite toda"],
+      "correctIndex": 0,
+      "replayAllowed": true,
+      "transcriptAfterAttempt": "Hoje o posto fecha mais cedo, às quatro da tarde."
+    },
+    {
+      "id": "V01-Q07",
+      "competency": "compreensão oral — orientação",
+      "ttsText": "Espere na recepção até chamarem seu nome.",
+      "transcriptHiddenUntilAttempt": true,
+      "question": "O que a pessoa deve fazer?",
+      "options": ["esperar na recepção", "ir para casa", "chamar todos os nomes"],
+      "correctIndex": 0,
+      "replayAllowed": true,
+      "transcriptAfterAttempt": "Espere na recepção até chamarem seu nome."
+    },
+    {
+      "id": "V01-Q08",
+      "competency": "registro e adequação",
+      "situation": "Você escreve para uma instituição pedindo o horário de atendimento.",
+      "options": ["Olá. Poderia informar o horário de atendimento, por favor?", "E aí, manda o horário aí.", "O atendimento foi ontem."],
+      "correctIndex": 0,
+      "note": "a alternativa informal não é declarada gramaticalmente errada; o contraste é de adequação à situação institucional apresentada"
+    },
+    {
+      "id": "V01-Q09",
+      "competency": "variação e adequação",
+      "question": "Qual afirmação preserva os princípios estudados?",
+      "options": [
+        "O português pode variar, e a situação e as convenções ainda ajudam a orientar escolhas.",
+        "Toda forma diferente da minha é erro.",
+        "Como existe variação, qualquer forma serve igualmente em qualquer situação."
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "V01-Q10",
+      "competency": "reparo — pedir esclarecimento",
+      "situation": "Você ouviu um endereço, mas não entendeu o número.",
+      "options": ["Pode repetir o número do endereço, por favor?", "Vou adivinhar um número.", "Não preciso saber."],
+      "correctIndex": 0
+    },
+    {
+      "id": "V01-Q11",
+      "competency": "reformulação própria",
+      "situation": "Você escreveu 'Me encontre ali depois'. A pessoa responde que não sabe onde nem quando. O encontro será na entrada da estação às seis.",
+      "responseMode": "free-text",
+      "selfReview": ["Minha nova mensagem informa o local?", "Ela informa o horário?", "Mantém a intenção de marcar o encontro?"],
+      "modelExamplesAfterSubmission": ["Me encontre na entrada da estação às seis.", "A gente se encontra às seis na entrada da estação."],
+      "automaticObservations": ["há texto livre", "autochecagem concluída"],
+      "notAutomaticallyJudged": ["compreensibilidade plena", "formulação única", "correção gramatical global"]
+    },
+    {
+      "id": "V01-Q12",
+      "competency": "produção oral — prática não validada automaticamente",
+      "situation": "Uma pessoa pergunta: 'Que horas começa a aula?'. A informação é: oito horas.",
+      "instruction": "Responda oralmente de forma simples. Depois marque que concluiu o ensaio.",
+      "oralRehearsal": true,
+      "automaticValidation": false,
+      "selfCheck": ["Minha resposta oral informou oito horas?"],
+      "externalReview": {"requiredForClaimOfValidatedOralComprehensibility": true, "statusWhenApproved": "oralidade-validada"},
+      "meaning": "a aplicação registra prática/autochecagem, mas não infere que a fala foi compreensível"
+    }
+  ],
+  "coverage": [
+    {"competency": "participantes/finalidade", "evidence": ["V01-Q01"]},
+    {"competency": "perguntar/responder", "evidence": ["V01-Q02", "V01-Q03"]},
+    {"competency": "pedido/orientação e mensagens cotidianas", "evidence": ["V01-Q04", "V01-Q05"]},
+    {"competency": "compreensão oral", "evidence": ["V01-Q06", "V01-Q07"]},
+    {"competency": "registro/variação", "evidence": ["V01-Q08", "V01-Q09"]},
+    {"competency": "reparo/reformulação", "evidence": ["V01-Q10", "V01-Q11"]},
+    {"competency": "produção oral", "evidence": ["V01-Q12"], "validationLimit": "prática/autochecagem no fluxo autônomo; compreensibilidade exige observação externa"}
+  ],
+  "assessmentBehavior": {
+    "openResponsePolicy": "respostas abertas são registradas/autorrevisadas, não validadas plenamente por heurística",
+    "oralComprehension": "TTS sem transcrição antes da tentativa; replay permitido",
+    "oralProduction": "ensaio/autochecagem pode ser registrado, mas compreensibilidade não é validada automaticamente",
+    "timeLimit": false,
+    "technicalTerminologyRequired": false
+  },
+  "completionEvidence": {
+    "clusters": {
+      "comprehensionAndPurpose": {"evidence": ["V01-Q01", "V01-Q05"], "rule": "acertar os dois"},
+      "functionalUseAndProduction": {"evidence": ["V01-Q02", "V01-Q03", "V01-Q04", "V01-Q11"], "rule": "acertar Q03 e Q04 e realizar Q02 e Q11 em campo livre com autochecagem"},
+      "oralComprehension": {"evidence": ["V01-Q06", "V01-Q07"], "rule": "acertar os dois com replay permitido"},
+      "adequacyVariationAndRepair": {"evidence": ["V01-Q08", "V01-Q09", "V01-Q10"], "rule": "acertar os três"},
+      "oralProductionPractice": {"evidence": ["V01-Q12"], "rule": "realizar o ensaio e autochecagem; este agrupamento registra prática, não validação de compreensibilidade"}
+    },
+    "completionRule": "todos os cinco agrupamentos são obrigatórios; nenhum score global pode compensar ausência de compreensão oral ou produção/reformulação.",
+    "autonomousOutcome": {
+      "whenAllClusterRulesMet": "u6-autonoma-concluida-com-pratica-oral-nao-validada",
+      "meaning": "competências automaticamente observáveis foram demonstradas e a prática oral foi registrada; isso não equivale a oralidade validada"
+    },
+    "validatedOutcome": {
+      "additionalRequirement": "observação humana ou externa confiável confirma compreensibilidade da produção oral do aluno em tarefa equivalente a V01-Q12 e das produções abertas quando aplicável",
+      "status": "u6-validada"
+    },
+    "notSufficient": ["acertar apenas tarefas escritas", "digitar uma resposta como substituto de produção oral", "marcar ensaio sem autochecagem", "tratar formalidade como correção absoluta", "adivinhar em vez de pedir esclarecimento"]
+  },
+  "remediationRoutes": [
+    {"when": "finalidade e contexto", "review": ["N0-U06-L01"]},
+    {"when": "perguntar", "review": ["N0-U06-L02"]},
+    {"when": "responder", "review": ["N0-U06-L03"]},
+    {"when": "pedido/oferta/orientação", "review": ["N0-U06-L04"]},
+    {"when": "mensagens cotidianas", "review": ["N0-U06-L05"]},
+    {"when": "compreensão oral", "review": ["N0-U06-L06"]},
+    {"when": "registro", "review": ["N0-U06-L07"]},
+    {"when": "variação", "review": ["N0-U06-L08"]},
+    {"when": "reparo", "review": ["N0-U06-L09"]},
+    {"when": "reformulação", "review": ["N0-U06-L10"]}
+  ]
+}
