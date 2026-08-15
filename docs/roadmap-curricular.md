@@ -13,15 +13,15 @@ Que condição estrutural precisa ser atendida antes de aprofundar mais?
 
 Fontes relacionadas:
 
-- `docs/mapa-curso.md` — visão geral do percurso e detalhamento consolidado do Nível 0;
+- `docs/mapa-curso.md` — visão geral do percurso e Nível 0;
 - `docs/mapa-niveis-1-4.md` — camada `M1` dos Níveis 1–4;
-- `docs/matriz-progressao-global.md` — progressão transversal dos grandes domínios;
-- `docs/unidades-nivel-0.md` — unidades do Nível 0;
-- `docs/licoes-nivel-0.md` — arquitetura das Unidades 1–5;
-- `docs/licoes-nivel-0-unidade-6.md` — arquitetura da Unidade 6;
-- `docs/checkpoint-saida-nivel-0.md` — auditoria das competências de saída do Nível 0;
-- `content/` — conteúdo efetivamente desenvolvido;
-- `docs/execucao-continua.md` — protocolo para execução por marcos.
+- `docs/matriz-progressao-global.md` — progressão transversal;
+- `docs/areas-nivel-1.md` — áreas do Nível 1 em `M2`;
+- `docs/unidades-nivel-1.md` — unidades do Nível 1 em `M3`;
+- `docs/transicao-n0-n1.md` — auditoria da passagem N0→N1;
+- `docs/checkpoint-saida-nivel-0.md` — fechamento do N0;
+- `content/` — conteúdo desenvolvido;
+- `docs/execucao-continua.md` — execução por marcos.
 
 ## Escala de maturidade
 
@@ -34,7 +34,7 @@ M4 — lições dimensionadas
 M5 — conteúdo desenvolvido
 ```
 
-A escala mede maturidade de planejamento/desenvolvimento, não progresso do aluno nem prontidão de publicação.
+A escala mede maturidade curricular, não progresso do aluno nem publicação.
 
 ## Estado macro atual
 
@@ -42,21 +42,32 @@ A escala mede maturidade de planejamento/desenvolvimento, não progresso do alun
 
 Estado curricular: **`M5` concluído**.
 
-- `M1` concluído;
-- `M2` concluído;
-- `M3` concluído: seis unidades dimensionadas;
-- `M4` concluído: todas as seis unidades possuem arquitetura de lições;
-- `M5` concluído: **U1–U6 possuem conteúdo detalhado e verificação integrada**;
-- verificação de saída do nível criada em `content/levels/000-fundamentos/exit-verification.json`;
-- competências de saída auditadas em `docs/checkpoint-saida-nivel-0.md`.
+- seis unidades em M5;
+- verificações integradas U1–U6;
+- verificação de saída `N0-EXIT-V01`;
+- competências de saída auditadas.
 
-O fechamento curricular **não** significa publicação pronta. Permanecem dependências técnicas e de mídia descritas abaixo.
+Permanece a distinção:
+
+```text
+N0 curricularmente fechado
+≠ N0 pronto para publicação
+≠ N0 externamente validado em toda produção aberta/oral
+```
 
 ### Nível 1 — Básico
 
-Estado atual: **`M1` concluído**.
+Estado atual:
 
-Próximo avanço estrutural: `M1 → M2`, dimensionando suas áreas antes de organizar unidades ou produzir conteúdo.
+- **`M1` concluído** — objetivo, competências de saída e responsabilidades gerais;
+- **`M2` concluído** — 10 áreas dimensionadas em `docs/areas-nivel-1.md`;
+- **`M3` concluído** — 7 unidades dimensionadas em `docs/unidades-nivel-1.md`;
+- `M4` ainda não iniciado;
+- `M5` ainda não iniciado.
+
+Refinamento realizado em M2: a antiga área M1 que agrupava registro, variação, literatura e multimodalidade foi dividida em duas áreas para não concentrar responsabilidades incompatíveis e para explicitar literatura, multimodalidade e fontes iniciais.
+
+A transição N0→N1 foi revisada em `docs/transicao-n0-n1.md` e não revelou lacuna que exija reabrir o N0.
 
 ### Nível 2 — Intermediário
 
@@ -70,184 +81,166 @@ Estado atual: **`M1` concluído**.
 
 Estado atual: **`M1` concluído**.
 
-## Checkpoint global após a Unidade 3
+## Marcos globais concluídos
 
-Status: **CONCLUÍDO**.
+### Checkpoint global após U3 do N0
 
 ```text
-N1 — M0 → M1 ✓
-N2 — M0 → M1 ✓
-N3 — M0 → M1 ✓
-N4 — M0 → M1 ✓
+N1–N4 M0 → M1 ✓
 matriz global ✓
 revisão de lacunas/sobreposições ✓
 ```
 
-## Fechamento do Nível 0
-
-Status curricular: **CONCLUÍDO**.
+### Fechamento do Nível 0
 
 ```text
-U1 — M5 ✓
-U2 — M5 ✓
-U3 — M5 ✓
-U4 — M5 ✓
-U5 — M5 ✓
-U6 — M5 ✓
-verificações integradas U1–U6 ✓
-verificação de saída do N0 ✓
-mapeamento das competências de saída ✓
+U1–U6 M5 ✓
+verificações integradas ✓
+verificação de saída ✓
+checkpoint de competências ✓
 ```
 
-### Unidade 6 — Usando a língua no cotidiano
+## Nível 1 — arquitetura atual
 
-Conteúdo desenvolvido:
+### M2 — 10 áreas
 
-```text
-1. Quem, para quem e para quê?
-2. Perguntar para obter informação
-3. Responder e fornecer informação
-4. Pedir, oferecer e orientar
-5. Avisos, instruções e mensagens do cotidiano
-6. Ouvindo mensagens curtas e identificando o principal
-7. Mais formal ou mais informal?
-8. Maneiras diferentes de usar o português
-9. Quando não entendo: repetir, esclarecer e confirmar
-10. Reformular e confirmar que a comunicação funcionou
-+ verificação integrada
-```
+1. Leitura e compreensão básica ampliada
+2. Produção de textos curtos e parágrafos
+3. Ortografia, acentuação e convenções frequentes
+4. Palavras, classes e flexões fundamentais
+5. Frase, relações sintáticas básicas e concordância
+6. Vocabulário, semântica e formação básica de palavras
+7. Pontuação e organização gráfica ampliadas
+8. Gêneros, oralidade e uso social da língua
+9. Registro, variação e adequação
+10. Literatura, multimodalidade e fontes iniciais
 
-A U6 fecha o percurso funcional do Nível 0 sem se tornar revisão geral disfarçada. TTS mede compreensão oral quando a resposta depende do significado e não de prosódia específica.
+### M3 — 7 unidades
 
-### Limite de produção oral
+1. **Lendo textos com mais autonomia**
+2. **Palavras: ortografia, acentuação e sentidos**
+3. **Classes, flexões e construção da frase**
+4. **Da frase ao parágrafo: conectando e pontuando ideias**
+5. **Produzindo textos curtos para diferentes finalidades**
+6. **Língua em interação: oralidade, registros e variação**
+7. **Literatura, multimodalidade e leitura digital**
 
-Sem reconhecimento de fala ou avaliação humana/externa confiável:
+As unidades combinam áreas por progressão pedagógica e não seguem correspondência 1:1.
 
-```text
-prática oral registrada
-≠
-produção oral compreensível validada
-```
+## Revisão de cobertura do Nível 1
 
-A U6 e a verificação de saída preservam essa distinção. O nível pode ser curricularmente fechado sem fingir que a limitação técnica deixou de existir.
+A revisão M2/M3 confirma no N1:
 
-### Dependências ainda abertas fora da maturidade curricular
-
-**Mídia:** U1 e U2 ainda possuem mídias humanas obrigatórias já registradas em `producao-midia/FILA-MIDIA.md`.
-
-**Frontend:** o catálogo/renderer ainda não publica as unidades desenvolvidas; `content/course.json` continua sem unidades publicadas por decisão deliberada.
-
-**Respostas abertas:** validação linguística plena depende de avaliador confiável; o fluxo autônomo registra produção e autochecagem.
-
-**Produção oral:** validação de compreensibilidade depende de observação externa futura.
-
-Portanto:
-
-```text
-N0 curricularmente fechado
-≠ N0 pronto para publicação
-≠ N0 completamente validado por um aluno real
-```
+- consolidação da alfabetização sem retornar a treino mecânico;
+- leitura ampliada e resumo inicial;
+- escrita de textos curtos/parágrafos;
+- ortografia e acentuação sistemáticas em nível básico;
+- classes/flexões fundamentais;
+- sintaxe e concordância básicas;
+- vocabulário, semântica e formação simples de palavras;
+- pontuação e organização de parágrafo;
+- coesão/coerência em nível introdutório;
+- `opinião + razão` como contato argumentativo antes do N2;
+- gêneros e oralidade;
+- registro, variação e norma;
+- literatura e figuratividade inicial;
+- multimodalidade/digital;
+- autoria/fonte e registro simples de origem da informação.
 
 ## Foco curricular atual
 
 ```text
-NÍVEL 0 — curricularmente fechado em M5
+NÍVEL 0 — M5 concluído
 
-NÍVEL 1 — MARCO ATIVO
-└── elevar de M1 para M2
-    └── dimensionar grandes áreas — PRÓXIMO SUBPASSO INTERNO
+NÍVEL 1 — M3 concluído
+└── M4 — MARCO ATIVO
+    └── dimensionar lições por unidade — PRÓXIMO SUBPASSO INTERNO
 ```
 
 Último marco curricular concluído:
 
 ```text
-N0 — U1–U6 em M5 + verificação de saída + checkpoint de competências
+N1 — M2 + M3 + auditoria N0→N1
 ```
 
 Marco ativo:
 
 ```text
-N1 — dimensionar áreas em M2
+N1 — avançar para M4
 ```
 
 Próximo subpasso interno:
 
 ```text
-N1-M2 — transformar as grandes áreas do mapa M1 em áreas dimensionadas com objetivo, competências, conteúdos essenciais e limites
+N1-U01 — dimensionar as lições de “Lendo textos com mais autonomia”
 ```
 
-## Gate para avançar o Nível 1
+## Gate para autoria M5 do Nível 1
 
-Antes de autoria detalhada do N1:
+Autoria detalhada só deve começar para uma unidade cuja arquitetura M4 esteja consolidada.
 
 ```text
-M1 — concluído
-→ M2 — dimensionar áreas
-→ revisão contra saída do N0 e matriz global
-→ M3 — organizar unidades
-→ somente então M4/M5
+M1 ✓
+M2 ✓
+M3 ✓
+→ M4 da unidade
+→ revisão de dependências/evidências
+→ então M5 da unidade
 ```
 
-O dimensionamento M2 deve garantir especialmente as responsabilidades do N1 na matriz global: consolidação da alfabetização, leitura básica ampliada, textos curtos/parágrafos, ortografia/acentuação inicial sistemática, classes/flexões fundamentais, sintaxe e concordância básicas, vocabulário, pontuação ampliada, gêneros/oralidade, registro/variação, literatura/multimodalidade e primeiros contatos com argumento e fontes.
+Não é obrigatório dimensionar todas as sete unidades em M4 antes de desenvolver a primeira, mas a arquitetura M3 do nível inteiro deve permanecer como horizonte e qualquer descoberta local relevante deve ser conferida contra a matriz global.
 
-## Cobertura global
+## Dependências não curriculares do N0
 
-A fonte oficial continua sendo `docs/matriz-progressao-global.md`.
+Continuam abertas e não bloqueiam o avanço curricular do N1:
 
-## Regras de continuidade
-
-1. Detalhar mais o que está mais próximo.
-2. Nenhum nível entra em autoria detalhada sem `M1–M3` suficientemente consolidados.
-3. Corrigir a camada apropriada quando surgir lacuna estrutural real.
-4. Atualizar este roadmap quando o estado curricular mudar.
-5. Executar marcos autorizados sem confirmações repetidas conforme `docs/execucao-continua.md`.
+- mídias humanas obrigatórias antigas de U1/U2 na fila;
+- frontend sem renderer/catalogação das unidades;
+- validação plena de respostas abertas dependente de avaliador confiável;
+- produção oral compreensível dependente de observação externa.
 
 ## Sequência prevista
 
 ```text
-MARCO ATIVO — NÍVEL 1
-1. dimensionar áreas do N1 em M2
-2. revisar conexão N0 → N1 e matriz global
-3. consolidar M2
+MARCO ATIVO — N1 M4
+1. dimensionar lições da U1
+2. revisar arquitetura U1
+3. continuar U2–U7 em blocos coerentes
 
-MARCO SEGUINTE — NÍVEL 1 M3
-4. organizar áreas em unidades pedagógicas
-5. dimensionar cada unidade
-6. revisar cobertura e dependências
+QUANDO UMA UNIDADE TIVER M4 CONSOLIDADO
+4. pode entrar em M5
+5. desenvolver lições + verificação integrada
+6. atualizar roadmap
 
-DEPOIS
-7. dimensionar lições do N1 em M4
-8. só então iniciar autoria M5
+ANTES DE FECHAR N1
+7. verificação de saída do nível
+8. checkpoint N1→N2
 ```
 
-## Fonte de verdade e manutenção
+## Fontes de verdade
 
 ```text
-visão geral do curso
+visão geral
 → docs/mapa-curso.md
 
-M1 dos Níveis 1–4
+M1 N1–N4
 → docs/mapa-niveis-1-4.md
 
-progressão transversal
+matriz global
 → docs/matriz-progressao-global.md
 
-estado e próximo marco
+N1 M2
+→ docs/areas-nivel-1.md
+
+N1 M3
+→ docs/unidades-nivel-1.md
+
+transição N0→N1
+→ docs/transicao-n0-n1.md
+
+estado atual
 → docs/roadmap-curricular.md
 
-checkpoint de saída N0
-→ docs/checkpoint-saida-nivel-0.md
-
-execução contínua
-→ docs/execucao-continua.md
-
-arquitetura U1–U5
-→ docs/licoes-nivel-0.md
-
-arquitetura U6
-→ docs/licoes-nivel-0-unidade-6.md
-
-conteúdo detalhado
+conteúdo
 → content/
 ```
