@@ -35,9 +35,9 @@ currículo fechado
 - **M2 concluído** — 10 áreas em `docs/areas-nivel-1.md`;
 - **M3 concluído** — 7 unidades em `docs/unidades-nivel-1.md`;
 - **M4 concluído** — 64 lições + 7 verificações integradas em `docs/licoes-nivel-1.md` e documentos U1–U7;
-- **M5 em andamento** — **U1 e U2 concluídas**; U3–U7 pendentes.
+- **M5 em andamento** — **U1, U2 e U3 concluídas**; U4–U7 pendentes.
 
-A passagem N0→N1 foi auditada em `docs/transicao-n0-n1.md` e não exige reabrir o N0.
+A passagem N0→N1 foi auditada em `docs/transicao-n0-n1.md`.
 
 ### Níveis 2, 3 e 4
 
@@ -59,25 +59,39 @@ Cobertura: objetivo de leitura; assunto/finalidade/principal; explícitos; refer
 10 lições + N1-U02-V01
 ```
 
+Cobertura: regularidades ortográficas delimitadas; tonicidade; primeira sistematização de acentuação; relações de sentido; polissemia/precisão/figuratividade transparente; famílias/formação introdutória; consulta contextual.
+
+Escopo normativo: `docs/referencias-ortografia-nivel-1.md`.
+
+### U3 — Classes, flexões e construção da frase — CONCLUÍDA
+
+```text
+10 lições + N1-U03-V01
+```
+
 Cobertura:
 
-- ortografia como padrões + convenções + consulta;
-- `r/rr`, `c/qu`, `g/gu`, `m/n`, `nh/lh/ch` e `s/ss` em regularidades delimitadas;
-- sílaba tônica e acento gráfico como conceitos distintos;
-- oxítona, paroxítona e proparoxítona como ferramentas;
-- primeira sistematização de acentuação: proparoxítonas, oxítonas terminadas em `a(s), e(s), o(s), em, ens` e monossílabos tônicos terminados em `a(s), e(s), o(s)`;
-- proximidade/oposição de sentido, polissemia, precisão e figuratividade transparente;
-- famílias de palavras, prefixos/sufixos introdutórios e consulta por acepção contextual.
+- classes como ferramentas de funcionamento, não definições isoladas;
+- substantivos e artigos em uso;
+- adjetivos, gênero/número e limite de adjetivos sem variação de gênero;
+- verbos como ação, estado ou acontecimento; pessoa e número em formas frequentes;
+- presente/passado/futuro em usos frequentes e primeiro contato funcional com ordem/pedido;
+- pronomes pessoais, possessivos e demonstrativos com foco em referência e ambiguidade;
+- frase x oração sem fórmula rígida;
+- sujeito/predicado em casos básicos com contraexemplo sem sujeito explícito a inventar;
+- expansão/complementação conforme finalidade, sem transitividade formal;
+- concordância nominal/verbal básica e revisão orientada.
 
-O escopo normativo e os limites estão registrados em `docs/referencias-ortografia-nivel-1.md`. A unidade ensina explicitamente que uma regra correta pode não resolver um caso fora de seu recorte; reconhecer a necessidade de consulta é evidência de autonomia.
+Guard rails consolidados:
 
-Revisões implementadas antes do fechamento:
-
-- removido exemplo de `gu` que misturava comportamento sonoro diferente no mesmo grupo simplificado;
-- removida generalização de que toda palavra da língua seria tônica;
-- oposição semântica passou a ter prática e evidência própria;
-- removido distrator morfologicamente ambíguo em família de palavras;
-- verificação integrada passou a amostrar de fato todos os grupos ortográficos centrais da unidade.
+- classe não é decidida apenas pelo significado isolado;
+- verbo não é somente palavra de ação;
+- nem todo adjetivo muda de forma por gênero;
+- demonstrativos e formas de tratamento não recebem regra regional artificialmente rígida;
+- nem toda frase precisa ter verbo;
+- sujeito/predicado não equivalem a `alguém faz alguma coisa`;
+- frase mais longa não é automaticamente melhor;
+- produção aberta de revisão não recebe falsa validação automática.
 
 Nenhuma nova mídia humana obrigatória foi criada.
 
@@ -89,20 +103,21 @@ NÍVEL 1 — M1–M4 concluídos
 └── M5 — MARCO ATIVO
     ├── U1 ✓
     ├── U2 ✓
-    └── U3 — PRÓXIMO SUBPASSO
+    ├── U3 ✓
+    └── U4 — PRÓXIMO SUBPASSO
 ```
 
 Próximo marco:
 
 ```text
-N1-U03 — Classes, flexões e construção da frase
-10 lições + verificação integrada
+N1-U04 — Da frase ao parágrafo: conectando e pontuando ideias
+9 lições + verificação integrada
 ```
 
 Depois:
 
 ```text
-U4 → U5 → U6 → U7
+U5 → U6 → U7
 → verificação de saída do N1
 → checkpoint N1→N2
 ```
@@ -116,6 +131,7 @@ U4 → U5 → U6 → U7
 5. Atualizar este roadmap no mesmo PR que alterar materialmente o estado curricular.
 6. Em ortografia/acentuação, ensinar regularidades com escopo explícito e nunca transformar padrão parcial em regra universal.
 7. Terminologia gramatical no N1 deve funcionar como ferramenta de compreensão/revisão, não como fim classificatório.
+8. Em sintaxe básica, apresentar contraexemplos cedo quando uma regra simplificada puder virar falsa generalização.
 
 ## Dependências não curriculares ainda abertas
 
