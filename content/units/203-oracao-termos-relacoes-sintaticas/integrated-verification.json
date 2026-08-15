@@ -1,0 +1,146 @@
+{
+  "schemaVersion": 1,
+  "id": "N2-U03-V01",
+  "type": "integrated-unit-verification",
+  "title": "Verificação integrada — Nível 2, Unidade 3",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Verificar se o aluno usa análise sintática básica/intermediária para compreender e revisar oração, sujeito, predicado, grupos nominais, complementação, modificação, concordância, ordem e ambiguidade, sem depender de fórmulas mecânicas.",
+  "prerequisites": ["N2-U03-L01", "N2-U03-L02", "N2-U03-L03", "N2-U03-L04", "N2-U03-L05", "N2-U03-L06", "N2-U03-L07", "N2-U03-L08", "N2-U03-L09", "N2-U03-L10"],
+  "designPrinciples": ["terminologia deve servir à análise/revisão", "locução verbal não é contada mecanicamente como duas orações", "sujeito não é identificado pela primeira palavra", "verbo não é reduzido a ação", "complemento não é tudo depois do verbo", "modificador removível pode ser comunicativamente relevante", "concordância verbal não segue o substantivo mais próximo", "mais de uma ordem/reformulação pode ser clara", "tarefa real de revisão é obrigatória"],
+  "limits": ["sem análise sintática completa", "sem transitividade/regência como sistema", "sem concordâncias especiais", "sem pontuação de período composto", "sem crase", "sem colocação pronominal sistemática"],
+  "media": {"tts": "opcional", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["frases", "texto de revisão", "feedback"], "purpose": "apoio"}], "generatedVisualResources": [{"type": "UI_RENDERED_CLAUSE_PERIOD_MAP", "locations": ["V01-Q01"], "purpose": "avaliar oração/período/locução"}, {"type": "UI_RENDERED_SUBJECT_PREDICATE_MAP", "locations": ["V01-Q02", "V01-Q03"], "purpose": "avaliar relações de sujeito/predicado"}, {"type": "UI_RENDERED_NOMINAL_GROUP_TREE", "locations": ["V01-Q04", "V01-Q06"], "purpose": "avaliar núcleo e concordância nominal"}, {"type": "UI_RENDERED_CORE_MODIFIER_COMPARE", "locations": ["V01-Q05"], "purpose": "avaliar complementação/modificação"}, {"type": "UI_RENDERED_SUBJECT_VERB_AGREEMENT", "locations": ["V01-Q07"], "purpose": "avaliar concordância verbal"}, {"type": "UI_RENDERED_AMBIGUITY_BRANCHES", "locations": ["V01-Q08"], "purpose": "avaliar ambiguidade/reparo"}, {"type": "UI_RENDERED_SYNTACTIC_REVISION_PASSES", "locations": ["V01-Q09"], "purpose": "editar trecho de forma integrada"}], "productionQueueRequired": false, "publicationDependency": "nenhuma mídia humana obrigatória", "decisionRationale": "a unidade é estrutural/textual e pode ser avaliada por manipulação direta de frases e revisão."},
+  "items": [
+    {
+      "id": "V01-Q01",
+      "cluster": "clausePeriodLocution",
+      "type": "structure-set",
+      "items": [
+        {"text": "Atenção!", "options": ["frase sem oração verbal", "período com duas orações"], "correctIndex": 0},
+        {"text": "A equipe encerrou a atividade.", "options": ["período simples com uma oração", "período composto"], "correctIndex": 0},
+        {"text": "A equipe encerrou a atividade e os visitantes saíram.", "options": ["período com duas orações transparentes", "uma frase sem verbo"], "correctIndex": 0},
+        {"text": "Os técnicos vão revisar o equipamento.", "options": ["'vão revisar' funciona como grupo verbal no recorte; não se contam duas orações só pelas duas formas", "há obrigatoriamente duas orações"], "correctIndex": 0}
+      ]
+    },
+    {
+      "id": "V01-Q02",
+      "cluster": "subjectPositions",
+      "type": "subject-set",
+      "items": [
+        {"text": "No corredor ficaram três caixas.", "options": ["três caixas", "No corredor"], "correctIndex": 0},
+        {"text": "Os relatórios finais chegaram hoje.", "options": ["Os relatórios finais", "hoje"], "correctIndex": 0},
+        {"text": "Voltamos cedo.", "subjectOptions": ["nós, recuperável pela forma verbal/contexto", "cedo"], "correctIndex": 0},
+        {"text": "Choveu durante a madrugada.", "question": "É preciso inventar uma pessoa como sujeito para encaixar a frase em 'alguém faz algo'?", "options": ["não", "sim"], "correctIndex": 0}
+      ]
+    },
+    {
+      "id": "V01-Q03",
+      "cluster": "predicateVerbFunction",
+      "type": "predicate-and-verb-set",
+      "items": [
+        {"text": "A sala continua vazia.", "question": "O verbo participa principalmente de qual funcionamento no contexto?", "options": ["manutenção de estado", "ação voluntária"], "correctIndex": 0},
+        {"text": "A falha aconteceu ontem.", "options": ["ocorrência", "ordem"], "correctIndex": 0},
+        {"text": "Os técnicos abriram a caixa.", "subject": "Os técnicos", "predicateOptions": ["abriram a caixa", "a caixa"], "correctIndex": 0},
+        {"question": "Qual definição deve ser rejeitada?", "options": ["verbo é sempre palavra de ação", "verbos podem organizar ação, estado, mudança ou ocorrência"], "correctIndex": 0}
+      ]
+    },
+    {
+      "id": "V01-Q04",
+      "cluster": "nominalGroup",
+      "type": "nominal-core-set",
+      "items": [
+        {"group": "as três propostas revisadas", "coreOptions": ["propostas", "três", "revisadas"], "correctIndex": 0},
+        {"group": "o novo laboratório da escola", "coreOptions": ["laboratório", "novo", "escola"], "correctIndex": 0},
+        {"group": "os dois relatórios completos", "question": "Qual versão reduz o grupo ao núcleo?", "options": ["relatórios", "dois completos"], "correctIndex": 0}
+      ]
+    },
+    {
+      "id": "V01-Q05",
+      "cluster": "complementVsModifier",
+      "type": "relation-set",
+      "items": [
+        {"text": "Lia enviou o comprovante ontem.", "targets": [{"text": "o comprovante", "role": "informação central do que foi enviado"}, {"text": "ontem", "role": "modificador de tempo"}]},
+        {"text": "A equipe depende de autorização agora.", "targets": [{"text": "de autorização", "role": "informação central da construção"}, {"text": "agora", "role": "modificador de tempo"}]},
+        {"text": "Rui respondeu com calma.", "target": "com calma", "options": ["modificador de modo", "sujeito"], "correctIndex": 0},
+        {"question": "Tudo que vem depois do verbo é complemento exigido?", "options": ["não", "sim"], "correctIndex": 0}
+      ]
+    },
+    {
+      "id": "V01-Q06",
+      "cluster": "nominalAgreement",
+      "type": "nominal-agreement-set",
+      "items": [
+        {"options": ["as duas salas disponíveis", "a duas sala disponível"], "correctIndex": 0},
+        {"options": ["os relatórios antigos", "os relatório antiga"], "correctIndex": 0},
+        {"options": ["a profissional responsável", "a profissional responsávella"], "correctIndex": 0},
+        {"question": "Todo adjetivo precisa ter formas diferentes de masculino e feminino?", "options": ["não", "sim"], "correctIndex": 0}
+      ]
+    },
+    {
+      "id": "V01-Q07",
+      "cluster": "verbalAgreement",
+      "type": "verbal-agreement-set",
+      "items": [
+        {"stem": "___ os novos equipamentos.", "options": ["Chegaram", "Chegou"], "correctIndex": 0},
+        {"stem": "Ana e Rui ___ o relatório.", "options": ["revisaram", "revisou"], "correctIndex": 0},
+        {"before": "A lista de tarefas foram atualizadas.", "options": ["A lista de tarefas foi atualizada.", "A lista de tarefas foram atualizadas."], "correctIndex": 0},
+        {"question": "Por que não usamos automaticamente a forma plural por causa de 'tarefas'?", "options": ["o núcleo do sujeito no caso é 'lista'", "o verbo sempre concorda com a primeira letra"], "correctIndex": 0}
+      ]
+    },
+    {
+      "id": "V01-Q08",
+      "cluster": "orderAmbiguity",
+      "type": "ambiguity-repair-set",
+      "items": [
+        {"text": "Bia avisou Lara que ela seria chamada.", "options": ["há ambiguidade de referente sem contexto adicional", "'ela' só pode retomar Lara"], "correctIndex": 0},
+        {"text": "Carlos observou o vizinho com o binóculo.", "options": ["a expressão pode se ligar ao modo/instrumento de observar ou ao vizinho conforme o contexto", "há uma única leitura obrigatória"], "correctIndex": 0},
+        {"intended": "Lara seria chamada", "ambiguous": "Bia avisou Lara que ela seria chamada.", "options": ["Bia avisou Lara de que Lara seria chamada.", "Bia avisou Lara que ela seria chamada."], "correctIndex": 0},
+        {"text": "Ontem chegaram os pedidos.", "question": "A ordem é automaticamente errada?", "options": ["não", "sim; o sujeito deve estar sempre antes do verbo"], "correctIndex": 0}
+      ]
+    },
+    {
+      "id": "V01-Q09",
+      "cluster": "integratedRevision",
+      "type": "real-editing-task",
+      "original": "Na entrada ficou as duas caixas novas. A lista de materiais foram conferidos ontem. A equipe precisa apoio para terminar. Paula falou com Renata quando ela chegou. Os técnicos trabalharam cuidadosamente no laboratório.",
+      "requiredEdits": [
+        {"target": "ficou as duas caixas novas", "accepted": "ficaram as duas caixas novas", "reason": "sujeito posposto plural"},
+        {"target": "A lista de materiais foram conferidos", "accepted": "A lista de materiais foi conferida", "reason": "núcleo singular 'lista' + concordância nominal"},
+        {"target": "A equipe precisa apoio", "accepted": "A equipe precisa de apoio", "reason": "preservar a relação preposicionada da construção estudada"},
+        {"target": "Paula falou com Renata quando ela chegou.", "action": "marcar como ambígua e selecionar reformulação conforme o referente fornecido pela interface"},
+        {"target": "Os técnicos trabalharam cuidadosamente no laboratório.", "action": "manter", "reason": "frase correta; modificadores acrescentam modo/lugar sem exigir correção"}
+      ],
+      "acceptEquivalent": true,
+      "questionAfter": "Qual princípio orienta a revisão?",
+      "options": ["alterar apenas quando existe problema de relação/sentido no escopo estudado", "mudar toda frase para provar que houve revisão"],
+      "correctIndex": 0
+    }
+  ],
+  "assessmentBehavior": {"realEditingRequired": true, "preserveCorrectText": true, "acceptEquivalentClearRewrites": true, "mechanicalRulesRejected": true, "ttsPolicy": "opcional", "timeLimit": false},
+  "completionEvidence": {
+    "clusters": {
+      "clausePeriodLocution": {"evidence": ["V01-Q01"], "rule": "resolver os quatro casos sem contagem mecânica"},
+      "subjectPositions": {"evidence": ["V01-Q02"], "rule": "resolver sujeito antes/depois/recuperável e contraexemplo"},
+      "predicateVerbFunction": {"evidence": ["V01-Q03"], "rule": "resolver predicado e rejeitar verbo=ação"},
+      "nominalGroup": {"evidence": ["V01-Q04"], "rule": "localizar núcleo nos três grupos"},
+      "complementVsModifier": {"evidence": ["V01-Q05"], "rule": "distinguir relações centrais/modificadores sem usar posição"},
+      "nominalAgreement": {"evidence": ["V01-Q06"], "rule": "aplicar concordância e reconhecer forma sem variação de gênero"},
+      "verbalAgreement": {"evidence": ["V01-Q07"], "rule": "aplicar concordância sem seguir nome mais próximo"},
+      "orderAmbiguity": {"evidence": ["V01-Q08"], "rule": "diagnosticar/reparar ambiguidade e aceitar ordem não canônica clara"},
+      "integratedRevision": {"evidence": ["V01-Q09"], "rule": "corrigir quatro alvos e preservar a frase correta"}
+    },
+    "completionRule": "todos os nove agrupamentos são obrigatórios; classificação isolada não compensa falha na revisão real.",
+    "notSufficient": ["decorar termos", "seguir primeira palavra", "definir verbo como ação", "marcar tudo depois do verbo como complemento", "concordar com o nome mais próximo", "mudar texto correto"]
+  },
+  "remediationRoutes": [
+    {"when": "oração/período/locução", "review": ["N2-U03-L01"]},
+    {"when": "sujeito", "review": ["N2-U03-L02"]},
+    {"when": "predicado/verbo", "review": ["N2-U03-L03"]},
+    {"when": "grupo nominal", "review": ["N2-U03-L04"]},
+    {"when": "complementação/modificação", "review": ["N2-U03-L05", "N2-U03-L06"]},
+    {"when": "concordância nominal", "review": ["N2-U03-L07"]},
+    {"when": "concordância verbal", "review": ["N2-U03-L08"]},
+    {"when": "ambiguidade", "review": ["N2-U03-L09"]},
+    {"when": "revisão integrada", "review": ["N2-U03-L10"]}
+  ]
+}
