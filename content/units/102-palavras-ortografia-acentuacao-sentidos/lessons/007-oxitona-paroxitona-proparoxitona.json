@@ -1,0 +1,93 @@
+{
+  "schemaVersion": 1,
+  "id": "N1-U02-L07",
+  "title": "Oxítona, paroxítona e proparoxítona como ferramentas",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Classificar palavras pela posição da sílaba tônica usando oxítona, paroxítona e proparoxítona como ferramentas para organizar a acentuação, sem transformar a nomenclatura em objetivo isolado.",
+  "competencies": [
+    "identificar a posição da sílaba tônica",
+    "classificar palavra como oxítona quando a última sílaba é tônica",
+    "classificar palavra como paroxítona quando a penúltima sílaba é tônica",
+    "classificar palavra como proparoxítona quando a antepenúltima sílaba é tônica",
+    "relacionar a classificação ao estudo posterior de acentuação",
+    "não usar presença de acento gráfico como única pista"
+  ],
+  "prerequisites": ["N1-U02-L06"],
+  "limits": [
+    "não exigir classificação de palavras cuja divisão/tonicidade introduza dificuldade desnecessária",
+    "não ensinar que toda oxítona ou paroxítona recebe acento",
+    "não transformar nomes técnicos em prova suficiente de domínio",
+    "não avaliar sotaque",
+    "não introduzir regras completas de acentuação ainda"
+  ],
+  "normativeScopeRef": "docs/referencias-ortografia-nivel-1.md",
+  "media": {"tts": "apoio opcional; pronúncia própria de palavras familiares também pode ser usada", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {
+    "curatedMedia": [],
+    "runtimeResources": [{"type": "TTS_OK", "locations": ["palavras sob demanda", "feedback"], "purpose": "apoio opcional"}],
+    "generatedVisualResources": [
+      {"type": "UI_RENDERED_STRESS_POSITION", "locations": ["L07-B02", "L07-C01", "L07-A01"], "purpose": "mostrar última/penúltima/antepenúltima depois da tentativa"},
+      {"type": "UI_RENDERED_SYLLABLE_TILES", "locations": ["L07-B02", "L07-C01", "L07-A01"], "purpose": "selecionar sílaba tônica antes de classificar"}
+    ],
+    "productionQueueRequired": false,
+    "publicationDependency": "nenhuma nova mídia humana obrigatória",
+    "decisionRationale": "a classificação só é introduzida porque prepara regras de acentuação; a atividade começa pela tonicidade percebida."
+  },
+  "sequence": [
+    {"id": "L07-B01", "type": "objective", "text": "Depois de encontrar a sílaba tônica, podemos dizer em que posição ela está. Esses três nomes ajudam a organizar regras de acentuação."},
+    {
+      "id": "L07-B02",
+      "type": "demonstration",
+      "categories": [
+        {"name": "oxítona", "definition": "última sílaba tônica", "examples": [{"word": "papel", "syllables": ["pa", "pel"], "stressedIndex": 1}, {"word": "café", "syllables": ["ca", "fé"], "stressedIndex": 1}]},
+        {"name": "paroxítona", "definition": "penúltima sílaba tônica", "examples": [{"word": "janela", "syllables": ["ja", "ne", "la"], "stressedIndex": 1}, {"word": "caderno", "syllables": ["ca", "der", "no"], "stressedIndex": 1}]},
+        {"name": "proparoxítona", "definition": "antepenúltima sílaba tônica", "examples": [{"word": "médico", "syllables": ["mé", "di", "co"], "stressedIndex": 0}, {"word": "lâmpada", "syllables": ["lâm", "pa", "da"], "stressedIndex": 0}]}
+      ]
+    },
+    {
+      "id": "L07-C01",
+      "type": "quick-check-set",
+      "items": [
+        {"word": "animal", "syllables": ["a", "ni", "mal"], "stressedIndex": 2, "classification": "oxítona"},
+        {"word": "cidade", "syllables": ["ci", "da", "de"], "stressedIndex": 1, "classification": "paroxítona"},
+        {"word": "abóbora", "syllables": ["a", "bó", "bo", "ra"], "stressedIndex": 1, "classification": "proparoxítona"}
+      ],
+      "flow": "primeiro selecionar a sílaba tônica; depois selecionar a classificação"
+    },
+    {
+      "id": "L07-B03",
+      "type": "guard-rail",
+      "examples": [
+        {"word": "papel", "classification": "oxítona", "writtenAccent": false},
+        {"word": "café", "classification": "oxítona", "writtenAccent": true}
+      ],
+      "conclusion": "Ser oxítona, paroxítona ou proparoxítona não significa, sozinho, receber acento. A regra de acentuação considera também outros padrões."
+    },
+    {
+      "id": "L07-A01",
+      "type": "assessment-set",
+      "items": [
+        {"word": "sofá", "syllables": ["so", "fá"], "stressedIndex": 1, "classification": "oxítona"},
+        {"word": "trabalho", "syllables": ["tra", "ba", "lho"], "stressedIndex": 1, "classification": "paroxítona"},
+        {"word": "número", "syllables": ["nú", "me", "ro"], "stressedIndex": 0, "classification": "proparoxítona"},
+        {"word": "também", "syllables": ["tam", "bém"], "stressedIndex": 1, "classification": "oxítona"}
+      ]
+    },
+    {
+      "id": "L07-A02",
+      "type": "assessment-principle",
+      "question": "Para que essas classificações serão úteis no curso?",
+      "options": ["para relacionar a posição tônica a regras de acentuação", "para decidir que toda oxítona recebe acento", "para medir velocidade de leitura"],
+      "correctIndex": 0
+    }
+  ],
+  "assessmentBehavior": {"classificationFlow": "tonicidade primeiro, nome depois", "ttsPolicy": "apoio opcional", "timeLimit": false},
+  "completionEvidence": {
+    "clusters": {
+      "classification": {"evidence": ["L07-C01", "L07-A01"], "rule": "classificar corretamente pelo menos seis das sete palavras de avaliação/prática final"},
+      "purpose": {"evidence": ["L07-A02"], "rule": "relacionar classificação à acentuação sem generalização falsa"}
+    },
+    "completionRule": "os dois agrupamentos são obrigatórios.",
+    "notSufficient": ["decorar nomes sem achar tonicidade", "usar acento gráfico como única pista", "afirmar que toda palavra de uma categoria é acentuada"]
+  }
+}

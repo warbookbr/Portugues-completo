@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "id": "N1-U02-L01",
+  "title": "Ortografia: padrões, convenções e consulta",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Compreender que a ortografia combina regularidades e convenções lexicais, aprendendo a aplicar padrões estudados e a consultar uma fonte quando a regra disponível não é suficiente.",
+  "competencies": [
+    "distinguir pronúncia de grafia normativa",
+    "reconhecer que um som pode ter mais de uma grafia possível",
+    "aplicar uma regularidade quando ela foi explicitamente ensinada",
+    "reconhecer quando não possui regra suficiente para decidir uma grafia",
+    "usar consulta simples como estratégia legítima de escrita e revisão"
+  ],
+  "prerequisites": ["N0-U01-V01", "N0-U02-V01", "N1-U01-V01"],
+  "limits": [
+    "não ensinar escreva como fala como regra",
+    "não prometer regra para toda palavra",
+    "não transformar consulta em erro ou trapaça",
+    "não introduzir listas extensas de exceções",
+    "não avaliar pronúncia regional como ortografia incorreta"
+  ],
+  "normativeScopeRef": "docs/referencias-ortografia-nivel-1.md",
+  "media": {"tts": "instruções e palavras sob demanda; TTS não deve ser usado como prova de uma pronúncia única correta", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {
+    "curatedMedia": [],
+    "runtimeResources": [{"type": "TTS_OK", "locations": ["instruções", "palavras sob demanda", "feedback"], "purpose": "apoio geral, não padrão fonético normativo"}],
+    "generatedVisualResources": [
+      {"type": "UI_RENDERED_RULE_OR_LOOKUP", "locations": ["L01-B02", "L01-C01", "L01-A01", "L01-A02"], "purpose": "escolher entre aplicar padrão conhecido e consultar"},
+      {"type": "UI_RENDERED_DICTIONARY_LOOKUP_SIMULATION", "locations": ["L01-B03", "L01-A02"], "purpose": "praticar consulta de grafia sem acesso externo obrigatório"}
+    ],
+    "productionQueueRequired": false,
+    "publicationDependency": "nenhuma nova mídia humana obrigatória",
+    "decisionRationale": "a lição é metacognitiva e prepara o uso responsável de regras/consulta antes de padrões específicos."
+  },
+  "sequence": [
+    {"id": "L01-B01", "type": "objective", "text": "A escrita tem padrões, mas nem toda palavra pode ser escrita corretamente apenas pelo que ouvimos. Aprender ortografia também é saber quando uma regra ajuda e quando precisamos consultar."},
+    {
+      "id": "L01-B02",
+      "type": "demonstration",
+      "examples": [
+        {"spokenRelation": "som parecido", "words": ["casa", "exame"], "point": "grafias diferentes podem participar de sons semelhantes em certas posições"},
+        {"decision": "uma regra já estudada se aplica", "strategy": "usar a regra e depois revisar"},
+        {"decision": "a regra ainda não cobre a palavra", "strategy": "consultar uma fonte confiável de grafia"}
+      ]
+    },
+    {
+      "id": "L01-C01",
+      "type": "quick-check",
+      "situation": "Você está escrevendo uma palavra e percebe que nenhuma regra estudada até agora decide entre duas grafias possíveis.",
+      "options": ["consultar a grafia", "inventar uma regra", "escolher pela aparência e nunca revisar"],
+      "correctIndex": 0
+    },
+    {
+      "id": "L01-B03",
+      "type": "lookup-demonstration",
+      "queryWord": "exceção",
+      "simulatedEntry": {"headword": "exceção", "wordClass": "substantivo", "note": "a entrada confirma a grafia"},
+      "explanation": "A consulta confirma uma convenção; não é necessário inventar uma explicação falsa para cada letra."
+    },
+    {
+      "id": "L01-A01",
+      "type": "assessment-principle",
+      "question": "Qual afirmação está correta?",
+      "options": [
+        "Algumas regularidades ajudam, mas certas grafias precisam ser conhecidas ou consultadas.",
+        "Toda palavra do português pode ser escrita apenas repetindo os sons que ouvimos.",
+        "Consultar um dicionário significa que a pessoa não sabe escrever."
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "L01-A02",
+      "type": "assessment-strategy",
+      "situation": "A tarefa pede revisar a grafia de uma palavra que ainda não pertence a nenhuma regularidade estudada na unidade.",
+      "options": ["consultar a forma normativa e registrar a correção", "aplicar qualquer regra de outra palavra", "não revisar porque não há regra conhecida"],
+      "correctIndex": 0
+    }
+  ],
+  "completionEvidence": {
+    "clusters": {
+      "principle": {"evidence": ["L01-C01", "L01-A01"], "rule": "reconhecer ortografia como sistema de padrões e convenções"},
+      "strategy": {"evidence": ["L01-A02"], "rule": "escolher consulta quando a regra estudada é insuficiente"}
+    },
+    "completionRule": "os dois agrupamentos são obrigatórios.",
+    "notSufficient": ["memorizar que existe dicionário", "inventar regra para toda grafia", "confundir fala com escrita normativa"]
+  }
+}

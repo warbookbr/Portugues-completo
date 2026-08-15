@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 1,
+  "id": "N1-U02-L05",
+  "title": "S e SS: uma regularidade útil, mas não a ortografia inteira do som /s/",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Aplicar o contraste gráfico frequente entre s e ss em posição intervocálica em palavras acessíveis, reconhecendo explicitamente que esse padrão não resolve todas as grafias associadas aos sons representados por essas letras.",
+  "competencies": [
+    "reconhecer ss entre vogais em palavras frequentes do padrão estudado",
+    "reconhecer s simples entre vogais em palavras frequentes como casa, mesa e visita",
+    "usar contexto lexical para distinguir palavras com s e ss",
+    "completar e revisar palavras do padrão estudado",
+    "reconhecer que outras grafias como c, ç, z, x e ch pertencem a etapas/regras diferentes"
+  ],
+  "prerequisites": ["N1-U02-L01", "N1-U02-L04"],
+  "limits": [
+    "não apresentar s/ss como solução para toda grafia do som /s/",
+    "não sistematizar c/ç/z/x/ch nesta lição",
+    "não julgar pronúncia regional",
+    "não usar som isolado como única pista para decidir grafia",
+    "não ensinar regras etimológicas"
+  ],
+  "normativeScopeRef": "docs/referencias-ortografia-nivel-1.md",
+  "media": {"tts": "apoio opcional; a decisão central é ortográfica/contextual", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {
+    "curatedMedia": [],
+    "runtimeResources": [{"type": "TTS_OK", "locations": ["instruções", "palavras", "feedback"], "purpose": "apoio de leitura"}],
+    "generatedVisualResources": [
+      {"type": "UI_RENDERED_ORTHOGRAPHIC_PATTERN", "locations": ["L05-B02", "L05-B03", "L05-C01", "L05-A01"], "purpose": "destacar posição intervocálica"},
+      {"type": "UI_RENDERED_WORD_IN_SENTENCE", "locations": ["L05-B03", "L05-C01", "L05-A01"], "purpose": "desambiguar por contexto"}
+    ],
+    "productionQueueRequired": false,
+    "publicationDependency": "nenhuma nova mídia humana obrigatória",
+    "decisionRationale": "o objetivo é uma regularidade ortográfica estreita; componentes textuais são suficientes e evitam sobreprometer cobertura."
+  },
+  "sequence": [
+    {"id": "L05-B01", "type": "objective", "text": "S e SS ajudam a escrever muitas palavras, mas não explicam sozinhos todas as grafias possíveis. Vamos aprender um contraste útil e saber onde ele termina."},
+    {
+      "id": "L05-B02",
+      "type": "pattern-demonstration",
+      "groups": [
+        {"pattern": "ss entre vogais em palavras do padrão", "examples": ["massa", "passo", "professor", "assunto"]},
+        {"pattern": "s simples entre vogais em outras palavras frequentes", "examples": ["casa", "mesa", "visita", "camisa"]}
+      ],
+      "explanation": "A posição ajuda a observar o contraste, mas a palavra e sua grafia convencional continuam importantes."
+    },
+    {
+      "id": "L05-B03",
+      "type": "contrast",
+      "examples": [
+        {"sentence": "Ele deu um pa__o para a frente.", "word": "passo", "letters": "ss"},
+        {"sentence": "Eu pa__o por aqui todos os dias.", "word": "passo", "letters": "ss"},
+        {"sentence": "A ca__a fica perto da praça.", "word": "casa", "letters": "s"},
+        {"sentence": "A me__a está limpa.", "word": "mesa", "letters": "s"}
+      ],
+      "note": "o contexto identifica a palavra; o padrão gráfico confirma a escrita estudada"
+    },
+    {
+      "id": "L05-C01",
+      "type": "quick-check-set",
+      "items": [
+        {"sentence": "O profe__or explicou a atividade.", "options": ["ss", "s"], "correctIndex": 0, "result": "professor"},
+        {"sentence": "A vi__ita chegou cedo.", "options": ["s", "ss"], "correctIndex": 0, "result": "visita"},
+        {"sentence": "O a__unto será discutido amanhã.", "options": ["ss", "s"], "correctIndex": 0, "result": "assunto"}
+      ]
+    },
+    {
+      "id": "L05-A01",
+      "type": "assessment-set",
+      "items": [
+        {"sentence": "A ma__a do pão descansou por uma hora.", "options": ["ss", "s"], "correctIndex": 0, "result": "massa"},
+        {"sentence": "A cami__a azul está no armário.", "options": ["s", "ss"], "correctIndex": 0, "result": "camisa"},
+        {"sentence": "A me__a de reunião é grande.", "options": ["s", "ss"], "correctIndex": 0, "result": "mesa"}
+      ]
+    },
+    {
+      "id": "L05-A02",
+      "type": "assessment-scope",
+      "question": "A palavra 'cidade' tem uma grafia relacionada a um som que também pode aparecer em palavras com s ou ss. A regra desta lição basta para explicar o c de 'cidade'?",
+      "options": ["não; c pertence a outra regularidade/convenção", "sim; toda grafia desse som usa s ou ss", "sim; basta trocar toda letra c por ss"],
+      "correctIndex": 0
+    }
+  ],
+  "completionEvidence": {
+    "clusters": {
+      "patternUse": {"evidence": ["L05-C01", "L05-A01"], "rule": "acertar pelo menos cinco dos seis itens"},
+      "scope": {"evidence": ["L05-A02"], "rule": "reconhecer explicitamente que s/ss não resolve todo o sistema"}
+    },
+    "completionRule": "os dois agrupamentos são obrigatórios.",
+    "notSufficient": ["usar ss em qualquer dúvida", "generalizar para c/ç/z/x/ch", "decidir toda grafia apenas pelo som"]
+  }
+}
