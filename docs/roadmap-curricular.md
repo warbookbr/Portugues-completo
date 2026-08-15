@@ -2,14 +2,15 @@
 
 ## Objetivo
 
-Este documento acompanha **onde o desenvolvimento curricular está**, **qual é o próximo passo** e **quais marcos estruturais precisam ser atendidos antes de aprofundar indefinidamente uma única parte do curso**.
+Este documento acompanha **onde o desenvolvimento curricular está**, **qual é o marco ativo** e **quais condições estruturais precisam ser atendidas antes de aprofundar indefinidamente uma única parte do curso**.
 
 Ele não substitui as fontes pedagógicas detalhadas:
 
 - `docs/mapa-curso.md` define a progressão curricular pretendida;
 - documentos de áreas, unidades e lições definem o conteúdo de cada camada;
 - `content/` registra o conteúdo efetivamente desenvolvido;
-- este roadmap registra **maturidade estrutural, foco atual, próximo passo e checkpoints de cobertura global**.
+- `docs/execucao-continua.md` define como um marco autorizado pode ser executado sem confirmações repetidas;
+- este roadmap registra **maturidade estrutural, foco atual, marco ativo, subpasso interno e checkpoints de cobertura global**.
 
 A função principal é evitar dois extremos:
 
@@ -107,8 +108,8 @@ Nível 0 — Fundamentos
     ├── Lições 1 a 10 — concluídas
     └── Verificação integrada — concluída
 
-CHECKPOINT GLOBAL — ATIVO
-├── Nível 1 — elevar de M0 para M1 — PRÓXIMO PASSO
+CHECKPOINT GLOBAL — MARCO ATIVO
+├── Nível 1 — elevar de M0 para M1 — PRÓXIMO SUBPASSO INTERNO
 ├── Nível 2 — elevar de M0 para M1 — pendente
 ├── Nível 3 — elevar de M0 para M1 — pendente
 ├── Nível 4 — elevar de M0 para M1 — pendente
@@ -122,11 +123,52 @@ CHECKPOINT GLOBAL — ATIVO
 N0-U03-V01 — Verificação integrada da Unidade 3
 ```
 
-Próximo passo imediato:
+Marco ativo:
 
 ```text
-CHECKPOINT GLOBAL — elevar o Nível 1 de M0 para M1
+CHECKPOINT GLOBAL — elevar Níveis 1–4 para M1, consolidar matriz global e revisar lacunas
 ```
+
+Próximo subpasso interno:
+
+```text
+Nível 1 — elevar de M0 para M1
+```
+
+O subpasso interno informa a ordem operacional, mas **não exige nova autorização quando o marco inteiro já tiver sido autorizado**.
+
+## Modo de execução por marcos
+
+O desenvolvimento deve preferir autorizações em escala de marco.
+
+Exemplo:
+
+```text
+usuário autoriza: "execute o checkpoint global"
+
+ChatGPT executa:
+Nível 1 M1
+→ revisão
+→ PR/CI/merge
+→ Nível 2 M1
+→ revisão
+→ PR/CI/merge
+→ Nível 3 M1
+→ revisão
+→ PR/CI/merge
+→ Nível 4 M1
+→ revisão
+→ PR/CI/merge
+→ matriz global
+→ revisão cruzada
+→ correções
+→ PR/CI/merge
+→ checkpoint concluído
+```
+
+Não pedir `prossiga` entre subpassos contidos no marco autorizado. Aplicar o pipeline e as condições de parada de `docs/execucao-continua.md` e a skill `.ChatGPT/skills/curricular-orchestration/SKILL.md`.
+
+Uma execução pode usar várias PRs para manter mudanças revisáveis; o marco, e não cada PR, é a unidade principal de autorização do usuário.
 
 ## Checkpoint estrutural após a Unidade 3
 
@@ -237,7 +279,7 @@ Toda PR que altere materialmente o avanço curricular deve verificar se este arq
 
 Exemplos de mudanças que normalmente exigem atualização:
 
-- conclusão de uma lição que move o próximo passo;
+- conclusão de uma lição que move o próximo subpasso;
 - fechamento de uma unidade ou verificação integrada;
 - dimensionamento de novas lições;
 - avanço de maturidade de um nível, área ou unidade;
@@ -246,23 +288,30 @@ Exemplos de mudanças que normalmente exigem atualização:
 
 Correções editoriais ou técnicas que não mudem o estado curricular não precisam modificar o roadmap.
 
+### 7. Continuar automaticamente dentro de um marco autorizado
+
+Quando o usuário autorizar explicitamente um marco, executar os subpassos previsíveis sem pedir nova confirmação entre eles.
+
+Parar apenas quando o marco terminar ou ocorrer uma condição real de parada definida em `docs/execucao-continua.md`.
+
 ## Sequência de desenvolvimento prevista a partir do estado atual
 
 ```text
-CHECKPOINT GLOBAL
+MARCO ATIVO — CHECKPOINT GLOBAL
 1. elevar Nível 1 de M0 para M1
 2. elevar Nível 2 de M0 para M1
 3. elevar Nível 3 de M0 para M1
 4. elevar Nível 4 de M0 para M1
 5. consolidar a distribuição dos grandes domínios na matriz de progressão
 6. revisar se alguma lacuna descoberta exige ajuste do mapa já construído
+→ checkpoint concluído
 
-RETORNO AO DESENVOLVIMENTO DO NÍVEL 0
+PRÓXIMO MARCO — RETORNO AO NÍVEL 0
 7. dimensionar as lições da Unidade 4
 8. desenvolver a Unidade 4 e seguir pelos próximos marcos do Nível 0
 ```
 
-A sequência após o checkpoint pode ser ajustada se a análise global revelar dependências melhores, mas qualquer mudança significativa deve ser registrada aqui.
+A sequência interna após o checkpoint pode ser ajustada se a análise global revelar dependências melhores, mas qualquer mudança significativa deve ser registrada aqui. Se o checkpoint inteiro estiver autorizado, esses subpassos não exigem autorizações separadas.
 
 ## Relação com a conclusão do Nível 0 e início do Nível 1
 
@@ -283,17 +332,21 @@ Quando houver divergência:
 progressão curricular pretendida
 → docs/mapa-curso.md
 
-estado do desenvolvimento, próximo passo e checkpoints
+estado do desenvolvimento, marco ativo, subpassos e checkpoints
 → docs/roadmap-curricular.md
+
+protocolo de execução contínua
+→ docs/execucao-continua.md
 
 conteúdo detalhado de unidades/lições
 → documentos específicos + content/
 ```
 
-Este arquivo deve permanecer vivo e conciso o suficiente para responder rapidamente a três perguntas:
+Este arquivo deve permanecer vivo e conciso o suficiente para responder rapidamente a quatro perguntas:
 
 ```text
 Onde estamos?
-Qual é o próximo passo?
+Qual é o marco ativo?
+Qual é o próximo subpasso interno?
 Que condição estrutural precisa ser atendida antes de aprofundar mais?
 ```

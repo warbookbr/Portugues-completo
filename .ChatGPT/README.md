@@ -90,6 +90,22 @@ Quando uma decisão nova conflitar com documentação existente, não manter as 
 
 ## Skills disponíveis
 
+### Curricular Orchestration
+
+Arquivo:
+
+- `.ChatGPT/skills/curricular-orchestration/SKILL.md`
+
+Usar quando o usuário autorizar um marco curricular que contenha vários subpassos previsíveis.
+
+Objetivo:
+
+- executar pesquisa, planejamento, escrita, revisão, validação e integração como um ciclo contínuo;
+- continuar automaticamente entre subpassos já contidos no marco autorizado;
+- usar PR + CI + merge normal sem exigir confirmação rotineira;
+- parar apenas nas condições definidas em `docs/execucao-continua.md`;
+- atualizar o roadmap sem transformar cada microetapa em nova autorização do usuário.
+
 ### Frontend Visual Check
 
 Arquivo:
@@ -122,11 +138,19 @@ Objetivo:
 - distinguir checagens de exercícios;
 - consultar as fontes oficiais antes de propor grandes mudanças.
 
+Quando `curricular-orchestration` estiver ativa, `course-content-design` continua sendo a skill especializada usada para planejar e revisar conteúdo pedagógico.
+
 ## Fontes principais relacionadas
 
 ```text
 PROJECT_INDEX.md
 → mapa geral do projeto
+
+docs/roadmap-curricular.md
+→ estado, marcos e próximo subpasso curricular
+
+docs/execucao-continua.md
+→ protocolo de execução de marcos sem confirmações repetidas
 
 docs/arquitetura.md
 → decisões técnicas e responsabilidades

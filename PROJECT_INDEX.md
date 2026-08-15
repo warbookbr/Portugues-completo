@@ -80,7 +80,8 @@ Arquivos principais:
 
 Ler:
 
-- `docs/roadmap-curricular.md` para estado atual, próximo passo, maturidade dos níveis e checkpoints de cobertura global
+- `docs/roadmap-curricular.md` para estado atual, marco ativo, próximo subpasso, maturidade dos níveis e checkpoints de cobertura global
+- `docs/execucao-continua.md` quando o usuário autorizar um marco com vários subpassos e o trabalho puder continuar sem confirmações rotineiras
 - `docs/mapa-curso.md`
 - `docs/unidades-nivel-0.md` quando o trabalho envolver o detalhamento das unidades do Nível 0
 - `docs/licoes-nivel-0.md` quando o trabalho envolver lições já dimensionadas do Nível 0
@@ -88,13 +89,15 @@ Ler:
 
 Usar:
 
-- `.ChatGPT/skills/course-content-design/SKILL.md`
+- `.ChatGPT/skills/curricular-orchestration/SKILL.md` para marcos longos ou checkpoint completo
+- `.ChatGPT/skills/course-content-design/SKILL.md` para planejamento e revisão pedagógica especializada
 
 ### Criação de unidades e lições
 
 Ler:
 
-- `docs/roadmap-curricular.md` para confirmar o foco atual, próximo passo e eventual checkpoint estrutural antes de aprofundar a camada
+- `docs/roadmap-curricular.md` para confirmar o foco atual, marco ativo, próximo subpasso e eventual checkpoint estrutural antes de aprofundar a camada
+- `docs/execucao-continua.md` se a autorização cobrir uma sequência inteira ou unidade completa
 - `docs/mapa-curso.md`
 - `docs/unidades-nivel-0.md` para unidades já detalhadas do Nível 0
 - `docs/licoes-nivel-0.md` para lições já consolidadas do Nível 0
@@ -107,6 +110,17 @@ Ler:
 Conteúdo fica em:
 
 - `content/`
+
+### Execução contínua de marcos
+
+Quando o usuário autorizar um marco como `execute o checkpoint global`, `desenvolva a unidade completa` ou equivalente, ler:
+
+- `docs/execucao-continua.md`
+- `docs/roadmap-curricular.md`
+- `.ChatGPT/skills/curricular-orchestration/SKILL.md`
+- `.ChatGPT/skills/course-content-design/SKILL.md` quando houver trabalho pedagógico
+
+Nesse modo, pesquisa, planejamento, escrita, revisões, correções, PR, CI, merge e atualização do roadmap fazem parte do mesmo ciclo. O ChatGPT deve continuar entre subpassos contidos no marco autorizado até concluí-lo ou atingir uma condição real de parada.
 
 ### Produção e curadoria de mídia pedagógica
 
@@ -185,7 +199,8 @@ Workflow:
 ## Documentação oficial existente
 
 - `docs/arquitetura.md` — arquitetura e responsabilidades técnicas.
-- `docs/roadmap-curricular.md` — estado do desenvolvimento curricular, próximo passo, maturidade dos níveis e checkpoints de cobertura global.
+- `docs/roadmap-curricular.md` — estado do desenvolvimento curricular, marco ativo, próximo subpasso, maturidade dos níveis e checkpoints de cobertura global.
+- `docs/execucao-continua.md` — protocolo para executar marcos com pesquisa, escrita, revisão, validação e integração sem confirmações repetidas.
 - `docs/mapa-curso.md` — níveis, áreas e progressão curricular geral.
 - `docs/unidades-nivel-0.md` — detalhamento pedagógico consolidado das unidades do Nível 0.
 - `docs/licoes-nivel-0.md` — dimensionamento pedagógico consolidado das lições já definidas do Nível 0.
@@ -240,6 +255,7 @@ Esta pasta coordena produção; não substitui `docs/conteudo.md`, `docs/arquite
 
 Skills atuais:
 
+- `.ChatGPT/skills/curricular-orchestration/SKILL.md`
 - `.ChatGPT/skills/frontend-visual-check/SKILL.md`
 - `.ChatGPT/skills/course-content-design/SKILL.md`
 
@@ -283,7 +299,7 @@ Fonte oficial:
 
 O documento define o que deve bloquear o CI, o que deve gerar apenas warning e em que momento adicionar schemas, integridade curricular, detecção de conteúdo órfão, acessibilidade, performance e segurança.
 
-O `PROJECT_INDEX.md` não deve listar cada aula ou exercício individual. Ele mapeia áreas estruturais, documentos e pontos de entrada. O estado detalhado e o próximo passo curricular pertencem a `docs/roadmap-curricular.md`.
+O `PROJECT_INDEX.md` não deve listar cada aula ou exercício individual. Ele mapeia áreas estruturais, documentos e pontos de entrada. O estado detalhado, o marco ativo e o próximo subpasso curricular pertencem a `docs/roadmap-curricular.md`.
 
 ## Fontes de verdade
 
@@ -296,8 +312,11 @@ Decisão arquitetural
 Progressão curricular geral
 → docs/mapa-curso.md
 
-Estado curricular, próximo passo e checkpoints de cobertura
+Estado curricular, marcos, próximo subpasso e checkpoints de cobertura
 → docs/roadmap-curricular.md
+
+Protocolo de execução contínua de marcos
+→ docs/execucao-continua.md
 
 Detalhamento das unidades do Nível 0
 → docs/unidades-nivel-0.md
