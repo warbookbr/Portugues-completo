@@ -1,0 +1,92 @@
+{
+  "schemaVersion": 1,
+  "id": "N1-U03-L01",
+  "title": "Para que servem as classes de palavras?",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Compreender classes de palavras como ferramentas para observar padrões de funcionamento em frases reais, usando nomes gramaticais somente depois de perceber o que as palavras fazem no contexto.",
+  "competencies": [
+    "agrupar palavras por funcionamento em exemplos simples",
+    "relacionar de forma introdutória palavras que nomeiam, caracterizam, expressam ação/estado/acontecimento ou retomam participantes às classes que serão estudadas",
+    "reconhecer que significado isolado não basta para classificar toda palavra",
+    "usar o contexto da frase para decidir o funcionamento de uma forma",
+    "explicar para que a terminologia pode ajudar na leitura, construção e revisão"
+  ],
+  "prerequisites": ["N0-U03-V01", "N1-U02-V01"],
+  "limits": [
+    "não apresentar lista completa das classes do português",
+    "não exigir definição decorada como evidência principal",
+    "não afirmar que uma classe é determinada apenas por uma pergunta ou pelo significado isolado",
+    "não introduzir subclasses extensas",
+    "não transformar análise de palavra isolada em centro da unidade"
+  ],
+  "media": {"tts": "permitido para instruções, frases e feedback", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {
+    "curatedMedia": [],
+    "runtimeResources": [{"type": "TTS_OK", "locations": ["instruções", "frases", "feedback"], "purpose": "apoio de leitura"}],
+    "generatedVisualResources": [
+      {"type": "UI_RENDERED_FUNCTION_SORT", "locations": ["L01-B01", "L01-C01", "L01-A01"], "purpose": "agrupar por funcionamento antes de nomear a classe"},
+      {"type": "UI_RENDERED_CONTEXT_COMPARISON", "locations": ["L01-B02", "L01-A02"], "purpose": "mostrar que a mesma forma gráfica pode funcionar de modos diferentes"}
+    ],
+    "productionQueueRequired": false,
+    "publicationDependency": "nenhuma nova mídia humana obrigatória",
+    "decisionRationale": "o alvo é funcional e pode ser demonstrado com frases curtas e comparação contextual."
+  },
+  "sequence": [
+    {
+      "id": "L01-B01",
+      "type": "demonstration",
+      "groups": [
+        {"function": "nomear", "examples": ["cidade", "trabalho", "Ana"], "laterLabel": "substantivo"},
+        {"function": "caracterizar", "examples": ["claro", "rápida", "útil"], "laterLabel": "adjetivo"},
+        {"function": "expressar ação, estado ou acontecimento", "examples": ["chegou", "está", "choveu"], "laterLabel": "verbo"},
+        {"function": "retomar/indicar participantes", "examples": ["ele", "ela", "nós"], "laterLabel": "pronome"}
+      ],
+      "teachingPoint": "o nome da classe resume padrões observados; não substitui a observação do uso"
+    },
+    {
+      "id": "L01-B02",
+      "type": "context-contrast",
+      "target": "trabalho",
+      "examples": [
+        {"sentence": "O trabalho terminou cedo.", "function": "nomeia algo", "class": "substantivo"},
+        {"sentence": "Eu trabalho cedo.", "function": "expressa o que acontece/é feito", "class": "verbo"}
+      ],
+      "conclusion": "a forma isolada pode não bastar; a frase ajuda a identificar o funcionamento"
+    },
+    {
+      "id": "L01-C01",
+      "type": "guided-classification",
+      "items": [
+        {"sentence": "A loja abriu.", "target": "loja", "options": ["nomeia", "caracteriza", "expressa ação/estado/acontecimento"], "correctIndex": 0, "classAfterAnswer": "substantivo"},
+        {"sentence": "A loja abriu.", "target": "abriu", "options": ["nomeia", "caracteriza", "expressa ação/estado/acontecimento"], "correctIndex": 2, "classAfterAnswer": "verbo"},
+        {"sentence": "O aviso é importante.", "target": "importante", "options": ["caracteriza", "nomeia", "retoma participante"], "correctIndex": 0, "classAfterAnswer": "adjetivo"}
+      ]
+    },
+    {
+      "id": "L01-A01",
+      "type": "assessment-function-to-class",
+      "items": [
+        {"sentence": "A reunião começou.", "target": "reunião", "function": "nomeia", "options": ["substantivo", "verbo", "pronome"], "correctIndex": 0},
+        {"sentence": "A reunião começou.", "target": "começou", "function": "expressa acontecimento", "options": ["verbo", "adjetivo", "artigo"], "correctIndex": 0},
+        {"sentence": "Ela chegou cedo.", "target": "Ela", "function": "retoma/indica participante", "options": ["pronome", "substantivo", "adjetivo"], "correctIndex": 0}
+      ]
+    },
+    {
+      "id": "L01-A02",
+      "type": "assessment-context",
+      "items": [
+        {"sentence": "O jantar está pronto.", "target": "jantar", "options": ["substantivo neste contexto", "verbo neste contexto"], "correctIndex": 0},
+        {"sentence": "Vamos jantar às oito.", "target": "jantar", "options": ["verbo neste contexto", "substantivo neste contexto"], "correctIndex": 0}
+      ]
+    }
+  ],
+  "assessmentBehavior": {"functionBeforeLabel": true, "contextVisible": true, "ttsPolicy": "permitido", "timeLimit": false},
+  "completionEvidence": {
+    "clusters": {
+      "functionalGrouping": {"evidence": ["L01-C01", "L01-A01"], "rule": "relacionar funcionamento e classe nos exemplos básicos"},
+      "contextSensitivity": {"evidence": ["L01-A02"], "rule": "classificar corretamente a mesma forma em dois contextos diferentes"}
+    },
+    "completionRule": "os dois agrupamentos são obrigatórios.",
+    "notSufficient": ["recitar definições", "classificar apenas pela aparência da palavra", "ignorar o contexto"]
+  }
+}
