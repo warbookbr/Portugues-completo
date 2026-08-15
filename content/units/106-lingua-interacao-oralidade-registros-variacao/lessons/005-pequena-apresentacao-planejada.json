@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "id": "N1-U06-L05",
+  "title": "Pequena apresentação planejada",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Preparar uma apresentação oral curta com finalidade, abertura, dois ou três pontos centrais e fechamento funcional, usando notas como apoio sem exigir memorização ou performance formal.",
+  "competencies": ["definir finalidade e audiência", "selecionar dois ou três pontos", "organizar abertura/desenvolvimento/fechamento quando úteis", "usar notas curtas", "ensaiar apresentação", "revisar plano após ensaio", "não depender de leitura integral do roteiro"],
+  "prerequisites": ["N1-U05-L01", "N1-U06-L03", "N1-U06-L04"],
+  "limits": ["não exigir apresentação longa", "não avaliar postura estética, timbre ou sotaque", "não exigir decorar texto", "não impor três partes como fórmula universal", "não validar compreensibilidade oral automaticamente"],
+  "media": {"tts": "apoio para instruções/modelo; não padrão obrigatório de apresentação", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["modelo", "instruções"], "purpose": "apoio"}], "generatedVisualResources": [{"type": "UI_RENDERED_PRESENTATION_PLAN", "locations": ["L05-B01", "L05-C01", "L05-A01", "L05-P01"], "purpose": "organizar finalidade e pontos"}, {"type": "UI_RENDERED_NOTE_CARDS", "locations": ["L05-B02", "L05-P01"], "purpose": "usar tópicos sem roteiro integral"}, {"type": "UI_RENDERED_ORAL_SELF_CHECK", "locations": ["L05-P01"], "purpose": "registrar ensaio e revisão"}], "productionQueueRequired": false, "publicationDependency": "planejamento/prática autônomos; validação de fala exige observação confiável", "decisionRationale": "a competência de planejamento pode ser registrada sem vídeo; performance oral não é simulada por nota automática."},
+  "sequence": [
+    {"id": "L05-B01", "type": "plan-demonstration", "situation": "Apresentar em cerca de um minuto uma mudança no atendimento de uma equipe.", "plan": {"purpose": "informar mudança", "audience": "colegas", "opening": "Vou explicar a mudança no atendimento desta semana.", "points": ["quinta: atendimento até 16h", "sexta: horário normal", "urgências por telefone"], "closing": "Se houver dúvida, posso repetir os horários."}},
+    {"id": "L05-B02", "type": "notes-vs-script", "script": "texto completo para decorar", "notes": ["quinta → até 16h", "sexta → normal", "urgência → telefone"], "preferredForPractice": "notes", "reason": "as notas reduzem carga de memória e permitem fala própria"},
+    {"id": "L05-C01", "type": "guided-plan", "topic": "explicar um curso curto", "facts": ["início segunda", "duas aulas por semana", "horário 19h", "material digital"], "task": "escolher 2–3 pontos e uma abertura funcional"},
+    {"id": "L05-A01", "type": "presentation-plan-assessment", "scenario": "Apresentar a novos participantes como funciona uma oficina: encontro às quartas às 18h, duração de 90 minutos, materiais fornecidos, dúvidas no final.", "required": ["finalidade/audiência", "2–3 pontos centrais", "ordem compreensível", "fechamento possível"]},
+    {"id": "L05-P01", "type": "oral-presentation-practice", "prompt": "Faça uma pequena apresentação usando somente suas notas. Depois revise o plano se percebeu uma ordem melhor ou informação ausente.", "recordAttemptMetadata": true, "automaticSpeechValidation": false, "selfCheck": ["ficou claro sobre o que eu falaria?", "os pontos centrais apareceram?", "a ordem ajudou?", "as notas foram suficientes?", "quero reorganizar alguma parte?"]}
+  ],
+  "assessmentBehavior": {"notesAllowed": true, "memorizationNotRequired": true, "oralAttemptRequired": true, "speechComprehensibilityAutoValidated": false, "speedNotScored": true},
+  "completionEvidence": {"clusters": {"presentationPlan": {"evidence": ["L05-A01"], "rule": "plano completo e proporcional à situação"}, "oralPractice": {"evidence": ["L05-P01"], "rule": "ensaio e autochecagem registrados; avaliação oral externa separada"}}, "completionRule": "plano e ensaio são obrigatórios.", "notSufficient": ["decorar roteiro", "falar rápido", "marcar tarefa sem ensaio"]}
+}
