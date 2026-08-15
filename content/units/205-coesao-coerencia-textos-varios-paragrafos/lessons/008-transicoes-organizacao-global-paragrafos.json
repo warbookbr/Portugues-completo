@@ -1,0 +1,118 @@
+{
+  "schemaVersion": 1,
+  "id": "N2-U05-L08",
+  "title": "Transições e organização global entre parágrafos",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Organizar parágrafos segundo a finalidade e construir transições claras entre blocos de informação, usando frases de passagem, retomadas ou conectores quando necessários sem impor um molde global único.",
+  "competencies": [
+    "reconhecer função de cada parágrafo no texto",
+    "ordenar parágrafos quando a relação lógica/temporal exige sequência",
+    "construir transição que retoma informação anterior e prepara a seguinte",
+    "reconhecer transição clara sem conector inicial",
+    "evitar frase de passagem que apenas repete títulos ou marcadores",
+    "escolher organização compatível com a finalidade do gênero"
+  ],
+  "prerequisites": ["N2-U05-L02", "N2-U05-L03", "N2-U05-L05", "N2-U05-L06", "N2-U05-L07"],
+  "limits": [
+    "não impor introdução-desenvolvimento-conclusão a todo gênero",
+    "não exigir frase de transição entre todos os parágrafos",
+    "não premiar conectores sofisticados",
+    "não reorganizar texto correto apenas por preferência",
+    "não tratar um parágrafo como quantidade fixa de frases"
+  ],
+  "media": {"tts": "opcional", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {
+    "curatedMedia": [],
+    "runtimeResources": [{"type": "TTS_OK", "locations": ["textos", "feedback"], "purpose": "apoio"}],
+    "generatedVisualResources": [
+      {"type": "UI_RENDERED_PARAGRAPH_FUNCTION_MAP", "locations": ["L08-B01", "L08-C01", "L08-A01"], "purpose": "mapear função dos parágrafos"},
+      {"type": "UI_RENDERED_TRANSITION_BUILDER", "locations": ["L08-B02", "L08-A02"], "purpose": "construir ponte entre blocos"}
+    ],
+    "productionQueueRequired": false,
+    "publicationDependency": "nenhuma nova mídia humana obrigatória",
+    "decisionRationale": "organização global e transições podem ser manipuladas textualmente."
+  },
+  "sequence": [
+    {
+      "id": "L08-B01",
+      "type": "model-analysis",
+      "textTitle": "Teste de bicicletário",
+      "paragraphs": [
+        "O centro esportivo instalou um bicicletário temporário perto da entrada principal para testar a procura durante dois meses.",
+        "No primeiro mês, o uso foi maior no início da manhã e no fim da tarde. Em dias de evento, todas as vagas foram ocupadas.",
+        "Com base nesses dados, a direção decidiu acrescentar dez vagas durante o segundo mês do teste.",
+        "Ao final do período, a equipe comparará a ocupação antes de decidir se a estrutura se tornará permanente."
+      ],
+      "functions": ["apresentar o teste", "mostrar dados", "mostrar decisão decorrente dos dados", "indicar avaliação futura"],
+      "globalRelation": "teste → observação → ajuste → decisão futura"
+    },
+    {
+      "id": "L08-B02",
+      "type": "transition-demonstration",
+      "before": [
+        "No primeiro mês, as sessões da tarde lotaram.",
+        "A organização abrirá uma sessão extra às 17h."
+      ],
+      "versions": [
+        {"text": "Diante dessa procura, a organização abrirá uma sessão extra às 17h.", "effect": "retoma os dados e explicita o motivo da decisão"},
+        {"text": "A organização abrirá uma sessão extra às 17h.", "effect": "também pode funcionar se a proximidade e o contexto já tornarem a relação clara"},
+        {"text": "Além disso, portanto, nesse sentido, a organização abrirá...", "effect": "acúmulo artificial não melhora a transição"}
+      ]
+    },
+    {
+      "id": "L08-C01",
+      "type": "quick-check",
+      "blocks": [
+        {"id": "a", "text": "Depois de quatro semanas, a equipe comparou as respostas dos usuários."},
+        {"id": "b", "text": "O projeto começou com um formulário simples de avaliação."},
+        {"id": "c", "text": "A comparação mostrou que a principal dificuldade era localizar o serviço correto."},
+        {"id": "d", "text": "Com esse diagnóstico, o formulário foi reorganizado por tipo de serviço."}
+      ],
+      "question": "Qual ordem produz uma progressão coerente neste relato de teste?",
+      "options": ["b → a → c → d", "d → c → b → a", "a → d → b → c"],
+      "correctIndex": 0
+    },
+    {
+      "id": "L08-A01",
+      "type": "assessment-organization",
+      "blocks": [
+        {"id": "1", "text": "A biblioteca testou atendimento por agendamento durante seis semanas."},
+        {"id": "2", "text": "Nas três primeiras semanas, a maior parte das reservas ocorreu no fim da tarde."},
+        {"id": "3", "text": "Por causa dessa concentração, uma segunda pessoa passou a atender nesse horário."},
+        {"id": "4", "text": "A equipe medirá novamente o tempo de espera antes de decidir se mantém o reforço."}
+      ],
+      "oneCoherentOrder": ["1", "2", "3", "4"],
+      "question": "Por que essa ordem funciona?",
+      "options": ["apresenta teste, dado, ajuste e avaliação futura", "todo texto deve seguir quatro parágrafos"],
+      "correctIndex": 0
+    },
+    {
+      "id": "L08-A02",
+      "type": "assessment-transition",
+      "pairs": [
+        {
+          "previous": "A pesquisa mostrou que usuários se perdiam entre três formulários semelhantes.",
+          "nextIdea": "a equipe unificou os formulários",
+          "options": ["Diante dessa dificuldade, a equipe reuniu os três formulários em uma única página.", "Por outro lado, portanto, além disso, a equipe reuniu os formulários."],
+          "correctIndex": 0
+        },
+        {
+          "previous": "O primeiro parágrafo já informa que o curso terá duas etapas.",
+          "next": "A primeira etapa será on-line. A segunda ocorrerá presencialmente.",
+          "question": "É obrigatório inserir um conector no início do segundo parágrafo?",
+          "options": ["não; a organização enumerada já pode construir a passagem", "sim; todo parágrafo precisa começar com conector"],
+          "correctIndex": 0
+        }
+      ]
+    }
+  ],
+  "assessmentBehavior": {"fixedGlobalFormula": false, "connectorAtParagraphStartRequired": false, "ttsPolicy": "opcional", "timeLimit": false},
+  "completionEvidence": {
+    "clusters": {
+      "globalOrganization": {"evidence": ["L08-C01", "L08-A01"], "rule": "ordenar e explicar a progressão do texto"},
+      "transition": {"evidence": ["L08-A02"], "rule": "selecionar transição proporcional e reconhecer quando marcador não é necessário"}
+    },
+    "completionRule": "os dois agrupamentos são obrigatórios.",
+    "notSufficient": ["iniciar todo parágrafo com conector", "impor molde universal", "variar por preferência"]
+  }
+}

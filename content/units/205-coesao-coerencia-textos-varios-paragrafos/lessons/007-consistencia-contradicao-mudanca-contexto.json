@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 1,
+  "id": "N2-U05-L07",
+  "title": "Consistência, contradição e mudança de contexto",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Distinguir contradição real de mudança legítima de tempo, condição, fonte ou perspectiva, avaliando se afirmações podem coexistir no mesmo texto sem apagar diferenças relevantes.",
+  "competencies": [
+    "identificar afirmações incompatíveis sob as mesmas condições",
+    "reconhecer mudança temporal que torna afirmações compatíveis",
+    "reconhecer perspectivas diferentes atribuídas a fontes distintas",
+    "reconhecer condição que limita uma afirmação",
+    "evitar corrigir divergência legítima como se fosse erro",
+    "reformular contradição real ou explicitar contexto que resolve a aparente incompatibilidade"
+  ],
+  "prerequisites": ["N2-U05-L01", "N2-U05-L02", "N2-U01-L08", "N2-U01-L09"],
+  "limits": [
+    "não tratar opiniões divergentes como contradição do autor",
+    "não exigir consistência entre momentos diferentes quando a situação mudou",
+    "não inventar condição para salvar uma contradição",
+    "não entrar em lógica formal avançada",
+    "não exigir consenso entre fontes"
+  ],
+  "media": {"tts": "opcional", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {
+    "curatedMedia": [],
+    "runtimeResources": [{"type": "TTS_OK", "locations": ["textos", "feedback"], "purpose": "apoio"}],
+    "generatedVisualResources": [
+      {"type": "UI_RENDERED_CONSISTENCY_COMPARE", "locations": ["L07-B01", "L07-C01", "L07-A01"], "purpose": "comparar afirmações sob tempo/fonte/condição"},
+      {"type": "UI_RENDERED_PERSPECTIVE_LABELS", "locations": ["L07-B02", "L07-A02"], "purpose": "atribuir afirmações a vozes diferentes"}
+    ],
+    "productionQueueRequired": false,
+    "publicationDependency": "nenhuma nova mídia humana obrigatória",
+    "decisionRationale": "consistência depende da relação entre afirmações e seus contextos, observável no texto."
+  },
+  "sequence": [
+    {
+      "id": "L07-B01",
+      "type": "contrast",
+      "cases": [
+        {"text": "O atendimento termina às 18h. O atendimento termina às 20h.", "context": "as duas frases descrevem o mesmo dia e serviço", "judgment": "contradição não resolvida"},
+        {"text": "Até junho, o atendimento terminava às 18h. Desde julho, termina às 20h.", "judgment": "compatível: houve mudança temporal"},
+        {"text": "Em dias úteis, o atendimento termina às 20h. Aos sábados, termina às 14h.", "judgment": "compatível: condições diferentes"}
+      ]
+    },
+    {
+      "id": "L07-B02",
+      "type": "perspective-contrast",
+      "paragraphs": [
+        "A direção considera que o novo sistema de reservas reduziu filas na entrada.",
+        "Alguns usuários afirmam que o sistema exige planejamento demais para quem decide usar o serviço no mesmo dia."
+      ],
+      "analysis": "as avaliações são atribuídas a fontes diferentes; o texto pode apresentar ambas sem se contradizer",
+      "guardRail": "divergência de perspectiva não precisa ser apagada para criar coerência"
+    },
+    {
+      "id": "L07-C01",
+      "type": "quick-check",
+      "items": [
+        {"text": "Na primeira semana, havia dez vagas. Na segunda, o limite passou para quinze.", "options": ["informações compatíveis por mudança temporal", "contradição obrigatória"], "correctIndex": 0},
+        {"text": "O relatório afirma que nenhuma inscrição foi recebida em maio. Depois afirma que vinte inscrições foram recebidas em maio.", "context": "mesmo relatório, mesmo período, sem distinção adicional", "options": ["há contradição a revisar", "as duas afirmações são automaticamente compatíveis"], "correctIndex": 0}
+      ]
+    },
+    {
+      "id": "L07-A01",
+      "type": "assessment-consistency",
+      "items": [
+        {"paragraphs": ["Em 2025, a oficina funcionava às sextas.", "A partir de janeiro de 2026, passou a funcionar aos sábados."], "options": ["compatível: momentos diferentes", "contradição"], "correctIndex": 0},
+        {"paragraphs": ["O texto informa que o curso é gratuito.", "Mais adiante, informa que todos devem pagar R$ 80 pela inscrição, sem explicar taxa separada ou mudança."], "options": ["há incompatibilidade que precisa ser esclarecida", "não há qualquer problema"], "correctIndex": 0},
+        {"paragraphs": ["A coordenação avalia a mudança como positiva.", "Uma participante considera que o novo horário dificulta sua presença."], "options": ["perspectivas diferentes podem coexistir", "uma das duas precisa ser apagada para o texto ficar coerente"], "correctIndex": 0}
+      ]
+    },
+    {
+      "id": "L07-A02",
+      "type": "assessment-repair",
+      "items": [
+        {"before": "A biblioteca fecha às 18h. A biblioteca fecha às 20h.", "providedFact": "o horário mudou em julho", "options": ["Até junho, a biblioteca fechava às 18h. Desde julho, fecha às 20h.", "manter as duas frases sem contexto"], "correctIndex": 0},
+        {"before": "O sistema é fácil. O sistema é difícil.", "providedContext": "primeira avaliação é da equipe técnica; segunda é de alguns usuários iniciantes", "options": ["A equipe técnica considera o sistema fácil; alguns usuários iniciantes o consideram difícil.", "apagar uma avaliação"], "correctIndex": 0},
+        {"question": "É válido inventar uma mudança de data que o material não fornece para resolver uma contradição?", "options": ["não", "sim"], "correctIndex": 0}
+      ]
+    }
+  ],
+  "assessmentBehavior": {"sourceAndTimeSensitive": true, "noInventedContext": true, "ttsPolicy": "opcional", "timeLimit": false},
+  "completionEvidence": {
+    "clusters": {
+      "consistencyJudgment": {"evidence": ["L07-C01", "L07-A01"], "rule": "distinguir contradição, mudança temporal e perspectivas diferentes"},
+      "repair": {"evidence": ["L07-A02"], "rule": "explicitar contexto fornecido sem inventar dados"}
+    },
+    "completionRule": "os dois agrupamentos são obrigatórios.",
+    "notSufficient": ["apagar divergência", "inventar data/condição", "tratar toda diferença como contradição"]
+  }
+}

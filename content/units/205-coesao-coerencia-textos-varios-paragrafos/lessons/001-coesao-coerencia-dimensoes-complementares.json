@@ -1,0 +1,103 @@
+{
+  "schemaVersion": 1,
+  "id": "N2-U05-L01",
+  "title": "Coesão e coerência: dimensões diferentes e complementares",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Distinguir coesão e coerência em textos curtos de vários parágrafos, percebendo que marcas de ligação não garantem sentido global e que um texto pode manter sentido mesmo com poucas marcas explícitas.",
+  "competencies": [
+    "reconhecer vínculos de referência, repetição, substituição e conexão como recursos de coesão",
+    "avaliar se as informações de um texto são globalmente compatíveis com o assunto e entre si",
+    "identificar texto com muitas marcas coesivas mas relação de sentido inadequada",
+    "identificar texto coerente com poucos conectores explícitos",
+    "explicar funcionalmente qual dimensão precisa de revisão em exemplo transparente"
+  ],
+  "prerequisites": ["N2-U01-V01", "N2-U04-V01", "N1-U04-V01"],
+  "limits": [
+    "não reduzir coesão a conectores",
+    "não reduzir coerência a ausência de erro gramatical",
+    "não exigir terminologia de linguística textual avançada",
+    "não tratar toda repetição como falha",
+    "não pontuar texto por quantidade de conectivos"
+  ],
+  "media": {"tts": "opcional", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {
+    "curatedMedia": [],
+    "runtimeResources": [{"type": "TTS_OK", "locations": ["textos", "instruções", "feedback"], "purpose": "apoio de leitura"}],
+    "generatedVisualResources": [
+      {"type": "UI_RENDERED_COHESION_COHERENCE_COMPARE", "locations": ["L01-B01", "L01-C01", "L01-A01"], "purpose": "comparar ligações locais e sentido global"},
+      {"type": "UI_RENDERED_TEXT_RELATION_MAP", "locations": ["L01-B02", "L01-A02"], "purpose": "mostrar relações entre parágrafos"}
+    ],
+    "productionQueueRequired": false,
+    "publicationDependency": "nenhuma nova mídia humana obrigatória",
+    "decisionRationale": "o alvo é textual e pode ser demonstrado por contraste entre versões."
+  },
+  "sequence": [
+    {
+      "id": "L01-B01",
+      "type": "contrast",
+      "texts": [
+        {
+          "label": "muitas ligações, sentido global problemático",
+          "paragraphs": [
+            "A biblioteca ampliou o horário de atendimento. Por isso, agora fecha duas horas mais tarde.",
+            "Além disso, o oceano Pacífico é muito extenso. Portanto, os usuários podem devolver livros até as 20h."
+          ],
+          "analysis": "há conectores e retomadas, mas a informação sobre o oceano rompe o assunto e não sustenta a conclusão"
+        },
+        {
+          "label": "sentido global claro com poucas marcas explícitas",
+          "paragraphs": [
+            "A biblioteca ampliou o horário de atendimento. Agora fecha às 20h.",
+            "As devoluções podem ser feitas até esse horário. O serviço de empréstimo continua funcionando normalmente."
+          ],
+          "analysis": "as informações permanecem no mesmo campo temático e se relacionam com clareza"
+        }
+      ]
+    },
+    {
+      "id": "L01-B02",
+      "type": "concept-map",
+      "dimensions": [
+        {"name": "coesão", "question": "como partes do texto se ligam?", "examples": ["pronomes", "repetição funcional", "expressões nominais", "conectores", "elipse recuperável"]},
+        {"name": "coerência", "question": "o conjunto constrói um sentido compatível com a situação e com o que já foi dito?", "examples": ["manter foco", "não criar contradição indevida", "não saltar etapa essencial", "preservar relações plausíveis"]}
+      ],
+      "guardRail": "as duas dimensões interagem, mas não são sinônimas"
+    },
+    {
+      "id": "L01-C01",
+      "type": "quick-check",
+      "items": [
+        {"text": "O curso foi adiado. A nova data será divulgada amanhã. Os participantes receberão aviso por e-mail.", "question": "O texto pode ser coerente mesmo sem vários conectores?", "options": ["sim", "não; coerência exige muitos conectores"], "correctIndex": 0},
+        {"text": "O curso foi adiado. Portanto, a parede da sala é azul. Além disso, a nova data será divulgada amanhã.", "question": "Qual é o principal problema?", "options": ["há uma informação sem relação construída com o assunto", "faltam mais conectores"], "correctIndex": 0}
+      ]
+    },
+    {
+      "id": "L01-A01",
+      "type": "assessment-diagnosis",
+      "items": [
+        {"paragraphs": ["O posto ampliou o atendimento aos sábados.", "A mudança busca atender pessoas que trabalham durante a semana."], "options": ["há coerência e a relação pode ser compreendida mesmo sem conector obrigatório", "o texto é incoerente porque não usa 'por isso'"], "correctIndex": 0},
+        {"paragraphs": ["A equipe criou uma nova fila digital. Além disso, o prédio foi construído em 1998. Portanto, a fila reduz a espera na recepção."], "options": ["o detalhe sobre o ano do prédio quebra a progressão do argumento apresentado", "o texto fica melhor porque tem mais informações"], "correctIndex": 0}
+      ]
+    },
+    {
+      "id": "L01-A02",
+      "type": "assessment-principle",
+      "question": "Qual afirmação é correta?",
+      "options": [
+        "um texto pode ter conectores corretos localmente e ainda assim apresentar problema de coerência global",
+        "quanto mais conectores houver, mais coerente o texto será",
+        "coesão e coerência são exatamente a mesma coisa"
+      ],
+      "correctIndex": 0
+    }
+  ],
+  "assessmentBehavior": {"textVisibility": "sempre disponível", "connectorCountNotScore": true, "ttsPolicy": "opcional", "timeLimit": false},
+  "completionEvidence": {
+    "clusters": {
+      "dimensionDistinction": {"evidence": ["L01-C01", "L01-A01"], "rule": "diagnosticar corretamente ligação local e sentido global"},
+      "principle": {"evidence": ["L01-A02"], "rule": "rejeitar equivalência coesão=coerência e contagem de conectores"}
+    },
+    "completionRule": "os dois agrupamentos são obrigatórios.",
+    "notSufficient": ["contar conectores", "procurar apenas erros gramaticais", "chamar toda repetição de falta de coesão"]
+  }
+}

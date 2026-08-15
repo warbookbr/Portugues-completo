@@ -1,0 +1,126 @@
+{
+  "schemaVersion": 1,
+  "id": "N2-U05-L09",
+  "title": "Revisão global de coesão e coerência",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Revisar um texto de vários parágrafos em passes de finalidade, progressão, referência, conexão, consistência e clareza, corrigindo problemas reais sem transformar revisão em substituição indiscriminada de palavras ou conectores.",
+  "competencies": [
+    "ler o texto inteiro antes de editar",
+    "verificar se cada parágrafo contribui para a finalidade",
+    "reparar progressão e saltos de foco",
+    "revisar cadeias referenciais",
+    "ajustar conectores apenas quando a relação exige",
+    "identificar contradição real ou contexto que a resolve",
+    "preservar repetição, ordem e transição quando funcionam",
+    "registrar antes/depois e justificar mudanças"
+  ],
+  "prerequisites": ["N2-U05-L01", "N2-U05-L02", "N2-U05-L03", "N2-U05-L04", "N2-U05-L05", "N2-U05-L06", "N2-U05-L07", "N2-U05-L08"],
+  "limits": [
+    "não usar instrução genérica 'melhore o texto' sem foco",
+    "não corrigir estilo avançado",
+    "não exigir ausência absoluta de repetição",
+    "não adicionar fatos que o material não fornece",
+    "não pontuar qualidade global de reescrita livre por heurística superficial"
+  ],
+  "media": {"tts": "opcional", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {
+    "curatedMedia": [],
+    "runtimeResources": [{"type": "TTS_OK", "locations": ["texto", "feedback"], "purpose": "apoio"}],
+    "generatedVisualResources": [
+      {"type": "UI_RENDERED_COHESION_COHERENCE_REVISION_PASSES", "locations": ["L09-B01", "L09-A01", "L09-P01"], "purpose": "separar focos de revisão"},
+      {"type": "UI_RENDERED_VERSION_DIFF", "locations": ["L09-B01", "L09-A01", "L09-P01"], "purpose": "comparar versões"},
+      {"type": "UI_RENDERED_CHANGE_REASON", "locations": ["L09-B02", "L09-A02", "L09-P01"], "purpose": "ligar mudança ao problema resolvido"}
+    ],
+    "productionQueueRequired": false,
+    "publicationDependency": "nenhuma nova mídia humana obrigatória; revisão aberta plena requer avaliador confiável",
+    "decisionRationale": "revisão global é uma atividade textual e deve preservar histórico de versões."
+  },
+  "sequence": [
+    {
+      "id": "L09-B01",
+      "type": "revision-demonstration",
+      "original": [
+        "O centro comunitário abriu inscrições para um curso de informática. O curso terá duas turmas de vinte vagas.",
+        "A primeira turma será às quartas à noite. A praça ao lado do centro recebeu bancos novos. Ela começará em 10 de setembro.",
+        "A segunda turma ocorrerá aos sábados pela manhã. Por isso, os participantes das duas turmas receberão o mesmo material.",
+        "As inscrições terminam quando as vagas forem preenchidas. O centro divulgará a lista de participantes no dia seguinte ao encerramento."
+      ],
+      "passes": [
+        {"focus": "finalidade/foco", "action": "retirar a frase sobre os bancos da praça por não contribuir para o texto do curso"},
+        {"focus": "referência", "action": "substituir 'Ela começará' por 'A turma da noite começará' ou outra retomada clara, pois 'Ela' ficou próxima de praça/frase intrusa"},
+        {"focus": "conectores", "action": "retirar 'Por isso' antes da informação sobre material, pois o horário de sábado não causa o uso do mesmo material; usar adição ou nenhuma marca se a relação for apenas informativa"},
+        {"focus": "consistência", "action": "manter as informações de duas turmas porque são compatíveis e complementares"}
+      ],
+      "revised": [
+        "O centro comunitário abriu inscrições para um curso de informática. O curso terá duas turmas de vinte vagas.",
+        "A primeira turma será às quartas à noite e começará em 10 de setembro.",
+        "A segunda turma ocorrerá aos sábados pela manhã. Os participantes das duas turmas receberão o mesmo material.",
+        "As inscrições terminam quando as vagas forem preenchidas. O centro divulgará a lista de participantes no dia seguinte ao encerramento."
+      ]
+    },
+    {
+      "id": "L09-B02",
+      "type": "revision-order",
+      "passes": ["finalidade e sentido global", "função/progressão dos parágrafos", "referências e omissões", "conectores/relações", "consistência e ambiguidades", "convenções locais já ensinadas quando necessário"],
+      "reason": "trocar um pronome ou conector não resolve um texto cujo problema principal é informação intrusa ou contradição global"
+    },
+    {
+      "id": "L09-C01",
+      "type": "guided-revision",
+      "original": [
+        "A oficina recebeu trinta inscrições no primeiro dia. Havia vinte vagas.",
+        "O prédio possui três janelas na fachada. Por isso, a organização criou uma lista de espera.",
+        "Os inscritos receberão confirmação por e-mail. Ela será enviada até sexta-feira."
+      ],
+      "tasks": [
+        {"focus": "foco", "expected": "retirar a frase sobre as janelas"},
+        {"focus": "relação", "expected": "manter/criar relação entre excesso de inscrições e lista de espera; após retirada da frase intrusa, 'Por isso' pode retomar a situação de vagas insuficientes"},
+        {"focus": "referência", "expected": "'Ela' pode retomar confirmação por e-mail de modo claro; não é obrigatório alterar"}
+      ]
+    },
+    {
+      "id": "L09-A01",
+      "type": "assessment-integrated-edit",
+      "original": [
+        "A biblioteca testará um novo sistema de reserva de salas por seis semanas.",
+        "Na primeira etapa, três salas poderão ser reservadas pelo aplicativo. A cafeteria lançou um cardápio novo. Os usuários também poderão cancelar a reserva até duas horas antes do horário marcado.",
+        "No fim da terceira semana, a equipe analisará quantas reservas foram usadas e quantas foram canceladas. No entanto, com esses dados, poderá ajustar as regras da segunda etapa.",
+        "A direção considera que o teste pode reduzir conflitos de horário. Alguns usuários disseram que preferem reservar pessoalmente. Essa diferença de preferência também será registrada na avaliação."
+      ],
+      "requiredEdits": [
+        {"target": "A cafeteria lançou um cardápio novo.", "action": "remover", "reason": "salto de foco sem função no texto"},
+        {"target": "No entanto, com esses dados, poderá ajustar...", "action": "trocar/retirar 'No entanto'", "acceptedExamples": ["Com esses dados, a equipe poderá ajustar as regras da segunda etapa.", "Por isso, com base nesses dados, a equipe poderá ajustar as regras da segunda etapa."], "reason": "a relação é continuidade/uso dos dados, não contraste"},
+        {"target": "poderá ajustar", "action": "explicitar 'a equipe' se necessário após a revisão", "reason": "preservar referente claro"},
+        {"target": "direção considera... / usuários disseram...", "action": "manter", "reason": "perspectivas diferentes são atribuídas a fontes distintas e podem coexistir"}
+      ],
+      "acceptEquivalent": true
+    },
+    {
+      "id": "L09-A02",
+      "type": "assessment-reasons",
+      "items": [
+        {"change": "retirar a frase sobre a cafeteria", "options": ["ela interrompe a progressão sobre reserva de salas", "todo texto deve ter menos frases"], "correctIndex": 0},
+        {"change": "substituir 'No entanto'", "options": ["o conector indicava contraste que o contexto não sustentava", "é obrigatório variar conectores"], "correctIndex": 0},
+        {"change": "manter as avaliações diferentes de direção e usuários", "options": ["são perspectivas atribuídas a fontes diferentes, não contradição automática", "coerência exige que todas as pessoas concordem"], "correctIndex": 0},
+        {"change": "manter repetição explícita se ela resolver referente", "options": ["clareza pode justificar repetição", "repetição é sempre erro"], "correctIndex": 0}
+      ]
+    },
+    {
+      "id": "L09-P01",
+      "type": "practice-version-history",
+      "instruction": "Revise um texto novo de quatro ou cinco parágrafos em passes. Registre ao menos uma mudança realizada e uma decisão de manter um trecho que já funcionava.",
+      "recordBeforeAfter": true,
+      "automaticValidation": "somente alvos controlados; justificativas e reescritas livres ficam registradas sem selo semântico automático"
+    }
+  ],
+  "assessmentBehavior": {"preserveCorrectText": true, "acceptEquivalentRevisions": true, "noInventedFacts": true, "openRevisionAutoValidated": false, "ttsPolicy": "opcional", "timeLimit": false},
+  "completionEvidence": {
+    "clusters": {
+      "integratedRevision": {"evidence": ["L09-A01"], "rule": "resolver salto de foco, conector e referência sem apagar perspectivas legítimas"},
+      "revisionReasoning": {"evidence": ["L09-A02"], "rule": "associar decisões aos problemas textuais reais"}
+    },
+    "practiceRecorded": ["L09-P01"],
+    "completionRule": "edição e justificativa são obrigatórias; mudança por mudança não gera crédito.",
+    "notSufficient": ["trocar conectores", "remover toda repetição", "mudar toda frase", "inventar informação"]
+  }
+}

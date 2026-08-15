@@ -1,0 +1,92 @@
+{
+  "schemaVersion": 1,
+  "id": "N2-U05-L05",
+  "title": "Conectores entre frases e parágrafos: usar pelo sentido",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Usar conectores entre frases e parágrafos para explicitar relações de adição, sequência, causa, resultado e contraste quando isso melhora a leitura, evitando repetição mecânica e acúmulo de marcadores.",
+  "competencies": [
+    "selecionar conector compatível com a relação global",
+    "reconhecer relação sem conector explícito",
+    "evitar conector redundante",
+    "variar marcador somente quando a variação preserva o sentido",
+    "identificar conector que cria relação não sustentada",
+    "revisar transição entre parágrafos sem obrigar marcador inicial"
+  ],
+  "prerequisites": ["N2-U05-L02", "N2-U04-V01"],
+  "limits": [
+    "não premiar quantidade de conectores",
+    "não exigir conector em todo início de parágrafo",
+    "não tratar conectores como intercambiáveis",
+    "não confundir sequência com causa",
+    "não exigir lista extensa de equivalentes"
+  ],
+  "media": {"tts": "opcional", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {
+    "curatedMedia": [],
+    "runtimeResources": [{"type": "TTS_OK", "locations": ["textos", "feedback"], "purpose": "apoio"}],
+    "generatedVisualResources": [
+      {"type": "UI_RENDERED_PARAGRAPH_RELATION_CONNECTOR", "locations": ["L05-B01", "L05-C01", "L05-A01"], "purpose": "ligar relação e marcador"},
+      {"type": "UI_RENDERED_CONNECTOR_REDUNDANCY", "locations": ["L05-B02", "L05-A02"], "purpose": "comparar conexão suficiente e excesso"}
+    ],
+    "productionQueueRequired": false,
+    "publicationDependency": "nenhuma nova mídia humana obrigatória",
+    "decisionRationale": "a escolha do conector depende do sentido textual e pode ser avaliada diretamente."
+  },
+  "sequence": [
+    {
+      "id": "L05-B01",
+      "type": "model-analysis",
+      "pairs": [
+        {"paragraph1": "A procura pelo curso superou o número de vagas.", "paragraph2": "Por isso, a organização abriu uma segunda turma.", "relation": "resultado/consequência"},
+        {"paragraph1": "O aplicativo permite reservar horários pela internet.", "paragraph2": "Também é possível fazer a reserva presencialmente.", "relation": "adição"},
+        {"paragraph1": "O novo espaço tem menos mesas.", "paragraph2": "Mesmo assim, comporta todas as atividades previstas.", "relation": "contraste"},
+        {"paragraph1": "A equipe conferiu os documentos pela manhã.", "paragraph2": "À tarde, iniciou a análise dos pedidos.", "relation": "sequência temporal sem necessidade de conector causal"}
+      ]
+    },
+    {
+      "id": "L05-B02",
+      "type": "redundancy-contrast",
+      "versions": [
+        {"text": "A chuva aumentou durante a tarde. Por isso, o jogo foi interrompido.", "judgment": "relação explicitada de forma suficiente"},
+        {"text": "A chuva aumentou durante a tarde. Por isso, portanto, consequentemente, o jogo foi interrompido.", "judgment": "acúmulo redundante; mais conectores não melhora a relação"},
+        {"text": "A chuva aumentou durante a tarde. O jogo foi interrompido.", "judgment": "pode permitir leitura causal pelo contexto; a escolha de explicitar depende da clareza desejada"}
+      ]
+    },
+    {
+      "id": "L05-C01",
+      "type": "quick-check",
+      "items": [
+        {"stem": "O sistema ficou indisponível. ____, o prazo foi ampliado.", "options": ["Por isso", "Por outro lado", "Primeiro"], "correctIndex": 0},
+        {"stem": "A sala é menor. ____, recebe mais luz natural.", "context": "o texto quer contrastar uma limitação e uma vantagem", "options": ["Por outro lado", "Por isso", "Depois"], "correctIndex": 0},
+        {"question": "Todo parágrafo novo precisa começar com um conector?", "options": ["não", "sim"], "correctIndex": 0}
+      ]
+    },
+    {
+      "id": "L05-A01",
+      "type": "assessment-relation",
+      "items": [
+        {"paragraph1": "As inscrições encerraram antes do previsto porque todas as vagas foram preenchidas.", "paragraph2Stem": "____, a equipe criou uma lista de espera.", "options": ["Por isso", "Em seguida apenas como tempo", "No entanto"], "correctIndex": 0},
+        {"paragraph1": "O relatório mostra queda no consumo de papel.", "paragraph2Stem": "____, o uso de impressoras coloridas aumentou.", "context": "o texto destaca tendências diferentes", "options": ["Em contraste", "Por isso", "Além disso obrigatoriamente"], "correctIndex": 0},
+        {"paragraph1": "A oficina terá encontros presenciais.", "paragraph2Stem": "____ haverá materiais de estudo na plataforma.", "options": ["Além disso,", "Por isso,", "Apesar disso, necessariamente"], "correctIndex": 0}
+      ]
+    },
+    {
+      "id": "L05-A02",
+      "type": "assessment-revision",
+      "items": [
+        {"before": "O serviço foi suspenso por falta de energia. Além disso, por isso, o prazo foi ampliado.", "options": ["O serviço foi suspenso por falta de energia. Por isso, o prazo foi ampliado.", "manter os dois conectores porque quantidade melhora coesão"], "correctIndex": 0},
+        {"before": "A equipe realizou o teste. Depois, publicou os resultados.", "question": "'Depois' prova que o teste causou a publicação?", "options": ["não; marca sequência", "sim"], "correctIndex": 0},
+        {"question": "Uma transição clara sem conector explícito é automaticamente defeituosa?", "options": ["não", "sim"], "correctIndex": 0}
+      ]
+    }
+  ],
+  "assessmentBehavior": {"connectorCountNotScore": true, "contextRequired": true, "ttsPolicy": "opcional", "timeLimit": false},
+  "completionEvidence": {
+    "clusters": {
+      "connectorMeaning": {"evidence": ["L05-C01", "L05-A01"], "rule": "selecionar conectores compatíveis com as relações"},
+      "economyAndLimits": {"evidence": ["L05-A02"], "rule": "eliminar redundância e rejeitar causalidade/obrigatoriedade indevidas"}
+    },
+    "completionRule": "os dois agrupamentos são obrigatórios.",
+    "notSufficient": ["contar conectores", "variar por estilo sem preservar relação", "usar marcador causal para toda sequência"]
+  }
+}
