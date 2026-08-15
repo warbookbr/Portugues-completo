@@ -9,6 +9,7 @@ Este arquivo é o mapa mestre do projeto. Ele localiza as fontes oficiais antes 
 ```text
 Português Completo
 ├── README.md                  → apresentação pública do repositório
+├── PROJECT_INDEX.md           → este mapa
 ├── index.html + app/          → aplicação
 ├── content/                   → conteúdo pedagógico
 ├── producao-midia/            → coordenação de mídia
@@ -39,15 +40,21 @@ Português Completo
 - `docs/licoes-nivel-0-unidade-6.md` — arquitetura U6.
 - `docs/checkpoint-saida-nivel-0.md` — auditoria de saída.
 - `content/levels/000-fundamentos/exit-verification.json` — verificação de saída.
-- `content/units/` — conteúdo detalhado das seis unidades.
+- `content/units/` — conteúdo detalhado.
 
 ### Nível 1
 
-- `docs/areas-nivel-1.md` — **M2**, dez áreas dimensionadas.
-- `docs/unidades-nivel-1.md` — **M3**, sete unidades dimensionadas.
-- `docs/transicao-n0-n1.md` — auditoria da passagem N0→N1.
-
-Quando o N1 avançar para M4, registrar sua arquitetura de lições em documento próprio em `docs/` e atualizar este índice.
+- `docs/areas-nivel-1.md` — M2, dez áreas dimensionadas.
+- `docs/unidades-nivel-1.md` — M3, sete unidades dimensionadas.
+- `docs/transicao-n0-n1.md` — auditoria N0→N1.
+- `docs/licoes-nivel-1.md` — consolidação M4 do nível.
+- `docs/licoes-nivel-1-u1.md` — arquitetura M4 da U1.
+- `docs/licoes-nivel-1-u2.md` — arquitetura M4 da U2.
+- `docs/licoes-nivel-1-u3.md` — arquitetura M4 da U3.
+- `docs/licoes-nivel-1-u4.md` — arquitetura M4 da U4.
+- `docs/licoes-nivel-1-u5.md` — arquitetura M4 da U5.
+- `docs/licoes-nivel-1-u6.md` — arquitetura M4 da U6.
+- `docs/licoes-nivel-1-u7.md` — arquitetura M4 da U7.
 
 ## Arquitetura e frontend
 
@@ -64,10 +71,10 @@ Mídia pedagógica pesada não pertence a `app/assets/`.
 
 - `docs/conteudo.md` — estrutura pedagógica e uso de mídia.
 - `producao-midia/README.md` — contrato operacional de mídia.
-- `producao-midia/FILA-MIDIA.md` — demandas humanas já identificadas.
-- `content/course.json` — catálogo publicado pela aplicação; não adicionar unidades apenas porque o conteúdo JSON já foi desenvolvido.
-- `content/units/` — conteúdo de unidades/lições/verificações.
-- `content/levels/` — conteúdo/verificações transversais de nível.
+- `producao-midia/FILA-MIDIA.md` — fila oficial.
+- `content/course.json` — catálogo publicado; não adicionar unidades apenas porque o JSON curricular foi desenvolvido.
+- `content/units/` — conteúdo de unidades, lições e verificações.
+- `content/levels/` — verificações ou conteúdo transversal de nível.
 
 ## Validação
 
@@ -104,8 +111,14 @@ N1 M2
 N1 M3
 → docs/unidades-nivel-1.md
 
+N1 M4
+→ docs/licoes-nivel-1.md + docs/licoes-nivel-1-u1.md ... docs/licoes-nivel-1-u7.md
+
 estado/marcos
 → docs/roadmap-curricular.md
+
+transição N0→N1
+→ docs/transicao-n0-n1.md
 
 execução contínua
 → docs/execucao-continua.md
