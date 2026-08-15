@@ -17,7 +17,8 @@ Fontes relacionadas:
 - `docs/mapa-niveis-1-4.md` — camada `M1` dos Níveis 1–4;
 - `docs/matriz-progressao-global.md` — progressão transversal dos grandes domínios;
 - `docs/unidades-nivel-0.md` — unidades do Nível 0;
-- `docs/licoes-nivel-0.md` — arquitetura das lições já dimensionadas;
+- `docs/licoes-nivel-0.md` — arquitetura consolidada das Unidades 1–5;
+- `docs/licoes-nivel-0-unidade-6.md` — arquitetura das lições da Unidade 6;
 - `content/` — conteúdo efetivamente desenvolvido;
 - `docs/execucao-continua.md` — protocolo para execução por marcos.
 
@@ -41,10 +42,9 @@ A escala mede maturidade de planejamento/desenvolvimento, não progresso do alun
 - `M1` concluído;
 - `M2` concluído;
 - `M3` concluído: seis unidades dimensionadas;
-- `M4` parcial: lições dimensionadas até a **Unidade 5**;
-- `M5` em andamento: **Unidades 1, 2, 3 e 4 desenvolvidas com verificações integradas**;
-- Unidade 5 possui arquitetura de 10 lições pronta para desenvolvimento;
-- Unidade 6 continua em `M3`, ainda sem arquitetura de lições.
+- `M4` **concluído para as seis unidades**: U1–U5 em `docs/licoes-nivel-0.md` e U6 em `docs/licoes-nivel-0-unidade-6.md`;
+- `M5` em andamento: **Unidades 1, 2, 3, 4 e 5 desenvolvidas com verificações integradas**;
+- Unidade 6 possui arquitetura de 10 lições e verificação dimensionadas, mas ainda não conteúdo detalhado em `content/`.
 
 ### Nível 1 — Básico
 
@@ -77,62 +77,84 @@ matriz global ✓
 revisão de lacunas/sobreposições ✓
 ```
 
-A revisão global explicitou multimodalidade/letramento digital e pesquisa/fontes, distribuiu argumentação desde N1/N2 e confirmou que não era necessário redesenhar U1–U3 do Nível 0.
+## Marcos concluídos depois do checkpoint
 
-## Marco recém-concluído — Unidade 4
+### Unidade 4 — Lendo e compreendendo pequenos textos
 
-**Unidade 4 — Lendo e compreendendo pequenos textos** está fechada em `M4` e `M5`.
+Concluída em `M4` e `M5`:
 
-Arquitetura:
+- 9 lições desenvolvidas;
+- verificação integrada desenvolvida;
+- compreensão global, evidência explícita, integração, referências, sequência, relações, inferência e releitura cobertas;
+- nenhuma nova mídia humana obrigatória.
+
+### Unidade 5 — Escrevendo e organizando mensagens
+
+Concluída em `M4` e `M5`:
 
 ```text
-1. Ler é construir sentido
-2. Assunto e mensagem principal
-3. Encontrando informações no texto
-4. Ligando informações entre frases
-5. A quem ou a que isso se refere?
-6. A ordem dos acontecimentos e das instruções
-7. Tempo, causa e consequência em relações claras
-8. O texto diz ou dá pistas?
-9. Reler, procurar evidências e revisar a interpretação
+1. Da ideia à mensagem: o que preciso comunicar?
+2. Escrevendo frases com mais autonomia
+3. Duas ou mais frases que se relacionam
+4. Escrever para um propósito
+5. Informação suficiente para quem vai ler
+6. Reler: escrevi o que eu queria dizer?
+7. Revisando palavras, ordem e clareza
+8. Organizando a escrita: espaços, maiúscula e limites da frase
+9. Ponto final, interrogação e exclamação em uso
+10. Primeiro contato com a vírgula em enumerações
 + verificação integrada
 ```
 
-Conteúdo:
-
-- `content/units/004-lendo-compreendendo-pequenos-textos/lessons/`
-- `content/units/004-lendo-compreendendo-pequenos-textos/integrated-verification.json`
-
-A U4 foi desenvolvida sem nova mídia humana obrigatória. Textos, evidências, conexões e sequências permanecem como conteúdo/componentes acessíveis da UI; TTS é apoio quando apropriado.
+A U5 exige produção própria, planejamento e autochecagem. Questões fechadas não podem compensar ausência de escrita livre. Convenções são avaliadas apenas no escopo já ensinado no Nível 0. Não houve nova mídia humana obrigatória.
 
 ## Foco curricular atual
 
 ```text
-UNIDADE 4 — concluída
+UNIDADE 5 — concluída
 
-UNIDADE 5 — MARCO ATIVO
-└── Escrevendo e organizando mensagens
+UNIDADE 6 — MARCO ATIVO
+└── Usando a língua no cotidiano
     ├── 10 lições dimensionadas ✓
+    ├── verificação integrada dimensionada ✓
     └── desenvolver conteúdo — PRÓXIMO SUBPASSO INTERNO
 ```
 
 Último marco curricular concluído:
 
 ```text
-N0-U04 — arquitetura + 9 lições + verificação integrada
+N0-U05 — 10 lições + verificação integrada
 ```
 
 Marco ativo:
 
 ```text
-N0-U05 — desenvolver a Unidade 5 a partir da arquitetura já consolidada
+N0-U06 — desenvolver a Unidade 6 e preparar o fechamento do Nível 0
 ```
 
 Próximo subpasso interno:
 
 ```text
-N0-U05-L01 — Da ideia à mensagem: o que preciso comunicar?
+N0-U06-L01 — Quem, para quem e para quê?
 ```
+
+## Limite técnico importante para o fechamento do Nível 0
+
+A U6 inclui compreensão oral e produção/reformulação oral funcional.
+
+A aplicação pode usar TTS como estímulo quando a resposta depende do significado e não de uma realização sonora específica. Também pode registrar replay, ensaio e autochecagem.
+
+Sem reconhecimento de fala ou avaliação humana/externa confiável, porém, a aplicação **não deve afirmar automaticamente que uma produção oral foi compreensível** apenas porque o aluno concluiu a atividade ou digitou uma versão equivalente.
+
+Por isso o fechamento do Nível 0 deverá distinguir:
+
+```text
+evidência autônoma registrada pela aplicação
+≠
+oralidade externamente validada
+```
+
+Esse limite não bloqueia o desenvolvimento da U6 nem das outras competências do nível.
 
 ## Cobertura global
 
@@ -177,14 +199,7 @@ Corrigir a camada apropriada quando surgir lacuna estrutural real, sem redesenha
 
 ### 4. Atualizar o roadmap quando o estado curricular mudar
 
-Especialmente em:
-
-- conclusão de lição que mova a fronteira;
-- fechamento de unidade ou verificação integrada;
-- dimensionamento de novas lições;
-- avanço de maturidade;
-- novo checkpoint;
-- mudança importante na matriz global.
+Especialmente em conclusão de unidades/verificações, avanço de maturidade, novos checkpoints ou mudanças importantes na matriz global.
 
 ### 5. Executar marcos autorizados sem confirmações repetidas
 
@@ -193,26 +208,23 @@ Seguir `docs/execucao-continua.md` e `.ChatGPT/skills/curricular-orchestration/S
 ## Sequência prevista
 
 ```text
-MARCO ATIVO — UNIDADE 5
+MARCO ATIVO — UNIDADE 6
 1. desenvolver L1–L10
 2. criar verificação integrada
-3. revisar/validar e fechar U5
+3. revisar/validar e fechar U6
+4. criar checkpoint de saída do Nível 0
 
-MARCO SEGUINTE — UNIDADE 6
-4. dimensionar lições da U6
-5. desenvolver U6 e fechamento do Nível 0
-6. executar checkpoint de saída do Nível 0 antes de aprofundar Nível 1
+CHECKPOINT DE SAÍDA DO NÍVEL 0
+5. mapear todas as competências de saída para evidências U1–U6
+6. identificar lacunas reais
+7. corrigir lacunas sem criar conteúdo artificial
+8. registrar distinção entre evidência autônoma e oralidade validada
+9. decidir se o Nível 0 pode ser considerado curricularmente fechado
+
+DEPOIS DO NÍVEL 0
+10. elevar Nível 1 de M1 para M2
+11. organizar suas unidades em M3 antes de qualquer autoria detalhada
 ```
-
-## Relação com o futuro Nível 1
-
-O Nível 1 já está em `M1`. Antes de sua autoria detalhada:
-
-- dimensionar áreas (`M2`);
-- organizar unidades (`M3`);
-- conectar entrada do N1 às competências finais do N0;
-- verificar responsabilidades de `docs/matriz-progressao-global.md`;
-- preservar limites com N2–N4.
 
 ## Fonte de verdade e manutenção
 
@@ -232,6 +244,12 @@ estado e próximo marco
 execução contínua
 → docs/execucao-continua.md
 
+arquitetura U1–U5
+→ docs/licoes-nivel-0.md
+
+arquitetura U6
+→ docs/licoes-nivel-0-unidade-6.md
+
 conteúdo detalhado
-→ documentos específicos + content/
+→ content/
 ```

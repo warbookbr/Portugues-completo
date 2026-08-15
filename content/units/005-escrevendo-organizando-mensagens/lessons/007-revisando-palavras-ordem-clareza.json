@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 1,
+  "id": "N0-U05-L07",
+  "title": "Revisando palavras, ordem e clareza",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Realizar revisões orientadas em palavras, ordem e quantidade de informação para tornar mensagens simples mais claras, sem exigir revisão gramatical ampla nem ensinar que toda frase possui uma única forma correta.",
+  "competencies": [
+    "identificar palavra inadequada ao objetivo em casos transparentes",
+    "reorganizar partes quando a ordem dificulta a compreensão",
+    "retirar repetição desnecessária quando ela prejudica clareza",
+    "acrescentar informação essencial quando necessário",
+    "comparar versões e escolher a que comunica melhor o objetivo",
+    "produzir uma revisão focada sem tentar corrigir todos os aspectos de uma vez"
+  ],
+  "prerequisites": ["N0-U05-L06", "N0-U03-L05", "N0-U03-L06"],
+  "limits": [
+    "não transformar revisão em análise sintática",
+    "não exigir estilo formal ou concisão avançada",
+    "não declarar toda repetição como erro",
+    "não declarar uma ordem menos frequente automaticamente errada quando continua válida no contexto",
+    "não exigir ortografia ou pontuação como foco desta lição",
+    "não usar comando corriga tudo"
+  ],
+  "media": {"tts": "instruções, objetivos e feedback", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {
+    "curatedMedia": [],
+    "runtimeResources": [{"type": "TTS_OK", "locations": ["instruções", "objetivos", "feedback"], "purpose": "apoio à revisão"}],
+    "generatedVisualResources": [
+      {"type": "UI_RENDERED_BEFORE_AFTER_REVISION", "locations": ["L07-B02", "L07-B03", "L07-C01", "L07-A01", "L07-A02"], "purpose": "comparar versões"},
+      {"type": "UI_RENDERED_EDIT_HIGHLIGHT", "locations": ["L07-B02", "L07-B03", "L07-A01"], "purpose": "destacar apenas o elemento alterado"},
+      {"type": "UI_RENDERED_FOCUSED_REVIEW_PROMPT", "locations": ["L07-C01", "L07-A02"], "purpose": "indicar o aspecto específico a revisar"}
+    ],
+    "productionQueueRequired": false,
+    "publicationDependency": "nenhuma nova mídia humana obrigatória",
+    "decisionRationale": "comparação textual antes/depois é o recurso mais direto e acessível para revisão focada."
+  },
+  "sequence": [
+    {
+      "id": "L07-B01",
+      "type": "objective",
+      "focus": "focused-revision",
+      "text": "Depois de verificar se a mensagem diz o que você queria, é possível melhorar um aspecto de cada vez: palavra, ordem ou informação."
+    },
+    {
+      "id": "L07-B02",
+      "type": "demonstration",
+      "focus": "word-choice",
+      "goal": "informar que a sala está vazia",
+      "before": "A sala está cheia.",
+      "changedElement": "cheia → vazia",
+      "after": "A sala está vazia.",
+      "explanation": "A palavra anterior comunicava o contrário do objetivo."
+    },
+    {
+      "id": "L07-B03",
+      "type": "demonstration",
+      "focus": "order-and-clarity",
+      "goal": "avisar que o curso começa amanhã às oito",
+      "before": "Às oito amanhã começa o curso.",
+      "after": "O curso começa amanhã às oito.",
+      "note": "a primeira forma pode ser compreensível; a revisão mostra uma organização mais transparente para este contexto, não uma regra universal"
+    },
+    {
+      "id": "L07-C01",
+      "type": "quick-check",
+      "focus": "remove-unhelpful-repetition",
+      "reviewFocus": "clareza e repetição",
+      "before": "Rita chegou em casa. Rita entrou em casa e Rita guardou a bolsa.",
+      "options": [
+        "Rita chegou em casa. Ela entrou e guardou a bolsa.",
+        "Rita Rita chegou casa bolsa.",
+        "A bolsa chegou em Rita."
+      ],
+      "correctIndex": 0,
+      "explanation": "A revisão reduz repetição sem perder a informação principal."
+    },
+    {
+      "id": "L07-A01",
+      "type": "assessment-selection",
+      "focus": "choose-clearer-version",
+      "goal": "informar que a reunião foi cancelada hoje",
+      "versions": [
+        "A reunião foi cancelada hoje.",
+        "A reunião foi marcada hoje.",
+        "Hoje reunião cancelada a foi."
+      ],
+      "correctIndex": 0,
+      "question": "Qual versão comunica o objetivo com mais clareza?"
+    },
+    {
+      "id": "L07-A02",
+      "type": "assessment-edit",
+      "focus": "focused-edit-transfer",
+      "reviewFocus": "informação essencial",
+      "goal": "avisar que o ônibus sai às sete da plataforma 4",
+      "before": "O ônibus sai às sete.",
+      "question": "O que precisa ser acrescentado para cumprir todo o objetivo?",
+      "options": ["da plataforma 4", "o ônibus é grande", "a estação tem bancos"],
+      "correctIndex": 0,
+      "afterExample": "O ônibus sai às sete da plataforma 4."
+    }
+  ],
+  "completionEvidence": {
+    "clusters": {
+      "wordAndOrder": {"evidence": ["L07-A01"], "rule": "selecionar versão que preserva o objetivo e melhora clareza"},
+      "informationRevision": {"evidence": ["L07-A02"], "rule": "acrescentar informação essencial indicada pelo objetivo"},
+      "focusedReview": {"evidence": ["L07-C01"], "rule": "revisar um aspecto específico sem reescrever por acaso"}
+    },
+    "completionRule": "os três agrupamentos são obrigatórios.",
+    "notSufficient": ["trocar palavras sem relação com o objetivo", "considerar toda repetição errada", "marcar qualquer ordem não canônica como erro", "revisar tudo de uma vez sem foco"]
+  }
+}

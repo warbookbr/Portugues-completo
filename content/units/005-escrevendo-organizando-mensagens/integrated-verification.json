@@ -1,0 +1,174 @@
+{
+  "schemaVersion": 1,
+  "id": "N0-U05-V01",
+  "type": "integrated-unit-verification",
+  "title": "Verificação integrada — Unidade 5",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Verificar se o aluno consegue planejar, produzir, reler e revisar pequenas mensagens escritas com autonomia inicial, aplicando convenções gráficas fundamentais já ensinadas sem confundir escrita compreensível com ausência absoluta de erros.",
+  "prerequisites": ["N0-U05-L01", "N0-U05-L02", "N0-U05-L03", "N0-U05-L04", "N0-U05-L05", "N0-U05-L06", "N0-U05-L07", "N0-U05-L08", "N0-U05-L09", "N0-U05-L10"],
+  "designPrinciples": [
+    "exigir pelo menos uma produção escrita livre que não seja rearranjo de fichas",
+    "exigir planejamento e autochecagem da produção aberta",
+    "não usar média global para compensar ausência de produção própria",
+    "separar conteúdo/clareza de convenções gráficas em agrupamentos de evidência",
+    "não declarar automaticamente correção linguística plena de resposta aberta por heurística superficial",
+    "usar exemplos novos e objetivos funcionais",
+    "avaliar apenas convenções explicitamente ensinadas no Nível 0",
+    "não usar velocidade, extensão ou vocabulário rebuscado como critério"
+  ],
+  "limits": [
+    "não exigir redação longa ou parágrafo formal",
+    "não exigir ortografia e acentuação completas",
+    "não exigir concordância como sistema",
+    "não exigir domínio geral da vírgula",
+    "não exigir classificação formal de gêneros",
+    "não usar pontuação perfeita como substituto da capacidade de comunicar",
+    "não validar automaticamente adequação total de texto aberto"
+  ],
+  "media": {"tts": "instruções, situações, autochecagem e feedback; não fornecer texto-modelo antes da produção aberta", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {
+    "curatedMedia": [],
+    "runtimeResources": [{"type": "TTS_OK", "locations": ["instruções", "situações", "autochecagem", "feedback"], "purpose": "apoio de acesso sem ditar a produção"}],
+    "generatedVisualResources": [
+      {"type": "UI_RENDERED_PLANNING_CARDS", "locations": ["V01-Q01", "V01-Q08"], "purpose": "planejar informação antes da escrita"},
+      {"type": "UI_RENDERED_OPEN_RESPONSE_FIELD", "locations": ["V01-Q08"], "purpose": "produção livre obrigatória"},
+      {"type": "UI_RENDERED_SELF_REVIEW_CHECKLIST", "locations": ["V01-Q08"], "purpose": "autorrevisão funcional"},
+      {"type": "UI_RENDERED_BEFORE_AFTER_REVISION", "locations": ["V01-Q05", "V01-Q06"], "purpose": "comparar e revisar versões"},
+      {"type": "UI_RENDERED_EDITABLE_TEXT", "locations": ["V01-Q07", "V01-Q09", "V01-Q10"], "purpose": "aplicar convenções gráficas em texto real"}
+    ],
+    "productionQueueRequired": false,
+    "publicationDependency": "nenhuma nova mídia humana obrigatória",
+    "decisionRationale": "a unidade avalia escrita e revisão; campos de texto, comparadores e controles de edição da UI são necessários e suficientes."
+  },
+  "items": [
+    {
+      "id": "V01-Q01",
+      "competency": "planejamento e seleção de informação",
+      "goal": "avisar a Paula que o encontro mudou para terça-feira às duas na sala 6",
+      "informationCards": ["mudou para terça-feira", "será às duas", "será na sala 6", "a sala tem uma janela grande"],
+      "correctIndexes": [0, 1, 2]
+    },
+    {
+      "id": "V01-Q02",
+      "competency": "propósito",
+      "situation": "Você precisa deixar uma instrução para que alguém apague a luz ao sair.",
+      "options": ["Ao sair, apague a luz, por favor.", "A luz é forte.", "Que horas você sai?"],
+      "correctIndex": 0
+    },
+    {
+      "id": "V01-Q03",
+      "competency": "relação entre frases",
+      "goal": "avisar que o curso começa amanhã e que o horário é às sete",
+      "cards": ["O horário é às sete.", "O curso começa amanhã."],
+      "acceptableOrders": [
+        ["O curso começa amanhã.", "O horário é às sete."],
+        ["O horário é às sete.", "O curso começa amanhã."]
+      ],
+      "note": "as duas organizações são aceitáveis porque preservam as duas informações e não criam contradição"
+    },
+    {
+      "id": "V01-Q04",
+      "competency": "suficiência da informação",
+      "goal": "informar onde buscar um documento e em qual horário",
+      "candidate": "O documento está pronto.",
+      "question": "O que ainda precisa ser informado para cumprir o objetivo?",
+      "options": ["local e horário", "cor do documento", "nome de quem imprimiu"],
+      "correctIndex": 0
+    },
+    {
+      "id": "V01-Q05",
+      "competency": "releitura e revisão de conteúdo",
+      "goal": "informar que Beto não virá hoje",
+      "firstDraft": "Beto virá hoje.",
+      "question": "Qual revisão corrige a mensagem?",
+      "options": ["Beto não virá hoje.", "Beto virá cedo hoje.", "Hoje Beto virá."],
+      "correctIndex": 0
+    },
+    {
+      "id": "V01-Q06",
+      "competency": "clareza e revisão focada",
+      "goal": "avisar que o ônibus sai às oito da plataforma 5",
+      "firstDraft": "O ônibus sai às oito.",
+      "question": "Qual informação deve ser acrescentada?",
+      "options": ["da plataforma 5", "o ônibus é azul", "a plataforma tem bancos"],
+      "correctIndex": 0
+    },
+    {
+      "id": "V01-Q07",
+      "competency": "espaçamento, maiúscula e limites de frase",
+      "before": "amanhãalojaabreàsnove depoisfechaàscinco",
+      "expected": "Amanhã a loja abre às nove. Depois fecha às cinco.",
+      "interaction": "edit-controlled-text",
+      "automaticCheck": "comparação controlada de espaços, maiúscula inicial e limite das duas frases neste exemplo"
+    },
+    {
+      "id": "V01-Q08",
+      "competency": "produção própria integrada",
+      "situation": "Você precisa deixar uma mensagem para Carlos dizendo que não estará em casa e que a chave foi deixada na gaveta da cozinha.",
+      "planningPrompt": "Antes de escrever, selecione as informações essenciais.",
+      "essentialInformation": ["você não estará em casa", "a chave está na gaveta da cozinha"],
+      "responseMode": "free-text",
+      "support": "sem frase-modelo antes da primeira resposta; TTS pode narrar a situação",
+      "selfReview": ["Minha mensagem informa que não estarei em casa?", "Ela diz onde está a chave?", "As partes combinam entre si?", "Consigo reler e entender a mensagem?"],
+      "automaticObservations": ["há texto livre além de espaços/sinais", "planejamento foi realizado", "autochecagem foi concluída", "versão revisada é preservada se houver"],
+      "notAutomaticallyJudged": ["compreensibilidade linguística plena", "correção gramatical global", "ortografia completa", "equivalência literal com modelo"],
+      "humanOrExternalReview": {"requiredForClaimOfValidatedComprehensibility": true, "statusWhenApproved": "validada-compreensivel"}
+    },
+    {
+      "id": "V01-Q09",
+      "competency": "sinais finais",
+      "items": [
+        {"message": "Onde fica a saída", "context": "pergunta direta", "options": ["?", ".", "!"], "correctIndex": 0},
+        {"message": "A reunião começa às oito", "context": "informação simples", "options": [".", "?", "!"], "correctIndex": 0},
+        {"message": "Cuidado", "context": "alerta forte", "options": ["!", "?", "."], "correctIndex": 0}
+      ]
+    },
+    {
+      "id": "V01-Q10",
+      "competency": "vírgula em enumeração simples",
+      "before": "Na lista há café açúcar farinha e leite.",
+      "expected": "Na lista há café, açúcar, farinha e leite.",
+      "interaction": "insert-commas",
+      "principleQuestion": "Por que as vírgulas são usadas aqui?",
+      "principleOptions": ["para separar itens de uma enumeração", "para marcar toda pausa da fala", "porque toda frase longa precisa de vírgula"],
+      "principleCorrectIndex": 0
+    }
+  ],
+  "coverage": [
+    {"competency": "planejar e selecionar informação", "evidence": ["V01-Q01", "V01-Q08"]},
+    {"competency": "escrever para propósito e relacionar frases", "evidence": ["V01-Q02", "V01-Q03", "V01-Q08"]},
+    {"competency": "suficiência e revisão", "evidence": ["V01-Q04", "V01-Q05", "V01-Q06", "V01-Q08"]},
+    {"competency": "organização gráfica", "evidence": ["V01-Q07"]},
+    {"competency": "sinais finais", "evidence": ["V01-Q09"]},
+    {"competency": "vírgula em enumeração", "evidence": ["V01-Q10"]}
+  ],
+  "assessmentBehavior": {
+    "openResponsePolicy": "a produção aberta obrigatória não recebe julgamento automático de correção linguística por heurísticas superficiais",
+    "automaticChecksAllowed": ["campo vazio", "uso de campo livre", "planejamento realizado", "autochecagem concluída", "edições controladas das convenções"],
+    "automaticChecksNotSufficient": ["contagem de palavras", "palavra-chave", "pontuação específica isolada", "comparação literal com modelo"],
+    "timeLimit": false,
+    "technicalTerminologyRequired": false
+  },
+  "completionEvidence": {
+    "clusters": {
+      "planningAndPurpose": {"evidence": ["V01-Q01", "V01-Q02"], "rule": "acertar os dois"},
+      "organizationAndSufficiency": {"evidence": ["V01-Q03", "V01-Q04"], "rule": "acertar os dois"},
+      "revision": {"evidence": ["V01-Q05", "V01-Q06"], "rule": "acertar os dois"},
+      "graphicConventions": {"evidence": ["V01-Q07", "V01-Q09", "V01-Q10"], "rule": "concluir V01-Q07, acertar pelo menos dois dos três sinais finais e concluir corretamente a enumeração + princípio"},
+      "ownProduction": {"evidence": ["V01-Q08"], "rule": "realizar planejamento, produção em campo livre e autochecagem; nenhuma quantidade de acertos fechados compensa ausência desta produção"}
+    },
+    "completionRule": "todos os cinco agrupamentos são obrigatórios; não usar média global compensatória.",
+    "autonomousOutcome": {"whenAllClusterRulesMet": "verificacao-autonoma-concluida-com-producao-autorrevisada", "meaning": "produção foi realizada e autorrevisada, mas não necessariamente validada linguisticamente"},
+    "validatedOutcome": {"additionalRequirement": "revisão humana ou externa confiável confirma compreensibilidade da produção V01-Q08", "status": "verificacao-validada"},
+    "notSufficient": ["acertar apenas questões fechadas", "enviar produção vazia", "copiar modelo posterior", "usar pontuação perfeita sem cumprir o objetivo", "escrever muito sem informação suficiente"]
+  },
+  "remediationRoutes": [
+    {"when": "planejamento", "review": ["N0-U05-L01"]},
+    {"when": "produção própria", "review": ["N0-U05-L02", "N0-U05-L03", "N0-U05-L04"]},
+    {"when": "suficiência", "review": ["N0-U05-L05"]},
+    {"when": "releitura e revisão", "review": ["N0-U05-L06", "N0-U05-L07"]},
+    {"when": "organização gráfica", "review": ["N0-U05-L08"]},
+    {"when": "sinais finais", "review": ["N0-U05-L09"]},
+    {"when": "vírgula em enumeração", "review": ["N0-U05-L10"]}
+  ]
+}
