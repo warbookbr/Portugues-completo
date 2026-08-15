@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "id": "N1-U03-L06",
+  "title": "Pronomes: pessoas, posse e referência sem repetir tudo",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Usar pronomes pessoais, possessivos e demonstrativos frequentes para indicar ou retomar referentes com clareza, reduzindo repetição sem criar ambiguidade.",
+  "competencies": [
+    "retomar participante com pronome pessoal quando o referente está claro",
+    "usar pronomes possessivos frequentes para indicar relações de posse/pertencimento no contexto",
+    "usar demonstrativos em situações claras de apontamento ou referência textual",
+    "detectar quando a troca por pronome torna a referência ambígua",
+    "preferir repetir o nome ou reformular quando a clareza exigir",
+    "reconhecer que formas de tratamento e demonstrativos variam conforme uso e contexto"
+  ],
+  "prerequisites": ["N1-U01-L04", "N1-U03-L02", "N1-U03-L05"],
+  "limits": ["não ensinar subclasses completas de pronomes", "não sistematizar colocação pronominal", "não impor uma única distribuição regional de tu/você", "não ensinar este/esse como oposição espacial absolutamente rígida em todo uso brasileiro", "não tratar seu/sua como sempre inequívoco"],
+  "media": {"tts": "permitido", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["textos", "feedback"], "purpose": "apoio"}], "generatedVisualResources": [{"type": "UI_RENDERED_REFERENCE_LINK", "locations": ["L06-B01", "L06-C01", "L06-A01"], "purpose": "ligar pronome ao referente"}, {"type": "UI_RENDERED_AMBIGUITY_COMPARISON", "locations": ["L06-B03", "L06-A03"], "purpose": "mostrar quando repetição/reformulação é mais clara"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "referenciação e ambiguidade são observáveis em pequenos textos."},
+  "sequence": [
+    {"id": "L06-B01", "type": "personal-reference-demonstration", "text": "Marina recebeu o aviso. Ela leu a mensagem imediatamente.", "target": "Ela", "referent": "Marina", "teachingPoint": "o pronome evita repetição quando o referente está claro"},
+    {"id": "L06-B02", "type": "possession-demonstration", "examples": [{"sentence": "Eu trouxe meu documento.", "pronoun": "meu", "relation": "documento associado ao falante"}, {"sentence": "Nós revisamos nosso texto.", "pronoun": "nosso", "relation": "texto associado ao grupo que fala"}], "guardRail": "a relação precisa ser lida no contexto"},
+    {"id": "L06-B03", "type": "ambiguity-demonstration", "unclear": "Paula falou com Renata quando ela chegou.", "question": "Quem chegou?", "conclusion": "sem mais contexto, 'ela' pode ser ambíguo; repetir o nome ou reformular pode ser melhor"},
+    {"id": "L06-B04", "type": "demonstrative-demonstration", "examples": [{"context": "duas opções aparecem na tela e uma está selecionada", "sentence": "Este documento será enviado.", "function": "aponta o referente no contexto disponível"}, {"text": "O prazo foi alterado. Essa mudança vale a partir de segunda.", "target": "Essa", "function": "retoma a mudança mencionada"}], "guardRail": "o curso não transforma este/esse em tabela espacial rígida para todos os usos"},
+    {"id": "L06-C01", "type": "quick-check-reference", "items": [{"text": "Carlos abriu o arquivo. Ele encontrou o formulário.", "pronoun": "Ele", "referent": "Carlos"}, {"text": "A equipe concluiu o relatório. Ela enviou o arquivo.", "pronoun": "Ela", "referent": "A equipe"}]},
+    {"id": "L06-A01", "type": "assessment-reference", "items": [{"text": "Beatriz recebeu a senha. Ela entrou no sistema.", "question": "Quem 'Ela' retoma?", "options": ["Beatriz", "senha", "sistema"], "correctIndex": 0}, {"text": "Os técnicos chegaram. Eles verificaram a rede.", "question": "Quem 'Eles' retoma?", "options": ["os técnicos", "a rede", "ninguém"], "correctIndex": 0}]},
+    {"id": "L06-A02", "type": "assessment-possession-demonstrative", "items": [{"prompt": "Complete: Nós entregamos ____ relatório.", "options": ["nosso", "meu", "ela"], "correctIndex": 0}, {"text": "O horário mudou. Essa alteração foi comunicada hoje.", "question": "O que 'Essa alteração' retoma?", "options": ["a mudança de horário", "hoje", "uma pessoa"], "correctIndex": 0}]},
+    {"id": "L06-A03", "type": "assessment-clarity", "items": [{"unclear": "João avisou Pedro que ele precisava sair.", "question": "Sem contexto adicional, a referência de 'ele' é totalmente clara?", "options": ["não", "sim"], "correctIndex": 0}, {"prompt": "Qual versão elimina a ambiguidade se quem precisava sair era Pedro?", "options": ["João avisou Pedro que Pedro precisava sair.", "João avisou Pedro que ele precisava sair."], "correctIndex": 0}]}
+  ],
+  "assessmentBehavior": {"clarityOverAvoidingRepetition": true, "contextVisible": true, "ttsPolicy": "permitido", "timeLimit": false},
+  "completionEvidence": {"clusters": {"reference": {"evidence": ["L06-A01"], "rule": "resolver os dois referentes"}, "possessionDemonstrative": {"evidence": ["L06-A02"], "rule": "resolver os dois usos"}, "ambiguity": {"evidence": ["L06-A03"], "rule": "detectar e corrigir a ambiguidade"}}, "completionRule": "os três agrupamentos são obrigatórios.", "notSufficient": ["substituir todo nome por pronome", "decorar listas", "aceitar pronome ambíguo só para evitar repetição"]}
+}
