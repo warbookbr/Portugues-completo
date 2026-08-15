@@ -80,32 +80,35 @@ Arquivos principais:
 
 Ler:
 
-- `docs/roadmap-curricular.md` para estado atual, marco ativo, próximo subpasso, maturidade dos níveis e checkpoints de cobertura global
-- `docs/execucao-continua.md` quando o usuário autorizar um marco com vários subpassos e o trabalho puder continuar sem confirmações rotineiras
-- `docs/mapa-curso.md`
-- `docs/unidades-nivel-0.md` quando o trabalho envolver o detalhamento das unidades do Nível 0
-- `docs/licoes-nivel-0.md` quando o trabalho envolver lições já dimensionadas do Nível 0
-- `docs/conteudo.md`
+- `docs/roadmap-curricular.md` para estado atual, marco ativo, próximo subpasso e maturidade dos níveis;
+- `docs/execucao-continua.md` quando o usuário autorizar um marco com vários subpassos;
+- `docs/mapa-curso.md` para a visão geral do percurso e o detalhamento consolidado do Nível 0;
+- `docs/mapa-niveis-1-4.md` para objetivo, competências, grandes áreas, responsabilidades e limites dos Níveis 1–4 em `M1`;
+- `docs/matriz-progressao-global.md` para verificar a progressão transversal dos grandes domínios do português entre N0–N4;
+- `docs/unidades-nivel-0.md` quando o trabalho envolver as unidades do Nível 0;
+- `docs/licoes-nivel-0.md` quando o trabalho envolver lições já dimensionadas do Nível 0;
+- `docs/conteudo.md`.
 
 Usar:
 
-- `.ChatGPT/skills/curricular-orchestration/SKILL.md` para marcos longos ou checkpoint completo
-- `.ChatGPT/skills/course-content-design/SKILL.md` para planejamento e revisão pedagógica especializada
+- `.ChatGPT/skills/curricular-orchestration/SKILL.md` para marcos longos ou checkpoints completos;
+- `.ChatGPT/skills/course-content-design/SKILL.md` para planejamento e revisão pedagógica especializada.
 
 ### Criação de unidades e lições
 
 Ler:
 
-- `docs/roadmap-curricular.md` para confirmar o foco atual, marco ativo, próximo subpasso e eventual checkpoint estrutural antes de aprofundar a camada
-- `docs/execucao-continua.md` se a autorização cobrir uma sequência inteira ou unidade completa
-- `docs/mapa-curso.md`
-- `docs/unidades-nivel-0.md` para unidades já detalhadas do Nível 0
-- `docs/licoes-nivel-0.md` para lições já consolidadas do Nível 0
-- `docs/conteudo.md`
-- `docs/arquitetura.md` quando houver mídia ou limitações técnicas
-- `producao-midia/README.md` quando a lição exigir mídia produzida/curada
-- `producao-midia/FILA-MIDIA.md` para reutilizar IDs existentes e registrar novas demandas de mídia
-- `docs/validacoes.md` antes de formalizar novos formatos estruturados
+- `docs/roadmap-curricular.md` para confirmar o foco e o gate atual;
+- `docs/execucao-continua.md` se a autorização cobrir uma sequência inteira ou unidade completa;
+- `docs/mapa-curso.md`;
+- `docs/mapa-niveis-1-4.md` e `docs/matriz-progressao-global.md` quando a decisão puder afetar níveis superiores ou distribuição global de cobertura;
+- `docs/unidades-nivel-0.md` para unidades já detalhadas do Nível 0;
+- `docs/licoes-nivel-0.md` para lições já consolidadas do Nível 0;
+- `docs/conteudo.md`;
+- `docs/arquitetura.md` quando houver mídia ou limitações técnicas;
+- `producao-midia/README.md` quando a lição exigir mídia produzida/curada;
+- `producao-midia/FILA-MIDIA.md` para reutilizar IDs existentes e registrar novas demandas de mídia;
+- `docs/validacoes.md` antes de formalizar novos formatos estruturados.
 
 Conteúdo fica em:
 
@@ -115,10 +118,10 @@ Conteúdo fica em:
 
 Quando o usuário autorizar um marco como `execute o checkpoint global`, `desenvolva a unidade completa` ou equivalente, ler:
 
-- `docs/execucao-continua.md`
-- `docs/roadmap-curricular.md`
-- `.ChatGPT/skills/curricular-orchestration/SKILL.md`
-- `.ChatGPT/skills/course-content-design/SKILL.md` quando houver trabalho pedagógico
+- `docs/execucao-continua.md`;
+- `docs/roadmap-curricular.md`;
+- `.ChatGPT/skills/curricular-orchestration/SKILL.md`;
+- `.ChatGPT/skills/course-content-design/SKILL.md` quando houver trabalho pedagógico.
 
 Nesse modo, pesquisa, planejamento, escrita, revisões, correções, PR, CI, merge e atualização do roadmap fazem parte do mesmo ciclo. O ChatGPT deve continuar entre subpassos contidos no marco autorizado até concluí-lo ou atingir uma condição real de parada.
 
@@ -142,9 +145,9 @@ Arquivos pesados de produção não devem ser commitados aqui apenas para servir
 
 Quando esta área for implementada, consultar:
 
-- `docs/exercicios.md` (quando criado)
-- `docs/validacoes.md`
-- skill específica de exercícios, se existir
+- `docs/exercicios.md` (quando criado);
+- `docs/validacoes.md`;
+- skill específica de exercícios, se existir.
 
 Os arquivos de exercícios devem ficar dentro da estrutura de `content/` definida pela arquitetura.
 
@@ -152,13 +155,13 @@ Os arquivos de exercícios devem ficar dentro da estrutura de `content/` definid
 
 Ler:
 
-- `docs/arquitetura.md`
-- `docs/progresso.md` (quando criado)
+- `docs/arquitetura.md`;
+- `docs/progresso.md` (quando criado).
 
 Código futuro relacionado:
 
-- `app/js/services/progress-service.js` (quando criado)
-- `app/js/services/github-service.js` (quando criado)
+- `app/js/services/progress-service.js` (quando criado);
+- `app/js/services/github-service.js` (quando criado).
 
 A fonte oficial do progresso acadêmico é o Gist do aluno, não `localStorage`.
 
@@ -166,20 +169,20 @@ A fonte oficial do progresso acadêmico é o Gist do aluno, não `localStorage`.
 
 Ler:
 
-- `docs/arquitetura.md`
-- `docs/configuracoes.md` (quando criado)
+- `docs/arquitetura.md`;
+- `docs/configuracoes.md` (quando criado).
 
 Para produção de áudio pedagógico controlado, consultar também:
 
-- `producao-midia/README.md`
-- `producao-midia/FILA-MIDIA.md`
+- `producao-midia/README.md`;
+- `producao-midia/FILA-MIDIA.md`.
 
 Código relacionado:
 
-- `app/js/services/narration-service.js`
-- `app/js/services/settings-service.js`
-- `app/js/ui/audio-settings.js`
-- `app/js/ui/appearance-settings.js`
+- `app/js/services/narration-service.js`;
+- `app/js/services/settings-service.js`;
+- `app/js/ui/audio-settings.js`;
+- `app/js/ui/appearance-settings.js`.
 
 ### Validações e guard rails
 
@@ -189,8 +192,8 @@ Ler:
 
 Executar:
 
-- `scripts/validate-project.mjs`
-- `scripts/validate-json.mjs`
+- `scripts/validate-project.mjs`;
+- `scripts/validate-json.mjs`.
 
 Workflow:
 
@@ -199,9 +202,11 @@ Workflow:
 ## Documentação oficial existente
 
 - `docs/arquitetura.md` — arquitetura e responsabilidades técnicas.
-- `docs/roadmap-curricular.md` — estado do desenvolvimento curricular, marco ativo, próximo subpasso, maturidade dos níveis e checkpoints de cobertura global.
+- `docs/roadmap-curricular.md` — estado do desenvolvimento curricular, marco ativo, próximo subpasso e maturidade dos níveis.
 - `docs/execucao-continua.md` — protocolo para executar marcos com pesquisa, escrita, revisão, validação e integração sem confirmações repetidas.
-- `docs/mapa-curso.md` — níveis, áreas e progressão curricular geral.
+- `docs/mapa-curso.md` — visão geral do percurso e detalhamento curricular consolidado do Nível 0.
+- `docs/mapa-niveis-1-4.md` — camada `M1` dos Níveis 1–4.
+- `docs/matriz-progressao-global.md` — progressão transversal e revisão de cobertura dos grandes domínios entre N0–N4.
 - `docs/unidades-nivel-0.md` — detalhamento pedagógico consolidado das unidades do Nível 0.
 - `docs/licoes-nivel-0.md` — dimensionamento pedagógico consolidado das lições já definidas do Nível 0.
 - `docs/conteudo.md` — estrutura pedagógica e uso de mídia.
@@ -209,10 +214,10 @@ Workflow:
 
 Documentos previstos:
 
-- `docs/exercicios.md` (quando criado)
-- `docs/progresso.md` (quando criado)
-- `docs/configuracoes.md` (quando criado)
-- `docs/convencoes.md` (quando criado)
+- `docs/exercicios.md` (quando criado);
+- `docs/progresso.md` (quando criado);
+- `docs/configuracoes.md` (quando criado);
+- `docs/convencoes.md` (quando criado).
 
 ## Aplicação
 
@@ -222,10 +227,10 @@ Documentos previstos:
 
 ### JavaScript
 
-- `app/js/app.js`
-- `app/js/core/`
-- `app/js/services/`
-- `app/js/ui/`
+- `app/js/app.js`;
+- `app/js/core/`;
+- `app/js/services/`;
+- `app/js/ui/`.
 
 ### Assets da interface
 
@@ -235,8 +240,8 @@ Mídia pedagógica pesada não pertence a `app/assets/`; ela segue as regras de 
 
 ## Conteúdo pedagógico
 
-- `content/course.json`
-- `content/units/` (quando criado)
+- `content/course.json`;
+- `content/units/`.
 
 `content/` contém aquilo que o aplicativo ensina. `app/` contém o programa que apresenta e executa esse conteúdo.
 
@@ -255,9 +260,9 @@ Esta pasta coordena produção; não substitui `docs/conteudo.md`, `docs/arquite
 
 Skills atuais:
 
-- `.ChatGPT/skills/curricular-orchestration/SKILL.md`
-- `.ChatGPT/skills/frontend-visual-check/SKILL.md`
-- `.ChatGPT/skills/course-content-design/SKILL.md`
+- `.ChatGPT/skills/curricular-orchestration/SKILL.md`;
+- `.ChatGPT/skills/frontend-visual-check/SKILL.md`;
+- `.ChatGPT/skills/course-content-design/SKILL.md`.
 
 ## Validação automática
 
@@ -309,13 +314,19 @@ Quando houver dúvida, considerar esta ordem:
 Decisão arquitetural
 → docs/arquitetura.md
 
-Progressão curricular geral
+Visão geral do percurso curricular
 → docs/mapa-curso.md
 
-Estado curricular, marcos, próximo subpasso e checkpoints de cobertura
+M1 dos Níveis 1–4
+→ docs/mapa-niveis-1-4.md
+
+Progressão transversal e cobertura global
+→ docs/matriz-progressao-global.md
+
+Estado curricular, marcos e próximo subpasso
 → docs/roadmap-curricular.md
 
-Protocolo de execução contínua de marcos
+Protocolo de execução contínua
 → docs/execucao-continua.md
 
 Detalhamento das unidades do Nível 0
