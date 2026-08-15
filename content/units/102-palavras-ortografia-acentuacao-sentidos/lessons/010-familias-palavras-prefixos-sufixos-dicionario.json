@@ -1,0 +1,177 @@
+{
+  "schemaVersion": 1,
+  "id": "N1-U02-L10",
+  "title": "Famílias de palavras, prefixos, sufixos e uso do dicionário",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Reconhecer relações transparentes entre palavras da mesma família, perceber como alguns elementos acrescentados podem contribuir para o sentido e usar uma entrada simples de dicionário para confirmar grafia e escolher o significado adequado ao contexto.",
+  "competencies": [
+    "agrupar palavras em famílias por relação de forma e significado",
+    "relacionar palavras transparentemente derivadas a uma base conhecida sem exigir análise morfológica completa",
+    "interpretar o efeito aproximado de prefixos selecionados em exemplos transparentes, como re- em refazer e des- em desligar",
+    "perceber em exemplos selecionados que terminações podem formar palavras relacionadas, sem transformar o padrão em fórmula universal",
+    "usar palavra-guia/verbete, significado e exemplo de uso em uma entrada didática de dicionário",
+    "selecionar o significado que combina com o contexto quando um verbete possui mais de uma acepção",
+    "consultar quando a regularidade conhecida não basta para confirmar grafia ou significado",
+    "revisar escolha lexical e grafia de uma pequena mensagem com apoio de consulta"
+  ],
+  "prerequisites": ["N1-U02-L01", "N1-U02-L09"],
+  "limits": [
+    "não sistematizar derivação e composição completas",
+    "não exigir os termos radical, morfema, alomorfe ou etimologia",
+    "não afirmar que segmentos visualmente iguais têm sempre a mesma função",
+    "não apresentar prefixos ou sufixos como máquinas que permitem adivinhar com certeza qualquer palavra",
+    "não exigir consulta a serviço externo em tempo de execução; os verbetes necessários devem ser fornecidos pela própria atividade",
+    "não tratar o primeiro significado do verbete como automaticamente correto para qualquer contexto",
+    "não antecipar classes de palavras como foco central da U3"
+  ],
+  "media": {
+    "tts": "permitido para instruções, palavras, verbetes e feedback",
+    "controlledAudio": [],
+    "video": "nao necessario",
+    "images": "nao necessarias"
+  },
+  "supportMaterials": {
+    "curatedMedia": [],
+    "runtimeResources": [
+      {"type": "TTS_OK", "locations": ["instruções", "verbetes", "feedback"], "purpose": "apoio de leitura"}
+    ],
+    "generatedVisualResources": [
+      {"type": "UI_RENDERED_WORD_FAMILY_MAP", "locations": ["L10-B01", "L10-C01", "L10-A01"], "purpose": "visualizar relações sem implicar análise morfológica exaustiva"},
+      {"type": "UI_RENDERED_WORD_PART_COMPARISON", "locations": ["L10-B02", "L10-C02", "L10-A02"], "purpose": "comparar base e elemento acrescentado em exemplos transparentes"},
+      {"type": "UI_RENDERED_DICTIONARY_ENTRY", "locations": ["L10-B03", "L10-C03", "L10-A03", "L10-A04"], "purpose": "oferecer consulta controlada e acessível dentro da atividade"},
+      {"type": "UI_RENDERED_REVISION_CARD", "locations": ["L10-A04"], "purpose": "aplicar consulta à revisão de mensagem curta"}
+    ],
+    "productionQueueRequired": false,
+    "publicationDependency": "nenhuma nova mídia humana obrigatória",
+    "decisionRationale": "famílias, formação introdutória e consulta podem ser ensinadas por relações textuais e verbetes didáticos fornecidos pela interface."
+  },
+  "sequence": [
+    {
+      "id": "L10-B01",
+      "type": "demonstration",
+      "title": "Palavras podem formar famílias",
+      "families": [
+        {"baseIdea": "pintar", "words": ["pintar", "pintura", "pintor"], "sharedMeaning": "relação com a atividade/resultado/pessoa ligada a pintar"},
+        {"baseIdea": "trabalhar", "words": ["trabalhar", "trabalho", "trabalhador"], "sharedMeaning": "relação com trabalho"}
+      ],
+      "guardRail": "pertencer à mesma família depende de relação de forma e significado; semelhança visual isolada não basta"
+    },
+    {
+      "id": "L10-C01",
+      "type": "quick-check-family",
+      "items": [
+        {"reference": "pintar", "options": ["pintura", "porta", "pimenta"], "correctIndex": 0},
+        {"reference": "trabalhar", "options": ["trabalhador", "travesseiro", "bairro"], "correctIndex": 0},
+        {"reference": "organizar", "options": ["organização", "órgão", "origem"], "correctIndex": 0}
+      ]
+    },
+    {
+      "id": "L10-B02",
+      "type": "formation-introduction",
+      "examples": [
+        {"base": "fazer", "formed": "refazer", "element": "re-", "effect": "fazer novamente"},
+        {"base": "abrir", "formed": "reabrir", "element": "re-", "effect": "abrir novamente"},
+        {"base": "ligar", "formed": "desligar", "element": "des-", "effect": "no exemplo, desfazer/interromper o estado de ligado"},
+        {"base": "trabalhar", "formed": "trabalhador", "element": "-dor", "effect": "no exemplo, forma uma palavra para a pessoa associada à ação"}
+      ],
+      "guardRail": "o sentido precisa ser confirmado na palavra real e no contexto; o elemento acrescentado é uma pista, não uma garantia universal"
+    },
+    {
+      "id": "L10-C02",
+      "type": "guided-formation",
+      "items": [
+        {"word": "refazer", "base": "fazer", "question": "Qual ideia é mais compatível?", "options": ["fazer novamente", "deixar de fazer", "fazer rapidamente"], "correctIndex": 0},
+        {"word": "reabrir", "base": "abrir", "question": "Qual ideia é mais compatível?", "options": ["abrir novamente", "fechar", "abrir pela primeira vez obrigatoriamente"], "correctIndex": 0},
+        {"word": "desligar", "base": "ligar", "question": "No contexto 'desligar a máquina', qual ideia é mais compatível?", "options": ["interromper o estado de ligada", "ligar de novo", "aumentar a velocidade"], "correctIndex": 0}
+      ]
+    },
+    {
+      "id": "L10-B03",
+      "type": "dictionary-demonstration",
+      "entry": {
+        "headword": "ponto",
+        "spelling": "ponto",
+        "senses": [
+          {"number": 1, "meaning": "marca pequena ou sinal gráfico", "example": "Coloque um ponto no fim da frase."},
+          {"number": 2, "meaning": "local determinado", "example": "O ônibus para naquele ponto."}
+        ]
+      },
+      "context": "Encontre o ponto de ônibus mais próximo.",
+      "correctSense": 2,
+      "teachingPoint": "consultar não é apenas encontrar a palavra; é escolher a acepção que combina com o contexto"
+    },
+    {
+      "id": "L10-C03",
+      "type": "dictionary-sense-check",
+      "entry": {
+        "headword": "folha",
+        "senses": [
+          {"number": 1, "meaning": "parte geralmente verde de uma planta", "example": "A folha caiu da árvore."},
+          {"number": 2, "meaning": "pedaço ou página de papel", "example": "Escreva seu nome nesta folha."}
+        ]
+      },
+      "items": [
+        {"sentence": "Entregue a folha preenchida na recepção.", "correctSense": 2},
+        {"sentence": "A chuva deixou a folha da planta molhada.", "correctSense": 1}
+      ]
+    },
+    {
+      "id": "L10-A01",
+      "type": "assessment-family",
+      "items": [
+        {"reference": "limpar", "options": ["limpeza", "limite", "lima"], "correctIndex": 0},
+        {"reference": "informar", "options": ["informação", "forma", "firme"], "correctIndex": 0},
+        {"reference": "pintar", "options": ["pintor", "pinto", "ponte"], "correctIndex": 0, "note": "a relação de significado, e não só letras semelhantes, decide o agrupamento"}
+      ]
+    },
+    {
+      "id": "L10-A02",
+      "type": "assessment-formation",
+      "items": [
+        {"word": "reabrir", "context": "A loja fechou para reforma e vai reabrir amanhã.", "question": "Que relação com 'abrir' ajuda neste contexto?", "options": ["abrir novamente", "não abrir", "abrir mais cedo"], "correctIndex": 0},
+        {"word": "desmontar", "context": "Precisamos desmontar a estante antes da mudança.", "question": "Qual interpretação é sustentada?", "options": ["desfazer a montagem", "montar novamente", "pintar a estante"], "correctIndex": 0}
+      ]
+    },
+    {
+      "id": "L10-A03",
+      "type": "assessment-dictionary",
+      "entry": {
+        "headword": "rede",
+        "senses": [
+          {"number": 1, "meaning": "objeto feito de fios entrelaçados, usado para diferentes finalidades", "example": "A rede de descanso está na varanda."},
+          {"number": 2, "meaning": "conjunto de elementos ou serviços ligados entre si", "example": "A rede de ônibus atende vários bairros."}
+        ]
+      },
+      "sentence": "A prefeitura ampliou a rede de postos de atendimento.",
+      "options": ["sentido 1", "sentido 2"],
+      "correctIndex": 1
+    },
+    {
+      "id": "L10-A04",
+      "type": "assessment-revision-with-consultation",
+      "message": "O atendimento vai reabrir na segunda. Em caso de dúvida sobre o local, consulte o ponto informado no aviso.",
+      "uncertainties": [
+        {"target": "reabrir", "question": "O contexto sustenta a ideia de abrir novamente?", "correct": true},
+        {"target": "ponto", "dictionaryEntryRef": "L10-B03", "question": "No aviso, 'ponto' poderia significar local determinado, dependendo do restante da mensagem?", "correct": true}
+      ],
+      "finalDecision": "manter as duas palavras quando o contexto confirmar os sentidos; consultar novamente se a mensagem real não fornecer informação suficiente"
+    }
+  ],
+  "assessmentBehavior": {
+    "dictionaryEntriesProvided": true,
+    "externalLookupRequired": false,
+    "contextRequiredForSenseChoice": true,
+    "ttsPolicy": "permitido",
+    "timeLimit": false
+  },
+  "completionEvidence": {
+    "clusters": {
+      "wordFamilies": {"evidence": ["L10-A01"], "rule": "acertar pelo menos dois dos três agrupamentos e usar relação de significado"},
+      "formationClues": {"evidence": ["L10-A02"], "rule": "interpretar corretamente os dois exemplos transparentes"},
+      "dictionaryUse": {"evidence": ["L10-A03"], "rule": "selecionar a acepção compatível com o contexto"},
+      "consultativeRevision": {"evidence": ["L10-A04"], "rule": "usar contexto e consulta sem tratar a primeira acepção como resposta automática"}
+    },
+    "completionRule": "todos os quatro agrupamentos são obrigatórios.",
+    "notSufficient": ["agrupar apenas por letras parecidas", "adivinhar sentido apenas pelo prefixo/sufixo", "abrir o verbete sem selecionar a acepção contextual"]
+  }
+}
