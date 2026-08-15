@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 1,
+  "id": "N1-U01-L03",
+  "title": "Encontrar e combinar informações explícitas",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Localizar informações diretamente apresentadas e combinar duas ou mais partes do texto quando a resposta depende de integração, mantendo evidências consultáveis.",
+  "competencies": [
+    "localizar informação explícita em texto curto ou intermediário",
+    "identificar a parte do texto que sustenta uma resposta",
+    "combinar duas informações apresentadas separadamente",
+    "distinguir questão de localização simples de questão de integração",
+    "rejeitar resposta incompatível mesmo quando contém palavras do texto"
+  ],
+  "prerequisites": ["N1-U01-L02"],
+  "limits": [
+    "não transformar busca de palavra igual à pergunta em estratégia suficiente para toda questão",
+    "não esconder o texto",
+    "não exigir inferência quando a informação é explícita",
+    "não aceitar alternativa apenas porque repete vocabulário do texto",
+    "não usar memorização como critério"
+  ],
+  "media": {"tts": "instruções e textos sob demanda", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {
+    "curatedMedia": [],
+    "runtimeResources": [{"type": "TTS_OK", "locations": ["instruções", "textos", "feedback"], "purpose": "apoio de leitura"}],
+    "generatedVisualResources": [
+      {"type": "UI_RENDERED_READING_CARD", "locations": ["L03-B02", "L03-C01", "L03-A01", "L03-A02"], "purpose": "manter texto disponível"},
+      {"type": "UI_RENDERED_EVIDENCE_SELECTOR", "locations": ["L03-B02", "L03-C01", "L03-A01", "L03-A02"], "purpose": "marcar uma ou mais partes de evidência"},
+      {"type": "UI_RENDERED_EVIDENCE_LINK", "locations": ["L03-B03", "L03-A02"], "purpose": "mostrar combinação entre trechos depois da tentativa"}
+    ],
+    "productionQueueRequired": false,
+    "publicationDependency": "nenhuma nova mídia humana obrigatória",
+    "decisionRationale": "integração de informação é melhor observada com texto e seleção de trechos."
+  },
+  "sequence": [
+    {"id": "L03-B01", "type": "objective", "text": "Algumas perguntas são respondidas por uma única parte do texto. Outras exigem juntar informações que aparecem em lugares diferentes."},
+    {
+      "id": "L03-B02",
+      "type": "demonstration",
+      "text": "O curso começa na terça-feira. As aulas acontecem às 19h. Nos primeiros dois encontros, a turma ficará na sala 4; depois passará para a sala 8.",
+      "items": [
+        {"question": "Que horas acontecem as aulas?", "answer": "19h", "evidence": ["As aulas acontecem às 19h."]},
+        {"question": "Em qual sala será a primeira aula e em que dia?", "answer": "terça-feira, na sala 4", "evidence": ["O curso começa na terça-feira.", "Nos primeiros dois encontros, a turma ficará na sala 4"]}
+      ]
+    },
+    {
+      "id": "L03-C01",
+      "type": "quick-check",
+      "text": "A entrega de documentos ocorre no balcão 6. O atendimento funciona das nove às quatro. Às sextas-feiras, o balcão encerra uma hora mais cedo.",
+      "question": "Até que horas é possível entregar documentos na sexta-feira?",
+      "options": ["até as três", "até as quatro", "até as nove"],
+      "correctIndex": 0,
+      "requiredEvidence": ["O atendimento funciona das nove às quatro.", "Às sextas-feiras, o balcão encerra uma hora mais cedo."],
+      "textRemainsVisible": true
+    },
+    {
+      "id": "L03-B03",
+      "type": "strategy",
+      "text": "Se a pergunta inclui duas condições — por exemplo, dia e horário — procure onde cada condição aparece e combine somente informações compatíveis entre si."
+    },
+    {
+      "id": "L03-A01",
+      "type": "assessment",
+      "text": "A oficina de fotografia será no sábado. A atividade começa às dez e termina ao meio-dia. Participantes devem levar um celular ou uma câmera. A inscrição é feita na recepção até quinta-feira.",
+      "question": "Até quando é possível se inscrever e onde?",
+      "options": ["até quinta-feira, na recepção", "sábado, na oficina", "ao meio-dia, pelo celular"],
+      "correctIndex": 0,
+      "requiredEvidence": ["A inscrição é feita na recepção até quinta-feira."],
+      "textRemainsVisible": true
+    },
+    {
+      "id": "L03-A02",
+      "type": "assessment-set",
+      "text": "A linha 205 sai do Terminal Norte às 7h. Nos dias úteis, passa pela Avenida Central antes de seguir para o hospital. Aos domingos, não passa pela Avenida Central, mas o horário de saída continua o mesmo.",
+      "items": [
+        {"question": "Que horas a linha 205 sai aos domingos?", "options": ["às 7h", "o texto não informa", "depois da Avenida Central"], "correctIndex": 0, "requiredEvidence": ["sai do Terminal Norte às 7h", "o horário de saída continua o mesmo"]},
+        {"question": "Ela passa pela Avenida Central aos domingos?", "options": ["não", "sim", "o texto diz que depende do horário"], "correctIndex": 0, "requiredEvidence": ["Aos domingos, não passa pela Avenida Central"]}
+      ],
+      "textRemainsVisible": true
+    }
+  ],
+  "assessmentBehavior": {"textVisibility": "sempre disponível", "evidenceSelection": "obrigatória nos itens indicados", "readingSupport": "TTS opcional", "timeLimit": false},
+  "completionEvidence": {
+    "clusters": {
+      "explicitLocation": {"evidence": ["L03-A01", "L03-A02"], "rule": "localizar corretamente informação explícita e evidência"},
+      "integration": {"evidence": ["L03-C01", "L03-A02"], "rule": "resolver pelo menos duas questões que exigem combinar partes"}
+    },
+    "completionRule": "os dois agrupamentos são obrigatórios.",
+    "notSufficient": ["selecionar opção porque repete uma palavra da pergunta", "responder sem indicar evidência quando solicitada", "decorar o texto"]
+  }
+}
