@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "id": "N1-U03-L04",
+  "title": "Verbos: ação, estado e acontecimento; pessoa e número",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Reconhecer verbos pelo funcionamento na frase sem reduzi-los a palavras de ação e observar, em formas frequentes, como pessoa e número se relacionam com quem participa da mensagem.",
+  "competencies": [
+    "reconhecer verbos que expressam ação, estado ou acontecimento",
+    "localizar verbo em frases simples pelo funcionamento contextual",
+    "relacionar formas frequentes a eu, nós, ele/ela e eles/elas",
+    "ajustar pessoa e número em exemplos transparentes",
+    "rejeitar a definição inadequada de verbo como somente palavra de ação"
+  ],
+  "prerequisites": ["N1-U03-L01", "N1-U03-L03"],
+  "limits": [
+    "não sistematizar todas as pessoas e conjugações",
+    "não exigir paradigma verbal completo",
+    "não introduzir modos ou tempos como sistema nesta lição",
+    "não confundir pessoa gramatical com pessoa física",
+    "não apresentar sujeito/predicado formal antes da L8"
+  ],
+  "media": {"tts": "permitido", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {
+    "curatedMedia": [],
+    "runtimeResources": [{"type": "TTS_OK", "locations": ["frases", "feedback"], "purpose": "apoio de leitura"}],
+    "generatedVisualResources": [
+      {"type": "UI_RENDERED_VERB_FUNCTION_SORT", "locations": ["L04-B01", "L04-C01", "L04-A01"], "purpose": "comparar ação, estado e acontecimento"},
+      {"type": "UI_RENDERED_PERSON_NUMBER_MATCH", "locations": ["L04-B02", "L04-C02", "L04-A02"], "purpose": "relacionar participante e forma verbal"}
+    ],
+    "productionQueueRequired": false,
+    "publicationDependency": "nenhuma nova mídia humana obrigatória",
+    "decisionRationale": "o alvo é morfossintático básico e pode ser demonstrado em frases controladas."
+  },
+  "sequence": [
+    {
+      "id": "L04-B01",
+      "type": "demonstration",
+      "examples": [
+        {"sentence": "Rui corre.", "verb": "corre", "value": "ação"},
+        {"sentence": "A porta está aberta.", "verb": "está", "value": "estado"},
+        {"sentence": "Choveu à noite.", "verb": "Choveu", "value": "acontecimento"},
+        {"sentence": "O problema aconteceu ontem.", "verb": "aconteceu", "value": "acontecimento"}
+      ],
+      "conclusion": "verbo não é apenas palavra de ação"
+    },
+    {
+      "id": "L04-B02",
+      "type": "person-number-demonstration",
+      "sets": [
+        {"participant": "eu", "form": "trabalho", "sentence": "Eu trabalho cedo."},
+        {"participant": "nós", "form": "trabalhamos", "sentence": "Nós trabalhamos cedo."},
+        {"participant": "eles", "form": "trabalham", "sentence": "Eles trabalham cedo."}
+      ],
+      "teachingPoint": "a forma do verbo pode mudar conforme a pessoa e o número em muitos padrões"
+    },
+    {
+      "id": "L04-C01",
+      "type": "quick-check-function",
+      "items": [
+        {"sentence": "A sala parece vazia.", "verb": "parece", "options": ["verbo", "substantivo", "artigo"], "correctIndex": 0},
+        {"sentence": "O telefone tocou.", "verb": "tocou", "options": ["verbo", "adjetivo", "pronome"], "correctIndex": 0}
+      ]
+    },
+    {
+      "id": "L04-C02",
+      "type": "guided-person-number",
+      "items": [
+        {"sentence": "Nós ____ o aviso.", "options": ["lemos", "lê", "leem"], "correctIndex": 0},
+        {"sentence": "Eles ____ cedo.", "options": ["chegam", "chego", "chegamos"], "correctIndex": 0}
+      ]
+    },
+    {
+      "id": "L04-A01",
+      "type": "assessment-verb-function",
+      "items": [
+        {"sentence": "A máquina funciona.", "target": "funciona", "question": "Qual é a classe pelo funcionamento?", "options": ["verbo", "substantivo", "artigo"], "correctIndex": 0},
+        {"sentence": "O cliente permanece calmo.", "target": "permanece", "options": ["verbo", "adjetivo", "pronome"], "correctIndex": 0},
+        {"sentence": "Anoiteceu cedo.", "target": "Anoiteceu", "options": ["verbo", "substantivo", "adjetivo"], "correctIndex": 0}
+      ]
+    },
+    {
+      "id": "L04-A02",
+      "type": "assessment-person-number",
+      "items": [
+        {"prompt": "Complete: Eu ____ o relatório.", "options": ["reviso", "revisamos", "revisam"], "correctIndex": 0},
+        {"prompt": "Complete: Nós ____ o relatório.", "options": ["revisamos", "reviso", "revisa"], "correctIndex": 0},
+        {"prompt": "Complete: Elas ____ o relatório.", "options": ["revisam", "reviso", "revisamos"], "correctIndex": 0}
+      ]
+    }
+  ],
+  "assessmentBehavior": {"functionBeforeDefinition": true, "selectedFrequentForms": true, "ttsPolicy": "permitido", "timeLimit": false},
+  "completionEvidence": {
+    "clusters": {
+      "verbRecognition": {"evidence": ["L04-A01"], "rule": "reconhecer os três verbos em usos não restritos a ação"},
+      "personNumber": {"evidence": ["L04-A02"], "rule": "ajustar corretamente as três formas selecionadas"}
+    },
+    "completionRule": "os dois agrupamentos são obrigatórios.",
+    "notSufficient": ["definir verbo como ação", "recitar terminações sem usar", "acertar apenas verbos de movimento"]
+  }
+}
