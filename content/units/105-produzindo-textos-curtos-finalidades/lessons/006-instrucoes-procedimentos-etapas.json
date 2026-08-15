@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "id": "N1-U05-L06",
+  "title": "Instruções e procedimentos em etapas",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Escrever instruções curtas com ações, sequência e informação suficiente para execução em situações acessíveis, revisando o texto pela possibilidade de outra pessoa acompanhar as etapas.",
+  "competencies": ["selecionar etapas necessárias", "ordenar ações", "usar verbos de orientação em formas acessíveis", "incluir condição/material quando necessário", "evitar etapa vaga que impede execução", "produzir instrução própria de duas a cinco etapas", "revisar pela executabilidade"],
+  "prerequisites": ["N1-U01-L05", "N1-U03-L05", "N1-U04-L04", "N1-U05-L01", "N1-U05-L02"],
+  "limits": ["não exigir procedimento técnico especializado", "não impor imperativo como única formulação possível", "não usar número de etapas como qualidade", "não avaliar segurança de atividades de risco", "não validar automaticamente se texto livre seria executável em todos os contextos"],
+  "media": {"tts": "permitido", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["instruções", "modelos", "feedback"], "purpose": "apoio"}], "generatedVisualResources": [{"type": "UI_RENDERED_STEP_ORDER", "locations": ["L06-B01", "L06-C01", "L06-A01"], "purpose": "ordenar procedimento"}, {"type": "UI_RENDERED_EXECUTABILITY_CHECK", "locations": ["L06-B02", "L06-P01"], "purpose": "verificar informação suficiente"}, {"type": "UI_RENDERED_WRITING_EDITOR_WITH_CHECKLIST", "locations": ["L06-P01"], "purpose": "produção própria"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória; texto aberto requer avaliação confiável para validar executabilidade plena", "decisionRationale": "procedimentos cotidianos simples podem ser ensinados e testados textualmente."},
+  "sequence": [
+    {"id": "L06-B01", "type": "model-analysis", "purpose": "enviar um arquivo por formulário", "steps": ["Abra o formulário.", "Preencha os dados solicitados.", "Anexe o arquivo no campo indicado.", "Revise e envie."], "analysis": ["ordem útil", "ações explícitas", "sem detalhe técnico desnecessário"]},
+    {"id": "L06-B02", "type": "executability-contrast", "weak": "Faça o cadastro direito e termine.", "improved": "Preencha nome e telefone, confira os dados e selecione Enviar.", "reason": "a segunda versão informa ações observáveis"},
+    {"id": "L06-C01", "type": "guided-order", "situation": "guardar um documento digital em uma pasta já criada", "steps": ["Escolha Salvar.", "Abra a pasta indicada.", "Dê um nome claro ao arquivo."], "oneUsefulOrder": [1, 2, 0], "acceptEquivalentIfInterfaceFlowSupports": true},
+    {"id": "L06-A01", "type": "instruction-plan", "situation": "Orientar uma pessoa a confirmar presença em uma reunião por mensagem: abrir conversa, escrever nome + confirmação, conferir data mencionada, enviar.", "requiredActions": ["abrir conversa correta", "registrar confirmação identificável", "conferir referência à reunião/data", "enviar"], "task": "ordenar e tornar as ações executáveis"},
+    {"id": "L06-P01", "type": "open-production", "prompt": "Escreva a instrução curta a partir do plano. Depois imagine que outra pessoa só terá seu texto e use o checklist.", "recordResponse": true, "automaticValidation": false, "selfCheck": ["as etapas estão em ordem?", "cada ação diz o que fazer?", "faltou informação necessária?", "há etapa repetida ou inútil?", "conectores/pontuação ajudam a leitura?"]}
+  ],
+  "assessmentBehavior": {"ownProcedureRequired": true, "openTextAutoValidated": false, "safeEverydayScenariosOnly": true, "ttsPolicy": "permitido", "timeLimit": false},
+  "completionEvidence": {"clusters": {"proceduralPlan": {"evidence": ["L06-A01"], "rule": "organizar as quatro ações necessárias"}, "ownInstructions": {"evidence": ["L06-P01"], "rule": "produção própria registrada + autochecagem"}}, "completionRule": "produção própria obrigatória.", "notSufficient": ["ordenar cartões sem produzir texto", "usar instruções vagas", "copiar modelo"]}
+}
