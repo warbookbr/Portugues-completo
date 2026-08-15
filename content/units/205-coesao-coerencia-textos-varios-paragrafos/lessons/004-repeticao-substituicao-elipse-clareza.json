@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "id": "N2-U05-L04",
+  "title": "Repetição, substituição e elipse: variar sem perder clareza",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Usar repetição controlada, substituição e elipse recuperável para evitar monotonia quando houver ganho real, preservando referência e informação ao longo de vários parágrafos.",
+  "competencies": [
+    "distinguir repetição funcional de repetição sem ganho",
+    "substituir expressão quando o novo termo preserva o referente",
+    "usar pronome sem criar ambiguidade",
+    "reconhecer elipse recuperável em sequência textual",
+    "rejeitar elipse que apaga participante ou ação necessária",
+    "revisar texto sem perseguir variedade lexical artificial"
+  ],
+  "prerequisites": ["N2-U05-L03", "N2-U02-L10"],
+  "limits": [
+    "não tratar repetição como erro automático",
+    "não exigir sinônimo em toda retomada",
+    "não aceitar substituição que muda o sentido",
+    "não usar elipse quando o elemento omitido não é recuperável",
+    "não pontuar variedade lexical por quantidade"
+  ],
+  "media": {"tts": "opcional", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {
+    "curatedMedia": [],
+    "runtimeResources": [{"type": "TTS_OK", "locations": ["textos", "feedback"], "purpose": "apoio"}],
+    "generatedVisualResources": [
+      {"type": "UI_RENDERED_REPETITION_SUBSTITUTION_COMPARE", "locations": ["L04-B01", "L04-C01", "L04-A01"], "purpose": "comparar versões"},
+      {"type": "UI_RENDERED_ELLIPSIS_RECOVERY", "locations": ["L04-B02", "L04-A02"], "purpose": "mostrar elemento omitido recuperável"}
+    ],
+    "productionQueueRequired": false,
+    "publicationDependency": "nenhuma nova mídia humana obrigatória",
+    "decisionRationale": "os mecanismos são textuais e podem ser observados em versões paralelas."
+  },
+  "sequence": [
+    {
+      "id": "L04-B01",
+      "type": "revision-contrast",
+      "versions": [
+        {
+          "before": "O laboratório publicou o novo horário. O laboratório também informou as regras de acesso. O laboratório manterá atendimento aos sábados.",
+          "after": "O laboratório publicou o novo horário e também informou as regras de acesso. A unidade manterá atendimento aos sábados.",
+          "analysis": "parte da repetição foi reduzida, mas uma expressão nominal mantém o referente"
+        },
+        {
+          "before": "Ana falou com Carla. Ela entregou o relatório.",
+          "after": "Ana falou com Carla. Carla entregou o relatório.",
+          "analysis": "a repetição é melhor que o pronome quando o contexto precisa identificar Carla"
+        }
+      ]
+    },
+    {
+      "id": "L04-B02",
+      "type": "ellipsis-demonstration",
+      "items": [
+        {"text": "Rui revisou o primeiro arquivo; Lia, o segundo.", "recovered": "Lia revisou o segundo arquivo", "judgment": "elipse recuperável pelo paralelismo"},
+        {"text": "O primeiro grupo chegou às oito. O segundo, às nove.", "recovered": "O segundo grupo chegou às nove", "judgment": "a ação é recuperável"},
+        {"text": "Marina enviou o formulário. Paula, amanhã.", "judgment": "sem contexto suficiente, a leitura do que Paula fará pode ficar incerta", "guardRail": "não omitir informação central apenas para encurtar"}
+      ]
+    },
+    {
+      "id": "L04-C01",
+      "type": "quick-check",
+      "items": [
+        {"before": "A oficina abriu inscrições. A oficina terá vinte vagas.", "options": ["A oficina abriu inscrições. Ela terá vinte vagas.", "A oficina abriu inscrições. Ele terá vinte vagas."], "correctIndex": 0},
+        {"before": "Lia encontrou Marina. Ela levou a chave.", "situation": "Quem levou foi Marina.", "options": ["Lia encontrou Marina. Marina levou a chave.", "Lia encontrou Marina. Ela levou a chave."], "correctIndex": 0},
+        {"text": "A turma A apresentou de manhã; a turma B, à tarde.", "question": "O que fica recuperável?", "options": ["a turma B apresentou à tarde", "a turma B chegou à tarde"], "correctIndex": 0}
+      ]
+    },
+    {
+      "id": "L04-A01",
+      "type": "assessment-revision",
+      "paragraphs": [
+        "O projeto abriu inscrições na segunda-feira. O projeto recebeu cinquenta cadastros no primeiro dia.",
+        "O projeto terá duas turmas. O projeto publicará a divisão dos participantes na sexta-feira."
+      ],
+      "options": [
+        "O projeto abriu inscrições na segunda-feira e recebeu cinquenta cadastros no primeiro dia. Ele terá duas turmas e publicará a divisão dos participantes na sexta-feira.",
+        "O projeto abriu inscrições na segunda-feira. A iniciativa recebeu cinquenta cadastros. Ela terá duas turmas e publicará a divisão na sexta-feira.",
+        "Ambas podem funcionar se 'Ele/Ela' e a expressão nominal continuarem com referente claro."
+      ],
+      "correctIndex": 2,
+      "teachingPoint": "não existe uma única revisão lexical obrigatória"
+    },
+    {
+      "id": "L04-A02",
+      "type": "assessment-ellipsis",
+      "items": [
+        {"text": "Carlos revisou a introdução; Bia, a conclusão.", "options": ["Bia revisou a conclusão", "Bia escreveu necessariamente a conclusão"], "correctIndex": 0},
+        {"text": "O primeiro ônibus saiu às sete. O segundo, às oito.", "options": ["o segundo ônibus saiu às oito", "o segundo ônibus chegou às oito"], "correctIndex": 0},
+        {"question": "Uma elipse deve ser usada mesmo quando cria duas leituras relevantes?", "options": ["não; explicitar pode preservar clareza", "sim; texto curto é sempre melhor"], "correctIndex": 0}
+      ]
+    }
+  ],
+  "assessmentBehavior": {"equivalentClearRevisionsAccepted": true, "clarityOverridesVariation": true, "ttsPolicy": "opcional", "timeLimit": false},
+  "completionEvidence": {
+    "clusters": {
+      "repetitionSubstitution": {"evidence": ["L04-C01", "L04-A01"], "rule": "revisar sem criar ambiguidade e aceitar soluções equivalentes"},
+      "ellipsis": {"evidence": ["L04-A02"], "rule": "recuperar elipses transparentes e rejeitar omissão ambígua"}
+    },
+    "completionRule": "os dois agrupamentos são obrigatórios.",
+    "notSufficient": ["eliminar toda repetição", "forçar sinônimos", "omitir para reduzir tamanho"]
+  }
+}
