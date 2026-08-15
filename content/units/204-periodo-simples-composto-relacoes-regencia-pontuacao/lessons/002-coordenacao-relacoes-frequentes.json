@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "id": "N2-U04-L02",
+  "title": "Coordenação: relações frequentes entre orações",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Interpretar e construir relações coordenadas frequentes de adição, contraste, alternância, conclusão/resultado e explicação em contextos transparentes, usando conectores pelo sentido e não por lista decorada.",
+  "competencies": ["reconhecer adição entre orações", "reconhecer contraste", "reconhecer alternância", "reconhecer conclusão ou resultado apresentado", "reconhecer explicação em exemplo transparente", "trocar conector e prever mudança de relação"],
+  "prerequisites": ["N2-U04-L01", "N2-U01-L06"],
+  "limits": ["não exigir nomenclatura completa das coordenadas", "não fixar um conector a uma única relação em qualquer contexto", "não confundir sequência com causa", "não exigir conector em toda coordenação"],
+  "media": {"tts": "opcional", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["frases", "feedback"], "purpose": "apoio"}], "generatedVisualResources": [{"type": "UI_RENDERED_RELATION_CONNECTOR_MAP", "locations": ["L02-B01", "L02-C01", "L02-A01"], "purpose": "ligar orações e relação"}, {"type": "UI_RENDERED_CONNECTOR_SWAP", "locations": ["L02-B02", "L02-A02"], "purpose": "comparar efeitos"}], "productionQueueRequired": false, "publicationDependency": "nenhuma mídia humana obrigatória", "decisionRationale": "relações são textuais e podem ser comparadas diretamente."},
+  "sequence": [
+    {"id": "L02-B01", "type": "demonstration", "items": [{"text": "A equipe revisou o texto e publicou a versão.", "relation": "adição"}, {"text": "Queria participar, mas estava doente.", "relation": "contraste"}, {"text": "Você pode enviar hoje ou entregar amanhã.", "relation": "alternância"}, {"text": "O sistema falhou; por isso o prazo foi ampliado.", "relation": "resultado/conclusão"}, {"text": "Feche a janela, pois a chuva está entrando.", "relation": "explicação/justificativa no contexto"}]},
+    {"id": "L02-B02", "type": "connector-effect", "pairs": [{"base": "A sala é pequena, ___ comporta toda a equipe.", "with": "mas", "effect": "contraste"}, {"base": "A sala é pequena ___ está vazia.", "with": "e", "effect": "adição; o contexto não cria contraste automaticamente"}], "teachingPoint": "o conector participa da relação, mas a frase inteira precisa fazer sentido"},
+    {"id": "L02-C01", "type": "quick-check", "items": [{"text": "Rui revisou o arquivo e enviou a versão.", "options": ["adição", "alternância"], "correctIndex": 0}, {"text": "A vaga era interessante, mas o horário não servia.", "options": ["contraste", "causa"], "correctIndex": 0}, {"text": "Podemos ir de ônibus ou caminhar.", "options": ["alternância", "explicação"], "correctIndex": 0}]},
+    {"id": "L02-A01", "type": "assessment-relations", "items": [{"stem": "O prazo terminou, ___ a inscrição foi encerrada.", "options": ["por isso", "ou", "mas"], "correctIndex": 0, "relation": "resultado"}, {"stem": "O arquivo está correto, ___ falta a assinatura.", "options": ["mas", "ou", "por isso"], "correctIndex": 0, "relation": "contraste"}, {"stem": "Você pode imprimir o documento ___ apresentá-lo no celular.", "options": ["ou", "mas", "por isso"], "correctIndex": 0, "relation": "alternância"}]},
+    {"id": "L02-A02", "type": "assessment-meaning", "question": "Trocar 'mas' por 'e' em 'A sala é pequena, mas comporta o grupo' preserva exatamente a mesma relação?", "options": ["não; a marca explícita de contraste muda", "sim; conectores são apenas enfeite"], "correctIndex": 0}
+  ],
+  "assessmentBehavior": {"relationOverLabel": true, "ttsPolicy": "opcional", "timeLimit": false},
+  "completionEvidence": {"clusters": {"relations": {"evidence": ["L02-C01", "L02-A01"], "rule": "distinguir relações nos exemplos"}, "connectorEffect": {"evidence": ["L02-A02"], "rule": "reconhecer mudança semântica produzida pelo conector"}}, "completionRule": "os dois agrupamentos são obrigatórios.", "notSufficient": ["decorar lista", "escolher conector sem ler a relação"]}
+}
