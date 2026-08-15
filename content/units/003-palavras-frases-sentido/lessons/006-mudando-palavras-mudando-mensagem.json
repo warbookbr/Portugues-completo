@@ -1,0 +1,515 @@
+{
+  "schemaVersion": 1,
+  "id": "N0-U03-L06",
+  "title": "Mudando palavras, mudando a mensagem",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Perceber que substituir, acrescentar, retirar ou modificar palavras pode alterar informações, relações ou o grau de especificidade de uma mensagem, relacionando cada mudança textual ao efeito correspondente no sentido sem depender de classificação gramatical formal.",
+  "competencies": [
+    "comparar duas frases simples e localizar qual palavra ou trecho mudou",
+    "perceber quando a substituição de uma palavra muda de quem ou do que se fala",
+    "perceber quando a substituição de uma palavra muda a ação, característica ou outra informação principal da mensagem",
+    "reconhecer que acrescentar palavras pode tornar uma mensagem mais específica ao adicionar informação",
+    "reconhecer que retirar uma informação pode tornar a mensagem menos específica sem necessariamente torná-la incorreta ou incompreensível",
+    "observar em exemplos transparentes que mudanças na forma de palavras podem acompanhar mudanças de significado, como a passagem de uma entidade para mais de uma",
+    "escolher uma transformação controlada que produza a mensagem pedida",
+    "explicar por escolha ou associação o efeito de uma alteração sem precisar nomear classes gramaticais ou regras de concordância"
+  ],
+  "prerequisites": ["N0-U03-L05"],
+  "limits": [
+    "não ensinar classes gramaticais como sistema nem exigir os rótulos substantivo, verbo, adjetivo ou advérbio",
+    "não sistematizar flexão de número, pessoa, gênero, tempo ou modo",
+    "não ensinar concordância nominal ou verbal como regra formal; mudanças de forma aparecem apenas como observação funcional em exemplos transparentes",
+    "não transformar toda substituição em regra de equivalência; palavras diferentes produzem mensagens diferentes conforme o contexto",
+    "não ensinar que acrescentar palavras sempre melhora uma frase; informação adicional só é útil quando corresponde ao que se pretende comunicar",
+    "não ensinar que retirar uma palavra torna automaticamente a frase errada; em alguns casos a mensagem permanece clara, porém menos específica",
+    "não trabalhar a inclusão ou retirada de NÃO como caso principal nesta lição; o efeito da negação é o foco específico da Lição 7",
+    "não aprofundar mudança de ordem como foco principal, pois isso foi trabalhado na Lição 5",
+    "não exigir produção livre de frases; as transformações permanecem controladas e usam elementos fornecidos",
+    "não transformar pontuação em objeto de estudo",
+    "não transformar a atividade em compreensão de pequenos textos ou várias frases relacionadas",
+    "não usar velocidade ou tempo de resposta como critério de domínio"
+  ],
+  "media": {
+    "tts": "instruções, frases de comparação, situações e feedback. O TTS pode ler as frases antes da resposta porque a competência medida é compreender o efeito da transformação textual, não demonstrar decodificação independente de cada frase.",
+    "controlledAudio": [],
+    "video": "nao necessario",
+    "images": "nao necessarias"
+  },
+  "supportMaterials": {
+    "curatedMedia": [],
+    "runtimeResources": [
+      {
+        "type": "TTS_OK",
+        "locations": ["instruções", "comparações", "situações", "frases antes/depois", "feedback", "resumo"],
+        "purpose": "reduzir carga de leitura enquanto o aluno observa relações entre alteração textual e mudança de sentido; nenhuma resposta depende de entonação específica"
+      }
+    ],
+    "generatedVisualResources": [
+      {
+        "type": "UI_RENDERED_BEFORE_AFTER_SENTENCE_COMPARISON",
+        "locations": ["L06-B02", "L06-C01", "L06-B03", "L06-C02", "L06-B04", "L06-C03", "L06-B05", "L06-C04", "L06-B06", "L06-C05", "L06-A01", "L06-A02", "L06-A03", "L06-A04"],
+        "purpose": "mostrar frase anterior e frase modificada lado a lado como texto real da interface"
+      },
+      {
+        "type": "UI_RENDERED_ACCESSIBLE_DIFF_HIGHLIGHT",
+        "locations": ["L06-B02", "L06-B03", "L06-B04", "L06-B05", "L06-B06", "L06-C01", "L06-C02", "L06-C03", "L06-C04", "L06-C05", "L06-A01", "L06-A02", "L06-A03", "L06-A04"],
+        "purpose": "marcar de forma acessível quais elementos foram substituídos, acrescentados, retirados ou modificados, usando rótulo textual/estrutura além de qualquer destaque visual"
+      },
+      {
+        "type": "UI_RENDERED_CHANGE_EFFECT_CHOICES",
+        "locations": ["L06-C01", "L06-C02", "L06-C03", "L06-C04", "L06-C05", "L06-A01", "L06-A02", "L06-A03", "L06-A04"],
+        "purpose": "oferecer descrições funcionais do que mudou na mensagem sem exigir terminologia gramatical"
+      },
+      {
+        "type": "UI_RENDERED_CONTROLLED_REPLACEMENT_SLOT",
+        "locations": ["L06-C02", "L06-A01", "L06-A04"],
+        "purpose": "permitir substituir apenas um elemento fornecido para produzir uma mudança de significado previamente indicada"
+      },
+      {
+        "type": "UI_RENDERED_ADD_REMOVE_INFORMATION_CONTROL",
+        "locations": ["L06-C03", "L06-C04", "L06-A02", "L06-A04"],
+        "purpose": "permitir acrescentar ou retirar um trecho fornecido e comparar a quantidade de informação antes e depois"
+      }
+    ],
+    "productionQueueRequired": false,
+    "publicationDependency": "não há nova mídia humana obrigatória; comparação textual, marcação acessível de diferenças, controles de substituição/adição/retirada e TTS são suficientes para ensinar e avaliar a competência",
+    "decisionRationale": "o objeto pedagógico é a transformação do próprio texto. Representar frases e diferenças diretamente na interface torna a alteração observável com maior precisão do que imagens ou vídeo. Áudio controlado não é necessário porque nenhuma resposta depende de uma realização sonora específica."
+  },
+  "sequence": [
+    {
+      "id": "L06-B01",
+      "type": "objective",
+      "focus": "read-or-listen",
+      "text": "Na lição anterior, vimos que a organização das palavras ajuda a construir a mensagem. Agora vamos manter a frase como base e observar outro fenômeno: quando mudamos uma palavra ou uma informação, a mensagem também pode mudar."
+    },
+    {
+      "id": "L06-B02",
+      "type": "substitution-person-or-thing-demonstration",
+      "focus": "compare",
+      "title": "Trocar uma palavra pode mudar de quem ou do que estamos falando",
+      "examples": [
+        {
+          "before": "O gato dorme.",
+          "after": "O pato dorme.",
+          "change": {"type": "replacement", "beforeText": "gato", "afterText": "pato"},
+          "effect": "a ação continua sendo dormir, mas agora a mensagem fala do pato em vez do gato"
+        },
+        {
+          "before": "Lia chama Rui.",
+          "after": "Lia chama Beto.",
+          "change": {"type": "replacement", "beforeText": "Rui", "afterText": "Beto"},
+          "effect": "Lia continua chamando alguém, mas mudou quem é chamado"
+        }
+      ],
+      "explanation": "Uma pequena troca na escrita pode alterar uma parte importante da mensagem. Para perceber isso, não precisamos classificar a palavra: basta comparar o que a frase dizia antes e o que passa a dizer depois."
+    },
+    {
+      "id": "L06-C01",
+      "type": "quick-check-set",
+      "focus": "compare-and-respond",
+      "interaction": "identify-effect-of-replacement",
+      "instruction": "Compare as frases e escolha o efeito da palavra que foi trocada.",
+      "items": [
+        {
+          "before": "A menina sorriu.",
+          "after": "O menino sorriu.",
+          "options": ["Mudou de quem a mensagem fala; a ação de sorrir permaneceu.", "Mudou a ação para correr.", "Foi acrescentado um lugar."],
+          "correctIndex": 0
+        },
+        {
+          "before": "Ana ajuda Caio.",
+          "after": "Ana ajuda Leo.",
+          "options": ["Mudou quem recebe a ajuda.", "Mudou quem realiza a ajuda para Leo.", "A mensagem passou a dizer que ninguém ajuda ninguém."],
+          "correctIndex": 0
+        }
+      ],
+      "sentenceTtsAvailable": true
+    },
+    {
+      "id": "L06-B03",
+      "type": "substitution-information-demonstration",
+      "focus": "compare",
+      "title": "A troca também pode mudar o que acontece ou como algo é apresentado",
+      "examples": [
+        {
+          "before": "O gato dorme.",
+          "after": "O gato corre.",
+          "change": {"type": "replacement", "beforeText": "dorme", "afterText": "corre"},
+          "effect": "o gato continua sendo o foco, mas mudou o que acontece"
+        },
+        {
+          "before": "A caixa é leve.",
+          "after": "A caixa é pesada.",
+          "change": {"type": "replacement", "beforeText": "leve", "afterText": "pesada"},
+          "effect": "a mensagem continua falando da mesma caixa, mas muda a característica informada"
+        }
+      ],
+      "explanation": "Trocar uma palavra pode mudar uma ação, uma característica ou outra informação. Nesta etapa, interessa perceber o efeito no sentido; os nomes gramaticais dessas palavras ficam para quando forem pedagogicamente úteis."
+    },
+    {
+      "id": "L06-C02",
+      "type": "quick-check-set",
+      "focus": "transform-and-respond",
+      "interaction": "choose-single-replacement-for-target-meaning",
+      "instruction": "Escolha a única substituição que produz a mensagem pedida.",
+      "items": [
+        {
+          "baseSentence": "O pato nada.",
+          "targetMeaning": "comunicar que o pato agora corre",
+          "replaceTarget": "nada",
+          "options": ["corre", "pato", "lago"],
+          "correctIndex": 0,
+          "result": "O pato corre."
+        },
+        {
+          "baseSentence": "A bolsa é leve.",
+          "targetMeaning": "comunicar que a bolsa é pesada",
+          "replaceTarget": "leve",
+          "options": ["pesada", "bolsa", "chegou"],
+          "correctIndex": 0,
+          "result": "A bolsa é pesada."
+        }
+      ],
+      "sentenceTtsAvailable": true
+    },
+    {
+      "id": "L06-B04",
+      "type": "addition-demonstration",
+      "focus": "compare",
+      "title": "Acrescentar palavras pode adicionar informação",
+      "examples": [
+        {
+          "before": "Rui corre.",
+          "after": "Rui corre no parque.",
+          "change": {"type": "addition", "addedText": "no parque"},
+          "effect": "a nova versão informa também onde Rui corre"
+        },
+        {
+          "before": "A loja abriu.",
+          "after": "A loja abriu cedo.",
+          "change": {"type": "addition", "addedText": "cedo"},
+          "effect": "a nova versão acrescenta uma informação sobre o momento da abertura"
+        }
+      ],
+      "explanation": "A frase mais curta já pode comunicar uma mensagem completa. A versão maior não é automaticamente 'mais correta'; ela apenas traz uma informação adicional que pode ser útil quando queremos ser mais específicos."
+    },
+    {
+      "id": "L06-C03",
+      "type": "quick-check-set",
+      "focus": "compare-and-respond",
+      "interaction": "identify-information-added",
+      "instruction": "Observe o trecho acrescentado e escolha qual informação nova ele traz.",
+      "items": [
+        {
+          "before": "Lia chegou.",
+          "after": "Lia chegou hoje.",
+          "addedText": "hoje",
+          "options": ["informa quando Lia chegou", "troca Lia por outra pessoa", "nega que Lia chegou"],
+          "correctIndex": 0
+        },
+        {
+          "before": "O gato dorme.",
+          "after": "O gato dorme na cadeira.",
+          "addedText": "na cadeira",
+          "options": ["informa onde o gato dorme", "muda a ação para correr", "diz que existem vários gatos"],
+          "correctIndex": 0
+        }
+      ],
+      "sentenceTtsAvailable": true
+    },
+    {
+      "id": "L06-B05",
+      "type": "removal-demonstration",
+      "focus": "compare",
+      "title": "Retirar informação pode deixar a mensagem menos específica",
+      "examples": [
+        {
+          "before": "Rui corre no parque.",
+          "after": "Rui corre.",
+          "change": {"type": "removal", "removedText": "no parque"},
+          "effect": "a mensagem continua dizendo que Rui corre, mas deixa de informar onde"
+        },
+        {
+          "before": "A loja abriu cedo.",
+          "after": "A loja abriu.",
+          "change": {"type": "removal", "removedText": "cedo"},
+          "effect": "a abertura continua sendo informada, mas o momento deixa de ser especificado"
+        }
+      ],
+      "explanation": "Retirar uma informação não torna necessariamente a mensagem errada. Pode apenas reduzir o que sabemos. Para avaliar a mudança, precisamos perguntar: o que ainda está sendo dito e o que deixou de ser informado?"
+    },
+    {
+      "id": "L06-C04",
+      "type": "quick-check-set",
+      "focus": "compare-and-respond",
+      "interaction": "identify-information-lost-after-removal",
+      "items": [
+        {
+          "before": "Ana chegou de manhã.",
+          "after": "Ana chegou.",
+          "question": "O que deixou de ser informado?",
+          "options": ["o momento da chegada", "que Ana chegou", "quem chegou"],
+          "correctIndex": 0
+        },
+        {
+          "before": "O cachorro dorme no tapete.",
+          "after": "O cachorro dorme.",
+          "question": "A frase menor continua comunicando que o cachorro dorme?",
+          "options": ["Sim; apenas deixa de informar o lugar.", "Não; toda retirada torna a frase sem sentido.", "Não; agora a frase diz que o cachorro corre."],
+          "correctIndex": 0
+        }
+      ],
+      "sentenceTtsAvailable": true
+    },
+    {
+      "id": "L06-B06",
+      "type": "word-form-change-demonstration",
+      "focus": "compare",
+      "title": "Às vezes, a forma das palavras também muda junto com a informação",
+      "examples": [
+        {
+          "before": "A menina chegou.",
+          "after": "As meninas chegaram.",
+          "changedSegments": [
+            {"before": "A", "after": "As"},
+            {"before": "menina", "after": "meninas"},
+            {"before": "chegou", "after": "chegaram"}
+          ],
+          "effect": "a primeira mensagem fala de uma menina; a segunda fala de mais de uma menina"
+        },
+        {
+          "before": "A porta abriu.",
+          "after": "As portas abriram.",
+          "changedSegments": [
+            {"before": "A", "after": "As"},
+            {"before": "porta", "after": "portas"},
+            {"before": "abriu", "after": "abriram"}
+          ],
+          "effect": "a primeira mensagem fala de uma porta; a segunda fala de mais de uma"
+        }
+      ],
+      "explanation": "Aqui basta observar o efeito: quando passamos de uma para mais de uma pessoa ou coisa, várias palavras podem mudar de forma juntas. As regras que explicam essas mudanças serão estudadas depois; não precisamos decorá-las agora."
+    },
+    {
+      "id": "L06-C05",
+      "type": "quick-check-set",
+      "focus": "compare-and-respond",
+      "interaction": "interpret-transparent-word-form-change",
+      "items": [
+        {
+          "before": "O aluno chegou.",
+          "after": "Os alunos chegaram.",
+          "options": ["A segunda mensagem fala de mais de um aluno.", "A segunda mensagem nega a chegada.", "A segunda mensagem fala de outro lugar."],
+          "correctIndex": 0
+        },
+        {
+          "before": "A gata correu.",
+          "after": "As gatas correram.",
+          "options": ["Mudou de uma gata para mais de uma gata.", "Mudou de correr para dormir.", "Foi retirada toda a informação sobre quem correu."],
+          "correctIndex": 0
+        }
+      ],
+      "sentenceTtsAvailable": true,
+      "technicalRuleExplanationRequired": false
+    },
+    {
+      "id": "L06-B07",
+      "type": "guard-rail-demonstration",
+      "focus": "read-or-listen",
+      "title": "Nem toda mudança tem o mesmo efeito",
+      "examples": [
+        {
+          "transformation": ["O gato dorme.", "O pato dorme."],
+          "effect": "mudou de quem ou do que se fala"
+        },
+        {
+          "transformation": ["O gato dorme.", "O gato corre."],
+          "effect": "mudou o que acontece"
+        },
+        {
+          "transformation": ["O gato dorme.", "O gato dorme na cadeira."],
+          "effect": "foi acrescentada uma informação"
+        },
+        {
+          "transformation": ["O gato dorme na cadeira.", "O gato dorme."],
+          "effect": "uma informação foi retirada"
+        }
+      ],
+      "explanation": "O objetivo não é decorar quatro nomes de operação. O que importa é conseguir olhar para a mudança textual e perceber seu efeito real na mensagem."
+    },
+    {
+      "id": "L06-A01",
+      "type": "guided-activity",
+      "focus": "transform-and-respond",
+      "interaction": "controlled-single-replacement",
+      "title": "Troque uma palavra e acompanhe o sentido",
+      "items": [
+        {
+          "baseSentence": "O gato pula.",
+          "targetMeaning": "a mensagem deve passar a falar do pato, mantendo a ação de pular",
+          "replaceTarget": "gato",
+          "options": ["pato", "corre", "alto"],
+          "correctIndex": 0,
+          "result": "O pato pula."
+        },
+        {
+          "baseSentence": "Lia corre.",
+          "targetMeaning": "a mensagem deve dizer que Lia dorme",
+          "replaceTarget": "corre",
+          "options": ["dorme", "Rui", "casa"],
+          "correctIndex": 0,
+          "result": "Lia dorme."
+        },
+        {
+          "baseSentence": "A mala é leve.",
+          "targetMeaning": "a mensagem deve dizer que a mala é pesada",
+          "replaceTarget": "leve",
+          "options": ["pesada", "mala", "abre"],
+          "correctIndex": 0,
+          "result": "A mala é pesada."
+        }
+      ],
+      "sentenceTtsAvailable": true
+    },
+    {
+      "id": "L06-A02",
+      "type": "guided-activity",
+      "focus": "add-remove-and-respond",
+      "interaction": "compare-specificity-after-addition-or-removal",
+      "title": "Mais informação ou menos informação?",
+      "items": [
+        {
+          "before": "Beto chegou.",
+          "after": "Beto chegou cedo.",
+          "question": "O que a segunda versão acrescenta?",
+          "options": ["uma informação sobre quando Beto chegou", "uma negação", "outra pessoa"],
+          "correctIndex": 0
+        },
+        {
+          "before": "Ana lê no quarto.",
+          "after": "Ana lê.",
+          "question": "O que foi perdido na segunda versão?",
+          "options": ["a informação sobre onde Ana lê", "a informação de que Ana lê", "o nome Ana"],
+          "correctIndex": 0
+        },
+        {
+          "before": "O pato nada.",
+          "after": "O pato nada no lago.",
+          "question": "A primeira frase já era uma mensagem compreensível?",
+          "options": ["Sim; a segunda apenas acrescenta o lugar.", "Não; frases só funcionam com informação de lugar.", "Não; a primeira não possui palavras suficientes."],
+          "correctIndex": 0
+        }
+      ],
+      "sentenceTtsAvailable": true
+    },
+    {
+      "id": "L06-A03",
+      "type": "guided-activity",
+      "focus": "compare-and-respond",
+      "interaction": "interpret-word-form-change-without-rule-naming",
+      "title": "Observe a mudança de forma",
+      "items": [
+        {
+          "before": "A menina saiu.",
+          "after": "As meninas saíram.",
+          "question": "Qual mudança principal de informação podemos perceber?",
+          "options": ["de uma menina para mais de uma menina", "de sair para dormir", "de uma afirmação para uma pergunta"],
+          "correctIndex": 0
+        },
+        {
+          "before": "O cachorro chegou.",
+          "after": "Os cachorros chegaram.",
+          "question": "Precisamos saber agora o nome técnico das regras que mudaram as palavras?",
+          "options": ["Não; nesta lição basta perceber a mudança de sentido e que as formas mudaram juntas.", "Sim; sem decorar concordância não é possível compreender a mensagem."],
+          "correctIndex": 0
+        }
+      ],
+      "sentenceTtsAvailable": true
+    },
+    {
+      "id": "L06-A04",
+      "type": "transfer-activity",
+      "focus": "transform-compare-and-respond",
+      "title": "Use as transformações em exemplos novos",
+      "items": [
+        {
+          "interaction": "identify-effect-of-replacement",
+          "before": "Mia encontrou Caio.",
+          "after": "Mia encontrou Beto.",
+          "options": ["mudou quem Mia encontrou", "mudou a ação para dormir", "foi retirada a pessoa que realiza a ação"],
+          "correctIndex": 0
+        },
+        {
+          "interaction": "identify-information-added",
+          "before": "Leo estudou.",
+          "after": "Leo estudou ontem.",
+          "options": ["foi acrescentada informação sobre quando", "mudou de uma pessoa para várias", "foi retirada a ação"],
+          "correctIndex": 0
+        },
+        {
+          "interaction": "identify-information-lost-after-removal",
+          "before": "A bola caiu no quintal.",
+          "after": "A bola caiu.",
+          "options": ["deixou de informar onde a bola caiu", "deixou de informar que a bola caiu", "passou a negar a queda"],
+          "correctIndex": 0
+        },
+        {
+          "interaction": "choose-single-replacement-for-target-meaning",
+          "baseSentence": "A sopa está quente.",
+          "targetMeaning": "comunicar que a sopa está fria",
+          "replaceTarget": "quente",
+          "options": ["fria", "sopa", "ontem"],
+          "correctIndex": 0,
+          "result": "A sopa está fria."
+        },
+        {
+          "interaction": "interpret-transparent-word-form-change",
+          "before": "A criança chegou.",
+          "after": "As crianças chegaram.",
+          "options": ["a segunda frase fala de mais de uma criança", "a segunda frase informa outro lugar", "a segunda frase diz que ninguém chegou"],
+          "correctIndex": 0
+        }
+      ],
+      "sentenceTtsAvailable": true
+    },
+    {
+      "id": "L06-B08",
+      "type": "summary",
+      "focus": "read-or-listen",
+      "text": "Mudar uma palavra pode mudar de quem falamos, o que acontece ou uma característica. Acrescentar informação pode tornar a mensagem mais específica; retirar informação pode deixá-la menos específica sem necessariamente torná-la errada. Algumas mudanças de sentido também aparecem acompanhadas por mudanças na forma de várias palavras. Na próxima lição, vamos estudar separadamente uma transformação muito importante: o efeito da negação."
+    }
+  ],
+  "assessmentBehavior": {
+    "sentenceAudio": "frases antes e depois podem ser narradas antes da resposta, pois a competência é interpretar o efeito da transformação textual; a voz exata não determina o acerto",
+    "differenceRendering": "toda diferença deve permanecer disponível como texto real e possuir indicação estrutural ou rótulo acessível de substituição, adição, retirada ou modificação; não depender somente de cor",
+    "replacementTasks": "alterar apenas o alvo explicitamente indicado e não oferecer uma resposta que exija mudança de ordem ou conhecimento gramatical ainda não ensinado",
+    "additionRemovalTasks": "avaliar a informação acrescentada ou perdida sem assumir que a versão mais longa é melhor ou que a versão mais curta é incorreta",
+    "wordFormTasks": "avaliar somente a interpretação transparente da mudança de quantidade ou informação; não pedir nome de regra, paradigma flexional ou correção produtiva de concordância",
+    "negationBoundary": "não usar inclusão ou retirada de NÃO como item avaliativo desta lição; reservar esse contraste para N0-U03-L07",
+    "readingSupport": "TTS e apoio de leitura são permitidos e seu uso não é automaticamente erro",
+    "timeLimit": false,
+    "technicalTerminologyRequired": false,
+    "longWrittenResponseRequired": false,
+    "retryPolicy": "permitir nova tentativa após feedback; variar a ordem das opções quando isso não prejudicar a comparação antes/depois"
+  },
+  "completionEvidence": {
+    "observablePerformance": "Relacionar transformações controladas em frases simples aos efeitos correspondentes na mensagem, distinguindo substituição, informação acrescentada ou retirada e mudanças transparentes de forma pelo resultado de sentido que produzem.",
+    "criteria": {
+      "replacementEffect": "acertar pelo menos 2 dos 3 itens de L06-A01",
+      "additionAndRemoval": "acertar pelo menos 2 dos 3 itens de L06-A02, incluindo um caso de adição e um de retirada",
+      "wordFormMeaning": "acertar os 2 itens de L06-A03 sem necessidade de nomear regra gramatical",
+      "transfer": "acertar pelo menos 4 dos 5 itens de L06-A04, incluindo pelo menos um caso de substituição e um caso de adição ou retirada"
+    },
+    "completionRule": "considerar a lição concluída quando os quatro critérios forem atingidos; reconhecer visualmente qual palavra mudou sem compreender o efeito da mudança não é evidência suficiente",
+    "notSufficient": [
+      "percorrer todas as telas",
+      "apontar apenas que as frases são diferentes sem dizer o que mudou na mensagem",
+      "memorizar os exemplos demonstrados",
+      "decorar nomes de classes gramaticais ou de operações",
+      "assumir que toda frase maior é melhor",
+      "assumir que qualquer retirada torna a frase errada",
+      "explicar regras formais de concordância sem demonstrar compreensão do sentido",
+      "responder rapidamente"
+    ]
+  }
+}
