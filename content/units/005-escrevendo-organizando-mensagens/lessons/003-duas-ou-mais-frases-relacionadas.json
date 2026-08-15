@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 1,
+  "id": "N0-U05-L03",
+  "title": "Duas ou mais frases que se relacionam",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Organizar uma mensagem curta com duas ou mais frases relacionadas quando uma única frase não for suficiente, mantendo continuidade simples sem impor uma fórmula fixa de parágrafo.",
+  "competencies": [
+    "perceber quando uma mensagem precisa de mais de uma frase",
+    "ordenar duas ou três frases para manter sequência e continuidade",
+    "produzir duas frases próprias relacionadas a um mesmo objetivo",
+    "evitar contradições simples entre frases",
+    "reler o conjunto e verificar se as partes formam uma mensagem compreensível"
+  ],
+  "prerequisites": ["N0-U05-L02", "N0-U04-V01"],
+  "limits": [
+    "não exigir parágrafo formal como sistema",
+    "não exigir conectivos como taxonomia",
+    "não impor número fixo de frases em toda mensagem",
+    "não exigir coesão formal avançada",
+    "não validar automaticamente qualidade global de produção aberta"
+  ],
+  "media": {"tts": "instruções, situações e feedback", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {
+    "curatedMedia": [],
+    "runtimeResources": [{"type": "TTS_OK", "locations": ["instruções", "situações", "feedback"], "purpose": "apoio de acesso"}],
+    "generatedVisualResources": [
+      {"type": "UI_RENDERED_SENTENCE_ORDERING", "locations": ["L03-B02", "L03-C01", "L03-A01"], "purpose": "ordenar frases como texto manipulável"},
+      {"type": "UI_RENDERED_MULTI_SENTENCE_FIELD", "locations": ["L03-A02"], "purpose": "permitir produção de duas frases próprias"},
+      {"type": "UI_RENDERED_SELF_REVIEW_CHECKLIST", "locations": ["L03-A02"], "purpose": "revisar continuidade e objetivo"}
+    ],
+    "productionQueueRequired": false,
+    "publicationDependency": "nenhuma nova mídia humana obrigatória",
+    "decisionRationale": "a progressão é textual e pode ser observada por ordenação e produção escrita curta."
+  },
+  "sequence": [
+    {
+      "id": "L03-B01",
+      "type": "objective",
+      "focus": "connect-sentences",
+      "text": "Algumas mensagens cabem em uma frase. Outras precisam de duas ou mais partes que se relacionam."
+    },
+    {
+      "id": "L03-B02",
+      "type": "demonstration",
+      "focus": "sequence-two-sentences",
+      "goal": "avisar que a loja fechará cedo e explicar o motivo",
+      "sentences": ["A loja fechará às quatro hoje.", "Haverá manutenção no prédio."],
+      "explanation": "As duas frases tratam do mesmo aviso e juntas fornecem mais informação."
+    },
+    {
+      "id": "L03-C01",
+      "type": "quick-check",
+      "focus": "order-message",
+      "goal": "contar que Rosa chegou à estação e depois pegou o trem",
+      "cards": ["Depois, ela entrou no trem.", "Rosa chegou à estação."],
+      "correctOrder": ["Rosa chegou à estação.", "Depois, ela entrou no trem."]
+    },
+    {
+      "id": "L03-B03",
+      "type": "contrast",
+      "focus": "continuity-versus-contradiction",
+      "pairs": [
+        {"sentences": ["O curso começa às sete.", "A sala abre às seis e meia."], "coherent": true},
+        {"sentences": ["A loja está fechada hoje.", "A loja está aberta hoje o dia inteiro."], "coherent": false}
+      ],
+      "explanation": "As frases precisam poder conviver dentro da mesma mensagem."
+    },
+    {
+      "id": "L03-A01",
+      "type": "assessment-ordering",
+      "focus": "sequence-transfer",
+      "goal": "organizar uma pequena instrução",
+      "cards": ["Depois, entregue o formulário no balcão.", "Primeiro, preencha seu nome e telefone."],
+      "correctOrder": ["Primeiro, preencha seu nome e telefone.", "Depois, entregue o formulário no balcão."]
+    },
+    {
+      "id": "L03-A02",
+      "type": "assessment-open",
+      "focus": "produce-related-sentences",
+      "goal": "avise uma pessoa de que a consulta mudou para amanhã e que o novo horário é às dez",
+      "responseMode": "free-text-multiple-sentences",
+      "minimumFunctionalRequirement": "a mensagem precisa comunicar as duas informações; uma ou mais frases podem ser usadas",
+      "selfReview": ["Minha mensagem diz que mudou para amanhã?", "Ela informa o horário das dez?", "As partes combinam entre si?"],
+      "automaticObservations": ["há texto livre", "autochecagem concluída", "há ao menos duas informações registradas pelo próprio aluno se isso puder ser observado sem heurística semântica"],
+      "notAutomaticallyJudged": ["compreensibilidade plena", "correção gramatical global", "quantidade ideal de frases"],
+      "modelExamplesAfterSubmission": ["A consulta mudou para amanhã. O novo horário é às dez.", "A consulta será amanhã às dez."]
+    }
+  ],
+  "assessmentBehavior": {"openResponsePolicy": "produção aberta é registrada e autorrevisada; validação plena exige avaliador confiável", "timeLimit": false},
+  "completionEvidence": {
+    "clusters": {
+      "organization": {"evidence": ["L03-C01", "L03-A01"], "rule": "ordenar corretamente as duas mensagens"},
+      "ownMessage": {"evidence": ["L03-A02"], "rule": "realizar produção livre e autochecagem; resultado autônomo não equivale a validação linguística plena"}
+    },
+    "completionRule": "os dois agrupamentos são obrigatórios.",
+    "notSufficient": ["ordenar frases sem compreender o objetivo", "produzir partes contraditórias", "copiar modelo posterior"]
+  }
+}
