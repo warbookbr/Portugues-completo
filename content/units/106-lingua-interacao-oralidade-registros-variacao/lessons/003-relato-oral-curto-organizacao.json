@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "N1-U06-L03",
+  "title": "Relato oral curto: começo compreensível e sequência",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Planejar e produzir oralmente um relato curto com sequência acompanhável e referência clara, usando apoio de tópicos quando necessário e distinguindo prática registrada de validação de compreensibilidade.",
+  "competencies": ["selecionar dois a quatro acontecimentos", "ordenar fatos", "indicar participantes", "usar marcas temporais quando ajudam", "evitar leitura integral obrigatória de roteiro", "realizar ensaio oral", "usar autochecagem após falar"],
+  "prerequisites": ["N1-U05-L04", "N1-U06-L02"],
+  "limits": ["não exigir improviso sem preparação", "não avaliar sotaque", "não usar duração/velocidade como nota", "não exigir narrativa literária", "não declarar fala compreensível sem observação confiável"],
+  "media": {"tts": "apenas instruções/modelos; não é modelo obrigatório de pronúncia", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["modelo", "instruções"], "purpose": "apoio"}], "generatedVisualResources": [{"type": "UI_RENDERED_ORAL_PLAN", "locations": ["L03-B01", "L03-A01", "L03-P01"], "purpose": "organizar tópicos antes da fala"}, {"type": "UI_RENDERED_ORAL_SELF_CHECK", "locations": ["L03-P01"], "purpose": "registrar ensaio e autochecagem sem atribuir nota de compreensibilidade"}], "productionQueueRequired": false, "publicationDependency": "prática autônoma possível; validação de produção oral exige observação humana/externa ou reconhecimento confiável futuro", "decisionRationale": "o curso pode estruturar planejamento e prática sem fingir avaliar características acústicas que não observa."},
+  "sequence": [
+    {"id": "L03-B01", "type": "oral-plan-model", "situation": "Relatar por que chegou atrasado.", "topics": ["ônibus não passou no horário", "avisou a equipe", "pegou a linha seguinte", "chegou vinte minutos depois"], "modelTranscript": "Meu ônibus atrasou. Eu avisei a equipe e peguei a linha seguinte. Cheguei cerca de vinte minutos depois.", "teachingPoint": "o plano pode ser tópicos; não precisa ser texto para decorar"},
+    {"id": "L03-C01", "type": "sequence-check", "events": ["avisou que se atrasaria", "percebeu que o ônibus tinha partido", "pegou o próximo ônibus"], "oneCoherentOrder": [1, 0, 2]},
+    {"id": "L03-A01", "type": "oral-plan-assessment", "scenario": "Relatar uma pequena mudança no trabalho: recebeu nova tarefa pela manhã, pediu uma explicação, concluiu à tarde.", "requiredTopics": ["nova tarefa", "pedido de explicação", "conclusão à tarde"], "responseMode": "organização de tópicos"},
+    {"id": "L03-P01", "type": "oral-practice", "prompt": "Use os tópicos para fazer um relato oral curto. Se não puder gravar, faça o ensaio em voz alta e registre que o realizou.", "recordAttemptMetadata": true, "recordingRequired": false, "automaticSpeechValidation": false, "selfCheck": ["apresentei o assunto sem demora excessiva?", "os acontecimentos ficaram em ordem?", "fica claro quem participou?", "precisei consultar os tópicos? isso é permitido", "há parte que eu gostaria de reformular?"]}
+  ],
+  "assessmentBehavior": {"planningAutoCheckable": true, "oralAttemptRecorded": true, "speechComprehensibilityAutoValidated": false, "accentNotScored": true, "speedNotScored": true},
+  "completionEvidence": {"clusters": {"oralPlan": {"evidence": ["L03-A01"], "rule": "organizar os três tópicos essenciais"}, "oralPractice": {"evidence": ["L03-P01"], "rule": "ensaio registrado + autochecagem; status da fala = prática realizada, não compreensibilidade validada"}}, "completionRule": "planejamento e prática são obrigatórios; validação oral externa é uma camada separada.", "notSufficient": ["ler definição de relato", "marcar tarefa como feita sem ensaio", "usar pronúncia do TTS como padrão obrigatório"]}
+}
