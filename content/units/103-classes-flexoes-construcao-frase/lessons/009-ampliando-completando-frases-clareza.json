@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "id": "N1-U03-L09",
+  "title": "Ampliando e completando frases com clareza",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Completar ou ampliar frases com informações de participante, objeto, lugar, tempo ou modo quando a mensagem e a finalidade pedem, distinguindo informação necessária de detalhe opcional sem introduzir transitividade formal.",
+  "competencies": [
+    "perceber quando uma mensagem deixa informação relevante em aberto",
+    "completar construções controladas com informação compatível",
+    "ampliar frase já suficiente com detalhes de lugar, tempo ou modo",
+    "retirar detalhe e avaliar se a mensagem continua suficiente para a finalidade",
+    "explicar funcionalmente o que uma informação acrescentada esclarece",
+    "não confundir frase mais longa com frase automaticamente melhor"
+  ],
+  "prerequisites": ["N1-U03-L04", "N1-U03-L08"],
+  "limits": ["não introduzir objeto direto/indireto", "não sistematizar transitividade ou regência", "não afirmar que todo verbo exige o mesmo conjunto de informações", "não ensinar ordem rígida de complementos", "não avaliar tamanho como qualidade"],
+  "media": {"tts": "permitido", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["frases", "feedback"], "purpose": "apoio"}], "generatedVisualResources": [{"type": "UI_RENDERED_INFORMATION_SLOTS", "locations": ["L09-B01", "L09-C01", "L09-A01"], "purpose": "mostrar que diferentes informações podem completar a mensagem"}, {"type": "UI_RENDERED_BEFORE_AFTER_SENTENCE", "locations": ["L09-B02", "L09-A02"], "purpose": "comparar suficiência antes/depois"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "suficiência e expansão podem ser testadas com situações textuais controladas."},
+  "sequence": [
+    {"id": "L09-B01", "type": "completion-demonstration", "situation": "Alguém pergunta onde Rita colocou o relatório.", "before": "Rita colocou...", "after": "Rita colocou o relatório na mesa.", "addedInformation": ["o que foi colocado", "onde foi colocado"], "teachingPoint": "a situação decide qual informação precisa ficar clara"},
+    {"id": "L09-B02", "type": "expansion-demonstration", "pairs": [{"base": "Paulo chegou.", "expanded": "Paulo chegou às oito.", "effect": "acrescenta tempo sem tornar a versão curta incorreta"}, {"base": "A loja abriu.", "expanded": "A loja abriu cedo hoje.", "effect": "acrescenta detalhes de tempo"}], "guardRail": "mais informação não significa automaticamente melhor; depende da finalidade"},
+    {"id": "L09-C01", "type": "guided-completion", "items": [{"situation": "A pergunta é: o que Ana enviou?", "stem": "Ana enviou ____.", "options": ["o formulário", "ontem", "devagar"], "correctIndex": 0}, {"situation": "A pergunta é: onde a equipe se reuniu?", "stem": "A equipe se reuniu ____.", "options": ["na sala 2", "o relatório", "a equipe"], "correctIndex": 0}]},
+    {"id": "L09-C02", "type": "sufficiency-check", "situation": "O aviso precisa dizer apenas que o atendimento começou.", "versions": ["O atendimento começou.", "O atendimento começou às oito na sala principal."], "correctJudgment": "as duas podem cumprir a finalidade; a segunda oferece detalhes adicionais"},
+    {"id": "L09-A01", "type": "assessment-completion", "items": [{"situation": "Pergunta: onde Carlos guardou a chave?", "stem": "Carlos guardou a chave ____.", "options": ["na gaveta", "a chave", "Carlos"], "correctIndex": 0}, {"situation": "Pergunta: quando a reunião terminou?", "stem": "A reunião terminou ____.", "options": ["às 17h", "a reunião", "o relatório"], "correctIndex": 0}, {"situation": "Pergunta: o que a técnica verificou?", "stem": "A técnica verificou ____.", "options": ["o equipamento", "cedo", "na segunda"], "correctIndex": 0}]},
+    {"id": "L09-A02", "type": "assessment-sufficiency", "items": [{"situation": "Você só precisa confirmar a chegada de Marina.", "versions": ["Marina chegou.", "Marina chegou às 9h pela entrada lateral."], "question": "A versão curta já comunica o necessário?", "options": ["sim", "não"], "correctIndex": 0}, {"situation": "Você precisa dizer onde deixou o pacote.", "versions": ["Deixei o pacote.", "Deixei o pacote na recepção."], "question": "Qual versão fornece a informação pedida?", "options": ["segunda", "primeira"], "correctIndex": 0}]},
+    {"id": "L09-A03", "type": "assessment-effect", "before": "O ônibus chegou.", "after": "O ônibus chegou com atraso.", "question": "O que a expressão acrescentada informa?", "options": ["modo/condição da chegada em relação ao horário", "quem era o ônibus", "que não houve chegada"], "correctIndex": 0}
+  ],
+  "assessmentBehavior": {"purposeControlsSufficiency": true, "noFormalTransitivity": true, "ttsPolicy": "permitido", "timeLimit": false},
+  "completionEvidence": {"clusters": {"completion": {"evidence": ["L09-A01"], "rule": "completar os três casos conforme a pergunta"}, "sufficiency": {"evidence": ["L09-A02"], "rule": "julgar corretamente as duas situações"}, "effect": {"evidence": ["L09-A03"], "rule": "explicar funcionalmente o detalhe acrescentado"}}, "completionRule": "os três agrupamentos são obrigatórios.", "notSufficient": ["sempre alongar frases", "nomear complemento técnico", "ignorar a finalidade comunicativa"]}
+}
