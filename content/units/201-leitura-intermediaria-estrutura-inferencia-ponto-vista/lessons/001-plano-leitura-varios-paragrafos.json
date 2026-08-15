@@ -1,0 +1,131 @@
+{
+  "schemaVersion": 1,
+  "id": "N2-U01-L01",
+  "title": "Ler textos de vários parágrafos com um plano de leitura",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Escolher e aplicar estratégias de leitura compatíveis com diferentes finalidades em textos de vários parágrafos, usando leitura global, busca orientada e releitura seletiva sem transformar velocidade ou memória em critério de compreensão.",
+  "competencies": [
+    "identificar o objetivo de leitura antes de começar uma tarefa",
+    "usar leitura global quando precisa compreender a organização ou mensagem geral",
+    "usar busca orientada quando precisa localizar informação específica",
+    "reler seletivamente os parágrafos relevantes para confirmar uma resposta",
+    "manter o texto disponível e usar evidência em vez de memória",
+    "mudar de estratégia quando a primeira leitura não é suficiente"
+  ],
+  "prerequisites": ["N1-U01-V01", "N1-EXIT-V01"],
+  "limits": [
+    "não usar velocidade como evidência de boa leitura",
+    "não esconder o texto para medir memória",
+    "não exigir leitura linear completa quando a finalidade é localizar um dado",
+    "não ensinar busca de palavra como substituto da compreensão global",
+    "não exigir nome técnico das estratégias"
+  ],
+  "media": {"tts": "opcional para instruções e textos quando decodificação visual independente não for o alvo", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {
+    "curatedMedia": [],
+    "runtimeResources": [{"type": "TTS_OK", "locations": ["instruções", "textos", "feedback"], "purpose": "apoio de acesso; não revela resposta"}],
+    "generatedVisualResources": [
+      {"type": "UI_RENDERED_READING_GOAL_CARD", "locations": ["L01-B01", "L01-C01", "L01-A01", "L01-A02"], "purpose": "manter a finalidade visível"},
+      {"type": "UI_RENDERED_PARAGRAPH_READING_CARD", "locations": ["L01-B02", "L01-C01", "L01-A01", "L01-A02"], "purpose": "manter texto e parágrafos consultáveis"},
+      {"type": "UI_RENDERED_EVIDENCE_HIGHLIGHT", "locations": ["L01-C01", "L01-A01", "L01-A02"], "purpose": "marcar trecho usado na resposta com equivalente textual acessível"}
+    ],
+    "productionQueueRequired": false,
+    "publicationDependency": "nenhuma nova mídia humana obrigatória",
+    "decisionRationale": "o alvo é estratégia de leitura; texto e marcação de evidência na interface são suficientes."
+  },
+  "sequence": [
+    {"id": "L01-B01", "type": "objective", "text": "Em textos maiores, você não precisa ler sempre do mesmo jeito. A pergunta orienta a estratégia: compreender o conjunto, localizar um dado ou confirmar uma relação pedem movimentos diferentes."},
+    {
+      "id": "L01-B02",
+      "type": "demonstration",
+      "textTitle": "Atendimento no centro comunitário",
+      "paragraphs": [
+        "O centro comunitário do bairro passará a atender em dois prédios durante o mês de setembro. A mudança será temporária enquanto a sede principal recebe manutenção elétrica.",
+        "As oficinas de artes continuarão na sede principal, mas ocorrerão somente no período da manhã. Os encontros de leitura serão transferidos para a biblioteca da praça.",
+        "Quem precisar emitir a carteirinha do centro deverá procurar a biblioteca às terças e quintas, das 13h às 17h. Não é necessário fazer novo cadastro para participar das atividades já inscritas.",
+        "A administração divulgará qualquer alteração adicional no mural dos dois prédios e no boletim eletrônico semanal."
+      ],
+      "contrasts": [
+        {"goal": "descobrir em quais dias a carteirinha pode ser emitida", "strategy": "ir ao parágrafo que trata da carteirinha e confirmar o horário", "evidence": "terças e quintas, das 13h às 17h"},
+        {"goal": "explicar o que muda durante setembro", "strategy": "ler o conjunto e relacionar motivo, locais e atividades afetadas", "evidence": "os quatro parágrafos contribuem em graus diferentes"}
+      ]
+    },
+    {
+      "id": "L01-C01",
+      "type": "quick-check",
+      "readingGoal": "descobrir se quem já está inscrito precisa fazer novo cadastro",
+      "paragraphsRef": "L01-B02",
+      "question": "Qual é a estratégia mais eficiente sem perder confiabilidade?",
+      "options": [
+        "localizar o parágrafo sobre cadastro, ler a frase completa e confirmar a resposta no texto",
+        "tentar lembrar a primeira leitura sem consultar o texto",
+        "ler apenas o título e deduzir a resposta"
+      ],
+      "correctIndex": 0,
+      "followUp": {"question": "Qual é a resposta?", "options": ["não precisa fazer novo cadastro", "precisa fazer cadastro toda semana", "o texto não menciona cadastro"], "correctIndex": 0},
+      "textRemainsVisible": true
+    },
+    {
+      "id": "L01-B03",
+      "type": "strategy-repair",
+      "situation": "Você leu rapidamente e não consegue explicar por que os encontros de leitura mudaram de lugar.",
+      "options": [
+        "voltar aos parágrafos sobre a mudança e o motivo geral, verificando se o texto liga diretamente as duas informações",
+        "responder pelo que costuma acontecer em centros comunitários",
+        "evitar reler porque releitura indica falha"
+      ],
+      "correctIndex": 0,
+      "teachingPoint": "reler é estratégia; também é importante não inventar uma relação que o texto não afirma"
+    },
+    {
+      "id": "L01-A01",
+      "type": "assessment",
+      "readingGoal": "localizar até quando uma inscrição pode ser feita",
+      "textTitle": "Curso de manutenção de bicicletas",
+      "paragraphs": [
+        "A oficina escola abrirá uma turma de manutenção básica de bicicletas para moradores a partir de 16 anos. As aulas acontecerão aos sábados pela manhã durante quatro semanas.",
+        "As inscrições ficam abertas de 3 a 12 de outubro. Para se inscrever, é preciso preencher a ficha na recepção ou no formulário digital indicado no mural.",
+        "A oficina fornecerá as ferramentas usadas durante as aulas. Cada participante deverá levar apenas uma bicicleta em condições de ser transportada com segurança.",
+        "Se houver mais candidatos do que vagas, a escola fará um sorteio e publicará a lista no dia 14."
+      ],
+      "question": "Qual estratégia atende melhor ao objetivo?",
+      "options": ["procurar o parágrafo que informa o período de inscrição e conferir as datas", "memorizar todos os detalhes das quatro partes antes de responder", "ler apenas o último parágrafo"],
+      "correctIndex": 0,
+      "followUp": {"question": "Até quando a inscrição pode ser feita?", "options": ["12 de outubro", "14 de outubro", "durante quatro semanas"], "correctIndex": 0},
+      "textRemainsVisible": true
+    },
+    {
+      "id": "L01-A02",
+      "type": "assessment",
+      "readingGoal": "explicar como funciona a participação no curso, da inscrição até a confirmação da vaga",
+      "paragraphsRef": "L01-A01",
+      "question": "Qual estratégia é necessária?",
+      "options": [
+        "ler os parágrafos relevantes em conjunto, relacionando inscrição, possível sorteio e publicação da lista",
+        "localizar apenas a palavra bicicleta e responder com o trecho mais próximo",
+        "usar somente a data do primeiro parágrafo"
+      ],
+      "correctIndex": 0,
+      "followUp": {
+        "question": "Qual descrição corresponde ao texto?",
+        "options": [
+          "a pessoa se inscreve entre 3 e 12; se houver candidatos demais, ocorre sorteio e a lista sai no dia 14",
+          "a vaga é confirmada automaticamente no momento em que a bicicleta é levada",
+          "a lista de vagas é publicada antes do início das inscrições"
+        ],
+        "correctIndex": 0
+      },
+      "textRemainsVisible": true
+    }
+  ],
+  "assessmentBehavior": {"textVisibility": "sempre disponível", "rereading": "permitida e ensinada", "evidenceSelection": "registrada quando solicitada", "ttsPolicy": "apoio opcional", "timeLimit": false},
+  "completionEvidence": {
+    "clusters": {
+      "strategySelection": {"evidence": ["L01-C01", "L01-A01", "L01-A02"], "rule": "selecionar estratégia compatível nas três situações"},
+      "strategyApplication": {"evidence": ["L01-A01", "L01-A02"], "rule": "obter a informação pedida usando o texto e sem inventar relações"},
+      "repair": {"evidence": ["L01-B03"], "rule": "reconhecer releitura seletiva como estratégia legítima"}
+    },
+    "completionRule": "os três agrupamentos são obrigatórios.",
+    "notSufficient": ["ler rapidamente", "memorizar sem consultar", "usar busca de palavra para responder questão global", "responder por conhecimento externo"]
+  }
+}

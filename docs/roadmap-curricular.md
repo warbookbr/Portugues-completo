@@ -50,7 +50,7 @@ currículo fechado
 - **M2 concluído** — 11 áreas em `docs/areas-nivel-2.md`;
 - **M3 concluído** — 9 unidades em `docs/unidades-nivel-2.md`;
 - **M4 concluído** — **87 lições + 9 verificações integradas** em `docs/licoes-nivel-2.md` e documentos U1–U9;
-- **M5 pendente**.
+- **M5 em andamento** — **U1 concluída**; U2–U9 pendentes.
 
 Arquitetura M4:
 
@@ -66,6 +66,41 @@ U8   8 — Língua em interação: apresentação, discussão, registro e varia�
 U9   9 — Literatura, multimodalidade e comparação de fontes
 ```
 
+### N2-U1 — Leitura intermediária: estrutura, inferência e ponto de vista — CONCLUÍDA
+
+```text
+10 lições + N2-U01-V01
+```
+
+Cobertura:
+
+- plano de leitura para textos de vários parágrafos;
+- foco por parágrafo e organização global sem molde fixo;
+- informação principal, secundária relevante e detalhe lateral;
+- integração explícita de informações distribuídas;
+- cadeias referenciais mais longas e reparo de ambiguidade;
+- causa, consequência, condição, contraste e conclusão;
+- inferência com duas ou mais pistas distribuídas;
+- ponto de vista/perspectiva com evidência e sem intenção autoral inventada;
+- distinção entre explícito, inferência apoiada e informação insuficiente;
+- síntese própria de texto de vários parágrafos.
+
+A verificação integrada usa texto novo de cinco parágrafos e mantém oito agrupamentos obrigatórios: estrutura/hierarquia, integração de explícitos, referência, relações lógicas, inferência distribuída, perspectiva/evidência, informação insuficiente e síntese própria.
+
+Regras preservadas:
+
+- texto permanece disponível e releitura é permitida;
+- velocidade e número de releituras não determinam aprovação;
+- inferência exige pistas pertinentes;
+- `não há informação suficiente` é resposta legítima quando o material realmente não decide;
+- integração de informações explícitas não é tratada automaticamente como inferência;
+- síntese própria é obrigatória, mas não recebe falsa validação semântica por palavras-chave;
+- TTS é apoio opcional, sem nova mídia humana obrigatória.
+
+Revisão implementada antes do fechamento:
+
+- um item de referenciação foi corrigido para usar dois referentes femininos realmente concorrentes (`a planilha` / `a ficha`), removendo uma ambiguidade artificial que a concordância de gênero resolvia sozinha.
+
 ### Níveis 3 e 4
 
 **M1 concluído.** M2–M5 ainda pendentes.
@@ -76,21 +111,24 @@ U9   9 — Literatura, multimodalidade e comparação de fontes
 NÍVEL 0 — M5 ✓
 NÍVEL 1 — M5 ✓
 NÍVEL 2 — M1–M4 ✓
-└── M5 — PRÓXIMO MARCO
-    └── U1 — Leitura intermediária: estrutura, inferência e ponto de vista
+└── M5 — MARCO ATIVO
+    ├── U1 ✓
+    └── U2 — PRÓXIMO SUBPASSO
 ```
 
 Próximo subpasso:
 
 ```text
-N2-U01
-10 lições + verificação integrada
+N2-U02 — Palavras em sistema: ortografia, acentuação, morfologia e precisão
+11 lições + verificação integrada
 ```
+
+Antes do M5 da U2, o recorte normativo exato de ortografia/acentuação deve ser conferido e registrado a partir de fontes normativas primárias adequadas.
 
 Depois:
 
 ```text
-N2-U2 → U3 → U4 → U5 → U6 → U7 → U8 → U9
+N2-U3 → U4 → U5 → U6 → U7 → U8 → U9
 → verificação de saída N2
 → checkpoint N2→N3
 ```
