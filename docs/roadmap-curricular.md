@@ -2,26 +2,7 @@
 
 ## Objetivo
 
-Este documento responde rapidamente:
-
-```text
-Onde estamos?
-Qual é o marco ativo?
-Qual é o próximo subpasso interno?
-Que condição estrutural precisa ser atendida antes de aprofundar mais?
-```
-
-Fontes relacionadas:
-
-- `docs/mapa-curso.md` — visão geral do percurso e detalhamento consolidado do Nível 0;
-- `docs/mapa-niveis-1-4.md` — camada `M1` dos Níveis 1–4;
-- `docs/matriz-progressao-global.md` — progressão transversal dos grandes domínios;
-- `docs/unidades-nivel-0.md` — unidades do Nível 0;
-- `docs/licoes-nivel-0.md` — arquitetura das Unidades 1–5;
-- `docs/licoes-nivel-0-unidade-6.md` — arquitetura da Unidade 6;
-- `docs/checkpoint-saida-nivel-0.md` — auditoria das competências de saída do Nível 0;
-- `content/` — conteúdo efetivamente desenvolvido;
-- `docs/execucao-continua.md` — protocolo para execução por marcos.
+Registrar o estado real do desenvolvimento curricular, o marco ativo e a próxima camada que pode ser aprofundada.
 
 ## Escala de maturidade
 
@@ -34,220 +15,125 @@ M4 — lições dimensionadas
 M5 — conteúdo desenvolvido
 ```
 
-A escala mede maturidade de planejamento/desenvolvimento, não progresso do aluno nem prontidão de publicação.
+A escala mede maturidade curricular. Não equivale a progresso do aluno nem a prontidão de publicação.
 
-## Estado macro atual
+## Estado macro
 
 ### Nível 0 — Fundamentos
 
-Estado curricular: **`M5` concluído**.
+**M5 concluído.** Seis unidades, verificações integradas U1–U6, verificação de saída `N0-EXIT-V01` e auditoria de competências concluídas.
 
-- `M1` concluído;
-- `M2` concluído;
-- `M3` concluído: seis unidades dimensionadas;
-- `M4` concluído: todas as seis unidades possuem arquitetura de lições;
-- `M5` concluído: **U1–U6 possuem conteúdo detalhado e verificação integrada**;
-- verificação de saída do nível criada em `content/levels/000-fundamentos/exit-verification.json`;
-- competências de saída auditadas em `docs/checkpoint-saida-nivel-0.md`.
+Permanece a distinção:
 
-O fechamento curricular **não** significa publicação pronta. Permanecem dependências técnicas e de mídia descritas abaixo.
+```text
+currículo fechado
+≠ publicação pronta
+≠ validação externa de toda resposta aberta/oral
+```
 
 ### Nível 1 — Básico
 
-Estado atual: **`M1` concluído**.
+- **M1 concluído** — `docs/mapa-niveis-1-4.md`;
+- **M2 concluído** — 10 áreas em `docs/areas-nivel-1.md`;
+- **M3 concluído** — 7 unidades em `docs/unidades-nivel-1.md`;
+- **M4 concluído** — 64 lições + 7 verificações integradas dimensionadas em `docs/licoes-nivel-1.md` e documentos U1–U7;
+- **M5 em andamento** — **U1 concluída**; U2–U7 ainda pendentes.
 
-Próximo avanço estrutural: `M1 → M2`, dimensionando suas áreas antes de organizar unidades ou produzir conteúdo.
+A passagem N0→N1 foi auditada em `docs/transicao-n0-n1.md` e não exige reabrir o N0.
 
-### Nível 2 — Intermediário
+### Níveis 2, 3 e 4
 
-Estado atual: **`M1` concluído**.
+**M1 concluído** para os três níveis.
 
-### Nível 3 — Avançado
+## N1 — M5
 
-Estado atual: **`M1` concluído**.
-
-### Nível 4 — Domínio
-
-Estado atual: **`M1` concluído**.
-
-## Checkpoint global após a Unidade 3
-
-Status: **CONCLUÍDO**.
+### U1 — Lendo textos com mais autonomia — CONCLUÍDA
 
 ```text
-N1 — M0 → M1 ✓
-N2 — M0 → M1 ✓
-N3 — M0 → M1 ✓
-N4 — M0 → M1 ✓
-matriz global ✓
-revisão de lacunas/sobreposições ✓
+9 lições desenvolvidas
++ N1-U01-V01
 ```
 
-## Fechamento do Nível 0
+Cobertura: objetivo de leitura; assunto, finalidade e informação principal; combinação de explícitos; referenciação; tempo/causa/contraste/explicação; explícito x inferência x informação insuficiente; apoios multimodais acessíveis; autoria/fonte/opinião/razão; resumo em palavras próprias.
 
-Status curricular: **CONCLUÍDO**.
+Regras preservadas:
 
-```text
-U1 — M5 ✓
-U2 — M5 ✓
-U3 — M5 ✓
-U4 — M5 ✓
-U5 — M5 ✓
-U6 — M5 ✓
-verificações integradas U1–U6 ✓
-verificação de saída do N0 ✓
-mapeamento das competências de saída ✓
-```
-
-### Unidade 6 — Usando a língua no cotidiano
-
-Conteúdo desenvolvido:
-
-```text
-1. Quem, para quem e para quê?
-2. Perguntar para obter informação
-3. Responder e fornecer informação
-4. Pedir, oferecer e orientar
-5. Avisos, instruções e mensagens do cotidiano
-6. Ouvindo mensagens curtas e identificando o principal
-7. Mais formal ou mais informal?
-8. Maneiras diferentes de usar o português
-9. Quando não entendo: repetir, esclarecer e confirmar
-10. Reformular e confirmar que a comunicação funcionou
-+ verificação integrada
-```
-
-A U6 fecha o percurso funcional do Nível 0 sem se tornar revisão geral disfarçada. TTS mede compreensão oral quando a resposta depende do significado e não de prosódia específica.
-
-### Limite de produção oral
-
-Sem reconhecimento de fala ou avaliação humana/externa confiável:
-
-```text
-prática oral registrada
-≠
-produção oral compreensível validada
-```
-
-A U6 e a verificação de saída preservam essa distinção. O nível pode ser curricularmente fechado sem fingir que a limitação técnica deixou de existir.
-
-### Dependências ainda abertas fora da maturidade curricular
-
-**Mídia:** U1 e U2 ainda possuem mídias humanas obrigatórias já registradas em `producao-midia/FILA-MIDIA.md`.
-
-**Frontend:** o catálogo/renderer ainda não publica as unidades desenvolvidas; `content/course.json` continua sem unidades publicadas por decisão deliberada.
-
-**Respostas abertas:** validação linguística plena depende de avaliador confiável; o fluxo autônomo registra produção e autochecagem.
-
-**Produção oral:** validação de compreensibilidade depende de observação externa futura.
-
-Portanto:
-
-```text
-N0 curricularmente fechado
-≠ N0 pronto para publicação
-≠ N0 completamente validado por um aluno real
-```
+- o texto permanece disponível para releitura;
+- inferências exigem pistas suficientes;
+- `não há informação suficiente` é resposta legítima;
+- imagem/layout nunca são a única via de acesso à evidência;
+- resumo próprio é evidência obrigatória e não recebe validação automática por heurística fraca;
+- nenhuma nova mídia humana obrigatória foi criada.
 
 ## Foco curricular atual
 
 ```text
-NÍVEL 0 — curricularmente fechado em M5
-
-NÍVEL 1 — MARCO ATIVO
-└── elevar de M1 para M2
-    └── dimensionar grandes áreas — PRÓXIMO SUBPASSO INTERNO
+NÍVEL 0 — M5 concluído
+NÍVEL 1 — M1–M4 concluídos
+└── M5 — MARCO ATIVO
+    ├── U1 ✓
+    └── U2 — PRÓXIMO SUBPASSO
 ```
 
-Último marco curricular concluído:
+Próximo marco:
 
 ```text
-N0 — U1–U6 em M5 + verificação de saída + checkpoint de competências
+N1-U02 — Palavras: ortografia, acentuação e sentidos
+10 lições + verificação integrada
 ```
 
-Marco ativo:
+Depois:
 
 ```text
-N1 — dimensionar áreas em M2
+U3 → U4 → U5 → U6 → U7
+→ verificação de saída do N1
+→ checkpoint N1→N2
 ```
-
-Próximo subpasso interno:
-
-```text
-N1-M2 — transformar as grandes áreas do mapa M1 em áreas dimensionadas com objetivo, competências, conteúdos essenciais e limites
-```
-
-## Gate para avançar o Nível 1
-
-Antes de autoria detalhada do N1:
-
-```text
-M1 — concluído
-→ M2 — dimensionar áreas
-→ revisão contra saída do N0 e matriz global
-→ M3 — organizar unidades
-→ somente então M4/M5
-```
-
-O dimensionamento M2 deve garantir especialmente as responsabilidades do N1 na matriz global: consolidação da alfabetização, leitura básica ampliada, textos curtos/parágrafos, ortografia/acentuação inicial sistemática, classes/flexões fundamentais, sintaxe e concordância básicas, vocabulário, pontuação ampliada, gêneros/oralidade, registro/variação, literatura/multimodalidade e primeiros contatos com argumento e fontes.
-
-## Cobertura global
-
-A fonte oficial continua sendo `docs/matriz-progressao-global.md`.
 
 ## Regras de continuidade
 
-1. Detalhar mais o que está mais próximo.
-2. Nenhum nível entra em autoria detalhada sem `M1–M3` suficientemente consolidados.
-3. Corrigir a camada apropriada quando surgir lacuna estrutural real.
-4. Atualizar este roadmap quando o estado curricular mudar.
-5. Executar marcos autorizados sem confirmações repetidas conforme `docs/execucao-continua.md`.
+1. Nenhuma unidade entra em M5 sem M4 consolidado.
+2. Descobertas locais devem ser conferidas contra `docs/matriz-progressao-global.md`.
+3. Ortografia e gramática não devem virar taxonomia isolada: uso, compreensão, aplicação e revisão continuam centrais.
+4. Produções abertas e orais não podem receber validação automática falsa quando a aplicação não possui avaliador confiável.
+5. Atualizar este roadmap no mesmo PR que alterar materialmente o estado curricular.
+6. Em ortografia/acentuação, ensinar regularidades com escopo explícito e não transformar padrão parcial em regra universal.
 
-## Sequência prevista
+## Dependências não curriculares ainda abertas
 
-```text
-MARCO ATIVO — NÍVEL 1
-1. dimensionar áreas do N1 em M2
-2. revisar conexão N0 → N1 e matriz global
-3. consolidar M2
+- mídias humanas antigas de U1/U2 do N0 registradas em `producao-midia/FILA-MIDIA.md`;
+- frontend ainda sem catálogo/renderer das unidades desenvolvidas;
+- respostas abertas dependem de avaliador confiável para correção linguística plena;
+- produção oral compreensível depende de observação externa futura.
 
-MARCO SEGUINTE — NÍVEL 1 M3
-4. organizar áreas em unidades pedagógicas
-5. dimensionar cada unidade
-6. revisar cobertura e dependências
+Essas dependências não bloqueiam o desenvolvimento curricular do N1.
 
-DEPOIS
-7. dimensionar lições do N1 em M4
-8. só então iniciar autoria M5
-```
-
-## Fonte de verdade e manutenção
+## Fontes de verdade
 
 ```text
-visão geral do curso
+visão geral
 → docs/mapa-curso.md
 
-M1 dos Níveis 1–4
+M1 N1–N4
 → docs/mapa-niveis-1-4.md
 
-progressão transversal
+matriz global
 → docs/matriz-progressao-global.md
 
-estado e próximo marco
+N1 M2
+→ docs/areas-nivel-1.md
+
+N1 M3
+→ docs/unidades-nivel-1.md
+
+N1 M4
+→ docs/licoes-nivel-1.md + docs/licoes-nivel-1-u*.md
+
+transição N0→N1
+→ docs/transicao-n0-n1.md
+
+estado atual
 → docs/roadmap-curricular.md
 
-checkpoint de saída N0
-→ docs/checkpoint-saida-nivel-0.md
-
-execução contínua
-→ docs/execucao-continua.md
-
-arquitetura U1–U5
-→ docs/licoes-nivel-0.md
-
-arquitetura U6
-→ docs/licoes-nivel-0-unidade-6.md
-
-conteúdo detalhado
+conteúdo
 → content/
-```
