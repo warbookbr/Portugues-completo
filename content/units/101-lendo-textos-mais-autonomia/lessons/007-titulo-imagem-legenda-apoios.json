@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 1,
+  "id": "N1-U01-L07",
+  "title": "Título, imagem, legenda e outros apoios",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Integrar informações verbais e visuais simples quando ambas participam da compreensão, distinguindo elemento que apoia, complementa ou apenas decora sem permitir que a imagem substitua a leitura quando o alvo é textual.",
+  "competencies": [
+    "usar título como pista sem tratá-lo como resumo automático",
+    "relacionar legenda ao elemento que ela explica",
+    "integrar informação de texto e representação visual simples",
+    "identificar quando um elemento visual acrescenta informação relevante",
+    "identificar quando um elemento visual é apenas decorativo",
+    "usar alternativa textual acessível como equivalente da informação visual quando necessário"
+  ],
+  "prerequisites": ["N1-U01-L02", "N1-U01-L03", "N1-U01-L06"],
+  "limits": [
+    "não usar imagem para tornar desnecessária a leitura de texto quando a leitura verbal é o alvo",
+    "não exigir interpretação estética avançada",
+    "não criar mídia humana apenas para decorar a lição",
+    "não tratar título como garantia da informação principal",
+    "não avaliar capacidade visual sem oferecer equivalente acessível"
+  ],
+  "media": {"tts": "instruções e texto verbal; representações visuais devem possuir equivalente acessível", "controlledAudio": [], "video": "nao necessario", "images": "nenhuma imagem humana necessária; usar representações semânticas geradas pela UI"},
+  "supportMaterials": {
+    "curatedMedia": [],
+    "runtimeResources": [{"type": "TTS_OK", "locations": ["instruções", "textos", "equivalentes acessíveis", "feedback"], "purpose": "acesso ao componente verbal"}],
+    "generatedVisualResources": [
+      {"type": "UI_RENDERED_TITLE_AND_CAPTION_CARD", "locations": ["L07-B02", "L07-C01"], "purpose": "mostrar relação entre título, texto e legenda"},
+      {"type": "UI_RENDERED_SIMPLE_ROUTE_DIAGRAM", "locations": ["L07-B03", "L07-A01"], "purpose": "fornecer informação espacial complementar com equivalente textual acessível"},
+      {"type": "UI_RENDERED_DATA_BADGE", "locations": ["L07-A02"], "purpose": "apresentar dado visual simples que precisa ser integrado ao texto"}
+    ],
+    "productionQueueRequired": false,
+    "publicationDependency": "nenhuma mídia humana obrigatória; componentes visuais da UI precisam de alternativa textual acessível",
+    "decisionRationale": "multimodalidade pode ser ensinada com representações semânticas simples geradas pela interface; não há ganho em produzir imagens decorativas."
+  },
+  "sequence": [
+    {"id": "L07-B01", "type": "objective", "text": "Alguns textos usam título, legenda, mapas, ícones ou outros elementos visuais. Eles podem ajudar, acrescentar informação ou apenas decorar. Precisamos perceber a função de cada parte."},
+    {
+      "id": "L07-B02",
+      "type": "demonstration",
+      "title": "Horta comunitária amplia atendimento",
+      "bodyText": "A horta do bairro passará a receber visitantes também nas quartas-feiras pela manhã. Aos sábados, o horário continua o mesmo.",
+      "caption": "Canteiros da horta comunitária durante atividade de sábado.",
+      "questions": [
+        {"question": "O título ajuda a antecipar qual assunto?", "answer": "uma mudança/ampliação no atendimento da horta"},
+        {"question": "A legenda informa o novo horário de quarta-feira?", "answer": "não; ela identifica a situação mostrada e menciona sábado"}
+      ]
+    },
+    {
+      "id": "L07-C01",
+      "type": "quick-check",
+      "title": "Feira de profissões acontece na escola",
+      "bodyText": "O evento será na sexta-feira, das 14h às 18h. A entrada é gratuita.",
+      "caption": "Auditório preparado para receber os participantes.",
+      "question": "Onde está a informação do horário?",
+      "options": ["no corpo do texto", "somente na legenda", "somente no título"],
+      "correctIndex": 0
+    },
+    {
+      "id": "L07-B03",
+      "type": "multimodal-demonstration",
+      "bodyText": "Para chegar à sala de inscrição, entre pela porta principal e siga as indicações do mapa.",
+      "visual": {
+        "type": "simple-route-diagram",
+        "nodes": ["Entrada principal", "Recepção", "Sala de inscrição"],
+        "connections": [["Entrada principal", "Recepção"], ["Recepção", "Sala de inscrição"]],
+        "accessibleEquivalent": "O diagrama mostra a rota Entrada principal → Recepção → Sala de inscrição."
+      },
+      "question": "Qual informação precisa do diagrama ou de seu equivalente acessível para ser respondida?",
+      "answer": "o caminho específico depois de entrar"
+    },
+    {
+      "id": "L07-A01",
+      "type": "assessment-multimodal",
+      "bodyText": "A retirada de crachás começa na entrada do prédio. Depois, siga o percurso indicado até a sala da palestra.",
+      "visual": {
+        "type": "simple-route-diagram",
+        "nodes": ["Entrada", "Balcão de crachás", "Corredor B", "Sala 6"],
+        "connections": [["Entrada", "Balcão de crachás"], ["Balcão de crachás", "Corredor B"], ["Corredor B", "Sala 6"]],
+        "accessibleEquivalent": "A rota mostrada é Entrada → Balcão de crachás → Corredor B → Sala 6."
+      },
+      "question": "Depois de retirar o crachá, por onde a pessoa passa antes de chegar à palestra?",
+      "options": ["pelo Corredor B", "pela Entrada novamente", "o material não informa"],
+      "correctIndex": 0,
+      "evidenceSourcesRequired": ["bodyText", "visual-or-accessible-equivalent"]
+    },
+    {
+      "id": "L07-A02",
+      "type": "assessment-relevance",
+      "title": "Mutirão de documentos",
+      "bodyText": "O atendimento será sábado, das 9h às 13h, no centro comunitário. É preciso levar documento com foto.",
+      "visualBadge": {"label": "Entrada gratuita", "accessibleEquivalent": "Selo informativo: Entrada gratuita."},
+      "question": "Qual afirmação descreve corretamente o papel do selo?",
+      "options": ["ele acrescenta uma informação que não aparece no corpo do texto", "ele substitui a necessidade de ler horário e documentos", "ele prova que o evento acontece domingo"],
+      "correctIndex": 0
+    }
+  ],
+  "assessmentBehavior": {"accessibility": "toda informação visual necessária deve ter equivalente textual acessível", "readingSupport": "TTS opcional", "timeLimit": false},
+  "completionEvidence": {
+    "clusters": {
+      "verbalSupport": {"evidence": ["L07-C01", "L07-A02"], "rule": "distinguir informação de título/corpo/legenda/selo"},
+      "multimodalIntegration": {"evidence": ["L07-A01"], "rule": "integrar texto e representação visual/equivalente acessível para responder"}
+    },
+    "completionRule": "os dois agrupamentos são obrigatórios.",
+    "notSufficient": ["usar apenas a imagem quando a informação verbal é necessária", "usar apenas o título como resumo", "tratar elemento decorativo como evidência"]
+  }
+}
