@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "id": "N0-U05-L05",
+  "title": "Informação suficiente para quem vai ler",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Perceber quando uma mensagem deixa de comunicar uma informação necessária e completá-la de modo funcional, sem confundir clareza com excesso de detalhes.",
+  "competencies": [
+    "identificar informação essencial ausente em mensagem curta",
+    "acrescentar o dado necessário para cumprir o objetivo",
+    "distinguir informação necessária de detalhe opcional",
+    "comparar duas versões e reconhecer qual é suficiente para a situação",
+    "evitar acrescentar informações irrelevantes apenas para alongar o texto"
+  ],
+  "prerequisites": ["N0-U05-L04"],
+  "limits": [
+    "não exigir que toda mensagem responda quem, onde, quando, como e por quê",
+    "não usar tamanho do texto como critério de suficiência",
+    "não exigir detalhamento que a situação não precisa",
+    "não introduzir coesão formal ou revisão gramatical ampla",
+    "não marcar como incompleta uma formulação diferente apenas por não repetir um modelo"
+  ],
+  "media": {"tts": "instruções, situações e feedback", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {
+    "curatedMedia": [],
+    "runtimeResources": [{"type": "TTS_OK", "locations": ["instruções", "situações", "feedback"], "purpose": "apoio de acesso"}],
+    "generatedVisualResources": [
+      {"type": "UI_RENDERED_BEFORE_AFTER_MESSAGE", "locations": ["L05-B02", "L05-C01", "L05-A01"], "purpose": "comparar mensagem incompleta e completada"},
+      {"type": "UI_RENDERED_MISSING_INFO_SLOT", "locations": ["L05-C01", "L05-A01", "L05-A02"], "purpose": "tornar observável qual informação precisa ser acrescentada"}
+    ],
+    "productionQueueRequired": false,
+    "publicationDependency": "nenhuma nova mídia humana obrigatória",
+    "decisionRationale": "o alvo é funcionalidade da informação, diretamente representável por comparação textual."
+  },
+  "sequence": [
+    {
+      "id": "L05-B01",
+      "type": "objective",
+      "focus": "sufficient-information",
+      "text": "Uma mensagem precisa ter a informação necessária para o objetivo. Isso não significa colocar todos os detalhes possíveis."
+    },
+    {
+      "id": "L05-B02",
+      "type": "demonstration",
+      "focus": "missing-place",
+      "goal": "avisar onde será a reunião",
+      "before": "A reunião será amanhã às dez.",
+      "problem": "o local não foi informado",
+      "after": "A reunião será amanhã às dez na sala 5.",
+      "explanation": "O local é necessário porque faz parte do objetivo."
+    },
+    {
+      "id": "L05-C01",
+      "type": "quick-check",
+      "focus": "complete-message",
+      "goal": "informar quando a loja fecha hoje",
+      "candidate": "A loja fecha hoje.",
+      "question": "O que precisa ser acrescentado?",
+      "options": ["o horário", "a cor da fachada", "o nome do dono"],
+      "correctIndex": 0,
+      "completionExample": "A loja fecha hoje às seis."
+    },
+    {
+      "id": "L05-B03",
+      "type": "contrast",
+      "focus": "necessary-versus-extra",
+      "goal": "avisar que o ônibus sai às oito da plataforma 3",
+      "necessary": ["sai às oito", "plataforma 3"],
+      "optional": ["o ônibus é azul"],
+      "explanation": "O detalhe opcional pode ser verdadeiro, mas não é necessário para cumprir o objetivo."
+    },
+    {
+      "id": "L05-A01",
+      "type": "assessment",
+      "focus": "identify-and-complete",
+      "goal": "pedir que Joana leve o formulário na segunda-feira",
+      "candidate": "Joana, leve o formulário.",
+      "question": "Qual informação precisa ser acrescentada?",
+      "options": ["na segunda-feira", "o formulário é branco", "Joana mora perto"],
+      "correctIndex": 0,
+      "completedExample": "Joana, leve o formulário na segunda-feira."
+    },
+    {
+      "id": "L05-A02",
+      "type": "assessment-selection",
+      "focus": "choose-sufficient-version",
+      "goal": "avisar onde e quando buscar um pacote",
+      "options": [
+        "Seu pacote pode ser retirado amanhã depois das duas no balcão 4.",
+        "Seu pacote chegou.",
+        "O balcão 4 fica no prédio azul."
+      ],
+      "correctIndex": 0,
+      "explanationAfterAnswer": "A primeira versão informa tempo e local, que são as informações pedidas."
+    }
+  ],
+  "completionEvidence": {
+    "clusters": {
+      "missingInfo": {"evidence": ["L05-C01", "L05-A01"], "rule": "identificar corretamente a informação essencial ausente nos dois itens"},
+      "sufficiency": {"evidence": ["L05-A02"], "rule": "selecionar a versão que cumpre o objetivo sem depender de detalhe irrelevante"}
+    },
+    "completionRule": "os dois agrupamentos são obrigatórios.",
+    "notSufficient": ["escrever mais sem comunicar melhor", "adicionar detalhes irrelevantes", "usar fórmula fixa para toda mensagem"]
+  }
+}
