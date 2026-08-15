@@ -50,7 +50,7 @@ currículo fechado
 - **M2 concluído** — 11 áreas em `docs/areas-nivel-2.md`;
 - **M3 concluído** — 9 unidades em `docs/unidades-nivel-2.md`;
 - **M4 concluído** — **87 lições + 9 verificações integradas** em `docs/licoes-nivel-2.md` e documentos U1–U9;
-- **M5 em andamento** — **U1 e U2 concluídas**; U3–U9 pendentes.
+- **M5 em andamento** — **U1, U2 e U3 concluídas**; U4–U9 pendentes.
 
 Arquitetura M4:
 
@@ -72,34 +72,9 @@ U9   9 — Literatura, multimodalidade e comparação de fontes
 10 lições + N2-U01-V01
 ```
 
-Cobertura:
+Cobertura: plano de leitura; foco e organização global; hierarquia de informações; integração de explícitos; cadeias referenciais; relações lógicas; inferência distribuída; ponto de vista com evidência; explícito/inferência/insuficiência; síntese própria.
 
-- plano de leitura para textos de vários parágrafos;
-- foco por parágrafo e organização global sem molde fixo;
-- informação principal, secundária relevante e detalhe lateral;
-- integração explícita de informações distribuídas;
-- cadeias referenciais mais longas e reparo de ambiguidade;
-- causa, consequência, condição, contraste e conclusão;
-- inferência com duas ou mais pistas distribuídas;
-- ponto de vista/perspectiva com evidência e sem intenção autoral inventada;
-- distinção entre explícito, inferência apoiada e informação insuficiente;
-- síntese própria de texto de vários parágrafos.
-
-A verificação integrada usa texto novo de cinco parágrafos e mantém oito agrupamentos obrigatórios: estrutura/hierarquia, integração de explícitos, referência, relações lógicas, inferência distribuída, perspectiva/evidência, informação insuficiente e síntese própria.
-
-Regras preservadas:
-
-- texto permanece disponível e releitura é permitida;
-- velocidade e número de releituras não determinam aprovação;
-- inferência exige pistas pertinentes;
-- `não há informação suficiente` é resposta legítima quando o material realmente não decide;
-- integração de informações explícitas não é tratada automaticamente como inferência;
-- síntese própria é obrigatória, mas não recebe falsa validação semântica por palavras-chave;
-- TTS é apoio opcional, sem nova mídia humana obrigatória.
-
-Revisão implementada antes do fechamento:
-
-- um item de referenciação foi corrigido para usar dois referentes femininos realmente concorrentes (`a planilha` / `a ficha`), removendo uma ambiguidade artificial que a concordância de gênero resolvia sozinha.
+Regras centrais: releitura permitida, velocidade não pontua, inferência exige pistas, insuficiência pode ser resposta legítima e síntese aberta não recebe validação semântica falsa.
 
 ### N2-U2 — Palavras em sistema: ortografia, acentuação, morfologia e precisão — CONCLUÍDA
 
@@ -109,36 +84,39 @@ Revisão implementada antes do fechamento:
 
 Escopo normativo: `docs/referencias-ortografia-nivel-2.md`.
 
+Cobertura: regra/padrão/consulta; `c/qu/ç` e fronteiras lexicais; paroxítonas; hiatos; famílias/base; afixos; derivação/composição; classes ampliadas; sinonímia/polissemia/ambiguidade/precisão; literal/figurado + acepção contextual.
+
+Regras centrais: padrão parcial não vira regra universal; consulta é autonomia quando a regra não decide; acentuação é avaliada apenas no recorte documentado; classes e sentidos são avaliados em contexto.
+
+### N2-U3 — Oração e termos: construindo e revisando relações sintáticas — CONCLUÍDA
+
+```text
+10 lições + N2-U03-V01
+```
+
 Cobertura:
 
-- decisão entre regra/padrão, pista morfológica e consulta lexical;
-- ampliação de `c/qu/ç` e fronteiras de `g/gu/g/j` e `ch/x` sem falsas regras fonéticas universais;
-- grafias lexicalmente condicionadas e consulta responsável;
-- paroxítonas em recorte produtivo e revisão de `ideia`, `assembleia`, `heroico`, `jiboia` sem acento no padrão atual;
-- `i/u` tônicos em hiatos centrais e limites como `rainha`, `moinho`, `raiz`, `juiz`;
-- radical/base e famílias transparentes sem confundir semelhança gráfica com parentesco;
-- prefixos/sufixos, derivação e composição por efeito de sentido;
-- advérbio, preposição, conjunção e numeral em uso contextual;
-- sinonímia aproximada, polissemia, ambiguidade e precisão lexical;
-- literal/figurado e escolha de acepção por contexto, distinguindo consulta ortográfica de recurso de definições.
+- frase, oração, período e locução verbal sem contagem mecânica de formas verbais;
+- sujeito antes/depois do verbo e recuperável pelo contexto/forma verbal;
+- predicado e funcionamento verbal em ação, estado, mudança e ocorrência;
+- núcleo e expansão de grupos nominais;
+- complementação verbal em construções transparentes, com e sem preposição;
+- modificadores de tempo, lugar e modo, separando papel estrutural de relevância comunicativa;
+- concordância nominal em grupos produtivos;
+- concordância verbal em sujeito simples, posposto e composto transparente;
+- ordem, referência e ambiguidade sintática com reformulações equivalentes;
+- revisão sintática em passes, preservando trechos corretos.
 
-A verificação integrada mantém nove agrupamentos obrigatórios: estratégia ortográfica, regularidades, paroxítonas, hiatos, família, formação, classes ampliadas, semântica/precisão e figurado/acepção contextual.
+A verificação integrada mantém nove agrupamentos obrigatórios e exige tarefa real de edição. Ela contém contraexemplos explícitos às generalizações `sujeito = primeira palavra`, `verbo = ação`, `tudo depois do verbo = complemento` e `verbo concorda com o substantivo mais próximo`.
 
-Regras preservadas:
+Limites preservados:
 
-- padrão parcial nunca vira regra universal;
-- quando o som/posição não decide a grafia, consulta é evidência de autonomia;
-- VOLP/consulta ortográfica não é tratado como dicionário completo de significados;
-- acentuação só é avaliada dentro do recorte normativo documentado;
-- classes são avaliadas em contexto, não por definição isolada;
-- sinônimo não significa intercambiabilidade perfeita;
-- mais precisão só é desejável quando a informação está disponível;
-- primeira acepção do verbete não é automaticamente a correta.
-
-Revisões implementadas antes do fechamento:
-
-- exemplo de ambiguidade lexical em L10 foi reescrito para um contexto genuinamente neutro (`Ela segurou a manga.`), evitando uma frase que favorecia quase toda a leitura de fruta;
-- item de cedilha da verificação foi refeito para não entregar a grafia correta no próprio enunciado, passando a exigir aplicação em `O la__o da fita soltou.`.
+- sem análise sintática completa;
+- sem taxonomia exaustiva de sujeito/predicado/transitividade;
+- regência normativa sistemática fica para U4;
+- concordâncias especiais/controversas ficam fora do recorte;
+- ordem não canônica clara não é corrigida por reflexo;
+- classificação isolada não compensa incapacidade de revisar uma construção real.
 
 Nenhuma nova mídia humana obrigatória foi criada.
 
@@ -155,20 +133,23 @@ NÍVEL 2 — M1–M4 ✓
 └── M5 — MARCO ATIVO
     ├── U1 ✓
     ├── U2 ✓
-    └── U3 — PRÓXIMO SUBPASSO
+    ├── U3 ✓
+    └── U4 — PRÓXIMO SUBPASSO
 ```
 
 Próximo subpasso:
 
 ```text
-N2-U03 — Oração e termos: construindo e revisando relações sintáticas
-10 lições + verificação integrada
+N2-U04 — Do período simples ao composto: relações, regência e pontuação
+11 lições + verificação integrada
 ```
+
+Antes do M5 da U4, o recorte normativo de regência, crase e colocação pronominal deve ser conferido e registrado em fontes adequadas, assim como foi feito com a ortografia da U2.
 
 Depois:
 
 ```text
-N2-U4 → U5 → U6 → U7 → U8 → U9
+N2-U5 → U6 → U7 → U8 → U9
 → verificação de saída N2
 → checkpoint N2→N3
 ```
