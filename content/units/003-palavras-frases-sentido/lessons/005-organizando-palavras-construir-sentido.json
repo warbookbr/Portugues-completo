@@ -1,0 +1,407 @@
+{
+  "schemaVersion": 1,
+  "id": "N0-U03-L05",
+  "title": "Organizando palavras para construir sentido",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Perceber que a organização e as relações entre palavras contribuem para construir a mensagem de uma frase, ordenando palavras fornecidas e comparando organizações que mudam ou preservam a informação principal sem depender de terminologia sintática formal.",
+  "competencies": [
+    "ordenar palavras fornecidas para formar uma mensagem simples coerente com uma situação",
+    "comparar frases formadas pelas mesmas palavras e perceber quando a mudança de ordem altera quem faz o quê",
+    "identificar intuitivamente sobre quem ou sobre o que uma mensagem fala e qual informação principal apresenta",
+    "reconhecer que duas organizações diferentes podem preservar a informação principal quando o contexto permite",
+    "distinguir uma organização clara de uma sequência que não comunica de modo adequado a mensagem pretendida em exemplos cotidianos controlados",
+    "transferir essas decisões para frases novas sem depender de nomes como sujeito, verbo, objeto ou complemento"
+  ],
+  "prerequisites": ["N0-U03-L04"],
+  "limits": [
+    "não ensinar sujeito, predicado, verbo, objeto, complemento, núcleo, ordem direta ou inversão como terminologia obrigatória",
+    "não apresentar uma única ordem de palavras como fórmula universal de frase em português",
+    "não afirmar que qualquer mudança de ordem produz erro; algumas organizações podem preservar a informação principal ou mudar apenas o foco",
+    "não exigir produção autônoma de frase com vocabulário livre; esta lição opera principalmente com palavras fornecidas",
+    "não transformar pontuação em objeto de estudo",
+    "não aprofundar concordância, regência ou análise sintática",
+    "não antecipar sistematicamente substituição, acréscimo e retirada de palavras, que serão o foco da Lição 6",
+    "não transformar a atividade em compreensão de pequenos textos ou de várias frases relacionadas",
+    "não usar velocidade ou tempo de resposta como critério de domínio"
+  ],
+  "media": {
+    "tts": "instruções, descrições de situação, palavras isoladas quando necessário e feedback. Em tarefas de ordenar palavras, o TTS não deve reproduzir previamente a frase correta na ordem-alvo; a frase montada pode ser narrada depois da tentativa para revisão.",
+    "controlledAudio": [],
+    "video": "nao necessario",
+    "images": "nao necessarias"
+  },
+  "supportMaterials": {
+    "curatedMedia": [],
+    "runtimeResources": [
+      {
+        "type": "TTS_OK",
+        "locations": ["instruções", "situações", "palavras isoladas sob demanda", "comparações já apresentadas", "feedback", "resumo"],
+        "purpose": "reduzir carga de leitura sem entregar a ordem correta nas tarefas de montagem; a voz exata não determina nenhuma resposta"
+      }
+    ],
+    "generatedVisualResources": [
+      {
+        "type": "UI_RENDERED_WORD_TILES",
+        "locations": ["L05-B02", "L05-C01", "L05-A01", "L05-A04"],
+        "purpose": "renderizar cada palavra como ficha de texto manipulável, preservando acessibilidade e permitindo reordenação sem transformar texto em imagem"
+      },
+      {
+        "type": "UI_RENDERED_ORDERING_ZONE",
+        "locations": ["L05-B02", "L05-C01", "L05-A01", "L05-A04"],
+        "purpose": "permitir construir uma sequência e revisar a frase montada antes de receber feedback"
+      },
+      {
+        "type": "UI_RENDERED_SENTENCE_COMPARISON",
+        "locations": ["L05-B03", "L05-C02", "L05-B05", "L05-C04", "L05-A02", "L05-A04"],
+        "purpose": "comparar duas organizações lado a lado e perguntar o que mudou ou permaneceu na mensagem sem rotular funções sintáticas"
+      },
+      {
+        "type": "UI_RENDERED_MESSAGE_RELATION_PROMPT",
+        "locations": ["L05-B04", "L05-C03", "L05-A03"],
+        "purpose": "perguntar de modo funcional sobre quem ou sobre o que se fala e qual informação é apresentada, sem converter isso em nomenclatura gramatical"
+      },
+      {
+        "type": "UI_RENDERED_WORD_READING_SUPPORT",
+        "locations": ["L05-C01", "L05-C02", "L05-C03", "L05-C04", "L05-A01", "L05-A02", "L05-A03", "L05-A04"],
+        "purpose": "oferecer apoio de leitura de palavras sob demanda e registrar seu uso separadamente do acerto sobre organização e sentido"
+      }
+    ],
+    "productionQueueRequired": false,
+    "publicationDependency": "não há nova mídia humana obrigatória para esta lição; fichas de texto, comparação de frases, TTS e descrições curtas de situação são suficientes",
+    "decisionRationale": "o conteúdo central é a relação entre ordem textual e mensagem. Texto manipulável da interface torna essa relação diretamente observável e acessível. Imagens não acrescentariam informação necessária e poderiam deslocar o foco para reconhecimento visual; áudio controlado não é necessário porque nenhuma resposta depende de entonação específica."
+  },
+  "sequence": [
+    {
+      "id": "L05-B01",
+      "type": "objective",
+      "focus": "read-or-listen",
+      "text": "Na lição anterior, vimos que uma frase comunica uma mensagem. Agora vamos olhar para dentro de frases com várias palavras. A posição das palavras e a relação entre elas ajudam a construir o que entendemos."
+    },
+    {
+      "id": "L05-B02",
+      "type": "word-order-demonstration",
+      "focus": "observe-order-and-understand",
+      "title": "Palavras organizadas constroem uma mensagem",
+      "situation": "Lia está chamando Rui.",
+      "shuffledTiles": ["Rui", "chama", "Lia"],
+      "targetSequence": ["Lia", "chama", "Rui"],
+      "renderedSentence": "Lia chama Rui.",
+      "sentenceTtsBeforeFirstAttempt": false,
+      "wordTtsAvailable": true,
+      "explanation": "As três palavras participam da mensagem, mas sua organização ajuda a indicar que Lia é quem chama e Rui é quem está sendo chamado. Não precisamos dar nomes gramaticais a essas funções para perceber a relação."
+    },
+    {
+      "id": "L05-C01",
+      "type": "quick-check-set",
+      "focus": "order-and-respond",
+      "interaction": "order-word-tiles-to-match-situation",
+      "instruction": "Organize as fichas para comunicar a situação apresentada.",
+      "items": [
+        {
+          "situation": "Rui está ajudando Ana.",
+          "tiles": ["Ana", "Rui", "ajuda"],
+          "acceptedSequences": [["Rui", "ajuda", "Ana"]],
+          "renderedSentence": "Rui ajuda Ana."
+        },
+        {
+          "situation": "O gato está dormindo.",
+          "tiles": ["dorme", "gato", "O"],
+          "acceptedSequences": [["O", "gato", "dorme"]],
+          "renderedSentence": "O gato dorme."
+        }
+      ],
+      "sentenceTtsBeforeFirstAttempt": false,
+      "wordTtsAvailable": true,
+      "supportUseIsError": false
+    },
+    {
+      "id": "L05-B03",
+      "type": "role-change-by-order-demonstration",
+      "focus": "compare",
+      "title": "Mudar a ordem pode mudar a relação",
+      "sameWords": ["Lia", "chama", "Rui"],
+      "sentences": [
+        {"text": "Lia chama Rui.", "meaning": "Lia realiza a ação de chamar; Rui é chamado."},
+        {"text": "Rui chama Lia.", "meaning": "Rui realiza a ação de chamar; Lia é chamada."}
+      ],
+      "explanation": "As palavras são as mesmas, mas a organização mudou quem chama quem. Por isso, a ordem não é apenas aparência: em muitos casos ela participa diretamente da construção do sentido."
+    },
+    {
+      "id": "L05-C02",
+      "type": "quick-check-set",
+      "focus": "compare-and-respond",
+      "interaction": "identify-relation-change-from-order",
+      "instruction": "Compare as frases e escolha o que cada uma comunica.",
+      "items": [
+        {
+          "sentences": ["Bia segue Caio.", "Caio segue Bia."],
+          "question": "O que mudou?",
+          "options": ["Mudou quem segue quem.", "Nada mudou na relação entre as pessoas.", "As duas frases dizem que ninguém segue ninguém."],
+          "correctIndex": 0
+        },
+        {
+          "sentences": ["Ana ajuda Beto.", "Beto ajuda Ana."],
+          "question": "Na segunda frase, quem ajuda?",
+          "options": ["Ana", "Beto", "ninguém"],
+          "correctIndex": 1
+        }
+      ],
+      "sentenceTtsAvailable": true,
+      "supportUseIsError": false
+    },
+    {
+      "id": "L05-B04",
+      "type": "functional-message-relation-demonstration",
+      "focus": "read-or-listen-then-understand",
+      "title": "Podemos perceber as relações sem decorar nomes técnicos",
+      "examples": [
+        {
+          "sentence": "O gato dorme.",
+          "about": "o gato",
+          "information": "ele dorme"
+        },
+        {
+          "sentence": "A loja abriu.",
+          "about": "a loja",
+          "information": "ela abriu"
+        },
+        {
+          "sentence": "Lia chamou Rui.",
+          "about": "Lia e uma ação envolvendo Rui",
+          "information": "Lia realizou a ação de chamar Rui"
+        }
+      ],
+      "explanation": "Nesta etapa, basta conseguir responder perguntas como 'sobre quem ou sobre o que estamos falando?' e 'o que está sendo informado?'. Os nomes gramaticais dessas relações serão estudados quando forem realmente úteis."
+    },
+    {
+      "id": "L05-C03",
+      "type": "quick-check-set",
+      "focus": "read-or-listen-and-respond",
+      "interaction": "identify-message-relations-functionally",
+      "items": [
+        {
+          "sentence": "O pato corre.",
+          "question": "Sobre o que a mensagem fala e o que informa?",
+          "options": ["Fala do pato e informa que ele corre.", "Fala da corrida e informa que ela é um pato.", "Fala do pato e informa que ele dorme."],
+          "correctIndex": 0
+        },
+        {
+          "sentence": "Rui empurra Leo.",
+          "question": "Quem realiza a ação de empurrar nessa mensagem?",
+          "options": ["Leo", "Rui", "os dois necessariamente"],
+          "correctIndex": 1
+        }
+      ],
+      "sentenceTtsAvailable": true,
+      "supportUseIsError": false
+    },
+    {
+      "id": "L05-B05",
+      "type": "alternative-order-demonstration",
+      "focus": "compare",
+      "title": "Nem toda mudança de ordem muda a informação principal",
+      "pairs": [
+        {
+          "sentences": ["Hoje a loja abriu.", "A loja abriu hoje."],
+          "sharedCoreMeaning": "a loja abriu hoje",
+          "note": "a organização muda, mas a informação principal permanece"
+        },
+        {
+          "sentences": ["Agora Rui chegou.", "Rui chegou agora."],
+          "sharedCoreMeaning": "Rui chegou agora",
+          "note": "as duas organizações são compreensíveis neste contexto simples"
+        }
+      ],
+      "explanation": "Português não funciona como um quebra-cabeça em que sempre existe uma única ordem possível. Em alguns casos, outra organização continua comunicando a mesma informação principal; em outros, como LIA CHAMA RUI e RUI CHAMA LIA, a relação muda."
+    },
+    {
+      "id": "L05-C04",
+      "type": "quick-check",
+      "focus": "compare-and-respond",
+      "interaction": "distinguish-preserved-core-meaning-from-role-change",
+      "prompt": "Qual par mantém a mesma informação principal nas duas organizações?",
+      "options": [
+        {"pair": ["Hoje Ana correu.", "Ana correu hoje."], "preservesCoreMeaning": true},
+        {"pair": ["Lia chama Rui.", "Rui chama Lia."], "preservesCoreMeaning": false},
+        {"pair": ["O gato segue o pato.", "O pato segue o gato."], "preservesCoreMeaning": false}
+      ],
+      "correctIndex": 0,
+      "feedback": "HOJE ANA CORREU e ANA CORREU HOJE mantêm a informação principal de que Ana correu hoje. Nos outros pares, trocar a posição dos participantes muda quem faz a ação em relação ao outro."
+    },
+    {
+      "id": "L05-B06",
+      "type": "guard-rail-demonstration",
+      "focus": "read-or-listen",
+      "title": "Flexibilidade não significa qualquer ordem",
+      "examples": [
+        {"sequence": "O gato dorme.", "judgment": "mensagem cotidiana clara"},
+        {"sequence": "Gato o dorme.", "judgment": "não apresenta de modo claro a mensagem pretendida neste exercício"},
+        {"sequence": "A loja abriu hoje.", "judgment": "mensagem cotidiana clara"},
+        {"sequence": "Hoje a loja abriu.", "judgment": "outra organização também clara"}
+      ],
+      "explanation": "Existem organizações diferentes possíveis, mas isso não significa que qualquer sequência de fichas comunica claramente a mensagem pretendida. Nesta lição usamos exemplos cotidianos controlados para aprender a observar sentido, não para decorar uma fórmula universal."
+    },
+    {
+      "id": "L05-A01",
+      "type": "guided-activity",
+      "focus": "order-and-respond",
+      "interaction": "order-word-tiles-to-match-situation",
+      "title": "Monte a mensagem",
+      "items": [
+        {
+          "situation": "Mia está chamando Caio.",
+          "tiles": ["Caio", "Mia", "chama"],
+          "acceptedSequences": [["Mia", "chama", "Caio"]]
+        },
+        {
+          "situation": "Caio está chamando Mia.",
+          "tiles": ["chama", "Mia", "Caio"],
+          "acceptedSequences": [["Caio", "chama", "Mia"]]
+        },
+        {
+          "situation": "O gato está dormindo.",
+          "tiles": ["gato", "dorme", "O"],
+          "acceptedSequences": [["O", "gato", "dorme"]]
+        },
+        {
+          "situation": "A loja acabou de abrir.",
+          "tiles": ["abriu", "loja", "A"],
+          "acceptedSequences": [["A", "loja", "abriu"]]
+        }
+      ],
+      "sentenceTtsBeforeFirstAttempt": false,
+      "wordTtsAvailable": true,
+      "supportUseIsError": false
+    },
+    {
+      "id": "L05-A02",
+      "type": "guided-activity",
+      "focus": "compare-and-respond",
+      "interaction": "interpret-order-change",
+      "title": "O que a ordem mudou?",
+      "items": [
+        {
+          "sentences": ["Ana ajuda Beto.", "Beto ajuda Ana."],
+          "question": "Na primeira frase, quem ajuda quem?",
+          "options": ["Ana ajuda Beto.", "Beto ajuda Ana.", "As duas pessoas ajudam uma terceira pessoa."],
+          "correctIndex": 0
+        },
+        {
+          "sentences": ["Lia segue Rui.", "Rui segue Lia."],
+          "question": "A mudança de ordem mantém exatamente a mesma relação?",
+          "options": ["Sim.", "Não; muda quem segue quem."],
+          "correctIndex": 1
+        },
+        {
+          "sentences": ["O gato persegue o pato.", "O pato persegue o gato."],
+          "question": "Na segunda frase, quem é perseguido?",
+          "options": ["o pato", "o gato"],
+          "correctIndex": 1
+        }
+      ],
+      "sentenceTtsAvailable": true,
+      "supportUseIsError": false
+    },
+    {
+      "id": "L05-A03",
+      "type": "guided-activity",
+      "focus": "understand-and-respond",
+      "interaction": "identify-about-and-information",
+      "title": "Encontre as relações da mensagem",
+      "items": [
+        {
+          "sentence": "O pato nadou.",
+          "options": ["A mensagem fala do pato e informa que ele nadou.", "A mensagem fala de uma loja e informa que abriu."],
+          "correctIndex": 0
+        },
+        {
+          "sentence": "A porta abriu.",
+          "options": ["A mensagem fala da porta e informa que ela abriu.", "A mensagem fala de Rui e informa que ele correu."],
+          "correctIndex": 0
+        },
+        {
+          "sentence": "Lia sorriu.",
+          "options": ["A mensagem fala de Lia e informa que ela sorriu.", "A mensagem fala de um gato e informa que dormiu."],
+          "correctIndex": 0
+        }
+      ],
+      "sentenceTtsAvailable": true,
+      "supportUseIsError": false
+    },
+    {
+      "id": "L05-A04",
+      "type": "transfer-activity",
+      "focus": "order-compare-and-respond",
+      "title": "Use a organização em exemplos novos",
+      "items": [
+        {
+          "interaction": "order-word-tiles-to-match-situation",
+          "situation": "Beto está encontrando Ana.",
+          "tiles": ["Ana", "encontra", "Beto"],
+          "acceptedSequences": [["Beto", "encontra", "Ana"]]
+        },
+        {
+          "interaction": "choose-pair-preserving-core-meaning",
+          "prompt": "Qual par mantém a mesma informação principal?",
+          "options": [
+            ["Hoje Ana correu.", "Ana correu hoje."],
+            ["Rui chama Lia.", "Lia chama Rui."],
+            ["Beto segue Ana.", "Ana segue Beto."]
+          ],
+          "correctIndex": 0
+        },
+        {
+          "interaction": "interpret-order-change",
+          "sentences": ["Rui chama Lia.", "Lia chama Rui."],
+          "prompt": "O que a troca de ordem muda?",
+          "options": ["muda quem chama quem", "muda apenas o tamanho das palavras", "não muda nenhuma relação"],
+          "correctIndex": 0
+        },
+        {
+          "interaction": "choose-clear-everyday-order",
+          "prompt": "Qual organização comunica claramente a mensagem cotidiana de que o pato nadou?",
+          "options": ["O pato nadou.", "Pato o nadou.", "Nadou o pato o."],
+          "correctIndex": 0
+        }
+      ],
+      "sentenceTtsBeforeOrderingAttempt": false,
+      "sentenceTtsAvailableForComparisonItems": true,
+      "wordTtsAvailable": true,
+      "supportUseIsError": false
+    },
+    {
+      "id": "L05-B07",
+      "type": "summary",
+      "focus": "read-or-listen",
+      "text": "A organização das palavras ajuda a construir relações e sentido. Às vezes, mudar a ordem muda quem faz o quê. Em outros casos, organizações diferentes podem manter a informação principal. O importante é observar a mensagem produzida, e não decorar uma única fórmula de frase. Na próxima lição, vamos manter a organização como base e observar o que acontece quando uma palavra é substituída, acrescentada, retirada ou modificada."
+    }
+  ],
+  "assessmentBehavior": {
+    "orderingTaskAudio": "não reproduzir a frase correta na ordem-alvo antes da primeira tentativa; instruções, situação e palavras isoladas podem ser narradas, e a sequência montada pode ser lida por TTS depois da tentativa",
+    "comparisonAudio": "frases já apresentadas para comparação podem ser narradas, pois a competência nesses blocos é interpretar a relação produzida pela ordem",
+    "readingSupport": "apoio de leitura de palavras é permitido quando disponível e deve ser registrado separadamente do acerto sobre organização e sentido; seu uso não é automaticamente erro",
+    "alternativeOrders": "o renderer deve aceitar todas as sequências explicitamente registradas em acceptedSequences e não inferir uma única ordem universal fora dos casos controlados",
+    "timeLimit": false,
+    "technicalTerminologyRequired": false,
+    "longWrittenResponseRequired": false,
+    "retryPolicy": "permitir nova tentativa após feedback; embaralhar a posição inicial das fichas quando isso não alterar a competência medida"
+  },
+  "completionEvidence": {
+    "observablePerformance": "Construir e interpretar frases simples a partir de palavras fornecidas, percebendo quando a organização altera relações e quando outra ordem preserva a informação principal.",
+    "criteria": {
+      "ordering": "acertar pelo menos 3 dos 4 itens de L05-A01, incluindo pelo menos um item com duas pessoas e uma relação entre elas",
+      "relationChange": "acertar pelo menos 2 dos 3 itens de L05-A02",
+      "messageRelations": "acertar pelo menos 2 dos 3 itens de L05-A03",
+      "transfer": "acertar pelo menos 3 dos 4 itens de L05-A04, incluindo o item de montagem e pelo menos um item que diferencie mudança de relação de preservação da informação principal"
+    },
+    "completionRule": "considerar a lição concluída quando os quatro critérios forem atingidos; ordenar uma frase memorizada não compensa incapacidade de interpretar o que a mudança de ordem fez com a mensagem",
+    "notSufficient": [
+      "percorrer todas as telas",
+      "memorizar uma fórmula fixa de ordem",
+      "acertar apenas frases de três palavras já demonstradas",
+      "reconhecer palavras isoladas sem compreender a relação formada pela sequência",
+      "usar presença de ponto final como critério principal",
+      "responder rapidamente"
+    ]
+  }
+}
