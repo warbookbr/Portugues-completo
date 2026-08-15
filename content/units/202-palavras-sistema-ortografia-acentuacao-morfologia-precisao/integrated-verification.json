@@ -28,7 +28,7 @@
       "type": "scope-and-position-set",
       "items": [
         {"sentence": "O __enário foi montado cedo.", "options": ["c", "ç"], "correctIndex": 0, "result": "cenário", "target": "ç não ocorre antes de e/i"},
-        {"sentence": "A palavra pretendida é 'moço'. Qual combinação está de acordo com o padrão?", "options": ["moço", "moco com c mantendo o mesmo valor sonoro pretendido"], "correctIndex": 0, "target": "ç antes de o no vocábulo estudado"},
+        {"sentence": "O la__o da fita soltou.", "options": ["ç", "c"], "correctIndex": 0, "result": "laço", "target": "no contraste c/ç oferecido, ç preserva o valor sibilante pretendido antes de o"},
         {"question": "Som e posição bastam para decidir entre g e j em qualquer palavra diante de e/i?", "options": ["não", "sim"], "correctIndex": 0},
         {"question": "Som e posição bastam para decidir entre ch e x em toda palavra?", "options": ["não", "sim"], "correctIndex": 0}
       ]
