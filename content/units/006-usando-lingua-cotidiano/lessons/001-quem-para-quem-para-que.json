@@ -1,0 +1,92 @@
+{
+  "schemaVersion": 1,
+  "id": "N0-U06-L01",
+  "title": "Quem, para quem e para quê?",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Identificar intuitivamente quem comunica, para quem e com qual finalidade imediata em situações cotidianas simples, usando contexto sem exigir terminologia pragmática formal.",
+  "competencies": [
+    "identificar quem produz uma mensagem em situação clara",
+    "identificar para quem a mensagem é dirigida",
+    "reconhecer a finalidade imediata da mensagem",
+    "perceber que a mesma sequência de palavras pode cumprir funções diferentes conforme a situação",
+    "usar contexto como parte da interpretação"
+  ],
+  "prerequisites": ["N0-U05-V01", "N0-U03-L08"],
+  "limits": [
+    "não exigir termos como emissor, receptor, enunciador ou ato de fala",
+    "não usar situações ambíguas como evidência central",
+    "não inferir intenções ocultas ou indiretas complexas",
+    "não transformar finalidade comunicativa em tabela de classificação rígida",
+    "não confundir pessoa mencionada com destinatário sem observar a situação"
+  ],
+  "media": {"tts": "instruções, mensagens e situações quando útil", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {
+    "curatedMedia": [],
+    "runtimeResources": [{"type": "TTS_OK", "locations": ["instruções", "situações", "mensagens", "feedback"], "purpose": "apoio de acesso; a voz exata não determina a resposta"}],
+    "generatedVisualResources": [
+      {"type": "UI_RENDERED_SITUATION_CARD", "locations": ["L01-B02", "L01-C01", "L01-A01", "L01-A02"], "purpose": "manter participantes e situação visíveis"},
+      {"type": "UI_RENDERED_WHO_TO_WHOM_PURPOSE", "locations": ["L01-B02", "L01-A01", "L01-A02"], "purpose": "relacionar mensagem, participante, destinatário e finalidade"}
+    ],
+    "productionQueueRequired": false,
+    "publicationDependency": "nenhuma nova mídia humana obrigatória",
+    "decisionRationale": "situações textuais curtas e TTS são suficientes para observar finalidade e participantes sem artificializar o contexto com imagens."
+  },
+  "sequence": [
+    {
+      "id": "L01-B01",
+      "type": "objective",
+      "text": "Para compreender uma mensagem, ajuda perceber quem está falando ou escrevendo, para quem e o que essa pessoa precisa comunicar."
+    },
+    {
+      "id": "L01-B02",
+      "type": "demonstration",
+      "situation": "Rita está no trabalho e envia a mensagem para o colega Paulo: 'A reunião mudou para a sala 3.'",
+      "answers": {"who": "Rita", "toWhom": "Paulo", "purpose": "informar a mudança do local da reunião"},
+      "explanation": "Os participantes e a finalidade vêm da situação inteira, não apenas de uma palavra isolada."
+    },
+    {
+      "id": "L01-C01",
+      "type": "quick-check",
+      "situation": "Um cliente pergunta ao atendente: 'Que horas a loja fecha?'",
+      "question": "Qual é a finalidade imediata da mensagem?",
+      "options": ["obter o horário de fechamento", "avisar que a loja fechou", "pedir um produto"],
+      "correctIndex": 0
+    },
+    {
+      "id": "L01-B03",
+      "type": "context-contrast",
+      "message": "Você vem amanhã?",
+      "contexts": [
+        {"situation": "Uma pessoa precisa saber se a outra estará presente.", "purpose": "obter confirmação"},
+        {"situation": "A frase aparece sozinha em uma lista de exemplos de pontuação.", "purpose": "servir como exemplo escrito, não realizar necessariamente uma pergunta a alguém naquele momento"}
+      ],
+      "explanation": "A forma da frase ajuda, mas a situação também participa do que ela está fazendo."
+    },
+    {
+      "id": "L01-A01",
+      "type": "assessment",
+      "situation": "Carlos deixa um bilhete para a irmã: 'Volto às oito. A chave está na gaveta.'",
+      "items": [
+        {"question": "Quem produziu a mensagem?", "options": ["Carlos", "a irmã", "a chave"], "correctIndex": 0},
+        {"question": "Para quem o bilhete foi deixado?", "options": ["para a irmã", "para Carlos", "para a gaveta"], "correctIndex": 0},
+        {"question": "Qual é a finalidade principal?", "options": ["informar quando Carlos volta e onde está a chave", "pedir que a irmã compre uma chave", "contar uma história sobre uma gaveta"], "correctIndex": 0}
+      ]
+    },
+    {
+      "id": "L01-A02",
+      "type": "assessment",
+      "situation": "Na recepção, uma visitante diz à funcionária: 'Pode me dizer onde fica a sala 8?'",
+      "question": "Qual opção descreve melhor a situação?",
+      "options": ["a visitante pede uma informação à funcionária", "a funcionária avisa a visitante", "a visitante dá uma ordem sobre a sala"],
+      "correctIndex": 0
+    }
+  ],
+  "completionEvidence": {
+    "clusters": {
+      "participants": {"evidence": ["L01-A01"], "rule": "identificar corretamente quem comunica e destinatário"},
+      "purpose": {"evidence": ["L01-C01", "L01-A01", "L01-A02"], "rule": "identificar a finalidade em pelo menos três situações claras"}
+    },
+    "completionRule": "os dois agrupamentos são obrigatórios.",
+    "notSufficient": ["classificar apenas pela pontuação", "decorar nomes técnicos", "ignorar a situação"]
+  }
+}
