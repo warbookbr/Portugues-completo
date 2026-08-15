@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "id": "N0-U06-L05",
+  "title": "Avisos, instruções e mensagens do cotidiano",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Compreender mensagens cotidianas simples pelo que informam, pela finalidade que cumprem e pela ação que exigem ou possibilitam em uma situação clara.",
+  "competencies": [
+    "compreender avisos, horários, bilhetes, convites, rótulos e instruções curtas",
+    "identificar informação principal e finalidade funcional",
+    "selecionar ação compatível com uma instrução ou aviso",
+    "usar contexto sem depender de classificação formal de gênero",
+    "distinguir informação escrita de suposição não apresentada"
+  ],
+  "prerequisites": ["N0-U06-L04", "N0-U04-V01", "N0-U05-V01"],
+  "limits": [
+    "não exigir taxonomia de gêneros",
+    "não usar textos longos",
+    "não transformar placas e avisos em imagens quando texto real basta",
+    "não exigir conhecimento especializado de rótulos ou documentos",
+    "não usar imagem para entregar resposta de uma tarefa de leitura"
+  ],
+  "media": {"tts": "instruções, mensagens e feedback", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {
+    "curatedMedia": [],
+    "runtimeResources": [{"type": "TTS_OK", "locations": ["instruções", "mensagens", "feedback"], "purpose": "apoio de acesso"}],
+    "generatedVisualResources": [
+      {"type": "UI_RENDERED_EVERYDAY_MESSAGE", "locations": ["L05-B02", "L05-C01", "L05-A01", "L05-A02"], "purpose": "representar aviso, horário ou instrução como texto acessível"},
+      {"type": "UI_RENDERED_ACTION_CHOICES", "locations": ["L05-C01", "L05-A01"], "purpose": "relacionar mensagem a ação funcional"}
+    ],
+    "productionQueueRequired": false,
+    "publicationDependency": "nenhuma nova mídia humana obrigatória",
+    "decisionRationale": "a aparência gráfica não é o alvo; texto real da UI preserva leitura e acessibilidade."
+  },
+  "sequence": [
+    {"id": "L05-B01", "type": "objective", "text": "Mensagens do cotidiano ajudam a agir: avisam, orientam, informam horários, identificam coisas ou dizem o que fazer."},
+    {
+      "id": "L05-B02",
+      "type": "demonstration-set",
+      "items": [
+        {"message": "FECHADO PARA MANUTENÇÃO. REABRIMOS AMANHÃ.", "meaning": "o local não atende hoje e volta amanhã"},
+        {"message": "Retirada de senhas: 8h às 16h.", "meaning": "informa o período para retirar senhas"},
+        {"message": "Agite antes de usar.", "meaning": "orienta uma ação antes do uso"}
+      ]
+    },
+    {
+      "id": "L05-C01",
+      "type": "quick-check",
+      "message": "NÃO ENTRE. PISO MOLHADO.",
+      "question": "Qual ação é compatível com o aviso?",
+      "options": ["não entrar naquele momento", "entrar rapidamente", "apagar o aviso"],
+      "correctIndex": 0
+    },
+    {
+      "id": "L05-B03",
+      "type": "evidence-discipline",
+      "message": "Atendimento: segunda a sexta, das 9h às 17h.",
+      "question": "O texto informa se há atendimento sábado?",
+      "answer": "não informa atendimento sábado; apenas define segunda a sexta",
+      "explanation": "Não complete com suposição aquilo que a mensagem não apresenta."
+    },
+    {
+      "id": "L05-A01",
+      "type": "assessment-set",
+      "items": [
+        {"message": "Favor desligar o celular durante a consulta.", "question": "O que a mensagem orienta?", "options": ["desligar o celular durante a consulta", "ligar para a consulta", "comprar um celular"], "correctIndex": 0},
+        {"message": "Convite: café comunitário, sábado, 15h, salão do bairro.", "question": "Onde será o encontro?", "options": ["no salão do bairro", "na escola", "o texto não informa"], "correctIndex": 0}
+      ]
+    },
+    {
+      "id": "L05-A02",
+      "type": "assessment",
+      "message": "Entrega de documentos somente até 18h.",
+      "question": "Uma pessoa chega às 18h30. O que o texto permite concluir?",
+      "options": ["o horário informado para entrega já terminou", "a entrega começa às 18h30", "o documento foi aceito"],
+      "correctIndex": 0
+    }
+  ],
+  "completionEvidence": {
+    "clusters": {
+      "meaningAndAction": {"evidence": ["L05-C01", "L05-A01"], "rule": "compreender mensagem e ação em pelo menos três itens"},
+      "functionalInformation": {"evidence": ["L05-A02"], "rule": "usar a informação escrita sem inventar dados"}
+    },
+    "completionRule": "os dois agrupamentos são obrigatórios.",
+    "notSufficient": ["nomear o gênero sem compreender", "agir por imagem sem ler", "inventar informação ausente"]
+  }
+}

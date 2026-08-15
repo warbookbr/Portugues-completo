@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "id": "N0-U06-L04",
+  "title": "Pedir, oferecer e orientar",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Compreender e produzir pedidos, ofertas e orientações simples em situações claras, reconhecendo que uma mesma finalidade pode ser expressa por mais de uma formulação adequada.",
+  "competencies": [
+    "reconhecer quando uma mensagem faz pedido, oferece algo ou orienta uma ação",
+    "selecionar formulação funcional para uma situação simples",
+    "perceber que formas diferentes podem cumprir a mesma finalidade",
+    "produzir pelo menos uma mensagem própria de pedido ou orientação",
+    "considerar contexto e interlocutor sem transformar a lição em etiqueta"
+  ],
+  "prerequisites": ["N0-U06-L01", "N0-U06-L02", "N0-U06-L03"],
+  "limits": [
+    "não exigir termos formais para atos comunicativos",
+    "não apresentar uma única frase universalmente correta para pedir ou orientar",
+    "não tratar por favor como requisito mecânico de toda mensagem",
+    "não transformar adequação em julgamento moral sobre a pessoa",
+    "não exigir negociação, persuasão ou instruções complexas"
+  ],
+  "media": {"tts": "instruções, situações, mensagens e feedback", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {
+    "curatedMedia": [],
+    "runtimeResources": [{"type": "TTS_OK", "locations": ["instruções", "situações", "mensagens", "feedback"], "purpose": "apoio de acesso; prosódia exata não define a resposta"}],
+    "generatedVisualResources": [
+      {"type": "UI_RENDERED_COMMUNICATIVE_FUNCTION_CHOICES", "locations": ["L04-B02", "L04-C01", "L04-A01"], "purpose": "relacionar mensagem e finalidade"},
+      {"type": "UI_RENDERED_OPEN_RESPONSE_FIELD", "locations": ["L04-A02"], "purpose": "produção própria funcional"},
+      {"type": "UI_RENDERED_SELF_REVIEW_CHECKLIST", "locations": ["L04-A02"], "purpose": "revisar se a mensagem cumpre a finalidade"}
+    ],
+    "productionQueueRequired": false,
+    "publicationDependency": "nenhuma nova mídia humana obrigatória",
+    "decisionRationale": "situações e mensagens textuais/TTS cobrem a função comunicativa sem exigir encenação ou vídeo."
+  },
+  "sequence": [
+    {"id": "L04-B01", "type": "objective", "text": "No cotidiano, usamos a língua para pedir algo, oferecer ajuda e orientar uma ação. A forma pode variar, mas precisa funcionar na situação."},
+    {
+      "id": "L04-B02",
+      "type": "demonstration",
+      "situations": [
+        {"situation": "Você precisa que alguém abra a janela.", "examples": ["Pode abrir a janela, por favor?", "Você abre a janela para mim?"], "function": "pedido"},
+        {"situation": "Uma pessoa está carregando muitas caixas.", "examples": ["Quer ajuda com as caixas?", "Posso ajudar?"], "function": "oferta"},
+        {"situation": "Alguém procura a saída.", "examples": ["Siga pelo corredor e vire à direita.", "A saída fica à direita, no fim do corredor."], "function": "orientação/informação funcional"}
+      ]
+    },
+    {
+      "id": "L04-C01",
+      "type": "quick-check-set",
+      "items": [
+        {"situation": "Uma pessoa quer ajuda para levantar uma caixa.", "options": ["Você pode me ajudar com esta caixa?", "A caixa é azul.", "Onde fica a caixa?"], "correctIndex": 0},
+        {"situation": "Você quer oferecer seu guarda-chuva a alguém.", "options": ["Quer usar meu guarda-chuva?", "Meu guarda-chuva está molhado.", "Guarde o guarda-chuva agora."], "correctIndex": 0}
+      ]
+    },
+    {
+      "id": "L04-B03",
+      "type": "guard-rail",
+      "focus": "multiple-formulations",
+      "text": "Duas mensagens podem cumprir o mesmo pedido com graus diferentes de formalidade ou de delicadeza. A situação ajuda a decidir; não existe uma frase única para todo contexto."
+    },
+    {
+      "id": "L04-A01",
+      "type": "assessment-selection",
+      "situation": "Uma visitante pergunta como chegar à sala 10. Você sabe que deve subir a escada e virar à esquerda.",
+      "options": ["Suba a escada e vire à esquerda; a sala 10 fica ali.", "A escada foi pintada ontem.", "Você gosta da sala 10?"],
+      "correctIndex": 0
+    },
+    {
+      "id": "L04-A02",
+      "type": "assessment-open",
+      "situation": "Você precisa pedir a uma pessoa que espere alguns minutos.",
+      "responseMode": "free-text",
+      "selfReview": ["Minha mensagem faz um pedido para esperar?", "A pessoa consegue entender o que eu preciso?"],
+      "modelExamplesAfterSubmission": ["Pode esperar alguns minutos, por favor?", "Espere só alguns minutos, por favor."],
+      "automaticObservations": ["há texto livre", "autochecagem concluída"],
+      "notAutomaticallyJudged": ["cortesia perfeita", "formalidade ideal", "correção linguística plena"]
+    }
+  ],
+  "assessmentBehavior": {"openResponsePolicy": "registrar produção e autochecagem; não validar qualidade social ou linguística plena automaticamente", "timeLimit": false},
+  "completionEvidence": {
+    "clusters": {
+      "understandFunctions": {"evidence": ["L04-C01", "L04-A01"], "rule": "selecionar mensagens funcionais em pelo menos três situações"},
+      "ownFunctionalMessage": {"evidence": ["L04-A02"], "rule": "realizar produção livre e autochecagem"}
+    },
+    "completionRule": "os dois agrupamentos são obrigatórios.",
+    "notSufficient": ["nomear pedido/oferta sem conseguir agir linguisticamente", "copiar modelo posterior", "usar uma fórmula fixa em toda situação"]
+  }
+}

@@ -1,0 +1,177 @@
+{
+  "schemaVersion": 1,
+  "id": "N0-EXIT-V01",
+  "type": "level-exit-verification",
+  "title": "Verificação de saída — Nível 0: Fundamentos",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Observar transferência integrada das competências de saída do Nível 0 sem repetir mecanicamente todas as verificações das seis unidades, preservando evidências anteriores de alfabetização e acrescentando situações novas de leitura, escrita, compreensão oral, uso cotidiano, revisão e reparo comunicativo.",
+  "prerequisiteEvidence": [
+    {"verification": "N0-U01-V01", "reason": "fala/escrita, sons, letras e organização gráfica de base"},
+    {"verification": "N0-U02-V01", "reason": "sílabas, palavras, leitura inicial e significado familiar"},
+    {"verification": "N0-U03-V01", "reason": "palavras, frases, significado e produção de frase própria"},
+    {"verification": "N0-U04-V01", "reason": "compreensão de pequenos textos, evidência e inferência simples"},
+    {"verification": "N0-U05-V01", "reason": "produção, revisão e convenções gráficas"},
+    {"verification": "N0-U06-V01", "reason": "uso cotidiano, compreensão oral, adequação, variação e reparo"}
+  ],
+  "designPrinciples": [
+    "usar resultados das verificações de unidade para competências fundacionais que não precisam ser reavaliadas por completo",
+    "usar situações novas para observar transferência entre leitura, escrita e uso cotidiano",
+    "manter textos disponíveis durante compreensão leitora",
+    "permitir replay em compreensão oral sem penalidade automática",
+    "exigir produção escrita própria e autochecagem",
+    "não usar respostas fechadas para compensar ausência de produção própria",
+    "não inferir produção oral compreensível a partir de resposta digitada ou botão concluído",
+    "separar resultado curricular/autônomo de validação externa de oralidade",
+    "não usar velocidade, extensão, terminologia ou ausência absoluta de erros como definição de domínio"
+  ],
+  "limits": [
+    "não introduzir conteúdo do Nível 1",
+    "não exigir ortografia e acentuação sistemáticas ainda não ensinadas",
+    "não exigir análise gramatical formal",
+    "não exigir redação longa ou parágrafo formal",
+    "não exigir inferência complexa, argumentação ou análise crítica de fontes",
+    "não exigir conversa longa ou pronúncia padronizada",
+    "não transformar a verificação em prova de memória"
+  ],
+  "media": {"tts": "instruções e estímulos de compreensão oral", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {
+    "curatedMedia": [],
+    "runtimeResources": [
+      {"type": "TTS_OK", "locations": ["EXIT-Q05", "instruções e feedback"], "purpose": "compreensão oral de mensagem cuja resposta depende do significado, não de prosódia específica"},
+      {"type": "REPLAY_CONTROL", "locations": ["EXIT-Q05"], "purpose": "permitir repetição sem penalidade automática"}
+    ],
+    "generatedVisualResources": [
+      {"type": "UI_RENDERED_READING_CARD", "locations": ["EXIT-Q01", "EXIT-Q02"], "purpose": "manter pequeno texto consultável"},
+      {"type": "UI_RENDERED_OPEN_RESPONSE_FIELD", "locations": ["EXIT-Q03", "EXIT-Q06", "EXIT-Q07"], "purpose": "produção escrita funcional"},
+      {"type": "UI_RENDERED_SELF_REVIEW_CHECKLIST", "locations": ["EXIT-Q03", "EXIT-Q06", "EXIT-Q07"], "purpose": "autorrevisão"},
+      {"type": "UI_RENDERED_EDITABLE_TEXT", "locations": ["EXIT-Q04"], "purpose": "aplicar convenções já ensinadas"},
+      {"type": "UI_RENDERED_ORAL_REHEARSAL_CHECK", "locations": ["EXIT-Q08"], "purpose": "registrar prática oral sem alegar validação"}
+    ],
+    "productionQueueRequired": false,
+    "publicationDependency": "a verificação de saída não cria mídia humana nova; mídias obrigatórias já pendentes em U1/U2 continuam sendo dependências de publicação dessas competências",
+    "decisionRationale": "o final do nível deve integrar competências já construídas e não criar nova carga de produção de mídia sem necessidade pedagógica."
+  },
+  "scenario": {
+    "title": "Um dia de atividades no centro comunitário",
+    "readingText": "O centro comunitário terá uma oficina de cozinha na quinta-feira. A atividade começa às duas da tarde, na sala 3. Cada participante deve levar um caderno. Quem ainda não fez inscrição pode procurar a recepção antes da oficina.",
+    "purpose": "fornecer um contexto comum para parte das tarefas sem exigir que todas dependam de uma única memória"
+  },
+  "items": [
+    {
+      "id": "EXIT-Q01",
+      "competency": "leitura e compreensão de pequeno texto",
+      "textRef": "scenario.readingText",
+      "items": [
+        {"question": "Quando acontece a oficina?", "options": ["quinta-feira às duas da tarde", "sexta-feira às três", "o texto não informa"], "correctIndex": 0},
+        {"question": "Onde acontece?", "options": ["na sala 3", "na recepção", "na cozinha de casa"], "correctIndex": 0},
+        {"question": "O que cada participante deve levar?", "options": ["um caderno", "um documento", "uma panela"], "correctIndex": 0}
+      ],
+      "textRemainsVisible": true
+    },
+    {
+      "id": "EXIT-Q02",
+      "competency": "integração, finalidade e instrução",
+      "textRef": "scenario.readingText",
+      "items": [
+        {"question": "O que uma pessoa sem inscrição pode fazer?", "options": ["procurar a recepção antes da oficina", "ir diretamente para casa", "esperar até sexta-feira"], "correctIndex": 0},
+        {"question": "Qual frase representa melhor a mensagem do texto?", "options": ["O texto informa quando e onde será uma oficina e o que os participantes precisam fazer.", "O texto conta uma história sobre uma viagem.", "O texto ensina uma receita completa."], "correctIndex": 0}
+      ],
+      "textRemainsVisible": true
+    },
+    {
+      "id": "EXIT-Q03",
+      "competency": "produção de pequena mensagem e planejamento",
+      "situation": "Você precisa avisar a Joana que a reunião de amanhã mudou para as quatro e será na sala 5.",
+      "planning": {"essentialInformation": ["é amanhã", "novo horário: quatro", "local: sala 5"]},
+      "responseMode": "free-text",
+      "selfReview": ["Minha mensagem informa o dia?", "Informa o novo horário?", "Informa a sala?", "Consigo reler e entender o que quis comunicar?"],
+      "modelExamplesAfterSubmission": ["Joana, a reunião de amanhã mudou para as quatro e será na sala 5.", "A reunião será amanhã às quatro, na sala 5."],
+      "automaticObservations": ["há texto livre", "planejamento realizado", "autochecagem concluída"],
+      "notAutomaticallyJudged": ["compreensibilidade plena", "ortografia global", "formulação única"]
+    },
+    {
+      "id": "EXIT-Q04",
+      "competency": "convenções básicas já ensinadas",
+      "before": "onde fica a sala 5 joana perguntou",
+      "task": "organize como duas frases compatíveis com o sentido: uma pergunta e uma informação sobre quem perguntou",
+      "acceptedExample": "Onde fica a sala 5? Joana perguntou.",
+      "requiredObservations": ["maiúscula inicial", "espaços adequados", "ponto de interrogação na pergunta", "delimitação das duas frases"],
+      "note": "aceitar variações controladas que preservem as duas mensagens; não usar comparação literal única quando outra formulação válida existir"
+    },
+    {
+      "id": "EXIT-Q05",
+      "competency": "compreensão oral curta",
+      "ttsText": "A consulta foi antecipada para amanhã às nove da manhã.",
+      "transcriptHiddenUntilAttempt": true,
+      "question": "O que mudou?",
+      "options": ["a consulta será amanhã às nove", "a consulta foi cancelada", "a consulta será à noite"],
+      "correctIndex": 0,
+      "replayAllowed": true,
+      "transcriptAfterAttempt": "A consulta foi antecipada para amanhã às nove da manhã."
+    },
+    {
+      "id": "EXIT-Q06",
+      "competency": "perguntar para obter informação",
+      "situation": "Você sabe que um documento está pronto, mas não sabe onde pode buscá-lo. Escreva uma pergunta curta para descobrir o local.",
+      "responseMode": "free-text",
+      "selfReview": ["Minha pergunta busca o local de retirada?"],
+      "modelExamplesAfterSubmission": ["Onde posso buscar o documento?", "Em qual lugar retiro o documento?"],
+      "automaticObservations": ["há texto livre", "autochecagem concluída"],
+      "notAutomaticallyJudged": ["formulação única", "correção linguística plena"]
+    },
+    {
+      "id": "EXIT-Q07",
+      "competency": "reparo e reformulação",
+      "situation": "Você escreveu: 'A gente se encontra lá depois'. A pessoa responde: 'Não sei onde nem quando'. O encontro será na porta do posto às três.",
+      "responseMode": "free-text",
+      "selfReview": ["Minha reformulação informa local?", "Informa horário?", "Mantém a intenção do encontro?"],
+      "modelExamplesAfterSubmission": ["A gente se encontra na porta do posto às três.", "Me encontre às três na porta do posto."],
+      "automaticObservations": ["há texto livre", "autochecagem concluída"],
+      "notAutomaticallyJudged": ["compreensibilidade plena", "formulação única"]
+    },
+    {
+      "id": "EXIT-Q08",
+      "competency": "produção oral funcional — prática e validação externa",
+      "situation": "Uma pessoa pergunta oralmente: 'Que horas começa a oficina?'. A informação é: duas horas.",
+      "instruction": "Responda oralmente de forma simples e faça a autochecagem.",
+      "oralRehearsal": true,
+      "selfCheck": ["Minha resposta oral informou duas horas?"],
+      "automaticValidation": false,
+      "externalReview": {"requiredForClaimOfValidatedOralComprehensibility": true, "statusWhenApproved": "n0-oralidade-validada"},
+      "meaning": "prática concluída não equivale a prova automática de fala compreensível"
+    }
+  ],
+  "carryForwardEvidence": {
+    "foundationalSoundWriting": {"requiredFrom": ["N0-U01-V01"], "reason": "não repetir integralmente reconhecimento de sons/letras no capstone"},
+    "syllablesAndWordReading": {"requiredFrom": ["N0-U02-V01"], "reason": "não transformar saída do nível em nova prova de famílias silábicas"},
+    "sentenceMeaning": {"requiredFrom": ["N0-U03-V01"], "reason": "o capstone aplica frase/mensagem em tarefas maiores"}
+  },
+  "assessmentBehavior": {
+    "readingTextVisibility": "texto permanece disponível",
+    "rereading": "permitida",
+    "oralComprehension": "TTS com replay e transcrição somente depois da tentativa",
+    "openResponsePolicy": "produção escrita é registrada/autorrevisada sem validação linguística plena por heurística",
+    "oralProductionPolicy": "ensaio e autochecagem não são prova de compreensibilidade oral",
+    "timeLimit": false
+  },
+  "completionEvidence": {
+    "clusters": {
+      "foundationCarryForward": {"evidence": ["N0-U01-V01", "N0-U02-V01", "N0-U03-V01"], "rule": "evidências fundacionais anteriores precisam estar concluídas conforme as regras de cada unidade"},
+      "readingAndUnderstanding": {"evidence": ["EXIT-Q01", "EXIT-Q02"], "rule": "acertar todos os subitens essenciais de compreensão e ação"},
+      "writingAndConventions": {"evidence": ["EXIT-Q03", "EXIT-Q04"], "rule": "realizar produção livre/autochecagem e aplicar convenções controladas"},
+      "oralComprehension": {"evidence": ["EXIT-Q05"], "rule": "compreender o estímulo com replay permitido"},
+      "functionalUseAndRepair": {"evidence": ["EXIT-Q06", "EXIT-Q07"], "rule": "realizar as duas produções livres e autochecagens"},
+      "oralProductionPractice": {"evidence": ["EXIT-Q08"], "rule": "realizar prática e autochecagem; não representa validação de compreensibilidade"}
+    },
+    "completionRule": "todos os agrupamentos são obrigatórios; nenhum score global compensa ausência de leitura, escrita, compreensão oral ou reparo.",
+    "autonomousOutcome": {
+      "whenAllClusterRulesMet": "n0-curricularmente-concluido-com-oralidade-praticada-nao-validada",
+      "meaning": "evidências automaticamente observáveis e produções autorrevisadas foram realizadas; produção oral ainda não recebeu validação externa"
+    },
+    "validatedOutcome": {
+      "additionalRequirement": "produções abertas necessárias são confirmadas como compreensíveis por avaliador confiável e produção oral recebe observação externa positiva",
+      "status": "n0-validado"
+    },
+    "notSufficient": ["acertar apenas múltipla escolha", "omitir produção escrita", "usar texto digitado como prova de fala", "responder por memória sem consultar texto quando consulta é permitida", "velocidade ou extensão como substituto de competência"]
+  }
+}

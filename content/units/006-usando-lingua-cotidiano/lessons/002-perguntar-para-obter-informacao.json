@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "id": "N0-U06-L02",
+  "title": "Perguntar para obter informação",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Formular perguntas simples para obter uma informação necessária em situações cotidianas, escolhendo o que perguntar antes de produzir a mensagem.",
+  "competencies": [
+    "identificar qual informação falta em uma situação simples",
+    "selecionar uma pergunta que realmente busca essa informação",
+    "produzir pelo menos uma pergunta própria em campo livre",
+    "reconhecer mais de uma formulação possível quando ambas cumprem o objetivo",
+    "autorrevisar se a pergunta permite obter a informação necessária"
+  ],
+  "prerequisites": ["N0-U06-L01", "N0-U05-L02", "N0-U05-L09"],
+  "limits": [
+    "não exigir uma única fórmula de pergunta",
+    "não usar ponto de interrogação como única evidência de que a mensagem é uma boa pergunta",
+    "não exigir interrogativas indiretas ou estruturas gramaticais formais",
+    "não exigir pergunta longa ou formal",
+    "não validar automaticamente pergunta aberta apenas por palavra interrogativa"
+  ],
+  "media": {"tts": "instruções, situações, opções e feedback; não fornecer pergunta-modelo antes da primeira produção aberta", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {
+    "curatedMedia": [],
+    "runtimeResources": [{"type": "TTS_OK", "locations": ["instruções", "situações", "opções", "feedback"], "purpose": "apoio de acesso"}],
+    "generatedVisualResources": [
+      {"type": "UI_RENDERED_MISSING_INFORMATION_CARD", "locations": ["L02-B02", "L02-C01", "L02-A01", "L02-A02"], "purpose": "mostrar qual informação precisa ser obtida"},
+      {"type": "UI_RENDERED_OPEN_RESPONSE_FIELD", "locations": ["L02-A02"], "purpose": "produção própria de pergunta"},
+      {"type": "UI_RENDERED_SELF_REVIEW_CHECKLIST", "locations": ["L02-A02"], "purpose": "autorrevisar função da pergunta"}
+    ],
+    "productionQueueRequired": false,
+    "publicationDependency": "nenhuma nova mídia humana obrigatória",
+    "decisionRationale": "a competência é formular uma pergunta funcional; situação, campo livre e autochecagem bastam."
+  },
+  "sequence": [
+    {"id": "L02-B01", "type": "objective", "text": "Quando falta uma informação, primeiro descubra o que precisa saber. Depois formule uma pergunta que possa trazer essa informação."},
+    {
+      "id": "L02-B02",
+      "type": "demonstration",
+      "situation": "Você sabe que há uma consulta amanhã, mas não sabe o horário.",
+      "missingInformation": "o horário da consulta",
+      "usefulQuestion": "Que horas é a consulta amanhã?",
+      "notUsefulForGoal": "Onde fica o mercado?",
+      "explanation": "Uma boa pergunta para essa situação busca a informação que está faltando."
+    },
+    {
+      "id": "L02-C01",
+      "type": "quick-check",
+      "situation": "Você chegou a um prédio e precisa encontrar a sala 5.",
+      "question": "Qual pergunta ajuda a resolver a necessidade?",
+      "options": ["Onde fica a sala 5?", "Que horas são?", "Você gosta deste prédio?"],
+      "correctIndex": 0
+    },
+    {
+      "id": "L02-B03",
+      "type": "multiple-valid-demonstration",
+      "goal": "descobrir o horário de fechamento de uma loja",
+      "acceptableExamples": ["Que horas a loja fecha?", "Você pode me dizer o horário de fechamento da loja?"],
+      "explanation": "As duas perguntas podem cumprir o objetivo. Maior formalidade não torna automaticamente uma delas melhor em toda situação."
+    },
+    {
+      "id": "L02-A01",
+      "type": "assessment-selection",
+      "situation": "Você precisa saber qual ônibus vai para o centro.",
+      "options": ["Qual ônibus vai para o centro?", "O centro é grande?", "O ônibus chegou cedo."],
+      "correctIndex": 0
+    },
+    {
+      "id": "L02-A02",
+      "type": "assessment-open",
+      "situation": "Você recebeu um convite para amanhã, mas o convite não informa o local. Escreva uma pergunta curta para descobrir onde será o encontro.",
+      "responseMode": "free-text",
+      "selfReview": ["Minha pergunta busca o local?", "A outra pessoa consegue entender qual informação eu preciso?"],
+      "modelExamplesAfterSubmission": ["Onde será o encontro?", "Qual é o local do encontro?"],
+      "automaticObservations": ["há texto livre", "autochecagem concluída"],
+      "notAutomaticallyJudged": ["correção linguística plena", "presença de palavra-chave como prova de funcionalidade", "equivalência literal com modelo"]
+    }
+  ],
+  "assessmentBehavior": {"openResponsePolicy": "registrar produção e autochecagem; validação plena exige avaliador confiável", "timeLimit": false},
+  "completionEvidence": {
+    "clusters": {
+      "chooseUsefulQuestion": {"evidence": ["L02-C01", "L02-A01"], "rule": "selecionar perguntas que buscam a informação necessária"},
+      "ownQuestion": {"evidence": ["L02-A02"], "rule": "realizar pergunta em campo livre e autochecagem"}
+    },
+    "completionRule": "os dois agrupamentos são obrigatórios.",
+    "notSufficient": ["adicionar apenas ponto de interrogação a uma frase não relacionada", "copiar modelo exibido depois", "escrever pergunta que não busca a informação necessária"]
+  }
+}
