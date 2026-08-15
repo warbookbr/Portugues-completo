@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "id": "N0-U05-L01",
+  "title": "Da ideia à mensagem: o que preciso comunicar?",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Selecionar as informações necessárias para transformar uma intenção simples em uma mensagem compreensível antes de iniciar a escrita.",
+  "competencies": [
+    "identificar o objetivo imediato de uma mensagem",
+    "distinguir informação essencial de detalhe opcional em situações simples",
+    "perceber quando falta informação necessária para cumprir o objetivo",
+    "selecionar um conjunto suficiente de informações antes de escrever",
+    "evitar adicionar detalhes sem relação apenas para aumentar o tamanho da mensagem"
+  ],
+  "prerequisites": ["N0-U04-V01", "N0-U03-L10"],
+  "limits": [
+    "não exigir planejamento formal de redação",
+    "não exigir introdução, desenvolvimento e conclusão",
+    "não usar quantidade de informações como sinônimo de qualidade",
+    "não exigir ortografia ou pontuação como foco central desta lição",
+    "não transformar planejamento em formulário longo"
+  ],
+  "media": {"tts": "instruções, situações e feedback", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {
+    "curatedMedia": [],
+    "runtimeResources": [{"type": "TTS_OK", "locations": ["instruções", "situações", "feedback"], "purpose": "reduzir carga de leitura do contexto"}],
+    "generatedVisualResources": [
+      {"type": "UI_RENDERED_GOAL_CARD", "locations": ["L01-B02", "L01-C01", "L01-A01", "L01-A02"], "purpose": "manter a finalidade visível"},
+      {"type": "UI_RENDERED_INFORMATION_CARDS", "locations": ["L01-B02", "L01-C01", "L01-A01"], "purpose": "selecionar informações antes de escrever"}
+    ],
+    "productionQueueRequired": false,
+    "publicationDependency": "nenhuma nova mídia humana obrigatória",
+    "decisionRationale": "o alvo é planejamento funcional; cartões de texto e situações curtas tornam as escolhas observáveis."
+  },
+  "sequence": [
+    {
+      "id": "L01-B01",
+      "type": "objective",
+      "focus": "plan-message",
+      "text": "Antes de escrever, vale perguntar: o que a outra pessoa precisa saber para entender minha mensagem?"
+    },
+    {
+      "id": "L01-B02",
+      "type": "demonstration",
+      "focus": "essential-information",
+      "goal": "avisar a João que a reunião mudou para amanhã às 10h",
+      "informationCards": [
+        {"text": "a reunião mudou", "essential": true},
+        {"text": "será amanhã", "essential": true},
+        {"text": "será às 10h", "essential": true},
+        {"text": "a sala tem cadeiras azuis", "essential": false}
+      ],
+      "explanation": "Detalhes podem ser verdadeiros e ainda assim não ser necessários para cumprir o objetivo."
+    },
+    {
+      "id": "L01-C01",
+      "type": "quick-check",
+      "focus": "select-needed-information",
+      "goal": "pedir que Ana traga o documento na sexta-feira",
+      "informationCards": [
+        {"text": "Ana precisa trazer um documento", "essential": true},
+        {"text": "o dia é sexta-feira", "essential": true},
+        {"text": "o documento deve ser trazido", "essential": true},
+        {"text": "Ana gosta de café", "essential": false}
+      ],
+      "correctEssentialIndexes": [0, 1, 2]
+    },
+    {
+      "id": "L01-B03",
+      "type": "contrast",
+      "focus": "missing-information",
+      "goal": "avisar onde buscar uma encomenda",
+      "candidateInformation": ["Sua encomenda chegou."],
+      "question": "A informação é suficiente para dizer onde buscar?",
+      "answer": "não",
+      "missing": "o local de retirada"
+    },
+    {
+      "id": "L01-A01",
+      "type": "assessment",
+      "focus": "planning-transfer",
+      "goal": "informar que o curso começa segunda-feira às 19h na sala 2",
+      "informationCards": ["começa segunda-feira", "é às 19h", "será na sala 2", "há uma árvore perto do prédio"],
+      "correctIndexes": [0, 1, 2]
+    },
+    {
+      "id": "L01-A02",
+      "type": "assessment",
+      "focus": "identify-missing-info",
+      "goal": "pedir que Pedro encontre você em um local e horário específicos",
+      "candidate": "Pedro, me encontre amanhã.",
+      "question": "Qual informação essencial ainda falta?",
+      "options": ["o local e o horário", "a cor da roupa de Pedro", "o nome da rua onde Pedro mora"],
+      "correctIndex": 0
+    }
+  ],
+  "completionEvidence": {
+    "clusters": {
+      "selection": {"evidence": ["L01-C01", "L01-A01"], "rule": "selecionar informações suficientes sem incluir detalhe irrelevante como necessário"},
+      "missingInfo": {"evidence": ["L01-A02"], "rule": "identificar informação essencial ausente"}
+    },
+    "completionRule": "os dois agrupamentos são obrigatórios.",
+    "notSufficient": ["selecionar todas as informações disponíveis", "escrever mais sem relação com o objetivo", "ignorar informação essencial"]
+  }
+}
