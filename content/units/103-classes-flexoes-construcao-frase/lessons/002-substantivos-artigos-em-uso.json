@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 1,
+  "id": "N1-U03-L02",
+  "title": "Substantivos e artigos em uso",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Reconhecer substantivos e artigos em contextos claros e perceber como artigos podem acompanhar substantivos para ajudar a apresentar, identificar ou retomar referentes, sem transformar presença de artigo em regra obrigatória para todo substantivo.",
+  "competencies": [
+    "reconhecer substantivos pelo funcionamento em frases simples",
+    "reconhecer artigos frequentes ligados a substantivos",
+    "perceber diferenças funcionais básicas entre apresentar um referente e retomá-lo como conhecido no contexto",
+    "usar artigo + substantivo em construções novas quando o contexto pede",
+    "reconhecer nomes próprios e comuns apenas no grau útil à referência e à maiúscula",
+    "não inferir que todo substantivo precisa vir acompanhado de artigo"
+  ],
+  "prerequisites": ["N1-U03-L01"],
+  "limits": [
+    "não ensinar subclasses exaustivas de substantivo",
+    "não transformar concreto/abstrato, coletivo ou outras subclasses em conteúdo obrigatório",
+    "não prescrever artigo antes de nome próprio como regra universal; o uso varia",
+    "não reduzir artigo a lista decorada sem observar a relação com o substantivo",
+    "não antecipar análise sintática detalhada"
+  ],
+  "media": {"tts": "permitido", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {
+    "curatedMedia": [],
+    "runtimeResources": [{"type": "TTS_OK", "locations": ["frases", "feedback"], "purpose": "apoio de leitura"}],
+    "generatedVisualResources": [
+      {"type": "UI_RENDERED_ARTICLE_NOUN_LINK", "locations": ["L02-B01", "L02-C01", "L02-A01"], "purpose": "mostrar relação entre artigo e substantivo"},
+      {"type": "UI_RENDERED_REFERENCE_SEQUENCE", "locations": ["L02-B02", "L02-A02"], "purpose": "comparar apresentação e retomada de referente"}
+    ],
+    "productionQueueRequired": false,
+    "publicationDependency": "nenhuma nova mídia humana obrigatória",
+    "decisionRationale": "relações de determinação/referência podem ser observadas diretamente em frases e pequenos pares contextuais."
+  },
+  "sequence": [
+    {
+      "id": "L02-B01",
+      "type": "demonstration",
+      "examples": [
+        {"sentence": "O aviso chegou hoje.", "article": "O", "noun": "aviso"},
+        {"sentence": "Uma cliente telefonou.", "article": "Uma", "noun": "cliente"},
+        {"sentence": "Os documentos chegaram.", "article": "Os", "noun": "documentos"}
+      ],
+      "teachingPoint": "o artigo acompanha o substantivo em muitos usos e participa da forma como o referente é apresentado/identificado"
+    },
+    {
+      "id": "L02-B02",
+      "type": "reference-demonstration",
+      "text": "Uma encomenda chegou pela manhã. A encomenda ficou na recepção.",
+      "observation": "'uma encomenda' apresenta o referente; 'a encomenda' retoma aquele referente já introduzido",
+      "guardRail": "essa diferença é funcional e contextual; não é uma fórmula que explique todo uso de artigo"
+    },
+    {
+      "id": "L02-C01",
+      "type": "quick-check-set",
+      "items": [
+        {"sentence": "As portas abriram.", "targets": {"article": "As", "noun": "portas"}},
+        {"sentence": "Um técnico chegou.", "targets": {"article": "Um", "noun": "técnico"}},
+        {"sentence": "A mensagem foi enviada.", "targets": {"article": "A", "noun": "mensagem"}}
+      ]
+    },
+    {
+      "id": "L02-B03",
+      "type": "common-proper-introduction",
+      "examples": [
+        {"sentence": "A cidade recebeu visitantes.", "target": "cidade", "use": "nome comum"},
+        {"sentence": "Recife recebeu visitantes.", "target": "Recife", "use": "nome próprio", "writingPoint": "maiúscula inicial"}
+      ],
+      "limit": "não desenvolver taxonomia de substantivos"
+    },
+    {
+      "id": "L02-A01",
+      "type": "assessment-recognition-use",
+      "items": [
+        {"sentence": "Os relatórios chegaram.", "article": "Os", "noun": "relatórios"},
+        {"prompt": "Complete de modo compatível: ____ pedido foi aprovado.", "options": ["O", "Eles", "Rápido"], "correctIndex": 0},
+        {"prompt": "Qual palavra nomeia algo em 'Uma reunião começou'?", "options": ["reunião", "Uma", "começou"], "correctIndex": 0}
+      ]
+    },
+    {
+      "id": "L02-A02",
+      "type": "assessment-reference",
+      "text": "Uma funcionária encontrou um documento. A funcionária levou o documento à recepção.",
+      "items": [
+        {"question": "Qual expressão apresenta a funcionária pela primeira vez?", "options": ["Uma funcionária", "A funcionária"], "correctIndex": 0},
+        {"question": "Qual expressão retoma a mesma funcionária?", "options": ["A funcionária", "Uma funcionária"], "correctIndex": 0}
+      ]
+    }
+  ],
+  "assessmentBehavior": {"contextVisible": true, "terminologyAfterFunction": true, "ttsPolicy": "permitido", "timeLimit": false},
+  "completionEvidence": {
+    "clusters": {
+      "recognitionUse": {"evidence": ["L02-C01", "L02-A01"], "rule": "reconhecer e usar artigo/substantivo nos casos básicos"},
+      "reference": {"evidence": ["L02-A02"], "rule": "distinguir apresentação e retomada no par contextual"}
+    },
+    "completionRule": "os dois agrupamentos são obrigatórios.",
+    "notSufficient": ["decorar nomes dos artigos", "afirmar que todo substantivo exige artigo", "memorizar subclasses de substantivo"]
+  }
+}

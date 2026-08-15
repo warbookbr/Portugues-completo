@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "id": "N1-U03-L08",
+  "title": "Sujeito e predicado em casos básicos, sem fórmula universal",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Reconhecer sujeito e predicado em orações transparentes e perceber desde o início que algumas orações não apresentam um sujeito que deva ser inventado, evitando a fórmula inadequada de que toda oração significa alguém fazendo algo.",
+  "competencies": [
+    "identificar sujeito em orações simples com referente explícito",
+    "identificar predicado como a parte que declara algo sobre o sujeito nos casos trabalhados",
+    "relacionar sujeito simples e verbo sem exigir taxonomia de termos",
+    "reconhecer Choveu como contraexemplo em que não se deve inventar sujeito explícito",
+    "rejeitar a fórmula alguém + faz + algo como definição universal de oração"
+  ],
+  "prerequisites": ["N1-U03-L07"],
+  "limits": ["não sistematizar tipos de sujeito", "não sistematizar tipos de predicado", "não introduzir sujeito oculto/indeterminado como sistema", "não analisar sujeito composto ou distante como evidência central", "não exigir análise de orações complexas"],
+  "media": {"tts": "permitido", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["orações", "feedback"], "purpose": "apoio"}], "generatedVisualResources": [{"type": "UI_RENDERED_SUBJECT_PREDICATE_SPLIT", "locations": ["L08-B01", "L08-C01", "L08-A01"], "purpose": "visualizar a divisão apenas em casos transparentes"}, {"type": "UI_RENDERED_COUNTEREXAMPLE_CARD", "locations": ["L08-B02", "L08-A02"], "purpose": "impedir generalização universal"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "a introdução sintática pode ser feita com orações simples e um contraexemplo explícito."},
+  "sequence": [
+    {"id": "L08-B01", "type": "demonstration", "examples": [{"sentence": "Ana chegou.", "subject": "Ana", "predicate": "chegou"}, {"sentence": "Os livros caíram.", "subject": "Os livros", "predicate": "caíram"}, {"sentence": "A loja abriu cedo.", "subject": "A loja", "predicate": "abriu cedo"}], "teachingPoint": "nesses casos transparentes, o sujeito indica aquilo de que se declara algo; o predicado traz a declaração"},
+    {"id": "L08-B02", "type": "counterexample", "sentence": "Choveu durante a noite.", "verb": "Choveu", "instruction": "Não invente uma pessoa ou coisa que 'fez chover'. A oração funciona sem sujeito nesse uso.", "conclusion": "nem toda oração se encaixa no modelo alguém faz algo"},
+    {"id": "L08-C01", "type": "guided-split", "items": [{"sentence": "O ônibus chegou cedo.", "subject": "O ônibus", "predicate": "chegou cedo"}, {"sentence": "A equipe terminou o relatório.", "subject": "A equipe", "predicate": "terminou o relatório"}]},
+    {"id": "L08-A01", "type": "assessment-basic-analysis", "items": [{"sentence": "A reunião terminou tarde.", "subject": "A reunião", "predicate": "terminou tarde"}, {"sentence": "Os clientes aguardaram na sala.", "subject": "Os clientes", "predicate": "aguardaram na sala"}, {"sentence": "O computador reiniciou.", "subject": "O computador", "predicate": "reiniciou"}]},
+    {"id": "L08-A02", "type": "assessment-counterexample", "items": [{"sentence": "Choveu muito ontem.", "question": "Devemos inventar um sujeito como 'alguém' para encaixar a oração na fórmula?", "options": ["não", "sim"], "correctIndex": 0}, {"question": "Qual afirmação é adequada?", "options": ["Sujeito/predicado ajudam em muitos casos, mas não autorizam inventar sujeito onde a construção não o apresenta.", "Toda oração sempre significa alguém fazendo alguma coisa."], "correctIndex": 0}]}
+  ],
+  "assessmentBehavior": {"transparentCasesOnly": true, "counterexampleRequired": true, "ttsPolicy": "permitido", "timeLimit": false},
+  "completionEvidence": {"clusters": {"basicAnalysis": {"evidence": ["L08-A01"], "rule": "identificar sujeito e predicado nos três casos"}, "boundary": {"evidence": ["L08-A02"], "rule": "rejeitar sujeito inventado e fórmula universal"}}, "completionRule": "os dois agrupamentos são obrigatórios.", "notSufficient": ["aplicar alguém faz algo a toda oração", "recitar sujeito/predicado sem segmentar", "inventar sujeito em Choveu"]}
+}

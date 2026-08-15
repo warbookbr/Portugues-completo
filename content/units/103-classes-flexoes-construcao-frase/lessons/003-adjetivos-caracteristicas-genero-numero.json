@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 1,
+  "id": "N1-U03-L03",
+  "title": "Adjetivos, características, gênero e número",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Reconhecer adjetivos em uso e aplicar concordâncias transparentes de gênero e número dentro do grupo nominal, percebendo também que nem todo adjetivo apresenta uma forma diferente para masculino e feminino.",
+  "competencies": [
+    "reconhecer adjetivos caracterizando substantivos em contextos claros",
+    "alterar a característica e observar mudança de sentido",
+    "ajustar artigo, substantivo e adjetivo em singular/plural nos padrões estudados",
+    "ajustar masculino/feminino em casos transparentes como claro/clara",
+    "reconhecer adjetivos como feliz/importante que não mudam de forma por gênero nesses usos",
+    "revisar incompatibilidades simples sem depender de classificação extensa"
+  ],
+  "prerequisites": ["N1-U03-L02"],
+  "limits": [
+    "não ensinar que todo adjetivo muda de forma no feminino",
+    "não sistematizar exceções de gênero ou plural",
+    "não introduzir subclasses de adjetivo",
+    "não tratar concordância como mera cópia de terminações",
+    "não antecipar concordâncias especiais"
+  ],
+  "media": {"tts": "permitido", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {
+    "curatedMedia": [],
+    "runtimeResources": [{"type": "TTS_OK", "locations": ["frases", "feedback"], "purpose": "apoio de leitura"}],
+    "generatedVisualResources": [
+      {"type": "UI_RENDERED_NOUN_ADJECTIVE_LINK", "locations": ["L03-B01", "L03-C01", "L03-A01"], "purpose": "ligar característica ao substantivo"},
+      {"type": "UI_RENDERED_INFLECTION_COMPARISON", "locations": ["L03-B02", "L03-B03", "L03-A02"], "purpose": "comparar gênero/número sem sugerir regra universal"},
+      {"type": "UI_RENDERED_REVISION_CARD", "locations": ["L03-C02", "L03-A03"], "purpose": "revisar incompatibilidades transparentes"}
+    ],
+    "productionQueueRequired": false,
+    "publicationDependency": "nenhuma nova mídia humana obrigatória",
+    "decisionRationale": "flexões e concordância inicial são visíveis na própria escrita e podem ser praticadas em pares controlados."
+  },
+  "sequence": [
+    {
+      "id": "L03-B01",
+      "type": "demonstration",
+      "examples": [
+        {"sentence": "O relatório está claro.", "noun": "relatório", "adjective": "claro"},
+        {"sentence": "A tarefa parece simples.", "noun": "tarefa", "adjective": "simples"},
+        {"sentence": "Os dados são importantes.", "noun": "dados", "adjective": "importantes"}
+      ],
+      "teachingPoint": "o adjetivo acrescenta uma característica ao referente no contexto"
+    },
+    {
+      "id": "L03-B02",
+      "type": "transparent-inflection",
+      "pairs": [
+        {"singular": "o relatório claro", "plural": "os relatórios claros"},
+        {"masculine": "o aviso claro", "feminine": "a mensagem clara"}
+      ],
+      "observation": "nesses padrões, as formas se ajustam em número e, quando a palavra possui essa variação, em gênero"
+    },
+    {
+      "id": "L03-B03",
+      "type": "guard-rail",
+      "examples": ["um cliente feliz", "uma cliente feliz", "um aviso importante", "uma mensagem importante"],
+      "conclusion": "nem todo adjetivo apresenta uma forma masculina e outra feminina"
+    },
+    {
+      "id": "L03-C01",
+      "type": "quick-check-characteristic",
+      "items": [
+        {"sentence": "A rua está tranquila.", "target": "tranquila", "class": "adjetivo"},
+        {"sentence": "O documento novo chegou.", "target": "novo", "class": "adjetivo"}
+      ]
+    },
+    {
+      "id": "L03-C02",
+      "type": "guided-revision",
+      "items": [
+        {"before": "As mensagens claro chegaram.", "after": "As mensagens claras chegaram."},
+        {"before": "Os relatórios novo estão aqui.", "after": "Os relatórios novos estão aqui."}
+      ]
+    },
+    {
+      "id": "L03-A01",
+      "type": "assessment-function",
+      "items": [
+        {"sentence": "A resposta correta foi enviada.", "target": "correta", "question": "O que essa palavra faz?", "options": ["caracteriza resposta", "nomeia resposta", "indica ação"], "correctIndex": 0},
+        {"sentence": "O caminho longo terminou.", "target": "longo", "options": ["caracteriza caminho", "retoma caminho", "substitui o verbo"], "correctIndex": 0}
+      ]
+    },
+    {
+      "id": "L03-A02",
+      "type": "assessment-inflection",
+      "items": [
+        {"base": "o aviso curto", "target": "plural", "options": ["os avisos curtos", "os aviso curto", "o avisos curtos"], "correctIndex": 0},
+        {"base": "o documento completo", "target": "referente feminino: a ficha", "options": ["a ficha completa", "a ficha completo", "o ficha completa"], "correctIndex": 0},
+        {"base": "um cliente feliz", "target": "referente feminino", "options": ["uma cliente feliz", "uma cliente feliza"], "correctIndex": 0}
+      ]
+    },
+    {
+      "id": "L03-A03",
+      "type": "assessment-revision",
+      "items": [
+        {"before": "As caixas pesado chegaram.", "after": "As caixas pesadas chegaram."},
+        {"before": "Os pedidos urgente foram atendidos.", "after": "Os pedidos urgentes foram atendidos."}
+      ]
+    }
+  ],
+  "assessmentBehavior": {"transparentCasesOnly": true, "contextVisible": true, "ttsPolicy": "permitido", "timeLimit": false},
+  "completionEvidence": {
+    "clusters": {
+      "adjectiveFunction": {"evidence": ["L03-A01"], "rule": "reconhecer a função nos dois casos"},
+      "inflection": {"evidence": ["L03-A02"], "rule": "acertar os três contrastes, inclusive o adjetivo sem variação de gênero"},
+      "revision": {"evidence": ["L03-A03"], "rule": "corrigir os dois grupos nominais"}
+    },
+    "completionRule": "os três agrupamentos são obrigatórios.",
+    "notSufficient": ["definir adjetivo sem usar", "acrescentar a em todo feminino", "corrigir apenas pela aparência"]
+  }
+}
