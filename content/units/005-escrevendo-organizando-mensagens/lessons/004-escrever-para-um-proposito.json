@@ -1,0 +1,96 @@
+{
+  "schemaVersion": 1,
+  "id": "N0-U05-L04",
+  "title": "Escrever para um propósito",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Produzir mensagens curtas que cumpram finalidades cotidianas simples, escolhendo conteúdo e forma compatíveis com a situação sem transformar gêneros em taxonomias a decorar.",
+  "competencies": [
+    "reconhecer o que uma mensagem precisa fazer na situação",
+    "distinguir uma mensagem adequada ao propósito de outra que comunica algo diferente",
+    "produzir bilhete, legenda, lista, resposta, descrição ou instrução curta quando o objetivo exigir",
+    "perceber que diferentes formatos podem cumprir funções diferentes",
+    "manter a finalidade como critério principal de revisão"
+  ],
+  "prerequisites": ["N0-U05-L03"],
+  "limits": [
+    "não exigir classificação formal de gêneros",
+    "não ensinar que todo bilhete, lista ou legenda possui fórmula única",
+    "não exigir textos longos",
+    "não transformar adequação em etiqueta social rígida",
+    "não validar automaticamente resposta aberta por presença de palavras-chave"
+  ],
+  "media": {"tts": "instruções, situações e feedback", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {
+    "curatedMedia": [],
+    "runtimeResources": [{"type": "TTS_OK", "locations": ["instruções", "situações", "feedback"], "purpose": "apoio de acesso"}],
+    "generatedVisualResources": [
+      {"type": "UI_RENDERED_PURPOSE_CARD", "locations": ["L04-B02", "L04-C01", "L04-A01", "L04-A02"], "purpose": "manter o objetivo visível"},
+      {"type": "UI_RENDERED_OPEN_RESPONSE_FIELD", "locations": ["L04-A02"], "purpose": "produção funcional livre"}
+    ],
+    "productionQueueRequired": false,
+    "publicationDependency": "nenhuma nova mídia humana obrigatória",
+    "decisionRationale": "os gêneros trabalhados podem ser representados como texto e campos da própria interface, sem necessidade de arquivos visuais."
+  },
+  "sequence": [
+    {
+      "id": "L04-B01",
+      "type": "objective",
+      "focus": "purpose-first",
+      "text": "Escrever bem começa por saber o que a mensagem precisa fazer: avisar, lembrar, identificar, orientar, responder ou registrar algo."
+    },
+    {
+      "id": "L04-B02",
+      "type": "demonstration",
+      "focus": "match-message-purpose",
+      "situation": "Você vai sair e quer avisar a pessoa que mora com você que volta às oito.",
+      "options": ["Saí. Volto às oito.", "Hoje o céu está azul.", "Compre pão, leite e arroz."],
+      "correctIndex": 0,
+      "explanation": "A primeira mensagem cumpre a finalidade apresentada."
+    },
+    {
+      "id": "L04-C01",
+      "type": "quick-check-set",
+      "focus": "purpose-and-format",
+      "items": [
+        {"purpose": "registrar três itens para comprar", "options": ["Pão, café, sabão.", "Onde fica o mercado?", "O mercado fechou."], "correctIndex": 0},
+        {"purpose": "identificar o que aparece em uma fotografia de uma praça", "options": ["Praça Central em uma manhã de domingo.", "Feche a porta.", "Leve um documento."], "correctIndex": 0}
+      ]
+    },
+    {
+      "id": "L04-B03",
+      "type": "contrast",
+      "focus": "no-fixed-template",
+      "purpose": "avisar que você chegará mais tarde",
+      "acceptableExamples": ["Vou chegar mais tarde hoje.", "Hoje chego mais tarde."],
+      "explanation": "O formato pode variar se a mensagem continuar cumprindo a finalidade."
+    },
+    {
+      "id": "L04-A01",
+      "type": "assessment-selection",
+      "focus": "purpose-transfer",
+      "situation": "Uma pessoa precisa deixar uma instrução curta para que outra desligue a luz ao sair.",
+      "options": ["Ao sair, desligue a luz, por favor.", "A luz é nova.", "Quando você chegou?"],
+      "correctIndex": 0
+    },
+    {
+      "id": "L04-A02",
+      "type": "assessment-open",
+      "focus": "functional-writing-transfer",
+      "situation": "Você não estará em casa e precisa deixar um bilhete dizendo que a chave está na gaveta da cozinha.",
+      "responseMode": "free-text",
+      "selfReview": ["A mensagem informa onde está a chave?", "A pessoa consegue entender o que precisa saber?"],
+      "modelExamplesAfterSubmission": ["A chave está na gaveta da cozinha.", "Deixei a chave na gaveta da cozinha."],
+      "automaticObservations": ["há produção livre", "autochecagem concluída"],
+      "notAutomaticallyJudged": ["correção linguística plena", "formato único de bilhete"]
+    }
+  ],
+  "assessmentBehavior": {"openResponsePolicy": "registrar produção e autochecagem; validação plena requer avaliador confiável", "timeLimit": false},
+  "completionEvidence": {
+    "clusters": {
+      "purposeRecognition": {"evidence": ["L04-C01", "L04-A01"], "rule": "selecionar mensagens compatíveis com finalidades diferentes"},
+      "functionalProduction": {"evidence": ["L04-A02"], "rule": "realizar produção livre e autochecagem voltadas ao propósito"}
+    },
+    "completionRule": "os dois agrupamentos são obrigatórios.",
+    "notSufficient": ["nomear gêneros sem conseguir usá-los", "escrever algo correto mas que não cumpra o objetivo", "copiar modelo posterior"]
+  }
+}
