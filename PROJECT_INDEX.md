@@ -119,7 +119,7 @@ Quando esta área for formalizada, consultar `docs/exercicios.md` (quando criado
 
 ### Progresso do aluno
 
-Ler `docs/arquitetura.md` e `docs/progresso.md` quando este último existir. A fonte oficial futura do progresso acadêmico é o Gist do aluno, não `localStorage`.
+Ler `docs/arquitetura.md` e `docs/progresso.md` (quando criado). A fonte oficial futura do progresso acadêmico é o Gist do aluno, não `localStorage`.
 
 ### Áudio e aparência
 
@@ -149,10 +149,10 @@ Ler `docs/arquitetura.md`; para mídia controlada, consultar também `producao-m
 
 Documentos previstos:
 
-- `docs/exercicios.md`
-- `docs/progresso.md`
-- `docs/configuracoes.md`
-- `docs/convencoes.md`
+- `docs/exercicios.md` (quando criado)
+- `docs/progresso.md` (quando criado)
+- `docs/configuracoes.md` (quando criado)
+- `docs/convencoes.md` (quando criado)
 
 ## Aplicação
 
