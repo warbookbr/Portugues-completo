@@ -1,0 +1,94 @@
+{
+  "schemaVersion": 1,
+  "id": "N1-U01-L04",
+  "title": "Acompanhando referências ao longo do texto",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Acompanhar cadeias curtas de referência entre frases, relacionando pronomes e expressões de retomada ao referente adequado sem depender apenas da palavra mais próxima.",
+  "competencies": [
+    "identificar referente de pronomes pessoais em contexto",
+    "identificar referente de expressões como esse lugar, essa atividade ou essa decisão",
+    "usar sentido e continuidade do texto para resolver referência",
+    "perceber quando uma substituição por pronome cria ambiguidade",
+    "acompanhar uma mesma pessoa, objeto ou ideia ao longo de duas ou três frases"
+  ],
+  "prerequisites": ["N1-U01-L03", "N0-U04-L05"],
+  "limits": [
+    "não ensinar classes e subclasses pronominais como foco central",
+    "não usar regra de que o referente é sempre o nome mais próximo",
+    "não exigir cadeias longas ou referências muito implícitas",
+    "não introduzir coesão referencial como teoria formal",
+    "não marcar toda repetição como problema"
+  ],
+  "media": {"tts": "instruções e textos sob demanda", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {
+    "curatedMedia": [],
+    "runtimeResources": [{"type": "TTS_OK", "locations": ["instruções", "textos", "feedback"], "purpose": "apoio de leitura"}],
+    "generatedVisualResources": [
+      {"type": "UI_RENDERED_REFERENCE_LINK", "locations": ["L04-B02", "L04-C01", "L04-A01", "L04-A02"], "purpose": "ligar expressão de retomada ao referente"},
+      {"type": "UI_RENDERED_AMBIGUITY_COMPARISON", "locations": ["L04-B03", "L04-A02"], "purpose": "comparar referência clara e ambígua"},
+      {"type": "UI_RENDERED_READING_CARD", "locations": ["L04-B02", "L04-C01", "L04-A01", "L04-A02"], "purpose": "manter contexto completo visível"}
+    ],
+    "productionQueueRequired": false,
+    "publicationDependency": "nenhuma nova mídia humana obrigatória",
+    "decisionRationale": "referência é relação textual e deve ser visualizada diretamente entre trechos."
+  },
+  "sequence": [
+    {"id": "L04-B01", "type": "objective", "text": "Textos evitam repetir todos os nomes o tempo todo. Para compreender, precisamos acompanhar a quem ou a que certas palavras se referem."},
+    {
+      "id": "L04-B02",
+      "type": "demonstration",
+      "text": "Luciana recebeu os visitantes na entrada. Ela explicou as regras da oficina e depois levou o grupo até a sala. A atividade começaria em dez minutos.",
+      "references": [
+        {"expression": "Ela", "referent": "Luciana"},
+        {"expression": "A atividade", "referent": "a oficina mencionada no contexto"}
+      ],
+      "explanation": "O referente é escolhido pelo sentido e pela continuidade, não só pela proximidade."
+    },
+    {
+      "id": "L04-C01",
+      "type": "quick-check",
+      "text": "O centro esportivo abriu uma nova piscina. O espaço será usado para aulas e também ficará disponível ao público nos fins de semana.",
+      "question": "A que 'O espaço' se refere?",
+      "options": ["à nova piscina", "ao fim de semana", "ao público"],
+      "correctIndex": 0,
+      "textRemainsVisible": true
+    },
+    {
+      "id": "L04-B03",
+      "type": "contrast",
+      "versions": [
+        {"text": "Paula conversou com Renata. Depois, Paula entregou o formulário.", "clarity": "clara"},
+        {"text": "Paula conversou com Renata. Depois, ela entregou o formulário.", "clarity": "pode ficar ambígua sem mais contexto"}
+      ],
+      "explanation": "Substituir repetição por pronome só ajuda quando o leitor consegue saber de quem se fala."
+    },
+    {
+      "id": "L04-A01",
+      "type": "assessment-set",
+      "text": "O mercado instalou caixas de coleta para pilhas usadas. Eles ficam perto da entrada principal. A iniciativa faz parte de um projeto ambiental do bairro.",
+      "items": [
+        {"question": "A que 'Eles' se refere?", "options": ["aos caixas de coleta", "às pilhas usadas", "ao bairro"], "correctIndex": 0},
+        {"question": "A que 'A iniciativa' se refere principalmente?", "options": ["à instalação dos caixas de coleta", "à entrada principal", "ao horário do mercado"], "correctIndex": 0}
+      ],
+      "textRemainsVisible": true
+    },
+    {
+      "id": "L04-A02",
+      "type": "assessment",
+      "text": "Marina encontrou Beatriz na recepção. Depois, ela foi chamar o médico.",
+      "question": "Só com essas duas frases, é possível saber com certeza quem foi chamar o médico?",
+      "options": ["não; 'ela' pode se referir a Marina ou Beatriz sem contexto adicional", "sim; sempre é o nome mais próximo", "sim; sempre é o primeiro nome"],
+      "correctIndex": 0,
+      "followUp": "Reconhecer ambiguidade também é compreender a referência."
+    }
+  ],
+  "assessmentBehavior": {"textVisibility": "sempre disponível", "ambiguityPolicy": "aceitar insuficiência/ambiguidade quando o texto realmente não permite resolver", "readingSupport": "TTS opcional", "timeLimit": false},
+  "completionEvidence": {
+    "clusters": {
+      "referenceTracking": {"evidence": ["L04-C01", "L04-A01"], "rule": "resolver as referências claras pelo contexto"},
+      "ambiguityAwareness": {"evidence": ["L04-A02"], "rule": "reconhecer referência não resolvível quando falta contexto"}
+    },
+    "completionRule": "os dois agrupamentos são obrigatórios.",
+    "notSufficient": ["escolher sempre o nome mais próximo", "substituir toda repetição por pronome", "ignorar ambiguidade"]
+  }
+}
