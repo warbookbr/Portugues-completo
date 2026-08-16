@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "N3-U09-L01",
+  "title": "Ambiguidade literária e interpretações sustentadas",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Interpretar ambiguidade em texto literário autoral distinguindo leitura sustentada, leitura possível porém fraca e leitura incompatível com evidências, sem exigir uma interpretação única quando o texto sustenta pluralidade.",
+  "competencies": ["localizar pontos de ambiguidade", "formular duas leituras plausíveis", "citar evidência textual", "distinguir abertura de arbitrariedade", "revisar interpretação diante de contraevidência"],
+  "prerequisites": ["N2-U09-V01", "N3-U01-V01"],
+  "limits": ["pluralidade não significa qualquer leitura", "preferência pessoal não basta", "nome técnico não substitui interpretação", "não depender de obra externa protegida"],
+  "media": {"tts": "opcional", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "purpose": "leitura de apoio"}], "generatedVisualResources": [{"type": "UI_RENDERED_INTERPRETATION_EVIDENCE_MAP", "purpose": "ligar leitura, pista e contraevidência"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "texto autoral e mapa de evidências bastam."},
+  "sequence": [
+    {"id": "L01-B01", "type": "literary-text", "text": "Quando a luz do corredor apagou, Lina sorriu para a porta fechada. 'Agora sim', disse, sem tocar na maçaneta. Pela manhã, ninguém soube explicar por que a chave estava do lado de fora.", "possibleReadings": ["Lina esperava que algo terminasse", "Lina sabe mais sobre a porta do que os outros personagens"], "guardRail": "nenhuma leitura prova sozinha quem moveu a chave"},
+    {"id": "L01-C01", "type": "quick-check", "items": [{"claim": "Lina colocou a chave do lado de fora.", "status": "não demonstrado"}, {"claim": "o texto constrói informação incompleta sobre o que ocorreu à noite", "status": "sustentado"}]},
+    {"id": "L01-A01", "type": "assessment-interpretations", "text": "novo conto breve autoral", "required": ["duas leituras plausíveis", "uma evidência para cada", "uma leitura rejeitada por incompatibilidade"]},
+    {"id": "L01-P01", "type": "open-interpretation", "prompt": "Produza interpretação própria e registre uma evidência que a sustenta e uma informação que o texto deixa em aberto.", "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"singleInterpretationRequired": false, "unsupportedReadingAccepted": false, "openResponseAutoValidated": false},
+  "completionEvidence": {"clusters": {"controlled": {"evidence": ["L01-A01"], "required": true}, "own": {"evidence": ["L01-P01"], "required": true}}, "completionRule": "pluralidade só conta quando ancorada em evidência textual."}
+}

@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "N3-U09-L02",
+  "title": "Voz, perspectiva e confiabilidade narrativa",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Analisar como uma voz narrativa seleciona, interpreta e limita informação, distinguindo perspectiva parcial de mentira comprovada e confiabilidade textual de julgamento moral sobre personagem.",
+  "competencies": ["identificar alcance da voz", "separar fato narrado de interpretação do narrador", "detectar contradição interna", "formular hipótese de confiabilidade", "comparar versões do mesmo evento"],
+  "prerequisites": ["N3-U09-L01", "N3-U01-L09"],
+  "limits": ["narrador em primeira pessoa não é automaticamente não confiável", "perspectiva parcial não prova mentira", "não inferir intenção autoral sem base", "não reduzir análise a rótulo"],
+  "media": {"tts": "opcional", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "purpose": "leitura"}], "generatedVisualResources": [{"type": "UI_RENDERED_PERSPECTIVE_COMPARE", "purpose": "comparar informação disponível a cada voz"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "duas versões autorais do mesmo evento permitem observar perspectiva."},
+  "sequence": [
+    {"id": "L02-B01", "type": "dual-account", "event": "uma reunião termina antes do previsto", "voices": [{"voice": "participante A", "account": "a reunião terminou cedo porque tudo já estava decidido"}, {"voice": "ata", "account": "a reunião foi encerrada após falta de quórum para dois itens"}], "teachingPoint": "A interpreta causa; a ata fornece outro registro, mas nenhum documento é onisciente por definição"},
+    {"id": "L02-C01", "type": "quick-check", "items": [{"question": "Perspectiva limitada = mentira comprovada?", "correct": false}, {"question": "Contradições internas podem afetar avaliação de confiabilidade?", "correct": true}]},
+    {"id": "L02-A01", "type": "assessment-perspective", "materials": "duas versões autorais de um acontecimento", "required": ["informação comum", "informação exclusiva", "interpretação de cada voz", "limite para concluir qual é mais confiável"]},
+    {"id": "L02-P01", "type": "open-analysis", "prompt": "Analise uma voz narrativa e explique o que ela sabe, o que interpreta e o que o texto não permite confirmar.", "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"firstPersonEqualsUnreliable": false, "perspectiveEqualsLie": false, "openResponseAutoValidated": false},
+  "completionEvidence": {"clusters": {"controlled": {"evidence": ["L02-A01"], "required": true}, "open": {"evidence": ["L02-P01"], "required": true}}, "completionRule": "a confiabilidade deve ser discutida por pistas, lacunas e contradições, não por rótulo automático."}
+}

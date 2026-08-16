@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "N3-U09-L06",
+  "title": "Adaptação e retextualização entre modos",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Comparar como uma narrativa ou argumento muda ao ser retextualizado entre texto verbal, sequência de quadros, roteiro e composição multimodal, distinguindo transformação funcional de equivalência literal impossível.",
+  "competencies": ["identificar o que foi preservado", "identificar o que foi condensado/expandido", "relacionar escolha ao novo modo", "avaliar mudança de foco", "evitar exigir fidelidade literal", "produzir plano de adaptação acessível"],
+  "prerequisites": ["N3-U09-L04", "N3-U05-L10", "docs/gate-audiovisual-nivel-3-u9.md"],
+  "limits": ["adaptação não é cópia", "mudança não é traição automática", "não exigir imagem/áudio real", "toda pista decisiva precisa de equivalente acessível"],
+  "media": {"tts": "opcional", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK"}], "generatedVisualResources": [{"type": "UI_RENDERED_FRAME_SEQUENCE"}, {"type": "UI_RENDERED_RETEXTUALIZATION_MATRIX"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "sequências semânticas descritas permitem analisar transformação sem depender de arquivo visual."},
+  "sequence": [
+    {"id": "L06-B01", "type": "adaptation-compare", "source": "conto: personagem espera diante de porta fechada e ouve passos antes de decidir sair", "sequence": ["quadro 1: porta fechada; personagem espera", "quadro 2: indicação textual 'passos no corredor'", "quadro 3: personagem olha para saída", "quadro 4: corredor vazio"], "task": "comparar informação explícita, elipse e mudança de foco"},
+    {"id": "L06-C01", "type": "quick-check", "items": [{"question": "Adaptação precisa conservar cada frase do original?", "correct": false}, {"question": "Uma mudança de modo pode exigir tornar visual/estrutural algo antes narrado?", "correct": true}]},
+    {"id": "L06-A01", "type": "assessment-adaptation", "source": "microconto autoral", "target": "sequência semântica de 5 quadros", "required": ["elemento preservado", "elemento condensado", "mudança de foco", "equivalente textual acessível"]},
+    {"id": "L06-P01", "type": "open-plan", "prompt": "Planeje uma adaptação de texto curto para outro modo usando apenas componentes acessíveis da interface e justifique três transformações.", "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"literalFidelityRequired": false, "realImageRequired": false, "accessibilityRequired": true},
+  "completionEvidence": {"clusters": {"analysis": {"evidence": ["L06-A01"], "required": true}, "adaptationPlan": {"evidence": ["L06-P01"], "required": true}}, "completionRule": "a adaptação deve preservar relações centrais e tornar transformações justificáveis/acessíveis."}
+}

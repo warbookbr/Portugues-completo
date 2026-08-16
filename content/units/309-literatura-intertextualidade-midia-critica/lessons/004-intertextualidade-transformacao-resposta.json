@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "N3-U09-L04",
+  "title": "Intertextualidade: transformação, alusão e resposta",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Analisar relações intertextuais comprováveis entre textos didáticos autorais, distinguindo transformação, alusão, contraste e resposta de mera coincidência temática.",
+  "competencies": ["identificar elemento retomado", "comparar transformação", "explicar função da retomada", "distinguir tema comum de intertextualidade", "avaliar evidência de relação", "produzir resposta intertextual curta"],
+  "prerequisites": ["N3-U01-L10", "N3-U09-L01"],
+  "limits": ["tema comum não prova relação", "não exigir identificação de obras externas", "não reproduzir obra protegida extensa", "nome da referência não substitui análise"],
+  "media": {"tts": "opcional", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "purpose": "leitura"}], "generatedVisualResources": [{"type": "UI_RENDERED_INTERTEXT_LINKS", "purpose": "ligar motivo, formulação e transformação"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "textos autorais relacionados evitam dependência de obra externa."},
+  "sequence": [
+    {"id": "L04-B01", "type": "paired-texts", "sourceText": "conto autoral sobre uma porta que nunca é aberta", "responseText": "poema autoral que retoma a frase 'do lado de fora' e inverte a perspectiva", "teachingPoint": "há elemento identificável retomado e transformado"},
+    {"id": "L04-C01", "type": "quick-check", "items": [{"question": "Dois textos sobre chuva são automaticamente intertextuais?", "correct": false}, {"question": "Uma formulação reconhecível retomada e transformada pode sustentar relação intertextual?", "correct": true}]},
+    {"id": "L04-A01", "type": "assessment-intertext", "texts": "três textos autorais; dois têm relação construída e um apenas tema semelhante", "tasks": ["identificar o par relacionado", "marcar elemento de ligação", "explicar transformação", "rejeitar coincidência temática"]},
+    {"id": "L04-P01", "type": "open-response", "prompt": "Produza um fragmento curto que responda ou transforme um texto-base fornecido e explique qual elemento retomou e que efeito novo criou.", "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"sharedThemeEqualsIntertext": false, "externalWorkIdentificationRequired": false, "openResponseAutoValidated": false},
+  "completionEvidence": {"clusters": {"analysis": {"evidence": ["L04-A01"], "required": true}, "production": {"evidence": ["L04-P01"], "required": true}}, "completionRule": "a relação intertextual precisa de vínculo textual identificável e função interpretada."}
+}

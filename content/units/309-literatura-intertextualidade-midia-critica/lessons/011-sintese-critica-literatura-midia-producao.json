@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "N3-U09-L11",
+  "title": "Síntese crítica de literatura e mídia + produção multimodal acessível",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Integrar interpretação literária, intertextualidade, contexto, adaptação, composição, montagem, trilhas e circulação em análise crítica própria e produzir uma pequena composição multimodal acessível com decisões justificadas.",
+  "competencies": ["integrar evidências de modos diferentes", "preservar ambiguidade", "rastrear intertexto", "analisar adaptação", "analisar enquadramento/circulação", "produzir composição acessível", "justificar sequência e trilhas", "reconhecer limite que exigiria mídia real"],
+  "prerequisites": ["N3-U09-L01", "N3-U09-L02", "N3-U09-L03", "N3-U09-L04", "N3-U09-L05", "N3-U09-L06", "N3-U09-L07", "N3-U09-L08", "N3-U09-L09", "N3-U09-L10"],
+  "limits": ["não exigir imagem/vídeo real", "produção estética não pontua", "qualidade global aberta exige avaliador confiável", "não fabricar interpretação única", "não fingir experiência sonora não fornecida"],
+  "media": {"tts": "opcional", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK"}], "generatedVisualResources": [{"type": "UI_RENDERED_INTERPRETATION_EVIDENCE_MAP"}, {"type": "UI_RENDERED_INTERTEXT_LINKS"}, {"type": "UI_RENDERED_FRAME_SEQUENCE"}, {"type": "UI_RENDERED_MULTIMODAL_TIMELINE"}, {"type": "UI_RENDERED_CIRCULATION_CHAIN"}, {"type": "UI_RENDERED_ACCESSIBLE_MULTIMODAL_COMPOSER"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória; produção aberta exige avaliador confiável para qualidade global", "decisionRationale": "composição semântica acessível permite avaliar decisões multimodais sem gerar mídia externa."},
+  "sequence": [
+    {"id": "L11-P01", "type": "critical-analysis", "materials": ["texto literário autoral", "texto intertextual relacionado", "adaptação em sequência semântica", "duas publicações derivadas"], "required": ["interpretação com evidência", "relação intertextual", "transformação na adaptação", "efeito de composição/montagem", "circulação/enquadramento", "incerteza preservada"], "recordResponse": true, "automaticValidation": false},
+    {"id": "L11-P02", "type": "multimodal-plan", "prompt": "Planeje uma composição multimodal acessível que responda a um dos textos-base.", "required": ["finalidade", "audiência", "sequência", "trilha verbal", "elementos visuais semânticos", "descrições acessíveis", "origem/intertexto"], "recordResponse": true},
+    {"id": "L11-P03", "type": "multimodal-production", "format": "componentes semânticos de UI", "required": ["3–7 quadros/segmentos", "texto real na interface", "alternativa acessível", "nenhuma pista decisiva apenas visual", "marcação de qualquer elemento que exigiria mídia real se fosse avaliado acusticamente"], "recordResponse": true, "automaticValidation": false},
+    {"id": "L11-P04", "type": "reflection", "required": ["duas decisões de adaptação", "uma decisão de montagem/ordem", "uma relação entre trilhas", "uma decisão de acessibilidade", "um limite da representação sem mídia real"], "recordResponse": true}
+  ],
+  "assessmentBehavior": {"realMediaRequired": false, "aestheticPolishScored": false, "singleInterpretationRequired": false, "openResponseAutoValidated": false},
+  "completionEvidence": {"clusters": {"criticalAnalysis": {"evidence": ["L11-P01"], "required": true}, "multimodalPlan": {"evidence": ["L11-P02"], "required": true}, "production": {"evidence": ["L11-P03"], "required": true}, "reflection": {"evidence": ["L11-P04"], "required": true}}, "completionRule": "análise crítica, produção acessível e reflexão sobre limites são obrigatórias.", "requiresReliableEvaluatorFor": ["qualidade global da análise", "qualidade comunicativa global da produção"]}
+}
