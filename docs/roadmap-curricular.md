@@ -50,7 +50,7 @@ currículo fechado
 - **M2 concluído** — 11 áreas em `docs/areas-nivel-2.md`;
 - **M3 concluído** — 9 unidades em `docs/unidades-nivel-2.md`;
 - **M4 concluído** — **87 lições + 9 verificações integradas** em `docs/licoes-nivel-2.md` e documentos U1–U9;
-- **M5 em andamento** — **U1–U6 concluídas**; U7–U9 pendentes.
+- **M5 em andamento** — **U1–U7 concluídas**; U8–U9 pendentes.
 
 Arquitetura M4:
 
@@ -128,11 +128,23 @@ Regras centrais: mais conectores não significa mais coesão; repetição não �
 
 Cobertura: planejamento global; distribuição funcional de parágrafos; narrativa; explicação; texto informativo ligado a fonte controlada; procedimento intermediário; resumo/paráfrase com atribuição; adequação ao gênero/leitor; revisão em camadas; reescrita com versionamento.
 
-A verificação integrada exige **duas produções próprias de gêneros diferentes**, tarefa de resumo/paráfrase com fonte, adaptação a dois contextos e reescrita com histórico. Questões fechadas não compensam ausência de autoria.
+A verificação integrada exige duas produções próprias de gêneros diferentes, tarefa de resumo/paráfrase com fonte, adaptação a dois contextos e reescrita com histórico. Questões fechadas não compensam ausência de autoria.
 
 Regras centrais: número de parágrafos não é meta; extensão não pontua por si; fatos fornecidos não podem ser inventados; formalidade não é qualidade absoluta; texto livre e qualidade global não recebem validação automática falsa; quantidade de alterações não mede qualidade da reescrita.
 
-Nenhuma nova mídia humana obrigatória foi criada em U5 ou U6.
+### N2-U7 — Argumentar: posição, razões, exemplos e evidências — CONCLUÍDA
+
+```text
+9 lições + N2-U07-V01
+```
+
+Cobertura: tema/preferência/posição; fato/opinião/inferência em contexto; razões relevantes, circulares e laterais; exemplo x evidência; apoio suficiente/insuficiente/irrelevante; organização argumentativa sem fórmula fixa; objeção/contraexemplo simples; uso responsável de fonte controlada; produção, revisão e reescrita de argumentação própria.
+
+A verificação integrada mantém nove agrupamentos obrigatórios e contém casos em que `a evidência disponível não basta` é a resposta correta. A produção argumentativa própria com primeira versão, revisão e segunda versão é obrigatória.
+
+Regras centrais: posição não é avaliada por concordância ideológica; fato não significa automaticamente verdadeiro; exemplo não é prova; número não é apoio automaticamente pertinente; uma objeção relevante pode limitar a posição sem anulá-la; a fonte não autoriza inventar dados nem transformar ausência de informação em evidência contrária.
+
+Nenhuma nova mídia humana obrigatória foi criada em U5–U7.
 
 ### Níveis 3 e 4
 
@@ -151,22 +163,23 @@ NÍVEL 2 — M1–M4 ✓
     ├── U4 ✓
     ├── U5 ✓
     ├── U6 ✓
-    └── U7 — PRÓXIMO SUBPASSO
+    ├── U7 ✓
+    └── U8 — PRÓXIMO SUBPASSO
 ```
 
 Próximo subpasso:
 
 ```text
-N2-U07 — Argumentar: posição, razões, exemplos e evidências
-9 lições + verificação integrada
+N2-U08 — Língua em interação: apresentação, discussão, registro e variação
+8 lições + verificação integrada
 ```
 
-A U7 deve construir argumentação como relação entre posição e apoio, não como concordância ideológica. Deve distinguir razão, exemplo e evidência; trabalhar objeção simples sem antecipar debate avançado; e exigir produção argumentativa própria.
+A U8 deve trabalhar fala e interação sem fingir que o sistema consegue validar sozinho inteligibilidade, fluência, prosódia ou qualidade global de produção oral. Registro e variação devem ser tratados como adequação e diversidade linguística, não como escala moral entre formas de falar.
 
 Depois:
 
 ```text
-N2-U8 → U9
+N2-U9
 → verificação de saída N2
 → checkpoint N2→N3
 ```
@@ -202,6 +215,7 @@ O N2 deve avançar de autonomia básica para uso intermediário organizado e jus
 11. Interpretações literárias diferentes são aceitas quando sustentadas por evidência.
 12. Ao comparar fontes, divergência pode legitimamente exigir confirmação adicional.
 13. Em produção escrita, planejamento, texto próprio, revisão e versionamento devem ser evidências reais quando a unidade os exigir; tarefas fechadas não podem substituí-los.
+14. Em produção oral, o projeto só pode automatizar o que realmente observa; inteligibilidade e qualidade global exigem observador ou avaliador confiável.
 
 ## Dependências não curriculares abertas
 
