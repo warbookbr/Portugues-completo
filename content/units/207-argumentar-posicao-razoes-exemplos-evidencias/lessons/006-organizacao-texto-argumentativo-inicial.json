@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "N2-U07-L06",
+  "title": "Organizar um texto argumentativo inicial",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Organizar posição, razões, exemplos ou evidências e fechamento em vários parágrafos de modo funcional, sem impor número ou sequência fixa de parágrafos.",
+  "competencies": ["agrupar razão e apoio relacionado", "ordenar blocos por progressão", "evitar repetição estagnada", "escolher abertura adequada à situação", "construir fechamento compatível com o que foi sustentado", "planejar texto sem fórmula fixa"],
+  "prerequisites": ["N2-U07-L01", "N2-U07-L02", "N2-U07-L03", "N2-U07-L04", "N2-U07-L05", "N2-U05-V01", "N2-U06-V01"],
+  "limits": ["não impor modelo de cinco parágrafos", "não exigir posição sempre na primeira frase", "não confundir fechamento com repetição literal", "não usar quantidade de argumentos como métrica de qualidade"],
+  "media": {"tts": "opcional", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["blocos", "instruções", "feedback"], "purpose": "apoio"}], "generatedVisualResources": [{"type": "UI_RENDERED_ARGUMENT_BLOCKS", "locations": ["L06-B01", "L06-C01", "L06-A01", "L06-P01"], "purpose": "organizar posição, razões e apoios"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "a arquitetura argumentativa pode ser manipulada por blocos textuais antes da redação."},
+  "sequence": [
+    {"id": "L06-B01", "type": "argument-map", "position": "O centro comunitário deveria testar uma noite de funcionamento por semana.", "blocks": [{"function": "razão 1", "text": "Parte dos usuários trabalha até o fim da tarde."}, {"function": "evidência", "text": "Em uma consulta interna, 34 de 52 respondentes indicaram que usariam o espaço após 18h."}, {"function": "razão 2", "text": "O teste pode ser limitado a oito semanas antes de uma decisão permanente."}, {"function": "fechamento", "text": "Por isso, um teste temporário permitiria observar a demanda sem assumir uma mudança definitiva."}], "teachingPoint": "organização serve à progressão do argumento; não existe quantidade universal de parágrafos"},
+    {"id": "L06-C01", "type": "quick-check", "items": [{"problem": "um bloco apresenta evidência antes de deixar claro qual afirmação ela apoia e a relação fica obscura", "bestAction": "reorganizar ou explicitar a ligação"}, {"problem": "o fechamento introduz uma razão totalmente nova", "bestAction": "desenvolver a razão antes ou retirar do fechamento"}]},
+    {"id": "L06-A01", "type": "assessment-plan", "topic": "testar agendamento on-line para uma atividade comunitária", "providedBlocks": ["posição", "duas razões", "um dado fornecido", "um exemplo", "fechamento"], "task": "montar uma arquitetura coerente e justificar pelo menos uma decisão de agrupamento ou ordem", "acceptEquivalent": true},
+    {"id": "L06-P01", "type": "open-plan", "prompt": "Crie um plano para um texto argumentativo próprio de vários parágrafos. Registre posição, ao menos uma razão, apoio disponível e uma ordem global plausível.", "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"fixedParagraphModel": false, "positionFirstSentenceRequired": false, "ideologicalAgreementScored": false, "timeLimit": false},
+  "completionEvidence": {"clusters": {"controlledOrganization": {"evidence": ["L06-A01"], "rule": "arquitetura coerente com ligações reconhecíveis"}, "ownPlan": {"evidence": ["L06-P01"], "rule": "plano argumentativo próprio"}}, "completionRule": "os dois agrupamentos são obrigatórios.", "notSufficient": ["seguir fórmula sem relação com o argumento", "espalhar razão e evidência sem ligação"]}
+}

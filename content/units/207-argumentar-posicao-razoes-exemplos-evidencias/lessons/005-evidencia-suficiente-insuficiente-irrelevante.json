@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "N2-U07-L05",
+  "title": "Evidência suficiente, insuficiente e irrelevante",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Julgar inicialmente se o apoio disponível é suficiente para uma conclusão limitada, insuficiente para a afirmação proposta ou irrelevante para o ponto, sem exigir certeza absoluta.",
+  "competencies": ["adequar força da conclusão ao apoio", "reconhecer evidência insuficiente", "reconhecer evidência irrelevante", "evitar generalização além dos dados", "aceitar 'não basta para concluir' como resposta correta"],
+  "prerequisites": ["N2-U07-L03", "N2-U07-L04"],
+  "limits": ["não introduzir estatística formal", "não ensinar causalidade avançada", "não exigir certeza absoluta", "não tratar dado isolado como suficiente para qualquer conclusão"],
+  "media": {"tts": "opcional", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["cenários", "dados", "feedback"], "purpose": "apoio"}], "generatedVisualResources": [{"type": "UI_RENDERED_EVIDENCE_STRENGTH", "locations": ["L05-B01", "L05-C01", "L05-A01"], "purpose": "comparar conclusão e apoio disponível"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "o julgamento introdutório pode usar cenários controlados e conclusões de força diferente."},
+  "sequence": [
+    {"id": "L05-B01", "type": "worked-cases", "cases": [{"evidence": "No teste de quatro quintas, 37 usuários entraram no horário ampliado.", "claim": "O horário ampliado foi usado por algumas pessoas durante o teste.", "judgment": "suficiente para essa conclusão limitada"}, {"evidence": "No teste de quatro quintas, 37 usuários entraram no horário ampliado.", "claim": "Todos os moradores da cidade preferem bibliotecas abertas à noite.", "judgment": "insuficiente"}, {"evidence": "A biblioteca trocou as luminárias.", "claim": "O horário ampliado foi usado por algumas pessoas.", "judgment": "irrelevante"}], "teachingPoint": "a mesma evidência pode sustentar uma conclusão limitada e não sustentar uma generalização ampla"},
+    {"id": "L05-C01", "type": "quick-check", "evidence": "Em uma turma de 20 inscritos, 17 concluíram a atividade.", "claims": [{"text": "A maioria dos inscritos dessa turma concluiu a atividade.", "correct": "suficiente para a turma descrita"}, {"text": "Esse método garante conclusão em qualquer turma.", "correct": "insuficiente"}]},
+    {"id": "L05-A01", "type": "assessment-judgment", "items": [{"evidence": "Cinco participantes relataram dificuldade com uma etapa do formulário.", "claim": "Alguns participantes tiveram dificuldade nessa etapa.", "correct": "suficiente para conclusão limitada"}, {"evidence": "Cinco participantes relataram dificuldade com uma etapa do formulário.", "claim": "O formulário é impossível de preencher para qualquer pessoa.", "correct": "a evidência disponível não basta"}, {"evidence": "O formulário tem cabeçalho azul.", "claim": "Alguns participantes tiveram dificuldade nessa etapa.", "correct": "irrelevante"}], "requireJustification": true},
+    {"id": "L05-P01", "type": "open-limited-claim", "prompt": "A partir de uma evidência fornecida, escreva uma conclusão que ela sustente e outra conclusão mais forte que ela não permita afirmar. Explique o limite.", "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"insufficientEvidenceCanBeCorrect": true, "certaintyRequired": false, "formalStatisticsRequired": false, "timeLimit": false},
+  "completionEvidence": {"clusters": {"judgment": {"evidence": ["L05-A01"], "rule": "distinguir suficiente, insuficiente e irrelevante"}, "calibration": {"evidence": ["L05-P01"], "rule": "ajustar força da conclusão ao apoio"}}, "completionRule": "os dois agrupamentos são obrigatórios.", "notSufficient": ["sempre escolher a conclusão mais forte", "tratar ausência de certeza como ausência total de apoio"]}
+}

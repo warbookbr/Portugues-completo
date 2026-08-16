@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "N2-U07-L04",
+  "title": "Exemplos e evidências: o que realmente apoia uma afirmação",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Distinguir exemplo ilustrativo de evidência fornecida e avaliar se cada recurso realmente trata da afirmação que pretende apoiar.",
+  "competencies": ["distinguir exemplo de evidência fornecida", "ligar apoio à afirmação correta", "rejeitar evidência irrelevante", "usar dado fornecido sem extrapolar", "reconhecer que exemplo isolado não prova regra geral"],
+  "prerequisites": ["N2-U07-L03", "N2-U01-V01"],
+  "limits": ["não exigir pesquisa aberta", "não introduzir metodologia científica formal", "não tratar exemplo como prova automática", "não assumir que qualquer número é evidência pertinente"],
+  "media": {"tts": "opcional", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["dados", "trechos", "feedback"], "purpose": "apoio"}], "generatedVisualResources": [{"type": "UI_RENDERED_CLAIM_SUPPORT_MATCH", "locations": ["L04-B01", "L04-C01", "L04-A01"], "purpose": "parear afirmação e apoio"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "dados e exemplos controlados podem ser comparados textualmente."},
+  "sequence": [
+    {"id": "L04-B01", "type": "contrast", "claim": "O novo horário atende parte de um público que antes não conseguia ir à biblioteca.", "supports": [{"text": "Por exemplo, uma usuária que trabalha até 18h passou a frequentar às quintas à noite.", "label": "exemplo ilustrativo"}, {"text": "Segundo o registro de entrada, 37 usuários visitaram a biblioteca no horário ampliado nas quatro quintas do teste.", "label": "evidência fornecida"}, {"text": "A biblioteca comprou duas estantes novas.", "label": "irrelevante para a afirmação"}], "teachingPoint": "exemplo torna uma possibilidade concreta; evidência fornecida oferece informação observada sobre o ponto"},
+    {"id": "L04-C01", "type": "quick-check", "claim": "A oficina teve procura maior que o número de vagas.", "options": ["Foram registradas 31 inscrições para 20 vagas.", "Um participante disse que gostou do cartaz.", "A sala tem 20 cadeiras azuis."], "correctIndex": 0},
+    {"id": "L04-A01", "type": "assessment-support-match", "items": [{"claim": "O serviço foi usado também por pessoas que chegaram depois das 18h.", "supports": ["O registro marca 24 entradas entre 18h e 20h.", "O prédio fica perto de uma praça."], "correctIndex": 0}, {"claim": "Alguns participantes precisaram de ajuda para completar o cadastro.", "supports": ["Quatro atendimentos registrados foram classificados como ajuda no cadastro.", "O formulário usa a cor verde."], "correctIndex": 0}], "requireExplanation": true},
+    {"id": "L04-P01", "type": "open-support-analysis", "prompt": "Diante de uma afirmação e de três apoios fornecidos, identifique qual é exemplo, qual é evidência e qual não trata do ponto. Explique por quê.", "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"exampleEqualsProof": false, "numericDataAutomaticallyRelevant": false, "openResearchRequired": false, "timeLimit": false},
+  "completionEvidence": {"clusters": {"matching": {"evidence": ["L04-A01"], "rule": "parear apoio pertinente à afirmação"}, "distinction": {"evidence": ["L04-P01"], "rule": "distinguir exemplo, evidência e irrelevância"}}, "completionRule": "os dois agrupamentos são obrigatórios.", "notSufficient": ["escolher apoio só por conter número", "usar exemplo único como prova de regra geral"]}
+}

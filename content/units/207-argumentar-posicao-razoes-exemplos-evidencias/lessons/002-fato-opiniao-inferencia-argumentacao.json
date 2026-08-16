@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "N2-U07-L02",
+  "title": "Fato, opinião e inferência em textos argumentativos",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Distinguir afirmação apresentada como fato, avaliação/opinião e inferência pelo modo como cada uma é sustentada e usada no contexto argumentativo, sem tratar 'fato' como sinônimo automático de verdade.",
+  "competencies": ["reconhecer fato atribuído a fonte", "reconhecer avaliação", "reconhecer conclusão inferida", "justificar categoria pelo papel da afirmação", "separar tipo de afirmação de confiabilidade da fonte"],
+  "prerequisites": ["N2-U07-L01", "N2-U01-L09"],
+  "limits": ["fato não significa automaticamente verdadeiro", "não classificar frase isolada quando o contexto é necessário", "não introduzir epistemologia formal", "não avaliar opinião como errada por discordância"],
+  "media": {"tts": "opcional", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["trechos", "instruções", "feedback"], "purpose": "apoio"}], "generatedVisualResources": [{"type": "UI_RENDERED_ASSERTION_CONTEXT_CARD", "locations": ["L02-B01", "L02-C01", "L02-A01"], "purpose": "classificar afirmação em contexto"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "a distinção depende de contexto textual, não de mídia controlada."},
+  "sequence": [
+    {"id": "L02-B01", "type": "contextual-example", "context": "Relatório informa que 62% dos usuários pesquisados preferiram o novo horário.", "claims": [{"text": "Segundo o relatório, 62% dos pesquisados preferiram o novo horário.", "label": "fato atribuído"}, {"text": "O novo horário é muito melhor.", "label": "opinião/avaliação"}, {"text": "É provável que parte do público continue usando o horário ampliado se ele for mantido.", "label": "inferência"}], "teachingPoint": "o rótulo descreve o papel da afirmação; a confiabilidade do relatório é outra pergunta"},
+    {"id": "L02-C01", "type": "quick-check", "items": [{"context": "A tabela registra 48 inscrições.", "text": "A tabela registra 48 inscrições.", "correct": "fato atribuído"}, {"context": "A tabela registra 48 inscrições.", "text": "O número de inscrições é excelente.", "correct": "opinião/avaliação"}, {"context": "As vagas são 50 e há 48 inscrições.", "text": "Provavelmente restam poucas vagas.", "correct": "inferência"}]},
+    {"id": "L02-A01", "type": "assessment-classification", "items": [{"context": "Um comunicado diz que o serviço funcionou por quatro sábados.", "text": "Segundo o comunicado, o serviço funcionou por quatro sábados.", "correct": "fato atribuído"}, {"context": "O texto descreve filas menores no último sábado.", "text": "A organização fez um ótimo trabalho.", "correct": "opinião/avaliação"}, {"context": "As filas caíram após uma mudança de horário, mas não há comparação de outras causas.", "text": "A mudança pode ter contribuído para a redução das filas.", "correct": "inferência"}], "requireJustification": true},
+    {"id": "L02-P01", "type": "open-analysis", "prompt": "Em um pequeno trecho fornecido pela interface, identifique uma afirmação factual atribuída, uma avaliação ou uma inferência quando houver. Explique pelo papel que cada uma cumpre.", "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"factEqualsTruth": false, "contextRequired": true, "ideologicalAgreementScored": false, "timeLimit": false},
+  "completionEvidence": {"clusters": {"classification": {"evidence": ["L02-A01"], "rule": "classificar em contexto e justificar"}, "transfer": {"evidence": ["L02-P01"], "rule": "aplicar distinção em trecho novo"}}, "completionRule": "os dois agrupamentos são obrigatórios.", "notSufficient": ["usar palavras como 'acho' como único critério", "chamar qualquer número de fato verdadeiro sem considerar a atribuição"]}
+}

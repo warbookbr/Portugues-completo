@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "id": "N2-U07-L07",
+  "title": "Objeção e contraexemplo simples",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Reconhecer exceção, limite ou objeção relevante a uma posição e ajustar uma afirmação quando necessário, sem exigir refutação sofisticada.",
+  "competencies": ["identificar objeção relevante", "distinguir objeção de mudança de assunto", "reconhecer contraexemplo", "detectar afirmação absoluta vulnerável", "reformular posição para acomodar limite real", "responder sem atacar a pessoa"],
+  "prerequisites": ["N2-U07-L05", "N2-U07-L06"],
+  "limits": ["não exigir debate formal", "não exigir contra-argumentação extensa", "não ensinar concessão retórica sofisticada", "não confundir objeção com discordância sem relação"],
+  "media": {"tts": "opcional", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["posições", "objeções", "feedback"], "purpose": "apoio"}], "generatedVisualResources": [{"type": "UI_RENDERED_CLAIM_OBJECTION_PAIR", "locations": ["L07-B01", "L07-C01", "L07-A01"], "purpose": "comparar posição e limite"}, {"type": "UI_RENDERED_CLAIM_REWRITE", "locations": ["L07-A02", "L07-P01"], "purpose": "reformular afirmação"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "objeções iniciais podem ser tratadas com pares e reformulações textuais."},
+  "sequence": [
+    {"id": "L07-B01", "type": "worked-case", "claim": "Todo atendimento deveria ser feito apenas on-line.", "objection": "Pessoas sem acesso estável à internet ainda precisam de uma forma de atendimento.", "revisedClaim": "O atendimento on-line pode ser ampliado, desde que exista alternativa para quem não consegue usar esse canal.", "teachingPoint": "uma objeção relevante pode pedir limitação da posição, não abandono completo dela"},
+    {"id": "L07-C01", "type": "quick-check", "claim": "A oficina deveria exigir inscrição antecipada.", "options": [{"text": "Algumas pessoas podem não conseguir acessar o formulário; é preciso prever outra forma de inscrição.", "label": "objeção relevante"}, {"text": "A sala foi pintada no mês passado.", "label": "mudança de assunto"}]},
+    {"id": "L07-A01", "type": "assessment-objection", "items": [{"claim": "Todos os avisos deveriam existir somente em formato digital.", "options": ["Alguns usuários não consultam canais digitais e podem ficar sem a informação.", "O mural é azul."], "correctIndex": 0}, {"claim": "Qualquer reunião longa é inútil.", "options": ["Algumas reuniões longas incluem decisões complexas que exigem tempo.", "A mesa da sala é retangular."], "correctIndex": 0}]},
+    {"id": "L07-A02", "type": "assessment-rewrite", "prompt": "Reformule uma afirmação absoluta fornecida para acomodar um contraexemplo real sem perder a posição central.", "recordResponse": true, "automaticValidation": false},
+    {"id": "L07-P01", "type": "open-objection-response", "prompt": "Retome seu plano argumentativo e escreva uma objeção relevante possível. Depois ajuste sua posição ou explique por que o limite não exige mudança.", "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"formalDebateRequired": false, "personalAttackAccepted": false, "claimAdjustmentAllowed": true, "timeLimit": false},
+  "completionEvidence": {"clusters": {"recognize": {"evidence": ["L07-A01"], "rule": "distinguir objeção relevante de desvio"}, "respond": {"evidence": ["L07-A02", "L07-P01"], "rule": "responder ou reformular de modo proporcional"}}, "completionRule": "os dois agrupamentos são obrigatórios.", "notSufficient": ["mudar de assunto", "desqualificar quem apresenta a objeção"]}
+}
