@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "N2-U06-L03",
+  "title": "Narrativa de vários parágrafos",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Produzir uma narrativa própria de vários parágrafos com sequência compreensível, participantes recuperáveis, seleção de acontecimentos e transições suficientes, sem exigir molde literário rígido.",
+  "competencies": ["selecionar acontecimentos relevantes", "organizar sequência temporal ou causal plausível", "manter participantes identificáveis", "usar transições quando necessárias", "omitir detalhe irrelevante sem quebrar o sentido", "revisar continuidade global da narrativa"],
+  "prerequisites": ["N2-U06-L01", "N2-U06-L02", "N2-U05-V01"],
+  "limits": ["não exigir extensão mínima fixa além de vários parágrafos", "não exigir clímax ou estrutura literária canônica", "não confundir ordem cronológica com única ordem possível", "não avaliar criatividade como substituto de clareza"],
+  "media": {"tts": "opcional", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["situações", "modelos", "feedback"], "purpose": "apoio"}], "generatedVisualResources": [{"type": "UI_RENDERED_EVENT_SEQUENCE", "locations": ["L03-B01", "L03-C01", "L03-A01"], "purpose": "organizar eventos e transições"}, {"type": "UI_RENDERED_WRITING_EDITOR", "locations": ["L03-P01"], "purpose": "registrar narrativa própria e revisão"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "a competência central é escrita e revisão textual."},
+  "sequence": [
+    {"id": "L03-B01", "type": "worked-example", "events": ["ônibus atrasou", "Lia avisou a equipe", "a reunião começou com pauta adaptada", "Lia chegou e apresentou sua parte"], "teachingPoint": "uma narrativa seleciona eventos e explicita relações necessárias; não precisa relatar tudo o que aconteceu"},
+    {"id": "L03-C01", "type": "quick-check", "items": [{"question": "Qual versão mantém melhor o referente?", "options": ["Rui encontrou Pedro. Ele explicou o problema, mas o texto deixa impossível saber quem explicou.", "Rui encontrou Pedro. Rui explicou o problema ao colega."], "correctIndex": 1}, {"question": "Qual detalhe pode ser omitido se não afeta o acontecimento?", "options": ["o horário em que a porta foi fechada, quando isso explica o atraso", "a cor de uma caneta que não volta a ser relevante"], "correctIndex": 1}]},
+    {"id": "L03-A01", "type": "assessment-controlled-draft", "situation": "um grupo preparou uma feira; faltou energia antes da abertura; reorganizou as atividades; a energia voltou; a feira ocorreu", "task": "planejar e redigir uma narrativa curta de vários parágrafos preservando sequência e participantes", "recordResponse": true, "automaticValidation": "presença de vários parágrafos e fatos controlados pode ser verificada; qualidade global exige avaliador confiável"},
+    {"id": "L03-P01", "type": "open-writing", "prompt": "Produza uma narrativa própria de vários parágrafos sobre uma situação fornecida ou vivida que possa ser compartilhada sem dados sensíveis. Depois releia e registre pelo menos uma revisão de sequência, referência ou detalhe.", "recordResponse": true, "requiresRevisionNote": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"ownWritingRequired": true, "fixedLength": false, "creativityScored": false, "openTextAutoValidated": false, "timeLimit": false},
+  "completionEvidence": {"clusters": {"controlledNarrative": {"evidence": ["L03-A01"], "rule": "preservar eventos centrais e continuidade"}, "ownNarrative": {"evidence": ["L03-P01"], "rule": "narrativa própria em vários parágrafos com revisão registrada"}}, "completionRule": "produção própria é obrigatória e não pode ser compensada por tarefa fechada.", "notSufficient": ["ordenar cartões sem escrever", "produzir frases desconectadas"]}
+}

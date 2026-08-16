@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "N2-U06-L04",
+  "title": "Texto explicativo: explicar e exemplificar",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Produzir uma explicação própria de vários parágrafos desenvolvendo uma ideia por definição funcional, relação causal, detalhamento ou exemplo adequado ao leitor.",
+  "competencies": ["formular o que precisa ser explicado", "selecionar explicações adequadas ao leitor", "usar exemplo realmente ligado ao ponto", "separar ideia principal de detalhe", "evitar circularidade", "revisar suficiência e excesso de explicação"],
+  "prerequisites": ["N2-U06-L01", "N2-U06-L02", "N2-U01-V01", "N2-U05-V01"],
+  "limits": ["não exigir linguagem acadêmica", "não impor sequência ideia-explicação-exemplo quando outra organização funcionar", "não considerar exemplo como prova automática", "não premiar extensão por si só"],
+  "media": {"tts": "opcional", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["instruções", "modelos", "feedback"], "purpose": "apoio"}], "generatedVisualResources": [{"type": "UI_RENDERED_EXPLANATION_MAP", "locations": ["L04-B01", "L04-A01"], "purpose": "relacionar ideia, explicação e exemplo"}, {"type": "UI_RENDERED_WRITING_EDITOR", "locations": ["L04-P01"], "purpose": "produção e revisão"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "a competência é textual e pode ser desenvolvida com situações e editor."},
+  "sequence": [
+    {"id": "L04-B01", "type": "worked-example", "topic": "por que separar resíduos eletrônicos do lixo comum", "structure": [{"function": "ideia", "content": "equipamentos eletrônicos exigem destinação específica"}, {"function": "explicação", "content": "eles podem conter materiais que precisam de coleta e tratamento próprios"}, {"function": "exemplo", "content": "pilhas e baterias não devem ser misturadas ao lixo doméstico quando há ponto de coleta adequado"}], "teachingPoint": "o exemplo precisa tornar a ideia mais concreta, não apenas mudar de assunto"},
+    {"id": "L04-C01", "type": "quick-check", "items": [{"question": "Qual exemplo realmente ajuda a explicar por que um manual precisa ser claro?", "options": ["um passo ambíguo pode levar duas pessoas a executar ações diferentes", "manuais costumam ter capas de várias cores"], "correctIndex": 0}, {"question": "Uma explicação que repete a pergunta com outras palavras, sem acrescentar relação ou detalhe, é suficiente?", "options": ["sim", "não"], "correctIndex": 1}]},
+    {"id": "L04-A01", "type": "assessment-explanation", "prompt": "Explique a um novo participante por que uma equipe registra decisões de reunião e dê um exemplo pertinente.", "requiredElements": ["ideia central", "explicação", "exemplo ligado ao ponto", "mais de um parágrafo quando a organização justificar"], "recordResponse": true, "automaticValidation": "estrutura mínima pode ser verificada; qualidade global exige avaliador confiável"},
+    {"id": "L04-P01", "type": "open-writing", "prompt": "Escolha um processo, hábito ou prática cotidiana que você conheça e produza uma explicação de vários parágrafos para um leitor definido. Inclua pelo menos um exemplo útil e revise se alguma parte ficou circular ou excessiva.", "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"ownWritingRequired": true, "fixedFormula": false, "openTextAutoValidated": false, "timeLimit": false},
+  "completionEvidence": {"clusters": {"controlledExplanation": {"evidence": ["L04-A01"], "rule": "explicação e exemplo devem sustentar a ideia"}, "ownExplanation": {"evidence": ["L04-P01"], "rule": "texto próprio de vários parágrafos com leitor definido"}}, "completionRule": "os dois agrupamentos são obrigatórios.", "notSufficient": ["dar exemplo desconectado", "repetir a ideia sem explicar"]}
+}

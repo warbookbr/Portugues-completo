@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "N2-U06-L02",
+  "title": "Distribuir funções entre parágrafos",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Transformar um plano em blocos de sentido que cumpram funções diferentes e mantenham progressão, decidindo quando unir, separar ou reordenar ideias sem impor um molde fixo.",
+  "competencies": ["agrupar ideias por foco", "atribuir função a cada bloco", "identificar parágrafo sobrecarregado", "identificar divisão artificial", "decidir quando unir ou separar", "justificar uma ordem global plausível"],
+  "prerequisites": ["N2-U06-L01", "N2-U05-V01"],
+  "limits": ["não exigir número fixo de parágrafos", "não tratar introdução-desenvolvimento-conclusão como fórmula universal", "não separar parágrafos por tamanho", "não considerar toda ordem diferente como erro"],
+  "media": {"tts": "opcional", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["instruções", "exemplos", "feedback"], "purpose": "apoio"}], "generatedVisualResources": [{"type": "UI_RENDERED_PARAGRAPH_BLOCKS", "locations": ["L02-B01", "L02-C01", "L02-A01", "L02-P01"], "purpose": "agrupar e reordenar ideias por função"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "a organização global pode ser trabalhada por blocos textuais manipuláveis."},
+  "sequence": [
+    {"id": "L02-B01", "type": "worked-example", "facts": ["o mutirão começa às 8h", "haverá triagem dos materiais", "voluntários recebem luvas", "materiais perigosos não entram", "o resultado será divulgado depois"], "usefulBlocks": [{"focus": "participação", "facts": ["o mutirão começa às 8h", "voluntários recebem luvas"]}, {"focus": "como funciona", "facts": ["haverá triagem dos materiais", "materiais perigosos não entram"]}, {"focus": "depois do evento", "facts": ["o resultado será divulgado depois"]}], "teachingPoint": "blocos se formam por função e relação de sentido, não por contagem de linhas"},
+    {"id": "L02-C01", "type": "quick-check", "items": [{"problem": "um parágrafo mistura inscrição, materiais necessários, história do projeto e horário sem relação clara", "bestAction": "reagrupar por função"}, {"problem": "dois parágrafos de uma frase repetem a mesma informação", "bestAction": "considerar união ou desenvolvimento"}]},
+    {"id": "L02-A01", "type": "assessment-architecture", "situation": "organizar um texto para novos usuários de uma horta comunitária", "facts": ["cadastro gratuito", "ferramentas são compartilhadas", "cada pessoa cuida de um canteiro", "há escala de rega", "reunião mensal decide mudanças"], "task": "criar uma arquitetura de parágrafos e justificar pelo menos uma divisão", "acceptEquivalent": true},
+    {"id": "L02-P01", "type": "open-architecture", "prompt": "Pegue seu plano da lição anterior ou um novo plano e distribua as ideias em blocos de parágrafo. Registre a função de cada bloco e justifique uma decisão de unir, separar ou ordenar.", "recordResponse": true, "automaticValidation": "estrutura e presença dos campos podem ser verificadas; qualidade global exige avaliador confiável"}
+  ],
+  "assessmentBehavior": {"fixedParagraphCount": false, "singleCanonicalOrder": false, "openArchitectureAutoValidated": false, "timeLimit": false},
+  "completionEvidence": {"clusters": {"controlledArchitecture": {"evidence": ["L02-A01"], "rule": "organização funcional plausível"}, "ownArchitecture": {"evidence": ["L02-P01"], "rule": "arquitetura própria com justificativa"}}, "completionRule": "os dois agrupamentos são obrigatórios.", "notSufficient": ["dividir só por tamanho", "usar um molde fixo sem relação com a situação"]}
+}
