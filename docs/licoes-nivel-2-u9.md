@@ -14,7 +14,7 @@ Progressão:
 voz/perspectiva
 → personagem/conflito
 → poesia/forma
-→ figuras/efeito
+→ figuras + humor/ironia clara + efeito
 → interpretações + evidência
 → multimodalidade/hipertexto
 → autoria/origem/circulação
@@ -46,13 +46,13 @@ voz/perspectiva
 - **Evidência:** relacionar ao menos um recurso formal a interpretação/efeito plausível.
 - **Limite:** poema não precisa rimar; métrica técnica não é requisito.
 
-## Lição 4 — Figuras frequentes e efeitos de sentido
+## Lição 4 — Figuras frequentes, humor e ironia de pistas claras
 
-- **Objetivo:** reconhecer e interpretar comparação, metáfora, personificação, hipérbole e outros recursos frequentes apenas no recorte em que o nome técnico ajuda.
+- **Objetivo:** reconhecer e interpretar comparação, metáfora, personificação, hipérbole e casos de humor/ironia em que o próprio contexto oferece pistas claras, explicando o efeito antes ou junto do nome técnico.
 - **Dependências:** L3 + N2-U02-L11.
-- **Prática:** literal x figurado, reformulação neutra, efeito de intensidade/imagem/ênfase e contexto que desambigua.
-- **Evidência:** interpretar recurso novo e explicar o efeito antes ou junto da classificação.
-- **Limite:** nome da figura sem interpretação não conta como domínio; taxonomia extensa fica depois.
+- **Prática:** literal x figurado, reformulação neutra, efeito de intensidade/imagem/ênfase, contraste entre avaliação literal e contexto, humor por reinterpretação ou quebra de expectativa e contraexemplo em que não há pista suficiente para exigir ironia.
+- **Evidência:** interpretar recurso novo, explicar o efeito e, em humor/ironia, apontar a pista contextual que sustenta a leitura não literal.
+- **Limite:** nome da figura sem interpretação não conta como domínio; taxonomia extensa fica depois; ironia sutil, sarcasmo ambíguo, pressupostos distantes e pragmática complexa ficam para N3/N4; entonação nunca é a única evidência exigida.
 
 ## Lição 5 — Interpretações diferentes e evidência textual
 
@@ -102,7 +102,7 @@ Agrupamentos obrigatórios:
 narrativa/perspectiva
 personagem/conflito
 poesia/forma
-figurado/efeito
+figurado + humor/ironia clara + efeito
 interpretação + evidência
 multimodalidade acessível
 autoria/origem/circulação
@@ -110,4 +110,4 @@ comparação de duas fontes
 resumo/paráfrase + atribuição + resposta própria
 ```
 
-A verificação deve aceitar interpretações diferentes quando sustentadas. As duas fontes devem ser controladas e apresentar pelo menos uma convergência e uma divergência real. Quando o material não permite decidir qual afirmação divergente é correta, reconhecer a necessidade de confirmação adicional é resposta válida.
+A verificação deve aceitar interpretações diferentes quando sustentadas. Humor/ironia só são cobrados quando há pistas claras no próprio contexto. As duas fontes devem ser controladas e apresentar pelo menos uma convergência e uma divergência real. Quando o material não permite decidir qual afirmação divergente é correta, reconhecer a necessidade de confirmação adicional é resposta válida.
