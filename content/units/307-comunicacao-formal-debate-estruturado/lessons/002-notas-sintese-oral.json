@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "N3-U07-L02",
+  "title": "Tomada de notas e síntese de fala formal",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Transformar exposição oral em notas seletivas e síntese fiel, preservando relações, qualificações e autoria sem transcrever tudo.",
+  "competencies": ["selecionar palavras-chave", "organizar notas por tópicos", "registrar evidência/limite", "distinguir nota de comentário próprio", "produzir síntese oral ou escrita", "preservar qualificação"],
+  "prerequisites": ["N3-U07-L01", "N3-U04-V01"],
+  "limits": ["nota não é transcrição", "quantidade de notas não pontua", "síntese não apaga divergência", "qualidade oral própria exige observação confiável"],
+  "media": {"tts": "principal para estímulos", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "purpose": "estímulo"}], "generatedVisualResources": [{"type": "UI_RENDERED_NOTE_OUTLINE", "purpose": "notas seletivas"}, {"type": "UI_RENDERED_ORAL_SUMMARY_RECORDER", "purpose": "registrar tentativa e/ou transcrição manual"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "TTS e notas estruturadas bastam para compreensão; inteligibilidade da fala não é validada automaticamente."},
+  "sequence": [
+    {"id": "L02-B01", "type": "note-contrast", "bad": "transcrição palavra por palavra", "better": ["objetivo", "resultado 1", "resultado 2", "limite", "próximo passo"]},
+    {"id": "L02-C01", "type": "quick-check", "items": [{"question": "Nota útil precisa repetir cada frase?", "correct": false}, {"question": "Qualificador como 'no período testado' deve ser preservado se limita a conclusão?", "correct": true}]},
+    {"id": "L02-A01", "type": "assessment-notes", "stimulus": "nova exposição formal", "required": ["núcleo", "evidência", "limite", "encaminhamento"], "replayAllowed": true},
+    {"id": "L02-P01", "type": "summary-production", "prompt": "Produza uma síntese a partir das próprias notas, sem consultar a transcrição completa até terminar a primeira versão.", "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"noteCountScored": false, "oralIntelligibilityAutoValidated": false, "replayPenalty": false},
+  "completionEvidence": {"clusters": {"notes": {"evidence": ["L02-A01"], "required": true}, "summary": {"evidence": ["L02-P01"], "required": true}}, "completionRule": "notas e síntese precisam preservar o sentido central e os limites relevantes."}
+}

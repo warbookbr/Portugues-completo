@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "N3-U07-L09",
+  "title": "Revisão integrada da comunicação oral formal",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Integrar escuta, notas, planejamento, apresentação, apoio, interação e argumentação em um ciclo de prática e revisão, separando evidências registráveis de qualidade oral que exige observação externa.",
+  "competencies": ["planejar ciclo completo", "realizar tentativa", "usar apoio funcional", "responder perguntas", "tratar objeções", "revisar conteúdo e notas", "registrar evidência observável", "identificar aspecto que exige feedback externo"],
+  "prerequisites": ["N3-U07-L01", "N3-U07-L02", "N3-U07-L03", "N3-U07-L04", "N3-U07-L05", "N3-U07-L06", "N3-U07-L07", "N3-U07-L08"],
+  "limits": ["não atribuir nota automática a inteligibilidade", "velocidade/sotaque não pontuam", "não exigir performance teatral", "quantidade de fala não mede domínio", "revisão deve preservar o que funciona"],
+  "media": {"tts": "para interlocução simulada e instruções", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "purpose": "interlocutor simulado"}], "generatedVisualResources": [{"type": "UI_RENDERED_ORAL_COMMUNICATION_REVIEW", "purpose": "ciclo de apresentação, perguntas e revisão"}, {"type": "UI_RENDERED_VERSION_HISTORY", "purpose": "preservar plano/notas antes e depois"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória; feedback sobre inteligibilidade e desempenho oral global depende de observador confiável", "decisionRationale": "o sistema registra processo, conteúdo e autochecagem sem fingir avaliar áudio de forma completa."},
+  "sequence": [
+    {"id": "L09-P01", "type": "integrated-plan", "required": ["finalidade", "audiência", "arquitetura", "evidências", "apoio", "perguntas previstas", "objeção provável"]},
+    {"id": "L09-P02", "type": "oral-attempt", "recordResponse": true, "requiredLog": ["tentativa realizada", "pontos cobertos", "apoio usado", "pergunta respondida", "objeção tratada"], "automaticValidation": "somente registro/estrutura"},
+    {"id": "L09-P03", "type": "self-review", "checks": ["mantive propósito?", "usei evidência com alcance correto?", "apoio ajudou?", "respondi ao ponto?", "houve algo que precise de feedback de um ouvinte?", "que parte das notas deve permanecer?"], "recordResponse": true},
+    {"id": "L09-P04", "type": "revised-plan-notes", "preserveOriginal": true, "recordResponse": true, "automaticValidation": false, "requiredReflection": ["uma melhoria", "uma manutenção", "um aspecto que só observador externo pode validar"]}
+  ],
+  "assessmentBehavior": {"oralAttemptRequired": true, "oralIntelligibilityAutoValidated": false, "speedScored": false, "accentScored": false, "talkTimeScored": false},
+  "completionEvidence": {"clusters": {"planning": {"evidence": ["L09-P01"], "required": true}, "attempt": {"evidence": ["L09-P02"], "required": true}, "review": {"evidence": ["L09-P03", "L09-P04"], "required": true}}, "completionRule": "processo completo e revisão são obrigatórios; inteligibilidade externa permanece uma evidência separada.", "requiresReliableEvaluatorFor": ["inteligibilidade", "qualidade global da apresentação", "gestão prosódica e presença oral"]}
+}

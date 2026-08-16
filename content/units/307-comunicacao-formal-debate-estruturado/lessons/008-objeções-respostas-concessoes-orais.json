@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "N3-U07-L08",
+  "title": "Objeções, respostas e concessões em interação oral",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Responder oralmente ou em roteiro de fala a objeções relevantes, concedendo limites reais, reformulando posição quando necessário e distinguindo resposta direta de evasão.",
+  "competencies": ["identificar alvo da objeção", "responder ao ponto", "conceder limite válido", "reformular alcance", "admitir insuficiência", "evitar repetição da tese", "preservar respeito e foco"],
+  "prerequisites": ["N3-U02-L09", "N3-U02-L10", "N3-U07-L07"],
+  "limits": ["concessão não é fraqueza", "não exigir vencer objeção", "não inventar dado", "não usar tom agressivo como critério", "qualidade acústica não é validada automaticamente"],
+  "media": {"tts": "pode fornecer objeções simuladas", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "purpose": "objeções simuladas"}], "generatedVisualResources": [{"type": "UI_RENDERED_ORAL_OBJECTION_RESPONSE", "purpose": "mapear objeção, concessão e resposta"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória; inteligibilidade da resposta oral depende de observador confiável", "decisionRationale": "o conteúdo argumentativo da resposta pode ser registrado textualmente."},
+  "sequence": [
+    {"id": "L08-B01", "type": "response-contrast", "thesis": "A apresentação recomenda novo teste.", "objection": "O teste anterior teve custo alto.", "responses": [{"text": "Mesmo assim, minha proposta é melhor.", "analysis": "não trata custo"}, {"text": "O custo é um limite real; por isso, o novo teste deveria ser menor e incluir um teto de gasto antes de qualquer expansão.", "analysis": "concede e reformula"}]},
+    {"id": "L08-C01", "type": "quick-check", "items": [{"question": "Conceder um limite obriga abandonar toda a posição?", "correct": false}, {"question": "Se a evidência não basta, admitir isso pode ser resposta forte?", "correct": true}]},
+    {"id": "L08-A01", "type": "assessment-response", "cases": [{"position": "ampliar projeto", "objection": "não há dados de custo anual", "expected": "limitar recomendação/solicitar dado, não fingir certeza"}, {"position": "manter canal digital", "objection": "parte dos usuários não tem acesso digital", "expected": "considerar alternativa ou condição sem atacar interlocutor"}]},
+    {"id": "L08-P01", "type": "objection-round", "prompt": "Responda a três objeções relevantes à sua posição. Em pelo menos uma, registre uma concessão; em outra, reformule alcance se necessário.", "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"winningRequired": false, "concessionPenalized": false, "aggressiveToneScored": false, "oralIntelligibilityAutoValidated": false},
+  "completionEvidence": {"clusters": {"controlled": {"evidence": ["L08-A01"], "required": true}, "responseRound": {"evidence": ["L08-P01"], "required": true}}, "completionRule": "a resposta deve tratar a objeção, reconhecer limites e reformular quando preciso."}
+}

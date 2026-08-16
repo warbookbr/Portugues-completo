@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "N3-U07-L04",
+  "title": "Apresentar com notas e estrutura, não com memorização literal",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Realizar tentativa de apresentação formal usando notas para manter progressão, evidência e fechamento, recuperando o fio após hesitação sem usar fluência perfeita como critério automático.",
+  "competencies": ["seguir arquitetura planejada", "usar notas como apoio", "introduzir evidência", "sinalizar transições", "recuperar sequência após interrupção", "concluir de modo compatível com objetivo", "autoavaliar tentativa"],
+  "prerequisites": ["N3-U07-L03"],
+  "limits": ["inteligibilidade não é validada automaticamente", "fluência perfeita não é critério", "hesitação não é erro automático", "velocidade e sotaque não pontuam", "memorização literal não é requisito"],
+  "media": {"tts": "opcional para instruções/modelos", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "purpose": "modelos e instruções"}], "generatedVisualResources": [{"type": "UI_RENDERED_PRESENTATION_NOTES", "purpose": "notas durante tentativa"}, {"type": "UI_RENDERED_ORAL_ATTEMPT_LOG", "purpose": "registrar tentativa e autochecagem"}], "productionQueueRequired": false, "publicationDependency": "tentativa pode ser registrada; inteligibilidade/compreensibilidade exige observador confiável", "decisionRationale": "o sistema pode observar plano/registro/autochecagem, não qualidade acústica global."},
+  "sequence": [
+    {"id": "L04-B01", "type": "strategy", "problem": "perder o fio após pergunta/interrupção", "repair": ["retomar a última nota", "resumir o ponto concluído", "anunciar o próximo núcleo"]},
+    {"id": "L04-C01", "type": "quick-check", "items": [{"question": "Ler texto decorado sem adaptar é objetivo da lição?", "correct": false}, {"question": "Hesitar e retomar pode ser parte normal da apresentação?", "correct": true}]},
+    {"id": "L04-P01", "type": "oral-attempt", "planRef": "N3-U07-L03", "requiredLog": ["tentativa realizada", "núcleos cobertos", "evidência usada", "ponto em que precisou retomar", "autochecagem"], "recordResponse": true, "automaticValidation": "apenas presença/estrutura do registro"},
+    {"id": "L04-P02", "type": "revision-plan", "prompt": "Depois da tentativa, ajuste suas notas para a próxima versão sem transformá-las em discurso integral.", "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"oralAttemptRequired": true, "oralIntelligibilityAutoValidated": false, "accentScored": false, "speedScored": false, "hesitationScored": false},
+  "completionEvidence": {"clusters": {"attempt": {"evidence": ["L04-P01"], "required": true}, "selfRevision": {"evidence": ["L04-P02"], "required": true}}, "completionRule": "tentativa e revisão das notas são obrigatórias; inteligibilidade externa permanece separada."}
+}

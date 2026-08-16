@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "N3-U07-L07",
+  "title": "Discussão e debate estruturado: posição, evidência e escuta",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Participar de discussão estruturada mantendo tema, apresentando posição sustentada, retomando contribuição anterior e diferenciando crítica ao argumento de competição pessoal.",
+  "competencies": ["formular posição delimitada", "usar evidência pertinente", "retomar argumento alheio com fidelidade", "discordar do ponto e não da pessoa", "fazer pergunta de seguimento", "reconhecer convergência parcial", "manter tema"],
+  "prerequisites": ["N3-U02-V01", "N3-U07-L06"],
+  "limits": ["vitória retórica não pontua", "posição ideológica não pontua", "interrupção/agressividade não são sinais de força", "não exigir fala longa", "inteligibilidade permanece validação externa"],
+  "media": {"tts": "pode fornecer turnos simulados", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "purpose": "turnos simulados"}], "generatedVisualResources": [{"type": "UI_RENDERED_DEBATE_MAP", "purpose": "posição, evidência, resposta e convergência"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória; fala própria precisa de observador confiável para inteligibilidade", "decisionRationale": "o raciocínio e a interação podem ser observados por mapa/turnos textuais."},
+  "sequence": [
+    {"id": "L07-B01", "type": "worked-turns", "turns": [{"speaker": "A", "text": "A expansão deveria esperar porque só duas unidades foram testadas."}, {"speaker": "B", "text": "Concordo que a amostra é limitada, mas os resultados justificam ao menos testar outras unidades comparáveis."}], "teachingPoint": "B reconhece parte do argumento e propõe posição própria, em vez de apenas negar"},
+    {"id": "L07-C01", "type": "quick-check", "items": [{"question": "Discordar da pessoa em vez da razão conta como contra-argumento?", "correct": false}, {"question": "É possível concordar parcialmente e ainda defender posição diferente?", "correct": true}]},
+    {"id": "L07-A01", "type": "assessment-turn", "previousTurn": "O piloto foi pequeno e não permite expansão total.", "candidateReplies": ["Você sempre é pessimista.", "O tamanho realmente limita a generalização; proponho um segundo teste maior antes de decidir expansão total."], "correctIndex": 1, "task": "explicar por que a resposta trata o argumento"},
+    {"id": "L07-P01", "type": "structured-discussion", "topic": "tema acessível com fonte controlada", "required": ["posição", "apoio", "retomada fiel de um turno anterior", "pergunta ou resposta de seguimento", "registro de convergência/divergência"], "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"winningScored": false, "ideologyScored": false, "aggressivenessScored": false, "oralIntelligibilityAutoValidated": false},
+  "completionEvidence": {"clusters": {"controlled": {"evidence": ["L07-A01"], "required": true}, "discussion": {"evidence": ["L07-P01"], "required": true}}, "completionRule": "a participação precisa responder a argumentos e usar apoio, não competir por dominância."}
+}
