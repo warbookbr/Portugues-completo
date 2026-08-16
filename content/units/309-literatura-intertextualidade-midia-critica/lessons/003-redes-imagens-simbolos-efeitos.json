@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "N3-U09-L03",
+  "title": "Redes de imagens, símbolos e efeitos de sentido",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Interpretar recorrências de imagens, objetos, metáforas e contrastes ao longo de texto literário, propondo função simbólica quando sustentada sem transformar todo detalhe em símbolo obrigatório.",
+  "competencies": ["rastrear recorrência", "ligar ocorrência a contexto", "formular hipótese simbólica", "distinguir símbolo de detalhe casual", "comparar leituras", "revisar exagero interpretativo"],
+  "prerequisites": ["N3-U09-L01", "N2-U09-L04"],
+  "limits": ["todo objeto não é símbolo", "nome de figura não basta", "interpretação simbólica exige recorrência/contexto", "não exigir dicionário fixo de símbolos"],
+  "media": {"tts": "opcional", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "purpose": "leitura"}], "generatedVisualResources": [{"type": "UI_RENDERED_IMAGE_MOTIF_MAP", "purpose": "rastrear recorrências e contextos"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "rede figurativa é observável no texto."},
+  "sequence": [
+    {"id": "L03-B01", "type": "motif-track", "textPattern": ["janela fechada no início", "janela embaçada no conflito", "janela aberta no final"], "teachingPoint": "a recorrência pode sustentar leitura sobre abertura/limite, mas não cria significado universal de 'janela'"},
+    {"id": "L03-C01", "type": "quick-check", "items": [{"question": "Um objeto citado uma vez é necessariamente símbolo?", "correct": false}, {"question": "Recorrência e transformação contextual fortalecem hipótese interpretativa?", "correct": true}]},
+    {"id": "L03-A01", "type": "assessment-network", "text": "poema/conto autoral com duas imagens recorrentes", "tasks": ["mapear ocorrências", "propor função para uma imagem", "registrar evidência", "indicar leitura excessiva não sustentada"]},
+    {"id": "L03-P01", "type": "open-analysis", "prompt": "Escolha uma recorrência em texto novo e construa hipótese de efeito; diga também o que seria necessário para fortalecer ou enfraquecer sua leitura.", "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"everyDetailSymbolic": false, "symbolDictionaryRequired": false, "openResponseAutoValidated": false},
+  "completionEvidence": {"clusters": {"controlled": {"evidence": ["L03-A01"], "required": true}, "open": {"evidence": ["L03-P01"], "required": true}}, "completionRule": "a leitura figurativa precisa ser sustentada pela rede textual, não por associação livre isolada."}
+}
