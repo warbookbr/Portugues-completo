@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "N3-U07-L06",
+  "title": "Perguntas, respostas, esclarecimento e reparo",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Sustentar interação formal de múltiplos turnos com perguntas pertinentes, respostas proporcionais, pedidos de esclarecimento, confirmação de entendimento e admissão de limite quando a informação não estiver disponível.",
+  "competencies": ["formular pergunta ligada ao tema", "responder ao ponto", "pedir esclarecimento", "confirmar entendimento", "corrigir mal-entendido", "admitir não saber", "separar resposta de desvio"],
+  "prerequisites": ["N3-U07-L01", "N3-U07-L04"],
+  "limits": ["resposta longa não é automaticamente melhor", "não inventar informação para evitar 'não sei'", "pergunta crítica não é ataque", "validação da fala espontânea continua externa"],
+  "media": {"tts": "pode fornecer interlocutor simulado", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "purpose": "turnos simulados"}], "generatedVisualResources": [{"type": "UI_RENDERED_INTERACTION_TURNS", "purpose": "registrar pergunta, resposta, reparo e confirmação"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória; inteligibilidade da fala própria exige observador confiável", "decisionRationale": "turnos semânticos podem ser simulados por texto/TTS."},
+  "sequence": [
+    {"id": "L06-B01", "type": "turn-contrast", "question": "O dado de satisfação representa todos os usuários?", "responses": [{"text": "Sim, porque foi positivo.", "analysis": "não responde ao limite de amostra"}, {"text": "Não necessariamente. A pesquisa foi voluntária e cobre apenas os respondentes; para generalizar, precisaríamos conhecer melhor quem não respondeu.", "analysis": "responde ao ponto e preserva limite"}]},
+    {"id": "L06-C01", "type": "quick-check", "items": [{"question": "Dizer que não há informação suficiente pode ser resposta adequada?", "correct": true}, {"question": "Mudar de assunto conta como reparar um mal-entendido?", "correct": false}]},
+    {"id": "L06-A01", "type": "assessment-turns", "situations": [{"prompt": "pergunta ambígua", "required": "pedir esclarecimento antes de responder"}, {"prompt": "pergunta pede dado não fornecido", "required": "admitir limite e indicar o que precisaria consultar"}, {"prompt": "interlocutor entendeu a conclusão como certeza absoluta", "required": "corrigir o alcance"}]},
+    {"id": "L06-P01", "type": "simulated-interaction", "prompt": "Responda a uma sequência de 4–6 turnos sobre sua apresentação, incluindo ao menos um pedido de esclarecimento ou reparo quando necessário.", "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"longAnswersScored": false, "inventedAnswerAccepted": false, "oralIntelligibilityAutoValidated": false},
+  "completionEvidence": {"clusters": {"controlled": {"evidence": ["L06-A01"], "required": true}, "interaction": {"evidence": ["L06-P01"], "required": true}}, "completionRule": "a interação deve permanecer ligada ao ponto e admitir limites reais."}
+}
