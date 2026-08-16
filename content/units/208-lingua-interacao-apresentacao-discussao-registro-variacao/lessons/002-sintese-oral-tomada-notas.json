@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "id": "N2-U08-L02",
+  "title": "Síntese oral e tomada de notas",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Selecionar informação central de uma fala, registrá-la em notas curtas e reconstruir uma síntese fiel sem transcrever tudo nem depender de memória literal.",
+  "competencies": ["registrar palavras-chave", "hierarquizar informações", "distinguir nota útil de transcrição integral", "preservar núcleo da mensagem", "usar notas para produzir síntese", "reconhecer informação ausente nas próprias notas"],
+  "prerequisites": ["N2-U08-L01", "N2-U01-L10"],
+  "limits": ["não exigir sistema formal de abreviações", "não premiar quantidade de notas", "não validar automaticamente qualidade global da síntese oral", "notas não precisam reproduzir a ordem exata da fala"],
+  "media": {"tts": "principal", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["L02-B01", "L02-C01", "L02-A01"], "purpose": "mensagens para tomada de notas"}], "generatedVisualResources": [{"type": "UI_RENDERED_NOTE_PAD", "locations": ["L02-B01", "L02-C01", "L02-A01", "L02-P01"], "purpose": "registrar notas"}, {"type": "UI_RENDERED_SUMMARY_RECORDER", "locations": ["L02-A01", "L02-P01"], "purpose": "registrar síntese oral ou escrita"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória; qualidade da fala própria exige avaliador confiável quando for critério", "decisionRationale": "TTS basta para o estímulo; notas e síntese são o alvo."},
+  "renderingGuards": ["texto integral do estímulo não aparece antes da tentativa", "transcrição pode aparecer depois para comparação"],
+  "sequence": [
+    {"id": "L02-B01", "type": "note-model", "spokenText": "O projeto receberá inscrições até sexta. A primeira etapa será uma orientação on-line na terça seguinte. O encontro presencial ocorrerá no sábado e cada participante deverá levar documento e caderno.", "goodNotes": ["inscrição até sexta", "orientação on-line terça", "presencial sábado", "levar documento + caderno"], "badNotePattern": "copiar cada frase palavra por palavra", "teachingPoint": "nota serve para recuperar informação, não para reproduzir a fala"},
+    {"id": "L02-C01", "type": "quick-check", "spokenText": "A feira abre às dez, recebe doações até meio-dia e encerra às quatro. Livros molhados não serão aceitos.", "task": "escolher conjunto de notas que preserva horário, prazo de doação e limite de aceitação", "replayAllowed": true},
+    {"id": "L02-A01", "type": "assessment-notes-summary", "spokenText": "O atendimento experimental ocorrerá nas quartas, das dezoito às vinte horas, por seis semanas. Não é preciso novo cadastro para usuários já ativos. Ao final, a equipe avaliará uso e custos antes de decidir se mantém o horário.", "requirements": ["notas com período do teste", "horário", "regra de cadastro", "decisão futura condicionada à avaliação", "síntese fiel"], "recordNotes": true, "recordSummary": true, "summaryModes": ["oral", "written"], "automaticValidation": "presença de informações objetivas pode ser verificada; qualidade global da síntese oral exige avaliador confiável"},
+    {"id": "L02-P01", "type": "open-note-transfer", "prompt": "Ouça uma nova mensagem, faça notas curtas e produza uma síntese com base nelas. Depois compare com a transcrição e registre uma informação que suas notas preservaram bem ou deixaram faltar.", "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"replayAllowed": true, "literalTranscriptionRequired": false, "noteCountScored": false, "oralQualityAutoValidated": false, "timeLimit": false},
+  "completionEvidence": {"clusters": {"notes": {"evidence": ["L02-A01"], "rule": "notas suficientes para recuperar núcleo"}, "summary": {"evidence": ["L02-A01", "L02-P01"], "rule": "síntese fiel ao estímulo"}}, "completionRule": "notas e síntese são obrigatórias.", "notSufficient": ["transcrever sem hierarquizar", "produzir síntese com informação inventada"]}
+}

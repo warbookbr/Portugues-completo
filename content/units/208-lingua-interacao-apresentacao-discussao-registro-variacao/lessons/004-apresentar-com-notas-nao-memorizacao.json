@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "N2-U08-L04",
+  "title": "Apresentar com notas, não com memorização literal",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Usar notas para sustentar uma apresentação curta, manter sequência e recuperar o fio após interrupção, registrando a tentativa oral sem fingir validação automática de inteligibilidade ou fluência.",
+  "competencies": ["usar notas como apoio", "manter pontos centrais", "recuperar sequência após interrupção", "fazer autochecagem de cobertura", "distinguir prática oral de avaliação externa de compreensibilidade"],
+  "prerequisites": ["N2-U08-L03"],
+  "limits": ["fluência perfeita não é critério automático", "velocidade e ausência de hesitação não pontuam", "memorização literal não é exigida", "inteligibilidade e compreensibilidade não recebem selo automático sem observador confiável"],
+  "media": {"tts": "opcional", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["modelos de instrução", "feedback"], "purpose": "apoio"}], "generatedVisualResources": [{"type": "UI_RENDERED_PRESENTATION_NOTES", "locations": ["L04-B01", "L04-A01", "L04-P01"], "purpose": "mostrar notas durante a prática"}, {"type": "UI_RENDERED_ORAL_ATTEMPT_RECORDER", "locations": ["L04-A01", "L04-P01"], "purpose": "registrar tentativa oral quando o ambiente permitir"}, {"type": "UI_RENDERED_SELF_CHECK", "locations": ["L04-C01", "L04-A01", "L04-P01"], "purpose": "autochecar cobertura e sequência"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória; validação forte de produção oral depende de observador confiável", "decisionRationale": "o projeto pode registrar plano e tentativa, mas não deve inferir qualidade oral que não observa de modo confiável."},
+  "sequence": [
+    {"id": "L04-B01", "type": "practice-model", "notes": ["objetivo da feira", "3 tipos aceitos", "triagem", "onde pedir ajuda"], "teachingPoint": "o apresentador consulta palavras-chave e reconstrói a fala; não precisa recitar frases idênticas"},
+    {"id": "L04-C01", "type": "self-check", "items": ["consegui cobrir os pontos centrais?", "se perdi o fio, consegui voltar às notas?", "algum ponto importante ficou sem explicação?"], "notScoredAsExternalOralQuality": true},
+    {"id": "L04-A01", "type": "assessment-practice", "instruction": "Faça uma tentativa de apresentação com base no plano da L3. Registre a tentativa oral se o ambiente permitir e marque quais pontos do plano foram cobertos.", "requiredEvidence": ["plano disponível", "tentativa registrada ou observada", "autochecagem de cobertura"], "automaticValidation": "presença do plano e registro da tentativa podem ser verificados; inteligibilidade e compreensibilidade exigem avaliação externa confiável"},
+    {"id": "L04-P01", "type": "open-practice", "prompt": "Faça uma segunda tentativa após ajustar suas notas. Registre o que mudou na organização ou no apoio usado.", "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"oralAttemptRequired": true, "perfectFluencyRequired": false, "speedScored": false, "intelligibilityAutoValidated": false, "memorizationRequired": false, "timeLimit": false},
+  "completionEvidence": {"clusters": {"practice": {"evidence": ["L04-A01"], "rule": "tentativa oral registrada/observada com notas"}, "reflection": {"evidence": ["L04-P01"], "rule": "ajuste das notas ou organização após prática"}}, "completionRule": "prática e reflexão são obrigatórias; compreensibilidade só pode ser marcada quando observada por avaliador confiável.", "notSufficient": ["apenas escrever o roteiro", "marcar fluência como aprovada sem observação"]}
+}
