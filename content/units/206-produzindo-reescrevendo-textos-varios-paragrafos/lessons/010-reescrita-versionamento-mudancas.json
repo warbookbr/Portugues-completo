@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "N2-U06-L10",
+  "title": "Reescrita, versionamento e justificativa de mudanças",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Produzir uma nova versão de texto próprio com mudanças justificáveis, distinguindo revisão relevante de alteração cosmética e preservando o histórico do processo.",
+  "competencies": ["comparar versões", "identificar mudança relevante e cosmética", "reescrever para resolver problema real", "preservar o que funciona", "justificar inclusão, remoção, reorganização ou manutenção", "avaliar se a nova versão melhora o objetivo do texto"],
+  "prerequisites": ["N2-U06-L09"],
+  "limits": ["não exigir grande quantidade de mudanças", "não considerar versão nova automaticamente melhor", "não premiar troca superficial de palavras", "não apagar histórico da primeira versão"],
+  "media": {"tts": "opcional", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["versões", "instruções", "feedback"], "purpose": "apoio"}], "generatedVisualResources": [{"type": "UI_RENDERED_TEXT_DIFF", "locations": ["L10-B01", "L10-C01", "L10-A01", "L10-P01"], "purpose": "comparar versão anterior e nova"}, {"type": "UI_RENDERED_CHANGE_REASON", "locations": ["L10-A01", "L10-P01"], "purpose": "registrar motivo e efeito esperado"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "versionamento e reflexão podem ser registrados pela interface textual."},
+  "sequence": [
+    {"id": "L10-B01", "type": "before-after", "before": "A oficina terá vagas limitadas. A oficina será sábado. A oficina precisa de inscrição. Leve documento.", "after": "A oficina será realizada no sábado e terá vagas limitadas. Para participar, é necessário fazer a inscrição. No dia da atividade, leve um documento.", "changes": [{"type": "reorganização", "reason": "agrupar informações relacionadas"}, {"type": "redução de repetição", "reason": "manter referência sem repetir o nome em toda frase"}], "teachingPoint": "a nova versão melhora por resolver problemas identificados, não por ser diferente"},
+    {"id": "L10-C01", "type": "quick-check", "items": [{"question": "Trocar 'atividade' por 'evento' sem mudar clareza, precisão ou adequação é necessariamente uma melhora relevante?", "options": ["sim", "não"], "correctIndex": 1}, {"question": "Manter um parágrafo correto pode ser uma decisão de revisão?", "options": ["sim", "não"], "correctIndex": 0}]},
+    {"id": "L10-A01", "type": "assessment-versioning", "draft": "Texto controlado de vários parágrafos com repetição estagnada, uma ordem pouco funcional e um parágrafo correto.", "task": "produzir segunda versão, destacar mudanças e justificar pelo menos uma alteração e uma manutenção", "recordResponse": true, "automaticValidation": "alvos controlados e histórico podem ser verificados; qualidade global exige avaliador confiável"},
+    {"id": "L10-P01", "type": "own-versioning", "prompt": "Retome um texto próprio desta unidade, preserve a versão anterior, produza uma nova versão após a revisão em camadas e registre as mudanças mais importantes e seus motivos.", "recordResponse": true, "requiresPreviousVersion": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"previousVersionRequired": true, "minimumChangeCount": false, "cosmeticChangeNotEnough": true, "openTextAutoValidated": false, "timeLimit": false},
+  "completionEvidence": {"clusters": {"controlledVersioning": {"evidence": ["L10-A01"], "rule": "mudanças respondem a problemas reais"}, "ownVersioning": {"evidence": ["L10-P01"], "rule": "duas versões próprias e justificativa registradas"}}, "completionRule": "os dois agrupamentos são obrigatórios.", "notSufficient": ["apagar a versão anterior", "trocar palavras sem efeito verificável"]}
+}
