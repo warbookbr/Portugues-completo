@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "N2-U08-L03",
+  "title": "Planejar uma apresentação curta",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Planejar apresentação intermediária curta definindo objetivo, público, sequência e 3–5 pontos centrais, usando notas como apoio em vez de escrever um discurso para decorar.",
+  "competencies": ["definir objetivo comunicativo", "identificar público", "selecionar 3–5 pontos centrais", "ordenar pontos", "planejar abertura e fechamento funcionais", "escolher apoio apenas quando necessário"],
+  "prerequisites": ["N2-U08-L02", "N2-U06-V01"],
+  "limits": ["não exigir apresentação longa", "não exigir design de slides", "não escrever discurso completo como condição do plano", "não impor abertura ou fechamento únicos", "não avaliar duração exata por cronômetro"],
+  "media": {"tts": "opcional", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["situações", "instruções", "feedback"], "purpose": "apoio"}], "generatedVisualResources": [{"type": "UI_RENDERED_PRESENTATION_PLAN", "locations": ["L03-B01", "L03-C01", "L03-A01", "L03-P01"], "purpose": "organizar objetivo, público e pontos"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "o alvo é planejamento e pode ser registrado por notas estruturadas."},
+  "sequence": [
+    {"id": "L03-B01", "type": "model-plan", "situation": "apresentar a novos voluntários como funciona uma feira de troca", "plan": {"objective": "explicar como participar", "audience": "novos voluntários", "points": ["objetivo da feira", "o que pode ser recebido", "como ocorre a triagem", "onde cada voluntário atua"], "opening": "explicar em uma frase o que a feira faz", "closing": "retomar onde pedir ajuda durante o evento"}, "teachingPoint": "o plano orienta a fala; não precisa conter todas as frases"},
+    {"id": "L03-C01", "type": "quick-check", "items": [{"question": "Qual plano é mais útil?", "options": ["copiar um texto completo de duas páginas", "registrar objetivo, público e quatro pontos centrais"], "correctIndex": 1}, {"question": "Todo apoio visual é obrigatório?", "options": ["sim", "não; só quando ajuda a finalidade"], "correctIndex": 1}]},
+    {"id": "L03-A01", "type": "assessment-plan", "situation": "apresentar por alguns minutos um projeto de biblioteca de ferramentas a moradores interessados", "requiredFields": ["objetivo", "público", "3–5 pontos centrais", "ordem", "abertura funcional", "fechamento funcional"], "recordResponse": true, "automaticValidation": "campos podem ser verificados; qualidade global exige avaliador confiável"},
+    {"id": "L03-P01", "type": "open-plan", "prompt": "Planeje uma apresentação curta sobre assunto que você conhece. Use notas, não um texto completo para decorar. Registre objetivo, público e 3–5 pontos centrais.", "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"fullScriptRequired": false, "slidesRequired": false, "exactDurationScored": false, "timeLimit": false},
+  "completionEvidence": {"clusters": {"controlledPlan": {"evidence": ["L03-A01"], "rule": "plano proporcional e completo"}, "ownPlan": {"evidence": ["L03-P01"], "rule": "plano próprio em notas"}}, "completionRule": "os dois agrupamentos são obrigatórios.", "notSufficient": ["escrever discurso inteiro", "listar pontos sem objetivo ou público"]}
+}
