@@ -6,7 +6,7 @@
   "objective": "Reconstruir e construir argumentos com vários passos, verificando como razões e subrazões sustentam uma tese e identificando elos laterais, circulares ou ausentes.",
   "competencies": ["identificar tese e razões principais", "reconhecer subrazão que sustenta outra razão", "explicitar ligação implícita transparente", "detectar razão lateral", "detectar circularidade", "construir cadeia com mais de um passo sem confundir quantidade com força"],
   "prerequisites": ["N3-U02-L01", "N3-U01-L05"],
-  "limits": ["não exigir lógica simbólica", "não tratar mapa como única forma válida de argumento", "número de razões não mede força", "não preencher elo implíccito quando o texto não fornece base"],
+  "limits": ["não exigir lógica simbólica", "não tratar mapa como única forma válida de argumento", "número de razões não mede força", "não preencher elo implícito quando o texto não fornece base"],
   "media": {"tts": "opcional", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
   "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["argumentos", "feedback"], "purpose": "apoio"}], "generatedVisualResources": [{"type": "UI_RENDERED_ARGUMENT_CHAIN", "locations": ["L02-B01", "L02-C01", "L02-A01", "L02-P01"], "purpose": "mapear tese, razões, subrazões e elos"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "a cadeia argumentativa é melhor observada em estrutura textual interativa."},
   "sequence": [
