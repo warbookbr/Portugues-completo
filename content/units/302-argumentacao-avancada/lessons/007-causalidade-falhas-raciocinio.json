@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "id": "N3-U02-L07",
+  "title": "Causalidade e falhas frequentes de raciocínio",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Diagnosticar, em contextos claros, causalidade não demonstrada, alternativas artificialmente reduzidas, ataque à pessoa e circularidade pelo funcionamento do raciocínio e propor reparos proporcionais.",
+  "competencies": ["distinguir sequência/correlação de causa demonstrada", "identificar alternativas relevantes omitidas em falso dilema claro", "separar crítica ao argumento de ataque à pessoa", "reconhecer circularidade", "explicar o problema sem depender do rótulo técnico", "propor reparo argumentativo"],
+  "prerequisites": ["N3-U02-L02", "N3-U02-L06"],
+  "limits": ["não criar catálogo de falácias", "nome técnico é secundário", "casos ambíguos não recebem classificação forçada", "correlação pode ser pista para investigação sem provar causa", "não usar a lição como manual de manipulação"],
+  "media": {"tts": "opcional", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["argumentos", "feedback"], "purpose": "apoio"}], "generatedVisualResources": [{"type": "UI_RENDERED_REASONING_DIAGNOSIS", "locations": ["L07-B01", "L07-C01", "L07-A01"], "purpose": "mostrar onde o raciocínio falha"}, {"type": "UI_RENDERED_ARGUMENT_REPAIR", "locations": ["L07-A02", "L07-P01"], "purpose": "reparar afirmação ou apoio"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "argumentos controlados permitem diagnosticar funcionamento sem taxonomia enciclopédica."},
+  "sequence": [
+    {"id": "L07-B01", "type": "worked-cases", "cases": [{"argument": "Depois que o mural foi instalado, as inscrições aumentaram; logo, o mural causou todo o aumento.", "problem": "a sequência temporal não elimina outras causas"}, {"argument": "Ou aprovamos este projeto exatamente como está ou não nos importamos com o problema.", "problem": "reduz artificialmente as alternativas"}, {"argument": "A proposta de Rui está errada porque Rui costuma se atrasar.", "problem": "ataca a pessoa sem responder às razões da proposta"}, {"argument": "A regra é correta porque é a regra certa.", "problem": "repete a conclusão como razão"}]},
+    {"id": "L07-C01", "type": "quick-check", "items": [{"argument": "As duas variáveis cresceram juntas; isso prova causa?", "options": ["não necessariamente", "sim, sempre"], "correctIndex": 0}, {"argument": "Há apenas duas opções quando o contexto mostra uma terceira alternativa plausível.", "question": "O problema está nas alternativas artificialmente reduzidas?", "correct": true}]},
+    {"id": "L07-A01", "type": "assessment-diagnosis", "arguments": [{"text": "A avaliação de Joana não vale porque ela é nova na equipe.", "expected": "não responde ao conteúdo da avaliação"}, {"text": "No mês em que mudou o sistema, as faltas caíram; portanto, só o sistema causou a queda.", "expected": "causalidade exclusiva não demonstrada"}, {"text": "Ou mantemos todas as etapas ou cancelamos o serviço.", "context": "é possível testar apenas uma etapa por vez", "expected": "alternativas omitidas"}]},
+    {"id": "L07-A02", "type": "repair", "original": "Como as faltas caíram depois dos lembretes, os lembretes causaram a queda.", "availableEvidence": "não há grupo de comparação nem registro de outras mudanças", "target": "reformular como associação observada ou hipótese a investigar, sem afirmar causalidade demonstrada", "acceptMultipleValid": true},
+    {"id": "L07-P01", "type": "open-repair", "prompt": "Escolha um argumento problemático fornecido, explique o problema em linguagem comum e escreva uma versão reparada que preserve o que ainda pode ser defendido.", "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"technicalFallacyNamesRequired": false, "ambiguousCasesForced": false, "openResponseAutoValidated": false, "timeLimit": false},
+  "completionEvidence": {"clusters": {"diagnosis": {"evidence": ["L07-A01"], "required": true}, "repair": {"evidence": ["L07-A02", "L07-P01"], "required": true}}, "completionRule": "o estudante deve explicar o funcionamento do problema e reparar o argumento; apenas nomear uma falha não basta."}
+}

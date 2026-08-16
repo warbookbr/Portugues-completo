@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "id": "N3-U02-L09",
+  "title": "Objeção e contra-argumento relevantes",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Formular objeções e contra-argumentos que atinjam efetivamente tese, razão, evidência ou alcance, distinguindo discordância, desvio de assunto e ataque pessoal de crítica argumentativa relevante.",
+  "competencies": ["identificar o ponto exato questionado", "distinguir discordância de contra-argumento", "formular objeção a alcance, premissa, evidência ou consequência", "usar contraexemplo quando pertinente", "rejeitar desvio temático e ataque pessoal", "explicar por que a objeção é relevante"],
+  "prerequisites": ["N3-U02-L01", "N3-U02-L08"],
+  "limits": ["discordância não é automaticamente contra-argumento", "ataque pessoal não conta", "objeção não precisa destruir toda a tese para ser relevante", "não exigir retórica competitiva"],
+  "media": {"tts": "opcional", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["teses", "objeções"], "purpose": "apoio"}], "generatedVisualResources": [{"type": "UI_RENDERED_OBJECTION_TARGET_MAP", "locations": ["L09-B01", "L09-C01", "L09-A01"], "purpose": "marcar tese, razão, evidência ou alcance questionado"}, {"type": "UI_RENDERED_COUNTERARGUMENT_BUILDER", "locations": ["L09-A02", "L09-P01"], "purpose": "construir contra-argumento relevante"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "mapas de argumento permitem observar relevância sem simular debate competitivo."},
+  "sequence": [
+    {"id": "L09-B01", "type": "worked-map", "argument": {"thesis": "A unidade deve manter um encontro noturno semanal.", "reason": "o teste teve ocupação média de 82%", "limit": "o teste durou apenas quatro semanas"}, "objections": [{"text": "Quatro semanas podem não representar a procura ao longo do ano.", "target": "alcance/força da evidência", "relevant": true}, {"text": "Não gosto da cor do prédio.", "target": "nenhum ponto do argumento", "relevant": false}, {"text": "Quem propôs isso costuma se atrasar.", "target": "pessoa, não argumento", "relevant": false}]},
+    {"id": "L09-C01", "type": "quick-check", "items": [{"question": "Dizer 'discordo' sem razão é contra-argumento?", "options": ["não", "sim"], "correctIndex": 0}, {"question": "Uma objeção pode limitar o alcance sem refutar toda a tese?", "options": ["sim", "não"], "correctIndex": 0}]},
+    {"id": "L09-A01", "type": "assessment-target", "argument": {"thesis": "O projeto deve ser expandido imediatamente para toda a rede.", "support": "uma unidade teve resultado positivo durante seis semanas"}, "candidateObjections": ["o resultado de uma unidade por seis semanas pode não sustentar expansão imediata para toda a rede", "a coordenadora usa óculos", "eu prefiro outro assunto"], "task": "selecionar objeção relevante e indicar se atinge alcance ou evidência"},
+    {"id": "L09-A02", "type": "counterargument-production", "thesis": "O atendimento deve ocorrer apenas por agendamento.", "context": "registros mostram que parte dos usuários chega por demanda imprevista", "target": "produzir contra-argumento que use o dado para questionar o alcance de 'apenas' sem ataque pessoal", "recordResponse": true},
+    {"id": "L09-P01", "type": "own-objection", "prompt": "Receba um argumento novo, formule uma objeção relevante e marque exatamente que parte da cadeia ela questiona.", "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"disagreementAloneCounts": false, "personalAttackCounts": false, "openResponseAutoValidated": false, "timeLimit": false},
+  "completionEvidence": {"clusters": {"targetIdentification": {"evidence": ["L09-A01"], "required": true}, "counterargument": {"evidence": ["L09-A02", "L09-P01"], "required": true}}, "completionRule": "a objeção precisa tocar um ponto identificável do argumento e explicar sua relevância."}
+}

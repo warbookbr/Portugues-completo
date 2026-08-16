@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "id": "N3-U02-L04",
+  "title": "Relevância e qualidade da evidência",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Comparar evidências concorrentes avaliando relação com a afirmação, população, período, medida, origem e escopo, sem tratar autoridade ou aparência como garantia automática.",
+  "competencies": ["avaliar pertinência entre evidência e afirmação", "comparar escopo da evidência com escopo da tese", "detectar medida que não responde ao que se afirma", "considerar origem sem usá-la como selo automático", "justificar por que um apoio é melhor que outro"],
+  "prerequisites": ["N3-U02-L03"],
+  "limits": ["autoridade não decide qualidade sozinha", "aparência profissional não prova confiabilidade", "fonte próxima ao fato ainda pode ter limites", "comparação multifuente aprofundada fica para N3-U04"],
+  "media": {"tts": "opcional", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["evidências", "instruções"], "purpose": "apoio"}], "generatedVisualResources": [{"type": "UI_RENDERED_EVIDENCE_QUALITY_COMPARE", "locations": ["L04-B01", "L04-C01", "L04-A01"], "purpose": "comparar pertinência, escopo e medida"}, {"type": "UI_RENDERED_SCOPE_ALIGNMENT", "locations": ["L04-A02"], "purpose": "alinhar tese e população/período da evidência"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "metadados explícitos em cartões textuais permitem avaliar qualidade sem pesquisa aberta."},
+  "sequence": [
+    {"id": "L04-B01", "type": "worked-compare", "claim": "O horário ampliado foi usado por trabalhadores do turno diurno.", "evidence": [{"text": "Questionário voluntário: 62 de 80 respondentes disseram trabalhar em horário comercial.", "analysis": "relaciona-se ao grupo, mas amostra é voluntária e não representa necessariamente todos os usuários"}, {"text": "Registro: 75% das entradas ocorreram após 18h.", "analysis": "mede horário de uso, não ocupação dos usuários; não prova sozinho a afirmação sobre trabalhadores"}, {"text": "O prédio tem estacionamento.", "analysis": "irrelevante para a afirmação"}]},
+    {"id": "L04-C01", "type": "quick-check", "items": [{"question": "Uma evidência sobre satisfação responde diretamente a uma tese sobre redução de tempo de espera?", "options": ["não necessariamente; são medidas diferentes", "sim; toda avaliação positiva mede tempo"], "correctIndex": 0}, {"question": "Uma instituição conhecida torna qualquer dado suficiente?", "options": ["não; origem importa, mas escopo e método também", "sim"], "correctIndex": 0}]},
+    {"id": "L04-A01", "type": "assessment-compare", "claim": "A mudança reduziu faltas às consultas no primeiro mês.", "supports": [{"text": "faltas: 46 no mês anterior e 29 no primeiro mês após a mudança, no mesmo serviço", "expected": "mais diretamente pertinente, ainda sem provar causalidade sozinho"}, {"text": "87% dos funcionários gostaram do novo sistema", "expected": "mede outra coisa"}, {"text": "um usuário afirmou que não faltou por causa do lembrete", "expected": "caso individual; útil como ilustração, fraco para efeito geral"}], "task": "ordenar por pertinência e justificar"},
+    {"id": "L04-A02", "type": "scope-alignment", "thesis": "Em todas as unidades da rede, o novo sistema melhora o atendimento.", "evidence": "teste de quatro semanas em uma unidade com 120 atendimentos", "tasks": ["identificar desalinhamento de alcance", "propor uma conclusão compatível com o recorte sem inventar generalização"]},
+    {"id": "L04-P01", "type": "open-justification", "prompt": "Escolha entre duas evidências fornecidas para uma tese nova e explique sua decisão por pertinência, escopo e medida.", "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"authorityAsAutomaticSeal": false, "multiSourceResearchRequired": false, "openResponseAutoValidated": false, "timeLimit": false},
+  "completionEvidence": {"clusters": {"qualityComparison": {"evidence": ["L04-A01", "L04-A02"], "required": true}, "justification": {"evidence": ["L04-P01"], "required": true}}, "completionRule": "a escolha de evidência deve ser justificada pela relação real com a afirmação."}
+}

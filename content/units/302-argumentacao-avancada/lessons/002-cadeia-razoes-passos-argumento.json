@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "id": "N3-U02-L02",
+  "title": "Cadeia de razões e passos do argumento",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Reconstruir e construir argumentos com vários passos, verificando como razões e subrazões sustentam uma tese e identificando elos laterais, circulares ou ausentes.",
+  "competencies": ["identificar tese e razões principais", "reconhecer subrazão que sustenta outra razão", "explicitar ligação implícita transparente", "detectar razão lateral", "detectar circularidade", "construir cadeia com mais de um passo sem confundir quantidade com força"],
+  "prerequisites": ["N3-U02-L01", "N3-U01-L05"],
+  "limits": ["não exigir lógica simbólica", "não tratar mapa como única forma válida de argumento", "número de razões não mede força", "não preencher elo implícito quando o texto não fornece base"],
+  "media": {"tts": "opcional", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["argumentos", "feedback"], "purpose": "apoio"}], "generatedVisualResources": [{"type": "UI_RENDERED_ARGUMENT_CHAIN", "locations": ["L02-B01", "L02-C01", "L02-A01", "L02-P01"], "purpose": "mapear tese, razões, subrazões e elos"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "a cadeia argumentativa é melhor observada em estrutura textual interativa."},
+  "sequence": [
+    {"id": "L02-B01", "type": "worked-example", "argument": ["Tese: o centro deve testar agendamento on-line opcional.", "Razão 1: parte dos usuários não consegue telefonar no horário de atendimento.", "Apoio à razão 1: em consulta interna, 38 de 90 respondentes relataram essa dificuldade.", "Razão 2: manter telefone junto do canal on-line preserva alternativa para quem não usa internet."], "teachingPoint": "um apoio pode sustentar uma razão, que por sua vez sustenta a tese"},
+    {"id": "L02-C01", "type": "quick-check", "argument": {"thesis": "testar lembretes por mensagem pode reduzir esquecimentos", "statements": ["uma pesquisa local encontrou esquecimentos como motivo frequente de ausência", "a sala de espera foi pintada no mês passado", "lembretes podem atuar diretamente antes do compromisso"]}, "tasks": ["marcar o elo lateral", "organizar os dois passos relacionados"]},
+    {"id": "L02-A01", "type": "assessment-chain", "text": "A biblioteca deveria experimentar devolução em caixa externa fora do horário. Muitos usuários chegam depois do fechamento; permitir a devolução nesse período reduziria a necessidade de uma nova viagem. A iluminação da fachada foi trocada recentemente.", "tasks": ["identificar tese", "mapear razões", "retirar informação lateral", "explicar o elo entre horário e nova viagem"]},
+    {"id": "L02-A02", "type": "circularity-check", "items": [{"argument": "A medida é necessária porque precisa ser adotada.", "expected": "circular"}, {"argument": "A medida merece teste porque o problema que ela busca resolver apareceu em 27% dos registros e o teste pode medir se há melhora.", "expected": "não circular; contém razão e possibilidade de verificação"}]},
+    {"id": "L02-P01", "type": "own-chain", "prompt": "A partir de uma tese delimitada, construa uma cadeia com pelo menos uma razão principal e um passo de apoio. Não acrescente razões apenas para aumentar quantidade.", "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"symbolicLogicRequired": false, "quantityOfReasonsScored": false, "openResponseAutoValidated": false, "timeLimit": false},
+  "completionEvidence": {"clusters": {"reconstruction": {"evidence": ["L02-A01", "L02-A02"], "required": true}, "construction": {"evidence": ["L02-P01"], "required": true}}, "completionRule": "é preciso demonstrar relações entre passos, não apenas listar razões."}
+}

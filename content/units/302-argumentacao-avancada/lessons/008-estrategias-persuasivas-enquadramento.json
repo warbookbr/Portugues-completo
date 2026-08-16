@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "id": "N3-U02-L08",
+  "title": "Estratégias persuasivas e enquadramento",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Analisar como vocabulário, exemplos, autoridade, emoção, ordem e enquadramento influenciam a recepção de um argumento, separando efeito persuasivo de qualidade da evidência e evitando inferir intenção manipulativa sem base.",
+  "competencies": ["identificar escolha persuasiva concreta", "comparar enquadramentos que preservam os mesmos fatos", "explicar efeito provável de intensidade lexical, exemplo ou ordem", "analisar apelo à autoridade pelo papel que exerce", "distinguir narrativa pessoal de evidência geral", "separar persuasão de falsidade automática"],
+  "prerequisites": ["N3-U02-L01", "N3-U02-L07", "N3-U01-L09"],
+  "limits": ["não ensinar manipulação", "emoção não é automaticamente inválida", "autoridade pode ser pertinente sem ser prova absoluta", "enquadramento não prova viés ou má-fé", "intenção do autor não é inferida sem evidência"],
+  "media": {"tts": "opcional", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["versões", "argumentos"], "purpose": "apoio"}], "generatedVisualResources": [{"type": "UI_RENDERED_FRAMING_COMPARE", "locations": ["L08-B01", "L08-A01"], "purpose": "comparar destaque e seleção"}, {"type": "UI_RENDERED_PERSUASIVE_STRATEGY_MAP", "locations": ["L08-C01", "L08-A02", "L08-P01"], "purpose": "ligar escolha, efeito e evidência"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "versões textuais controladas isolam efeitos persuasivos sem depender de mídia externa."},
+  "sequence": [
+    {"id": "L08-B01", "type": "framing-contrast", "sharedFacts": ["o teste atendeu 180 pessoas", "27 aguardaram mais de 30 minutos", "153 aguardaram até 30 minutos"], "versions": [{"headline": "Maioria foi atendida em até meia hora", "focus": "resultado majoritário"}, {"headline": "Vinte e sete pessoas esperaram mais de meia hora", "focus": "grupo com maior espera"}], "teachingPoint": "os dois enquadramentos podem usar fatos verdadeiros e destacar aspectos diferentes; a análise precisa separar seleção de falsificação"},
+    {"id": "L08-C01", "type": "quick-check", "items": [{"question": "Um relato emocionante pode ter efeito persuasivo sem provar frequência geral?", "options": ["sim", "não"], "correctIndex": 0}, {"question": "Citar especialista encerra automaticamente a análise da evidência?", "options": ["não", "sim"], "correctIndex": 0}]},
+    {"id": "L08-A01", "type": "assessment-framing", "facts": ["o projeto custou 8% menos que o orçamento previsto", "duas das oito etapas atrasaram uma semana"], "versions": ["Projeto termina abaixo do orçamento", "Duas etapas do projeto atrasam"], "tasks": ["identificar o foco de cada versão", "apontar o fato que cada uma deixa em segundo plano", "explicar por que isso sozinho não prova manipulação"]},
+    {"id": "L08-A02", "type": "strategy-effect", "cases": [{"text": "Até especialistas reconhecem que...", "task": "avaliar se a autoridade citada é identificada e pertinente ou apenas evocada"}, {"text": "Imagine perder uma manhã inteira para resolver algo simples.", "task": "identificar apelo experiencial/emocional e explicar que ele não mede frequência"}, {"text": "O programa custou apenas R$ 2 por usuário.", "task": "analisar o efeito de 'apenas' sem alterar o valor numérico"}]},
+    {"id": "L08-P01", "type": "open-analysis", "prompt": "Compare duas versões de um argumento fornecido, identifique uma estratégia persuasiva em cada uma e explique separadamente o efeito provável e a qualidade do apoio factual.", "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"persuasionEqualsFalsehood": false, "framingEqualsManipulation": false, "authorIntentInferredAutomatically": false, "openResponseAutoValidated": false},
+  "completionEvidence": {"clusters": {"framing": {"evidence": ["L08-A01"], "required": true}, "strategyEffect": {"evidence": ["L08-A02", "L08-P01"], "required": true}}, "completionRule": "o estudante deve separar escolha persuasiva, efeito e força da evidência."}
+}

@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "id": "N3-U02-L10",
+  "title": "Responder, conceder e reformular",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Responder a objeções preservando o que continua defensável, concedendo limites reais e reformulando a tese quando necessário, sem tratar argumentação como obrigação de vencer o interlocutor.",
+  "competencies": ["responder ao ponto efetivamente levantado", "reconhecer objeção válida", "fazer concessão parcial quando pertinente", "reduzir alcance da tese sem abandoná-la por reflexo", "admitir insuficiência de evidência", "distinguir resposta de repetição da tese"],
+  "prerequisites": ["N3-U02-L09"],
+  "limits": ["concessão não é fórmula obrigatória", "não exigir vencer o interlocutor", "não apagar evidência contrária", "não responder mudando de assunto", "reformular não significa sempre enfraquecer"],
+  "media": {"tts": "opcional", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["argumentos", "objeções", "respostas"], "purpose": "apoio"}], "generatedVisualResources": [{"type": "UI_RENDERED_OBJECTION_RESPONSE_COMPARE", "locations": ["L10-B01", "L10-C01", "L10-A01"], "purpose": "comparar resposta direta e evasiva"}, {"type": "UI_RENDERED_CONCEDE_LIMIT_RESPOND", "locations": ["L10-A02", "L10-P01"], "purpose": "organizar concessão, limite e resposta quando úteis"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "versões textuais permitem avaliar se a resposta realmente trata a objeção."},
+  "sequence": [
+    {"id": "L10-B01", "type": "worked-response", "thesis": "O projeto deveria manter duas noites semanais de atendimento.", "objection": "O teste ocorreu em um mês de demanda excepcionalmente alta.", "responses": [{"text": "Isso não importa; duas noites são melhores.", "analysis": "repete a tese e ignora a objeção"}, {"text": "O mês excepcional limita a generalização. Os dados sustentam continuar testando o horário, mas ainda não bastam para afirmar que duas noites serão necessárias o ano inteiro.", "analysis": "concede o limite e reformula o alcance"}]},
+    {"id": "L10-C01", "type": "quick-check", "items": [{"question": "Reconhecer um limite real obriga abandonar toda a tese?", "options": ["não; pode exigir qualificação ou reformulação", "sim"], "correctIndex": 0}, {"question": "Uma resposta que muda de assunto resolve a objeção?", "options": ["não", "sim"], "correctIndex": 0}]},
+    {"id": "L10-A01", "type": "assessment-response-quality", "argument": "A unidade deveria testar fila virtual por três meses.", "objection": "Parte dos usuários não possui celular compatível.", "responses": ["A fila virtual é moderna.", "O teste deve manter uma alternativa presencial para não excluir esse grupo; com essa condição, ainda é possível avaliar a fila virtual."], "correctIndex": 1, "task": "explicar por que a segunda resposta trata o ponto"},
+    {"id": "L10-A02", "type": "reformulation", "originalThesis": "O novo formato funciona para todos os usuários.", "objectionEvidence": "18% dos participantes relataram dificuldade de acesso ao material digital", "target": "reformular a tese de modo compatível com a evidência sem negar o benefício observado para outros participantes", "acceptMultipleValid": true},
+    {"id": "L10-P01", "type": "open-response", "prompt": "Receba uma tese própria ou fornecida e uma objeção relevante. Registre: o que você concede, o que ainda sustenta e se a tese precisa ser reformulada.", "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"winningRequired": false, "concessionAlwaysRequired": false, "contraryEvidenceMayBeIgnored": false, "openResponseAutoValidated": false},
+  "completionEvidence": {"clusters": {"responseQuality": {"evidence": ["L10-A01"], "required": true}, "reformulation": {"evidence": ["L10-A02", "L10-P01"], "required": true}}, "completionRule": "o estudante precisa responder ao ponto, preservar limites reais e reformular quando a crítica exigir."}
+}

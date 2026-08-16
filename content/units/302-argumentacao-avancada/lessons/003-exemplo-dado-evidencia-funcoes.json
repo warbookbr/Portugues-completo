@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "id": "N3-U02-L03",
+  "title": "Exemplo, dado e evidência: funções diferentes",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Distinguir exemplo ilustrativo, caso individual, dado agregado e evidência documental pelo papel que exercem no argumento e pelo alcance que realmente sustentam.",
+  "competencies": ["distinguir ilustração de apoio empírico", "reconhecer caso individual sem generalizá-lo", "interpretar dado agregado no recorte informado", "ligar evidência à afirmação que ela pode apoiar", "explicar o que um apoio não permite concluir"],
+  "prerequisites": ["N3-U02-L02", "N2-U07-L04"],
+  "limits": ["exemplo não prova regra geral sozinho", "número não é evidência automaticamente relevante", "fonte documental não é infalível", "não exigir metodologia científica avançada"],
+  "media": {"tts": "opcional", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["fontes", "argumentos"], "purpose": "apoio"}], "generatedVisualResources": [{"type": "UI_RENDERED_SUPPORT_TYPE_COMPARE", "locations": ["L03-B01", "L03-C01", "L03-A01"], "purpose": "comparar função e alcance de apoios"}, {"type": "UI_RENDERED_CLAIM_SUPPORT_LINK", "locations": ["L03-A02"], "purpose": "ligar apoio à afirmação pertinente"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "cartões textuais controlados bastam para separar função e alcance."},
+  "sequence": [
+    {"id": "L03-B01", "type": "worked-contrast", "claim": "O novo horário noturno teve procura relevante no teste.", "supports": [{"text": "Uma usuária disse que finalmente conseguiu ir depois do trabalho.", "role": "exemplo/caso individual; ilustra utilidade possível, não mede procura geral"}, {"text": "Das 120 vagas oferecidas no período noturno, 96 foram ocupadas.", "role": "dado agregado diretamente relacionado à procura no recorte"}, {"text": "A fachada recebeu iluminação nova.", "role": "informação sem relação com a afirmação"}]},
+    {"id": "L03-C01", "type": "quick-check", "items": [{"question": "Qual apoio é apenas ilustrativo?", "options": ["um relato individual de um participante", "a taxa de ocupação de todas as sessões do teste"], "correctIndex": 0}, {"question": "Um dado numérico é automaticamente boa evidência?", "options": ["não; precisa medir algo pertinente à afirmação", "sim; qualquer número prova a tese"], "correctIndex": 0}]},
+    {"id": "L03-A01", "type": "assessment-function", "claim": "A oficina atraiu participantes de diferentes bairros.", "supports": [{"text": "Registros de inscrição mostram endereços em sete bairros", "expectedRole": "evidência pertinente no recorte"}, {"text": "Um participante mora no bairro Central", "expectedRole": "exemplo insuficiente para diversidade geral"}, {"text": "A oficina usou mesas dobráveis", "expectedRole": "irrelevante"}], "task": "classificar pelo funcionamento e explicar o alcance"},
+    {"id": "L03-A02", "type": "claim-support-matching", "claims": ["houve aumento de inscrições", "participantes avaliaram positivamente o material", "o teste durou seis semanas"], "supports": ["inscrições: 74 no ciclo anterior e 103 no novo ciclo", "questionário: 81% dos respondentes avaliaram o material como bom ou ótimo", "calendário oficial: 3 de maio a 14 de junho"], "task": "parear sem usar um apoio para uma afirmação diferente"},
+    {"id": "L03-P01", "type": "open-explanation", "prompt": "Explique por que um exemplo pode melhorar a compreensão de uma razão sem necessariamente provar uma afirmação geral.", "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"sourceEqualsTruth": false, "numberEqualsEvidence": false, "openResponseAutoValidated": false, "timeLimit": false},
+  "completionEvidence": {"clusters": {"function": {"evidence": ["L03-A01"], "required": true}, "matching": {"evidence": ["L03-A02"], "required": true}, "explanation": {"evidence": ["L03-P01"], "required": true}}, "completionRule": "o estudante precisa relacionar tipo de apoio, função e alcance."}
+}
