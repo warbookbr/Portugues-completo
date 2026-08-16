@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "N2-U06-L05",
+  "title": "Texto informativo: selecionar e hierarquizar informações",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Produzir texto informativo de vários parágrafos a partir de fatos fornecidos, selecionando e hierarquizando informações conforme finalidade e leitor sem inventar dados.",
+  "competencies": ["separar fato fornecido de inferência", "selecionar fatos relevantes", "hierarquizar informações", "agrupar fatos por foco", "usar atribuição simples quando necessária", "evitar invenção ou distorção"],
+  "prerequisites": ["N2-U06-L01", "N2-U06-L02", "N2-U01-V01"],
+  "limits": ["não exigir pesquisa aberta", "não tratar todo fato fornecido como igualmente importante", "não permitir completar lacunas com invenção", "não exigir formato jornalístico rígido"],
+  "media": {"tts": "opcional", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["ficha-fonte", "instruções", "feedback"], "purpose": "apoio"}], "generatedVisualResources": [{"type": "UI_RENDERED_FACT_SOURCE_CARD", "locations": ["L05-B01", "L05-A01", "L05-P01"], "purpose": "separar dados fornecidos da redação"}, {"type": "UI_RENDERED_PRIORITY_SORTER", "locations": ["L05-C01", "L05-A01"], "purpose": "hierarquizar informações"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "fichas textuais controladas bastam para trabalhar seleção e fidelidade informacional."},
+  "sequence": [
+    {"id": "L05-B01", "type": "source-card", "sourceLabel": "Ficha da organização", "facts": ["feira de troca no dia 18", "entrada gratuita", "cada participante pode levar até cinco livros", "não serão aceitos livros molhados", "sobras serão doadas a uma biblioteca comunitária"], "teachingPoint": "o texto pode reorganizar e resumir os fatos, mas não pode criar informação ausente"},
+    {"id": "L05-C01", "type": "quick-check", "items": [{"question": "Para alguém que quer participar, qual informação é mais central?", "options": ["data, condição de participação e limite de livros", "uma opinião sobre qual livro é melhor"], "correctIndex": 0}, {"question": "Se a ficha não informa horário, o texto pode inventar 9h?", "options": ["sim", "não"], "correctIndex": 1}]},
+    {"id": "L05-A01", "type": "assessment-information-text", "sourceLabel": "Ficha do projeto", "facts": ["oficina gratuita de reparo", "sábado das 14h às 17h", "inscrição on-line", "12 vagas", "participante pode levar um pequeno aparelho", "equipamentos com bateria estufada não serão atendidos"], "task": "produzir texto informativo de vários parágrafos para interessados, preservando os fatos e a prioridade comunicativa", "recordResponse": true, "automaticValidation": "presença de fatos e ausência de contradições objetivas pode ser verificada; qualidade global exige avaliador confiável"},
+    {"id": "L05-P01", "type": "open-writing-from-controlled-source", "prompt": "A partir de uma nova ficha-fonte fornecida pela interface, produza um texto informativo para um leitor definido. Registre quais fatos você considerou centrais e quais ficaram secundários.", "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"sourceBound": true, "inventedFactsAllowed": false, "ownWritingRequired": true, "openTextAutoValidated": false, "timeLimit": false},
+  "completionEvidence": {"clusters": {"fidelity": {"evidence": ["L05-A01"], "rule": "preservar fatos centrais sem invenção"}, "ownInformativeText": {"evidence": ["L05-P01"], "rule": "texto próprio com hierarquia explícita"}}, "completionRule": "fidelidade e produção própria são obrigatórias.", "notSufficient": ["copiar a ficha em lista", "inventar informação para deixar o texto mais completo"]}
+}
