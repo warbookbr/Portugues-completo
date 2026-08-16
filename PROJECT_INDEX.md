@@ -79,6 +79,12 @@ Português Completo
 - `docs/checkpoint-saida-nivel-2.md` — auditoria das competências oficiais de saída e autorização de fechamento curricular.
 - `docs/transicao-n2-n3.md` — fronteira pedagógica N2→N3 e gate para desenvolvimento do N3.
 
+### Nível 3
+
+- `docs/areas-nivel-3.md` — M2, dez áreas avançadas dimensionadas a partir do M1 e da transição N2→N3.
+
+O N3 ainda não possui M3/M4/M5. Não criar lições antes de dimensionar as unidades.
+
 ## Arquitetura e frontend
 
 - `docs/arquitetura.md` — arquitetura, armazenamento e responsabilidades técnicas.
@@ -157,6 +163,9 @@ N2 saída
 
 N2→N3
 → docs/transicao-n2-n3.md
+
+N3 M2
+→ docs/areas-nivel-3.md
 
 escopo normativo N2-U02
 → docs/referencias-ortografia-nivel-2.md
