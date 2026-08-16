@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "N3-U09-L08",
+  "title": "Sequência, corte, montagem e construção do tempo",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Analisar como ordem, corte, elipse e justaposição constroem relações temporais e interpretativas usando sequências de quadros semânticos acessíveis, sem fingir que o estudante assistiu a um vídeo inexistente.",
+  "competencies": ["reconstruir sequência", "identificar elipse", "comparar duas ordens", "explicar efeito de justaposição", "distinguir fato mostrado de inferência", "propor montagem alternativa"],
+  "prerequisites": ["N3-U09-L06", "docs/gate-audiovisual-nivel-3-u9.md"],
+  "limits": ["timing audiovisual real não é avaliado sem mídia", "sequência não prova causalidade automaticamente", "não depender de imagem real", "não tratar toda quebra temporal como erro"],
+  "media": {"tts": "opcional", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK"}], "generatedVisualResources": [{"type": "UI_RENDERED_FRAME_SEQUENCE"}, {"type": "UI_RENDERED_EDITING_TIMELINE"}, {"type": "UI_RENDERED_SEQUENCE_REORDER"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória; atividade não avalia tempo exato de corte real", "decisionRationale": "sequência de estados descritos preserva o alvo conceitual de ordem/elipse/justaposição."},
+  "sequence": [
+    {"id": "L08-B01", "type": "frame-sequence", "frames": ["1 — relógio marca 22h10", "2 — corredor vazio; porta fechada", "3 — corte para rua molhada", "4 — corredor; porta aberta, ninguém visível"], "questions": ["o que mudou entre 2 e 4?", "o que foi omitido pela elipse?", "a sequência prova quem abriu a porta?"]},
+    {"id": "L08-C01", "type": "quick-check", "items": [{"question": "Dois eventos mostrados em sequência provam causalidade?", "correct": false}, {"question": "Reordenar quadros pode mudar expectativa e interpretação?", "correct": true}]},
+    {"id": "L08-A01", "type": "assessment-montage", "frames": ["ônibus chega", "relógio 6h10", "ponto cheio", "ônibus parte"], "tasks": ["propor duas ordens plausíveis", "explicar mudança de ênfase", "identificar informação que continua ausente"]},
+    {"id": "L08-P01", "type": "open-montage", "prompt": "Crie uma sequência de 5–7 quadros semânticos e depois uma segunda montagem com os mesmos materiais. Explique um efeito que muda e uma inferência que permanece não demonstrada.", "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"realVideoRequired": false, "exactCutTimingScored": false, "sequenceEqualsCausation": false, "openResponseAutoValidated": false},
+  "completionEvidence": {"clusters": {"analysis": {"evidence": ["L08-A01"], "required": true}, "production": {"evidence": ["L08-P01"], "required": true}}, "completionRule": "o estudante deve controlar ordem/elipse sem transformar sequência em causalidade automática."}
+}
