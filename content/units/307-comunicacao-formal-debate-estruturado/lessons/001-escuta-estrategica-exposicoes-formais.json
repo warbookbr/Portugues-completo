@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "N3-U07-L01",
+  "title": "Escuta estratégica em exposições formais",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Compreender exposições formais mais densas recuperando propósito, arquitetura, pontos centrais, evidências, qualificações e encaminhamentos sem exigir memória literal ou penalizar replay.",
+  "competencies": ["identificar propósito", "reconstruir estrutura", "selecionar ideias centrais", "recuperar evidências e limites", "distinguir posição de dado", "usar replay estrategicamente"],
+  "prerequisites": ["N2-U08-V01", "N3-U01-V01"],
+  "limits": ["velocidade de escuta não pontua", "memória literal não pontua", "sotaque não pontua", "replay não é erro", "prosódia específica não será única pista decisiva"],
+  "media": {"tts": "principal quando prosódia específica não for alvo", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "purpose": "fornecer exposições e instruções"}], "generatedVisualResources": [{"type": "UI_RENDERED_LISTENING_MAP", "purpose": "registrar propósito, estrutura, evidência e limite"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "a competência é compreensão semântica/estrutural; TTS é suficiente."},
+  "sequence": [
+    {"id": "L01-B01", "type": "guided-listening", "script": "A coordenação apresenta resultados de um piloto, explica dois limites e propõe novo ciclo antes da expansão.", "replayAllowed": true, "transcriptAfterAttempt": true},
+    {"id": "L01-C01", "type": "quick-check", "items": [{"question": "Qual foi o propósito principal?", "target": "apresentar resultados e justificar próximo passo"}, {"question": "Uma limitação mencionada pode alterar a força da conclusão?", "correct": true}]},
+    {"id": "L01-A01", "type": "assessment-listening", "stimulus": "exposição inédita com 4–6 pontos relacionados", "required": ["propósito", "dois pontos centrais", "uma evidência", "uma qualificação/limite", "encaminhamento"]},
+    {"id": "L01-P01", "type": "strategy-reflection", "prompt": "Registre que parte você precisou ouvir novamente e por que o replay ajudou.", "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"replayPenalty": false, "literalMemoryScored": false, "accentScored": false, "timeLimit": false},
+  "completionEvidence": {"clusters": {"comprehension": {"evidence": ["L01-A01"], "required": true}, "strategy": {"evidence": ["L01-P01"], "required": true}}, "completionRule": "compreensão e uso estratégico da escuta são obrigatórios."}
+}
