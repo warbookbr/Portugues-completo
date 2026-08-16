@@ -64,7 +64,7 @@ currículo fechado
 - **M2 concluído** — 10 áreas em `docs/areas-nivel-3.md`;
 - **M3 concluído** — 9 unidades pedagógicas integradas em `docs/unidades-nivel-3.md`;
 - **M4 concluído** — **94 lições + 9 verificações integradas** em `docs/licoes-nivel-3.md` e documentos U1–U9;
-- **M5 em andamento** — **U1 e U2 concluídas**; U3–U9 pendentes.
+- **M5 em andamento** — **U1, U2 e U3 concluídas**; U4–U9 pendentes.
 
 O N3 aprofunda um usuário intermediário já organizado; não reinicia leitura, gramática, escrita, argumentação, oralidade, variação ou fontes do zero.
 
@@ -100,36 +100,60 @@ Regras centrais: releitura e anotações permitidas; velocidade não pontua; inf
 11 lições + N3-U02-V01
 ```
 
+Cobertura: tese delimitada; cadeia de razões/subrazões; exemplo/dado/evidência pelo funcionamento; relevância, escopo e qualidade do apoio; suficiência, qualificação e força da conclusão; generalização/amostra/contraexemplo; causalidade e falhas frequentes pelo funcionamento; estratégias persuasivas/enquadramento; objeção/contra-argumento; resposta/concessão/reformulação; produção própria com revisão e reescrita.
+
+A verificação integrada mantém nove agrupamentos obrigatórios e contém caso em que `a evidência disponível não basta` é a conclusão correta.
+
+Regras centrais: posição ideológica não pontua; quantidade de razões não mede força; exemplo não prova regra geral; número não é evidência automaticamente pertinente; correlação não prova causalidade sozinha; nomes de falácias são secundários; emoção/persuasão não equivalem a falsidade; enquadramento não prova manipulação; qualidade global da produção aberta exige avaliador confiável.
+
+#### N3-U3 — Sintaxe complexa, norma e efeitos de estrutura — CONCLUÍDA
+
+```text
+12 lições + N3-U03-V01
+```
+
+Gate normativo concluído e registrado em:
+
+`docs/referencias-gramatica-nivel-3-u3.md`
+
 Cobertura:
 
-- tese delimitada;
-- cadeia de razões e subrazões;
-- exemplo, dado e evidência pelo funcionamento;
-- relevância, escopo e qualidade do apoio;
-- suficiência, qualificação e força da conclusão;
-- generalização, amostra e contraexemplo;
-- causalidade não demonstrada, alternativas artificialmente reduzidas, ataque à pessoa e circularidade em casos claros;
-- estratégias persuasivas e enquadramento;
-- objeção e contra-argumento relevantes;
-- resposta, concessão e reformulação;
-- produção argumentativa própria com revisão e reescrita.
+- período complexo como arquitetura de relações, sem contagem mecânica de verbos;
+- coordenação ampliada, paralelismo e alcance;
+- subordinação por relação de sentido;
+- orações relativas, antecedente, restrição e informação adicional;
+- formas reduzidas e reformulações com controle de referente;
+- ordem, foco, topicalização e ambiguidade;
+- voz, agente e visibilidade sem inferir intenção por reflexo;
+- concordância em estruturas complexas no recorte documentado;
+- regência e crase com sentido, estrutura e consulta;
+- colocação pronominal como convenção formal/editorial quando pertinente;
+- pontuação estrutural do período complexo;
+- revisão integrada distinguindo regra, variante, consulta e escolha estilística.
 
-A verificação integrada mantém nove agrupamentos obrigatórios e contém caso em que `a evidência disponível não basta` é a conclusão correta. A produção própria exige tese, cadeia de apoio, evidência responsável, limite/qualificação, objeção, resposta, primeira versão, revisão e segunda versão.
+O recorte normativo classifica decisões como:
 
-Regras centrais:
+```text
+REGRA_PRODUTIVA
+VARIANTE_DOCUMENTADA
+CONVENCAO_FORMAL_EDITORIAL
+CASO_LEXICAL_DE_CONSULTA
+ESCOLHA_ESTILISTICA
+```
 
-- posição ideológica não pontua;
-- quantidade de razões não mede força;
-- exemplo não prova regra geral sozinho;
-- número não é evidência automaticamente pertinente;
-- correlação/sequência temporal não prova causalidade sozinha;
-- falhas de raciocínio são ensinadas pelo funcionamento, não por catálogo de nomes;
-- persuasão ou emoção não equivalem automaticamente a falsidade;
-- enquadramento não prova manipulação;
-- discordância sem atacar um ponto do argumento não é contra-argumento;
-- qualidade global da produção aberta exige avaliador confiável.
+Isso impede transformar preferência institucional, variante aceita ou caso lexical controverso em erro universal.
 
-Nenhuma nova mídia humana obrigatória foi criada em U1 ou U2; TTS e UI textual/acessível são suficientes.
+A verificação integrada mantém nove agrupamentos obrigatórios e exige explicitamente:
+
+- corrigir regras produtivas;
+- preservar ao menos uma variante documentada;
+- reconhecer ao menos um caso de consulta;
+- distinguir escolha estilística de obrigação sintática;
+- revisar texto real, não apenas classificar estruturas.
+
+Regras centrais: crase não é decidida por palavra feminina; vírgula não é pausa para respirar; ordem não canônica não é erro automático; passiva não prova evasão; mesóclise não é requisito produtivo; fala brasileira corrente não é medida de inteligência; casos fora do recorte não são resolvidos por palpite.
+
+Nenhuma nova mídia humana obrigatória foi criada em U1–U3; TTS e UI textual/acessível são suficientes.
 
 ### Nível 4 — Domínio
 
@@ -149,38 +173,42 @@ NÍVEL 3 — M1–M4 ✓
 └── M5 — MARCO ATIVO
     ├── U1 ✓
     ├── U2 ✓
-    └── U3 — PRÓXIMO SUBPASSO
+    ├── U3 ✓
+    └── U4 — PRÓXIMO SUBPASSO
 ```
 
 Próximo subpasso:
 
 ```text
-N3-U03 — Sintaxe complexa, norma e efeitos de estrutura
-12 lições + verificação integrada
+N3-U04 — Fontes múltiplas, síntese e leitura crítica da informação
+11 lições + verificação integrada
 ```
 
-A U3 só entra em autoria M5 depois do **gate normativo** abaixo. O objetivo não é montar uma enciclopédia gramatical, mas selecionar estruturas e convenções de alta utilidade para leitura, produção e edição de textos complexos.
+A U4 deve ampliar a comparação de duas fontes do N2 para um conjunto pequeno de fontes com funções diferentes, separando convergência, divergência, escopo, origem, evidência e incerteza. A síntese deve preservar conflito real e não fabricar consenso. Pesquisa aberta só entra se houver critérios de rastreabilidade e registro de origem compatíveis com o desenho da unidade.
 
 Depois:
 
 ```text
-N3-U4 → U5 → U6 → U7 → U8 → U9
+N3-U5 → U6 → U7 → U8 → U9
 → verificação de saída N3
 → checkpoint N3→N4
 ```
 
 ## Gates já definidos para o M5 do N3
 
-### N3-U3 — gate normativo
+### N3-U3 — gate normativo — SATISFEITO
 
-Antes de congelar casos avançados de concordância, regência, crase, colocação pronominal e pontuação:
+Fonte oficial do projeto:
 
-- selecionar casos de alta utilidade;
-- conferir formulações em fontes normativas/institucionais adequadas;
-- documentar o recorte em fonte oficial do projeto;
-- distinguir regra produtiva, convenção formal, caso lexical e escolha estilística;
-- não transformar controvérsia, exceção rara ou preferência editorial em regra universal;
-- indicar consulta quando a decisão exceder o repertório seguro do curso.
+`docs/referencias-gramatica-nivel-3-u3.md`
+
+O gate:
+
+- seleciona casos de alta utilidade;
+- registra fontes institucionais adequadas;
+- distingue regra produtiva, variante, convenção editorial, consulta e escolha estilística;
+- exclui exceções raras como medida de domínio;
+- impede que controvérsia ou preferência institucional vire regra universal.
 
 ### N3-U9 — gate audiovisual/acessibilidade
 
@@ -229,6 +257,7 @@ O N3 deve aprofundar — não reensinar do zero — principalmente:
 13. Casos normativos avançados, raros ou controversos devem ser conferidos em fontes adequadas antes de serem congelados no M5.
 14. Fontes e escrita não podem ser confinadas a uma única unidade; devem reaparecer quando o objetivo exige transferência.
 15. Gêneros não são templates rígidos; estilo não é mero polimento cosmético no final do processo.
+16. Na U3 e em futuras unidades normativas, `consultar` pode ser uma evidência de competência quando o caso excede o recorte seguro.
 
 ## Dependências não curriculares abertas
 
@@ -263,6 +292,7 @@ N2→N3 → docs/transicao-n2-n3.md
 N3 M2 → docs/areas-nivel-3.md
 N3 M3 → docs/unidades-nivel-3.md
 N3 M4 → docs/licoes-nivel-3.md + docs/licoes-nivel-3-u*.md
+N3-U03 escopo normativo → docs/referencias-gramatica-nivel-3-u3.md
 
 estado atual → docs/roadmap-curricular.md
 conteúdo desenvolvido → content/
