@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "N3-U05-L08",
+  "title": "Artigo de opinião, proposta e recomendação fundamentada",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Adaptar argumentação avançada a gêneros públicos em que tese ou proposta, apoio, qualificação e consideração de objeções precisam ser compreensíveis para uma audiência realista.",
+  "competencies": ["formular tese/proposta adequada ao gênero", "selecionar evidência pertinente", "explicar relação entre apoio e proposta", "considerar objeção relevante", "qualificar alcance", "adequar abertura e fechamento ao público"],
+  "prerequisites": ["N3-U05-L01", "N3-U05-L05", "N3-U02-V01"],
+  "limits": ["posição ideológica não pontua", "linguagem inflamada não é requisito", "artigo/proposta não seguem fórmula fixa", "evidência insuficiente pode exigir proposta experimental ou condicional"],
+  "media": {"tts": "opcional", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "purpose": "apoio"}], "generatedVisualResources": [{"type": "UI_RENDERED_PUBLIC_ARGUMENT_WORKSPACE", "purpose": "integrar tese, apoio, objeção e leitor"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "situação pública controlada e editor textual bastam."},
+  "sequence": [
+    {"id": "L08-B01", "type": "genre-contrast", "base": "dados de um teste de horário", "versions": [{"genre": "artigo de opinião", "center": "posição pública sustentada"}, {"genre": "proposta", "center": "ação, justificativa, limites e implementação"}, {"genre": "recomendação", "center": "opção preferida com critérios e evidência"}]},
+    {"id": "L08-C01", "type": "quick-check", "items": [{"question": "Uma posição impopular pode ser bem argumentada?", "correct": true}, {"question": "Uma proposta pode reconhecer incerteza e sugerir teste?", "correct": true}]},
+    {"id": "L08-A01", "type": "assessment-public", "topic": "manter uma noite mensal sem agendamento", "sourceFacts": ["42 atendimentos em três noites", "11 usuários sem vaga regular", "uma noite com espera >40 min"], "required": ["tese/proposta", "apoio", "limite", "objeção", "resposta proporcional"]},
+    {"id": "L08-P01", "type": "open-public-text", "prompt": "Produza artigo, proposta ou recomendação para situação nova, registrando qual gênero escolheu e por que ele serve à finalidade.", "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"opinionContentScored": false, "inflamedLanguageScored": false, "openResponseAutoValidated": false},
+  "completionEvidence": {"clusters": {"controlled": {"evidence": ["L08-A01"], "required": true}, "ownText": {"evidence": ["L08-P01"], "required": true}}, "completionRule": "o texto deve adequar argumentação à finalidade pública sem pontuar o conteúdo ideológico da posição."}
+}
