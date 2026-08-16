@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "id": "N3-U03-L05",
+  "title": "Formas reduzidas e reformulações de estrutura",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Compreender como infinitivo, gerúndio e particípio podem condensar relações e decidir quando desenvolver ou reduzir uma construção melhora clareza, referência ou ritmo.",
+  "competencies": ["expandir forma reduzida para tornar relação explícita", "condensar sem perder referente", "detectar gerúndio ou particípio com referente ambíguo", "comparar concisão e clareza", "preservar relação de sentido na reformulação"],
+  "prerequisites": ["N3-U03-L03", "N3-U03-L04"],
+  "limits": ["forma reduzida não é superior por ser mais concisa", "gerúndio não é erro automático", "não aceitar referente implícito ambíguo em nome da concisão", "não exigir classificação exaustiva das formas reduzidas"],
+  "media": {"tts": "opcional", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["períodos", "feedback"], "purpose": "apoio"}], "generatedVisualResources": [{"type": "UI_RENDERED_REDUCED_EXPANDED_COMPARE", "locations": ["L05-B01", "L05-A01", "L05-A02"], "purpose": "comparar condensação e explicitação"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "pares de frases permitem testar referência e clareza diretamente."},
+  "sequence": [
+    {"id": "L05-B01", "type": "worked-pairs", "pairs": [{"reduced": "Ao concluir a análise, a equipe publicou o relatório.", "expanded": "Quando concluiu a análise, a equipe publicou o relatório.", "effect": "relação temporal permanece clara"}, {"reduced": "Encerrado o prazo, as inscrições foram bloqueadas.", "expanded": "Depois que o prazo foi encerrado, as inscrições foram bloqueadas.", "effect": "a versão desenvolvida torna a relação mais explícita"}]},
+    {"id": "L05-C01", "type": "quick-check", "items": [{"text": "Ao sair da sala, o relatório caiu da pasta.", "question": "Há problema de referente na construção?", "correct": true}, {"text": "Ao sair da sala, Marta percebeu que o relatório havia caído da pasta.", "question": "O referente da ação de sair ficou recuperável?", "correct": true}]},
+    {"id": "L05-A01", "type": "assessment-ambiguity", "original": "Analisando os dados, os erros do sistema ficaram evidentes.", "tasks": ["identificar por que o agente de 'analisando' fica problemático", "reescrever com agente explícito sem alterar a informação principal"], "acceptMultipleValid": true},
+    {"id": "L05-A02", "type": "condense-expand", "items": [{"developed": "Depois que a comissão terminou a leitura, publicou a nota.", "task": "produzir versão reduzida clara"}, {"reduced": "Confirmados os valores, o pagamento foi autorizado.", "task": "produzir versão desenvolvida que preserve a relação"}], "acceptMultipleValid": true},
+    {"id": "L05-P01", "type": "open-choice", "prompt": "Receba um trecho com uma forma reduzida. Decida manter, desenvolver ou reformular e justifique sua escolha por referência, clareza ou ritmo, não por uma regra de que uma forma é sempre melhor.", "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"reducedFormsPreferredAutomatically": false, "gerundAsAutomaticError": false, "openResponseAutoValidated": false},
+  "completionEvidence": {"clusters": {"ambiguity": {"evidence": ["L05-A01"], "required": true}, "reformulation": {"evidence": ["L05-A02", "L05-P01"], "required": true}}, "completionRule": "o estudante deve preservar relação e referente ao condensar ou expandir."}
+}
