@@ -50,7 +50,8 @@ currículo fechado
 - **M2 concluído** — 11 áreas em `docs/areas-nivel-2.md`;
 - **M3 concluído** — 9 unidades em `docs/unidades-nivel-2.md`;
 - **M4 concluído** — **87 lições + 9 verificações integradas** em `docs/licoes-nivel-2.md` e documentos U1–U9;
-- **M5 em andamento** — **U1–U8 concluídas**; U9 pendente.
+- **M5 das unidades concluído** — **U1–U9 com conteúdo + verificações integradas**;
+- **fechamento do nível em andamento** — verificação de saída e checkpoint N2→N3 ainda pendentes.
 
 Arquitetura M4:
 
@@ -140,9 +141,9 @@ Regras centrais: número de parágrafos não é meta; extensão não pontua por 
 
 Cobertura: tema/preferência/posição; fato/opinião/inferência em contexto; razões relevantes, circulares e laterais; exemplo x evidência; apoio suficiente/insuficiente/irrelevante; organização argumentativa sem fórmula fixa; objeção/contraexemplo simples; uso responsável de fonte controlada; produção, revisão e reescrita de argumentação própria.
 
-A verificação integrada mantém nove agrupamentos obrigatórios e contém casos em que `a evidência disponível não basta` é a resposta correta. A produção argumentativa própria com primeira versão, revisão e segunda versão é obrigatória.
+A verificação integrada contém casos em que `a evidência disponível não basta` é a resposta correta. A produção argumentativa própria com primeira versão, revisão e segunda versão é obrigatória.
 
-Regras centrais: posição não é avaliada por concordância ideológica; fato não significa automaticamente verdadeiro; exemplo não é prova; número não é apoio automaticamente pertinente; uma objeção relevante pode limitar a posição sem anulá-la; a fonte não autoriza inventar dados nem transformar ausência de informação em evidência contrária.
+Regras centrais: posição não é avaliada por concordância ideológica; fato não significa automaticamente verdadeiro; exemplo não é prova; número não é apoio automaticamente pertinente; objeção relevante pode limitar a posição sem anulá-la; fonte não autoriza inventar dados nem transformar ausência de informação em evidência contrária.
 
 ### N2-U8 — Língua em interação: apresentação, discussão, registro e variação — CONCLUÍDA
 
@@ -150,9 +151,9 @@ Regras centrais: posição não é avaliada por concordância ideológica; fato 
 8 lições + N2-U08-V01
 ```
 
-Cobertura: escuta estratégica de mensagens mais densas; tomada de notas e síntese; planejamento de apresentação curta; prática com notas em vez de memorização; interação com pergunta, confirmação e reparo; discussão curta com posição e escuta; registro e adequação; variação, norma e preconceito linguístico.
+Cobertura: escuta estratégica; tomada de notas e síntese; planejamento de apresentação curta; prática com notas em vez de memorização; interação com pergunta, confirmação e reparo; discussão curta; registro e adequação; variação, norma e preconceito linguístico.
 
-A verificação integrada mantém oito agrupamentos separados e distingue explicitamente:
+A verificação integrada distingue explicitamente:
 
 ```text
 compreensão oral observável
@@ -160,9 +161,21 @@ compreensão oral observável
 ≠ produção oral compreensível validada externamente
 ```
 
-Regras centrais: replay é permitido sem penalidade automática; transcrição só aparece depois da tentativa de escuta; score escrito não compensa ausência de compreensão oral; fluência perfeita, velocidade e ausência de hesitação não são critérios automáticos; formal não é melhor por definição; informal não é erro automático; variedade linguística não mede valor ou inteligência do falante.
+Regras centrais: replay sem penalidade automática; transcrição só após tentativa de escuta; score escrito não compensa ausência de compreensão oral; fluência perfeita, velocidade e ausência de hesitação não são critérios automáticos; formal não é melhor por definição; informal não é erro automático; variedade linguística não mede valor ou inteligência do falante.
 
-Nenhuma nova mídia humana obrigatória foi criada em U5–U8; U8 usa TTS porque prosódia específica não determina a resposta.
+### N2-U9 — Literatura, multimodalidade e comparação de fontes — CONCLUÍDA
+
+```text
+9 lições + N2-U09-V01
+```
+
+Cobertura: voz e perspectiva narrativa; personagem, tensão e transformação sem molde fixo; poema, ritmo, repetição, disposição e imagem; figuras frequentes e seus efeitos; pluralidade interpretativa sustentada; multimodalidade e hipertexto acessíveis; autoria/origem/data/circulação; comparação de duas fontes; resumo/paráfrase com atribuição e resposta própria separada.
+
+A verificação integrada usa narrativa e poema autorais, componente multimodal estruturado com equivalente textual acessível e duas fontes controladas com convergência e divergência real. Quando os materiais não resolvem a divergência, `é preciso confirmar mais` é resposta válida e necessária.
+
+Regras centrais: interpretação diferente não é erro quando sustentada; leitura incompatível com o texto não é aceita como pluralidade; nome de figura sem interpretação não basta; nenhuma pista decisiva depende só de cor/imagem; aparência profissional/data recente não provam credibilidade; diferenças de escopo devem ser checadas antes de chamar fontes de contraditórias; comentário próprio deve ficar separado das afirmações das fontes.
+
+Nenhuma nova mídia humana obrigatória foi criada em U5–U9. U8 usa TTS porque prosódia específica não determina a resposta; U9 usa componentes de UI acessíveis e não depende de imagem gerada.
 
 ### Níveis 3 e 4
 
@@ -174,7 +187,7 @@ Nenhuma nova mídia humana obrigatória foi criada em U5–U8; U8 usa TTS porque
 NÍVEL 0 — M5 ✓
 NÍVEL 1 — M5 ✓
 NÍVEL 2 — M1–M4 ✓
-└── M5 — MARCO ATIVO
+└── M5 DAS UNIDADES ✓
     ├── U1 ✓
     ├── U2 ✓
     ├── U3 ✓
@@ -183,24 +196,28 @@ NÍVEL 2 — M1–M4 ✓
     ├── U6 ✓
     ├── U7 ✓
     ├── U8 ✓
-    └── U9 — PRÓXIMO SUBPASSO
+    └── U9 ✓
+
+FECHAMENTO DO N2 — MARCO ATIVO
+└── VERIFICAÇÃO DE SAÍDA N2 — PRÓXIMO SUBPASSO
 ```
 
 Próximo subpasso:
 
 ```text
-N2-U09 — Literatura, multimodalidade e comparação de fontes
-9 lições + verificação integrada
+verificação de saída N2
 ```
 
-A U9 é o último subpasso de unidades do M5 do N2. Ela deve trabalhar interpretação literária sustentada por evidência, relações entre modos sem reduzir imagem a decoração e comparação de fontes com possibilidade legítima de `é preciso confirmar mais` quando os materiais divergem ou não bastam.
+A saída deve verificar transferência entre as responsabilidades do nível, e não repetir nove provas de unidade. Deve preservar os limites já adotados para escrita livre, produção oral, fontes e interpretações abertas.
 
 Depois:
 
 ```text
-verificação de saída N2
-→ checkpoint N2→N3
+checkpoint N2→N3
+→ dimensionamento M2 do N3
 ```
+
+O N2 **ainda não deve ser declarado curricularmente fechado** antes de concluir a verificação de saída e o checkpoint N2→N3.
 
 ## Responsabilidades críticas do N2
 
@@ -234,6 +251,7 @@ O N2 deve avançar de autonomia básica para uso intermediário organizado e jus
 12. Ao comparar fontes, divergência pode legitimamente exigir confirmação adicional.
 13. Em produção escrita, planejamento, texto próprio, revisão e versionamento devem ser evidências reais quando a unidade os exigir; tarefas fechadas não podem substituí-los.
 14. Em produção oral, o projeto só pode automatizar o que realmente observa; inteligibilidade e qualidade global exigem observador ou avaliador confiável.
+15. Em multimodalidade, toda pista decisiva deve ter equivalente acessível; cor, imagem ou posição isoladas não podem ser a única via para a resposta.
 
 ## Dependências não curriculares abertas
 
