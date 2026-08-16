@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "N3-U09-L10",
+  "title": "Circulação, plataforma, edição e enquadramento",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Analisar como título, recorte, miniatura semântica, legenda, ordem, contexto de publicação e republicação podem enquadrar o mesmo material de modos diferentes sem inferir manipulação ou intenção oculta automaticamente.",
+  "competencies": ["comparar versões publicadas", "identificar recorte e título", "rastrear republicação", "distinguir material original de edição derivada", "analisar enquadramento", "evitar inferir intenção sem evidência", "registrar contexto de circulação"],
+  "prerequisites": ["N3-U04-V01", "N3-U09-L07", "N3-U09-L08"],
+  "limits": ["plataforma não determina verdade", "edição não é manipulação automática", "título chamativo não prova falsidade", "não exigir algoritmo real", "não usar marcas reais como atalho"],
+  "media": {"tts": "opcional", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK"}], "generatedVisualResources": [{"type": "UI_RENDERED_CIRCULATION_CHAIN"}, {"type": "UI_RENDERED_PUBLICATION_FRAME_COMPARE"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "publicações simuladas e metadados explícitos permitem analisar circulação sem marcas reais."},
+  "sequence": [
+    {"id": "L10-B01", "type": "publication-compare", "baseMaterial": "entrevista autoral de 4 minutos representada por transcrição/segmentos", "versions": [{"title": "Projeto reduz espera em unidade-piloto", "selectedSegment": "dados de redução"}, {"title": "Usuários ainda relatam filas", "selectedSegment": "limites e reclamações"}], "teachingPoint": "os recortes enfatizam partes distintas; é preciso voltar ao material-base antes de concluir incompatibilidade"},
+    {"id": "L10-C01", "type": "quick-check", "items": [{"question": "Um recorte parcial é automaticamente falso?", "correct": false}, {"question": "Comparar versão derivada com material original pode revelar mudança de enquadramento?", "correct": true}]},
+    {"id": "L10-A01", "type": "assessment-circulation", "chain": ["material-base", "resumo institucional", "post derivado", "comentário que cita o post"], "tasks": ["mapear origem", "identificar o que foi recortado/adicionado", "separar fato de comentário", "formular limite sobre intenção"]},
+    {"id": "L10-P01", "type": "open-analysis", "prompt": "Compare duas publicações simuladas derivadas do mesmo material e explique diferenças de enquadramento, contexto e circulação sem assumir manipulação por padrão.", "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"platformEqualsCredibility": false, "editingEqualsManipulation": false, "intentInferredAutomatically": false, "openResponseAutoValidated": false},
+  "completionEvidence": {"clusters": {"lineage": {"evidence": ["L10-A01"], "required": true}, "framing": {"evidence": ["L10-P01"], "required": true}}, "completionRule": "o estudante deve rastrear circulação e demonstrar enquadramento por elementos observáveis."}
+}
