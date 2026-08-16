@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "N2-U07-L08",
+  "title": "Usar fonte fornecida sem inventar apoio",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Selecionar de uma fonte controlada informação pertinente para apoiar uma posição, preservar a origem e reconhecer quando a fonte não permite afirmar algo.",
+  "competencies": ["localizar apoio pertinente na fonte", "atribuir origem", "parafrasear sem distorcer", "recusar dado inexistente", "distinguir ausência de evidência de evidência contrária", "limitar afirmação ao que a fonte sustenta"],
+  "prerequisites": ["N2-U07-L02", "N2-U07-L03", "N2-U07-L04", "N2-U07-L05", "N2-U07-L06", "N2-U07-L07", "N2-U06-L07"],
+  "limits": ["não exigir pesquisa multifuente", "não avaliar credibilidade avançada", "não inventar número, citação ou conclusão ausente", "não tratar ausência de dado como prova do contrário"],
+  "media": {"tts": "opcional", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["fonte", "instruções", "feedback"], "purpose": "apoio"}], "generatedVisualResources": [{"type": "UI_RENDERED_SOURCE_EVIDENCE_PICKER", "locations": ["L08-B01", "L08-C01", "L08-A01"], "purpose": "selecionar apoio na fonte"}, {"type": "UI_RENDERED_ATTRIBUTION_FIELD", "locations": ["L08-A01", "L08-P01"], "purpose": "preservar origem"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "fonte controlada e atribuição podem ser trabalhadas integralmente em texto."},
+  "sequence": [
+    {"id": "L08-B01", "type": "source-card", "sourceLabel": "Relatório do teste", "sourceText": "Durante seis semanas, o centro comunitário abriu até 21h às quartas-feiras. Foram registradas 146 entradas após 18h. A equipe informou que ainda não calculou o custo total do horário ampliado.", "claims": [{"text": "Houve uso do centro após 18h durante o teste.", "support": "146 entradas após 18h", "status": "supported"}, {"text": "O horário ampliado é financeiramente sustentável.", "support": null, "status": "not-supported"}], "teachingPoint": "a fonte pode apoiar uma parte do argumento e ser insuficiente para outra"},
+    {"id": "L08-C01", "type": "quick-check", "source": "A fonte informa 80 inscrições e 50 vagas, mas não informa idade dos inscritos.", "items": [{"claim": "Houve mais inscrições do que vagas.", "correct": "apoiada"}, {"claim": "A maioria dos inscritos tinha menos de 30 anos.", "correct": "a fonte não permite afirmar"}]},
+    {"id": "L08-A01", "type": "assessment-source-use", "sourceLabel": "Boletim da biblioteca", "sourceText": "Em quatro quintas de horário ampliado, 92 empréstimos foram registrados depois das 18h. Uma consulta com 60 usuários recebeu 41 respostas favoráveis à repetição do teste. O boletim não informa custos.", "tasks": ["selecionar uma informação que apoie repetir o teste", "registrar Fonte: Boletim da biblioteca", "identificar uma afirmação sobre custos que a fonte não permite fazer"], "recordResponse": true, "automaticValidation": "fatos e atribuição podem ser verificados; qualidade da integração ao argumento exige avaliador confiável"},
+    {"id": "L08-P01", "type": "open-source-support", "prompt": "Use uma nova fonte controlada para apoiar uma posição fornecida. Cite ou parafraseie uma informação pertinente, registre a origem e indique uma conclusão que a fonte não permite afirmar.", "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"inventedSupportAllowed": false, "attributionRequired": true, "absenceEqualsContraryEvidence": false, "timeLimit": false},
+  "completionEvidence": {"clusters": {"responsibleUse": {"evidence": ["L08-A01"], "rule": "usar informação pertinente com origem"}, "limits": {"evidence": ["L08-A01", "L08-P01"], "rule": "reconhecer o que a fonte não sustenta"}}, "completionRule": "uso responsável e reconhecimento de limites são obrigatórios.", "notSufficient": ["inventar apoio", "copiar dado sem ligação com a posição"]}
+}
