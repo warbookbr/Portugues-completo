@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "N3-U08-L07",
+  "title": "Preconceito linguístico, correção e intervenção responsável",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Responder a julgamentos linguísticos inadequados preservando dignidade do falante e, quando houver necessidade real, oferecendo orientação de adequação específica ao gênero ou situação sem humilhação.",
+  "competencies": ["identificar generalização sobre competência", "distinguir correção contextual de ataque ao falante", "formular feedback respeitoso", "explicar convenção quando pertinente", "evitar correção pública desnecessária", "propor intervenção proporcional"],
+  "prerequisites": ["N3-U08-L02", "N3-U08-L03", "N3-U08-L06"],
+  "limits": ["não transformar toda correção em preconceito", "não justificar humilhação por norma", "não negar exigências reais de gênero", "não impor intervenção quando nenhuma ação é necessária"],
+  "media": {"tts": "opcional", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "purpose": "apoio"}], "generatedVisualResources": [{"type": "UI_RENDERED_FEEDBACK_CONTEXT", "purpose": "separar pessoa, forma, contexto e orientação"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "cenários simulados permitem avaliar intervenção sem expor grupos reais."},
+  "sequence": [
+    {"id": "L07-B01", "type": "feedback-contrast", "scenario": "texto para processo institucional usa forma fora da convenção pedida", "responses": [{"text": "Você fala errado e precisa aprender português.", "analysis": "ataca competência global e pessoa"}, {"text": "Neste documento, a instituição adota esta convenção. Podemos ajustar a forma sem concluir nada sobre sua capacidade de comunicação em outros contextos.", "analysis": "orientação específica e respeitosa"}]},
+    {"id": "L07-C01", "type": "quick-check", "items": [{"question": "Toda orientação de adequação formal é preconceito?", "correct": false}, {"question": "Uma correção pode ser tecnicamente pertinente e socialmente mal conduzida?", "correct": true}]},
+    {"id": "L07-A01", "type": "assessment-intervention", "cases": [{"context": "conversa informal sem problema de compreensão", "event": "alguém corrige publicamente uma forma regional", "expected": "questionar necessidade e evitar humilhação"}, {"context": "revisão solicitada de ofício", "event": "forma diverge da convenção do gênero", "expected": "orientar ajuste de modo específico"}]},
+    {"id": "L07-P01", "type": "open-feedback", "prompt": "Escreva uma intervenção responsável para uma situação nova, explicando se corrigiria, adaptaria, perguntaria sobre o contexto ou não faria intervenção.", "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"allCorrectionEqualsPrejudice": false, "humiliationAccepted": false, "openResponseAutoValidated": false},
+  "completionEvidence": {"clusters": {"controlled": {"evidence": ["L07-A01"], "required": true}, "intervention": {"evidence": ["L07-P01"], "required": true}}, "completionRule": "a intervenção deve ser contextual, tecnicamente honesta e respeitosa."}
+}

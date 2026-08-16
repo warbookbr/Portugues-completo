@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "N3-U08-L08",
+  "title": "Análise integrada: variação, norma, prestígio e identidade",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Integrar análise de variação, norma, prestígio, estigma, identidade, mudança e adequação em situações complexas, evitando tanto estigmatização quanto apagamento de convenções e consequências institucionais.",
+  "competencies": ["descrever forma/contexto sem hierarquia", "identificar convenção formal relevante", "analisar prestígio/estigma", "limitar inferências identitárias", "considerar mudança histórica", "propor adaptação proporcional", "formular feedback responsável", "justificar decisão de não intervir"],
+  "prerequisites": ["N3-U08-L01", "N3-U08-L02", "N3-U08-L03", "N3-U08-L04", "N3-U08-L05", "N3-U08-L06", "N3-U08-L07"],
+  "limits": ["não reduzir tudo a certo/errado", "não reduzir tudo a 'qualquer forma serve'", "não inferir capacidade ou identidade por uma forma", "não apagar normas específicas de gêneros", "qualidade de análise aberta exige avaliador confiável"],
+  "media": {"tts": "opcional", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "purpose": "apoio"}], "generatedVisualResources": [{"type": "UI_RENDERED_SOCIO_LINGUISTIC_CASE_ANALYSIS", "purpose": "separar forma, contexto, norma, julgamento, identidade e ação"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória; qualidade global da análise aberta exige avaliador confiável", "decisionRationale": "cenários textuais contextualizados cobrem o alvo sem precisar simular pessoas ou sotaques."},
+  "sequence": [
+    {"id": "L08-B01", "type": "analysis-framework", "questions": ["qual é a situação?", "que variedade/repertório aparece?", "há convenção explícita do gênero?", "há julgamento social?", "o que pode e não pode ser inferido sobre identidade?", "há necessidade funcional de adaptação?", "como orientar sem estigmatizar?"]},
+    {"id": "L08-C01", "type": "quick-check", "items": [{"question": "Rejeitar preconceito exige dizer que toda forma é igualmente adequada em qualquer gênero?", "correct": false}, {"question": "Reconhecer convenção formal exige considerar uma variedade intrinsecamente superior?", "correct": false}]},
+    {"id": "L08-A01", "type": "assessment-case", "case": "uma pessoa usa repertório regional em entrevista oral e depois adapta parte das escolhas em documento solicitado; um avaliador afirma que a fala inicial prova desconhecimento da língua", "tasks": ["identificar generalização indevida", "explicar alternância de repertório", "identificar convenções que podem ser relevantes no documento", "propor feedback responsável"]},
+    {"id": "L08-P01", "type": "open-integrated-analysis", "prompt": "Analise um caso novo envolvendo variação, norma e julgamento social. Produza conclusão que preserve simultaneamente diversidade linguística, adequação contextual e limites de inferência sobre o falante.", "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"prescriptivismScored": false, "anythingGoesScored": false, "identityInferenceFromForm": false, "openResponseAutoValidated": false},
+  "completionEvidence": {"clusters": {"controlled": {"evidence": ["L08-A01"], "required": true}, "integrated": {"evidence": ["L08-P01"], "required": true}}, "completionRule": "a análise precisa sustentar diversidade e adequação sem cair em hierarquia ou relativismo simplista.", "requiresReliableEvaluatorFor": ["qualidade global da análise aberta"]}
+}

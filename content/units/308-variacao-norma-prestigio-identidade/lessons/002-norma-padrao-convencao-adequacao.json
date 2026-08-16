@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "N3-U08-L02",
+  "title": "Norma-padrão, convenção e adequação",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Compreender a norma-padrão e convenções formais como repertórios de alto valor funcional em determinados gêneros, sem tratá-los como descrição total da língua nem como medida de valor do falante.",
+  "competencies": ["distinguir convenção formal de uso geral", "identificar contexto em que a norma é funcionalmente exigida", "adaptar texto ao gênero", "preservar significado na adaptação", "evitar transformar adequação em hierarquia humana"],
+  "prerequisites": ["N3-U08-L01", "N3-U03-V01"],
+  "limits": ["norma-padrão não descreve todo uso real", "não ensinar que informal é errado por natureza", "não abandonar convenções formais em nome de relativismo", "não corrigir fala cotidiana fora de contexto"],
+  "media": {"tts": "opcional", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "purpose": "apoio"}], "generatedVisualResources": [{"type": "UI_RENDERED_NORM_CONTEXT_COMPARE", "purpose": "comparar uso corrente e convenção formal"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "comparação textual em gêneros distintos basta."},
+  "sequence": [
+    {"id": "L02-B01", "type": "context-contrast", "sameMessage": "pedido para enviar documento", "versions": [{"context": "chat entre colegas", "text": "Me manda o arquivo quando puder."}, {"context": "comunicado institucional", "text": "Envie o arquivo até sexta-feira, por favor."}], "teachingPoint": "diferença de registro não transforma um falante em mais competente que outro"},
+    {"id": "L02-C01", "type": "quick-check", "items": [{"question": "Conhecer norma formal amplia repertório de ação?", "correct": true}, {"question": "Usar uma forma informal em contexto informal prova desconhecimento da norma?", "correct": false}]},
+    {"id": "L02-A01", "type": "assessment-adaptation", "sourceContext": "mensagem informal", "targetContext": "requerimento institucional", "task": "adaptar apenas o que a situação exige e explicar as mudanças"},
+    {"id": "L02-P01", "type": "open-register", "prompt": "Produza duas versões da mesma mensagem para contextos diferentes e explique quais convenções mudaram e quais informações permaneceram.", "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"standardEqualsHumanValue": false, "informalAsAutomaticError": false, "formalConventionMayBeRequiredByContext": true},
+  "completionEvidence": {"clusters": {"controlled": {"evidence": ["L02-A01"], "required": true}, "transfer": {"evidence": ["L02-P01"], "required": true}}, "completionRule": "o estudante deve dominar adequação sem converter convenção em hierarquia humana."}
+}

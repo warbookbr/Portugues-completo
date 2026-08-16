@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "N3-U08-L01",
+  "title": "Variação como parte do funcionamento da língua",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Analisar variação regional, social, situacional e histórica como parte do funcionamento linguístico, distinguindo diferença sistemática de erro de desempenho ou inadequação contextual.",
+  "competencies": ["reconhecer dimensões de variação", "relacionar forma a contexto", "evitar hierarquia automática entre variedades", "distinguir diferença de lapso", "formular descrição sem caricatura"],
+  "prerequisites": ["N2-U08-V01", "N3-U01-V01"],
+  "limits": ["não imitar sotaques de forma caricatural", "variedade não mede inteligência", "nem toda diferença é livre em qualquer gênero", "não exigir terminologia sociolinguística extensa"],
+  "media": {"tts": "opcional apenas em exemplos cujo conteúdo, não o sotaque, é alvo", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "purpose": "instruções e exemplos neutros"}], "generatedVisualResources": [{"type": "UI_RENDERED_VARIATION_CONTEXT_MATRIX", "purpose": "relacionar forma, contexto e dimensão de variação"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "o alvo é análise contextual; sotaque não precisa ser simulado."},
+  "sequence": [
+    {"id": "L01-B01", "type": "variation-set", "examples": [{"form": "tu vais / você vai", "focus": "variação de tratamento/concordância em comunidades e contextos diferentes"}, {"form": "ter / haver em certos usos existenciais na fala cotidiana", "focus": "diferença entre uso corrente e convenção formal em gêneros específicos"}, {"form": "vocabulário regional para o mesmo objeto", "focus": "variação lexical sem hierarquia"}]},
+    {"id": "L01-C01", "type": "quick-check", "items": [{"question": "Uma forma regional indica menor capacidade linguística?", "correct": false}, {"question": "Uma forma pode ser normal em certa comunidade e inadequada a um gênero institucional específico?", "correct": true}]},
+    {"id": "L01-A01", "type": "assessment-description", "cases": ["mensagem entre amigos", "entrevista formal", "fala regional", "documento institucional"], "task": "descrever diferenças de escolha sem usar rótulos de superioridade"},
+    {"id": "L01-P01", "type": "open-analysis", "prompt": "Analise um conjunto de formas linguísticas contextualizadas e explique que tipo de variação pode estar envolvido e que informação adicional seria necessária antes de julgar adequação.", "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"prestigeEqualsCorrectness": false, "accentImitationRequired": false, "openResponseAutoValidated": false},
+  "completionEvidence": {"clusters": {"controlled": {"evidence": ["L01-A01"], "required": true}, "open": {"evidence": ["L01-P01"], "required": true}}, "completionRule": "o estudante deve descrever variação em contexto sem hierarquizar falantes."}
+}

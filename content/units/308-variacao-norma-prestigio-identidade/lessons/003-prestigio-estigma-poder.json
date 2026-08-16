@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "N3-U08-L03",
+  "title": "Prestígio, estigma e relações de poder",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Analisar como formas linguísticas podem receber prestígio ou estigma social sem confundir avaliação social com propriedades linguísticas intrínsecas ou competência geral do falante.",
+  "competencies": ["distinguir julgamento social de descrição linguística", "identificar estigma em enunciados", "reformular comentário preconceituoso", "analisar acesso desigual a repertórios valorizados", "explicar impacto de contexto institucional"],
+  "prerequisites": ["N3-U08-L01", "N3-U08-L02"],
+  "limits": ["não atribuir intenção preconceituosa sem evidência", "não negar que certas convenções tenham consequências institucionais", "não naturalizar prestígio como superioridade linguística", "não usar grupos reais como caricatura"],
+  "media": {"tts": "opcional", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "purpose": "apoio"}], "generatedVisualResources": [{"type": "UI_RENDERED_PRESTIGE_STIGMA_ANALYSIS", "purpose": "separar forma, contexto, julgamento e consequência"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "casos textuais simulados evitam caricaturas e permitem análise crítica."},
+  "sequence": [
+    {"id": "L03-B01", "type": "judgment-analysis", "statement": "Quem fala assim não sabe português.", "analysis": ["generaliza de uma forma contextual para competência inteira", "apaga variação", "pode ignorar adequação ao contexto em que a fala ocorreu"]},
+    {"id": "L03-C01", "type": "quick-check", "items": [{"question": "Prestígio social prova superioridade estrutural de uma variedade?", "correct": false}, {"question": "Convenções valorizadas podem ter consequências reais em seleção acadêmica/profissional?", "correct": true}]},
+    {"id": "L03-A01", "type": "assessment-prejudice", "cases": [{"comment": "Essa pessoa é incapaz porque usa uma forma regional.", "expected": "rejeitar inferência sobre capacidade"}, {"comment": "Neste documento, a convenção exigida pela instituição é outra.", "expected": "pode ser observação de adequação, dependendo do contexto"}], "task": "separar preconceito de orientação contextual legítima"},
+    {"id": "L03-P01", "type": "open-analysis", "prompt": "Analise uma situação de julgamento linguístico e proponha resposta que preserve simultaneamente respeito ao falante e informação útil sobre adequação institucional, se houver.", "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"prestigeAsIntrinsicQuality": false, "institutionalConsequencesDenied": false, "openResponseAutoValidated": false},
+  "completionEvidence": {"clusters": {"controlled": {"evidence": ["L03-A01"], "required": true}, "open": {"evidence": ["L03-P01"], "required": true}}, "completionRule": "o estudante deve separar julgamento social, adequação e competência linguística."}
+}
