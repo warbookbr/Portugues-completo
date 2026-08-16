@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "id": "N3-U02-L06",
+  "title": "Generalização, amostra e contraexemplo",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Reconhecer quando conclusões extrapolam exemplos ou amostras e usar contraexemplos para testar o alcance de afirmações gerais sem transformar uma exceção em resposta automática para toda questão empírica.",
+  "competencies": ["distinguir alguns, muitos e todos", "comparar alcance da amostra e da conclusão", "identificar amostra restrita", "usar contraexemplo para refutar afirmação universal quando pertinente", "reformular generalização para alcance sustentável"],
+  "prerequisites": ["N3-U02-L05"],
+  "limits": ["não exigir estatística avançada", "contraexemplo derruba afirmação universal compatível, mas não resolve sozinho toda questão empírica", "amostra pequena não é automaticamente inútil", "não confundir exceção com padrão"],
+  "media": {"tts": "opcional", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["casos", "feedback"], "purpose": "apoio"}], "generatedVisualResources": [{"type": "UI_RENDERED_SAMPLE_CLAIM_SCOPE", "locations": ["L06-B01", "L06-A01"], "purpose": "comparar amostra e alcance"}, {"type": "UI_RENDERED_COUNTEREXAMPLE_TEST", "locations": ["L06-C01", "L06-A02"], "purpose": "testar afirmações gerais"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "conjuntos de casos e escopos textuais bastam para observar generalização."},
+  "sequence": [
+    {"id": "L06-B01", "type": "worked-example", "sample": "12 participantes de uma única turma responderam a uma consulta; 10 preferiram material digital.", "claims": [{"text": "Naquela pequena consulta, a maioria preferiu material digital.", "status": "sustentada"}, {"text": "Todos os alunos da cidade preferem material digital.", "status": "generalização excessiva"}]},
+    {"id": "L06-C01", "type": "quick-check", "items": [{"claim": "Nenhum usuário precisa de atendimento presencial.", "case": "um usuário relata que só consegue resolver o procedimento presencialmente", "question": "O caso é contraexemplo à afirmação universal?", "correct": true}, {"question": "Esse único caso prova que a maioria precisa de atendimento presencial?", "correct": false}]},
+    {"id": "L06-A01", "type": "assessment-scope", "cases": [{"sample": "pesquisa com usuários que já frequentam o turno noturno", "claim": "a maioria de todos os moradores prefere turno noturno", "expected": "amostra não cobre o universo da conclusão"}, {"sample": "registro completo das 30 sessões do teste", "claim": "no teste, houve ao menos uma inscrição em todas as sessões", "expected": "conclusão limitada ao próprio registro"}]},
+    {"id": "L06-A02", "type": "counterexample", "claims": ["Todo procedimento digital é mais rápido para qualquer usuário.", "Alguns procedimentos digitais reduziram o tempo médio no teste local."], "task": "explicar em qual afirmação um único contraexemplo pode invalidar diretamente o quantificador universal"},
+    {"id": "L06-P01", "type": "open-reformulation", "prompt": "Receba uma conclusão ampla demais e reformule-a para combinar com a amostra fornecida, explicando o que deixou de afirmar.", "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"advancedStatisticsRequired": false, "counterexampleAsUniversalSolution": false, "openResponseAutoValidated": false, "timeLimit": false},
+  "completionEvidence": {"clusters": {"scope": {"evidence": ["L06-A01"], "required": true}, "counterexample": {"evidence": ["L06-A02"], "required": true}, "reformulation": {"evidence": ["L06-P01"], "required": true}}, "completionRule": "o estudante precisa controlar o alcance da conclusão em relação aos casos observados."}
+}
