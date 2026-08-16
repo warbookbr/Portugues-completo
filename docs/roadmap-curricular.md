@@ -72,95 +72,74 @@ U8   8 — Língua em interação: apresentação, discussão, registro e varia�
 U9   9 — Literatura, multimodalidade e comparação de fontes
 ```
 
-### N2-U1 — Leitura intermediária — CONCLUÍDA
+### Verificação e checkpoint de saída N2 — CONCLUÍDOS
 
-Cobertura: plano de leitura; foco e organização global; hierarquia de informações; integração de explícitos; cadeias referenciais; relações lógicas; inferência distribuída; ponto de vista com evidência; explícito/inferência/insuficiência; síntese própria.
-
-### N2-U2 — Palavras em sistema — CONCLUÍDA
-
-Escopo normativo: `docs/referencias-ortografia-nivel-2.md`.
-
-Cobertura: regra/padrão/consulta; ortografia em recorte documentado; paroxítonas; hiatos; famílias/base; afixos; derivação/composição; classes ampliadas; sinonímia/polissemia/ambiguidade/precisão; literal/figurado.
-
-### N2-U3 — Oração e termos — CONCLUÍDA
-
-Cobertura: frase, oração, período e locução verbal; sujeito em posições variadas; predicado; núcleo e expansão; complementação verbal introdutória; modificadores; concordância nominal/verbal em casos gerais; ordem, referência e ambiguidade; revisão sintática.
-
-### N2-U4 — Período, relações, regência e pontuação — CONCLUÍDA
-
-Escopo normativo: `docs/referencias-gramatica-nivel-2-u4.md`.
-
-Cobertura: período simples/composto; coordenação; subordinação inicial; conectores; pontuação estrutural; regência verbal/nominal frequente; crase central; colocação pronominal introdutória; revisão integrada.
-
-### N2-U5 — Coesão e coerência — CONCLUÍDA
-
-Cobertura: progressão temática; referenciação; repetição/substituição/elipse; conectores; lacunas, saltos e ambiguidades; consistência/contradição/contexto; transições; revisão global.
-
-### N2-U6 — Produção e reescrita — CONCLUÍDA
-
-Cobertura: planejamento global; parágrafos por função; narrativa; explicação; informação ligada a fonte; procedimento; resumo/paráfrase; adequação; revisão em camadas; versionamento.
-
-### N2-U7 — Argumentação inicial — CONCLUÍDA
-
-Cobertura: posição; fato/opinião/inferência; razões relevantes; exemplo/evidência; suficiência e limite; organização; objeção simples; fonte controlada; produção e reescrita argumentativa.
-
-A evidência disponível não precisa ser suficiente: reconhecer `não basta para concluir` é competência legítima.
-
-### N2-U8 — Língua em interação — CONCLUÍDA
-
-Cobertura: escuta estratégica; notas/síntese; planejamento e prática de apresentação; interação/reparo; discussão curta; registro/adequação; variação, norma e preconceito linguístico.
+`N2-EXIT-V01` usa oito agrupamentos integrados de transferência. O checkpoint em `docs/checkpoint-saida-nivel-2.md` auditou:
 
 ```text
-compreensão oral observável
-≠ tentativa oral registrada
-≠ produção oral compreensível validada externamente
-```
-
-### N2-U9 — Literatura, multimodalidade e fontes — CONCLUÍDA
-
-Cobertura: voz/perspectiva; personagem/tensão/transformação; poema/forma; figuras frequentes; humor e ironia de pistas claras; pluralidade interpretativa sustentada; multimodalidade/hipertexto acessíveis; autoria/origem/data/circulação; comparação de duas fontes; resumo/paráfrase com atribuição e resposta própria.
-
-A lacuna de humor/ironia detectada na auditoria pré-saída foi corrigida em L4, M4 e `N2-U09-V01` antes da criação de `N2-EXIT-V01`.
-
-### Verificação de saída N2 — CONCLUÍDA
-
-`N2-EXIT-V01` usa oito agrupamentos integrados de transferência:
-
-```text
-1. leitura + inferência + evidência + ponto de vista
-2. revisão linguística integrada
-3. produção própria + planejamento + revisão + reescrita
-4. argumentação própria + apoio
-5. compreensão oral + apresentação/discussão
-6. registro + variação + adequação
-7. literatura + multimodalidade acessível
-8. duas fontes + resumo/paráfrase + atribuição
-```
-
-Não há média global que compense ausência de competência central.
-
-### Checkpoint N2→N3 — APROVADO
-
-Fonte: `docs/checkpoint-saida-nivel-2.md`.
-
-Resultado:
-
-```text
-25 competências oficiais auditadas
+25 competências oficiais
 → 25 cobertas
 → 0 lacunas obrigatórias remanescentes
 ```
 
-A fronteira pedagógica está em `docs/transicao-n2-n3.md`.
+A fronteira N2→N3 está registrada em `docs/transicao-n2-n3.md`.
 
 ### Nível 3 — Avançado
 
 - **M1 concluído** — `docs/mapa-niveis-1-4.md`;
-- **M2–M5 pendentes**.
+- **M2 concluído** — 10 áreas em `docs/areas-nivel-3.md`;
+- **M3–M5 pendentes**.
 
 O N3 recebe como pressuposto curricular um usuário intermediário organizado: leitura de vários parágrafos, revisão funcional do recorte N2, produção/revisão de textos, argumentação inicial, oralidade curta, adequação/variação, literatura sustentada, multimodalidade acessível e comparação de duas fontes.
 
-O N3 deve aprofundar textos longos/densos, relações implícitas, contra-argumentação, fontes múltiplas, sintaxe complexa, gêneros formais/analíticos/profissionais, estilo, debate estruturado, consciência sociolinguística e leitura crítica de literatura/mídia.
+O M2 dimensionou as seguintes áreas:
+
+```text
+1. Leitura crítica e interpretação avançada
+2. Produção textual longa, formal e analítica
+3. Gramática avançada aplicada ao texto
+4. Argumentação, retórica e persuasão
+5. Coesão, coerência, semântica e discurso
+6. Gêneros formais, profissionais, públicos e de estudo
+7. Estilo, registro, precisão e edição
+8. Oralidade argumentativa e comunicação formal
+9. Variação, norma e consciência sociolinguística
+10. Literatura, multimodalidade e leitura crítica de mídia
+```
+
+### Decisões estruturais do M2 do N3
+
+**Fontes/pesquisa são transversais, não uma 11ª área artificial.** Responsabilidades principais:
+
+```text
+Área 1 → leitura, comparação e síntese de várias fontes
+Área 4 → qualidade de evidência em argumentação
+Área 6 → integração/atribuição de fontes em gêneros
+Área 10 → autoria, circulação, edição e enquadramento de mídia/fontes
+```
+
+**Ortografia não desaparece.** Ela passa a operar principalmente como revisão e consulta qualificada:
+
+```text
+Área 3 → convenções ligadas a estrutura/norma formal
+Área 7 → revisão ortográfica/editorial e consulta
+```
+
+**Produção e gêneros não são a mesma área:**
+
+```text
+Área 2 → processo de planejar, desenvolver, revisar e reescrever texto longo
+Área 6 → finalidades e convenções de famílias de gêneros
+```
+
+**Semântica/discurso e estilo também foram separados:**
+
+```text
+Área 5 → relações de sentido, implícitos, modalidade, coesão e discurso
+Área 7 → precisão, ritmo, voz, tom, concisão e edição
+```
+
+O M2 inclui revisão cruzada das competências oficiais de saída do N3 e dos domínios da matriz global; não ficou domínio obrigatório dependente de uma área implícita.
 
 ### Nível 4 — Domínio
 
@@ -177,33 +156,46 @@ NÍVEL 2 — M5 ✓
 │   └── checkpoint N2→N3 ✓
 │
 NÍVEL 3 — M1 ✓
-└── M2 — PRÓXIMO MARCO
+├── M2 ✓
+└── M3 — PRÓXIMO MARCO
 ```
 
 Próximo subpasso:
 
 ```text
-N3 M2 — dimensionar as grandes áreas do Nível 3
+N3 M3 — dimensionar as unidades do Nível 3
 ```
 
-O dimensionamento M2 deve transformar as grandes áreas de `docs/mapa-niveis-1-4.md` em áreas com:
+As unidades devem integrar áreas quando a progressão pedagógica exigir, em vez de criar mecanicamente uma unidade para cada área.
+
+Cada unidade M3 deve registrar:
 
 ```text
-Objetivo da área
+Objetivo da unidade
 → Competências ao concluir
-→ Conteúdos essenciais
+→ Conteúdos nucleares
+→ Retomadas e conexões
+→ Evidências de conclusão
 → Limites
 ```
+
+### Restrições para o M3 do N3
+
+- não criar uma unidade por área apenas para manter simetria;
+- não concentrar toda gramática antes de leitura/produção;
+- não deixar argumentação, fontes e escrita apenas para o final do nível;
+- não transformar gêneros em coleção de templates;
+- não tratar estilo apenas como polimento final;
+- garantir retomadas distribuídas de fontes, escrita, revisão, oralidade e leitura crítica;
+- prever casos normativos avançados específicos para conferência de fontes antes do M5;
+- não criar lições antes de M3 suficientemente consolidado.
 
 Depois:
 
 ```text
-N3 M3 — dimensionar unidades
-→ N3 M4 — dimensionar lições
+N3 M4 — dimensionar lições
 → N3 M5 — desenvolver conteúdo
 ```
-
-Não criar lições do N3 antes de M2/M3 suficientemente consolidados.
 
 ## Responsabilidades críticas do N3
 
@@ -235,6 +227,7 @@ O N3 deve aprofundar — não reensinar do zero — principalmente:
 10. Comparação de fontes preserva divergências e pode exigir investigação adicional.
 11. Em produção oral, o projeto só automatiza o que realmente observa; inteligibilidade exige avaliador confiável.
 12. Em multimodalidade, acessibilidade continua obrigatória para pistas decisivas.
+13. Casos normativos avançados, raros ou controversos devem ser conferidos em fontes adequadas antes de serem congelados no M5.
 
 ## Dependências não curriculares abertas
 
@@ -265,6 +258,8 @@ N2-U02 escopo normativo → docs/referencias-ortografia-nivel-2.md
 N2-U04 escopo normativo → docs/referencias-gramatica-nivel-2-u4.md
 N2 saída → docs/checkpoint-saida-nivel-2.md + content/levels/002-intermediario/exit-verification.json
 N2→N3 → docs/transicao-n2-n3.md
+
+N3 M2 → docs/areas-nivel-3.md
 
 estado atual → docs/roadmap-curricular.md
 conteúdo desenvolvido → content/
