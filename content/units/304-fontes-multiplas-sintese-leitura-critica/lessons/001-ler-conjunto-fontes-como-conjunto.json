@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "id": "N3-U04-L01",
+  "title": "Ler um conjunto de fontes como conjunto",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Planejar a leitura de três ou mais fontes relacionadas, definindo pergunta, função provável de cada material e profundidade necessária sem ler tudo do mesmo modo por reflexo.",
+  "competencies": ["definir pergunta de comparação", "identificar tema comum", "antecipar função de cada fonte por metadados e gênero", "escolher ordem inicial de leitura", "distinguir leitura panorâmica de aprofundada", "revisar estratégia conforme novas informações"],
+  "prerequisites": ["N3-U01-V01", "N2-U09-V01"],
+  "limits": ["mais fontes não significa automaticamente melhor análise", "não exigir a mesma profundidade para todo material", "metadados orientam, mas não decidem credibilidade", "não escolher fonte vencedora antes de ler"],
+  "media": {"tts": "opcional", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["fontes", "instruções"], "purpose": "apoio"}], "generatedVisualResources": [{"type": "UI_RENDERED_SOURCE_SET_PANEL", "locations": ["L01-B01", "L01-A01", "L01-P01"], "purpose": "visualizar conjunto e metadados"}, {"type": "UI_RENDERED_READING_PLAN", "locations": ["L01-A02", "L01-P01"], "purpose": "registrar pergunta, ordem e profundidade"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "fontes simuladas e painel textual acessível isolam a estratégia de leitura."},
+  "sequence": [
+    {"id": "L01-B01", "type": "source-set", "question": "O teste de horário ampliado aumentou acesso e quais limites apareceram?", "sources": [{"id": "A", "genre": "relatório operacional", "offers": "atendimentos, horários e espera"}, {"id": "B", "genre": "questionário de participantes", "offers": "experiência dos respondentes"}, {"id": "C", "genre": "nota da associação local", "offers": "demanda percebida e pedidos do bairro"}, {"id": "D", "genre": "resumo em boletim", "offers": "síntese de resultados divulgados"}], "teachingPoint": "fontes têm funções diferentes; a pergunta orienta o que aprofundar"},
+    {"id": "L01-C01", "type": "quick-check", "items": [{"question": "Para conferir o número de atendimentos, qual fonte parece primeiro mais próxima do registro?", "options": ["relatório operacional", "comentário genérico"], "correctIndex": 0}, {"question": "Isso torna o relatório automaticamente correto em tudo?", "options": ["não", "sim"], "correctIndex": 0}]},
+    {"id": "L01-A01", "type": "assessment-map", "sources": [{"genre": "ata", "metadata": "reunião de 5/8"}, {"genre": "infográfico posterior", "metadata": "resume dados da ata e de pesquisa"}, {"genre": "pesquisa de satisfação", "metadata": "respondentes voluntários"}], "tasks": ["definir pergunta comparável", "identificar o que cada fonte pode oferecer", "marcar uma informação que ainda não pode ser presumida"]},
+    {"id": "L01-A02", "type": "reading-order", "scenario": "verificar origem de uma afirmação numérica repetida em duas fontes secundárias", "task": "propor ordem de leitura e justificar onde aprofundaria primeiro", "acceptMultipleValid": true},
+    {"id": "L01-P01", "type": "open-plan", "prompt": "Receba um conjunto novo de 3–5 fontes e construa um plano de leitura com pergunta, ordem inicial, profundidade e motivo de cada decisão.", "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"sameDepthRequired": false, "sourceCountScored": false, "openResponseAutoValidated": false},
+  "completionEvidence": {"clusters": {"setMap": {"evidence": ["L01-A01"], "required": true}, "strategy": {"evidence": ["L01-A02", "L01-P01"], "required": true}}, "completionRule": "o estudante deve tratar fontes como conjunto orientado por pergunta, não como pilha de textos independentes."}
+}
