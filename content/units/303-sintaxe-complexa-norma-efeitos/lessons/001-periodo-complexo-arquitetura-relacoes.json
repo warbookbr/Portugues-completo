@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "id": "N3-U03-L01",
+  "title": "O período complexo como arquitetura de relações",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Compreender períodos complexos como arquiteturas de ideias e relações, decompondo e recompondo blocos funcionais sem contar mecanicamente formas verbais nem exigir análise sintática exaustiva.",
+  "competencies": ["identificar ideias/proposições relacionadas", "distinguir locução verbal de múltiplos eventos por contagem mecânica", "explicitar relação central entre blocos", "decompor período para leitura", "recompor preservando sentido e hierarquia"],
+  "prerequisites": ["N2-U04-V01", "N3-U01-V01"],
+  "limits": ["número de formas verbais não determina sozinho o número de orações", "não exigir taxonomia completa", "decompor é estratégia de compreensão, não regra de estilo", "período longo não é automaticamente avançado ou ruim"],
+  "media": {"tts": "opcional", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["períodos", "feedback"], "purpose": "apoio"}], "generatedVisualResources": [{"type": "UI_RENDERED_CLAUSE_ARCHITECTURE", "locations": ["L01-B01", "L01-A01", "L01-P01"], "purpose": "segmentar e relacionar blocos"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "segmentação textual interativa torna relações observáveis."},
+  "sequence": [
+    {"id": "L01-B01", "type": "worked-decomposition", "text": "A equipe decidiu ampliar o teste porque a procura cresceu, mas manteve o formulário antigo para comparar os resultados.", "blocks": ["a equipe decidiu ampliar o teste", "porque a procura cresceu", "mas manteve o formulário antigo", "para comparar os resultados"], "relations": ["causa", "oposição/adição contrastiva", "finalidade"]},
+    {"id": "L01-C01", "type": "quick-check", "items": [{"text": "A equipe vai continuar avaliando os dados.", "question": "'vai continuar avaliando' deve ser contado como três orações só porque há três formas verbais?", "correct": false}, {"text": "Quando o prazo terminou, a equipe publicou o relatório.", "question": "A relação temporal é recuperável?", "correct": true}]},
+    {"id": "L01-A01", "type": "assessment-architecture", "text": "Embora o atendimento tenha aumentado, a coordenação não ampliará o serviço até que os custos sejam revistos, porque o orçamento atual termina em setembro.", "tasks": ["segmentar blocos", "identificar concessão, condição temporal e causa", "explicar qual decisão é central"]},
+    {"id": "L01-A02", "type": "recomposition", "blocks": ["o relatório foi concluído", "alguns dados ainda precisam de confirmação", "a equipe publicou apenas os resultados verificados"], "targetRelations": ["contraste/concessão", "consequência editorial"], "acceptMultipleValid": true},
+    {"id": "L01-P01", "type": "open-analysis", "prompt": "Escolha um período complexo fornecido e produza uma versão segmentada que preserve as relações principais; depois explique uma relação que se perderia se os blocos fossem apenas colocados lado a lado.", "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"verbCountingAsClauseCounting": false, "fullParsingRequired": false, "openResponseAutoValidated": false, "timeLimit": false},
+  "completionEvidence": {"clusters": {"architecture": {"evidence": ["L01-A01"], "required": true}, "recomposition": {"evidence": ["L01-A02", "L01-P01"], "required": true}}, "completionRule": "o estudante deve explicar relações entre blocos, não apenas localizar verbos."}
+}
