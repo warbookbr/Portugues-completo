@@ -50,7 +50,7 @@ currículo fechado
 - **M2 concluído** — 11 áreas em `docs/areas-nivel-2.md`;
 - **M3 concluído** — 9 unidades em `docs/unidades-nivel-2.md`;
 - **M4 concluído** — **87 lições + 9 verificações integradas** em `docs/licoes-nivel-2.md` e documentos U1–U9;
-- **M5 em andamento** — **U1, U2 e U3 concluídas**; U4–U9 pendentes.
+- **M5 em andamento** — **U1–U6 concluídas**; U7–U9 pendentes.
 
 Arquitetura M4:
 
@@ -94,31 +94,45 @@ Regras centrais: padrão parcial não vira regra universal; consulta é autonomi
 10 lições + N2-U03-V01
 ```
 
-Cobertura:
+Cobertura: frase, oração, período e locução verbal; sujeito em posições variadas; predicado e funcionamento verbal; núcleo e expansão; complementação verbal introdutória; modificadores; concordância nominal/verbal em casos gerais; ordem, referência e ambiguidade; revisão sintática em passes.
 
-- frase, oração, período e locução verbal sem contagem mecânica de formas verbais;
-- sujeito antes/depois do verbo e recuperável pelo contexto/forma verbal;
-- predicado e funcionamento verbal em ação, estado, mudança e ocorrência;
-- núcleo e expansão de grupos nominais;
-- complementação verbal em construções transparentes, com e sem preposição;
-- modificadores de tempo, lugar e modo, separando papel estrutural de relevância comunicativa;
-- concordância nominal em grupos produtivos;
-- concordância verbal em sujeito simples, posposto e composto transparente;
-- ordem, referência e ambiguidade sintática com reformulações equivalentes;
-- revisão sintática em passes, preservando trechos corretos.
+Contraexemplos explícitos impedem as generalizações `sujeito = primeira palavra`, `verbo = ação`, `tudo depois do verbo = complemento` e `verbo concorda com o substantivo mais próximo`.
 
-A verificação integrada mantém nove agrupamentos obrigatórios e exige tarefa real de edição. Ela contém contraexemplos explícitos às generalizações `sujeito = primeira palavra`, `verbo = ação`, `tudo depois do verbo = complemento` e `verbo concorda com o substantivo mais próximo`.
+### N2-U4 — Do período simples ao composto: relações, regência e pontuação — CONCLUÍDA
 
-Limites preservados:
+```text
+11 lições + N2-U04-V01
+```
 
-- sem análise sintática completa;
-- sem taxonomia exaustiva de sujeito/predicado/transitividade;
-- regência normativa sistemática fica para U4;
-- concordâncias especiais/controversas ficam fora do recorte;
-- ordem não canônica clara não é corrigida por reflexo;
-- classificação isolada não compensa incapacidade de revisar uma construção real.
+Escopo normativo: `docs/referencias-gramatica-nivel-2-u4.md`.
 
-Nenhuma nova mídia humana obrigatória foi criada.
+Cobertura: período simples/composto; coordenação; subordinação inicial de causa, condição, tempo e finalidade; conectores pelo sentido; pontuação estrutural; regência verbal e nominal em corpus frequente; crase pela estrutura `a + a`; casos centrais com/sem crase; colocação pronominal introdutória na escrita formal; revisão integrada.
+
+Regras centrais: locução verbal não é contada mecanicamente; vírgula não é pausa para respirar; regência fora do corpus pede consulta; crase não é ensinada por palavra feminina ou truque isolado; convenção formal de colocação não vira estigma da fala brasileira.
+
+### N2-U5 — Coesão e coerência em textos de vários parágrafos — CONCLUÍDA
+
+```text
+9 lições + N2-U05-V01
+```
+
+Cobertura: coesão x coerência; progressão temática; cadeias referenciais; repetição/substituição/elipse; conectores entre parágrafos; lacunas, saltos e ambiguidades; consistência x contradição x mudança de contexto/perspectiva; transições e organização global; revisão em passes.
+
+Regras centrais: mais conectores não significa mais coesão; repetição não é erro automático; referente não é escolhido só por proximidade; divergência de perspectivas não é contradição automática; revisão não autoriza inventar fatos.
+
+### N2-U6 — Produzindo e reescrevendo textos de vários parágrafos — CONCLUÍDA
+
+```text
+10 lições + N2-U06-V01
+```
+
+Cobertura: planejamento global; distribuição funcional de parágrafos; narrativa; explicação; texto informativo ligado a fonte controlada; procedimento intermediário; resumo/paráfrase com atribuição; adequação ao gênero/leitor; revisão em camadas; reescrita com versionamento.
+
+A verificação integrada exige **duas produções próprias de gêneros diferentes**, tarefa de resumo/paráfrase com fonte, adaptação a dois contextos e reescrita com histórico. Questões fechadas não compensam ausência de autoria.
+
+Regras centrais: número de parágrafos não é meta; extensão não pontua por si; fatos fornecidos não podem ser inventados; formalidade não é qualidade absoluta; texto livre e qualidade global não recebem validação automática falsa; quantidade de alterações não mede qualidade da reescrita.
+
+Nenhuma nova mídia humana obrigatória foi criada em U5 ou U6.
 
 ### Níveis 3 e 4
 
@@ -134,22 +148,25 @@ NÍVEL 2 — M1–M4 ✓
     ├── U1 ✓
     ├── U2 ✓
     ├── U3 ✓
-    └── U4 — PRÓXIMO SUBPASSO
+    ├── U4 ✓
+    ├── U5 ✓
+    ├── U6 ✓
+    └── U7 — PRÓXIMO SUBPASSO
 ```
 
 Próximo subpasso:
 
 ```text
-N2-U04 — Do período simples ao composto: relações, regência e pontuação
-11 lições + verificação integrada
+N2-U07 — Argumentar: posição, razões, exemplos e evidências
+9 lições + verificação integrada
 ```
 
-Antes do M5 da U4, o recorte normativo de regência, crase e colocação pronominal deve ser conferido e registrado em fontes adequadas, assim como foi feito com a ortografia da U2.
+A U7 deve construir argumentação como relação entre posição e apoio, não como concordância ideológica. Deve distinguir razão, exemplo e evidência; trabalhar objeção simples sem antecipar debate avançado; e exigir produção argumentativa própria.
 
 Depois:
 
 ```text
-N2-U5 → U6 → U7 → U8 → U9
+N2-U8 → U9
 → verificação de saída N2
 → checkpoint N2→N3
 ```
@@ -184,6 +201,7 @@ O N2 deve avançar de autonomia básica para uso intermediário organizado e jus
 10. Argumentação avalia relação entre posição e apoio, não concordância ideológica.
 11. Interpretações literárias diferentes são aceitas quando sustentadas por evidência.
 12. Ao comparar fontes, divergência pode legitimamente exigir confirmação adicional.
+13. Em produção escrita, planejamento, texto próprio, revisão e versionamento devem ser evidências reais quando a unidade os exigir; tarefas fechadas não podem substituí-los.
 
 ## Dependências não curriculares abertas
 
@@ -211,6 +229,7 @@ N2 M2 → docs/areas-nivel-2.md
 N2 M3 → docs/unidades-nivel-2.md
 N2 M4 → docs/licoes-nivel-2.md + docs/licoes-nivel-2-u*.md
 N2-U02 escopo normativo → docs/referencias-ortografia-nivel-2.md
+N2-U04 escopo normativo → docs/referencias-gramatica-nivel-2-u4.md
 
 estado atual → docs/roadmap-curricular.md
 conteúdo desenvolvido → content/
