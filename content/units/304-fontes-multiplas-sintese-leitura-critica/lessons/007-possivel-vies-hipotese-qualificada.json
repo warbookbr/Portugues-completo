@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "id": "N3-U04-L07",
+  "title": "Possível viés: hipótese qualificada, não acusação automática",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Analisar interesses, financiamento, seleção unilateral e ausência de contraponto como sinais que podem justificar investigação de possível viés, formulando conclusões proporcionais sem presumir falsidade por identidade ou interesse.",
+  "competencies": ["identificar interesse relevante explicitamente informado", "distinguir interesse de prova de falsidade", "observar seleção unilateral", "formular hipótese qualificada", "pedir confirmação adicional quando necessário", "evitar cinismo como substituto de análise"],
+  "prerequisites": ["N3-U04-L05", "N3-U04-L06", "N3-U02-L08"],
+  "limits": ["não presumir viés por grupo ou instituição", "interesse não torna dado automaticamente falso", "ausência de contraponto só importa conforme o gênero e a finalidade", "não premiar desconfiança indiscriminada"],
+  "media": {"tts": "opcional", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["fontes", "contextos"], "purpose": "apoio"}], "generatedVisualResources": [{"type": "UI_RENDERED_BIAS_EVIDENCE_LADDER", "locations": ["L07-B01", "L07-A01", "L07-P01"], "purpose": "separar sinal, hipótese e conclusão"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "contextos simulados explicitam interesses sem associá-los a grupos reais."},
+  "sequence": [
+    {"id": "L07-B01", "type": "qualified-analysis", "case": {"source": "boletim produzido pela empresa que fornece o sistema avaliado", "content": "apresenta apenas indicadores favoráveis e não informa tempo de espera", "otherInfo": "um relatório independente registra também custos e espera"}, "levels": [{"statement": "Há interesse relevante e seleção de indicadores; vale comparar com dados independentes.", "status": "proporcional"}, {"statement": "A fonte é falsa porque foi produzida pela empresa.", "status": "não demonstrado"}]},
+    {"id": "L07-C01", "type": "quick-check", "items": [{"question": "Ter interesse no resultado prova que todos os dados estão errados?", "options": ["não", "sim"], "correctIndex": 0}, {"question": "Um conjunto unilateral de indicadores pode justificar buscar outra fonte?", "options": ["sim", "não"], "correctIndex": 0}]},
+    {"id": "L07-A01", "type": "assessment-qualification", "cases": [{"metadata": "estudo financiado por entidade que defende a política avaliada; método e dados são descritos", "task": "registrar interesse como contexto e avaliar método/evidência separadamente"}, {"metadata": "comentário sem autoria ou fonte para números citados", "task": "identificar lacuna de origem sem acusar falsificação automática"}, {"metadata": "relatório institucional que inclui resultados positivos e negativos", "task": "evitar inferir viés apenas pela identidade institucional"}]},
+    {"id": "L07-A02", "type": "language-calibration", "versions": ["A fonte é obviamente manipuladora.", "A fonte tem interesse direto no tema e destaca apenas resultados favoráveis; isso justifica comparar os dados com registros adicionais."], "correctIndex": 1, "task": "explicar por que a segunda formulação é mais proporcional"},
+    {"id": "L07-P01", "type": "open-qualified-analysis", "prompt": "Analise um caso novo com informações explícitas sobre autoria, interesse e seleção de conteúdo. Separe: fato observado, possível hipótese e próximo passo de confirmação.", "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"identityEqualsBias": false, "interestEqualsFalsehood": false, "cynicismScored": false, "openResponseAutoValidated": false},
+  "completionEvidence": {"clusters": {"qualifiedJudgment": {"evidence": ["L07-A01", "L07-A02"], "required": true}, "openAnalysis": {"evidence": ["L07-P01"], "required": true}}, "completionRule": "o estudante deve qualificar a hipótese de viés e indicar evidência/confirmacão, não apenas desconfiar."}
+}
