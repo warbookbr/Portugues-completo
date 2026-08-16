@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "id": "N3-U05-L12",
+  "title": "Produção longa B: gênero formal/público e revisão cruzada",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Produzir um texto longo de família diferente da produção analítica e demonstrar transferência ao comparar decisões de finalidade, arquitetura, registro, fontes, revisão e reescrita entre as duas produções.",
+  "competencies": ["selecionar gênero de família diferente", "analisar nova audiência/finalidade", "planejar arquitetura apropriada", "produzir texto formal/público próprio", "revisar e reescrever", "comparar decisões com a produção A", "justificar diferenças que decorrem do gênero e não apenas de correção superficial"],
+  "prerequisites": ["N3-U05-L06", "N3-U05-L07", "N3-U05-L08", "N3-U05-L09", "N3-U05-L10", "N3-U05-L11"],
+  "limits": ["não repetir a família da produção A", "número de mudanças não pontua", "mais formalidade não é automaticamente melhor", "tarefas fechadas não substituem segunda produção", "qualidade global exige avaliador confiável"],
+  "media": {"tts": "opcional", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "purpose": "apoio"}], "generatedVisualResources": [{"type": "UI_RENDERED_LONGFORM_WORKSPACE", "purpose": "produção B"}, {"type": "UI_RENDERED_VERSION_HISTORY", "purpose": "histórico"}, {"type": "UI_RENDERED_CROSS_GENRE_COMPARE", "purpose": "comparar produções A/B"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória; qualidade global requer avaliador confiável", "decisionRationale": "editor e quadro comparativo registram transferência entre gêneros."},
+  "sequence": [
+    {"id": "L12-P01", "type": "genre-selection", "allowedFamilies": ["relatório geral", "proposta/recomendação pública", "comunicação institucional extensa", "resenha crítica"], "rule": "deve ser família diferente da escolhida em L11"},
+    {"id": "L12-P02", "type": "plan", "required": ["finalidade", "audiência", "meio", "conteúdo", "arquitetura", "fontes se necessárias", "ação esperada"]},
+    {"id": "L12-P03", "type": "open-draft", "recordResponse": true, "automaticValidation": false},
+    {"id": "L12-P04", "type": "layered-review", "layers": ["adequação ao gênero", "conteúdo/fatos", "arquitetura", "registro", "fontes/evidência se usadas", "coesão", "norma"], "required": true, "recordResponse": true},
+    {"id": "L12-P05", "type": "open-rewrite", "preserveOriginal": true, "recordResponse": true, "automaticValidation": false},
+    {"id": "L12-P06", "type": "cross-genre-reflection", "compareWith": "N3-U05-L11", "required": ["duas decisões que mudaram por gênero/audiência", "uma decisão que permaneceu", "uma diferença de uso de fonte/evidência", "uma diferença de arquitetura/registro"], "recordResponse": true}
+  ],
+  "assessmentBehavior": {"closedTasksCanCompensate": false, "familyDifferenceRequired": true, "changeCountScored": false, "openResponseAutoValidated": false},
+  "completionEvidence": {"clusters": {"planning": {"evidence": ["L12-P01", "L12-P02"], "required": true}, "draft": {"evidence": ["L12-P03"], "required": true}, "reviewRewrite": {"evidence": ["L12-P04", "L12-P05"], "required": true}, "transfer": {"evidence": ["L12-P06"], "required": true}}, "completionRule": "segunda produção própria, reescrita e comparação entre gêneros são obrigatórias.", "requiresReliableEvaluatorFor": ["qualidade global", "adequação global do gênero"]}
+}
