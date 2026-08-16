@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "id": "N2-U07-L01",
+  "title": "Da opinião à posição argumentativa",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Distinguir tema, preferência e posição argumentativa, formulando afirmações claras que possam receber razões e ser discutidas sem exigir tese acadêmica formal.",
+  "competencies": ["identificar o tema", "identificar posição explícita", "distinguir preferência de posição discutível", "formular posição clara", "evitar posição vaga ou impossível de sustentar no contexto"],
+  "prerequisites": ["N1-U05-L09", "N2-U01-V01"],
+  "limits": ["não exigir tese acadêmica formal", "não usar temas de alta complexidade como condição de aprendizagem", "não avaliar posição por concordância ideológica", "não confundir intensidade de opinião com qualidade argumentativa"],
+  "media": {"tts": "opcional", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["situações", "afirmações", "feedback"], "purpose": "apoio"}], "generatedVisualResources": [{"type": "UI_RENDERED_TOPIC_POSITION_COMPARE", "locations": ["L01-B01", "L01-C01", "L01-A01"], "purpose": "separar tema de posição"}, {"type": "UI_RENDERED_CLAIM_EDITOR", "locations": ["L01-A02", "L01-P01"], "purpose": "formular posição própria"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "a competência é conceitual e textual."},
+  "sequence": [
+    {"id": "L01-B01", "type": "contrast", "examples": [{"text": "Transporte público.", "label": "tema"}, {"text": "Eu gosto de ônibus.", "label": "preferência"}, {"text": "A cidade deveria ampliar as faixas exclusivas de ônibus nos horários de pico.", "label": "posição argumentativa"}], "teachingPoint": "posição diz algo discutível sobre o tema e pode receber apoio"},
+    {"id": "L01-C01", "type": "quick-check", "items": [{"text": "A biblioteca deveria abrir uma noite por semana.", "correct": "posição"}, {"text": "Bibliotecas públicas.", "correct": "tema"}, {"text": "Prefiro estudar de manhã.", "correct": "preferência"}]},
+    {"id": "L01-A01", "type": "assessment-identify", "items": [{"theme": "horta comunitária", "options": ["Horta comunitária.", "A horta comunitária deveria reservar parte dos canteiros para oficinas de iniciantes.", "Eu acho verde uma cor bonita."], "correctIndex": 1}]},
+    {"id": "L01-A02", "type": "assessment-formulate", "prompt": "Formule uma posição clara sobre uma questão acessível fornecida pela interface.", "required": ["tema identificável", "afirmação discutível", "formulação suficientemente específica"], "recordResponse": true, "automaticValidation": "estrutura pode ser verificada parcialmente; qualidade global exige avaliador confiável"},
+    {"id": "L01-P01", "type": "open-position", "prompt": "Escolha uma questão cotidiana acessível e escreva uma posição que você poderia sustentar com razões. Não desenvolva ainda o argumento completo.", "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"ideologicalAgreementScored": false, "positionClarityScored": true, "timeLimit": false},
+  "completionEvidence": {"clusters": {"identify": {"evidence": ["L01-A01"], "rule": "distinguir tema, preferência e posição"}, "formulate": {"evidence": ["L01-A02", "L01-P01"], "rule": "formular posição clara"}}, "completionRule": "identificação e formulação são obrigatórias.", "notSufficient": ["apenas declarar gosto", "usar frase vaga sem posição identificável"]}
+}
