@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "id": "N3-U02-L05",
+  "title": "Suficiência, qualificação e força da conclusão",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Calibrar a força de conclusões ao apoio disponível, usando qualificadores e limites quando necessários e reconhecendo situações em que a evidência ainda não permite concluir.",
+  "competencies": ["distinguir apoio inexistente, fraco, limitado e forte no recorte", "identificar conclusão mais forte que a evidência", "usar qualificadores de alcance e certeza", "preservar incerteza real", "reconhecer quando a evidência não basta"],
+  "prerequisites": ["N3-U02-L03", "N3-U02-L04", "N3-U01-L08"],
+  "limits": ["qualificação não substitui evidência", "não exigir porcentagens formais de certeza", "apoio forte em um recorte não prova universalidade", "não forçar conclusão quando os dados são insuficientes"],
+  "media": {"tts": "opcional", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["argumentos", "feedback"], "purpose": "apoio"}], "generatedVisualResources": [{"type": "UI_RENDERED_EVIDENCE_STRENGTH_SCALE", "locations": ["L05-B01", "L05-C01", "L05-A01"], "purpose": "calibrar conclusão"}, {"type": "UI_RENDERED_CONCLUSION_REWRITE", "locations": ["L05-A02", "L05-P01"], "purpose": "reformular alcance e certeza"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "escala e comparação textual tornam explícita a relação entre apoio e força da conclusão."},
+  "sequence": [
+    {"id": "L05-B01", "type": "strength-scale", "evidence": "Em um teste de seis semanas, 71% das vagas extras foram ocupadas.", "conclusions": [{"text": "Ninguém quer vagas extras.", "status": "contradita pelo dado"}, {"text": "O teste sugere demanda pelas vagas extras nesse período.", "status": "proporcional"}, {"text": "Toda unidade deve ampliar vagas permanentemente.", "status": "extrapolação não sustentada"}]},
+    {"id": "L05-C01", "type": "quick-check", "items": [{"question": "Se duas medições pequenas apontam em direções opostas, a resposta pode ser 'a evidência disponível não basta'?", "options": ["sim", "não; é obrigatório escolher um lado"], "correctIndex": 0}, {"question": "Adicionar 'talvez' torna qualquer afirmação bem sustentada?", "options": ["não; ainda é preciso apoio pertinente", "sim"], "correctIndex": 0}]},
+    {"id": "L05-A01", "type": "assessment-strength", "cases": [{"evidence": "um relato individual", "claim": "a mudança melhora a experiência de todos", "expected": "apoio insuficiente para a generalização"}, {"evidence": "registros completos do teste mostram redução consistente do tempo mediano em todas as 12 sessões", "claim": "no teste, o tempo mediano foi menor de forma consistente", "expected": "apoio forte no recorte"}, {"evidence": "não há medição antes da mudança", "claim": "a mudança causou redução", "expected": "não há base para essa comparação causal"}]},
+    {"id": "L05-A02", "type": "rewrite-overclaim", "original": "O programa resolve o problema de acesso.", "evidence": "num teste local, 44 de 60 participantes disseram que o novo horário facilitou sua participação", "target": "produzir conclusão limitada ao recorte e à medida realmente observada", "acceptMultipleValid": true},
+    {"id": "L05-P01", "type": "own-calibration", "prompt": "Receba um pequeno conjunto de evidências, formule a conclusão mais forte que você considera sustentada e explique um limite que preservou.", "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"insufficiencyCanBeCorrect": true, "qualifierWithoutEvidenceAccepted": false, "openResponseAutoValidated": false, "timeLimit": false},
+  "completionEvidence": {"clusters": {"strengthJudgment": {"evidence": ["L05-A01"], "required": true}, "recalibration": {"evidence": ["L05-A02", "L05-P01"], "required": true}}, "completionRule": "o estudante deve ajustar conclusão ao apoio e aceitar insuficiência quando for o resultado correto."}
+}
