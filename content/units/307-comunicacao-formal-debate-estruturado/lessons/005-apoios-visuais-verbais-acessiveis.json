@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "N3-U07-L05",
+  "title": "Apoios visuais e verbais: função, clareza e acessibilidade",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Selecionar e desenhar apoios simples que realmente ajudem a acompanhar a exposição sem duplicar o discurso, sobrecarregar a atenção ou tornar informação decisiva inacessível.",
+  "competencies": ["decidir se apoio é necessário", "selecionar informação para apoio", "evitar slide-texto integral", "integrar dado e fala", "garantir equivalente textual/acessível", "explicar função do apoio"],
+  "prerequisites": ["N3-U07-L03", "N3-U07-L04", "N3-U04-V01"],
+  "limits": ["slides não são obrigatórios", "design visual sofisticado não é objetivo", "apoio não substitui explicação", "cor não pode ser única pista", "imagem decorativa não conta como ganho pedagógico"],
+  "media": {"tts": "opcional", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "purpose": "apoio"}], "generatedVisualResources": [{"type": "UI_RENDERED_ACCESSIBLE_PRESENTATION_SUPPORT", "purpose": "título, dado, esquema e equivalente textual"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "componentes semânticos da interface bastam; não há motivo pedagógico para gerar imagens."},
+  "sequence": [
+    {"id": "L05-B01", "type": "support-contrast", "samePoint": "tempo de espera caiu de 38 para 27 minutos", "options": [{"support": "cartão com os dois valores e rótulos", "analysis": "apoia comparação"}, {"support": "parágrafo inteiro com tudo que será falado", "analysis": "duplica e sobrecarrega"}]},
+    {"id": "L05-C01", "type": "quick-check", "items": [{"question": "Todo ponto da apresentação precisa de apoio visual?", "correct": false}, {"question": "Se um gráfico é decisivo, seus valores/relacões precisam de equivalente acessível?", "correct": true}]},
+    {"id": "L05-A01", "type": "assessment-support", "presentationPoints": ["resultado principal", "limitação", "próximo passo"], "candidateSupports": ["quadro com dois indicadores", "texto integral do roteiro", "lista curta das duas limitações"], "task": "selecionar apoios funcionais, rejeitar duplicação e descrever alternativa acessível"},
+    {"id": "L05-P01", "type": "own-support", "prompt": "Crie um apoio simples para um ponto da sua apresentação e explique o que ele acrescenta à fala e como permanece acessível.", "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"slidesRequired": false, "visualPolishScored": false, "accessibilityRequired": true, "openResponseAutoValidated": false},
+  "completionEvidence": {"clusters": {"controlled": {"evidence": ["L05-A01"], "required": true}, "own": {"evidence": ["L05-P01"], "required": true}}, "completionRule": "apoio só conta quando tem função clara e alternativa acessível."}
+}
