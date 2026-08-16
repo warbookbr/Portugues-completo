@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "N2-U09-L04",
+  "title": "Figuras frequentes e efeitos de sentido",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Reconhecer e interpretar comparação, metáfora, personificação e hipérbole em contextos claros, priorizando o efeito de sentido antes ou junto do nome técnico.",
+  "competencies": ["distinguir uso literal e figurado", "interpretar comparação", "interpretar metáfora", "interpretar personificação", "interpretar hipérbole", "explicar efeito de intensidade, imagem ou ênfase", "usar contexto para desambiguar"],
+  "prerequisites": ["N2-U09-L03", "N2-U02-L11"],
+  "limits": ["nome técnico sem interpretação não conta como domínio", "não ensinar taxonomia extensa", "não tratar toda expressão não literal como metáfora", "não exigir classificação quando o efeito pode ser explicado funcionalmente"],
+  "media": {"tts": "opcional", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["exemplos", "instruções", "feedback"], "purpose": "apoio"}], "generatedVisualResources": [{"type": "UI_RENDERED_LITERAL_FIGURATIVE_COMPARE", "locations": ["L04-B01", "L04-C01", "L04-A01"], "purpose": "comparar formulação figurada e neutra"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "os recursos podem ser interpretados em textos autorais curtos sem suporte visual obrigatório."},
+  "sequence": [
+    {"id": "L04-B01", "type": "worked-examples", "examples": [{"text": "A fila avançava como uma tartaruga.", "resource": "comparação", "effect": "destaca lentidão por imagem comparativa"}, {"text": "A cidade acordou tossindo fumaça.", "resource": "personificação", "effect": "atribui ação humana à cidade para enfatizar a poluição"}, {"text": "Esperei um século por cinco minutos.", "resource": "hipérbole", "effect": "exagera a duração percebida"}, {"text": "A dúvida era uma pedra no bolso.", "resource": "metáfora", "effect": "transforma a sensação de incômodo em imagem concreta"}], "teachingPoint": "o efeito interpretado é mais importante que decorar o rótulo"},
+    {"id": "L04-C01", "type": "quick-check", "items": [{"text": "A notícia caiu como um balde de água fria.", "task": "explicar o efeito antes de nomear o recurso", "expected": "imagem de impacto/surpresa desagradável; comparação"}, {"text": "Tenho mil coisas para fazer hoje.", "task": "explicar o efeito", "expected": "ênfase em grande quantidade; hipérbole"}]},
+    {"id": "L04-A01", "type": "assessment-figurative-effect", "items": [{"text": "O corredor engoliu o som dos passos.", "tasks": ["explicar sentido não literal", "indicar efeito de imagem", "nomear personificação/metáfora se útil"]}, {"text": "A resposta veio leve como papel.", "tasks": ["explicar comparação", "relacionar leveza a efeito de sentido"]}], "recordResponse": true, "automaticValidation": false},
+    {"id": "L04-P01", "type": "open-analysis", "prompt": "Interprete um recurso figurado em trecho novo. Primeiro explique o que ele faz no contexto; depois nomeie a figura se o nome técnico ajudar.", "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"labelWithoutInterpretationCounts": false, "exhaustiveTaxonomyRequired": false, "contextRequired": true, "timeLimit": false},
+  "completionEvidence": {"clusters": {"effect": {"evidence": ["L04-A01"], "rule": "interpretar efeito de recurso figurado"}, "transfer": {"evidence": ["L04-P01"], "rule": "aplicar em trecho novo"}}, "completionRule": "os dois agrupamentos são obrigatórios.", "notSufficient": ["nomear figura sem interpretar", "decidir apenas por palavra isolada"]}
+}

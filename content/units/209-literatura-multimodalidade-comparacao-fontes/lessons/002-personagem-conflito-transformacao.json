@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "N2-U09-L02",
+  "title": "Personagem, conflito e transformação sem molde fixo",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Acompanhar objetivos, tensões, decisões e possíveis mudanças de personagem, reconstruindo o percurso narrativo com evidência sem exigir herói, vilão, conflito explícito ou transformação final.",
+  "competencies": ["identificar objetivo de personagem", "reconhecer tensão ou obstáculo", "distinguir motivação explícita de inferida", "acompanhar decisão e consequência", "reconhecer transformação sustentada", "reconhecer narrativa sem transformação", "separar núcleo de detalhe"],
+  "prerequisites": ["N2-U09-L01", "N2-U01-V01"],
+  "limits": ["não exigir herói/vilão", "não exigir conflito explícito em toda narrativa", "não exigir transformação final", "não aceitar motivação inventada sem pista", "não confundir qualquer mudança de cenário com mudança de personagem"],
+  "media": {"tts": "opcional", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["narrativas", "instruções", "feedback"], "purpose": "apoio"}], "generatedVisualResources": [{"type": "UI_RENDERED_CHARACTER_PATH", "locations": ["L02-B01", "L02-C01", "L02-A01"], "purpose": "mapear objetivo, obstáculo, decisão e efeito"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "percurso narrativo pode ser reconstruído com texto e mapa de eventos."},
+  "sequence": [
+    {"id": "L02-B01", "type": "worked-narrative", "text": "Nara queria apresentar seu projeto sozinha, porque achava que pedir ajuda mostraria despreparo. Na véspera, percebeu que os dados estavam incompletos. Depois de hesitar, procurou um colega que conhecia a planilha. Na apresentação, explicou o que havia corrigido e agradeceu a ajuda.", "path": {"goal": "apresentar o projeto", "tension": "dados incompletos e resistência a pedir ajuda", "decision": "procurar o colega", "possibleTransformation": "passa a aceitar ajuda sem tratá-la como sinal de incapacidade"}, "teachingPoint": "transformação deve ser sustentada por decisões e atitudes no texto"},
+    {"id": "L02-C01", "type": "quick-check", "text": "Rui perdeu o ônibus, caminhou até o trabalho e chegou atrasado. No fim do dia, voltou para casa pelo mesmo caminho de sempre.", "items": [{"question": "Há obstáculo?", "correct": "sim, perdeu o ônibus"}, {"question": "O texto mostra transformação clara de Rui?", "correct": "não"}]},
+    {"id": "L02-A01", "type": "assessment-character-path", "text": "Mila evitava falar nas reuniões porque temia esquecer algum dado. Quando uma colega pediu sua opinião sobre um problema que ela conhecia bem, Mila consultou as notas e respondeu. Nas semanas seguintes, continuou levando notas e passou a participar quando tinha informação relevante.", "tasks": ["identificar tensão", "identificar decisão", "explicar mudança possível", "apontar evidência textual"], "recordResponse": true},
+    {"id": "L02-P01", "type": "open-analysis", "prompt": "Reconstrua o percurso de uma personagem em narrativa nova. Indique objetivo, tensão, decisão e se há ou não transformação. Use pistas do texto e aceite a possibilidade de não haver mudança.", "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"transformationRequiredInEveryStory": false, "textEvidenceRequired": true, "timeLimit": false},
+  "completionEvidence": {"clusters": {"characterPath": {"evidence": ["L02-A01"], "rule": "reconstruir percurso com evidência"}, "transfer": {"evidence": ["L02-P01"], "rule": "reconhecer mudança ou ausência dela em texto novo"}}, "completionRule": "os dois agrupamentos são obrigatórios.", "notSufficient": ["forçar transformação inexistente", "inventar motivação sem pista"]}
+}

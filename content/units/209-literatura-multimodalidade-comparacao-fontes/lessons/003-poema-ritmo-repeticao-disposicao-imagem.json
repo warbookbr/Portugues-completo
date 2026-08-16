@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "id": "N2-U09-L03",
+  "title": "Poema: ritmo, repetição, disposição e imagem",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Interpretar como repetição, quebra de verso, disposição gráfica, ritmo e imagens verbais podem contribuir para efeito e sentido em poemas autorais do curso, sem exigir rima ou métrica técnica.",
+  "competencies": ["identificar repetição funcional", "perceber efeito de quebra de verso", "comparar poema e versão em prosa", "relacionar imagem verbal a interpretação", "usar leitura em voz alta/TTS como apoio", "explicar efeito antes de classificar tecnicamente"],
+  "prerequisites": ["N1-U07-L04", "N2-U02-L11"],
+  "limits": ["poema não precisa rimar", "métrica técnica não é requisito", "não reduzir poesia a contagem de versos", "não aceitar efeito sem relação com elemento formal", "TTS não define uma interpretação única"],
+  "media": {"tts": "opcional para leitura", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["L03-B01", "L03-C01", "L03-A01"], "purpose": "leitura oral opcional para perceber ritmo e repetição"}], "generatedVisualResources": [{"type": "UI_RENDERED_POEM_LAYOUT", "locations": ["L03-B01", "L03-C01", "L03-A01"], "purpose": "preservar versos, espaços e repetição"}, {"type": "UI_RENDERED_POEM_PROSE_COMPARE", "locations": ["L03-B02", "L03-A01"], "purpose": "comparar forma poética e prosa"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "poemas são autorais do curso; TTS é apenas apoio e a disposição é renderizada pela UI."},
+  "sequence": [
+    {"id": "L03-B01", "type": "original-poem", "title": "Depois da chuva", "lines": ["A rua guarda", "pequenos espelhos.", "Passo devagar—", "um céu em cada poça,", "um céu,", "um céu", "que o sapato desfaz."], "questions": ["que efeito a repetição de 'um céu' pode produzir?", "como a quebra em versos curtos muda a leitura em relação a uma frase contínua?"], "teachingPoint": "repetição e disposição podem destacar uma imagem e alterar o ritmo sem depender de rima"},
+    {"id": "L03-B02", "type": "prose-compare", "prose": "Depois da chuva, as poças refletem o céu e são desfeitas quando alguém pisa nelas.", "task": "comparar o que a versão em prosa mantém e o que perde do efeito de repetição e imagem"},
+    {"id": "L03-C01", "type": "quick-check", "poem": ["Bate o relógio.", "Bate de novo.", "A sala não anda," ,"mas a tarde vai."], "items": [{"question": "Qual recurso é evidente?", "correct": "repetição de 'bate'"}, {"question": "Uma interpretação plausível do contraste final?", "correct": "o espaço parece parado enquanto o tempo passa"}], "acceptEquivalentInterpretation": true},
+    {"id": "L03-A01", "type": "assessment-poem", "poem": ["Na janela," ,"a luz entra em tiras.", "No chão," ,"desenha caminhos", "que ninguém percorre."], "tasks": ["identificar um recurso formal", "explicar um efeito plausível", "relacionar a imagem verbal à interpretação", "comparar brevemente com uma paráfrase em prosa"], "recordResponse": true, "automaticValidation": false},
+    {"id": "L03-P01", "type": "open-interpretation", "prompt": "Leia um poema autoral novo e relacione pelo menos um recurso de forma ou repetição a um efeito de sentido plausível. Use o texto como evidência.", "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"rhymeRequired": false, "technicalMeterRequired": false, "singleInterpretationRequired": false, "textEvidenceRequired": true, "timeLimit": false},
+  "completionEvidence": {"clusters": {"formalEffect": {"evidence": ["L03-A01"], "rule": "relacionar recurso formal a efeito plausível"}, "transfer": {"evidence": ["L03-P01"], "rule": "interpretar poema novo com evidência"}}, "completionRule": "os dois agrupamentos são obrigatórios.", "notSufficient": ["apenas contar versos", "nomear recurso sem explicar efeito"]}
+}
