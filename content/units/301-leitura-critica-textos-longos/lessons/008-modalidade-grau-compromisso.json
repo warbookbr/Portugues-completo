@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "N3-U01-L08",
+  "title": "Modalidade e grau de compromisso",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Interpretar e usar marcas de possibilidade, probabilidade, certeza, obrigação, recomendação e limitação para calibrar o grau de compromisso de uma afirmação à evidência disponível.",
+  "competencies": ["comparar graus de certeza", "distinguir possibilidade de conclusão categórica", "interpretar obrigação e recomendação", "reconhecer qualificador que limita alcance", "escolher formulação compatível com evidência", "explicar efeito de apagar ou acrescentar modalização"],
+  "prerequisites": ["N3-U01-L05", "N3-U01-L06", "N3-U01-L07"],
+  "limits": ["forma mais categórica não é automaticamente melhor", "modalidade não se reduz a lista de verbos", "qualificador não compensa ausência total de evidência", "não exigir terminologia linguística avançada"],
+  "media": {"tts": "opcional", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["pares de frases", "texto", "feedback"], "purpose": "apoio"}], "generatedVisualResources": [{"type": "UI_RENDERED_MODALITY_SCALE", "locations": ["L08-B01", "L08-C01", "L08-A01"], "purpose": "comparar força de formulações sem tratar a escala como regra absoluta"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "modalidade pode ser analisada diretamente em formulações textuais."},
+  "sequence": [
+    {"id": "L08-B01", "type": "worked-modality", "evidence": "Em seis semanas, 18 de 24 participantes que responderam à consulta afirmaram preferir o novo horário; seis não responderam.", "versions": [{"text": "Todos os participantes preferem o novo horário.", "status": "too-strong", "reason": "universaliza além dos dados"}, {"text": "A consulta mostra que a maioria dos respondentes preferiu o novo horário.", "status": "well-calibrated"}, {"text": "Os resultados podem indicar apoio ao novo horário entre quem respondeu, mas não permitem afirmar a preferência de todos os participantes.", "status": "well-qualified"}], "teachingPoint": "o grau de compromisso deve acompanhar o alcance da evidência"},
+    {"id": "L08-C01", "type": "modality-effect", "items": [{"pair": ["A mudança resolverá o problema.", "A mudança pode reduzir parte do problema."], "task": "explicar diferença de compromisso"}, {"pair": ["É obrigatório enviar o formulário.", "É recomendável enviar o formulário."], "task": "distinguir obrigação de recomendação"}, {"pair": ["Os dados sugerem uma tendência.", "Os dados provam uma tendência."], "task": "escolher a forma compatível quando a amostra é limitada", "correct": "sugerem"}]},
+    {"id": "L08-A01", "type": "assessment-modality", "text": "Um teste com 40 voluntários mostrou redução média de tempo em uma tarefa. O relatório informa que o grupo era pequeno e que a atividade foi realizada em ambiente controlado.", "tasks": ["escolher entre três conclusões com graus de força diferentes", "justificar a escolha pelo tamanho/escopo", "reformular uma conclusão forte demais", "identificar uma marca de limitação adequada"], "recordResponse": true},
+    {"id": "L08-P01", "type": "open-calibration", "prompt": "Receba um conjunto novo de evidências e escreva duas versões da conclusão: uma inadequadamente forte e outra calibrada. Explique o que mudou no grau de compromisso.", "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"strongerStatementPreferred": false, "evidenceCalibrationRequired": true, "technicalTerminologyRequired": false, "timeLimit": false},
+  "completionEvidence": {"clusters": {"interpret": {"evidence": ["L08-A01"], "required": true}, "produce": {"evidence": ["L08-P01"], "required": true}}, "completionRule": "interpretar e produzir modalização proporcional são obrigatórios; linguagem mais categórica não compensa desalinhamento com a evidência.", "requiresReliableEvaluatorFor": ["reformulação aberta"]}
+}
