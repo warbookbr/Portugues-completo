@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "id": "N3-U04-L02",
+  "title": "Origem, autoria e cadeia de circulação",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Reconstruir a circulação de uma informação entre registro original, republicação, resumo e comentário, identificando transformações sem supor que proximidade da origem garante verdade absoluta.",
+  "competencies": ["distinguir fonte original e material derivado", "seguir referência controlada até origem", "comparar formulação original e resumo", "detectar informação acrescentada ou omitida", "identificar qual material é mais próximo do registro de determinada afirmação", "preservar utilidade possível de fonte secundária"],
+  "prerequisites": ["N3-U04-L01", "N2-U09-L07"],
+  "limits": ["original não significa automaticamente verdadeiro", "secundário não significa inútil", "não inferir cópia indevida apenas por semelhança", "não exigir navegação aberta"],
+  "media": {"tts": "opcional", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["fontes", "feedback"], "purpose": "apoio"}], "generatedVisualResources": [{"type": "UI_RENDERED_SOURCE_LINEAGE", "locations": ["L02-B01", "L02-A01", "L02-P01"], "purpose": "mapear circulação e derivações"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "cadeias simuladas com metadados e trechos permitem rastreamento sem web aberta."},
+  "sequence": [
+    {"id": "L02-B01", "type": "lineage", "chain": [{"id": "A", "type": "registro original", "text": "Foram atendidas 148 pessoas em julho."}, {"id": "B", "type": "boletim institucional", "source": "A", "text": "O serviço realizou 148 atendimentos em julho."}, {"id": "C", "type": "comentário local", "source": "B", "text": "O serviço atendeu quase 150 pessoas e deveria ser ampliado."}], "teachingPoint": "C mistura paráfrase do dado com conclusão própria"},
+    {"id": "L02-C01", "type": "quick-check", "items": [{"question": "Para verificar o número 148, qual material está mais próximo do registro?", "options": ["A", "C"], "correctIndex": 0}, {"question": "O comentário C pode ainda ser útil para estudar opinião/repercussão?", "options": ["sim", "não"], "correctIndex": 0}]},
+    {"id": "L02-A01", "type": "assessment-lineage", "materials": [{"id": "R", "type": "ata", "statement": "o teste será prorrogado por 60 dias"}, {"id": "S", "type": "resumo", "source": "R", "statement": "o projeto continuará por mais dois meses"}, {"id": "T", "type": "post de comentário", "source": "S", "statement": "o projeto foi aprovado definitivamente"}], "tasks": ["mapear cadeia", "identificar onde o sentido muda", "escolher material para verificar duração original"]},
+    {"id": "L02-A02", "type": "original-vs-derivative", "original": "62% dos respondentes disseram preferir o novo canal.", "derivative": "A maioria dos usuários prefere o novo canal.", "task": "explicar o que foi ampliado indevidamente de respondentes para usuários em geral"},
+    {"id": "L02-P01", "type": "open-lineage", "prompt": "Reconstrua a cadeia de circulação de uma afirmação em quatro materiais fornecidos e registre o que cada transformação preserva, acrescenta ou perde.", "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"originalEqualsTruth": false, "secondaryEqualsUseless": false, "openResponseAutoValidated": false},
+  "completionEvidence": {"clusters": {"lineage": {"evidence": ["L02-A01"], "required": true}, "transformation": {"evidence": ["L02-A02", "L02-P01"], "required": true}}, "completionRule": "é preciso rastrear a origem e reconhecer transformações de sentido sem usar hierarquia simplista de valor."}
+}
