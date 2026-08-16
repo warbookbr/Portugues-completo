@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "N3-U08-L04",
+  "title": "Língua, identidade e pertencimento",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Compreender escolhas linguísticas como possíveis marcas de pertencimento, proximidade, posição e identidade sem reduzir pessoas a uma única variedade ou inferir identidade a partir de uma forma isolada.",
+  "competencies": ["identificar função identitária possível", "relacionar escolha a grupo/situação quando o contexto fornece base", "distinguir pertencimento de estereótipo", "analisar mudança de repertório entre contextos", "evitar inferência identitária sem evidência"],
+  "prerequisites": ["N3-U08-L01", "N3-U08-L03"],
+  "limits": ["uma forma não identifica automaticamente origem ou classe", "não essencializar grupos", "não exigir abandono de variedade de pertencimento", "alternância de repertório não implica falsidade de identidade"],
+  "media": {"tts": "opcional", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "purpose": "apoio"}], "generatedVisualResources": [{"type": "UI_RENDERED_IDENTITY_CONTEXT_MAP", "purpose": "relacionar escolha, contexto e pertencimento sem inferência automática"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "situações textuais controladas permitem discutir identidade sem simular sotaques."},
+  "sequence": [
+    {"id": "L04-B01", "type": "contextual-choice", "person": "mesma pessoa", "contexts": ["conversa com familiares", "apresentação profissional", "grupo on-line de interesse"], "teachingPoint": "repertório pode mudar sem que uma versão seja 'a verdadeira' e outra 'falsa'"},
+    {"id": "L04-C01", "type": "quick-check", "items": [{"question": "Uma palavra regional basta para concluir com certeza onde alguém nasceu?", "correct": false}, {"question": "Escolhas linguísticas podem sinalizar pertencimento em contexto?", "correct": true}]},
+    {"id": "L04-A01", "type": "assessment-inference", "cases": [{"evidence": "uma forma lexical isolada", "claim": "identidade completa do falante", "expected": "inferência insuficiente"}, {"evidence": "falante explica que escolhe certo repertório para marcar pertencimento em um grupo", "claim": "função identitária nesse contexto", "expected": "sustentado pelo próprio contexto"}]},
+    {"id": "L04-P01", "type": "open-analysis", "prompt": "Analise uma situação em que a mesma pessoa adapta repertório entre contextos. Explique o que pode ser concluído e o que seria estereótipo sem base.", "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"identityInferredFromSingleForm": false, "repertoireShiftAsInauthenticity": false, "openResponseAutoValidated": false},
+  "completionEvidence": {"clusters": {"controlled": {"evidence": ["L04-A01"], "required": true}, "open": {"evidence": ["L04-P01"], "required": true}}, "completionRule": "a análise deve reconhecer identidade possível sem essencializar o falante."}
+}
