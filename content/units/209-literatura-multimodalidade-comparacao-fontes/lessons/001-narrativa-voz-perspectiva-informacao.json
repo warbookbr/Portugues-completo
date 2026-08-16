@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "N2-U09-L01",
+  "title": "Narrativa: voz, perspectiva e construção de informação",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Identificar quem conta e de que perspectiva uma narrativa é percebida, explicando como essa posição seleciona ou limita as informações disponíveis ao leitor.",
+  "competencies": ["identificar voz narrativa", "distinguir narrador participante de narrador externo", "reconhecer informação conhecida pela voz", "reconhecer informação fora do alcance da perspectiva", "comparar versões de um mesmo acontecimento", "sustentar análise com trecho"],
+  "prerequisites": ["N1-U07-V01", "N2-U01-L08"],
+  "limits": ["não exigir taxonomia narratológica extensa", "não reduzir primeira pessoa a autobiografia", "não supor que narrador externo sabe tudo", "não aceitar afirmação sobre perspectiva sem evidência textual"],
+  "media": {"tts": "opcional", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["textos autorais", "instruções", "feedback"], "purpose": "apoio"}], "generatedVisualResources": [{"type": "UI_RENDERED_PERSPECTIVE_COMPARE", "locations": ["L01-B01", "L01-C01", "L01-A01"], "purpose": "comparar versões e informação disponível"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "a competência é textual e pode ser trabalhada com narrativas autorais curtas."},
+  "sequence": [
+    {"id": "L01-B01", "type": "paired-narratives", "versionA": "Cheguei à estação e vi o painel apagado. Esperei alguns minutos sem saber por que o trem não vinha. Só depois ouvi o aviso sobre uma falha na linha.", "versionB": "Quando Marina chegou à estação, a equipe técnica já tentava corrigir uma falha na linha. Ela, porém, ainda não sabia disso e olhava o painel apagado.", "questions": ["o que Marina sabe em cada versão?", "que informação o leitor recebe na versão B antes da personagem?"], "teachingPoint": "perspectiva pode limitar a personagem e, ao mesmo tempo, permitir ao leitor saber mais dependendo da voz narrativa"},
+    {"id": "L01-C01", "type": "quick-check", "text": "Ouvi a porta fechar no corredor, mas não consegui ver quem saiu.", "items": [{"question": "A voz sabe quem saiu?", "correct": "não"}, {"question": "Qual trecho sustenta isso?", "correct": "não consegui ver quem saiu"}]},
+    {"id": "L01-A01", "type": "assessment-perspective", "text": "Do alto da varanda, Caio observava as pessoas correndo para se proteger da chuva. Ele imaginou que a feira seria cancelada, mas não ouviu a conversa dos organizadores na sala ao lado.", "tasks": ["identificar a perspectiva dominante", "dizer uma informação acessível a Caio", "dizer uma informação que o texto não permite atribuir a Caio", "citar trecho de apoio"], "recordResponse": true},
+    {"id": "L01-P01", "type": "open-interpretation", "prompt": "Leia uma narrativa nova e explique como a perspectiva escolhida controla o que o leitor ou a personagem pode saber. Use pelo menos um trecho como evidência.", "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"technicalTaxonomyRequired": false, "textEvidenceRequired": true, "timeLimit": false},
+  "completionEvidence": {"clusters": {"identifyPerspective": {"evidence": ["L01-A01"], "rule": "identificar voz/perspectiva e limites"}, "transfer": {"evidence": ["L01-P01"], "rule": "explicar efeito em texto novo com evidência"}}, "completionRule": "os dois agrupamentos são obrigatórios.", "notSufficient": ["nomear primeira/terceira pessoa sem explicar informação", "atribuir conhecimento não disponível no texto"]}
+}
