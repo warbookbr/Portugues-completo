@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "N3-U05-L02",
+  "title": "Macroplanejamento: foco, questão, tese e conteúdo",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Selecionar e hierarquizar conteúdo para texto longo, definindo foco, questão ou tese apenas quando a situação e o gênero exigirem.",
+  "competencies": ["delimitar foco", "formular questão orientadora", "usar tese quando pertinente", "separar essencial, apoio, exemplo e conteúdo lateral", "relacionar fontes a funções no texto", "reduzir escopo excessivo"],
+  "prerequisites": ["N3-U05-L01", "N3-U02-V01", "N3-U04-V01"],
+  "limits": ["tese não é obrigatória em todo gênero", "quantidade de tópicos não mede qualidade", "plano não deve conter o texto inteiro", "não acumular fontes sem função"],
+  "media": {"tts": "opcional", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "purpose": "apoio"}], "generatedVisualResources": [{"type": "UI_RENDERED_MACRO_PLAN", "purpose": "hierarquizar foco, conteúdo e fontes"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "mapa textual é suficiente para planejamento."},
+  "sequence": [
+    {"id": "L02-B01", "type": "worked-plan", "topic": "piloto de atendimento noturno", "purpose": "analisar resultados", "focus": "acesso, espera e limites do teste", "essential": ["volume", "espera", "escopo", "avaliação de participantes"], "lateral": ["cor da sala"]},
+    {"id": "L02-C01", "type": "quick-check", "items": [{"question": "Um relatório factual precisa ter tese opinativa?", "correct": false}, {"question": "Um artigo de opinião normalmente precisa de posição/tese identificável?", "correct": true}]},
+    {"id": "L02-A01", "type": "assessment-plan", "sourceSet": "quatro fontes controladas sobre um programa", "tasks": ["delimitar foco", "escolher 3–5 núcleos", "ligar cada fonte a uma função", "retirar dois tópicos laterais"]},
+    {"id": "L02-P01", "type": "open-plan", "prompt": "Crie macroplano próprio para uma situação nova, justificando foco e o que decidiu não incluir.", "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"thesisAlwaysRequired": false, "topicCountScored": false, "openResponseAutoValidated": false},
+  "completionEvidence": {"clusters": {"controlledPlan": {"evidence": ["L02-A01"], "required": true}, "ownPlan": {"evidence": ["L02-P01"], "required": true}}, "completionRule": "o plano deve ser seletivo, funcional e proporcional ao gênero."}
+}
