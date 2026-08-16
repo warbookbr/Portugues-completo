@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "id": "N3-U03-L07",
+  "title": "Voz, agente e visibilidade no texto",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Comparar construções ativas, passivas e outras reformulações observando como alteram foco e visibilidade dos participantes, sem inferir automaticamente formalidade, evasão ou intenção de ocultar agente.",
+  "competencies": ["identificar participante tornado mais visível", "reconhecer agente explícito ou omitido", "comparar ativa e passiva", "analisar nominalização em contraste funcional", "escolher formulação adequada à finalidade", "evitar inferir intenção sem contexto"],
+  "prerequisites": ["N3-U03-L01", "N3-U03-L06"],
+  "limits": ["passiva não é automaticamente formal", "passiva não é automaticamente evasiva", "agente omitido não prova intenção de esconder", "nominalização não é automaticamente melhor ou pior"],
+  "media": {"tts": "opcional", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["versões", "feedback"], "purpose": "apoio"}], "generatedVisualResources": [{"type": "UI_RENDERED_VOICE_VISIBILITY_COMPARE", "locations": ["L07-B01", "L07-A01", "L07-A02"], "purpose": "comparar foco e participantes"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "reformulações textuais controladas isolam foco e visibilidade."},
+  "sequence": [
+    {"id": "L07-B01", "type": "voice-contrast", "versions": [{"text": "A equipe técnica revisou os dados.", "focus": "agente explícito em posição inicial"}, {"text": "Os dados foram revisados pela equipe técnica.", "focus": "dados em posição temática; agente ainda explícito"}, {"text": "Os dados foram revisados.", "focus": "processo/resultado em primeiro plano; agente não aparece"}, {"text": "A revisão dos dados terminou ontem.", "focus": "processo nominalizado"}], "teachingPoint": "a escolha muda visibilidade, mas a intenção precisa de contexto"},
+    {"id": "L07-C01", "type": "quick-check", "items": [{"question": "Uma passiva sem agente prova que o autor quer esconder alguém?", "options": ["não", "sim"], "correctIndex": 0}, {"question": "Uma ativa pode ser adequada em texto formal?", "options": ["sim", "não"], "correctIndex": 0}]},
+    {"id": "L07-A01", "type": "assessment-purpose", "scenarios": [{"purpose": "destacar que o relatório, e não outros documentos, foi aprovado", "options": ["O relatório foi aprovado pela comissão.", "A comissão aprovou o relatório."], "preferredIndex": 0, "note": "a outra forma continua gramatical; a escolha é de foco"}, {"purpose": "deixar claro quem tomou a decisão", "options": ["A diretoria cancelou a etapa.", "A etapa foi cancelada."], "preferredIndex": 0}]},
+    {"id": "L07-A02", "type": "visibility-analysis", "text": "Foi decidido que o prazo seria alterado.", "context": "o documento precisa registrar responsabilidade institucional", "task": "propor reformulação que explicite o agente se ele estiver disponível no contexto e explicar por quê"},
+    {"id": "L07-P01", "type": "open-choice", "prompt": "Receba um evento e duas finalidades de gênero diferentes. Produza formulações adequadas a cada finalidade e explique o que ficou mais ou menos visível.", "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"passiveAsAutomaticError": false, "hiddenAgentIntentInferred": false, "openResponseAutoValidated": false},
+  "completionEvidence": {"clusters": {"purposeChoice": {"evidence": ["L07-A01"], "required": true}, "visibility": {"evidence": ["L07-A02", "L07-P01"], "required": true}}, "completionRule": "o estudante deve explicar efeitos de visibilidade e foco sem atribuir intenção não sustentada."}
+}
