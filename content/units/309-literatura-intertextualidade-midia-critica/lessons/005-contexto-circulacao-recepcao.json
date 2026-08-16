@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "N3-U09-L05",
+  "title": "Contexto, circulação e recepção sem determinismo",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Usar informações de contexto de produção e circulação para ampliar interpretação sem substituir leitura do texto nem tratar contexto como chave única e determinista.",
+  "competencies": ["distinguir evidência textual e contextual", "usar contexto pertinente", "evitar biografismo automático", "comparar recepções possíveis", "revisar leitura diante de nova informação", "reconhecer limite do contexto fornecido"],
+  "prerequisites": ["N3-U09-L01", "N3-U04-V01"],
+  "limits": ["contexto não decide sozinho significado", "biografia não explica automaticamente texto", "recepção diferente não prova leitura errada", "não exigir história literária enciclopédica"],
+  "media": {"tts": "opcional", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK"}], "generatedVisualResources": [{"type": "UI_RENDERED_TEXT_CONTEXT_EVIDENCE", "purpose": "separar pista textual, contexto e inferência"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "metadados didáticos e texto autoral permitem controlar a relação texto-contexto."},
+  "sequence": [
+    {"id": "L05-B01", "type": "context-layer", "text": "poema autoral sobre espera e fronteiras", "context": "publicado em boletim de uma comunidade após mudança de regras de circulação", "teachingPoint": "o contexto pode fortalecer certas leituras, mas imagens do poema continuam precisando ser analisadas"},
+    {"id": "L05-C01", "type": "quick-check", "items": [{"question": "Conhecer a biografia do autor elimina a necessidade de ler o texto?", "correct": false}, {"question": "Contexto pode alterar a plausibilidade de uma interpretação?", "correct": true}]},
+    {"id": "L05-A01", "type": "assessment-context", "materials": ["texto autoral", "duas informações contextuais pertinentes", "uma informação lateral"], "task": "integrar apenas o contexto relevante e justificar o que não usou"},
+    {"id": "L05-P01", "type": "open-analysis", "prompt": "Reveja uma interpretação depois de receber contexto adicional. Registre o que mudou, o que permaneceu e por quê.", "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"contextAsMasterKey": false, "biographyRequired": false, "openResponseAutoValidated": false},
+  "completionEvidence": {"clusters": {"controlled": {"evidence": ["L05-A01"], "required": true}, "revision": {"evidence": ["L05-P01"], "required": true}}, "completionRule": "contexto deve dialogar com evidência textual, não substituí-la."}
+}
