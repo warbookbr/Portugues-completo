@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "N2-U08-L06",
+  "title": "Discussão curta: posição, razão, evidência e escuta",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Participar de discussão curta mantendo o tema, apresentando posição apoiada e respondendo a uma contribuição anterior sem transformar a atividade em competição retórica.",
+  "competencies": ["apresentar posição breve", "dar razão relevante", "referir-se a evidência fornecida", "responder ao turno anterior", "formular pergunta de seguimento", "discordar ou concordar de modo funcional", "manter o tema"],
+  "prerequisites": ["N2-U07-V01", "N2-U08-L05"],
+  "limits": ["não avaliar vitória em debate", "não avaliar concordância ideológica", "não exigir refutação sofisticada", "não premiar interrupção ou fala longa", "qualidade oral global não é validada automaticamente"],
+  "media": {"tts": "principal para turnos-modelo", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["L06-B01", "L06-C01", "L06-A01"], "purpose": "simular contribuições de interlocutores"}], "generatedVisualResources": [{"type": "UI_RENDERED_DISCUSSION_TURNS", "locations": ["L06-B01", "L06-C01", "L06-A01", "L06-P01"], "purpose": "registrar encadeamento de turnos"}, {"type": "UI_RENDERED_ARGUMENT_SUPPORT_CARD", "locations": ["L06-A01", "L06-P01"], "purpose": "manter posição e apoio visíveis"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória; produção oral compreensível exige avaliação externa confiável", "decisionRationale": "a estrutura da discussão pode ser observada nos turnos e apoios, sem inferir automaticamente qualidade vocal."},
+  "sequence": [
+    {"id": "L06-B01", "type": "discussion-model", "topic": "repetir um teste de horário ampliado", "turns": [{"speaker": "A", "text": "Acho que vale repetir o teste porque houve uso após as 18h."}, {"speaker": "B", "text": "Concordo que houve uso, mas o custo ainda não foi medido. Talvez um novo teste deva incluir esse dado."}, {"speaker": "A", "text": "Faz sentido. Então a posição pode ser repetir o teste antes de decidir algo permanente."}], "teachingPoint": "responder ao que o outro disse é parte da discussão; repetir a própria posição não basta"},
+    {"id": "L06-C01", "type": "quick-check", "turn": "A fonte mostra interesse de parte dos usuários, mas não informa custo.", "options": ["Então podemos afirmar que é barato.", "Esse dado apoia a existência de interesse, mas não resolve a questão do custo."], "correctIndex": 1},
+    {"id": "L06-A01", "type": "assessment-discussion", "topic": "oferecer uma segunda turma de uma oficina", "source": "Há 28 pessoas em lista de espera para 20 vagas; não há informação sobre disponibilidade de instrutor.", "requiredMoves": ["posição", "razão relevante", "uso responsável do dado", "resposta a uma contribuição anterior", "pergunta ou confirmação de seguimento"], "mode": ["turnos escritos simulando fala", "oral quando ambiente permitir"], "automaticValidation": "estrutura dos turnos pode ser verificada; qualidade oral depende de observador confiável"},
+    {"id": "L06-P01", "type": "open-discussion", "prompt": "Participe de uma discussão curta simulada. Registre 3–5 turnos seus/interlocutor, mantenha o tema e responda explicitamente a pelo menos uma contribuição anterior.", "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"debateVictoryScored": false, "ideologicalAgreementScored": false, "turnLengthScored": false, "oralQualityAutoValidated": false, "timeLimit": false},
+  "completionEvidence": {"clusters": {"controlledDiscussion": {"evidence": ["L06-A01"], "rule": "posição, apoio e resposta ao interlocutor"}, "transfer": {"evidence": ["L06-P01"], "rule": "discussão nova mantendo tema"}}, "completionRule": "os dois agrupamentos são obrigatórios.", "notSufficient": ["ignorar a contribuição anterior", "repetir posição sem apoio"]}
+}
