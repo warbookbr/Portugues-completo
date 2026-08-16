@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "N2-U07-L03",
+  "title": "Razões: relevância e ligação com a posição",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Avaliar se uma razão realmente apoia uma posição, distinguindo apoio relevante de repetição circular ou motivo lateral e desenvolvendo a ligação entre posição e razão.",
+  "competencies": ["parear posição e razão relevante", "identificar razão circular", "identificar razão lateral", "explicar como a razão apoia a posição", "desenvolver uma razão curta sem mudar de tema"],
+  "prerequisites": ["N2-U07-L01", "N2-U07-L02"],
+  "limits": ["não memorizar catálogo de falácias", "não contar quantidade de razões como qualidade", "não exigir razão incontestável", "não confundir intensidade verbal com relevância"],
+  "media": {"tts": "opcional", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["pares posição/razão", "feedback"], "purpose": "apoio"}], "generatedVisualResources": [{"type": "UI_RENDERED_CLAIM_REASON_LINK", "locations": ["L03-B01", "L03-C01", "L03-A01", "L03-P01"], "purpose": "tornar explícita a ligação entre posição e razão"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "a relação argumentativa pode ser representada por pares textuais."},
+  "sequence": [
+    {"id": "L03-B01", "type": "worked-pairs", "position": "A biblioteca deveria testar abertura noturna uma vez por semana.", "reasons": [{"text": "Parte dos usuários trabalha durante o horário comercial e hoje não consegue usar o serviço.", "label": "relevante"}, {"text": "A biblioteca deveria abrir à noite porque deveria ter horário noturno.", "label": "circular"}, {"text": "O prédio foi pintado no ano passado.", "label": "lateral"}], "teachingPoint": "uma razão apoia a posição quando explica por que ela merece ser aceita no contexto"},
+    {"id": "L03-C01", "type": "quick-check", "position": "O curso deveria oferecer uma turma no sábado.", "options": ["Há interessados que não podem frequentar durante a semana.", "O curso tem um logotipo azul.", "A turma de sábado é boa porque é uma turma de sábado."], "correctIndex": 0},
+    {"id": "L03-A01", "type": "assessment-relevance", "items": [{"position": "O espaço deveria disponibilizar instruções de uso perto das ferramentas.", "reasons": ["Novos usuários frequentemente precisam confirmar o procedimento antes de começar.", "As paredes do espaço são brancas."], "correctIndex": 0, "requireLinkExplanation": true}, {"position": "O evento deveria divulgar regras de inscrição com antecedência.", "reasons": ["Isso permite que participantes saibam requisitos e prazos antes de decidir.", "As regras devem ser divulgadas porque devem ser divulgadas."], "correctIndex": 0, "requireLinkExplanation": true}]},
+    {"id": "L03-P01", "type": "open-reason", "prompt": "Retome uma posição sua da L1 e escreva uma razão relevante. Em uma frase adicional, explique como essa razão se liga à posição.", "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"reasonCountScored": false, "relevanceRequired": true, "ideologicalAgreementScored": false, "timeLimit": false},
+  "completionEvidence": {"clusters": {"controlledRelevance": {"evidence": ["L03-A01"], "rule": "selecionar e explicar razão relevante"}, "ownReason": {"evidence": ["L03-P01"], "rule": "produzir razão própria ligada à posição"}}, "completionRule": "os dois agrupamentos são obrigatórios.", "notSufficient": ["repetir a posição", "apresentar motivo sem ligação com o ponto"]}
+}
