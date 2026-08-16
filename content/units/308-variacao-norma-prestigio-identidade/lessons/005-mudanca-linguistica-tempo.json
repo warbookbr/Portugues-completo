@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "N3-U08-L05",
+  "title": "Mudança linguística e língua no tempo",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Analisar mudanças de vocabulário, construção, tratamento e convenção ao longo do tempo sem confundir mudança com decadência nem tratar toda forma antiga como inadequada em seu contexto histórico.",
+  "competencies": ["comparar usos de épocas diferentes", "distinguir arcaísmo contextual de erro", "reconhecer inovação estabilizada", "relacionar mudança a circulação/uso", "evitar narrativa automática de decadência"],
+  "prerequisites": ["N3-U08-L01", "N3-U08-L02"],
+  "limits": ["não exigir história completa do português", "antigo não é errado por natureza", "novo não é automaticamente melhor", "não inventar etimologia"],
+  "media": {"tts": "opcional", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "purpose": "apoio"}], "generatedVisualResources": [{"type": "UI_RENDERED_LANGUAGE_CHANGE_TIMELINE", "purpose": "comparar usos contextualizados no tempo"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "trechos autorais simulando registros históricos transparentes bastam para o conceito."},
+  "sequence": [
+    {"id": "L05-B01", "type": "time-contrast", "examples": [{"period": "registro mais antigo", "form": "tratamento/formulação hoje pouco frequente", "analysis": "adequada ao contexto histórico simulado"}, {"period": "registro atual", "form": "formulação contemporânea", "analysis": "mudança de uso, não prova de decadência"}]},
+    {"id": "L05-C01", "type": "quick-check", "items": [{"question": "Uma forma antiga é erro porque hoje é rara?", "correct": false}, {"question": "Mudanças podem alcançar convenções formais ao longo do tempo?", "correct": true}]},
+    {"id": "L05-A01", "type": "assessment-change", "materials": ["dois trechos didáticos de épocas diferentes com mesma finalidade"], "tasks": ["identificar diferenças", "explicar quais podem ser temporais", "evitar atribuir incapacidade aos falantes de qualquer período"]},
+    {"id": "L05-P01", "type": "open-analysis", "prompt": "Compare duas versões históricas contextualizadas de uma mensagem e explique mudança sem usar 'a língua piorou' como explicação automática.", "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"changeEqualsDecay": false, "etymologyRequired": false, "openResponseAutoValidated": false},
+  "completionEvidence": {"clusters": {"controlled": {"evidence": ["L05-A01"], "required": true}, "open": {"evidence": ["L05-P01"], "required": true}}, "completionRule": "o estudante deve interpretar mudança como fenômeno histórico contextualizado."}
+}
