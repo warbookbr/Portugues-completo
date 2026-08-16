@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "id": "N3-U04-L05",
+  "title": "Qualidade e pertinência da evidência entre fontes",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Comparar o apoio oferecido por fontes diferentes para uma mesma questão, relacionando afirmação, evidência, origem e alcance sem criar um placar universal de credibilidade.",
+  "competencies": ["identificar evidência direta e indireta", "comparar dado, relato, estimativa e afirmação sem apoio visível", "avaliar pertinência para a pergunta", "considerar origem e alcance", "explicar por que uma fonte pode ser forte para uma questão e fraca para outra", "evitar usar fama/aparência como atalho"],
+  "prerequisites": ["N3-U04-L04", "N3-U02-L03", "N3-U02-L04"],
+  "limits": ["não criar score universal de fonte", "aparência ou reputação não substitui evidência", "fonte original pode ter limite metodológico", "relato pode ser útil sem medir frequência geral"],
+  "media": {"tts": "opcional", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["fontes", "feedback"], "purpose": "apoio"}], "generatedVisualResources": [{"type": "UI_RENDERED_CLAIM_EVIDENCE_SOURCE", "locations": ["L05-B01", "L05-A01", "L05-P01"], "purpose": "ligar afirmação, apoio, origem e alcance"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "cartões textuais controlados permitem comparar função e pertinência do apoio."},
+  "sequence": [
+    {"id": "L05-B01", "type": "evidence-compare", "question": "O tempo de espera diminuiu?", "sources": [{"id": "A", "support": "medianas mensais antes/depois pelo mesmo registro", "analysis": "diretamente pertinente à medida"}, {"id": "B", "support": "85% dos respondentes disseram gostar do novo sistema", "analysis": "mede satisfação, não tempo"}, {"id": "C", "support": "um usuário relata ter esperado menos", "analysis": "exemplo individual"}]},
+    {"id": "L05-C01", "type": "quick-check", "items": [{"question": "Uma fonte pode ser relevante para satisfação e irrelevante para custo?", "options": ["sim", "não"], "correctIndex": 0}, {"question": "Um documento original sem método descrito deve ser tratado como perfeito?", "options": ["não", "sim"], "correctIndex": 0}]},
+    {"id": "L05-A01", "type": "assessment-evidence", "claim": "O novo canal ampliou uso por pessoas que trabalham em horário comercial.", "sources": [{"id": "A", "evidence": "questionário voluntário: 63 de 82 respondentes trabalham em horário comercial"}, {"id": "B", "evidence": "71% dos acessos ocorreram após 18h"}, {"id": "C", "evidence": "o sistema recebeu nova identidade visual"}], "tasks": ["avaliar pertinência de cada apoio", "explicar que A e B oferecem pistas diferentes sem provar exatamente a mesma coisa", "rejeitar C como apoio ao ponto"]},
+    {"id": "L05-A02", "type": "same-source-different-question", "source": "registro completo de horários de atendimento", "questions": ["quantos atendimentos ocorreram?", "os usuários ficaram satisfeitos?"], "task": "explicar por que a fonte é forte para a primeira e insuficiente para a segunda"},
+    {"id": "L05-P01", "type": "open-comparison", "prompt": "Para uma afirmação nova, compare apoios de três fontes e indique qual é mais pertinente, quais limites permanecem e qual fonte seria necessária para responder ao que ainda falta.", "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"universalCredibilityScore": false, "fameAsShortcut": false, "openResponseAutoValidated": false},
+  "completionEvidence": {"clusters": {"pertinence": {"evidence": ["L05-A01", "L05-A02"], "required": true}, "comparison": {"evidence": ["L05-P01"], "required": true}}, "completionRule": "a avaliação da evidência deve ser específica à afirmação e ao alcance."}
+}

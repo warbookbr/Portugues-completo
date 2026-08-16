@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "id": "N3-U04-L08",
+  "title": "Lacunas, rastreamento e confirmação adicional",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Identificar informação ausente que realmente impede uma conclusão e escolher o próximo passo de confirmação mais proporcional, específico e rastreável.",
+  "competencies": ["distinguir lacuna relevante de curiosidade lateral", "explicar por que a lacuna afeta a conclusão", "especificar registro ou fonte a buscar", "priorizar fonte original/atualizada quando pertinente", "pedir confirmação independente quando necessário", "evitar 'pesquisar mais' sem objetivo"],
+  "prerequisites": ["N3-U04-L02", "N3-U04-L03", "N3-U04-L07"],
+  "limits": ["não exigir investigação aberta ilimitada", "mais pesquisa não é sempre necessária", "o próximo passo deve estar ligado à lacuna", "não prometer que uma única nova fonte resolverá toda incerteza"],
+  "media": {"tts": "opcional", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["fontes", "instruções"], "purpose": "apoio"}], "generatedVisualResources": [{"type": "UI_RENDERED_INFORMATION_GAP_MAP", "locations": ["L08-B01", "L08-A01", "L08-P01"], "purpose": "ligar lacuna, impacto e próxima fonte"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "caminhos de confirmação podem ser simulados com registros controlados."},
+  "sequence": [
+    {"id": "L08-B01", "type": "gap-to-action", "question": "O programa reduziu desistências?", "available": ["desistências após a mudança: 18", "não há número comparável do período anterior"], "gap": "linha de base anterior pelo mesmo critério", "nextStep": "buscar registro anterior com a mesma definição de desistência", "teachingPoint": "pedir uma nova opinião não resolve a lacuna de comparação"},
+    {"id": "L08-C01", "type": "quick-check", "items": [{"question": "'Pesquisar mais' sem dizer o quê é suficiente?", "options": ["não", "sim"], "correctIndex": 0}, {"question": "Se a divergência é entre versões de um mesmo relatório, buscar a versão original/atualizada pode ser um próximo passo proporcional?", "options": ["sim", "não"], "correctIndex": 0}]},
+    {"id": "L08-A01", "type": "assessment-gap", "cases": [{"claim": "o novo formulário reduziu erros", "available": "erros atuais conhecidos; não há medição anterior", "expectedGap": "medida comparável anterior"}, {"claim": "Fonte B copiou corretamente a Fonte A", "available": "B cita A, mas o trecho original não foi fornecido", "expectedGap": "acessar trecho/original citado"}, {"claim": "duas contagens divergentes usam o mesmo critério", "available": "uma fonte não descreve método", "expectedGap": "definição/metodologia da fonte sem método"}]},
+    {"id": "L08-A02", "type": "next-step-choice", "gap": "número de participantes únicos diverge entre dois resumos derivados do mesmo banco", "options": ["consultar o registro original e a definição de participante único", "ler mais opiniões sobre o projeto", "escolher o número que parece mais plausível"], "correctIndex": 0},
+    {"id": "L08-P01", "type": "open-confirmation-plan", "prompt": "A partir de um conjunto incompleto, registre uma lacuna real, o efeito dela sobre a conclusão e o próximo registro/fonte que buscaria. Explique por que esse passo é proporcional.", "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"unlimitedResearchRequired": false, "genericResearchMoreAccepted": false, "openResponseAutoValidated": false},
+  "completionEvidence": {"clusters": {"gapDiagnosis": {"evidence": ["L08-A01"], "required": true}, "confirmationStep": {"evidence": ["L08-A02", "L08-P01"], "required": true}}, "completionRule": "a lacuna e o próximo passo precisam estar diretamente relacionados à conclusão em análise."}
+}

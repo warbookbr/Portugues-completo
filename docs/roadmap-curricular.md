@@ -1,8 +1,10 @@
 # Roadmap Curricular
 
-## Objetivo
+## Função
 
-Registrar o estado real do desenvolvimento curricular, o marco ativo e a próxima camada que pode ser aprofundada.
+Registrar **estado real**, **maturidade**, **marco ativo**, **gates** e **próximo subpasso**.
+
+Este arquivo não duplica o conteúdo detalhado das áreas, unidades, lições ou JSONs. Para detalhes, seguir as fontes de verdade listadas ao final.
 
 ## Escala de maturidade
 
@@ -15,64 +17,67 @@ M4 — lições dimensionadas
 M5 — conteúdo desenvolvido
 ```
 
-A escala mede maturidade curricular. Não equivale a progresso do aluno nem a prontidão de publicação.
+Maturidade curricular não equivale a progresso de aluno nem a prontidão de publicação.
 
-## Estado macro
+---
 
-### Nível 0 — Fundamentos
+# Estado macro
 
-**M5 curricularmente concluído.** Seis unidades, verificações integradas U1–U6, verificação de saída `N0-EXIT-V01` e auditoria de competências concluídas.
+## Nível 0 — Fundamentos
 
-### Nível 1 — Básico
+**M5 concluído.**
 
-**M5 curricularmente concluído.**
+- 6 unidades desenvolvidas;
+- verificações integradas U1–U6;
+- `N0-EXIT-V01`;
+- checkpoint de saída concluído.
 
-- M1 — `docs/mapa-niveis-1-4.md`;
-- M2 — `docs/areas-nivel-1.md`;
-- M3 — `docs/unidades-nivel-1.md`;
-- M4 — `docs/licoes-nivel-1.md` + U1–U7;
-- M5 — sete unidades com conteúdo e verificações integradas;
-- saída — `content/levels/001-basico/exit-verification.json`;
-- checkpoint — `docs/checkpoint-saida-nivel-1.md`;
-- transição — `docs/transicao-n1-n2.md`.
+Pendências antigas de mídia/publicação não reabrem o currículo.
 
-### Nível 2 — Intermediário
+## Nível 1 — Básico
 
-**M5 curricularmente concluído.**
+**M5 concluído.**
 
-- M1 — `docs/mapa-niveis-1-4.md`;
-- M2 — 11 áreas em `docs/areas-nivel-2.md`;
-- M3 — 9 unidades em `docs/unidades-nivel-2.md`;
-- M4 — 87 lições + 9 verificações integradas em `docs/licoes-nivel-2.md` e documentos U1–U9;
-- M5 — U1–U9 com conteúdo + verificações integradas;
-- saída — `content/levels/002-intermediario/exit-verification.json` (`N2-EXIT-V01`);
-- checkpoint — `docs/checkpoint-saida-nivel-2.md`;
-- transição — `docs/transicao-n2-n3.md`.
+- M1–M4 consolidados;
+- 7 unidades desenvolvidas + verificações integradas;
+- `N1-EXIT-V01`;
+- `docs/checkpoint-saida-nivel-1.md`;
+- `docs/transicao-n1-n2.md`.
 
-O checkpoint auditou as 25 competências oficiais de saída e não encontrou lacuna obrigatória remanescente após a correção pré-saída de humor/ironia de pistas claras.
+## Nível 2 — Intermediário
+
+**M5 concluído.**
+
+- M1–M4 consolidados;
+- 9 unidades desenvolvidas + verificações integradas;
+- `N2-EXIT-V01`;
+- `docs/checkpoint-saida-nivel-2.md`;
+- `docs/transicao-n2-n3.md`.
+
+O checkpoint auditou as competências oficiais de saída e não encontrou lacuna obrigatória remanescente após a correção pré-saída de humor/ironia com pistas claras.
 
 ```text
 currículo fechado
 ≠ publicação pronta
-≠ validação automática plena de toda escrita/fala aberta
-≠ aprovação automática de um aluno individual
+≠ validação automática plena de escrita/fala aberta
+≠ aprovação automática de aluno individual
 ```
 
-### Nível 3 — Avançado
-
-- **M1 concluído** — `docs/mapa-niveis-1-4.md`;
-- **M2 concluído** — 10 áreas em `docs/areas-nivel-3.md`;
-- **M3 concluído** — 9 unidades pedagógicas integradas em `docs/unidades-nivel-3.md`;
-- **M4 concluído** — **94 lições + 9 verificações integradas** em `docs/licoes-nivel-3.md` e documentos U1–U9;
-- **M5 em andamento** — **U1, U2 e U3 concluídas**; U4–U9 pendentes.
-
-O N3 aprofunda um usuário intermediário já organizado; não reinicia leitura, gramática, escrita, argumentação, oralidade, variação ou fontes do zero.
-
-#### Arquitetura M3/M4 do N3
+## Nível 3 — Avançado
 
 ```text
-U1  11 — Leitura crítica de textos longos: arquitetura, implícitos e enquadramento
-U2  11 — Argumentação avançada: tese, evidência, qualificação e contra-argumento
+M1 ✓
+M2 ✓ — 10 áreas
+M3 ✓ — 9 unidades
+M4 ✓ — 94 lições + 9 verificações integradas
+M5 em andamento
+```
+
+Arquitetura:
+
+```text
+U1  11 — Leitura crítica de textos longos
+U2  11 — Argumentação avançada
 U3  12 — Sintaxe complexa, norma e efeitos de estrutura
 U4  11 — Fontes múltiplas, síntese e leitura crítica da informação
 U5  12 — Produção longa e gêneros formais/analíticos
@@ -82,56 +87,35 @@ U8   8 — Variação, norma, prestígio e identidade
 U9  11 — Literatura, intertextualidade e mídia crítica
 ```
 
-As 10 áreas M2 não foram convertidas mecanicamente em 10 unidades. Escrita, fontes, gramática, estilo, argumentação e oralidade reaparecem ao longo do nível conforme a progressão pedagógica.
+### M5 concluído até aqui
 
-#### N3-U1 — Leitura crítica de textos longos — CONCLUÍDA
+#### U1 — Leitura crítica de textos longos
 
-```text
-11 lições + N3-U01-V01
-```
+**11 lições + `N3-U01-V01`.**
 
-Cobertura: estratégia de leitura; arquitetura global; hierarquia; cadeias referenciais extensas; cadeia argumentativa distribuída; inferência por pistas distantes; pressupostos/implicações; modalidade; perspectiva/enquadramento; intertextualidade; síntese crítica sustentada.
+Núcleo: estratégia de leitura, arquitetura global, hierarquia, cadeias referenciais, inferência distante, implícitos, modalidade, enquadramento, intertextualidade e síntese crítica.
 
-Regras centrais: releitura e anotações permitidas; velocidade não pontua; inferência exige evidência; informação insuficiente pode ser resposta correta; enquadramento não equivale automaticamente a manipulação; tema comum não prova intertextualidade; síntese preserva qualificações; questões fechadas não compensam ausência de síntese crítica própria.
+Guard rails: releitura permitida; velocidade não pontua; inferência exige evidência; enquadramento não equivale automaticamente a manipulação; tema comum não prova intertextualidade; síntese própria é obrigatória.
 
-#### N3-U2 — Argumentação avançada — CONCLUÍDA
+#### U2 — Argumentação avançada
 
-```text
-11 lições + N3-U02-V01
-```
+**11 lições + `N3-U02-V01`.**
 
-Cobertura: tese delimitada; cadeia de razões/subrazões; exemplo/dado/evidência pelo funcionamento; relevância, escopo e qualidade do apoio; suficiência, qualificação e força da conclusão; generalização/amostra/contraexemplo; causalidade e falhas frequentes pelo funcionamento; estratégias persuasivas/enquadramento; objeção/contra-argumento; resposta/concessão/reformulação; produção própria com revisão e reescrita.
+Núcleo: tese delimitada, cadeia de razões, função e qualidade de evidência, suficiência/qualificação, generalização, causalidade, falhas de raciocínio pelo funcionamento, estratégias persuasivas, contra-argumento, resposta e produção argumentativa revisada.
 
-A verificação integrada mantém nove agrupamentos obrigatórios e contém caso em que `a evidência disponível não basta` é a conclusão correta.
+Guard rails: posição ideológica não pontua; quantidade de razões não mede força; exemplo não prova regra geral; número não é evidência automaticamente pertinente; correlação não prova causa; nome de falácia não substitui diagnóstico; evidência insuficiente pode ser conclusão correta.
 
-Regras centrais: posição ideológica não pontua; quantidade de razões não mede força; exemplo não prova regra geral; número não é evidência automaticamente pertinente; correlação não prova causalidade sozinha; nomes de falácias são secundários; emoção/persuasão não equivalem a falsidade; enquadramento não prova manipulação; qualidade global da produção aberta exige avaliador confiável.
+#### U3 — Sintaxe complexa, norma e efeitos de estrutura
 
-#### N3-U3 — Sintaxe complexa, norma e efeitos de estrutura — CONCLUÍDA
+**12 lições + `N3-U03-V01`.**
 
-```text
-12 lições + N3-U03-V01
-```
-
-Gate normativo concluído e registrado em:
+Gate normativo satisfeito em:
 
 `docs/referencias-gramatica-nivel-3-u3.md`
 
-Cobertura:
+Núcleo: arquitetura de período, coordenação/subordinação, relativas, formas reduzidas, ordem/foco, voz/agente, concordância complexa, regência/crase, colocação formal, pontuação e revisão integrada.
 
-- período complexo como arquitetura de relações, sem contagem mecânica de verbos;
-- coordenação ampliada, paralelismo e alcance;
-- subordinação por relação de sentido;
-- orações relativas, antecedente, restrição e informação adicional;
-- formas reduzidas e reformulações com controle de referente;
-- ordem, foco, topicalização e ambiguidade;
-- voz, agente e visibilidade sem inferir intenção por reflexo;
-- concordância em estruturas complexas no recorte documentado;
-- regência e crase com sentido, estrutura e consulta;
-- colocação pronominal como convenção formal/editorial quando pertinente;
-- pontuação estrutural do período complexo;
-- revisão integrada distinguindo regra, variante, consulta e escolha estilística.
-
-O recorte normativo classifica decisões como:
+Status normativos usados pela unidade:
 
 ```text
 REGRA_PRODUTIVA
@@ -141,134 +125,143 @@ CASO_LEXICAL_DE_CONSULTA
 ESCOLHA_ESTILISTICA
 ```
 
-Isso impede transformar preferência institucional, variante aceita ou caso lexical controverso em erro universal.
+Guard rails: preferência institucional não vira regra universal; variante documentada não é corrigida por reflexo; crase não é decidida por palavra feminina; vírgula não é respiração; ordem não canônica não é erro automático; mesóclise não é requisito; consulta pode ser evidência de competência.
 
-A verificação integrada mantém nove agrupamentos obrigatórios e exige explicitamente:
+#### U4 — Fontes múltiplas, síntese e leitura crítica da informação
 
-- corrigir regras produtivas;
-- preservar ao menos uma variante documentada;
-- reconhecer ao menos um caso de consulta;
-- distinguir escolha estilística de obrigação sintática;
-- revisar texto real, não apenas classificar estruturas.
+**11 lições + `N3-U04-V01`.**
 
-Regras centrais: crase não é decidida por palavra feminina; vírgula não é pausa para respirar; ordem não canônica não é erro automático; passiva não prova evasão; mesóclise não é requisito produtivo; fala brasileira corrente não é medida de inteligência; casos fora do recorte não são resolvidos por palpite.
+Núcleo: mapa de conjunto, origem/circulação, data/escopo/método, convergência/divergência, qualidade de evidência, enquadramento, possível viés com linguagem qualificada, lacunas e confirmação, matriz temática, atribuição/paráfrase e síntese multifuente crítica.
 
-Nenhuma nova mídia humana obrigatória foi criada em U1–U3; TTS e UI textual/acessível são suficientes.
+A verificação usa quatro fontes didáticas e contém deliberadamente:
 
-### Nível 4 — Domínio
+- diferença de números explicável por escopo/método;
+- divergência que permanece não resolvida;
+- fonte secundária derivada de registro original;
+- questionário voluntário que não autoriza generalização a todos;
+- síntese própria + resposta analítica separada.
 
-**M1 concluído.** M2–M5 ainda pendentes.
+Guard rails: mais fontes não significa melhor análise; original não significa automaticamente verdadeiro; secundário não significa inútil; números diferentes não são contradição automática; enquadramento não prova manipulação; interesse não prova falsidade; síntese não fabrica consenso; `pesquisar mais` sem especificar o quê não basta.
 
-## Foco curricular atual
+Nenhuma nova mídia humana obrigatória foi criada em U1–U4.
+
+## Nível 4 — Domínio
+
+**M1 concluído.** M2–M5 pendentes.
+
+---
+
+# Marco ativo
 
 ```text
-NÍVEL 0 — M5 ✓
-NÍVEL 1 — M5 ✓
-NÍVEL 2 — M5 ✓
-│   ├── U1–U9 ✓
-│   ├── N2-EXIT-V01 ✓
-│   └── checkpoint N2→N3 ✓
-│
-NÍVEL 3 — M1–M4 ✓
+N0 — M5 ✓
+N1 — M5 ✓
+N2 — M5 ✓
+N3 — M1–M4 ✓
 └── M5 — MARCO ATIVO
     ├── U1 ✓
     ├── U2 ✓
     ├── U3 ✓
-    └── U4 — PRÓXIMO SUBPASSO
+    ├── U4 ✓
+    └── U5 — PRÓXIMO SUBPASSO
 ```
 
-Próximo subpasso:
+## Próximo subpasso
 
 ```text
-N3-U04 — Fontes múltiplas, síntese e leitura crítica da informação
-11 lições + verificação integrada
+N3-U05 — Produção longa e gêneros formais/analíticos
+12 lições + verificação integrada
 ```
 
-A U4 deve ampliar a comparação de duas fontes do N2 para um conjunto pequeno de fontes com funções diferentes, separando convergência, divergência, escopo, origem, evidência e incerteza. A síntese deve preservar conflito real e não fabricar consenso. Pesquisa aberta só entra se houver critérios de rastreabilidade e registro de origem compatíveis com o desenho da unidade.
+A U5 deve exigir produção longa própria e processo real de planejamento, fontes, rascunho, revisão e reescrita. Gênero não deve virar template rígido e extensão, quantidade de parágrafos ou vocabulário difícil não podem funcionar como proxy automático de qualidade.
 
 Depois:
 
 ```text
-N3-U5 → U6 → U7 → U8 → U9
+N3-U6 → U7 → U8 → U9
 → verificação de saída N3
 → checkpoint N3→N4
 ```
 
-## Gates já definidos para o M5 do N3
+---
 
-### N3-U3 — gate normativo — SATISFEITO
+# Gates
 
-Fonte oficial do projeto:
+## N3-U3 — gate normativo — SATISFEITO
+
+Fonte oficial:
 
 `docs/referencias-gramatica-nivel-3-u3.md`
 
 O gate:
 
 - seleciona casos de alta utilidade;
-- registra fontes institucionais adequadas;
-- distingue regra produtiva, variante, convenção editorial, consulta e escolha estilística;
+- registra fontes institucionais;
+- distingue regra, variante, convenção, consulta e estilo;
 - exclui exceções raras como medida de domínio;
-- impede que controvérsia ou preferência institucional vire regra universal.
+- impede universalização de preferência editorial.
 
-### N3-U9 — gate audiovisual/acessibilidade
+## N3-U9 — gate audiovisual/acessibilidade — PENDENTE PARA U9
 
-Sequência, corte e montagem devem ser ensinados primeiro com recursos acessíveis e controláveis pela interface. Clipe audiovisual controlado só entra se movimento, montagem, som ou sequência trouxerem ganho pedagógico real que não possa ser substituído por representação acessível equivalente.
+Antes de introduzir clipe audiovisual controlado:
 
-Se mídia humana se tornar necessária:
+1. tentar representação acessível por texto, sequência, quadros, transcrição e componentes de UI;
+2. exigir mídia humana apenas se movimento, montagem, som ou sequência forem essenciais ao alvo;
+3. criar `mediaId` antes da produção;
+4. registrar na fila de mídia;
+5. não criar imagem/vídeo apenas para variedade visual.
 
-```text
-mediaId antes da produção
-→ registrar no contrato/fila
-→ não bloquear autoria curricular desnecessariamente
-```
+---
 
-Nenhuma imagem ou vídeo deve ser criado apenas para variedade visual.
+# Responsabilidades críticas do N3
 
-## Responsabilidades críticas do N3
+O N3 deve aprofundar:
 
-O N3 deve aprofundar — não reensinar do zero — principalmente:
-
-- leitura crítica de textos longos e densos;
+- leitura crítica de textos longos/densos;
 - implícitos, pressupostos, intertextualidade e enquadramento;
-- argumentação com contra-argumento, qualidade de evidência e estratégias persuasivas;
+- argumentação com qualidade de evidência e contra-argumentação;
 - síntese e avaliação de várias fontes;
-- produção de textos longos, formais, analíticos, profissionais e públicos;
-- sintaxe complexa e efeitos de ordem, voz, modalidade e léxico;
-- revisão integrada com precisão, concisão, ritmo, paralelismo, tom e estilo;
+- produção longa formal, analítica, profissional e pública;
+- sintaxe complexa e efeitos de estrutura;
+- revisão integrada, precisão, concisão, ritmo, paralelismo, tom e estilo;
 - apresentações e debates estruturados;
 - prestígio, estigma, identidade e mudança linguística;
-- literatura com ambiguidade, contexto e intertextualidade;
-- multimodalidade crítica, edição, áudio/vídeo e circulação.
+- literatura, multimodalidade crítica e circulação.
 
-## Regras de continuidade
+---
 
-1. M3 e M4 do N3 são fontes consolidadas; autoria M5 local não deve redimensioná-los sem motivo curricular real.
-2. Descobertas locais devem ser conferidas contra `docs/matriz-progressao-global.md`.
-3. Atualizar este roadmap no mesmo PR que alterar materialmente o estado curricular.
-4. Produções abertas e orais não podem receber validação automática falsa.
-5. Terminologia deve produzir ganho de compreensão, produção ou revisão.
-6. Contraexemplos devem aparecer cedo quando uma simplificação puder virar regra falsa.
-7. Gramática permanece ferramenta de uso, leitura, produção e edição; não vira classificação isolada no N3.
-8. Argumentação avalia relação entre tese, apoio, qualificação e objeções, não concordância ideológica.
-9. Interpretações literárias diferentes são aceitas quando sustentadas por evidência.
-10. Comparação de fontes preserva divergências e pode exigir investigação adicional.
-11. Em produção oral, o projeto só automatiza o que realmente observa; inteligibilidade exige avaliador confiável.
-12. Em multimodalidade, acessibilidade continua obrigatória para pistas decisivas.
-13. Casos normativos avançados, raros ou controversos devem ser conferidos em fontes adequadas antes de serem congelados no M5.
-14. Fontes e escrita não podem ser confinadas a uma única unidade; devem reaparecer quando o objetivo exige transferência.
-15. Gêneros não são templates rígidos; estilo não é mero polimento cosmético no final do processo.
-16. Na U3 e em futuras unidades normativas, `consultar` pode ser uma evidência de competência quando o caso excede o recorte seguro.
+# Regras de continuidade
 
-## Dependências não curriculares abertas
+1. M3 e M4 do N3 são fontes consolidadas; não redimensioná-los durante autoria local sem motivo curricular real.
+2. Atualizar este roadmap no mesmo PR que alterar materialmente o estado curricular.
+3. Terminologia precisa produzir ganho de compreensão, produção ou revisão.
+4. Contraexemplos devem aparecer cedo quando uma simplificação puder virar regra falsa.
+5. Produção escrita/oral aberta não recebe validação automática falsa.
+6. Argumentação avalia estrutura e apoio, não concordância ideológica.
+7. Interpretação literária aceita pluralidade sustentada por evidência.
+8. Comparação de fontes preserva divergência e pode exigir confirmação adicional.
+9. Gramática permanece ferramenta de leitura, produção e edição.
+10. Casos normativos raros/controversos exigem fonte adequada antes de serem congelados.
+11. Fontes e escrita reaparecem transversalmente; não ficam confinadas a uma unidade.
+12. Gêneros não são templates rígidos e estilo não é polimento cosmético final.
+13. Em multimodalidade, pistas decisivas precisam de alternativa acessível.
+14. `Consultar` pode ser evidência de competência quando o caso excede o recorte seguro.
+15. Síntese multifuente deve separar fonte, evidência, incerteza e resposta própria.
+
+---
+
+# Dependências não curriculares abertas
 
 - mídias humanas antigas do N0 em `producao-midia/FILA-MIDIA.md`;
 - frontend ainda sem catálogo/renderer completo das unidades desenvolvidas;
 - validação plena de respostas abertas depende de avaliador confiável;
-- inteligibilidade da produção oral depende de observação externa confiável.
+- inteligibilidade de produção oral depende de observação externa confiável.
 
-Essas dependências não impedem desenvolvimento curricular quando os limites estão registrados corretamente.
+Essas dependências não impedem autoria curricular quando os limites estão registrados corretamente.
 
-## Fontes de verdade
+---
+
+# Fontes de verdade
 
 ```text
 visão geral → docs/mapa-curso.md
@@ -284,15 +277,14 @@ N1→N2 → docs/transicao-n1-n2.md
 N2 M2 → docs/areas-nivel-2.md
 N2 M3 → docs/unidades-nivel-2.md
 N2 M4 → docs/licoes-nivel-2.md + docs/licoes-nivel-2-u*.md
-N2-U02 escopo normativo → docs/referencias-ortografia-nivel-2.md
-N2-U04 escopo normativo → docs/referencias-gramatica-nivel-2-u4.md
+N2 normativo → docs/referencias-ortografia-nivel-2.md + docs/referencias-gramatica-nivel-2-u4.md
 N2 saída → docs/checkpoint-saida-nivel-2.md + content/levels/002-intermediario/exit-verification.json
 N2→N3 → docs/transicao-n2-n3.md
 
 N3 M2 → docs/areas-nivel-3.md
 N3 M3 → docs/unidades-nivel-3.md
 N3 M4 → docs/licoes-nivel-3.md + docs/licoes-nivel-3-u*.md
-N3-U03 escopo normativo → docs/referencias-gramatica-nivel-3-u3.md
+N3-U3 normativo → docs/referencias-gramatica-nivel-3-u3.md
 
 estado atual → docs/roadmap-curricular.md
 conteúdo desenvolvido → content/

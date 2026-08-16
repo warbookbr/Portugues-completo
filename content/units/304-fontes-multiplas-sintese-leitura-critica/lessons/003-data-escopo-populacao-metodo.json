@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "id": "N3-U04-L03",
+  "title": "Data, escopo, população e método",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Verificar se fontes que parecem concordar ou divergir descrevem o mesmo período, população, definição e procedimento, reconhecendo diferenças de método como possíveis explicações e lacunas metodológicas como limites.",
+  "competencies": ["comparar períodos", "comparar população e amostra", "distinguir inscritos, participantes e atendimentos", "comparar definições operacionais", "identificar método ausente", "evitar chamar de contradição números de escopos diferentes"],
+  "prerequisites": ["N3-U04-L01", "N3-U04-L02", "N3-U02-L04"],
+  "limits": ["não exigir estatística avançada", "diferença de método não invalida automaticamente uma fonte", "método ausente deve ser registrado como lacuna, não preenchido por palpite", "números diferentes não são contradição automática"],
+  "media": {"tts": "opcional", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["metadados", "fontes"], "purpose": "apoio"}], "generatedVisualResources": [{"type": "UI_RENDERED_SCOPE_METHOD_MATRIX", "locations": ["L03-B01", "L03-A01", "L03-P01"], "purpose": "comparar período, população e medida"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "metadados estruturados permitem análise de comparabilidade sem cálculo avançado."},
+  "sequence": [
+    {"id": "L03-B01", "type": "scope-contrast", "sources": [{"id": "A", "period": "julho", "population": "todos os atendimentos", "measure": "148 atendimentos"}, {"id": "B", "period": "julho a setembro", "population": "participantes únicos", "measure": "327 pessoas"}, {"id": "C", "period": "julho", "population": "respondentes voluntários", "measure": "84 respostas"}], "teachingPoint": "148, 327 e 84 não são diretamente concorrentes: medem coisas e períodos diferentes"},
+    {"id": "L03-C01", "type": "quick-check", "items": [{"question": "Fonte A conta atendimentos e Fonte B conta pessoas únicas. Números diferentes provam contradição?", "options": ["não", "sim"], "correctIndex": 0}, {"question": "Se uma fonte não informa como definiu 'participante ativo', isso deve ser registrado como:", "options": ["lacuna metodológica", "prova de fraude"], "correctIndex": 0}]},
+    {"id": "L03-A01", "type": "assessment-comparability", "sources": [{"id": "A", "claim": "310 visitas noturnas em junho", "scope": "entradas registradas após 18h"}, {"id": "B", "claim": "328 atendimentos noturnos em junho", "scope": "atendimentos iniciados após 17h30"}, {"id": "C", "claim": "41% dos entrevistados usam o turno noturno", "scope": "pesquisa com 120 respondentes"}], "tasks": ["identificar por que A e B não são necessariamente contraditórias", "explicar por que C mede proporção de respondentes, não contagem de atendimentos", "indicar que definição seria necessária para comparação direta"]},
+    {"id": "L03-A02", "type": "real-vs-scope-difference", "pairs": [{"a": "12% em 2025", "b": "12% em 2025", "sameMeasure": true, "expected": "convergência possível"}, {"a": "12% dos inscritos", "b": "18% dos concluintes", "sameMeasure": false, "expected": "populações diferentes; não comparar diretamente"}]},
+    {"id": "L03-P01", "type": "open-method-check", "prompt": "Compare três fontes novas e registre para cada par: comparável, parcialmente comparável ou não comparável com os dados disponíveis, justificando por período, população, definição ou método.", "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"advancedStatisticsRequired": false, "differentNumbersEqualContradiction": false, "missingMethodMayBeInvented": false},
+  "completionEvidence": {"clusters": {"comparability": {"evidence": ["L03-A01", "L03-A02"], "required": true}, "methodJudgment": {"evidence": ["L03-P01"], "required": true}}, "completionRule": "o estudante deve verificar comparabilidade antes de concluir convergência ou divergência."}
+}

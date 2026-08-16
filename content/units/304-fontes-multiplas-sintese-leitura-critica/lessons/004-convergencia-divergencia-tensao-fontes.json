@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "id": "N3-U04-L04",
+  "title": "Convergência, divergência e tensão entre fontes",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Registrar relações entre afirmações de fontes diferentes distinguindo convergência, divergência real, complementação, ênfase distinta e impossibilidade de comparação.",
+  "competencies": ["identificar afirmações equivalentes", "registrar convergência parcial", "identificar incompatibilidade real", "distinguir ênfase diferente de contradição", "preservar divergência não resolvida", "citar qual fonte sustenta cada classificação"],
+  "prerequisites": ["N3-U04-L03"],
+  "limits": ["toda diferença não é contradição", "síntese não deve apagar conflito real", "convergência não prova automaticamente verdade", "não escolher vencedora sem critério pertinente"],
+  "media": {"tts": "opcional", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["fontes", "feedback"], "purpose": "apoio"}], "generatedVisualResources": [{"type": "UI_RENDERED_SOURCE_RELATION_MATRIX", "locations": ["L04-B01", "L04-A01", "L04-P01"], "purpose": "classificar converge/diverge/complementa/não compara"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "matriz textual torna relações entre afirmações explícitas."},
+  "sequence": [
+    {"id": "L04-B01", "type": "worked-matrix", "claims": [{"source": "A", "text": "o teste começou em maio e terminou em julho"}, {"source": "B", "text": "o projeto operou por três meses"}, {"source": "C", "text": "a fase inicial terminou em junho"}], "analysis": ["A e B podem convergir se maio-julho corresponder aos três meses", "C pode falar de uma fase interna, não necessariamente contradizer o fim total em julho", "é preciso conferir o que 'fase inicial' significa"]},
+    {"id": "L04-C01", "type": "quick-check", "items": [{"a": "o custo caiu 8%", "b": "o custo ficou abaixo do orçamento", "question": "Pode haver complementação sem afirmações idênticas?", "correct": true}, {"a": "310 entradas noturnas pelo mesmo critério/período", "b": "328 entradas noturnas pelo mesmo critério/período", "question": "Há divergência numérica real a registrar?", "correct": true}]},
+    {"id": "L04-A01", "type": "assessment-relations", "sources": [{"id": "A", "statements": ["quatro encontros ocorreram", "310 visitas noturnas"]}, {"id": "B", "statements": ["quatro encontros ocorreram", "328 visitas noturnas"]}, {"id": "C", "statements": ["os encontros tiveram média de 22 participantes", "não informa visitas noturnas"]}], "tasks": ["registrar convergência", "registrar divergência", "marcar onde C complementa sem resolver a divergência", "não inventar número ausente"]},
+    {"id": "L04-A02", "type": "emphasis-vs-conflict", "sharedFacts": ["o projeto atendeu 200 pessoas", "30 aguardaram mais de 40 minutos"], "sourceAHeadline": "Projeto atende duzentas pessoas", "sourceBHeadline": "Trinta usuários enfrentam espera superior a 40 minutos", "task": "explicar que títulos enfatizam fatos diferentes sem se contradizerem por isso"},
+    {"id": "L04-P01", "type": "open-matrix", "prompt": "Classifique relações entre quatro fontes novas e justifique cada marcação com afirmações concretas, preservando relações incertas como incertas.", "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"differenceEqualsContradiction": false, "winnerRequired": false, "unresolvedDivergenceAllowed": true},
+  "completionEvidence": {"clusters": {"relationClassification": {"evidence": ["L04-A01", "L04-A02"], "required": true}, "openMatrix": {"evidence": ["L04-P01"], "required": true}}, "completionRule": "é preciso preservar convergências, divergências e limites sem forçar resolução."}
+}

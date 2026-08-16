@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "id": "N3-U04-L10",
+  "title": "Atribuição, paráfrase e citação curta em síntese",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Integrar informações de várias fontes por resumo, paráfrase e citação curta, preservando autoria e sentido e separando claramente comentário próprio da voz das fontes.",
+  "competencies": ["atribuir afirmação à fonte correta", "parafrasear sem ampliar sentido", "resumir preservando qualificação", "usar citação curta quando a formulação exata importa", "separar comentário próprio", "evitar falsa fusão de vozes"],
+  "prerequisites": ["N3-U04-L09", "N2-U06-L07", "N2-U09-L09"],
+  "limits": ["normalização bibliográfica exaustiva fica fora", "citação longa não é necessária", "paráfrase não autoriza mudar população ou certeza", "não usar aspas para esconder falta de compreensão"],
+  "media": {"tts": "opcional", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["fontes", "rascunhos"], "purpose": "apoio"}], "generatedVisualResources": [{"type": "UI_RENDERED_ATTRIBUTION_EDITOR", "locations": ["L10-B01", "L10-A01", "L10-P01"], "purpose": "marcar fonte e voz"}, {"type": "UI_RENDERED_ORIGINAL_PARAPHRASE_COMPARE", "locations": ["L10-C01", "L10-A02"], "purpose": "comparar fidelidade"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "editor textual com origem marcada é suficiente para autoria e atribuição."},
+  "sequence": [
+    {"id": "L10-B01", "type": "voice-contrast", "source": {"id": "A", "text": "Entre os 96 respondentes voluntários, 78 avaliaram o atendimento positivamente."}, "versions": [{"text": "A Fonte A informa que 78 dos 96 respondentes voluntários avaliaram o atendimento positivamente.", "status": "atribuição fiel"}, {"text": "Todos os usuários aprovaram o atendimento.", "status": "amplia indevidamente população e certeza"}, {"text": "Segundo a Fonte A, a avaliação foi positiva entre a maioria dos respondentes voluntários; isso não permite concluir sozinho como todos os usuários avaliaram o serviço.", "status": "paráfrase com limite e comentário analítico separado"}]},
+    {"id": "L10-C01", "type": "quick-check", "items": [{"original": "pode contribuir para", "paraphrase": "garante", "question": "A paráfrase preserva o grau de certeza?", "correct": false}, {"question": "Uma citação curta pode ser útil quando a formulação exata é o objeto da análise?", "correct": true}]},
+    {"id": "L10-A01", "type": "assessment-attribution", "sources": [{"id": "A", "claim": "o teste durou oito semanas"}, {"id": "B", "claim": "a fase de entrevistas ocorreu por seis semanas"}, {"id": "C", "claim": "não informa duração"}], "draft": "O teste durou seis semanas.", "task": "corrigir atribuição/escopo sem fundir B com A e registrar que C não informa duração"},
+    {"id": "L10-A02", "type": "paraphrase-fidelity", "original": "O relatório considera plausível, mas ainda não confirmada, uma redução de custos.", "candidates": ["O relatório afirma que os custos foram reduzidos.", "O relatório trata a redução de custos como possibilidade ainda não confirmada."], "correctIndex": 1, "task": "explicar qualificação preservada"},
+    {"id": "L10-P01", "type": "open-source-integration", "prompt": "Produza um parágrafo que integre informação de três fontes por pelo menos duas formas entre resumo, paráfrase e citação curta. Marque a origem e separe sua análise própria.", "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"citationRequiredEveryTime": false, "longQuotesRequired": false, "openResponseAutoValidated": false},
+  "completionEvidence": {"clusters": {"attribution": {"evidence": ["L10-A01"], "required": true}, "fidelity": {"evidence": ["L10-A02"], "required": true}, "integration": {"evidence": ["L10-P01"], "required": true}}, "completionRule": "origem, fidelidade e separação de vozes são obrigatórias; formato acadêmico completo não."}
+}

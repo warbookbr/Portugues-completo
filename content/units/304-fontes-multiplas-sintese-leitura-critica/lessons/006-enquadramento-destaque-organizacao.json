@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "id": "N3-U04-L06",
+  "title": "Enquadramento: destaque, ordem e organização",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Comparar como fontes selecionam, ordenam, titulam e nomeiam fatos compartilhados, explicando enquadramentos com evidência concreta e sem inferir intenção manipulativa automaticamente.",
+  "competencies": ["identificar fatos compartilhados", "identificar o que recebe destaque", "comparar título, ordem e vocabulário", "distinguir fato omitido de fato desconhecido", "explicar efeito de enquadramento", "evitar inferir intenção sem evidência"],
+  "prerequisites": ["N3-U04-L04", "N3-U04-L05", "N3-U01-L09"],
+  "limits": ["enquadramento não equivale a mentira", "omissão não prova intenção", "não exigir que toda fonte tenha o mesmo foco", "vocabulário avaliativo deve ser analisado em contexto"],
+  "media": {"tts": "opcional", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["fontes", "feedback"], "purpose": "apoio"}], "generatedVisualResources": [{"type": "UI_RENDERED_MULTI_SOURCE_FRAMING", "locations": ["L06-B01", "L06-A01", "L06-P01"], "purpose": "comparar seleção, ordem, título e léxico"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "fontes textuais controladas isolam enquadramento sem exigir mídia externa."},
+  "sequence": [
+    {"id": "L06-B01", "type": "framing-set", "sharedFacts": ["o programa atendeu 420 pessoas", "38 desistiram antes da conclusão", "o custo ficou 6% abaixo do previsto"], "sources": [{"id": "A", "headline": "Programa atende mais de quatrocentas pessoas e gasta menos que o previsto", "firstFocus": "alcance e custo"}, {"id": "B", "headline": "Trinta e oito participantes abandonam programa antes do fim", "firstFocus": "desistência"}], "teachingPoint": "fontes podem destacar dimensões diferentes de um mesmo conjunto de fatos"},
+    {"id": "L06-C01", "type": "quick-check", "items": [{"question": "Se uma fonte não menciona um fato que outra menciona, isso prova que ela desconhece o fato?", "options": ["não necessariamente", "sim"], "correctIndex": 0}, {"question": "O enquadramento pode ser analisado pelo que aparece primeiro e pelo vocabulário?", "options": ["sim", "não"], "correctIndex": 0}]},
+    {"id": "L06-A01", "type": "assessment-framing", "sharedFacts": ["o serviço ampliou horários em 20%", "o custo mensal subiu 9%", "a procura cresceu 14%"], "sources": [{"id": "A", "title": "Ampliação acompanha crescimento da procura", "lead": "A procura cresceu 14% após a expansão do horário."}, {"id": "B", "title": "Novo horário eleva custo mensal", "lead": "O custo mensal subiu 9% com a ampliação."}], "tasks": ["identificar fatos compartilhados", "apontar foco de cada fonte", "registrar o que cada uma deixa em segundo plano", "não inferir má-fé apenas pelo foco"]},
+    {"id": "L06-A02", "type": "omitted-vs-unknown", "source": "relatório de custo que não menciona satisfação", "task": "distinguir 'a fonte não informa satisfação' de 'os usuários estavam insatisfeitos'"},
+    {"id": "L06-P01", "type": "open-framing-analysis", "prompt": "Compare três fontes com fatos parcialmente compartilhados e explique como cada uma organiza o assunto. Separe observação textual de hipótese sobre intenção.", "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"framingEqualsManipulation": false, "omissionEqualsIgnorance": false, "authorIntentInferredAutomatically": false},
+  "completionEvidence": {"clusters": {"framingEvidence": {"evidence": ["L06-A01", "L06-A02"], "required": true}, "openAnalysis": {"evidence": ["L06-P01"], "required": true}}, "completionRule": "o estudante deve demonstrar enquadramento por elementos concretos e limitar inferências sobre intenção."}
+}
