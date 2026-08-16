@@ -50,7 +50,7 @@ currículo fechado
 - **M2 concluído** — 11 áreas em `docs/areas-nivel-2.md`;
 - **M3 concluído** — 9 unidades em `docs/unidades-nivel-2.md`;
 - **M4 concluído** — **87 lições + 9 verificações integradas** em `docs/licoes-nivel-2.md` e documentos U1–U9;
-- **M5 em andamento** — **U1–U7 concluídas**; U8–U9 pendentes.
+- **M5 em andamento** — **U1–U8 concluídas**; U9 pendente.
 
 Arquitetura M4:
 
@@ -144,7 +144,25 @@ A verificação integrada mantém nove agrupamentos obrigatórios e contém caso
 
 Regras centrais: posição não é avaliada por concordância ideológica; fato não significa automaticamente verdadeiro; exemplo não é prova; número não é apoio automaticamente pertinente; uma objeção relevante pode limitar a posição sem anulá-la; a fonte não autoriza inventar dados nem transformar ausência de informação em evidência contrária.
 
-Nenhuma nova mídia humana obrigatória foi criada em U5–U7.
+### N2-U8 — Língua em interação: apresentação, discussão, registro e variação — CONCLUÍDA
+
+```text
+8 lições + N2-U08-V01
+```
+
+Cobertura: escuta estratégica de mensagens mais densas; tomada de notas e síntese; planejamento de apresentação curta; prática com notas em vez de memorização; interação com pergunta, confirmação e reparo; discussão curta com posição e escuta; registro e adequação; variação, norma e preconceito linguístico.
+
+A verificação integrada mantém oito agrupamentos separados e distingue explicitamente:
+
+```text
+compreensão oral observável
+≠ tentativa oral registrada
+≠ produção oral compreensível validada externamente
+```
+
+Regras centrais: replay é permitido sem penalidade automática; transcrição só aparece depois da tentativa de escuta; score escrito não compensa ausência de compreensão oral; fluência perfeita, velocidade e ausência de hesitação não são critérios automáticos; formal não é melhor por definição; informal não é erro automático; variedade linguística não mede valor ou inteligência do falante.
+
+Nenhuma nova mídia humana obrigatória foi criada em U5–U8; U8 usa TTS porque prosódia específica não determina a resposta.
 
 ### Níveis 3 e 4
 
@@ -164,23 +182,23 @@ NÍVEL 2 — M1–M4 ✓
     ├── U5 ✓
     ├── U6 ✓
     ├── U7 ✓
-    └── U8 — PRÓXIMO SUBPASSO
+    ├── U8 ✓
+    └── U9 — PRÓXIMO SUBPASSO
 ```
 
 Próximo subpasso:
 
 ```text
-N2-U08 — Língua em interação: apresentação, discussão, registro e variação
-8 lições + verificação integrada
+N2-U09 — Literatura, multimodalidade e comparação de fontes
+9 lições + verificação integrada
 ```
 
-A U8 deve trabalhar fala e interação sem fingir que o sistema consegue validar sozinho inteligibilidade, fluência, prosódia ou qualidade global de produção oral. Registro e variação devem ser tratados como adequação e diversidade linguística, não como escala moral entre formas de falar.
+A U9 é o último subpasso de unidades do M5 do N2. Ela deve trabalhar interpretação literária sustentada por evidência, relações entre modos sem reduzir imagem a decoração e comparação de fontes com possibilidade legítima de `é preciso confirmar mais` quando os materiais divergem ou não bastam.
 
 Depois:
 
 ```text
-N2-U9
-→ verificação de saída N2
+verificação de saída N2
 → checkpoint N2→N3
 ```
 
