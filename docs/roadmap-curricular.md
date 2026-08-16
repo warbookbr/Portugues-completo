@@ -64,7 +64,7 @@ currículo fechado
 - **M2 concluído** — 10 áreas em `docs/areas-nivel-3.md`;
 - **M3 concluído** — 9 unidades pedagógicas integradas em `docs/unidades-nivel-3.md`;
 - **M4 concluído** — **94 lições + 9 verificações integradas** em `docs/licoes-nivel-3.md` e documentos U1–U9;
-- **M5 em andamento** — **U1 concluída**; U2–U9 pendentes.
+- **M5 em andamento** — **U1 e U2 concluídas**; U3–U9 pendentes.
 
 O N3 aprofunda um usuário intermediário já organizado; não reinicia leitura, gramática, escrita, argumentação, oralidade, variação ou fontes do zero.
 
@@ -90,32 +90,46 @@ As 10 áreas M2 não foram convertidas mecanicamente em 10 unidades. Escrita, fo
 11 lições + N3-U01-V01
 ```
 
+Cobertura: estratégia de leitura; arquitetura global; hierarquia; cadeias referenciais extensas; cadeia argumentativa distribuída; inferência por pistas distantes; pressupostos/implicações; modalidade; perspectiva/enquadramento; intertextualidade; síntese crítica sustentada.
+
+Regras centrais: releitura e anotações permitidas; velocidade não pontua; inferência exige evidência; informação insuficiente pode ser resposta correta; enquadramento não equivale automaticamente a manipulação; tema comum não prova intertextualidade; síntese preserva qualificações; questões fechadas não compensam ausência de síntese crítica própria.
+
+#### N3-U2 — Argumentação avançada — CONCLUÍDA
+
+```text
+11 lições + N3-U02-V01
+```
+
 Cobertura:
 
-- estratégia de leitura conforme finalidade e densidade;
-- arquitetura global e movimentos de texto longo;
-- hierarquia de informação;
-- cadeias referenciais extensas;
-- cadeia argumentativa distribuída;
-- inferência por pistas distantes;
-- pressupostos/implicações em recorte funcional;
-- modalidade e grau de compromisso;
-- perspectiva e enquadramento;
-- intertextualidade;
-- síntese crítica sustentada.
+- tese delimitada;
+- cadeia de razões e subrazões;
+- exemplo, dado e evidência pelo funcionamento;
+- relevância, escopo e qualidade do apoio;
+- suficiência, qualificação e força da conclusão;
+- generalização, amostra e contraexemplo;
+- causalidade não demonstrada, alternativas artificialmente reduzidas, ataque à pessoa e circularidade em casos claros;
+- estratégias persuasivas e enquadramento;
+- objeção e contra-argumento relevantes;
+- resposta, concessão e reformulação;
+- produção argumentativa própria com revisão e reescrita.
+
+A verificação integrada mantém nove agrupamentos obrigatórios e contém caso em que `a evidência disponível não basta` é a conclusão correta. A produção própria exige tese, cadeia de apoio, evidência responsável, limite/qualificação, objeção, resposta, primeira versão, revisão e segunda versão.
 
 Regras centrais:
 
-- releitura e anotações são permitidas;
-- velocidade não pontua;
-- inferência exige evidência;
-- informação insuficiente pode ser resposta correta;
-- enquadramento não equivale automaticamente a manipulação;
-- tema comum não prova intertextualidade;
-- síntese deve preservar qualificações e incertezas reais;
-- questões fechadas não compensam ausência de síntese crítica própria.
+- posição ideológica não pontua;
+- quantidade de razões não mede força;
+- exemplo não prova regra geral sozinho;
+- número não é evidência automaticamente pertinente;
+- correlação/sequência temporal não prova causalidade sozinha;
+- falhas de raciocínio são ensinadas pelo funcionamento, não por catálogo de nomes;
+- persuasão ou emoção não equivalem automaticamente a falsidade;
+- enquadramento não prova manipulação;
+- discordância sem atacar um ponto do argumento não é contra-argumento;
+- qualidade global da produção aberta exige avaliador confiável.
 
-Nenhuma nova mídia humana obrigatória foi criada. TTS e UI textual/acessível são suficientes para a unidade.
+Nenhuma nova mídia humana obrigatória foi criada em U1 ou U2; TTS e UI textual/acessível são suficientes.
 
 ### Nível 4 — Domínio
 
@@ -134,41 +148,23 @@ NÍVEL 2 — M5 ✓
 NÍVEL 3 — M1–M4 ✓
 └── M5 — MARCO ATIVO
     ├── U1 ✓
-    └── U2 — PRÓXIMO SUBPASSO
+    ├── U2 ✓
+    └── U3 — PRÓXIMO SUBPASSO
 ```
 
 Próximo subpasso:
 
 ```text
-N3-U02 — Argumentação avançada: tese, evidência, qualificação e contra-argumento
-11 lições + verificação integrada
+N3-U03 — Sintaxe complexa, norma e efeitos de estrutura
+12 lições + verificação integrada
 ```
 
-A U2 deve avançar deliberadamente de:
-
-```text
-posição → razão → evidência → limite/objeção simples
-```
-
-para:
-
-```text
-tese delimitada
-→ cadeia de razões/evidências
-→ avaliação de qualidade do apoio
-→ qualificação
-→ contra-argumento
-→ resposta
-→ análise de estratégias persuasivas
-→ revisão argumentativa
-```
-
-A posição defendida nunca é pontuada por concordância ideológica. Falhas de raciocínio devem ser ensinadas pelo funcionamento, não como catálogo de nomes; emoção não é automaticamente inválida nem evidência factual; e insuficiência de evidência continua sendo conclusão legítima.
+A U3 só entra em autoria M5 depois do **gate normativo** abaixo. O objetivo não é montar uma enciclopédia gramatical, mas selecionar estruturas e convenções de alta utilidade para leitura, produção e edição de textos complexos.
 
 Depois:
 
 ```text
-N3-U3 → U4 → U5 → U6 → U7 → U8 → U9
+N3-U4 → U5 → U6 → U7 → U8 → U9
 → verificação de saída N3
 → checkpoint N3→N4
 ```
@@ -181,8 +177,10 @@ Antes de congelar casos avançados de concordância, regência, crase, colocaç�
 
 - selecionar casos de alta utilidade;
 - conferir formulações em fontes normativas/institucionais adequadas;
-- documentar o recorte;
-- não transformar controvérsia, exceção rara ou preferência estilística em regra universal.
+- documentar o recorte em fonte oficial do projeto;
+- distinguir regra produtiva, convenção formal, caso lexical e escolha estilística;
+- não transformar controvérsia, exceção rara ou preferência editorial em regra universal;
+- indicar consulta quando a decisão exceder o repertório seguro do curso.
 
 ### N3-U9 — gate audiovisual/acessibilidade
 
