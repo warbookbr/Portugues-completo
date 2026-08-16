@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "N2-U08-L07",
+  "title": "Registro e adequação entre situações",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Adaptar vocabulário, tratamento, explicitação e formulação entre situações pessoais, institucionais, escolares/profissionais acessíveis e digitais, tratando formalidade como escolha relativa ao contexto.",
+  "competencies": ["identificar relação entre participantes", "ajustar tratamento", "ajustar grau de explicitação", "distinguir formalidade de qualidade", "preservar conteúdo ao adaptar registro", "justificar escolha pela situação"],
+  "prerequisites": ["N2-U08-L03", "N2-U08-L04", "N2-U08-L05", "N2-U08-L06", "N1-U06-L07"],
+  "limits": ["formal não significa melhor", "informal não significa incorreto", "gíria não é julgada fora de contexto", "não exigir jargão profissional especializado", "não alterar fatos ao adaptar registro"],
+  "media": {"tts": "opcional", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["mensagens", "instruções", "feedback"], "purpose": "apoio"}], "generatedVisualResources": [{"type": "UI_RENDERED_CONTEXT_REGISTER_COMPARE", "locations": ["L07-B01", "L07-C01", "L07-A01", "L07-P01"], "purpose": "comparar formulações por contexto"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "adequação de registro pode ser trabalhada por versões textuais e situações de uso."},
+  "sequence": [
+    {"id": "L07-B01", "type": "paired-versions", "information": "a reunião mudou para sexta às 18h", "versions": [{"context": "grupo de colegas", "text": "Pessoal, a reunião passou para sexta às 18h."}, {"context": "comunicado institucional", "text": "Informamos que a reunião foi remarcada para sexta-feira, às 18h."}], "teachingPoint": "as duas versões podem ser adequadas; o contexto orienta as escolhas"},
+    {"id": "L07-C01", "type": "quick-check", "items": [{"question": "Uma forma informal é automaticamente errada?", "options": ["sim", "não"], "correctIndex": 1}, {"question": "Uma forma formal é automaticamente adequada a qualquer situação?", "options": ["sim", "não"], "correctIndex": 1}]},
+    {"id": "L07-A01", "type": "assessment-adaptation", "baseInformation": ["atividade começa às 9h", "levar documento", "confirmar presença"], "contexts": [{"reader": "amigo já inscrito", "medium": "mensagem"}, {"reader": "grupo de participantes", "medium": "comunicado"}], "task": "produzir duas versões e justificar ao menos duas diferenças sem alterar os fatos", "recordResponse": true, "automaticValidation": false},
+    {"id": "L07-P01", "type": "open-register", "prompt": "Adapte uma mesma mensagem para duas situações diferentes. Registre o que mudou em tratamento, explicitação ou vocabulário e explique por quê.", "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"formalityAsQuality": false, "informalityAsError": false, "factsMustBePreserved": true, "timeLimit": false},
+  "completionEvidence": {"clusters": {"controlledAdaptation": {"evidence": ["L07-A01"], "rule": "versões compatíveis com os contextos"}, "transfer": {"evidence": ["L07-P01"], "rule": "adaptação própria com justificativa"}}, "completionRule": "os dois agrupamentos são obrigatórios.", "notSufficient": ["apenas aumentar formalidade", "julgar forma sem considerar situação"]}
+}
