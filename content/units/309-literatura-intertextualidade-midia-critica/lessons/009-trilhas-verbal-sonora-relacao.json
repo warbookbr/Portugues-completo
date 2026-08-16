@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "N3-U09-L09",
+  "title": "Trilhas verbal e sonora: relação, contraste e limite da representação",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Analisar relações entre narração, fala, legenda e elementos sonoros quando suas funções são fornecidas semanticamente, reconhecendo o ponto em que som real se tornaria necessário e evitando fingir percepção auditiva inexistente.",
+  "competencies": ["separar trilhas", "identificar redundância/complementação/contraste", "relacionar som indicado ao efeito proposto", "distinguir descrição de experiência auditiva", "marcar quando áudio real seria necessário", "propor alternativa acessível"],
+  "prerequisites": ["N3-U09-L08", "docs/gate-audiovisual-nivel-3-u9.md"],
+  "limits": ["não avaliar timbre/ritmo real sem áudio", "descrição sonora não equivale a ouvir", "prosódia decisiva exige mídia controlada", "música não prova emoção universal"],
+  "media": {"tts": "opcional para texto verbal, nunca como substituto de fenômeno sonoro alvo", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "purpose": "ler fala/narração quando prosódia não é alvo"}], "generatedVisualResources": [{"type": "UI_RENDERED_MULTIMODAL_TIMELINE"}, {"type": "UI_RENDERED_AUDIO_TRACK_DESCRIPTION"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória no desenho atual", "decisionRationale": "a lição avalia relação entre trilhas fornecidas, não percepção acústica. Se esse alvo mudar, o gate exige mídia controlada."},
+  "sequence": [
+    {"id": "L09-B01", "type": "track-timeline", "timeline": [{"time": "0–4", "visual": "praça vazia", "narration": "A cidade acorda cedo.", "soundDescription": "tráfego distante"}, {"time": "4–8", "visual": "ônibus lotado", "caption": "6h10", "soundDescription": "aumento indicado de ruído urbano"}], "teachingPoint": "podemos analisar contraposição entre 'praça vazia' e 'ônibus lotado', mas não avaliar timbre/intensidade real do som descrito"},
+    {"id": "L09-C01", "type": "quick-check", "items": [{"question": "Uma descrição de som permite avaliar timbre real?", "correct": false}, {"question": "Se duas entonações forem a única diferença relevante, áudio controlado passa a ser necessário?", "correct": true}]},
+    {"id": "L09-A01", "type": "assessment-tracks", "timeline": "sequência semântica com narração, legenda e som indicado", "tasks": ["classificar relações entre trilhas", "explicar efeito sustentado pelos dados fornecidos", "marcar uma questão que não poderia ser respondida sem áudio real"]},
+    {"id": "L09-P01", "type": "open-design", "prompt": "Planeje uma linha do tempo multimodal curta com trilhas verbal e sonora descrita. Indique claramente o que pode ser avaliado pela representação e o que exigiria mídia real.", "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"soundExperiencePretended": false, "realAudioRequired": false, "prosodyScoredWithoutAudio": false, "openResponseAutoValidated": false},
+  "completionEvidence": {"clusters": {"analysis": {"evidence": ["L09-A01"], "required": true}, "boundaryAwareDesign": {"evidence": ["L09-P01"], "required": true}}, "completionRule": "o estudante deve analisar relações fornecidas e reconhecer honestamente o limite entre representação e percepção sonora."}
+}
