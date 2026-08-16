@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "N2-U06-L08",
+  "title": "Adequar registro ao gênero e ao leitor",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Revisar e produzir textos ajustando vocabulário, tratamento, grau de explicitação e formulação à situação, ao gênero, ao meio e ao leitor sem tratar formalidade como qualidade absoluta.",
+  "competencies": ["identificar expectativas básicas da situação", "ajustar tratamento e vocabulário", "decidir quanto explicitar", "distinguir adequação de formalidade", "preservar conteúdo central entre versões", "justificar mudanças de registro"],
+  "prerequisites": ["N2-U06-L01", "N2-U06-L05", "N2-U06-L07", "N1-U06-V01"],
+  "limits": ["não ensinar registro como escala moral", "não exigir estilo profissional especializado", "não corrigir variedade legítima só por ser informal", "não alterar fatos para parecer mais formal"],
+  "media": {"tts": "opcional", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["situações", "versões", "feedback"], "purpose": "apoio"}], "generatedVisualResources": [{"type": "UI_RENDERED_AUDIENCE_CONTEXT_CARD", "locations": ["L08-B01", "L08-A01", "L08-P01"], "purpose": "explicitar leitor, gênero, meio e finalidade"}, {"type": "UI_RENDERED_VERSION_COMPARE", "locations": ["L08-C01", "L08-A01", "L08-P01"], "purpose": "comparar escolhas de registro"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "a adequação é observável pela comparação entre contextos e versões textuais."},
+  "sequence": [
+    {"id": "L08-B01", "type": "paired-context", "sameInformation": "a reunião mudou de terça para quarta às 19h", "versions": [{"context": "mensagem no grupo de colegas", "text": "Pessoal, a reunião passou para quarta, às 19h."}, {"context": "comunicado a participantes inscritos", "text": "Informamos que a reunião prevista para terça-feira foi remarcada para quarta-feira, às 19h."}], "teachingPoint": "as duas versões podem ser adequadas; a diferença decorre da situação e do leitor"},
+    {"id": "L08-C01", "type": "quick-check", "items": [{"question": "Tornar um texto mais formal o torna automaticamente melhor?", "options": ["sim", "não; adequação depende da situação"], "correctIndex": 1}, {"question": "Ao adaptar o registro, os fatos centrais podem ser alterados?", "options": ["sim, se soar melhor", "não"], "correctIndex": 1}]},
+    {"id": "L08-A01", "type": "assessment-two-versions", "information": ["atividade começa às 9h", "inscrição confirmada", "levar documento", "em caso de atraso, avisar a organização"], "contexts": [{"genre": "mensagem direta", "reader": "colega já inscrito"}, {"genre": "comunicado", "reader": "grupo de participantes"}], "task": "produzir duas versões e justificar pelo menos duas diferenças de formulação", "recordResponse": true, "automaticValidation": "preservação de fatos pode ser verificada parcialmente; adequação global exige avaliador confiável"},
+    {"id": "L08-P01", "type": "open-adaptation", "prompt": "Escolha um texto produzido nesta unidade e adapte-o para uma segunda situação com leitor ou gênero diferente. Preserve o conteúdo necessário e registre por que você mudou ou manteve certas escolhas.", "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"formalityAsQuality": false, "factsMustBePreserved": true, "ownWritingRequired": true, "openTextAutoValidated": false, "timeLimit": false},
+  "completionEvidence": {"clusters": {"controlledAdaptation": {"evidence": ["L08-A01"], "rule": "duas versões compatíveis com situações distintas"}, "ownAdaptation": {"evidence": ["L08-P01"], "rule": "adaptação própria com justificativa"}}, "completionRule": "os dois agrupamentos são obrigatórios.", "notSufficient": ["trocar apenas saudação", "aumentar formalidade sem considerar leitor e gênero"]}
+}
