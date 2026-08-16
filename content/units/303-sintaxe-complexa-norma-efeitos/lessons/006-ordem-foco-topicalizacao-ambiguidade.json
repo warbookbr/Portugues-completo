@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "id": "N3-U03-L06",
+  "title": "Ordem, foco, topicalização e ambiguidade",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Analisar como deslocamentos e ordem de constituintes alteram foco, continuidade, ritmo e ambiguidade, revisando estruturas sem tratar ordem não canônica como erro automático.",
+  "competencies": ["comparar ordem canônica e deslocada", "identificar elemento topicalizado", "relacionar ordem a foco informacional", "detectar modificador com alcance ambíguo", "reformular para clareza preservando foco quando possível"],
+  "prerequisites": ["N3-U03-L01", "N3-U03-L05", "N3-U01-V01"],
+  "limits": ["ordem não canônica não é erro automático", "preferência estilística isolada não vira regra", "topicalização não exige termo técnico para ser compreendida", "não normalizar toda frase para a mesma ordem"],
+  "media": {"tts": "opcional", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["versões", "feedback"], "purpose": "apoio"}], "generatedVisualResources": [{"type": "UI_RENDERED_ORDER_FOCUS_COMPARE", "locations": ["L06-B01", "L06-A01"], "purpose": "comparar foco e continuidade"}, {"type": "UI_RENDERED_MODIFIER_SCOPE", "locations": ["L06-C01", "L06-A02"], "purpose": "marcar alcance de modificadores"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "reordenação textual interativa permite observar foco e ambiguidade."},
+  "sequence": [
+    {"id": "L06-B01", "type": "order-contrast", "versions": [{"text": "A equipe publicou os dados revisados ontem.", "possibleIssue": "'ontem' pode ser associado à publicação; em certos contextos a proximidade com 'revisados' pode causar releitura"}, {"text": "Ontem, a equipe publicou os dados revisados.", "effect": "o enquadramento temporal da publicação fica destacado"}, {"text": "Os dados revisados, a equipe os publicou ontem.", "effect": "topicaliza o objeto; possível em contexto de contraste, não é erro por ordem"}]},
+    {"id": "L06-C01", "type": "quick-check", "items": [{"text": "Apenas a coordenação revisou o relatório.", "question": "'apenas' tem alcance sobre quem revisou?", "correct": true}, {"text": "A coordenação revisou apenas o relatório.", "question": "O foco de 'apenas' mudou?", "correct": true}]},
+    {"id": "L06-A01", "type": "assessment-focus", "context": "o texto já vinha falando dos custos, e agora informa o que aconteceu com eles", "options": ["Os custos, a equipe reduziu após a revisão do contrato.", "A equipe reduziu os custos após a revisão do contrato."], "task": "explicar como cada ordem distribui foco; aceitar ambas se justificadas pelo contexto"},
+    {"id": "L06-A02", "type": "ambiguity-repair", "original": "O gerente informou ao técnico que o sistema falhou novamente na reunião.", "tasks": ["identificar leituras possíveis para 'na reunião'", "reescrever para pelo menos uma leitura pretendida"], "acceptMultipleValid": true},
+    {"id": "L06-P01", "type": "open-revision", "prompt": "Compare duas ordens possíveis de um período fornecido e escolha a mais adequada ao contexto discursivo, justificando por foco, continuidade ou clareza.", "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"nonCanonicalOrderAsAutomaticError": false, "onePreferredOrderRequired": false, "openResponseAutoValidated": false},
+  "completionEvidence": {"clusters": {"focus": {"evidence": ["L06-A01"], "required": true}, "ambiguity": {"evidence": ["L06-A02"], "required": true}, "contextualChoice": {"evidence": ["L06-P01"], "required": true}}, "completionRule": "o estudante deve relacionar ordem a efeito e clareza, não simplesmente restaurar ordem canônica."}
+}
