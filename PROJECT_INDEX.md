@@ -93,9 +93,11 @@ Português Completo
 - `docs/licoes-nivel-3-u7.md` — M4 da U7.
 - `docs/licoes-nivel-3-u8.md` — M4 da U8.
 - `docs/licoes-nivel-3-u9.md` — M4 da U9.
+- `docs/referencias-gramatica-nivel-3-u3.md` — gate normativo oficial da N3-U03 para concordância, regência, crase, colocação pronominal e pontuação avançadas.
 - `content/units/301-leitura-critica-textos-longos/` — N3-U1 em M5, com 11 lições + `N3-U01-V01`.
+- `content/units/302-argumentacao-avancada/` — N3-U2 em M5, com 11 lições + `N3-U02-V01`.
 
-O N3 está em **M5 em andamento**: U1 concluída; U2 é o próximo subpasso. O M3 e o M4 já estão consolidados e não devem ser redimensionados por inércia durante a autoria local.
+O N3 está em **M5 em andamento**: U1 e U2 concluídas; U3 é o próximo subpasso e só pode cobrar como norma específica os casos congelados em `docs/referencias-gramatica-nivel-3-u3.md`.
 
 ## Arquitetura e frontend
 
@@ -190,6 +192,9 @@ escopo normativo N2-U02
 
 escopo normativo N2-U04
 → docs/referencias-gramatica-nivel-2-u4.md
+
+escopo normativo N3-U03
+→ docs/referencias-gramatica-nivel-3-u3.md
 
 estado/marcos
 → docs/roadmap-curricular.md
