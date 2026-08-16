@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "N3-U05-L04",
+  "title": "Desenvolver análise e exposição sem girar em círculo",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Desenvolver ideias em extensão proporcional por explicação, relação, exemplo, evidência e interpretação, distinguindo aprofundamento de repetição e detalhe lateral.",
+  "competencies": ["detectar paráfrase repetitiva", "expandir ponto insuficiente", "ligar afirmação a evidência", "interpretar relevância do apoio", "condensar repetição", "controlar detalhe lateral"],
+  "prerequisites": ["N3-U05-L03", "N3-U02-V01"],
+  "limits": ["tamanho não define profundidade", "mais exemplos não significa melhor desenvolvimento", "não alongar texto por requisito artificial", "evidência sem comentário não substitui análise"],
+  "media": {"tts": "opcional", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "purpose": "apoio"}], "generatedVisualResources": [{"type": "UI_RENDERED_ANALYTIC_DEVELOPMENT", "purpose": "comparar afirmação, evidência, explicação e repetição"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "blocos textuais comparáveis bastam."},
+  "sequence": [
+    {"id": "L04-B01", "type": "contrast", "claim": "O piloto mostrou procura relevante.", "weak": "Houve procura. A procura foi relevante. Isso mostra que as pessoas procuraram.", "developed": "O registro contabilizou ocupação acima de 70% em todas as sessões; isso não prova demanda permanente, mas sustenta que houve procura consistente durante o período testado."},
+    {"id": "L04-C01", "type": "quick-check", "items": [{"question": "Repetir a tese com sinônimos conta como desenvolvimento?", "correct": false}, {"question": "Interpretar o alcance da evidência pode aprofundar o bloco?", "correct": true}]},
+    {"id": "L04-A01", "type": "assessment-development", "seed": "A pesquisa tem limite porque foi voluntária.", "sourceFact": "96 de 214 atendidos responderam; 78 avaliaram positivamente", "task": "desenvolver em 2–3 parágrafos explicando utilidade do dado e limite de generalização, sem repetir a mesma ideia"},
+    {"id": "L04-P01", "type": "open-development", "prompt": "Desenvolva um núcleo do seu plano em vários parágrafos e marque onde explica, evidencia, interpreta e faz transição.", "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"lengthScored": false, "exampleCountScored": false, "openResponseAutoValidated": false},
+  "completionEvidence": {"clusters": {"controlled": {"evidence": ["L04-A01"], "required": true}, "ownBlock": {"evidence": ["L04-P01"], "required": true}}, "completionRule": "o bloco precisa avançar o raciocínio, não apenas aumentar a extensão."}
+}

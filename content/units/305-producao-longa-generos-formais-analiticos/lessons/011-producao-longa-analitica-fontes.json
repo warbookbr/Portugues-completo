@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "id": "N3-U05-L11",
+  "title": "Produção longa A: texto analítico/de estudo com fontes",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Realizar processo completo de produção longa analítica ou de estudo com múltiplas fontes, do planejamento à reescrita, preservando arquitetura, evidência, atribuição e limites.",
+  "competencies": ["analisar situação", "macroplanejar", "organizar seções", "desenvolver análise", "integrar 3+ fontes", "redigir texto próprio longo", "revisar conteúdo/arquitetura/fontes/linguagem", "reescrever com histórico", "justificar mudanças global e local"],
+  "prerequisites": ["N3-U05-L01", "N3-U05-L02", "N3-U05-L03", "N3-U05-L04", "N3-U05-L05", "N3-U04-V01"],
+  "limits": ["extensão mínima rígida não pontua", "número de seções não pontua", "vocabulário difícil não é proxy de qualidade", "qualidade global exige avaliador confiável", "não reescrever o que já funciona só para aumentar mudanças"],
+  "media": {"tts": "opcional", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "purpose": "apoio"}], "generatedVisualResources": [{"type": "UI_RENDERED_LONGFORM_WORKSPACE", "purpose": "planejar/redigir por seções"}, {"type": "UI_RENDERED_SOURCE_USE_WORKSPACE", "purpose": "integrar fontes"}, {"type": "UI_RENDERED_VERSION_HISTORY", "purpose": "preservar versões"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória; qualidade global da escrita aberta requer avaliador confiável", "decisionRationale": "o alvo é processo de escrita e pode ser registrado em editor completo."},
+  "sequence": [
+    {"id": "L11-P01", "type": "production-situation", "scenario": "produzir análise de um programa comunitário com quatro fontes controladas, respondendo o que os dados permitem concluir, quais limites permanecem e que informação ainda falta", "requiredDecisions": ["gênero analítico/de estudo", "audiência", "foco", "arquitetura"]},
+    {"id": "L11-P02", "type": "macroplan", "required": ["questão", "núcleos", "fontes por função", "divergências/limites", "arquitetura"]},
+    {"id": "L11-P03", "type": "open-draft", "prompt": "Redija a primeira versão longa usando pelo menos três fontes de modo funcional.", "recordResponse": true, "automaticValidation": false},
+    {"id": "L11-P04", "type": "layered-review", "layers": ["situação/foco", "arquitetura/progressão", "desenvolvimento analítico", "fontes/atribuição", "coesão/referência", "sintaxe/norma do recorte", "precisão/registro"], "recordResponse": true, "required": true},
+    {"id": "L11-P05", "type": "open-rewrite", "preserveOriginal": true, "recordResponse": true, "automaticValidation": false, "requiredReflection": ["mudança global", "mudança local", "trecho mantido", "limite preservado"]}
+  ],
+  "assessmentBehavior": {"minimumLengthScored": false, "sourceCountMinimum": 3, "openResponseAutoValidated": false, "changeCountScored": false},
+  "completionEvidence": {"clusters": {"planning": {"evidence": ["L11-P01", "L11-P02"], "required": true}, "draft": {"evidence": ["L11-P03"], "required": true}, "review": {"evidence": ["L11-P04"], "required": true}, "rewrite": {"evidence": ["L11-P05"], "required": true}}, "completionRule": "planejamento, produção longa própria, revisão e segunda versão são obrigatórios.", "requiresReliableEvaluatorFor": ["qualidade global", "fidelidade analítica aberta"]}
+}

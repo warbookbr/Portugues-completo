@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "N3-U05-L09",
+  "title": "Comunicação institucional, profissional geral e pública",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Produzir comunicações formais de uso geral adequando contexto, densidade, tratamento, estrutura e ação esperada sem recorrer a burocratês ou impessoalidade extrema.",
+  "competencies": ["explicitar propósito", "fornecer contexto suficiente", "indicar ação esperada", "adequar tratamento", "controlar densidade", "preservar fatos", "ser conciso sem omitir informação necessária"],
+  "prerequisites": ["N3-U05-L01", "N3-U05-L05", "N2-U08-V01"],
+  "limits": ["não exigir linguagem jurídica", "formal não significa difícil", "impessoalidade extrema não é requisito", "concisão não autoriza apagar condição essencial"],
+  "media": {"tts": "opcional", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "purpose": "apoio"}], "generatedVisualResources": [{"type": "UI_RENDERED_FORMAL_COMMUNICATION_EDITOR", "purpose": "adequar contexto, ação e tratamento"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "gêneros gerais podem ser praticados em texto."},
+  "sequence": [
+    {"id": "L09-B01", "type": "purpose-contrast", "sameFacts": ["sistema ficará indisponível sexta 18h–20h", "cadastros em andamento serão salvos", "usuários devem retomar após 20h"], "genres": ["comunicado público", "e-mail à equipe", "nota explicativa"]},
+    {"id": "L09-C01", "type": "quick-check", "items": [{"question": "Usar palavras difíceis torna a comunicação mais formal?", "correct": false}, {"question": "Ação esperada precisa estar clara quando a situação exige ação do leitor?", "correct": true}]},
+    {"id": "L09-A01", "type": "assessment-two-communications", "facts": ["reunião transferida para quinta 15h", "local mudou para sala 4", "documentos devem ser enviados até quarta 12h"], "tasks": ["escrever mensagem à equipe", "escrever comunicado aos participantes", "explicar duas diferenças funcionais"]},
+    {"id": "L09-P01", "type": "open-formal", "prompt": "Produza duas comunicações de situações diferentes, preservando fatos e adequando contexto, ação e tratamento.", "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"bureaucraticLanguageScored": false, "maximumImpersonalityScored": false, "openResponseAutoValidated": false},
+  "completionEvidence": {"clusters": {"controlled": {"evidence": ["L09-A01"], "required": true}, "ownCommunications": {"evidence": ["L09-P01"], "required": true}}, "completionRule": "a comunicação deve ser adequada e acionável, não apenas formal na superfície."}
+}

@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "N3-U05-L05",
+  "title": "Integrar fontes sem apagar a voz própria",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Incorporar síntese, paráfrase, dados e citações curtas em texto longo mantendo atribuição, função e análise própria identificáveis.",
+  "competencies": ["introduzir fonte pela função", "atribuir corretamente", "parafrasear com fidelidade", "ligar evidência ao ponto", "comentar limite/relevância", "evitar colagem de citações", "separar análise própria"],
+  "prerequisites": ["N3-U05-L04", "N3-U04-V01"],
+  "limits": ["fonte não substitui raciocínio", "citação direta não prova rigor", "não exigir citação em todo parágrafo", "não fundir vozes"],
+  "media": {"tts": "opcional", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "purpose": "apoio"}], "generatedVisualResources": [{"type": "UI_RENDERED_SOURCE_USE_WORKSPACE", "purpose": "ligar fonte, uso e comentário próprio"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "workspace textual registra origem e função."},
+  "sequence": [
+    {"id": "L05-B01", "type": "contrast", "weak": "Segundo A, 71%. B diz 62%. C diz que houve melhora.", "developed": "O registro A mostra ocupação de 71% no teste; a pesquisa B, com amostra diferente, registra 62% de avaliações positivas. Os números não medem a mesma coisa, por isso sustentam aspectos distintos da análise."},
+    {"id": "L05-C01", "type": "quick-check", "items": [{"question": "Uma citação precisa ter função no argumento/análise?", "correct": true}, {"question": "Misturar comentário próprio como se fosse da fonte é aceitável?", "correct": false}]},
+    {"id": "L05-A01", "type": "assessment-integration", "sources": [{"id": "A", "fact": "342 atendimentos noturnos"}, {"id": "B", "fact": "79% dos respondentes avaliaram positivamente"}], "task": "escrever bloco que use as duas fontes, preserve escopos e acrescente análise própria"},
+    {"id": "L05-P01", "type": "open-source-block", "prompt": "Escreva um bloco do seu texto com pelo menos duas fontes e marque a função de cada uso e sua análise própria.", "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"quoteCountScored": false, "sourcePresenceWithoutFunctionSufficient": false, "openResponseAutoValidated": false},
+  "completionEvidence": {"clusters": {"controlled": {"evidence": ["L05-A01"], "required": true}, "ownIntegration": {"evidence": ["L05-P01"], "required": true}}, "completionRule": "a fonte precisa ser atribuída e integrada a raciocínio próprio."}
+}

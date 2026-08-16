@@ -98,8 +98,9 @@ Português Completo
 - `content/units/302-argumentacao-avancada/` — N3-U2 em M5, 11 lições + `N3-U02-V01`.
 - `content/units/303-sintaxe-complexa-norma-efeitos/` — N3-U3 em M5, 12 lições + `N3-U03-V01`.
 - `content/units/304-fontes-multiplas-sintese-leitura-critica/` — N3-U4 em M5, 11 lições + `N3-U04-V01`.
+- `content/units/305-producao-longa-generos-formais-analiticos/` — N3-U5 em M5, 12 lições + `N3-U05-V01`.
 
-O N3 está em **M5 em andamento**: U1–U4 concluídas; U5 é o próximo subpasso. O gate normativo da U3 permanece registrado em `docs/referencias-gramatica-nivel-3-u3.md`.
+O N3 está em **M5 em andamento**: U1–U5 concluídas; U6 é o próximo subpasso. O gate normativo da U3 permanece registrado em `docs/referencias-gramatica-nivel-3-u3.md`.
 
 ## Arquitetura e frontend
 
@@ -138,83 +139,26 @@ Documentos previstos:
 ## Fontes de verdade
 
 ```text
-arquitetura
-→ docs/arquitetura.md
-
-visão geral curricular
-→ docs/mapa-curso.md
-
-M1 N1–N4
-→ docs/mapa-niveis-1-4.md
-
-matriz transversal
-→ docs/matriz-progressao-global.md
-
-N1 M2
-→ docs/areas-nivel-1.md
-
-N1 M3
-→ docs/unidades-nivel-1.md
-
-N1 M4
-→ docs/licoes-nivel-1.md + docs/licoes-nivel-1-u1.md ... docs/licoes-nivel-1-u7.md
-
-N1 saída
-→ docs/checkpoint-saida-nivel-1.md + content/levels/001-basico/exit-verification.json
-
-N1→N2
-→ docs/transicao-n1-n2.md
-
-N2 M2
-→ docs/areas-nivel-2.md
-
-N2 M3
-→ docs/unidades-nivel-2.md
-
-N2 M4
-→ docs/licoes-nivel-2.md + docs/licoes-nivel-2-u1.md ... docs/licoes-nivel-2-u9.md
-
-N2 saída
-→ docs/checkpoint-saida-nivel-2.md + content/levels/002-intermediario/exit-verification.json
-
-N2→N3
-→ docs/transicao-n2-n3.md
-
-N3 M2
-→ docs/areas-nivel-3.md
-
-N3 M3
-→ docs/unidades-nivel-3.md
-
-N3 M4
-→ docs/licoes-nivel-3.md + docs/licoes-nivel-3-u1.md ... docs/licoes-nivel-3-u9.md
-
-escopo normativo N2-U02
-→ docs/referencias-ortografia-nivel-2.md
-
-escopo normativo N2-U04
-→ docs/referencias-gramatica-nivel-2-u4.md
-
-escopo normativo N3-U03
-→ docs/referencias-gramatica-nivel-3-u3.md
-
-estado/marcos
-→ docs/roadmap-curricular.md
-
-conteúdo detalhado
-→ content/
-
-forma de ensinar/mídia
-→ docs/conteudo.md
-
-produção de mídia
-→ producao-midia/README.md + producao-midia/FILA-MIDIA.md
-
-validação automática
-→ docs/validacoes.md
-
-procedimentos ChatGPT
-→ .ChatGPT/skills/
+arquitetura → docs/arquitetura.md
+visão geral curricular → docs/mapa-curso.md
+M1 N1–N4 → docs/mapa-niveis-1-4.md
+matriz transversal → docs/matriz-progressao-global.md
+N1 M2/M3/M4 → docs/areas-nivel-1.md + docs/unidades-nivel-1.md + docs/licoes-nivel-1*.md
+N1 saída → docs/checkpoint-saida-nivel-1.md + content/levels/001-basico/exit-verification.json
+N1→N2 → docs/transicao-n1-n2.md
+N2 M2/M3/M4 → docs/areas-nivel-2.md + docs/unidades-nivel-2.md + docs/licoes-nivel-2*.md
+N2 saída → docs/checkpoint-saida-nivel-2.md + content/levels/002-intermediario/exit-verification.json
+N2→N3 → docs/transicao-n2-n3.md
+N3 M2/M3/M4 → docs/areas-nivel-3.md + docs/unidades-nivel-3.md + docs/licoes-nivel-3*.md
+escopo normativo N2-U02 → docs/referencias-ortografia-nivel-2.md
+escopo normativo N2-U04 → docs/referencias-gramatica-nivel-2-u4.md
+escopo normativo N3-U03 → docs/referencias-gramatica-nivel-3-u3.md
+estado/marcos → docs/roadmap-curricular.md
+conteúdo detalhado → content/
+forma de ensinar/mídia → docs/conteudo.md
+produção de mídia → producao-midia/README.md + producao-midia/FILA-MIDIA.md
+validação automática → docs/validacoes.md
+procedimentos ChatGPT → .ChatGPT/skills/
 ```
 
 Se uma decisão mudar uma fonte de verdade, atualizar a documentação correspondente em vez de depender da conversa.

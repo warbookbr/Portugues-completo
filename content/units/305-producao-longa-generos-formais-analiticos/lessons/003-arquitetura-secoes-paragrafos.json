@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "N3-U05-L03",
+  "title": "Arquitetura de seções e parágrafos em escala longa",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Distribuir conteúdo em seções e parágrafos com funções recuperáveis, progressão e transições, sem impor número fixo de partes ou subtítulos.",
+  "competencies": ["agrupar conteúdo por função", "dividir seção sobrecarregada", "unir blocos redundantes", "decidir quando subtítulo ajuda", "planejar transições", "justificar arquitetura"],
+  "prerequisites": ["N3-U05-L02", "N3-U01-L02", "N3-U01-L03"],
+  "limits": ["não impor introdução-desenvolvimento-conclusão universal", "subtítulo não é obrigatório", "número de parágrafos não pontua", "seção longa não é erro automático"],
+  "media": {"tts": "opcional", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "purpose": "apoio"}], "generatedVisualResources": [{"type": "UI_RENDERED_LONG_TEXT_ARCHITECTURE", "purpose": "organizar seções, parágrafos e transições"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "arquitetura pode ser manipulada em UI textual."},
+  "sequence": [
+    {"id": "L03-B01", "type": "architecture-compare", "content": ["objetivo do teste", "dados de acesso", "dados de espera", "limites metodológicos", "recomendação condicional"], "architectures": [{"sections": ["contexto", "resultados", "limites e próximos passos"], "status": "uma organização plausível"}, {"sections": ["introdução", "desenvolvimento", "conclusão"], "status": "rótulos genéricos não mostram função suficiente neste caso"}]},
+    {"id": "L03-C01", "type": "quick-check", "items": [{"question": "Toda seção precisa do mesmo tamanho?", "correct": false}, {"question": "Um subtítulo deve existir só para aumentar aparência de formalidade?", "correct": false}]},
+    {"id": "L03-A01", "type": "assessment-architecture", "planItems": ["problema", "fontes", "resultados convergentes", "divergência não resolvida", "limites", "resposta própria"], "tasks": ["agrupar em arquitetura", "marcar função de cada seção", "propor duas transições importantes"]},
+    {"id": "L03-P01", "type": "open-architecture", "prompt": "Transforme seu macroplano em arquitetura de texto longo e justifique uma divisão, uma união e uma transição.", "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"fixedSectionCount": false, "headingsRequired": false, "openResponseAutoValidated": false},
+  "completionEvidence": {"clusters": {"controlled": {"evidence": ["L03-A01"], "required": true}, "ownArchitecture": {"evidence": ["L03-P01"], "required": true}}, "completionRule": "a arquitetura deve tornar funções e progressão recuperáveis."}
+}

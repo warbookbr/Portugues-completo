@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "N3-U05-L01",
+  "title": "Ler a situação de produção antes de escrever",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Transformar gênero, finalidade, audiência, meio, recorte e restrições em decisões concretas de conteúdo, estrutura, registro e uso de fontes antes da redação.",
+  "competencies": ["identificar finalidade e ação esperada", "caracterizar audiência sem estereótipo", "considerar meio e circulação", "selecionar densidade e registro adequados", "reconhecer restrições reais", "explicar que escolhas mudam quando a situação muda"],
+  "prerequisites": ["N3-U01-V01", "N3-U02-V01", "N3-U04-V01"],
+  "limits": ["formalidade máxima não é resposta padrão", "planejamento não substitui texto", "gênero não é template", "não inventar características do leitor"],
+  "media": {"tts": "opcional", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "purpose": "apoio"}], "generatedVisualResources": [{"type": "UI_RENDERED_PRODUCTION_SITUATION", "purpose": "mapear gênero, finalidade, audiência, meio e restrições"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "situações textuais controladas tornam as decisões observáveis."},
+  "sequence": [
+    {"id": "L01-B01", "type": "contrast", "sameTopic": "mudança de horário", "situations": [{"genre": "relatório interno", "reader": "coordenação", "purpose": "registrar resultados e limites"}, {"genre": "comunicado público", "reader": "usuários", "purpose": "informar novo horário e ação necessária"}], "task": "comparar conteúdo, estrutura e registro"},
+    {"id": "L01-C01", "type": "quick-check", "items": [{"question": "O mesmo tema exige o mesmo texto para qualquer leitor?", "correct": false}, {"question": "Formalidade maior é sempre melhor?", "correct": false}]},
+    {"id": "L01-A01", "type": "assessment-situation", "scenario": {"genre": "nota explicativa", "audience": "participantes de um programa", "purpose": "explicar mudança de procedimento e motivo", "medium": "site institucional", "constraint": "não divulgar dados pessoais"}, "tasks": ["definir conteúdo essencial", "identificar informação que deve ficar de fora", "propor registro e estrutura"]},
+    {"id": "L01-P01", "type": "open-analysis", "prompt": "Analise uma situação nova e registre decisões concretas de escrita antes de redigir.", "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"maximalFormalityScored": false, "templateRequired": false, "openResponseAutoValidated": false},
+  "completionEvidence": {"clusters": {"controlled": {"evidence": ["L01-A01"], "required": true}, "ownDecision": {"evidence": ["L01-P01"], "required": true}}, "completionRule": "as decisões precisam derivar da situação real de produção."}
+}

@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "N3-U05-L07",
+  "title": "Resenha crítica: resumir, analisar e avaliar com critérios",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Produzir resenha crítica que apresente o material, sintetize apenas o necessário, analise escolhas relevantes e formule avaliação sustentada por critérios e elementos concretos.",
+  "competencies": ["apresentar material e recorte", "selecionar resumo funcional", "distinguir descrição de análise", "formular critérios pertinentes", "sustentar avaliação", "aceitar avaliações divergentes quando justificadas"],
+  "prerequisites": ["N3-U05-L04", "N3-U02-V01", "N3-U01-V01"],
+  "limits": ["gosto pessoal sozinho não basta", "resenha não é resumo integral", "jargão especializado não é requisito", "avaliação diferente pode ser válida"],
+  "media": {"tts": "opcional", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "purpose": "apoio"}], "generatedVisualResources": [{"type": "UI_RENDERED_REVIEW_CRITERIA_WORKSPACE", "purpose": "separar descrição, análise, critério e avaliação"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "material autoral textual é suficiente para resenha."},
+  "sequence": [
+    {"id": "L07-B01", "type": "contrast", "material": "ensaio autoral curto do curso", "weak": "O texto é bom porque gostei.", "developed": "A organização por exemplos torna a tese acessível, mas a conclusão retoma pouco o limite apresentado no segundo bloco; por esse critério, a argumentação é clara, porém o fechamento poderia integrar melhor a ressalva."},
+    {"id": "L07-C01", "type": "quick-check", "items": [{"question": "Uma resenha precisa recontar todo o material?", "correct": false}, {"question": "Critério e evidência do material devem sustentar a avaliação?", "correct": true}]},
+    {"id": "L07-A01", "type": "assessment-review", "material": "texto autoral fornecido", "required": ["apresentação", "síntese seletiva", "análise de ao menos duas escolhas", "avaliação com critério e evidência"]},
+    {"id": "L07-P01", "type": "open-review", "prompt": "Produza resenha crítica própria de material novo e explicite pelo menos dois critérios usados na avaliação.", "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"agreementWithModelEvaluationScored": false, "jargonRequired": false, "openResponseAutoValidated": false},
+  "completionEvidence": {"clusters": {"controlled": {"evidence": ["L07-A01"], "required": true}, "ownReview": {"evidence": ["L07-P01"], "required": true}}, "completionRule": "a avaliação deve ser sustentada por critérios e elementos do material, não por concordância com um julgamento-modelo."}
+}
