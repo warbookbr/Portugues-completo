@@ -81,9 +81,21 @@ Português Completo
 
 ### Nível 3
 
-- `docs/areas-nivel-3.md` — M2, dez áreas avançadas dimensionadas a partir do M1 e da transição N2→N3.
+- `docs/areas-nivel-3.md` — M2, dez áreas avançadas dimensionadas.
+- `docs/unidades-nivel-3.md` — M3, nove unidades pedagógicas integradas + arquitetura antecipada da saída.
+- `docs/licoes-nivel-3.md` — consolidação M4, 94 lições + 9 verificações integradas.
+- `docs/licoes-nivel-3-u1.md` — M4 da U1.
+- `docs/licoes-nivel-3-u2.md` — M4 da U2.
+- `docs/licoes-nivel-3-u3.md` — M4 da U3.
+- `docs/licoes-nivel-3-u4.md` — M4 da U4.
+- `docs/licoes-nivel-3-u5.md` — M4 da U5.
+- `docs/licoes-nivel-3-u6.md` — M4 da U6.
+- `docs/licoes-nivel-3-u7.md` — M4 da U7.
+- `docs/licoes-nivel-3-u8.md` — M4 da U8.
+- `docs/licoes-nivel-3-u9.md` — M4 da U9.
+- `content/units/301-leitura-critica-textos-longos/` — N3-U1 em M5, com 11 lições + `N3-U01-V01`.
 
-O N3 ainda não possui M3/M4/M5. Não criar lições antes de dimensionar as unidades.
+O N3 está em **M5 em andamento**: U1 concluída; U2 é o próximo subpasso. O M3 e o M4 já estão consolidados e não devem ser redimensionados por inércia durante a autoria local.
 
 ## Arquitetura e frontend
 
@@ -166,6 +178,12 @@ N2→N3
 
 N3 M2
 → docs/areas-nivel-3.md
+
+N3 M3
+→ docs/unidades-nivel-3.md
+
+N3 M4
+→ docs/licoes-nivel-3.md + docs/licoes-nivel-3-u1.md ... docs/licoes-nivel-3-u9.md
 
 escopo normativo N2-U02
 → docs/referencias-ortografia-nivel-2.md

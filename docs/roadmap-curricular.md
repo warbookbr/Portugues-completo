@@ -58,88 +58,64 @@ currículo fechado
 ≠ aprovação automática de um aluno individual
 ```
 
-### Arquitetura concluída do N2
-
-```text
-U1  10 — Leitura intermediária: estrutura, inferência e ponto de vista
-U2  11 — Palavras em sistema: ortografia, acentuação, morfologia e precisão
-U3  10 — Oração e termos: construindo e revisando relações sintáticas
-U4  11 — Do período simples ao composto: relações, regência e pontuação
-U5   9 — Coesão e coerência em textos de vários parágrafos
-U6  10 — Produzindo e reescrevendo textos de vários parágrafos
-U7   9 — Argumentar: posição, razões, exemplos e evidências
-U8   8 — Língua em interação: apresentação, discussão, registro e variação
-U9   9 — Literatura, multimodalidade e comparação de fontes
-```
-
-### Verificação e checkpoint de saída N2 — CONCLUÍDOS
-
-`N2-EXIT-V01` usa oito agrupamentos integrados de transferência. O checkpoint em `docs/checkpoint-saida-nivel-2.md` auditou:
-
-```text
-25 competências oficiais
-→ 25 cobertas
-→ 0 lacunas obrigatórias remanescentes
-```
-
-A fronteira N2→N3 está registrada em `docs/transicao-n2-n3.md`.
-
 ### Nível 3 — Avançado
 
 - **M1 concluído** — `docs/mapa-niveis-1-4.md`;
 - **M2 concluído** — 10 áreas em `docs/areas-nivel-3.md`;
-- **M3–M5 pendentes**.
+- **M3 concluído** — 9 unidades pedagógicas integradas em `docs/unidades-nivel-3.md`;
+- **M4 concluído** — **94 lições + 9 verificações integradas** em `docs/licoes-nivel-3.md` e documentos U1–U9;
+- **M5 em andamento** — **U1 concluída**; U2–U9 pendentes.
 
-O N3 recebe como pressuposto curricular um usuário intermediário organizado: leitura de vários parágrafos, revisão funcional do recorte N2, produção/revisão de textos, argumentação inicial, oralidade curta, adequação/variação, literatura sustentada, multimodalidade acessível e comparação de duas fontes.
+O N3 aprofunda um usuário intermediário já organizado; não reinicia leitura, gramática, escrita, argumentação, oralidade, variação ou fontes do zero.
 
-O M2 dimensionou as seguintes áreas:
-
-```text
-1. Leitura crítica e interpretação avançada
-2. Produção textual longa, formal e analítica
-3. Gramática avançada aplicada ao texto
-4. Argumentação, retórica e persuasão
-5. Coesão, coerência, semântica e discurso
-6. Gêneros formais, profissionais, públicos e de estudo
-7. Estilo, registro, precisão e edição
-8. Oralidade argumentativa e comunicação formal
-9. Variação, norma e consciência sociolinguística
-10. Literatura, multimodalidade e leitura crítica de mídia
-```
-
-### Decisões estruturais do M2 do N3
-
-**Fontes/pesquisa são transversais, não uma 11ª área artificial.** Responsabilidades principais:
+#### Arquitetura M3/M4 do N3
 
 ```text
-Área 1 → leitura, comparação e síntese de várias fontes
-Área 4 → qualidade de evidência em argumentação
-Área 6 → integração/atribuição de fontes em gêneros
-Área 10 → autoria, circulação, edição e enquadramento de mídia/fontes
+U1  11 — Leitura crítica de textos longos: arquitetura, implícitos e enquadramento
+U2  11 — Argumentação avançada: tese, evidência, qualificação e contra-argumento
+U3  12 — Sintaxe complexa, norma e efeitos de estrutura
+U4  11 — Fontes múltiplas, síntese e leitura crítica da informação
+U5  12 — Produção longa e gêneros formais/analíticos
+U6   9 — Estilo, precisão e edição avançada
+U7   9 — Comunicação formal e debate estruturado
+U8   8 — Variação, norma, prestígio e identidade
+U9  11 — Literatura, intertextualidade e mídia crítica
 ```
 
-**Ortografia não desaparece.** Ela passa a operar principalmente como revisão e consulta qualificada:
+As 10 áreas M2 não foram convertidas mecanicamente em 10 unidades. Escrita, fontes, gramática, estilo, argumentação e oralidade reaparecem ao longo do nível conforme a progressão pedagógica.
+
+#### N3-U1 — Leitura crítica de textos longos — CONCLUÍDA
 
 ```text
-Área 3 → convenções ligadas a estrutura/norma formal
-Área 7 → revisão ortográfica/editorial e consulta
+11 lições + N3-U01-V01
 ```
 
-**Produção e gêneros não são a mesma área:**
+Cobertura:
 
-```text
-Área 2 → processo de planejar, desenvolver, revisar e reescrever texto longo
-Área 6 → finalidades e convenções de famílias de gêneros
-```
+- estratégia de leitura conforme finalidade e densidade;
+- arquitetura global e movimentos de texto longo;
+- hierarquia de informação;
+- cadeias referenciais extensas;
+- cadeia argumentativa distribuída;
+- inferência por pistas distantes;
+- pressupostos/implicações em recorte funcional;
+- modalidade e grau de compromisso;
+- perspectiva e enquadramento;
+- intertextualidade;
+- síntese crítica sustentada.
 
-**Semântica/discurso e estilo também foram separados:**
+Regras centrais:
 
-```text
-Área 5 → relações de sentido, implícitos, modalidade, coesão e discurso
-Área 7 → precisão, ritmo, voz, tom, concisão e edição
-```
+- releitura e anotações são permitidas;
+- velocidade não pontua;
+- inferência exige evidência;
+- informação insuficiente pode ser resposta correta;
+- enquadramento não equivale automaticamente a manipulação;
+- tema comum não prova intertextualidade;
+- síntese deve preservar qualificações e incertezas reais;
+- questões fechadas não compensam ausência de síntese crítica própria.
 
-O M2 inclui revisão cruzada das competências oficiais de saída do N3 e dos domínios da matriz global; não ficou domínio obrigatório dependente de uma área implícita.
+Nenhuma nova mídia humana obrigatória foi criada. TTS e UI textual/acessível são suficientes para a unidade.
 
 ### Nível 4 — Domínio
 
@@ -155,47 +131,72 @@ NÍVEL 2 — M5 ✓
 │   ├── N2-EXIT-V01 ✓
 │   └── checkpoint N2→N3 ✓
 │
-NÍVEL 3 — M1 ✓
-├── M2 ✓
-└── M3 — PRÓXIMO MARCO
+NÍVEL 3 — M1–M4 ✓
+└── M5 — MARCO ATIVO
+    ├── U1 ✓
+    └── U2 — PRÓXIMO SUBPASSO
 ```
 
 Próximo subpasso:
 
 ```text
-N3 M3 — dimensionar as unidades do Nível 3
+N3-U02 — Argumentação avançada: tese, evidência, qualificação e contra-argumento
+11 lições + verificação integrada
 ```
 
-As unidades devem integrar áreas quando a progressão pedagógica exigir, em vez de criar mecanicamente uma unidade para cada área.
-
-Cada unidade M3 deve registrar:
+A U2 deve avançar deliberadamente de:
 
 ```text
-Objetivo da unidade
-→ Competências ao concluir
-→ Conteúdos nucleares
-→ Retomadas e conexões
-→ Evidências de conclusão
-→ Limites
+posição → razão → evidência → limite/objeção simples
 ```
 
-### Restrições para o M3 do N3
+para:
 
-- não criar uma unidade por área apenas para manter simetria;
-- não concentrar toda gramática antes de leitura/produção;
-- não deixar argumentação, fontes e escrita apenas para o final do nível;
-- não transformar gêneros em coleção de templates;
-- não tratar estilo apenas como polimento final;
-- garantir retomadas distribuídas de fontes, escrita, revisão, oralidade e leitura crítica;
-- prever casos normativos avançados específicos para conferência de fontes antes do M5;
-- não criar lições antes de M3 suficientemente consolidado.
+```text
+tese delimitada
+→ cadeia de razões/evidências
+→ avaliação de qualidade do apoio
+→ qualificação
+→ contra-argumento
+→ resposta
+→ análise de estratégias persuasivas
+→ revisão argumentativa
+```
+
+A posição defendida nunca é pontuada por concordância ideológica. Falhas de raciocínio devem ser ensinadas pelo funcionamento, não como catálogo de nomes; emoção não é automaticamente inválida nem evidência factual; e insuficiência de evidência continua sendo conclusão legítima.
 
 Depois:
 
 ```text
-N3 M4 — dimensionar lições
-→ N3 M5 — desenvolver conteúdo
+N3-U3 → U4 → U5 → U6 → U7 → U8 → U9
+→ verificação de saída N3
+→ checkpoint N3→N4
 ```
+
+## Gates já definidos para o M5 do N3
+
+### N3-U3 — gate normativo
+
+Antes de congelar casos avançados de concordância, regência, crase, colocação pronominal e pontuação:
+
+- selecionar casos de alta utilidade;
+- conferir formulações em fontes normativas/institucionais adequadas;
+- documentar o recorte;
+- não transformar controvérsia, exceção rara ou preferência estilística em regra universal.
+
+### N3-U9 — gate audiovisual/acessibilidade
+
+Sequência, corte e montagem devem ser ensinados primeiro com recursos acessíveis e controláveis pela interface. Clipe audiovisual controlado só entra se movimento, montagem, som ou sequência trouxerem ganho pedagógico real que não possa ser substituído por representação acessível equivalente.
+
+Se mídia humana se tornar necessária:
+
+```text
+mediaId antes da produção
+→ registrar no contrato/fila
+→ não bloquear autoria curricular desnecessariamente
+```
+
+Nenhuma imagem ou vídeo deve ser criado apenas para variedade visual.
 
 ## Responsabilidades críticas do N3
 
@@ -215,7 +216,7 @@ O N3 deve aprofundar — não reensinar do zero — principalmente:
 
 ## Regras de continuidade
 
-1. Nenhuma camada M4/M5 deve ser criada antes de M2/M3 suficientemente consolidados.
+1. M3 e M4 do N3 são fontes consolidadas; autoria M5 local não deve redimensioná-los sem motivo curricular real.
 2. Descobertas locais devem ser conferidas contra `docs/matriz-progressao-global.md`.
 3. Atualizar este roadmap no mesmo PR que alterar materialmente o estado curricular.
 4. Produções abertas e orais não podem receber validação automática falsa.
@@ -228,6 +229,8 @@ O N3 deve aprofundar — não reensinar do zero — principalmente:
 11. Em produção oral, o projeto só automatiza o que realmente observa; inteligibilidade exige avaliador confiável.
 12. Em multimodalidade, acessibilidade continua obrigatória para pistas decisivas.
 13. Casos normativos avançados, raros ou controversos devem ser conferidos em fontes adequadas antes de serem congelados no M5.
+14. Fontes e escrita não podem ser confinadas a uma única unidade; devem reaparecer quando o objetivo exige transferência.
+15. Gêneros não são templates rígidos; estilo não é mero polimento cosmético no final do processo.
 
 ## Dependências não curriculares abertas
 
@@ -260,6 +263,8 @@ N2 saída → docs/checkpoint-saida-nivel-2.md + content/levels/002-intermediari
 N2→N3 → docs/transicao-n2-n3.md
 
 N3 M2 → docs/areas-nivel-3.md
+N3 M3 → docs/unidades-nivel-3.md
+N3 M4 → docs/licoes-nivel-3.md + docs/licoes-nivel-3-u*.md
 
 estado atual → docs/roadmap-curricular.md
 conteúdo desenvolvido → content/
