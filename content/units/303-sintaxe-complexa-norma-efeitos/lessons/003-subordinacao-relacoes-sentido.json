@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "id": "N3-U03-L03",
+  "title": "Subordinação e relações de sentido em escala avançada",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Compreender e produzir relações subordinadas de causa, condição, concessão, consequência, finalidade, comparação, proporção e tempo conforme a intenção, priorizando a relação de sentido sobre a classificação terminológica.",
+  "competencies": ["identificar relação lógica em contexto", "escolher conectivo compatível", "comparar versões com relações diferentes", "mover oração observando foco e pontuação", "tornar relação implícita mais explícita quando necessário"],
+  "prerequisites": ["N3-U03-L01", "N3-U03-L02", "N2-U04-V01"],
+  "limits": ["nome da classe não substitui compreensão", "não exigir catálogo completo de subordinadas", "o mesmo conectivo pode depender de contexto", "não impor relação mais explícita quando a versão original é clara"],
+  "media": {"tts": "opcional", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["períodos", "feedback"], "purpose": "apoio"}], "generatedVisualResources": [{"type": "UI_RENDERED_RELATION_MAP", "locations": ["L03-B01", "L03-A01", "L03-A02"], "purpose": "mapear relações semânticas"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "pares de reformulação permitem observar a relação sem depender de taxonomia extensa."},
+  "sequence": [
+    {"id": "L03-B01", "type": "relation-contrast", "versions": [{"text": "Como o sistema ficou indisponível, o prazo foi ampliado.", "relation": "causa"}, {"text": "Embora o sistema tenha ficado indisponível, o prazo não foi ampliado.", "relation": "concessão"}, {"text": "Se o sistema ficar indisponível, o prazo será ampliado.", "relation": "condição"}]},
+    {"id": "L03-C01", "type": "quick-check", "items": [{"text": "A equipe repetiu a medição para confirmar o resultado.", "expectedRelation": "finalidade"}, {"text": "À medida que a procura crescia, novos horários eram abertos.", "expectedRelation": "proporção"}]},
+    {"id": "L03-A01", "type": "assessment-choice", "scenario": "o relatório foi publicado apesar de uma limitação metodológica já conhecida", "options": ["Embora a limitação fosse conhecida, o relatório foi publicado.", "Porque a limitação fosse conhecida, o relatório foi publicado."], "correctIndex": 0, "task": "explicar a relação"},
+    {"id": "L03-A02", "type": "meaning-shift", "base": "A equipe revisou o protocolo. Os erros diminuíram.", "targets": ["explicitar causa sem afirmar que ela foi demonstrada", "explicitar sequência temporal", "explicitar condição hipotética"], "acceptMultipleValid": true},
+    {"id": "L03-P01", "type": "open-rewrite", "prompt": "Reescreva um par de ideias fornecido em duas versões com relações diferentes e explique como o sentido global muda.", "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"terminologyRequired": false, "meaningRelationRequired": true, "openResponseAutoValidated": false},
+  "completionEvidence": {"clusters": {"relationRecognition": {"evidence": ["L03-A01"], "required": true}, "relationProduction": {"evidence": ["L03-A02", "L03-P01"], "required": true}}, "completionRule": "o estudante precisa controlar a relação de sentido, independentemente de nomear a classe."}
+}
