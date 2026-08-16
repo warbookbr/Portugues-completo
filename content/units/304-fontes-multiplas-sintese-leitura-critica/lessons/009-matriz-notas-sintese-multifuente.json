@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "id": "N3-U04-L09",
+  "title": "Matriz de notas para síntese multifuente",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Organizar notas por questão e tema através de várias fontes, preservando origem, convergências, divergências, evidências e lacunas sem produzir resumos isolados fonte por fonte.",
+  "competencies": ["criar linhas temáticas", "registrar origem de cada nota", "agrupar informações comparáveis", "marcar convergência/divergência/lacuna", "distinguir paráfrase de comentário próprio", "reduzir transcrição desnecessária"],
+  "prerequisites": ["N3-U04-L01", "N3-U04-L08"],
+  "limits": ["quantidade de notas não pontua", "matriz não substitui síntese final", "não copiar trechos longos sem função", "não fundir fontes em uma voz única sem atribuição"],
+  "media": {"tts": "opcional", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["fontes", "notas"], "purpose": "apoio"}], "generatedVisualResources": [{"type": "UI_RENDERED_MULTI_SOURCE_NOTE_MATRIX", "locations": ["L09-B01", "L09-A01", "L09-P01"], "purpose": "organizar temas x fontes x status"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "matriz textual acessível é o próprio recurso de estudo necessário."},
+  "sequence": [
+    {"id": "L09-B01", "type": "worked-matrix", "themes": ["procura", "tempo de espera", "satisfação"], "sources": ["relatório operacional", "questionário", "nota comunitária"], "teachingPoint": "a mesma linha temática reúne fontes diferentes; fonte sem dado pertinente recebe marcação de ausência, não informação inventada"},
+    {"id": "L09-C01", "type": "quick-check", "items": [{"question": "Organizar uma página de resumo para cada fonte facilita automaticamente a comparação?", "options": ["não; pode esconder relações entre fontes", "sim, sempre"], "correctIndex": 0}, {"question": "Uma célula sem informação pode ser marcada como 'não informado'?", "options": ["sim", "não; deve ser preenchida por inferência"], "correctIndex": 0}]},
+    {"id": "L09-A01", "type": "assessment-matrix", "sources": [{"id": "A", "facts": ["420 atendimentos", "custo +9%"]}, {"id": "B", "facts": ["87 de 110 respondentes satisfeitos", "não informa custo"]}, {"id": "C", "facts": ["questiona tempo de espera", "não fornece contagem"]}], "themes": ["volume", "custo", "satisfação", "espera"], "tasks": ["preencher células com origem", "marcar ausências", "registrar quais temas ainda exigem outra fonte"]},
+    {"id": "L09-A02", "type": "note-quality", "notes": [{"text": "Fonte A: 420 atendimentos.", "status": "nota factual atribuída"}, {"text": "O projeto foi ótimo.", "status": "comentário sem separação/critério"}, {"text": "Fonte B: 87/110 respondentes satisfeitos; amostra voluntária.", "status": "nota com dado e limite"}], "task": "selecionar notas mais úteis para síntese e explicar"},
+    {"id": "L09-P01", "type": "open-matrix", "prompt": "Monte uma matriz temática para quatro fontes novas, preservando autoria, divergências e lacunas. Registre separadamente qualquer interpretação própria.", "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"noteCountScored": false, "blankCellsMayBeMissingInfo": true, "openResponseAutoValidated": false},
+  "completionEvidence": {"clusters": {"matrixConstruction": {"evidence": ["L09-A01", "L09-A02"], "required": true}, "ownMatrix": {"evidence": ["L09-P01"], "required": true}}, "completionRule": "a matriz deve permitir recuperar tema, fonte, relação e lacuna sem misturar vozes."}
+}
