@@ -51,7 +51,8 @@ currículo fechado
 - **M3 concluído** — 9 unidades em `docs/unidades-nivel-2.md`;
 - **M4 concluído** — **87 lições + 9 verificações integradas** em `docs/licoes-nivel-2.md` e documentos U1–U9;
 - **M5 das unidades concluído** — **U1–U9 com conteúdo + verificações integradas**;
-- **fechamento do nível em andamento** — verificação de saída e checkpoint N2→N3 ainda pendentes.
+- **verificação de saída desenvolvida** — `content/levels/002-intermediario/exit-verification.json` (`N2-EXIT-V01`);
+- **fechamento do nível em andamento** — checkpoint N2→N3 ainda pendente.
 
 Arquitetura M4:
 
@@ -169,13 +170,33 @@ Regras centrais: replay sem penalidade automática; transcrição só após tent
 9 lições + N2-U09-V01
 ```
 
-Cobertura: voz e perspectiva narrativa; personagem, tensão e transformação sem molde fixo; poema, ritmo, repetição, disposição e imagem; figuras frequentes e seus efeitos; pluralidade interpretativa sustentada; multimodalidade e hipertexto acessíveis; autoria/origem/data/circulação; comparação de duas fontes; resumo/paráfrase com atribuição e resposta própria separada.
+Cobertura: voz e perspectiva narrativa; personagem, tensão e transformação sem molde fixo; poema, ritmo, repetição, disposição e imagem; figuras frequentes, humor e ironia de pistas claras; pluralidade interpretativa sustentada; multimodalidade e hipertexto acessíveis; autoria/origem/data/circulação; comparação de duas fontes; resumo/paráfrase com atribuição e resposta própria separada.
 
-A verificação integrada usa narrativa e poema autorais, componente multimodal estruturado com equivalente textual acessível e duas fontes controladas com convergência e divergência real. Quando os materiais não resolvem a divergência, `é preciso confirmar mais` é resposta válida e necessária.
+A verificação integrada usa narrativa e poema autorais, inclui humor/ironia apenas quando sustentados por pistas textuais claras, componente multimodal estruturado com equivalente textual acessível e duas fontes controladas com convergência e divergência real. Quando os materiais não resolvem a divergência, `é preciso confirmar mais` é resposta válida e necessária.
 
-Regras centrais: interpretação diferente não é erro quando sustentada; leitura incompatível com o texto não é aceita como pluralidade; nome de figura sem interpretação não basta; nenhuma pista decisiva depende só de cor/imagem; aparência profissional/data recente não provam credibilidade; diferenças de escopo devem ser checadas antes de chamar fontes de contraditórias; comentário próprio deve ficar separado das afirmações das fontes.
+Regras centrais: interpretação diferente não é erro quando sustentada; leitura incompatível com o texto não é aceita como pluralidade; nome de figura sem interpretação não basta; ironia não é forçada sem pista contextual; nenhuma pista decisiva depende só de cor/imagem; aparência profissional/data recente não provam credibilidade; diferenças de escopo devem ser checadas antes de chamar fontes de contraditórias; comentário próprio deve ficar separado das afirmações das fontes.
 
 Nenhuma nova mídia humana obrigatória foi criada em U5–U9. U8 usa TTS porque prosódia específica não determina a resposta; U9 usa componentes de UI acessíveis e não depende de imagem gerada.
+
+### Verificação de saída N2 — DESENVOLVIDA
+
+```text
+N2-EXIT-V01
+8 agrupamentos obrigatórios de transferência
+```
+
+Cobertura de saída:
+
+1. leitura intermediária + inferência + evidência + ponto de vista;
+2. revisão linguística integrada no escopo normativo do N2;
+3. produção própria de vários parágrafos com planejamento, revisão e reescrita;
+4. argumentação própria com posição, razão, evidência e limite;
+5. compreensão oral + prática de apresentação/discussão;
+6. registro, variação e adequação;
+7. literatura + humor/ironia clara + multimodalidade acessível;
+8. comparação de duas fontes + resumo/paráfrase + atribuição.
+
+A saída usa materiais novos, não repete as nove verificações de unidade e não usa média global para compensar ausência de uma competência central.
 
 ### Níveis 3 e 4
 
@@ -187,37 +208,38 @@ Nenhuma nova mídia humana obrigatória foi criada em U5–U9. U8 usa TTS porque
 NÍVEL 0 — M5 ✓
 NÍVEL 1 — M5 ✓
 NÍVEL 2 — M1–M4 ✓
-└── M5 DAS UNIDADES ✓
-    ├── U1 ✓
-    ├── U2 ✓
-    ├── U3 ✓
-    ├── U4 ✓
-    ├── U5 ✓
-    ├── U6 ✓
-    ├── U7 ✓
-    ├── U8 ✓
-    └── U9 ✓
+├── M5 DAS UNIDADES ✓
+│   ├── U1 ✓
+│   ├── U2 ✓
+│   ├── U3 ✓
+│   ├── U4 ✓
+│   ├── U5 ✓
+│   ├── U6 ✓
+│   ├── U7 ✓
+│   ├── U8 ✓
+│   └── U9 ✓
+└── N2-EXIT-V01 ✓
 
 FECHAMENTO DO N2 — MARCO ATIVO
-└── VERIFICAÇÃO DE SAÍDA N2 — PRÓXIMO SUBPASSO
+└── CHECKPOINT N2→N3 — PRÓXIMO SUBPASSO
 ```
 
 Próximo subpasso:
 
 ```text
-verificação de saída N2
+checkpoint N2→N3
 ```
 
-A saída deve verificar transferência entre as responsabilidades do nível, e não repetir nove provas de unidade. Deve preservar os limites já adotados para escrita livre, produção oral, fontes e interpretações abertas.
+O checkpoint deve auditar cada competência oficial de saída contra ensino, evidência de unidade e transferência em `N2-EXIT-V01`. Se encontrar lacuna real, a unidade responsável deve ser reaberta antes de declarar o nível fechado.
 
-Depois:
+Depois, se o checkpoint fechar sem lacunas obrigatórias:
 
 ```text
-checkpoint N2→N3
+N2 curricularmente fechado em M5
 → dimensionamento M2 do N3
 ```
 
-O N2 **ainda não deve ser declarado curricularmente fechado** antes de concluir a verificação de saída e o checkpoint N2→N3.
+O N2 **ainda não deve ser declarado curricularmente fechado** antes desse checkpoint.
 
 ## Responsabilidades críticas do N2
 
@@ -280,6 +302,7 @@ N2 M3 → docs/unidades-nivel-2.md
 N2 M4 → docs/licoes-nivel-2.md + docs/licoes-nivel-2-u*.md
 N2-U02 escopo normativo → docs/referencias-ortografia-nivel-2.md
 N2-U04 escopo normativo → docs/referencias-gramatica-nivel-2-u4.md
+N2 saída → content/levels/002-intermediario/exit-verification.json
 
 estado atual → docs/roadmap-curricular.md
 conteúdo desenvolvido → content/
