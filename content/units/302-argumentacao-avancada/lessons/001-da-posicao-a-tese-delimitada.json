@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "id": "N3-U02-L01",
+  "title": "Da posição à tese delimitada",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Transformar posições amplas ou vagas em teses delimitadas, definindo alcance suficiente para que possam ser sustentadas, qualificadas e contestadas sem confundir força com categorização excessiva.",
+  "competencies": ["distinguir tema, posição e tese", "identificar tese ampla demais ou vaga", "delimitar público, situação, período, ação ou alcance quando necessário", "preservar o sentido central ao delimitar", "justificar por que o recorte melhora a possibilidade de sustentação"],
+  "prerequisites": ["N2-U07-V01", "N3-U01-V01"],
+  "limits": ["tese mais categórica não é automaticamente melhor", "não exigir fórmula única de tese", "a opinião defendida não é pontuada por concordância ideológica", "delimitar não significa enfraquecer artificialmente toda posição"],
+  "media": {"tts": "opcional", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["argumentos", "instruções", "feedback"], "purpose": "apoio de acesso"}], "generatedVisualResources": [{"type": "UI_RENDERED_THESIS_SCOPE_COMPARE", "locations": ["L01-B01", "L01-C01", "L01-A01"], "purpose": "comparar alcance de teses"}, {"type": "UI_RENDERED_SCOPE_CONTROLS", "locations": ["L01-A02", "L01-P01"], "purpose": "delimitar público, condição, período e ação"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "comparações textuais e controles de escopo tornam a delimitação observável sem mídia externa."},
+  "sequence": [
+    {"id": "L01-B01", "type": "contrast", "topic": "horário de bibliotecas", "examples": [{"text": "Bibliotecas devem abrir mais.", "analysis": "posição ampla: não define quais bibliotecas, quando ou em que condições"}, {"text": "Bibliotecas de bairro com demanda noturna demonstrada deveriam testar ao menos uma noite de horário ampliado antes de decidir uma expansão permanente.", "analysis": "tese delimitada por tipo de serviço, evidência prévia, ação e caráter experimental"}], "teachingPoint": "delimitação torna mais claro o que precisa ser sustentado"},
+    {"id": "L01-C01", "type": "quick-check", "items": [{"question": "Qual tese tem alcance mais verificável?", "options": ["Todo curso on-line é melhor.", "Para participantes que trabalham em horário comercial, oferecer uma turma on-line pode ampliar o acesso quando o conteúdo não exige prática presencial contínua."], "correctIndex": 1}, {"question": "Delimitar uma tese significa:", "options": ["definir com mais precisão o que está sendo defendido", "tornar qualquer opinião neutra", "escolher a frase mais longa"], "correctIndex": 0}]},
+    {"id": "L01-A01", "type": "assessment-reformulation", "prompts": [{"original": "Reuniões presenciais são ruins.", "target": "reformular para tese discutível e delimitada sem obrigar uma posição favorável ou contrária"}, {"original": "A cidade precisa de mais espaços públicos.", "target": "delimitar ação, público ou condição suficiente para avaliar apoio"}], "acceptMultipleValid": true},
+    {"id": "L01-A02", "type": "scope-diagnosis", "theses": ["Um teste de atendimento aos sábados deve ser mantido por três meses nas unidades que tiveram lista de espera durante a semana.", "Tudo deveria funcionar aos sábados."], "tasks": ["identificar elementos de escopo", "explicar qual tese exigiria evidência mais ampla e por quê"]},
+    {"id": "L01-P01", "type": "own-thesis", "prompt": "A partir de uma questão acessível fornecida pela interface, formule uma tese delimitada e registre uma justificativa curta para o alcance escolhido.", "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"opinionContentScored": false, "multipleValidTheses": true, "timeLimit": false},
+  "completionEvidence": {"clusters": {"recognition": {"evidence": ["L01-C01", "L01-A02"], "required": true}, "reformulation": {"evidence": ["L01-A01"], "required": true}, "ownThesis": {"evidence": ["L01-P01"], "required": true}}, "completionRule": "o estudante deve reconhecer e produzir delimitação funcional; posição ideológica não entra no critério."}
+}
