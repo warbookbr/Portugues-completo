@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "id": "N3-U03-L02",
+  "title": "Coordenação ampliada: relação, paralelismo e alcance",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Revisar coordenações extensas observando relação de sentido, paralelismo funcional, alcance de conectores e ambiguidade sem transformar a lição em lista de conjunções.",
+  "competencies": ["identificar elementos efetivamente coordenados", "escolher conectivo compatível com relação", "reparar paralelismo quebrado quando prejudica leitura", "interpretar alcance de conectores", "aceitar paralelismos não idênticos quando a estrutura permanece clara"],
+  "prerequisites": ["N3-U03-L01"],
+  "limits": ["não memorizar catálogo de conjunções", "paralelismo não exige repetição artificial", "coordenação assimétrica pode ser legítima", "não corrigir apenas por preferência estilística"],
+  "media": {"tts": "opcional", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["períodos", "feedback"], "purpose": "apoio"}], "generatedVisualResources": [{"type": "UI_RENDERED_COORDINATION_MAP", "locations": ["L02-B01", "L02-A01"], "purpose": "marcar elementos coordenados e alcance"}, {"type": "UI_RENDERED_PARALLELISM_COMPARE", "locations": ["L02-C01", "L02-A02"], "purpose": "comparar versões"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "estrutura textual é suficiente para observar coordenação e paralelismo."},
+  "sequence": [
+    {"id": "L02-B01", "type": "worked-example", "versions": [{"text": "O relatório descreve o teste, compara os períodos e propõe ajustes.", "analysis": "três ações coordenadas com estrutura paralela clara"}, {"text": "O relatório descreve o teste, a comparação dos períodos e propõe ajustes.", "analysis": "mistura estruturas; pode ser compreensível, mas a revisão deve verificar se a assimetria é intencional ou produz tropeço"}]},
+    {"id": "L02-C01", "type": "quick-check", "items": [{"text": "O serviço aumentou a capacidade, mas o tempo de espera também cresceu.", "relation": "contraste", "correct": true}, {"text": "A equipe revisou o cadastro ou publicou o resultado, e fez as duas coisas.", "question": "O 'ou' exclusivo é compatível com a informação de que ambas ocorreram?", "correct": false}]},
+    {"id": "L02-A01", "type": "assessment-relation", "text": "A mudança reduziu filas, porém aumentou o número de atendimentos e exigiu mais pessoal.", "tasks": ["marcar o alcance de 'porém'", "identificar quais ações estão ligadas por 'e'", "explicar a relação global"]},
+    {"id": "L02-A02", "type": "parallelism-edit", "original": "O plano prevê ampliar o horário, a contratação temporária e revisar o fluxo.", "tasks": ["produzir ao menos uma versão com paralelismo mais transparente", "explicar por que a mudança melhora a leitura"], "acceptMultipleValid": true},
+    {"id": "L02-P01", "type": "open-revision", "prompt": "Revise uma coordenação extensa fornecida pela interface, preservando as escolhas que já funcionam e justificando apenas alterações necessárias para relação, alcance ou clareza.", "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"conjunctionListRequired": false, "perfectSurfaceParallelismRequired": false, "openResponseAutoValidated": false},
+  "completionEvidence": {"clusters": {"relationAndScope": {"evidence": ["L02-A01"], "required": true}, "revision": {"evidence": ["L02-A02", "L02-P01"], "required": true}}, "completionRule": "o estudante deve relacionar estrutura a sentido e clareza, não apenas reproduzir formas idênticas."}
+}
