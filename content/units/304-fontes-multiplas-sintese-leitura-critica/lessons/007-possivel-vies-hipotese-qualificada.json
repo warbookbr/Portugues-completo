@@ -17,5 +17,5 @@
     {"id": "L07-P01", "type": "open-qualified-analysis", "prompt": "Analise um caso novo com informações explícitas sobre autoria, interesse e seleção de conteúdo. Separe: fato observado, possível hipótese e próximo passo de confirmação.", "recordResponse": true, "automaticValidation": false}
   ],
   "assessmentBehavior": {"identityEqualsBias": false, "interestEqualsFalsehood": false, "cynicismScored": false, "openResponseAutoValidated": false},
-  "completionEvidence": {"clusters": {"qualifiedJudgment": {"evidence": ["L07-A01", "L07-A02"], "required": true}, "openAnalysis": {"evidence": ["L07-P01"], "required": true}}, "completionRule": "o estudante deve qualificar a hipótese de viés e indicar evidência/confirmacão, não apenas desconfiar."}
+  "completionEvidence": {"clusters": {"qualifiedJudgment": {"evidence": ["L07-A01", "L07-A02"], "required": true}, "openAnalysis": {"evidence": ["L07-P01"], "required": true}}, "completionRule": "o estudante deve qualificar a hipótese de viés e indicar evidência/confirmação, não apenas desconfiar."}
 }
