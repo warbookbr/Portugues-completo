@@ -76,6 +76,8 @@ Português Completo
 - `docs/referencias-ortografia-nivel-2.md` — escopo normativo da N2-U02 para ortografia e acentuação.
 - `docs/referencias-gramatica-nivel-2-u4.md` — escopo normativo da N2-U04 para regência, crase, colocação e pontuação do período.
 - `content/levels/002-intermediario/exit-verification.json` — `N2-EXIT-V01`, transferência integrada de saída do N2.
+- `docs/checkpoint-saida-nivel-2.md` — auditoria das competências oficiais de saída e autorização de fechamento curricular.
+- `docs/transicao-n2-n3.md` — fronteira pedagógica N2→N3 e gate para desenvolvimento do N3.
 
 ## Arquitetura e frontend
 
@@ -151,7 +153,10 @@ N2 M4
 → docs/licoes-nivel-2.md + docs/licoes-nivel-2-u1.md ... docs/licoes-nivel-2-u9.md
 
 N2 saída
-→ content/levels/002-intermediario/exit-verification.json
+→ docs/checkpoint-saida-nivel-2.md + content/levels/002-intermediario/exit-verification.json
+
+N2→N3
+→ docs/transicao-n2-n3.md
 
 escopo normativo N2-U02
 → docs/referencias-ortografia-nivel-2.md
