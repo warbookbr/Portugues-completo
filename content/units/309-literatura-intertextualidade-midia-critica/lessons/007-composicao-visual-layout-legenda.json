@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "N3-U09-L07",
+  "title": "Composição visual, layout e relação entre texto e imagem",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Analisar hierarquia, posição, legenda, contraste e ordem de leitura em composições multimodais acessíveis, distinguindo contribuição real de decoração e evitando depender de cor ou imagem como única pista.",
+  "competencies": ["identificar ordem de leitura", "relacionar legenda e elemento visual", "analisar destaque", "distinguir redundância e complementação", "detectar composição que induz interpretação", "propor versão acessível"],
+  "prerequisites": ["N3-U09-L06", "docs/gate-audiovisual-nivel-3-u9.md"],
+  "limits": ["design bonito não é argumento", "cor não é pista única", "imagem não substitui texto-alvo", "não exigir visão para resolver item", "não gerar imagem externa"],
+  "media": {"tts": "opcional", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK"}], "generatedVisualResources": [{"type": "UI_RENDERED_SEMANTIC_PAGE_LAYOUT"}, {"type": "UI_RENDERED_ACCESSIBLE_VISUAL_COMPOSITION"}, {"type": "UI_RENDERED_CAPTION_IMAGE_RELATION"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "layout semântico com descrições equivalentes permite avaliar composição e acessibilidade."},
+  "sequence": [
+    {"id": "L07-B01", "type": "semantic-layout", "components": [{"role": "headline", "text": "Fila cai 20% após mudança"}, {"role": "large-number", "value": "20%", "accessibleLabel": "redução de vinte por cento"}, {"role": "caption", "text": "comparação entre abril e maio; mesmo critério"}, {"role": "small-note", "text": "uma unidade não participou da comparação"}], "teachingPoint": "destaque visual pode atrair atenção ao 20%, mas a nota limita o alcance"},
+    {"id": "L07-C01", "type": "quick-check", "items": [{"question": "Um dado destacado visualmente pode ser interpretado sem ler nota de escopo?", "correct": false}, {"question": "Uma legenda pode complementar em vez de repetir a composição?", "correct": true}]},
+    {"id": "L07-A01", "type": "assessment-layout", "layout": "cartaz semântico com título, dois números, legenda e nota metodológica", "tasks": ["identificar hierarquia", "explicar contribuição da legenda", "indicar risco de leitura sem a nota", "descrever equivalente acessível"]},
+    {"id": "L07-P01", "type": "open-composition", "prompt": "Organize uma mensagem multimodal simples em componentes semânticos, justificando ordem de leitura e acessibilidade. Nenhuma informação decisiva pode depender apenas de aparência visual.", "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"visualPolishScored": false, "colorOnlyCueAllowed": false, "imageIdentificationRequired": false, "accessibilityRequired": true},
+  "completionEvidence": {"clusters": {"analysis": {"evidence": ["L07-A01"], "required": true}, "production": {"evidence": ["L07-P01"], "required": true}}, "completionRule": "a composição deve ser analisável e compreensível também por representação acessível."}
+}
