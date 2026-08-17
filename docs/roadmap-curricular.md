@@ -73,7 +73,7 @@ M1 ✓ — objetivo + 17 competências oficiais + 9 grandes responsabilidades
 M2 ✓ — 9 áreas dimensionadas + revisão horizontal 17/17
 M3 ✓ — 9 unidades integradas + cobertura 17/17 + saída antecipada
 M4 ✓ — 93 lições + 9 verificações integradas
-M5 — PRÓXIMO MARCO
+M5 em andamento
 ```
 
 Fontes:
@@ -112,10 +112,38 @@ Decisões estruturais do M4:
 - U8 preserva limite real de validação oral;
 - U9 integra literatura, multimodalidade, circulação e autoria acessível sem exigir mídia decorativa.
 
+### Estado M5
+
+```text
+U1 ✓ — 10 lições + N4-U01-V01
+U2 — PRÓXIMO SUBPASSO
+U3 pendente
+U4 pendente
+U5 pendente
+U6 pendente
+U7 pendente
+U8 pendente
+U9 pendente
+```
+
+U1: `content/units/401-leitura-estrategica-alta-complexidade-revisao-interpretacao/`.
+
+O M5 da U1 consolidou os guard rails do nível:
+
+- estratégia pode mudar ou ser mantida, desde que a decisão seja justificada;
+- mais de uma arquitetura textual pode ser defensável;
+- condições, exceções e ressalvas decisivas não podem ser apagadas;
+- repetição não é erro automático e proximidade não decide referente sozinha;
+- implícito, ambiguidade, ironia e intertextualidade exigem evidência;
+- enquadramento não equivale automaticamente a manipulação;
+- conclusão deve ser calibrada pela força da evidência;
+- nova evidência pode justificar enfraquecer, ampliar, abandonar ou manter uma interpretação;
+- síntese crítica própria e revisão explícita não são compensáveis por tarefas fechadas.
+
 Gates do N4:
 
 - `docs/gate-normativo-nivel-4-u5-u7.md` — **DELIMITADO; pesquisa obrigatória antes de congelar respostas normativas em M5**;
-- `docs/gate-midia-acessibilidade-nivel-4-u9.md` — **SATISFEITO PARA O M4; nenhuma nova mídia humana obrigatória**; reabrir apenas se M5 introduzir alvo sensorial real insubstituível.
+- `docs/gate-midia-acessibilidade-nivel-4-u9.md` — **SATISFEITO PARA A ARQUITETURA ATUAL; nenhuma nova mídia humana obrigatória**; reabrir apenas se M5 introduzir alvo sensorial real insubstituível.
 
 O M4 preserva a cobertura 17/17 do N4 e mantém a arquitetura da futura saída em oito agrupamentos integrados.
 
@@ -131,25 +159,29 @@ N4 — M1 ✓
     └── M3 ✓
         └── M4 ✓
             └── M5
-                └── U1 — PRÓXIMO SUBPASSO
+                ├── U1 ✓
+                └── U2 — PRÓXIMO SUBPASSO
 ```
 
 ## Próximo subpasso
 
 ```text
-N4-U01 M5 — Leitura estratégica de alta complexidade e revisão de interpretação
-→ 10 lições + N4-U01-V01
-→ usar materiais novos/controlados
-→ exigir escolha e mudança justificada de estratégia
-→ exigir revisão de interpretação diante de nova evidência
-→ preservar releitura, anotação e incerteza justificadas
-→ não criar mídia humana sem necessidade pedagógica real
+N4-U02 M5 — Pesquisa orientada por problema, fontes e rastreabilidade
+→ 11 lições + N4-U02-V01
+→ partir de necessidade informacional explícita
+→ planejar e refinar busca em vez de acumular resultados
+→ distinguir função de fonte de hierarquia automática
+→ avaliar autoria, data, origem, versão, escopo, método e unidade de análise
+→ rastrear afirmações secundárias até a origem quando necessário
+→ preservar divergências e lacunas
+→ registrar notas/referências que permitam reconstruir a origem das afirmações
+→ não premiar quantidade de fontes
 ```
 
 Depois:
 
 ```text
-U2 → U3 → U4 → U5 (gate normativo) → U6 → U7 (gate normativo) → U8 → U9 (reavaliar gate de mídia se necessário)
+U3 → U4 → U5 (gate normativo) → U6 → U7 (gate normativo) → U8 → U9 (reavaliar gate de mídia se necessário)
 → N4-EXIT-V01
 → checkpoint final do curso
 ```
@@ -176,6 +208,7 @@ U2 → U3 → U4 → U5 (gate normativo) → U6 → U7 (gate normativo) → U8 �
 18. N4 deve exigir revisão da própria interpretação, argumento, texto ou estratégia quando nova evidência tornar a decisão anterior insuficiente.
 19. M5 não pode congelar resposta normativa de U5/U7 antes do gate de fontes.
 20. U9 não cria mídia humana por variedade; alvo sensorial real reabre o gate antes da produção.
+21. Mudança de estratégia ou interpretação não pontua por si; manutenção justificada pode ser a melhor decisão.
 
 # Dependências não curriculares
 
@@ -204,6 +237,7 @@ N3-U9 audiovisual → docs/gate-audiovisual-nivel-3-u9.md
 N4 M2 → docs/areas-nivel-4.md
 N4 M3 → docs/unidades-nivel-4.md
 N4 M4 → docs/licoes-nivel-4.md + docs/licoes-nivel-4-u*.md
+N4 M5 → content/units/4xx-*
 N4 gates → docs/gate-normativo-nivel-4-u5-u7.md + docs/gate-midia-acessibilidade-nivel-4-u9.md
 estado → docs/roadmap-curricular.md
 conteúdo → content/

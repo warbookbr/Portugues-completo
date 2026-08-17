@@ -137,7 +137,7 @@ O N3 está **curricularmente fechado em M5**: U1–U9, `N3-EXIT-V01` e checkpoin
 ### Gates do N4
 
 - `docs/gate-normativo-nivel-4-u5-u7.md` — escopo e protocolo do gate normativo; **pesquisa obrigatória antes de congelar respostas normativas no M5 de U5/U7**.
-- `docs/gate-midia-acessibilidade-nivel-4-u9.md` — gate de mídia/acessibilidade **satisfeito para o M4**; nenhuma nova mídia humana obrigatória na arquitetura atual.
+- `docs/gate-midia-acessibilidade-nivel-4-u9.md` — gate de mídia/acessibilidade **satisfeito para a arquitetura atual**; nenhuma nova mídia humana obrigatória, com reabertura apenas se M5 introduzir alvo sensorial real insubstituível.
 
 ### Resultado M4
 
@@ -155,7 +155,13 @@ U9 — 12 lições + verificação
 TOTAL — 93 lições + 9 verificações integradas
 ```
 
-O M4 preserva cobertura 17/17 e explicita como cada unidade exigirá autonomia, transferência e revisão de decisões, sem aumentar dificuldade por extensão ou vocabulário raro.
+O M4 preserva cobertura 17/17 e explicita como cada unidade exige autonomia, transferência e revisão de decisões, sem aumentar dificuldade por extensão ou vocabulário raro.
+
+### Conteúdo M5
+
+- `content/units/401-leitura-estrategica-alta-complexidade-revisao-interpretacao/` — U1, 10 lições + `N4-U01-V01`, **concluída**.
+
+A U1 exige escolha e eventual troca justificada de estratégia, arquiteturas concorrentes defensáveis, preservação de condições/ressalvas, cadeias distribuídas, implícitos/intertextualidade com evidência, enquadramento sem inferência automática de manipulação, calibração epistêmica e revisão explícita da interpretação após nova evidência.
 
 Estado:
 
@@ -164,7 +170,9 @@ M1 ✓
 M2 ✓ — 9 áreas
 M3 ✓ — 9 unidades
 M4 ✓ — 93 lições + 9 verificações integradas
-M5 — próximo marco, começando por U1
+M5 em andamento
+├── U1 ✓ — 10 lições + N4-U01-V01
+└── U2 — próximo subpasso
 ```
 
 A fonte oficial do estado é `docs/roadmap-curricular.md`.
@@ -209,6 +217,7 @@ N3 saída → docs/checkpoint-saida-nivel-3.md + content/levels/003-avancado/exi
 N4 M2 → docs/areas-nivel-4.md
 N4 M3 → docs/unidades-nivel-4.md
 N4 M4 → docs/licoes-nivel-4.md + docs/licoes-nivel-4-u*.md
+N4 M5 → content/units/4xx-*/
 N4 gates → docs/gate-normativo-nivel-4-u5-u7.md + docs/gate-midia-acessibilidade-nivel-4-u9.md
 estado/marcos → docs/roadmap-curricular.md
 conteúdo detalhado → content/
