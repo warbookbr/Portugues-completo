@@ -160,9 +160,12 @@ Mocka a REST API e verifica:
 - criação com `public: false`;
 - leitura de `portugues-completo-progress.json`;
 - atualização;
-- Authorization header;
+- Authorization header somente nas chamadas da API;
 - `Accept: application/vnd.github+json`;
-- `X-GitHub-Api-Version` declarado.
+- `X-GitHub-Api-Version` declarado;
+- Gist truncado segue `raw_url` somente quando o host é `gist.githubusercontent.com`;
+- a leitura por `raw_url` não envia bearer token nem header de versão da API;
+- host de `raw_url` inesperado é rejeitado antes de qualquer `fetch`.
 
 Permissões/endpoints são fatos externos e devem ser rechecados em documentação oficial quando o fluxo GitHub for alterado.
 
