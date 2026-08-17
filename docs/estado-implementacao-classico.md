@@ -4,82 +4,50 @@
 
 Este documento é o **registro operacional canônico** do desenvolvimento do Modo Clássico do Português Completo.
 
-Ele existe para responder, sem depender da conversa anterior:
+Ele deve permitir que uma nova instância responda sem depender da conversa anterior:
 
 ```text
 onde o desenvolvimento parou?
-o que já foi implementado?
-o que está apenas parcialmente pronto?
-o que ainda precisa de homologação?
+o que foi implementado?
+o que foi homologado?
+o que ficou parcial?
 qual item depende de mídia/material de apoio?
-qual blocker impede publicação?
+qual blocker existe?
 qual é o próximo passo exato?
 ```
 
-`docs/roadmap-produto.md` define **a ordem e os marcos**. Este documento registra **o estado concreto dentro desses marcos**.
+`docs/roadmap-produto.md` define a ordem P1→P9. Este arquivo registra o estado concreto dentro dos marcos.
 
-A regra central é:
+Regra central:
 
 ```text
 implementado tecnicamente
-≠ homologado pedagogicamente
+≠ homologado
 ≠ publicável
 ```
 
-Nenhum desses estados deve ser inferido a partir de outro.
-
-## Fontes relacionadas
-
-- `docs/roadmap-produto.md` — sequência P1→P9 até o gate `CLÁSSICO HOMOLOGADO`.
-- `docs/conteudo.md` — composição pedagógica e política de mídia flexível.
-- `docs/contrato-conteudo.md` — publicação/runtime.
-- `docs/exercicios.md` — atividades e evidência.
-- `docs/progresso.md` — progresso/domínio/revisão.
-- `docs/persistencia-progresso.md` — persistência/Gist.
-- `docs/avaliacao-ia.md` — feedback com IA.
-- `producao-midia/README.md` — produção e criticidade de mídia.
-- `producao-midia/FILA-MIDIA.md` — fila concreta de mídia.
-- `.ChatGPT/skills/classic-product-delivery/SKILL.md` — procedimento obrigatório para uma IA executar o Modo Clássico sem perder estado.
-
 ## Regra de atualização
 
-Toda PR que altere materialmente o estado de implementação do Clássico deve revisar este documento **na mesma PR**.
+Toda PR que altere materialmente o Modo Clássico deve revisar este documento na mesma branch.
 
-Isso inclui, por exemplo:
+Isso inclui schemas, adapters, catálogo, renderer, progresso, IA, mídia ligada, homologação, blockers e mudança de próximo passo.
 
-- novo schema/validator;
-- novo adapter/normalizador;
-- nova unidade publicada no catálogo;
-- novo tipo de atividade suportado;
-- nova tela/renderer;
-- progresso/revisão/persistência;
-- integração de IA;
-- nova mídia ligada ao runtime;
-- homologação de atividade/lição/unidade;
-- descoberta ou remoção de blocker;
-- mudança do próximo item ativo.
-
-Correção puramente editorial que não altera estado não precisa mudar este arquivo.
+Correção puramente editorial que não muda estado não exige atualização.
 
 ## Cursor operacional
 
-Este bloco deve permanecer curto e atualizado.
-
 ```text
 Fase estratégica: CONCLUIR E HOMOLOGAR O CLÁSSICO
-Marco ativo: P1 — Schemas e contratos executáveis
+Marco concluído mais recente: P1 — Schemas e contratos executáveis
+Marco ativo: P2 — ContentService e normalizador
 Item ativo: ainda não iniciado
-Último item concluído: documentação/contratos de produto e política de execução
-Próximo passo exato: selecionar fixtures reais N0/N4 e materializar os contratos em schemas + validator
+Último item concluído: CL-P1-VALIDATOR-CONTRACTS + fixtures N0/N4
+Próximo passo exato: implementar ContentService/normalizador e adapters v1 começando por N0-U01-L01 e N4-U09-L01, usando as fixtures P1 como contrato de saída
 Blocker atual do próximo passo: nenhum
 Gate final do Clássico: NÃO SATISFEITO
 ```
 
-Sempre que o trabalho parar no meio de um item, `Item ativo` e `Próximo passo exato` devem permitir que outra instância continue sem reconstruir a história da conversa.
-
-## Estados consolidados de item
-
-Usar somente estes estados para leitura rápida:
+## Estados consolidados
 
 ```text
 NAO_INICIADO
@@ -91,51 +59,17 @@ PUBLICAVEL
 BLOQUEADO
 ```
 
-### `NAO_INICIADO`
+- `NAO_INICIADO` — existe no plano, sem implementação material.
+- `EM_ANDAMENTO` — implementação parcial ativa.
+- `IMPLEMENTADO_COM_PENDENCIA` — parte técnica principal existe, mas há dependência explícita.
+- `PRONTO_PARA_HOMOLOGAR` — implementação completa no escopo e testável.
+- `HOMOLOGADO` — comportamento aplicável foi provado por evidência reconstruível.
+- `PUBLICAVEL` — homologado e sem blocker de publicação aplicável.
+- `BLOQUEADO` — não consegue avançar naquele item sem dependência material.
 
-Existe no plano, mas ainda não houve implementação material.
+## Dimensões obrigatórias por item
 
-### `EM_ANDAMENTO`
-
-Há implementação parcial ativa e ainda faltam partes técnicas previstas no próprio item.
-
-### `IMPLEMENTADO_COM_PENDENCIA`
-
-A parte técnica principal existe, mas o item não pode avançar de estado por alguma dependência explícita.
-
-Exemplos:
-
-- mídia obrigatória ainda ausente;
-- tipo de estímulo final ainda não disponível;
-- avaliação externa necessária;
-- dependência de outro marco;
-- homologação ainda impossível por recurso ausente.
-
-### `PRONTO_PARA_HOMOLOGAR`
-
-Implementação necessária está completa para o escopo e não existe blocker conhecido que impeça testar o comportamento real.
-
-### `HOMOLOGADO`
-
-O item foi testado no escopo declarado e cumpriu os critérios técnicos/pedagógicos aplicáveis.
-
-`HOMOLOGADO` não significa automaticamente `PUBLICAVEL`.
-
-### `PUBLICAVEL`
-
-Além de homologado, todos os blockers de publicação aplicáveis foram resolvidos, inclusive mídia obrigatória final, acessibilidade e ligações externas necessárias.
-
-### `BLOQUEADO`
-
-O trabalho não consegue avançar naquele item sem resolver uma dependência material.
-
-O blocker deve ser registrado explicitamente. Não usar `BLOQUEADO` para uma mídia que só bloqueia uma parte específica enquanto o restante pode avançar.
-
-## Dimensões obrigatórias de rastreamento
-
-O estado consolidado é apenas resumo. Cada item relevante deve manter as dimensões abaixo separadas.
-
-### 1. Estado técnico
+### Estado técnico
 
 ```text
 NAO_INICIADO
@@ -144,9 +78,7 @@ IMPLEMENTADO
 BLOQUEADO_TECNICO
 ```
 
-Responde: **o código/estrutura necessário existe?**
-
-### 2. Estado de homologação
+### Estado de homologação
 
 ```text
 NAO_AVALIADO
@@ -156,9 +88,7 @@ HOMOLOGADO
 BLOQUEADO_POR_DEPENDENCIA
 ```
 
-Responde: **já provamos que funciona corretamente no uso real declarado?**
-
-### 3. Estado de mídia/material de apoio
+### Estado de mídia/material de apoio
 
 ```text
 SEM_DEPENDENCIA
@@ -171,9 +101,7 @@ MIDIA_VALIDADA
 MIDIA_PUBLICADA
 ```
 
-Responde: **a ausência de material de apoio muda o que pode ser homologado/publicado?**
-
-### 4. Estado de publicação
+### Estado de publicação
 
 ```text
 NAO_AVALIADO
@@ -182,92 +110,26 @@ BLOQUEADO
 APTO
 ```
 
-Responde: **este item pode fazer parte da experiência pública final?**
-
 ## Política de mídia flexível
-
-### Princípio
 
 ```text
 mídia pendente
-→ bloquear apenas o que depende pedagogicamente dela
-→ continuar todo trabalho independente
+→ bloqueia somente o que depende pedagogicamente dela
+→ todo trabalho independente continua
 ```
 
-A ausência de conteúdo de apoio **não paralisa o desenvolvimento do Modo Clássico**.
+### Regras
 
-### `SEM_DEPENDENCIA`
+- TTS/texto/UI semântica devem ser preferidos quando forem pedagogicamente suficientes.
+- `MIDIA_OPCIONAL_PENDENTE` não impede homologação/publicação quando o ensino essencial continua válido.
+- `MIDIA_PENDENTE_NAO_BLOQUEANTE` permite desenvolvimento técnico usando `mediaId`/contrato.
+- `MIDIA_OBRIGATORIA_PARA_ATIVIDADE` permite implementar estrutura/renderer, mas impede homologar pedagogicamente a atividade sem o estímulo real.
+- `MIDIA_OBRIGATORIA_PARA_PUBLICACAO` impede `PUBLICAVEL` enquanto a versão final não estiver validada e ligada.
+- placeholder serve para desenvolvimento, nunca para fingir homologação de estímulo ausente.
 
-O item não necessita mídia humana/curada.
+A fila `producao-midia/FILA-MIDIA.md` rastreia a produção do arquivo; este documento rastreia o **impacto no produto**.
 
-TTS, texto ou UI semântica podem ser suficientes.
-
-### `MIDIA_OPCIONAL_PENDENTE`
-
-A mídia melhora a experiência, mas sua ausência não prejudica o ensino/avaliação essencial.
-
-O item pode ser homologado e, se todos os demais requisitos estiverem satisfeitos, pode ser publicável sem essa mídia.
-
-### `MIDIA_PENDENTE_NAO_BLOQUEANTE`
-
-Existe `mediaId`, posição e contrato, mas a implementação independente pode continuar.
-
-Usar quando a mídia será adicionada depois e ainda não chegou o momento de decidir homologação/publicação final da parte dependente.
-
-### `MIDIA_OBRIGATORIA_PARA_ATIVIDADE`
-
-A mídia é o próprio estímulo necessário para ensinar/avaliar corretamente.
-
-Exemplos:
-
-- discriminação de dois sons controlados;
-- análise de entonação específica;
-- interpretação de vídeo/imagem cujo conteúdo é indispensável à resposta.
-
-Neste caso:
-
-```text
-estrutura técnica pode estar IMPLEMENTADA
-+ placeholder pode existir
-+ navegação pode funcionar
-
-mas
-
-atividade não pode ser HOMOLOGADA pedagogicamente
-sem o estímulo final apropriado
-```
-
-### `MIDIA_OBRIGATORIA_PARA_PUBLICACAO`
-
-O fluxo já pode ter sido testado tecnicamente/pedagogicamente com recurso apropriado de validação, mas a versão final validada ainda não está publicada/ligada ao curso.
-
-Bloqueia `PUBLICAVEL`, não necessariamente toda homologação anterior.
-
-### Estados finais da mídia
-
-`MIDIA_PRONTA_PARA_VALIDAR`, `MIDIA_VALIDADA` e `MIDIA_PUBLICADA` devem corresponder à fila oficial de produção quando houver `mediaId`.
-
-Não duplicar a fila completa neste documento; registrar somente o vínculo e seu impacto no item de produto.
-
-## Placeholders e fallback
-
-Placeholder é uma ferramenta de desenvolvimento, não uma forma de fingir conclusão.
-
-Quando mídia obrigatória estiver ausente, o produto pode implementar:
-
-- container/layout final;
-- estados de loading/erro/ausência;
-- acessibilidade estrutural;
-- ligação por `mediaId`;
-- renderer do tipo;
-- lógica independente do estímulo;
-- fallback informativo que não invente conteúdo pedagógico.
-
-Não usar placeholder genérico para homologar uma discriminação/percepção que depende do estímulo real.
-
-## Registro de item
-
-Cada nova inclusão relevante deve poder ser rastreada com este formato:
+## Formato de registro de item
 
 ```text
 ID:
@@ -287,179 +149,169 @@ PR/commit de referência:
 Próximo passo:
 ```
 
-### IDs de implementação
+IDs de produto usam formato estável `CL-P<marco>-<escopo>` e não substituem IDs curriculares ou `mediaId`.
 
-Usar IDs estáveis no registro, por exemplo:
+## Registro de marcos
 
-```text
-CL-P1-SCHEMA-COURSE
-CL-P2-ADAPTER-LESSON-V1
-CL-P3-UNIT-N0-U01
-CL-P4-RENDERER-MULTIPLE-CHOICE
-CL-P5-REVIEW-QUEUE
-CL-P6-AI-FEEDBACK-OPEN-TEXT
-CL-P7-N2-U04
-CL-P8-MEDIA-N0-U01-L03-AUD-001
-CL-P9-E2E-RESUME
-```
-
-O ID de implementação não substitui IDs curriculares ou `mediaId`; ele serve para rastrear o trabalho de produto.
-
-## Registro atual de marcos
-
-| Marco | Estado | Observação | Próximo critério de avanço |
+| Marco | Estado | Observação | Próximo critério |
 |---|---|---|---|
-| P1 — Schemas e contratos executáveis | `NAO_INICIADO` | próximo marco oficial | schemas + validator + fixtures N0/N4 validados |
-| P2 — ContentService/normalizador | `NAO_INICIADO` | depende de P1 | slice N0/N4 normalizado |
+| P1 — Schemas e contratos executáveis | `HOMOLOGADO` | cinco schemas + fixtures N0/N4 + validator em CI | concluído |
+| P2 — ContentService/normalizador | `NAO_INICIADO` | marco ativo | slice N0/N4 normalizado contra schemas P1 |
 | P3 — Manifests e catálogo inicial | `NAO_INICIADO` | depende de P2 | unidades do slice descobríveis pelo catálogo |
 | P4 — Renderer real do Clássico | `NAO_INICIADO` | depende do runtime do slice | conteúdo/atividades do slice renderizados e testáveis |
-| P5 — ProgressService/revisão/Gist | `NAO_INICIADO` | núcleo pedagógico clássico | progresso/revisão/persistência homologados no slice |
-| P6 — Feedback por IA no Clássico | `NAO_INICIADO` | BYOK; não bloqueia determinísticos | feedback opt-in e fallback homologados |
-| P7 — Ampliação N0→N4 | `NAO_INICIADO` | após pipeline provado | catálogo clássico cobre escopo N0→N4 |
-| P8 — Mídia/prontidão de publicação | `NAO_INICIADO` | resolve blockers obrigatórios | itens clássicos publicáveis no escopo |
+| P5 — ProgressService/revisão/Gist | `NAO_INICIADO` | núcleo pedagógico clássico | progresso/revisão/persistência homologados |
+| P6 — Feedback por IA | `NAO_INICIADO` | BYOK; determinísticos independem de IA | feedback/fallback homologados |
+| P7 — Ampliação N0→N4 | `NAO_INICIADO` | após pipeline provado | catálogo clássico cobre o escopo aprovado |
+| P8 — Mídia/prontidão de publicação | `NAO_INICIADO` | resolve blockers obrigatórios | itens clássicos aptos à publicação |
 | P9 — Homologação E2E | `NAO_INICIADO` | gate final | `CLÁSSICO HOMOLOGADO` |
 
-## Registro de itens ativos/concluídos
+## P1 — itens concluídos
 
-No início deste protocolo ainda não existe implementação P1 concluída.
-
-O primeiro item deve ser criado quando P1 começar. Não preencher artificialmente dezenas de itens futuros apenas para completar tabela.
-
-Princípio:
+### `CL-P1-SCHEMA-COURSE`
 
 ```text
-registrar trabalho real
-≠ inventariar antecipadamente tudo o que talvez exista
+Escopo: schemas/course.schema.json
+Estado consolidado: HOMOLOGADO
+Técnico: IMPLEMENTADO
+Homologação: HOMOLOGADO
+Mídia: SEM_DEPENDENCIA
+Publicação: NAO_APLICAVEL
+Evidência: fixture course-v2-slice validada pelo CI
 ```
 
-## Blockers
-
-Todo blocker aberto deve informar:
+### `CL-P1-SCHEMA-UNIT`
 
 ```text
-ID do item afetado
-Tipo: TECNICO | MIDIA | EXTERNO | HOMOLOGACAO | PUBLICACAO
-Descrição objetiva
-O que ele realmente bloqueia
-O que pode continuar apesar dele
-Ação necessária para remover
+Escopo: schemas/unit.schema.json
+Estado consolidado: HOMOLOGADO
+Técnico: IMPLEMENTADO
+Homologação: HOMOLOGADO
+Mídia: SEM_DEPENDENCIA
+Publicação: NAO_APLICAVEL
+Evidência: fixtures N0-U01 e N4-U09 validadas pelo CI
 ```
 
-### Regra de escopo do blocker
-
-Nunca promover blocker local a blocker global sem necessidade.
-
-Exemplo correto:
+### `CL-P1-SCHEMA-LESSON`
 
 ```text
-áudio obrigatório ausente em N0-U01-L03
-→ bloqueia homologação/publicação daquela atividade
-→ NÃO bloqueia implementação de N0-U01-L04
-→ NÃO bloqueia renderer de outras atividades
-→ NÃO bloqueia P1/P2/P3 independentes
+Escopo: schemas/lesson.schema.json
+Estado consolidado: HOMOLOGADO
+Técnico: IMPLEMENTADO
+Homologação: HOMOLOGADO
+Mídia: SEM_DEPENDENCIA
+Publicação: NAO_APLICAVEL
+Evidência: fixtures normalizadas N0-U01-L01 e N4-U09-L01
 ```
 
-## Evidência de validação
+O schema representa **runtime normalizado**. Os JSONs autorais v1 continuam preservados e serão transformados por P2.
 
-`HOMOLOGADO` ou `PUBLICAVEL` deve ter alguma evidência reconstruível, conforme o tipo:
+### `CL-P1-SCHEMA-VERIFICATION`
+
+```text
+Escopo: schemas/verification.schema.json
+Estado consolidado: HOMOLOGADO
+Técnico: IMPLEMENTADO
+Homologação: HOMOLOGADO
+Mídia: SEM_DEPENDENCIA do schema
+Publicação: NAO_APLICAVEL
+Evidência: fixtures N0-U01-V01 e N4-U09-V01
+```
+
+A fixture N0 contém referências reais de áudio controlado para provar que o contrato consegue representá-las. Isso **não** significa que a mídia N0 foi homologada/publicada; esse impacto continuará sendo rastreado nos itens de conteúdo correspondentes em P3–P9.
+
+### `CL-P1-SCHEMA-PROGRESS`
+
+```text
+Escopo: schemas/progress.schema.json
+Estado consolidado: HOMOLOGADO
+Técnico: IMPLEMENTADO
+Homologação: HOMOLOGADO
+Mídia: SEM_DEPENDENCIA
+Publicação: NAO_APLICAVEL
+Evidência: progress-v1 fixture valida progresso clássico, pending, revisão e resposta aberta
+```
+
+### `CL-P1-FIXTURES-N0-N4`
+
+```text
+Escopo: schemas/fixtures/p1/
+Estado consolidado: HOMOLOGADO
+Técnico: IMPLEMENTADO
+Homologação: HOMOLOGADO
+Mídia: SEM_DEPENDENCIA para o teste de contrato
+Publicação: NAO_APLICAVEL
+Fontes reais: N0-U01-L01, N0-U01-V01, N4-U09-L01, N4-U09-V01 e contratos de course/unit/progress
+```
+
+As fixtures são contratos de teste; não são manifests públicos e não mudam `content/course.json` para v2.
+
+### `CL-P1-VALIDATOR-CONTRACTS`
+
+```text
+Escopo: scripts/validate-contracts.mjs + CI
+Estado consolidado: HOMOLOGADO
+Técnico: IMPLEMENTADO
+Homologação: HOMOLOGADO
+Mídia: SEM_DEPENDENCIA
+Publicação: NAO_APLICAVEL
+Evidência: PR #105, workflow Validate project structure, etapa Validate contract schemas = success
+```
+
+O validator usa o subconjunto de JSON Schema necessário aos schemas P1 e falha se uma keyword futura for adicionada sem suporte explícito.
+
+## Blockers abertos
+
+Nenhum blocker impede iniciar P2.
+
+Pendências históricas de mídia continuam fora do escopo de P1 e não foram apagadas.
+
+## Evidência e regra de homologação
+
+`HOMOLOGADO`/`PUBLICAVEL` precisa de evidência reconstruível adequada ao tipo, por exemplo:
 
 - CI/validator;
 - teste automatizado;
-- teste manual documentado;
-- screenshot/validação visual quando aplicável;
-- teste desktop/tablet/mobile;
-- exercício realizado com resultado esperado;
-- mídia validada e ligada;
+- teste manual;
+- screenshot/inspeção visual quando houver UI;
+- desktop/tablet/mobile;
+- exercício executado;
+- mídia validada/ligada;
 - fluxo E2E;
-- PR/commit onde a homologação foi registrada.
-
-Não exigir burocracia desnecessária, mas evitar estados finais sem nenhuma base rastreável.
+- PR/commit.
 
 ## Atualização após PR
 
 Quando uma PR do Clássico for integrada:
 
 ```text
-1. identificar quais IDs de implementação mudaram
-2. atualizar estados por dimensão
+1. identificar IDs alterados
+2. atualizar quatro dimensões de estado
 3. registrar blockers novos/removidos
 4. registrar mediaIds relevantes
-5. registrar PR/commit/evidência quando útil
+5. registrar evidência/PR quando útil
 6. atualizar Cursor operacional
-7. atualizar tabela do marco se a condição mudou
+7. atualizar estado do marco
 8. só então declarar o subpasso concluído
 ```
 
-Se a PR termina com trabalho parcial, isso deve aparecer explicitamente.
+Trabalho parcial deve permanecer `EM_ANDAMENTO` ou `IMPLEMENTADO_COM_PENDENCIA`; nunca mascarar a parcialidade.
 
-Exemplo:
+## Condição de avanço
 
-```text
-CL-P4-AUDIO-STIMULUS
-Estado consolidado: IMPLEMENTADO_COM_PENDENCIA
-Estado técnico: IMPLEMENTADO
-Homologação: BLOQUEADO_POR_DEPENDENCIA
-Mídia: MIDIA_OBRIGATORIA_PARA_ATIVIDADE
-Publicação: BLOQUEADO
-mediaId: N0-U01-L03-AUD-001
-Próximo passo: produzir/validar/publicar estímulo e repetir homologação pedagógica
-```
-
-## Condição para avançar de marco
-
-Um marco não precisa ter zero pendências históricas de qualquer tipo para o desenvolvimento continuar.
-
-Ele precisa satisfazer **a condição de saída definida em `docs/roadmap-produto.md`**.
-
-Pendências que não bloqueiam o próximo marco permanecem registradas e são retomadas no ponto apropriado, especialmente P8/P9.
-
-Isso permite:
+Um marco pode avançar com pendências locais não bloqueantes quando sua condição de saída do roadmap estiver satisfeita e as pendências permanecerem rastreadas.
 
 ```text
 avanço contínuo
 +
-pendências rastreadas
+pendências explícitas
 +
 nenhuma falsa conclusão
 ```
 
 ## Gate `CLÁSSICO HOMOLOGADO`
 
-O gate só pode ser marcado como satisfeito quando P9 confirmar os critérios de `docs/roadmap-produto.md`.
+Só P9 pode satisfazer o gate, aplicando os critérios de `docs/roadmap-produto.md`.
 
-Uma lista de mídia opcional pendente não impede necessariamente o gate.
+Mídia opcional pendente não bloqueia automaticamente o gate. Mídia obrigatória ainda necessária para a experiência pública impede a parte afetada de ser `PUBLICAVEL` e precisa ser resolvida antes do gate quando fizer parte do escopo final.
 
-Uma atividade obrigatória do percurso com `MIDIA_OBRIGATORIA_PARA_ATIVIDADE` ainda sem homologação ou um blocker de publicação obrigatório impede o gate quando estiver dentro do escopo final aprovado.
-
-## Regra para futuras instâncias de IA
-
-Ao assumir desenvolvimento do Clássico sem contexto de conversa:
-
-```text
-1. ler PROJECT_INDEX.md
-2. ler docs/roadmap-produto.md
-3. ler este documento
-4. ler .ChatGPT/skills/classic-product-delivery/SKILL.md
-5. localizar Marco ativo + Item ativo + Próximo passo exato
-6. ler apenas os contratos necessários ao item
-7. continuar dali
-8. atualizar este documento na mesma PR quando o estado mudar
-```
-
-Não reconstruir o estado por suposição a partir do número de arquivos existentes.
-
-## Regra final
-
-O projeto deve sempre conseguir diferenciar:
-
-```text
-feito
-parcialmente feito
-feito tecnicamente mas sem mídia
-pronto para testar
-homologado
-publicável
-bloqueado
-```
-
-Se uma nova inclusão não puder ser colocada com clareza em uma dessas situações, o registro precisa ser melhorado antes de chamar o trabalho de concluído.
+Nenhuma implementação de XP, missões, conquistas, streak ou progressão gamificada começa antes desse gate.

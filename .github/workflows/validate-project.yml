@@ -29,3 +29,6 @@ jobs:
 
       - name: Validate JSON syntax
         run: node scripts/validate-json.mjs
+
+      - name: Validate contract schemas
+        run: node scripts/validate-contracts.mjs
