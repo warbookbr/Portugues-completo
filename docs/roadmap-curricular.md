@@ -71,35 +71,46 @@ Gates do N3:
 ```text
 M1 ✓ — objetivo + 17 competências oficiais + 9 grandes responsabilidades
 M2 ✓ — 9 áreas dimensionadas + revisão horizontal 17/17
-M3 — PRÓXIMO MARCO
-M4 pendente
+M3 ✓ — 9 unidades integradas + cobertura 17/17 + saída antecipada
+M4 — PRÓXIMO MARCO
 M5 pendente
 ```
 
-Fonte M2: `docs/areas-nivel-4.md`.
+Fontes:
 
-Áreas M2:
+- M2: `docs/areas-nivel-4.md`;
+- M3: `docs/unidades-nivel-4.md`.
+
+Unidades M3:
 
 ```text
-1. Leitura estratégica de alta complexidade, comparação e síntese
-2. Escrita avançada, autoria e transferência entre gêneros
-3. Revisão, edição e precisão linguística
-4. Argumentação, pesquisa, fontes e responsabilidade autoral
-5. Estilo, registro e escolhas autorais
-6. Análise da língua, norma, variação, mudança e efeitos sociais
-7. Literatura e leitura estética autônoma
-8. Oralidade de alta complexidade
-9. Multimodalidade, cultura digital e autoria em múltiplas linguagens
+U1 — Leitura estratégica de alta complexidade e revisão de interpretação
+U2 — Pesquisa orientada por problema, fontes e rastreabilidade
+U3 — Argumentação complexa, evidência e responsabilidade epistêmica
+U4 — Autoria avançada, gêneros complexos e transferência
+U5 — Edição de alto nível, precisão e consulta linguística
+U6 — Estilo, registro e projeto de voz
+U7 — Língua, norma, variação, mudança, identidade e poder
+U8 — Oralidade complexa, síntese, negociação e debate
+U9 — Literatura, multimodalidade e autoria intermedial/digital
 ```
 
-Fronteiras explicitadas no M2:
+Decisões estruturais do M3:
 
-- leitura/síntese ≠ pesquisa/seleção/uso de fontes;
-- autoria global ≠ estilo;
-- edição normativa ≠ análise sociolinguística;
-- literatura ≠ multimodalidade, embora possam se integrar em unidades futuras.
+- as nove unidades não são mapeamento 1:1 das nove áreas;
+- pesquisa/fontes se desdobra em U2 e U3 e continua em U4/U9;
+- edição e estilo permanecem conectados, mas separados em U5/U6;
+- literatura e multimodalidade convergem em U9 depois de preparação transversal;
+- fontes, escrita, revisão, consulta e acessibilidade reaparecem ao longo do nível;
+- a arquitetura antecipada da saída tem oito agrupamentos integrados e obrigatórios;
+- produção longa, pesquisa/síntese, argumentação, oralidade e produção multimodal não devem ser compensáveis por média global.
 
-O gate M2→M3 foi satisfeito: as 17 competências oficiais possuem responsabilidade identificável e nenhuma área adicional é necessária apenas para cobrir lacuna aparente.
+Gates antecipados:
+
+- U5/U7 — gate normativo antes de congelar respostas avançadas em M5;
+- U9 — gate de mídia/acessibilidade se o M4 exigir fenômeno sensorial real insubstituível.
+
+O gate M3→M4 foi satisfeito: as nove áreas e as 17 competências oficiais possuem responsabilidade identificável nas unidades e a sequência não repete o N3 por simples aumento de dificuldade.
 
 # Marco ativo
 
@@ -110,18 +121,21 @@ N2 — M5 ✓
 N3 — M5 ✓
 N4 — M1 ✓
 └── M2 ✓
-    └── M3 — PRÓXIMO MARCO
+    └── M3 ✓
+        └── M4 — PRÓXIMO MARCO
 ```
 
 ## Próximo subpasso
 
 ```text
-N4 — M3
-→ transformar as 9 áreas em uma sequência de unidades pedagógicas integradas
-→ definir objetivo, competências, conteúdos nucleares, retomadas/conexões, evidências e limites de cada unidade
-→ não impor 9 unidades apenas porque existem 9 áreas
-→ distribuir transversalmente fontes, escrita, revisão, consulta e acessibilidade
-→ antecipar arquitetura da verificação de saída do N4 sem criar ainda o JSON final
+N4 — M4
+→ dimensionar as lições das 9 unidades
+→ definir quantidade por dependências, carga cognitiva, prática e evidência — não por simetria
+→ registrar objetivo, competências, conteúdo/dependências, modalidade principal, recursos, prática e evidência de cada lição
+→ definir verificações integradas de unidade
+→ tratar gate normativo de U5/U7 antes de congelar respostas normativas
+→ avaliar gate de mídia/acessibilidade de U9 se surgir dependência sensorial real
+→ manter arquitetura da futura N4-EXIT-V01 coerente com os oito agrupamentos antecipados no M3
 ```
 
 # Regras de continuidade
@@ -143,6 +157,7 @@ N4 — M3
 15. Fechamento curricular de nível não equivale a aprovação automática de aluno individual.
 16. N4 deve aumentar integração, flexibilidade, independência crítica e autoria, não apenas comprimento ou raridade.
 17. Pesquisa deve responder a necessidade informacional explícita; quantidade de fontes não é proxy de qualidade.
+18. N4 deve exigir revisão da própria interpretação, argumento, texto ou estratégia quando nova evidência tornar a decisão anterior insuficiente.
 
 # Dependências não curriculares
 
@@ -169,6 +184,7 @@ N3 saída → docs/checkpoint-saida-nivel-3.md + content/levels/003-avancado/exi
 N3-U3 normativo → docs/referencias-gramatica-nivel-3-u3.md
 N3-U9 audiovisual → docs/gate-audiovisual-nivel-3-u9.md
 N4 M2 → docs/areas-nivel-4.md
+N4 M3 → docs/unidades-nivel-4.md
 estado → docs/roadmap-curricular.md
 conteúdo → content/
 ```
