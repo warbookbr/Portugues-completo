@@ -102,6 +102,7 @@ interação unsupported
 metadado técnico conhecido exposto ao aluno
 TTS autoral não transformado em controle
 pending N4 ausente
+painel/configuração de progresso P5 ausentes
 ```
 
 A inspeção humana das screenshots continua obrigatória quando mudança visual relevante ocorrer.
@@ -126,7 +127,7 @@ Valida com runtime real:
 
 ### `scripts/test-progress-policies.mjs`
 
-Valida guard rails do contrato, independentemente dos casos mais simples do slice:
+Valida guard rails do contrato independentemente dos casos mais simples do slice:
 
 ```text
 minimumEvidence
@@ -136,6 +137,15 @@ backup local antes de substituir schema desconhecido/JSON inválido
 ```
 
 Um schema futuro não pode ser descartado silenciosamente só porque a aplicação atual entende apenas v1.
+
+### `scripts/test-progress-merge-edge-cases.mjs`
+
+Cobre conflitos que não aparecem no caminho feliz:
+
+- cluster de verificação presente apenas em um lado do merge não pode virar `undefined`;
+- cluster novo do outro dispositivo deve ser preservado;
+- revisão já resolvida em um lado não pode ser ressuscitada por uma alteração local não relacionada;
+- alteração real concorrente da revisão não pode ser descartada como se fosse somente remoção.
 
 ## Camada 8 — GitHub/Gist e sincronização
 
@@ -216,6 +226,7 @@ Validate publication catalog
 Test catalog discovery
 Test progress engine
 Test progress policies
+Test progress merge edge cases
 Test GitHub Gist service
 Test progress sync
 Test classic renderer
