@@ -122,18 +122,38 @@ O N3 está **curricularmente fechado em M5**: U1–U9, `N3-EXIT-V01` e checkpoin
 
 - `docs/mapa-niveis-1-4.md` — M1: objetivo, 17 competências oficiais de saída e nove grandes responsabilidades.
 - `docs/areas-nivel-4.md` — M2: nove áreas dimensionadas, revisão horizontal 17/17 e gate M2→M3 satisfeito.
+- `docs/unidades-nivel-4.md` — M3: nove unidades integradas, cobertura 17/17, arquitetura antecipada da saída e gate M3→M4 satisfeito.
+
+Unidades M3:
+
+```text
+U1 — Leitura estratégica de alta complexidade e revisão de interpretação
+U2 — Pesquisa orientada por problema, fontes e rastreabilidade
+U3 — Argumentação complexa, evidência e responsabilidade epistêmica
+U4 — Autoria avançada, gêneros complexos e transferência
+U5 — Edição de alto nível, precisão e consulta linguística
+U6 — Estilo, registro e projeto de voz
+U7 — Língua, norma, variação, mudança, identidade e poder
+U8 — Oralidade complexa, síntese, negociação e debate
+U9 — Literatura, multimodalidade e autoria intermedial/digital
+```
 
 Estado:
 
 ```text
 M1 ✓
 M2 ✓ — 9 áreas
-M3 — próximo marco
-M4 pendente
+M3 ✓ — 9 unidades
+M4 — próximo marco
 M5 pendente
 ```
 
-O próximo marco curricular é dimensionar as unidades do N4 em M3. A fonte oficial do estado é `docs/roadmap-curricular.md`.
+Gates antecipados pelo M3:
+
+- U5/U7 — gate normativo antes de congelar respostas avançadas;
+- U9 — gate de mídia/acessibilidade se o M4 exigir fenômeno sensorial real.
+
+O próximo marco curricular é dimensionar as lições do N4 em M4. A fonte oficial do estado é `docs/roadmap-curricular.md`.
 
 ## Arquitetura e frontend
 
@@ -173,6 +193,7 @@ N2 M2/M3/M4 → docs/areas-nivel-2.md + docs/unidades-nivel-2.md + docs/licoes-n
 N3 M2/M3/M4 → docs/areas-nivel-3.md + docs/unidades-nivel-3.md + docs/licoes-nivel-3*.md
 N3 saída → docs/checkpoint-saida-nivel-3.md + content/levels/003-avancado/exit-verification.json
 N4 M2 → docs/areas-nivel-4.md
+N4 M3 → docs/unidades-nivel-4.md
 estado/marcos → docs/roadmap-curricular.md
 conteúdo detalhado → content/
 forma de ensinar/mídia → docs/conteudo.md
