@@ -114,7 +114,26 @@ Português Completo
 - `content/levels/003-avancado/exit-verification.json` — `N3-EXIT-V01`, saída integrada em oito agrupamentos obrigatórios.
 - `docs/checkpoint-saida-nivel-3.md` — auditoria das 18 competências oficiais e fronteira N3→N4.
 
-O N3 está **curricularmente fechado em M5**: U1–U9, `N3-EXIT-V01` e checkpoint N3→N4 concluídos. O próximo marco curricular é N4-M2. A fonte oficial do estado é `docs/roadmap-curricular.md`.
+O N3 está **curricularmente fechado em M5**: U1–U9, `N3-EXIT-V01` e checkpoint N3→N4 concluídos.
+
+## Nível 4
+
+### Arquitetura curricular
+
+- `docs/mapa-niveis-1-4.md` — M1: objetivo, 17 competências oficiais de saída e nove grandes responsabilidades.
+- `docs/areas-nivel-4.md` — M2: nove áreas dimensionadas, revisão horizontal 17/17 e gate M2→M3 satisfeito.
+
+Estado:
+
+```text
+M1 ✓
+M2 ✓ — 9 áreas
+M3 — próximo marco
+M4 pendente
+M5 pendente
+```
+
+O próximo marco curricular é dimensionar as unidades do N4 em M3. A fonte oficial do estado é `docs/roadmap-curricular.md`.
 
 ## Arquitetura e frontend
 
@@ -153,6 +172,7 @@ N1 M2/M3/M4 → docs/areas-nivel-1.md + docs/unidades-nivel-1.md + docs/licoes-n
 N2 M2/M3/M4 → docs/areas-nivel-2.md + docs/unidades-nivel-2.md + docs/licoes-nivel-2*.md
 N3 M2/M3/M4 → docs/areas-nivel-3.md + docs/unidades-nivel-3.md + docs/licoes-nivel-3*.md
 N3 saída → docs/checkpoint-saida-nivel-3.md + content/levels/003-avancado/exit-verification.json
+N4 M2 → docs/areas-nivel-4.md
 estado/marcos → docs/roadmap-curricular.md
 conteúdo detalhado → content/
 forma de ensinar/mídia → docs/conteudo.md
