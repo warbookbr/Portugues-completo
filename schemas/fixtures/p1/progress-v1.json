@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "courseId": "portugues-completo",
+  "curriculum": {
+    "current": {"levelId": "N4", "unitId": "N4-U09", "lessonId": "N4-U09-L01"},
+    "lessons": {
+      "N0-U01-L01": {"status": "CONCLUIDA", "startedAt": "2026-08-17T10:00:00-03:00", "completedAt": "2026-08-17T10:12:00-03:00", "lastVisitedAt": "2026-08-17T10:12:00-03:00"},
+      "N4-U09-L01": {"status": "CONCLUIDA", "startedAt": "2026-08-17T11:00:00-03:00", "completedAt": "2026-08-17T11:20:00-03:00", "lastVisitedAt": "2026-08-17T11:20:00-03:00"}
+    },
+    "verifications": {
+      "N0-U01-V01": {"status": "EM_ESTUDO", "attemptCount": 1, "clusterStates": {"auditoryAndModality": "DEMONSTRADA", "graphicSystem": "REVISAO_RECOMENDADA"}, "lastAttemptAt": "2026-08-17T10:30:00-03:00"}
+    }
+  },
+  "evidence": {
+    "N0-U01-L01/L01-A01": {"status": "DEMONSTRADA", "attemptCount": 1, "lastAttemptAt": "2026-08-17T10:10:00-03:00", "support": {"hintUsed": false, "replayCount": 1, "rereadUsed": false, "consultationUsed": false}, "feedbackRef": null},
+    "N4-U09-L01/L01-A01": {"status": "VALIDACAO_PENDENTE", "attemptCount": 1, "lastAttemptAt": "2026-08-17T11:18:00-03:00", "support": {"hintUsed": false, "replayCount": 0, "rereadUsed": true, "consultationUsed": false}, "feedbackRef": "N4-U09-L01/L01-A01@1"}
+  },
+  "competencies": {
+    "N0-U01-C01": {"status": "DEMONSTRADA", "evidenceRefs": ["N0-U01-L01/L01-A01"], "reviewRecommended": false, "updatedAt": "2026-08-17T10:12:00-03:00"},
+    "N4-U09-C01": {"status": "EM_DESENVOLVIMENTO", "evidenceRefs": ["N4-U09-L01/L01-A01"], "reviewRecommended": false, "updatedAt": "2026-08-17T11:20:00-03:00"}
+  },
+  "review": {
+    "queue": [
+      {"id": "review:N0-U01-C02", "competencyId": "N0-U01-C02", "reason": "RECENT_DIFFICULTY", "sourceEvidenceRef": "N0-U01-V01/V01-Q07", "priority": "NORMAL", "createdAt": "2026-08-17T10:30:00-03:00", "lastReviewedAt": null}
+    ]
+  },
+  "responses": {
+    "N4-U09-L01/L01-A01": {"type": "STRUCTURED_RESPONSE", "value": {"interpretation": "Lia hesita diante da partida.", "evidence": ["painel apagado", "bilhete inteiro", "não se aproxima da plataforma"], "alternative": "ela pode estar apenas adiando uma decisão", "limit": "o texto não informa sua decisão posterior"}, "updatedAt": "2026-08-17T11:18:00-03:00", "revision": 1}
+  },
+  "gamification": null,
+  "meta": {"createdAt": "2026-08-17T10:00:00-03:00", "updatedAt": "2026-08-17T11:20:00-03:00", "contentRevision": null}
+}
