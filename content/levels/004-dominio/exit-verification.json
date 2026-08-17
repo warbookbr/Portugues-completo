@@ -1,0 +1,257 @@
+{
+  "schemaVersion": 1,
+  "id": "N4-EXIT-V01",
+  "type": "level-exit-verification",
+  "levelId": "N4",
+  "title": "Verificação de saída — Nível 4 — Domínio",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Verificar autonomia, integração, transferência e revisão consciente no domínio geral do português, cobrindo leitura estratégica, pesquisa multifuente, argumentação, autoria longa, edição/estilo/consulta, análise de língua e variação, oralidade complexa e literatura/multimodalidade sem repetir mecanicamente as nove verificações de unidade.",
+  "prerequisites": ["N4-U01-V01", "N4-U02-V01", "N4-U03-V01", "N4-U04-V01", "N4-U05-V01", "N4-U06-V01", "N4-U07-V01", "N4-U08-V01", "N4-U09-V01"],
+  "officialCompetenciesCovered": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17],
+  "principles": [
+    "usar materiais novos e situações de transferência",
+    "todos os oito agrupamentos são obrigatórios e não se compensam por média global",
+    "avaliar decisões e justificativas, não quantidade de mudanças, fontes, palavras ou termos técnicos",
+    "permitir releitura, replay, consulta e revisão quando velocidade ou memória literal não são a competência",
+    "aceitar insuficiência de evidência, manutenção de posição e consulta quando forem decisões justificadas",
+    "preservar divergências, condições, ressalvas, vozes e incerteza reais",
+    "não pontuar ideologia, gosto literário, sotaque, hesitação, formalidade máxima, extensão ou vocabulário raro",
+    "distinguir regra produtiva, variante documentada, convenção institucional/editorial, caso de consulta e escolha estilística",
+    "não declarar automaticamente qualidade global de escrita, síntese, argumento, interpretação ou fala aberta",
+    "exigir primeira versão, revisão e segunda versão quando o agrupamento envolve autoria longa",
+    "preservar trechos e decisões que já funcionam quando a melhor revisão for manutenção",
+    "garantir equivalente acessível para pistas decisivas e reconhecer quando mídia sensorial real seria indispensável"
+  ],
+  "normativeScope": ["docs/gate-normativo-nivel-4-u5-u7.md", "docs/referencias-gramatica-nivel-4-u5-u7.md", "docs/referencias-gramatica-nivel-4-u5-u7-atualizacao-2026.md"],
+  "mediaAccessibilityGate": "docs/gate-midia-acessibilidade-nivel-4-u9.md",
+  "validationBoundary": {
+    "autonomouslyCheckable": [
+      "presença estrutural de estratégia, evidência, atribuição, plano, versões, consulta e histórico de decisões",
+      "itens fechados sobre fatos, escopo, método, proveniência, relações entre fontes e informação ausente em materiais controlados",
+      "alvos normativos fechados estritamente dentro do recorte documentado",
+      "compreensão oral baseada em significado quando timbre/prosódia específica não determina a resposta",
+      "relações multimodais representadas semanticamente e princípios objetivos de acessibilidade",
+      "distinção explícita entre conclusão sustentada, hipótese, variante, convenção e caso que exige consulta"
+    ],
+    "requiresReliableEvaluator": [
+      "qualidade global de leitura e síntese abertas",
+      "qualidade global de argumentação",
+      "qualidade, adequação e autoria de texto longo livre",
+      "qualidade de edição e decisão estilística aberta",
+      "qualidade de análise sociolinguística aberta",
+      "inteligibilidade, pronúncia, prosódia e qualidade global da apresentação oral",
+      "qualidade de interpretação literária e produção multimodal autoral"
+    ],
+    "studentEvidenceStates": {
+      "strategicReading": "evidencia-registrada-validacao-interpretativa-pendente",
+      "multiSourceResearch": "evidencia-registrada-validacao-de-pesquisa-sintese-pendente",
+      "argumentation": "evidencia-registrada-validacao-argumentativa-pendente",
+      "longAuthorship": "evidencia-registrada-validacao-linguistica-autoral-pendente",
+      "editingStyle": "evidencia-registrada-validacao-editorial-pendente",
+      "languageVariation": "evidencia-registrada-validacao-analitica-pendente",
+      "oralCommunication": "pratica-realizada-validacao-oral-externa-pendente",
+      "literatureMultimodal": "evidencia-registrada-validacao-interpretativa-multimodal-pendente"
+    }
+  },
+  "media": {
+    "tts": "permitido quando significado verbal é o alvo; replay não penaliza",
+    "controlledAudio": [],
+    "video": "nao necessario",
+    "images": "nao obrigatorias; composições são semânticas e acessíveis"
+  },
+  "supportMaterials": {
+    "curatedMedia": [],
+    "runtimeResources": [
+      {"type": "TTS_OK", "locations": ["textos", "fontes", "componentes-verbais"], "purpose": "apoio de acesso"},
+      {"type": "TTS_AUDIO_FIRST", "locations": ["N4-EXIT-Q07"], "purpose": "estímulo inicial de compreensão oral"},
+      {"type": "TRANSCRIPT_AFTER_ATTEMPT", "locations": ["N4-EXIT-Q07"], "purpose": "conferência e autorrevisão após tentativa"}
+    ],
+    "generatedVisualResources": [
+      {"type": "UI_RENDERED_INTERPRETATION_EVIDENCE_MAP"},
+      {"type": "UI_RENDERED_MULTI_SOURCE_NOTE_MATRIX"},
+      {"type": "UI_RENDERED_SOURCE_LINEAGE"},
+      {"type": "UI_RENDERED_ADVANCED_ARGUMENT_MAP"},
+      {"type": "UI_RENDERED_LONGFORM_WORKSPACE"},
+      {"type": "UI_RENDERED_VERSION_HISTORY"},
+      {"type": "UI_RENDERED_INTEGRATED_REVISION_EDITOR"},
+      {"type": "UI_RENDERED_NORMATIVE_STATUS"},
+      {"type": "UI_RENDERED_SPEECH_ARCHITECTURE_MAP"},
+      {"type": "UI_RENDERED_PRESENTATION_PLAN"},
+      {"type": "UI_RENDERED_INTERPRETATION_EVIDENCE_MAP"},
+      {"type": "UI_RENDERED_FRAME_SEQUENCE"},
+      {"type": "UI_RENDERED_EDITING_TIMELINE"},
+      {"type": "UI_RENDERED_SOURCE_LINEAGE"},
+      {"type": "UI_RENDERED_ACCESSIBLE_VISUAL_COMPOSITION"},
+      {"type": "UI_RENDERED_SEMANTIC_PAGE_LAYOUT"}
+    ],
+    "productionQueueRequired": false,
+    "publicationDependency": "nenhuma nova mídia humana obrigatória; respostas abertas e produção oral/multimodal exigem avaliador confiável para validação global",
+    "decisionRationale": "A saída mede transferência com materiais autorais, fontes controladas, TTS e representações semânticas. Nenhuma competência exige timbre, atuação, movimento ou timing sensorial real como resposta correta."
+  },
+  "materials": {
+    "strategicReading": {
+      "title": "Biblioteca estende empréstimo de equipamentos, mas mantém expansão em caráter experimental",
+      "sections": [
+        {"heading": "Experimento", "paragraphs": ["Três bibliotecas municipais testaram durante quatro meses o empréstimo de notebooks e roteadores portáteis. O objetivo era observar usos e obstáculos antes de decidir se o serviço deveria integrar permanentemente toda a rede.", "Foram registradas 1.920 retiradas por 811 pessoas identificadas. Uma mesma pessoa podia realizar novas retiradas, portanto os dois números não medem a mesma coisa."]},
+        {"heading": "Diferenças", "paragraphs": ["A unidade Central concentrou 46% das retiradas e também ofereceu atendimento aos sábados. As outras duas unidades tiveram horários, estoques e ações de divulgação diferentes. O relatório considera plausível que o sábado tenha contribuído para a procura, mas não o trata como causa isolada.", "Em uma unidade predominaram pedidos de roteadores; em outra, de notebooks. A coordenação concluiu que a composição inicial do estoque deve continuar ajustável por unidade."]},
+        {"heading": "Limites", "paragraphs": ["Um questionário voluntário recebeu 307 respostas e 78% relataram que o equipamento foi usado para estudo ou trabalho. Como responder era opcional, o resultado descreve os respondentes, não necessariamente todos os usuários.", "Ainda não há estimativa anual consolidada de manutenção, perdas e reposição, nem dados suficientes sobre períodos de férias escolares."]},
+        {"heading": "Próximo ciclo", "paragraphs": ["A proposta é manter as três unidades, incluir outras duas por seis meses e separar no registro usuários únicos, retiradas repetidas, pedidos sem estoque e custos de manutenção.", "Os dados sustentam continuidade e expansão experimental. Não sustentam, por enquanto, estoque idêntico, calendário único ou adoção permanente em toda a rede."]}
+      ],
+      "framingVariant": {"headline": "Biblioteca Central concentra quase metade dos empréstimos de tecnologia", "lead": "A unidade que também abriu aos sábados respondeu por 46% das retiradas registradas no experimento."},
+      "newEvidence": "Após o primeiro rascunho da análise, a equipe informa que a unidade Central também tinha estoque inicial quase duas vezes maior que o de cada uma das outras unidades."
+    },
+    "researchSet": [
+      {"id": "A", "title": "Registro operacional do programa", "type": "registro institucional primário", "scope": "cinco meses; três unidades", "method": "retiradas registradas individualmente; pessoa pode aparecer mais de uma vez", "content": ["2.410 retiradas", "996 pessoas identificadas", "142 pedidos sem equipamento disponível", "não mede satisfação"]},
+      {"id": "B", "title": "Questionário pós-uso", "type": "pesquisa voluntária", "scope": "328 respondentes com retirada registrada", "method": "convite após devolução; uma resposta por participante", "content": ["82% disseram que usariam novamente", "109 relataram dificuldade de transporte até a unidade", "não representa pessoas que nunca conseguiram retirar equipamento"]},
+      {"id": "C", "title": "Nota de associação local", "type": "fonte secundária", "scope": "relatos recebidos pela associação", "method": "metodologia de contagem não publicada", "content": ["afirma que mais de 1.100 moradores foram atendidos", "defende nova unidade no bairro Sul", "não publica a origem do número 1.100"]},
+      {"id": "D", "title": "Planilha de custos parciais", "type": "registro institucional primário", "scope": "três primeiros meses", "method": "custos de reparo e reposição lançados por ocorrência", "content": ["custos variam fortemente por tipo de equipamento", "não inclui horas de equipe", "não permite ainda estimar custo anual completo"]}
+    ],
+    "argumentUpdate": {
+      "initialFacts": ["duas unidades registram pedidos sem estoque há oito semanas", "o total atual é 86 pedidos", "59 solicitantes aceitaram indicação para outra unidade", "há espaço físico disponível em uma quarta biblioteca", "o custo anual completo ainda não foi calculado"],
+      "newEvidence": "Uma vistoria posterior conclui que a quarta biblioteca exigiria adequação elétrica antes de receber equipamentos e que o orçamento dessa adequação ainda não foi aprovado."
+    },
+    "authorshipBrief": {
+      "scenario": "Produzir para o conselho municipal uma recomendação geral sobre o próximo ciclo do programa, usando o conjunto de pesquisa e o argumento revisado.",
+      "destinationA": "nota técnica geral para decisão não especializada, com fontes rastreáveis e limites explícitos",
+      "destinationB": "comunicado público curto para moradores, preservando fatos e ressalvas sem reproduzir a arquitetura da nota técnica"
+    },
+    "editingText": "Embora os dados tenha sido atualizados, a equipe informou que houveram diferenças importantes entre as unidades e encaminhou o relatório a coordenação. A maior parte dos avaliadores consideraram que expandir é obviamente a melhor solução, porque todos os usuários precisam do serviço. O projeto, que seus custos ainda não foram consolidados, deve portanto ser adotado definitivamente. Além disso, foi constatado através dos questionários que o sábado causa maior procura.",
+    "languageVariationCase": {
+      "context": "Uma instituição prepara orientação para dois textos: uma mensagem interna cotidiana entre colegas e um edital público que declara seguir o padrão editorial institucional.",
+      "observations": ["na mensagem interna aparece 'me manda o arquivo quando puder'", "no edital aparece uma construção cuja colocação pronominal formal está dentro do recorte documentado", "um revisor chama a forma cotidiana de 'português inferior'", "outro afirma que qualquer diferença de uso prova mudança histórica concluída"],
+      "sourcesAvailable": ["gate normativo U5/U7", "referências normativas/descritivas U5/U7", "padrão editorial declarado do edital"]
+    },
+    "oralStimulus": {
+      "audioText": "A comissão avaliou a primeira fase de um atendimento móvel em quatro bairros. Foram 612 atendimentos, mas dois pontos concentraram quase dois terços do total. Em 54 casos, a pessoa precisou voltar em outro dia porque o serviço procurado não estava disponível naquela parada. A equipe propõe testar um calendário diferente e divulgar antes quais serviços estarão em cada local. Isso ainda não é recomendação de permanência: faltam dados de custo no período chuvoso e de procura em férias.",
+      "replayAllowed": true,
+      "transcriptAfterAttempt": true,
+      "objection": "Se dois pontos concentram a maioria dos atendimentos, deveríamos eliminar os outros dois agora.",
+      "clarification": "O que exatamente significa 'concentraram quase dois terços': atendimentos únicos ou total de registros?"
+    },
+    "literatureMultimodal": {
+      "literaryText": "No último dia do prédio, Joana escreveu os números dos apartamentos em pequenos papéis e os colocou numa caixa sem tampa. Quando chegou ao 304, parou. Dobrou o papel uma vez, depois outra, e o guardou no bolso. A caixa ficou na portaria para quem quisesse levar uma lembrança.",
+      "responseText": "Num poema-resposta autoral, a caixa fala em primeira pessoa e enumera portas vazias; o número 304 aparece apenas como um espaço em branco entre dois versos.",
+      "semanticFrames": ["1 — caixa aberta na portaria", "2 — papéis com números de apartamentos", "3 — papel 304 sendo dobrado", "4 — mão guardando o papel no bolso", "5 — caixa permanecendo na portaria"],
+      "publicationChain": [
+        {"id": "p1", "role": "obra-base", "credit": "Curso Português Completo"},
+        {"id": "p2", "role": "adaptação em sequência", "derivedFrom": "p1", "credit": "Equipe didática"},
+        {"id": "p3", "role": "repostagem simulada", "derivedFrom": "p2", "change": "remove o crédito e a informação de que o poema responde à narrativa"}
+      ],
+      "sensoryBoundary": ["ordem e conteúdo dos quadros estão disponíveis semanticamente", "não existe atuação humana, timbre específico ou movimento contínuo real"]
+    }
+  },
+  "tasks": [
+    {
+      "id": "N4-EXIT-Q01",
+      "cluster": "strategicReadingRevision",
+      "type": "strategic-reading-with-revision",
+      "source": "materials.strategicReading",
+      "required": ["definir objetivo e estratégia inicial de leitura e justificar", "reconstruir arquitetura global e cadeias decisivas", "distinguir explícito, inferência sustentada e hipótese não confirmada", "analisar pelo menos um implícito/efeito de formulação e um limite", "comparar o texto com framingVariant sem inferir manipulação automática", "produzir síntese crítica preservando ressalvas", "revisar ou manter a conclusão após newEvidence e justificar a decisão"],
+      "reReadingAllowed": true,
+      "recordResponse": true,
+      "automaticValidation": false
+    },
+    {
+      "id": "N4-EXIT-Q02",
+      "cluster": "multiSourceResearchSynthesis",
+      "type": "problem-oriented-research-and-synthesis",
+      "source": "materials.researchSet",
+      "required": ["formular pergunta investigável para decidir o próximo ciclo", "mapear o que precisa ser sabido", "propor estratégia de busca/refinamento sem pontuar quantidade", "classificar função, origem, escopo e método das quatro fontes", "rastrear a afirmação de C e registrar que a origem numérica permanece insuficiente", "distinguir fontes dependentes de confirmações independentes", "registrar convergências, divergências e lacunas", "produzir síntese atribuída e decidir justificadamente o que ainda exige confirmação"],
+      "recordResponse": true,
+      "automaticValidation": "metadados e relações fechadas podem ser verificados; síntese e decisão de suficiência abertas não"
+    },
+    {
+      "id": "N4-EXIT-Q03",
+      "cluster": "revisableArgumentation",
+      "type": "argument-with-new-evidence",
+      "source": "materials.argumentUpdate",
+      "required": ["formular tese inicial delimitada e proporcional", "ligar razões a evidências sem extrapolar alcance", "registrar grau de certeza", "formular objeção forte e responder sem caricatura", "identificar concessão real quando pertinente", "reavaliar tese após newEvidence", "registrar mudança, enfraquecimento, suspensão ou manutenção justificada da posição"],
+      "recordResponse": true,
+      "automaticValidation": false
+    },
+    {
+      "id": "N4-EXIT-Q04",
+      "cluster": "longAuthorshipTransfer",
+      "type": "longform-authorship-and-transfer",
+      "source": "materials.authorshipBrief",
+      "required": ["projeto textual explícito de finalidade, audiência, gênero, suporte e circulação", "macroplano funcional", "primeira versão longa própria usando fontes de Q02/Q03 com vozes distinguíveis", "revisão global por arquitetura, evidência, progressão e audiência", "segunda versão com mudanças e permanências justificadas", "transferência para destinationB sem copiar mecanicamente a arquitetura de destinationA", "comparação das duas versões preservando fatos, atribuições e ressalvas"],
+      "recordResponse": true,
+      "automaticValidation": false
+    },
+    {
+      "id": "N4-EXIT-Q05",
+      "cluster": "editingStyleConsultation",
+      "type": "layered-editing-with-consultation",
+      "source": "materials.editingText",
+      "required": ["diagnosticar antes de reescrever e ordenar prioridades", "corrigir problemas de concordância e regência apenas dentro do recorte documentado", "tratar referência, causalidade, generalização e precisão lexical", "classificar cada intervenção relevante como regra, variante, convenção, consulta ou estilo", "registrar consulta quando o caso não puder ser congelado por memória", "propor pelo menos duas alternativas estilísticas defensáveis para um trecho", "preservar ao menos um elemento adequado conscientemente", "comparar antes/depois e verificar se cada alteração resolveu o problema que a motivou"],
+      "recordResponse": true,
+      "automaticValidation": "casos normativos fechados no gate podem ser verificados; edição global aberta não"
+    },
+    {
+      "id": "N4-EXIT-Q06",
+      "cluster": "languageNormVariationPower",
+      "type": "norm-description-variation-analysis",
+      "source": "materials.languageVariationCase",
+      "required": ["separar uso observado, descrição, norma/convenção e julgamento social", "tratar a mensagem interna segundo contexto sem transformar informalidade em erro automático", "aplicar o padrão declarado do edital apenas em seu domínio", "explicar por que prestígio/consequência institucional não prova superioridade linguística", "recusar inferência de inteligência ou valor pessoal por variedade", "explicar por que observação isolada não prova mudança histórica concluída", "propor feedback contextual que preserve autoria e dignidade do falante"],
+      "recordResponse": true,
+      "automaticValidation": false
+    },
+    {
+      "id": "N4-EXIT-Q07",
+      "cluster": "complexOralCommunication",
+      "type": "listening-presentation-objection-negotiation",
+      "source": "materials.oralStimulus",
+      "required": ["definir foco de escuta", "reconstruir arquitetura, dados, recomendação e limites com replay permitido", "produzir síntese fiel sem memória literal como critério", "planejar apresentação curta para audiência declarada", "registrar tentativa oral ou evidência equivalente de processo", "responder à clarification sem inventar informação ausente", "reformular fielmente objection antes de responder", "conceder, delimitar ou reformular quando pertinente", "negociar um ponto de escopo sem fabricar consenso", "autorrevisar plano/estratégia após a tentativa", "separar o que o sistema pode observar do que exige ouvinte confiável"],
+      "replayAllowed": true,
+      "recordResponse": true,
+      "automaticValidation": "compreensão fechada baseada em significado pode ser verificada; qualidade global da fala não"
+    },
+    {
+      "id": "N4-EXIT-Q08",
+      "cluster": "literatureMultimodalDigitalAuthorship",
+      "type": "literary-multimodal-integrated-authorship",
+      "source": "materials.literatureMultimodal",
+      "required": ["formular interpretação literária própria antes de receber leitura pronta e sustentá-la por evidência", "analisar voz, estrutura, imagem/gesto e indeterminação sem leitura única", "relacionar responseText à narrativa sem repertório secreto", "comparar ao menos duas leituras e revisar ou manter a própria justificadamente", "analisar distribuição de informação e efeito da sequência sem depender de aparência", "reconstruir p1→p2→p3 e distinguir autoria, adaptação e perda de contexto", "comparar ganhos/perdas de adaptação entre meios", "produzir protótipo multimodal/digital semântico com finalidade, atribuição e equivalentes acessíveis", "identificar corretamente uma pergunta que exigiria mídia sensorial real e não fingir resposta", "registrar decisões de preservação, transformação e limite"],
+      "recordResponse": true,
+      "automaticValidation": false
+    }
+  ],
+  "assessmentBehavior": {
+    "timeLimit": false,
+    "speedScored": false,
+    "sourceCountScored": false,
+    "wordCountScored": false,
+    "changeCountScored": false,
+    "formalismScored": false,
+    "rareVocabularyScored": false,
+    "ideologyScored": false,
+    "tasteScored": false,
+    "accentScored": false,
+    "hesitationScored": false,
+    "visualPolishScored": false,
+    "singleInterpretationKey": false,
+    "openResponseAutoValidated": false,
+    "globalAverageCanCompensateMissingCluster": false
+  },
+  "completionEvidence": {
+    "clusters": {
+      "strategicReadingRevision": {"evidence": ["N4-EXIT-Q01"], "required": true, "officialCompetencies": [1, 2, 4, 17]},
+      "multiSourceResearchSynthesis": {"evidence": ["N4-EXIT-Q02"], "required": true, "officialCompetencies": [3, 4, 7, 17]},
+      "revisableArgumentation": {"evidence": ["N4-EXIT-Q03"], "required": true, "officialCompetencies": [6, 17]},
+      "longAuthorshipTransfer": {"evidence": ["N4-EXIT-Q04"], "required": true, "officialCompetencies": [5, 7, 8, 11, 12]},
+      "editingStyleConsultation": {"evidence": ["N4-EXIT-Q05"], "required": true, "officialCompetencies": [8, 9, 10, 11, 17]},
+      "languageNormVariationPower": {"evidence": ["N4-EXIT-Q06"], "required": true, "officialCompetencies": [10, 11, 16, 17]},
+      "complexOralCommunication": {"evidence": ["N4-EXIT-Q07"], "required": true, "officialCompetencies": [6, 11, 13, 17]},
+      "literatureMultimodalDigitalAuthorship": {"evidence": ["N4-EXIT-Q08"], "required": true, "officialCompetencies": [2, 4, 12, 14, 15, 17]}
+    },
+    "nonCompensable": ["N4-EXIT-Q01", "N4-EXIT-Q02", "N4-EXIT-Q03", "N4-EXIT-Q04", "N4-EXIT-Q05", "N4-EXIT-Q06", "N4-EXIT-Q07", "N4-EXIT-Q08"],
+    "coverageAudit": {
+      "officialCompetencies": 17,
+      "covered": 17,
+      "missing": [],
+      "rule": "cada competência oficial aparece em pelo menos um agrupamento obrigatório; a cobertura formal não substitui avaliação qualitativa das evidências abertas"
+    },
+    "completionRule": "Os oito agrupamentos são obrigatórios. Não há compensação por média global. Conclusão curricular do nível significa que há evidência registrada em todos os agrupamentos; aprovação individual plena continua dependente de avaliador confiável nas produções abertas indicadas em validationBoundary.",
+    "requiresReliableEvaluatorFor": ["leitura e síntese abertas", "pesquisa e síntese multifuente", "argumentação", "autoria longa", "edição e estilo", "análise sociolinguística", "produção oral", "interpretação literária", "produção multimodal e acessibilidade global"]
+  }
+}
