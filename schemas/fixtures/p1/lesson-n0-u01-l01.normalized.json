@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "id": "N0-U01-L01",
+  "kind": "LESSON",
+  "title": "Fala e escrita: duas formas relacionadas",
+  "objective": "Distinguir a realização sonora da língua de sua representação escrita e compreender que fala e escrita são relacionadas, mas não idênticas.",
+  "competencyIds": ["N0-U01-C01"],
+  "prerequisites": [],
+  "limits": ["não exigir leitura autônoma", "não tratar escrita como cópia exata dos sons da fala"],
+  "blocks": [
+    {
+      "id": "L01-B01",
+      "kind": "CONTENT",
+      "pedagogicalType": "objective",
+      "focus": "read-or-listen",
+      "content": {"title": "Duas maneiras de encontrar uma mensagem", "text": "Algumas mensagens chegam pelos sons da fala; outras aparecem como escrita."}
+    },
+    {
+      "id": "L01-C01",
+      "kind": "ACTIVITY",
+      "pedagogicalType": "quick-check",
+      "focus": "respond",
+      "content": {"prompt": "Se a mensagem chega pelos sons de uma voz, qual forma está sendo usada?", "options": ["fala", "escrita"], "feedback": "A fala chega por sons que ouvimos."},
+      "activity": {
+        "role": "CHECK",
+        "interaction": "SINGLE_CHOICE",
+        "evaluation": {"mode": "DETERMINISTIC", "feedbackTiming": "IMMEDIATE", "allowRetry": true, "penalizeSupport": false, "answerKey": {"correct": "fala"}, "criteria": [], "threshold": null},
+        "evidence": {"role": "PRACTICE", "competencyIds": ["N0-U01-C01"], "clusterId": null, "recordResponse": false, "requiredForCompletion": false},
+        "stimuli": []
+      }
+    },
+    {
+      "id": "L01-A01",
+      "kind": "ACTIVITY",
+      "pedagogicalType": "guided-activity",
+      "focus": "respond",
+      "content": {"title": "Fala ou escrita?", "categories": ["fala", "escrita"], "itemIds": ["a1", "a2", "a3", "a4"]},
+      "activity": {
+        "role": "EVIDENCE",
+        "interaction": "CLASSIFY",
+        "evaluation": {"mode": "DETERMINISTIC", "feedbackTiming": "IMMEDIATE", "allowRetry": true, "penalizeSupport": false, "answerKey": {"a1": "fala", "a2": "escrita", "a3": "fala", "a4": "escrita"}, "criteria": [], "threshold": 0.75},
+        "evidence": {"role": "REQUIRED", "competencyIds": ["N0-U01-C01"], "clusterId": "modalityDistinction", "recordResponse": false, "requiredForCompletion": true},
+        "stimuli": [
+          {"type": "TTS", "payload": {"itemId": "a1", "text": "Olá!"}},
+          {"type": "SEMANTIC_UI", "payload": {"itemId": "a2", "visibleText": "Olá!"}}
+        ]
+      }
+    },
+    {
+      "id": "L01-C03",
+      "kind": "ACTIVITY",
+      "pedagogicalType": "quick-check",
+      "focus": "respond",
+      "content": {"prompt": "Qual afirmação descreve melhor a relação entre fala e escrita?", "options": ["são iguais", "não têm relação", "são relacionadas, mas diferentes"]},
+      "activity": {
+        "role": "EVIDENCE",
+        "interaction": "SINGLE_CHOICE",
+        "evaluation": {"mode": "DETERMINISTIC", "feedbackTiming": "IMMEDIATE", "allowRetry": true, "penalizeSupport": false, "answerKey": {"correctIndex": 2}, "criteria": [], "threshold": null},
+        "evidence": {"role": "REQUIRED", "competencyIds": ["N0-U01-C01"], "clusterId": "modalityDistinction", "recordResponse": false, "requiredForCompletion": true},
+        "stimuli": []
+      }
+    }
+  ],
+  "completion": {
+    "clusters": [
+      {"id": "modalityDistinction", "required": true, "evidenceIds": ["L01-A01", "L01-C03"], "satisfaction": "DEMONSTRATED_REQUIRED"}
+    ],
+    "nonCompensable": true
+  }
+}
