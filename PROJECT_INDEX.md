@@ -137,7 +137,8 @@ O N3 está **curricularmente fechado em M5**: U1–U9, `N3-EXIT-V01` e checkpoin
 ### Gates do N4
 
 - `docs/gate-normativo-nivel-4-u5-u7.md` — gate normativo de U5/U7, **SATISFEITO**; reabrir apenas se surgir caso fechado fora do recorte documentado.
-- `docs/referencias-gramatica-nivel-4-u5-u7.md` — recorte normativo/descritivo pesquisado e congelado; separa regra, variante, convenção editorial, consulta e estilo e libera U5/U7 no aspecto normativo.
+- `docs/referencias-gramatica-nivel-4-u5-u7.md` — recorte normativo/descritivo pesquisado e congelado; separa regra, variante, convenção editorial, consulta e estilo.
+- `docs/referencias-gramatica-nivel-4-u5-u7-atualizacao-2026.md` — addendum do contexto institucional atual; registra o Decreto nº 12.002/2024 sem alterar o recorte pedagógico.
 - `docs/gate-midia-acessibilidade-nivel-4-u9.md` — gate de mídia/acessibilidade **satisfeito para a arquitetura atual**; nenhuma nova mídia humana obrigatória, com reabertura apenas se M5 introduzir alvo sensorial real insubstituível.
 
 ### Resultado M4
@@ -166,6 +167,7 @@ O M4 preserva cobertura 17/17 e explicita como cada unidade exige autonomia, tra
 - `content/units/404-autoria-avancada-generos-complexos-transferencia/` — U4, 11 lições + `N4-U04-V01`, **concluída**.
 - `content/units/405-edicao-alto-nivel-precisao-consulta-linguistica/` — U5, 11 lições + `N4-U05-V01`, **concluída**.
 - `content/units/406-estilo-registro-projeto-voz/` — U6, 9 lições + `N4-U06-V01`, **concluída**.
+- `content/units/407-lingua-norma-variacao-mudanca-identidade-poder/` — U7, 10 lições + `N4-U07-V01`, **concluída**.
 
 A U1 exige escolha e eventual troca justificada de estratégia, arquiteturas concorrentes defensáveis, preservação de condições/ressalvas, cadeias distribuídas, implícitos/intertextualidade com evidência, enquadramento sem inferência automática de manipulação, calibração epistêmica e revisão explícita da interpretação após nova evidência.
 
@@ -178,6 +180,8 @@ A U4 transforma decisões de leitura/pesquisa/argumentação em autoria longa: p
 A U5 transforma revisão em julgamento editorial priorizado e auditável: diagnostica antes de reescrever, corrige arquitetura antes do polimento, revisa referência/sintaxe/precisão, classifica regra/variante/convenção/consulta/estilo antes de agir, usa somente o recorte normativo documentado, registra consulta lexical quando necessária, preserva trechos adequados e distingue correção, sugestão, pergunta ao autor e preservação de voz.
 
 A U6 transforma estilo em projeto funcional e transferível: explicita presença autoral, tom/registro e relação com a audiência, equilibra densidade e explicitação, escolhe léxico por significado/alcance/conotação, controla ritmo/repetição/ênfase e modalidade/agência e exige adaptações entre meios que preservem fatos e traços autorais sem cópia mecânica.
+
+A U7 separa uso, descrição, norma/convenção e julgamento social; trata variação e mudança com limites de inferência; distingue consequência institucional de prestígio/estigma; trabalha repertório e identidade sem essencialização; exige feedback contextual, comparação de fontes, auditoria de afirmações públicas e adaptação formal sem hierarquizar falantes.
 
 Estado:
 
@@ -193,7 +197,8 @@ M5 em andamento
 ├── U4 ✓ — 11 lições + N4-U04-V01
 ├── U5 ✓ — 11 lições + N4-U05-V01
 ├── U6 ✓ — 9 lições + N4-U06-V01
-└── U7 — próximo subpasso
+├── U7 ✓ — 10 lições + N4-U07-V01
+└── U8 — próximo subpasso
 ```
 
 A fonte oficial do estado é `docs/roadmap-curricular.md`.
@@ -239,7 +244,7 @@ N4 M2 → docs/areas-nivel-4.md
 N4 M3 → docs/unidades-nivel-4.md
 N4 M4 → docs/licoes-nivel-4.md + docs/licoes-nivel-4-u*.md
 N4 M5 → content/units/4xx-*/
-N4 normativo U5/U7 → docs/gate-normativo-nivel-4-u5-u7.md + docs/referencias-gramatica-nivel-4-u5-u7.md
+N4 normativo U5/U7 → docs/gate-normativo-nivel-4-u5-u7.md + docs/referencias-gramatica-nivel-4-u5-u7.md + docs/referencias-gramatica-nivel-4-u5-u7-atualizacao-2026.md
 N4 mídia/acessibilidade → docs/gate-midia-acessibilidade-nivel-4-u9.md
 estado/marcos → docs/roadmap-curricular.md
 conteúdo detalhado → content/
