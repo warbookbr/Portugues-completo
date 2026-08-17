@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "N4-U08-L05",
+  "title": "Adaptação à audiência e apoio acessível",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Adaptar densidade, vocabulário, exemplos e apoio visual/textual à audiência sem reduzir indevidamente o conteúdo nem tornar cor, imagem ou polimento gráfico a única pista decisiva.",
+  "competencies": ["adaptar explicitação", "selecionar vocabulário", "criar apoio complementar", "preservar conteúdo decisivo", "garantir equivalência acessível"],
+  "prerequisites": ["N4-U08-L03", "N4-U08-L04", "N4-U06-V01"],
+  "limits": ["visual polido não pontua", "apoio não deve apenas duplicar fala", "cor/imagem não pode ser pista única", "simplificação não pode apagar ressalvas ou incertezas relevantes"],
+  "media": {"tts": "opcional para ensaio", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias; suporte pode ser renderizado pela UI"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["ensaio"]}], "generatedVisualResources": [{"type": "UI_RENDERED_AUDIENCE_PROFILE"}, {"type": "UI_RENDERED_ACCESSIBLE_SUPPORT_CARD"}, {"type": "UI_RENDERED_DENSITY_COMPARE"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "apoios semânticos renderizados pela interface permitem testar adaptação e acessibilidade sem premiar design decorativo."},
+  "sequence": [
+    {"id": "L05-B01", "type": "audience-contrast", "profiles": [{"label": "gestores", "priorKnowledge": "conhecem o projeto", "need": "evidência, limite e decisão"}, {"label": "usuarios", "priorKnowledge": "conhecem o serviço, não os dados", "need": "contexto, consequência prática e incertezas principais"}]},
+    {"id": "L05-B02", "type": "support-design", "baseFacts": ["teste por seis semanas", "312 entradas após 18h", "custo de segurança ainda não separado"], "task": "decidir o que vai na fala, o que vai no cartão de apoio e o que precisa aparecer nos dois por segurança comunicativa"},
+    {"id": "L05-C01", "type": "accessibility-check", "items": [{"choice": "usar apenas cor para distinguir certeza e hipótese", "acceptable": false}, {"choice": "rotular texto e usar organização visual redundante", "acceptable": true}, {"choice": "omitir a lacuna de custo para simplificar", "acceptable": false}], "automaticValidation": true},
+    {"id": "L05-A01", "type": "audience-adaptation", "prompt": "Produza duas decisões de adaptação para cada audiência e um apoio textual/visual acessível que complemente a fala. Justifique o que foi explicitado, reduzido, preservado e deslocado para o suporte.", "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"timeLimit": false, "visualPolishScored": false, "minimalTextScored": false, "openResponseAutoValidated": false},
+  "completionEvidence": {"clusters": {"audienceAdaptation": {"evidence": ["L05-A01"], "required": true}, "accessibleSupport": {"evidence": ["L05-A01"], "required": true}}, "completionRule": "a adaptação deve responder à audiência sem perda factual e o apoio deve possuir equivalentes textuais/semânticos suficientes.", "requiresReliableEvaluatorFor": ["adequação da adaptação", "qualidade funcional do apoio", "preservação de conteúdo"]}
+}
