@@ -95,7 +95,7 @@ Portugues-completo/
 |-- content/
 |   |-- course.json
 |   `-- units/
-|       `-- 001-.../
+|       `-- 001-fundamentos/
 |           |-- unit.json
 |           |-- lessons/
 |           `-- exercises/
@@ -105,7 +105,7 @@ Portugues-completo/
 |   |-- mapa-curso.md
 |   |-- conteudo.md
 |   |-- exercicios.md                      (quando criado)
-|   |-- progresso.md                       (quando criado)
+|   |-- progresso.md
 |   |-- configuracoes.md                   (quando criado)
 |   `-- convencoes.md                      (quando criado)
 |
@@ -185,6 +185,8 @@ GitHubService
 - identificar usuário
 - localizar, criar e atualizar Gist
 ```
+
+As regras funcionais do `ProgressService`, feedback, revisão, domínio e gamificação ficam em `docs/progresso.md`.
 
 A gamificação deve permanecer separada do núcleo pedagógico. Se sua implementação crescer o suficiente para justificar serviço próprio, ela deve ser isolada em vez de concentrada no `ProgressService`.
 
@@ -420,7 +422,7 @@ O aluno que escolhe o modo Clássico não precisa participar de um sistema de XP
 
 O modo Gamificado usa o mesmo conteúdo e as mesmas evidências pedagógicas do modo Clássico, acrescentando uma camada motivacional opcional.
 
-Essa camada poderá incluir, quando definida funcionalmente:
+Essa camada poderá incluir, conforme `docs/progresso.md`:
 
 - XP;
 - conquistas;
@@ -447,7 +449,7 @@ Ao trocar de modo, devem permanecer intactos:
 
 A troca modifica a experiência apresentada ao aluno, não o que ele já aprendeu ou percorreu.
 
-Como o modo Clássico não precisa acumular XP ocultamente, a regra exata para iniciar ou retomar elementos exclusivamente gamificados após uma troca será definida junto das regras de gamificação em `docs/progresso.md`, quando esse documento for criado. Essa decisão não pode alterar retroativamente o domínio pedagógico do aluno.
+O modo Clássico não acumula XP ocultamente. Ao ativar o Gamificado depois de estudar no Clássico, o progresso pedagógico anterior permanece válido, mas o XP não é reconstruído retroativamente. Dados gamificados já obtidos antes de uma troca para o Clássico podem ser preservados para eventual retorno. O contrato completo fica em `docs/progresso.md`.
 
 ### Separação entre progresso e gamificação
 
@@ -529,7 +531,7 @@ Exemplo conceitual:
 }
 ```
 
-Campos exclusivamente gamificados, como XP, não são requisito do núcleo de progresso pedagógico e só devem ser formalizados quando as regras de gamificação forem definidas.
+O formato definitivo do progresso deve respeitar `docs/progresso.md` e separar dados curriculares, evidência/domínio, revisão e gamificação.
 
 A credencial deve pertencer ao próprio aluno, ter apenas as permissões necessárias e nunca ser commitada no repositório.
 
@@ -615,7 +617,7 @@ A interface deve informar, em linguagem clara, que:
 
 A IA poderá futuramente apoiar feedback de respostas complexas, especialmente quando regras determinísticas não forem suficientes para diagnosticar uma produção aberta.
 
-A integração não deve transformar uma resposta gerada pelo modelo em verdade pedagógica automática. O desenho funcional de avaliação com IA será definido separadamente antes da implementação, preservando os limites de validação já registrados no conteúdo curricular.
+A integração não deve transformar uma resposta gerada pelo modelo em verdade pedagógica automática. `docs/progresso.md` define o contrato funcional: IA pode fornecer feedback assistivo, enquanto atividades que declaram necessidade de avaliador confiável permanecem com validação pendente por padrão.
 
 ## Fontes oficiais dos dados
 
@@ -665,7 +667,7 @@ docs/exercicios.md
 → tipos e regras de exercícios, quando criado
 
 docs/progresso.md
-→ regras de progresso, domínio, revisão e gamificação, quando criado
+→ progresso curricular, evidência/domínio, feedback, revisão, IA assistiva e gamificação
 
 docs/configuracoes.md
 → comportamento das preferências, quando criado
@@ -723,7 +725,7 @@ O validador não exige que cada lição ou exercício individual seja listado no
 - Google Drive não é tratado como CDN nem como filesystem da aplicação;
 - uma API key de IA lembrada localmente não acompanha automaticamente o aluno entre dispositivos ou navegadores;
 - limpar dados locais pode exigir que a API key de IA seja informada novamente;
-- regras específicas de XP, missões, conquistas e transição para o modo Gamificado ainda dependem de definição funcional posterior;
+- valores exatos de XP, catálogo de conquistas, missões e algoritmo de prioridade da revisão permanecem decisões de implementação/teste, sem alterar o contrato pedagógico de `docs/progresso.md`;
 - a arquitetura foi escolhida para um grupo pequeno de usuários, não para milhares de alunos simultâneos.
 
 ## Regra principal
