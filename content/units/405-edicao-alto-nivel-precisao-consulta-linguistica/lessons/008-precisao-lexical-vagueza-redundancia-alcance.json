@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "id": "N4-U05-L08",
+  "title": "Precisão lexical, vagueza, redundância e alcance",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Ajustar palavras e expressões para preservar exatamente o alcance pretendido, sem confundir precisão com rebuscamento ou concisão com apagamento de condições.",
+  "competencies": ["detectar vagueza relevante", "ajustar especificidade", "revisar quantificadores", "distinguir redundância funcional de improdutiva", "evitar falso sinônimo", "preservar condições"],
+  "prerequisites": ["N4-U05-L01", "N4-U05-L03", "N4-U05-L04", "N4-U05-L07"],
+  "limits": ["palavra rara não é melhor", "sinônimo não é intercambiável por definição", "redundância pode cumprir função", "concisão não pode apagar condição decisiva"],
+  "media": {"tts": "opcional", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["alternativas"]}], "generatedVisualResources": [{"type": "UI_RENDERED_SCOPE_SCALE"}, {"type": "UI_RENDERED_LEXICAL_ALTERNATIVE_COMPARE"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "escala de alcance ajuda a comparar o que cada formulação afirma sem premiar vocabulário raro."},
+  "sequence": [
+    {"id": "L08-B01", "type": "scope-change-demo", "pairs": [{"a": "os usuários aprovaram", "b": "81 dos 96 respondentes avaliaram positivamente", "lesson": "a segunda formulação restringe universo e fonte da afirmação"}, {"a": "sempre houve falhas", "b": "houve falhas nas três semanas observadas", "lesson": "quantificador altera alcance"}]},
+    {"id": "L08-C01", "type": "precision-not-prestige", "items": [{"change": "trocar usar por utilizar sem mudança de sentido", "status": "cosmetico"}, {"change": "trocar todos por 18 dos 24 participantes", "status": "precisao"}, {"change": "remover salvo em períodos de pico", "status": "perda-de-condicao"}]},
+    {"id": "L08-A01", "type": "lexical-precision-edit", "tasks": ["revisar quatro formulações vagas", "ajustar dois quantificadores", "preservar uma redundância funcional", "rejeitar um sinônimo que muda alcance", "explicar uma manutenção lexical"], "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"timeLimit": false, "rareVocabularyScored": false, "shorterAlwaysBetter": false, "openResponseAutoValidated": false},
+  "completionEvidence": {"clusters": {"lexicalPrecision": {"evidence": ["L08-A01"], "required": true}}, "completionRule": "a revisão deve aumentar precisão sem inventar dados, apagar condições ou premiar rebuscamento.", "requiresReliableEvaluatorFor": ["precisão semântica", "preservação do alcance"]}
+}

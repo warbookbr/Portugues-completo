@@ -164,6 +164,7 @@ O M4 preserva cobertura 17/17 e explicita como cada unidade exige autonomia, tra
 - `content/units/402-pesquisa-orientada-problema-fontes-rastreabilidade/` — U2, 11 lições + `N4-U02-V01`, **concluída**.
 - `content/units/403-argumentacao-complexa-evidencia-responsabilidade-epistemica/` — U3, 10 lições + `N4-U03-V01`, **concluída**.
 - `content/units/404-autoria-avancada-generos-complexos-transferencia/` — U4, 11 lições + `N4-U04-V01`, **concluída**.
+- `content/units/405-edicao-alto-nivel-precisao-consulta-linguistica/` — U5, 11 lições + `N4-U05-V01`, **concluída**.
 
 A U1 exige escolha e eventual troca justificada de estratégia, arquiteturas concorrentes defensáveis, preservação de condições/ressalvas, cadeias distribuídas, implícitos/intertextualidade com evidência, enquadramento sem inferência automática de manipulação, calibração epistêmica e revisão explícita da interpretação após nova evidência.
 
@@ -172,6 +173,8 @@ A U2 transforma pesquisa em processo rastreável: parte de necessidade informaci
 A U3 transforma dossiê em argumento responsável: exige tese proporcional, cadeia reconstruível, ajuste evidência-afirmação, tratamento de causalidade/generalização, qualificação epistêmica, objeção forte sem caricatura, concessão com consequência, persuasão sem distorção e duas versões autorais com revisão motivada por nova evidência.
 
 A U4 transforma decisões de leitura/pesquisa/argumentação em autoria longa: parte de projeto textual explícito, aprende gêneros pouco familiares por modelos sem fórmula universal, macroplaneja por função, integra fontes e voz própria, sustenta análise em escala longa, trabalha gêneros acadêmicos gerais, profissionais/públicos e digitais/híbridos, executa transferência entre destinos e exige primeira versão, revisão global, segunda versão e justificativa autoral.
+
+A U5 transforma revisão em julgamento editorial priorizado e auditável: diagnostica antes de reescrever, corrige arquitetura antes do polimento, revisa referência/sintaxe/precisão, classifica regra/variante/convenção/consulta/estilo antes de agir, usa somente o recorte normativo documentado, registra consulta lexical quando necessária, preserva trechos adequados e distingue correção, sugestão, pergunta ao autor e preservação de voz.
 
 Estado:
 
@@ -185,7 +188,8 @@ M5 em andamento
 ├── U2 ✓ — 11 lições + N4-U02-V01
 ├── U3 ✓ — 10 lições + N4-U03-V01
 ├── U4 ✓ — 11 lições + N4-U04-V01
-└── U5 — próximo subpasso; gate normativo ✓, desenvolver 11 lições + N4-U05-V01
+├── U5 ✓ — 11 lições + N4-U05-V01
+└── U6 — próximo subpasso
 ```
 
 A fonte oficial do estado é `docs/roadmap-curricular.md`.

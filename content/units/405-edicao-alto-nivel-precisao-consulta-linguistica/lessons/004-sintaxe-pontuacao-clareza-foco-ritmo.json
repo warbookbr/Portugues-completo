@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "id": "N4-U05-L04",
+  "title": "Sintaxe e pontuação como decisões de clareza, foco e ritmo",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Comparar construções sintáticas e escolhas de pontuação pelo efeito no contexto, sem tratar frase longa, subordinação ou segmentação como qualidade ou defeito por si.",
+  "competencies": ["comparar estruturas sintáticas", "avaliar foco e ambiguidade", "usar segmentação funcional", "revisar paralelismo", "justificar pontuação por estrutura/efeito"],
+  "prerequisites": ["N4-U05-L01", "N4-U05-L02", "N4-U05-L03", "N3-U03-V01"],
+  "limits": ["frase longa não é erro por si", "frase curta não é automaticamente clara", "pontuação expressiva não substitui coerência", "não simplificar estrutura quando a relação complexa precisa permanecer explícita"],
+  "media": {"tts": "opcional para comparar cadência sem tornar áudio critério", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["alternativas sintáticas"]}], "generatedVisualResources": [{"type": "UI_RENDERED_SENTENCE_ALTERNATIVES"}, {"type": "UI_RENDERED_CLAUSE_RELATION_MAP"}], "productionQueueRequired": false, "publicationDependency": "nenhuma mídia humana obrigatória; TTS não determina acerto", "decisionRationale": "comparação textual mantém foco em estrutura e efeito."},
+  "sequence": [
+    {"id": "L04-B01", "type": "syntax-choice-demo", "context": "É preciso preservar simultaneamente a condição, a consequência e a ressalva.", "alternatives": [{"text": "O programa será ampliado se o teste final confirmar estabilidade, embora o custo ainda precise ser acompanhado.", "effect": "mantem relações em uma unidade"}, {"text": "O programa poderá ser ampliado. Isso depende do teste final. O custo ainda precisa ser acompanhado.", "effect": "segmenta e explicita relações em passos"}], "model": "ambas podem ser adequadas conforme gênero, densidade e foco."},
+    {"id": "L04-C01", "type": "effect-check", "items": [{"change": "dividir período apenas porque é longo", "status": "insuficiente"}, {"change": "reordenar oração para remover ambiguidade de escopo", "status": "funcional"}, {"change": "preservar período complexo porque relações estão claras", "status": "manutencao-valida"}]},
+    {"id": "L04-A01", "type": "syntax-punctuation-edit", "tasks": ["comparar pelo menos duas soluções", "escolher uma solução para clareza/foco", "preservar um período complexo que funciona", "explicar o efeito da pontuação escolhida"], "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"timeLimit": false, "sentenceLengthScored": false, "openResponseAutoValidated": false},
+  "completionEvidence": {"clusters": {"syntaxEdit": {"evidence": ["L04-A01"], "required": true}}, "completionRule": "a decisão deve ser justificada pelo efeito e pela estrutura, não por uma preferência automática por frases curtas ou longas.", "requiresReliableEvaluatorFor": ["clareza", "efeito de foco", "qualidade das alternativas"]}
+}

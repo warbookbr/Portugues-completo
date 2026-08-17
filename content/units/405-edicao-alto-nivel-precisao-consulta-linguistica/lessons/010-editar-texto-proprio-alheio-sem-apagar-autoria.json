@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "id": "N4-U05-L10",
+  "title": "Editar texto próprio e alheio sem apagar autoria",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Ajustar o grau de intervenção à responsabilidade editorial, distinguindo correção necessária, recomendação, pergunta ao autor e decisão que pertence ao projeto autoral.",
+  "competencies": ["editar texto próprio", "editar texto alheio", "classificar intervenção", "preservar voz", "formular pergunta editorial", "respeitar briefing de finalidade"],
+  "prerequisites": ["N4-U05-L01", "N4-U05-L02", "N4-U05-L03", "N4-U05-L04", "N4-U05-L05", "N4-U05-L06", "N4-U05-L07", "N4-U05-L08", "N4-U05-L09", "N4-U04-V01"],
+  "limits": ["editor não substitui intenção autoral por gosto próprio", "mais formal não é padrão universal", "correção necessária e sugestão opcional não são a mesma coisa", "decisão de conteúdo pode exigir pergunta em vez de reescrita"],
+  "media": {"tts": "opcional", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["texto próprio", "texto alheio"]}], "generatedVisualResources": [{"type": "UI_RENDERED_INTERVENTION_LABELS"}, {"type": "UI_RENDERED_AUTHOR_BRIEF"}, {"type": "UI_RENDERED_VERSION_DIFF"}], "productionQueueRequired": false, "publicationDependency": "nenhuma mídia humana obrigatória; qualidade da edição exige avaliador confiável", "decisionRationale": "rótulos de intervenção e briefing preservam responsabilidade entre autor e editor."},
+  "sequence": [
+    {"id": "L10-B01", "type": "intervention-level-demo", "cases": [{"issue": "erro inequívoco de concordância no recorte", "action": "correcao-necessaria"}, {"issue": "frase clara, mas alternativa pode melhorar ritmo", "action": "sugestao-opcional"}, {"issue": "trecho contradiz briefing e não se sabe intenção", "action": "pergunta-ao-autor"}, {"issue": "voz informal é deliberada e adequada ao público", "action": "preservar"}]},
+    {"id": "L10-C01", "type": "ownership-check", "items": [{"change": "substituir toda voz do autor por estilo do editor", "status": "sobreedicao"}, {"change": "corrigir ambiguidade que altera sentido", "status": "intervencao-necessaria"}, {"change": "perguntar sobre dado contraditório antes de inventar correção", "status": "responsabilidade-editorial"}]},
+    {"id": "L10-A01", "type": "own-and-other-edit", "tasks": ["editar um texto próprio", "editar um texto alheio com briefing", "rotular intervenções como necessárias/recomendadas/pergunta/preservação", "registrar pelo menos uma pergunta ao autor", "comparar o grau de intervenção nos dois textos"], "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"timeLimit": false, "changeCountScored": false, "editorStyleImpositionScored": false, "openResponseAutoValidated": false},
+  "completionEvidence": {"clusters": {"ownOtherEditing": {"evidence": ["L10-A01"], "required": true}}, "completionRule": "o aluno precisa editar texto próprio e alheio com graus de intervenção adequados e sem apagar autoria.", "requiresReliableEvaluatorFor": ["preservação de voz", "proporcionalidade da intervenção", "qualidade das perguntas ao autor"]}
+}

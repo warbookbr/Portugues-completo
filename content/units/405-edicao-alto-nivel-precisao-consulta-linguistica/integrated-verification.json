@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 1,
+  "id": "N4-U05-V01",
+  "type": "integrated-unit-verification",
+  "title": "Verificação integrada — Nível 4, Unidade 5",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Verificar se o aluno consegue editar dois textos novos de forma priorizada, proporcional e auditável, usando o recorte normativo documentado, consulta adequada e preservação de autoria.",
+  "prerequisites": ["N4-U05-L01", "N4-U05-L02", "N4-U05-L03", "N4-U05-L04", "N4-U05-L05", "N4-U05-L06", "N4-U05-L07", "N4-U05-L08", "N4-U05-L09", "N4-U05-L10", "N4-U05-L11"],
+  "referenceScope": "docs/referencias-gramatica-nivel-4-u5-u7.md",
+  "guardRails": ["diagnóstico precede reescrita", "problemas globais precedem polimento local", "variantes documentadas não recebem gabarito único", "convenções institucionais só são exigidas quando declaradas", "caso lexical incerto exige consulta apropriada", "preservar trecho adequado é evidência de competência", "quantidade de mudanças não pontua", "mais formal não é automaticamente melhor", "texto alheio deve preservar intenção/voz", "itens fechados não compensam edição própria e justificativa"],
+  "materials": {
+    "textA": {
+      "role": "texto derivado de produção própria simulada",
+      "brief": "relatório analítico para coordenação de serviço público geral; recomendação deve ser proporcional aos dados",
+      "content": [
+        "Os dados provam que o atendimento itinerante deve ser ampliado imediatamente a todos os bairros. Haviam 426 atendimentos em oito semanas, distribuídos de forma desigual entre quatro bairros.",
+        "A maior parte dos respondentes avaliaram positivamente o acesso. O questionário foi voluntário e reuniu 96 respostas, das quais 81 foram favoráveis.",
+        "A coordenação enviou à equipe regional o relatório depois de conversar com a comissão. Ela pediu a ampliação do serviço, mas o texto não deixa claro quem fez o pedido.",
+        "O custo foi muito razoável. O registro disponível inclui deslocamentos, mas o custo de manutenção do veículo ainda é parcial. Em uma nota operacional aparece a grafia 'microonibus', marcada para confirmação em fonte ortográfica atual.",
+        "Por isso, o programa foi um sucesso total. Em dois bairros de menor uso, porém, houve chuva intensa em metade das visitas."
+      ]
+    },
+    "textB": {
+      "role": "texto alheio",
+      "brief": "comunicação pública curta, direta e próxima; preservar a voz simples do autor e não transformar o texto em nota burocrática",
+      "declaredEditorialConvention": "usar o nome completo do programa na primeira ocorrência e a sigla PAP nas seguintes",
+      "content": [
+        "Queremos contar o que mudou no Programa de Atendimento de Proximidade. Nas últimas semanas, a equipe testou novos horários e eles ajudaram a distribuir melhor parte da procura.",
+        "O PAP continua em teste. Foram realizados 170 atendimentos, mas o rascunho não informa quantas pessoas diferentes foram atendidas. Esse número foi ótimo para todo mundo.",
+        "A equipe vai manter os horários por mais um ciclo e publicar nova atualização quando houver dados completos de custo e procura."
+      ]
+    }
+  },
+  "tasks": [
+    {"id": "V01-A01", "cluster": "diagnosis-priority", "type": "diagnosis-and-priority", "prompt": "Diagnostique os dois textos por camadas e ordene as intervenções de maior impacto. Não marque um trecho só para aumentar a quantidade de correções.", "recordResponse": true, "automaticValidation": false},
+    {"id": "V01-A02", "cluster": "global-revision", "type": "global-edit", "prompt": "Faça a revisão global necessária no texto A. Reduza conclusões que excedem os dados, reorganize o que for necessário e registre ao menos uma mudança de arquitetura e uma manutenção consciente.", "recordResponse": true, "automaticValidation": false},
+    {"id": "V01-A03", "cluster": "reference-syntax", "type": "reference-syntax-edit", "prompt": "Repare a ambiguidade de referência do texto A e revise sintaxe/pontuação apenas onde houver ganho real. Preserve pelo menos uma construção complexa que já funcione.", "recordResponse": true, "automaticValidation": false},
+    {"id": "V01-Q01", "cluster": "norm-status", "type": "documented-norm-check", "cases": [{"case": "haver = existir em 'Haviam 426 atendimentos'", "expectedStatus": "REGRA_PRODUTIVA", "expectedAction": "corrigir para forma singular no recorte documentado"}, {"case": "A maior parte dos respondentes avaliaram positivamente", "expectedStatus": "VARIANTE_DOCUMENTADA", "expectedAction": "não tratar o plural como erro automático"}, {"case": "posição de clítico em locução verbal sem padrão declarado", "expectedStatus": "CASO_DE_CONSULTA", "expectedAction": "consultar/analisar padrão antes de congelar correção"}], "automaticValidation": true},
+    {"id": "V01-A04", "cluster": "consultation", "type": "consultation-decision", "prompt": "Consulte fonte ortográfica atual adequada para a grafia marcada 'microonibus', registre fonte/motivo e aplique o resultado. A atividade não fornece gabarito de memória.", "recordResponse": true, "automaticValidation": false},
+    {"id": "V01-A05", "cluster": "lexical-precision", "type": "lexical-precision", "prompt": "Revise formulações como 'muito razoável', 'sucesso total' e o alcance de 'para todo mundo' sem inventar dados, sem rebuscamento e sem apagar ressalvas.", "recordResponse": true, "automaticValidation": false},
+    {"id": "V01-A06", "cluster": "other-author-editing", "type": "edit-other-author", "prompt": "Edite o texto B respeitando o briefing e a convenção declarada. Classifique intervenções como necessárias, recomendadas, pergunta ao autor ou preservação. A ausência do número de pessoas distintas deve gerar pergunta/nota, não dado inventado.", "recordResponse": true, "automaticValidation": false},
+    {"id": "V01-A07", "cluster": "audit-trail", "type": "final-version-and-log", "prompt": "Entregue versões finais dos textos A e B com histórico curto de mudanças, permanências, categorias normativas e consultas. Destaque uma intervenção recusada por ser apenas preferência do editor.", "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"timeLimit": false, "changeCountScored": false, "errorCountScored": false, "formalityMaximizationScored": false, "rareVocabularyScored": false, "closedNormItemsRestrictedToDocumentedScope": true, "openResponseAutoValidated": false, "closedTasksCanCompensateEditing": false},
+  "completionEvidence": {
+    "clusters": {
+      "diagnosisPriority": {"evidence": ["V01-A01"], "required": true},
+      "globalRevision": {"evidence": ["V01-A02"], "required": true},
+      "referenceSyntax": {"evidence": ["V01-A03"], "required": true},
+      "normStatus": {"evidence": ["V01-Q01"], "required": true},
+      "consultation": {"evidence": ["V01-A04"], "required": true},
+      "lexicalPrecision": {"evidence": ["V01-A05"], "required": true},
+      "otherAuthorEditing": {"evidence": ["V01-A06"], "required": true},
+      "auditTrail": {"evidence": ["V01-A07"], "required": true},
+      "preservation": {"evidence": ["V01-A02", "V01-A03", "V01-A06", "V01-A07"], "required": true},
+      "normativeBoundary": {"evidence": ["V01-Q01", "V01-A04", "V01-A07"], "required": true},
+      "integratedEditorialJudgment": {"evidence": ["V01-A01", "V01-A02", "V01-A05", "V01-A06", "V01-A07"], "required": true}
+    },
+    "completionRule": "todos os onze agrupamentos são obrigatórios. Itens fechados não compensam ausência de edição própria, consulta, preservação de autoria ou justificativa; casos normativos objetivos ficam restritos ao documento de referência.",
+    "requiresReliableEvaluatorFor": ["qualidade global da edição", "prioridade e proporcionalidade", "preservação de voz", "qualidade das justificativas", "adequação das consultas"]
+  },
+  "media": {"tts": "opcional como apoio de releitura", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["textos A/B e versões"]}, {"type": "REFERENCE_ACCESS", "locations": ["consulta"]}], "generatedVisualResources": [{"type": "UI_RENDERED_LAYERED_DIAGNOSIS_PANEL"}, {"type": "UI_RENDERED_VERSION_HISTORY"}, {"type": "UI_RENDERED_NORM_STATUS_BADGE"}, {"type": "UI_RENDERED_CONSULTATION_LOG"}, {"type": "UI_RENDERED_INTERVENTION_LABELS"}], "productionQueueRequired": false, "publicationDependency": "nenhuma mídia humana obrigatória; respostas abertas exigem avaliador confiável", "decisionRationale": "a verificação mede processo editorial e fronteira normativa com textos concretos; UI versionada e acesso a referências são os recursos essenciais."}
+}
