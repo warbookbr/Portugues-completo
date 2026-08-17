@@ -72,45 +72,52 @@ Gates do N3:
 M1 ✓ — objetivo + 17 competências oficiais + 9 grandes responsabilidades
 M2 ✓ — 9 áreas dimensionadas + revisão horizontal 17/17
 M3 ✓ — 9 unidades integradas + cobertura 17/17 + saída antecipada
-M4 — PRÓXIMO MARCO
-M5 pendente
+M4 ✓ — 93 lições + 9 verificações integradas
+M5 — PRÓXIMO MARCO
 ```
 
 Fontes:
 
 - M2: `docs/areas-nivel-4.md`;
-- M3: `docs/unidades-nivel-4.md`.
+- M3: `docs/unidades-nivel-4.md`;
+- M4 consolidado: `docs/licoes-nivel-4.md`;
+- M4 por unidade: `docs/licoes-nivel-4-u1.md` ... `docs/licoes-nivel-4-u9.md`.
 
-Unidades M3:
+Arquitetura M4:
 
 ```text
-U1 — Leitura estratégica de alta complexidade e revisão de interpretação
-U2 — Pesquisa orientada por problema, fontes e rastreabilidade
-U3 — Argumentação complexa, evidência e responsabilidade epistêmica
-U4 — Autoria avançada, gêneros complexos e transferência
-U5 — Edição de alto nível, precisão e consulta linguística
-U6 — Estilo, registro e projeto de voz
-U7 — Língua, norma, variação, mudança, identidade e poder
-U8 — Oralidade complexa, síntese, negociação e debate
-U9 — Literatura, multimodalidade e autoria intermedial/digital
+U1 — 10 lições — Leitura estratégica de alta complexidade e revisão de interpretação
+U2 — 11 lições — Pesquisa orientada por problema, fontes e rastreabilidade
+U3 — 10 lições — Argumentação complexa, evidência e responsabilidade epistêmica
+U4 — 11 lições — Autoria avançada, gêneros complexos e transferência
+U5 — 11 lições — Edição de alto nível, precisão e consulta linguística
+U6 —  9 lições — Estilo, registro e projeto de voz
+U7 — 10 lições — Língua, norma, variação, mudança, identidade e poder
+U8 —  9 lições — Oralidade complexa, síntese, negociação e debate
+U9 — 12 lições — Literatura, multimodalidade e autoria intermedial/digital
+────────────────────────────────────────────────────────
+TOTAL — 93 lições + 9 verificações integradas
 ```
 
-Decisões estruturais do M3:
+Decisões estruturais do M4:
 
-- as nove unidades não são mapeamento 1:1 das nove áreas;
-- pesquisa/fontes se desdobra em U2 e U3 e continua em U4/U9;
-- edição e estilo permanecem conectados, mas separados em U5/U6;
-- literatura e multimodalidade convergem em U9 depois de preparação transversal;
-- fontes, escrita, revisão, consulta e acessibilidade reaparecem ao longo do nível;
-- a arquitetura antecipada da saída tem oito agrupamentos integrados e obrigatórios;
-- produção longa, pesquisa/síntese, argumentação, oralidade e produção multimodal não devem ser compensáveis por média global.
+- a progressão do N4 é medida por autonomia, transferência, integração e revisão — não por extensão;
+- U1 exige mudança consciente de estratégia e revisão da interpretação diante de nova evidência;
+- U2 trata pesquisa como processo rastreável orientado por necessidade informacional, não como acúmulo de fontes;
+- U3 exige revisão de tese/posição quando a evidência realmente mudar;
+- U4 exige produção longa em versões e transferência para outro gênero/audiência/meio;
+- U5 distingue regra, variante, convenção, preferência e consulta e preserva trechos adequados;
+- U6 trata estilo como projeto funcional e adaptável;
+- U7 separa descrição, norma, variação, mudança e consequências sociais sem hierarquizar falantes;
+- U8 preserva limite real de validação oral;
+- U9 integra literatura, multimodalidade, circulação e autoria acessível sem exigir mídia decorativa.
 
-Gates antecipados:
+Gates do N4:
 
-- U5/U7 — gate normativo antes de congelar respostas avançadas em M5;
-- U9 — gate de mídia/acessibilidade se o M4 exigir fenômeno sensorial real insubstituível.
+- `docs/gate-normativo-nivel-4-u5-u7.md` — **DELIMITADO; pesquisa obrigatória antes de congelar respostas normativas em M5**;
+- `docs/gate-midia-acessibilidade-nivel-4-u9.md` — **SATISFEITO PARA O M4; nenhuma nova mídia humana obrigatória**; reabrir apenas se M5 introduzir alvo sensorial real insubstituível.
 
-O gate M3→M4 foi satisfeito: as nove áreas e as 17 competências oficiais possuem responsabilidade identificável nas unidades e a sequência não repete o N3 por simples aumento de dificuldade.
+O M4 preserva a cobertura 17/17 do N4 e mantém a arquitetura da futura saída em oito agrupamentos integrados.
 
 # Marco ativo
 
@@ -122,20 +129,29 @@ N3 — M5 ✓
 N4 — M1 ✓
 └── M2 ✓
     └── M3 ✓
-        └── M4 — PRÓXIMO MARCO
+        └── M4 ✓
+            └── M5
+                └── U1 — PRÓXIMO SUBPASSO
 ```
 
 ## Próximo subpasso
 
 ```text
-N4 — M4
-→ dimensionar as lições das 9 unidades
-→ definir quantidade por dependências, carga cognitiva, prática e evidência — não por simetria
-→ registrar objetivo, competências, conteúdo/dependências, modalidade principal, recursos, prática e evidência de cada lição
-→ definir verificações integradas de unidade
-→ tratar gate normativo de U5/U7 antes de congelar respostas normativas
-→ avaliar gate de mídia/acessibilidade de U9 se surgir dependência sensorial real
-→ manter arquitetura da futura N4-EXIT-V01 coerente com os oito agrupamentos antecipados no M3
+N4-U01 M5 — Leitura estratégica de alta complexidade e revisão de interpretação
+→ 10 lições + N4-U01-V01
+→ usar materiais novos/controlados
+→ exigir escolha e mudança justificada de estratégia
+→ exigir revisão de interpretação diante de nova evidência
+→ preservar releitura, anotação e incerteza justificadas
+→ não criar mídia humana sem necessidade pedagógica real
+```
+
+Depois:
+
+```text
+U2 → U3 → U4 → U5 (gate normativo) → U6 → U7 (gate normativo) → U8 → U9 (reavaliar gate de mídia se necessário)
+→ N4-EXIT-V01
+→ checkpoint final do curso
 ```
 
 # Regras de continuidade
@@ -158,6 +174,8 @@ N4 — M4
 16. N4 deve aumentar integração, flexibilidade, independência crítica e autoria, não apenas comprimento ou raridade.
 17. Pesquisa deve responder a necessidade informacional explícita; quantidade de fontes não é proxy de qualidade.
 18. N4 deve exigir revisão da própria interpretação, argumento, texto ou estratégia quando nova evidência tornar a decisão anterior insuficiente.
+19. M5 não pode congelar resposta normativa de U5/U7 antes do gate de fontes.
+20. U9 não cria mídia humana por variedade; alvo sensorial real reabre o gate antes da produção.
 
 # Dependências não curriculares
 
@@ -185,6 +203,8 @@ N3-U3 normativo → docs/referencias-gramatica-nivel-3-u3.md
 N3-U9 audiovisual → docs/gate-audiovisual-nivel-3-u9.md
 N4 M2 → docs/areas-nivel-4.md
 N4 M3 → docs/unidades-nivel-4.md
+N4 M4 → docs/licoes-nivel-4.md + docs/licoes-nivel-4-u*.md
+N4 gates → docs/gate-normativo-nivel-4-u5-u7.md + docs/gate-midia-acessibilidade-nivel-4-u9.md
 estado → docs/roadmap-curricular.md
 conteúdo → content/
 ```
