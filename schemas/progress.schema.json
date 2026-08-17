@@ -1,0 +1,168 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://warbookbr.github.io/Portugues-completo/schemas/progress.schema.json",
+  "title": "Português Completo — Progress v1",
+  "type": "object",
+  "required": ["schemaVersion", "courseId", "curriculum", "evidence", "competencies", "review", "responses", "gamification", "meta"],
+  "additionalProperties": false,
+  "properties": {
+    "schemaVersion": {"const": 1},
+    "courseId": {"const": "portugues-completo"},
+    "curriculum": {
+      "type": "object",
+      "required": ["current", "lessons", "verifications"],
+      "additionalProperties": false,
+      "properties": {
+        "current": {
+          "type": "object",
+          "required": ["levelId", "unitId", "lessonId"],
+          "additionalProperties": false,
+          "properties": {
+            "levelId": {"type": ["string", "null"]},
+            "unitId": {"type": ["string", "null"]},
+            "lessonId": {"type": ["string", "null"]}
+          }
+        },
+        "lessons": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object",
+            "required": ["status"],
+            "additionalProperties": false,
+            "properties": {
+              "status": {"enum": ["NAO_INICIADA", "EM_ESTUDO", "CONCLUIDA"]},
+              "startedAt": {"type": ["string", "null"]},
+              "completedAt": {"type": ["string", "null"]},
+              "lastVisitedAt": {"type": ["string", "null"]}
+            }
+          }
+        },
+        "verifications": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object",
+            "required": ["status", "attemptCount", "clusterStates"],
+            "additionalProperties": false,
+            "properties": {
+              "status": {"enum": ["NAO_INICIADA", "EM_ESTUDO", "CONCLUIDA"]},
+              "attemptCount": {"type": "integer", "minimum": 0},
+              "clusterStates": {
+                "type": "object",
+                "additionalProperties": {"enum": ["PRATICADA", "DEMONSTRADA", "VALIDACAO_PENDENTE", "REVISAO_RECOMENDADA"]}
+              },
+              "lastAttemptAt": {"type": ["string", "null"]}
+            }
+          }
+        }
+      }
+    },
+    "evidence": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "required": ["status", "attemptCount", "support"],
+        "additionalProperties": false,
+        "properties": {
+          "status": {"enum": ["PRATICADA", "DEMONSTRADA", "VALIDACAO_PENDENTE", "REVISAO_RECOMENDADA"]},
+          "attemptCount": {"type": "integer", "minimum": 1},
+          "lastAttemptAt": {"type": ["string", "null"]},
+          "support": {
+            "type": "object",
+            "required": ["hintUsed", "replayCount", "rereadUsed", "consultationUsed"],
+            "additionalProperties": false,
+            "properties": {
+              "hintUsed": {"type": "boolean"},
+              "replayCount": {"type": "integer", "minimum": 0},
+              "rereadUsed": {"type": "boolean"},
+              "consultationUsed": {"type": "boolean"}
+            }
+          },
+          "feedbackRef": {"type": ["string", "null"]}
+        }
+      }
+    },
+    "competencies": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "required": ["status", "evidenceRefs", "reviewRecommended"],
+        "additionalProperties": false,
+        "properties": {
+          "status": {"enum": ["NOVA", "EM_DESENVOLVIMENTO", "DEMONSTRADA", "CONSOLIDADA"]},
+          "evidenceRefs": {"type": "array", "items": {"type": "string", "minLength": 1}},
+          "reviewRecommended": {"type": "boolean"},
+          "updatedAt": {"type": ["string", "null"]}
+        }
+      }
+    },
+    "review": {
+      "type": "object",
+      "required": ["queue"],
+      "additionalProperties": false,
+      "properties": {
+        "queue": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["id", "competencyId", "reason", "priority", "createdAt"],
+            "additionalProperties": false,
+            "properties": {
+              "id": {"type": "string", "minLength": 1},
+              "competencyId": {"type": "string", "minLength": 1},
+              "reason": {"enum": ["RECENT_DIFFICULTY", "REPEATED_SUPPORT", "PREREQUISITE_WEAKNESS", "TRANSFER_NEEDED", "PENDING_RECOVERY", "VOLUNTARY"]},
+              "sourceEvidenceRef": {"type": ["string", "null"]},
+              "priority": {"enum": ["LOW", "NORMAL", "HIGH"]},
+              "createdAt": {"type": "string", "minLength": 1},
+              "lastReviewedAt": {"type": ["string", "null"]}
+            }
+          }
+        }
+      }
+    },
+    "responses": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "required": ["type", "value", "updatedAt", "revision"],
+        "additionalProperties": false,
+        "properties": {
+          "type": {"enum": ["SHORT_TEXT", "STRUCTURED_RESPONSE", "LONG_TEXT", "ORAL_RESPONSE", "COMPOSITE"]},
+          "value": {},
+          "updatedAt": {"type": "string", "minLength": 1},
+          "revision": {"type": "integer", "minimum": 1}
+        }
+      }
+    },
+    "gamification": {
+      "type": ["object", "null"],
+      "required": ["xp", "startedAt", "achievements", "missions", "streak"],
+      "additionalProperties": false,
+      "properties": {
+        "xp": {"type": "integer", "minimum": 0},
+        "startedAt": {"type": "string", "minLength": 1},
+        "achievements": {"type": "array", "items": {"type": "string"}},
+        "missions": {"type": "object", "additionalProperties": true},
+        "streak": {
+          "type": "object",
+          "required": ["current", "best", "lastStudyDate"],
+          "additionalProperties": false,
+          "properties": {
+            "current": {"type": "integer", "minimum": 0},
+            "best": {"type": "integer", "minimum": 0},
+            "lastStudyDate": {"type": ["string", "null"]}
+          }
+        }
+      }
+    },
+    "meta": {
+      "type": "object",
+      "required": ["createdAt", "updatedAt", "contentRevision"],
+      "additionalProperties": false,
+      "properties": {
+        "createdAt": {"type": "string", "minLength": 1},
+        "updatedAt": {"type": "string", "minLength": 1},
+        "contentRevision": {"type": ["string", "null"]}
+      }
+    }
+  }
+}
