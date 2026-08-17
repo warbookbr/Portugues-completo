@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "id": "N4-U09",
+  "levelId": "N4",
+  "order": 9,
+  "title": "Literatura, multimodalidade, autoria intermedial e digital",
+  "objective": "Integrar interpretação literária, leitura multimodal, proveniência, adaptação e autoria digital acessível.",
+  "competencies": [
+    {"id": "N4-U09-C01", "label": "formular interpretação sustentada por evidência"},
+    {"id": "N4-U09-C02", "label": "analisar relações multimodais e limites de representação"}
+  ],
+  "prerequisites": ["N3-U09-V01"],
+  "lessons": [
+    {"id": "N4-U09-L01", "order": 1, "title": "Interpretação literária autônoma e evidência", "path": "lessons/001-interpretacao-literaria-autonoma-evidencia.json"}
+  ],
+  "verification": {"id": "N4-U09-V01", "path": "integrated-verification.json"},
+  "publication": {"status": "DRAFT", "blockers": ["fixture-only"]}
+}
