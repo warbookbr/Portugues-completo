@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "N4-U07-L10",
+  "title": "Análise integrada e adaptação contextual sem hierarquizar falantes",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Integrar norma, variação, mudança, repertório, prestígio e adequação em uma decisão comunicativa concreta, adaptando um texto ao contexto sem atribuir inferioridade linguística ao falante de origem.",
+  "competencies": ["integrar análise linguística e social", "adaptar texto a convenção explícita", "preservar fatos e intenção", "justificar consequências contextuais", "responder a julgamento preconceituoso com precisão"],
+  "prerequisites": ["N4-U07-L01", "N4-U07-L02", "N4-U07-L03", "N4-U07-L04", "N4-U07-L05", "N4-U07-L06", "N4-U07-L07", "N4-U07-L08", "N4-U07-L09"],
+  "limits": ["adaptação formal não prova superioridade", "não inventar identidade social", "não apagar conteúdo para parecer formal", "qualidade global aberta exige avaliador confiável"],
+  "referenceScope": ["docs/referencias-gramatica-nivel-4-u5-u7.md", "docs/referencias-gramatica-nivel-4-u5-u7-atualizacao-2026.md"],
+  "media": {"tts": "opcional", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "REFERENCE_ACCESS", "locations": ["decisões de consulta"]}], "generatedVisualResources": [{"type": "UI_RENDERED_LANGUAGE_CONTEXT_CASE_MAP"}, {"type": "UI_RENDERED_ADAPTATION_DIFF"}, {"type": "UI_RENDERED_SOCIAL_INFERENCE_BOUNDARY"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "caso integrado e diff semântico tornam visíveis tanto a adaptação quanto as inferências que devem ser recusadas."},
+  "sequence": [
+    {"id": "L10-B01", "type": "integrated-case", "scenario": "Uma pessoa envia em grupo comunitário uma mensagem breve e próxima sobre atraso de atendimento. A instituição precisa transformar os mesmos fatos em aviso público com horário, motivo conhecido e orientação objetiva. Um terceiro comentário diz que a mensagem cotidiana mostra que a pessoa 'não sabe português'.", "tasks": ["separar repertório/contexto de erro", "identificar exigências do aviso público", "preservar fatos e responsabilidade", "analisar o comentário social"]},
+    {"id": "L10-C01", "type": "integrated-principle-check", "question": "O que uma boa adaptação precisa preservar ao mudar de registro?", "correctPrinciple": "fatos, atribuições, condições e intenção comunicativa relevantes; o registro pode mudar sem desqualificar a versão de origem"},
+    {"id": "L10-A01", "type": "integrated-analysis-adaptation", "scenario": "Novo caso com mensagem cotidiana, manual institucional declarado, pequena série temporal didática e comentário público sobre a variedade usada.", "tasks": ["analisar uso/descrição/norma", "mapear variação e limites de inferência", "identificar convenção aplicável", "consultar se necessário", "produzir adaptação formal", "explicar consequências institucionais", "responder ao julgamento sobre o falante sem apagar a exigência contextual"], "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"timeLimit": false, "prestigeScored": false, "formalityMaximizationScored": false, "ideologicalAgreementScored": false, "openResponseAutoValidated": false},
+  "completionEvidence": {"clusters": {"integratedLanguageDecision": {"evidence": ["L10-A01"], "required": true}}, "completionRule": "a solução precisa adaptar o texto ao domínio quando necessário e, simultaneamente, controlar inferências sobre o falante, variação e prestígio.", "requiresReliableEvaluatorFor": ["qualidade integrada da análise", "adequação da adaptação", "controle de julgamento social"]}
+}

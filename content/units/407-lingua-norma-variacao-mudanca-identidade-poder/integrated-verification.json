@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "id": "N4-U07-V01",
+  "type": "integrated-unit-verification",
+  "title": "Verificação integrada — Nível 4, Unidade 7",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Verificar se o aluno consegue distinguir uso, descrição, norma/convenção e julgamento social; analisar variação e mudança com limites; consultar fontes adequadas; avaliar afirmações públicas e adaptar texto a um domínio formal sem hierarquizar falantes.",
+  "prerequisites": ["N4-U07-L01", "N4-U07-L02", "N4-U07-L03", "N4-U07-L04", "N4-U07-L05", "N4-U07-L06", "N4-U07-L07", "N4-U07-L08", "N4-U07-L09", "N4-U07-L10"],
+  "referenceScope": ["docs/referencias-gramatica-nivel-4-u5-u7.md", "docs/referencias-gramatica-nivel-4-u5-u7-atualizacao-2026.md"],
+  "guardRails": ["norma-padrão não é toda a língua", "uso frequente não é obrigatório", "manual institucional vale para seu domínio", "variante documentada não recebe gabarito único genérico", "consulta pode ser resposta competente", "sotaque/variedade/prestígio não pontuam", "não inferir inteligência, caráter ou identidade total por traço linguístico", "mudança exige evidência temporal/contextual", "consequência institucional não prova inferioridade", "posição ideológica não pontua", "adaptação formal não deve apagar fatos nem autoria"],
+  "materials": {
+    "case": {
+      "person": "Marina",
+      "context": "Marina participa de uma associação comunitária e também prepara um documento para uma instituição que declarou seguir um manual editorial próprio.",
+      "everydayMessage": "gente, chegaram umas respostas novas e a maioria dos moradores acharam melhor manter o horário por mais um mês. se der, eu mando os números completos amanhã.",
+      "institutionalFacts": ["o questionário voluntário recebeu 84 respostas", "51 respostas foram favoráveis à continuidade por mais um mês", "19 foram neutras e 14 desfavoráveis", "o documento institucional deve indicar que o questionário é voluntário", "o manual declarado pede grafia institucional consistente e padrão formal de redação"],
+      "publicComment": "Se ela escreveu 'a maioria dos moradores acharam', isso prova que não sabe português e não deveria redigir documento nenhum.",
+      "simulatedTimeSeries": [{"period": "P1", "formA": 70, "formB": 30}, {"period": "P2", "formA": 55, "formB": 45}, {"period": "P3", "formA": 43, "formB": 57}],
+      "timeSeriesNotice": "série didática simulada para avaliar raciocínio sobre mudança; não representa fenômeno histórico real específico"
+    }
+  },
+  "tasks": [
+    {"id": "V01-A01", "cluster": "use-description-norm", "type": "claim-type-map", "prompt": "Separe no caso o que é uso observado, o que exigiria descrição empírica e o que é norma/convenção do documento institucional. Registre também o julgamento social presente no comentário.", "recordResponse": true, "automaticValidation": false},
+    {"id": "V01-Q01", "cluster": "norm-convention", "type": "documented-status-check", "cases": [{"case": "a maioria dos moradores acharam", "expectedStatus": "VARIANTE_DOCUMENTADA", "expectedAction": "não tratar plural como erro automático"}, {"case": "haver com sentido de existir em contexto inequívoco", "expectedStatus": "REGRA_PRODUTIVA", "expectedAction": "usar singular"}, {"case": "padrão Secom para atender pessoa/coisa", "expectedStatus": "CONVENCAO_FORMAL_EDITORIAL", "expectedAction": "só exigir como padrão declarado"}], "automaticValidation": true},
+    {"id": "V01-A02", "cluster": "variation-boundary", "type": "variation-safe-inference", "prompt": "Analise a mensagem cotidiana sem inferir origem, escolaridade, inteligência ou identidade total de Marina. Liste o que pode e o que não pode ser concluído a partir do texto e do contexto fornecido.", "recordResponse": true, "automaticValidation": false},
+    {"id": "V01-A03", "cluster": "change-evidence", "type": "simulated-change-analysis", "prompt": "Analise a série temporal simulada: descreva tendência/coexistência e escreva uma conclusão proporcional. Não transforme a série local em afirmação sobre toda a língua nem em narrativa de decadência.", "recordResponse": true, "automaticValidation": false},
+    {"id": "V01-A04", "cluster": "prestige-power", "type": "social-evaluation-analysis", "prompt": "Analise o comentário público separando eventual necessidade de adequação do documento institucional de inferências sobre capacidade da pessoa. Explique consequências contextuais sem legitimar o julgamento global.", "recordResponse": true, "automaticValidation": false},
+    {"id": "V01-A05", "cluster": "repertoire-identity", "type": "repertoire-map", "prompt": "Explique como Marina pode manter identidade/autoria ao adaptar sua mensagem para o documento institucional. Identifique recursos que mudam e ao menos um traço comunicativo que pode permanecer.", "recordResponse": true, "automaticValidation": false},
+    {"id": "V01-A06", "cluster": "contextual-feedback", "type": "feedback-rewrite", "prompt": "Transforme o comentário público em feedback linguístico contextual, preciso e respeitoso, distinguindo variante documentada, exigência institucional e decisão editorial.", "recordResponse": true, "automaticValidation": false},
+    {"id": "V01-A07", "cluster": "source-consultation", "type": "source-comparison-record", "prompt": "Para três perguntas — grafia lexical, padrão institucional e descrição de uso — escolha fontes adequadas, registre função, escopo, resposta possível e limite. Se houver divergência, preserve-a.", "recordResponse": true, "automaticValidation": false},
+    {"id": "V01-A08", "cluster": "public-claim-audit", "type": "public-claim-audit", "prompt": "Audite a afirmação de que uma variante prova que alguém 'não sabe português'. Identifique alegação, evidência necessária, extrapolação e escreva resposta crítica qualificada sem ataque ao emissor.", "recordResponse": true, "automaticValidation": false},
+    {"id": "V01-A09", "cluster": "formal-adaptation", "type": "institutional-adaptation", "prompt": "Produza o trecho institucional a partir dos fatos fornecidos, aplicando apenas convenções realmente declaradas/documentadas, preservando a natureza voluntária do questionário e sem desqualificar a mensagem cotidiana de origem.", "recordResponse": true, "automaticValidation": false},
+    {"id": "V01-A10", "cluster": "integrated-justification", "type": "decision-log", "prompt": "Registre as decisões finais: uma regra aplicada, uma variante preservada, uma convenção contextual, uma consulta, uma inferência social recusada e uma mudança de registro justificada.", "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"timeLimit": false, "prestigeVarietyScored": false, "accentScored": false, "ideologicalAgreementScored": false, "formalityMaximizationScored": false, "closedNormItemsRestrictedToDocumentedScope": true, "openResponseAutoValidated": false, "closedTasksCanCompensateProduction": false},
+  "completionEvidence": {
+    "clusters": {
+      "useDescriptionNorm": {"evidence": ["V01-A01"], "required": true},
+      "normConvention": {"evidence": ["V01-Q01"], "required": true},
+      "variationBoundary": {"evidence": ["V01-A02"], "required": true},
+      "changeEvidence": {"evidence": ["V01-A03"], "required": true},
+      "prestigePower": {"evidence": ["V01-A04"], "required": true},
+      "repertoireIdentity": {"evidence": ["V01-A05"], "required": true},
+      "contextualFeedback": {"evidence": ["V01-A06"], "required": true},
+      "sourceConsultation": {"evidence": ["V01-A07"], "required": true},
+      "publicClaimAudit": {"evidence": ["V01-A08"], "required": true},
+      "formalAdaptation": {"evidence": ["V01-A09", "V01-A10"], "required": true}
+    },
+    "nonCompensable": ["V01-A07", "V01-A08", "V01-A09", "V01-A10"],
+    "completionRule": "todos os dez agrupamentos são obrigatórios. Itens normativos fechados não compensam comparação de fontes, auditoria de afirmação pública, adaptação contextual e justificativa integrada.",
+    "requiresReliableEvaluatorFor": ["qualidade da distinção entre uso/descrição/norma", "controle de inferências sociais", "análise de mudança", "adequação das fontes", "qualidade do feedback", "auditoria da afirmação pública", "adequação da adaptação formal", "qualidade das justificativas"]
+  },
+  "media": {"tts": "opcional; não determina resposta correta", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "REFERENCE_ACCESS", "locations": ["consulta"]}, {"type": "TTS_OK", "locations": ["mensagem e adaptação"]}], "generatedVisualResources": [{"type": "UI_RENDERED_CLAIM_TYPE_BOARD"}, {"type": "UI_RENDERED_NORM_STATUS_BADGE"}, {"type": "UI_RENDERED_VARIATION_DIMENSION_MAP"}, {"type": "UI_RENDERED_TIME_SERIES_USAGE"}, {"type": "UI_RENDERED_SOCIAL_EVALUATION_MAP"}, {"type": "UI_RENDERED_REPERTOIRE_MAP"}, {"type": "UI_RENDERED_FEEDBACK_LAYER_MAP"}, {"type": "UI_RENDERED_SOURCE_PURPOSE_MATRIX"}, {"type": "UI_RENDERED_PUBLIC_CLAIM_AUDIT"}, {"type": "UI_RENDERED_ADAPTATION_DIFF"}, {"type": "UI_RENDERED_DECISION_LOG"}], "productionQueueRequired": false, "publicationDependency": "nenhuma mídia humana obrigatória; respostas abertas exigem avaliador confiável", "decisionRationale": "o caso integrado mede domínio conceitual, consulta e adaptação sem usar sotaque, mídia performática ou identidade real como alvo de avaliação."}
+}

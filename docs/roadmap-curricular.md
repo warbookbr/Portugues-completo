@@ -121,8 +121,8 @@ U3 ✓ — 10 lições + N4-U03-V01
 U4 ✓ — 11 lições + N4-U04-V01
 U5 ✓ — 11 lições + N4-U05-V01; gate normativo ✓
 U6 ✓ — 9 lições + N4-U06-V01
-U7 — PRÓXIMO SUBPASSO; gate normativo ✓ para o recorte já documentado
-U8 pendente
+U7 ✓ — 10 lições + N4-U07-V01; gate normativo ✓
+U8 — PRÓXIMO SUBPASSO
 U9 pendente
 ```
 
@@ -137,6 +137,8 @@ U4: `content/units/404-autoria-avancada-generos-complexos-transferencia/`.
 U5: `content/units/405-edicao-alto-nivel-precisao-consulta-linguistica/`.
 
 U6: `content/units/406-estilo-registro-projeto-voz/`.
+
+U7: `content/units/407-lingua-norma-variacao-mudanca-identidade-poder/`.
 
 O M5 da U1 consolidou os guard rails do nível:
 
@@ -223,19 +225,33 @@ O M5 da U6 consolidou estilo como projeto funcional e transferível:
 - transferência estilística altera superfície e organização quando necessário sem exigir cópia mecânica da voz;
 - `N4-U06-V01` exige projeto, versão-base, duas adaptações e histórico explícito de mudanças/permanências; soluções estilísticas alternativas são aceitas quando funcionais e justificadas.
 
+O M5 da U7 consolidou análise linguística contextual e socialmente responsável:
+
+- uso observado, descrição empírica, norma/convenção e julgamento social são categorias diferentes;
+- regra produtiva, variante documentada, convenção editorial, consulta e escolha estilística preservam seus escopos;
+- variação regional/social/situacional/histórica não autoriza inferir inteligência, origem ou identidade total por pista isolada;
+- mudança linguística exige evidência temporal/contextual e não é sinônimo de decadência;
+- prestígio e estigma são avaliações/consequências sociais, não propriedades estruturais de superioridade linguística;
+- repertório permite adaptação contextual sem exigir abandono da variedade ou identidade pessoal;
+- feedback útil separa exigência contextual do julgamento global do falante;
+- fontes normativas, ortográficas, editoriais e descritivas são escolhidas pela pergunta que podem responder;
+- afirmações públicas sobre “certo”, “errado” e “o português” são auditadas por escopo e evidência, não pela identidade de quem fala;
+- adaptação formal pode ser necessária sem desqualificar a forma cotidiana de origem;
+- `N4-U07-V01` exige dez agrupamentos, incluindo consulta de fontes, auditoria de afirmação pública, adaptação contextual e justificativa integrada.
+
 ### Gate normativo N4-U5/U7
 
 - `docs/gate-normativo-nivel-4-u5-u7.md` — **SATISFEITO**;
 - `docs/referencias-gramatica-nivel-4-u5-u7.md` — referência normativa/descritiva resultante da pesquisa, revisada em 17 de agosto de 2026;
-- fontes ortográficas oficiais foram separadas de manuais editoriais/institucionais;
+- `docs/referencias-gramatica-nivel-4-u5-u7-atualizacao-2026.md` — addendum que registra o contexto jurídico atual do Manual da Presidência: o Decreto nº 12.002/2024 revogou o Decreto nº 9.191/2017 e mantém, em seu art. 75, a aplicação do Manual aos atos abrangidos;
+- fontes ortográficas oficiais foram separadas de manuais editoriais/institucionais e pesquisa descritiva;
 - `REGRA_PRODUTIVA`, `VARIANTE_DOCUMENTADA`, `CONVENCAO_FORMAL_EDITORIAL`, `CASO_DE_CONSULTA` e `ESCOLHA_ESTILISTICA` têm funções distintas;
 - variantes documentadas não recebem gabarito único genérico;
 - convenção institucional só pode ser exigida quando o padrão estiver declarado;
 - colocação pronominal formal não é tratada como descrição total do português brasileiro;
 - consulta é competência de domínio, não falha automática;
-- U5 está concluída dentro desse recorte;
-- U7 está liberada no aspecto normativo dentro desse recorte;
-- reabrir o gate apenas se uma futura lição precisar congelar resposta específica fora do documento de referências.
+- U5 e U7 estão concluídas dentro desse recorte;
+- reabrir o gate apenas se uma futura necessidade exigir congelar resposta específica fora do documento de referências.
 
 Gate de mídia/acessibilidade do N4:
 
@@ -261,32 +277,31 @@ N4 — M1 ✓
                 ├── U4 ✓
                 ├── U5 ✓
                 ├── U6 ✓
-                └── U7 — PRÓXIMO SUBPASSO
+                ├── U7 ✓
+                └── U8 — PRÓXIMO SUBPASSO
 ```
 
 ## Próximo subpasso
 
 ```text
-N4-U07 M5 — Língua, norma, variação, mudança, identidade e poder
-→ usar `docs/referencias-gramatica-nivel-4-u5-u7.md`; gate normativo já satisfeito para o recorte documentado
-→ 10 lições + N4-U07-V01
-→ distinguir uso, descrição e normatização
-→ distinguir norma-padrão, norma editorial, convenção de gênero/instituição e preferência
-→ analisar variação regional, social, situacional e histórica sem inferir capacidade global do falante
-→ observar mudança linguística com evidência temporal/contextual, sem narrativa automática de decadência
-→ separar prestígio/estigma e consequências sociais de suposta inferioridade linguística
-→ tratar identidade e repertório como recursos adaptáveis sem exigir abandono da variedade pessoal
-→ distinguir feedback contextual de preconceito linguístico
-→ comparar fontes normativas e descritivas pela função e pelo escopo
-→ avaliar afirmações públicas sobre “certo”, “errado” e “o português” sem generalização indevida
-→ integrar análise + adaptação contextual sem hierarquizar falantes
-→ reabrir o gate somente se surgir caso objetivo fora do recorte já documentado
+N4-U08 M5 — Oralidade complexa, síntese, negociação e debate
+→ 9 lições + N4-U08-V01
+→ escuta estratégica com replay permitido; velocidade/memória literal não pontuam
+→ notas e síntese fiel de múltiplas vozes sem fundir posições ou atribuições
+→ planejar apresentação complexa por finalidade e audiência
+→ usar evidência, atribuição e qualificação oral sem inventar dado ausente
+→ adaptar densidade/vocabulário e oferecer apoio acessível sem polimento visual como critério
+→ formular perguntas, esclarecimentos e reparos; admitir lacuna é permitido
+→ responder a objeção com fidelidade, concessão real e reformulação quando necessária
+→ negociar escopo, definições, convergências e divergências sem fabricar consenso
+→ apresentação/discussão integrada com tentativa registrada e autorrevisão
+→ sistema valida processo e compreensão; não declara automaticamente inteligibilidade, pronúncia, prosódia ou qualidade global da fala
 ```
 
 Depois:
 
 ```text
-U8 → U9 (reavaliar gate de mídia se necessário)
+U9 (reavaliar gate de mídia se necessário)
 → N4-EXIT-V01
 → checkpoint final do curso
 ```
@@ -311,7 +326,7 @@ U8 → U9 (reavaliar gate de mídia se necessário)
 16. N4 deve aumentar integração, flexibilidade, independência crítica e autoria, não apenas comprimento ou raridade.
 17. Pesquisa deve responder a necessidade informacional explícita; quantidade de fontes não é proxy de qualidade.
 18. N4 deve exigir revisão da própria interpretação, argumento, texto ou estratégia quando nova evidência tornar a decisão anterior insuficiente.
-19. U5/U7 só podem congelar respostas normativas dentro de `docs/referencias-gramatica-nivel-4-u5-u7.md`; caso fechado fora do recorte exige verificação específica e, se necessário, reabertura do gate.
+19. U5/U7 só podem congelar respostas normativas dentro do recorte documentado; caso fechado fora do recorte exige verificação específica e, se necessário, reabertura do gate.
 20. U9 não cria mídia humana por variedade; alvo sensorial real reabre o gate antes da produção.
 21. Mudança de estratégia ou interpretação não pontua por si; manutenção justificada pode ser a melhor decisão.
 22. Fontes dependentes não devem ser contadas como confirmações independentes e a decisão de parar/continuar pesquisando precisa ser justificada pela lacuna, não por quantidade.
@@ -327,6 +342,9 @@ U8 → U9 (reavaliar gate de mídia se necessário)
 32. Em texto alheio, correção necessária, sugestão opcional, pergunta ao autor e preservação são intervenções distintas; o editor não deve reescrever o autor à própria imagem.
 33. Em estilo, formalidade, concisão, complexidade, repetição, primeira pessoa, impessoalidade ou raridade lexical só têm valor quando servem ao projeto e à audiência; nenhuma dessas escolhas funciona como proxy universal de qualidade.
 34. Transferência de voz deve preservar fatos, responsabilidade e traços autorais funcionais sem exigir semelhança superficial entre versões.
+35. Em língua/norma/variação, uso, descrição, norma e julgamento social devem permanecer separados; uma fonte não responde automaticamente perguntas de outra função.
+36. Prestígio, estigma e consequência institucional não autorizam inferir inferioridade estrutural, inteligência ou valor pessoal do falante.
+37. Mudança linguística exige série/contexto suficiente; forma mais nova, mais antiga, mais frequente ou mais prestigiosa não recebe valor linguístico automático.
 
 # Dependências não curriculares
 
@@ -356,7 +374,7 @@ N4 M2 → docs/areas-nivel-4.md
 N4 M3 → docs/unidades-nivel-4.md
 N4 M4 → docs/licoes-nivel-4.md + docs/licoes-nivel-4-u*.md
 N4 M5 → content/units/4xx-*
-N4 normativo U5/U7 → docs/gate-normativo-nivel-4-u5-u7.md + docs/referencias-gramatica-nivel-4-u5-u7.md
+N4 normativo U5/U7 → docs/gate-normativo-nivel-4-u5-u7.md + docs/referencias-gramatica-nivel-4-u5-u7.md + docs/referencias-gramatica-nivel-4-u5-u7-atualizacao-2026.md
 N4 mídia/acessibilidade → docs/gate-midia-acessibilidade-nivel-4-u9.md
 estado → docs/roadmap-curricular.md
 conteúdo → content/
