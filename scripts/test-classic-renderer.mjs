@@ -16,6 +16,10 @@ async function fileFetch(url) {
   return { ok: true, status: 200, async json() { return JSON.parse(fs.readFileSync(filePath, 'utf8')); } };
 }
 
+function escapeRegex(value) {
+  return String(value).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
 const service = new ContentService({ basePath: './content', fetchImpl: fileFetch });
 const catalog = await service.loadCatalog();
 const units = [];
@@ -33,7 +37,7 @@ for (const unitRef of catalog.units) {
   for (const lessonRef of manifest.lessons) {
     const loaded = await service.loadLesson(manifest.id, lessonRef.id);
     const html = documentHtml(loaded.runtime, { unitId: manifest.id, unitTitle: manifest.title });
-    assert.match(html, new RegExp(lessonRef.id.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')));
+    assert.match(html, new RegExp(escapeRegex(lessonRef.title)));
     assert.doesNotMatch(html, /Interação ainda não suportada/i, `${lessonRef.id} possui interação sem renderer`);
     assert.doesNotMatch(html, /Lição ainda não publicada/i);
     lessonCount += 1;
@@ -59,7 +63,7 @@ assert.match(n0Html, /N0-U01-V01-AUD-/);
 const n4Lesson = await service.loadLesson('N4-U09', 'N4-U09-L01');
 const n4Html = documentHtml(n4Lesson.runtime, { unitId: 'N4-U09', unitTitle: 'Literatura, multimodalidade, autoria intermedial e digital' });
 assert.match(n4Html, /avaliação pendente/i);
-assert.match(n4Html, /validação permanece pendente|Registrar resposta/i);
+assert.match(n4Html, /Registrar resposta/i);
 
 assert.equal(lessonCount, 20);
 assert.equal(verificationCount, 2);
