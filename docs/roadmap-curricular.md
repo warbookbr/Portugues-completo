@@ -119,9 +119,9 @@ U1 ✓ — 10 lições + N4-U01-V01
 U2 ✓ — 11 lições + N4-U02-V01
 U3 ✓ — 10 lições + N4-U03-V01
 U4 ✓ — 11 lições + N4-U04-V01
-U5 — PRÓXIMO SUBPASSO; gate normativo primeiro
+U5 — PRÓXIMO SUBPASSO; gate normativo ✓
 U6 pendente
-U7 pendente
+U7 pendente — gate normativo ✓ para o recorte já documentado
 U8 pendente
 U9 pendente
 ```
@@ -192,9 +192,22 @@ O M5 da U4 consolidou autoria longa e transferência:
 - primeira versão longa, revisão global, segunda versão e transferência são evidências obrigatórias;
 - quantidade de mudanças e extensão não pontuam; manutenção consciente pode ser a melhor decisão.
 
-Gates do N4:
+### Gate normativo N4-U5/U7
 
-- `docs/gate-normativo-nivel-4-u5-u7.md` — **DELIMITADO; torna-se dependência ativa agora**. Antes de congelar respostas normativas em L5–L7 da U5, executar a pesquisa prevista e produzir a referência resultante;
+- `docs/gate-normativo-nivel-4-u5-u7.md` — **SATISFEITO**;
+- `docs/referencias-gramatica-nivel-4-u5-u7.md` — referência normativa/descritiva resultante da pesquisa, revisada em 17 de agosto de 2026;
+- fontes ortográficas oficiais foram separadas de manuais editoriais/institucionais;
+- `REGRA_PRODUTIVA`, `VARIANTE_DOCUMENTADA`, `CONVENCAO_FORMAL_EDITORIAL`, `CASO_DE_CONSULTA` e `ESCOLHA_ESTILISTICA` têm funções distintas;
+- variantes documentadas não recebem gabarito único genérico;
+- convenção institucional só pode ser exigida quando o padrão estiver declarado;
+- colocação pronominal formal não é tratada como descrição total do português brasileiro;
+- consulta é competência de domínio, não falha automática;
+- U5 está liberada integralmente para M5 dentro desse recorte;
+- U7 está liberada no aspecto normativo dentro desse recorte;
+- reabrir o gate apenas se uma futura lição precisar congelar resposta específica fora do documento de referências.
+
+Gate de mídia/acessibilidade do N4:
+
 - `docs/gate-midia-acessibilidade-nivel-4-u9.md` — **SATISFEITO PARA A ARQUITETURA ATUAL; nenhuma nova mídia humana obrigatória**; reabrir apenas se M5 introduzir alvo sensorial real insubstituível.
 
 O M4 preserva a cobertura 17/17 do N4 e mantém a arquitetura da futura saída em oito agrupamentos integrados.
@@ -216,16 +229,16 @@ N4 — M1 ✓
                 ├── U3 ✓
                 ├── U4 ✓
                 └── U5 — PRÓXIMO SUBPASSO
-                    └── gate normativo → autoria das 11 lições + N4-U05-V01
+                    ├── gate normativo ✓
+                    └── autoria das 11 lições + N4-U05-V01
 ```
 
 ## Próximo subpasso
 
 ```text
 N4-U05 M5 — Edição de alto nível, precisão e consulta linguística
-→ primeiro satisfazer docs/gate-normativo-nivel-4-u5-u7.md
-→ produzir referência linguística rastreável para o recorte de U5/U7
-→ então desenvolver 11 lições + N4-U05-V01
+→ desenvolver 11 lições + N4-U05-V01
+→ usar docs/referencias-gramatica-nivel-4-u5-u7.md como fonte de verdade normativa
 → diagnóstico e prioridade antes de editar
 → revisão global de coerência/progressão/arquitetura
 → referenciação e ambiguidade
@@ -237,12 +250,13 @@ N4-U05 M5 — Edição de alto nível, precisão e consulta linguística
 → comparar alternativas e preservar trechos adequados
 → editar texto próprio e alheio sem apagar autoria
 → fechar com edição integrada, histórico e justificativa
+→ itens fechados normativos só podem usar casos cobertos pela referência ou verificados explicitamente em fonte adequada
 ```
 
 Depois:
 
 ```text
-U6 → U7 (reutilizar/estender gate normativo conforme documento) → U8 → U9 (reavaliar gate de mídia se necessário)
+U6 → U7 (gate normativo já satisfeito; usar a referência e reabrir só se surgir caso fechado fora do recorte) → U8 → U9 (reavaliar gate de mídia se necessário)
 → N4-EXIT-V01
 → checkpoint final do curso
 ```
@@ -267,7 +281,7 @@ U6 → U7 (reutilizar/estender gate normativo conforme documento) → U8 → U9 
 16. N4 deve aumentar integração, flexibilidade, independência crítica e autoria, não apenas comprimento ou raridade.
 17. Pesquisa deve responder a necessidade informacional explícita; quantidade de fontes não é proxy de qualidade.
 18. N4 deve exigir revisão da própria interpretação, argumento, texto ou estratégia quando nova evidência tornar a decisão anterior insuficiente.
-19. M5 não pode congelar resposta normativa de U5/U7 antes do gate de fontes.
+19. U5/U7 só podem congelar respostas normativas dentro de `docs/referencias-gramatica-nivel-4-u5-u7.md`; caso fechado fora do recorte exige verificação específica e, se necessário, reabertura do gate.
 20. U9 não cria mídia humana por variedade; alvo sensorial real reabre o gate antes da produção.
 21. Mudança de estratégia ou interpretação não pontua por si; manutenção justificada pode ser a melhor decisão.
 22. Fontes dependentes não devem ser contadas como confirmações independentes e a decisão de parar/continuar pesquisando precisa ser justificada pela lacuna, não por quantidade.
@@ -275,6 +289,10 @@ U6 → U7 (reutilizar/estender gate normativo conforme documento) → U8 → U9 
 24. Em autoria longa, gênero, arquitetura, desenvolvimento e transferência são decisões funcionais: extensão, número de seções, quantidade de citações, formalidade máxima ou polimento visual não são proxies de domínio.
 25. Aprender gênero por modelos exige distinguir função recorrente de regra universal; poucos modelos não autorizam generalização automática.
 26. Transferência entre gênero/audiência/meio deve preservar fatos, atribuições e ressalvas decisivas; mudança superficial de vocabulário não basta.
+27. Manual institucional define um padrão de uso para seu domínio; não deve ser convertido automaticamente em regra universal da língua.
+28. Variante documentada não recebe gabarito único genérico; convenção editorial precisa ser declarada para poder ser cobrada como convenção.
+29. Ortografia lexical incerta deve ser consultada em fonte atual apropriada; memória de regra não substitui consulta quando o item estiver fora do recorte seguro.
+30. Em colocação pronominal, adequação à escrita formal e descrição do português brasileiro são dimensões distintas; nenhuma delas autoriza hierarquizar falantes.
 
 # Dependências não curriculares
 
@@ -304,7 +322,8 @@ N4 M2 → docs/areas-nivel-4.md
 N4 M3 → docs/unidades-nivel-4.md
 N4 M4 → docs/licoes-nivel-4.md + docs/licoes-nivel-4-u*.md
 N4 M5 → content/units/4xx-*
-N4 gates → docs/gate-normativo-nivel-4-u5-u7.md + docs/gate-midia-acessibilidade-nivel-4-u9.md
+N4 normativo U5/U7 → docs/gate-normativo-nivel-4-u5-u7.md + docs/referencias-gramatica-nivel-4-u5-u7.md
+N4 mídia/acessibilidade → docs/gate-midia-acessibilidade-nivel-4-u9.md
 estado → docs/roadmap-curricular.md
 conteúdo → content/
 ```
