@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "N4-U06-L05",
+  "title": "Escolha lexical, especificidade, conotação e consistência",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Selecionar palavras pelo significado, alcance, registro e conotação, mantendo terminologia consistente quando a precisão exigir e evitando substituir termos apenas por variedade ou prestígio.",
+  "competencies": ["comparar alternativas lexicais", "avaliar especificidade e alcance", "reconhecer conotação", "manter terminologia funcional", "evitar falso sinônimo"],
+  "prerequisites": ["N4-U06-L04", "N4-U05-L08"],
+  "limits": ["sinônimos não são intercambiáveis em todo contexto", "raridade não pontua", "variação lexical não deve quebrar rastreabilidade terminológica", "termo técnico só entra quando ajuda a audiência/tarefa"],
+  "media": {"tts": "opcional para releitura", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["trechos comparados"]}], "generatedVisualResources": [{"type": "UI_RENDERED_LEXICAL_ALTERNATIVES"}, {"type": "UI_RENDERED_CONNOTATION_SCOPE_MAP"}, {"type": "UI_RENDERED_TERM_CONSISTENCY_MAP"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "redes lexicais contextuais permitem comparar significado e efeito sem transformar variedade vocabular em objetivo autônomo."},
+  "sequence": [
+    {"id": "L05-B01", "type": "lexical-network", "context": "Um serviço reduzirá temporariamente o número de vagas por limite operacional.", "alternatives": [{"term": "redução", "notes": "descreve diminuição sem indicar causa moral"}, {"term": "corte", "notes": "pode salientar perda/decisão"}, {"term": "ajuste", "notes": "pode suavizar o efeito e ser vago se a redução for relevante"}], "task": "comparar alcance e conotação sem declarar uma palavra universalmente melhor"},
+    {"id": "L05-B02", "type": "terminology-consistency", "text": "O relatório chama o mesmo indicador de 'tempo de espera', 'demora média' e 'intervalo de atendimento' sem definir se são a mesma medida.", "task": "decidir se a variação lexical prejudica precisão e propor padrão ou definição"},
+    {"id": "L05-C01", "type": "lexical-check", "items": [{"claim": "Trocar toda repetição por sinônimo melhora estilo.", "expected": "falso"}, {"claim": "Um termo mais específico pode mudar o alcance factual.", "expected": "verdadeiro"}, {"claim": "Conotação pode afetar enquadramento mesmo com fatos iguais.", "expected": "verdadeiro"}]},
+    {"id": "L05-A01", "type": "lexical-design", "scenario": "Revise uma atualização institucional que mistura termos técnicos, expressões vagas e sinônimos de alcance diferente.", "tasks": ["mapear quatro escolhas lexicais relevantes", "justificar manter/substituir cada uma", "definir um termo que precisa permanecer consistente", "registrar uma alternativa rejeitada por alterar alcance ou conotação"], "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"timeLimit": false, "rareVocabularyScored": false, "synonymCountScored": false, "openResponseAutoValidated": false},
+  "completionEvidence": {"clusters": {"lexicalDesign": {"evidence": ["L05-A01"], "required": true}}, "completionRule": "as escolhas precisam ser justificadas por significado, alcance, registro ou conotação e preservar consistência quando ela é funcional.", "requiresReliableEvaluatorFor": ["precisão lexical", "adequação de conotação", "qualidade das justificativas"]}
+}
