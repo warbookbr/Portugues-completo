@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "id": "N4-U05-L09",
+  "title": "Comparar alternativas e preservar intenção e trechos adequados",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Comparar soluções editoriais defensáveis e escolher entre alterar ou preservar com base em clareza, tom, ritmo, precisão, custo e fidelidade à intenção.",
+  "competencies": ["comparar alternativas", "explicitar trade-offs", "preservar intenção", "manter trecho adequado", "evitar sobreedição"],
+  "prerequisites": ["N4-U05-L01", "N4-U05-L02", "N4-U05-L03", "N4-U05-L04", "N4-U05-L05", "N4-U05-L06", "N4-U05-L07", "N4-U05-L08"],
+  "limits": ["número de alterações não mede competência", "alternativa diferente pode ser igualmente boa", "mais formal não é automaticamente melhor", "editor não precisa demonstrar atividade mudando texto bom"],
+  "media": {"tts": "opcional para releitura", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["alternativas"]}], "generatedVisualResources": [{"type": "UI_RENDERED_TRADEOFF_MATRIX"}, {"type": "UI_RENDERED_VERSION_COMPARE"}], "productionQueueRequired": false, "publicationDependency": "nenhuma mídia humana obrigatória", "decisionRationale": "matriz de trade-offs explicita que edição é decisão, não caça a diferenças."},
+  "sequence": [
+    {"id": "L09-B01", "type": "three-way-edit-choice", "original": "O procedimento, apesar de mais lento, preserva o registro completo.", "alternatives": [{"text": "Embora seja mais lento, o procedimento preserva o registro completo.", "effect": "ênfase inicial na concessão"}, {"text": "O procedimento preserva o registro completo, mas é mais lento.", "effect": "ênfase inicial no benefício"}, {"text": "manter original", "effect": "estrutura já clara e compacta"}], "model": "a melhor escolha depende do foco do trecho."},
+    {"id": "L09-C01", "type": "edit-or-preserve", "items": [{"case": "trecho claro e consistente com voz", "decision": "preservar-pode-ser-melhor"}, {"case": "ambiguidade altera responsável pela ação", "decision": "editar"}, {"case": "editor prefere sinônimo mais raro", "decision": "não-há-necessidade"}]},
+    {"id": "L09-A01", "type": "alternative-evaluation", "tasks": ["comparar três versões de dois trechos", "explicitar pelo menos dois trade-offs", "escolher uma revisão", "manter conscientemente outro trecho", "explicar por que mais mudanças não seriam melhores"], "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"timeLimit": false, "changeCountScored": false, "formalityMaximizationScored": false, "openResponseAutoValidated": false},
+  "completionEvidence": {"clusters": {"alternativeJudgment": {"evidence": ["L09-A01"], "required": true}}, "completionRule": "a evidência deve incluir uma escolha entre alternativas e uma manutenção consciente, ambas justificadas por função e intenção.", "requiresReliableEvaluatorFor": ["qualidade dos trade-offs", "fidelidade à intenção"]}
+}
