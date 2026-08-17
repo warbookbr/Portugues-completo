@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "N4-U08-L01",
+  "title": "Escuta estratégica de exposição e discussão complexa",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Escolher foco de escuta e reconstruir arquitetura, posição, evidência, qualificação e limites de uma fala densa sem depender de memória literal ou velocidade.",
+  "competencies": ["definir foco de escuta", "reconstruir arquitetura oral", "separar posição de evidência", "reconhecer qualificação", "identificar informação ausente"],
+  "prerequisites": ["N3-U07-V01", "N4-U01-V01", "N4-U03-V01"],
+  "limits": ["replay não penaliza", "memória literal não pontua", "velocidade de resposta não pontua", "TTS não é usado para avaliar pronúncia do aluno"],
+  "media": {"tts": "principal para estímulos autorais quando timbre/prosódia específica não determina a resposta", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["exposicao-base", "discussao-base"]}, {"type": "TRANSCRIPT_AFTER_ATTEMPT", "locations": ["revisao"]}], "generatedVisualResources": [{"type": "UI_RENDERED_LISTENING_GOAL"}, {"type": "UI_RENDERED_SPEECH_ARCHITECTURE_MAP"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "a competência é compreensão estratégica; TTS autoral, replay e mapa semântico preservam o alvo sem criar dependência acústica artificial."},
+  "sequence": [
+    {"id": "L01-B01", "type": "listening-goal", "scenario": "Uma coordenadora apresenta resultados provisórios de um projeto e propõe um próximo passo com duas ressalvas.", "task": "antes de ouvir, escolher se o foco inicial será arquitetura, evidência ou encaminhamento e justificar"},
+    {"id": "L01-B02", "type": "tts-authored-exposition", "script": "O teste ampliou o horário em duas noites por semana. Houve procura maior na terça, mas o registro ainda não separa usuários novos de retornos. A equipe considera manter o teste por mais um mês, desde que seja possível acompanhar custo e escala de atendimento. Isso não é ainda uma decisão de expansão permanente.", "replayAllowed": true, "transcriptReveal": "depois da primeira reconstrução"},
+    {"id": "L01-C01", "type": "meaning-check", "items": [{"claim": "já foi decidida expansão permanente", "expected": false}, {"claim": "há condição ligada a custo e escala", "expected": true}, {"claim": "o registro distingue usuários novos de retornos", "expected": false}], "automaticValidation": true},
+    {"id": "L01-A01", "type": "speech-map", "prompt": "Reconstrua abertura/contexto, observação principal, evidência, ressalvas e encaminhamento. Registre também uma informação que a fala não permite concluir.", "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"timeLimit": false, "replayPenalized": false, "literalRecallScored": false, "speedScored": false, "openResponseAutoValidated": false},
+  "completionEvidence": {"clusters": {"strategicListening": {"evidence": ["L01-A01"], "required": true}}, "completionRule": "o mapa deve preservar a arquitetura, as qualificações e pelo menos um limite de inferência; replay pode ser usado sem perda de pontuação.", "requiresReliableEvaluatorFor": ["fidelidade da reconstrução aberta", "qualidade da justificativa de foco"]}
+}

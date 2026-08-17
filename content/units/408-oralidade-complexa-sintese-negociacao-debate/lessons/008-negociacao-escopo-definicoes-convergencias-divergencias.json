@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "id": "N4-U08-L08",
+  "title": "Negociação de escopo, definições, convergências e divergências",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Tornar uma discussão produtiva quando participantes usam termos, escopos ou critérios diferentes, explicitando desacordos, convergências e pontos ainda abertos sem fabricar consenso.",
+  "competencies": ["explicitar definição", "delimitar escopo", "separar desacordos", "localizar convergência", "registrar ponto aberto"],
+  "prerequisites": ["N4-U08-L02", "N4-U08-L07"],
+  "limits": ["consenso não é obrigatório", "negociação não exige abandonar posição", "mesma palavra pode esconder critérios diferentes", "convergência parcial não apaga divergência restante"],
+  "media": {"tts": "adequado para discussão autoral rotulada", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["discussao-negociacao"]}, {"type": "LABELED_TURNS", "locations": ["discussao-negociacao"]}], "generatedVisualResources": [{"type": "UI_RENDERED_SCOPE_NEGOTIATION_MAP"}, {"type": "UI_RENDERED_DEFINITION_COMPARE"}, {"type": "UI_RENDERED_OPEN_POINTS_BOARD"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "o mapa torna explícitos termos, escopos e pontos abertos sem transformar negociação em busca obrigatória por consenso."},
+  "sequence": [
+    {"id": "L08-B01", "type": "definition-conflict", "turns": [{"speaker": "A", "text": "Para mim, sucesso significa demanda suficiente para manter duas noites."}, {"speaker": "B", "text": "Estou usando sucesso para falar de benefício ao usuário, mesmo que o custo ainda impeça expansão."}, {"speaker": "C", "text": "Antes de discutir sucesso, eu separaria continuidade do teste e expansão permanente."}], "task": "identificar que parte da discordância vem de definição e que parte vem de decisão/critério"},
+    {"id": "L08-C01", "type": "scope-check", "items": [{"statement": "todos discordam sobre a existência de procura", "expected": false}, {"statement": "há mais de uma definição operacional de sucesso", "expected": true}, {"statement": "continuidade do teste e expansão permanente podem ser tratadas separadamente", "expected": true}], "automaticValidation": true},
+    {"id": "L08-A01", "type": "negotiation-reframe", "prompt": "Reorganize uma discussão confusa em: termos a definir, questões separadas, convergências, divergências e pontos que exigem dado/decisão adicional. Proponha uma formulação comum apenas onde houver base para isso.", "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"timeLimit": false, "consensusScored": false, "positionAbandonmentScored": false, "openResponseAutoValidated": false},
+  "completionEvidence": {"clusters": {"scopeNegotiation": {"evidence": ["L08-A01"], "required": true}}, "completionRule": "a reorganização deve reduzir confusão sem apagar divergências reais nem fabricar consenso onde faltam critérios, dados ou acordo.", "requiresReliableEvaluatorFor": ["qualidade da delimitação", "fidelidade das convergências/divergências", "utilidade da reformulação"]}
+}

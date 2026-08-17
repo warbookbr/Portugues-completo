@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "id": "N4-U08-L06",
+  "title": "Perguntas, esclarecimento e reparo comunicativo",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Formular perguntas úteis e reparar incompreensão escolhendo estratégias diferentes conforme a falha comunicativa, sem fingir entendimento nem inventar resposta para evitar admitir lacuna.",
+  "competencies": ["formular pergunta de esclarecimento", "formular pergunta de aprofundamento", "parafrasear para confirmar", "reformular explicação", "admitir desconhecimento"],
+  "prerequisites": ["N4-U08-L01", "N4-U08-L05"],
+  "limits": ["hesitação não é defeito automático", "repetir a mesma formulação não é reparo suficiente", "admitir falta de informação pode ser a melhor resposta", "rapidez de resposta não pontua"],
+  "media": {"tts": "adequado para cenários autorais de pergunta/resposta", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["cenarios-de-reparo"]}], "generatedVisualResources": [{"type": "UI_RENDERED_REPAIR_STRATEGY_MAP"}, {"type": "UI_RENDERED_QUESTION_TYPE_CARDS"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "cenários textuais/TTS e mapa de reparo medem decisão comunicativa, não espontaneidade ou velocidade."},
+  "sequence": [
+    {"id": "L06-B01", "type": "repair-strategy-model", "strategies": [{"failure": "termo desconhecido", "options": ["pedir definição", "pedir exemplo"]}, {"failure": "não ficou claro o alcance", "options": ["parafrasear e confirmar", "perguntar qual caso está incluído"]}, {"failure": "informação não disponível", "options": ["admitir lacuna", "indicar como confirmar depois"]}]},
+    {"id": "L06-C01", "type": "repair-choice", "items": [{"scenario": "você não sabe se 'custo adicional' inclui segurança", "bestAction": "perguntar/confirmar o escopo"}, {"scenario": "a pergunta exige um dado não fornecido", "bestAction": "admitir que falta informação"}, {"scenario": "o interlocutor não entendeu sua explicação", "bestAction": "reformular com outra estrutura ou exemplo"}], "automaticValidation": true},
+    {"id": "L06-A01", "type": "repair-response-set", "prompt": "Responda a três falhas comunicativas distintas usando estratégias diferentes. Em cada caso, registre o problema percebido, a estratégia escolhida e por que ela é melhor que apenas repetir ou improvisar.", "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"timeLimit": false, "responseSpeedScored": false, "hesitationScored": false, "openResponseAutoValidated": false},
+  "completionEvidence": {"clusters": {"communicativeRepair": {"evidence": ["L06-A01"], "required": true}}, "completionRule": "o aluno deve diagnosticar a falha e variar a estratégia de reparo, incluindo admissão de lacuna quando for apropriado.", "requiresReliableEvaluatorFor": ["adequação da estratégia", "qualidade da reformulação", "clareza da justificativa"]}
+}

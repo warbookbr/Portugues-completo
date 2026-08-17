@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "N4-U08-L03",
+  "title": "Planejar apresentação complexa por finalidade e audiência",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Estruturar uma apresentação complexa por função, prioridade e audiência, definindo o que precisa ser contextualizado, evidenciado, qualificado e encaminhado antes da fala.",
+  "competencies": ["planejar arquitetura oral", "priorizar informação", "adaptar explicitação", "organizar evidência e ressalva", "definir encaminhamento"],
+  "prerequisites": ["N4-U08-L01", "N4-U08-L02", "N4-U04-V01"],
+  "limits": ["roteiro não precisa ser texto integral", "tempo é parâmetro de planejamento, não prova de fluência", "performance teatral não pontua", "extensão maior não significa domínio maior"],
+  "media": {"tts": "opcional para ouvir ensaio do próprio roteiro textual", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["ensaio-do-roteiro"]}], "generatedVisualResources": [{"type": "UI_RENDERED_ORAL_MOVES_MAP"}, {"type": "UI_RENDERED_AUDIENCE_PRIORITY_MATRIX"}, {"type": "UI_RENDERED_APPROXIMATE_TIME_BUDGET"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "mapa de movimentos e prioridades permite planejar fala por função sem confundir cronômetro ou performance com competência."},
+  "sequence": [
+    {"id": "L03-B01", "type": "planning-scenario", "facts": ["um serviço testou dois horários alternativos", "a procura foi desigual", "o custo total ainda não foi fechado", "a decisão pedida é apenas sobre prolongar o teste"], "audience": "conselho gestor que conhece o projeto, mas não os resultados recentes", "purpose": "apresentar evidência suficiente para decidir se o teste continua"},
+    {"id": "L03-B02", "type": "movement-model", "movements": ["abertura com decisão em pauta", "contexto mínimo", "evidência principal", "limites e incertezas", "alternativas", "encaminhamento"], "rule": "a ordem pode mudar quando houver justificativa funcional; a lista não é template universal"},
+    {"id": "L03-C01", "type": "priority-check", "items": [{"information": "histórico completo do projeto desde a origem", "priority": "baixa salvo necessidade específica"}, {"information": "o custo total ainda é incompleto", "priority": "alta"}, {"information": "qual decisão está sendo pedida", "priority": "alta"}], "automaticValidation": true},
+    {"id": "L03-A01", "type": "oral-plan", "prompt": "Monte um plano de apresentação com blocos funcionais, prioridade, evidência/ressalva e grau de explicitação para essa audiência. Indique também o que deliberadamente ficará fora e por quê.", "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"timeLimit": false, "speedScored": false, "performancePolishScored": false, "wordCountScored": false, "openResponseAutoValidated": false},
+  "completionEvidence": {"clusters": {"presentationPlan": {"evidence": ["L03-A01"], "required": true}}, "completionRule": "o plano deve explicitar função dos blocos, prioridades e limites, sem exigir roteiro integral nem uma ordem única quando alternativas forem justificáveis.", "requiresReliableEvaluatorFor": ["coerência arquitetural", "adequação à audiência", "qualidade das prioridades"]}
+}

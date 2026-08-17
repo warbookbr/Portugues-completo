@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "id": "N4-U08-V01",
+  "type": "integrated-unit-verification",
+  "title": "Verificação integrada — Nível 4, Unidade 8",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Verificar se o aluno consegue compreender, sintetizar, planejar, expor, responder, negociar e revisar um processo oral complexo mantendo atribuições, evidência, limites e adaptação à audiência, sem confundir presença de tentativa com validação automática de qualidade acústica.",
+  "prerequisites": ["N4-U08-L01", "N4-U08-L02", "N4-U08-L03", "N4-U08-L04", "N4-U08-L05", "N4-U08-L06", "N4-U08-L07", "N4-U08-L08", "N4-U08-L09"],
+  "guardRails": ["replay permitido e não penalizado", "memória literal e velocidade não pontuam", "síntese deve preservar atribuições e divergências", "fontes precisam permanecer ligadas às afirmações", "dado ausente não pode ser improvisado", "visual polido não pontua", "pergunta/reparo pode incluir admissão de desconhecimento", "vencer debate, agressividade ou mudança de posição não pontuam", "consenso não é obrigatório", "tentativa registrada não equivale a inteligibilidade validada", "pronúncia e prosódia globais não são validadas automaticamente", "autorrevisão pode justificar manutenção"],
+  "materials": {
+    "case": {
+      "context": "Um centro comunitário testou duas oficinas noturnas e precisa decidir se mantém o teste por mais um ciclo antes de qualquer expansão permanente.",
+      "facts": ["o teste durou cinco semanas", "houve 184 presenças registradas; o registro não identifica pessoas únicas", "a oficina de terça concentrou 112 presenças e a de quinta 72", "um formulário voluntário recebeu 49 respostas: 37 favoráveis à continuidade, 7 neutras e 5 desfavoráveis", "o custo de material está fechado", "o custo adicional de vigilância ainda não foi separado do contrato geral", "em uma quinta a oficina começou 20 minutos depois por indisponibilidade temporária da sala", "a decisão pedida é apenas sobre manter o teste por mais quatro semanas"],
+      "prohibitedInferences": ["não afirmar que houve 184 pessoas diferentes", "não tratar o formulário como opinião de todos os participantes", "não afirmar que o custo total está conhecido", "não transformar continuidade provisória em expansão permanente"]
+    },
+    "discussion": [
+      {"speaker": "A", "text": "Eu manteria as duas oficinas por mais quatro semanas. A procura da quinta é menor, mas ainda precisamos comparar os dois dias com mais observações."},
+      {"speaker": "B", "text": "Aceito prolongar o teste, mas só se o custo de vigilância for separado antes da decisão seguinte. Hoje ainda não sabemos o custo adicional total."},
+      {"speaker": "C", "text": "Eu manteria apenas a terça. Para mim, continuidade deveria significar concentrar o recurso onde houve mais procura."},
+      {"speaker": "A", "text": "Acho importante separar duas perguntas: se vale continuar testando e se vale manter exatamente o mesmo formato. Podemos concordar na primeira sem decidir a segunda agora."}
+    ],
+    "audiences": {
+      "presentation": {"audience": "conselho gestor", "purpose": "recomendar próximo passo proporcional aos dados"},
+      "support": {"audience": "participantes das oficinas", "purpose": "explicar o que foi observado, o que ainda está aberto e o que será decidido"}
+    }
+  },
+  "tasks": [
+    {"id": "V01-A01", "cluster": "strategic-listening", "type": "listening-goal-and-map", "prompt": "Escolha foco de escuta, ouça/reouça a discussão e reconstrua posições, razões, ressalvas e o que não foi afirmado.", "replayAllowed": true, "recordResponse": true, "automaticValidation": false},
+    {"id": "V01-A02", "cluster": "multivoice-synthesis", "type": "multivoice-notes-and-synthesis", "prompt": "Produza notas por participante e uma síntese que preserve convergências, divergências e atribuições sem fabricar consenso.", "recordResponse": true, "automaticValidation": false},
+    {"id": "V01-A03", "cluster": "presentation-plan", "type": "oral-plan", "prompt": "Planeje a apresentação ao conselho: decisão em pauta, contexto mínimo, evidências, limites, alternativas e encaminhamento. Indique o que ficará de fora e por quê.", "recordResponse": true, "automaticValidation": false},
+    {"id": "V01-A04", "cluster": "evidence-attribution", "type": "oral-evidence-segment", "prompt": "Prepare um trecho que atribua pelo menos duas evidências, calibre a certeza e registre uma lacuna sem inventar dado.", "recordResponse": true, "automaticValidation": false},
+    {"id": "V01-A05", "cluster": "audience-accessibility", "type": "audience-support-adaptation", "prompt": "Crie apoio acessível para os participantes e explique como densidade, vocabulário e seleção mudam em relação à fala para o conselho sem apagar ressalvas decisivas.", "recordResponse": true, "automaticValidation": false},
+    {"id": "V01-A06", "cluster": "question-repair", "type": "repair-cycle", "prompt": "Responda a uma pergunta cujo escopo esteja ambíguo e a outra que peça um dado não disponível. Use estratégias de reparo diferentes e não improvise.", "recordResponse": true, "automaticValidation": false},
+    {"id": "V01-A07", "cluster": "objection-reformulation", "type": "objection-cycle", "prompt": "Receba uma objeção sobre custo, reformule-a fielmente, identifique ponto válido e responda registrando se sua recomendação foi mantida, delimitada ou alterada.", "recordResponse": true, "automaticValidation": false},
+    {"id": "V01-A08", "cluster": "scope-negotiation", "type": "negotiation-reframe", "prompt": "Reorganize a divergência sobre 'continuidade' separando definição, formato do teste, decisão provisória, convergências e pontos abertos sem fabricar consenso.", "recordResponse": true, "automaticValidation": false},
+    {"id": "V01-A09", "cluster": "oral-attempt", "type": "integrated-oral-attempt", "prompt": "Realize ou registre uma tentativa oral/equivalente da apresentação seguida do ciclo de pergunta/objeção/negociação. O registro comprova o processo, não aprovação acústica.", "recordResponse": true, "automaticValidation": false, "acousticValidation": false},
+    {"id": "V01-A10", "cluster": "self-revision", "type": "post-attempt-review", "prompt": "Revise o processo: o que manteria, o que mudaria e por quê. Separe evidência observável pelo sistema, autoavaliação e aspectos que exigem ouvinte confiável.", "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"timeLimit": false, "replayPenalized": false, "literalRecallScored": false, "speedScored": false, "visualPolishScored": false, "aggressivenessScored": false, "winningScored": false, "consensusScored": false, "positionChangeScoredByItself": false, "attemptPresenceCanBeObserved": true, "intelligibilityAutoValidated": false, "pronunciationAutoValidated": false, "prosodyAutoValidated": false, "openResponseAutoValidated": false, "closedTasksCanCompensateOralProcess": false},
+  "completionEvidence": {
+    "clusters": {
+      "strategicListening": {"evidence": ["V01-A01"], "required": true},
+      "multivoiceSynthesis": {"evidence": ["V01-A02"], "required": true},
+      "presentationPlan": {"evidence": ["V01-A03"], "required": true},
+      "evidenceAttribution": {"evidence": ["V01-A04"], "required": true},
+      "audienceAdaptation": {"evidence": ["V01-A05"], "required": true},
+      "accessibleSupport": {"evidence": ["V01-A05"], "required": true},
+      "questionRepair": {"evidence": ["V01-A06"], "required": true},
+      "objectionConcessionReformulation": {"evidence": ["V01-A07"], "required": true},
+      "scopeNegotiation": {"evidence": ["V01-A08"], "required": true},
+      "oralAttemptSelfRevision": {"evidence": ["V01-A09", "V01-A10"], "required": true}
+    },
+    "nonCompensable": ["V01-A01", "V01-A02", "V01-A03", "V01-A09", "V01-A10"],
+    "completionRule": "todos os dez agrupamentos são obrigatórios. Escuta/síntese, plano, tentativa registrada e autorrevisão não podem ser compensados por itens analíticos; a presença do processo pode ser verificada, mas qualidade acústica global exige avaliação humana/confiável apropriada.",
+    "requiresReliableEvaluatorFor": ["fidelidade da síntese aberta", "qualidade global da apresentação", "adequação interacional", "inteligibilidade", "pronúncia quando relevante", "prosódia global", "qualidade da negociação", "qualidade da autorrevisão"]
+  },
+  "media": {"tts": "para discussão, perguntas e objeções autorais; replay permitido", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["discussao", "perguntas", "objecoes"]}, {"type": "LABELED_TURNS", "locations": ["discussao"]}, {"type": "TRANSCRIPT_AFTER_ATTEMPT", "locations": ["revisao-de-escuta"]}, {"type": "OPTIONAL_ATTEMPT_RECORDING", "locations": ["tentativa-oral"]}], "generatedVisualResources": [{"type": "UI_RENDERED_LISTENING_GOAL"}, {"type": "UI_RENDERED_MULTIVOICE_NOTES_MATRIX"}, {"type": "UI_RENDERED_ORAL_MOVES_MAP"}, {"type": "UI_RENDERED_ORAL_EVIDENCE_CARDS"}, {"type": "UI_RENDERED_ACCESSIBLE_SUPPORT_CARD"}, {"type": "UI_RENDERED_REPAIR_STRATEGY_MAP"}, {"type": "UI_RENDERED_OBJECTION_RESPONSE_CHAIN"}, {"type": "UI_RENDERED_SCOPE_NEGOTIATION_MAP"}, {"type": "UI_RENDERED_ORAL_PROCESS_TIMELINE"}, {"type": "UI_RENDERED_VALIDATION_BOUNDARY"}], "productionQueueRequired": false, "publicationDependency": "nenhuma mídia humana obrigatória; qualidade oral global e aspectos acústicos exigem avaliador confiável", "decisionRationale": "a verificação integra compreensão, produção e interação com materiais autorais, replay e recursos acessíveis, preservando explicitamente os limites de validação automática."}
+}

@@ -122,8 +122,8 @@ U4 ✓ — 11 lições + N4-U04-V01
 U5 ✓ — 11 lições + N4-U05-V01; gate normativo ✓
 U6 ✓ — 9 lições + N4-U06-V01
 U7 ✓ — 10 lições + N4-U07-V01; gate normativo ✓
-U8 — PRÓXIMO SUBPASSO
-U9 pendente
+U8 ✓ — 9 lições + N4-U08-V01
+U9 — PRÓXIMO SUBPASSO; gate de mídia/acessibilidade ✓ para a arquitetura atual
 ```
 
 U1: `content/units/401-leitura-estrategica-alta-complexidade-revisao-interpretacao/`.
@@ -139,6 +139,8 @@ U5: `content/units/405-edicao-alto-nivel-precisao-consulta-linguistica/`.
 U6: `content/units/406-estilo-registro-projeto-voz/`.
 
 U7: `content/units/407-lingua-norma-variacao-mudanca-identidade-poder/`.
+
+U8: `content/units/408-oralidade-complexa-sintese-negociacao-debate/`.
 
 O M5 da U1 consolidou os guard rails do nível:
 
@@ -239,6 +241,19 @@ O M5 da U7 consolidou análise linguística contextual e socialmente responsáve
 - adaptação formal pode ser necessária sem desqualificar a forma cotidiana de origem;
 - `N4-U07-V01` exige dez agrupamentos, incluindo consulta de fontes, auditoria de afirmação pública, adaptação contextual e justificativa integrada.
 
+O M5 da U8 consolidou oralidade complexa como processo estratégico, interacional e revisável:
+
+- escuta começa por objetivo e permite replay sem penalizar; memória literal e velocidade não são proxies de compreensão;
+- notas e síntese preservam vozes, atribuições, convergências, divergências e ressalvas sem exigir transcrição;
+- apresentação é planejada por função, prioridade e audiência, não por roteiro integral ou performance teatral;
+- evidência oral mantém origem identificável, distingue fato/inferência e admite lacunas sem improvisar dados;
+- adaptação de audiência preserva conteúdo decisivo e usa apoio acessível sem polimento visual como critério;
+- perguntas e reparo comunicativo variam conforme a falha e podem incluir admissão explícita de desconhecimento;
+- objeções são reformuladas fielmente antes da resposta; concessão, manutenção ou mudança de posição só contam pela justificativa;
+- negociação separa definições, escopos, convergências e divergências sem transformar consenso em obrigação;
+- tentativa oral registrada comprova processo, não inteligibilidade, pronúncia, prosódia ou qualidade global;
+- `N4-U08-V01` exige dez agrupamentos obrigatórios e torna escuta/síntese, plano, tentativa e autorrevisão não compensáveis.
+
 ### Gate normativo N4-U5/U7
 
 - `docs/gate-normativo-nivel-4-u5-u7.md` — **SATISFEITO**;
@@ -278,31 +293,34 @@ N4 — M1 ✓
                 ├── U5 ✓
                 ├── U6 ✓
                 ├── U7 ✓
-                └── U8 — PRÓXIMO SUBPASSO
+                ├── U8 ✓
+                └── U9 — PRÓXIMO SUBPASSO
 ```
 
 ## Próximo subpasso
 
 ```text
-N4-U08 M5 — Oralidade complexa, síntese, negociação e debate
-→ 9 lições + N4-U08-V01
-→ escuta estratégica com replay permitido; velocidade/memória literal não pontuam
-→ notas e síntese fiel de múltiplas vozes sem fundir posições ou atribuições
-→ planejar apresentação complexa por finalidade e audiência
-→ usar evidência, atribuição e qualificação oral sem inventar dado ausente
-→ adaptar densidade/vocabulário e oferecer apoio acessível sem polimento visual como critério
-→ formular perguntas, esclarecimentos e reparos; admitir lacuna é permitido
-→ responder a objeção com fidelidade, concessão real e reformulação quando necessária
-→ negociar escopo, definições, convergências e divergências sem fabricar consenso
-→ apresentação/discussão integrada com tentativa registrada e autorrevisão
-→ sistema valida processo e compreensão; não declara automaticamente inteligibilidade, pronúncia, prosódia ou qualidade global da fala
+N4-U09 M5 — Literatura, multimodalidade e autoria intermedial/digital
+→ 12 lições + N4-U09-V01
+→ interpretação literária própria sustentada por evidência e limite reconhecido
+→ voz, perspectiva, estrutura e temporalidade sem taxonomia como fim
+→ poesia: forma, ritmo, sintaxe e efeito; TTS opcional não determina interpretação
+→ figuratividade, ambiguidade e ironia sem procurar símbolo por reflexo
+→ intertextualidade/contexto com repertório fornecido, não secreto
+→ interpretações concorrentes + revisão justificada
+→ multimodalidade verbal/visual/dados/interface com equivalentes acessíveis
+→ sequência, montagem e timing representados; reconhecer quando mídia real seria indispensável
+→ proveniência, autoria, edição, circulação e plataforma sem inventar causalidade algorítmica
+→ adaptação/intermedialidade com ganhos, perdas e transformação
+→ autoria multimodal/digital acessível com função clara por modalidade
+→ análise + produção integradas
+→ usar `docs/gate-midia-acessibilidade-nivel-4-u9.md`; reabrir somente se surgir alvo sensorial real insubstituível
 ```
 
 Depois:
 
 ```text
-U9 (reavaliar gate de mídia se necessário)
-→ N4-EXIT-V01
+N4-EXIT-V01
 → checkpoint final do curso
 ```
 
@@ -345,6 +363,9 @@ U9 (reavaliar gate de mídia se necessário)
 35. Em língua/norma/variação, uso, descrição, norma e julgamento social devem permanecer separados; uma fonte não responde automaticamente perguntas de outra função.
 36. Prestígio, estigma e consequência institucional não autorizam inferir inferioridade estrutural, inteligência ou valor pessoal do falante.
 37. Mudança linguística exige série/contexto suficiente; forma mais nova, mais antiga, mais frequente ou mais prestigiosa não recebe valor linguístico automático.
+38. Em oralidade, replay, tempo de resposta, hesitação e memória literal não são proxies de compreensão ou domínio; o foco é significado, estrutura, evidência e interação.
+39. Registro de tentativa oral comprova processo, não inteligibilidade, pronúncia, prosódia ou qualidade global; esses aspectos exigem observação confiável apropriada.
+40. Debate e negociação não pontuam vitória, agressividade, consenso ou mudança de posição por si; fidelidade, reparo, evidência, escopo e justificativa são os critérios funcionais.
 
 # Dependências não curriculares
 

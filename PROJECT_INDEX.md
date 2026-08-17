@@ -168,6 +168,7 @@ O M4 preserva cobertura 17/17 e explicita como cada unidade exige autonomia, tra
 - `content/units/405-edicao-alto-nivel-precisao-consulta-linguistica/` — U5, 11 lições + `N4-U05-V01`, **concluída**.
 - `content/units/406-estilo-registro-projeto-voz/` — U6, 9 lições + `N4-U06-V01`, **concluída**.
 - `content/units/407-lingua-norma-variacao-mudanca-identidade-poder/` — U7, 10 lições + `N4-U07-V01`, **concluída**.
+- `content/units/408-oralidade-complexa-sintese-negociacao-debate/` — U8, 9 lições + `N4-U08-V01`, **concluída**.
 
 A U1 exige escolha e eventual troca justificada de estratégia, arquiteturas concorrentes defensáveis, preservação de condições/ressalvas, cadeias distribuídas, implícitos/intertextualidade com evidência, enquadramento sem inferência automática de manipulação, calibração epistêmica e revisão explícita da interpretação após nova evidência.
 
@@ -182,6 +183,8 @@ A U5 transforma revisão em julgamento editorial priorizado e auditável: diagno
 A U6 transforma estilo em projeto funcional e transferível: explicita presença autoral, tom/registro e relação com a audiência, equilibra densidade e explicitação, escolhe léxico por significado/alcance/conotação, controla ritmo/repetição/ênfase e modalidade/agência e exige adaptações entre meios que preservem fatos e traços autorais sem cópia mecânica.
 
 A U7 separa uso, descrição, norma/convenção e julgamento social; trata variação e mudança com limites de inferência; distingue consequência institucional de prestígio/estigma; trabalha repertório e identidade sem essencialização; exige feedback contextual, comparação de fontes, auditoria de afirmações públicas e adaptação formal sem hierarquizar falantes.
+
+A U8 transfere leitura, síntese, argumentação e projeto de voz para oralidade complexa: escuta por objetivo com replay permitido, preserva múltiplas vozes, planeja fala por função/audiência, integra evidência e qualificação, usa apoio acessível, repara incompreensão, responde a objeções, negocia escopo sem fabricar consenso e exige tentativa registrada + autorrevisão com fronteira explícita entre processo observável e qualidade acústica dependente de ouvinte confiável.
 
 Estado:
 
@@ -198,7 +201,8 @@ M5 em andamento
 ├── U5 ✓ — 11 lições + N4-U05-V01
 ├── U6 ✓ — 9 lições + N4-U06-V01
 ├── U7 ✓ — 10 lições + N4-U07-V01
-└── U8 — próximo subpasso
+├── U8 ✓ — 9 lições + N4-U08-V01
+└── U9 — próximo subpasso
 ```
 
 A fonte oficial do estado é `docs/roadmap-curricular.md`.
