@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "N4-U02-L03",
+  "title": "Termos de busca, refinamento e mudança de estratégia",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Formular consultas e refiná-las quando os resultados forem amplos, estreitos, enviesados pela formulação ou incapazes de responder à necessidade.",
+  "competencies": ["criar termos iniciais", "usar sinônimos e variantes", "ajustar recorte temporal/contextual", "buscar autoria/título/frase quando necessário", "interpretar resultados como feedback da estratégia", "mudar consulta por motivo documentado"],
+  "prerequisites": ["N4-U02-L01", "N4-U02-L02"],
+  "limits": ["decorar operadores não é objetivo", "número de buscas não mede qualidade", "resultado no topo não é automaticamente melhor", "mudança de consulta deve responder a problema real"],
+  "media": {"tts": "opcional como apoio de acesso", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["consultas", "resultados", "feedback"], "purpose": "apoio de acesso"}], "generatedVisualResources": [{"type": "UI_RENDERED_QUERY_HISTORY"}, {"type": "UI_RENDERED_SEARCH_RESULT_SET"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "um ambiente de busca didático torna o refinamento observável sem depender da web aberta."},
+  "sequence": [
+    {"id": "L03-B01", "type": "worked-query-refinement", "need": "descobrir se um número citado em notícia vem de relatório original", "history": [{"query": "uso biblioteca sábado aumento", "problem": "resultados genéricos e sem o número citado"}, {"query": "\"2.480\" biblioteca sábado relatório", "problem": "localiza republicações, mas não a origem"}, {"query": "\"2.480\" \"relatório trimestral\" biblioteca", "result": "localiza documento institucional com tabela e metodologia"}], "model": "cada refinamento usa uma pista nova; não é repetir palavras aleatoriamente."},
+    {"id": "L03-C01", "type": "query-diagnosis", "cases": [{"need": "versão atual de um regulamento", "query": "regulamento", "status": "too-broad"}, {"need": "versão atual de um regulamento", "query": "título exato + órgão + ano/versão", "status": "better"}, {"need": "experiência de usuários em um bairro específico", "query": "nome do bairro + tema + termos de experiência", "status": "reasonable-start"}]},
+    {"id": "L03-A01", "type": "controlled-search-simulation", "need": "rastrear a origem da afirmação 'o tempo médio caiu 22%'", "resultSets": [{"query": "tempo médio caiu 22", "results": ["postagem que cita uma matéria", "matéria que cita 'levantamento interno' sem link"]}, {"query": "\"22%\" \"levantamento interno\" atendimento", "results": ["relatório interno v2 com período e definição de tempo médio", "apresentação que reproduz o número"]}], "tasks": ["escolher consulta inicial", "refinar após o primeiro conjunto", "justificar a mudança", "indicar qual resultado merece inspeção prioritária e por quê"], "recordResponse": true},
+    {"id": "L03-P01", "type": "reflection", "prompt": "Dê um exemplo em que estreitar a busca demais pode esconder informação relevante e explique como você corrigiria isso.", "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"timeLimit": false, "queryCountScored": false, "operatorMemorizationScored": false, "openResponseAutoValidated": false},
+  "completionEvidence": {"clusters": {"refinement": {"evidence": ["L03-A01"], "required": true}, "metacognition": {"evidence": ["L03-P01"], "required": true}}, "completionRule": "o aluno deve mostrar refinamento orientado por necessidade e resultados; muitas consultas sem justificativa não contam como domínio.", "requiresReliableEvaluatorFor": ["qualidade da justificativa aberta"]}
+}
