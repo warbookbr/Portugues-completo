@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "id": "N3-U06-L06",
+  "title": "Ordem, foco e ênfase como escolhas editoriais",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Usar ordem de informação, posição de elementos e estrutura de frase ou parágrafo para controlar foco e ênfase sem criar ambiguidade nem tratar uma ordem como universalmente superior.",
+  "competencies": [
+    "distinguir informação dada e nova quando relevante",
+    "mover contraste ou informação central para posição funcional",
+    "comparar aberturas e fechamentos de período/parágrafo",
+    "avaliar voz ativa e passiva pelo efeito de visibilidade do agente",
+    "reordenar sem alterar relação lógica",
+    "justificar entre versões plausíveis a melhor para uma finalidade específica"
+  ],
+  "prerequisites": ["N3-U06-L05", "N3-U03-L06", "N3-U03-L07"],
+  "limits": [
+    "não existe ordem universalmente superior",
+    "voz passiva não é erro automático",
+    "voz ativa não é sempre mais clara",
+    "topicalização não é defeito por princípio",
+    "ênfase deve ser avaliada no contexto",
+    "reordenação não pode criar referente ambíguo"
+  ],
+  "media": {"tts": "opcional", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {
+    "curatedMedia": [],
+    "runtimeResources": [{"type": "TTS_OK", "purpose": "apoio opcional de leitura/comparação"}],
+    "generatedVisualResources": [
+      {"type": "UI_RENDERED_INFORMATION_ORDER_COMPARE", "purpose": "comparar ordem, foco e progressão de informação"},
+      {"type": "UI_RENDERED_AGENT_VISIBILITY", "purpose": "comparar ativa/passiva e visibilidade do agente"}
+    ],
+    "productionQueueRequired": false,
+    "publicationDependency": "nenhuma nova mídia humana obrigatória",
+    "decisionRationale": "A competência pode ser ensinada e registrada com texto, comparação de versões e componentes semânticos da interface."
+  },
+  "sequence": [
+    {"id": "L06-B01", "type": "focus-contrast", "context": "o parágrafo responde à pergunta 'o que mudou no prazo?'", "versions": ["Na sexta-feira, a coordenação publicou o novo prazo.", "O novo prazo foi publicado na sexta-feira pela coordenação."], "task": "comparar foco, naturalidade e necessidade de explicitar agente sem declarar uma versão universalmente melhor"},
+    {"id": "L06-B02", "type": "paragraph-order", "blocks": ["limitação da amostra", "resultado de 76% entre respondentes", "conclusão qualificada"], "task": "ordenar os blocos para uma síntese que não deixe a qualificação invisível"},
+    {"id": "L06-C01", "type": "quick-check", "items": [
+      {"question": "A voz passiva é sempre pior que a ativa?", "correct": false},
+      {"question": "A posição de uma informação pode alterar o destaque que ela recebe?", "correct": true}
+    ]},
+    {"id": "L06-A01", "type": "assessment-order", "scenario": "nota curta cujo objetivo é destacar uma mudança de procedimento e depois explicar quem a decidiu", "versions": ["A direção decidiu ontem que o formulário mudará em setembro.", "O formulário mudará em setembro, conforme decisão tomada ontem pela direção."], "task": "escolher ou produzir uma versão adequada ao foco solicitado e justificar a ordem"},
+    {"id": "L06-P01", "type": "open-reformulation", "prompt": "Reordene um trecho novo para uma finalidade explícita. Registre o que ganhou destaque, o que permaneceu igual e por que uma alternativa também poderia ser válida em outro contexto.", "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"activeVoiceAlwaysPreferred": false, "canonicalOrderRequired": false, "openResponseAutoValidated": false},
+  "completionEvidence": {
+    "clusters": {
+      "controlled": {"evidence": ["L06-A01"], "required": true},
+      "ownEdit": {"evidence": ["L06-P01"], "required": true}
+    },
+    "completionRule": "a ordem deve ser justificada por foco, clareza e finalidade, preservando relações e admitindo alternativas contextualmente válidas."
+  }
+}

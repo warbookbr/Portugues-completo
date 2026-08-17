@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "id": "N3-U06-L07",
+  "title": "Voz, tom e consistência de registro",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Reconhecer e controlar como escolhas recorrentes, modalidade, tratamento, formalidade e posição do autor constroem voz e tom ao longo de textos extensos, preservando mudanças deliberadas.",
+  "competencies": [
+    "caracterizar tom por marcas textuais observáveis",
+    "detectar ruptura não intencional de registro",
+    "ajustar proximidade e formalidade à situação",
+    "controlar modalidade e grau de compromisso como parte da voz",
+    "preservar mudança de tom quando há função clara",
+    "distinguir voz institucional de apagamento indevido de agentes"
+  ],
+  "prerequisites": ["N3-U06-L01", "N3-U06-L06", "N3-U05-V01", "N3-U01-L08"],
+  "limits": [
+    "voz não é personalidade fixa",
+    "formal não é automaticamente melhor",
+    "consistência não exige monotonia",
+    "tom próximo não é inadequação automática",
+    "certeza categórica não é voz superior",
+    "não inferir intenção ou caráter do autor apenas pelo registro"
+  ],
+  "media": {"tts": "opcional", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {
+    "curatedMedia": [],
+    "runtimeResources": [{"type": "TTS_OK", "purpose": "apoio opcional de leitura/comparação"}],
+    "generatedVisualResources": [
+      {"type": "UI_RENDERED_TONE_REGISTER_COMPARE", "purpose": "comparar tom, tratamento, modalidade e consistência"},
+      {"type": "UI_RENDERED_VOICE_TRACE", "purpose": "marcar escolhas recorrentes que constroem voz ao longo do texto"}
+    ],
+    "productionQueueRequired": false,
+    "publicationDependency": "nenhuma nova mídia humana obrigatória",
+    "decisionRationale": "A competência pode ser ensinada e registrada com texto, comparação de versões e componentes semânticos da interface."
+  },
+  "sequence": [
+    {"id": "L07-B01", "type": "tone-shift", "text": "O relatório descreve três limitações do piloto. Agora, vamos combinar: esse negócio ficou meio bagunçado, né? Por isso, recomenda-se novo teste.", "analysis": "a mudança de registro destoa do gênero estabelecido; não implica que a linguagem coloquial seja inferior fora desse contexto"},
+    {"id": "L07-B02", "type": "modality-voice", "evidence": "um teste local de seis semanas mostrou melhora", "versions": ["A medida resolve o problema.", "Os resultados sugerem que a medida pode contribuir para reduzir o problema no contexto observado."], "teachingPoint": "grau de compromisso participa da voz e deve acompanhar a evidência"},
+    {"id": "L07-C01", "type": "quick-check", "items": [
+      {"question": "Consistência exige o mesmo tom em todas as seções, mesmo quando a função muda?", "correct": false},
+      {"question": "Uma mudança deliberada de tom pode ser adequada quando sua função é clara?", "correct": true}
+    ]},
+    {"id": "L07-A01", "type": "assessment-register", "source": "Pedimos que você mande os documentos logo, beleza? A medida certamente resolverá todos os atrasos.", "targetContext": "comunicado institucional a usuários; evidência ainda preliminar", "task": "ajustar tratamento, tom e compromisso sem transformar formalidade máxima em objetivo"},
+    {"id": "L07-P01", "type": "open-consistency", "prompt": "Revise um trecho longo quanto a voz, tom e registro. Identifique uma ruptura inadequada, uma escolha recorrente a preservar e uma mudança de tom que seria aceitável se tivesse função explícita.", "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"formalityAsQuality": false, "monotonyRequired": false, "categoricalLanguageScored": false, "openResponseAutoValidated": false},
+  "completionEvidence": {
+    "clusters": {
+      "controlled": {"evidence": ["L07-A01"], "required": true},
+      "ownEdit": {"evidence": ["L07-P01"], "required": true}
+    },
+    "completionRule": "a revisão deve relacionar voz, tom e registro à situação e às evidências, distinguindo consistência funcional de uniformidade mecânica."
+  }
+}

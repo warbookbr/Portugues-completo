@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "id": "N3-U06-L05",
+  "title": "Ritmo e paralelismo na prosa",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Perceber e editar extensão de frases, segmentação, repetição de estruturas e paralelismo quando essas escolhas contribuem para clareza, ritmo e ênfase.",
+  "competencies": [
+    "detectar sobrecarga ou fragmentação prejudicial",
+    "dividir ou unir frases preservando relações",
+    "usar paralelismo em séries e comparações quando útil",
+    "preservar assimetria funcional",
+    "explicar efeito de ritmo ou estrutura",
+    "usar TTS apenas como apoio, não como critério único"
+  ],
+  "prerequisites": ["N3-U06-L01", "N3-U06-L04", "N3-U03-V01"],
+  "limits": [
+    "frase curta não é sempre clara",
+    "frase longa não é erro automático",
+    "variedade rítmica não é regra obrigatória",
+    "paralelismo não exige identidade total",
+    "não medir estilo por tamanho médio de frase",
+    "sonoridade não é o único critério de qualidade"
+  ],
+  "media": {"tts": "opcional", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {
+    "curatedMedia": [],
+    "runtimeResources": [{"type": "TTS_OK", "purpose": "apoio opcional de leitura/comparação"}],
+    "generatedVisualResources": [
+      {"type": "UI_RENDERED_SENTENCE_RHYTHM_COMPARE", "purpose": "comparar segmentação e relações"},
+      {"type": "UI_RENDERED_PARALLELISM_COMPARE", "purpose": "comparar estruturas coordenadas e efeitos de repetição formal"}
+    ],
+    "productionQueueRequired": false,
+    "publicationDependency": "nenhuma nova mídia humana obrigatória",
+    "decisionRationale": "A competência pode ser ensinada e registrada com texto, comparação de versões e componentes semânticos da interface."
+  },
+  "sequence": [
+    {"id": "L05-B01", "type": "rhythm-contrast", "overloaded": "Como o relatório foi concluído depois que a equipe recebeu os últimos dados, que chegaram com atraso por causa de uma falha no sistema, a publicação foi adiada, embora o prazo original ainda aparecesse na página, o que gerou dúvidas entre os participantes.", "revision": "Os últimos dados chegaram com atraso por causa de uma falha no sistema. Como o relatório só pôde ser concluído depois disso, a publicação foi adiada. O prazo antigo, porém, continuou na página e gerou dúvidas.", "teachingPoint": "a segmentação preserva causa, contraste e referência"},
+    {"id": "L05-B02", "type": "parallelism-contrast", "versions": ["O plano prevê revisar cadastros, atualizar contatos e publicar o cronograma.", "O plano prevê a revisão dos cadastros, atualizar contatos e a publicação do cronograma."], "teachingPoint": "quando os itens têm a mesma função, paralelismo pode tornar a relação mais legível"},
+    {"id": "L05-C01", "type": "quick-check", "items": [
+      {"question": "Dividir todo período longo melhora automaticamente o texto?", "correct": false},
+      {"question": "Uma assimetria pode ser mantida quando os elementos têm funções diferentes?", "correct": true}
+    ]},
+    {"id": "L05-A01", "type": "assessment-rhythm-parallelism", "text": "O projeto cresceu. Houve mais inscrições. Novas turmas foram abertas. A equipe aumentou, e a proposta também prevê revisar cadastros, a atualização dos contatos e publicar o cronograma.", "task": "revisar ritmo e paralelismo sem apagar relações nem impor simetria artificial", "acceptMultipleValid": true},
+    {"id": "L05-P01", "type": "open-edit", "prompt": "Revise um parágrafo quanto a ritmo e paralelismo. Justifique uma alteração e uma estrutura que decidiu manter.", "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"shortSentencePreference": false, "perfectSymmetryRequired": false, "wordCountRhythmScore": false, "openResponseAutoValidated": false},
+  "completionEvidence": {
+    "clusters": {
+      "controlled": {"evidence": ["L05-A01"], "required": true},
+      "ownEdit": {"evidence": ["L05-P01"], "required": true}
+    },
+    "completionRule": "a revisão deve usar ritmo e paralelismo para tornar relações mais funcionais, sem transformar variedade ou simetria em metas absolutas."
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "id": "N3-U06-L01",
+  "title": "Diagnosticar antes de editar: correção, clareza, adequação e estilo",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Distinguir dimensões de revisão e estabelecer prioridades antes de editar, evitando tratar preferência estilística como erro ou polir frases quando ainda há problemas de conteúdo, estrutura ou adequação.",
+  "competencies": [
+    "distinguir conteúdo/estrutura de clareza, norma, adequação e estilo",
+    "reconhecer sobreposição entre dimensões sem apagar diferenças",
+    "priorizar problemas globais antes de ajustes locais",
+    "separar erro, risco de compreensão e preferência",
+    "justificar uma ordem de revisão",
+    "preservar trechos que já cumprem sua função"
+  ],
+  "prerequisites": ["N3-U05-V01", "N3-U03-V01"],
+  "limits": [
+    "as categorias podem se sobrepor",
+    "checklist não substitui leitura de sentido",
+    "estilo não é sinônimo de correção",
+    "quantidade de problemas encontrados não mede qualidade do diagnóstico",
+    "preferência pessoal não vira erro"
+  ],
+  "media": {"tts": "opcional", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {
+    "curatedMedia": [],
+    "runtimeResources": [{"type": "TTS_OK", "purpose": "apoio opcional de leitura/comparação"}],
+    "generatedVisualResources": [
+      {"type": "UI_RENDERED_REVIEW_DIAGNOSTIC", "purpose": "classificar problema, evidência e prioridade"},
+      {"type": "UI_RENDERED_EDITING_PRIORITY", "purpose": "ordenar passes de revisão"}
+    ],
+    "productionQueueRequired": false,
+    "publicationDependency": "nenhuma nova mídia humana obrigatória",
+    "decisionRationale": "A competência pode ser ensinada e registrada com texto, comparação de versões e componentes semânticos da interface."
+  },
+  "sequence": [
+    {
+      "id": "L01-B01",
+      "type": "diagnostic-contrast",
+      "text": "O piloto atendeu 486 pessoas e, por isso, provou que o novo horário funcionará em qualquer unidade. O relatório também alterna entre linguagem institucional e comentários coloquiais sem finalidade.",
+      "issues": [
+        {"dimension": "conteúdo/argumentação", "evidence": "generalização para qualquer unidade sem apoio"},
+        {"dimension": "adequação/voz", "evidence": "mudança de registro sem função clara"}
+      ],
+      "teachingPoint": "corrigir primeiro o alcance da conclusão; polir vocabulário não resolve um problema de evidência"
+    },
+    {"id": "L01-C01", "type": "quick-check", "items": [
+      {"question": "Uma frase gramaticalmente correta pode ainda ter problema de clareza ou adequação?", "correct": true},
+      {"question": "Toda escolha estilística diferente da preferência do revisor é erro?", "correct": false},
+      {"question": "Vale corrigir detalhes de superfície antes de resolver informação contraditória?", "correct": false}
+    ]},
+    {"id": "L01-A01", "type": "assessment-diagnostic", "scenario": "nota institucional com uma conclusão exagerada, um referente ambíguo, uma grafia duvidosa e uma escolha estilística válida", "task": "classificar cada ponto, justificar a prioridade e indicar pelo menos um trecho que deve ser preservado"},
+    {"id": "L01-P01", "type": "open-analysis", "prompt": "Diagnostique um texto novo em camadas e proponha uma ordem de revisão. Registre um problema prioritário, um problema local e uma escolha que não precisa ser alterada.", "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"preferenceAsError": false, "surfaceFirstRequired": false, "changeCountScored": false, "openResponseAutoValidated": false},
+  "completionEvidence": {
+    "clusters": {
+      "controlled": {"evidence": ["L01-A01"], "required": true},
+      "ownDiagnostic": {"evidence": ["L01-P01"], "required": true}
+    },
+    "completionRule": "o estudante precisa distinguir dimensões de revisão, priorizar por impacto e demonstrar que sabe preservar escolhas funcionais."
+  }
+}

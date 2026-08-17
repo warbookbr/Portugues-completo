@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "id": "N3-U06-L02",
+  "title": "Precisão lexical, vagueza e ambiguidade",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Escolher palavras e expressões suficientemente precisas para a finalidade, reconhecendo quando vagueza ou ambiguidade prejudica a compreensão e quando permanece legítima ou deliberada.",
+  "competencies": [
+    "detectar vagueza relevante",
+    "distinguir termos próximos por alcance e compromisso",
+    "identificar referentes lexicalmente ambíguos",
+    "preservar incerteza quando os dados não autorizam precisão maior",
+    "substituir termo genérico por formulação mais exata sem inventar informação",
+    "reconhecer ambiguidade deliberada como recurso possível"
+  ],
+  "prerequisites": ["N3-U06-L01", "N2-U02-V01", "N3-U01-V01"],
+  "limits": [
+    "palavra rara não é automaticamente mais precisa",
+    "sinônimos não são intercambiáveis em todo contexto",
+    "não eliminar vagueza legítima quando a informação é incerta",
+    "não resolver ambiguidade acrescentando fato não autorizado",
+    "ambiguidade literária ou deliberada não é erro por princípio"
+  ],
+  "media": {"tts": "opcional", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {
+    "curatedMedia": [],
+    "runtimeResources": [{"type": "TTS_OK", "purpose": "apoio opcional de leitura/comparação"}],
+    "generatedVisualResources": [
+      {"type": "UI_RENDERED_LEXICAL_PRECISION_COMPARE", "purpose": "comparar termo, alcance, referente e grau de certeza"},
+      {"type": "UI_RENDERED_REFERENCE_HIGHLIGHT", "purpose": "marcar possíveis referentes de expressão ambígua"}
+    ],
+    "productionQueueRequired": false,
+    "publicationDependency": "nenhuma nova mídia humana obrigatória",
+    "decisionRationale": "A competência pode ser ensinada e registrada com texto, comparação de versões e componentes semânticos da interface."
+  },
+  "sequence": [
+    {"id": "L02-B01", "type": "contrast", "items": [
+      {"source": "o relatório considera possível uma redução", "bad": "o relatório confirma uma redução", "issue": "aumenta certeza sem evidência"},
+      {"source": "27 usuários aguardaram mais de 40 minutos", "bad": "muitos usuários sofreram demora enorme", "issue": "troca medida por avaliação vaga/intensificada"},
+      {"source": "A coordenadora falou com a pesquisadora quando ela saiu da sala.", "issue": "o pronome pode ter dois referentes plausíveis", "task": "reformular apenas se o contexto exigir desambiguação"}
+    ]},
+    {"id": "L02-C01", "type": "quick-check", "items": [
+      {"question": "'possível' e 'confirmado' expressam o mesmo grau de compromisso?", "correct": false},
+      {"question": "Uma palavra comum pode ser mais precisa que uma palavra rara?", "correct": true},
+      {"question": "Toda ambiguidade precisa ser eliminada mesmo em uso deliberado?", "correct": false}
+    ]},
+    {"id": "L02-A01", "type": "assessment-precision", "context": "um piloto curto mostrou associação, sem desenho causal e sem informação sobre outras unidades", "sentences": ["A medida causou melhora em toda a rede.", "A medida coincidiu com redução de 12% no período observado."], "task": "revisar a formulação para preservar alcance, referente e grau de certeza sem acrescentar dado inexistente"},
+    {"id": "L02-P01", "type": "open-edit", "prompt": "Revise um parágrafo quanto a precisão lexical, vagueza e ambiguidade. Faça apenas alterações justificadas e registre ao menos uma expressão que decidiu manter.", "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"rareVocabularyScored": false, "uncertaintyMustBePreserved": true, "ambiguityAsAutomaticError": false, "openResponseAutoValidated": false},
+  "completionEvidence": {
+    "clusters": {
+      "controlled": {"evidence": ["L02-A01"], "required": true},
+      "ownEdit": {"evidence": ["L02-P01"], "required": true}
+    },
+    "completionRule": "a revisão deve aumentar precisão quando necessário sem ampliar certeza, alcance ou informação além do que o contexto autoriza."
+  }
+}
