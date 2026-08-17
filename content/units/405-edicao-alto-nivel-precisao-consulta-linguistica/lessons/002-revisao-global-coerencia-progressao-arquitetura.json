@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "id": "N4-U05-L02",
+  "title": "Coerência, progressão e arquitetura em revisão global",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Reestruturar textos quando o problema está nas relações globais entre blocos, preservando arquiteturas alternativas defensáveis.",
+  "competencies": ["diagnosticar falha global", "mover/fundir/dividir blocos", "reparar progressão", "preparar conclusão", "justificar manutenção de arquitetura"],
+  "prerequisites": ["N4-U05-L01", "N4-U04-V01"],
+  "limits": ["reordenar por variedade não pontua", "não existe uma única arquitetura universal", "polimento de frase não corrige lacuna global", "mudança global precisa ter função"],
+  "media": {"tts": "opcional", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["versões"]}], "generatedVisualResources": [{"type": "UI_RENDERED_SECTION_CARDS"}, {"type": "UI_RENDERED_PROGRESSION_MAP"}, {"type": "UI_RENDERED_VERSION_COMPARE"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória; qualidade global exige avaliador confiável", "decisionRationale": "cartões reordenáveis e comparação de versões tornam a revisão global visível."},
+  "sequence": [
+    {"id": "L02-B01", "type": "global-revision-demo", "blocks": ["conclusão forte", "dados principais", "limitação do levantamento", "recomendação operacional"], "modelRevision": ["dados principais", "limitação do levantamento", "conclusão calibrada", "recomendação operacional"]},
+    {"id": "L02-C01", "type": "global-or-local", "items": [{"issue": "parágrafo 5 conclui algo que nenhum bloco preparou", "answer": "global"}, {"issue": "pronome pode retomar dois referentes", "answer": "local/referencial"}, {"issue": "dois blocos repetem a mesma função sem avanço", "answer": "global"}]},
+    {"id": "L02-A01", "type": "restructure-document", "tasks": ["mapear função de cada bloco", "propor nova arquitetura ou justificar a atual", "reparar uma lacuna de progressão", "indicar um bloco que deve permanecer"], "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"timeLimit": false, "changeCountScored": false, "openResponseAutoValidated": false},
+  "completionEvidence": {"clusters": {"globalRevision": {"evidence": ["L02-A01"], "required": true}}, "completionRule": "a revisão precisa resolver problema global real ou justificar que a arquitetura existente já funciona; quantidade de movimentos não pontua.", "requiresReliableEvaluatorFor": ["coerência da arquitetura", "proporcionalidade das mudanças"]}
+}
