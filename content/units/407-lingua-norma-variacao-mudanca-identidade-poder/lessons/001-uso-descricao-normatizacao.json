@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "N4-U07-L01",
+  "title": "Língua como sistema: uso, descrição e normatização",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Distinguir uso observado, descrição linguística e normatização/convenção, escolhendo o tipo de fonte adequado para cada pergunta sem transformar prescrição em descrição total da língua.",
+  "competencies": ["classificar a natureza de uma afirmação linguística", "distinguir uso de norma", "distinguir descrição de preferência editorial", "selecionar fonte por função", "explicitar limites de uma conclusão"],
+  "prerequisites": ["N3-U08-V01", "N4-U05-V01"],
+  "limits": ["norma não é sinônimo de toda a língua", "frequência de uso não cria regra universal", "manual institucional não descreve sozinho todos os falantes", "não transformar gramática em julgamento moral"],
+  "referenceScope": ["docs/referencias-gramatica-nivel-4-u5-u7.md", "docs/referencias-gramatica-nivel-4-u5-u7-atualizacao-2026.md"],
+  "media": {"tts": "opcional para leitura dos casos", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["casos controlados"]}], "generatedVisualResources": [{"type": "UI_RENDERED_SOURCE_FUNCTION_MAP"}, {"type": "UI_RENDERED_CLAIM_TYPE_BOARD"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "quadro semântico de função da fonte é suficiente para separar uso, descrição e normatização."},
+  "sequence": [
+    {"id": "L01-B01", "type": "concept-map", "categories": [{"id": "USO_OBSERVADO", "question": "o que aparece em determinado corpus/contexto?"}, {"id": "DESCRICAO", "question": "como um fenômeno funciona ou varia segundo evidência?"}, {"id": "NORMA_CONVENCAO", "question": "qual padrão é exigido/recomendado neste domínio?"}, {"id": "JULGAMENTO_SOCIAL", "question": "que valor social está sendo atribuído a uma forma ou falante?"}]},
+    {"id": "L01-C01", "type": "classification-check", "items": [{"claim": "Um manual exige determinada forma em documentos oficiais.", "expected": "NORMA_CONVENCAO"}, {"claim": "Um estudo encontrou maior frequência de uma construção em seu corpus.", "expected": "DESCRICAO"}, {"claim": "Uma pessoa usou uma construção em conversa informal.", "expected": "USO_OBSERVADO"}]},
+    {"id": "L01-A01", "type": "source-function-analysis", "scenario": "Uma equipe precisa responder a três dúvidas: grafia de uma palavra, padrão de um documento institucional e ocorrência de uma construção no português brasileiro.", "tasks": ["associar cada dúvida ao tipo de fonte adequado", "explicar o que cada fonte pode responder", "registrar uma conclusão que a fonte não autoriza"], "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"timeLimit": false, "singleAuthorityScored": false, "openResponseAutoValidated": false},
+  "completionEvidence": {"clusters": {"sourceFunction": {"evidence": ["L01-A01"], "required": true}}, "completionRule": "o aluno precisa separar função da fonte e limite da conclusão, sem usar autoridade normativa como descrição automática do uso.", "requiresReliableEvaluatorFor": ["adequação da fonte", "qualidade da delimitação"]}
+}
