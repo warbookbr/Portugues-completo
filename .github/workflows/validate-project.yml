@@ -41,3 +41,6 @@ jobs:
 
       - name: Test catalog discovery
         run: node scripts/test-content-catalog.mjs
+
+      - name: Test classic renderer
+        run: node scripts/test-classic-renderer.mjs
