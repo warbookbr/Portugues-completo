@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 1,
+  "id": "N1-U06-V01",
+  "type": "integrated-unit-verification",
+  "title": "Verificação integrada — Nível 1, Unidade 6",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Verificar compreensão oral ampliada, interação/reparo, planejamento de fala, apresentação curta, resposta a pergunta, opinião com razão e adequação de registro/variação, separando explicitamente evidência autônoma de produção oral validada externamente.",
+  "prerequisites": ["N1-U06-L01", "N1-U06-L02", "N1-U06-L03", "N1-U06-L04", "N1-U06-L05", "N1-U06-L06", "N1-U06-L07", "N1-U06-L08"],
+  "designPrinciples": ["compreensão oral usa áudio primeiro e transcrição somente depois da tentativa", "replay é estratégia permitida", "interação exige mais de um turno", "informação ausente não deve ser inventada", "planejamento oral e ensaio são registráveis", "qualidade acústica/compreensibilidade de fala não é inferida de clique ou roteiro escrito", "registro é adequação contextual, não hierarquia", "variação não é erro automático", "norma-padrão mantém papel funcional em gêneros que a exigem"],
+  "oralValidationBoundary": {
+    "autonomousEvidence": ["respostas a estímulos orais", "decisões de reparo", "plano de relato/apresentação", "registro de ensaio", "autochecagem", "respostas escritas/roteirizadas de interação", "decisões de registro/variação"],
+    "externalValidationNeededFor": ["fala efetivamente compreensível a interlocutor", "pronúncia/inteligibilidade", "organização oral percebida em execução real", "adequação prosódica quando relevante"],
+    "rule": "a unidade pode ser curricularmente desenvolvida e a prática oral registrada sem declarar produção oral externamente validada"
+  },
+  "media": {"tts": "estímulo de compreensão/interação quando prosódia específica não decide a resposta", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_AUDIO_FIRST", "locations": ["V01-Q01", "V01-Q02"], "purpose": "compreensão/interação"}, {"type": "TRANSCRIPT_AFTER_ATTEMPT", "locations": ["V01-Q01"], "purpose": "revisão posterior"}], "generatedVisualResources": [{"type": "UI_RENDERED_AUDIO_REPLAY", "locations": ["V01-Q01", "V01-Q02"], "purpose": "replay"}, {"type": "UI_RENDERED_DIALOGUE_BRANCH", "locations": ["V01-Q02"], "purpose": "interação/reparo"}, {"type": "UI_RENDERED_ORAL_PLAN", "locations": ["V01-P03"], "purpose": "planejar fala"}, {"type": "UI_RENDERED_ORAL_SELF_CHECK", "locations": ["V01-P03", "V01-P04"], "purpose": "registrar ensaio sem nota acústica"}, {"type": "UI_RENDERED_REGISTER_VARIATION_COMPARE", "locations": ["V01-Q05"], "purpose": "adequação e variação"}], "productionQueueRequired": false, "publicationDependency": "TTS suficiente para compreensão; produção oral validada exige observação externa/confiável", "decisionRationale": "separa competências semanticamente testáveis de propriedades da fala que o sistema atual não observa."},
+  "tasks": [
+    {
+      "id": "V01-Q01",
+      "cluster": "oralComprehension",
+      "type": "audio-first-comprehension",
+      "audioText": "A oficina de quinta-feira mudou para a sala seis e começará às dezenove e trinta. O horário de término continua às vinte e uma horas. Quem já confirmou presença não precisa responder novamente.",
+      "replayAllowed": true,
+      "transcriptTiming": "after-attempt",
+      "items": [
+        {"question": "O que mudou?", "options": ["sala e horário de início", "horário de término", "necessidade de nova confirmação para todos"], "correctIndex": 0},
+        {"question": "Que informação permaneceu igual?", "options": ["término às 21h", "sala seis", "início às 19h30"], "correctIndex": 0},
+        {"question": "Quem não precisa responder novamente?", "options": ["quem já confirmou presença", "ninguém", "somente quem chegar às 21h"], "correctIndex": 0}
+      ]
+    },
+    {
+      "id": "V01-Q02",
+      "cluster": "interactionRepair",
+      "type": "multi-turn-branch",
+      "received": "Pegue o documento no balcão do anexo depois das três.",
+      "uncertainty": "não está claro qual anexo",
+      "steps": [
+        {"need": "esclarecer", "options": ["Qual anexo?", "O documento é azul?", "Está tudo claro."], "correctIndex": 0},
+        {"reply": "No anexo ao lado do estacionamento.", "need": "confirmar", "options": ["Certo: no anexo ao lado do estacionamento, depois das três.", "Então é antes das três no prédio principal.", "Não preciso confirmar."], "correctIndex": 0},
+        {"question": "Se a pessoa perguntar algo que não foi informado, é adequado inventar resposta?", "options": ["não", "sim"], "correctIndex": 0}
+      ]
+    },
+    {
+      "id": "V01-P03",
+      "cluster": "oralNarrationExplanation",
+      "type": "oral-plan-and-attempt",
+      "scenario": "Explique oralmente a um colega uma mudança: a entrega que seria hoje passou para amanhã às 10h, no mesmo local; o motivo informado foi atraso no transporte.",
+      "planRequired": ["entrega passou para amanhã", "10h", "mesmo local", "atraso no transporte"],
+      "attempt": {"required": true, "recordingRequired": false, "recordAttemptMetadata": true, "automaticSpeechValidation": false},
+      "selfCheck": ["assunto identificável", "pontos em ordem", "não inventei dado", "usei tópicos sem precisar decorar texto", "reformulei se necessário"]
+    },
+    {
+      "id": "V01-P04",
+      "cluster": "presentationQuestionOpinion",
+      "type": "presentation-plus-response",
+      "presentationScenario": "Faça uma pequena apresentação sobre uma atividade: ocorre terça às 18h, dura uma hora e materiais são fornecidos.",
+      "planRequired": ["finalidade/audiência", "2–3 pontos", "fechamento"],
+      "questionAfterPresentation": "É preciso levar notebook?",
+      "expectedResponsePrinciple": "dizer que essa informação não foi fornecida em vez de inventar",
+      "opinionPrompt": "Você considera útil fornecer os materiais? Dê uma razão relacionada.",
+      "attempt": {"required": true, "recordingRequired": false, "automaticSpeechValidation": false},
+      "opinionContentNotScored": true,
+      "selfCheck": ["respondi à pergunta", "não inventei informação", "posição e razão se relacionam", "permiti tempo de preparação"]
+    },
+    {
+      "id": "V01-Q05",
+      "cluster": "registerVariationNorm",
+      "type": "contextual-language-decisions",
+      "items": [
+        {"situation": "comunicado institucional", "options": ["Por favor, confirme o recebimento até sexta-feira.", "E aí, me dá um toque depois."], "preferredIndex": 0, "reason": "registro mais adequado ao gênero"},
+        {"situation": "mensagem a amigo próximo", "options": ["Oi! Chego por volta das oito.", "Comunico que minha chegada ocorrerá aproximadamente às vinte horas."], "preferredIndex": 0, "reason": "registro compatível com relação próxima"},
+        {"statement": "Quem usa uma variedade regional é menos inteligente.", "options": ["preconceito linguístico", "orientação de adequação"], "correctIndex": 0},
+        {"statement": "Um relatório formal pode exigir convenções da norma-padrão.", "options": ["afirmação contextual adequada", "negação de toda variação"], "correctIndex": 0},
+        {"question": "Uma forma informal é automaticamente erro em toda situação?", "options": ["não", "sim"], "correctIndex": 0}
+      ]
+    }
+  ],
+  "assessmentBehavior": {"audioFirst": true, "replayAllowed": true, "oralAttemptsRequired": 2, "recordingRequired": false, "speechComprehensibilityAutoValidated": false, "accentNotScored": true, "speedNotScored": true, "opinionContentNotScored": true, "timeLimit": false},
+  "completionEvidence": {
+    "clusters": {
+      "oralComprehension": {"evidence": ["V01-Q01"], "rule": "acertar pelo menos dois dos três itens; replay não penaliza"},
+      "interactionRepair": {"evidence": ["V01-Q02"], "rule": "esclarecer, confirmar e rejeitar invenção de dado"},
+      "oralNarrationExplanation": {"evidence": ["V01-P03"], "rule": "plano + tentativa + autochecagem registrados; status oral externo permanece pendente"},
+      "presentationQuestionOpinion": {"evidence": ["V01-P04"], "rule": "plano + tentativa + resposta sem inventar dado + opinião/razão registradas; qualidade oral externa pendente"},
+      "registerVariationNorm": {"evidence": ["V01-Q05"], "rule": "resolver adequação, preconceito e papel contextual da norma"}
+    },
+    "completionRule": "todos os cinco agrupamentos são obrigatórios. A unidade pode registrar conclusão do processo autônomo, mas os clusters de produção oral carregam estado `pratica-realizada-validacao-oral-externa-pendente` até observação confiável.",
+    "notSufficient": ["roteiro escrito sem ensaio", "transcrição antes da tentativa de escuta", "responder apenas um turno", "formal = superior", "norma-padrão = única língua legítima", "clique de conclusão = fala compreensível"]
+  },
+  "remediationRoutes": [
+    {"when": "compreensão oral", "review": ["N1-U06-L01"]},
+    {"when": "interação/reparo", "review": ["N1-U06-L02"]},
+    {"when": "relato oral", "review": ["N1-U06-L03"]},
+    {"when": "explicação", "review": ["N1-U06-L04"]},
+    {"when": "apresentação", "review": ["N1-U06-L05", "N1-U06-L06"]},
+    {"when": "registro", "review": ["N1-U06-L07"]},
+    {"when": "variação/norma", "review": ["N1-U06-L08"]}
+  ]
+}
