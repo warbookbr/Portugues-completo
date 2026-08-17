@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "id": "N4-U05-L05",
+  "title": "Regra, variante, convenção, consulta e escolha estilística",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Classificar o status de uma dúvida linguística antes de editar, escolhendo a fonte e o tipo de decisão compatíveis com o caso.",
+  "competencies": ["distinguir cinco status linguísticos", "evitar certo/errado indevido", "selecionar fonte adequada", "reconhecer necessidade de consulta", "separar preferência editorial de regra"],
+  "prerequisites": ["N4-U05-L01", "N4-U05-L02", "N4-U05-L03", "N4-U05-L04", "docs/referencias-gramatica-nivel-4-u5-u7.md"],
+  "limits": ["frequência não cria obrigação", "manual institucional não descreve toda a língua", "variante documentada não recebe gabarito único genérico", "escolha estilística não vira erro"],
+  "media": {"tts": "opcional", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["casos"]}], "generatedVisualResources": [{"type": "UI_RENDERED_STATUS_CLASSIFIER"}, {"type": "UI_RENDERED_SOURCE_SELECTOR"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "classificador de status e seletor de fonte ensinam decisão metalinguística diretamente."},
+  "sequence": [
+    {"id": "L05-B01", "type": "status-map", "cases": [{"case": "haver no sentido de existir", "status": "REGRA_PRODUTIVA"}, {"case": "a maioria dos participantes chegou/chegaram", "status": "VARIANTE_DOCUMENTADA"}, {"case": "evitar clítico em início de oração em manual institucional formal", "status": "CONVENCAO_FORMAL_EDITORIAL"}, {"case": "regência de verbo raro fora do corpus", "status": "CASO_DE_CONSULTA"}, {"case": "manter repetição para rastreabilidade", "status": "ESCOLHA_ESTILISTICA"}]},
+    {"id": "L05-C01", "type": "source-fit", "items": [{"question": "grafia lexical incerta", "source": "VOLP atual"}, {"question": "padrão de redação oficial", "source": "manual institucional pertinente"}, {"question": "variação real do português brasileiro", "source": "pesquisa linguística descritiva"}]},
+    {"id": "L05-A01", "type": "status-before-editing", "tasks": ["classificar dez casos entre as cinco categorias", "justificar três classificações", "escolher fonte adequada para três casos", "marcar pelo menos um caso em que não se deve editar sem consulta"], "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"timeLimit": false, "statusClosedItemsAllowedOnlyFromReference": true, "openResponseAutoValidated": false},
+  "completionEvidence": {"clusters": {"statusClassification": {"evidence": ["L05-A01"], "required": true}}, "completionRule": "o aluno precisa classificar a natureza da decisão antes de corrigir; regra, variante, convenção, consulta e estilo não são intercambiáveis.", "requiresReliableEvaluatorFor": ["justificativas de classificação", "adequação da fonte escolhida"]}
+}
