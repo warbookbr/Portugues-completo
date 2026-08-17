@@ -19,6 +19,16 @@ function authHeaders(token, extra = {}) {
   };
 }
 
+function validatedRawGistUrl(rawUrl) {
+  try {
+    const url = new URL(rawUrl);
+    if (url.protocol !== 'https:' || url.hostname !== 'gist.githubusercontent.com') throw new Error('host não permitido');
+    return url.toString();
+  } catch (error) {
+    throw new GitHubServiceError('RAW_FILE_URL_INVALID', 'O GitHub retornou uma URL de conteúdo bruto inesperada para o Gist.', { cause: error.message });
+  }
+}
+
 async function responseJson(response) {
   try { return await response.json(); } catch { return null; }
 }
@@ -82,7 +92,8 @@ export class GitHubService {
     if (!file) throw new GitHubServiceError('PROGRESS_FILE_MISSING', `O Gist não contém ${PROGRESS_GIST_FILENAME}.`);
     let content = file.content;
     if (file.truncated && file.raw_url) {
-      const response = await this.fetchImpl(file.raw_url, { headers: authHeaders(this.token), cache: 'no-store' });
+      const rawUrl = validatedRawGistUrl(file.raw_url);
+      const response = await this.fetchImpl(rawUrl, { cache: 'no-store' });
       if (!response.ok) throw new GitHubServiceError('RAW_FILE_ERROR', `Não foi possível carregar o arquivo completo do Gist (HTTP ${response.status}).`);
       content = await response.text();
     }
