@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "N4-U06-L08",
+  "title": "Modalidade, voz gramatical, impessoalidade e responsabilidade enunciativa",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Integrar grau de compromisso, escolha de voz gramatical e visibilidade de agentes ao projeto textual, calibrando certeza e responsabilidade de acordo com evidência e finalidade.",
+  "competencies": ["calibrar modalidade", "comparar ativa/passiva/impessoal", "decidir visibilidade do agente", "preservar responsabilidade enunciativa", "relacionar certeza à evidência"],
+  "prerequisites": ["N4-U06-L01", "N4-U06-L07", "N4-U03-L05"],
+  "limits": ["voz ativa não é sempre melhor", "impessoalidade não é neutralidade automática", "ocultar agente pode ser inadequado quando responsabilidade importa", "modalização não deve exagerar nem esvaziar a evidência"],
+  "media": {"tts": "opcional para releitura", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["reformulacoes"]}], "generatedVisualResources": [{"type": "UI_RENDERED_MODALITY_LADDER"}, {"type": "UI_RENDERED_AGENT_VISIBILITY_MAP"}, {"type": "UI_RENDERED_VERSION_COMPARE"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "mapas de modalidade e agência tornam visíveis escolhas éticas e estilísticas sem tratá-las como preferência fixa de voz gramatical."},
+  "sequence": [
+    {"id": "L08-B01", "type": "agent-visibility-compare", "context": "A coordenação decidiu adiar a abertura após detectar falha de segurança.", "versions": [{"text": "A coordenação adiou a abertura após detectar a falha.", "agentVisibility": "alta"}, {"text": "A abertura foi adiada após a detecção da falha.", "agentVisibility": "baixa"}], "task": "discutir quando a diferença de visibilidade é funcional e quando pode apagar responsabilidade relevante"},
+    {"id": "L08-B02", "type": "modality-scale", "evidence": "Três de quatro ciclos tiveram aumento de participação, mas o período observado é curto.", "alternatives": ["o programa funciona", "os dados indicam melhora no período observado", "os dados podem ser compatíveis com melhora, mas o período é curto"], "task": "comparar alcance e compromisso epistêmico"},
+    {"id": "L08-C01", "type": "responsibility-check", "items": [{"claim": "Passiva é sempre menos clara.", "expected": "falso"}, {"claim": "Quando quem tomou a decisão importa, omitir o agente pode prejudicar responsabilização.", "expected": "verdadeiro"}, {"claim": "Modalizadores devem acompanhar a força da evidência.", "expected": "verdadeiro"}]},
+    {"id": "L08-A01", "type": "modality-agent-design", "scenario": "Revise um trecho analítico com uma conclusão forte demais e duas decisões em que a visibilidade do agente tem efeitos diferentes.", "tasks": ["calibrar uma afirmação à evidência", "escolher voz/estrutura para cada decisão", "explicar quando preservar ou explicitar agente", "registrar uma alternativa rejeitada por ocultar responsabilidade ou exagerar certeza"], "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"timeLimit": false, "activeVoiceBonus": false, "impersonalityBonus": false, "certaintyMaximizationScored": false, "openResponseAutoValidated": false},
+  "completionEvidence": {"clusters": {"modalityAgency": {"evidence": ["L08-A01"], "required": true}}, "completionRule": "as escolhas de modalidade e agência devem ser compatíveis com a evidência, a função do texto e a responsabilidade enunciativa.", "requiresReliableEvaluatorFor": ["calibração epistêmica", "adequação da visibilidade do agente", "justificativa ética/funcional"]}
+}
