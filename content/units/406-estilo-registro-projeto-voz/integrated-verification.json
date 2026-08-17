@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "id": "N4-U06-V01",
+  "type": "integrated-unit-verification",
+  "title": "Verificação integrada — Nível 4, Unidade 6",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Verificar se o aluno consegue projetar, realizar e transferir uma voz autoral funcional, controlando presença, tom, densidade, léxico, ritmo, ênfase, modalidade e visibilidade de agentes sem alterar fatos nem confundir estilo com prestígio formal.",
+  "prerequisites": ["N4-U06-L01", "N4-U06-L02", "N4-U06-L03", "N4-U06-L04", "N4-U06-L05", "N4-U06-L06", "N4-U06-L07", "N4-U06-L08", "N4-U06-L09"],
+  "guardRails": ["estilo é projeto funcional, não ornamentação", "primeira pessoa e impessoalidade não recebem valor fixo", "formalidade máxima não pontua", "texto menor não é automaticamente melhor", "raridade lexical não pontua", "repetição não é erro automático", "frase longa ou curta não pontua por si", "modalidade deve ser proporcional à evidência", "agente não deve ser apagado quando responsabilidade for relevante", "adaptação não pode inventar ou apagar fatos decisivos", "quantidade de mudanças não pontua", "soluções estilísticas diferentes podem ser igualmente defensáveis quando funcionais e justificadas"],
+  "materials": {
+    "factPacket": {
+      "context": "Um centro de estudos testou horário estendido por seis semanas e precisa decidir o próximo passo.",
+      "facts": [
+        "o espaço ficou aberto até 21h às terças e quintas durante seis semanas",
+        "foram registradas 312 entradas depois das 18h; 61% ocorreram às terças e 39% às quintas",
+        "um questionário voluntário recebeu 74 respostas: 58 favoráveis, 9 neutras e 7 desfavoráveis",
+        "a escala previa duas pessoas no atendimento; em duas quintas houve apenas uma por ausência imprevista",
+        "o custo de energia do período foi estimado, mas o custo adicional de segurança ainda não foi separado do contrato geral",
+        "a decisão em análise é manter o teste por mais quatro semanas antes de discutir expansão permanente"
+      ],
+      "prohibitedInferences": ["não afirmar que 312 entradas correspondem a 312 pessoas diferentes", "não tratar questionário voluntário como opinião de todos os usuários", "não dizer que o custo total está conhecido", "não afirmar que o teste provou sucesso permanente"]
+    },
+    "destinations": {
+      "base": {"audience": "coordenação do centro", "genre": "nota analítica curta", "purpose": "recomendar próximo passo proporcional aos dados"},
+      "adaptationA": {"audience": "usuários do centro", "medium": "página digital de atualização", "purpose": "explicar o que foi observado, o que ainda falta saber e o próximo passo"},
+      "adaptationB": {"audience": "equipe de atendimento", "medium": "mensagem interna", "purpose": "registrar continuidade do teste e destacar informações operacionais relevantes"}
+    }
+  },
+  "tasks": [
+    {"id": "V01-A01", "cluster": "style-project", "type": "style-project-brief", "prompt": "Defina o projeto estilístico da nota-base antes de redigir.", "requiredFields": ["finalidade", "audiencia", "efeitos desejados", "presenca autoral", "tom/registro", "densidade", "prioridades lexicais", "ritmo/ênfase", "modalidade", "uma escolha a evitar"], "recordResponse": true, "automaticValidation": false},
+    {"id": "V01-A02", "cluster": "authorial-voice", "type": "base-authored-version", "prompt": "Produza a nota analítica para a coordenação usando apenas o pacote factual. Sua voz pode ser mais explícita ou mais discreta, mas as atribuições, limites e responsabilidade pela recomendação precisam permanecer recuperáveis.", "recordResponse": true, "automaticValidation": false},
+    {"id": "V01-A03", "cluster": "tone-register", "type": "voice-register-annotation", "prompt": "Anote na versão-base três decisões de presença/tom/registro e explique o efeito pretendido. Inclua uma alternativa defensável que você deliberadamente não escolheu.", "recordResponse": true, "automaticValidation": false},
+    {"id": "V01-A04", "cluster": "density-explicitness", "type": "density-revision", "prompt": "Escolha um trecho da versão-base e produza uma alternativa mais compacta e outra mais explícita. Registre quais fatos/condições não podem desaparecer e escolha a versão mais adequada ao destino-base.", "recordResponse": true, "automaticValidation": false},
+    {"id": "V01-A05", "cluster": "lexical-connotation", "type": "lexical-design", "prompt": "Mapeie pelo menos quatro escolhas lexicais relevantes da versão-base. Justifique significado, alcance, registro ou conotação e identifique um termo que deve permanecer consistente para evitar falsa variação.", "recordResponse": true, "automaticValidation": false},
+    {"id": "V01-A06", "cluster": "rhythm-emphasis", "type": "rhythm-pattern-revision", "prompt": "Revise um trecho usando ritmo, segmentação, repetição/paralelismo ou ordem para produzir uma ênfase funcional. Preserve pelo menos uma repetição ou estrutura que já esteja cumprindo bem seu papel e justifique a manutenção.", "recordResponse": true, "automaticValidation": false},
+    {"id": "V01-A07", "cluster": "modality-agency", "type": "modality-agent-decision", "prompt": "Revise as afirmações sobre resultado e continuidade para calibrar certeza à evidência. Decida também se a ausência de pessoal em duas quintas deve ter agente/responsabilidade explicitados ou não, justificando a escolha sem inventar causa.", "recordResponse": true, "automaticValidation": false},
+    {"id": "V01-A08", "cluster": "style-adaptation", "type": "adaptation-public-page", "prompt": "Adapte o conteúdo para a página digital destinada aos usuários. Ajuste densidade, explicitação, léxico, tom e organização sem alterar fatos nem transformar a atualização em cópia superficial da nota-base.", "recordResponse": true, "automaticValidation": false},
+    {"id": "V01-A09", "cluster": "style-adaptation", "type": "adaptation-internal-message", "prompt": "Crie a mensagem interna para a equipe de atendimento. Destaque o que é operacionalmente relevante e ajuste ritmo/diretividade ao meio, preservando as incertezas que continuam relevantes.", "recordResponse": true, "automaticValidation": false},
+    {"id": "V01-A10", "cluster": "identity-preservation", "type": "authorial-trait-transfer-log", "prompt": "Compare a nota-base e as duas adaptações. Identifique pelo menos três traços do seu projeto de voz; mostre onde cada traço foi preservado, transformado ou abandonado e justifique duas permanências e duas mudanças. Registre também uma mudança recusada por apagar identidade, responsabilidade ou adequação.", "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"timeLimit": false, "formalityMaximizationScored": false, "wordCountScored": false, "rareVocabularyScored": false, "sentenceLengthScored": false, "changeCountScored": false, "surfaceSimilarityScored": false, "singleStyleKey": false, "openResponseAutoValidated": false, "closedTasksCanCompensateProduction": false},
+  "completionEvidence": {
+    "clusters": {
+      "styleProject": {"evidence": ["V01-A01"], "required": true},
+      "authorialVoice": {"evidence": ["V01-A02", "V01-A03"], "required": true},
+      "toneRegister": {"evidence": ["V01-A03"], "required": true},
+      "densityExplicitness": {"evidence": ["V01-A04"], "required": true},
+      "lexicalConnotation": {"evidence": ["V01-A05"], "required": true},
+      "rhythmCadence": {"evidence": ["V01-A06"], "required": true},
+      "patternEmphasis": {"evidence": ["V01-A06"], "required": true},
+      "modalityAgency": {"evidence": ["V01-A07"], "required": true},
+      "styleAdaptation": {"evidence": ["V01-A08", "V01-A09"], "required": true},
+      "identityPreservation": {"evidence": ["V01-A10"], "required": true}
+    },
+    "nonCompensable": ["V01-A01", "V01-A02", "V01-A08", "V01-A09", "V01-A10"],
+    "completionRule": "todos os dez agrupamentos são obrigatórios. O projeto estilístico, a versão-base, as duas adaptações e o histórico de identidade não podem ser compensados por reconhecimento ou análise parcial; soluções diferentes são aceitas quando preservam fatos e são funcionalmente justificadas.",
+    "requiresReliableEvaluatorFor": ["coerência do projeto estilístico", "qualidade global da versão-base", "adequação das adaptações", "preservação factual", "controle de voz e registro", "efeitos de ritmo/ênfase", "calibração de modalidade", "coerência da identidade autoral", "qualidade das justificativas"]
+  },
+  "media": {"tts": "opcional para releitura comparativa; não determina resposta correta", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["versao-base", "adaptacoes"]}], "generatedVisualResources": [{"type": "UI_RENDERED_STYLE_PROJECT_BRIEF"}, {"type": "UI_RENDERED_VOICE_PRESENCE_CONTINUUM"}, {"type": "UI_RENDERED_DENSITY_EXPLICITNESS_MAP"}, {"type": "UI_RENDERED_LEXICAL_ALTERNATIVES"}, {"type": "UI_RENDERED_RHYTHM_MAP"}, {"type": "UI_RENDERED_EMPHASIS_ORDER_MAP"}, {"type": "UI_RENDERED_MODALITY_LADDER"}, {"type": "UI_RENDERED_AGENT_VISIBILITY_MAP"}, {"type": "UI_RENDERED_VERSION_COMPARE"}, {"type": "UI_RENDERED_AUTHORIAL_TRAIT_MAP"}, {"type": "UI_RENDERED_AUTHORSHIP_HISTORY"}], "productionQueueRequired": false, "publicationDependency": "nenhuma mídia humana obrigatória; produção e justificativas abertas exigem avaliador confiável", "decisionRationale": "a verificação mede projeto, realização e transferência de estilo com textos controlados e histórico de decisões; UI semântica e TTS opcional são suficientes."}
+}
