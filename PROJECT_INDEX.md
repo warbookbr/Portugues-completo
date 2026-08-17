@@ -25,6 +25,7 @@ Português Completo
 - `docs/estado-implementacao-classico.md` — **estado operacional concreto do Modo Clássico**: marco/item ativo, estados técnico/homologação/mídia/publicação, blockers e próximo passo exato.
 - `docs/execucao-continua.md` — execução autônoma por marcos autorizados.
 - `.ChatGPT/skills/classic-product-delivery/SKILL.md` — procedimento operacional obrigatório para implementar P1→P9 do Clássico sem perder estado.
+- `.ChatGPT/skills/student-ui-ux/SKILL.md` — procedimento obrigatório para qualquer interface visível ao aluno; aplica linguagem humana, reduz vazamento de IDs/enums técnicos e exige clareza pedagógica.
 - `.ChatGPT/skills/curricular-orchestration/SKILL.md` — orquestração de marcos curriculares longos.
 - `.ChatGPT/skills/course-content-design/SKILL.md` — planejamento e revisão pedagógica, alinhado aos contratos de produto.
 - `.ChatGPT/skills/frontend-visual-check/SKILL.md` — verificação de mudanças visuais relevantes.
@@ -39,6 +40,14 @@ PROJECT_INDEX.md
 → docs/estado-implementacao-classico.md
 → .ChatGPT/skills/classic-product-delivery/SKILL.md
 → contratos específicos do item ativo
+```
+
+Quando o trabalho envolver interface visível ao aluno, também ler obrigatoriamente:
+
+```text
+docs/ui-ux.md
+→ .ChatGPT/skills/student-ui-ux/SKILL.md
+→ .ChatGPT/skills/frontend-visual-check/SKILL.md
 ```
 
 `docs/roadmap-produto.md` diz **qual marco vem agora**. `docs/estado-implementacao-classico.md` diz **onde exatamente o trabalho parou dentro dele**.
@@ -56,6 +65,7 @@ O percurso **N0→N4 está curricularmente fechado em M5**. Isso não equivale a
 Estas fontes definem como o currículo fechado vira aplicação:
 
 - `docs/arquitetura.md` — arquitetura geral, serviços, armazenamento e separação de responsabilidades.
+- `docs/ui-ux.md` — linguagem e apresentação ao aluno; regra canônica de separar códigos/estados internos da experiência pública.
 - `docs/contrato-conteudo.md` — catálogo `course.json`, manifests `unit.json`, normalização de conteúdo e versionamento.
 - `docs/conteudo.md` — estrutura pedagógica das lições e uso de mídia.
 - `docs/exercicios.md` — papéis de atividade, primitivas de interação, avaliação, estímulos e evidência.
@@ -275,6 +285,7 @@ estado curricular → docs/roadmap-curricular.md
 ordem/condições dos marcos de produto → docs/roadmap-produto.md
 estado operacional concreto do Clássico → docs/estado-implementacao-classico.md
 arquitetura → docs/arquitetura.md
+linguagem e apresentação ao aluno → docs/ui-ux.md
 catálogo/manifests/runtime → docs/contrato-conteudo.md
 forma de ensinar/mídia → docs/conteudo.md
 atividades/interações/avaliação/evidência → docs/exercicios.md
@@ -293,6 +304,7 @@ conteúdo detalhado → content/
 produção de mídia → producao-midia/README.md + producao-midia/FILA-MIDIA.md
 validação automática → docs/validacoes.md
 procedimento de entrega do Clássico → .ChatGPT/skills/classic-product-delivery/SKILL.md
+procedimento de UI/UX do aluno → .ChatGPT/skills/student-ui-ux/SKILL.md
 procedimentos ChatGPT gerais → .ChatGPT/skills/
 ```
 
