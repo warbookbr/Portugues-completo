@@ -21,7 +21,7 @@ Português Completo
 ## Estado e execução
 
 - `docs/roadmap-curricular.md` — estado/maturidade do currículo N0→N4, atualmente fechado em M5.
-- `docs/roadmap-produto.md` — ordem e condições dos marcos da fase de produto/publicação.
+- `docs/roadmap-produto.md` — ordem e condições dos marcos da fase de produto/publicação; P1–P5 homologados e P6 ativo.
 - `docs/estado-implementacao-classico.md` — **estado operacional concreto do Modo Clássico**: marco/item ativo, estados técnico/homologação/mídia/publicação, blockers e próximo passo exato.
 - `docs/execucao-continua.md` — execução autônoma por marcos autorizados.
 - `.ChatGPT/skills/classic-product-delivery/SKILL.md` — procedimento operacional obrigatório para implementar P1→P9 do Clássico sem perder estado.
@@ -64,7 +64,7 @@ Estas fontes definem como o currículo fechado vira aplicação:
 - `docs/avaliacao-ia.md` — contrato neutro de feedback com IA, BYOK, consentimento, request/response e limites de autoridade.
 - `docs/calibracao-produto.md` — homologação/calibração progressiva; no Clássico registra casos-âncora e revisão, e só depois do gate clássico concretiza XP/missões/conquistas.
 - `docs/estado-implementacao-classico.md` — status real de cada inclusão/materialização do produto Clássico e impacto de dependências de mídia.
-- `docs/validacoes.md` — guard rails atuais e próximos schemas/checagens de integridade.
+- `docs/validacoes.md` — guard rails atuais de P1–P5 e próximos testes P6+.
 
 Regra de leitura para trabalho de produto:
 
@@ -215,18 +215,18 @@ M5 ✓ — U1–U9 + N4-EXIT-V01 + checkpoint final
 
 A sequência oficial está em `docs/roadmap-produto.md` e o ponto exato de execução em `docs/estado-implementacao-classico.md`.
 
-Resumo:
+Estado atual resumido:
 
 ```text
-P1 schemas + validadores de contrato
-→ P2 ContentService/normalizador
-→ P3 manifests + catálogo inicial
-→ P4 renderer real do Clássico
-→ P5 ProgressService + revisão + Gist
-→ P6 feedback por IA no Clássico
-→ P7 ampliação do catálogo Clássico N0→N4
-→ P8 mídia + prontidão de publicação do Clássico
-→ P9 homologação end-to-end do Clássico
+P1 schemas + validadores de contrato                    ✓
+P2 ContentService/normalizador                          ✓
+P3 manifests + catálogo inicial                         ✓
+P4 renderer real do Clássico                            ✓
+P5 ProgressService + revisão + cache/Gist/sync           ✓
+P6 feedback por IA no Clássico                          ← ativo
+P7 ampliação do catálogo Clássico N0→N4
+P8 mídia + prontidão de publicação do Clássico
+P9 homologação end-to-end do Clássico
 → GATE: CLÁSSICO HOMOLOGADO
 → P10 Modo Gamificado
 → P11 homologação/calibração global do Gamificado
@@ -246,7 +246,7 @@ Não iniciar reescrita curricular em massa para atender ao renderer; usar adapte
 - `producao-midia/README.md` — contrato operacional de mídia; mídia pendente bloqueia somente o escopo que realmente depende dela.
 - `producao-midia/FILA-MIDIA.md` — fila oficial das mídias humanas/curadas.
 - `docs/estado-implementacao-classico.md` — registra o impacto de cada mídia pendente sobre implementação, homologação e publicação.
-- `content/course.json` — catálogo de publicação; ainda precisa ser populado no marco P3.
+- `content/course.json` — catálogo de publicação v2; slice N0-U01 + N4-U09 publicado, expansão N0→N4 prevista no P7.
 - `content/units/` — conteúdo de unidades, lições e verificações.
 - `content/levels/` — verificações de nível.
 
@@ -255,6 +255,16 @@ Não iniciar reescrita curricular em massa para atender ao renderer; usar adapte
 - `docs/validacoes.md`
 - `scripts/validate-project.mjs`
 - `scripts/validate-json.mjs`
+- `scripts/validate-contracts.mjs`
+- `scripts/test-content-normalizer.mjs`
+- `scripts/validate-catalog.mjs`
+- `scripts/test-content-catalog.mjs`
+- `scripts/test-progress-service.mjs`
+- `scripts/test-progress-policies.mjs`
+- `scripts/test-github-service.mjs`
+- `scripts/test-progress-sync-service.mjs`
+- `scripts/test-classic-renderer.mjs`
+- `scripts/capture-classic-visuals.sh`
 - `.github/workflows/validate-project.yml`
 
 ## Fontes de verdade
