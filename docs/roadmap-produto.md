@@ -15,8 +15,9 @@ P1 — Schemas/contratos executáveis → HOMOLOGADO
 P2 — ContentService/normalizador → HOMOLOGADO
 P3 — Manifests e catálogo inicial → HOMOLOGADO
 P4 — Renderer real do Clássico → HOMOLOGADO
-MARCO ATIVO → P5 — ProgressService, revisão e persistência
-MODO CLÁSSICO REAL → slice funcional; ainda não completo de ponta a ponta
+P5 — ProgressService, revisão e persistência → HOMOLOGADO
+MARCO ATIVO → P6 — Feedback por IA no Clássico
+MODO CLÁSSICO REAL → slice funcional com progresso persistente; ainda não completo N0→N4/E2E
 MODO GAMIFICADO → somente após CLÁSSICO HOMOLOGADO
 ```
 
@@ -57,7 +58,7 @@ Detalhes: `docs/estado-implementacao-classico.md`, `docs/conteudo.md`, `producao
 
 **Estado: HOMOLOGADO.**
 
-Schemas `course`, `unit`, `lesson`, `verification` e `progress`, fixtures reais N0/N4 e validator em CI. Autoria histórica de lições/verificações permanece v1 e é normalizada em runtime canônico.
+Schemas `course`, `unit`, `lesson`, `verification` e `progress`, fixtures reais N0/N4 e validator em CI. Autoria histórica permanece v1 e é adaptada para runtime canônico.
 
 ## P2 — ContentService e normalizador
 
@@ -77,149 +78,203 @@ Prosa histórica ambígua nunca é convertida por heurística. Sem estrutura/reg
 
 **Estado: HOMOLOGADO.**
 
-Entregas:
-
-```text
-content/course.json v2
-unit.json N0-U01
-unit.json N4-U09
-registry de competências estáveis
-competencyIds por lição/verificação
-ContentService: catálogo → manifesto → fonte → runtime
-integridade/descoberta em CI
-```
-
-Slice:
+Slice de publicação/descoberta:
 
 ```text
 N0-U01 → 8 lições + verificação
 N4-U09 → 12 lições + verificação
 ```
 
-Demais unidades continuam como autoria curricular e entram na publicação progressiva em P7.
+`course.json` v2, manifests, registry de competências estáveis e integridade/descoberta em CI estão homologados. Demais unidades entram progressivamente em P7.
 
 ## P4 — Renderer real do Clássico
 
 **Estado: HOMOLOGADO.**
 
-O slice deixou de ser placeholder e passou a ser uma experiência Clássica funcional baseada exclusivamente no catálogo/manifests.
+Entregas principais:
 
-Entregas homologadas:
-
-- home real do curso;
-- tela real de unidade;
-- tela real de lição;
-- rota e tela de verificação integrada;
+- home/unidade/lição/verificação reais;
 - blocos `CONTENT`;
-- `SINGLE_CHOICE`, `MULTIPLE_CHOICE`, `CLASSIFY`, `MATCH`, `ORDER/SEQUENCE`, respostas abertas e `COMPOSITE` necessários ao slice;
-- TTS via `NarrationService`;
-- mídia controlada ausente representada explicitamente por `mediaId`;
-- correção determinística de lição sem punição;
-- feedback neutro em verificações com `AFTER_VERIFICATION`;
-- `RELIABLE_EVALUATOR` representado como avaliação pendente, sem declarar domínio;
-- estados de loading/erro/fora-do-catálogo explícitos;
-- camada pública que não expõe IDs/status de runtime/publicação ao aluno;
-- smoke DOM + screenshots automáticos.
+- primitivas `ACTIVITY` exigidas pelo slice;
+- TTS;
+- mídia controlada ausente por `mediaId`;
+- feedback determinístico sem punição;
+- `AFTER_VERIFICATION` sem revelar gabarito por item;
+- `RELIABLE_EVALUATOR` como pending;
+- camada pública sem metadados internos;
+- smoke DOM + screenshots desktop/tablet/mobile.
 
-Validação:
+Validação do slice:
 
 ```text
-20/20 lições do slice
+20/20 lições
 + 2/2 verificações
-→ renderizadas sem estado unsupported
-
-Desktop → home/unidade/lição N0 + lição N4
-Tablet → unidade N0
-Mobile 390px → home + lição N0
-→ inspecionados visualmente
+→ sem unsupported
 ```
-
-O smoke de navegador falha automaticamente em tela de erro, `Illegal invocation`, interação sem suporte e metadados internos conhecidos na interface pública.
-
-Durante P4, N0-U01-L02...L08 revelou critérios históricos ainda em prosa. Foram formalizados por ID, mantendo a regra de não interpretar prosa por regex. Datasets autorais como `letterSet`, `letterPairs` e classificação vogal/consoante passaram a ser materializados pelo adapter, sem reescrever as lições.
 
 Estado local após P4:
 
 ```text
-N0-U01
-→ renderer homologado
-→ manifesto BLOCKED somente pelos áudios controlados obrigatórios ainda pendentes
-
-N4-U09
-→ renderer homologado
-→ nenhuma nova mídia humana obrigatória
-→ manifesto READY
+N0-U01 → BLOCKED somente pelos áudios controlados obrigatórios pendentes
+N4-U09 → READY
 ```
-
-A pendência N0 é local e não impede P5–P7.
 
 ## P5 — ProgressService, revisão e persistência
 
-**Estado: MARCO ATIVO / PRÓXIMO.**
+**Estado: HOMOLOGADO.**
 
-Objetivo: transformar respostas/interações P4 em estado pedagógico persistente sem misturar percurso, domínio e gamificação.
+Objetivo cumprido: transformar interações P4 em estado pedagógico persistente sem misturar percurso, domínio e gamificação.
 
-Entregas:
+### Motor pedagógico
 
-- `ProgressService` isolado da UI;
-- eventos pedagógicos do renderer para o serviço;
-- estados de lição `NAO_INICIADA`, `EM_ESTUDO`, `CONCLUIDA`;
-- estados de evidência `NAO_OBSERVADA`, `PRATICADA`, `DEMONSTRADA`, `VALIDACAO_PENDENTE`, `REVISAO_RECOMENDADA`;
-- estados de competência `NOVA`, `EM_DESENVOLVIMENTO`, `DEMONSTRADA`, `CONSOLIDADA`;
-- políticas `DEMONSTRATED_REQUIRED`, `PENDING_ALLOWED`, `ATTEMPT_REQUIRED`;
-- suporte a `minimumEvidence` + `requiredAnyOf`;
-- fila de revisão explicável e não punitiva;
-- schema de progresso v1 em uso real;
-- save/load local;
-- migração de schema;
-- GitHubService/Gist usando `portugues-completo-progress.json`;
-- merge/conflitos entre dispositivos;
-- falha de sync sem perda local.
-
-Ordem recomendada:
+Implementado em `app/js/services/progress-service.js`:
 
 ```text
-motor em memória
-→ testes de completion/evidência
-→ persistência local
-→ revisão
-→ Gist
-→ conflito/sync
-→ integração UI
+lição → NAO_INICIADA | EM_ESTUDO | CONCLUIDA
+evidência → PRATICADA | DEMONSTRADA | VALIDACAO_PENDENTE | REVISAO_RECOMENDADA
+competência → NOVA | EM_DESENVOLVIMENTO | DEMONSTRADA | CONSOLIDADA
 ```
 
-Antes de implementar credencial, scopes ou chamadas Gist, verificar documentação oficial atual do GitHub; esses detalhes não são congelados por memória do projeto.
+Ausência de registro representa `NAO_INICIADA`/`NAO_OBSERVADA`/`NOVA`.
 
-Condição de saída:
+Políticas homologadas:
 
 ```text
-interação do aluno
-→ evento pedagógico
+DEMONSTRATED_REQUIRED
+PENDING_ALLOWED
+ATTEMPT_REQUIRED
+minimumEvidence
+requiredAnyOf
+```
+
+N0 prova erro → revisão → recuperação → conclusão. N4 prova resposta aberta → `VALIDACAO_PENDENTE` → conclusão de percurso permitida por `PENDING_ALLOWED` sem domínio inventado.
+
+### Revisão
+
+Dificuldade relevante pode criar `REVISAO_RECOMENDADA` e fila explicável. Recuperação remove a recomendação sem apagar histórico. Revisão voluntária é suportada. Não há vidas, penalidade de acesso ou XP oculto.
+
+### Persistência local
+
+`localStorage` funciona como cache resiliente, não como declaração falsa de sincronização remota.
+
+`progress-storage-service.js` preserva cache de schema futuro/desconhecido ou JSON inválido em backup antes de iniciar um v1 novo. Não existe migração v1→v2 enquanto progress v2 não existir; futuras migrações devem ser explícitas e testadas.
+
+### Gist e credencial
+
+Serviços:
+
+```text
+ProgressService
+↕
+ProgressSyncService
+↕
+GitHubService
+↕
+portugues-completo-progress.json
+```
+
+Decisões homologadas:
+
+- token do próprio aluno;
+- token somente na sessão (`sessionStorage`);
+- token nunca em progresso/Gist/conteúdo;
+- Gist criado com `public: false` sem ser apresentado como cofre criptográfico;
+- sync explícito/manual após conexão;
+- nova alteração local muda `SYNCED` → `LOCAL_CHANGES`;
+- `GET /user` é usado para nomear a conta conectada sem exigir permissão adicional em token refinado;
+- criar/atualizar Gist exige permissão de usuário `Gists: write`; nenhum acesso a repositórios faz parte do fluxo P5.
+
+Detalhes de API/permissão são fatos externos e devem ser rechecados em documentação oficial se o fluxo GitHub for alterado.
+
+### Conflitos e falha remota
+
+O último snapshot sincronizado é baseline de merge de três vias.
+
+```text
+só remoto mudou → adotar remoto
+só local mudou → enviar local
+ambos mudaram → merge por domínio
+```
+
+Resposta autoral concorrente nunca é concatenada nem descartada: uma versão permanece na referência principal e a outra é preservada em referência `#conflict-...`; a interface sinaliza `CONFLICT_PRESERVED`.
+
+Falha remota mantém trabalho local e muda o estado para `ERROR`.
+
+### UI Clássica
+
+A experiência agora mostra, quando aplicável:
+
+- continuar estudando;
+- lição em estudo/concluída;
+- evidência demonstrada/pending/revisão;
+- tentativas;
+- resumo de revisão/pending;
+- restauração de resposta aberta;
+- Configurações → Progresso para conectar/sincronizar/desconectar GitHub;
+- estados `LOCAL_ONLY`, `LOCAL_CHANGES`, `SYNCING`, `SYNCED`, `CONFLICT_PRESERVED`, `ERROR`.
+
+A UI não grava domínio diretamente.
+
+### Validação P5
+
+CI acrescentou:
+
+```text
+Test progress engine
+Test progress policies
+Test GitHub Gist service
+Test progress sync
+```
+
+Além disso, o smoke Chrome exige painel de progresso/configuração e mantém os guard rails visuais P4.
+
+Condição de saída P5 satisfeita:
+
+```text
+interação
 → evidência
 → conclusão/domínio honestos
 → revisão quando aplicável
-→ estado salvo/restaurado
-→ sync remoto sem perda
+→ cache local
+→ restore
+→ sync Gist
+→ conflito preservado
+→ falha remota sem perda
 ```
-
-O Clássico não cria nem mantém XP oculto.
 
 ## P6 — Feedback por IA no Clássico
 
-Objetivo: feedback opt-in em atividades elegíveis.
+**Estado: MARCO ATIVO / PRÓXIMO.**
 
-Entregas: provider/model configurável, BYOK, chave fora de Git/Gist/progresso, `AiFeedbackService`, structured output, minimização de contexto/custo, fallback e preservação de `VALIDACAO_PENDENTE` quando avaliador confiável é exigido.
+Objetivo: acrescentar feedback opt-in em atividades elegíveis sem transformar IA em autoridade automática de domínio.
+
+Entregas:
+
+- `AiFeedbackService` isolado da UI;
+- adapter do provider escolhido;
+- provider/model configurável conforme contrato;
+- BYOK;
+- chave fora de Git/Gist/progresso;
+- opt-in explícito;
+- request mínimo com contexto/critério necessários;
+- structured output validado;
+- fallback sem perda da resposta;
+- indisponibilidade de IA não bloqueia percurso quando a policy permite;
+- `requiresReliableEvaluator` continua `VALIDACAO_PENDENTE` por padrão;
+- ProgressService aplica somente transições autorizadas, nunca o provider diretamente.
+
+Antes de congelar provider/model/endpoints, verificar documentação oficial atual. Se a implementação usar OpenAI, usar documentação oficial da OpenAI como fonte técnica.
 
 ## P7 — Ampliação do catálogo Clássico N0→N4
 
-Objetivo: levar o pipeline homologado ao curso inteiro.
+Objetivo: levar o pipeline homologado P1–P6 ao curso inteiro.
 
 ```text
 normalizar
 → manifestar/publicar
 → validar
 → renderizar
-→ testar
+→ integrar progresso/feedback
 → homologar o possível
 → registrar mídia/blockers locais
 → continuar
@@ -268,5 +323,5 @@ Cobrir troca de modos, preservação de domínio, coerência/resistência a farm
 ## Próximo passo oficial
 
 ```text
-P5 — ProgressService, revisão e persistência
+P6 — Feedback por IA no Clássico
 ```
