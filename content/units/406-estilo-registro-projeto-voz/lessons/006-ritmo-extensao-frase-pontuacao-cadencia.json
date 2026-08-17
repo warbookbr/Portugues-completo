@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "N4-U06-L06",
+  "title": "Ritmo, extensão de frase, pontuação e cadência",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Usar extensão de frases, segmentação, enumeração, transições e pontuação para organizar fluxo e ênfase, distinguindo efeito estilístico de correção normativa.",
+  "competencies": ["comparar ritmos textuais", "variar segmentação funcionalmente", "usar pontuação para organizar fluxo", "relacionar cadência a efeito", "preservar clareza em frases longas ou curtas"],
+  "prerequisites": ["N4-U06-L04", "N4-U06-L05", "N4-U05-L04"],
+  "limits": ["frase curta não é automaticamente clara", "frase longa não é automaticamente ruim", "TTS variável não define resposta correta", "pontuação estilística não corrige arquitetura deficiente por si"],
+  "media": {"tts": "opcional para perceber diferenças de ritmo sem transformar a voz do dispositivo em gabarito", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["versoes ritmicas"], "purpose": "apoio perceptivo opcional"}], "generatedVisualResources": [{"type": "UI_RENDERED_RHYTHM_MAP"}, {"type": "UI_RENDERED_SENTENCE_PATTERN"}, {"type": "UI_RENDERED_VERSION_COMPARE"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "a cadência pode ser observada pela estrutura textual; TTS é apoio e não estímulo controlado decisivo."},
+  "sequence": [
+    {"id": "L06-B01", "type": "rhythm-comparison", "versionA": "O teste começou em março. Primeiro, a equipe ampliou o horário. Depois, registrou a procura. Ao fim de quatro semanas, comparou os resultados.", "versionB": "O teste começou em março: a equipe ampliou o horário, registrou a procura e, ao fim de quatro semanas, comparou os resultados.", "task": "comparar sensação de progressão, continuidade e destaque sem classificar uma versão como universalmente superior"},
+    {"id": "L06-B02", "type": "punctuation-effect", "baseIdeas": ["há três condições", "demanda suficiente", "equipe disponível", "custo compatível"], "task": "organizar as ideias como período contínuo e como enumeração, explicando o efeito de cada solução"},
+    {"id": "L06-C01", "type": "rhythm-check", "items": [{"claim": "Períodos curtos são sempre mais claros.", "expected": "falso"}, {"claim": "Uma enumeração pode aumentar saliência de critérios.", "expected": "verdadeiro"}, {"claim": "A mesma informação pode ganhar cadências diferentes sem mudar o conteúdo factual.", "expected": "verdadeiro"}]},
+    {"id": "L06-A01", "type": "dual-rhythm-production", "scenario": "Reescreva um mesmo parágrafo informativo em duas versões: uma de andamento mais contínuo e outra com pausas/ênfases mais marcadas.", "required": ["duas versoes", "mesmo núcleo factual", "justificativa de segmentacao/pontuacao", "efeito funcional esperado"], "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"timeLimit": false, "sentenceLengthScored": false, "ttsPerformanceScored": false, "openResponseAutoValidated": false},
+  "completionEvidence": {"clusters": {"rhythmCadence": {"evidence": ["L06-A01"], "required": true}}, "completionRule": "as duas versões devem preservar informação e usar segmentação/pontuação de modo coerente com efeitos diferentes e justificáveis.", "requiresReliableEvaluatorFor": ["clareza", "efeito rítmico", "qualidade da justificativa"]}
+}
