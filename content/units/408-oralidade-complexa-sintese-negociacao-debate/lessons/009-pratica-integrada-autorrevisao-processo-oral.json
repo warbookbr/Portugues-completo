@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "id": "N4-U08-L09",
+  "title": "Apresentação, discussão integrada e autorrevisão do processo oral",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Integrar escuta, planejamento, exposição, evidência, perguntas, objeções, negociação e revisão do próprio processo, distinguindo o que é autoavaliável, observável pelo sistema e dependente de ouvinte confiável.",
+  "competencies": ["executar processo oral integrado", "registrar tentativa", "responder a pergunta/objeção", "negociar escopo", "revisar plano e estratégia", "distinguir limites de avaliação"],
+  "prerequisites": ["N4-U08-L01", "N4-U08-L02", "N4-U08-L03", "N4-U08-L04", "N4-U08-L05", "N4-U08-L06", "N4-U08-L07", "N4-U08-L08"],
+  "limits": ["tentativa registrada não equivale a inteligibilidade validada", "pronúncia/prosódia global não são autoaprovadas", "revisar o plano não significa que a primeira tentativa foi fracasso", "quantidade de mudanças não pontua"],
+  "media": {"tts": "para estímulos/perguntas autorais e releitura de roteiro; não avalia produção do aluno", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["perguntas-e-objecoes"]}, {"type": "OPTIONAL_ATTEMPT_RECORDING", "locations": ["tentativa-oral"]}], "generatedVisualResources": [{"type": "UI_RENDERED_ORAL_PROCESS_TIMELINE"}, {"type": "UI_RENDERED_SELF_REVISION_LOG"}, {"type": "UI_RENDERED_VALIDATION_BOUNDARY"}], "productionQueueRequired": false, "publicationDependency": "nenhuma mídia humana obrigatória; inteligibilidade e qualidade oral global exigem ouvinte confiável", "decisionRationale": "registro de processo e fronteira explícita de validação permitem praticar oralidade sem atribuir ao sistema capacidades acústicas que ele não possui."},
+  "sequence": [
+    {"id": "L09-B01", "type": "integrated-scenario", "scenario": "Apresentar a uma equipe uma proposta provisória baseada em dados incompletos, responder a uma pergunta de esclarecimento e a uma objeção sobre custo e reorganizar um ponto de divergência."},
+    {"id": "L09-A01", "type": "oral-process-plan", "prompt": "Prepare mapa de fala, evidências/ressalvas, apoio acessível e possíveis pontos de pergunta/objeção.", "recordResponse": true, "automaticValidation": false},
+    {"id": "L09-A02", "type": "oral-attempt", "prompt": "Realize ou registre uma tentativa oral/equivalente conforme os recursos disponíveis. A presença do registro comprova processo, não inteligibilidade.", "recordResponse": true, "automaticValidation": false, "acousticValidation": false},
+    {"id": "L09-A03", "type": "response-cycle", "prompt": "Responda a uma pergunta, a uma objeção e a um desalinhamento de escopo usando as estratégias da unidade.", "recordResponse": true, "automaticValidation": false},
+    {"id": "L09-A04", "type": "self-revision", "prompt": "Depois da tentativa, registre o que manteria, o que mudaria e por quê. Separe: observável pelo sistema; autoavaliação; aspectos que exigem ouvinte confiável.", "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"timeLimit": false, "attemptPresenceCanBeObserved": true, "intelligibilityAutoValidated": false, "pronunciationAutoValidated": false, "prosodyAutoValidated": false, "changeCountScored": false, "openResponseAutoValidated": false},
+  "completionEvidence": {"clusters": {"integratedOralProcess": {"evidence": ["L09-A01", "L09-A02", "L09-A03"], "required": true}, "selfRevision": {"evidence": ["L09-A04"], "required": true}, "validationBoundary": {"evidence": ["L09-A04"], "required": true}}, "completionRule": "o processo precisa estar registrado e revisado; o sistema pode confirmar estrutura/presença, mas aprovação de inteligibilidade, pronúncia, prosódia ou qualidade global depende de avaliação confiável adequada.", "requiresReliableEvaluatorFor": ["qualidade global da apresentação", "inteligibilidade", "pronúncia quando relevante", "prosódia global", "qualidade interacional"]}
+}
