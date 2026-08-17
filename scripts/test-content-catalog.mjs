@@ -28,11 +28,14 @@ const n0 = await service.loadUnitManifest('N0-U01', { catalog });
 assert.equal(n0.manifest.lessons.length, 8);
 assert.equal(n0.manifest.competencies.length, 8);
 assert.equal(n0.manifest.publication.status, 'BLOCKED');
+assert.equal(n0.manifest.publication.blockers.length, 1);
+assert.match(n0.manifest.publication.blockers[0], /MIDIA_OBRIGATORIA_PARA_ATIVIDADE/);
 
 const n4 = await service.loadUnitManifest('N4-U09', { catalog });
 assert.equal(n4.manifest.lessons.length, 12);
 assert.equal(n4.manifest.competencies.length, 12);
-assert.equal(n4.manifest.publication.status, 'BLOCKED');
+assert.equal(n4.manifest.publication.status, 'READY');
+assert.deepEqual(n4.manifest.publication.blockers, []);
 
 const n0Lesson = await service.loadLesson('N0-U01', 'N0-U01-L01');
 assert.equal(n0Lesson.sourcePath, 'units/001-fala-sons-escrita/lessons/001-fala-e-escrita.json');
@@ -60,4 +63,4 @@ await assert.rejects(
   error => error instanceof ContentCatalogError && error.code === 'UNIT_NOT_FOUND'
 );
 
-console.log('Catálogo/ContentService P3: N0-U01 + N4-U09 descobertos, manifests e conteúdo representativo carregados com sucesso.');
+console.log('Catálogo/ContentService: N0-U01 bloqueado apenas por mídia e N4-U09 READY após P4; descoberta e carregamento continuam válidos.');
