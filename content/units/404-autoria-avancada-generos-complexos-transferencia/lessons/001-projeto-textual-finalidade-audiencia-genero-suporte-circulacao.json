@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "N4-U04-L01",
+  "title": "Projeto textual: finalidade, audiência, gênero, suporte e circulação",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Transformar uma situação comunicativa em decisões explícitas de produção antes de escrever.",
+  "competencies": ["identificar finalidade comunicativa", "caracterizar audiência relevante", "selecionar gênero e suporte por função", "definir recorte e grau de explicitação", "antecipar condições de circulação", "justificar decisões de projeto"],
+  "prerequisites": ["N4-U01-V01", "N4-U02-V01", "N4-U03-V01"],
+  "limits": ["formalidade máxima não é padrão universal", "gênero não é escolhido só pelo nome da tarefa", "suporte não determina sozinho o gênero", "projeto pode ser revisto durante a escrita"],
+  "media": {"tts": "opcional como apoio", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["cenários", "modelos curtos", "instruções"]}], "generatedVisualResources": [{"type": "UI_RENDERED_TEXT_PROJECT_CANVAS"}, {"type": "UI_RENDERED_AUDIENCE_PURPOSE_MATRIX"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "o objeto é decisão textual; quadro semântico e exemplos em texto são suficientes e mais acessíveis."},
+  "sequence": [
+    {"id": "L01-B01", "type": "contrastive-scenarios", "sharedCore": "Uma rede de bibliotecas altera o horário de atendimento em quatro unidades.", "destinations": [{"audience": "usuários frequentes", "purpose": "informar mudança e reduzir dúvida operacional", "support": "página de serviço"}, {"audience": "conselho gestor", "purpose": "recomendar ajustes após piloto", "support": "nota de decisão"}, {"audience": "público geral", "purpose": "explicar a experiência sem prometer resultado não medido", "support": "comunicado público"}], "tasks": ["definir recorte", "definir grau de contexto", "escolher tom", "indicar informação que muda de prioridade"]},
+    {"id": "L01-C01", "type": "project-diagnosis", "cases": [{"decision": "usar linguagem altamente técnica para público geral sem necessidade", "status": "misaligned"}, {"decision": "explicar metodologia em maior detalhe para conselho que precisa avaliar evidência", "status": "aligned"}, {"decision": "usar o mesmo título para todos os destinos porque os fatos são iguais", "status": "needs-justification"}]},
+    {"id": "L01-A01", "type": "text-project", "scenario": "Uma instituição precisa comunicar e analisar um novo sistema de agendamento.", "tasks": ["escolher uma finalidade", "caracterizar audiência", "definir gênero e suporte", "registrar recorte", "definir nível de explicitação", "antecipar onde e como o texto circulará", "justificar pelo menos duas decisões"], "recordResponse": true},
+    {"id": "L01-P01", "type": "metacognitive-check", "prompt": "Indique uma decisão de projeto que mudaria se a audiência mudasse e uma que provavelmente permaneceria.", "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"timeLimit": false, "formalityScored": false, "fixedGenreScored": false, "openResponseAutoValidated": false},
+  "completionEvidence": {"clusters": {"project": {"evidence": ["L01-A01"], "required": true}, "justification": {"evidence": ["L01-P01"], "required": true}}, "completionRule": "o aluno deve produzir um projeto textual coerente com finalidade, audiência, gênero, suporte e circulação e justificar decisões centrais.", "requiresReliableEvaluatorFor": ["coerência global do projeto e das justificativas"]}
+}

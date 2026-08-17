@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "N4-U04-L03",
+  "title": "Macroplanejamento e arquitetura global flexível",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Construir uma arquitetura global em que cada bloco cumpra função no projeto textual, comparando alternativas e revisando o plano quando necessário.",
+  "competencies": ["definir movimentos globais", "ordenar blocos por função", "comparar arquiteturas alternativas", "planejar transições e fechamento", "revisar plano durante a escrita"],
+  "prerequisites": ["N4-U04-L01", "N4-U04-L02"],
+  "limits": ["número de seções não pontua", "introdução-desenvolvimento-conclusão não é molde suficiente para todo gênero", "plano não é contrato imutável", "simetria visual não é critério de qualidade"],
+  "media": {"tts": "opcional como apoio", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["cenário", "planos", "instruções"]}], "generatedVisualResources": [{"type": "UI_RENDERED_SECTION_FLOW"}, {"type": "UI_RENDERED_REORDERABLE_TEXT_BLOCKS"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "blocos reordenáveis e mapa funcional tornam a arquitetura observável e editável."},
+  "sequence": [
+    {"id": "L03-B01", "type": "alternative-architectures", "scenario": "Relatório geral sobre um piloto de atendimento noturno", "plans": [{"id": "A", "blocks": ["decisão em jogo", "evidências", "limites", "recomendação"]}, {"id": "B", "blocks": ["contexto", "o que foi testado", "resultados", "alternativas", "recomendação"]}], "tasks": ["explicar quando cada arquitetura favorece a finalidade", "identificar bloco ausente se audiência exigir método"]},
+    {"id": "L03-C01", "type": "structure-repair", "cases": [{"problem": "conclusão aparece antes de evidência sem sinalização em texto analítico", "action": "reorder-or-frame"}, {"problem": "dois blocos repetem a mesma função", "action": "merge-or-differentiate"}, {"problem": "plano mudou após nova fonte", "action": "valid-revision"}]},
+    {"id": "L03-A01", "type": "macroplan", "scenario": "Produzir análise para decidir continuidade de um programa de empréstimo de equipamentos.", "tasks": ["criar dois planos possíveis", "escolher um", "atribuir função a cada bloco", "planejar transições", "indicar condição que faria reestruturar o plano"], "recordResponse": true},
+    {"id": "L03-P01", "type": "plan-review", "prompt": "Identifique um bloco que você manteria mesmo se mudasse a ordem global e explique sua função.", "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"timeLimit": false, "sectionCountScored": false, "singleArchitectureRequired": false, "openResponseAutoValidated": false},
+  "completionEvidence": {"clusters": {"macroplan": {"evidence": ["L03-A01"], "required": true}, "review": {"evidence": ["L03-P01"], "required": true}}, "completionRule": "o plano precisa ser funcional, justificável e revisável; quantidade de seções ou adesão a molde não substituem arquitetura adequada.", "requiresReliableEvaluatorFor": ["coerência global do macroplanejamento"]}
+}

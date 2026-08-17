@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "N4-U04-L10",
+  "title": "Transferência e retextualização entre gênero, audiência e meio",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Adaptar um mesmo núcleo informacional a novas situações comunicativas, decidindo conscientemente o que mudar, preservar, condensar, expandir ou reordenar.",
+  "competencies": ["identificar núcleo informacional invariável", "adaptar arquitetura", "adaptar registro e explicitação", "selecionar dados conforme finalidade", "preservar atribuições e limites", "justificar perdas e permanências", "evitar invenção de fatos na transferência"],
+  "prerequisites": ["N4-U04-L01", "N4-U04-L02", "N4-U04-L03", "N4-U04-L04", "N4-U04-L05", "N4-U04-L07", "N4-U04-L08", "N4-U04-L09"],
+  "limits": ["retextualizar não é resumir sempre", "não inventar dado para preencher convenção de gênero", "preservar ressalvas decisivas mesmo quando condensando", "mudança superficial de vocabulário não demonstra transferência"],
+  "media": {"tts": "opcional como apoio", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["texto-fonte", "versões de destino"]}], "generatedVisualResources": [{"type": "UI_RENDERED_TRANSFER_MATRIX"}, {"type": "UI_RENDERED_PRESERVE_CHANGE_MAP"}, {"type": "UI_RENDERED_VERSION_COMPARE"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória; qualidade global das versões exige avaliador confiável", "decisionRationale": "comparação textual entre origem e destinos torna mudanças e permanências diretamente auditáveis."},
+  "sequence": [
+    {"id": "L10-B01", "type": "transfer-demonstration", "source": "Análise de 900 palavras sobre um piloto de oficinas noturnas, com uso, custos parciais, pesquisa voluntária e recomendação condicional.", "destinations": [{"genre": "resumo executivo", "audience": "gestores", "changes": ["antecipar decisão", "condensar método", "preservar custo incompleto"]}, {"genre": "página pública", "audience": "usuários", "changes": ["explicar o que muda", "reduzir detalhe operacional", "preservar que expansão ainda é experimental"]}]},
+    {"id": "L10-C01", "type": "transfer-quality", "cases": [{"change": "apagar ressalva sobre custo para caber em texto curto", "status": "invalid-loss"}, {"change": "trocar ordem e explicitar consequência para nova audiência", "status": "functional-transfer"}, {"change": "substituir sinônimos mantendo a mesma arquitetura e finalidade", "status": "surface-only"}]},
+    {"id": "L10-A01", "type": "dual-destination-transfer", "sourceScenario": "Relatório analítico sobre um serviço itinerante, com quatro fontes e limites de custo.", "tasks": ["definir núcleo que não pode mudar", "produzir versão para audiência decisória", "produzir versão para público geral", "registrar mudanças de arquitetura, detalhe, registro e atribuição", "explicar uma informação removida e por que a remoção é segura", "identificar uma ressalva preservada em ambos os destinos"], "recordResponse": true, "automaticValidation": false},
+    {"id": "L10-P01", "type": "transfer-reflection", "prompt": "Escolha uma mudança profunda de projeto e uma permanência obrigatória entre suas versões. Explique por que ambas são necessárias.", "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"timeLimit": false, "wordCountScored": false, "surfaceChangeScored": false, "factInventionAllowed": false, "openResponseAutoValidated": false},
+  "completionEvidence": {"clusters": {"dualTransfer": {"evidence": ["L10-A01"], "required": true}, "changePreserveReasoning": {"evidence": ["L10-P01"], "required": true}}, "completionRule": "o aluno deve produzir duas transferências funcionalmente distintas do mesmo núcleo, preservando fatos, atribuições e ressalvas decisivas.", "requiresReliableEvaluatorFor": ["adequação das duas versões e justificativa das mudanças/permanências"]}
+}

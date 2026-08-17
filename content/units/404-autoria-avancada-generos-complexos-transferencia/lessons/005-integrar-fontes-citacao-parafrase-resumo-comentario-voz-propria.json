@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "N4-U04-L05",
+  "title": "Integrar fontes: citação, paráfrase, resumo, comentário e voz própria",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Integrar fontes ao texto sem apagar autoria, confundir vozes ou transformar o texto em colagem de citações.",
+  "competencies": ["distinguir citação, paráfrase, resumo e comentário", "atribuir afirmações", "integrar fonte à função do parágrafo", "separar voz própria de voz alheia", "comentar evidência em vez de apenas inseri-la", "preservar rastreabilidade"],
+  "prerequisites": ["N4-U02-V01", "N4-U04-L01", "N4-U04-L02", "N4-U04-L03", "N4-U04-L04"],
+  "limits": ["citação não substitui análise", "paráfrase não apaga necessidade de atribuição", "estilo bibliográfico especializado não é objetivo universal", "quantidade de citações não pontua"],
+  "media": {"tts": "opcional como apoio", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["fontes", "trechos", "instruções"]}], "generatedVisualResources": [{"type": "UI_RENDERED_SOURCE_VOICE_MAP"}, {"type": "UI_RENDERED_ATTRIBUTION_HIGHLIGHT"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória; qualidade global de integração exige avaliador confiável", "decisionRationale": "marcação semântica de vozes e origem torna a integração observável sem mídia externa."},
+  "sequence": [
+    {"id": "L05-B01", "type": "voice-contrast", "source": "Relatório: 68% dos respondentes disseram preferir o novo horário; questionário voluntário com 143 respostas.", "versions": [{"text": "O relatório prova que a maioria dos usuários prefere o novo horário.", "diagnosis": "overclaim-and-scope-loss"}, {"text": "Em questionário voluntário com 143 respostas, 68% dos respondentes disseram preferir o novo horário; o resultado descreve esse grupo, não todos os usuários.", "diagnosis": "attributed-and-qualified"}]},
+    {"id": "L05-C01", "type": "voice-labeling", "items": ["citação curta", "paráfrase atribuída", "resumo de duas fontes", "comentário do autor", "inferência própria"], "task": "classificar e indicar onde origem precisa aparecer"},
+    {"id": "L05-A01", "type": "source-integration-writing", "sources": [{"id": "A", "content": "registro de 420 atendimentos em seis semanas"}, {"id": "B", "content": "pesquisa voluntária com 97 respostas; 72 avaliaram positivamente"}, {"id": "C", "content": "relato de equipe aponta dificuldade em horários de pico"}], "tasks": ["produzir parágrafo que use ao menos duas fontes", "marcar atribuição", "incluir comentário próprio", "preservar limite de escopo", "evitar colagem"], "recordResponse": true, "automaticValidation": false},
+    {"id": "L05-P01", "type": "voice-audit", "prompt": "Revise seu parágrafo e indique uma frase de fonte, uma inferência sua e o sinal textual que permite distingui-las.", "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"timeLimit": false, "citationCountScored": false, "bibliographicStyleScored": false, "sourceAttributionRequired": true, "openResponseAutoValidated": false},
+  "completionEvidence": {"clusters": {"integration": {"evidence": ["L05-A01"], "required": true}, "voiceAudit": {"evidence": ["L05-P01"], "required": true}}, "completionRule": "o leitor deve conseguir reconstruir origem, voz da fonte e contribuição autoral sem depender de quantidade fixa de citações.", "requiresReliableEvaluatorFor": ["qualidade da integração e distinção entre vozes"]}
+}

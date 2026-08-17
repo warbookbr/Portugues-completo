@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "N4-U04-L09",
+  "title": "Gêneros digitais/híbridos e condições de circulação",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Projetar texto para suporte digital ou híbrido considerando navegação, fragmentação, links, atualização, versão e circulação sem confundir qualidade textual com acabamento gráfico.",
+  "competencies": ["organizar leitura linear e modular", "definir hierarquia informacional", "usar links por função", "preservar contexto em fragmentação", "sinalizar atualização e versão", "antecipar circulação fora do contexto original"],
+  "prerequisites": ["N4-U02-L08", "N4-U04-L01", "N4-U04-L03", "N4-U04-L04", "N4-U04-L05", "N4-U04-L06"],
+  "limits": ["programação e design visual profissional ficam fora", "mais links não significam melhor texto", "fragmentação não autoriza apagar contexto decisivo", "métrica de engajamento não mede qualidade textual"],
+  "media": {"tts": "opcional como apoio", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["modelos digitais", "instruções"]}], "generatedVisualResources": [{"type": "UI_RENDERED_SEMANTIC_PAGE_OUTLINE"}, {"type": "UI_RENDERED_LINK_CONTEXT_MAP"}, {"type": "UI_RENDERED_VERSION_HISTORY"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "UI semântica reproduz navegação e versão sem depender de screenshots ou design decorativo."},
+  "sequence": [
+    {"id": "L09-B01", "type": "digital-architecture-compare", "sameContent": "Atualização sobre um projeto de mobilidade comunitária", "versions": [{"id": "linear", "features": ["contexto", "dados", "limites", "próximo passo"]}, {"id": "modular", "features": ["resumo inicial", "seções independentes", "links para método e histórico", "data de atualização"]}], "tasks": ["comparar o que precisa ser repetido para preservar contexto", "decidir o que pode virar link"]},
+    {"id": "L09-C01", "type": "circulation-risk", "cases": [{"fragment": "card com número sem período", "risk": "context-loss"}, {"fragment": "resumo com link para fonte e data", "risk": "lower"}, {"fragment": "página atualizada sem indicar mudança", "risk": "version-confusion"}]},
+    {"id": "L09-A01", "type": "digital-hybrid-project", "scenario": "Transformar uma análise longa em dossiê digital para consulta pública.", "tasks": ["criar resumo inicial", "definir hierarquia/seções", "escolher o que fica no corpo e o que vai para link", "registrar versão/data", "preservar duas ressalvas que não podem desaparecer em fragmentos"], "recordResponse": true, "automaticValidation": false},
+    {"id": "L09-P01", "type": "circulation-review", "prompt": "Escolha um trecho que poderia circular isoladamente e reescreva-o para continuar interpretável fora da página completa.", "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"timeLimit": false, "visualPolishScored": false, "linkCountScored": false, "engagementMetricScored": false, "openResponseAutoValidated": false},
+  "completionEvidence": {"clusters": {"digitalArchitecture": {"evidence": ["L09-A01"], "required": true}, "circulationContext": {"evidence": ["L09-P01"], "required": true}}, "completionRule": "a arquitetura digital/híbrida precisa preservar contexto, rastreabilidade e versão; polimento visual e quantidade de links não compensam perda informacional.", "requiresReliableEvaluatorFor": ["adequação global da arquitetura e preservação de contexto"]}
+}

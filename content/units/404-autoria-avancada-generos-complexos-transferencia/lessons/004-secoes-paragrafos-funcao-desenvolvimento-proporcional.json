@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "N4-U04-L04",
+  "title": "Seções e parágrafos por função e desenvolvimento proporcional",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Desenvolver blocos na extensão e profundidade exigidas por sua função, evitando tanto repetição estagnada quanto compressão que apaga relações importantes.",
+  "competencies": ["atribuir função a parágrafos/seções", "expandir ponto subdesenvolvido", "reduzir repetição improdutiva", "equilibrar exemplo, explicação e análise", "preservar progressão temática"],
+  "prerequisites": ["N4-U04-L03"],
+  "limits": ["parágrafo curto ou longo não é bom por si", "extensão não é proxy de profundidade", "cortar não significa melhorar sempre", "variação de tamanho entre blocos pode ser funcional"],
+  "media": {"tts": "opcional como apoio", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["trechos", "instruções"]}], "generatedVisualResources": [{"type": "UI_RENDERED_PARAGRAPH_FUNCTION_MAP"}, {"type": "UI_RENDERED_DEVELOPMENT_BALANCE"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "o objeto é desenvolvimento textual e funciona melhor com blocos editáveis e comparação direta."},
+  "sequence": [
+    {"id": "L04-B01", "type": "development-diagnosis", "fragments": [{"state": "três parágrafos repetem que o serviço cresceu sem acrescentar causa, limite ou implicação", "diagnosis": "stagnant-repetition"}, {"state": "um único período lista dado, exceção, comparação e conclusão sem explicar relação", "diagnosis": "over-compressed"}, {"state": "bloco curto apenas define o problema antes de análise longa", "diagnosis": "functionally-brief"}]},
+    {"id": "L04-C01", "type": "expand-or-cut", "tasks": ["expandir um ponto que precisa de relação causal/qualificação", "condensar repetição que não avança", "manter trecho curto cuja função já está completa"]},
+    {"id": "L04-A01", "type": "section-writing", "prompt": "Escreva uma seção de análise com ao menos três funções distintas entre apresentar evidência, explicar, comparar, qualificar, exemplificar e sintetizar. Depois marque a função de cada bloco e revise onde houver desproporção.", "recordResponse": true, "automaticValidation": false},
+    {"id": "L04-P01", "type": "author-review", "prompt": "Registre um trecho que você expandiu, um que reduziu e um que preservou, justificando cada decisão pela função e não pelo tamanho.", "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"timeLimit": false, "wordCountScored": false, "paragraphCountScored": false, "changeCountScored": false, "openResponseAutoValidated": false},
+  "completionEvidence": {"clusters": {"functionalDevelopment": {"evidence": ["L04-A01"], "required": true}, "revisionJustification": {"evidence": ["L04-P01"], "required": true}}, "completionRule": "o aluno deve demonstrar progressão funcional e revisar desenvolvimento por necessidade comunicativa, não por comprimento fixo.", "requiresReliableEvaluatorFor": ["qualidade da progressão e proporcionalidade do desenvolvimento"]}
+}

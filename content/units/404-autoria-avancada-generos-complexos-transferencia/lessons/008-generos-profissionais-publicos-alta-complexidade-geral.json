@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "N4-U04-L08",
+  "title": "Gêneros profissionais e públicos de alta complexidade geral",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Adaptar informação, análise e recomendação a contextos profissionais e públicos gerais sem simular autoridade especializada inexistente.",
+  "competencies": ["identificar decisão comunicativa central", "selecionar evidência relevante à audiência", "ajustar grau de detalhe", "formular recomendação proporcional", "explicitar limites e próximos passos", "adaptar registro sem inflar formalidade"],
+  "prerequisites": ["N4-U04-L01", "N4-U04-L03", "N4-U04-L04", "N4-U04-L05", "N4-U04-L06"],
+  "limits": ["não simular parecer jurídico, médico, técnico ou científico especializado", "formalidade máxima não é padrão", "nota técnica geral não equivale a documento profissional regulamentado", "formato institucional específico pode exigir consulta"],
+  "media": {"tts": "opcional como apoio", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["modelos", "cenários", "rascunho"]}], "generatedVisualResources": [{"type": "UI_RENDERED_AUDIENCE_DECISION_MATRIX"}, {"type": "UI_RENDERED_RECOMMENDATION_SCOPE_MAP"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "o desempenho-alvo é textual e decisório; modelos e matriz de audiência são suficientes."},
+  "sequence": [
+    {"id": "L08-B01", "type": "same-evidence-different-destinations", "evidence": ["piloto atendeu 318 pessoas", "custos completos ainda não foram consolidados", "duas unidades tiveram demanda muito diferente"], "destinations": [{"genre": "relatório executivo", "priority": "decisão e limites"}, {"genre": "comunicado público", "priority": "o que ocorreu, o que muda e o que ainda não se sabe"}, {"genre": "carta aberta", "priority": "posição pública com razões atribuídas"}], "tasks": ["comparar seleção de informação", "ajustar tom e encaminhamento"]},
+    {"id": "L08-C01", "type": "authority-boundary", "cases": [{"text": "Os dados recomendam teste adicional antes de expansão ampla.", "status": "general-recommendation"}, {"text": "Este documento certifica a viabilidade técnica definitiva do sistema.", "status": "unsupported-authority"}, {"text": "A decisão final depende de custos ainda não consolidados.", "status": "appropriate-limit"}]},
+    {"id": "L08-A01", "type": "professional-public-writing", "scenario": "Uma rede cultural avalia ampliar atendimento aos sábados.", "tasks": ["escolher um gênero de destino", "definir audiência e decisão", "produzir texto com evidência e limites", "formular encaminhamento proporcional", "justificar duas escolhas de registro/detalhe"], "recordResponse": true, "automaticValidation": false},
+    {"id": "L08-P01", "type": "audience-review", "prompt": "Explique uma informação que você ampliaria para um gestor e condensaria para o público geral, sem alterar o fato central.", "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"timeLimit": false, "maximumFormalityScored": false, "professionalAuthorityScored": false, "fixedFormatScored": false, "openResponseAutoValidated": false},
+  "completionEvidence": {"clusters": {"professionalPublicText": {"evidence": ["L08-A01"], "required": true}, "audienceAdaptation": {"evidence": ["L08-P01"], "required": true}}, "completionRule": "o texto deve cumprir finalidade profissional/pública geral com evidência, limites e registro adequados, sem simular especialização ou autoridade não sustentada.", "requiresReliableEvaluatorFor": ["adequação global ao gênero, audiência e finalidade"]}
+}

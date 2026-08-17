@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "N4-U04-L07",
+  "title": "Gêneros acadêmicos gerais sem simular especialização",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Produzir textos de estudo e análise de alta complexidade geral com questão delimitada, fontes rastreáveis, desenvolvimento e conclusão proporcionais, sem fingir especialização metodológica inexistente.",
+  "competencies": ["delimitar questão de estudo", "apresentar corpus/fontes de modo funcional", "organizar análise geral", "integrar atribuições", "concluir proporcionalmente", "reconhecer limites de especialização"],
+  "prerequisites": ["N4-U04-L01", "N4-U04-L02", "N4-U04-L03", "N4-U04-L04", "N4-U04-L05", "N4-U04-L06"],
+  "limits": ["não exigir artigo científico publicável", "não inventar metodologia especializada", "jargão disciplinar não pontua", "formato de citação específico pode exigir consulta externa"],
+  "media": {"tts": "opcional como apoio", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["modelos", "fontes", "rascunho"]}], "generatedVisualResources": [{"type": "UI_RENDERED_ACADEMIC_GENERAL_MODEL_COMPARE"}, {"type": "UI_RENDERED_QUESTION_EVIDENCE_CONCLUSION_MAP"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "modelos textuais controlados permitem trabalhar funções acadêmicas gerais sem simular autoridade especializada."},
+  "sequence": [
+    {"id": "L07-B01", "type": "model-comparison", "models": ["ensaio analítico geral", "relatório de estudo geral", "análise comparativa"], "tasks": ["identificar pergunta/objeto", "localizar como fontes entram", "comparar formas de fechamento", "marcar o que depende do gênero e não é universal"]},
+    {"id": "L07-C01", "type": "specialization-boundary", "cases": [{"claim": "o texto descreve um levantamento fornecido no material", "status": "general-allowed"}, {"claim": "o autor inventa amostragem estatística que não realizou", "status": "false-specialization"}, {"claim": "o texto diz que uma convenção específica precisa ser consultada", "status": "competent-consultation"}]},
+    {"id": "L07-A01", "type": "academic-general-production", "scenario": "Analisar como dois programas comunitários registram uso e satisfação.", "tasks": ["delimitar questão", "apresentar fontes", "produzir desenvolvimento analítico", "integrar ao menos duas vozes", "concluir com limites", "não inventar método ausente"], "recordResponse": true, "automaticValidation": false},
+    {"id": "L07-P01", "type": "boundary-reflection", "prompt": "Aponte uma decisão em que consultar convenção específica seria mais competente do que improvisar uma regra geral.", "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"timeLimit": false, "jargonScored": false, "specializedMethodRequired": false, "fabricatedMethodAccepted": false, "openResponseAutoValidated": false},
+  "completionEvidence": {"clusters": {"academicGeneralText": {"evidence": ["L07-A01"], "required": true}, "boundaryAwareness": {"evidence": ["L07-P01"], "required": true}}, "completionRule": "o aluno deve produzir análise acadêmica geral coerente e rastreável sem simular conhecimento metodológico ou disciplinar que o material não sustenta.", "requiresReliableEvaluatorFor": ["adequação global ao gênero e qualidade da análise"]}
+}
