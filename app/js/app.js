@@ -37,42 +37,45 @@ function loadingPage(label = 'Carregando conteúdo') {
 }
 
 async function ensureCourse() {
-  if (!course) course = await contentService.loadCourse();
+  if (!course) course = await contentService.loadCatalog();
   return course;
+}
+
+async function loadManifest(unitId) {
+  const catalog = await ensureCourse();
+  const unit = await contentService.loadUnitManifest(unitId, { catalog });
+  return unit.manifest;
 }
 
 async function renderHome(revision) {
   const catalog = await ensureCourse();
-  const manifests = await Promise.all(catalog.units.map(unit => contentService.loadUnit(unit.id).catch(() => null)));
+  const manifests = await Promise.all(catalog.units.map(unit => loadManifest(unit.id).catch(() => null)));
   if (revision !== routeRevision) return;
   app.innerHTML = homeHtml(catalog, manifests.filter(Boolean));
   bindClassicRenderer(app);
 }
 
 async function renderUnit(route, revision) {
-  await ensureCourse();
-  const manifest = await contentService.loadUnit(route.unitId);
+  const manifest = await loadManifest(route.unitId);
   if (revision !== routeRevision) return;
   app.innerHTML = unitHtml(manifest);
   bindClassicRenderer(app);
 }
 
 async function renderLesson(route, revision) {
-  await ensureCourse();
-  const manifest = await contentService.loadUnit(route.unitId);
-  const document = await contentService.loadLesson(route.unitId, route.lessonId);
+  const manifest = await loadManifest(route.unitId);
+  const loaded = await contentService.loadLesson(route.unitId, route.lessonId);
   if (revision !== routeRevision) return;
-  app.innerHTML = documentHtml(document, { unitId: manifest.id, unitTitle: manifest.title });
-  bindClassicRenderer(app, document);
+  app.innerHTML = documentHtml(loaded.runtime, { unitId: manifest.id, unitTitle: manifest.title });
+  bindClassicRenderer(app, loaded.runtime);
 }
 
 async function renderVerification(route, revision) {
-  await ensureCourse();
-  const manifest = await contentService.loadUnit(route.unitId);
-  const document = await contentService.loadVerification(route.unitId);
+  const manifest = await loadManifest(route.unitId);
+  const loaded = await contentService.loadVerification(route.unitId);
   if (revision !== routeRevision) return;
-  app.innerHTML = documentHtml(document, { unitId: manifest.id, unitTitle: manifest.title, verification: true });
-  bindClassicRenderer(app, document);
+  app.innerHTML = documentHtml(loaded.runtime, { unitId: manifest.id, unitTitle: manifest.title, verification: true });
+  bindClassicRenderer(app, loaded.runtime);
 }
 
 async function renderRoute(route) {
@@ -88,7 +91,7 @@ async function renderRoute(route) {
   } catch (error) {
     if (revision !== routeRevision) return;
     console.error('Falha ao renderizar rota.', error);
-    const isMissing = /não encontrada|não pertence|HTTP 404/i.test(error.message || '');
+    const isMissing = /não está|não declara|não encontrada|não pertence|HTTP 404/i.test(error.message || '');
     app.innerHTML = statePage({
       eyebrow: isMissing ? 'Conteúdo indisponível' : 'Erro de carregamento',
       title: isMissing ? 'Este conteúdo não está no catálogo atual' : 'Não foi possível abrir esta etapa',
@@ -98,7 +101,7 @@ async function renderRoute(route) {
   }
 }
 
-async function bootstrap() {
+function bootstrap() {
   initSettings();
   initNarration();
   mountSettingsMenu(settingsRoot);
