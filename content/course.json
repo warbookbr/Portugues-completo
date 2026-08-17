@@ -1,7 +1,14 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "id": "portugues-completo",
   "title": "Português Completo",
-  "description": "Plataforma de ensino de português do nível zero ao domínio completo.",
-  "units": []
+  "description": "Plataforma de ensino de português do nível zero ao domínio completo. O catálogo de publicação é expandido progressivamente sem reescrever o conteúdo autoral histórico.",
+  "levels": [
+    {"id": "N0", "order": 0, "title": "Fundamentos"},
+    {"id": "N4", "order": 4, "title": "Domínio"}
+  ],
+  "units": [
+    {"id": "N0-U01", "levelId": "N0", "order": 1, "title": "Fala, sons e escrita", "manifest": "units/001-fala-sons-escrita/unit.json"},
+    {"id": "N4-U09", "levelId": "N4", "order": 9, "title": "Literatura, multimodalidade, autoria intermedial e digital", "manifest": "units/409-literatura-multimodalidade-autoria-intermedial-digital/unit.json"}
+  ]
 }
