@@ -1,57 +1,18 @@
 export const LEGACY_COMPLETION_RULES_V1 = Object.freeze({
-  'N0-U01-L01': {
-    clusters: [{ id: 'modalityDistinction', required: true, evidenceIds: ['L01-A01', 'L01-C03'], satisfaction: 'DEMONSTRATED_REQUIRED' }],
-    nonCompensable: true,
-    activityPolicies: { 'L01-A01': { threshold: 0.75 } }
-  },
-  'N0-U01-L02': {
-    clusters: [{ id: 'auditoryComparison', required: true, evidenceIds: ['L02-A01', 'L02-C02'], satisfaction: 'DEMONSTRATED_REQUIRED' }],
-    nonCompensable: true,
-    activityPolicies: { 'L02-A01': { threshold: 0.75 } }
-  },
-  'N0-U01-L03': {
-    clusters: [{ id: 'alphabetRecognition', required: true, evidenceIds: ['L03-A01', 'L03-A02'], satisfaction: 'DEMONSTRATED_REQUIRED' }],
-    nonCompensable: true,
-    activityPolicies: { 'L03-A01': { threshold: 1 }, 'L03-A02': { threshold: 0.75 } }
-  },
-  'N0-U01-L04': {
-    clusters: [{ id: 'letterCaseRecognition', required: true, evidenceIds: ['L04-A02', 'L04-C02'], satisfaction: 'DEMONSTRATED_REQUIRED' }],
-    nonCompensable: true,
-    activityPolicies: { 'L04-A02': { threshold: 22 / 26 } }
-  },
-  'N0-U01-L05': {
-    clusters: [{ id: 'graphicClassification', required: true, evidenceIds: ['L05-A01', 'L05-A02', 'L05-C03'], satisfaction: 'DEMONSTRATED_REQUIRED' }],
-    nonCompensable: true,
-    activityPolicies: { 'L05-A01': { threshold: 1 }, 'L05-A02': { threshold: 0.875 } }
-  },
-  'N0-U01-L06': {
-    clusters: [{ id: 'visualOrderAndSpacing', required: true, evidenceIds: ['L06-A01', 'L06-A02', 'L06-C03'], satisfaction: 'DEMONSTRATED_REQUIRED' }],
-    nonCompensable: true,
-    activityPolicies: { 'L06-A01': { threshold: 1 }, 'L06-A02': { threshold: 1 } }
-  },
-  'N0-U01-L07': {
-    clusters: [{ id: 'letterNameAndSound', required: true, evidenceIds: ['L07-A01', 'L07-A02', 'L07-C02'], satisfaction: 'DEMONSTRATED_REQUIRED' }],
-    nonCompensable: true,
-    activityPolicies: { 'L07-A01': { threshold: 0.8 }, 'L07-A02': { threshold: 0.8 } }
-  },
-  'N0-U01-L08': {
-    clusters: [{ id: 'soundWritingVariation', required: true, evidenceIds: ['L08-A01', 'L08-C03'], satisfaction: 'DEMONSTRATED_REQUIRED' }],
-    nonCompensable: true,
-    activityPolicies: { 'L08-A01': { threshold: 0.75 } }
-  },
+  'N0-U01-L01': { clusters: [{ id: 'modalityDistinction', required: true, evidenceIds: ['L01-A01', 'L01-C03'], satisfaction: 'DEMONSTRATED_REQUIRED' }], nonCompensable: true, activityPolicies: { 'L01-A01': { threshold: 0.75 } } },
+  'N0-U01-L02': { clusters: [{ id: 'auditoryComparison', required: true, evidenceIds: ['L02-A01', 'L02-C02'], satisfaction: 'DEMONSTRATED_REQUIRED' }], nonCompensable: true, activityPolicies: { 'L02-A01': { threshold: 0.75 } } },
+  'N0-U01-L03': { clusters: [{ id: 'alphabetRecognition', required: true, evidenceIds: ['L03-A01', 'L03-A02'], satisfaction: 'DEMONSTRATED_REQUIRED' }], nonCompensable: true, activityPolicies: { 'L03-A01': { threshold: 1 }, 'L03-A02': { threshold: 0.75 } } },
+  'N0-U01-L04': { clusters: [{ id: 'letterCaseRecognition', required: true, evidenceIds: ['L04-A02', 'L04-C02'], satisfaction: 'DEMONSTRATED_REQUIRED' }], nonCompensable: true, activityPolicies: { 'L04-A02': { threshold: 22 / 26 } } },
+  'N0-U01-L05': { clusters: [{ id: 'graphicClassification', required: true, evidenceIds: ['L05-A01', 'L05-A02', 'L05-C03'], satisfaction: 'DEMONSTRATED_REQUIRED' }], nonCompensable: true, activityPolicies: { 'L05-A01': { threshold: 1 }, 'L05-A02': { threshold: 0.875 } } },
+  'N0-U01-L06': { clusters: [{ id: 'visualOrderAndSpacing', required: true, evidenceIds: ['L06-A01', 'L06-A02', 'L06-C03'], satisfaction: 'DEMONSTRATED_REQUIRED' }], nonCompensable: true, activityPolicies: { 'L06-A01': { threshold: 1 }, 'L06-A02': { threshold: 1 } } },
+  'N0-U01-L07': { clusters: [{ id: 'letterNameAndSound', required: true, evidenceIds: ['L07-A01', 'L07-A02', 'L07-C02'], satisfaction: 'DEMONSTRATED_REQUIRED' }], nonCompensable: true, activityPolicies: { 'L07-A01': { threshold: 0.8 }, 'L07-A02': { threshold: 0.8 } } },
+  'N0-U01-L08': { clusters: [{ id: 'soundWritingVariation', required: true, evidenceIds: ['L08-A01', 'L08-C03'], satisfaction: 'DEMONSTRATED_REQUIRED' }], nonCompensable: true, activityPolicies: { 'L08-A01': { threshold: 0.75 } } },
   'N0-U01-V01': {
     clusters: [
       { id: 'auditoryAndModality', required: true, evidenceIds: ['V01-Q01', 'V01-Q02'], satisfaction: 'DEMONSTRATED_REQUIRED' },
       { id: 'graphicSystem', required: true, evidenceIds: ['V01-Q03', 'V01-Q04', 'V01-Q05'], satisfaction: 'DEMONSTRATED_REQUIRED' },
       { id: 'visualOrganization', required: true, evidenceIds: ['V01-Q06', 'V01-Q07'], satisfaction: 'DEMONSTRATED_REQUIRED' },
-      {
-        id: 'soundWritingRelations',
-        required: true,
-        evidenceIds: ['V01-Q08', 'V01-Q09', 'V01-Q10', 'V01-Q11', 'V01-Q12'],
-        minimumEvidence: 4,
-        requiredAnyOf: [['V01-Q10', 'V01-Q11']],
-        satisfaction: 'DEMONSTRATED_REQUIRED'
-      }
+      { id: 'soundWritingRelations', required: true, evidenceIds: ['V01-Q08', 'V01-Q09', 'V01-Q10', 'V01-Q11', 'V01-Q12'], minimumEvidence: 4, requiredAnyOf: [['V01-Q10', 'V01-Q11']], satisfaction: 'DEMONSTRATED_REQUIRED' }
     ],
     nonCompensable: true,
     activityPolicies: { 'V01-Q02': { threshold: 0.5 }, 'V01-Q05': { threshold: 0.8 } }
@@ -72,6 +33,16 @@ export const INTERACTION_BY_PEDAGOGICAL_TYPE_V1 = Object.freeze({
   'similar-sound-different-writing': 'COMPOSITE',
   'concept-consolidation': 'SINGLE_CHOICE',
   'interpretation-boundary-check': 'CLASSIFY',
+  'perspective-check': 'CLASSIFY',
+  'formal-evidence-check': 'CLASSIFY',
+  'figurative-boundary-check': 'CLASSIFY',
+  'intertext-check': 'CLASSIFY',
+  'revision-principle-check': 'CLASSIFY',
+  'multimodal-check': 'CLASSIFY',
+  'representation-boundary-check': 'CLASSIFY',
+  'provenance-check': 'CLASSIFY',
+  'adaptation-check': 'CLASSIFY',
+  'accessibility-principle-check': 'CLASSIFY',
   'open-interpretation': 'STRUCTURED_RESPONSE',
   'closed-boundary-check': 'COMPOSITE',
   'independent-interpretation': 'STRUCTURED_RESPONSE',
