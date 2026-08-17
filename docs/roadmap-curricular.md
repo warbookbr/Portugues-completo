@@ -73,7 +73,7 @@ M1 ✓ — objetivo + 17 competências oficiais + 9 grandes responsabilidades
 M2 ✓ — 9 áreas dimensionadas + revisão horizontal 17/17
 M3 ✓ — 9 unidades integradas + cobertura 17/17 + saída antecipada
 M4 ✓ — 93 lições + 9 verificações integradas
-M5 em andamento
+M5 em andamento — U1–U9 concluídas; N4-EXIT-V01 e checkpoint final pendentes
 ```
 
 Fontes:
@@ -123,7 +123,8 @@ U5 ✓ — 11 lições + N4-U05-V01; gate normativo ✓
 U6 ✓ — 9 lições + N4-U06-V01
 U7 ✓ — 10 lições + N4-U07-V01; gate normativo ✓
 U8 ✓ — 9 lições + N4-U08-V01
-U9 — PRÓXIMO SUBPASSO; gate de mídia/acessibilidade ✓ para a arquitetura atual
+U9 ✓ — 12 lições + N4-U09-V01; gate de mídia/acessibilidade ✓
+N4-EXIT-V01 — PRÓXIMO SUBPASSO
 ```
 
 U1: `content/units/401-leitura-estrategica-alta-complexidade-revisao-interpretacao/`.
@@ -141,6 +142,8 @@ U6: `content/units/406-estilo-registro-projeto-voz/`.
 U7: `content/units/407-lingua-norma-variacao-mudanca-identidade-poder/`.
 
 U8: `content/units/408-oralidade-complexa-sintese-negociacao-debate/`.
+
+U9: `content/units/409-literatura-multimodalidade-autoria-intermedial-digital/`.
 
 O M5 da U1 consolidou os guard rails do nível:
 
@@ -254,6 +257,21 @@ O M5 da U8 consolidou oralidade complexa como processo estratégico, interaciona
 - tentativa oral registrada comprova processo, não inteligibilidade, pronúncia, prosódia ou qualidade global;
 - `N4-U08-V01` exige dez agrupamentos obrigatórios e torna escuta/síntese, plano, tentativa e autorrevisão não compensáveis.
 
+O M5 da U9 consolidou literatura, multimodalidade e autoria digital como competências integradas mas não intercambiáveis:
+
+- interpretação literária começa por leitura própria sustentada por evidência e limite reconhecido;
+- voz, perspectiva, estrutura e temporalidade são analisadas pela distribuição de informação, não por terminologia como fim;
+- poesia relaciona forma, repetição, sintaxe, quebra e ordem a efeitos sem reduzir qualidade a métrica/rima;
+- figuratividade, ambiguidade e ironia exigem pistas e podem preservar indeterminação real;
+- intertextualidade usa repertório fornecido e contexto funcional, sem prova de memória cultural secreta;
+- interpretação concorrente pode motivar revisão ou manutenção justificada; popularidade e mudança de posição não pontuam;
+- multimodalidade preserva relações, valores, ordem e equivalentes acessíveis sem depender de polimento visual;
+- montagem e timing representados são analisados apenas dentro do que a estrutura fornece; reconhecer necessidade de mídia real é desempenho correto quando timbre, atuação, movimento ou timing exato forem decisivos;
+- proveniência separa autoria, edição, repostagem e contexto de plataforma sem inventar causalidade algorítmica;
+- adaptação é avaliada por ganhos, perdas e transformação funcional, não por fidelidade máxima;
+- autoria multimodal exige função por modalidade, atribuição e equivalentes acessíveis para toda pista decisiva;
+- `N4-U09-V01` mantém literatura e multimodal/digital como eixos independentes e exige treze agrupamentos, incluindo produção integrada e reflexão autoral.
+
 ### Gate normativo N4-U5/U7
 
 - `docs/gate-normativo-nivel-4-u5-u7.md` — **SATISFEITO**;
@@ -270,9 +288,12 @@ O M5 da U8 consolidou oralidade complexa como processo estratégico, interaciona
 
 Gate de mídia/acessibilidade do N4:
 
-- `docs/gate-midia-acessibilidade-nivel-4-u9.md` — **SATISFEITO PARA A ARQUITETURA ATUAL; nenhuma nova mídia humana obrigatória**; reabrir apenas se M5 introduzir alvo sensorial real insubstituível.
+- `docs/gate-midia-acessibilidade-nivel-4-u9.md` — **SATISFEITO NO M5 DA U9; nenhuma nova mídia humana obrigatória**;
+- a autoria M5 usa apenas os recursos semânticos já aprovados pelo gate e TTS quando som específico não determina resposta;
+- nenhum `mediaId` novo foi criado e nenhuma entrada nova na fila de mídia é necessária;
+- reabrir somente se uma tarefa futura tornar timbre, prosódia específica, atuação, movimento contínuo ou timing audiovisual real evidência decisiva.
 
-O M4 preserva a cobertura 17/17 do N4 e mantém a arquitetura da futura saída em oito agrupamentos integrados.
+As nove unidades M5 preservam a cobertura 17/17 do N4. A conclusão das unidades **não equivale** ao fechamento do nível: falta a verificação integrada de saída e o checkpoint final.
 
 # Marco ativo
 
@@ -294,34 +315,36 @@ N4 — M1 ✓
                 ├── U6 ✓
                 ├── U7 ✓
                 ├── U8 ✓
-                └── U9 — PRÓXIMO SUBPASSO
+                ├── U9 ✓
+                └── N4-EXIT-V01 — PRÓXIMO SUBPASSO
 ```
 
 ## Próximo subpasso
 
 ```text
-N4-U09 M5 — Literatura, multimodalidade e autoria intermedial/digital
-→ 12 lições + N4-U09-V01
-→ interpretação literária própria sustentada por evidência e limite reconhecido
-→ voz, perspectiva, estrutura e temporalidade sem taxonomia como fim
-→ poesia: forma, ritmo, sintaxe e efeito; TTS opcional não determina interpretação
-→ figuratividade, ambiguidade e ironia sem procurar símbolo por reflexo
-→ intertextualidade/contexto com repertório fornecido, não secreto
-→ interpretações concorrentes + revisão justificada
-→ multimodalidade verbal/visual/dados/interface com equivalentes acessíveis
-→ sequência, montagem e timing representados; reconhecer quando mídia real seria indispensável
-→ proveniência, autoria, edição, circulação e plataforma sem inventar causalidade algorítmica
-→ adaptação/intermedialidade com ganhos, perdas e transformação
-→ autoria multimodal/digital acessível com função clara por modalidade
-→ análise + produção integradas
-→ usar `docs/gate-midia-acessibilidade-nivel-4-u9.md`; reabrir somente se surgir alvo sensorial real insubstituível
+N4-EXIT-V01 — verificação integrada de saída do Nível 4
+→ usar material novo e controlado; não repetir mecanicamente verificações das unidades
+→ oito agrupamentos integrados obrigatórios:
+   1. leitura estratégica + revisão de interpretação
+   2. pesquisa + síntese multifuente rastreável
+   3. argumentação própria revisável pela evidência
+   4. autoria longa + transferência entre gêneros/audiências/meios
+   5. edição + estilo + consulta linguística
+   6. análise de língua/norma/variação com adequação contextual
+   7. comunicação oral complexa com limite explícito de validação acústica
+   8. literatura + multimodalidade + autoria digital acessível
+→ preservar rastreabilidade, limites de evidência, revisão consciente e justificativa de manutenção/mudança
+→ produção longa, argumentação própria, pesquisa/síntese, processo oral e integração autoral não podem ser compensados por itens fechados
+→ respostas abertas não recebem validação automática global
+→ nenhuma preferência ideológica, formalidade máxima, extensão, quantidade de fontes/mudanças, sotaque, velocidade ou polimento visual funciona como proxy de domínio
 ```
 
 Depois:
 
 ```text
-N4-EXIT-V01
-→ checkpoint final do curso
+checkpoint final do curso
+→ auditorar as 17 competências oficiais do N4 contra evidências de U1–U9 + N4-EXIT-V01
+→ fechar curricularmente o N4 e o curso sem confundir fechamento curricular com aprovação automática de aluno individual
 ```
 
 # Regras de continuidade
@@ -366,6 +389,9 @@ N4-EXIT-V01
 38. Em oralidade, replay, tempo de resposta, hesitação e memória literal não são proxies de compreensão ou domínio; o foco é significado, estrutura, evidência e interação.
 39. Registro de tentativa oral comprova processo, não inteligibilidade, pronúncia, prosódia ou qualidade global; esses aspectos exigem observação confiável apropriada.
 40. Debate e negociação não pontuam vitória, agressividade, consenso ou mudança de posição por si; fidelidade, reparo, evidência, escopo e justificativa são os critérios funcionais.
+41. Em literatura, gosto, popularidade de leitura e quantidade de símbolos identificados não substituem evidência; interpretações concorrentes podem coexistir quando sustentadas.
+42. Em multimodalidade, aparência, cor, quantidade de modalidades ou fidelidade máxima da adaptação não são proxies de qualidade; informação decisiva precisa permanecer acessível e atribuível.
+43. Reconhecer que uma pergunta exige mídia real é competência quando a representação semântica não preserva timbre, atuação, movimento ou timing que sejam justamente o alvo.
 
 # Dependências não curriculares
 
