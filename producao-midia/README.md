@@ -14,6 +14,8 @@ produção humana de mídia
 
 A fonte oficial das demandas de produção é `producao-midia/FILA-MIDIA.md`.
 
+O impacto de uma mídia pendente sobre o desenvolvimento, homologação e publicação do Modo Clássico é registrado em `docs/estado-implementacao-classico.md`.
+
 ## O que fica aqui
 
 Esta pasta contém instruções e rastreamento de produção. Ela não deve receber os arquivos pesados de áudio, vídeo ou imagem apenas para servir como área de trabalho.
@@ -27,6 +29,8 @@ producao-midia/
 As regras pedagógicas gerais de uso de mídia continuam em `docs/conteudo.md`.
 
 As regras técnicas de providers, carregamento e mídia externa continuam em `docs/arquitetura.md`.
+
+O estado operacional do produto não deve ser duplicado na fila: a fila responde **como está a produção da mídia**; `docs/estado-implementacao-classico.md` responde **o que essa ausência/presença bloqueia no produto**.
 
 ## Princípio central
 
@@ -125,17 +129,53 @@ Obrigatório para publicação: SIM / NÃO
 
 ### `SIM`
 
-A mídia é necessária para que a atividade ensine ou avalie corretamente aquilo que se propõe.
+A mídia é necessária para que a atividade ensine ou avalie corretamente aquilo que se propõe, ou para que a versão pública final cumpra o contrato aprovado.
 
 Exemplo: áudio controlado em uma atividade de discriminação sonora.
 
-A implementação técnica pode continuar usando o ID como dependência, mas a atividade não deve ser considerada pronta para publicação enquanto a mídia obrigatória estiver pendente.
+A implementação técnica pode continuar usando o ID como dependência, mas o escopo afetado não deve ser considerado pronto para publicação enquanto a mídia obrigatória estiver pendente.
+
+Quando a mídia for o próprio estímulo necessário, a atividade também não deve ser marcada como homologada pedagogicamente antes de existir material apropriado para essa homologação.
 
 ### `NÃO`
 
 A mídia melhora a experiência, mas sua ausência não invalida pedagogicamente a atividade.
 
 Exemplo possível: vídeo complementar cuja mesma ideia essencial já esteja ensinada de maneira suficiente por outro recurso.
+
+## Impacto da mídia no estado do produto
+
+A fila de produção e o estado do produto são relacionados, mas diferentes.
+
+Uma mídia pode estar `A_PRODUZIR` enquanto o renderer que a consumirá já está tecnicamente implementado.
+
+No registro do Clássico, usar a classificação apropriada:
+
+```text
+SEM_DEPENDENCIA
+MIDIA_OPCIONAL_PENDENTE
+MIDIA_PENDENTE_NAO_BLOQUEANTE
+MIDIA_OBRIGATORIA_PARA_ATIVIDADE
+MIDIA_OBRIGATORIA_PARA_PUBLICACAO
+MIDIA_PRONTA_PARA_VALIDAR
+MIDIA_VALIDADA
+MIDIA_PUBLICADA
+```
+
+Exemplo:
+
+```text
+FILA-MIDIA
+N0-U01-L03-AUD-001 → A_PRODUZIR
+
+ESTADO DO PRODUTO
+renderer de áudio → IMPLEMENTADO
+atividade de discriminação → homologação BLOQUEADA_POR_DEPENDENCIA
+publicação da atividade → BLOQUEADA
+restante da unidade → pode continuar
+```
+
+Essa separação impede que uma pendência local paralise o desenvolvimento inteiro e impede também que infraestrutura pronta seja confundida com atividade pedagogicamente pronta.
 
 ## Estados da produção
 
@@ -160,6 +200,8 @@ Significado:
 - `PUBLICADO` — versão validada já está disponível no local usado pelo curso.
 
 Não usar `PUBLICADO` apenas porque o arquivo foi colocado no Drive. Publicado significa que a versão validada está ligada ao conteúdo que o aplicativo entrega.
+
+Quando o estado de produção mudar de forma que remova ou crie blocker real no Modo Clássico, atualizar também `docs/estado-implementacao-classico.md` na PR/alteração de produto correspondente.
 
 ## Prioridades
 
@@ -257,7 +299,8 @@ necessidade pedagógica
 → decidir TTS ou mídia curada
 → criar ID quando houver produção humana
 → registrar ficha em FILA-MIDIA.md
-→ conteúdo pode continuar sendo desenvolvido usando o ID
+→ conteúdo/implementação independente pode continuar usando o ID
+→ registrar impacto no estado do produto quando a implementação chegar a esse escopo
 ```
 
 Não criar mídia apenas para tornar a aula visualmente mais variada.
@@ -351,10 +394,14 @@ Criar um novo ID apenas quando a nova mídia passar a representar outra função
 mídia pendente
 ≠ desenvolvimento bloqueado
 
-mas
+mídia obrigatória para uma atividade
+→ bloqueia homologação pedagógica daquela atividade
 
-mídia obrigatória pendente
-→ conteúdo correspondente não está pronto para publicação
+mídia obrigatória para publicação
+→ bloqueia PUBLICAVEL naquele escopo
+
+pendência local
+≠ blocker global automático
 ```
 
 O objetivo deste sistema é permitir que planejamento, implementação e produção de mídia avancem em paralelo sem perder clareza, rastreabilidade ou qualidade pedagógica.
