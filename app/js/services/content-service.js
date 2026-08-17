@@ -32,7 +32,7 @@ export class ContentService {
   constructor({ basePath = './content', fetchImpl = globalThis.fetch } = {}) {
     if (typeof fetchImpl !== 'function') throw new TypeError('ContentService exige uma função fetch.');
     this.basePath = basePath;
-    this.fetchImpl = fetchImpl;
+    this.fetchImpl = fetchImpl.bind(globalThis);
   }
 
   async loadJson(relativePath) {
