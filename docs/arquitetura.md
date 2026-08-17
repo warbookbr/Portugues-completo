@@ -18,6 +18,8 @@ O projeto deve continuar simples de publicar, fácil de manter e organizado o su
 - Instruções específicas do ChatGPT ficam em `.ChatGPT/`.
 - Serviços como áudio, configurações, progresso e GitHub devem ficar isolados da interface.
 - Preferências locais e progresso acadêmico são dados diferentes e não devem compartilhar a mesma fonte de verdade.
+- O conteúdo didático e o progresso pedagógico são únicos; modos de estudo alteram a experiência de uso, não criam currículos paralelos.
+- Gamificação é uma camada opcional e não define domínio pedagógico.
 - Assets necessários para o funcionamento e identidade visual do frontend ficam no repositório.
 - Mídias pedagógicas pesadas podem ficar fora do repositório e ser referenciadas declarativamente pelo conteúdo.
 - Mudanças estruturais devem manter `PROJECT_INDEX.md` e as referências carregadas por `index.html` coerentes.
@@ -170,17 +172,21 @@ SettingsService
 - carregar preferências
 - salvar preferências
 - aplicar tema e tipografia
+- armazenar a preferência de modo de estudo
 
 ProgressService
-- carregar progresso
-- salvar progresso
-- atualizar XP e lições concluídas
+- carregar progresso pedagógico
+- salvar progresso pedagógico
+- registrar lições, evidências e estados de aprendizagem
+- fornecer eventos de progresso que a gamificação possa consumir sem controlar o domínio
 
 GitHubService
 - autenticar chamadas
 - identificar usuário
 - localizar, criar e atualizar Gist
 ```
+
+A gamificação deve permanecer separada do núcleo pedagógico. Se sua implementação crescer o suficiente para justificar serviço próprio, ela deve ser isolada em vez de concentrada no `ProgressService`.
 
 A interface não deve espalhar chamadas diretas à GitHub REST API.
 
@@ -193,6 +199,7 @@ Exemplos:
 - menu de configurações;
 - painel de áudio;
 - painel de aparência;
+- escolha e troca do modo de estudo;
 - visualização de lição;
 - visualização de exercício.
 
@@ -333,6 +340,7 @@ Estrutura inicial:
 Configurações
 - Áudio
 - Aparência
+- Modo de estudo
 ```
 
 ### Áudio
@@ -356,6 +364,110 @@ Pode configurar inicialmente:
 - cor do texto;
 - restauração dos padrões.
 
+### Modo de estudo
+
+O aluno pode escolher entre duas experiências sobre o mesmo curso:
+
+```text
+Clássico
+→ experiência direta e focada no conteúdo
+→ sem XP, missões, conquistas ou progressão de jogo obrigatória
+
+Gamificado
+→ mesmo conteúdo e mesmo progresso pedagógico
+→ acrescenta uma camada opcional de XP, conquistas, missões, sequência de estudo e outros recursos de jogo
+```
+
+A escolha inicial deve ser apresentada ao aluno em momento apropriado da primeira experiência. Depois disso, o modo deve permanecer alterável nas configurações.
+
+O controle visual definitivo pode ser botão, seletor, cards ou outro componente adequado. A arquitetura define o comportamento, não obriga um componente específico antes do desenho da interface.
+
+## Modos de experiência de estudo
+
+O Português Completo possui **um único currículo e um único núcleo de progresso pedagógico**. Os modos Clássico e Gamificado não representam cursos diferentes e não devem duplicar lições, exercícios ou regras curriculares.
+
+Estrutura conceitual:
+
+```text
+conteúdo didático único
+        |
+        v
+motor pedagógico / progresso
+        |
+        +------------------+
+        |                  |
+        v                  v
+modo Clássico        modo Gamificado
+interface direta     camada de jogo opcional
+```
+
+### Modo Clássico
+
+O modo Clássico deve priorizar uma experiência simples, prática e direta.
+
+Características:
+
+- não exige XP;
+- não exige missões;
+- não exige conquistas;
+- não exige sequência de dias;
+- mostra progresso curricular, revisão, prática e domínio quando pedagogicamente úteis;
+- não deve esconder requisitos pedagógicos atrás de mecânicas de jogo.
+
+O aluno que escolhe o modo Clássico não precisa participar de um sistema de XP em segundo plano para que o curso funcione.
+
+### Modo Gamificado
+
+O modo Gamificado usa o mesmo conteúdo e as mesmas evidências pedagógicas do modo Clássico, acrescentando uma camada motivacional opcional.
+
+Essa camada poderá incluir, quando definida funcionalmente:
+
+- XP;
+- conquistas;
+- missões;
+- sequência de estudo;
+- marcos;
+- progressão visual;
+- estatísticas ou coleções relacionadas à jornada.
+
+Gamificação não substitui avaliação pedagógica. XP, conquistas ou frequência não devem ser usados como prova automática de domínio de uma competência.
+
+### Troca de modo
+
+O aluno deve poder trocar entre Clássico e Gamificado sem reiniciar o curso.
+
+Ao trocar de modo, devem permanecer intactos:
+
+- lições iniciadas ou concluídas;
+- evidências registradas;
+- competências demonstradas;
+- revisões pendentes;
+- estado curricular;
+- demais dados pedagógicos independentes da apresentação.
+
+A troca modifica a experiência apresentada ao aluno, não o que ele já aprendeu ou percorreu.
+
+Como o modo Clássico não precisa acumular XP ocultamente, a regra exata para iniciar ou retomar elementos exclusivamente gamificados após uma troca será definida junto das regras de gamificação em `docs/progresso.md`, quando esse documento for criado. Essa decisão não pode alterar retroativamente o domínio pedagógico do aluno.
+
+### Separação entre progresso e gamificação
+
+A arquitetura deve distinguir pelo menos três conceitos:
+
+```text
+PROGRESSO CURRICULAR
+→ onde o aluno está e o que percorreu
+
+DOMÍNIO / EVIDÊNCIA
+→ o que o aluno demonstrou saber ou ainda precisa validar
+
+GAMIFICAÇÃO
+→ XP, missões, conquistas e outros elementos motivacionais opcionais
+```
+
+Os dois primeiros pertencem ao núcleo pedagógico e existem independentemente do modo escolhido.
+
+O terceiro só participa da experiência gamificada e não deve ser fonte de verdade para domínio curricular.
+
 ## Persistência das configurações
 
 Preferências de interface podem ser salvas em `localStorage`.
@@ -372,9 +484,12 @@ velocidade
 tom
 volume
 narração ligada/desligada
+modo de estudo
 ```
 
 `localStorage` não é a fonte oficial do progresso acadêmico.
+
+A preferência entre Clássico e Gamificado é uma configuração de experiência; o progresso pedagógico correspondente permanece separado e deve continuar sincronizável conforme a arquitetura de progresso.
 
 ## Identificação e progresso dos alunos
 
@@ -401,19 +516,20 @@ O arquivo previsto no Gist é:
 portugues-completo-progress.json
 ```
 
-Exemplo:
+Exemplo conceitual:
 
 ```json
 {
   "schemaVersion": 1,
   "aluno": "joao",
-  "xp": 1250,
   "nivel": 3,
   "licaoAtual": "3.4",
   "concluidas": ["1.1", "1.2"],
   "ultimaAtividade": "2026-08-11T22:30:00-03:00"
 }
 ```
+
+Campos exclusivamente gamificados, como XP, não são requisito do núcleo de progresso pedagógico e só devem ser formalizados quando as regras de gamificação forem definidas.
 
 A credencial deve pertencer ao próprio aluno, ter apenas as permissões necessárias e nunca ser commitada no repositório.
 
@@ -506,6 +622,7 @@ A integração não deve transformar uma resposta gerada pelo modelo em verdade 
 ```text
 Preferências do dispositivo
 → localStorage
+→ inclui a preferência de modo de estudo
 
 Credencial temporária
 → sessionStorage, quando aplicável
@@ -548,7 +665,7 @@ docs/exercicios.md
 → tipos e regras de exercícios, quando criado
 
 docs/progresso.md
-→ regras de XP, domínio e revisão, quando criado
+→ regras de progresso, domínio, revisão e gamificação, quando criado
 
 docs/configuracoes.md
 → comportamento das preferências, quando criado
@@ -590,6 +707,8 @@ O validador não exige que cada lição ou exercício individual seja listado no
 - documentação centralizada;
 - mídias pesadas fora do repositório;
 - preferências visuais independentes do progresso;
+- mesmo conteúdo e progresso pedagógico em qualquer modo de estudo;
+- gamificação opcional sem contaminar a fonte de verdade de domínio;
 - progresso do aluno separado dos commits do curso;
 - validação automática contra referências quebradas e deriva estrutural.
 
@@ -604,6 +723,7 @@ O validador não exige que cada lição ou exercício individual seja listado no
 - Google Drive não é tratado como CDN nem como filesystem da aplicação;
 - uma API key de IA lembrada localmente não acompanha automaticamente o aluno entre dispositivos ou navegadores;
 - limpar dados locais pode exigir que a API key de IA seja informada novamente;
+- regras específicas de XP, missões, conquistas e transição para o modo Gamificado ainda dependem de definição funcional posterior;
 - a arquitetura foi escolhida para um grupo pequeno de usuários, não para milhares de alunos simultâneos.
 
 ## Regra principal
@@ -617,7 +737,8 @@ exercícios
 mídia pedagógica
 configurações
 narração
-progresso
+progresso pedagógico
+gamificação opcional
 integração com GitHub
 integração com IA e credenciais locais
 documentação
