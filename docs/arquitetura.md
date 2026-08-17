@@ -16,10 +16,11 @@ O projeto deve continuar simples de publicar, fácil de manter e organizado o su
 - Conteúdo pedagógico fica separado em `content/`.
 - Documentação oficial fica em `docs/`.
 - Instruções específicas do ChatGPT ficam em `.ChatGPT/`.
-- Serviços como áudio, configurações, progresso e GitHub devem ficar isolados da interface.
+- Serviços como conteúdo, áudio, configurações, progresso, IA e GitHub devem ficar isolados da interface.
 - Preferências locais e progresso acadêmico são dados diferentes e não devem compartilhar a mesma fonte de verdade.
 - O conteúdo didático e o progresso pedagógico são únicos; modos de estudo alteram a experiência de uso, não criam currículos paralelos.
 - Gamificação é uma camada opcional e não define domínio pedagógico.
+- Atividade pedagógica, interação visual, avaliação e evidência são dimensões separadas.
 - Assets necessários para o funcionamento e identidade visual do frontend ficam no repositório.
 - Mídias pedagógicas pesadas podem ficar fora do repositório e ser referenciadas declarativamente pelo conteúdo.
 - Mudanças estruturais devem manter `PROJECT_INDEX.md` e as referências carregadas por `index.html` coerentes.
@@ -36,10 +37,13 @@ GitHub Pages
     |   `-- assets do frontend
     |
     |-- content/
-    |   `-- conteúdo do curso em JSON
+    |   `-- conteúdo + manifests do curso em JSON
     |
     |-- Google Drive / providers externos
     |   `-- mídias pedagógicas
+    |
+    |-- provedor de IA escolhido pelo aluno
+    |   `-- feedback assistido via API key do próprio aluno
     |
     `-- GitHub REST API
         |-- identifica o aluno
@@ -48,7 +52,7 @@ GitHub Pages
 
 ## Estrutura de arquivos
 
-Estrutura base:
+Estrutura base/alvo:
 
 ```text
 Portugues-completo/
@@ -73,9 +77,11 @@ Portugues-completo/
 |   |   |   `-- state.js                  (quando necessário)
 |   |   |
 |   |   |-- services/
+|   |   |   |-- content-service.js        (quando implementado)
 |   |   |   |-- narration-service.js
 |   |   |   |-- settings-service.js
 |   |   |   |-- progress-service.js       (quando implementado)
+|   |   |   |-- ai-feedback-service.js    (quando implementado)
 |   |   |   `-- github-service.js         (quando implementado)
 |   |   |
 |   |   |-- ui/
@@ -94,31 +100,29 @@ Portugues-completo/
 |
 |-- content/
 |   |-- course.json
+|   |-- levels/
 |   `-- units/
 |       `-- 001-.../
-|           |-- unit.json
-|           |-- lessons/
-|           `-- exercises/
+|           |-- unit.json                  (manifesto quando publicado)
+|           |-- integrated-verification.json
+|           `-- lessons/
 |
 |-- docs/
 |   |-- arquitetura.md
-|   |-- mapa-curso.md
+|   |-- contrato-conteudo.md
 |   |-- conteudo.md
-|   |-- exercicios.md                      (quando criado)
+|   |-- exercicios.md
 |   |-- progresso.md
+|   |-- persistencia-progresso.md
+|   |-- avaliacao-ia.md
+|   |-- mapa-curso.md
 |   |-- configuracoes.md                   (quando criado)
 |   `-- convencoes.md                      (quando criado)
 |
+|-- schemas/                               (quando implementados)
 |-- scripts/
-|   `-- validate-project.mjs
-|
 |-- .github/
-|   `-- workflows/
-|       `-- validate-project.yml
-|
 `-- .ChatGPT/
-    |-- README.md
-    `-- skills/
 ```
 
 ## Separação de responsabilidades
@@ -138,7 +142,7 @@ Como o projeto é publicado em um subcaminho do GitHub Pages, referências locai
 
 Contém a aplicação entregue ao navegador.
 
-A pasta existe para evitar que `css/`, `js/` e assets de interface concorram na raiz com conteúdo, documentação e arquivos de governança.
+A pasta existe para evitar que CSS, JavaScript e assets de interface concorram na raiz com conteúdo, documentação e arquivos de governança.
 
 ### `app/css/`
 
@@ -163,6 +167,12 @@ Serviços independentes da interface.
 Responsabilidades previstas:
 
 ```text
+ContentService
+- carregar course.json e manifests
+- carregar lições/verificações
+- normalizar gerações de conteúdo para o runtime
+- rejeitar versões/formato incompatíveis explicitamente
+
 NarrationService
 - carregar vozes disponíveis
 - falar texto
@@ -172,13 +182,19 @@ SettingsService
 - carregar preferências
 - salvar preferências
 - aplicar tema e tipografia
-- armazenar a preferência de modo de estudo
+- armazenar preferência de modo de estudo e opções locais de IA
 
 ProgressService
-- carregar progresso pedagógico
-- salvar progresso pedagógico
+- carregar/salvar progresso pedagógico
 - registrar lições, evidências e estados de aprendizagem
-- fornecer eventos de progresso que a gamificação possa consumir sem controlar o domínio
+- calcular clusters, revisão e competências
+- fornecer eventos que a gamificação possa consumir sem controlar domínio
+
+AiFeedbackService
+- receber contrato neutro de avaliação
+- chamar adapter do provider escolhido
+- validar/normalizar feedback estruturado
+- nunca gravar domínio diretamente
 
 GitHubService
 - autenticar chamadas
@@ -186,11 +202,17 @@ GitHubService
 - localizar, criar e atualizar Gist
 ```
 
-As regras funcionais do `ProgressService`, feedback, revisão, domínio e gamificação ficam em `docs/progresso.md`.
+Contratos:
+
+- conteúdo/runtime: `docs/contrato-conteudo.md`;
+- atividades: `docs/exercicios.md`;
+- progresso pedagógico: `docs/progresso.md`;
+- persistência/cálculo mecânico: `docs/persistencia-progresso.md`;
+- feedback com IA: `docs/avaliacao-ia.md`.
 
 A gamificação deve permanecer separada do núcleo pedagógico. Se sua implementação crescer o suficiente para justificar serviço próprio, ela deve ser isolada em vez de concentrada no `ProgressService`.
 
-A interface não deve espalhar chamadas diretas à GitHub REST API.
+A interface não deve espalhar chamadas diretas à GitHub REST API ou a providers de IA.
 
 ### `app/js/ui/`
 
@@ -203,56 +225,49 @@ Exemplos:
 - painel de aparência;
 - escolha e troca do modo de estudo;
 - visualização de lição;
-- visualização de exercício.
+- visualização de exercício;
+- estados de feedback, evidência, revisão e sincronização.
 
 ### `app/assets/`
 
 Contém assets necessários ao frontend e à identidade visual da aplicação.
 
-Exemplos:
-
-- logo;
-- ícones;
-- imagens de interface;
-- fundos;
-- elementos visuais reutilizados pelo sistema.
-
 Mídia pedagógica pesada não deve ser colocada aqui apenas por conveniência.
 
 ### `content/`
 
-Responsável pelo conteúdo pedagógico.
+Responsável pelo conteúdo pedagógico e pelos manifests de publicação.
 
-O conteúdo deve ser preferencialmente declarativo em JSON e não deve depender de JavaScript para armazenar textos de aula.
+O conteúdo continua declarativo em JSON. O JavaScript não deve armazenar grandes blocos pedagógicos.
 
-Estrutura prevista:
+O contrato oficial de descoberta é:
 
 ```text
-content/
-|-- course.json
-`-- units/
-    `-- 001-fundamentos/
-        |-- unit.json
-        |-- lessons/
-        `-- exercises/
+content/course.json
+→ unit.json
+→ lesson/verification JSON
+→ ContentService/normalizador
+→ modelo de runtime
+→ renderer
 ```
 
-Os formatos definitivos de unidades, lições e exercícios devem ser documentados em `docs/`.
+Os JSONs curriculares já existentes continuam válidos como autoria. A publicação usa manifests e adaptação incremental; não existe exigência de reescrita em massa.
+
+Detalhes: `docs/contrato-conteudo.md`.
 
 ## Navegação
 
 A aplicação deve usar hash routing para permanecer compatível com GitHub Pages sem reescrita de servidor.
 
-Exemplos:
+Exemplos conceituais:
 
 ```text
 #/
-#/unidade/1
-#/unidade/1/licao/3
-#/exercicio/1/3
+#/unidade/<id>
+#/unidade/<id>/licao/<id>
 ```
 
-Assim o navegador sempre carrega `index.html`, e o JavaScript interpreta a parte após `#`.
+O router trabalha com IDs descobertos pelo catálogo. Ele não deve adivinhar pastas ou manter uma lista curricular paralela em JavaScript.
 
 ## Conteúdo e carregamento
 
@@ -260,7 +275,25 @@ Assim o navegador sempre carrega `index.html`, e o JavaScript interpreta a parte
 
 O catálogo principal é carregado de `content/course.json`.
 
-À medida que unidades e lições forem implementadas, a aplicação deve carregar conteúdo declarativo em vez de incorporar grandes blocos pedagógicos no JavaScript.
+O conteúdo atual de `course.json` ainda não publica as unidades. O marco técnico de catálogo/manifests deverá preenchê-lo de forma controlada conforme `docs/contrato-conteudo.md`.
+
+## Atividades e renderer
+
+O renderer não deve criar um componente diferente para cada string histórica de `type`.
+
+A normalização separa:
+
+```text
+papel pedagógico
+interação
+avaliação
+evidência
+estímulos
+```
+
+As primitivas e políticas oficiais ficam em `docs/exercicios.md`.
+
+O mesmo estado pedagógico deve ser representável nos modos Clássico e Gamificado sem duplicar conteúdo.
 
 ## Mídia pedagógica externa
 
@@ -276,13 +309,6 @@ Mídia pedagógica pesada
 → Google Drive ou outro provider declarado
 ```
 
-Exemplos de mídia externa:
-
-- vídeos das unidades;
-- fotografias usadas em aulas;
-- ilustrações pedagógicas grandes;
-- diagramas específicos do conteúdo.
-
 O Google Drive não deve ser usado como substituto de `app/assets/` para arquivos essenciais ao funcionamento ou identidade visual da aplicação.
 
 ### Referência pelo conteúdo
@@ -295,13 +321,11 @@ Exemplo:
 
 ```json
 {
-  "tipo": "video",
+  "type": "video",
   "provider": "google-drive",
   "fileId": "1AbCdEfGh123456"
 }
 ```
-
-Para vídeo do Google Drive, o frontend pode montar o player com o formato de visualização correspondente ao provider.
 
 Nenhuma credencial privada do Google Drive deve ser incluída no frontend ou nos JSON do curso.
 
@@ -311,16 +335,7 @@ A aplicação não deve listar automaticamente uma pasta do Drive para descobrir
 
 O campo `provider` evita acoplamento permanente ao Google Drive.
 
-Exemplos futuros:
-
-```text
-google-drive
-youtube
-arquivo-local
-outro provider
-```
-
-A interface decide como renderizar cada provider.
+A interface/serviço decide como renderizar cada provider.
 
 ## Narração
 
@@ -343,28 +358,16 @@ Configurações
 - Áudio
 - Aparência
 - Modo de estudo
+- IA / feedback, quando implementado
 ```
 
 ### Áudio
 
-Pode configurar:
-
-- narração ligada/desligada;
-- voz;
-- velocidade;
-- tom;
-- volume;
-- teste de voz.
+Pode configurar narração, voz, velocidade, tom, volume e teste.
 
 ### Aparência
 
-Pode configurar inicialmente:
-
-- tema claro/escuro;
-- tamanho da fonte;
-- família da fonte;
-- cor do texto;
-- restauração dos padrões.
+Pode configurar tema, tamanho/família da fonte, cor do texto e restauração dos padrões.
 
 ### Modo de estudo
 
@@ -377,18 +380,16 @@ Clássico
 
 Gamificado
 → mesmo conteúdo e mesmo progresso pedagógico
-→ acrescenta uma camada opcional de XP, conquistas, missões, sequência de estudo e outros recursos de jogo
+→ acrescenta camada opcional de XP, conquistas, missões, sequência de estudo e outros recursos de jogo
 ```
 
-A escolha inicial deve ser apresentada ao aluno em momento apropriado da primeira experiência. Depois disso, o modo deve permanecer alterável nas configurações.
+A escolha inicial deve ser apresentada em momento apropriado e permanecer alterável nas configurações.
 
 O controle visual definitivo pode ser botão, seletor, cards ou outro componente adequado. A arquitetura define o comportamento, não obriga um componente específico antes do desenho da interface.
 
 ## Modos de experiência de estudo
 
-O Português Completo possui **um único currículo e um único núcleo de progresso pedagógico**. Os modos Clássico e Gamificado não representam cursos diferentes e não devem duplicar lições, exercícios ou regras curriculares.
-
-Estrutura conceitual:
+O Português Completo possui **um único currículo e um único núcleo de progresso pedagógico**.
 
 ```text
 conteúdo didático único
@@ -405,70 +406,30 @@ interface direta     camada de jogo opcional
 
 ### Modo Clássico
 
-O modo Clássico deve priorizar uma experiência simples, prática e direta.
-
-Características:
-
 - não exige XP;
 - não exige missões;
 - não exige conquistas;
 - não exige sequência de dias;
-- mostra progresso curricular, revisão, prática e domínio quando pedagogicamente úteis;
-- não deve esconder requisitos pedagógicos atrás de mecânicas de jogo.
-
-O aluno que escolhe o modo Clássico não precisa participar de um sistema de XP em segundo plano para que o curso funcione.
+- mostra progresso curricular, revisão, prática e domínio quando úteis;
+- não acumula XP ocultamente.
 
 ### Modo Gamificado
 
-O modo Gamificado usa o mesmo conteúdo e as mesmas evidências pedagógicas do modo Clássico, acrescentando uma camada motivacional opcional.
+Usa o mesmo conteúdo e evidências, acrescentando camada motivacional opcional.
 
-Essa camada poderá incluir, conforme `docs/progresso.md`:
-
-- XP;
-- conquistas;
-- missões;
-- sequência de estudo;
-- marcos;
-- progressão visual;
-- estatísticas ou coleções relacionadas à jornada.
-
-Gamificação não substitui avaliação pedagógica. XP, conquistas ou frequência não devem ser usados como prova automática de domínio de uma competência.
+Gamificação não substitui avaliação pedagógica. XP, conquistas ou frequência não são prova automática de domínio.
 
 ### Troca de modo
 
-O aluno deve poder trocar entre Clássico e Gamificado sem reiniciar o curso.
+Ao trocar de modo, permanecem intactos:
 
-Ao trocar de modo, devem permanecer intactos:
+- lições iniciadas/concluídas;
+- evidências;
+- competências;
+- revisões;
+- estado curricular.
 
-- lições iniciadas ou concluídas;
-- evidências registradas;
-- competências demonstradas;
-- revisões pendentes;
-- estado curricular;
-- demais dados pedagógicos independentes da apresentação.
-
-A troca modifica a experiência apresentada ao aluno, não o que ele já aprendeu ou percorreu.
-
-O modo Clássico não acumula XP ocultamente. Ao ativar o Gamificado depois de estudar no Clássico, o progresso pedagógico anterior permanece válido, mas o XP não é reconstruído retroativamente. Dados gamificados já obtidos antes de uma troca para o Clássico podem ser preservados para eventual retorno. O contrato completo fica em `docs/progresso.md`.
-
-### Separação entre progresso e gamificação
-
-A arquitetura deve distinguir pelo menos três conceitos:
-
-```text
-PROGRESSO CURRICULAR
-→ onde o aluno está e o que percorreu
-
-DOMÍNIO / EVIDÊNCIA
-→ o que o aluno demonstrou saber ou ainda precisa validar
-
-GAMIFICAÇÃO
-→ XP, missões, conquistas e outros elementos motivacionais opcionais
-```
-
-Os dois primeiros pertencem ao núcleo pedagógico e existem independentemente do modo escolhido.
-
-O terceiro só participa da experiência gamificada e não deve ser fonte de verdade para domínio curricular.
+Clássico → Gamificado não reconstrói XP retroativo. Gamificação anterior pode ser preservada para eventual retorno.
 
 ## Persistência das configurações
 
@@ -487,161 +448,120 @@ tom
 volume
 narração ligada/desligada
 modo de estudo
+preferências de IA não secretas
 ```
 
 `localStorage` não é a fonte oficial do progresso acadêmico.
 
-A preferência entre Clássico e Gamificado é uma configuração de experiência; o progresso pedagógico correspondente permanece separado e deve continuar sincronizável conforme a arquitetura de progresso.
-
 ## Identificação e progresso dos alunos
 
-A arquitetura escolhida usa a própria conta GitHub do aluno e um Gist pertencente a ele para sincronizar o progresso entre dispositivos.
+A arquitetura usa a própria conta GitHub do aluno e um Gist pertencente a ele para sincronizar progresso entre dispositivos.
 
-Fluxo conceitual:
+Fluxo:
 
 ```text
 Aluno fornece credencial compatível
-        |
-        v
-Aplicação identifica a conta pela GitHub REST API
-        |
-        v
-Localiza ou cria o Gist de progresso
-        |
-        v
-Carrega e atualiza o progresso acadêmico
+→ aplicação identifica conta pela GitHub REST API
+→ localiza/cria Gist
+→ carrega/atualiza progresso
 ```
 
-O arquivo previsto no Gist é:
+Arquivo oficial:
 
 ```text
 portugues-completo-progress.json
 ```
 
-Exemplo conceitual:
+O schema v1 e as regras de merge/migração ficam em `docs/persistencia-progresso.md`.
 
-```json
-{
-  "schemaVersion": 1,
-  "aluno": "joao",
-  "nivel": 3,
-  "licaoAtual": "3.4",
-  "concluidas": ["1.1", "1.2"],
-  "ultimaAtividade": "2026-08-11T22:30:00-03:00"
-}
-```
+A credencial deve pertencer ao próprio aluno, ter apenas permissões necessárias e nunca ser commitada.
 
-O formato definitivo do progresso deve respeitar `docs/progresso.md` e separar dados curriculares, evidência/domínio, revisão e gamificação.
-
-A credencial deve pertencer ao próprio aluno, ter apenas as permissões necessárias e nunca ser commitada no repositório.
-
-O mecanismo exato de token e as permissões disponíveis devem ser verificados na documentação atual do GitHub antes da implementação definitiva.
-
-Se uma credencial precisar permanecer apenas durante a sessão, `sessionStorage` pode ser usado como armazenamento temporário.
+O mecanismo exato de token e permissões disponíveis deve ser verificado na documentação atual do GitHub antes da implementação definitiva.
 
 ## IA, feedback e credenciais do aluno
 
-A integração futura com provedores de IA deve preservar a arquitetura estática do GitHub Pages e **não pode depender de uma chave secreta pertencente ao projeto exposta ao navegador**.
-
-Regra estrutural:
+A integração com IA preserva a arquitetura estática e não pode depender de chave secreta pertencente ao projeto exposta ao navegador.
 
 ```text
-nenhuma chave privada do projeto para provedor de IA
-→ frontend estático
+nenhuma chave privada do projeto para IA
+→ frontend
 → repositório
-→ JSON de conteúdo
-→ configuração pública do GitHub Pages
+→ JSON do curso
+→ configuração pública
 ```
 
-Qualquer integração direta entre o navegador e um provedor de IA deve usar uma credencial fornecida pelo próprio aluno, pertencente à conta dele no provedor escolhido.
+Qualquer integração direta usa credencial do próprio aluno.
 
 ### Separação entre credenciais
 
-A credencial usada para IA e a credencial usada para GitHub/progresso são responsabilidades diferentes.
-
 ```text
 credencial GitHub
-→ identidade e sincronização de progresso
-→ pode participar do fluxo de Gist definido pelo projeto
+→ identidade + Gist
 
 API key de IA
-→ chamadas ao provedor de IA escolhido pelo aluno
-→ nunca deve ser colocada no Gist
-→ nunca deve ser sincronizada como progresso
+→ provider escolhido pelo aluno
+→ nunca Gist
+→ nunca progresso
 ```
 
-O `ProgressService` e o mecanismo de Gist não devem receber, persistir ou transportar a API key de IA.
+O `ProgressService` e o `GitHubService` não devem receber/persistir a API key de IA como dado acadêmico.
 
-### Persistência da API key de IA
+### Persistência da API key
 
-O comportamento padrão deve ser o mais conservador:
+Padrão:
 
 ```text
-aluno informa a API key
-→ chave disponível somente para a sessão atual
-→ ao encerrar a sessão/navegador, pode ser necessário informar novamente
+aluno informa key
+→ somente sessão
 ```
 
-A interface poderá oferecer explicitamente a opção:
+Opção explícita:
 
 ```text
 ☐ Lembrar minha chave neste dispositivo
 ```
 
-Somente quando o aluno escolher essa opção, a aplicação poderá persistir a chave no armazenamento local daquele navegador/dispositivo.
+Quando marcada, a chave pode permanecer apenas no armazenamento local daquele navegador/dispositivo.
 
-Essa persistência é **local**, não sincronizada. Portanto:
+Troca de aparelho/navegador ou limpeza de dados pode exigir inserir novamente.
 
-- trocar de computador ou celular pode exigir inserir a chave novamente;
-- trocar de navegador pode exigir inserir a chave novamente;
-- limpar os dados do site pode remover a chave;
-- a chave não deve ser recuperada do Gist ou de qualquer outro mecanismo de progresso.
-
-### Dispositivos públicos ou compartilhados
-
-A interface deve deixar claro que a opção de lembrar a chave não é recomendada em computador, celular ou perfil de navegador público/compartilhado.
-
-O padrão deve continuar sendo **não persistir a chave** sem escolha explícita do aluno.
+Em dispositivo público/compartilhado, lembrar a chave não é recomendado.
 
 ### Responsabilidade e transparência
 
-A interface deve informar, em linguagem clara, que:
+A interface deve informar que:
 
-- a API key pertence à conta do aluno no provedor de IA;
-- o Português Completo não fornece uma chave privada própria pelo frontend;
-- o aluno deve manter sua chave secreta e não compartilhá-la nem publicá-la;
-- uso, limites, cobranças e custos associados à chave pertencem à conta do titular e são responsabilidade dele;
-- escolher lembrar a chave aumenta conveniência naquele dispositivo, mas exige cuidado adicional em dispositivos compartilhados.
+- a API key pertence ao aluno;
+- o aluno deve mantê-la secreta;
+- uso, limites e custos pertencem à conta do titular;
+- feedback de IA envolve envio da resposta/contexto necessário ao provider escolhido;
+- IA pode errar e algumas atividades permanecem `VALIDACAO_PENDENTE`.
 
-### Papel da IA no curso
-
-A IA poderá futuramente apoiar feedback de respostas complexas, especialmente quando regras determinísticas não forem suficientes para diagnosticar uma produção aberta.
-
-A integração não deve transformar uma resposta gerada pelo modelo em verdade pedagógica automática. `docs/progresso.md` define o contrato funcional: IA pode fornecer feedback assistivo, enquanto atividades que declaram necessidade de avaliador confiável permanecem com validação pendente por padrão.
+O contrato completo de request/response, consentimento, fallback e autoridade pedagógica fica em `docs/avaliacao-ia.md`.
 
 ## Fontes oficiais dos dados
 
 ```text
 Preferências do dispositivo
 → localStorage
-→ inclui a preferência de modo de estudo
 
-Credencial temporária
-→ sessionStorage, quando aplicável
+Credenciais temporárias
+→ armazenamento de sessão quando aplicável
 
-API key de IA
-→ sessão por padrão
-→ armazenamento local somente mediante escolha explícita do aluno
+API key de IA lembrada
+→ armazenamento local separado mediante escolha explícita
 → nunca Gist/progresso
 
 Progresso acadêmico
 → Gist do aluno
+→ schema: docs/persistencia-progresso.md
 
 Conteúdo pedagógico
 → content/
+→ contrato: docs/contrato-conteudo.md
 
 Mídia pedagógica pesada
-→ provider externo declarado no conteúdo
+→ provider externo declarado
 
 Assets do frontend
 → app/assets/
@@ -649,100 +569,86 @@ Assets do frontend
 
 ## Documentação
 
-A documentação oficial fica em `docs/`.
-
-Responsabilidades:
-
 ```text
 docs/arquitetura.md
 → decisões estruturais e técnicas
 
-docs/mapa-curso.md
-→ progressão curricular e níveis
+docs/contrato-conteudo.md
+→ catálogo, manifests, normalização e versionamento do conteúdo
 
 docs/conteudo.md
-→ estrutura pedagógica, lições e uso de mídia
+→ estrutura pedagógica e mídia
 
 docs/exercicios.md
-→ tipos e regras de exercícios, quando criado
+→ atividades, interações, avaliação e evidência
 
 docs/progresso.md
-→ progresso curricular, evidência/domínio, feedback, revisão, IA assistiva e gamificação
+→ significado pedagógico de progresso, domínio, revisão e gamificação
 
-docs/configuracoes.md
-→ comportamento das preferências, quando criado
+docs/persistencia-progresso.md
+→ schema do Gist e cálculo mecânico
 
-docs/convencoes.md
-→ IDs, nomes, caminhos e convenções, quando criado
+docs/avaliacao-ia.md
+→ contrato de feedback/avaliação assistida por IA
+
+docs/mapa-curso.md
+→ progressão curricular e níveis
 ```
 
-`PROJECT_INDEX.md` é o mapa de entrada do repositório e aponta para as fontes corretas.
+`PROJECT_INDEX.md` é o mapa de entrada do repositório e deve apontar para todas as fontes de verdade.
 
 ## Validação estrutural
 
-O projeto possui `scripts/validate-project.mjs`.
+Os validadores atuais protegem estrutura/referências e sintaxe JSON.
 
-Ele deve detectar automaticamente, entre outros casos:
-
-- caminhos explícitos do `PROJECT_INDEX.md` que não existem;
-- novos itens importantes na raiz que não foram mapeados;
-- documentos em `docs/` que não aparecem no índice;
-- skills que não aparecem no índice do projeto ou no `.ChatGPT/README.md`;
-- `src` e `href` locais quebrados em `index.html`;
-- imports JavaScript quebrados alcançáveis a partir de `index.html`;
-- arquivos carregados por `fetch()` com caminho local inexistente;
-- referências locais de CSS quebradas;
-- caminhos absolutos locais que podem falhar no GitHub Pages de projeto;
-- módulos JS ou CSS órfãos, apresentados como aviso.
-
-A validação roda pelo GitHub Actions em `.github/workflows/validate-project.yml`.
-
-O validador não exige que cada lição ou exercício individual seja listado no `PROJECT_INDEX.md`; o índice deve mapear áreas, documentos e pontos estruturais, não virar um inventário de todo o conteúdo.
+A próxima camada deve implementar schemas e integridade conforme contratos agora definidos. Detalhes em `docs/validacoes.md`.
 
 ## Vantagens
 
 - sem servidor próprio;
-- sem banco de dados externo;
+- sem banco externo;
 - publicação simples pelo GitHub Pages;
-- frontend agrupado em uma área clara;
-- conteúdo separado da lógica da aplicação;
-- documentação centralizada;
-- mídias pesadas fora do repositório;
-- preferências visuais independentes do progresso;
-- mesmo conteúdo e progresso pedagógico em qualquer modo de estudo;
-- gamificação opcional sem contaminar a fonte de verdade de domínio;
-- progresso do aluno separado dos commits do curso;
-- validação automática contra referências quebradas e deriva estrutural.
+- conteúdo separado da lógica;
+- contratos de runtime estáveis sem reescrita curricular em massa;
+- preferências independentes do progresso;
+- mesmo progresso pedagógico em qualquer modo;
+- gamificação opcional;
+- IA opcional/BYOK sem chave secreta do projeto no frontend;
+- Gist compacto e versionado;
+- evolução gradual por schemas e normalização.
 
 ## Limitações aceitas
 
-- cada aluno precisa possuir uma conta GitHub para sincronizar progresso;
+- cada aluno precisa de conta GitHub para sincronizar progresso;
 - existe configuração inicial de credencial;
-- GitHub é uma dependência da sincronização;
+- GitHub é dependência da sincronização;
 - Gist é armazenamento simples, não banco relacional;
-- vozes de narração variam entre sistemas e navegadores;
-- mídias externas dependem da disponibilidade e permissões do provider;
-- Google Drive não é tratado como CDN nem como filesystem da aplicação;
-- uma API key de IA lembrada localmente não acompanha automaticamente o aluno entre dispositivos ou navegadores;
-- limpar dados locais pode exigir que a API key de IA seja informada novamente;
-- valores exatos de XP, catálogo de conquistas, missões e algoritmo de prioridade da revisão permanecem decisões de implementação/teste, sem alterar o contrato pedagógico de `docs/progresso.md`;
-- a arquitetura foi escolhida para um grupo pequeno de usuários, não para milhares de alunos simultâneos.
+- sincronização entre dispositivos exige estratégia de conflito testada;
+- vozes de narração variam entre sistemas/navegadores;
+- mídias externas dependem do provider;
+- uma API key de IA lembrada não acompanha automaticamente outros dispositivos;
+- limpar dados locais pode exigir informar a chave novamente;
+- uso de IA depende de conta/chave/custos do próprio aluno;
+- valores exatos de XP e catálogo inicial de missões/conquistas continuam calibráveis sem alterar o contrato pedagógico;
+- a arquitetura foi escolhida para um grupo pequeno de usuários, não milhares simultâneos.
 
 ## Regra principal
 
-O projeto deve manter separadas as seguintes responsabilidades:
+O projeto deve manter separadas:
 
 ```text
 interface
+catálogo/normalização de conteúdo
 conteúdo pedagógico
-exercícios
+atividades/avaliação
 mídia pedagógica
 configurações
 narração
 progresso pedagógico
+persistência/sincronização
 gamificação opcional
 integração com GitHub
-integração com IA e credenciais locais
+feedback com IA/credenciais locais
 documentação
 validação estrutural
 ```

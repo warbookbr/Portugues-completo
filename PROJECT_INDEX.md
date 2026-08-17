@@ -20,10 +20,11 @@ Português Completo
 
 ## Estado e execução
 
-- `docs/roadmap-curricular.md` — estado real, maturidade, marco ativo e próximo subpasso.
+- `docs/roadmap-curricular.md` — estado/maturidade do currículo N0→N4, atualmente fechado em M5.
+- `docs/roadmap-produto.md` — estado e ordem da fase ativa de produto/publicação; **fonte do próximo marco técnico**.
 - `docs/execucao-continua.md` — execução autônoma por marcos autorizados.
 - `.ChatGPT/skills/curricular-orchestration/SKILL.md` — orquestração de marcos longos.
-- `.ChatGPT/skills/course-content-design/SKILL.md` — planejamento e revisão pedagógica.
+- `.ChatGPT/skills/course-content-design/SKILL.md` — planejamento e revisão pedagógica, já alinhado aos contratos de produto.
 - `.ChatGPT/skills/frontend-visual-check/SKILL.md` — verificação de mudanças visuais relevantes.
 
 ## Curso inteiro
@@ -33,6 +34,32 @@ Português Completo
 - `docs/matriz-progressao-global.md` — progressão transversal N0–N4.
 
 O percurso **N0→N4 está curricularmente fechado em M5**. Isso não equivale a frontend/publicação concluídos, mídia histórica toda produzida, validação automática plena de respostas abertas ou aprovação automática de aluno individual.
+
+## Contratos de produto
+
+Estas fontes definem como o currículo fechado vira aplicação:
+
+- `docs/arquitetura.md` — arquitetura geral, serviços, armazenamento e separação de responsabilidades.
+- `docs/contrato-conteudo.md` — catálogo `course.json`, manifests `unit.json`, normalização de conteúdo e versionamento.
+- `docs/conteudo.md` — estrutura pedagógica das lições e uso de mídia.
+- `docs/exercicios.md` — papéis de atividade, primitivas de interação, avaliação, estímulos e evidência.
+- `docs/progresso.md` — significado pedagógico de progresso, domínio, feedback, revisão e gamificação.
+- `docs/persistencia-progresso.md` — schema v1 do Gist, cálculo mecânico de conclusão, gates e sincronização.
+- `docs/avaliacao-ia.md` — contrato neutro de feedback com IA, BYOK, consentimento, request/response e limites de autoridade.
+- `docs/validacoes.md` — guard rails atuais e próximos schemas/checagens de integridade.
+
+Regra de leitura para trabalho de produto:
+
+```text
+roadmap-produto
+→ arquitetura
+→ contrato de conteúdo
+→ exercícios/atividades
+→ progresso
+→ persistência
+→ IA quando aplicável
+→ validações
+```
 
 ## Nível 0
 
@@ -113,19 +140,19 @@ O percurso **N0→N4 está curricularmente fechado em M5**. Isso não equivale a
 - `content/units/307-comunicacao-formal-debate-estruturado/` — U7, 9 lições + `N3-U07-V01`.
 - `content/units/308-variacao-norma-prestigio-identidade/` — U8, 8 lições + `N3-U08-V01`.
 - `content/units/309-literatura-intertextualidade-midia-critica/` — U9, 11 lições + `N3-U09-V01`.
-- `content/levels/003-avancado/exit-verification.json` — `N3-EXIT-V01`, saída integrada em oito agrupamentos obrigatórios.
-- `docs/checkpoint-saida-nivel-3.md` — auditoria das 18 competências oficiais e fronteira N3→N4.
+- `content/levels/003-avancado/exit-verification.json` — `N3-EXIT-V01`.
+- `docs/checkpoint-saida-nivel-3.md` — auditoria das 18 competências oficiais.
 
-O N3 está **curricularmente fechado em M5**: U1–U9, `N3-EXIT-V01` e checkpoint N3→N4 concluídos.
+O N3 está **curricularmente fechado em M5**.
 
 ## Nível 4
 
 ### Arquitetura curricular
 
-- `docs/mapa-niveis-1-4.md` — M1: objetivo, 17 competências oficiais de saída e nove grandes responsabilidades.
-- `docs/areas-nivel-4.md` — M2: nove áreas dimensionadas, revisão horizontal 17/17 e gate M2→M3 satisfeito.
-- `docs/unidades-nivel-4.md` — M3: nove unidades integradas, cobertura 17/17, arquitetura antecipada da saída e gate M3→M4 satisfeito.
-- `docs/licoes-nivel-4.md` — consolidação M4: 93 lições + 9 verificações integradas.
+- `docs/mapa-niveis-1-4.md` — M1.
+- `docs/areas-nivel-4.md` — M2.
+- `docs/unidades-nivel-4.md` — M3.
+- `docs/licoes-nivel-4.md` — M4 consolidado.
 - `docs/licoes-nivel-4-u1.md`
 - `docs/licoes-nivel-4-u2.md`
 - `docs/licoes-nivel-4-u3.md`
@@ -138,64 +165,24 @@ O N3 está **curricularmente fechado em M5**: U1–U9, `N3-EXIT-V01` e checkpoin
 
 ### Gates do N4
 
-- `docs/gate-normativo-nivel-4-u5-u7.md` — gate normativo de U5/U7, **SATISFEITO**; reabrir apenas se surgir caso fechado fora do recorte documentado.
-- `docs/referencias-gramatica-nivel-4-u5-u7.md` — recorte normativo/descritivo pesquisado e congelado; separa regra, variante, convenção editorial, consulta e estilo.
-- `docs/referencias-gramatica-nivel-4-u5-u7-atualizacao-2026.md` — addendum do contexto institucional atual; registra o Decreto nº 12.002/2024 sem alterar o recorte pedagógico.
-- `docs/gate-midia-acessibilidade-nivel-4-u9.md` — gate de mídia/acessibilidade **SATISFEITO para o M5 da U9 e a saída atual**; nenhuma nova mídia humana obrigatória e toda pista decisiva permanece semanticamente acessível.
-
-### Resultado M4
-
-```text
-U1 — 10 lições + verificação
-U2 — 11 lições + verificação
-U3 — 10 lições + verificação
-U4 — 11 lições + verificação
-U5 — 11 lições + verificação
-U6 —  9 lições + verificação
-U7 — 10 lições + verificação
-U8 —  9 lições + verificação
-U9 — 12 lições + verificação
-────────────────────────────
-TOTAL — 93 lições + 9 verificações integradas
-```
-
-O M4 preserva cobertura 17/17 e explicita como cada unidade exige autonomia, transferência e revisão de decisões, sem aumentar dificuldade por extensão ou vocabulário raro.
+- `docs/gate-normativo-nivel-4-u5-u7.md` — **SATISFEITO**.
+- `docs/referencias-gramatica-nivel-4-u5-u7.md`.
+- `docs/referencias-gramatica-nivel-4-u5-u7-atualizacao-2026.md`.
+- `docs/gate-midia-acessibilidade-nivel-4-u9.md` — **SATISFEITO**.
 
 ### Conteúdo M5
 
-- `content/units/401-leitura-estrategica-alta-complexidade-revisao-interpretacao/` — U1, 10 lições + `N4-U01-V01`, **concluída**.
-- `content/units/402-pesquisa-orientada-problema-fontes-rastreabilidade/` — U2, 11 lições + `N4-U02-V01`, **concluída**.
-- `content/units/403-argumentacao-complexa-evidencia-responsabilidade-epistemica/` — U3, 10 lições + `N4-U03-V01`, **concluída**.
-- `content/units/404-autoria-avancada-generos-complexos-transferencia/` — U4, 11 lições + `N4-U04-V01`, **concluída**.
-- `content/units/405-edicao-alto-nivel-precisao-consulta-linguistica/` — U5, 11 lições + `N4-U05-V01`, **concluída**.
-- `content/units/406-estilo-registro-projeto-voz/` — U6, 9 lições + `N4-U06-V01`, **concluída**.
-- `content/units/407-lingua-norma-variacao-mudanca-identidade-poder/` — U7, 10 lições + `N4-U07-V01`, **concluída**.
-- `content/units/408-oralidade-complexa-sintese-negociacao-debate/` — U8, 9 lições + `N4-U08-V01`, **concluída**.
-- `content/units/409-literatura-multimodalidade-autoria-intermedial-digital/` — U9, 12 lições + `N4-U09-V01`, **concluída**.
-- `content/levels/004-dominio/exit-verification.json` — `N4-EXIT-V01`, oito agrupamentos obrigatórios com cobertura 17/17, **concluída**.
-- `docs/checkpoint-saida-nivel-4.md` — auditoria final 17/17, gates, progressão N0→N4 e dependências não curriculares, **APROVADA**.
-
-A U1 exige escolha e eventual troca justificada de estratégia, arquiteturas concorrentes defensáveis, preservação de condições/ressalvas, cadeias distribuídas, implícitos/intertextualidade com evidência, enquadramento sem inferência automática de manipulação, calibração epistêmica e revisão explícita da interpretação após nova evidência.
-
-A U2 transforma pesquisa em processo rastreável: parte de necessidade informacional explícita, planeja/refina a busca, escolhe fontes por função, audita autoria/data/origem/versão/escopo/método, rastreia afirmações até a origem, reconstrói circulação, avalia triangulação real, separa vozes nas notas e exige decisão justificada de suficiência ou continuidade.
-
-A U3 transforma dossiê em argumento responsável: exige tese proporcional, cadeia reconstruível, ajuste evidência-afirmação, tratamento de causalidade/generalização, qualificação epistêmica, objeção forte sem caricatura, concessão com consequência, persuasão sem distorção e duas versões autorais com revisão motivada por nova evidência.
-
-A U4 transforma decisões de leitura/pesquisa/argumentação em autoria longa: parte de projeto textual explícito, aprende gêneros pouco familiares por modelos sem fórmula universal, macroplaneja por função, integra fontes e voz própria, sustenta análise em escala longa, trabalha gêneros acadêmicos gerais, profissionais/públicos e digitais/híbridos, executa transferência entre destinos e exige primeira versão, revisão global, segunda versão e justificativa autoral.
-
-A U5 transforma revisão em julgamento editorial priorizado e auditável: diagnostica antes de reescrever, corrige arquitetura antes do polimento, revisa referência/sintaxe/precisão, classifica regra/variante/convenção/consulta/estilo antes de agir, usa somente o recorte normativo documentado, registra consulta lexical quando necessária, preserva trechos adequados e distingue correção, sugestão, pergunta ao autor e preservação de voz.
-
-A U6 transforma estilo em projeto funcional e transferível: explicita presença autoral, tom/registro e relação com a audiência, equilibra densidade e explicitação, escolhe léxico por significado/alcance/conotação, controla ritmo/repetição/ênfase e modalidade/agência e exige adaptações entre meios que preservem fatos e traços autorais sem cópia mecânica.
-
-A U7 separa uso, descrição, norma/convenção e julgamento social; trata variação e mudança com limites de inferência; distingue consequência institucional de prestígio/estigma; trabalha repertório e identidade sem essencialização; exige feedback contextual, comparação de fontes, auditoria de afirmações públicas e adaptação formal sem hierarquizar falantes.
-
-A U8 transfere leitura, síntese, argumentação e projeto de voz para oralidade complexa: escuta por objetivo com replay permitido, preserva múltiplas vozes, planeja fala por função/audiência, integra evidência e qualificação, usa apoio acessível, repara incompreensão, responde a objeções, negocia escopo sem fabricar consenso e exige tentativa registrada + autorrevisão com fronteira explícita entre processo observável e qualidade acústica dependente de ouvinte confiável.
-
-A U9 integra leitura estética e autoria digital: exige interpretação própria com evidência, análise de estrutura/forma/figuratividade/intertextualidade, comparação e revisão de leituras, leitura de relações multimodais, reconhecimento explícito de limites sensoriais, rastreabilidade de autoria/circulação, análise de adaptação e produção multimodal acessível. `N4-U09-V01` mantém literatura e multimodal/digital como eixos independentes e exige integração autoral sem permitir que polimento visual compense evidência, proveniência ou acessibilidade.
-
-`N4-EXIT-V01` integra as 17 competências oficiais em oito blocos não compensáveis: leitura estratégica revisável; pesquisa/síntese multifuente; argumentação revisável; autoria longa com transferência; edição/estilo/consulta; língua/norma/variação; oralidade complexa; literatura/multimodalidade/autoria digital. Produções abertas registram evidência sem fingir validação automática global.
-
-Estado:
+- `content/units/401-leitura-estrategica-alta-complexidade-revisao-interpretacao/` — U1.
+- `content/units/402-pesquisa-orientada-problema-fontes-rastreabilidade/` — U2.
+- `content/units/403-argumentacao-complexa-evidencia-responsabilidade-epistemica/` — U3.
+- `content/units/404-autoria-avancada-generos-complexos-transferencia/` — U4.
+- `content/units/405-edicao-alto-nivel-precisao-consulta-linguistica/` — U5.
+- `content/units/406-estilo-registro-projeto-voz/` — U6.
+- `content/units/407-lingua-norma-variacao-mudanca-identidade-poder/` — U7.
+- `content/units/408-oralidade-complexa-sintese-negociacao-debate/` — U8.
+- `content/units/409-literatura-multimodalidade-autoria-intermedial-digital/` — U9.
+- `content/levels/004-dominio/exit-verification.json` — `N4-EXIT-V01`.
+- `docs/checkpoint-saida-nivel-4.md` — auditoria final **APROVADA**.
 
 ```text
 M1 ✓
@@ -203,56 +190,38 @@ M2 ✓ — 9 áreas
 M3 ✓ — 9 unidades
 M4 ✓ — 93 lições + 9 verificações integradas
 M5 ✓ — U1–U9 + N4-EXIT-V01 + checkpoint final
-├── U1 ✓ — 10 lições + N4-U01-V01
-├── U2 ✓ — 11 lições + N4-U02-V01
-├── U3 ✓ — 10 lições + N4-U03-V01
-├── U4 ✓ — 11 lições + N4-U04-V01
-├── U5 ✓ — 11 lições + N4-U05-V01
-├── U6 ✓ — 9 lições + N4-U06-V01
-├── U7 ✓ — 10 lições + N4-U07-V01
-├── U8 ✓ — 9 lições + N4-U08-V01
-├── U9 ✓ — 12 lições + N4-U09-V01
-├── N4-EXIT-V01 ✓ — 8 agrupamentos; cobertura 17/17
-└── checkpoint final ✓
 ```
 
 **N4 curricularmente completo. Curso N0→N4 curricularmente completo.**
 
-A fonte oficial do estado é `docs/roadmap-curricular.md`.
-
 ## Próxima fase do projeto
 
-Com o currículo fechado, a prioridade passa a ser transformar o conteúdo desenvolvido em produto utilizável/publicável:
+A sequência oficial está em `docs/roadmap-produto.md`.
+
+Resumo:
 
 ```text
-auditoria técnica de publicação
-→ catálogo/descoberta de conteúdo
-→ renderer e contratos de atividade
-→ acessibilidade/estados de evidência
-→ mídia realmente obrigatória
-→ avaliação confiável de respostas abertas
-→ testes end-to-end e validação com usuários
+P1 schemas + validadores de contrato
+→ P2 ContentService/normalizador
+→ P3 manifests unit.json + catálogo course.json
+→ P4 renderer real
+→ P5 ProgressService + Gist
+→ P6 modos Clássico/Gamificado
+→ P7 feedback com IA
+→ P8 ampliação do catálogo
+→ P9 mídia/publicação
+→ P10 testes/calibração
 ```
 
-## Arquitetura e produto
-
-- `docs/arquitetura.md` — decisões estruturais e técnicas.
-- `docs/progresso.md` — progresso curricular, evidência/domínio, feedback, revisão, IA assistiva e gamificação opcional.
-- `index.html`
-- `app/css/`
-- `app/js/`
-- `app/assets/`
-
-Mídia pedagógica pesada não pertence a `app/assets/`.
+Não iniciar reescrita curricular em massa para atender ao renderer; usar adapters/manifests conforme `docs/contrato-conteudo.md`.
 
 ## Conteúdo e mídia
 
-- `docs/conteudo.md` — estrutura pedagógica e uso de mídia.
 - `producao-midia/README.md` — contrato operacional de mídia.
 - `producao-midia/FILA-MIDIA.md` — fila oficial.
-- `content/course.json` — catálogo publicado; não adicionar unidades apenas porque o JSON curricular foi desenvolvido.
+- `content/course.json` — catálogo de publicação; ainda precisa ser populado no marco P3.
 - `content/units/` — conteúdo de unidades, lições e verificações.
-- `content/levels/` — verificações e conteúdo transversal de nível.
+- `content/levels/` — verificações de nível.
 
 ## Validação
 
@@ -264,25 +233,23 @@ Mídia pedagógica pesada não pertence a `app/assets/`.
 ## Fontes de verdade
 
 ```text
+estado curricular → docs/roadmap-curricular.md
+estado/próximo marco de produto → docs/roadmap-produto.md
 arquitetura → docs/arquitetura.md
-progresso/feedback/domínio/revisão/gamificação → docs/progresso.md
+catálogo/manifests/runtime → docs/contrato-conteudo.md
+forma de ensinar/mídia → docs/conteudo.md
+atividades/interações/avaliação/evidência → docs/exercicios.md
+progresso/domínio/revisão/gamificação → docs/progresso.md
+schema/sincronização/cálculo de progresso → docs/persistencia-progresso.md
+feedback com IA → docs/avaliacao-ia.md
 visão geral curricular → docs/mapa-curso.md
 M1 N1–N4 → docs/mapa-niveis-1-4.md
 matriz transversal → docs/matriz-progressao-global.md
-N1 M2/M3/M4 → docs/areas-nivel-1.md + docs/unidades-nivel-1.md + docs/licoes-nivel-1*.md
-N2 M2/M3/M4 → docs/areas-nivel-2.md + docs/unidades-nivel-2.md + docs/licoes-nivel-2*.md
-N3 M2/M3/M4 → docs/areas-nivel-3.md + docs/unidades-nivel-3.md + docs/licoes-nivel-3*.md
 N3 saída → docs/checkpoint-saida-nivel-3.md + content/levels/003-avancado/exit-verification.json
-N4 M2 → docs/areas-nivel-4.md
-N4 M3 → docs/unidades-nivel-4.md
-N4 M4 → docs/licoes-nivel-4.md + docs/licoes-nivel-4-u*.md
-N4 M5 → content/units/4xx-*/
 N4 saída → content/levels/004-dominio/exit-verification.json + docs/checkpoint-saida-nivel-4.md
-N4 normativo U5/U7 → docs/gate-normativo-nivel-4-u5-u7.md + docs/referencias-gramatica-nivel-4-u5-u7.md + docs/referencias-gramatica-nivel-4-u5-u7-atualizacao-2026.md
+N4 normativo U5/U7 → docs/gate-normativo-nivel-4-u5-u7.md + docs/referencias-gramatica-nivel-4-u5-u7*.md
 N4 mídia/acessibilidade → docs/gate-midia-acessibilidade-nivel-4-u9.md
-estado/marcos → docs/roadmap-curricular.md
 conteúdo detalhado → content/
-forma de ensinar/mídia → docs/conteudo.md
 produção de mídia → producao-midia/README.md + producao-midia/FILA-MIDIA.md
 validação automática → docs/validacoes.md
 procedimentos ChatGPT → .ChatGPT/skills/

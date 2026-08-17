@@ -4,15 +4,11 @@
 
 Este documento define como o conteúdo pedagógico do `Português Completo` deve ser planejado e apresentado.
 
-Ele não define ainda todas as unidades do curso. O mapa geral dos níveis fica em `docs/mapa-curso.md`.
+O mapa geral dos níveis fica em `docs/mapa-curso.md`. O contrato técnico de publicação/runtime fica em `docs/contrato-conteudo.md`, e atividades/exercícios ficam em `docs/exercicios.md`.
 
 A intenção aqui é garantir clareza, consistência e variedade sem transformar cada lição em uma interface saturada.
 
 ## Princípio central
-
-A estrutura pedagógica deve ser consistente, mas a composição de mídia deve ser flexível.
-
-Em outras palavras:
 
 ```text
 estrutura pedagógica consistente
@@ -24,7 +20,7 @@ O aluno deve reconhecer o ritmo de uma lição sem sentir que todas as aulas sã
 
 ## Estrutura pedagógica de uma lição
 
-Uma lição deve normalmente cumprir estas funções:
+Uma lição deve normalmente cumprir:
 
 ```text
 Objetivo
@@ -34,162 +30,160 @@ Objetivo
 → Consolidação / resumo / prática
 ```
 
-Essas funções são mais importantes do que uma sequência rígida de componentes visuais.
+Essas funções são mais importantes que uma sequência rígida de componentes visuais.
 
 Uma lição pode repetir ciclos de explicação, exemplo e checagem quando o assunto exigir.
 
 ## Regra de foco
 
-Cada momento da lição deve ter um foco principal.
+Cada momento deve ter foco principal:
 
-O aluno deve estar principalmente:
+- ler;
+- observar;
+- ouvir;
+- assistir;
+- responder.
 
-- lendo;
-- observando;
-- ouvindo;
-- assistindo;
-- ou respondendo.
+Evitar texto longo, vídeo, imagem, controles, caixas e exercícios competindo simultaneamente pela atenção.
 
-Evitar apresentar texto longo, vídeo, imagem, controles, caixas de destaque e exercícios competindo simultaneamente pela atenção.
-
-Uma lição pode ser extensa em conteúdo sem parecer visualmente pesada se for dividida em blocos curtos e progressivos.
+Conteúdo extenso deve ser dividido em blocos progressivos.
 
 ## Blocos de conteúdo
 
-A arquitetura deve permitir diferentes tipos de bloco, por exemplo:
+Podem existir, por exemplo:
 
 - texto;
 - exemplo;
 - imagem;
 - vídeo;
-- destaque ou observação;
+- destaque/observação;
 - `Saiba mais`;
 - checagem rápida;
 - atividade interativa;
-- resumo.
+- resumo;
+- produções abertas;
+- recursos semânticos gerados pela UI.
 
-Nem todo tipo de bloco precisa aparecer em toda lição.
+Nem todo bloco aparece em toda lição.
 
-Os tipos definitivos e seus campos JSON serão formalizados conforme forem implementados.
+Os nomes pedagógicos específicos podem variar. O runtime normaliza blocos como `CONTENT` ou `ACTIVITY` conforme `docs/contrato-conteudo.md`, preservando `pedagogicalType` para especialização visual.
 
 ## Narração e TTS
 
-A narração usa `speechSynthesis` do navegador/dispositivo, conforme definido na arquitetura.
+A narração usa `speechSynthesis` do navegador/dispositivo conforme a arquitetura.
 
-O texto continua sendo a fonte do conteúdo. Não é necessário manter um arquivo de áudio correspondente para cada trecho narrado.
+O texto continua fonte do conteúdo. Não é necessário manter um áudio correspondente para cada trecho narrado.
 
-Preferir narração associada a blocos ou trechos coerentes, em vez de uma narração única e muito longa para toda a página.
+Preferir narração associada a blocos/trechos coerentes.
 
-O aluno deve manter controle sobre a narração e suas configurações.
+O aluno mantém controle sobre narração e configurações.
 
 ## Uso de imagens
 
-Imagem pedagógica deve ser utilizada quando reduzir esforço de compreensão ou melhorar retenção.
+Imagem pedagógica deve reduzir esforço de compreensão ou melhorar retenção.
 
-Boas aplicações incluem:
+Boas aplicações:
 
-- associação entre palavra e objeto;
+- associação palavra/objeto;
 - diagramas;
 - estruturas de frase;
 - comparação de conceitos;
 - organização visual;
-- ilustrações que esclarecem uma situação;
-- material necessário para uma atividade.
+- situação necessária para atividade.
 
-Não inserir imagem apenas para preencher espaço ou deixar a página mais decorativa.
+Não inserir imagem apenas para preencher espaço.
 
-Imagens do conteúdo podem ser hospedadas externamente conforme as regras de mídia definidas em `docs/arquitetura.md`.
-
-Quando adequado, uma imagem deve poder possuir legenda e descrição.
+Quando a UI consegue representar letras, tabelas, relações ou mapas de forma semântica e acessível, preferir `SEMANTIC_UI` a imagem rasterizada.
 
 ## Uso de vídeo
 
 Vídeo é opcional.
 
-Não existe regra de que cada unidade ou lição precise conter vídeo.
-
-O critério é pedagógico: o vídeo deve justificar o tempo e o espaço que ocupa.
-
-Vídeo tende a ser útil quando existe ganho claro ao observar algo acontecendo, por exemplo:
+Usar quando houver ganho claro em observar algo acontecendo, como:
 
 - pronúncia;
 - entonação;
 - leitura expressiva;
-- comparação de formas de falar;
+- situação comunicativa;
 - demonstração passo a passo;
-- transformação de uma frase ou texto ao longo de uma explicação;
-- situação comunicativa cuja dinâmica seja importante;
-- explicação visual que seria mais difícil de compreender apenas em texto.
+- transformação visual relevante.
 
-Vídeo tende a atrapalhar quando:
-
-- repete uma explicação curta que seria compreendida mais rapidamente por texto;
-- é incluído apenas para variar a interface;
-- interrompe desnecessariamente o fluxo da lição;
-- aumenta a carga cognitiva sem acrescentar compreensão;
-- exige vários minutos para transmitir uma ideia simples.
-
-Regra prática:
-
-> Se o mesmo conteúdo puder ser compreendido com mais clareza e rapidez por texto, exemplo ou imagem, não adicionar vídeo.
+Evitar quando repete uma explicação que texto/exemplo/imagem transmitiria com mais clareza e rapidez.
 
 Vídeos não devem iniciar automaticamente.
 
-Quando necessário, uma pequena introdução deve explicar ao aluno por que aquele vídeo vale a pena ser assistido.
-
 ## Critério geral para mídia
 
-Mídia não entra para deixar a aula bonita.
-
-Ela deve melhorar pelo menos um destes pontos:
+Mídia deve melhorar pelo menos um destes pontos:
 
 - compreensão;
 - demonstração;
 - memória;
 - contextualização;
-- percepção auditiva ou visual;
+- percepção auditiva/visual;
 - prática.
 
-Se não houver ganho claro, preferir a solução mais simples.
+Se não houver ganho claro, preferir solução simples.
 
 ## Checagem rápida versus exercício
 
-Uma `checagem` e um `exercício` têm papéis diferentes.
-
 ### Checagem rápida
 
-Acontece durante a explicação.
+Acontece durante a explicação e confirma entendimento imediato.
 
-Serve para confirmar que o aluno acompanhou a ideia antes de continuar.
-
-Características esperadas:
+Características:
 
 - curta;
 - baixo atrito;
-- foco em uma ideia recém-explicada;
-- sem necessidade de grande peso no sistema de progresso;
-- pode oferecer feedback imediatamente.
+- foco em ideia recém-exposta;
+- normalmente baixo peso no progresso;
+- feedback imediato quando apropriado.
 
-### Exercício
+No contrato de `docs/exercicios.md`, tende a usar `role: CHECK`.
 
-Acontece como prática estruturada da lição ou unidade.
+### Exercício/prática
+
+É prática estruturada da lição/unidade.
 
 Pode participar de:
 
-- acertos e erros;
-- XP;
+- feedback;
 - progresso;
 - revisão;
-- domínio de competências;
-- repetição futura.
+- domínio/evidência;
+- repetição futura;
+- gamificação somente quando o modo Gamificado estiver ativo.
 
-Os formatos de exercício serão definidos separadamente em `docs/exercicios.md`.
+XP não é requisito do exercício nem do modo Clássico.
+
+Os tipos de interação, avaliação e evidência estão definidos em `docs/exercicios.md`.
+
+## Produções abertas
+
+Texto livre, interpretação, argumentação, síntese, edição, reflexão e oralidade não devem ser reduzidos a palavras-chave só para permitir correção automática.
+
+O conteúdo precisa declarar:
+
+- o que deve ser observado;
+- critérios;
+- limites;
+- se resposta deve ser registrada;
+- se validação automática é permitida;
+- quando avaliador confiável é necessário.
+
+O runtime converte isso em política de avaliação/evidência conforme `docs/exercicios.md` e `docs/progresso.md`.
+
+## Feedback
+
+O conteúdo pode fornecer feedback determinístico local quando a resposta é fechada.
+
+Para tarefas estruturadas/complexas, o feedback deve se ligar a critérios.
+
+A IA, quando usada, segue `docs/avaliacao-ia.md` e não transforma automaticamente uma produção aberta em domínio demonstrado.
 
 ## Informações secundárias
 
-Conteúdo complementar não deve interromper quem está aprendendo o essencial.
-
-Informações como curiosidades, aprofundamentos, exceções prematuras ou detalhes históricos podem utilizar blocos opcionais, por exemplo:
+Curiosidades, aprofundamentos, exceções prematuras ou detalhes históricos podem usar blocos opcionais:
 
 ```text
 Saiba mais
@@ -197,11 +191,11 @@ Curiosidade
 Aprofundamento
 ```
 
-Esses recursos não devem esconder conhecimento necessário para atingir o objetivo da lição.
+Nunca esconder conhecimento necessário dentro de conteúdo opcional.
 
 ## Exemplos de composição
 
-Uma lição simples pode ser:
+Lição simples:
 
 ```text
 Objetivo
@@ -211,67 +205,72 @@ Checagem
 Resumo
 ```
 
-Uma lição que exige apoio visual pode ser:
+Com apoio visual:
 
 ```text
 Objetivo
 Texto
-Imagem
+Recurso visual
 Exemplo
 Checagem
 Resumo
 ```
 
-Uma lição ligada à oralidade pode ser:
+Ligada à oralidade:
 
 ```text
 Objetivo
 Explicação curta
-TTS
-Vídeo
+TTS ou áudio controlado conforme necessidade
 Prática
 Checagem
 Resumo
 ```
 
-Esses exemplos são composições possíveis, não templates obrigatórios.
+São composições possíveis, não templates obrigatórios.
 
 ## Clareza da interface
 
-Ao criar uma lição, avaliar sempre:
+Ao criar lição, avaliar:
 
-1. Qual é a ideia que o aluno precisa compreender neste momento?
-2. Qual é a forma mais simples de ensiná-la com clareza?
-3. Alguma mídia realmente melhora essa explicação?
-4. Há elementos demais competindo pela atenção?
-5. O aluno tem uma oportunidade de verificar se compreendeu?
+1. qual ideia precisa ser compreendida agora?
+2. qual forma mais simples de ensiná-la?
+3. alguma mídia realmente melhora isso?
+4. há elementos demais competindo?
+5. existe oportunidade adequada de prática/checagem?
+6. a evidência exigida mede a competência declarada?
 
-O objetivo é evitar dois extremos:
+Evitar extremos:
 
 ```text
 curso seco
 → paredes de texto
 
 curso saturado
-→ vídeo + imagem + áudio + animação + caixas em toda tela
+→ mídia e controles sem necessidade
 ```
 
-O projeto deve buscar conteúdo dinâmico com apresentação limpa.
+## Relação entre as fontes
 
-## Relação com o mapa do curso
+```text
+docs/mapa-curso.md
+→ o que precisa ser ensinado
 
-`docs/mapa-curso.md` responde principalmente:
+docs/conteudo.md
+→ como transformar isso em experiência pedagógica
 
-> O que precisa ser ensinado?
+docs/exercicios.md
+→ como atividades interagem, avaliam e produzem evidência
 
-Este documento responde principalmente:
+docs/contrato-conteudo.md
+→ como os JSONs são publicados/normalizados
 
-> Como esse conteúdo deve ser transformado em uma experiência de aprendizagem clara?
-
-Antes de produzir muitas aulas, o nível correspondente deve estar suficientemente planejado no mapa do curso.
+docs/progresso.md
+→ como evidência vira progresso/domínio/revisão
+```
 
 ## Regra para evolução
 
-As regras deste documento podem evoluir conforme as primeiras unidades forem testadas.
+Novos componentes ou mídias só se tornam padrão quando resolvem necessidade pedagógica recorrente.
 
-Novos componentes ou mídias só devem se tornar padrão quando resolverem uma necessidade pedagógica recorrente, e não apenas porque são tecnicamente possíveis.
+Novo `pedagogicalType` não deve implicar automaticamente nova primitiva de renderer; reutilizar o contrato existente sempre que a interação for equivalente.

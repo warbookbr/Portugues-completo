@@ -2,9 +2,7 @@
 
 ## Objetivo
 
-Este documento define a estratégia de validação automática do projeto **Português Completo**.
-
-A finalidade dos guard rails é detectar cedo quebras objetivas, referências inconsistentes e deriva estrutural sem transformar o desenvolvimento em burocracia excessiva.
+Este documento define a estratégia de validação automática do **Português Completo**.
 
 A regra geral é:
 
@@ -16,213 +14,351 @@ risco, possível abandono ou degradação
 → warning
 ```
 
-Um guard rail só deve ser promovido a erro quando a condição puder ser verificada de forma confiável e representar um problema real para o projeto.
+Automação protege contratos mecânicos; não substitui revisão pedagógica ou julgamento confiável.
+
+## Fontes de contrato
+
+As próximas validações devem implementar, e não reinventar:
+
+- `docs/contrato-conteudo.md` — catálogo, manifests, versões e normalização;
+- `docs/exercicios.md` — atividades, interação, avaliação e evidência;
+- `docs/progresso.md` — estados pedagógicos;
+- `docs/persistencia-progresso.md` — schema do Gist e cálculo mecânico;
+- `docs/avaliacao-ia.md` — envelopes e políticas de IA;
+- `docs/arquitetura.md` — separação de responsabilidades/credenciais.
 
 ## Princípios
 
-- Automatizar verificações mecânicas e repetitivas.
-- Não tentar substituir revisão pedagógica ou julgamento humano por regras frágeis.
-- Preferir validações determinísticas.
-- Evitar regras que gerem muitos falsos positivos.
-- Não transformar `PROJECT_INDEX.md` em inventário de todas as aulas e exercícios.
-- Adicionar novas validações conforme a estrutura correspondente seja formalizada.
-- Manter os validadores pequenos e separados por responsabilidade quando isso melhorar clareza.
+- automatizar verificações determinísticas;
+- evitar falso positivo alto;
+- não pontuar qualidade pedagógica por heurística;
+- não transformar `PROJECT_INDEX.md` em inventário de aulas;
+- erro somente para quebra objetiva de contrato;
+- warning para conteúdo ainda não publicado/órfão quando isso puder ser intencional;
+- schemas versionados devem aceitar somente versões que o runtime suporta.
 
-## Camada atual — estrutura do repositório
+## Camada 1 — estrutura do repositório
 
 Implementada em:
 
-- `scripts/validate-project.mjs`
-- `.github/workflows/validate-project.yml`
+- `scripts/validate-project.mjs`;
+- `.github/workflows/validate-project.yml`.
 
-Protege atualmente:
+Protege:
 
 - caminhos explícitos do `PROJECT_INDEX.md`;
 - áreas importantes da raiz não mapeadas;
-- documentos oficiais não registrados;
-- skills não registradas;
-- arquivos locais carregados pelo `index.html`;
+- documentos/skills oficiais não registrados;
+- arquivos carregados por `index.html`;
 - imports JavaScript;
-- `fetch()` de arquivos locais;
-- referências locais em CSS;
-- caminhos absolutos que podem quebrar no subcaminho do GitHub Pages;
-- módulos JavaScript e CSS não alcançáveis, como warning.
+- `fetch()` local;
+- referências CSS;
+- caminhos absolutos incompatíveis com GitHub Pages de projeto;
+- módulos JS/CSS não alcançáveis como warning.
 
-## Camada atual — validade sintática dos JSON
+## Camada 2 — sintaxe JSON
 
-Implementada em:
+Implementada em `scripts/validate-json.mjs`.
 
-- `scripts/validate-json.mjs`
+Todo `.json` de `content/` e, quando existir, `schemas/` deve ser JSON sintaticamente válido.
 
-Todo arquivo `.json` dentro de `content/` deve ser JSON sintaticamente válido.
+JSON inválido é **erro**.
 
-Quando `schemas/` existir, os JSON dessa pasta também serão verificados automaticamente.
+## Camada 3 — schemas de contrato
 
-JSON inválido é **erro**, porque a aplicação não consegue consumi-lo de forma confiável.
+**Contrato definido; implementação é o próximo marco técnico.**
 
-Esta validação é propositalmente genérica. Ela não define ainda quais campos uma unidade, lição ou exercício deve possuir.
-
-## Próxima camada — schemas do conteúdo
-
-Implementar somente depois que os formatos oficiais estiverem definidos.
-
-Estrutura prevista:
+Estrutura alvo:
 
 ```text
 schemas/
 ├── course.schema.json
 ├── unit.schema.json
 ├── lesson.schema.json
-└── exercise.schema.json
+├── verification.schema.json
+└── progress.schema.json
 ```
 
-Os schemas deverão validar, entre outros pontos:
+Um `exercise.schema.json` separado só deve ser criado se atividades realmente passarem a existir como arquivos independentes. Enquanto estiverem embutidas em lições/verificações, o schema correspondente deve reutilizar definições comuns em `$defs` em vez de exigir separação artificial.
 
-- campos obrigatórios;
-- tipos de dados;
+### `course.schema.json`
+
+Validar:
+
+- `schemaVersion` suportada;
+- `id`, `title`;
+- levels com IDs/ordem válidos;
+- units com `id`, `levelId`, `order`, `title`, `manifest`;
+- duplicidade de IDs no catálogo.
+
+### `unit.schema.json`
+
+Validar:
+
+- identidade/nível/ordem;
+- registry de competências estáveis;
+- lista de lições;
+- verificação integrada quando declarada;
+- estado de publicação;
+- estrutura de blockers.
+
+### `lesson.schema.json`
+
+A estratégia deve reconhecer versões de autoria suportadas.
+
+A primeira implantação pode validar fortemente o **manifest/runtime canônico** e aplicar validações estruturais compatíveis aos payloads históricos v1, evitando quebrar centenas de arquivos antes do adapter existir.
+
+Validar, quando aplicável:
+
+- `id`, `title`, `objective`;
+- sequência/blocos;
+- IDs de bloco únicos dentro da lição;
+- `assessmentBehavior`;
+- `completionEvidence`/forma normalizável;
+- materiais de apoio e referências de mídia.
+
+### `verification.schema.json`
+
+Validar unit/level verifications:
+
+- tipo de verificação;
 - IDs;
-- tipos permitidos de bloco;
-- campos exigidos por cada bloco;
-- formatos de mídia;
-- estrutura de opções e respostas de exercícios.
+- coverage/clusters;
+- items/atividades;
+- avaliação;
+- agrupamentos obrigatórios;
+- `completionEvidence`.
 
-Uma violação de schema deverá ser **erro**.
+### `progress.schema.json`
 
-Não criar schemas definitivos antes de estabilizar os formatos de conteúdo, para não transformar decisões provisórias em contrato rígido.
-
-## Camada futura — integridade curricular
-
-Depois que unidades, lições e exercícios estiverem sendo produzidos, validar as relações entre arquivos.
-
-Exemplos:
+Implementar exatamente o contrato v1 de `docs/persistencia-progresso.md`:
 
 ```text
-course.json referencia uma unidade
-→ a unidade precisa existir
-
-unit.json referencia uma lição
-→ a lição precisa existir
-
-lição referencia exercício
-→ o exercício precisa existir
-
-IDs que precisam ser únicos
-→ não podem se repetir no mesmo escopo
+courseId
+curriculum
+evidence
+competencies
+review
+responses
+gamification
+meta
 ```
 
-Referências quebradas e duplicidades que tornem o curso ambíguo deverão ser **erros**.
+API key de IA ou credencial GitHub dentro do objeto de progresso deve ser **erro**.
 
-## Camada futura — conteúdo órfão
+## Camada 4 — integridade entre arquivos
 
-Detectar arquivos pedagógicos que existem, mas não são alcançáveis pelo catálogo ou pela unidade correspondente.
+Depois dos manifests começarem a existir, implementar `validate-content-integrity.mjs` ou responsabilidade equivalente.
 
-Exemplo:
+Erros objetivos:
 
 ```text
-content/units/001/lessons/007.json existe
-mas não é referenciado pela unidade
-→ warning
+course.json.manifest inexistente
+unit.json.id != id do catálogo
+lesson path inexistente
+lesson id != id declarado no manifesto
+verification path/id incompatível
+competencyId referenciado inexistente
+cluster referencia activity/evidence inexistente
+ID duplicado no mesmo escopo
+schemaVersion maior que a suportada
 ```
 
-Por padrão, conteúdo órfão deve gerar **warning**, porque pode representar material em preparação ainda não publicado.
+## Conteúdo existente sem manifesto
 
-Se no futuro houver uma convenção explícita para conteúdo em rascunho, essa validação poderá ser refinada.
+O repositório contém conteúdo curricular não publicado no catálogo.
 
-## Camada futura — qualidade editorial mecânica
+Durante a migração:
 
-Automatizar apenas verificações objetivas e de baixo risco.
+```text
+pasta de unidade sem unit.json
++ unidade ainda não referenciada por course.json
+→ permitido
+→ warning opcional quando útil
+```
 
-Possíveis exemplos:
+Mas:
+
+```text
+course.json referencia unidade
++ unit.json ausente
+→ erro
+```
+
+Isso permite migração incremental sem confundir “não publicado” com “quebrado”.
+
+## Normalização e adapters
+
+Schemas não substituem o `ContentService`.
+
+Testes do normalizador devem cobrir exemplos reais de gerações diferentes:
+
+- N0 com `quick-check`, `guided-activity`, thresholds e critérios em prosa;
+- N4 com `automaticValidation: false`, clusters e `requiresReliableEvaluatorFor`;
+- verificações integradas;
+- saída de nível.
+
+Quando critério histórico não puder ser convertido com segurança para o runtime, o normalizador deve retornar erro/estado `BLOCKED`, nunca inventar regra.
+
+## Validação de atividades
+
+Com base em `docs/exercicios.md`, verificar:
+
+- interaction suportada;
+- evaluation mode compatível com os campos presentes;
+- `DETERMINISTIC` possui condição/chave suficiente;
+- `RELIABLE_EVALUATOR` não declara promoção automática contraditória;
+- activity IDs únicos;
+- `recordResponse` e evidence policy coerentes;
+- opções não são duplicadas de forma inválida;
+- answer key aponta para opção/item existente;
+- `COMPOSITE` possui etapas válidas.
+
+Contradição mecânica deve ser erro.
+
+## Validação de conclusão
+
+Após normalização:
+
+- todos os clusters obrigatórios têm IDs únicos;
+- `evidenceIds` existem;
+- satisfaction pertence a `DEMONSTRATED_REQUIRED`, `PENDING_ALLOWED`, `ATTEMPT_REQUIRED`;
+- cluster obrigatório não pode ficar vazio;
+- verificação marcada não compensável não pode ser reduzida a média global pelo schema/runtime.
+
+Não tentar validar automaticamente se um critério pedagógico em linguagem natural é “bom”.
+
+## Validação do progresso
+
+Além do JSON Schema, testes de unidade do `ProgressService` devem cobrir:
+
+- lição determinística concluída;
+- `PENDING_ALLOWED` concluindo percurso sem promover domínio;
+- cluster obrigatório não compensável;
+- revisão/consolidação;
+- modo Clássico sem XP;
+- Gamificado sem XP retroativo;
+- falha de IA sem perda de resposta;
+- falha de Gist sem perda do estado local;
+- conflito entre dispositivos;
+- migração de schema.
+
+Esses testes são **erro de CI** quando a implementação existir.
+
+## Validação de IA
+
+O contrato de `docs/avaliacao-ia.md` deve possuir testes sem depender de chamadas pagas em todo push.
+
+Testar adapters com fixtures/mocks:
+
+- `OK` válido;
+- `UNCERTAIN`;
+- contexto insuficiente;
+- resposta fora do JSON esperado;
+- provider error;
+- tentativa adversarial dentro do texto do aluno;
+- `mayPromoteEvidence=false` nunca promovendo domínio;
+- `requiresReliableEvaluator=true` permanecendo pending.
+
+Chamadas reais ao provider devem ser teste separado/sob demanda quando necessário.
+
+## Conteúdo órfão
+
+Arquivo pedagógico existente mas não alcançável por manifesto/catalog pode gerar **warning**.
+
+Isso é especialmente útil depois que uma unidade for declarada `PUBLISHED`, pois nesse estágio um arquivo órfão pode indicar esquecimento.
+
+## Qualidade editorial mecânica
+
+Pode validar objetivamente:
 
 - título obrigatório vazio;
-- bloco de conteúdo vazio;
-- opções idênticas em exercício de múltipla escolha;
-- resposta apontando para opção inexistente;
+- bloco vazio quando proibido;
+- opções idênticas;
+- resposta para opção inexistente;
 - mídia sem identificador obrigatório;
-- campos declarados que não são utilizados pelo schema.
+- blocker inválido;
+- path fora do escopo permitido.
 
-Não usar esse validador para decidir se uma explicação está pedagogicamente boa, clara ou interessante. Isso pertence à revisão de conteúdo.
+Não usar automação para decidir clareza, beleza, interesse ou correção global de interpretação aberta.
 
-## Camada futura — acessibilidade e interface
+## Acessibilidade e interface
 
-Quando a interface estiver mais madura, adicionar verificações automáticas complementares à inspeção visual.
-
-Possíveis áreas:
+Quando o renderer existir, adicionar:
 
 - HTML semântico;
 - nomes acessíveis;
-- controles sem label;
-- navegação por teclado;
-- problemas detectáveis de contraste;
-- estados de foco;
-- regressões de layout relevantes.
+- controles com labels;
+- teclado;
+- foco;
+- estados não dependentes apenas de cor;
+- alternativa a drag-and-drop;
+- contraste detectável;
+- regressões visuais relevantes.
 
-A automação deve complementar, não substituir, a skill de validação visual.
+Automação complementa a skill de inspeção visual.
 
-## Camada futura — performance e tamanho
+## Performance e tamanho
 
-Não definir limites arbitrários agora.
+Começar como warning com dados reais.
 
-Quando houver dados reais do projeto, considerar warnings para:
+Possíveis métricas:
 
-- JavaScript excessivamente grande;
-- CSS excessivamente grande;
-- JSON individual muito grande;
-- asset local pesado demais para a função que cumpre;
-- crescimento inesperado do repositório.
+- tamanho de JS/CSS;
+- JSON individual excessivo;
+- resposta/progresso Gist crescendo inesperadamente;
+- asset local pesado.
 
-Inicialmente esses controles devem ser **warnings**. Só devem virar erros se existir um limite técnico ou de produto claramente justificado.
+Não definir números arbitrários antes de medir o produto.
 
-## Camada futura — segurança e integrações
+## Segurança e integrações
 
-Quando autenticação e sincronização forem implementadas, validar pontos como:
+Quando implementadas, validar:
 
-- ausência de tokens ou segredos commitados;
-- credenciais fora do conteúdo pedagógico;
-- URLs e providers permitidos;
-- estrutura esperada do progresso salvo;
-- separação entre preferências locais e progresso acadêmico.
+- nenhum token/key commitado;
+- nenhuma API key de IA no progresso/Gist;
+- nenhuma credencial em JSON pedagógico;
+- providers permitidos;
+- URLs/payloads coerentes;
+- separação entre preferências, credenciais e progresso;
+- logs não contendo segredo.
 
-As regras exatas devem ser definidas junto da implementação real, especialmente quando dependerem de comportamento atual da GitHub API.
+Regras dependentes de comportamento atual de APIs externas devem ser verificadas novamente na implementação.
 
 ## Mídia externa
 
-Quando houver volume suficiente de conteúdo com mídia, poderá existir uma checagem separada para referências declaradas.
+Validar formato e consistência das referências declaradas sem tornar cada push dependente da disponibilidade remota do provider.
 
-Ela poderá verificar formato e consistência de `provider`, `fileId` ou equivalentes.
+Disponibilidade real de mídia pode ser checada sob demanda.
 
-Verificar disponibilidade remota de cada mídia em todo push pode ser caro, lento ou instável. Se esse tipo de checagem for implementado, deve preferir execução sob demanda ou rotina específica em vez de tornar cada commit dependente de serviços externos.
-
-## Política de evolução
-
-A ordem recomendada é:
+## Ordem de implementação
 
 ```text
-1. estrutura e referências locais                 — implementado
-2. sintaxe de JSON                                — implementado
-3. schemas de course/unit/lesson/exercise         — após definição dos formatos
-4. integridade entre arquivos                     — ao criar unidades reais
-5. conteúdo órfão e qualidade mecânica            — com volume real de conteúdo
-6. acessibilidade, performance e segurança        — conforme essas áreas amadurecerem
+1. estrutura/referências locais                  ✓
+2. sintaxe JSON                                  ✓
+3. schemas de contrato                           PRÓXIMO
+4. integridade catálogo → unit → lesson          depois dos manifests
+5. testes do normalizador                        junto do ContentService
+6. schema/testes de progresso                    junto do ProgressService
+7. testes de adapters de IA                      junto do AiFeedbackService
+8. acessibilidade/performance/segurança           conforme implementação
 ```
 
-Antes de criar um novo guard rail, responder:
+## Regra para novo guard rail
 
-1. Qual problema real ele detecta?
-2. A condição é verificável automaticamente com confiança?
-3. Deve bloquear o CI ou apenas avisar?
-4. Existe risco alto de falso positivo?
-5. A regra pertence a código, conteúdo, documentação ou revisão humana?
+Antes de adicionar:
 
-## Execução
+1. qual problema real detecta?
+2. é verificável com confiança?
+3. erro ou warning?
+4. qual risco de falso positivo?
+5. pertence a schema, integridade, código, UI ou revisão humana?
 
-A validação automática é executada pelo GitHub Actions em pushes para `main` e em pull requests.
-
-Localmente, as validações atuais podem ser executadas com:
+## Execução atual
 
 ```text
 node scripts/validate-project.mjs
 node scripts/validate-json.mjs
 ```
 
-Este documento deve ser atualizado quando uma nova camada de guard rail for adotada oficialmente.
+O GitHub Actions executa as validações atuais em PRs e pushes para `main`.
