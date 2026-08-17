@@ -45,6 +45,9 @@ jobs:
       - name: Test progress engine
         run: node scripts/test-progress-service.mjs
 
+      - name: Test progress policies
+        run: node scripts/test-progress-policies.mjs
+
       - name: Test GitHub Gist service
         run: node scripts/test-github-service.mjs
 
