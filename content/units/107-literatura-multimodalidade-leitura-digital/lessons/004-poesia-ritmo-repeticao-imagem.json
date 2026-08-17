@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "id": "N1-U07-L04",
+  "title": "Poesia: ritmo, repetição e imagem",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Ler poema curto percebendo organização em versos, repetições, ritmo visual/sonoro e imagens de linguagem que contribuem para o efeito, sem reduzir poesia a rima ou exigir escansão técnica.",
+  "competencies": ["reconhecer versos e repetição em poema curto", "perceber efeito de repetição", "identificar imagem de linguagem transparente", "relacionar escolha formal a sensação/interpretação", "reconhecer que poema pode não rimar", "apoiar leitura em elementos do texto"],
+  "prerequisites": ["N1-U07-L01", "N1-U02-L09"],
+  "limits": ["não exigir métrica ou escansão", "não afirmar que todo poema rima", "não sistematizar figuras de linguagem", "não impor interpretação única", "não avaliar leitura expressiva por performance vocal"],
+  "media": {"tts": "permitido como uma leitura possível; não modelo único de ritmo", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["poema", "feedback"], "purpose": "acessibilidade; uma leitura possível"}], "generatedVisualResources": [{"type": "UI_RENDERED_POEM_LAYOUT", "locations": ["L04-B01", "L04-C01", "L04-A01"], "purpose": "preservar versos/repetições"}, {"type": "UI_RENDERED_TEXTUAL_EFFECT_HIGHLIGHT", "locations": ["L04-B02", "L04-A02"], "purpose": "ligar forma a efeito sem depender só de cor"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória; poema original do curso", "decisionRationale": "a materialidade verbal/gráfica pode ser apresentada pela própria interface."},
+  "sequence": [
+    {"id": "L04-B01", "type": "original-poem", "textLines": ["A rua acorda devagar,", "porta por porta,", "passo por passo,", "até que o sol", "abre todas as janelas."], "note": "preservar quebras de verso na interface"},
+    {"id": "L04-B02", "type": "effect-demonstration", "observations": [{"feature": "repetição de 'por'", "effect": "reforça avanço gradual no trecho"}, {"feature": "'o sol abre todas as janelas'", "effect": "imagem que apresenta o amanhecer como se o sol realizasse uma ação humana"}], "guardRail": "esses efeitos são leituras sustentadas; o poema não precisa ter uma única interpretação"},
+    {"id": "L04-C01", "type": "guided-reading", "items": [{"question": "Que expressão se repete?", "options": ["por", "sol", "rua"], "correctIndex": 0}, {"question": "O poema depende de rimas finais regulares para ser poema?", "options": ["não", "sim"], "correctIndex": 0}]},
+    {"id": "L04-A01", "type": "assessment-poem", "textLines": ["Chove na telha,", "chove na praça,", "chove no vidro", "e a tarde fica pequena", "dentro da janela."], "items": [{"question": "Qual repetição organiza os primeiros versos?", "options": ["chove", "janela", "pequena"], "correctIndex": 0}, {"question": "A repetição contribui para qual efeito neste trecho?", "options": ["insistência/continuidade da chuva", "provar que a chuva terminou", "mudar o texto para notícia"], "correctIndex": 0}]},
+    {"id": "L04-A02", "type": "assessment-image", "textRef": "L04-A01", "target": "a tarde fica pequena dentro da janela", "question": "Qual leitura é compatível?", "options": ["a cena da tarde é percebida pelo recorte da janela", "a tarde é um objeto físico que diminuiu de tamanho", "o texto informa uma medida exata"], "correctIndex": 0},
+    {"id": "L04-P01", "type": "open-reaction", "prompt": "Escolha um verso e diga que imagem ou sensação ele produz para você. Relacione sua resposta às palavras do poema.", "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"layoutPreserved": true, "rhymeNotRequired": true, "openReactionNotScored": true, "ttsPolicy": "uma leitura possível", "timeLimit": false},
+  "completionEvidence": {"clusters": {"formalFeature": {"evidence": ["L04-A01"], "rule": "reconhecer repetição e seu efeito"}, "imageInterpretation": {"evidence": ["L04-A02"], "rule": "interpretar imagem transparente sem literalizar"}}, "practiceRecorded": ["L04-P01"], "completionRule": "os dois agrupamentos avaliáveis são obrigatórios.", "notSufficient": ["procurar rima como única marca", "nomear figura sem explicar efeito", "impor interpretação única"]}
+}
