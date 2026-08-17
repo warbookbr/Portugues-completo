@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "N4-U06-L07",
+  "title": "Repetição, paralelismo, ordem e ênfase",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Controlar padrões e quebras de padrão para produzir coesão, contraste, ritmo e saliência, decidindo conscientemente quando repetir, variar, reordenar ou preservar estruturas.",
+  "competencies": ["distinguir repetição funcional de redundância", "usar paralelismo", "reordenar para alterar ênfase", "preservar padrões úteis", "justificar saliência textual"],
+  "prerequisites": ["N4-U06-L05", "N4-U06-L06", "N4-U05-L09"],
+  "limits": ["repetição não é erro automático", "simetria não é obrigação estética", "reordenar não deve alterar relação lógica", "variedade não pontua por si"],
+  "media": {"tts": "opcional para releitura", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["padroes comparados"]}], "generatedVisualResources": [{"type": "UI_RENDERED_REPETITION_FUNCTION_MAP"}, {"type": "UI_RENDERED_PARALLELISM_MAP"}, {"type": "UI_RENDERED_EMPHASIS_ORDER_MAP"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "mapas de padrão e ênfase permitem visualizar função discursiva sem transformar repetição em falha mecânica."},
+  "sequence": [
+    {"id": "L07-B01", "type": "repetition-analysis", "examples": [{"text": "Precisamos saber quem será atendido. Precisamos saber quando. Precisamos saber com quais recursos.", "possibleFunction": "paralelismo e acumulação deliberada"}, {"text": "O relatório apresenta os resultados. Os resultados apresentados no relatório mostram os resultados do teste.", "possibleFunction": "repetição sem desenvolvimento"}], "task": "explicar por que a repetição cumpre funções diferentes"},
+    {"id": "L07-B02", "type": "order-emphasis", "versions": [{"text": "A equipe manteve o teste apesar da procura irregular.", "emphasis": "decisao da equipe"}, {"text": "Apesar da procura irregular, a equipe manteve o teste.", "emphasis": "contraste/condicao"}], "task": "comparar saliência sem alegar mudança factual automática"},
+    {"id": "L07-C01", "type": "pattern-check", "items": [{"claim": "Toda repetição deve ser substituída por sinônimo.", "expected": "falso"}, {"claim": "Paralelismo pode tornar uma série de critérios mais saliente.", "expected": "verdadeiro"}, {"claim": "Mudar a ordem pode mudar foco mesmo quando fatos permanecem.", "expected": "verdadeiro"}]},
+    {"id": "L07-A01", "type": "emphasis-design", "scenario": "Edite um trecho com uma repetição funcional, uma repetição improdutiva e duas ordens possíveis para uma condição relevante.", "tasks": ["preservar ou criar uma repetição funcional", "remover ou transformar uma redundância", "usar paralelismo onde houver ganho", "escolher uma ordem de ênfase", "justificar cada intervenção e uma manutenção"], "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"timeLimit": false, "repetitionCountScored": false, "symmetryScored": false, "changeCountScored": false, "openResponseAutoValidated": false},
+  "completionEvidence": {"clusters": {"patternEmphasis": {"evidence": ["L07-A01"], "required": true}}, "completionRule": "as intervenções precisam ser justificadas por coesão, contraste, ritmo ou ênfase; preservar um padrão funcional conta como decisão válida.", "requiresReliableEvaluatorFor": ["função da repetição", "efeito de ordem/ênfase", "qualidade das justificativas"]}
+}

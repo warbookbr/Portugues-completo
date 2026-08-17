@@ -120,8 +120,8 @@ U2 ✓ — 11 lições + N4-U02-V01
 U3 ✓ — 10 lições + N4-U03-V01
 U4 ✓ — 11 lições + N4-U04-V01
 U5 ✓ — 11 lições + N4-U05-V01; gate normativo ✓
-U6 — PRÓXIMO SUBPASSO
-U7 pendente — gate normativo ✓ para o recorte já documentado
+U6 ✓ — 9 lições + N4-U06-V01
+U7 — PRÓXIMO SUBPASSO; gate normativo ✓ para o recorte já documentado
 U8 pendente
 U9 pendente
 ```
@@ -135,6 +135,8 @@ U3: `content/units/403-argumentacao-complexa-evidencia-responsabilidade-epistemi
 U4: `content/units/404-autoria-avancada-generos-complexos-transferencia/`.
 
 U5: `content/units/405-edicao-alto-nivel-precisao-consulta-linguistica/`.
+
+U6: `content/units/406-estilo-registro-projeto-voz/`.
 
 O M5 da U1 consolidou os guard rails do nível:
 
@@ -208,6 +210,19 @@ O M5 da U5 consolidou edição como julgamento priorizado e auditável:
 - editar texto alheio exige distinguir correção, sugestão, pergunta ao autor e preservação de voz;
 - `N4-U05-V01` exige onze agrupamentos obrigatórios, incluindo consulta, fronteira normativa, edição de texto alheio e histórico de decisões.
 
+O M5 da U6 consolidou estilo como projeto funcional e transferível:
+
+- projeto estilístico precede decisões locais e explicita finalidade, audiência e efeitos desejados;
+- primeira pessoa, distância e impessoalidade são recursos funcionais, não escalas automáticas de rigor;
+- tom e registro dependem da relação com a audiência; formalidade máxima não pontua;
+- concisão e explicitação são ajustadas sem apagar condições, ressalvas ou contexto necessário;
+- escolha lexical considera significado, alcance, registro, conotação e consistência, sem premiar raridade;
+- ritmo, extensão de frase e pontuação são decisões de fluxo e ênfase, não proxies de qualidade;
+- repetição, paralelismo, ordem e saliência podem ser preservados ou alterados conforme função;
+- modalidade e visibilidade do agente precisam respeitar força da evidência e responsabilidade enunciativa;
+- transferência estilística altera superfície e organização quando necessário sem exigir cópia mecânica da voz;
+- `N4-U06-V01` exige projeto, versão-base, duas adaptações e histórico explícito de mudanças/permanências; soluções estilísticas alternativas são aceitas quando funcionais e justificadas.
+
 ### Gate normativo N4-U5/U7
 
 - `docs/gate-normativo-nivel-4-u5-u7.md` — **SATISFEITO**;
@@ -245,31 +260,33 @@ N4 — M1 ✓
                 ├── U3 ✓
                 ├── U4 ✓
                 ├── U5 ✓
-                └── U6 — PRÓXIMO SUBPASSO
+                ├── U6 ✓
+                └── U7 — PRÓXIMO SUBPASSO
 ```
 
 ## Próximo subpasso
 
 ```text
-N4-U06 M5 — Estilo, registro e projeto de voz
-→ 9 lições + N4-U06-V01
-→ estilo como projeto funcional, não ornamentação
-→ voz autoral, presença, distância e ponto de vista discursivo
-→ tom, registro e relação com a audiência
-→ densidade, explicitação e concisão em tensão funcional
-→ escolha lexical por significado, alcance, registro e conotação
-→ ritmo, extensão de frase, pontuação e cadência sem confundir estilo com norma
-→ repetição, paralelismo, ordem e ênfase
-→ modalidade, voz gramatical, impessoalidade e responsabilidade enunciativa
-→ adaptar estilo entre audiências/meios preservando identidade autoral
-→ aceitar soluções estilísticas diferentes quando funcionais e justificadas
-→ não pontuar formalidade máxima, extensão, vocabulário raro ou quantidade de alterações
+N4-U07 M5 — Língua, norma, variação, mudança, identidade e poder
+→ usar `docs/referencias-gramatica-nivel-4-u5-u7.md`; gate normativo já satisfeito para o recorte documentado
+→ 10 lições + N4-U07-V01
+→ distinguir uso, descrição e normatização
+→ distinguir norma-padrão, norma editorial, convenção de gênero/instituição e preferência
+→ analisar variação regional, social, situacional e histórica sem inferir capacidade global do falante
+→ observar mudança linguística com evidência temporal/contextual, sem narrativa automática de decadência
+→ separar prestígio/estigma e consequências sociais de suposta inferioridade linguística
+→ tratar identidade e repertório como recursos adaptáveis sem exigir abandono da variedade pessoal
+→ distinguir feedback contextual de preconceito linguístico
+→ comparar fontes normativas e descritivas pela função e pelo escopo
+→ avaliar afirmações públicas sobre “certo”, “errado” e “o português” sem generalização indevida
+→ integrar análise + adaptação contextual sem hierarquizar falantes
+→ reabrir o gate somente se surgir caso objetivo fora do recorte já documentado
 ```
 
 Depois:
 
 ```text
-U7 (gate normativo já satisfeito; usar a referência e reabrir só se surgir caso fechado fora do recorte) → U8 → U9 (reavaliar gate de mídia se necessário)
+U8 → U9 (reavaliar gate de mídia se necessário)
 → N4-EXIT-V01
 → checkpoint final do curso
 ```
@@ -308,6 +325,8 @@ U7 (gate normativo já satisfeito; usar a referência e reabrir só se surgir ca
 30. Em colocação pronominal, adequação à escrita formal e descrição do português brasileiro são dimensões distintas; nenhuma delas autoriza hierarquizar falantes.
 31. Edição de domínio prioriza impacto antes de polimento, preserva trechos adequados e registra consultas/manutenções; quantidade de correções não é proxy de qualidade.
 32. Em texto alheio, correção necessária, sugestão opcional, pergunta ao autor e preservação são intervenções distintas; o editor não deve reescrever o autor à própria imagem.
+33. Em estilo, formalidade, concisão, complexidade, repetição, primeira pessoa, impessoalidade ou raridade lexical só têm valor quando servem ao projeto e à audiência; nenhuma dessas escolhas funciona como proxy universal de qualidade.
+34. Transferência de voz deve preservar fatos, responsabilidade e traços autorais funcionais sem exigir semelhança superficial entre versões.
 
 # Dependências não curriculares
 

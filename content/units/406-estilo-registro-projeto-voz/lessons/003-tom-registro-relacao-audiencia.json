@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "N4-U06-L03",
+  "title": "Tom, registro e relação com a audiência",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Ajustar proximidade, formalidade, cortesia, tecnicidade e diretividade ao contexto sem alterar os fatos nem tratar registro como medida de inteligência ou qualidade universal.",
+  "competencies": ["selecionar tom e registro", "adaptar proximidade e diretividade", "controlar tecnicidade", "preservar fatos entre versões", "justificar escolhas pela audiência"],
+  "prerequisites": ["N4-U06-L01", "N4-U06-L02", "N4-U04-L08"],
+  "limits": ["formalidade máxima não é padrão", "registro não mede inteligência", "cortesia não exige linguagem burocrática", "adaptação de tom não autoriza inventar ou suprimir condição relevante"],
+  "media": {"tts": "opcional para releitura de tom; não define resposta correta", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["versoes"]}], "generatedVisualResources": [{"type": "UI_RENDERED_AUDIENCE_REGISTER_MAP"}, {"type": "UI_RENDERED_TONE_CONTINUUM"}, {"type": "UI_RENDERED_VERSION_COMPARE"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "mapas semânticos de audiência e tom permitem testar adequação contextual sem depender de performance oral específica."},
+  "sequence": [
+    {"id": "L03-B01", "type": "scenario-compare", "facts": ["a oficina começará às 18h30", "a sala mudou para 4", "a mudança vale apenas nesta semana"], "destinations": [{"audience": "participantes", "goal": "informar rapidamente e reduzir dúvida"}, {"audience": "equipe interna", "goal": "registrar mudança e orientar atendimento"}], "task": "identificar diferenças possíveis de tom, detalhe e diretividade sem mudar os fatos"},
+    {"id": "L03-B02", "type": "register-analysis", "alternatives": [{"text": "Nesta semana, a oficina começa às 18h30, na sala 4.", "effect": "direto e acessivel"}, {"text": "Comunica-se, para os devidos fins, a alteração excepcional do horário de início da oficina.", "effect": "mais formal e distante"}], "question": "qual versão é mais adequada para uma mensagem curta a participantes e por quê?"},
+    {"id": "L03-C01", "type": "register-check", "items": [{"claim": "Mais formal é sempre melhor em comunicação institucional.", "expected": "falso"}, {"claim": "O mesmo fato pode exigir graus diferentes de explicitação para públicos diferentes.", "expected": "verdadeiro"}]},
+    {"id": "L03-A01", "type": "audience-adaptation", "scenario": "Adapte o mesmo conjunto de fatos para uma comunicação pública breve e para uma nota interna de equipe.", "required": ["duas versoes", "fatos invariantes", "decisoes de proximidade", "decisoes de tecnicidade/diretividade", "justificativa de efeito"], "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"timeLimit": false, "formalityMaximizationScored": false, "singleRegisterKey": false, "openResponseAutoValidated": false},
+  "completionEvidence": {"clusters": {"toneRegisterAudience": {"evidence": ["L03-A01"], "required": true}}, "completionRule": "as duas versões precisam ser adequadas a relações/audiências distintas e manter o mesmo núcleo factual.", "requiresReliableEvaluatorFor": ["adequação de tom e registro", "preservação factual", "justificativa de efeito"]}
+}

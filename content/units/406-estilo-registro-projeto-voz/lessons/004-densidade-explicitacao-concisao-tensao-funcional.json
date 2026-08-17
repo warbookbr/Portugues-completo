@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "id": "N4-U06-L04",
+  "title": "Densidade, explicitação e concisão em tensão funcional",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Equilibrar economia e explicação suficiente conforme leitor e tarefa, removendo excesso ou acrescentando contexto sem apagar condições, ressalvas e relações necessárias.",
+  "competencies": ["ajustar densidade", "explicitar pressupostos necessários", "reduzir redundância sem perda factual", "preservar qualificações", "produzir versões compacta e expandida funcionalmente"],
+  "prerequisites": ["N4-U06-L01", "N4-U06-L03", "N4-U05-L02"],
+  "limits": ["texto menor não é automaticamente melhor", "explicitar tudo pode aumentar ruído", "concisão não autoriza apagar condição", "densidade não é medida por contagem fixa de palavras"],
+  "media": {"tts": "opcional para releitura", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["versoes compacta/expandida"]}], "generatedVisualResources": [{"type": "UI_RENDERED_DENSITY_EXPLICITNESS_MAP"}, {"type": "UI_RENDERED_INFORMATION_PRESERVATION_MAP"}, {"type": "UI_RENDERED_VERSION_COMPARE"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "a comparação de versões e o mapa de preservação tornam visível o que foi comprimido, explicitado ou mantido."},
+  "sequence": [
+    {"id": "L04-B01", "type": "controlled-revision", "base": "O atendimento extra será testado por quatro semanas e poderá continuar se houver procura suficiente e disponibilidade de equipe.", "compact": "O atendimento extra será testado por quatro semanas e só continuará se houver procura e equipe disponíveis.", "expanded": "O atendimento extra funcionará inicialmente por quatro semanas. Depois desse período, a continuidade dependerá de dois fatores: procura suficiente e disponibilidade de equipe.", "task": "comparar o que muda em densidade e explicitação e verificar se as duas versões preservam as condições"},
+    {"id": "L04-C01", "type": "loss-check", "items": [{"edit": "remover 'se houver disponibilidade de equipe' para encurtar", "expected": "perda factual indevida"}, {"edit": "trocar duas repetições idênticas por uma referência clara", "expected": "pode ser ganho de concisão"}, {"edit": "explicar uma sigla desconhecida ao público externo", "expected": "pode ser ganho de explicitação"}]},
+    {"id": "L04-A01", "type": "dual-density-revision", "scenario": "Um texto sobre um projeto piloto será lido por uma equipe já familiarizada com o contexto e por participantes externos que não conhecem o projeto.", "tasks": ["produzir uma versão mais compacta para a equipe", "produzir uma versão mais explícita para participantes", "marcar informação que deve permanecer nas duas", "justificar uma remoção e uma explicitação"], "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"timeLimit": false, "wordCountScored": false, "shorterIsBetter": false, "openResponseAutoValidated": false},
+  "completionEvidence": {"clusters": {"densityExplicitness": {"evidence": ["L04-A01"], "required": true}}, "completionRule": "as duas versões precisam responder a necessidades distintas sem apagar condições ou criar informação nova.", "requiresReliableEvaluatorFor": ["suficiência da explicitação", "qualidade da concisão", "preservação factual"]}
+}
