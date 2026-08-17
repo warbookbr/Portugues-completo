@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "N4-U02-L07",
+  "title": "Rastrear uma afirmação até a fonte de origem",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Reconstruir a proveniência de uma afirmação que circula por fontes secundárias e ajustar o que pode ser sustentado ao reencontrar o material de origem.",
+  "competencies": ["seguir cadeia de citação", "distinguir citação, paráfrase e ampliação", "localizar fonte original suficiente", "comparar afirmação circulante à origem", "interromper rastreamento quando a origem relevante estiver estabelecida", "avaliar a própria fonte original"],
+  "prerequisites": ["N4-U02-L04", "N4-U02-L05", "N4-U02-L06"],
+  "limits": ["fonte original continua sujeita a crítica", "nem toda afirmação exige regressão infinita", "link repetido não cria independência", "ausência de origem pode justificar suspensão da afirmação"],
+  "media": {"tts": "opcional como apoio de acesso", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["cadeias de fontes", "instruções", "feedback"], "purpose": "apoio de acesso"}], "generatedVisualResources": [{"type": "UI_RENDERED_SOURCE_LINEAGE"}, {"type": "UI_RENDERED_CLAIM_ORIGIN_COMPARE"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "a proveniência é representada semanticamente pela UI e não depende de mídia externa."},
+  "sequence": [
+    {"id": "L07-B01", "type": "worked-lineage", "chain": [{"stage": "postagem", "claim": "o novo sistema reduziu erros pela metade", "cites": "notícia"}, {"stage": "notícia", "claim": "erros caíram cerca de 50%", "cites": "apresentação"}, {"stage": "apresentação", "claim": "queda de 48% em erros de digitação em duas equipes durante quatro semanas", "cites": "relatório piloto"}, {"stage": "relatório piloto", "claim": "48% de redução relativa em erros classificados como digitação; duas equipes; quatro semanas; outros tipos não avaliados", "cites": "dados internos"}], "model": "a versão circulante amplia o escopo ao omitir tipo de erro, equipes e duração; a origem sustenta resultado local do piloto, não 'erros' em geral."},
+    {"id": "L07-C01", "type": "lineage-diagnosis", "items": [{"pattern": "três sites citam a mesma notícia", "status": "not-independent"}, {"pattern": "notícia liga relatório original com metodologia", "status": "traceable"}, {"pattern": "postagem diz 'segundo estudos' sem identificar nenhum", "status": "origin-missing"}]},
+    {"id": "L07-A01", "type": "lineage-transfer", "chain": [{"id": "P", "text": "Programa dobrou a participação.", "source": "M"}, {"id": "M", "text": "Participação em oficinas dobrou no bairro Norte.", "source": "R"}, {"id": "R", "text": "Inscrições em oficinas passaram de 84 para 171 no bairro Norte após mudança de calendário; não mede presença efetiva.", "source": "planilha de inscrições"}], "tasks": ["reconstruir a cadeia", "identificar duas ampliações de sentido", "formular versão que a origem realmente sustenta", "indicar uma pergunta que ainda permanece aberta"], "recordResponse": true},
+    {"id": "L07-P01", "type": "reflection", "prompt": "Quando é razoável parar o rastreamento de uma afirmação? Explique sem transformar 'fonte original' em sinônimo de 'fonte verdadeira'.", "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"timeLimit": false, "originalAutomaticallyTrusted": false, "numberOfLinksScored": false, "openResponseAutoValidated": false},
+  "completionEvidence": {"clusters": {"lineage": {"evidence": ["L07-A01"], "required": true}, "judgment": {"evidence": ["L07-P01"], "required": true}}, "completionRule": "a cadeia deve permitir reconstruir origem e mudanças de escopo; encontrar a fonte original não dispensa avaliação de método e alcance.", "requiresReliableEvaluatorFor": ["qualidade da reformulação aberta"]}
+}
