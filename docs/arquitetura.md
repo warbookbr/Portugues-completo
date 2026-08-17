@@ -421,6 +421,86 @@ O mecanismo exato de token e as permissões disponíveis devem ser verificados n
 
 Se uma credencial precisar permanecer apenas durante a sessão, `sessionStorage` pode ser usado como armazenamento temporário.
 
+## IA, feedback e credenciais do aluno
+
+A integração futura com provedores de IA deve preservar a arquitetura estática do GitHub Pages e **não pode depender de uma chave secreta pertencente ao projeto exposta ao navegador**.
+
+Regra estrutural:
+
+```text
+nenhuma chave privada do projeto para provedor de IA
+→ frontend estático
+→ repositório
+→ JSON de conteúdo
+→ configuração pública do GitHub Pages
+```
+
+Qualquer integração direta entre o navegador e um provedor de IA deve usar uma credencial fornecida pelo próprio aluno, pertencente à conta dele no provedor escolhido.
+
+### Separação entre credenciais
+
+A credencial usada para IA e a credencial usada para GitHub/progresso são responsabilidades diferentes.
+
+```text
+credencial GitHub
+→ identidade e sincronização de progresso
+→ pode participar do fluxo de Gist definido pelo projeto
+
+API key de IA
+→ chamadas ao provedor de IA escolhido pelo aluno
+→ nunca deve ser colocada no Gist
+→ nunca deve ser sincronizada como progresso
+```
+
+O `ProgressService` e o mecanismo de Gist não devem receber, persistir ou transportar a API key de IA.
+
+### Persistência da API key de IA
+
+O comportamento padrão deve ser o mais conservador:
+
+```text
+aluno informa a API key
+→ chave disponível somente para a sessão atual
+→ ao encerrar a sessão/navegador, pode ser necessário informar novamente
+```
+
+A interface poderá oferecer explicitamente a opção:
+
+```text
+☐ Lembrar minha chave neste dispositivo
+```
+
+Somente quando o aluno escolher essa opção, a aplicação poderá persistir a chave no armazenamento local daquele navegador/dispositivo.
+
+Essa persistência é **local**, não sincronizada. Portanto:
+
+- trocar de computador ou celular pode exigir inserir a chave novamente;
+- trocar de navegador pode exigir inserir a chave novamente;
+- limpar os dados do site pode remover a chave;
+- a chave não deve ser recuperada do Gist ou de qualquer outro mecanismo de progresso.
+
+### Dispositivos públicos ou compartilhados
+
+A interface deve deixar claro que a opção de lembrar a chave não é recomendada em computador, celular ou perfil de navegador público/compartilhado.
+
+O padrão deve continuar sendo **não persistir a chave** sem escolha explícita do aluno.
+
+### Responsabilidade e transparência
+
+A interface deve informar, em linguagem clara, que:
+
+- a API key pertence à conta do aluno no provedor de IA;
+- o Português Completo não fornece uma chave privada própria pelo frontend;
+- o aluno deve manter sua chave secreta e não compartilhá-la nem publicá-la;
+- uso, limites, cobranças e custos associados à chave pertencem à conta do titular e são responsabilidade dele;
+- escolher lembrar a chave aumenta conveniência naquele dispositivo, mas exige cuidado adicional em dispositivos compartilhados.
+
+### Papel da IA no curso
+
+A IA poderá futuramente apoiar feedback de respostas complexas, especialmente quando regras determinísticas não forem suficientes para diagnosticar uma produção aberta.
+
+A integração não deve transformar uma resposta gerada pelo modelo em verdade pedagógica automática. O desenho funcional de avaliação com IA será definido separadamente antes da implementação, preservando os limites de validação já registrados no conteúdo curricular.
+
 ## Fontes oficiais dos dados
 
 ```text
@@ -429,6 +509,11 @@ Preferências do dispositivo
 
 Credencial temporária
 → sessionStorage, quando aplicável
+
+API key de IA
+→ sessão por padrão
+→ armazenamento local somente mediante escolha explícita do aluno
+→ nunca Gist/progresso
 
 Progresso acadêmico
 → Gist do aluno
@@ -517,6 +602,8 @@ O validador não exige que cada lição ou exercício individual seja listado no
 - vozes de narração variam entre sistemas e navegadores;
 - mídias externas dependem da disponibilidade e permissões do provider;
 - Google Drive não é tratado como CDN nem como filesystem da aplicação;
+- uma API key de IA lembrada localmente não acompanha automaticamente o aluno entre dispositivos ou navegadores;
+- limpar dados locais pode exigir que a API key de IA seja informada novamente;
 - a arquitetura foi escolhida para um grupo pequeno de usuários, não para milhares de alunos simultâneos.
 
 ## Regra principal
@@ -532,6 +619,7 @@ configurações
 narração
 progresso
 integração com GitHub
+integração com IA e credenciais locais
 documentação
 validação estrutural
 ```
