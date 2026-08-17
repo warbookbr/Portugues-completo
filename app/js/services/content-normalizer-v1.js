@@ -16,19 +16,37 @@ export class ContentNormalizationError extends Error {
 const clone = value => value === undefined ? undefined : JSON.parse(JSON.stringify(value));
 
 function ensureV1(source) {
-  if (!source || typeof source !== 'object' || Array.isArray(source)) {
-    throw new ContentNormalizationError('INVALID_SOURCE', 'Conteúdo autoral deve ser um objeto JSON.');
-  }
-  if (source.schemaVersion !== 1) {
-    throw new ContentNormalizationError('UNSUPPORTED_SCHEMA_VERSION', `schemaVersion autoral não suportada: ${source.schemaVersion}`, { id: source.id, schemaVersion: source.schemaVersion });
-  }
-  if (!source.id || !source.title || !source.objective) {
-    throw new ContentNormalizationError('MISSING_IDENTITY', 'Conteúdo autoral sem id, title ou objective.', { id: source.id });
-  }
+  if (!source || typeof source !== 'object' || Array.isArray(source)) throw new ContentNormalizationError('INVALID_SOURCE', 'Conteúdo autoral deve ser um objeto JSON.');
+  if (source.schemaVersion !== 1) throw new ContentNormalizationError('UNSUPPORTED_SCHEMA_VERSION', `schemaVersion autoral não suportada: ${source.schemaVersion}`, { id: source.id, schemaVersion: source.schemaVersion });
+  if (!source.id || !source.title || !source.objective) throw new ContentNormalizationError('MISSING_IDENTITY', 'Conteúdo autoral sem id, title ou objective.', { id: source.id });
+}
+
+function materializeExpectedItems(block) {
+  if (!Array.isArray(block.items) || !block.items.length) return block;
+  const expectedItems = block.items.filter(item => item && Object.prototype.hasOwnProperty.call(item, 'expected'));
+  if (expectedItems.length !== block.items.length) return block;
+
+  const allBoolean = expectedItems.every(item => typeof item.expected === 'boolean');
+  const categories = allBoolean
+    ? ['verdadeiro', 'falso']
+    : [...new Set(expectedItems.map(item => item.expected).filter(value => typeof value === 'string'))];
+  if (!categories.length) return block;
+
+  return {
+    ...clone(block),
+    categories,
+    items: block.items.map((item, index) => ({
+      ...clone(item),
+      id: item.id || String(index),
+      displayLabel: item.displayLabel || item.claim || item.question || `Item ${index + 1}`,
+      expected: allBoolean ? (item.expected ? 'verdadeiro' : 'falso') : item.expected
+    }))
+  };
 }
 
 function materializeLegacyActivity(block, sourceDocument) {
-  if (!sourceDocument || !block?.id) return block;
+  let materialized = materializeExpectedItems(block);
+  if (!sourceDocument || !block?.id) return materialized;
 
   if (block.id === 'L03-A01' && Array.isArray(sourceDocument.letterSet)) {
     const letters = sourceDocument.letterSet.filter(item => item?.letter && item?.mediaId);
@@ -36,12 +54,7 @@ function materializeLegacyActivity(block, sourceDocument) {
       ...clone(block),
       interaction: 'classify',
       categories: letters.map(item => item.letter),
-      items: letters.map((item, index) => ({
-        id: `letter-${String(index + 1).padStart(2, '0')}`,
-        displayLabel: `Áudio ${index + 1}`,
-        stimulus: item.mediaId,
-        correct: item.letter
-      }))
+      items: letters.map((item, index) => ({ id: `letter-${String(index + 1).padStart(2, '0')}`, displayLabel: `Áudio ${index + 1}`, stimulus: item.mediaId, correct: item.letter }))
     };
   }
 
@@ -51,11 +64,7 @@ function materializeLegacyActivity(block, sourceDocument) {
       ...clone(block),
       interaction: 'classify',
       categories: pairs.map(item => item.lower),
-      items: pairs.map((item, index) => ({
-        id: `pair-${String(index + 1).padStart(2, '0')}`,
-        stimulus: item.upper,
-        correct: item.lower
-      }))
+      items: pairs.map((item, index) => ({ id: `pair-${String(index + 1).padStart(2, '0')}`, stimulus: item.upper, correct: item.lower }))
     };
   }
 
@@ -69,13 +78,12 @@ function materializeLegacyActivity(block, sourceDocument) {
     return { ...clone(block), interaction: 'classify', categories: ['vogal', 'consoante'], items };
   }
 
-  return block;
+  return materialized;
 }
 
 function normalizeInteraction(block) {
   if (block.interaction === 'audio-to-letter' && Array.isArray(block.options)) return 'SINGLE_CHOICE';
   if (block.interaction === 'initial-sound-to-letter' && Array.isArray(block.items)) return 'COMPOSITE';
-
   const fromInteraction = INTERACTION_BY_LEGACY_INTERACTION_V1[block.interaction];
   if (fromInteraction) return fromInteraction;
   const fromType = INTERACTION_BY_PEDAGOGICAL_TYPE_V1[block.type];
@@ -88,15 +96,11 @@ function normalizeInteraction(block) {
 }
 
 function collectionHasAnswer(collection) {
-  return Array.isArray(collection) && collection.some(item => item && typeof item === 'object' && [
-    'correct', 'expected', 'correctIndex', 'correctSequence', 'auditoryCorrect', 'relationCorrectIndex'
-  ].some(key => Object.prototype.hasOwnProperty.call(item, key)));
+  return Array.isArray(collection) && collection.some(item => item && typeof item === 'object' && ['correct', 'expected', 'correctIndex', 'correctSequence', 'auditoryCorrect', 'relationCorrectIndex'].some(key => Object.prototype.hasOwnProperty.call(item, key)));
 }
 
 function hasDeterministicKey(block) {
-  return block.automaticValidation === true ||
-    ['correct', 'correctIndex', 'correctSequence', 'auditoryCorrect', 'relationCorrectIndex'].some(key => Object.prototype.hasOwnProperty.call(block, key)) ||
-    collectionHasAnswer(block.items) || collectionHasAnswer(block.rounds);
+  return block.automaticValidation === true || ['correct', 'correctIndex', 'correctSequence', 'auditoryCorrect', 'relationCorrectIndex'].some(key => Object.prototype.hasOwnProperty.call(block, key)) || collectionHasAnswer(block.items) || collectionHasAnswer(block.rounds);
 }
 
 function normalizeEvaluationMode(block) {
@@ -118,10 +122,7 @@ function answerFromEntry(entry) {
 
 function normalizeAnswerKey(block) {
   const answerKey = {};
-  for (const key of ['correct', 'correctIndex', 'correctSequence', 'auditoryCorrect', 'relationCorrectIndex']) {
-    if (Object.prototype.hasOwnProperty.call(block, key)) answerKey[key] = clone(block[key]);
-  }
-
+  for (const key of ['correct', 'correctIndex', 'correctSequence', 'auditoryCorrect', 'relationCorrectIndex']) if (Object.prototype.hasOwnProperty.call(block, key)) answerKey[key] = clone(block[key]);
   const itemAnswers = {};
   for (const collection of [block.items, block.rounds]) {
     if (!Array.isArray(collection)) continue;
@@ -129,8 +130,7 @@ function normalizeAnswerKey(block) {
       if (!item || typeof item !== 'object') return;
       const answer = answerFromEntry(item);
       if (answer === undefined) return;
-      const key = item.id || String(index);
-      itemAnswers[key] = answer;
+      itemAnswers[item.id || String(index)] = answer;
     });
   }
   if (Object.keys(itemAnswers).length) answerKey.items = itemAnswers;
@@ -147,35 +147,31 @@ function stimulusFromObject(stimulus) {
 
 function stimulusFromPrimitive(stimulus, itemId = null) {
   if (typeof stimulus !== 'string') return null;
-  if (stimulus.includes('AUD-')) return { type: 'CONTROLLED_AUDIO', mediaId: stimulus, ...(itemId ? { payload: { itemId } } : {}) };
-  return { type: 'TEXT', payload: { content: stimulus, ...(itemId ? { itemId } : {}) } };
+  if (stimulus.includes('AUD-')) return { type: 'CONTROLLED_AUDIO', mediaId: stimulus, ...(itemId !== null ? { payload: { itemId } } : {}) };
+  return { type: 'TEXT', payload: { content: stimulus, ...(itemId !== null ? { itemId } : {}) } };
 }
 
 function appendEntryStimuli(stimuli, entries) {
   if (!Array.isArray(entries)) return;
-  for (const entry of entries) {
-    if (!entry || typeof entry !== 'object') continue;
-    const itemId = entry.id || null;
+  entries.forEach((entry, index) => {
+    if (!entry || typeof entry !== 'object') return;
+    const itemId = entry.id || String(index);
     if (Array.isArray(entry.stimuli)) {
       for (const nestedStimulus of entry.stimuli) {
-        const normalized = typeof nestedStimulus === 'string'
-          ? stimulusFromPrimitive(nestedStimulus, itemId)
-          : stimulusFromObject(nestedStimulus);
+        const normalized = typeof nestedStimulus === 'string' ? stimulusFromPrimitive(nestedStimulus, itemId) : stimulusFromObject(nestedStimulus);
         if (normalized) {
           if (typeof nestedStimulus !== 'string') normalized.payload = { ...(normalized.payload || {}), itemId };
           stimuli.push(normalized);
         }
       }
     }
-    if (!entry.stimulus) continue;
-    const normalized = typeof entry.stimulus === 'object'
-      ? stimulusFromObject(entry.stimulus)
-      : stimulusFromPrimitive(entry.stimulus, itemId);
+    if (!entry.stimulus) return;
+    const normalized = typeof entry.stimulus === 'object' ? stimulusFromObject(entry.stimulus) : stimulusFromPrimitive(entry.stimulus, itemId);
     if (normalized) {
       normalized.payload = { ...(normalized.payload || {}), itemId };
       stimuli.push(normalized);
     }
-  }
+  });
 }
 
 function normalizeStimuli(block) {
@@ -187,11 +183,9 @@ function normalizeStimuli(block) {
     const normalized = stimulusFromPrimitive(block.stimulus);
     if (normalized) stimuli.push(normalized);
   }
-  if (Array.isArray(block.stimuli)) {
-    for (const stimulus of block.stimuli) {
-      const normalized = typeof stimulus === 'string' ? stimulusFromPrimitive(stimulus) : stimulusFromObject(stimulus);
-      if (normalized) stimuli.push(normalized);
-    }
+  if (Array.isArray(block.stimuli)) for (const stimulus of block.stimuli) {
+    const normalized = typeof stimulus === 'string' ? stimulusFromPrimitive(stimulus) : stimulusFromObject(stimulus);
+    if (normalized) stimuli.push(normalized);
   }
   appendEntryStimuli(stimuli, block.items);
   appendEntryStimuli(stimuli, block.rounds);
@@ -208,16 +202,9 @@ function activityIdsByCluster(completion) {
 
 function normalizeStructuralCompletion(source, activitySources) {
   const legacy = LEGACY_COMPLETION_RULES_V1[source.id];
-  if (legacy) {
-    return {
-      completion: { clusters: clone(legacy.clusters), nonCompensable: Boolean(legacy.nonCompensable) },
-      activityPolicies: clone(legacy.activityPolicies || {})
-    };
-  }
+  if (legacy) return { completion: { clusters: clone(legacy.clusters), nonCompensable: Boolean(legacy.nonCompensable) }, activityPolicies: clone(legacy.activityPolicies || {}) };
   const authored = source.completionEvidence;
-  if (!authored || !authored.clusters || typeof authored.clusters !== 'object') {
-    throw new ContentNormalizationError('UNNORMALIZABLE_COMPLETION', `A regra de conclusão de ${source.id} não possui estrutura normalizável nem regra legada explícita.`, { id: source.id });
-  }
+  if (!authored || !authored.clusters || typeof authored.clusters !== 'object') throw new ContentNormalizationError('UNNORMALIZABLE_COMPLETION', `A regra de conclusão de ${source.id} não possui estrutura normalizável nem regra legada explícita.`, { id: source.id });
   const reliableEvaluatorDeclared = Array.isArray(authored.requiresReliableEvaluatorFor) && authored.requiresReliableEvaluatorFor.length > 0;
   const activityById = new Map(activitySources.map(activity => [activity.id, activity]));
   const clusters = Object.entries(authored.clusters).map(([id, cluster]) => {
@@ -227,20 +214,9 @@ function normalizeStructuralCompletion(source, activitySources) {
       const activity = activityById.get(evidenceId);
       return activity && (activity.recordResponse === true || activity.automaticValidation === false || typeof activity.automaticValidation === 'string');
     });
-    return {
-      id,
-      required: cluster.required !== false,
-      evidenceIds: clone(evidenceIds),
-      satisfaction: reliableEvaluatorDeclared && containsOpenEvidence ? 'PENDING_ALLOWED' : 'DEMONSTRATED_REQUIRED'
-    };
+    return { id, required: cluster.required !== false, evidenceIds: clone(evidenceIds), satisfaction: reliableEvaluatorDeclared && containsOpenEvidence ? 'PENDING_ALLOWED' : 'DEMONSTRATED_REQUIRED' };
   });
-  return {
-    completion: {
-      clusters,
-      nonCompensable: authored.nonCompensable === true || (Array.isArray(authored.nonCompensable) && authored.nonCompensable.length > 0)
-    },
-    activityPolicies: {}
-  };
+  return { completion: { clusters, nonCompensable: authored.nonCompensable === true || (Array.isArray(authored.nonCompensable) && authored.nonCompensable.length > 0) }, activityPolicies: {} };
 }
 
 const PRESENTATION_SECRET_KEYS = new Set(['correct', 'expected', 'correctIndex', 'correctSequence', 'auditoryCorrect', 'relationCorrectIndex']);
@@ -279,9 +255,7 @@ function normalizeActivity(block, context) {
     threshold: Object.prototype.hasOwnProperty.call(policy, 'threshold') ? policy.threshold : null
   };
   if (answerKey) evaluation.answerKey = answerKey;
-  const role = parentKind === 'LESSON'
-    ? (required ? (normalizedBlock.recordResponse === true ? 'PRODUCTION' : 'EVIDENCE') : (normalizedBlock.type === 'quick-check' ? 'CHECK' : 'PRACTICE'))
-    : (normalizedBlock.recordResponse === true ? 'PRODUCTION' : 'VERIFICATION');
+  const role = parentKind === 'LESSON' ? (required ? (normalizedBlock.recordResponse === true ? 'PRODUCTION' : 'EVIDENCE') : (normalizedBlock.type === 'quick-check' ? 'CHECK' : 'PRACTICE')) : (normalizedBlock.recordResponse === true ? 'PRODUCTION' : 'VERIFICATION');
   return {
     id: normalizedBlock.id,
     kind: 'ACTIVITY',
@@ -292,13 +266,7 @@ function normalizeActivity(block, context) {
       role,
       interaction: normalizeInteraction(normalizedBlock),
       evaluation,
-      evidence: {
-        role: required ? (parentKind === 'LESSON' ? 'REQUIRED' : 'CHECKPOINT') : 'PRACTICE',
-        competencyIds: clone(documentCompetencyIds),
-        clusterId: clusterByActivity.get(normalizedBlock.id) || null,
-        recordResponse: normalizedBlock.recordResponse === true,
-        requiredForCompletion: required
-      },
+      evidence: { role: required ? (parentKind === 'LESSON' ? 'REQUIRED' : 'CHECKPOINT') : 'PRACTICE', competencyIds: clone(documentCompetencyIds), clusterId: clusterByActivity.get(normalizedBlock.id) || null, recordResponse: normalizedBlock.recordResponse === true, requiredForCompletion: required },
       stimuli: normalizeStimuli(normalizedBlock)
     }
   };
@@ -313,7 +281,7 @@ function recognizedInteraction(block) {
 function isLessonActivity(block, requiredIds) {
   if (!block || typeof block !== 'object') return false;
   if (requiredIds.has(block.id)) return true;
-  if (block.recordResponse !== undefined || block.automaticValidation !== undefined) return true;
+  if (block.recordResponse === true || block.automaticValidation === true) return true;
   if (hasDeterministicKey(block)) return true;
   if (recognizedInteraction(block)) return true;
   return false;
@@ -321,13 +289,7 @@ function isLessonActivity(block, requiredIds) {
 
 function normalizeLessonBlock(block, context, requiredIds) {
   if (isLessonActivity(block, requiredIds)) return normalizeActivity(block, context);
-  return {
-    id: block.id,
-    kind: 'CONTENT',
-    pedagogicalType: block.type || 'content',
-    ...(block.focus ? { focus: block.focus } : {}),
-    content: normalizeContentPayload(block)
-  };
+  return { id: block.id, kind: 'CONTENT', pedagogicalType: block.type || 'content', ...(block.focus ? { focus: block.focus } : {}), content: normalizeContentPayload(block) };
 }
 
 function competencyIdsFromContext(context) {
@@ -343,18 +305,7 @@ export function normalizeLessonV1(source, context = {}) {
   const requiredIds = new Set(completion.clusters.flatMap(cluster => cluster.evidenceIds));
   const documentCompetencyIds = competencyIdsFromContext(context);
   const blockContext = { completion, activityPolicies, documentCompetencyIds, parentKind: 'LESSON', sourceDocument: source };
-  return {
-    schemaVersion: 1,
-    id: source.id,
-    kind: 'LESSON',
-    title: source.title,
-    objective: source.objective,
-    competencyIds: documentCompetencyIds,
-    prerequisites: clone(source.prerequisites || []),
-    limits: clone(source.limits || []),
-    blocks: sequence.map(block => normalizeLessonBlock(block, blockContext, requiredIds)),
-    completion
-  };
+  return { schemaVersion: 1, id: source.id, kind: 'LESSON', title: source.title, objective: source.objective, competencyIds: documentCompetencyIds, prerequisites: clone(source.prerequisites || []), limits: clone(source.limits || []), blocks: sequence.map(block => normalizeLessonBlock(block, blockContext, requiredIds)), completion };
 }
 
 function verificationActivities(source) {
@@ -369,17 +320,7 @@ export function normalizeVerificationV1(source, context = {}) {
   const { completion, activityPolicies } = normalizeStructuralCompletion(source, activities);
   const documentCompetencyIds = competencyIdsFromContext(context);
   const blockContext = { completion, activityPolicies, documentCompetencyIds, parentKind: 'VERIFICATION', sourceDocument: source };
-  return {
-    schemaVersion: 1,
-    id: source.id,
-    kind: source.type === 'level-exit-verification' || source.id.includes('-EXIT-') ? 'LEVEL_VERIFICATION' : 'UNIT_VERIFICATION',
-    title: source.title,
-    objective: source.objective,
-    competencyIds: documentCompetencyIds,
-    prerequisites: clone(source.prerequisites || []),
-    blocks: activities.map(block => normalizeActivity(block, blockContext)),
-    completion
-  };
+  return { schemaVersion: 1, id: source.id, kind: source.type === 'level-exit-verification' || source.id.includes('-EXIT-') ? 'LEVEL_VERIFICATION' : 'UNIT_VERIFICATION', title: source.title, objective: source.objective, competencyIds: documentCompetencyIds, prerequisites: clone(source.prerequisites || []), blocks: activities.map(block => normalizeActivity(block, blockContext)), completion };
 }
 
 export function normalizeAuthoredContentV1(source, context = {}) {
