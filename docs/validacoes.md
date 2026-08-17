@@ -2,26 +2,24 @@
 
 ## Objetivo
 
-Este documento define a estratégia de validação automática do **Português Completo**.
-
-Regra geral:
+Definir a estratégia de validação automática do **Português Completo**.
 
 ```text
 quebra objetiva de contrato
 → erro e CI bloqueado
 
-risco, conteúdo ainda não publicado ou possível degradação
-→ warning/pendência explícita
+risco, dependência externa ou julgamento aberto
+→ warning/pendência/revisão explícita
 ```
 
-Automação protege contratos mecânicos; não substitui revisão pedagógica, homologação visual ou avaliador confiável.
+Automação protege contratos mecânicos; não substitui revisão pedagógica, homologação visual nem avaliador confiável.
 
 ## Fontes de contrato
 
 - `docs/contrato-conteudo.md` — catálogo, manifests, runtime e versões;
 - `docs/exercicios.md` — atividade, interação, avaliação, estímulo e evidência;
 - `docs/progresso.md` — significado pedagógico dos estados;
-- `docs/persistencia-progresso.md` — persistência e cálculo mecânico;
+- `docs/persistencia-progresso.md` — persistência, conclusão e sincronização;
 - `docs/avaliacao-ia.md` — limites de feedback assistido;
 - `docs/estado-implementacao-classico.md` — estado operacional e blockers.
 
@@ -39,9 +37,7 @@ Todos os `.json` em `content/` e `schemas/` precisam ser sintaticamente válidos
 
 ## Camada 3 — schemas de contrato
 
-**Implementada no P1.**
-
-Schemas canônicos:
+Implementada no P1.
 
 ```text
 schemas/course.schema.json
@@ -51,211 +47,221 @@ schemas/verification.schema.json
 schemas/progress.schema.json
 ```
 
-Todos usam JSON Schema Draft 2020-12 como contrato declarativo.
+Todos usam JSON Schema Draft 2020-12. `lesson` e `verification` validam runtime normalizado, não reescrevem a autoria histórica.
 
-### O que cada schema representa
+Validator: `scripts/validate-contracts.mjs`.
 
-- `course.schema.json` — catálogo de publicação v2;
-- `unit.schema.json` — manifesto de unidade v1;
-- `lesson.schema.json` — lição **normalizada de runtime**, não o JSON autoral histórico diretamente;
-- `verification.schema.json` — verificação normalizada de unidade/nível;
-- `progress.schema.json` — persistência de progresso v1.
+Ele valida as keywords usadas pelos schemas atuais e falha se um schema começar a usar keyword que o validator local ainda não executa.
 
-### Compatibilidade com autoria v1
+## Camada 4 — normalização
 
-Os JSONs históricos continuam válidos como autoria curricular.
+Implementada no P2 em `scripts/test-content-normalizer.mjs`.
 
-```text
-autoria v1 existente
-→ adapter/normalizador (P2)
-→ runtime canônico validado pelos schemas
-```
-
-Portanto, P1 **não** regrava nem tenta validar centenas de lições históricas como se já fossem runtime normalizado.
-
-O validator confirma, nas fixtures que possuem fonte JSON real, que:
-
-- a fonte ainda existe;
-- a versão autoral esperada continua presente;
-- o ID normalizado preserva o ID curricular quando aplicável.
-
-## Fixtures P1
-
-Fonte:
-
-`schemas/fixtures/p1/manifest.json`
-
-As fixtures cobrem extremos reais do curso:
-
-```text
-N0-U01-L01
-→ single choice
-→ classificação
-→ TTS
-→ evidência determinística
-
-N0-U01-V01
-→ verificação determinística
-→ áudio controlado
-→ sequência
-
-N4-U09-L01
-→ interpretação aberta
-→ resposta registrada
-→ RELIABLE_EVALUATOR
-→ PENDING_ALLOWED
-
-N4-U09-V01
-→ produção complexa
-→ limites sensoriais
-→ clusters não compensáveis
-```
-
-Também existem fixtures de `course`, `unit` e `progress`.
-
-Fixtures são **contratos de teste**. Não equivalem a manifests publicados e não tornam `content/course.json` v2 antes do P3.
-
-## Validator de contratos
-
-Implementado em:
-
-`scripts/validate-contracts.mjs`
-
-Ele é deliberadamente independente de biblioteca externa para preservar o projeto sem build/runtime adicional.
-
-Responsabilidades:
-
-1. exigir os cinco schemas P1;
-2. exigir Draft 2020-12 e `$id`;
-3. rejeitar keywords que o validator local ainda não implementa;
-4. validar as fixtures contra os schemas;
-5. verificar fontes reais declaradas no manifesto de fixtures;
-6. verificar compatibilidade básica autoria v1 → fixture normalizada;
-7. executar self-test do próprio validator.
-
-### Subconjunto executado atualmente
-
-O validator cobre as keywords usadas pelos schemas P1, incluindo:
-
-```text
-type
-required
-properties
-additionalProperties
-const
-enum
-pattern
-minimum
-minLength
-minItems
-items
-oneOf
-```
-
-Se um schema futuro usar nova keyword, o CI deve falhar até o validator ser ampliado ou até o projeto adotar um engine externo de JSON Schema de forma deliberada.
-
-Isso evita a falsa impressão de que uma regra escrita no schema está sendo aplicada quando o CI a ignora.
-
-## Limites intencionais do P1
-
-P1 valida **forma canônica**, não toda integridade entre arquivos.
-
-Ainda pertencem aos próximos marcos:
-
-- catálogo → `unit.json` → lesson/verificação apontando para arquivos reais;
-- IDs duplicados entre manifests diferentes;
-- `competencyId` referenciado mas inexistente na registry;
-- cluster apontando para evidência inexistente;
-- normalização automática de prosa histórica;
-- comportamento do `ProgressService`;
-- Gist;
-- IA;
-- renderer e acessibilidade visual.
-
-## Camada 4 — integridade de publicação
-
-Entra a partir de P3, quando manifests reais existirem.
-
-Erros objetivos esperados:
-
-```text
-course manifest inexistente
-unit.id != catálogo
-lesson path inexistente
-lesson.id != manifesto
-verification incompatível
-competencyId inexistente
-cluster/evidenceId inexistente
-schemaVersion não suportada
-```
-
-Unidade existente no repositório mas ainda não publicada continua permitida.
-
-## Camada 5 — testes do normalizador
-
-Entra em P2.
-
-Casos mínimos:
+Cobre:
 
 - N0 determinístico;
 - N0 verification com threshold/áudio controlado;
-- N4 aberto com `requiresReliableEvaluatorFor`;
+- N4 aberto com avaliador confiável;
 - N4 verification não compensável;
 - saída de nível.
 
-Quando uma regra histórica não puder ser normalizada com confiança, retornar erro/estado `BLOCKED`; nunca inventar semântica.
+Prosa histórica sem regra auditável produz erro explícito; nunca semântica inventada.
 
-## Camada 6 — progresso, IA e integrações
+## Camada 5 — integridade de publicação
 
-Conforme P5/P6, adicionar testes para:
+Implementada no P3.
 
-- conclusão determinística;
-- `PENDING_ALLOWED` concluindo percurso sem fingir domínio;
-- clusters não compensáveis;
-- revisão;
-- persistência/migração/conflito;
-- falha de Gist sem perda local;
-- falha de IA sem perda de resposta;
-- `RELIABLE_EVALUATOR` permanecendo pending;
-- ausência de credenciais no progresso.
+```text
+scripts/validate-catalog.mjs
+scripts/test-content-catalog.mjs
+```
+
+Protege catálogo → manifesto → fonte real, identidade de IDs/títulos, paths, registry de competências, verification e cobertura da pasta de lições publicada.
+
+Conteúdo curricular ainda fora do catálogo é permitido.
+
+## Camada 6 — renderer e navegador
+
+Implementada no P4 e mantida nos marcos seguintes.
+
+```text
+scripts/test-classic-renderer.mjs
+scripts/capture-classic-visuals.sh
+```
+
+O teste de renderer percorre as 20 lições + 2 verificações do slice N0-U01/N4-U09 e rejeita interação sem suporte.
+
+O smoke Chrome real valida home/unidade/lição N0 e lição N4, além de gerar screenshots em desktop, tablet e 390px.
+
+Falhas automáticas incluem:
+
+```text
+tela de erro
+Illegal invocation
+interação unsupported
+metadado técnico conhecido exposto ao aluno
+TTS autoral não transformado em controle
+pending N4 ausente
+painel/configuração de progresso P5 ausentes
+```
+
+A inspeção humana das screenshots continua obrigatória quando mudança visual relevante ocorrer.
+
+## Camada 7 — progresso pedagógico
+
+Implementada no P5.
+
+### `scripts/test-progress-service.mjs`
+
+Valida com runtime real:
+
+- N0: erro determinístico → `REVISAO_RECOMENDADA`;
+- nova tentativa correta → recuperação;
+- cluster satisfeito → lição `CONCLUIDA`;
+- competência `EM_DESENVOLVIMENTO`/`DEMONSTRADA` coerente;
+- N4: resposta aberta → `VALIDACAO_PENDENTE`;
+- `PENDING_ALLOWED` conclui percurso sem declarar domínio;
+- resposta aberta persistida;
+- progress final valida contra `schemas/progress.schema.json`;
+- merge concorrente preserva as duas versões autorais.
+
+### `scripts/test-progress-policies.mjs`
+
+Valida guard rails do contrato independentemente dos casos mais simples do slice:
+
+```text
+minimumEvidence
+requiredAnyOf
+ATTEMPT_REQUIRED
+backup local antes de substituir schema desconhecido/JSON inválido
+```
+
+Um schema futuro não pode ser descartado silenciosamente só porque a aplicação atual entende apenas v1.
+
+### `scripts/test-progress-merge-edge-cases.mjs`
+
+Cobre conflitos que não aparecem no caminho feliz:
+
+- cluster de verificação presente apenas em um lado do merge não pode virar `undefined`;
+- cluster novo do outro dispositivo deve ser preservado;
+- revisão já resolvida em um lado não pode ser ressuscitada por uma alteração local não relacionada;
+- alteração real concorrente da revisão não pode ser descartada como se fosse somente remoção.
+
+## Camada 8 — GitHub/Gist e sincronização
+
+Implementada no P5 sem chamar a rede real em CI.
+
+### `scripts/test-github-service.mjs`
+
+Mocka a REST API e verifica:
+
+- `GET /user`;
+- descoberta de Gist;
+- criação com `public: false`;
+- leitura de `portugues-completo-progress.json`;
+- atualização;
+- Authorization header somente nas chamadas da API;
+- `Accept: application/vnd.github+json`;
+- `X-GitHub-Api-Version` declarado;
+- Gist truncado segue `raw_url` somente quando o host é `gist.githubusercontent.com`;
+- a leitura por `raw_url` não envia bearer token nem header de versão da API;
+- host de `raw_url` inesperado é rejeitado antes de qualquer `fetch`.
+
+Permissões/endpoints são fatos externos e devem ser rechecados em documentação oficial quando o fluxo GitHub for alterado.
+
+### `scripts/test-progress-sync-service.mjs`
+
+Valida:
+
+```text
+primeiro sync
+baseline
+LOCAL_CHANGES após nova alteração
+só local mudou
+só remoto mudou
+merge concorrente
+CONFLICT_PRESERVED
+falha remota → ERROR sem perda local
+desconexão → token de sessão removido
+```
+
+Resposta autoral concorrente nunca é validada por concatenação automática.
+
+## Camada 9 — IA
+
+Entra em P6.
+
+Casos mínimos previstos:
+
+- opt-in/BYOK;
+- request mínimo;
+- structured output válido e inválido;
+- provider indisponível;
+- resposta do aluno preservada em falha;
+- `mayAffectEvidence` respeitado;
+- `requiresReliableEvaluator` permanecendo pending;
+- ausência de credenciais em progress/Gist/logs persistidos.
 
 ## Interface e acessibilidade
 
-Quando houver renderer, automação complementa — não substitui — `.ChatGPT/skills/frontend-visual-check/SKILL.md`.
+Automação complementa — não substitui — `.ChatGPT/skills/frontend-visual-check/SKILL.md`.
 
-Validar teclado, foco, nomes acessíveis, estados não dependentes só de cor, alternativas a gesto de arrastar e regressões reais em desktop/tablet/mobile.
+Validar:
 
-## Execução atual
+- teclado e foco;
+- nomes acessíveis;
+- estados não dependentes apenas de cor;
+- alternativas a gesto de arrastar;
+- desktop/tablet/mobile;
+- estado de progresso/sync compreensível;
+- nenhuma afirmação falsa de sincronização/domínio.
+
+## Execução atual no CI
+
+O workflow `.github/workflows/validate-project.yml` executa em PRs e pushes para `main`:
 
 ```text
-node scripts/validate-project.mjs
-node scripts/validate-json.mjs
-node scripts/validate-contracts.mjs
+Validate repository structure
+Validate JSON syntax
+Validate contract schemas
+Test content normalization
+Validate publication catalog
+Test catalog discovery
+Test progress engine
+Test progress policies
+Test progress merge edge cases
+Test GitHub Gist service
+Test progress sync
+Test classic renderer
+Capture classic visual smoke
+Upload classic visual smoke
 ```
 
-O workflow `.github/workflows/validate-project.yml` executa as três validações em PRs e pushes para `main`.
-
-## Ordem atual
+## Estado das camadas
 
 ```text
 estrutura/referências locais          ✓
 sintaxe JSON                          ✓
-schemas + fixtures + validator P1     ✓ implementado; CI é a homologação técnica
-normalizador/adapters                 → P2
-integridade de manifests              → P3
-renderer/acessibilidade               → P4+
-progresso/Gist                        → P5
+schemas/fixtures                     ✓ P1
+normalizador/adapters                 ✓ P2
+integridade de manifests              ✓ P3
+renderer + smoke visual               ✓ P4
+progresso/revisão/cache               ✓ P5
+Gist/sync/conflito                    ✓ P5
 IA                                    → P6
+expansão N0→N4                        → P7
+publicação/mídia final                → P8
+E2E global                            → P9
 ```
 
 ## Regra para novo guard rail
 
-Antes de adicionar uma validação automática:
+Antes de adicionar automação:
 
 1. qual problema real ela detecta?
 2. é verificável com confiança?
-3. erro, warning ou pendência?
-4. qual risco de falso positivo?
+3. é erro, warning ou pendência?
+4. qual o risco de falso positivo?
 5. pertence a schema, integridade, código, UI ou revisão humana?
 
 Não criar heurística automática para substituir julgamento pedagógico aberto.

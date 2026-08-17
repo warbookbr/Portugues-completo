@@ -43,6 +43,8 @@ LESSON_DOM="$(assert_page '#/unidade/N0-U01/licao/N0-U01-L01' 'Duas maneiras de 
 N4_DOM="$(assert_page '#/unidade/N4-U09/licao/N4-U09-L01' 'Interpretação literária autônoma e evidência')"
 
 grep -Fq '2 unidades disponíveis nesta versão do curso.' <<<"$HOME_DOM" || { echo 'Smoke DOM: home ainda expõe estado técnico do catálogo.' >&2; exit 1; }
+grep -Fq 'Seu progresso' <<<"$HOME_DOM" || { echo 'Smoke DOM P5: painel de progresso não foi montado na home.' >&2; exit 1; }
+grep -Fq 'data-settings-section="progress"' <<<"$HOME_DOM" || { echo 'Smoke DOM P5: acesso às configurações de progresso ausente.' >&2; exit 1; }
 if grep -Eq '>BLOCKED<|N0-U01-C0[1-8]|Catálogo real conectado|TTStext|>OBJECTIVE<|>DEMONSTRATION<' <<<"$UNIT_DOM$LESSON_DOM"; then
   echo 'Smoke DOM: metadado interno ainda aparece na interface pública.' >&2
   exit 1
@@ -65,4 +67,4 @@ capture unit-n0-tablet 768 1024 '#/unidade/N0-U01'
 capture home-mobile 390 844 '#/'
 capture lesson-n0-mobile 390 1100 '#/unidade/N0-U01/licao/N0-U01-L01'
 
-printf 'Smoke DOM + screenshots clássicos: %s\n' "$OUT"
+printf 'Smoke DOM + screenshots clássicos/P5: %s\n' "$OUT"

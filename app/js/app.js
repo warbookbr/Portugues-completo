@@ -2,16 +2,25 @@ import { initRouter } from './core/router.js';
 import { initNarration } from './services/narration-service.js';
 import { initSettings } from './services/settings-service.js';
 import { createContentService } from './services/content-service.js';
+import { createProgressService } from './services/progress-service.js';
+import { createSafeProgressStorage } from './services/progress-storage-service.js';
+import { createProgressSyncService } from './services/progress-sync-service.js';
 import { mountSettingsMenu } from './ui/settings-menu.js';
 import { bindClassicRenderer, documentHtml, homeHtml, unitHtml } from './ui/classic-renderer.js';
+import { bindClassicProgress } from './ui/classic-progress-binding.js';
 import { polishClassicPresentation } from './ui/classic-presentation.js';
+import { decorateClassicProgress } from './ui/classic-progress.js';
 
 const app = document.getElementById('app');
 const settingsRoot = document.getElementById('settings-root');
 const contentService = createContentService({ basePath: './content' });
+const progressStorage = createSafeProgressStorage();
+const progressService = createProgressService({ storage: progressStorage });
+const progressSyncService = createProgressSyncService({ progressService });
 
 let course = null;
 let routeRevision = 0;
+let currentRuntime = null;
 
 function escapeHtml(value) {
   return String(value ?? '')
@@ -37,10 +46,17 @@ function loadingPage(label = 'Carregando conteúdo') {
   app.innerHTML = statePage({ eyebrow: 'Modo Clássico', title: label, copy: 'Preparando o conteúdo real do curso.' });
 }
 
-function mountClassic(html, document = null) {
+function refreshProgressPresentation(progress = progressService.getProgress()) {
+  decorateClassicProgress(app, progress, { documentRuntime: currentRuntime });
+}
+
+function mountClassic(html, documentRuntime = null) {
+  currentRuntime = documentRuntime;
   app.innerHTML = html;
   polishClassicPresentation(app);
-  bindClassicRenderer(app, document);
+  bindClassicRenderer(app, documentRuntime);
+  bindClassicProgress(app, documentRuntime, { progressService, onProgress: refreshProgressPresentation });
+  refreshProgressPresentation();
 }
 
 async function ensureCourse() {
@@ -64,6 +80,7 @@ async function renderHome(revision) {
 async function renderUnit(route, revision) {
   const manifest = await loadManifest(route.unitId);
   if (revision !== routeRevision) return;
+  progressService.visitDocument({ id: manifest.id, kind: 'UNIT' }, { levelId: manifest.levelId, unitId: manifest.id });
   mountClassic(unitHtml(manifest));
 }
 
@@ -71,6 +88,7 @@ async function renderLesson(route, revision) {
   const manifest = await loadManifest(route.unitId);
   const loaded = await contentService.loadLesson(route.unitId, route.lessonId);
   if (revision !== routeRevision) return;
+  progressService.visitDocument(loaded.runtime, { levelId: manifest.levelId, unitId: manifest.id });
   mountClassic(documentHtml(loaded.runtime, { unitId: manifest.id, unitTitle: manifest.title }), loaded.runtime);
 }
 
@@ -78,11 +96,13 @@ async function renderVerification(route, revision) {
   const manifest = await loadManifest(route.unitId);
   const loaded = await contentService.loadVerification(route.unitId);
   if (revision !== routeRevision) return;
+  progressService.visitDocument(loaded.runtime, { levelId: manifest.levelId, unitId: manifest.id });
   mountClassic(documentHtml(loaded.runtime, { unitId: manifest.id, unitTitle: manifest.title, verification: true }), loaded.runtime);
 }
 
 async function renderRoute(route) {
   const revision = ++routeRevision;
+  currentRuntime = null;
   loadingPage(route.name === 'home' ? 'Abrindo o curso' : 'Abrindo conteúdo');
   try {
     if (route.name === 'home') return await renderHome(revision);
@@ -107,7 +127,8 @@ async function renderRoute(route) {
 function bootstrap() {
   initSettings();
   initNarration();
-  mountSettingsMenu(settingsRoot);
+  progressService.subscribe(refreshProgressPresentation);
+  mountSettingsMenu(settingsRoot, { progressSyncService });
   initRouter(renderRoute);
 }
 

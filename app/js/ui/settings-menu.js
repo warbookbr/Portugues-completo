@@ -1,7 +1,8 @@
 import { renderAudioSettings } from './audio-settings.js';
 import { renderAppearanceSettings } from './appearance-settings.js';
+import { renderProgressSettings } from './progress-settings.js';
 
-export function mountSettingsMenu(root) {
+export function mountSettingsMenu(root, { progressSyncService = null } = {}) {
   root.innerHTML = `
     <button class="icon-button settings-trigger" id="settingsButton" type="button" aria-label="Abrir configurações" aria-expanded="false" aria-controls="settingsPanel">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
@@ -36,6 +37,9 @@ export function mountSettingsMenu(root) {
       <button class="menu-button" type="button" data-settings-section="appearance">
         <span>Aa Aparência</span><span aria-hidden="true">›</span>
       </button>
+      <button class="menu-button" type="button" data-settings-section="progress">
+        <span>Progresso</span><span aria-hidden="true">›</span>
+      </button>
     `;
   }
 
@@ -43,6 +47,7 @@ export function mountSettingsMenu(root) {
     cleanup();
     if (section === 'audio') cleanupDetail = renderAudioSettings(panel);
     if (section === 'appearance') renderAppearanceSettings(panel);
+    if (section === 'progress') cleanupDetail = renderProgressSettings(panel, { progressSyncService });
   }
 
   button.addEventListener('click', () => {

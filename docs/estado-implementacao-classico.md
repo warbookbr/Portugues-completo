@@ -2,7 +2,7 @@
 
 ## Objetivo
 
-Registro operacional canônico do desenvolvimento do Modo Clássico. Deve permitir que uma nova instância descubra, sem depender da conversa anterior:
+Registro operacional canônico do desenvolvimento do Modo Clássico. Uma nova instância deve conseguir descobrir sem contexto de conversa:
 
 ```text
 onde paramos?
@@ -22,43 +22,18 @@ implementado tecnicamente
 ≠ publicável
 ```
 
-Toda PR que altere materialmente o Clássico deve revisar este arquivo.
-
 ## Cursor operacional
 
 ```text
 Fase estratégica: CONCLUIR E HOMOLOGAR O CLÁSSICO
-Marco concluído mais recente: P4 — Renderer real do Clássico
-Marco ativo: P5 — ProgressService, revisão e persistência
+Marco concluído mais recente: P5 — ProgressService, revisão e persistência
+Marco ativo: P6 — Feedback por IA no Clássico
 Item ativo: ainda não iniciado
-Último item concluído: CL-P4-APP-ROUTES + CL-P4-RENDERER-SLICE + CL-P4-N0-LEGACY + CL-P4-VISUAL-SMOKE
-Próximo passo exato: implementar ProgressService sobre o runtime P4, começando por estados de lição/evidência/competência e políticas de completion cluster; depois revisão + persistência local e, por último, Gist/sync/conflitos
-Blocker atual do próximo passo: nenhum blocker técnico global; detalhes atuais de autenticação/permissões GitHub precisam ser verificados em documentação oficial durante a parte Gist de P5
+Último item concluído: CL-P5-PROGRESS-ENGINE + CL-P5-LOCAL-CACHE + CL-P5-REVIEW + CL-P5-GIST-SYNC + CL-P5-CONFLICT + CL-P5-UI
+Próximo passo exato: implementar AiFeedbackService/provider adapter sobre o contrato docs/avaliacao-ia.md, com BYOK opt-in, structured output, fallback e preservação de VALIDACAO_PENDENTE
+Blocker atual do próximo passo: nenhum blocker técnico global; provider/model/API atuais devem ser verificados em documentação oficial no início de P6
 Gate final do Clássico: NÃO SATISFEITO
 ```
-
-## Estados
-
-```text
-Consolidado: NAO_INICIADO | EM_ANDAMENTO | IMPLEMENTADO_COM_PENDENCIA | PRONTO_PARA_HOMOLOGAR | HOMOLOGADO | PUBLICAVEL | BLOQUEADO
-Técnico: NAO_INICIADO | EM_IMPLEMENTACAO | IMPLEMENTADO | BLOQUEADO_TECNICO
-Homologação: NAO_AVALIADO | HOMOLOGACAO_PARCIAL | PRONTO_PARA_HOMOLOGAR | HOMOLOGADO | BLOQUEADO_POR_DEPENDENCIA
-Mídia: SEM_DEPENDENCIA | MIDIA_OPCIONAL_PENDENTE | MIDIA_PENDENTE_NAO_BLOQUEANTE | MIDIA_OBRIGATORIA_PARA_ATIVIDADE | MIDIA_OBRIGATORIA_PARA_PUBLICACAO | MIDIA_PRONTA_PARA_VALIDAR | MIDIA_VALIDADA | MIDIA_PUBLICADA
-Publicação: NAO_AVALIADO | NAO_APLICAVEL | BLOQUEADO | APTO
-```
-
-## Política de mídia flexível
-
-```text
-mídia pendente
-→ bloqueia somente o que depende pedagogicamente dela
-→ todo trabalho independente continua
-```
-
-- TTS/texto/UI semântica são suficientes quando a competência não depende de característica sensorial específica.
-- Placeholder serve para desenvolvimento, nunca para fingir homologação de estímulo ausente.
-- `MIDIA_OBRIGATORIA_PARA_ATIVIDADE` impede homologar pedagogicamente a atividade sem o estímulo final, mas não paralisa o produto.
-- `producao-midia/FILA-MIDIA.md` rastreia produção do arquivo; este documento rastreia impacto no produto.
 
 ## Registro de marcos
 
@@ -67,190 +42,270 @@ mídia pendente
 | P1 — Schemas e contratos executáveis | `HOMOLOGADO` | PR #105 + schemas/fixtures/CI | concluído |
 | P2 — ContentService/normalizador | `HOMOLOGADO` | PR #106 + runtime canônico N0/N4/N4-EXIT | concluído |
 | P3 — Manifests e catálogo inicial | `HOMOLOGADO` | PR #107 + catálogo v2 + manifests + integridade | concluído |
-| P4 — Renderer real do Clássico | `HOMOLOGADO` | PR #108 + 20 lições/2 verificações + DOM smoke + screenshots desktop/tablet/mobile | concluído |
-| P5 — ProgressService/revisão/Gist | `NAO_INICIADO` | marco ativo | progresso/revisão/persistência homologados |
-| P6 — Feedback por IA | `NAO_INICIADO` | — | feedback/fallback homologados |
+| P4 — Renderer real do Clássico | `HOMOLOGADO` | PR #108 + 20 lições/2 verificações + smoke Chrome + screenshots | concluído |
+| P5 — ProgressService/revisão/Gist | `HOMOLOGADO` | PR #109 + engine/policies/Gist/sync/conflitos/cache/UI em CI | concluído |
+| P6 — Feedback por IA | `NAO_INICIADO` | marco ativo | feedback/fallback homologados |
 | P7 — Ampliação N0→N4 | `NAO_INICIADO` | — | catálogo clássico cobre escopo aprovado |
 | P8 — Mídia/prontidão de publicação | `NAO_INICIADO` | — | blockers obrigatórios resolvidos |
 | P9 — Homologação E2E | `NAO_INICIADO` | — | `CLÁSSICO HOMOLOGADO` |
 
-## P1–P3 — base homologada
+## Base homologada P1–P4
 
 ```text
 P1
 → schemas course/unit/lesson/verification/progress
 → fixtures reais N0/N4
-→ validação mecânica em CI
+→ validação mecânica
 
 P2
 → autoria v1 preservada
 → adapter/normalizador
 → runtime canônico
-→ regra histórica ambígua falha explicitamente, sem heurística
+→ ambiguidade histórica falha explicitamente
 
 P3
-→ content/course.json v2
-→ manifests reais N0-U01 + N4-U09
+→ course.json v2
+→ manifests N0-U01 + N4-U09
 → IDs estáveis de competência
 → catálogo → manifesto → autoria → runtime
-→ 20 lições + 2 verificações descobríveis
+
+P4
+→ home/unidade/lição/verificação reais
+→ renderer CONTENT/ACTIVITY
+→ 20 lições + 2 verificações sem unsupported
+→ TTS, pending e mídia ausente explícitos
+→ validação desktop/tablet/mobile
 ```
 
-O N0 exigiu suporte a `minimumEvidence` + `requiredAnyOf` para representar critérios compostos sem transformar clusters em média global.
+## P5 — itens homologados
 
-## P4 — itens homologados
-
-### `CL-P4-APP-ROUTES`
+### `CL-P5-PROGRESS-ENGINE`
 
 ```text
-Escopo: app/js/app.js + app/js/core/router.js
+Escopo: app/js/services/progress-service.js
 Estado consolidado: HOMOLOGADO
 Técnico: IMPLEMENTADO
-Homologação: HOMOLOGADO
-Mídia: SEM_DEPENDENCIA
-Publicação: NAO_APLICAVEL
+Homologação: HOMOLOGADO no slice P4 e em fixtures sintéticas de policy
+Gamificação: AUSENTE / não acumulada
 ```
 
-Fluxos reais:
+O serviço mantém separadas três dimensões:
 
 ```text
-#/
-#/unidade/:unitId
-#/unidade/:unitId/licao/:lessonId
-#/unidade/:unitId/verificacao
+percurso curricular
+≠ evidência/domínio
+≠ gamificação
 ```
 
-O app usa apenas catálogo/manifests para descobrir conteúdo. Conteúdo fora do catálogo recebe estado explícito, não placeholder enganoso.
-
-### `CL-P4-RENDERER-SLICE`
+Estados implementados:
 
 ```text
-Escopo: app/js/ui/classic-renderer.js + classic-presentation.js + CSS Classic
-Estado consolidado: HOMOLOGADO
-Técnico: IMPLEMENTADO
-Homologação: HOMOLOGADO no slice P4
-Mídia: dependência herdada por atividade quando aplicável
-Publicação: APTO tecnicamente; publicação final continua governada pelo manifesto/P8
+Lição
+NAO_INICIADA (ausência de registro) | EM_ESTUDO | CONCLUIDA
+
+Evidência
+NAO_OBSERVADA (ausência de registro) | PRATICADA | DEMONSTRADA | VALIDACAO_PENDENTE | REVISAO_RECOMENDADA
+
+Competência
+NOVA (ausência de registro) | EM_DESENVOLVIMENTO | DEMONSTRADA | CONSOLIDADA
 ```
 
-Primitivas provadas no slice:
+Políticas mecânicas provadas:
 
 ```text
-CONTENT
-SINGLE_CHOICE
-MULTIPLE_CHOICE
-CLASSIFY
-MATCH
-ORDER / SEQUENCE
-SHORT_TEXT
-STRUCTURED_RESPONSE
-LONG_TEXT
-ORAL_RESPONSE como registro técnico textual nesta fase
-COMPOSITE
+DEMONSTRATED_REQUIRED
+PENDING_ALLOWED
+ATTEMPT_REQUIRED
+minimumEvidence
+requiredAnyOf
 ```
 
-Comportamentos provados:
+N0 prova erro → revisão → nova tentativa → recuperação → conclusão determinística. N4 prova produção aberta registrada como `VALIDACAO_PENDENTE`, permitindo conclusão de percurso quando o cluster é `PENDING_ALLOWED` sem promover domínio automaticamente.
 
-- TTS real via `NarrationService`;
-- `CONTROLLED_AUDIO` ausente vira placeholder explícito por `mediaId`;
-- correção determinística nas lições sem penalidade por nova tentativa;
-- verificações com `AFTER_VERIFICATION` não revelam correção detalhada por item;
-- atividades `RELIABLE_EVALUATOR` permanecem como avaliação/validação pendente;
-- nenhum `unsupported` existe nas 20 lições + 2 verificações do slice;
-- metadados técnicos de runtime/publicação não são expostos ao aluno.
-
-### `CL-P4-N0-LEGACY`
-
-Durante P4 o slice completo revelou sete lições N0 que ainda possuíam critérios de conclusão históricos em prosa. Eles foram formalizados por ID em `content-normalization-rules-v1.js`, sem alterar os JSONs curriculares e sem interpretar prosa por regex.
-
-Também foram materializadas, a partir dos datasets autorais existentes:
+### `CL-P5-REVIEW`
 
 ```text
-N0-U01-L03 → letterSet
-N0-U01-L04 → letterPairs
-N0-U01-L05 → classificação vogal/consoante
+Escopo: fila review do progress v1
+Estado: HOMOLOGADO
 ```
 
-O normalizador ainda remove chaves de gabarito do payload de apresentação; respostas corretas pertencem à política de avaliação, não ao conteúdo exibido.
+Uma dificuldade relevante em evidência obrigatória cria `REVISAO_RECOMENDADA` e entrada explicável na fila. Recuperação demonstrada remove a recomendação correspondente sem apagar histórico de tentativas. Revisão voluntária também é suportada.
 
-### `CL-P4-VISUAL-SMOKE`
+Não existe penalidade por erro, XP, lives ou gate artificial.
+
+### `CL-P5-LOCAL-CACHE`
 
 ```text
-Escopo: scripts/test-classic-renderer.mjs + scripts/capture-classic-visuals.sh + CI
-Estado consolidado: HOMOLOGADO
-Evidência funcional: 20/20 lições + 2/2 verificações renderizadas sem unsupported
-Evidência visual: home/unidade/lição N0 + lição N4 em desktop; unidade em tablet; home/lição em 390px
+Escopo: localStorage como cópia resiliente do progress v1
+Arquivos: progress-service.js + progress-storage-service.js
+Estado: HOMOLOGADO
 ```
 
-O smoke de navegador agora falha automaticamente se detectar:
+A cópia local permite continuar estudando quando GitHub/rede estão indisponíveis.
+
+Guard rail de versão:
 
 ```text
-tela de erro
-Illegal invocation
-interação unsupported
-metadado BLOCKED/IDs internos na interface pública
-rótulos internos conhecidos
-TTS autoral não transformado em controle
-pending N4 ausente
+cache v1 válido
+→ carregar normalmente
+
+schema futuro/desconhecido ou JSON inválido
+→ preservar conteúdo em backup local
+→ remover somente a chave ativa incompatível
+→ iniciar v1 novo sem destruir o conteúdo anterior
 ```
 
-A inspeção humana das screenshots confirmou hierarquia, leitura e ausência de overflow aparente nos viewports cobertos.
+Ainda não existe migração v1→v2 porque progress v2 não existe. Quando um novo schema surgir, a migração deve ser explícita e testada; o P5 não inventa transformação futura.
 
-## Estado de publicação do slice após P4
+### `CL-P5-GIST-SYNC`
+
+```text
+Arquivos: github-service.js + progress-sync-service.js
+Arquivo remoto: portugues-completo-progress.json
+Estado: HOMOLOGADO por testes de contrato/mock
+```
+
+Fluxo:
+
+```text
+cache local
+↕
+ProgressSyncService
+↕
+GitHubService
+↕
+Gist do próprio aluno
+```
+
+Decisões implementadas:
+
+- token GitHub pertence ao aluno;
+- token fica apenas em `sessionStorage` durante a sessão;
+- token nunca entra no progress, Gist ou conteúdo;
+- criação usa `public: false` e o projeto não apresenta isso como cofre/segredo forte;
+- o Gist é descoberto pelo nome de arquivo oficial ou pelo ID já conhecido;
+- sincronização explícita evita depender de rede a cada atividade;
+- nova alteração local muda o estado para `LOCAL_CHANGES` em vez de continuar afirmando `SYNCED`.
+
+Verificação oficial realizada durante P5: token refinado não precisa de permissão adicional para `GET /user`; criação/atualização de Gist exige somente permissão de usuário `Gists: write`. Nenhum acesso a repositórios do aluno é necessário para este fluxo.
+
+### `CL-P5-CONFLICT`
+
+```text
+Estado: HOMOLOGADO por merge de três vias + teste de falha remota
+```
+
+O último snapshot sincronizado funciona como baseline.
+
+```text
+só remoto mudou → adotar remoto
+só local mudou → enviar local
+ambos mudaram → merge por domínio
+```
+
+Regras principais:
+
+- lição concluída não é rebaixada por cópia obsoleta;
+- mapas de evidência/competência/revisão são combinados por entidade;
+- respostas abertas concorrentes nunca são concatenadas;
+- quando as duas versões mudaram, uma permanece na referência principal e a outra é preservada numa referência `#conflict-...`;
+- a UI informa `CONFLICT_PRESERVED`;
+- falha de atualização remota deixa o estado local intacto e marca `ERROR`.
+
+### `CL-P5-UI`
+
+```text
+Arquivos: classic-progress.js + classic-progress-binding.js + progress-settings.js + progress.css
+Estado: HOMOLOGADO no slice
+```
+
+A experiência Clássica agora pode mostrar:
+
+- ponto de retomada / Continuar estudando;
+- lição em estudo ou concluída;
+- evidência demonstrada, pendente ou em revisão;
+- número de tentativas;
+- resumo de pending/revisões;
+- resposta aberta restaurada ao reabrir a atividade;
+- estado de sincronização `LOCAL_ONLY`, `LOCAL_CHANGES`, `SYNCING`, `SYNCED`, `CONFLICT_PRESERVED` ou `ERROR`;
+- conexão/sincronização/desconexão GitHub em Configurações → Progresso.
+
+O renderer continua responsável pela interação/feedback imediato; o `ProgressService` é a autoridade sobre estado pedagógico. A UI não grava domínio diretamente.
+
+### `CL-P5-VALIDATION`
+
+CI executa, além das camadas P1–P4:
+
+```text
+Test progress engine
+Test progress policies
+Test GitHub Gist service
+Test progress sync
+```
+
+Casos provados:
+
+- N0 determinístico;
+- revisão e recuperação;
+- N4 pending + resposta persistida;
+- schema progress v1 válido;
+- `minimumEvidence` e `requiredAnyOf`;
+- `ATTEMPT_REQUIRED`;
+- backup de schema local desconhecido;
+- criação/leitura/update de Gist sem rede real;
+- merge concorrente preservando duas respostas;
+- falha remota sem perda local;
+- DOM Chrome com painel de progresso/configuração presente;
+- screenshots desktop/tablet/mobile sem regressão visual aparente.
+
+## Estado de publicação do slice após P5
 
 ### N0-U01
 
 ```text
 Renderer: HOMOLOGADO
-TTS/UI/texto: HOMOLOGADOS no escopo P4
+Progresso: HOMOLOGADO
 Mídia: MIDIA_OBRIGATORIA_PARA_ATIVIDADE ainda pendente para áudios controlados
 Manifesto: BLOCKED somente pela mídia obrigatória local
-Consequência: desenvolvimento P5–P7 continua; atividades dependentes do áudio não recebem homologação pedagógica final nem PUBLICAVEL até a mídia existir
 ```
+
+A pendência é local e não impede P6/P7. P8 reconcilia a mídia obrigatória antes da publicação final.
 
 ### N4-U09
 
 ```text
 Renderer: HOMOLOGADO
+Progresso/pending: HOMOLOGADOS
 Nova mídia humana obrigatória: nenhuma
 Manifesto: READY
-Produções abertas: continuam VALIDACAO_PENDENTE quando exigem avaliador confiável
 ```
 
-`READY` no manifesto não significa que o produto Clássico completo já passou P9; significa somente que esta unidade não mantém blocker local de publicação registrado após P4.
+Produções abertas continuam `VALIDACAO_PENDENTE` quando exigem avaliador confiável. P6 poderá acrescentar feedback assistido, mas não converter isso automaticamente em domínio.
 
 ## Pendências abertas
 
-### Blocker global para iniciar P5
-
 ```text
-nenhum
+Global para iniciar P6: nenhuma
+Local: áudios controlados obrigatórios de N0-U01
 ```
 
-### Pendência local conhecida
+## Próximo marco — P6
+
+Implementar:
 
 ```text
-N0-U01
-→ áudios controlados obrigatórios ainda não produzidos/validados
-→ P5/P6/P7 podem continuar
-→ P8 reconcilia e resolve blockers obrigatórios para publicação final
+AiFeedbackService
+→ adapter de provider
+→ BYOK opt-in
+→ chave fora de Git/Gist/progresso
+→ request mínimo e estruturado
+→ structured response validado
+→ fallback sem perda de resposta
+→ IA nunca grava ProgressService diretamente
+→ VALIDACAO_PENDENTE preservada quando avaliador confiável é exigido
 ```
 
-## Próximo marco — P5
-
-Implementar na ordem:
-
-```text
-1. ProgressService e eventos pedagógicos
-2. estados de lição/evidência/competência
-3. completion clusters: DEMONSTRATED_REQUIRED / PENDING_ALLOWED / ATTEMPT_REQUIRED
-4. revisão e recomendação
-5. persistência local + migração
-6. Gist remoto
-7. conflito/sync entre dispositivos sem perda
-```
-
-A parte GitHub/Gist deve verificar documentação oficial atual antes de congelar token/scopes/fluxo.
+Provider/model/API atuais devem ser verificados em documentação oficial durante P6.
 
 ## Condição de avanço
 
