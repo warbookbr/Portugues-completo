@@ -14,8 +14,9 @@ CURRÍCULO N0→N4 → fechado curricularmente em M5
 P1 — Schemas/contratos executáveis → HOMOLOGADO
 P2 — ContentService/normalizador → HOMOLOGADO
 P3 — Manifests e catálogo inicial → HOMOLOGADO
-MARCO ATIVO → P4 — Renderer real do Clássico
-MODO CLÁSSICO REAL → ainda não completo de ponta a ponta
+P4 — Renderer real do Clássico → HOMOLOGADO
+MARCO ATIVO → P5 — ProgressService, revisão e persistência
+MODO CLÁSSICO REAL → slice funcional; ainda não completo de ponta a ponta
 MODO GAMIFICADO → somente após CLÁSSICO HOMOLOGADO
 ```
 
@@ -56,36 +57,11 @@ Detalhes: `docs/estado-implementacao-classico.md`, `docs/conteudo.md`, `producao
 
 **Estado: HOMOLOGADO.**
 
-Entregas:
-
-```text
-schemas/course.schema.json
-schemas/unit.schema.json
-schemas/lesson.schema.json
-schemas/verification.schema.json
-schemas/progress.schema.json
-schemas/fixtures/p1/
-scripts/validate-contracts.mjs
-CI: Validate contract schemas
-```
-
-Extremos reais: N0-U01 e N4-U09. Autoria histórica de lições/verificações permanece v1 e é normalizada em runtime canônico.
+Schemas `course`, `unit`, `lesson`, `verification` e `progress`, fixtures reais N0/N4 e validator em CI. Autoria histórica de lições/verificações permanece v1 e é normalizada em runtime canônico.
 
 ## P2 — ContentService e normalizador
 
 **Estado: HOMOLOGADO.**
-
-Entregas:
-
-```text
-app/js/services/content-service.js
-app/js/services/content-normalizer-v1.js
-app/js/services/content-normalization-rules-v1.js
-scripts/test-content-normalizer.mjs
-CI: Test content normalization
-```
-
-Fluxo provado:
 
 ```text
 fonte autoral v1
@@ -95,114 +71,148 @@ fonte autoral v1
 → teste verde
 ```
 
-Cobertura mínima homologada: N0-U01-L01, N0-U01-V01, N4-U09-L01, N4-U09-V01 e N4-EXIT-V01.
-
-Prosa histórica ambígua nunca é interpretada por heurística; sem estrutura/regra legada explícita, usar `UNNORMALIZABLE_COMPLETION`.
-
-O N0 exigiu `minimumEvidence` + `requiredAnyOf` para representar regras compostas de cluster sem média global.
+Prosa histórica ambígua nunca é convertida por heurística. Sem estrutura/regra legada explícita, usar `UNNORMALIZABLE_COMPLETION`.
 
 ## P3 — Manifests e catálogo inicial
 
 **Estado: HOMOLOGADO.**
 
-Entregas concluídas:
+Entregas:
 
 ```text
-content/course.json → schemaVersion 2
-content/units/001-fala-sons-escrita/unit.json
-content/units/409-literatura-multimodalidade-autoria-intermedial-digital/unit.json
-registry estável N0-U01-C01...C08
-registry estável N4-U09-C01...C12
-competencyIds por referência de lição/verificação
-ContentService: course.json → unit.json → fonte → runtime
-scripts/validate-catalog.mjs
-scripts/test-content-catalog.mjs
-CI: Validate publication catalog + Test catalog discovery
+content/course.json v2
+unit.json N0-U01
+unit.json N4-U09
+registry de competências estáveis
+competencyIds por lição/verificação
+ContentService: catálogo → manifesto → fonte → runtime
+integridade/descoberta em CI
 ```
 
-Slice publicado na camada de descoberta:
+Slice:
 
 ```text
 N0-U01 → 8 lições + verificação
 N4-U09 → 12 lições + verificação
 ```
 
-O catálogo é incremental: demais unidades continuam existindo como autoria curricular e entram na camada de publicação em P7.
-
-A integridade P3 verifica schema, identidade catálogo/manifesto, IDs/títulos/ordens, paths seguros, competências, cobertura completa da pasta `lessons/`, verification e manifesto real órfão.
-
-Estado de publicação atual:
-
-```text
-N0-U01 → BLOCKED por mídia obrigatória local + renderer P4
-N4-U09 → BLOCKED somente pelo renderer P4
-```
-
-Esses blockers não invalidam P3; descoberta e integridade estão homologadas.
+Demais unidades continuam como autoria curricular e entram na publicação progressiva em P7.
 
 ## P4 — Renderer real do Clássico
 
-**Estado: MARCO ATIVO.**
+**Estado: HOMOLOGADO.**
 
-Objetivo: substituir placeholders por conteúdo normalizado real em experiência exclusivamente clássica.
+O slice deixou de ser placeholder e passou a ser uma experiência Clássica funcional baseada exclusivamente no catálogo/manifests.
 
-Entregas:
+Entregas homologadas:
 
-- conectar `app.js` ao `ContentService`/catálogo;
-- home baseada no catálogo real;
-- tela de unidade baseada em `unit.json`;
-- tela de lição baseada no runtime normalizado;
+- home real do curso;
+- tela real de unidade;
+- tela real de lição;
+- rota e tela de verificação integrada;
 - blocos `CONTENT`;
-- primitivas `ACTIVITY` necessárias ao slice;
-- feedback determinístico e representação de evidência/pending no escopo P4;
-- estados de loading, erro, mídia pendente e tipo não suportado explícitos;
-- acessibilidade por teclado e semântica;
-- integração TTS existente;
-- mídia por `mediaId` com fallback seguro/placeholder de desenvolvimento onde permitido.
+- `SINGLE_CHOICE`, `MULTIPLE_CHOICE`, `CLASSIFY`, `MATCH`, `ORDER/SEQUENCE`, respostas abertas e `COMPOSITE` necessários ao slice;
+- TTS via `NarrationService`;
+- mídia controlada ausente representada explicitamente por `mediaId`;
+- correção determinística de lição sem punição;
+- feedback neutro em verificações com `AFTER_VERIFICATION`;
+- `RELIABLE_EVALUATOR` representado como avaliação pendente, sem declarar domínio;
+- estados de loading/erro/fora-do-catálogo explícitos;
+- camada pública que não expõe IDs/status de runtime/publicação ao aluno;
+- smoke DOM + screenshots automáticos.
 
-Slice de homologação:
+Validação:
+
+```text
+20/20 lições do slice
++ 2/2 verificações
+→ renderizadas sem estado unsupported
+
+Desktop → home/unidade/lição N0 + lição N4
+Tablet → unidade N0
+Mobile 390px → home + lição N0
+→ inspecionados visualmente
+```
+
+O smoke de navegador falha automaticamente em tela de erro, `Illegal invocation`, interação sem suporte e metadados internos conhecidos na interface pública.
+
+Durante P4, N0-U01-L02...L08 revelou critérios históricos ainda em prosa. Foram formalizados por ID, mantendo a regra de não interpretar prosa por regex. Datasets autorais como `letterSet`, `letterPairs` e classificação vogal/consoante passaram a ser materializados pelo adapter, sem reescrever as lições.
+
+Estado local após P4:
 
 ```text
 N0-U01
-+
+→ renderer homologado
+→ manifesto BLOCKED somente pelos áudios controlados obrigatórios ainda pendentes
+
 N4-U09
+→ renderer homologado
+→ nenhuma nova mídia humana obrigatória
+→ manifesto READY
 ```
 
-O N0 deve provar interações determinísticas, classificação, sequência e áudio controlado como dependência explícita. O N4 deve provar respostas abertas e `RELIABLE_EVALUATOR`/`PENDING_ALLOWED` sem fingir validação automática.
+A pendência N0 é local e não impede P5–P7.
 
-Validação visual obrigatória conforme `.ChatGPT/skills/frontend-visual-check/SKILL.md` em desktop, tablet e mobile.
+## P5 — ProgressService, revisão e persistência
+
+**Estado: MARCO ATIVO / PRÓXIMO.**
+
+Objetivo: transformar respostas/interações P4 em estado pedagógico persistente sem misturar percurso, domínio e gamificação.
+
+Entregas:
+
+- `ProgressService` isolado da UI;
+- eventos pedagógicos do renderer para o serviço;
+- estados de lição `NAO_INICIADA`, `EM_ESTUDO`, `CONCLUIDA`;
+- estados de evidência `NAO_OBSERVADA`, `PRATICADA`, `DEMONSTRADA`, `VALIDACAO_PENDENTE`, `REVISAO_RECOMENDADA`;
+- estados de competência `NOVA`, `EM_DESENVOLVIMENTO`, `DEMONSTRADA`, `CONSOLIDADA`;
+- políticas `DEMONSTRATED_REQUIRED`, `PENDING_ALLOWED`, `ATTEMPT_REQUIRED`;
+- suporte a `minimumEvidence` + `requiredAnyOf`;
+- fila de revisão explicável e não punitiva;
+- schema de progresso v1 em uso real;
+- save/load local;
+- migração de schema;
+- GitHubService/Gist usando `portugues-completo-progress.json`;
+- merge/conflitos entre dispositivos;
+- falha de sync sem perda local.
+
+Ordem recomendada:
+
+```text
+motor em memória
+→ testes de completion/evidência
+→ persistência local
+→ revisão
+→ Gist
+→ conflito/sync
+→ integração UI
+```
+
+Antes de implementar credencial, scopes ou chamadas Gist, verificar documentação oficial atual do GitHub; esses detalhes não são congelados por memória do projeto.
 
 Condição de saída:
 
 ```text
-catálogo real
-→ unidade real
-→ lição real
-→ conteúdo/atividade renderizados
-→ feedback/estado explícito
-→ navegação/teclado/responsividade validados
-→ sem esconder tipo não suportado
+interação do aluno
+→ evento pedagógico
+→ evidência
+→ conclusão/domínio honestos
+→ revisão quando aplicável
+→ estado salvo/restaurado
+→ sync remoto sem perda
 ```
 
-Mídia N0 ainda ausente pode deixar atividades específicas `IMPLEMENTADO_COM_PENDENCIA`; não bloqueia renderer independente.
-
-## P5 — ProgressService, revisão e persistência
-
-Objetivo: implementar o motor pedagógico do Clássico.
-
-Entregas: estados de lição/evidência/competência, clusters `DEMONSTRATED_REQUIRED`/`PENDING_ALLOWED`/`ATTEMPT_REQUIRED`, revisão, schema de progresso em uso, save/load local, GitHubService/Gist, migração, conflitos e falha de sync sem perda local.
-
-Detalhes atuais de autenticação/permissões GitHub devem ser verificados em documentação oficial no momento da implementação.
+O Clássico não cria nem mantém XP oculto.
 
 ## P6 — Feedback por IA no Clássico
 
 Objetivo: feedback opt-in em atividades elegíveis.
 
-Entregas: provider/model configurável, BYOK, chave fora de Git/Gist/progresso, `AiFeedbackService`, structured output, minimização de contexto/custo, fallback, testes e preservação de `VALIDACAO_PENDENTE` quando avaliador confiável é exigido.
+Entregas: provider/model configurável, BYOK, chave fora de Git/Gist/progresso, `AiFeedbackService`, structured output, minimização de contexto/custo, fallback e preservação de `VALIDACAO_PENDENTE` quando avaliador confiável é exigido.
 
 ## P7 — Ampliação do catálogo Clássico N0→N4
 
-Objetivo: levar o pipeline homologado do slice ao curso inteiro.
+Objetivo: levar o pipeline homologado ao curso inteiro.
 
 ```text
 normalizar
@@ -223,13 +233,13 @@ Condição de saída: catálogo cobre N0→N4, tipos necessários têm suporte o
 
 Objetivo: resolver blockers realmente obrigatórios, não produzir mídia decorativa.
 
-Entregas: reconciliar fila de mídia, ligar mídias validadas, resolver `MIDIA_OBRIGATORIA_PARA_ATIVIDADE/PUBLICACAO`, garantir equivalentes acessíveis, confirmar Pages/rotas/providers e reclassificar itens aptos/publicáveis.
+Reconciliar fila de mídia, ligar mídias validadas, resolver `MIDIA_OBRIGATORIA_PARA_ATIVIDADE/PUBLICACAO`, garantir equivalentes acessíveis e reclassificar itens aptos/publicáveis.
 
 ## P9 — Homologação end-to-end do Clássico
 
 Objetivo: provar o produto-base antes da gamificação.
 
-Cobrir primeira entrada, navegação N0→N4, lições simples/complexas, atividades determinísticas/estruturadas/abertas, feedback, revisão, pending, domínio, persistência/Gist, conflito entre dispositivos, IA ativa/desligada/falhando, mídia obrigatória, acessibilidade, desktop/tablet/mobile e recuperação sem perda de trabalho.
+Cobrir primeira entrada, navegação N0→N4, atividades determinísticas/estruturadas/abertas, feedback, revisão, pending, domínio, persistência/Gist, conflitos, IA ativa/desligada/falhando, mídia obrigatória, acessibilidade, desktop/tablet/mobile e recuperação sem perda.
 
 ### Gate `CLÁSSICO HOMOLOGADO`
 
@@ -258,17 +268,5 @@ Cobrir troca de modos, preservação de domínio, coerência/resistência a farm
 ## Próximo passo oficial
 
 ```text
-P4 — Renderer real do Clássico
-```
-
-Primeiro fluxo concreto:
-
-```text
-app.js
-→ ContentService.loadCatalog()
-→ N0-U01 / N4-U09
-→ unit.json
-→ lesson runtime
-→ renderer clássico
-→ validação visual desktop/tablet/mobile
+P5 — ProgressService, revisão e persistência
 ```
