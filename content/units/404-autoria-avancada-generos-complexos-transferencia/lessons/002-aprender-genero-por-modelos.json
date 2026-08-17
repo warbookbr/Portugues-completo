@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "N4-U04-L02",
+  "title": "Aprender um gênero pouco familiar a partir de modelos",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Inferir funções, convenções e variações de um gênero novo a partir de múltiplos modelos sem transformar observações locais em fórmula universal.",
+  "competencies": ["comparar modelos do mesmo gênero", "identificar movimentos funcionais recorrentes", "distinguir recorrência de obrigatoriedade", "reconhecer variação legítima", "identificar convenção que exige consulta", "formular hipótese de gênero revisável"],
+  "prerequisites": ["N4-U04-L01"],
+  "limits": ["dois ou três modelos não provam regra universal", "frequente não significa obrigatório", "estrutura superficial não substitui função", "terminologia especializada do gênero só entra quando ajuda a produzir ou revisar"],
+  "media": {"tts": "opcional como apoio", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["modelos", "instruções"]}], "generatedVisualResources": [{"type": "UI_RENDERED_GENRE_MODEL_COMPARE"}, {"type": "UI_RENDERED_FUNCTION_CONVENTION_MAP"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "comparação textual lado a lado e marcação semântica permitem observar função e variação sem mídia curada."},
+  "sequence": [
+    {"id": "L02-B01", "type": "model-set", "genre": "nota de recomendação geral", "models": [{"id": "A", "features": ["abre com decisão solicitada", "resume evidência", "fecha com recomendação condicional"]}, {"id": "B", "features": ["abre com contexto", "separa alternativas", "explicita incerteza antes da recomendação"]}, {"id": "C", "features": ["usa subtítulos", "inclui risco e próximo passo", "não usa seção chamada conclusão"]}], "tasks": ["identificar funções recorrentes", "listar diferenças legítimas", "evitar regra baseada em posição fixa"]},
+    {"id": "L02-C01", "type": "recurrence-status", "items": [{"observation": "os três modelos apresentam decisão ou recomendação explícita", "classification": "strong-corpus-pattern"}, {"observation": "dois usam subtítulos", "classification": "frequent-not-required"}, {"observation": "um começa com contexto", "classification": "possible-variation"}, {"observation": "nenhum inclui tabela", "classification": "absence-not-proof-of-prohibition"}]},
+    {"id": "L02-A01", "type": "genre-inference", "newModels": ["modelo D com ordem diferente", "modelo E com extensão muito menor"], "tasks": ["produzir mapa funcional", "marcar obrigatório no corpus, frequente ou opcional", "registrar uma hipótese que precisa de mais evidência", "explicar o que mudou após D/E"], "recordResponse": true},
+    {"id": "L02-P01", "type": "reflection", "prompt": "Escolha uma característica visual/estrutural que você não transformaria em regra e explique por quê.", "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"timeLimit": false, "templateMemorizationScored": false, "universalizationPenalizedWhenUnsupported": true, "openResponseAutoValidated": false},
+  "completionEvidence": {"clusters": {"genreMap": {"evidence": ["L02-A01"], "required": true}, "epistemicLimit": {"evidence": ["L02-P01"], "required": true}}, "completionRule": "o aluno deve inferir funções e convenções a partir do corpus sem universalizar características não sustentadas.", "requiresReliableEvaluatorFor": ["qualidade do mapa funcional e da distinção entre convenção, recorrência e variação"]}
+}
