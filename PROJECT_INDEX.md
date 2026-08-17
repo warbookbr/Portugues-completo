@@ -261,6 +261,7 @@ Não iniciar reescrita curricular em massa para atender ao renderer; usar adapte
 - `scripts/test-content-catalog.mjs`
 - `scripts/test-progress-service.mjs`
 - `scripts/test-progress-policies.mjs`
+- `scripts/test-progress-merge-edge-cases.mjs`
 - `scripts/test-github-service.mjs`
 - `scripts/test-progress-sync-service.mjs`
 - `scripts/test-classic-renderer.mjs`
