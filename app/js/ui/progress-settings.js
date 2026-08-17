@@ -1,8 +1,15 @@
 function statusCopy(state) {
-  if (state.status === 'SYNCED') return `Sincronizado${state.login ? ` como ${state.login}` : ''}.`;
-  if (state.status === 'LOCAL_CHANGES') return 'Alterações salvas neste navegador aguardam sincronização com o GitHub.';
+  if (state.status === 'SYNCED') {
+    if (!state.connected) return `Última sincronização concluída${state.login ? ` como ${state.login}` : ''}. Conecte novamente para enviar novas alterações.`;
+    return `Sincronizado${state.login ? ` como ${state.login}` : ''}.`;
+  }
+  if (state.status === 'LOCAL_CHANGES') return state.connected
+    ? 'Alterações salvas neste navegador aguardam sincronização com o GitHub.'
+    : 'Há alterações salvas neste navegador. Conecte novamente ao GitHub para sincronizá-las.';
   if (state.status === 'SYNCING') return 'Sincronizando com o GitHub…';
-  if (state.status === 'CONFLICT_PRESERVED') return 'Sincronizado com conflito preservado. Nenhuma resposta foi descartada.';
+  if (state.status === 'CONFLICT_PRESERVED') return state.connected
+    ? 'Sincronizado com conflito preservado. Nenhuma resposta foi descartada.'
+    : 'A última sincronização preservou um conflito sem descartar respostas. Conecte novamente para continuar sincronizando.';
   if (state.status === 'ERROR') return `Falha de sincronização: ${state.lastError || 'erro desconhecido'}`;
   return 'O progresso está apenas neste navegador até você conectar o GitHub.';
 }
