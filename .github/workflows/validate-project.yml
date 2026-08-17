@@ -48,6 +48,9 @@ jobs:
       - name: Test progress policies
         run: node scripts/test-progress-policies.mjs
 
+      - name: Test progress merge edge cases
+        run: node scripts/test-progress-merge-edge-cases.mjs
+
       - name: Test GitHub Gist service
         run: node scripts/test-github-service.mjs
 
