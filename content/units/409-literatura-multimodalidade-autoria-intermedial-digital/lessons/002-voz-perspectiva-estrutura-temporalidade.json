@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "id": "N4-U09-L02",
+  "title": "Voz, perspectiva, estrutura e temporalidade",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Analisar como perspectiva, distribuição de informação, ordem narrada e ordem cronológica moldam a experiência do leitor e as interpretações possíveis.",
+  "competencies": ["reconstruir ordem cronológica", "distinguir ordem narrada de ordem dos fatos", "mapear informação disponível a cada voz", "analisar distância e perspectiva", "explicar efeito estrutural"],
+  "prerequisites": ["N4-U09-L01"],
+  "limits": ["narrador externo não é automaticamente onisciente", "rótulo técnico não substitui análise", "não exigir taxonomia universitária de narratologia", "efeito deve ser ligado a estrutura observável"],
+  "media": {"tts": "opcional", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["narrativa-controlada"]}], "generatedVisualResources": [{"type": "UI_RENDERED_ANNOTATED_TEXT"}, {"type": "UI_RENDERED_NARRATIVE_SEQUENCE"}, {"type": "UI_RENDERED_PERSPECTIVE_MAP"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "sequência e disponibilidade de informação podem ser representadas semanticamente sem exigir mídia externa."},
+  "sequence": [
+    {"id": "L02-B01", "type": "controlled-narrative", "segments": [{"order": 1, "text": "Quando abriu a gaveta na segunda-feira, Davi encontrou a fotografia que julgava perdida."}, {"order": 2, "text": "Dois dias antes, Mara a havia colocado ali sem deixar recado."}, {"order": 3, "text": "Davi passou o domingo procurando a foto e concluiu que a levara para a rua."}, {"order": 4, "text": "Na segunda, ainda sem saber da ação de Mara, ligou para o café onde estivera no sábado."}], "task": "separar ordem narrada, cronologia e conhecimento de cada personagem"},
+    {"id": "L02-C01", "type": "perspective-check", "items": [{"claim": "Davi sabe, ao telefonar, que Mara guardou a foto", "expected": false}, {"claim": "o leitor recebe informação que Davi ainda não possui", "expected": true}], "automaticValidation": true},
+    {"id": "L02-A01", "type": "structural-analysis", "prompt": "Reconstrua a cronologia e explique como a ordem de revelação altera pelo menos duas expectativas ou interpretações do leitor.", "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"timeLimit": false, "technicalLabelCountScored": false, "openResponseAutoValidated": false},
+  "completionEvidence": {"clusters": {"voiceStructureTime": {"evidence": ["L02-A01"], "required": true}}, "completionRule": "a análise deve distinguir sequência dos fatos, sequência narrada e informação disponível, vinculando estrutura a efeito interpretativo.", "requiresReliableEvaluatorFor": ["qualidade da análise estrutural"]}
+}
