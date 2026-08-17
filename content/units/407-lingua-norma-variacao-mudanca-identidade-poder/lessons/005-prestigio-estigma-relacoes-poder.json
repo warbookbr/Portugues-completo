@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "id": "N4-U07-L05",
+  "title": "Prestígio, estigma e relações de poder",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Analisar como formas e variedades podem receber avaliações sociais diferentes, distinguindo consequência institucional ou social real de suposta superioridade linguística intrínseca.",
+  "competencies": ["distinguir prestígio social de qualidade estrutural", "identificar estigma linguístico", "separar consequência institucional de inferioridade do falante", "analisar evidência social com cautela", "evitar causalidade não fornecida"],
+  "prerequisites": ["N4-U07-L03", "N4-U07-L04"],
+  "limits": ["prestígio não prova superioridade linguística", "estigma não prova inadequação em todo contexto", "não atribuir causas sociais sem evidência", "não reduzir análise a slogan"],
+  "media": {"tts": "opcional", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [], "generatedVisualResources": [{"type": "UI_RENDERED_SOCIAL_EVALUATION_MAP"}, {"type": "UI_RENDERED_CONSEQUENCE_VS_VALUE"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "cenários controlados permitem observar avaliações e consequências sem representar grupos reais de forma estereotipada."},
+  "sequence": [
+    {"id": "L05-B01", "type": "controlled-social-case", "scenario": "Dois textos comunicam o mesmo fato com registros diferentes. Um processo seletivo fictício declara previamente exigir convenção formal para a etapa escrita; um comentário externo chama a versão informal de 'fala de gente incapaz'.", "distinctions": ["a instituição pode exigir um padrão textual no processo", "a exigência não demonstra inferioridade linguística ou intelectual da pessoa", "o comentário externo extrapola do texto para o falante"]},
+    {"id": "L05-C01", "type": "social-inference-check", "question": "Uma forma recebe menor prestígio em determinado contexto. O que isso demonstra por si?", "correctPrinciple": "demonstra uma avaliação social/contextual, não inferioridade estrutural nem capacidade global do falante"},
+    {"id": "L05-A01", "type": "prestige-stigma-analysis", "materials": "três cenários fictícios com escola, trabalho e convivência", "tasks": ["identificar convenção contextual real", "identificar julgamento do falante", "separar consequência institucional de estigma", "formular orientação que reconheça ambos sem legitimar hierarquia humana"], "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"timeLimit": false, "prestigeVarietyScored": false, "ideologicalAgreementScored": false, "openResponseAutoValidated": false},
+  "completionEvidence": {"clusters": {"prestigePower": {"evidence": ["L05-A01"], "required": true}}, "completionRule": "o aluno deve reconhecer consequências contextuais reais sem convertê-las em prova de inferioridade linguística ou pessoal.", "requiresReliableEvaluatorFor": ["separação entre consequência e estigma", "qualidade da orientação"]}
+}
