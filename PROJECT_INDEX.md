@@ -21,11 +21,27 @@ Português Completo
 ## Estado e execução
 
 - `docs/roadmap-curricular.md` — estado/maturidade do currículo N0→N4, atualmente fechado em M5.
-- `docs/roadmap-produto.md` — estado e ordem da fase ativa de produto/publicação; **fonte do próximo marco técnico**.
+- `docs/roadmap-produto.md` — ordem e condições dos marcos da fase de produto/publicação.
+- `docs/estado-implementacao-classico.md` — **estado operacional concreto do Modo Clássico**: marco/item ativo, estados técnico/homologação/mídia/publicação, blockers e próximo passo exato.
 - `docs/execucao-continua.md` — execução autônoma por marcos autorizados.
-- `.ChatGPT/skills/curricular-orchestration/SKILL.md` — orquestração de marcos longos.
+- `.ChatGPT/skills/classic-product-delivery/SKILL.md` — procedimento operacional obrigatório para implementar P1→P9 do Clássico sem perder estado.
+- `.ChatGPT/skills/curricular-orchestration/SKILL.md` — orquestração de marcos curriculares longos.
 - `.ChatGPT/skills/course-content-design/SKILL.md` — planejamento e revisão pedagógica, alinhado aos contratos de produto.
 - `.ChatGPT/skills/frontend-visual-check/SKILL.md` — verificação de mudanças visuais relevantes.
+
+### Regra para retomar o desenvolvimento do Clássico
+
+Uma instância sem contexto deve começar por:
+
+```text
+PROJECT_INDEX.md
+→ docs/roadmap-produto.md
+→ docs/estado-implementacao-classico.md
+→ .ChatGPT/skills/classic-product-delivery/SKILL.md
+→ contratos específicos do item ativo
+```
+
+`docs/roadmap-produto.md` diz **qual marco vem agora**. `docs/estado-implementacao-classico.md` diz **onde exatamente o trabalho parou dentro dele**.
 
 ## Curso inteiro
 
@@ -47,23 +63,20 @@ Estas fontes definem como o currículo fechado vira aplicação:
 - `docs/persistencia-progresso.md` — schema v1 do Gist, cálculo mecânico de conclusão, gates e sincronização.
 - `docs/avaliacao-ia.md` — contrato neutro de feedback com IA, BYOK, consentimento, request/response e limites de autoridade.
 - `docs/calibracao-produto.md` — homologação/calibração progressiva; no Clássico registra casos-âncora e revisão, e só depois do gate clássico concretiza XP/missões/conquistas.
+- `docs/estado-implementacao-classico.md` — status real de cada inclusão/materialização do produto Clássico e impacto de dependências de mídia.
 - `docs/validacoes.md` — guard rails atuais e próximos schemas/checagens de integridade.
 
 Regra de leitura para trabalho de produto:
 
 ```text
 roadmap-produto
-→ arquitetura
-→ contrato de conteúdo
-→ exercícios/atividades
-→ progresso
-→ persistência
-→ calibração quando houver homologação/experiência
-→ IA quando aplicável
+→ estado-implementacao-classico
+→ arquitetura/contratos necessários ao item
+→ mídia quando aplicável
 → validações
 ```
 
-Durante homologação de atividade, lição, verificação ou unidade, `docs/calibracao-produto.md` é leitura obrigatória para revisão e registro de casos-âncora. Antes do gate `CLÁSSICO HOMOLOGADO`, não transformar esse processo em implementação de XP.
+Durante homologação de atividade, lição, verificação ou unidade, `docs/calibracao-produto.md` também é leitura obrigatória para revisão e registro de casos-âncora. Antes do gate `CLÁSSICO HOMOLOGADO`, não transformar esse processo em implementação de XP.
 
 ## Nível 0
 
@@ -200,7 +213,7 @@ M5 ✓ — U1–U9 + N4-EXIT-V01 + checkpoint final
 
 ## Próxima fase do projeto
 
-A sequência oficial está em `docs/roadmap-produto.md`.
+A sequência oficial está em `docs/roadmap-produto.md` e o ponto exato de execução em `docs/estado-implementacao-classico.md`.
 
 Resumo:
 
@@ -230,8 +243,9 @@ Não iniciar reescrita curricular em massa para atender ao renderer; usar adapte
 
 ## Conteúdo e mídia
 
-- `producao-midia/README.md` — contrato operacional de mídia.
-- `producao-midia/FILA-MIDIA.md` — fila oficial.
+- `producao-midia/README.md` — contrato operacional de mídia; mídia pendente bloqueia somente o escopo que realmente depende dela.
+- `producao-midia/FILA-MIDIA.md` — fila oficial das mídias humanas/curadas.
+- `docs/estado-implementacao-classico.md` — registra o impacto de cada mídia pendente sobre implementação, homologação e publicação.
 - `content/course.json` — catálogo de publicação; ainda precisa ser populado no marco P3.
 - `content/units/` — conteúdo de unidades, lições e verificações.
 - `content/levels/` — verificações de nível.
@@ -247,7 +261,8 @@ Não iniciar reescrita curricular em massa para atender ao renderer; usar adapte
 
 ```text
 estado curricular → docs/roadmap-curricular.md
-estado/próximo marco de produto → docs/roadmap-produto.md
+ordem/condições dos marcos de produto → docs/roadmap-produto.md
+estado operacional concreto do Clássico → docs/estado-implementacao-classico.md
 arquitetura → docs/arquitetura.md
 catálogo/manifests/runtime → docs/contrato-conteudo.md
 forma de ensinar/mídia → docs/conteudo.md
@@ -266,7 +281,8 @@ N4 mídia/acessibilidade → docs/gate-midia-acessibilidade-nivel-4-u9.md
 conteúdo detalhado → content/
 produção de mídia → producao-midia/README.md + producao-midia/FILA-MIDIA.md
 validação automática → docs/validacoes.md
-procedimentos ChatGPT → .ChatGPT/skills/
+procedimento de entrega do Clássico → .ChatGPT/skills/classic-product-delivery/SKILL.md
+procedimentos ChatGPT gerais → .ChatGPT/skills/
 ```
 
 Se uma decisão mudar uma fonte de verdade, atualizar a documentação correspondente em vez de depender da conversa.
@@ -280,4 +296,6 @@ node scripts/validate-project.mjs
 node scripts/validate-json.mjs
 ```
 
-O workflow executa essas validações em PRs e pushes para `main`.
+Toda PR que altere materialmente o estado do Modo Clássico deve atualizar `docs/estado-implementacao-classico.md` na mesma mudança.
+
+O workflow executa as validações em PRs e pushes para `main`.

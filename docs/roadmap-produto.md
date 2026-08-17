@@ -2,9 +2,19 @@
 
 ## Função
 
-Registrar o estado e a ordem de implementação da fase de produto/publicação depois do fechamento curricular N0→N4.
+Registrar a ordem e as condições de saída da fase de produto/publicação depois do fechamento curricular N0→N4.
 
-A maturidade curricular continua documentada em `docs/roadmap-curricular.md`.
+A maturidade curricular continua em `docs/roadmap-curricular.md`.
+
+O estado concreto de execução do Modo Clássico — marco/item ativo, pendências, blockers, mídia e próximo passo exato — fica em `docs/estado-implementacao-classico.md`.
+
+```text
+roadmap-produto
+→ para onde vamos e quando um marco termina
+
+estado-implementacao-classico
+→ onde estamos exatamente agora
+```
 
 ## Estado atual
 
@@ -22,9 +32,11 @@ MODO GAMIFICADO
 → deliberadamente posterior à homologação do Clássico
 ```
 
+O próximo marco técnico é P1. O cursor operacional detalhado deve ser lido em `docs/estado-implementacao-classico.md`.
+
 ## Decisão de sequência: Clássico primeiro
 
-O **modo Clássico é a linha principal de entrega do produto-base**.
+O **Modo Clássico é a linha principal de entrega do produto-base**.
 
 Antes de implementar XP, missões, conquistas, streak, progressão de jogo ou seletor ativo entre modos, o projeto deve provar o núcleo pedagógico completo no Clássico.
 
@@ -60,6 +72,59 @@ Enquanto o gate **CLÁSSICO HOMOLOGADO** não estiver satisfeito:
 - pode-se registrar casos-âncora de esforço, recuperação e percurso para uso posterior na calibração.
 
 A arquitetura dos dois modos permanece válida. A decisão altera a **ordem de implementação**, não a existência futura do modo Gamificado.
+
+## Política de execução com mídia/material de apoio pendente
+
+A produção humana de imagens, vídeos e áudios **não é pré-requisito global para desenvolver o Clássico**.
+
+Regra:
+
+```text
+mídia pendente
+→ registrar a dependência
+→ implementar tudo que for independente
+→ bloquear somente homologação/publicação do escopo que realmente depende dela
+→ continuar o restante do roadmap
+```
+
+Durante P1→P7, mídia obrigatória ausente pode permanecer como pendência rastreada quando o marco consegue cumprir sua condição de saída sem fingir homologação da parte dependente.
+
+P8 concentra a resolução dos blockers de mídia/publicação necessários ao produto final; **P8 não é o primeiro momento em que mídia é identificada ou integrada**.
+
+Quando a mídia for o próprio estímulo pedagógico, a estrutura técnica pode ser implementada antes, mas a atividade dependente não pode ser homologada pedagogicamente usando um placeholder inadequado.
+
+A classificação e o impacto operacional ficam em `docs/estado-implementacao-classico.md`; a produção dos arquivos fica em `producao-midia/README.md` + `FILA-MIDIA.md`.
+
+## Regra de rastreamento do desenvolvimento
+
+Toda mudança material no Clássico deve atualizar o registro operacional na mesma PR.
+
+O registro separa:
+
+```text
+estado técnico
+estado de homologação
+estado de mídia/material de apoio
+estado de publicação
+```
+
+Portanto:
+
+```text
+IMPLEMENTADO
+não significa automaticamente
+HOMOLOGADO
+nem PUBLICAVEL
+```
+
+Ao fim de cada subpasso relevante, o repositório deve deixar reconstruíveis:
+
+- o último item efetivamente concluído;
+- o item em andamento, se houver;
+- pendências não bloqueantes;
+- blockers reais;
+- `mediaIds` relacionados;
+- próximo passo exato.
 
 ## Contratos fechados
 
@@ -117,13 +182,6 @@ A arquitetura dos dois modos permanece válida. A decisão altera a **ordem de i
 - IA não grava domínio;
 - tarefas com avaliador confiável permanecem pending por padrão.
 
-### Validação
-
-`docs/validacoes.md`
-
-- estrutura e sintaxe JSON já implementadas;
-- schemas de contrato são o próximo guard rail.
-
 ### Calibração progressiva
 
 `docs/calibracao-produto.md`
@@ -134,9 +192,28 @@ A arquitetura dos dois modos permanece válida. A decisão altera a **ordem de i
 - XP, conquistas, missões e streak só são concretizados depois do gate Clássico;
 - gamificação nunca força alteração curricular para corrigir sua economia.
 
+### Estado operacional
+
+`docs/estado-implementacao-classico.md`
+
+- cursor de execução;
+- IDs de implementação;
+- estados técnico/homologação/mídia/publicação;
+- blockers com escopo;
+- evidências de homologação;
+- rastreamento de trabalho parcial;
+- vínculo entre pendência de mídia e aquilo que ela realmente bloqueia.
+
+### Validação
+
+`docs/validacoes.md`
+
+- estrutura e sintaxe JSON já implementadas;
+- schemas de contrato são o próximo guard rail.
+
 ## Marco P1 — Schemas e contratos executáveis
 
-**Estado:** próximo.
+**Estado macro:** próximo. O estado operacional deve permanecer sincronizado em `docs/estado-implementacao-classico.md`.
 
 Objetivo: transformar os contratos documentados em validações mecânicas sem alterar o conteúdo em massa.
 
@@ -189,6 +266,8 @@ Casos mínimos:
 
 O runtime pode emitir eventos pedagógicos reutilizáveis no futuro, mas não conhece XP.
 
+Dependência de mídia presente no conteúdo deve ser normalizada/rastreável sem exigir que o arquivo físico já exista para todos os casos.
+
 ## Marco P3 — Manifests e catálogo inicial
 
 Objetivo: tornar unidades reais descobríveis sem lista manual no JavaScript.
@@ -209,11 +288,16 @@ uma unidade simples de N0
 + uma unidade complexa de N4
 ```
 
-Durante o slice, registrar hipóteses de esforço/comparabilidade como futuros casos-âncora, sem atribuir economia de XP ao produto Clássico.
+Durante o slice:
+
+- registrar hipóteses de esforço/comparabilidade como futuros casos-âncora;
+- registrar mídia pendente e seu impacto;
+- não retirar do slice uma atividade só porque sua mídia final ainda será produzida, quando a infraestrutura independente puder ser implementada/testada;
+- não atribuir economia de XP ao produto Clássico.
 
 ## Marco P4 — Renderer real do Clássico
 
-Objetivo: substituir placeholders por conteúdo real normalizado em uma experiência **exclusivamente clássica**.
+Objetivo: substituir placeholders genéricos por conteúdo real normalizado em uma experiência **exclusivamente clássica**.
 
 Entregas:
 
@@ -222,11 +306,14 @@ Entregas:
 - blocos de conteúdo;
 - primitivas de atividade do primeiro slice;
 - estados de feedback/evidência;
+- renderers/estados de mídia necessários ao slice;
 - acessibilidade e teclado;
 - tratamento explícito de tipo não suportado;
 - navegação sem qualquer dependência de XP/missões/conquistas.
 
 Validação visual obrigatória em desktop/tablet/mobile.
+
+Se uma mídia obrigatória ainda não existir, implementar os estados/contratos possíveis e registrar `IMPLEMENTADO_COM_PENDENCIA` quando adequado; não usar placeholder como prova pedagógica do estímulo ausente.
 
 A partir de atividades funcionando de ponta a ponta, registrar casos-âncora de esforço e recuperação para futura gamificação, sem expor pontuação ao aluno.
 
@@ -247,6 +334,8 @@ Entregas:
 - falha de sync sem perda de estado local.
 
 A revisão é parte do produto-base e deve ser homologada aqui com prioridades explicáveis antes de fórmulas finas.
+
+Uma atividade com mídia obrigatória ainda pendente não deve produzir domínio fictício só porque o restante do ProgressService está funcional.
 
 ## Marco P6 — Feedback por IA no Clássico
 
@@ -278,32 +367,44 @@ Fluxo:
 migrar/publicar lote
 → validar schema/integridade
 → renderizar
-→ testar visualmente
-→ homologar pedagogia/progresso/revisão
+→ testar tudo que for testável no estado atual
+→ homologar o que tiver condições reais de homologação
+→ registrar pendências de mídia/blockers por item
 → registrar casos-âncora relevantes
+→ atualizar estado operacional
 → continuar
 ```
 
 Não reescrever conteúdo em massa para atender ao renderer; usar adapters/manifests.
 
+Uma dependência local de apoio não deve impedir que outras lições/unidades sejam integradas.
+
 Condição de saída:
 
-- catálogo publicado cobrindo N0→N4 conforme escopo aprovado;
+- catálogo cobrindo N0→N4 conforme escopo aprovado;
 - tipos necessários de atividade suportados ou blockers explicitamente registrados;
-- navegação do Clássico alcança o percurso completo.
+- navegação do Clássico alcança o percurso completo;
+- pendências conhecidas estão rastreadas por escopo em vez de escondidas.
+
+P7 pode terminar com blockers de mídia claramente registrados para resolução em P8, desde que eles não invalidem a condição de saída acima.
 
 ## Marco P8 — Mídia obrigatória e prontidão de publicação do Clássico
 
-Objetivo: remover blockers externos que impedem considerar o Clássico publicável.
+Objetivo: remover blockers externos/finais que impedem considerar o Clássico publicável.
 
 Entregas:
 
-- resolver fila realmente obrigatória de mídia;
-- validar `requiredForPublication` e blockers;
+- revisar a lista de `IMPLEMENTADO_COM_PENDENCIA` e blockers de mídia/publicação;
+- resolver fila realmente obrigatória de mídia dentro do escopo final;
+- validar `requiredForPublication` e dependências;
+- ligar versões validadas aos `mediaIds`;
+- repetir homologações pedagógicas que dependiam do estímulo final;
 - garantir equivalentes acessíveis;
 - confirmar Pages e rotas reais;
 - confirmar TTS/áudio controlado conforme contrato;
 - reavaliar experiência de casos cuja mídia final altere materialmente o esforço/fluxo.
+
+Mídia opcional ainda não produzida não deve impedir prontidão de publicação quando a experiência essencial estiver completa.
 
 ## Marco P9 — Homologação end-to-end do Modo Clássico
 
@@ -327,7 +428,8 @@ Cobrir pelo menos:
 - desktop/tablet/mobile;
 - recuperação após erro;
 - retomada de sessão;
-- falhas sem perda de trabalho.
+- falhas sem perda de trabalho;
+- inexistência de item obrigatório silenciosamente marcado como concluído apesar de blocker aberto.
 
 ### Gate de saída: CLÁSSICO HOMOLOGADO
 
@@ -338,12 +440,15 @@ núcleo pedagógico estável
 + percurso N0→N4 utilizável no Clássico
 + feedback/revisão/progresso coerentes
 + persistência confiável dentro do contrato
-+ blockers de publicação tratados
++ blockers obrigatórios de publicação tratados
++ itens obrigatórios sem falsa homologação por ausência de mídia
 + testes end-to-end aprovados
 + nenhuma dependência de gamificação para estudar
 ```
 
 **P10 não pode começar antes desse gate.**
+
+O registro operacional deve marcar o gate explicitamente como satisfeito e manter eventuais pendências opcionais separadas.
 
 ## Marco P10 — Modo Gamificado
 
@@ -430,6 +535,8 @@ Também permanecem decisões separadas de integração:
 ```text
 P1 — schemas e contratos executáveis
 ```
+
+Antes de implementar, ler o cursor de `docs/estado-implementacao-classico.md` e criar/atualizar os IDs dos itens reais trabalhados.
 
 Prioridade estratégica:
 

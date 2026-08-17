@@ -125,6 +125,59 @@ Mídia deve melhorar pelo menos um destes pontos:
 
 Se não houver ganho claro, preferir solução simples.
 
+## Desenvolvimento independente da mídia final
+
+A produção de material de apoio não precisa estar concluída para que o Modo Clássico seja implementado.
+
+Regra de desenvolvimento:
+
+```text
+necessidade de mídia identificada
+→ definir função e mediaId quando aplicável
+→ registrar na fila de produção
+→ implementar tudo que não depende do arquivo final
+→ registrar a pendência e seu impacto
+→ continuar o restante do curso
+```
+
+A ausência de imagem, vídeo ou áudio não deve ser convertida automaticamente em blocker da lição inteira, unidade inteira ou marco técnico.
+
+### Sem dependência de mídia humana
+
+Se texto, TTS ou UI semântica ensinam adequadamente, não existe pendência de produção humana.
+
+### Mídia opcional
+
+Se melhora a experiência, mas o objetivo continua plenamente ensinado/avaliado sem ela, sua ausência não impede homologação/publicação do conteúdo essencial.
+
+### Mídia obrigatória para a atividade
+
+Quando a mídia é o próprio estímulo necessário — por exemplo áudio controlado, imagem específica ou vídeo cuja informação precisa ser analisada — a infraestrutura pode ser implementada antes, mas a atividade não pode ser homologada pedagogicamente com um substituto inadequado.
+
+```text
+renderer + ligação por mediaId + estados + navegação
+→ podem ficar implementados
+
+estímulo final ainda ausente
+→ homologação pedagógica da atividade permanece pendente
+```
+
+### Mídia obrigatória para publicação
+
+Uma versão final ainda não publicada pode impedir declarar o trecho `PUBLICAVEL` sem necessariamente invalidar testes técnicos já realizados.
+
+### Rastreabilidade
+
+O impacto concreto sobre implementação, homologação e publicação é registrado em `docs/estado-implementacao-classico.md`.
+
+A produção do arquivo, status de produção e critérios ficam em `producao-midia/README.md` e `producao-midia/FILA-MIDIA.md`.
+
+Não duplicar a fila inteira no registro do produto; vincular pelo `mediaId` e registrar somente o impacto.
+
+### Placeholder
+
+Placeholder pode ser usado para desenvolver layout, renderer, loading/erro e integração, mas não deve ser tratado como mídia final nem como evidência de homologação quando a percepção do estímulo real é pedagogicamente necessária.
+
 ## Checagem rápida versus exercício
 
 ### Checagem rápida
@@ -267,6 +320,9 @@ docs/contrato-conteudo.md
 
 docs/progresso.md
 → como evidência vira progresso/domínio/revisão
+
+docs/estado-implementacao-classico.md
+→ o que foi implementado/homologado e quais dependências ainda impedem conclusão/publicação
 ```
 
 ## Regra para evolução
@@ -274,3 +330,5 @@ docs/progresso.md
 Novos componentes ou mídias só se tornam padrão quando resolvem necessidade pedagógica recorrente.
 
 Novo `pedagogicalType` não deve implicar automaticamente nova primitiva de renderer; reutilizar o contrato existente sempre que a interação for equivalente.
+
+Mídia pendente deve ser tratada como dependência rastreável, não como motivo para abandonar o desenvolvimento independente nem como permissão para declarar falso estado de conclusão.
