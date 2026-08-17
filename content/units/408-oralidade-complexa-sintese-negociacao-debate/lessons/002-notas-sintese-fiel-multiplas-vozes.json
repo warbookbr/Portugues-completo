@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "N4-U08-L02",
+  "title": "Notas e síntese fiel de múltiplas vozes",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Registrar e sintetizar posições de múltiplos participantes sem fundir vozes, trocar atribuições ou apagar qualificações relevantes.",
+  "competencies": ["tomar notas por função", "separar vozes", "preservar atribuição", "identificar convergência e divergência", "sintetizar sem distorcer"],
+  "prerequisites": ["N4-U08-L01"],
+  "limits": ["nota literal extensa não pontua", "concordância pessoal não autoriza distorção", "redução não pode apagar ressalva decisiva", "vozes rotuladas evitam depender de reconhecimento de timbre"],
+  "media": {"tts": "adequado com vozes/turnos rotulados na interface; timbre não determina autoria", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["discussao-tres-vozes"]}, {"type": "LABELED_TURNS", "locations": ["discussao-tres-vozes"]}], "generatedVisualResources": [{"type": "UI_RENDERED_MULTIVOICE_NOTES_MATRIX"}, {"type": "UI_RENDERED_CONVERGENCE_DIVERGENCE_MAP"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "rótulos e matriz de notas fazem a atividade medir atribuição e síntese, não reconhecimento acústico de pessoas."},
+  "sequence": [
+    {"id": "L02-B01", "type": "labeled-multivoice-discussion", "turns": [{"speaker": "A", "text": "Sou favorável a prolongar o teste por quatro semanas, mas sem chamar isso de expansão definitiva."}, {"speaker": "B", "text": "Concordo com prolongar, desde que o custo adicional seja separado antes da decisão seguinte."}, {"speaker": "C", "text": "Eu manteria apenas uma das noites até sabermos se a procura da quinta é suficiente."}, {"speaker": "A", "text": "Esse recorte é possível, mas perderíamos comparação entre as duas noites."}], "replayAllowed": true},
+    {"id": "L02-C01", "type": "attribution-check", "items": [{"statement": "condiciona continuidade à separação de custo", "expectedSpeaker": "B"}, {"statement": "propõe uma noite apenas", "expectedSpeaker": "C"}, {"statement": "ressalva que prolongamento não é expansão definitiva", "expectedSpeaker": "A"}], "automaticValidation": true},
+    {"id": "L02-A01", "type": "multivoice-notes", "prompt": "Registre para A, B e C: posição, razão/evidência, condição/ressalva e resposta recebida. Depois marque convergências, divergências e um ponto ainda aberto.", "recordResponse": true, "automaticValidation": false},
+    {"id": "L02-A02", "type": "faithful-synthesis", "prompt": "Produza uma síntese curta da discussão que preserve as três posições e não transforme concordância parcial em consenso total.", "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"timeLimit": false, "replayPenalized": false, "noteLengthScored": false, "ideologicalAgreementScored": false, "openResponseAutoValidated": false},
+  "completionEvidence": {"clusters": {"multivoiceNotes": {"evidence": ["L02-A01"], "required": true}, "faithfulSynthesis": {"evidence": ["L02-A02"], "required": true}}, "completionRule": "notas e síntese precisam manter atribuições, diferenças e qualificações relevantes sem exigir transcrição literal.", "requiresReliableEvaluatorFor": ["fidelidade das notas abertas", "qualidade da síntese"]}
+}
