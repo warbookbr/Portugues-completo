@@ -6,6 +6,7 @@ import { createProgressService } from './services/progress-service.js';
 import { createProgressSyncService } from './services/progress-sync-service.js';
 import { mountSettingsMenu } from './ui/settings-menu.js';
 import { bindClassicRenderer, documentHtml, homeHtml, unitHtml } from './ui/classic-renderer.js';
+import { bindClassicProgress } from './ui/classic-progress-binding.js';
 import { polishClassicPresentation } from './ui/classic-presentation.js';
 import { decorateClassicProgress } from './ui/classic-progress.js';
 
@@ -51,7 +52,8 @@ function mountClassic(html, documentRuntime = null) {
   currentRuntime = documentRuntime;
   app.innerHTML = html;
   polishClassicPresentation(app);
-  bindClassicRenderer(app, documentRuntime, { progressService, onProgress: refreshProgressPresentation });
+  bindClassicRenderer(app, documentRuntime);
+  bindClassicProgress(app, documentRuntime, { progressService, onProgress: refreshProgressPresentation });
   refreshProgressPresentation();
 }
 
