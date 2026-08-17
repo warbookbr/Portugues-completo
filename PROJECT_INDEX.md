@@ -139,7 +139,7 @@ O N3 está **curricularmente fechado em M5**: U1–U9, `N3-EXIT-V01` e checkpoin
 - `docs/gate-normativo-nivel-4-u5-u7.md` — gate normativo de U5/U7, **SATISFEITO**; reabrir apenas se surgir caso fechado fora do recorte documentado.
 - `docs/referencias-gramatica-nivel-4-u5-u7.md` — recorte normativo/descritivo pesquisado e congelado; separa regra, variante, convenção editorial, consulta e estilo.
 - `docs/referencias-gramatica-nivel-4-u5-u7-atualizacao-2026.md` — addendum do contexto institucional atual; registra o Decreto nº 12.002/2024 sem alterar o recorte pedagógico.
-- `docs/gate-midia-acessibilidade-nivel-4-u9.md` — gate de mídia/acessibilidade **SATISFEITO para o M5 da U9**; nenhuma nova mídia humana obrigatória foi necessária e toda pista decisiva permanece semanticamente acessível.
+- `docs/gate-midia-acessibilidade-nivel-4-u9.md` — gate de mídia/acessibilidade **SATISFEITO para o M5 da U9 e a saída atual**; nenhuma nova mídia humana obrigatória e toda pista decisiva permanece semanticamente acessível.
 
 ### Resultado M4
 
@@ -170,6 +170,7 @@ O M4 preserva cobertura 17/17 e explicita como cada unidade exige autonomia, tra
 - `content/units/407-lingua-norma-variacao-mudanca-identidade-poder/` — U7, 10 lições + `N4-U07-V01`, **concluída**.
 - `content/units/408-oralidade-complexa-sintese-negociacao-debate/` — U8, 9 lições + `N4-U08-V01`, **concluída**.
 - `content/units/409-literatura-multimodalidade-autoria-intermedial-digital/` — U9, 12 lições + `N4-U09-V01`, **concluída**.
+- `content/levels/004-dominio/exit-verification.json` — `N4-EXIT-V01`, oito agrupamentos obrigatórios com cobertura 17/17, **concluída**.
 
 A U1 exige escolha e eventual troca justificada de estratégia, arquiteturas concorrentes defensáveis, preservação de condições/ressalvas, cadeias distribuídas, implícitos/intertextualidade com evidência, enquadramento sem inferência automática de manipulação, calibração epistêmica e revisão explícita da interpretação após nova evidência.
 
@@ -189,6 +190,8 @@ A U8 transfere leitura, síntese, argumentação e projeto de voz para oralidade
 
 A U9 integra leitura estética e autoria digital: exige interpretação própria com evidência, análise de estrutura/forma/figuratividade/intertextualidade, comparação e revisão de leituras, leitura de relações multimodais, reconhecimento explícito de limites sensoriais, rastreabilidade de autoria/circulação, análise de adaptação e produção multimodal acessível. `N4-U09-V01` mantém literatura e multimodal/digital como eixos independentes e exige integração autoral sem permitir que polimento visual compense evidência, proveniência ou acessibilidade.
 
+`N4-EXIT-V01` integra as 17 competências oficiais em oito blocos não compensáveis: leitura estratégica revisável; pesquisa/síntese multifuente; argumentação revisável; autoria longa com transferência; edição/estilo/consulta; língua/norma/variação; oralidade complexa; literatura/multimodalidade/autoria digital. Produções abertas registram evidência sem fingir validação automática global.
+
 Estado:
 
 ```text
@@ -196,7 +199,7 @@ M1 ✓
 M2 ✓ — 9 áreas
 M3 ✓ — 9 unidades
 M4 ✓ — 93 lições + 9 verificações integradas
-M5 em andamento — U1–U9 concluídas; saída do nível pendente
+M5 em fechamento — U1–U9 + N4-EXIT-V01 concluídos; checkpoint final pendente
 ├── U1 ✓ — 10 lições + N4-U01-V01
 ├── U2 ✓ — 11 lições + N4-U02-V01
 ├── U3 ✓ — 10 lições + N4-U03-V01
@@ -206,7 +209,8 @@ M5 em andamento — U1–U9 concluídas; saída do nível pendente
 ├── U7 ✓ — 10 lições + N4-U07-V01
 ├── U8 ✓ — 9 lições + N4-U08-V01
 ├── U9 ✓ — 12 lições + N4-U09-V01
-└── N4-EXIT-V01 — próximo subpasso
+├── N4-EXIT-V01 ✓ — 8 agrupamentos; cobertura 17/17
+└── checkpoint final — próximo subpasso
 ```
 
 A fonte oficial do estado é `docs/roadmap-curricular.md`.
@@ -252,6 +256,7 @@ N4 M2 → docs/areas-nivel-4.md
 N4 M3 → docs/unidades-nivel-4.md
 N4 M4 → docs/licoes-nivel-4.md + docs/licoes-nivel-4-u*.md
 N4 M5 → content/units/4xx-*/
+N4 saída → content/levels/004-dominio/exit-verification.json
 N4 normativo U5/U7 → docs/gate-normativo-nivel-4-u5-u7.md + docs/referencias-gramatica-nivel-4-u5-u7.md + docs/referencias-gramatica-nivel-4-u5-u7-atualizacao-2026.md
 N4 mídia/acessibilidade → docs/gate-midia-acessibilidade-nivel-4-u9.md
 estado/marcos → docs/roadmap-curricular.md
