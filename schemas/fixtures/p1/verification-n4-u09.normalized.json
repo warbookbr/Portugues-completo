@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "id": "N4-U09-V01",
+  "kind": "UNIT_VERIFICATION",
+  "title": "Verificação integrada — Nível 4, Unidade 9",
+  "objective": "Verificar integração entre interpretação literária, leitura multimodal, limites de representação, proveniência e autoria acessível.",
+  "competencyIds": ["N4-U09-C01", "N4-U09-C02"],
+  "prerequisites": ["N4-U09-L01"],
+  "blocks": [
+    {
+      "id": "V01-A01",
+      "kind": "ACTIVITY",
+      "pedagogicalType": "independent-interpretation",
+      "focus": "respond",
+      "content": {"prompt": "Formule uma interpretação própria, use pelo menos três evidências e registre uma hipótese que o texto não permite confirmar."},
+      "activity": {
+        "role": "VERIFICATION",
+        "interaction": "STRUCTURED_RESPONSE",
+        "evaluation": {
+          "mode": "RELIABLE_EVALUATOR",
+          "feedbackTiming": "AFTER_VERIFICATION",
+          "allowRetry": true,
+          "penalizeSupport": false,
+          "criteria": [
+            {"id": "interpretation", "description": "interpretação sustentada pelo texto", "required": true},
+            {"id": "uncertainty", "description": "limite de evidência explicitado", "required": true}
+          ],
+          "threshold": null
+        },
+        "evidence": {"role": "CHECKPOINT", "competencyIds": ["N4-U09-C01"], "clusterId": "interpretationEvidence", "recordResponse": true, "requiredForCompletion": true},
+        "stimuli": [{"type": "TEXT", "payload": {"material": "A luz do corredor"}}]
+      }
+    },
+    {
+      "id": "V01-C01",
+      "kind": "ACTIVITY",
+      "pedagogicalType": "closed-boundary-check",
+      "focus": "respond",
+      "content": {"questions": ["qual quadro dura 5 s?", "a fala de Marta soa irônica?", "a ordem dos quadros pode ser comparada sem vídeo real?"]},
+      "activity": {
+        "role": "VERIFICATION",
+        "interaction": "COMPOSITE",
+        "evaluation": {"mode": "DETERMINISTIC", "feedbackTiming": "AFTER_VERIFICATION", "allowRetry": true, "penalizeSupport": false, "answerKey": {"0": "quadro 3", "1": "nao determinavel sem midia", "2": "sim"}, "criteria": [], "threshold": 1},
+        "evidence": {"role": "CHECKPOINT", "competencyIds": ["N4-U09-C02"], "clusterId": "editingBoundary", "recordResponse": false, "requiredForCompletion": true},
+        "stimuli": [{"type": "DATA_SET", "payload": {"durations": [2, 5, 3]}}, {"type": "SEMANTIC_UI", "payload": {"kind": "frame-sequence"}}]
+      }
+    },
+    {
+      "id": "V01-A12",
+      "kind": "ACTIVITY",
+      "pedagogicalType": "multimodal-authored-prototype",
+      "focus": "respond",
+      "content": {"prompt": "Crie um protótipo semântico autoral com atribuição, decisão de meio, acessibilidade e escolha deliberada de preservação ou transformação."},
+      "activity": {
+        "role": "PRODUCTION",
+        "interaction": "COMPOSITE",
+        "evaluation": {
+          "mode": "RELIABLE_EVALUATOR",
+          "feedbackTiming": "AFTER_VERIFICATION",
+          "allowRetry": true,
+          "penalizeSupport": false,
+          "criteria": [
+            {"id": "evidence", "description": "preserva vínculo com evidência da obra", "required": true},
+            {"id": "accessibility", "description": "toda pista decisiva possui equivalente acessível", "required": true}
+          ],
+          "threshold": null
+        },
+        "evidence": {"role": "CHECKPOINT", "competencyIds": ["N4-U09-C01", "N4-U09-C02"], "clusterId": "integratedProduction", "recordResponse": true, "requiredForCompletion": true},
+        "stimuli": [{"type": "SEMANTIC_UI", "payload": {"kind": "authored-prototype-workspace"}}]
+      }
+    }
+  ],
+  "completion": {
+    "clusters": [
+      {"id": "interpretationEvidence", "required": true, "evidenceIds": ["V01-A01"], "satisfaction": "PENDING_ALLOWED"},
+      {"id": "editingBoundary", "required": true, "evidenceIds": ["V01-C01"], "satisfaction": "DEMONSTRATED_REQUIRED"},
+      {"id": "integratedProduction", "required": true, "evidenceIds": ["V01-A12"], "satisfaction": "PENDING_ALLOWED"}
+    ],
+    "nonCompensable": true
+  }
+}
