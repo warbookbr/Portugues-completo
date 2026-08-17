@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "id": "N3-U06-L03",
+  "title": "Concisão x explicitação necessária",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Reduzir excesso, redundância e perífrases quando houver ganho funcional, preservando condições, evidências, relações e contexto que o leitor precisa.",
+  "competencies": [
+    "detectar excesso sem função",
+    "condensar perífrases e duplicações",
+    "preservar condições e qualificações essenciais",
+    "recuperar informação necessária removida por corte excessivo",
+    "ajustar densidade ao leitor e ao gênero",
+    "justificar o que não deve ser cortado"
+  ],
+  "prerequisites": ["N3-U06-L01", "N3-U06-L02"],
+  "limits": [
+    "texto menor não é automaticamente melhor",
+    "concisão não autoriza omitir qualificação importante",
+    "repetição pode ter função",
+    "não transformar texto explicativo em frase telegráfica",
+    "extensão por si só não pontua"
+  ],
+  "media": {"tts": "opcional", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {
+    "curatedMedia": [],
+    "runtimeResources": [{"type": "TTS_OK", "purpose": "apoio opcional de leitura/comparação"}],
+    "generatedVisualResources": [{"type": "UI_RENDERED_CONCISION_DIFF", "purpose": "comparar corte, perda e informação preservada"}],
+    "productionQueueRequired": false,
+    "publicationDependency": "nenhuma nova mídia humana obrigatória",
+    "decisionRationale": "A competência pode ser ensinada e registrada com texto, comparação de versões e componentes semânticos da interface."
+  },
+  "sequence": [
+    {"id": "L03-B01", "type": "before-after", "before": "A equipe procedeu à realização de uma revisão dos dados antes da publicação do relatório.", "after": "A equipe revisou os dados antes de publicar o relatório.", "preserved": "ação e ordem temporal"},
+    {"id": "L03-B02", "type": "loss-detection", "before": "Caso o sistema permaneça indisponível após as 18h, o prazo poderá ser prorrogado, mas a decisão depende de confirmação técnica.", "badShortening": "O prazo será prorrogado.", "lost": ["condição", "possibilidade", "dependência de confirmação"]},
+    {"id": "L03-C01", "type": "quick-check", "items": [
+      {"question": "Cortar uma condição importante para encurtar é boa concisão?", "correct": false},
+      {"question": "Um detalhe pode precisar permanecer porque muda a interpretação da conclusão?", "correct": true}
+    ]},
+    {"id": "L03-A01", "type": "assessment-cut", "original": "No levantamento realizado durante quatro semanas, 68% dos respondentes disseram preferir o novo horário, mas a pesquisa era voluntária e não representa automaticamente todos os usuários.", "task": "produzir versão mais concisa preservando período, porcentagem e limite da amostra"},
+    {"id": "L03-P01", "type": "open-edit", "prompt": "Edite um trecho longo para reduzir excesso. Registre um corte feito, uma informação deliberadamente mantida e um caso em que uma versão curta demais prejudicaria o leitor.", "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"shorterAlwaysBetter": false, "wordReductionScored": false, "openResponseAutoValidated": false},
+  "completionEvidence": {
+    "clusters": {
+      "controlled": {"evidence": ["L03-A01"], "required": true},
+      "ownEdit": {"evidence": ["L03-P01"], "required": true}
+    },
+    "completionRule": "a concisão só conta como ganho quando o sentido e as qualificações necessárias permanecem disponíveis ao leitor."
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "id": "N3-U06-L04",
+  "title": "Repetição, redundância e coesão lexical",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Distinguir repetição funcional de repetição estagnada e revisar redundância sem destruir referência, precisão, coesão ou ênfase.",
+  "competencies": [
+    "identificar repetição funcional",
+    "detectar redundância sem função",
+    "preservar termos-chave quando a referência exige",
+    "variar formulação sem trocar referente ou sentido",
+    "usar repetição deliberada para contraste ou ênfase",
+    "evitar sinônimo ornamental que cria ambiguidade"
+  ],
+  "prerequisites": ["N3-U06-L01", "N3-U06-L02", "N3-U06-L03", "N2-U05-V01"],
+  "limits": [
+    "repetição não é erro automático",
+    "variedade lexical não é meta absoluta",
+    "sinônimo não é sempre intercambiável",
+    "termo técnico pode precisar repetir",
+    "remoção de redundância não pode apagar relação referencial"
+  ],
+  "media": {"tts": "opcional", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {
+    "curatedMedia": [],
+    "runtimeResources": [{"type": "TTS_OK", "purpose": "apoio opcional de leitura/comparação"}],
+    "generatedVisualResources": [{"type": "UI_RENDERED_REPETITION_FUNCTION_MAP", "purpose": "marcar repetição funcional, redundância e cadeia lexical/referencial"}],
+    "productionQueueRequired": false,
+    "publicationDependency": "nenhuma nova mídia humana obrigatória",
+    "decisionRationale": "A competência pode ser ensinada e registrada com texto, comparação de versões e componentes semânticos da interface."
+  },
+  "sequence": [
+    {"id": "L04-B01", "type": "contrast", "examples": [
+      {"text": "O prazo mudou. O novo prazo termina sexta-feira.", "analysis": "a repetição mantém o referente explícito"},
+      {"text": "O prazo mudou porque houve uma mudança no prazo, e essa mudança do prazo ocorreu após a mudança do sistema.", "analysis": "há redundância e repetição estagnada"},
+      {"text": "Sem dados, não há conclusão forte; sem conclusão forte, não há base para expansão.", "analysis": "repetição deliberada cria paralelismo e ênfase"}
+    ]},
+    {"id": "L04-C01", "type": "quick-check", "items": [
+      {"question": "Trocar um termo técnico por um sinônimo menos preciso só para variar é boa edição?", "correct": false},
+      {"question": "Repetição pode sustentar coesão ou ênfase?", "correct": true}
+    ]},
+    {"id": "L04-A01", "type": "assessment-revision", "text": "A análise mostra um limite. Esse limite afeta a conclusão. O limite não invalida os dados, mas o limite precisa aparecer no resumo.", "task": "reduzir apenas a repetição prejudicial, preservando referência e pelo menos uma ocorrência funcional", "acceptMultipleValid": true},
+    {"id": "L04-P01", "type": "open-edit", "prompt": "Revise um trecho quanto a repetição e redundância. Marque uma repetição mantida por função e uma ocorrência removida ou reformulada por excesso.", "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"repetitionAsAutomaticError": false, "synonymCountScored": false, "openResponseAutoValidated": false},
+  "completionEvidence": {
+    "clusters": {
+      "controlled": {"evidence": ["L04-A01"], "required": true},
+      "ownEdit": {"evidence": ["L04-P01"], "required": true}
+    },
+    "completionRule": "a edição deve preservar cadeias de referência e efeitos úteis, removendo apenas repetição ou redundância que prejudique a função do trecho."
+  }
+}

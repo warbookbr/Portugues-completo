@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "id": "N3-U06-L08",
+  "title": "Consistência editorial, ortografia e consulta qualificada",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Revisar grafia, acentuação, terminologia, siglas, números, títulos e convenções editoriais, usando consulta competente quando memória ou recorte normativo não forem suficientes.",
+  "competencies": [
+    "detectar inconsistência editorial recorrente",
+    "aplicar convenções já ensinadas quando produtivas",
+    "distinguir regra produtiva, convenção editorial, variante e caso de consulta",
+    "consultar grafia ou uso lexical incerto em fonte adequada",
+    "registrar decisão consultada e seu alcance",
+    "padronizar sem converter preferência institucional em regra universal"
+  ],
+  "prerequisites": ["N3-U06-L01", "N3-U06-L07", "N3-U03-V01"],
+  "limits": [
+    "memorização de grafias raras não mede domínio",
+    "consultar pode ser evidência de competência",
+    "convenções institucionais podem variar",
+    "preferência editorial não vira erro universal",
+    "não corrigir variante documentada por reflexo",
+    "não fingir certeza quando o caso está fora do recorte seguro"
+  ],
+  "media": {"tts": "opcional", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {
+    "curatedMedia": [],
+    "runtimeResources": [{"type": "TTS_OK", "purpose": "apoio opcional de leitura/comparação"}],
+    "generatedVisualResources": [
+      {"type": "UI_RENDERED_EDITORIAL_CHECKLIST", "purpose": "acompanhar grafia, terminologia, siglas, números e títulos"},
+      {"type": "UI_RENDERED_CONSULTATION_LOG", "purpose": "registrar dúvida, fonte consultada, decisão e alcance"}
+    ],
+    "productionQueueRequired": false,
+    "publicationDependency": "nenhuma nova mídia humana obrigatória",
+    "decisionRationale": "A competência pode ser ensinada e registrada com texto, comparação de versões e componentes semânticos da interface."
+  },
+  "sequence": [
+    {"id": "L08-B01", "type": "editorial-consistency", "items": [
+      {"text": "O projeto usa 'Programa Alfa' no título e 'programa alfa' como nome oficial em outro ponto.", "task": "decidir padronização conforme convenção definida para o documento"},
+      {"text": "O relatório alterna 'e-mail' e 'email'.", "task": "consultar se a convenção do projeto não estiver registrada antes de escolher"},
+      {"text": "Uma forma aceita no recorte normativo aparece diferente de uma preferência institucional.", "task": "separar variante documentada de convenção local"}
+    ]},
+    {"id": "L08-C01", "type": "quick-check", "items": [
+      {"question": "Consultar uma grafia rara quando há dúvida demonstra falta de domínio?", "correct": false},
+      {"question": "Uma convenção interna pode exigir consistência sem ser regra universal da língua?", "correct": true},
+      {"question": "Se o caso estiver fora do recorte seguro, o sistema deve inventar uma resposta definitiva?", "correct": false}
+    ]},
+    {"id": "L08-A01", "type": "assessment-consultation", "scenario": "texto com uma grafia produtivamente corrigível, uma variante documentada, uma inconsistência de sigla e um caso lexical que exige consulta", "task": "corrigir apenas o que é sustentado, preservar variante legítima, padronizar a sigla e registrar a estratégia de consulta para o caso incerto"},
+    {"id": "L08-P01", "type": "open-editorial-review", "prompt": "Faça uma revisão editorial de um texto novo. Registre pelo menos uma correção segura, uma padronização, uma forma mantida e uma consulta qualificada com o motivo da consulta.", "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"rareSpellingMemoryScored": false, "consultationAllowed": true, "institutionalPreferenceAsUniversalRule": false, "openResponseAutoValidated": false},
+  "completionEvidence": {
+    "clusters": {
+      "controlled": {"evidence": ["L08-A01"], "required": true},
+      "ownReview": {"evidence": ["L08-P01"], "required": true}
+    },
+    "completionRule": "a revisão precisa distinguir correção, convenção, variante e consulta, demonstrando consistência sem produzir falsas regras universais."
+  }
+}

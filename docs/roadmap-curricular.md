@@ -2,7 +2,7 @@
 
 ## Função
 
-Registrar **estado real**, **maturidade**, **marco ativo**, **gates** e **próximo subpasso**. Detalhes pedagógicos pertencem às fontes M1–M4 e aos JSONs, não devem ser duplicados extensamente aqui.
+Registrar **estado real**, **maturidade**, **marco ativo**, **gates** e **próximo subpasso**. Detalhes pedagógicos pertencem às fontes M1–M4 e aos JSONs; não devem ser duplicados extensamente aqui.
 
 ## Escala
 
@@ -10,7 +10,7 @@ Registrar **estado real**, **maturidade**, **marco ativo**, **gates** e **próxi
 M0 esboço → M1 nível → M2 áreas → M3 unidades → M4 lições → M5 conteúdo
 ```
 
-Maturidade curricular ≠ progresso de aluno ≠ prontidão de publicação.
+Maturidade curricular ≠ progresso do aluno ≠ prontidão de publicação.
 
 # Estado macro
 
@@ -26,13 +26,6 @@ Maturidade curricular ≠ progresso de aluno ≠ prontidão de publicação.
 
 **M5 concluído.** 9 unidades + verificações + `N2-EXIT-V01` + checkpoint + transição N2→N3.
 
-```text
-currículo fechado
-≠ publicação pronta
-≠ validação automática plena de escrita/fala aberta
-≠ aprovação automática de aluno individual
-```
-
 ## Nível 3 — Avançado
 
 ```text
@@ -40,86 +33,44 @@ M1 ✓
 M2 ✓ — 10 áreas
 M3 ✓ — 9 unidades
 M4 ✓ — 94 lições + 9 verificações integradas
-M5 em andamento
+M5 — U1–U9 concluídas
 ```
 
-Arquitetura:
+Unidades M5:
 
 ```text
-U1  11 — Leitura crítica de textos longos
-U2  11 — Argumentação avançada
-U3  12 — Sintaxe complexa, norma e efeitos de estrutura
-U4  11 — Fontes múltiplas, síntese e leitura crítica da informação
-U5  12 — Produção longa e gêneros formais/analíticos
-U6   9 — Estilo, precisão e edição avançada
-U7   9 — Comunicação formal e debate estruturado
-U8   8 — Variação, norma, prestígio e identidade
-U9  11 — Literatura, intertextualidade e mídia crítica
+U1 ✓ — Leitura crítica de textos longos
+U2 ✓ — Argumentação avançada
+U3 ✓ — Sintaxe complexa, norma e efeitos de estrutura
+U4 ✓ — Fontes múltiplas, síntese e leitura crítica da informação
+U5 ✓ — Produção longa e gêneros formais/analíticos
+U6 ✓ — Estilo, precisão e edição avançada
+U7 ✓ — Comunicação formal e debate estruturado
+U8 ✓ — Variação, norma, prestígio e identidade
+U9 ✓ — Literatura, intertextualidade e mídia crítica
 ```
 
-### U1 — concluída
+### Integridade da U6
 
-11 lições + `N3-U01-V01`. Leitura longa, implícitos, modalidade, enquadramento, intertextualidade e síntese crítica. Releitura é permitida; inferência exige evidência; velocidade não pontua.
-
-### U2 — concluída
-
-11 lições + `N3-U02-V01`. Tese, cadeia de razões, qualidade/suficiência de evidência, generalização, causalidade, persuasão, objeção e resposta. Posição ideológica não pontua; evidência insuficiente pode ser conclusão correta.
-
-### U3 — concluída
-
-12 lições + `N3-U03-V01`. Gate normativo em `docs/referencias-gramatica-nivel-3-u3.md`.
-
-Status usados:
+A N3-U06 segue `docs/licoes-nivel-3-u6.md` e mantém 9 lições + `N3-U06-V01`:
 
 ```text
-REGRA_PRODUTIVA
-VARIANTE_DOCUMENTADA
-CONVENCAO_FORMAL_EDITORIAL
-CASO_LEXICAL_DE_CONSULTA
-ESCOLHA_ESTILISTICA
+diagnóstico de revisão
+→ precisão lexical, vagueza e ambiguidade
+→ concisão x explicitação necessária
+→ repetição/redundância/coerência lexical
+→ ritmo e paralelismo
+→ ordem, foco e ênfase
+→ voz, tom e consistência de registro
+→ consistência editorial, ortografia e consulta qualificada
+→ edição integrada de texto fornecido e texto próprio
 ```
 
-Preferência institucional não vira regra universal; variante não é corrigida por reflexo; consulta pode ser competência.
+Guard rails centrais: palavra rara não é automaticamente melhor; texto menor não é automaticamente melhor; repetição e passiva não são erros por princípio; preferência editorial não vira regra universal; consulta pode ser competência; quantidade de alterações não mede qualidade; trechos adequados devem poder ser preservados.
 
-### U4 — concluída
+### U9 e multimodalidade
 
-11 lições + `N3-U04-V01`. Conjunto de fontes, circulação, escopo/método, convergência/divergência, evidência, enquadramento, viés qualificado, lacunas, matriz, atribuição e síntese multifuente.
-
-A verificação inclui diferença numérica explicável por escopo/método e divergência real não resolvida. Síntese não fabrica consenso.
-
-### U5 — concluída
-
-12 lições + `N3-U05-V01`.
-
-Núcleo:
-
-- situação de produção;
-- macroplanejamento seletivo;
-- arquitetura de seções/parágrafos;
-- desenvolvimento analítico;
-- integração funcional de fontes;
-- relatório geral;
-- resenha crítica;
-- artigo/proposta/recomendação;
-- comunicação institucional/profissional/pública;
-- retextualização entre gêneros;
-- produção longa A analítica/de estudo com fontes;
-- produção longa B de família formal/pública diferente + revisão cruzada.
-
-A verificação exige duas produções longas próprias de famílias diferentes, ambas com planejamento, primeira versão, revisão e reescrita, além de comparação das decisões entre gêneros.
-
-Guard rails:
-
-- gênero não é template;
-- formalidade máxima não é qualidade;
-- extensão e número de parágrafos não pontuam;
-- vocabulário difícil não é proxy de domínio;
-- fontes não substituem raciocínio;
-- fatos não podem ser inventados;
-- quantidade de alterações não mede reescrita;
-- itens fechados não compensam ausência das duas produções.
-
-Nenhuma nova mídia humana obrigatória foi criada em U1–U5.
+O gate audiovisual/acessibilidade foi satisfeito em `docs/gate-audiovisual-nivel-3-u9.md`. O desenho atual usa representação semântica acessível por texto/UI quando suficiente. Mídia humana controlada só passa a ser exigida quando uma competência depender de fenômeno sensorial real insubstituível.
 
 ## Nível 4 — Domínio
 
@@ -132,31 +83,20 @@ N0 — M5 ✓
 N1 — M5 ✓
 N2 — M5 ✓
 N3 — M1–M4 ✓
-└── M5
-    ├── U1 ✓
-    ├── U2 ✓
-    ├── U3 ✓
-    ├── U4 ✓
-    ├── U5 ✓
-    └── U6 — PRÓXIMO SUBPASSO
+└── M5 unidades U1–U9 ✓
+    └── verificação de saída — PRÓXIMO SUBPASSO
 ```
 
 ## Próximo subpasso
 
 ```text
-N3-U06 — Estilo, precisão e edição avançada
-9 lições + verificação integrada
-```
-
-A U6 deve tratar estilo como **efeito funcional** em contexto: precisão, concisão, paralelismo, ritmo, repetição, modalidade, tom e edição integrada. Não deve impor “texto enxuto” como superior em qualquer gênero nem substituir clareza por vocabulário raro.
-
-Depois:
-
-```text
-N3-U7 → U8 → U9
-→ verificação de saída N3
+N3-EXIT-V01
+→ definir/implementar a verificação integrada de saída do Nível 3
+→ auditar competências oficiais de saída
 → checkpoint N3→N4
 ```
+
+Não criar `content/levels/003-avancado/exit-verification.json` apenas para marcar progresso: primeiro a arquitetura de saída precisa derivar das competências oficiais do N3 e das evidências já exigidas pelas nove unidades.
 
 # Gates
 
@@ -164,9 +104,9 @@ N3-U7 → U8 → U9
 
 Fonte: `docs/referencias-gramatica-nivel-3-u3.md`.
 
-## N3-U9 — audiovisual/acessibilidade — PENDENTE PARA U9
+## N3-U9 — audiovisual/acessibilidade — SATISFEITO
 
-Antes de mídia humana, tentar representação acessível por texto, sequência, quadros, transcrição e UI. Se movimento/som/montagem forem essenciais: `mediaId` antes da produção → fila de mídia. Nunca criar imagem/vídeo só por variedade visual.
+Fonte: `docs/gate-audiovisual-nivel-3-u9.md`.
 
 # Regras de continuidade
 
@@ -182,8 +122,8 @@ Antes de mídia humana, tentar representação acessível por texto, sequência,
 10. Gêneros não são templates rígidos.
 11. Multimodalidade decisiva precisa ser acessível.
 12. `Consultar` pode ser evidência de competência fora do recorte seguro.
-13. Síntese multifuente separa fonte, evidência, incerteza e voz própria.
-14. Revisão longa deve preservar o que já funciona; quantidade de mudanças não mede qualidade.
+13. Revisão deve preservar o que já funciona; quantidade de mudanças não mede qualidade.
+14. Existência de JSON curricular não equivale automaticamente a conteúdo publicado.
 
 # Dependências não curriculares
 
@@ -207,6 +147,7 @@ N3 M2 → docs/areas-nivel-3.md
 N3 M3 → docs/unidades-nivel-3.md
 N3 M4 → docs/licoes-nivel-3.md + docs/licoes-nivel-3-u*.md
 N3-U3 normativo → docs/referencias-gramatica-nivel-3-u3.md
+N3-U9 audiovisual → docs/gate-audiovisual-nivel-3-u9.md
 estado → docs/roadmap-curricular.md
 conteúdo → content/
 ```
