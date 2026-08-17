@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "N4-U07-L08",
+  "title": "Comparar fontes normativas e descritivas + competência de consulta",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Escolher fontes conforme o tipo de dúvida, comparar respostas de escopos diferentes e registrar limites, variantes ou necessidade de consulta sem forçar falsa unanimidade.",
+  "competencies": ["selecionar fonte adequada", "distinguir fonte normativa de descritiva", "comparar escopos", "registrar divergência", "reconhecer quando consultar é a resposta competente"],
+  "prerequisites": ["N4-U07-L01", "N4-U07-L02", "N4-U07-L07", "N4-U05-L05"],
+  "limits": ["autoridade única não resolve toda questão", "fonte confiável pode ser inadequada para a pergunta", "manual institucional não substitui pesquisa de uso", "pesquisa de uso não define sozinha convenção institucional"],
+  "referenceScope": ["docs/referencias-gramatica-nivel-4-u5-u7.md", "docs/referencias-gramatica-nivel-4-u5-u7-atualizacao-2026.md"],
+  "media": {"tts": "opcional", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "REFERENCE_ACCESS", "locations": ["fichas de consulta"]}], "generatedVisualResources": [{"type": "UI_RENDERED_SOURCE_PURPOSE_MATRIX"}, {"type": "UI_RENDERED_CONSULTATION_RECORD"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "a matriz pergunta→fonte→escopo→resposta→limite torna a consulta competência observável."},
+  "sequence": [
+    {"id": "L08-B01", "type": "source-role-cards", "sources": [{"source": "VOLP", "bestFor": "grafia lexical/registro ortográfico"}, {"source": "Manual da Presidência ou manual institucional", "bestFor": "padrão de redação no domínio declarado"}, {"source": "Manual de Comunicação do Senado", "bestFor": "convenções editoriais e casos em que o próprio manual registra alternativas"}, {"source": "pesquisa linguística empírica", "bestFor": "descrição de uso, distribuição e variação no corpus estudado"}]},
+    {"id": "L08-C01", "type": "source-choice-check", "items": [{"question": "Como se registra ortograficamente uma palavra específica?", "expected": "VOLP"}, {"question": "Qual padrão um órgão exige em seus atos?", "expected": "manual/norma institucional aplicável"}, {"question": "Uma colocação pronominal ocorre produtivamente em dados brasileiros?", "expected": "pesquisa descritiva empírica"}]},
+    {"id": "L08-A01", "type": "consultation-workflow", "cases": ["grafia lexical incerta", "regência com divergência documentada", "colocação pronominal em escrita formal versus descrição do uso brasileiro"], "requiredFields": ["pergunta", "fonte escolhida", "por que a fonte é adequada", "resposta", "escopo", "limite/divergência", "decisão final"], "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"timeLimit": false, "singleAuthorityScored": false, "consultationAsFailureScored": false, "openResponseAutoValidated": false},
+  "completionEvidence": {"clusters": {"sourceComparisonConsultation": {"evidence": ["L08-A01"], "required": true}}, "completionRule": "a consulta precisa vincular pergunta e fonte, preservar escopo e registrar divergência/limite quando existente.", "requiresReliableEvaluatorFor": ["adequação da fonte", "qualidade do registro de escopo"]}
+}
