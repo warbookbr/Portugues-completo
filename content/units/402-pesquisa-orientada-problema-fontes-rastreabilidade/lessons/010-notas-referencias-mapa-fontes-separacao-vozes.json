@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "N4-U02-L10",
+  "title": "Notas, referências, mapa de fontes e separação de vozes",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Registrar pesquisa de modo que a origem de afirmações, citações, paráfrases, inferências próprias e dúvidas possa ser reconstruída por outra pessoa.",
+  "competencies": ["registrar identificador/origem", "separar citação e paráfrase", "marcar inferência própria", "preservar contexto e limite", "ligar nota a pergunta/subpergunta", "evitar nota órfã", "reconstruir cadeia de uso"],
+  "prerequisites": ["N4-U02-L01", "N4-U02-L02", "N4-U02-L03", "N4-U02-L04", "N4-U02-L05", "N4-U02-L06", "N4-U02-L07", "N4-U02-L08", "N4-U02-L09"],
+  "limits": ["estilo bibliográfico específico não é objetivo universal", "copiar trechos sem origem não é nota suficiente", "paráfrase ainda exige atribuição", "comentário próprio deve ser distinguível da fonte"],
+  "media": {"tts": "opcional como apoio de acesso", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["fontes", "notas", "instruções", "feedback"], "purpose": "apoio de acesso"}], "generatedVisualResources": [{"type": "UI_RENDERED_RESEARCH_NOTES_MATRIX"}, {"type": "UI_RENDERED_SOURCE_MAP"}, {"type": "UI_RENDERED_VOICE_SEPARATION"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "o fichamento e a separação de vozes são operações textuais e estruturais."},
+  "sequence": [
+    {"id": "L10-B01", "type": "worked-notes", "source": {"id": "R1", "title": "Relatório do piloto", "location": "seção 3, tabela 2"}, "notes": [{"kind": "paraphrase", "text": "O tempo mediano caiu nas duas equipes testadas.", "attribution": "R1", "limit": "apenas equipes A/B; quatro semanas"}, {"kind": "quote-short", "text": "resultado preliminar", "attribution": "R1", "purpose": "preservar qualificação"}, {"kind": "own-inference", "text": "A redução não deve ser generalizada à rede sem nova evidência.", "basis": ["R1 escopo limitado"]}, {"kind": "question", "text": "houve mudança simultânea de equipe?", "status": "buscar confirmação"}]},
+    {"id": "L10-C01", "type": "voice-separation", "items": [{"note": "A fonte diz que o projeto foi excelente.", "status": "ambiguous", "fix": "registrar quem faz a avaliação e em que trecho"}, {"note": "R2, p.4: 61% dos respondentes preferiram o canal digital; pesquisa só com usuários do canal.", "status": "traceable"}, {"note": "Logo, todos os usuários preferem digital.", "status": "unsupported-own-inference"}]},
+    {"id": "L10-A01", "type": "notes-transfer", "sources": [{"id": "A", "title": "registro operacional", "content": "1.240 solicitações; 980 concluídas no período"}, {"id": "B", "title": "pesquisa voluntária", "content": "74 de 96 respondentes avaliaram positivamente; convite apenas a concluintes"}, {"id": "C", "title": "nota pública", "content": "afirma que 'quase todos aprovam' e cita B"}], "tasks": ["criar uma nota de paráfrase para A", "criar nota para B preservando limite", "registrar a relação C→B", "escrever uma inferência própria claramente marcada", "registrar uma dúvida que ainda exige pesquisa"], "recordResponse": true},
+    {"id": "L10-P01", "type": "reflection", "prompt": "Por que separar a voz da fonte da sua própria inferência melhora tanto a integridade quanto a possibilidade de revisar uma pesquisa?", "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"timeLimit": false, "citationStyleScored": false, "noteQuantityScored": false, "openResponseAutoValidated": false},
+  "completionEvidence": {"clusters": {"traceability": {"evidence": ["L10-A01"], "required": true}, "voiceSeparation": {"evidence": ["L10-P01"], "required": true}}, "completionRule": "cada afirmação relevante deve ser rastreável à fonte ou marcada como inferência própria; volume de notas não é critério.", "requiresReliableEvaluatorFor": ["qualidade das notas abertas"]}
+}
