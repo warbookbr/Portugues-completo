@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "id": "N0-U01",
+  "levelId": "N0",
+  "order": 1,
+  "title": "Fala, sons e escrita",
+  "objective": "Construir distinções iniciais entre fala, sons e representação escrita sem antecipar leitura sistemática.",
+  "competencies": [
+    {"id": "N0-U01-C01", "label": "distinguir fala e escrita"},
+    {"id": "N0-U01-C02", "label": "reconhecer relações iniciais entre sons e representação gráfica"}
+  ],
+  "prerequisites": [],
+  "lessons": [
+    {"id": "N0-U01-L01", "order": 1, "title": "Fala e escrita: duas formas relacionadas", "path": "lessons/001-fala-e-escrita.json"}
+  ],
+  "verification": {"id": "N0-U01-V01", "path": "integrated-verification.json"},
+  "publication": {"status": "BLOCKED", "blockers": ["fixture-only", "required-media-pending"]}
+}
