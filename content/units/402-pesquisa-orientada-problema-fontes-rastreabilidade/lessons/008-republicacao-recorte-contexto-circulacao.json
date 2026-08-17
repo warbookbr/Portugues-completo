@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "N4-U02-L08",
+  "title": "Republicação, recorte, contexto perdido e circulação",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Analisar como uma informação muda de contexto ao ser recortada, republicada ou atualizada, preservando conclusões seguras sem presumir intenção manipulativa.",
+  "competencies": ["reconstruir cadeia de circulação", "identificar contexto ausente", "comparar versão inicial e atualização", "avaliar efeito de título/recorte", "distinguir perda de contexto de falsidade automática", "marcar o que permanece seguro"],
+  "prerequisites": ["N4-U02-L07"],
+  "limits": ["recorte não prova má-fé", "popularidade não determina veracidade", "print sem origem pode servir como pista, não confirmação suficiente", "atualização posterior pode mudar conclusão"],
+  "media": {"tts": "opcional como apoio de acesso", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["cadeias de circulação", "instruções", "feedback"], "purpose": "apoio de acesso"}], "generatedVisualResources": [{"type": "UI_RENDERED_CIRCULATION_CHAIN"}, {"type": "UI_RENDERED_CONTEXT_RESTORATION"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "sequências textuais e metadados permitem estudar circulação sem depender de capturas de tela reais."},
+  "sequence": [
+    {"id": "L08-B01", "type": "worked-circulation", "stages": [{"stage": "relatório", "text": "Em duas unidades, atrasos caíram 18% após ajuste de rota; terceira unidade não participou."}, {"stage": "notícia", "text": "Atrasos caem 18% em teste de nova rota."}, {"stage": "card compartilhado", "text": "Nova rota reduz atrasos em 18%."}, {"stage": "comentário", "text": "Está provado que a nova rota funciona em toda a rede."}], "model": ["o número permanece ligado a duas unidades", "a formulação final generaliza além do escopo", "a perda de contexto pode ocorrer sem prova de intenção manipulativa"]},
+    {"id": "L08-C01", "type": "context-safety", "items": [{"evidence": "captura sem data nem origem", "safeUse": "pista para buscar origem, não confirmação"}, {"evidence": "versão arquivada + atualização posterior", "safeUse": "comparar mudanças antes de citar"}, {"evidence": "título diferente com corpo fiel", "safeUse": "analisar enquadramento sem concluir falsidade automaticamente"}]},
+    {"id": "L08-A01", "type": "circulation-transfer", "stages": [{"id": "A", "date": "10/04", "text": "Pesquisa com 160 respondentes encontrou 61% de preferência pelo atendimento digital entre quem usou o canal."}, {"id": "B", "date": "11/04", "text": "Maioria prefere atendimento digital."}, {"id": "C", "date": "18/04", "text": "Atualização: o relatório esclarece que a pesquisa não incluiu não usuários."}, {"id": "D", "date": "20/04", "text": "Imagem compartilhada reutiliza o título de B sem a atualização."}], "tasks": ["ordenar a cadeia", "identificar o contexto perdido em B/D", "explicar o efeito da atualização C", "formular uma conclusão ainda segura", "explicar por que o recorte não prova intenção"], "recordResponse": true},
+    {"id": "L08-P01", "type": "reflection", "prompt": "Explique por que uma informação pode ser literalmente correta e ainda assim induzir uma leitura excessiva quando perde contexto.", "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"timeLimit": false, "popularityScored": false, "recropEqualsManipulation": false, "openResponseAutoValidated": false},
+  "completionEvidence": {"clusters": {"circulation": {"evidence": ["L08-A01"], "required": true}, "context": {"evidence": ["L08-P01"], "required": true}}, "completionRule": "o aluno deve restaurar contexto relevante e calibrar a conclusão sem inferir má-fé automaticamente.", "requiresReliableEvaluatorFor": ["análise de contexto aberta"]}
+}

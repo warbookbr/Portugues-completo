@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "N4-U02-L05",
+  "title": "Autoria, data, origem, versão e transparência",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Avaliar metadados que alteram o significado, o alcance e a possibilidade de uso de uma fonte, distinguindo publicação, atualização e período dos dados.",
+  "competencies": ["identificar autoria individual/institucional", "distinguir data de publicação de período dos dados", "comparar versões", "rastrear origem declarada", "avaliar transparência metodológica básica", "marcar necessidade de confirmação"],
+  "prerequisites": ["N4-U02-L04"],
+  "limits": ["autoria conhecida não garante verdade", "anonimato não torna automaticamente falso", "data recente não corrige método inadequado", "versão mais nova pode mudar apenas parte do conteúdo"],
+  "media": {"tts": "opcional como apoio de acesso", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["fontes simuladas", "instruções", "feedback"], "purpose": "apoio de acesso"}], "generatedVisualResources": [{"type": "UI_RENDERED_SOURCE_METADATA_PANEL"}, {"type": "UI_RENDERED_VERSION_COMPARE"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "painéis de metadados e comparação de versões permitem mostrar exatamente o que muda no uso de uma fonte."},
+  "sequence": [
+    {"id": "L05-B01", "type": "worked-metadata-audit", "sources": [{"title": "Boletim de mobilidade", "author": "Secretaria de Mobilidade", "published": "2026-03-10", "dataPeriod": "2025 inteiro", "version": "v2 corrigida em 2026-03-18", "method": "contagem de embarques; nota metodológica disponível"}, {"title": "Resumo do boletim", "author": "Equipe editorial local", "published": "2026-03-11", "dataPeriod": "não declarado no resumo", "version": "sem histórico", "method": "cita o boletim v1"}], "model": "a data do resumo não significa que os dados sejam de 2026; a v2 do boletim deve ser comparada à v1 antes de reutilizar números citados."},
+    {"id": "L05-C01", "type": "metadata-effect", "items": [{"change": "descobrir que a tabela foi corrigida em versão posterior", "effect": "rever números citados"}, {"change": "descobrir que o autor é institucional", "effect": "não basta para declarar a informação correta"}, {"change": "descobrir que os dados cobrem só um mês", "effect": "limitar generalização temporal"}]},
+    {"id": "L05-A01", "type": "metadata-audit-transfer", "sourceSet": [{"id": "A", "author": "Instituto municipal", "published": "2026-05-02", "dataPeriod": "jan-mar 2026", "version": "2.1", "method": "descrita em anexo"}, {"id": "B", "author": "sem assinatura individual; portal da associação", "published": "2026-05-04", "dataPeriod": "não indicado", "version": "não indicado", "method": "afirma basear-se em A, sem link"}, {"id": "C", "author": "pesquisadora identificada", "published": "2024-09-01", "dataPeriod": "2023", "version": "final", "method": "amostra de outro município"}], "tasks": ["identificar cinco metadados relevantes", "explicar qual fonte exige rastreamento de origem", "explicar qual fonte pode ser útil apesar de mais antiga", "registrar uma pergunta de confirmação antes de usar B"], "recordResponse": true},
+    {"id": "L05-P01", "type": "reflection", "prompt": "Por que 'publicado ontem' e 'dados atuais' não são expressões equivalentes?", "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"timeLimit": false, "recencyAutomaticallyScored": false, "knownAuthorAutomaticallyTrusted": false, "openResponseAutoValidated": false},
+  "completionEvidence": {"clusters": {"metadata": {"evidence": ["L05-A01"], "required": true}, "reasoning": {"evidence": ["L05-P01"], "required": true}}, "completionRule": "o aluno deve usar metadados para ajustar o alcance e a necessidade de confirmação, sem transformar autoria ou recência em garantia automática.", "requiresReliableEvaluatorFor": ["qualidade da análise aberta"]}
+}

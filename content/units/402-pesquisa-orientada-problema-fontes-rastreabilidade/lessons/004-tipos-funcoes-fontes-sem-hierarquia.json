@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "N4-U02-L04",
+  "title": "Tipos e funções de fontes sem hierarquia automática",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Selecionar fontes pela função que podem cumprir na investigação e rejeitar hierarquias automáticas baseadas apenas no rótulo da fonte.",
+  "competencies": ["distinguir fonte primária/secundária sem hierarquia absoluta", "identificar função de registro, análise, contexto, experiência e síntese", "combinar fontes complementares", "reconhecer limites específicos de cada tipo", "evitar prestígio como substituto de avaliação"],
+  "prerequisites": ["N4-U02-L01", "N4-U02-L02", "N4-U02-L03"],
+  "limits": ["fonte primária não é automaticamente verdadeira", "fonte secundária não é automaticamente inferior", "fonte institucional pode ter escopo limitado", "testemunho informa experiência, não necessariamente frequência populacional"],
+  "media": {"tts": "opcional como apoio de acesso", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["cartões de fontes", "instruções", "feedback"], "purpose": "apoio de acesso"}], "generatedVisualResources": [{"type": "UI_RENDERED_SOURCE_FUNCTION_CARDS"}, {"type": "UI_RENDERED_SOURCE_ROLE_MATRIX"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "cartões e matriz funcional permitem comparar fontes sem usar prestígio como atalho."},
+  "sequence": [
+    {"id": "L04-B01", "type": "worked-source-functions", "question": "Como o novo horário de atendimento afetou o serviço?", "sources": [{"source": "registro de atendimentos", "use": "contar eventos registrados", "limit": "não explica experiência de quem não usou"}, {"source": "entrevistas com atendentes", "use": "descrever dificuldades operacionais percebidas", "limit": "não mede frequência por si"}, {"source": "matéria jornalística com entrevistas", "use": "contextualizar debate público", "limit": "seleção editorial não substitui dados originais"}, {"source": "relatório de avaliação", "use": "integrar dados e método declarados", "limit": "deve ser auditado quanto a escopo e critérios"}]},
+    {"id": "L04-C01", "type": "source-fit", "items": [{"claimNeed": "qual era o texto oficial da regra em 2025", "source": "cópia arquivada do regulamento", "fit": "strong"}, {"claimNeed": "como alguns usuários vivenciaram a mudança", "source": "entrevistas identificadas quanto ao recorte", "fit": "strong-with-limits"}, {"claimNeed": "quantos usuários totais foram afetados", "source": "um depoimento individual", "fit": "weak"}]},
+    {"id": "L04-A01", "type": "source-combination", "scenario": "Investigar por que pedidos de suporte aumentaram após mudança de sistema.", "sourceCards": ["logs de chamados", "manual da versão implantada", "pesquisa voluntária de usuários", "entrevista com equipe", "postagem viral sem origem", "análise técnica independente"], "tasks": ["selecionar quatro fontes por função", "explicar o que cada uma pode e não pode sustentar", "rejeitar uma fonte ou usá-la apenas como pista", "explicar por que nenhuma categoria é automaticamente superior"], "recordResponse": true},
+    {"id": "L04-P01", "type": "reflection", "prompt": "Explique uma situação em que uma fonte primária pode ser inadequada para a pergunta e uma fonte secundária pode ser útil.", "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"timeLimit": false, "sourceTypeHierarchyScored": false, "sourceCountScored": false, "openResponseAutoValidated": false},
+  "completionEvidence": {"clusters": {"function": {"evidence": ["L04-A01"], "required": true}, "principle": {"evidence": ["L04-P01"], "required": true}}, "completionRule": "a seleção deve ser funcional e limitada pelo que cada fonte realmente pode sustentar; rótulo prestigioso não basta.", "requiresReliableEvaluatorFor": ["qualidade da seleção aberta"]}
+}

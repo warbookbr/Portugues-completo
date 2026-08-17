@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "N4-U02-L01",
+  "title": "Do tema à necessidade informacional e à pergunta investigável",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Transformar um tema amplo ou uma decisão prática em pergunta investigável e explicitar quais informações são necessárias, laterais ou ainda irrelevantes.",
+  "competencies": ["delimitar problema e finalidade", "formular pergunta respondível", "separar conhecimento prévio de lacuna", "priorizar necessidades informacionais", "revisar escopo quando a pergunta estiver ampla ou estreita demais"],
+  "prerequisites": ["N4-U01-V01"],
+  "limits": ["pergunta difícil não é automaticamente melhor", "pesquisa não começa acumulando links", "curiosidade lateral não deve dominar a investigação", "pergunta pode ser reformulada durante a pesquisa"],
+  "media": {"tts": "opcional como apoio de acesso", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["cenários", "instruções", "feedback"], "purpose": "apoio de acesso"}], "generatedVisualResources": [{"type": "UI_RENDERED_RESEARCH_QUESTION_WORKSPACE"}, {"type": "UI_RENDERED_KNOW_NEED_NOTNOW"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "cenários controlados e quadro de lacunas permitem ensinar delimitação sem busca externa obrigatória."},
+  "sequence": [
+    {"id": "L01-B01", "type": "worked-problem-framing", "scenario": "Uma rede de bibliotecas considera ampliar o horário de sábado e quer saber se a mudança atenderia demanda real sem deslocar recursos de períodos mais usados.", "model": {"theme": "horário de bibliotecas", "decision": "avaliar expansão de sábado", "investigableQuestion": "Que evidências disponíveis indicam demanda adicional aos sábados e quais custos/efeitos operacionais precisam ser conhecidos antes de ampliar o horário?", "needToKnow": ["uso atual por faixa horária", "pedidos não atendidos ou demanda reprimida", "custos e capacidade de equipe", "diferenças entre unidades"], "notNow": ["história completa das bibliotecas", "preferência pessoal por leitura"]}},
+    {"id": "L01-C01", "type": "question-scope-diagnosis", "items": [{"question": "Bibliotecas são importantes?", "status": "too-broad", "reason": "não define decisão, população, evidência nem recorte"}, {"question": "Quantas entradas ocorreram aos sábados nas quatro unidades no último trimestre?", "status": "useful-subquestion", "reason": "é mensurável, mas não responde sozinha à decisão"}, {"question": "Há evidência suficiente para ampliar o horário de sábado nas quatro unidades no próximo semestre, considerando demanda e capacidade operacional?", "status": "investigable", "reason": "liga decisão a evidência e limites"}]},
+    {"id": "L01-A01", "type": "transfer-framing", "scenario": "Uma escola avalia substituir parte dos avisos impressos por mensagens digitais.", "tasks": ["formular uma pergunta investigável", "listar quatro informações necessárias", "listar duas informações laterais que podem esperar", "indicar uma suposição inicial que precisa ser tratada como hipótese, não fato"], "recordResponse": true},
+    {"id": "L01-P01", "type": "reflection", "prompt": "Explique como você saberia que uma pergunta está ampla demais e dê um exemplo de reformulação que melhora a possibilidade de pesquisa sem fingir certeza.", "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"timeLimit": false, "sourceCountScored": false, "questionComplexityScored": false, "openResponseAutoValidated": false},
+  "completionEvidence": {"clusters": {"question": {"evidence": ["L01-A01"], "required": true}, "metacognition": {"evidence": ["L01-P01"], "required": true}}, "completionRule": "a pergunta deve ser investigável e ligada a necessidades informacionais explícitas; complexidade verbal não compensa falta de foco.", "requiresReliableEvaluatorFor": ["qualidade da delimitação aberta"]}
+}

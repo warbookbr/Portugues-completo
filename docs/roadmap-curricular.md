@@ -116,8 +116,8 @@ Decisões estruturais do M4:
 
 ```text
 U1 ✓ — 10 lições + N4-U01-V01
-U2 — PRÓXIMO SUBPASSO
-U3 pendente
+U2 ✓ — 11 lições + N4-U02-V01
+U3 — PRÓXIMO SUBPASSO
 U4 pendente
 U5 pendente
 U6 pendente
@@ -127,6 +127,8 @@ U9 pendente
 ```
 
 U1: `content/units/401-leitura-estrategica-alta-complexidade-revisao-interpretacao/`.
+
+U2: `content/units/402-pesquisa-orientada-problema-fontes-rastreabilidade/`.
 
 O M5 da U1 consolidou os guard rails do nível:
 
@@ -139,6 +141,22 @@ O M5 da U1 consolidou os guard rails do nível:
 - conclusão deve ser calibrada pela força da evidência;
 - nova evidência pode justificar enfraquecer, ampliar, abandonar ou manter uma interpretação;
 - síntese crítica própria e revisão explícita não são compensáveis por tarefas fechadas.
+
+O M5 da U2 consolidou a pesquisa como processo rastreável:
+
+- a busca começa por pergunta e lacuna informacional, não por acúmulo de resultados;
+- plano e consulta podem mudar quando os resultados revelarem nova necessidade;
+- tipo de fonte não cria hierarquia automática de confiabilidade;
+- autoria, data, origem, versão, escopo, método e unidade de análise alteram o uso possível da fonte;
+- afirmações secundárias devem ser rastreadas até origem suficiente quando o contexto exigir;
+- fontes que dependem da mesma origem não são confirmações independentes;
+- republicação/recorte não provam manipulação automaticamente;
+- triangulação preserva divergências e explicações alternativas;
+- notas precisam separar voz da fonte, paráfrase, citação, inferência própria e dúvida;
+- quantidade de fontes não pontua;
+- parar e qualificar pode ser melhor que continuar buscando;
+- `não há evidência suficiente` pode ser conclusão correta;
+- dossiê e decisão de suficiência próprios não são compensáveis por itens fechados.
 
 Gates do N4:
 
@@ -160,28 +178,33 @@ N4 — M1 ✓
         └── M4 ✓
             └── M5
                 ├── U1 ✓
-                └── U2 — PRÓXIMO SUBPASSO
+                ├── U2 ✓
+                └── U3 — PRÓXIMO SUBPASSO
 ```
 
 ## Próximo subpasso
 
 ```text
-N4-U02 M5 — Pesquisa orientada por problema, fontes e rastreabilidade
-→ 11 lições + N4-U02-V01
-→ partir de necessidade informacional explícita
-→ planejar e refinar busca em vez de acumular resultados
-→ distinguir função de fonte de hierarquia automática
-→ avaliar autoria, data, origem, versão, escopo, método e unidade de análise
-→ rastrear afirmações secundárias até a origem quando necessário
-→ preservar divergências e lacunas
-→ registrar notas/referências que permitam reconstruir a origem das afirmações
-→ não premiar quantidade de fontes
+N4-U03 M5 — Argumentação complexa, evidência e responsabilidade epistêmica
+→ 10 lições + N4-U03-V01
+→ partir de problema pesquisado/dossiê controlado
+→ formular tese proporcional à evidência
+→ construir cadeia de afirmação, razão, evidência, inferência e conclusão
+→ ajustar afirmação ao apoio real
+→ tratar generalização, causalidade e explicações alternativas
+→ calibrar certeza e alcance
+→ formular objeção forte sem caricatura
+→ conceder/reformular quando a objeção for válida
+→ analisar persuasão sem distorcer evidência
+→ revisar tese/posição quando nova evidência realmente justificar
+→ produzir argumento próprio em primeira e segunda versão
+→ não pontuar ideologia ou rigidez de posição
 ```
 
 Depois:
 
 ```text
-U3 → U4 → U5 (gate normativo) → U6 → U7 (gate normativo) → U8 → U9 (reavaliar gate de mídia se necessário)
+U4 → U5 (gate normativo) → U6 → U7 (gate normativo) → U8 → U9 (reavaliar gate de mídia se necessário)
 → N4-EXIT-V01
 → checkpoint final do curso
 ```
@@ -209,6 +232,7 @@ U3 → U4 → U5 (gate normativo) → U6 → U7 (gate normativo) → U8 → U9 (
 19. M5 não pode congelar resposta normativa de U5/U7 antes do gate de fontes.
 20. U9 não cria mídia humana por variedade; alvo sensorial real reabre o gate antes da produção.
 21. Mudança de estratégia ou interpretação não pontua por si; manutenção justificada pode ser a melhor decisão.
+22. Fontes dependentes não devem ser contadas como confirmações independentes e a decisão de parar/continuar pesquisando precisa ser justificada pela lacuna, não por quantidade.
 
 # Dependências não curriculares
 
