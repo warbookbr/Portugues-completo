@@ -3,6 +3,7 @@ import { initNarration } from './services/narration-service.js';
 import { initSettings } from './services/settings-service.js';
 import { createContentService } from './services/content-service.js';
 import { createProgressService } from './services/progress-service.js';
+import { createSafeProgressStorage } from './services/progress-storage-service.js';
 import { createProgressSyncService } from './services/progress-sync-service.js';
 import { mountSettingsMenu } from './ui/settings-menu.js';
 import { bindClassicRenderer, documentHtml, homeHtml, unitHtml } from './ui/classic-renderer.js';
@@ -13,7 +14,8 @@ import { decorateClassicProgress } from './ui/classic-progress.js';
 const app = document.getElementById('app');
 const settingsRoot = document.getElementById('settings-root');
 const contentService = createContentService({ basePath: './content' });
-const progressService = createProgressService();
+const progressStorage = createSafeProgressStorage();
+const progressService = createProgressService({ storage: progressStorage });
 const progressSyncService = createProgressSyncService({ progressService });
 
 let course = null;
