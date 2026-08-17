@@ -117,8 +117,8 @@ Decisões estruturais do M4:
 ```text
 U1 ✓ — 10 lições + N4-U01-V01
 U2 ✓ — 11 lições + N4-U02-V01
-U3 — PRÓXIMO SUBPASSO
-U4 pendente
+U3 ✓ — 10 lições + N4-U03-V01
+U4 — PRÓXIMO SUBPASSO
 U5 pendente
 U6 pendente
 U7 pendente
@@ -129,6 +129,8 @@ U9 pendente
 U1: `content/units/401-leitura-estrategica-alta-complexidade-revisao-interpretacao/`.
 
 U2: `content/units/402-pesquisa-orientada-problema-fontes-rastreabilidade/`.
+
+U3: `content/units/403-argumentacao-complexa-evidencia-responsabilidade-epistemica/`.
 
 O M5 da U1 consolidou os guard rails do nível:
 
@@ -158,6 +160,21 @@ O M5 da U2 consolidou a pesquisa como processo rastreável:
 - `não há evidência suficiente` pode ser conclusão correta;
 - dossiê e decisão de suficiência próprios não são compensáveis por itens fechados.
 
+O M5 da U3 consolidou argumentação como responsabilidade sobre evidência:
+
+- tese precisa responder ao problema e ter alcance proporcional ao apoio real;
+- cadeia de afirmação, razão, evidência, inferência e conclusão deve ser reconstruível;
+- dado verdadeiro pode ser irrelevante para uma afirmação específica;
+- generalização e causalidade exigem controle de escopo e explicações alternativas;
+- linguagem epistêmica deve calibrar certeza sem exagero nem cautela vazia;
+- objeção forte deve representar fielmente a posição alheia;
+- concessão precisa alterar de verdade o argumento quando a objeção atingir ponto válido;
+- persuasão pode variar em tom e enquadramento, mas não distorcer fatos, atribuições ou limites;
+- nova evidência pode fortalecer, enfraquecer, suspender ou não alterar a tese;
+- mudança e manutenção de posição só contam quando justificadas pela relação com a evidência;
+- primeira e segunda versão autorais são obrigatórias e não são compensáveis por itens fechados;
+- posição ideológica não é critério de pontuação.
+
 Gates do N4:
 
 - `docs/gate-normativo-nivel-4-u5-u7.md` — **DELIMITADO; pesquisa obrigatória antes de congelar respostas normativas em M5**;
@@ -179,32 +196,32 @@ N4 — M1 ✓
             └── M5
                 ├── U1 ✓
                 ├── U2 ✓
-                └── U3 — PRÓXIMO SUBPASSO
+                ├── U3 ✓
+                └── U4 — PRÓXIMO SUBPASSO
 ```
 
 ## Próximo subpasso
 
 ```text
-N4-U03 M5 — Argumentação complexa, evidência e responsabilidade epistêmica
-→ 10 lições + N4-U03-V01
-→ partir de problema pesquisado/dossiê controlado
-→ formular tese proporcional à evidência
-→ construir cadeia de afirmação, razão, evidência, inferência e conclusão
-→ ajustar afirmação ao apoio real
-→ tratar generalização, causalidade e explicações alternativas
-→ calibrar certeza e alcance
-→ formular objeção forte sem caricatura
-→ conceder/reformular quando a objeção for válida
-→ analisar persuasão sem distorcer evidência
-→ revisar tese/posição quando nova evidência realmente justificar
-→ produzir argumento próprio em primeira e segunda versão
-→ não pontuar ideologia ou rigidez de posição
+N4-U04 M5 — Autoria avançada, gêneros complexos e transferência
+→ 11 lições + N4-U04-V01
+→ partir de projeto textual explícito: finalidade, audiência, gênero, suporte e circulação
+→ aprender gênero pouco familiar por modelos, sem template universal
+→ macroplanejar arquitetura global flexível
+→ desenvolver seções/parágrafos por função e importância
+→ integrar fontes preservando atribuição e voz própria
+→ sustentar exposição/análise longa sem repetição estagnada
+→ trabalhar gêneros acadêmicos gerais sem simular especialização
+→ adaptar a gêneros profissionais/públicos e digitais/híbridos
+→ transferir o mesmo núcleo entre gênero, audiência e meio
+→ executar ciclo longo em primeira versão, reestruturação e segunda versão
+→ não pontuar extensão fixa nem quantidade de mudanças
 ```
 
 Depois:
 
 ```text
-U4 → U5 (gate normativo) → U6 → U7 (gate normativo) → U8 → U9 (reavaliar gate de mídia se necessário)
+U5 (gate normativo) → U6 → U7 (gate normativo) → U8 → U9 (reavaliar gate de mídia se necessário)
 → N4-EXIT-V01
 → checkpoint final do curso
 ```
@@ -233,6 +250,7 @@ U4 → U5 (gate normativo) → U6 → U7 (gate normativo) → U8 → U9 (reavali
 20. U9 não cria mídia humana por variedade; alvo sensorial real reabre o gate antes da produção.
 21. Mudança de estratégia ou interpretação não pontua por si; manutenção justificada pode ser a melhor decisão.
 22. Fontes dependentes não devem ser contadas como confirmações independentes e a decisão de parar/continuar pesquisando precisa ser justificada pela lacuna, não por quantidade.
+23. Em argumentação, tese, objeção, concessão e revisão são avaliadas pelo vínculo com evidência e raciocínio; posição ideológica, agressividade, rigidez ou número de mudanças não são proxies de qualidade.
 
 # Dependências não curriculares
 
