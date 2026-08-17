@@ -44,7 +44,7 @@ export const INTERACTION_BY_PEDAGOGICAL_TYPE_V1 = Object.freeze({
   'adaptation-check': 'CLASSIFY',
   'accessibility-principle-check': 'CLASSIFY',
   'open-interpretation': 'STRUCTURED_RESPONSE',
-  'closed-boundary-check': 'COMPOSITE',
+  'closed-boundary-check': 'CLASSIFY',
   'independent-interpretation': 'STRUCTURED_RESPONSE',
   'multimodal-authored-prototype': 'COMPOSITE',
   'strategic-reading-with-revision': 'STRUCTURED_RESPONSE',
