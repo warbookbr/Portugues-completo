@@ -42,6 +42,12 @@ jobs:
       - name: Test catalog discovery
         run: node scripts/test-content-catalog.mjs
 
+      - name: Test progress engine
+        run: node scripts/test-progress-service.mjs
+
+      - name: Test GitHub Gist service
+        run: node scripts/test-github-service.mjs
+
       - name: Test classic renderer
         run: node scripts/test-classic-renderer.mjs
 
