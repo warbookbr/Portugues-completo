@@ -24,7 +24,7 @@ Português Completo
 - `docs/roadmap-produto.md` — estado e ordem da fase ativa de produto/publicação; **fonte do próximo marco técnico**.
 - `docs/execucao-continua.md` — execução autônoma por marcos autorizados.
 - `.ChatGPT/skills/curricular-orchestration/SKILL.md` — orquestração de marcos longos.
-- `.ChatGPT/skills/course-content-design/SKILL.md` — planejamento e revisão pedagógica, já alinhado aos contratos de produto.
+- `.ChatGPT/skills/course-content-design/SKILL.md` — planejamento e revisão pedagógica, alinhado aos contratos de produto.
 - `.ChatGPT/skills/frontend-visual-check/SKILL.md` — verificação de mudanças visuais relevantes.
 
 ## Curso inteiro
@@ -46,7 +46,7 @@ Estas fontes definem como o currículo fechado vira aplicação:
 - `docs/progresso.md` — significado pedagógico de progresso, domínio, feedback, revisão e gamificação.
 - `docs/persistencia-progresso.md` — schema v1 do Gist, cálculo mecânico de conclusão, gates e sincronização.
 - `docs/avaliacao-ia.md` — contrato neutro de feedback com IA, BYOK, consentimento, request/response e limites de autoridade.
-- `docs/calibracao-produto.md` — protocolo de homologação/calibração progressiva para XP, conquistas, missões, revisão e decisões visuais do modo de estudo.
+- `docs/calibracao-produto.md` — homologação/calibração progressiva; no Clássico registra casos-âncora e revisão, e só depois do gate clássico concretiza XP/missões/conquistas.
 - `docs/validacoes.md` — guard rails atuais e próximos schemas/checagens de integridade.
 
 Regra de leitura para trabalho de produto:
@@ -63,7 +63,7 @@ roadmap-produto
 → validações
 ```
 
-Durante homologação de atividade, lição, verificação ou unidade que possa afetar XP, revisão, missões, conquistas ou experiência dos modos, `docs/calibracao-produto.md` é leitura obrigatória.
+Durante homologação de atividade, lição, verificação ou unidade, `docs/calibracao-produto.md` é leitura obrigatória para revisão e registro de casos-âncora. Antes do gate `CLÁSSICO HOMOLOGADO`, não transformar esse processo em implementação de XP.
 
 ## Nível 0
 
@@ -207,14 +207,23 @@ Resumo:
 ```text
 P1 schemas + validadores de contrato
 → P2 ContentService/normalizador
-→ P3 manifests unit.json + catálogo course.json
-→ P4 renderer real + primeiras âncoras de homologação
-→ P5 ProgressService + Gist + calibração de revisão
-→ P6 modos Clássico/Gamificado + primeira economia calibrada
-→ P7 feedback com IA
-→ P8 ampliação do catálogo + recalibração incremental
-→ P9 mídia/publicação
-→ P10 testes + calibração global
+→ P3 manifests + catálogo inicial
+→ P4 renderer real do Clássico
+→ P5 ProgressService + revisão + Gist
+→ P6 feedback por IA no Clássico
+→ P7 ampliação do catálogo Clássico N0→N4
+→ P8 mídia + prontidão de publicação do Clássico
+→ P9 homologação end-to-end do Clássico
+→ GATE: CLÁSSICO HOMOLOGADO
+→ P10 Modo Gamificado
+→ P11 homologação/calibração global do Gamificado
+```
+
+Regra estratégica:
+
+```text
+concluir e homologar o CLÁSSICO
+→ só então implementar o GAMIFICADO
 ```
 
 Não iniciar reescrita curricular em massa para atender ao renderer; usar adapters/manifests conforme `docs/contrato-conteudo.md`.
