@@ -2,16 +2,21 @@
 
 ## Objetivo
 
-Este documento define o contrato funcional do **Português Completo** para:
+Este documento define o contrato pedagógico/funcional do **Português Completo** para:
 
 - progresso curricular;
 - evidência e domínio pedagógico;
 - feedback ao aluno;
 - revisão;
-- uso futuro de IA em respostas complexas;
+- uso de IA em respostas complexas;
 - gamificação opcional.
 
-Ele complementa `docs/arquitetura.md` e deve orientar a implementação futura do `ProgressService`, dos renderers de atividade e das interfaces dos modos Clássico e Gamificado.
+Contratos técnicos complementares:
+
+- `docs/exercicios.md` — atividade, interação, avaliação e evidência;
+- `docs/persistencia-progresso.md` — schema do Gist e cálculo mecânico de conclusão;
+- `docs/avaliacao-ia.md` — request/response, consentimento e limites da IA;
+- `docs/contrato-conteudo.md` — normalização de `completionEvidence` e conteúdo para runtime.
 
 A regra central é:
 
@@ -38,8 +43,6 @@ Essas três dimensões podem se relacionar, mas não devem ser confundidas.
 
 ## Separação das três fontes de estado
 
-O sistema deve manter separadas pelo menos três dimensões.
-
 ### 1. Progresso curricular
 
 Responde:
@@ -53,7 +56,7 @@ Exemplos:
 - lições iniciadas;
 - lições concluídas;
 - verificações realizadas;
-- próximo conteúdo disponível.
+- próximo conteúdo recomendado.
 
 ### 2. Evidência e domínio
 
@@ -75,7 +78,7 @@ Responde:
 
 > Quais elementos motivacionais do modo Gamificado foram obtidos?
 
-Exemplos futuros:
+Exemplos:
 
 - XP;
 - conquistas;
@@ -87,14 +90,12 @@ Gamificação pode consumir eventos do progresso pedagógico, mas **não pode al
 
 ## Estados de uma lição
 
-O estado curricular da lição deve ser pequeno e objetivo:
-
 ```text
 NAO_INICIADA
 → o aluno ainda não começou
 
 EM_ESTUDO
-→ o aluno começou, mas ainda não cumpriu os requisitos de conclusão
+→ começou, mas ainda não cumpriu os requisitos de conclusão
 
 CONCLUIDA
 → os requisitos curriculares da lição foram percorridos/registrados
@@ -109,30 +110,28 @@ Uma lição pode estar concluída e ainda conter:
 - evidência aguardando validação;
 - produção aberta registrada, mas não validada globalmente.
 
+O cálculo mecânico fica em `docs/persistencia-progresso.md`.
+
 ## Estados de evidência
-
-Cada atividade ou requisito pedagógico relevante pode produzir um estado de evidência.
-
-Estados recomendados:
 
 ```text
 NAO_OBSERVADA
 → ainda não existe tentativa/evidência
 
 PRATICADA
-→ o aluno executou a tarefa, mas a evidência ainda não sustenta demonstração suficiente
+→ a tarefa foi executada, mas a evidência ainda não sustenta demonstração suficiente
 
 DEMONSTRADA
-→ há evidência suficiente segundo a política declarada da atividade
+→ há evidência suficiente segundo a política declarada
 
 VALIDACAO_PENDENTE
 → existe produção/tentativa registrada, mas a qualidade relevante exige avaliador confiável
 
 REVISAO_RECOMENDADA
-→ há evidência de dificuldade, instabilidade ou perda de desempenho que justifica nova prática
+→ há dificuldade, instabilidade ou perda de desempenho que justifica nova prática
 ```
 
-Uma tentativa pode registrar mais de um fato ao mesmo tempo. Exemplo:
+Uma tentativa pode registrar mais de um fato ao mesmo tempo:
 
 ```text
 atividade realizada
@@ -142,8 +141,6 @@ atividade realizada
 ```
 
 ## Estados de competência
-
-Para apresentar evolução sem falsa precisão matemática, a competência pode usar uma escala qualitativa:
 
 ```text
 NOVA
@@ -159,43 +156,65 @@ CONSOLIDADA
 → evidência reaparece com sucesso em revisão ou transferência posterior
 ```
 
-`CONSOLIDADA` exige nova evidência relevante; não deve surgir apenas porque passou tempo ou porque o aluno acumulou XP.
+`CONSOLIDADA` exige nova evidência relevante; não surge só porque passou tempo ou porque o aluno acumulou XP.
 
-Quando uma competência depende de avaliação ainda não disponível, a interface pode apresentar o domínio principal como `EM_DESENVOLVIMENTO` e mostrar separadamente `VALIDACAO_PENDENTE` para a evidência correspondente, em vez de inventar aprovação.
+Quando uma competência depende de avaliação ainda não disponível, a interface pode apresentar `EM_DESENVOLVIMENTO` e mostrar separadamente `VALIDACAO_PENDENTE` para a evidência correspondente.
 
 ## Conclusão de lição versus domínio
 
-O sistema deve preservar esta distinção:
-
 ```text
 lição concluída
-→ o percurso e as evidências obrigatórias foram realizados/registrados
+→ percurso e evidências obrigatórias foram realizados/registrados segundo a política de conclusão
 
 domínio demonstrado
-→ a evidência satisfez os critérios pedagógicos aplicáveis
+→ evidência satisfez os critérios pedagógicos aplicáveis
 ```
 
-Portanto, concluir uma lição não exige que toda resposta aberta receba uma aprovação automática inexistente.
-
-Quando uma lição possui uma produção que exige avaliador confiável:
+Quando uma produção exige avaliador confiável:
 
 ```text
 aluno realiza a produção
 → produção é registrada
 → feedback disponível é entregue
 → evidência recebe VALIDACAO_PENDENTE
-→ a lição pode seguir a regra curricular declarada sem fingir validação global
+→ a lição pode ser concluída como percurso quando o cluster permitir PENDING_ALLOWED
+→ domínio não é inventado
 ```
 
-A política exata de conclusão deve respeitar os campos e limites declarados pelo próprio conteúdo.
+As políticas normalizadas são:
+
+```text
+DEMONSTRATED_REQUIRED
+PENDING_ALLOWED
+ATTEMPT_REQUIRED
+```
+
+Detalhes em `docs/contrato-conteudo.md` e `docs/persistencia-progresso.md`.
+
+## Flexibilidade e gates
+
+A progressão usa **gates suaves por padrão**.
+
+```text
+pré-requisito ainda frágil/pendente
+→ avisar
+→ recomendar revisão
+→ permitir exploração posterior quando a atividade continua compreensível
+```
+
+Gate duro só deve existir quando a tarefa realmente depende de pré-requisito/recurso indispensável ou quando o currículo explicitamente exigir bloqueio.
+
+Nenhum gate duro pode ser criado por XP, streak, missão ou conquista.
+
+Explorar conteúdo posterior não transforma automaticamente níveis/unidades anteriores em dominados.
 
 ## Modelo de feedback
 
-O feedback deve ser escolhido conforme o tipo real de tarefa.
+O feedback é escolhido conforme o tipo real de tarefa.
 
 ### Nível A — feedback determinístico
 
-Usado quando existe resposta ou condição verificável de forma confiável.
+Usado quando existe resposta/condição verificável de forma confiável.
 
 Exemplos:
 
@@ -203,19 +222,19 @@ Exemplos:
 - classificação;
 - correspondência;
 - sequência com solução definida;
-- identificação de item explícito;
-- transformação com regra fechada quando o recorte permite correção automática.
+- identificação explícita;
+- transformação com regra fechada.
 
-O sistema deve tentar informar:
+Estrutura preferida:
 
 ```text
 resultado
 → o que estava correto/incorreto
-→ qual princípio explica isso
+→ princípio que explica
 → próximo passo curto
 ```
 
-Evitar feedback que seja apenas:
+Evitar apenas:
 
 ```text
 Errado.
@@ -224,107 +243,83 @@ Tente novamente.
 
 ### Nível B — feedback estruturado por critérios
 
-Usado quando a resposta é aberta, mas a atividade exige componentes observáveis definidos.
+Usado quando a resposta é aberta, mas exige componentes observáveis definidos.
 
 Exemplos:
 
-- apresentar tese + evidência + justificativa;
-- separar fato, inferência e limite;
-- identificar fonte + função + escopo;
-- registrar objeção + resposta;
-- produzir revisão justificando mudanças.
+- tese + evidência + justificativa;
+- fato + inferência + limite;
+- fonte + função + escopo;
+- objeção + resposta;
+- revisão + justificativa.
 
-O sistema pode verificar presença/estrutura de componentes quando isso for confiável e dar feedback localizado, por exemplo:
+O sistema pode validar partes estruturais quando isso for confiável e dar feedback localizado.
 
-```text
-A tese está explícita.
-A evidência foi citada.
-Falta explicar como essa evidência sustenta a conclusão.
-```
-
-Detectar presença estrutural não autoriza automaticamente concluir que a qualidade global está correta.
+Detectar presença de componente não autoriza concluir automaticamente que a qualidade global está correta.
 
 ### Nível C — feedback de produção complexa
 
-Usado para tarefas em que várias respostas podem ser defensáveis e a qualidade depende de relações de sentido.
+Usado quando várias respostas podem ser defensáveis e a qualidade depende de relações de sentido.
 
 Exemplos:
 
 - interpretação literária aberta;
 - argumentação longa;
-- síntese de múltiplas fontes;
+- síntese multifuente;
 - produção textual extensa;
 - edição autoral complexa;
-- avaliação global de adequação/estilo;
-- produção oral cuja inteligibilidade/prosódia seja relevante.
+- adequação/estilo;
+- produção oral quando qualidade real precisa ser julgada.
 
-Nesses casos, o feedback deve ser baseado em **critérios**, não em comparação literal com uma resposta-modelo.
-
-O diagnóstico ideal deve tentar responder:
+Diagnóstico ideal:
 
 ```text
 o que o aluno conseguiu fazer
-→ o que ficou incompleto ou frágil
-→ onde está a evidência do problema
-→ qual critério foi afetado
-→ qual é o próximo passo de revisão
+→ o que ficou incompleto/frágil
+→ evidência do problema
+→ critério afetado
+→ próximo passo de revisão
 ```
 
 ## Uso de IA no feedback
 
-A IA poderá apoiar principalmente o Nível C e, quando útil, o Nível B.
+A IA apoia principalmente Nível C e, quando útil, Nível B.
 
-A entrada para o avaliador de IA deve incluir somente o contexto necessário, como:
+A entrada inclui somente contexto necessário, objetivo, enunciado, materiais, critérios, limites e resposta.
 
-- objetivo da atividade;
-- enunciado;
-- material-base necessário;
-- critérios/rubrica;
-- limites de avaliação;
-- resposta do aluno;
-- indicação do que pode ou não ser validado automaticamente.
+A IA é **avaliador assistivo**, não fonte infalível.
 
-A IA deve ser tratada como **avaliador assistivo**, não como fonte infalível.
-
-### Regra de segurança pedagógica
-
-Se o conteúdo declarar algo equivalente a:
+Se o conteúdo/política declarar equivalente a:
 
 ```text
 automaticValidation: false
 requiresReliableEvaluatorFor: [...]
 ```
 
-uma resposta de IA pode fornecer feedback formativo, mas **não deve, por padrão, transformar sozinha a evidência em `DEMONSTRADA`**.
-
-Nesse caso:
+então:
 
 ```text
-resposta do aluno
-→ IA fornece diagnóstico/feedback
+IA fornece diagnóstico/feedback
 → evidência continua VALIDACAO_PENDENTE
-→ validação final depende da política futura de avaliador confiável
 ```
 
-No futuro, categorias específicas podem receber validação assistida por IA somente depois de critérios suficientemente claros, testes e calibração demonstrarem confiabilidade aceitável. Essa mudança deve ser explícita; não pode acontecer apenas porque a integração técnica existe.
+A IA não grava progresso diretamente. O `ProgressService` aplica somente as transições permitidas pela política.
+
+Contrato completo em `docs/avaliacao-ia.md`.
 
 ### Falha ou ausência de IA
 
-A indisponibilidade de IA não deve apagar trabalho do aluno.
-
-Se uma atividade puder ser concluída pedagogicamente sem avaliação imediata:
+A indisponibilidade de IA não apaga trabalho do aluno.
 
 ```text
 resposta registrada
-→ estado VALIDACAO_PENDENTE
-→ aluno pode continuar conforme a regra da atividade
+→ pending quando aplicável
+→ aluno pode continuar segundo a regra da atividade
 ```
 
-Se a avaliação for indispensável antes de avançar, a interface deve explicar a dependência em vez de fabricar resultado.
+Se avaliação for indispensável antes de uma ação específica, a interface explica a dependência em vez de fabricar resultado.
 
 ## Feedback após erro
-
-Erro deve gerar oportunidade de aprendizagem.
 
 Fluxo preferido:
 
@@ -336,108 +331,105 @@ tentativa
 → nova tentativa ou continuação conforme a atividade
 ```
 
-O sistema não deve punir erro pedagógico com:
+Não punir erro pedagógico com:
 
-- perda de acesso ao conteúdo;
+- perda de acesso;
 - espera artificial;
-- perda de progresso curricular já válido;
-- bloqueio por "vidas";
-- redução de domínio que não corresponda a nova evidência real.
+- perda de progresso válido;
+- vidas;
+- redução de domínio sem nova evidência real.
 
-Uma nova tentativa correta após revisão pode ser uma evidência pedagógica mais valiosa do que um primeiro acerto casual.
+Uma nova tentativa correta após revisão pode ser evidência mais valiosa que um primeiro acerto casual.
 
 ## Dicas, consulta e replay
 
-Consultar material, reler, ouvir novamente ou usar uma dica não deve ser tratado automaticamente como fracasso.
+Consultar material, reler, ouvir novamente ou usar dica não é fracasso automático.
 
-A atividade pode registrar o processo quando pedagogicamente relevante:
+O processo pode registrar:
 
 ```text
 respondeu sem apoio
 respondeu após dica
 respondeu após releitura
+consultou fonte permitida
 revisou a própria resposta
 ```
 
-Esses dados podem melhorar feedback e recomendação de revisão, mas não devem virar julgamento moral sobre o aluno.
+Esses dados podem melhorar feedback/revisão, mas não viram julgamento moral.
 
-Quando o próprio currículo permite consulta, replay ou revisão, o sistema deve preservar essa permissão.
+Quando o currículo permite consulta/replay/revisão, o sistema preserva essa permissão.
 
 ## Revisão
 
-O Português Completo deve oferecer uma fila de revisão separada de "continuar o curso".
+Existe uma fila de revisão separada de “continuar o curso”.
 
-A revisão pode ser acionada por:
+Pode ser acionada por:
 
-- erro ou dificuldade relevante;
-- uso repetido de ajuda em uma competência ainda instável;
-- `REVISAO_RECOMENDADA` declarado pelo sistema;
-- nova tentativa após algum intervalo;
-- competência pré-requisito que reaparece em conteúdo posterior;
-- pedido voluntário do aluno;
-- necessidade de transferência para contexto diferente.
+- erro/dificuldade relevante;
+- uso repetido de ajuda em competência instável;
+- `REVISAO_RECOMENDADA`;
+- nova tentativa após intervalo;
+- pré-requisito que reaparece;
+- pedido voluntário;
+- necessidade de transferência.
 
-A primeira versão não precisa fixar um algoritmo rígido de repetição espaçada.
-
-O contrato inicial é:
+Contrato:
 
 ```text
 necessidade detectada
-→ item entra na fila de revisão
+→ entra na fila
 → revisão produz nova evidência
-→ estado da competência é recalculado a partir dessa evidência
+→ competência é recalculada
 ```
 
-A implementação futura pode ordenar a fila por prioridade usando fatores como recência, dificuldade observada, dependências e histórico, sem transformar uma fórmula arbitrária em verdade pedagógica.
+O schema da fila e razões iniciais ficam em `docs/persistencia-progresso.md`.
+
+A ordem pode evoluir por recência, dificuldade, dependências e histórico sem transformar fórmula arbitrária em verdade pedagógica.
 
 ## Consolidação
 
-Uma competência pode passar de `DEMONSTRADA` para `CONSOLIDADA` quando houver nova evidência suficiente em outro momento ou contexto.
+Uma competência passa de `DEMONSTRADA` para `CONSOLIDADA` quando há nova evidência suficiente em outro momento/contexto.
 
-Boas fontes de consolidação incluem:
+Boas fontes:
 
 - revisão posterior bem-sucedida;
-- aplicação da mesma competência em nova tarefa;
-- transferência para outro gênero/contexto;
-- verificação de unidade ou nível;
-- recuperação bem-sucedida após dificuldade anterior.
+- aplicação em nova tarefa;
+- transferência;
+- verificação de unidade/nível;
+- recuperação após dificuldade.
 
 Não consolidar apenas por:
 
-- quantidade de XP;
-- número de dias seguidos;
-- tempo desde a primeira tentativa;
-- conclusão visual de uma barra de progresso.
+- XP;
+- número de dias;
+- passagem de tempo;
+- barra de progresso visual.
 
 ## Regressão e dificuldade posterior
 
-Domínio não precisa ser tratado como estado irreversível.
-
-Se evidência posterior mostrar dificuldade significativa, o sistema pode marcar `REVISAO_RECOMENDADA` sem apagar o histórico anterior.
-
-Exemplo:
+Domínio não é necessariamente irreversível.
 
 ```text
 competência demonstrada anteriormente
 → dificuldade relevante em nova aplicação
 → histórico permanece
-→ revisão é recomendada
-→ nova evidência atualiza o estado apresentado
+→ revisão recomendada
+→ nova evidência atualiza estado apresentado
 ```
 
-O histórico permite distinguir "nunca aprendeu" de "já demonstrou, mas precisa recuperar".
+O histórico distingue “nunca demonstrou” de “já demonstrou, mas precisa recuperar”.
 
 ## Modo Clássico
 
-No modo Clássico, o aluno deve receber todo o suporte pedagógico sem depender de gamificação.
+O aluno recebe todo suporte pedagógico sem gamificação.
 
-A experiência pode mostrar:
+Pode mostrar:
 
 - onde parou;
 - progresso curricular;
 - competências em desenvolvimento;
-- revisões recomendadas;
-- feedback das atividades;
+- revisões;
+- feedback;
 - evidências pendentes;
 - conteúdo concluído.
 
@@ -445,9 +437,9 @@ O modo Clássico **não acumula XP ocultamente** e não exige missões, conquist
 
 ## Modo Gamificado
 
-O modo Gamificado adiciona uma camada motivacional sobre os mesmos eventos pedagógicos.
+Adiciona camada motivacional sobre os mesmos eventos pedagógicos.
 
-A primeira versão poderá usar:
+Pode usar:
 
 - XP;
 - conquistas;
@@ -457,198 +449,189 @@ A primeira versão poderá usar:
 
 ### XP
 
-XP representa participação e realizações dentro da experiência gamificada.
+XP representa participação/realizações do modo de jogo.
 
 XP não representa domínio de português.
 
-Fontes possíveis de XP devem ser positivas e transparentes, por exemplo:
+Fontes possíveis:
 
-- concluir uma lição enquanto o modo Gamificado está ativo;
-- concluir uma revisão;
-- recuperar uma atividade anteriormente difícil;
-- completar uma missão;
-- alcançar um marco definido da jornada.
+- concluir lição com Gamificado ativo;
+- concluir revisão;
+- recuperar atividade anteriormente difícil;
+- completar missão;
+- alcançar marco da jornada.
 
-Evitar premiar apenas volume mecânico de cliques ou repetição sem valor pedagógico.
+Evitar premiar volume mecânico de cliques.
 
 ### Erros e XP
 
-Erro não deve retirar XP já obtido.
+Erro não retira XP já obtido.
 
-O sistema pode valorizar recuperação:
+Pode haver recompensa positiva de recuperação:
 
 ```text
 erro
 → revisão
 → nova tentativa bem-sucedida
-→ recompensa positiva de recuperação, quando aplicável
+→ bônus de recuperação, quando aplicável
 ```
 
 ### Conquistas
 
-Conquistas devem representar marcos compreensíveis, não domínio falso.
-
-Exemplos adequados:
-
-- concluir determinada quantidade de revisões;
-- finalizar uma unidade;
-- recuperar competências marcadas para revisão;
-- concluir atividades de diferentes tipos;
-- atingir um marco de percurso.
-
-Uma conquista nunca deve substituir evidência pedagógica.
-
-### Missões
-
-Missões devem orientar ações úteis e opcionais.
+Devem representar marcos compreensíveis, não domínio falso.
 
 Exemplos:
 
+- concluir revisões;
+- finalizar unidade;
+- recuperar competências;
+- praticar diferentes tipos de atividade;
+- atingir marco de percurso.
+
+### Missões
+
+Orientam ações úteis e opcionais:
+
 ```text
 concluir uma lição
-fazer uma revisão pendente
-retomar uma competência marcada para revisão
-praticar uma habilidade diferente da última sessão
+fazer revisão pendente
+retomar competência marcada
+praticar habilidade diferente da última sessão
 ```
 
-Missão não deve impedir acesso ao curso quando não cumprida.
+Missão não impede acesso ao curso.
 
 ### Sequência de estudo
 
-Uma sequência pode registrar frequência, mas deve evitar punição desproporcional.
+Pode registrar frequência, sem punição desproporcional.
 
-Perder uma sequência não pode:
+Perder sequência não pode:
 
 - apagar progresso;
 - reduzir domínio;
 - bloquear lições;
-- retirar recompensas já adquiridas.
+- retirar recompensas adquiridas.
 
 ## Troca entre Clássico e Gamificado
 
-O progresso pedagógico é preservado integralmente em qualquer troca.
-
 ### Clássico → Gamificado
 
-Ao ativar o Gamificado:
-
-- lições concluídas continuam concluídas;
-- competências demonstradas continuam demonstradas;
-- revisões continuam pendentes quando aplicável;
-- evidências anteriores continuam válidas;
-- **XP não é reconstruído retroativamente** para o período em que o aluno escolheu estudar no modo Clássico.
-
-O registro gamificado começa a partir da ativação.
-
-Marcos pedagógicos antigos podem aparecer como histórico do curso, mas não devem gerar uma pontuação retroativa inventada.
+- progresso pedagógico permanece;
+- evidências/revisões permanecem;
+- **XP não é reconstruído retroativamente**;
+- gamificação começa/retoma a partir da ativação.
 
 ### Gamificado → Clássico
 
-Ao voltar ao Clássico:
-
-- o progresso pedagógico continua igual;
-- dados gamificados já conquistados podem ser preservados para eventual retorno;
-- XP, missões e conquistas deixam de ser necessários para a experiência atual;
-- nenhuma mecânica de jogo deve continuar bloqueando ou condicionando o estudo.
+- progresso pedagógico permanece;
+- dados gamificados podem ser preservados;
+- mecânicas de jogo deixam de condicionar a experiência.
 
 ### Retorno ao Gamificado
 
-Se o aluno reativar o Gamificado, os dados gamificados preservados podem continuar de onde pararam.
+Dados gamificados preservados podem continuar de onde pararam.
 
-A troca de modo nunca recalcula domínio pedagógico.
+Troca de modo nunca recalcula domínio.
 
 ## Persistência
 
-A fonte oficial do progresso acadêmico continua sendo o Gist do próprio aluno, conforme `docs/arquitetura.md`.
+A fonte oficial do progresso acadêmico é o Gist do próprio aluno.
 
-O modelo futuro de progresso deve conseguir armazenar separadamente:
+O contrato técnico deixou de ser aberto e está definido em `docs/persistencia-progresso.md`.
+
+Estrutura principal do schema v1:
 
 ```text
 curriculum
 → posição, lições e verificações
 
 evidence
-→ tentativas, estados e referências necessárias
+→ tentativas/estados
 
 competencies
-→ estado atual + histórico mínimo necessário
+→ estado + referências de evidência
 
 review
-→ itens recomendados/pendentes
+→ fila de revisão
+
+responses
+→ somente produções que precisam ser preservadas
 
 gamification
-→ somente quando houver dados do modo Gamificado
+→ somente camada de jogo
 ```
 
-A preferência de modo de estudo é configuração de experiência e pode permanecer em armazenamento local conforme a arquitetura; ela não deve alterar a fonte de verdade do progresso pedagógico.
+A preferência de modo de estudo é configuração de experiência e pode permanecer local.
 
 A API key de IA nunca pertence ao objeto de progresso nem ao Gist.
 
 ## Privacidade e minimização de dados
 
-O sistema deve armazenar somente o necessário para:
+Armazenar somente o necessário para:
 
-- retomar o curso;
+- retomar curso;
 - reconstruir progresso;
 - sustentar feedback/revisão;
-- preservar evidências quando necessário;
-- sincronizar gamificação se o aluno usar esse modo.
+- preservar evidência quando necessário;
+- sincronizar gamificação usada.
 
-Não armazenar automaticamente texto integral de toda interação se um resumo/estado for suficiente.
+Não armazenar automaticamente texto integral de toda interação.
 
-Respostas abertas que precisem ser preservadas como evidência devem ser tratadas explicitamente como tal.
+Respostas abertas são preservadas apenas quando necessárias como evidência, rascunho retomável ou objeto de revisão.
 
-## Regras para o renderer futuro
+## Regras para o renderer
 
-O renderer não deve assumir que toda atividade termina em `correto` ou `incorreto`.
+O renderer não assume que toda atividade termina em `correto`/`incorreto`.
 
-Ele precisa conseguir representar pelo menos:
+Precisa representar:
 
-- resultado automático correto/incorreto quando aplicável;
+- resultado automático;
 - feedback por critério;
 - nova tentativa;
 - resposta registrada;
 - validação pendente;
 - revisão recomendada;
 - evidência demonstrada;
-- dica/consulta permitida;
-- estado indisponível sem fabricar resultado.
+- dica/consulta/replay permitidos;
+- falha de IA/sincronização sem fabricar resultado.
 
-Também deve conseguir mostrar os mesmos estados pedagógicos nos dois modos sem duplicar o conteúdo.
+O contrato de interações fica em `docs/exercicios.md`.
 
-## Regras para o ProgressService futuro
+## Regras para o ProgressService
 
 O `ProgressService` deve:
 
-- ser a fonte de coordenação do progresso pedagógico no frontend;
+- coordenar progresso pedagógico;
 - não depender de XP para concluir conteúdo;
-- registrar eventos de aprendizagem e evidência;
-- manter histórico suficiente para revisão e recuperação;
+- registrar eventos/evidência;
+- manter histórico mínimo suficiente;
 - expor estados de lição, evidência e competência;
-- permitir que a gamificação consuma eventos sem controlar domínio;
-- sincronizar apenas dados apropriados com o `GitHubService`/Gist;
-- nunca receber nem persistir API key de IA.
+- calcular clusters de conclusão;
+- alimentar revisão;
+- permitir gamificação como consumidora de eventos;
+- sincronizar apenas dados apropriados via GitHub/Gist;
+- nunca receber/persistir API key de IA;
+- resolver conflitos sem apagar silenciosamente produções do aluno.
 
-## Decisões ainda abertas para implementação
+Detalhes técnicos em `docs/persistencia-progresso.md`.
 
-Este documento fecha o **comportamento**, mas não congela números ou componentes visuais prematuramente.
+## Decisões calibráveis durante implementação/teste
 
-Ainda podem ser definidos durante implementação/teste:
+O comportamento estrutural está fechado. Permanecem calibráveis sem alterar o contrato:
 
 - valores exatos de XP;
 - catálogo inicial de conquistas;
-- frequência e quantidade de missões;
-- regra visual de sequência;
-- algoritmo de prioridade da fila de revisão;
-- formato exato do JSON de progresso;
+- frequência/quantidade de missões;
+- apresentação visual de streak;
+- algoritmo fino de prioridade da fila de revisão;
 - componente visual para seleção dos modos;
-- quais categorias, após calibração, podem usar IA também como validação e não apenas feedback.
+- quais classes de atividade, após testes de confiabilidade, podem permitir `ASSISTED_VALIDATION` por IA.
 
 Essas escolhas não podem contrariar os princípios deste documento.
 
 ## Regra de fechamento
 
-O sistema deve sempre conseguir responder separadamente:
+O sistema deve responder separadamente:
 
 ```text
 O aluno percorreu o quê?
@@ -664,4 +647,4 @@ O que ganhou no modo de jogo?
 → gamificação
 ```
 
-Se uma implementação misturar essas respostas em uma única pontuação, ela está violando o contrato de progresso do projeto.
+Se uma implementação misturar essas respostas em uma única pontuação, viola o contrato de progresso.
