@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "N4-U07-L02",
+  "title": "Norma-padrão, norma editorial, convenção de gênero e instituição",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Distinguir regra produtiva, variante documentada e convenções formais/editoriais ou institucionais, aplicando cada exigência somente ao domínio em que ela foi definida.",
+  "competencies": ["classificar exigências linguísticas por status", "reconhecer variante documentada", "aplicar convenção declarada", "evitar universalização de manual institucional", "justificar resposta proporcional"],
+  "prerequisites": ["N4-U07-L01", "N4-U05-L05"],
+  "limits": ["convenção institucional não vira superioridade linguística", "variante documentada não recebe gabarito único genérico", "preferência editorial só pode ser cobrada quando declarada", "não ampliar o gate normativo"],
+  "referenceScope": ["docs/referencias-gramatica-nivel-4-u5-u7.md", "docs/referencias-gramatica-nivel-4-u5-u7-atualizacao-2026.md"],
+  "media": {"tts": "opcional", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [], "generatedVisualResources": [{"type": "UI_RENDERED_NORM_STATUS_BADGE"}, {"type": "UI_RENDERED_SCOPE_BOUNDARY_MAP"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "badges de status e escopo explicitam a força da exigência sem criar uma hierarquia social de variedades."},
+  "sequence": [
+    {"id": "L02-B01", "type": "documented-status-cases", "cases": [{"case": "haver com sentido de existir em contexto inequívoco", "status": "REGRA_PRODUTIVA"}, {"case": "concordância com expressão partitiva + nome plural", "status": "VARIANTE_DOCUMENTADA"}, {"case": "padrão Secom para regência de atender", "status": "CONVENCAO_FORMAL_EDITORIAL", "note": "há divergência documentada; só exigir como padrão declarado"}, {"case": "escolha de forma entre alternativas gramaticais adequadas por tom/ritmo", "status": "ESCOLHA_ESTILISTICA"}]},
+    {"id": "L02-C01", "type": "scope-check", "question": "Um manual de uma instituição recomenda uma forma entre alternativas documentadas. O que isso autoriza?", "correctPrinciple": "exigir a forma dentro do padrão institucional declarado, sem transformá-la em regra universal da língua"},
+    {"id": "L02-A01", "type": "norm-scope-decision", "scenario": "Editar três textos: documento que segue manual institucional declarado, texto geral sem manual e texto autoral em que duas alternativas gramaticais são adequadas.", "tasks": ["classificar a força de cada decisão", "aplicar apenas exigências justificadas", "registrar pelo menos um caso em que não corrigir é a decisão correta"], "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"timeLimit": false, "variantAsErrorScored": false, "formalityMaximizationScored": false, "openResponseAutoValidated": false},
+  "completionEvidence": {"clusters": {"normScope": {"evidence": ["L02-A01"], "required": true}}, "completionRule": "o aluno deve aplicar regra, variante e convenção com alcance correto e reconhecer pelo menos uma situação em que não há correção universal.", "requiresReliableEvaluatorFor": ["classificação de escopo", "proporcionalidade da intervenção"]}
+}
