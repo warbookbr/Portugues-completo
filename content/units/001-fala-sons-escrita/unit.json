@@ -34,8 +34,7 @@
   "publication": {
     "status": "BLOCKED",
     "blockers": [
-      "MIDIA_OBRIGATORIA_PARA_ATIVIDADE: audios controlados de N0-U01 ainda pendentes de producao/validacao",
-      "P4: renderer classico ainda nao implementado"
+      "MIDIA_OBRIGATORIA_PARA_ATIVIDADE: audios controlados de N0-U01 ainda pendentes de producao/validacao"
     ]
   }
 }
