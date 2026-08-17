@@ -118,8 +118,8 @@ Decisões estruturais do M4:
 U1 ✓ — 10 lições + N4-U01-V01
 U2 ✓ — 11 lições + N4-U02-V01
 U3 ✓ — 10 lições + N4-U03-V01
-U4 — PRÓXIMO SUBPASSO
-U5 pendente
+U4 ✓ — 11 lições + N4-U04-V01
+U5 — PRÓXIMO SUBPASSO; gate normativo primeiro
 U6 pendente
 U7 pendente
 U8 pendente
@@ -131,6 +131,8 @@ U1: `content/units/401-leitura-estrategica-alta-complexidade-revisao-interpretac
 U2: `content/units/402-pesquisa-orientada-problema-fontes-rastreabilidade/`.
 
 U3: `content/units/403-argumentacao-complexa-evidencia-responsabilidade-epistemica/`.
+
+U4: `content/units/404-autoria-avancada-generos-complexos-transferencia/`.
 
 O M5 da U1 consolidou os guard rails do nível:
 
@@ -175,9 +177,24 @@ O M5 da U3 consolidou argumentação como responsabilidade sobre evidência:
 - primeira e segunda versão autorais são obrigatórias e não são compensáveis por itens fechados;
 - posição ideológica não é critério de pontuação.
 
+O M5 da U4 consolidou autoria longa e transferência:
+
+- projeto textual explicita finalidade, audiência, gênero, suporte e circulação antes da redação;
+- gênero pouco familiar é aprendido por comparação de modelos e hipóteses revisáveis, não por template universal;
+- macroplanejamento é funcional e pode mudar durante a escrita;
+- desenvolvimento é dimensionado por função, não por número de palavras/parágrafos;
+- citação, paráfrase, resumo, comentário e voz própria permanecem distinguíveis e rastreáveis;
+- exposição/análise longa precisa progredir em vez de repetir a mesma conclusão;
+- gêneros acadêmicos gerais não simulam especialização metodológica inexistente;
+- gêneros profissionais/públicos não simulam autoridade profissional especializada;
+- gêneros digitais/híbridos preservam contexto, versão e circulação sem pontuar polimento gráfico;
+- transferência modifica arquitetura, seleção, explicitação e registro quando necessário sem inventar fatos;
+- primeira versão longa, revisão global, segunda versão e transferência são evidências obrigatórias;
+- quantidade de mudanças e extensão não pontuam; manutenção consciente pode ser a melhor decisão.
+
 Gates do N4:
 
-- `docs/gate-normativo-nivel-4-u5-u7.md` — **DELIMITADO; pesquisa obrigatória antes de congelar respostas normativas em M5**;
+- `docs/gate-normativo-nivel-4-u5-u7.md` — **DELIMITADO; torna-se dependência ativa agora**. Antes de congelar respostas normativas em L5–L7 da U5, executar a pesquisa prevista e produzir a referência resultante;
 - `docs/gate-midia-acessibilidade-nivel-4-u9.md` — **SATISFEITO PARA A ARQUITETURA ATUAL; nenhuma nova mídia humana obrigatória**; reabrir apenas se M5 introduzir alvo sensorial real insubstituível.
 
 O M4 preserva a cobertura 17/17 do N4 e mantém a arquitetura da futura saída em oito agrupamentos integrados.
@@ -197,31 +214,35 @@ N4 — M1 ✓
                 ├── U1 ✓
                 ├── U2 ✓
                 ├── U3 ✓
-                └── U4 — PRÓXIMO SUBPASSO
+                ├── U4 ✓
+                └── U5 — PRÓXIMO SUBPASSO
+                    └── gate normativo → autoria das 11 lições + N4-U05-V01
 ```
 
 ## Próximo subpasso
 
 ```text
-N4-U04 M5 — Autoria avançada, gêneros complexos e transferência
-→ 11 lições + N4-U04-V01
-→ partir de projeto textual explícito: finalidade, audiência, gênero, suporte e circulação
-→ aprender gênero pouco familiar por modelos, sem template universal
-→ macroplanejar arquitetura global flexível
-→ desenvolver seções/parágrafos por função e importância
-→ integrar fontes preservando atribuição e voz própria
-→ sustentar exposição/análise longa sem repetição estagnada
-→ trabalhar gêneros acadêmicos gerais sem simular especialização
-→ adaptar a gêneros profissionais/públicos e digitais/híbridos
-→ transferir o mesmo núcleo entre gênero, audiência e meio
-→ executar ciclo longo em primeira versão, reestruturação e segunda versão
-→ não pontuar extensão fixa nem quantidade de mudanças
+N4-U05 M5 — Edição de alto nível, precisão e consulta linguística
+→ primeiro satisfazer docs/gate-normativo-nivel-4-u5-u7.md
+→ produzir referência linguística rastreável para o recorte de U5/U7
+→ então desenvolver 11 lições + N4-U05-V01
+→ diagnóstico e prioridade antes de editar
+→ revisão global de coerência/progressão/arquitetura
+→ referenciação e ambiguidade
+→ sintaxe/pontuação por efeito
+→ distinguir REGRA_PRODUTIVA, VARIANTE_DOCUMENTADA, CONVENCAO_FORMAL_EDITORIAL, CASO_DE_CONSULTA e ESCOLHA_ESTILISTICA
+→ aplicar apenas o recorte normativo documentado em concordância, regência, crase e colocação
+→ revisar ortografia/consistência com consulta quando necessário
+→ precisão lexical sem rebuscamento
+→ comparar alternativas e preservar trechos adequados
+→ editar texto próprio e alheio sem apagar autoria
+→ fechar com edição integrada, histórico e justificativa
 ```
 
 Depois:
 
 ```text
-U5 (gate normativo) → U6 → U7 (gate normativo) → U8 → U9 (reavaliar gate de mídia se necessário)
+U6 → U7 (reutilizar/estender gate normativo conforme documento) → U8 → U9 (reavaliar gate de mídia se necessário)
 → N4-EXIT-V01
 → checkpoint final do curso
 ```
@@ -251,6 +272,9 @@ U5 (gate normativo) → U6 → U7 (gate normativo) → U8 → U9 (reavaliar gate
 21. Mudança de estratégia ou interpretação não pontua por si; manutenção justificada pode ser a melhor decisão.
 22. Fontes dependentes não devem ser contadas como confirmações independentes e a decisão de parar/continuar pesquisando precisa ser justificada pela lacuna, não por quantidade.
 23. Em argumentação, tese, objeção, concessão e revisão são avaliadas pelo vínculo com evidência e raciocínio; posição ideológica, agressividade, rigidez ou número de mudanças não são proxies de qualidade.
+24. Em autoria longa, gênero, arquitetura, desenvolvimento e transferência são decisões funcionais: extensão, número de seções, quantidade de citações, formalidade máxima ou polimento visual não são proxies de domínio.
+25. Aprender gênero por modelos exige distinguir função recorrente de regra universal; poucos modelos não autorizam generalização automática.
+26. Transferência entre gênero/audiência/meio deve preservar fatos, atribuições e ressalvas decisivas; mudança superficial de vocabulário não basta.
 
 # Dependências não curriculares
 
