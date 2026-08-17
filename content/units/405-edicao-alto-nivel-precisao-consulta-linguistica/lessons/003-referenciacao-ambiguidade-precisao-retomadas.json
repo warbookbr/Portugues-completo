@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "id": "N4-U05-L03",
+  "title": "Referenciação, ambiguidade e precisão de retomadas",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Revisar cadeias de referência para que entidades, termos e relações possam ser recuperados sem ambiguidade indevida, preservando repetição funcional quando ela melhora rastreabilidade.",
+  "competencies": ["mapear referentes", "detectar ambiguidade real", "reformular retomadas", "usar repetição funcional", "distinguir elipse segura de apagamento ambíguo"],
+  "prerequisites": ["N4-U05-L01", "N4-U05-L02", "N4-U01-L04"],
+  "limits": ["pronome não é automaticamente mais elegante", "repetição não é erro automático", "proximidade não decide referente sozinha", "não eliminar termo técnico necessário só para variar vocabulário"],
+  "media": {"tts": "opcional", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["trechos"]}], "generatedVisualResources": [{"type": "UI_RENDERED_REFERENCE_CHAIN_MAP"}, {"type": "UI_RENDERED_BEFORE_AFTER_EDITOR"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "mapa textual de referentes é mais acessível e preciso que imagem estática."},
+  "sequence": [
+    {"id": "L03-B01", "type": "reference-chain-demo", "before": "A coordenação enviou à comissão o parecer depois de revisar o relatório. Ela pediu nova versão.", "problem": "ela pode retomar coordenação ou comissão", "repairs": ["A coordenação pediu nova versão.", "A comissão pediu nova versão."], "note": "a escolha depende do referente pretendido, não de evitar repetição."},
+    {"id": "L03-C01", "type": "ambiguity-or-functional-repetition", "items": [{"text": "O sensor foi testado. O sensor permaneceu estável.", "status": "repeticao-potencialmente-funcional"}, {"text": "Marina informou Ana de que ela seria responsável.", "status": "ambiguidade-real"}]},
+    {"id": "L03-A01", "type": "reference-edit", "tasks": ["mapear cadeias de retomada", "reparar duas ambiguidades reais", "preservar uma repetição que melhora rastreabilidade", "justificar uma elipse segura"], "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"timeLimit": false, "pronounUseScored": false, "repetitionCountScored": false, "openResponseAutoValidated": false},
+  "completionEvidence": {"clusters": {"referenceEdit": {"evidence": ["L03-A01"], "required": true}}, "completionRule": "o aluno deve reduzir ambiguidade sem trocar mecanicamente nomes por pronomes ou eliminar repetição funcional.", "requiresReliableEvaluatorFor": ["clareza referencial", "adequação das reformulações"]}
+}
