@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "id": "N4-U09",
+  "levelId": "N4",
+  "order": 9,
+  "title": "Literatura, multimodalidade, autoria intermedial e digital",
+  "objective": "Integrar interpretação literária, leitura multimodal, proveniência, adaptação e autoria digital acessível.",
+  "competencies": [
+    {"id": "N4-U09-C01", "label": "formular interpretação literária autônoma sustentada por evidência", "sourceLabels": ["Interpretação literária autônoma e evidência"]},
+    {"id": "N4-U09-C02", "label": "analisar voz, perspectiva, estrutura e temporalidade", "sourceLabels": ["Voz, perspectiva, estrutura e temporalidade"]},
+    {"id": "N4-U09-C03", "label": "relacionar forma poética, ritmo, sintaxe e efeitos de sentido", "sourceLabels": ["Poesia: forma, ritmo, sintaxe e efeito"]},
+    {"id": "N4-U09-C04", "label": "interpretar figuratividade, ambiguidade e ironia por evidências", "sourceLabels": ["Imagem, símbolo, figuratividade, ambiguidade e ironia"]},
+    {"id": "N4-U09-C05", "label": "analisar intertextualidade e contexto em recorte funcional", "sourceLabels": ["Intertextualidade, tradição e contexto em recorte funcional"]},
+    {"id": "N4-U09-C06", "label": "comparar interpretações concorrentes e revisar leitura justificadamente", "sourceLabels": ["Interpretações concorrentes, recepção e revisão de leitura"]},
+    {"id": "N4-U09-C07", "label": "analisar distribuição de informação entre verbal, imagem, dados e interface", "sourceLabels": ["Multimodalidade: verbal, imagem, dados e interface"]},
+    {"id": "N4-U09-C08", "label": "analisar sequência, montagem e limites de representação em áudio e vídeo", "sourceLabels": ["Áudio/vídeo: sequência, montagem, timing e limite de representação"]},
+    {"id": "N4-U09-C09", "label": "rastrear autoria, edição, proveniência e circulação em contexto de plataforma", "sourceLabels": ["Autoria, edição, proveniência, circulação e contexto de plataforma"]},
+    {"id": "N4-U09-C10", "label": "comparar adaptação intermedial por ganhos, perdas e transformações", "sourceLabels": ["Adaptação/intermedialidade: ganhos, perdas e transformação"]},
+    {"id": "N4-U09-C11", "label": "planejar autoria multimodal e digital acessível", "sourceLabels": ["Autoria multimodal/digital acessível"]},
+    {"id": "N4-U09-C12", "label": "integrar literatura, meio, circulação e autoria em análise e produção", "sourceLabels": ["Análise e produção integradas: literatura, meio, circulação e autoria"]}
+  ],
+  "prerequisites": ["N3-U09-V01"],
+  "lessons": [
+    {"id": "N4-U09-L01", "order": 1, "title": "Interpretação literária autônoma e evidência", "path": "lessons/001-interpretacao-literaria-autonoma-evidencia.json", "competencyIds": ["N4-U09-C01"]},
+    {"id": "N4-U09-L02", "order": 2, "title": "Voz, perspectiva, estrutura e temporalidade", "path": "lessons/002-voz-perspectiva-estrutura-temporalidade.json", "competencyIds": ["N4-U09-C02"]},
+    {"id": "N4-U09-L03", "order": 3, "title": "Poesia: forma, ritmo, sintaxe e efeito", "path": "lessons/003-poesia-forma-ritmo-sintaxe-efeito.json", "competencyIds": ["N4-U09-C03"]},
+    {"id": "N4-U09-L04", "order": 4, "title": "Imagem, símbolo, figuratividade, ambiguidade e ironia", "path": "lessons/004-figuratividade-ambiguidade-ironia.json", "competencyIds": ["N4-U09-C04"]},
+    {"id": "N4-U09-L05", "order": 5, "title": "Intertextualidade, tradição e contexto em recorte funcional", "path": "lessons/005-intertextualidade-tradicao-contexto.json", "competencyIds": ["N4-U09-C05"]},
+    {"id": "N4-U09-L06", "order": 6, "title": "Interpretações concorrentes, recepção e revisão de leitura", "path": "lessons/006-interpretacoes-concorrentes-recepcao-revisao.json", "competencyIds": ["N4-U09-C06"]},
+    {"id": "N4-U09-L07", "order": 7, "title": "Multimodalidade: verbal, imagem, dados e interface", "path": "lessons/007-multimodalidade-verbal-imagem-dados-interface.json", "competencyIds": ["N4-U09-C07"]},
+    {"id": "N4-U09-L08", "order": 8, "title": "Áudio/vídeo: sequência, montagem, timing e limite de representação", "path": "lessons/008-audio-video-sequencia-montagem-timing-limites.json", "competencyIds": ["N4-U09-C08"]},
+    {"id": "N4-U09-L09", "order": 9, "title": "Autoria, edição, proveniência, circulação e contexto de plataforma", "path": "lessons/009-autoria-edicao-proveniencia-circulacao-plataforma.json", "competencyIds": ["N4-U09-C09"]},
+    {"id": "N4-U09-L10", "order": 10, "title": "Adaptação/intermedialidade: ganhos, perdas e transformação", "path": "lessons/010-adaptacao-intermedialidade-ganhos-perdas-transformacao.json", "competencyIds": ["N4-U09-C10"]},
+    {"id": "N4-U09-L11", "order": 11, "title": "Autoria multimodal/digital acessível", "path": "lessons/011-autoria-multimodal-digital-acessivel.json", "competencyIds": ["N4-U09-C11"]},
+    {"id": "N4-U09-L12", "order": 12, "title": "Análise e produção integradas: literatura, meio, circulação e autoria", "path": "lessons/012-analise-producao-integradas-literatura-meio-circulacao-autoria.json", "competencyIds": ["N4-U09-C12"]}
+  ],
+  "verification": {
+    "id": "N4-U09-V01",
+    "path": "integrated-verification.json",
+    "competencyIds": ["N4-U09-C01", "N4-U09-C02", "N4-U09-C03", "N4-U09-C04", "N4-U09-C05", "N4-U09-C06", "N4-U09-C07", "N4-U09-C08", "N4-U09-C09", "N4-U09-C10", "N4-U09-C11", "N4-U09-C12"]
+  },
+  "publication": {
+    "status": "BLOCKED",
+    "blockers": ["P4: renderer classico ainda nao implementado"]
+  }
+}

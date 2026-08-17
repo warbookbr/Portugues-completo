@@ -1,13 +1,13 @@
 {
   "schemaVersion": 1,
-  "purpose": "Fixtures canônicas de P1 derivadas de conteúdo real N0/N4. Não são manifests de publicação e não alteram o conteúdo autoral existente.",
+  "purpose": "Fixtures canônicas de P1 derivadas de conteúdo real N0/N4. Não são manifests de publicação; a autoria histórica de lições/verificações permanece v1, enquanto content/course.json migra oficialmente para catálogo v2 em P3.",
   "cases": [
     {
       "id": "P1-COURSE-V2",
       "schema": "schemas/course.schema.json",
       "data": "schemas/fixtures/p1/course-v2-slice.json",
       "sources": ["content/course.json"],
-      "compatibility": {"expectSourceSchemaVersion": 1, "expectSameId": true}
+      "compatibility": {"expectSourceSchemaVersion": 2, "expectSameId": true}
     },
     {
       "id": "P1-UNIT-N0-U01",

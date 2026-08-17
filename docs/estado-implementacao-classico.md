@@ -2,14 +2,11 @@
 
 ## Objetivo
 
-Registro operacional canônico do desenvolvimento do Modo Clássico.
-
-Ele deve permitir reconstruir sem contexto de conversa:
+Registro operacional canônico do desenvolvimento do Modo Clássico. Deve permitir reconstruir sem contexto de conversa:
 
 ```text
 onde paramos?
-o que foi implementado?
-o que foi homologado?
+o que foi implementado/homologado?
 o que ficou parcial?
 qual mídia/dependência existe?
 qual é o próximo passo exato?
@@ -25,36 +22,25 @@ implementado tecnicamente
 ≠ publicável
 ```
 
-Toda PR que altere materialmente o Clássico deve revisar este arquivo na mesma branch.
+Toda PR que altere materialmente o Clássico deve revisar este arquivo.
 
 ## Cursor operacional
 
 ```text
 Fase estratégica: CONCLUIR E HOMOLOGAR O CLÁSSICO
-Marco concluído mais recente: P2 — ContentService e normalizador
-Marco ativo: P3 — Manifests e catálogo inicial
+Marco concluído mais recente: P3 — Manifests e catálogo inicial
+Marco ativo: P4 — Renderer real do Clássico
 Item ativo: ainda não iniciado
-Último item concluído: CL-P2-NORMALIZER-V1 + CL-P2-CONTENT-SERVICE + CL-P2-TEST-SLICE
-Próximo passo exato: criar manifests reais de N0-U01 e N4-U09, registry de competências e content/course.json v2 do slice, então validar integridade catálogo → unit → conteúdo
-Blocker atual do próximo passo: nenhum
+Último item concluído: CL-P3-COURSE-CATALOG + CL-P3-MANIFEST-N0-U01 + CL-P3-MANIFEST-N4-U09 + CL-P3-CATALOG-INTEGRITY
+Próximo passo exato: conectar app.js ao ContentService e substituir placeholders de unidade/lição por renderer clássico real do slice N0-U01 + N4-U09, implementando primeiro blocos CONTENT e primitivas ACTIVITY exigidas pelo slice
+Blocker atual do próximo passo: nenhum blocker técnico global; áudios obrigatórios de N0-U01 permanecem pendência local e não bloqueiam o renderer independente
 Gate final do Clássico: NÃO SATISFEITO
 ```
 
-## Estados consolidados
+## Estados
 
 ```text
-NAO_INICIADO
-EM_ANDAMENTO
-IMPLEMENTADO_COM_PENDENCIA
-PRONTO_PARA_HOMOLOGAR
-HOMOLOGADO
-PUBLICAVEL
-BLOQUEADO
-```
-
-Dimensões obrigatórias por item:
-
-```text
+Consolidado: NAO_INICIADO | EM_ANDAMENTO | IMPLEMENTADO_COM_PENDENCIA | PRONTO_PARA_HOMOLOGAR | HOMOLOGADO | PUBLICAVEL | BLOQUEADO
 Técnico: NAO_INICIADO | EM_IMPLEMENTACAO | IMPLEMENTADO | BLOQUEADO_TECNICO
 Homologação: NAO_AVALIADO | HOMOLOGACAO_PARCIAL | PRONTO_PARA_HOMOLOGAR | HOMOLOGADO | BLOQUEADO_POR_DEPENDENCIA
 Mídia: SEM_DEPENDENCIA | MIDIA_OPCIONAL_PENDENTE | MIDIA_PENDENTE_NAO_BLOQUEANTE | MIDIA_OBRIGATORIA_PARA_ATIVIDADE | MIDIA_OBRIGATORIA_PARA_PUBLICACAO | MIDIA_PRONTA_PARA_VALIDAR | MIDIA_VALIDADA | MIDIA_PUBLICADA
@@ -69,175 +55,161 @@ mídia pendente
 → todo trabalho independente continua
 ```
 
-- TTS/texto/UI semântica são suficientes quando a competência não depende de características sensoriais específicas.
-- Placeholder pode apoiar desenvolvimento, nunca fingir homologação.
-- `MIDIA_OBRIGATORIA_PARA_ATIVIDADE` impede homologar pedagogicamente a atividade sem estímulo final adequado.
-- `MIDIA_OBRIGATORIA_PARA_PUBLICACAO` impede `PUBLICAVEL`, não necessariamente desenvolvimento técnico.
-- `producao-midia/FILA-MIDIA.md` rastreia produção de arquivo; este documento rastreia impacto no produto.
+- TTS/texto/UI semântica são suficientes quando a competência não depende de característica sensorial específica.
+- Placeholder serve para desenvolvimento, nunca para fingir homologação.
+- `MIDIA_OBRIGATORIA_PARA_ATIVIDADE` impede homologar a atividade sem o estímulo final, mas não paralisa o produto.
+- `producao-midia/FILA-MIDIA.md` rastreia produção do arquivo; este documento rastreia impacto no produto.
 
 ## Registro de marcos
 
-| Marco | Estado | Observação | Próximo critério |
+| Marco | Estado | Evidência principal | Próximo critério |
 |---|---|---|---|
-| P1 — Schemas e contratos executáveis | `HOMOLOGADO` | cinco schemas + fixtures + validator em CI | concluído |
-| P2 — ContentService/normalizador | `HOMOLOGADO` | autoria v1 → runtime canônico para N0/N4/exit; testes contra schemas | concluído |
-| P3 — Manifests e catálogo inicial | `NAO_INICIADO` | marco ativo | N0-U01 e N4-U09 descobríveis por catálogo/manifests + integridade validada |
-| P4 — Renderer real do Clássico | `NAO_INICIADO` | depende de P3 | slice renderizado e testável |
-| P5 — ProgressService/revisão/Gist | `NAO_INICIADO` | núcleo pedagógico clássico | progresso/revisão/persistência homologados |
-| P6 — Feedback por IA | `NAO_INICIADO` | BYOK; determinísticos independem de IA | feedback/fallback homologados |
-| P7 — Ampliação N0→N4 | `NAO_INICIADO` | após pipeline provado | catálogo clássico cobre escopo aprovado |
-| P8 — Mídia/prontidão de publicação | `NAO_INICIADO` | resolve blockers obrigatórios | itens clássicos aptos à publicação |
-| P9 — Homologação E2E | `NAO_INICIADO` | gate final | `CLÁSSICO HOMOLOGADO` |
+| P1 — Schemas e contratos executáveis | `HOMOLOGADO` | PR #105 + schemas/fixtures/CI | concluído |
+| P2 — ContentService/normalizador | `HOMOLOGADO` | PR #106 + N0/N4/N4-EXIT em runtime canônico | concluído |
+| P3 — Manifests e catálogo inicial | `HOMOLOGADO` | PR #107 + catálogo v2 + 2 manifests + integridade/descoberta em CI | concluído |
+| P4 — Renderer real do Clássico | `NAO_INICIADO` | marco ativo | slice real renderizado + atividades necessárias + validação visual |
+| P5 — ProgressService/revisão/Gist | `NAO_INICIADO` | — | progresso/revisão/persistência homologados |
+| P6 — Feedback por IA | `NAO_INICIADO` | — | feedback/fallback homologados |
+| P7 — Ampliação N0→N4 | `NAO_INICIADO` | — | catálogo clássico cobre escopo aprovado |
+| P8 — Mídia/prontidão de publicação | `NAO_INICIADO` | — | blockers obrigatórios resolvidos |
+| P9 — Homologação E2E | `NAO_INICIADO` | — | `CLÁSSICO HOMOLOGADO` |
 
-## P1 — resumo homologado
+## P1 — resumo
 
 ### `CL-P1-SCHEMAS`
 
 ```text
-Escopo: course/unit/lesson/verification/progress schemas
-Estado consolidado: HOMOLOGADO
-Técnico: IMPLEMENTADO
-Homologação: HOMOLOGADO
-Mídia: SEM_DEPENDENCIA
-Publicação: NAO_APLICAVEL
-Evidência: PR #105 + CI
+Estado: HOMOLOGADO
+Escopo: schemas/course|unit|lesson|verification|progress.schema.json
+Evidência: PR #105 + Validate contract schemas
 ```
 
 ### `CL-P1-FIXTURES-VALIDATOR`
 
 ```text
+Estado: HOMOLOGADO
 Escopo: schemas/fixtures/p1 + scripts/validate-contracts.mjs
-Estado consolidado: HOMOLOGADO
-Técnico: IMPLEMENTADO
-Homologação: HOMOLOGADO
-Mídia: SEM_DEPENDENCIA
-Publicação: NAO_APLICAVEL
-Evidência: 8 fixtures P1 validadas pelo CI
+Observação: a fixture de course acompanha a migração oficial de content/course.json para v2 em P3; lições/verificações autorais continuam v1
 ```
 
-## P2 — itens homologados
+## P2 — resumo
 
 ### `CL-P2-NORMALIZER-V1`
 
 ```text
-Escopo: app/js/services/content-normalizer-v1.js + content-normalization-rules-v1.js
-Descrição: transforma autoria schemaVersion 1 em runtime canônico de lição/verificação.
-Estado consolidado: HOMOLOGADO
-Técnico: IMPLEMENTADO
-Homologação: HOMOLOGADO
-Mídia: MIDIA_PENDENTE_NAO_BLOQUEANTE no conteúdo que referencia mediaId; o normalizador em si não depende dos arquivos
-Publicação: NAO_APLICAVEL
-Evidência: PR #106; teste N0/N4/N4-EXIT contra schemas canônicos
+Estado: HOMOLOGADO
+Escopo: content-normalizer-v1.js + content-normalization-rules-v1.js
+Fluxo: autoria v1 → runtime canônico
+Casos provados: N0-U01-L01, N0-U01-V01, N4-U09-L01, N4-U09-V01, N4-EXIT-V01
 ```
 
-Cobertura comprovada:
+Regras históricas ambíguas não são interpretadas por regex. Sem estrutura explícita/regra legada auditável, retornar `UNNORMALIZABLE_COMPLETION`.
 
-```text
-N0-U01-L01
-→ quick-check + classify + TTS + threshold + conclusão determinística
-
-N0-U01-V01
-→ 12 itens + controlled audio + sequence + thresholds + quatro clusters não compensáveis
-
-N4-U09-L01
-→ resposta aberta + RELIABLE_EVALUATOR + PENDING_ALLOWED
-
-N4-U09-V01
-→ atividades abertas/fechadas + clusters não compensáveis
-
-N4-EXIT-V01
-→ LEVEL_VERIFICATION + oito clusters obrigatórios + produção oral/multimodal pending
-```
-
-### Regra descoberta durante P2
-
-O N0 real mostrou que um cluster pode exigir simultaneamente:
-
-```text
-4 de 5 evidências
-+
-pelo menos uma entre duas evidências específicas
-```
-
-O runtime passou a representar isso explicitamente com campos opcionais:
+O N0 real exigiu suporte a:
 
 ```text
 minimumEvidence
 requiredAnyOf
 ```
 
-Sem esses campos, a implementação teria simplificado indevidamente `N0-U01-V01`.
-
-Sem `minimumEvidence`, o padrão continua sendo exigir todas as `evidenceIds` conforme a política de satisfação. Cada grupo de `requiredAnyOf` exige pelo menos uma evidência satisfatória do grupo.
-
-### Regras legadas explícitas
-
-Critério histórico em prosa não é interpretado por regex.
-
-Quando a autoria v1 não possui estrutura suficiente, usar regra legada auditável por ID em `content-normalization-rules-v1.js`.
-
-Casos P2 materializados:
-
-```text
-N0-U01-L01
-N0-U01-V01
-```
-
-Se não houver estrutura normalizável nem regra explícita:
-
-```text
-ContentNormalizationError
-code = UNNORMALIZABLE_COMPLETION
-```
-
-Não inventar regra de conclusão.
+para representar `4 de 5 + pelo menos uma entre Q10/Q11` sem distorcer o critério.
 
 ### `CL-P2-CONTENT-SERVICE`
 
 ```text
+Estado: HOMOLOGADO
 Escopo: app/js/services/content-service.js
-Descrição: carregamento JSON + normalização por serviço isolado e injetável.
-Estado consolidado: HOMOLOGADO
-Técnico: IMPLEMENTADO
-Homologação: HOMOLOGADO em teste de serviço com fetch injetado
-Mídia: SEM_DEPENDENCIA
-Publicação: NAO_APLICAVEL até P3/P4 ligar o serviço ao app
-Evidência: scripts/test-content-normalizer.mjs
+P2: carregamento/normalização injetável
+P3: estendido para descoberta por course.json → unit.json → fonte autoral
 ```
 
-O serviço ainda não é importado por `app.js`; isso é deliberado até o catálogo/manifests reais de P3 existirem.
+## P3 — itens homologados
 
-Por isso `validate-project.mjs` emite três warnings de módulos JavaScript ainda não alcançáveis pelo `index.html`. São warnings esperados neste marco, não blockers.
-
-### `CL-P2-TEST-SLICE`
+### `CL-P3-COURSE-CATALOG`
 
 ```text
-Escopo: scripts/test-content-normalizer.mjs + CI
+Escopo: content/course.json
 Estado consolidado: HOMOLOGADO
 Técnico: IMPLEMENTADO
 Homologação: HOMOLOGADO
-Mídia: referências de áudio são validadas estruturalmente por mediaId; arquivo final não é necessário para P2
-Publicação: NAO_APLICAVEL
-Evidência: workflow PR #106 — Validate JSON syntax + Validate contract schemas + Test content normalization = success
+Mídia: SEM_DEPENDENCIA do catálogo
+Publicação: NAO_APLICAVEL ao arquivo de catálogo em si
+Evidência: schemaVersion 2 + Validate publication catalog + Test catalog discovery
 ```
 
-O teste importa `validateValue` do validator P1 e valida o runtime produzido pelo código, não apenas fixtures estáticas.
+O catálogo é incremental. Neste marco ele publica a descoberta de `N0-U01` e `N4-U09`; N1–N3 e demais unidades continuam existentes como autoria curricular e serão adicionados à camada de publicação em P7.
 
-## Blockers abertos
-
-Nenhum blocker impede iniciar P3.
-
-Pendências históricas de mídia continuam rastreadas no conteúdo/fila e não foram promovidas a blocker global.
-
-### Avisos não bloqueantes atuais
+### `CL-P3-MANIFEST-N0-U01`
 
 ```text
-content-normalization-rules-v1.js não alcançável a partir de index.html
-content-normalizer-v1.js não alcançável a partir de index.html
-content-service.js não alcançável a partir de index.html
+Escopo: content/units/001-fala-sons-escrita/unit.json
+Estado consolidado: IMPLEMENTADO_COM_PENDENCIA
+Técnico: IMPLEMENTADO
+Homologação do manifesto: HOMOLOGADO
+Mídia: MIDIA_OBRIGATORIA_PARA_ATIVIDADE
+Publicação: BLOQUEADO
+Conteúdo declarado: 8 lições + N0-U01-V01
+Registry: N0-U01-C01 ... N0-U01-C08
+Blockers: áudios controlados obrigatórios ainda pendentes; renderer P4 ainda ausente
+Evidência: validator confirma 100% das lições autorais declaradas e refs/IDs/títulos coerentes
 ```
 
-Motivo: P2 implementa a camada antes de P3/P4 conectá-la ao produto público.
+O blocker de áudio é local: P4 pode implementar telas, atividades, fallback/estado de mídia e tudo que não dependa do estímulo definitivo.
+
+### `CL-P3-MANIFEST-N4-U09`
+
+```text
+Escopo: content/units/409-literatura-multimodalidade-autoria-intermedial-digital/unit.json
+Estado consolidado: IMPLEMENTADO_COM_PENDENCIA
+Técnico: IMPLEMENTADO
+Homologação do manifesto: HOMOLOGADO
+Mídia: SEM_DEPENDENCIA de nova mídia humana obrigatória
+Publicação: BLOQUEADO
+Conteúdo declarado: 12 lições + N4-U09-V01
+Registry: N4-U09-C01 ... N4-U09-C12
+Blocker: renderer P4 ainda ausente
+Evidência: validator confirma 100% das lições autorais declaradas e refs/IDs/títulos coerentes
+```
+
+### `CL-P3-COMPETENCY-MAPPING`
+
+```text
+Escopo: schemas/unit.schema.json + unit.json reais
+Estado: HOMOLOGADO
+Decisão: referências de lição/verificação podem declarar competencyIds; registry mantém IDs estáveis e sourceLabels humanos
+```
+
+Isso impede o normalizador de atribuir todas as competências da unidade indiscriminadamente a cada lição.
+
+### `CL-P3-CATALOG-INTEGRITY`
+
+```text
+Escopo: scripts/validate-catalog.mjs + scripts/test-content-catalog.mjs + CI
+Estado: HOMOLOGADO
+Verifica: schemas, IDs, títulos, ordens, paths seguros, competências, cobertura de todas as lições autorais, verification, manifests órfãos e carregamento real pelo ContentService
+Evidência: PR #107 — Validate publication catalog + Test catalog discovery = success
+```
+
+## Blockers e pendências abertas
+
+### Blocker global para iniciar P4
+
+```text
+nenhum
+```
+
+### Pendência local conhecida
+
+```text
+N0-U01
+→ áudios controlados obrigatórios ainda não produzidos/validados
+→ manifesto e renderer podem avançar
+→ atividades dependentes não podem ser homologadas pedagogicamente/publicadas com estímulo final até a mídia existir
+```
+
+### Warnings transitórios
+
+Os módulos `content-normalization-rules-v1.js`, `content-normalizer-v1.js` e `content-service.js` continuam não alcançáveis pelo `index.html` até P4 conectá-los à aplicação. São warnings esperados e devem desaparecer/reduzir quando o renderer real entrar.
 
 ## Formato de novo item
 
@@ -258,14 +230,10 @@ PR/commit:
 Próximo passo:
 ```
 
-IDs de produto usam `CL-P<marco>-<escopo>` e não substituem IDs curriculares ou `mediaId`.
-
 ## Condição de avanço
 
-Um marco pode avançar com pendências locais não bloqueantes quando a condição de saída do roadmap estiver satisfeita e as pendências permanecerem explícitas.
+Um marco pode avançar com pendências locais não bloqueantes quando sua condição de saída estiver satisfeita e as pendências continuarem explícitas.
 
 ## Gate `CLÁSSICO HOMOLOGADO`
 
-Só P9 pode satisfazer o gate.
-
-Nenhuma implementação de XP, missões, conquistas, streak ou progressão gamificada começa antes dele.
+Só P9 pode satisfazer o gate. Nenhuma implementação de XP, missões, conquistas, streak ou progressão gamificada começa antes dele.

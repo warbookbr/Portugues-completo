@@ -35,3 +35,9 @@ jobs:
 
       - name: Test content normalization
         run: node scripts/test-content-normalizer.mjs
+
+      - name: Validate publication catalog
+        run: node scripts/validate-catalog.mjs
+
+      - name: Test catalog discovery
+        run: node scripts/test-content-catalog.mjs
