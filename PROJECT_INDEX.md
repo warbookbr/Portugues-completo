@@ -139,7 +139,7 @@ O N3 está **curricularmente fechado em M5**: U1–U9, `N3-EXIT-V01` e checkpoin
 - `docs/gate-normativo-nivel-4-u5-u7.md` — gate normativo de U5/U7, **SATISFEITO**; reabrir apenas se surgir caso fechado fora do recorte documentado.
 - `docs/referencias-gramatica-nivel-4-u5-u7.md` — recorte normativo/descritivo pesquisado e congelado; separa regra, variante, convenção editorial, consulta e estilo.
 - `docs/referencias-gramatica-nivel-4-u5-u7-atualizacao-2026.md` — addendum do contexto institucional atual; registra o Decreto nº 12.002/2024 sem alterar o recorte pedagógico.
-- `docs/gate-midia-acessibilidade-nivel-4-u9.md` — gate de mídia/acessibilidade **satisfeito para a arquitetura atual**; nenhuma nova mídia humana obrigatória, com reabertura apenas se M5 introduzir alvo sensorial real insubstituível.
+- `docs/gate-midia-acessibilidade-nivel-4-u9.md` — gate de mídia/acessibilidade **SATISFEITO para o M5 da U9**; nenhuma nova mídia humana obrigatória foi necessária e toda pista decisiva permanece semanticamente acessível.
 
 ### Resultado M4
 
@@ -169,6 +169,7 @@ O M4 preserva cobertura 17/17 e explicita como cada unidade exige autonomia, tra
 - `content/units/406-estilo-registro-projeto-voz/` — U6, 9 lições + `N4-U06-V01`, **concluída**.
 - `content/units/407-lingua-norma-variacao-mudanca-identidade-poder/` — U7, 10 lições + `N4-U07-V01`, **concluída**.
 - `content/units/408-oralidade-complexa-sintese-negociacao-debate/` — U8, 9 lições + `N4-U08-V01`, **concluída**.
+- `content/units/409-literatura-multimodalidade-autoria-intermedial-digital/` — U9, 12 lições + `N4-U09-V01`, **concluída**.
 
 A U1 exige escolha e eventual troca justificada de estratégia, arquiteturas concorrentes defensáveis, preservação de condições/ressalvas, cadeias distribuídas, implícitos/intertextualidade com evidência, enquadramento sem inferência automática de manipulação, calibração epistêmica e revisão explícita da interpretação após nova evidência.
 
@@ -186,6 +187,8 @@ A U7 separa uso, descrição, norma/convenção e julgamento social; trata varia
 
 A U8 transfere leitura, síntese, argumentação e projeto de voz para oralidade complexa: escuta por objetivo com replay permitido, preserva múltiplas vozes, planeja fala por função/audiência, integra evidência e qualificação, usa apoio acessível, repara incompreensão, responde a objeções, negocia escopo sem fabricar consenso e exige tentativa registrada + autorrevisão com fronteira explícita entre processo observável e qualidade acústica dependente de ouvinte confiável.
 
+A U9 integra leitura estética e autoria digital: exige interpretação própria com evidência, análise de estrutura/forma/figuratividade/intertextualidade, comparação e revisão de leituras, leitura de relações multimodais, reconhecimento explícito de limites sensoriais, rastreabilidade de autoria/circulação, análise de adaptação e produção multimodal acessível. `N4-U09-V01` mantém literatura e multimodal/digital como eixos independentes e exige integração autoral sem permitir que polimento visual compense evidência, proveniência ou acessibilidade.
+
 Estado:
 
 ```text
@@ -193,7 +196,7 @@ M1 ✓
 M2 ✓ — 9 áreas
 M3 ✓ — 9 unidades
 M4 ✓ — 93 lições + 9 verificações integradas
-M5 em andamento
+M5 em andamento — U1–U9 concluídas; saída do nível pendente
 ├── U1 ✓ — 10 lições + N4-U01-V01
 ├── U2 ✓ — 11 lições + N4-U02-V01
 ├── U3 ✓ — 10 lições + N4-U03-V01
@@ -202,7 +205,8 @@ M5 em andamento
 ├── U6 ✓ — 9 lições + N4-U06-V01
 ├── U7 ✓ — 10 lições + N4-U07-V01
 ├── U8 ✓ — 9 lições + N4-U08-V01
-└── U9 — próximo subpasso
+├── U9 ✓ — 12 lições + N4-U09-V01
+└── N4-EXIT-V01 — próximo subpasso
 ```
 
 A fonte oficial do estado é `docs/roadmap-curricular.md`.
