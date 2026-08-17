@@ -1,6 +1,6 @@
 import { getSettings } from './settings-service.js';
 
-const synth = window.speechSynthesis;
+const synth = globalThis.window?.speechSynthesis || null;
 let voices = [];
 const listeners = new Set();
 
@@ -21,10 +21,11 @@ export function onVoicesChanged(listener) {
 
 export function speak(text) {
   const settings = getSettings();
-  if (!synth || !settings.audioEnabled || !text) return false;
+  const Utterance = globalThis.SpeechSynthesisUtterance;
+  if (!synth || !Utterance || !settings.audioEnabled || !text) return false;
 
   synth.cancel();
-  const utterance = new SpeechSynthesisUtterance(text);
+  const utterance = new Utterance(text);
   utterance.lang = 'pt-BR';
   utterance.rate = Number(settings.rate);
   utterance.pitch = Number(settings.pitch);
