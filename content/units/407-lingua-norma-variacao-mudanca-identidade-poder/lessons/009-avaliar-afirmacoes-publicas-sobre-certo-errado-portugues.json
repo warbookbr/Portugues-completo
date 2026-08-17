@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "N4-U07-L09",
+  "title": "Avaliar afirmações públicas sobre certo, errado e o português",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Avaliar afirmações generalizantes sobre língua verificando escopo, tipo de norma, evidência e inferências sociais, distinguindo o que é sustentado, exagerado, falso no recorte ou dependente de consulta.",
+  "competencies": ["decompor afirmação pública", "identificar generalização indevida", "distinguir preferência de regra", "avaliar evidência e escopo", "responder criticamente sem ataque pessoal"],
+  "prerequisites": ["N4-U07-L01", "N4-U07-L02", "N4-U07-L05", "N4-U07-L08"],
+  "limits": ["não refutar afirmação apenas pela identidade de quem fala", "não transformar análise em disputa ideológica", "não assumir má-fé sem evidência", "caso normativo específico só pode ser fechado dentro do recorte documentado"],
+  "referenceScope": ["docs/referencias-gramatica-nivel-4-u5-u7.md", "docs/referencias-gramatica-nivel-4-u5-u7-atualizacao-2026.md"],
+  "media": {"tts": "opcional", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [], "generatedVisualResources": [{"type": "UI_RENDERED_PUBLIC_CLAIM_AUDIT"}, {"type": "UI_RENDERED_EVIDENCE_SCOPE_MAP"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "afirmações simuladas permitem treinar auditoria sem depender de polêmica ou citação real específica."},
+  "sequence": [
+    {"id": "L09-B01", "type": "simulated-public-claims", "claims": [{"claim": "Se um manual institucional prefere X, qualquer uso diferente é português errado.", "problem": "universaliza convenção de domínio"}, {"claim": "Se uma forma é frequente, ela é a única correta.", "problem": "confunde frequência com obrigatoriedade"}, {"claim": "Quem usa uma forma estigmatizada é menos capaz.", "problem": "inferência sobre pessoa não sustentada por traço linguístico"}, {"claim": "Uma variante documentada pode exigir escolha específica quando a tarefa declara um padrão institucional.", "status": "sustentável no recorte"}]},
+    {"id": "L09-C01", "type": "claim-audit-check", "question": "Qual é o primeiro passo diante de uma frase como 'o português correto exige X'?", "correctPrinciple": "identificar qual domínio, fonte, fenômeno e escopo estão sendo alegados antes de aceitar a generalização"},
+    {"id": "L09-A01", "type": "public-claim-audit", "materials": "seis afirmações simuladas misturando regra documentada, convenção, variante, descrição e julgamento social", "requiredFields": ["afirmação", "tipo de alegação", "evidência necessária", "escopo autorizado", "o que está sustentado", "o que está exagerado", "o que exige consulta", "resposta crítica qualificada"], "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"timeLimit": false, "ideologicalAgreementScored": false, "speakerIdentityScored": false, "openResponseAutoValidated": false},
+  "completionEvidence": {"clusters": {"publicClaimAudit": {"evidence": ["L09-A01"], "required": true}}, "completionRule": "a resposta deve auditar evidência e escopo da afirmação sem substituir análise linguística por ataque ao emissor ou por autoridade única.", "requiresReliableEvaluatorFor": ["qualidade da auditoria", "proporcionalidade da resposta"]}
+}
