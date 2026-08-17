@@ -95,7 +95,7 @@ Portugues-completo/
 |-- content/
 |   |-- course.json
 |   `-- units/
-|       `-- 001-fundamentos/
+|       `-- 001-.../
 |           |-- unit.json
 |           |-- lessons/
 |           `-- exercises/
