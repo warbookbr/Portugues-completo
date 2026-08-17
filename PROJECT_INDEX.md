@@ -140,13 +140,6 @@ Mídia pedagógica pesada não pertence a `app/assets/`.
 - `scripts/validate-json.mjs`
 - `.github/workflows/validate-project.yml`
 
-Documentos previstos, quando criados:
-
-- `docs/exercicios.md`
-- `docs/progresso.md`
-- `docs/configuracoes.md`
-- `docs/convencoes.md`
-
 ## Fontes de verdade
 
 ```text
