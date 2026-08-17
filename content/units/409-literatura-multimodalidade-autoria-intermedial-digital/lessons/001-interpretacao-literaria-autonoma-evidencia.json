@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "N4-U09-L01",
+  "title": "Interpretação literária autônoma e evidência",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Formular interpretação própria de um texto literário novo, sustentá-la por evidências internas, reconhecer alternativas plausíveis e delimitar o que permanece incerto.",
+  "competencies": ["formular hipótese interpretativa", "selecionar evidência textual", "distinguir evidência de gosto", "considerar leitura alternativa", "calibrar certeza interpretativa"],
+  "prerequisites": ["N3-U09-V01", "N4-U01-V01"],
+  "limits": ["gosto pessoal não substitui evidência", "pluralidade não significa que qualquer leitura é aceitável", "não exigir repertório externo secreto", "interpretação aberta exige avaliador confiável"],
+  "media": {"tts": "opcional para releitura; não determina interpretação", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["texto-literario"]}], "generatedVisualResources": [{"type": "UI_RENDERED_ANNOTATED_TEXT"}, {"type": "UI_RENDERED_INTERPRETATION_EVIDENCE_MAP"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "o alvo é construir e revisar interpretação por evidência textual; anotação semântica e mapa de evidências são suficientes."},
+  "sequence": [
+    {"id": "L01-B01", "type": "authored-literary-text", "text": "Na estação vazia, Lia conferiu três vezes o painel apagado. No bolso, o bilhete de volta continuava inteiro. Quando ouviu o trem ao longe, não se aproximou da plataforma; dobrou o bilhete ao meio e sentou-se sobre a mala.", "task": "formular uma leitura inicial antes de receber qualquer comentário"},
+    {"id": "L01-B02", "type": "evidence-map", "task": "ligar cada inferência a palavras, ações, contrastes ou omissões observáveis e marcar o grau de sustentação"},
+    {"id": "L01-C01", "type": "interpretation-boundary-check", "items": [{"claim": "Lia decidiu definitivamente nunca voltar", "expected": "nao sustentado"}, {"claim": "o texto constrói hesitação ou recuo diante da partida", "expected": "sustentavel"}, {"claim": "o bilhete funciona como elemento relevante para a decisão", "expected": "sustentavel"}], "automaticValidation": true},
+    {"id": "L01-A01", "type": "open-interpretation", "prompt": "Apresente uma interpretação própria, três evidências, uma alternativa plausível e um elemento que limita sua certeza.", "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"timeLimit": false, "singleInterpretationKey": false, "tasteScored": false, "openResponseAutoValidated": false},
+  "completionEvidence": {"clusters": {"interpretationEvidence": {"evidence": ["L01-A01"], "required": true}}, "completionRule": "a leitura deve ser reconstruível a partir do texto, reconhecer limite e não depender de concordância estética do avaliador.", "requiresReliableEvaluatorFor": ["qualidade da interpretação", "força do vínculo entre evidência e leitura"]}
+}
