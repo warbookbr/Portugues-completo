@@ -4,6 +4,7 @@ import { initSettings } from './services/settings-service.js';
 import { createContentService } from './services/content-service.js';
 import { mountSettingsMenu } from './ui/settings-menu.js';
 import { bindClassicRenderer, documentHtml, homeHtml, unitHtml } from './ui/classic-renderer.js';
+import { polishClassicPresentation } from './ui/classic-presentation.js';
 
 const app = document.getElementById('app');
 const settingsRoot = document.getElementById('settings-root');
@@ -36,6 +37,12 @@ function loadingPage(label = 'Carregando conteúdo') {
   app.innerHTML = statePage({ eyebrow: 'Modo Clássico', title: label, copy: 'Preparando o conteúdo real do curso.' });
 }
 
+function mountClassic(html, document = null) {
+  app.innerHTML = html;
+  polishClassicPresentation(app);
+  bindClassicRenderer(app, document);
+}
+
 async function ensureCourse() {
   if (!course) course = await contentService.loadCatalog();
   return course;
@@ -51,31 +58,27 @@ async function renderHome(revision) {
   const catalog = await ensureCourse();
   const manifests = await Promise.all(catalog.units.map(unit => loadManifest(unit.id).catch(() => null)));
   if (revision !== routeRevision) return;
-  app.innerHTML = homeHtml(catalog, manifests.filter(Boolean));
-  bindClassicRenderer(app);
+  mountClassic(homeHtml(catalog, manifests.filter(Boolean)));
 }
 
 async function renderUnit(route, revision) {
   const manifest = await loadManifest(route.unitId);
   if (revision !== routeRevision) return;
-  app.innerHTML = unitHtml(manifest);
-  bindClassicRenderer(app);
+  mountClassic(unitHtml(manifest));
 }
 
 async function renderLesson(route, revision) {
   const manifest = await loadManifest(route.unitId);
   const loaded = await contentService.loadLesson(route.unitId, route.lessonId);
   if (revision !== routeRevision) return;
-  app.innerHTML = documentHtml(loaded.runtime, { unitId: manifest.id, unitTitle: manifest.title });
-  bindClassicRenderer(app, loaded.runtime);
+  mountClassic(documentHtml(loaded.runtime, { unitId: manifest.id, unitTitle: manifest.title }), loaded.runtime);
 }
 
 async function renderVerification(route, revision) {
   const manifest = await loadManifest(route.unitId);
   const loaded = await contentService.loadVerification(route.unitId);
   if (revision !== routeRevision) return;
-  app.innerHTML = documentHtml(loaded.runtime, { unitId: manifest.id, unitTitle: manifest.title, verification: true });
-  bindClassicRenderer(app, loaded.runtime);
+  mountClassic(documentHtml(loaded.runtime, { unitId: manifest.id, unitTitle: manifest.title, verification: true }), loaded.runtime);
 }
 
 async function renderRoute(route) {
@@ -94,8 +97,8 @@ async function renderRoute(route) {
     const isMissing = /não está|não declara|não encontrada|não pertence|HTTP 404/i.test(error.message || '');
     app.innerHTML = statePage({
       eyebrow: isMissing ? 'Conteúdo indisponível' : 'Erro de carregamento',
-      title: isMissing ? 'Este conteúdo não está no catálogo atual' : 'Não foi possível abrir esta etapa',
-      copy: isMissing ? 'O catálogo clássico é publicado progressivamente. Conteúdo fora dele não é tratado como uma tela quebrada.' : 'Seu progresso não é alterado por uma falha de carregamento. Tente abrir novamente.',
+      title: isMissing ? 'Este conteúdo não está disponível nesta versão' : 'Não foi possível abrir esta etapa',
+      copy: isMissing ? 'O curso é disponibilizado progressivamente. Volte ao início para acessar as unidades disponíveis.' : 'Seu progresso não é alterado por uma falha de carregamento. Tente abrir novamente.',
       detail: error.message || 'Erro desconhecido'
     });
   }
