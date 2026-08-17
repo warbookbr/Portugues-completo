@@ -4,116 +4,172 @@
 
 ## Objetivo
 
-Ajudar o ChatGPT a planejar e produzir conteúdo pedagógico do curso sem perder as decisões já consolidadas sobre clareza, progressão e uso de mídia.
+Ajudar o ChatGPT a planejar e produzir conteúdo pedagógico do curso sem perder as decisões já consolidadas sobre clareza, progressão, evidência, atividades e uso de mídia.
 
 ## Fontes de verdade
 
 Antes de propor estrutura curricular, unidades, lições ou materiais de apoio, considerar como referência principal:
 
+- `PROJECT_INDEX.md` para localizar as fontes oficiais atuais;
 - `docs/mapa-curso.md` para níveis, áreas, competências de saída e progressão geral;
-- `docs/roadmap-curricular.md` para estado atual, próximo passo, maturidade dos níveis e checkpoints de cobertura global;
-- `docs/unidades-nivel-0.md` para o detalhamento pedagógico já consolidado das unidades do Nível 0;
-- `docs/licoes-nivel-0.md` para o dimensionamento de lições já consolidado do Nível 0;
+- `docs/roadmap-curricular.md` para maturidade curricular;
+- `docs/roadmap-produto.md` quando a tarefa envolver publicação/renderer/progresso;
+- `docs/unidades-nivel-0.md` e `docs/licoes-nivel-0.md` como referências históricas do dimensionamento inicial;
 - `docs/conteudo.md` para estrutura pedagógica e critérios de apresentação;
+- `docs/exercicios.md` quando houver checagem, prática, produção ou evidência;
+- `docs/progresso.md` quando a atividade participar de conclusão, revisão ou domínio;
+- `docs/contrato-conteudo.md` quando a autoria precisar ser compatível com runtime/publicação;
+- `docs/avaliacao-ia.md` quando uma atividade aberta puder usar feedback assistido;
 - `docs/arquitetura.md` para limitações técnicas, mídia externa, TTS e organização do projeto;
-- `producao-midia/README.md` para o contrato operacional de produção/curadoria de mídia;
-- `producao-midia/FILA-MIDIA.md` para as demandas concretas de mídia já identificadas.
+- `producao-midia/README.md` e `producao-midia/FILA-MIDIA.md` quando mídia puder ser relevante.
 
-Se uma nova decisão relevante entrar em conflito com esses documentos, não assumir silenciosamente a mudança. Explicar a razão e atualizar a documentação quando a nova decisão for adotada.
+Se uma nova decisão relevante entrar em conflito com esses documentos, não assumir silenciosamente a mudança. Explicar a razão e atualizar a fonte oficial quando a nova decisão for adotada.
 
 ## Princípio central
-
-Manter:
 
 ```text
 estrutura pedagógica consistente
 +
 composição de mídia flexível
++
+evidência compatível com a competência
 ```
 
-Não transformar cada lição em um template rígido, mas garantir que ela tenha objetivo claro, explicação, exemplificação, oportunidade de checagem e consolidação/prática quando apropriado.
+Não transformar cada lição em template rígido, mas garantir objetivo claro, explicação, exemplificação, oportunidade de checagem e consolidação/prática quando apropriado.
 
 ## Clareza antes de variedade
 
-Ao planejar uma lição, priorizar a forma mais simples que ensine bem.
+Priorizar a forma mais simples que ensine bem.
 
-Não adicionar imagem, vídeo, animação, áudio ou componente interativo apenas para tornar a aula mais dinâmica visualmente.
+Não adicionar imagem, vídeo, animação, áudio ou interação apenas para tornar a aula mais dinâmica.
 
-Cada recurso deve melhorar pelo menos um aspecto como:
+Cada recurso deve melhorar pelo menos:
 
 - compreensão;
 - demonstração;
 - memória;
 - contextualização;
-- percepção auditiva ou visual;
+- percepção auditiva/visual;
 - prática.
 
 ## Regra de foco
 
 Evitar múltiplos elementos competindo ao mesmo tempo.
 
-Cada momento da lição deve ter um foco principal: ler, observar, ouvir, assistir ou responder.
+Cada momento deve ter foco principal: ler, observar, ouvir, assistir ou responder.
 
-Quebrar conteúdo longo em blocos progressivos em vez de criar paredes de texto ou páginas visualmente saturadas.
+Quebrar conteúdo longo em blocos progressivos.
 
 ## Vídeo
 
 Vídeo é opcional.
 
-Usar quando houver vantagem clara em ver algo acontecendo, por exemplo pronúncia, entonação, leitura expressiva, demonstração passo a passo ou situação comunicativa.
+Usar quando houver vantagem clara em ver algo acontecendo, como pronúncia, entonação, leitura expressiva, demonstração passo a passo ou situação comunicativa.
 
-Se texto, exemplo ou imagem transmitir a mesma ideia com mais clareza e rapidez, não recomendar vídeo.
-
-Não propor vídeo obrigatório para toda unidade ou lição.
+Se texto, exemplo ou imagem transmitir a mesma ideia com mais clareza/rapidez, não recomendar vídeo.
 
 ## Imagens
 
-Usar imagens quando elas reduzirem esforço de compreensão ou adicionarem informação pedagógica real.
+Usar quando reduzirem esforço de compreensão ou adicionarem informação pedagógica real.
 
-Evitar imagens meramente decorativas dentro do conteúdo didático.
+Evitar imagens meramente decorativas.
+
+Quando a própria UI puder representar informação como letras, tabelas, relações, mapas ou diagramas semânticos, preferir recurso gerado pela interface a arquivo de imagem.
 
 ## Narração e áudio controlado
 
-A narração geral do curso usa TTS do navegador/dispositivo.
+A narração geral usa TTS do navegador/dispositivo.
 
-Pensar o texto de narração em trechos coerentes e controláveis pelo aluno, não como uma gravação longa obrigatória da página inteira.
+TTS variável é adequado quando pequenas diferenças entre vozes não alteram o objeto pedagógico.
 
-TTS variável é adequado quando pequenas diferenças entre vozes não alteram o objeto pedagógico. Quando características específicas do som forem parte da aprendizagem ou quando a resposta correta depender precisamente do estímulo auditivo, não depender apenas do TTS do dispositivo: planejar `AUDIO_CONTROLADO` e registrar a demanda em `producao-midia/FILA-MIDIA.md`.
+Quando características específicas do som fizerem parte da aprendizagem ou determinarem a resposta, planejar `AUDIO_CONTROLADO` e registrar em `producao-midia/FILA-MIDIA.md`.
 
-## Checagem e exercício
+## Checagem, exercício e produção
 
-Não confundir os dois conceitos:
+Não confundir função pedagógica com componente visual.
 
-- `checagem`: curta, durante a explicação, confirma entendimento imediato;
-- `exercício`: prática estruturada que pode afetar XP, progresso, revisão e domínio.
+```text
+checagem
+→ confirma entendimento imediato
+→ normalmente role CHECK
+
+prática/exercício
+→ opera sobre conteúdo
+→ role PRACTICE ou EVIDENCE conforme função
+
+produção aberta
+→ resposta autoral/complexa
+→ role PRODUCTION/EVIDENCE
+
+verificação
+→ integra competências
+→ role VERIFICATION
+```
+
+O contrato oficial de interação, avaliação e evidência fica em `docs/exercicios.md`.
+
+### Regra de autoria de atividades
+
+Ao criar uma atividade, conseguir responder:
+
+```text
+por que existe?
+→ role
+
+como o aluno interage?
+→ interaction
+
+como pode ser avaliada?
+→ evaluation
+
+que evidência produz?
+→ evidence
+
+que estímulo necessita?
+→ stimuli
+```
+
+Não inventar novo componente apenas porque o `type` pedagógico é novo.
+
+### Respostas abertas
+
+Não reduzir interpretação, argumentação, síntese, escrita, edição ou oralidade a palavras-chave frágeis.
+
+Quando necessário, declarar:
+
+- critérios;
+- limites;
+- `recordResponse`;
+- validação automática permitida ou não;
+- necessidade de avaliador confiável.
+
+Se uma atividade exige avaliador confiável, IA pode fornecer feedback conforme `docs/avaliacao-ia.md`, mas não deve produzir domínio automático por padrão.
 
 ## Conteúdo complementar
 
-Informações secundárias, curiosidades e aprofundamentos não devem interromper a linha principal de aprendizagem.
+Informações secundárias, curiosidades e aprofundamentos não devem interromper a linha principal.
 
-Quando apropriado, tratá-los como conteúdo opcional, como `Saiba mais` ou `Aprofundamento`.
+Quando apropriado, usar `Saiba mais`/`Aprofundamento`.
 
-Nunca esconder informação necessária para atingir o objetivo da lição dentro de um bloco opcional.
+Nunca esconder conhecimento necessário em bloco opcional.
 
 ## Forma de trabalho com o usuário
 
-O projeto é grande. Evitar despejar currículos enormes ou dezenas de decisões de uma só vez quando isso não for necessário.
+O projeto é grande. Evitar despejar dezenas de decisões quando isso não for necessário.
 
 Preferir:
 
 1. definir a camada atual;
 2. discutir critérios;
-3. consolidar a decisão;
+3. consolidar decisão;
 4. documentar;
-5. avançar para a próxima camada.
+5. avançar.
 
-Ao recomendar uma estrutura, apresentar uma direção principal clara antes de alternativas.
+Ao recomendar estrutura, apresentar direção principal clara antes de alternativas.
 
 ## Planejamento curricular
 
-Não começar produzindo grandes quantidades de aulas antes de o nível correspondente estar suficientemente mapeado.
-
-A progressão geral atualmente é:
+A progressão geral é:
 
 ```text
 0 — Fundamentos
@@ -123,149 +179,94 @@ A progressão geral atualmente é:
 4 — Domínio
 ```
 
-Tratar `docs/mapa-curso.md` como fonte oficial para a evolução desses níveis e `docs/roadmap-curricular.md` como fonte oficial para saber **onde o desenvolvimento está, qual é o próximo passo e quando um checkpoint estrutural deve ocorrer**.
+O currículo N0→N4 já está fechado em M5. Nova autoria ampla só deve ocorrer quando houver necessidade real detectada por validação/teste, não para alimentar o frontend com um formato mais conveniente.
 
-O detalhamento local não deve avançar indefinidamente ignorando a maturidade das camadas superiores. Quando o roadmap estabelecer um checkpoint, concluí-lo antes de iniciar a próxima rodada extensa de autoria detalhada.
+Para implementação/publicação, seguir `docs/roadmap-produto.md` e adaptar o conteúdo existente pelo contrato de runtime antes de reescrevê-lo.
 
 ## Dimensionamento por camada
 
-Planejar o curso de cima para baixo, sem saltar prematuramente para aulas detalhadas.
-
-A hierarquia conceitual atual é:
+A hierarquia conceitual continua:
 
 ```text
 Nível
 → Área
 → Unidade
 → Lição
-→ Checagens / Exercícios
+→ Checagens / Exercícios / Produções / Verificações
 ```
 
-Cada camada deve responder a perguntas compatíveis com seu nível de abstração. Não reutilizar mecanicamente o mesmo conjunto de perguntas em todas as camadas.
+Cada camada responde a perguntas compatíveis com seu grau de abstração.
 
 ### Dimensionamento de um nível
 
-Antes de detalhar as áreas de um nível, definir:
+Definir:
 
 ```text
 Objetivo geral
-→ onde queremos que o aluno chegue ao concluir o nível
-
 Competências de saída
-→ o que ele precisa conseguir fazer sozinho
-
 Grandes áreas
-→ quais blocos de conhecimento precisam existir para produzir essas competências
 ```
 
-As competências de saída devem ser, sempre que possível, observáveis e verificáveis. Elas servirão posteriormente para orientar unidades, exercícios e critérios de conclusão.
-
-Não transformar a lista de grandes áreas em unidades automaticamente. Primeiro verificar se as áreas cobrem adequadamente o objetivo e as competências do nível.
+Competências devem ser observáveis/verificáveis sempre que possível.
 
 ### Dimensionamento de uma área
 
-Antes de dividir uma área em unidades, definir:
+Definir:
 
 ```text
 Objetivo da área
-→ o que essa área precisa construir dentro do nível
-
 Competências ao concluir
-→ o que o aluno consegue fazer depois de concluir a área
-
 Conteúdos essenciais
-→ o que obrigatoriamente precisa ser ensinado para alcançar essas competências
-
 Limites
-→ o que ainda não entra aqui e deve ficar para outra área ou etapa posterior
 ```
 
-Os limites são parte importante do planejamento. Eles evitam que uma área cresça indefinidamente ou antecipe conhecimentos que serão melhor ensinados depois.
+Limites evitam crescimento indefinido e antecipação inadequada.
 
 ### Dimensionamento de unidade
 
-O primeiro molde de unidade foi formalizado a partir da divisão real do Nível 0. Usar, como estrutura de planejamento:
+Usar:
 
 ```text
 Objetivo da unidade
-→ o que esta etapa precisa construir
-
 Competências ao concluir
-→ o que o aluno consegue fazer sozinho ao final da unidade
-
 Conteúdos nucleares
-→ o que precisa ser ensinado nesta unidade para produzir essas competências
-
 Retomadas e conexões
-→ conhecimentos anteriores que continuam sendo praticados ou que se conectam ao novo conteúdo
-
 Evidências de conclusão
-→ quais desempenhos observáveis mostram que as competências da unidade foram atingidas
-
 Limites
-→ o que pode aparecer como apoio ou contato, mas ainda não precisa ser dominado nesta unidade
 ```
 
-Esse molde organiza a decisão pedagógica da unidade, mas não determina quantidade fixa de lições, exercícios ou componentes visuais. O número de lições deve ser definido depois, conforme densidade, dependências e necessidade de prática.
-
-Uma área não corresponde obrigatoriamente a uma unidade. Uma unidade pode combinar conhecimentos de mais de uma área quando isso produzir uma sequência de aprendizagem mais natural.
-
-Da mesma forma, competências transversais podem atravessar várias unidades. Uma habilidade pode:
-
-```text
-ser apresentada
-→ praticada
-→ retomada
-→ consolidada
-```
-
-em momentos diferentes do percurso. Não adiar oralidade, escrita, pontuação ou uso cotidiano apenas porque sua sistematização ou consolidação principal ocorre em uma unidade posterior.
+Uma área não corresponde obrigatoriamente a uma unidade. Competências podem atravessar várias unidades.
 
 ### Dimensionamento de lição
 
-Ao dimensionar uma lição, não definir apenas um título. Registrar, em nível adequado de detalhe:
+Registrar:
 
 ```text
 Objetivo
-→ o que a lição precisa construir
-
 Competências
-→ o que o aluno deve conseguir fazer após a lição
-
 Conteúdo e dependências
-→ o que precisa ser ensinado e o que já pode ser pressuposto
-
 Modalidade principal
-→ ler / observar / ouvir / assistir / responder, conforme o momento
-
 Recursos necessários
-→ texto, TTS, áudio controlado, imagem, vídeo ou interação somente quando houver ganho pedagógico
-
 Tipos de prática
-→ como o aluno opera sobre o conteúdo
-
 Evidência de conclusão
-→ qual desempenho mostra que a lição cumpriu seu objetivo
 ```
 
-Não congelar ainda todas as telas ou quantidades exatas de exercícios se isso não for necessário para decidir a progressão.
+Ao detalhar atividade que produzirá evidência, usar `docs/exercicios.md` e preservar compatibilidade com `docs/contrato-conteudo.md`.
 
-### Mídia durante o planejamento de lições
+## Mídia durante o planejamento de lições
 
-Mídia curada deve entrar no planejamento como dependência explícita, sem bloquear a continuação do desenvolvimento.
-
-Fluxo obrigatório quando uma necessidade real de mídia for identificada:
+Fluxo quando houver necessidade real:
 
 ```text
 necessidade pedagógica
-→ verificar se TTS/recurso existente é suficiente
+→ verificar se TTS/recurso existente basta
 → se exigir produção humana, criar ID permanente
-→ registrar ficha completa em producao-midia/FILA-MIDIA.md
-→ referenciar a mídia pelo ID no planejamento/conteúdo
-→ continuar desenvolvendo o restante da lição e do curso
+→ registrar em producao-midia/FILA-MIDIA.md
+→ referenciar pelo ID
+→ continuar partes independentes
 ```
 
-Não deixar uma demanda de mídia apenas em conversa ou em descrição solta da lição.
+Não deixar demanda de mídia apenas na conversa.
 
 IDs seguem o padrão documentado em `producao-midia/README.md`, por exemplo:
 
@@ -273,57 +274,40 @@ IDs seguem o padrão documentado em `producao-midia/README.md`, por exemplo:
 N0-U01-L03-AUD-001
 ```
 
-Cada demanda precisa informar ao produtor, sem depender de contexto da conversa:
+Cada demanda precisa informar:
 
 - onde será usada;
-- objetivo pedagógico;
+- objetivo;
 - roteiro/conteúdo exato;
-- orientações de produção;
+- orientações;
 - nome esperado;
-- destino de produção;
+- destino;
 - critérios de validação;
-- prioridade, status e obrigatoriedade para publicação.
+- prioridade/status/obrigatoriedade.
 
-Uma mídia obrigatória pendente não bloqueia planejamento ou implementação das partes independentes, mas o conteúdo dependente dela não deve ser considerado pronto para publicação.
+Mídia obrigatória pendente não bloqueia autoria independente, mas impede declarar publicável a parte dependente.
 
-### Contrato operacional de material de apoio por lição
+## Contrato operacional de material de apoio por lição
 
-Ao desenvolver uma lição em detalhe, **avaliar material de apoio explicitamente mesmo quando a conclusão for não criar mídia**. A ausência de imagem, vídeo ou áudio humano deve ser uma decisão pedagógica consciente, não uma omissão acidental.
+Avaliar material de apoio explicitamente mesmo quando a decisão for não criar mídia.
 
-Usar este checklist em toda lição:
+Checklist:
 
 ```text
-1. Mídia curada / produção humana
-→ existe áudio controlado, vídeo ou imagem que realmente precisa ser produzido?
-→ se sim: quais IDs, onde entram e são obrigatórios para publicação?
-
-2. Recursos de runtime
-→ TTS, texto, controles ou outro recurso fornecido pela aplicação são suficientes?
-→ registrar onde são usados quando isso for relevante para implementação.
-
-3. Recursos visuais gerados pela interface
-→ algo deve ser renderizado como texto/componente da UI em vez de virar arquivo de imagem?
-→ preferir UI quando ela for mais acessível, responsiva, reutilizável e fiel ao objetivo.
-
-4. Dependência de publicação
-→ o que pode ser implementado agora?
-→ o que não pode ser considerado publicável enquanto uma mídia obrigatória estiver pendente?
-
-5. Justificativa
-→ por que a composição escolhida é pedagogicamente adequada?
-→ por que mídias não escolhidas não acrescentariam valor suficiente?
+1. mídia curada / produção humana
+2. recursos de runtime
+3. recursos visuais gerados pela interface
+4. dependência de publicação
+5. justificativa
 ```
 
-Quando o formato de conteúdo da lição permitir, registrar essas decisões em um bloco conceitual equivalente a `supportMaterials`, sem tratar os nomes abaixo como schema global congelado enquanto os schemas oficiais ainda não existirem:
+Quando o conteúdo permitir, usar bloco conceitual equivalente a:
 
 ```text
 supportMaterials
 ├── curatedMedia
-│   └── mediaIds + tipo + finalidade + localizações + requiredForPublication
 ├── runtimeResources
-│   └── TTS/recursos da aplicação + localizações + finalidade
 ├── generatedVisualResources
-│   └── recursos que a própria UI deve renderizar
 ├── productionQueueRequired
 ├── publicationDependency
 └── decisionRationale
@@ -331,54 +315,54 @@ supportMaterials
 
 Regras:
 
-- `curatedMedia` vazio é válido quando nenhuma produção humana traz ganho real;
-- não criar `IMG` ou `VID` apenas porque a lição ainda não tem imagem ou vídeo;
-- letras, palavras, tabelas simples e outros elementos que funcionem melhor como conteúdo acessível da interface não devem ser convertidos em imagem sem necessidade;
-- se uma mídia humana for necessária, criar o ID **antes** de o arquivo existir;
-- ligar cada `mediaId` às posições pedagógicas exatas assim que a lição estiver detalhada;
-- atualizar `producao-midia/FILA-MIDIA.md` quando essas posições se tornarem conhecidas, sem esperar exercícios formais futuros;
-- reutilizar IDs existentes quando a mesma mídia cumprir a mesma função; não regravar nem renumerar sem motivo;
-- a implementação deve depender do ID lógico, não do nome físico ou da pasta de produção;
-- mídia obrigatória pendente não interrompe a criação das próximas lições, mas impede declarar como publicada/concluída a parte que depende dela.
+- `curatedMedia` vazio é válido;
+- não criar mídia só porque não existe mídia;
+- preferir UI acessível para letras/tabelas simples;
+- criar ID antes do arquivo quando mídia humana for necessária;
+- ligar `mediaId` às posições pedagógicas;
+- atualizar fila de mídia;
+- reutilizar IDs quando a mesma mídia cumprir a mesma função;
+- implementação depende do ID lógico, não nome físico;
+- dependência obrigatória bloqueia publicação, não autoria independente.
 
-### Inicialização em uma conversa sem contexto
+## Inicialização em conversa sem contexto
 
-Se a instância não tiver contexto anterior do projeto e a tarefa envolver criação/revisão de conteúdo:
+Se a tarefa envolver criação/revisão curricular:
 
 ```text
 1. ler PROJECT_INDEX.md
 2. ler esta skill
 3. ler docs/roadmap-curricular.md
-4. ler os documentos de nível/unidade/lição relevantes
+4. ler documentos curriculares específicos
 5. ler docs/conteudo.md
-6. se houver qualquer possibilidade de mídia ou material de apoio, ler producao-midia/README.md e FILA-MIDIA.md
-7. inspecionar o conteúdo já existente para não duplicar IDs, decisões ou formatos
-8. só então criar ou alterar a próxima unidade/lição
+6. ler docs/exercicios.md se houver atividades/evidência
+7. ler docs/progresso.md se houver conclusão/domínio/revisão
+8. ler docs/contrato-conteudo.md se o material será publicado/renderizado
+9. ler mídia quando aplicável
+10. inspecionar conteúdo existente
 ```
 
-Não depender da conversa anterior para descobrir o próximo passo curricular, padrões de material de apoio, IDs de mídia, critérios de publicação ou limites pedagógicos. Se uma decisão precisa sobreviver à conversa, ela deve estar nas fontes do repositório.
+Se a tarefa for de produto/publicação, `docs/roadmap-produto.md` substitui o roadmap curricular como guia do próximo marco, mantendo o currículo como fonte de conteúdo.
 
-### Regra de progressão
+Não depender da conversa anterior para descobrir decisões duradouras.
 
-Antes de descer uma camada, verificar se a camada atual está suficientemente consolidada e se `docs/roadmap-curricular.md` não exige um checkpoint estrutural antes do próximo aprofundamento.
+## Regra de progressão
 
 Fluxo preferido:
 
 ```text
 definir
-→ verificar cobertura e limites
+→ verificar cobertura/limites
 → consolidar
-→ documentar quando necessário
-→ atualizar o estado/roadmap quando houver avanço material
-→ descer uma camada
+→ documentar
+→ atualizar roadmap aplicável
+→ avançar
 ```
 
-Evitar produzir dezenas de unidades ou lições para compensar uma camada superior ainda mal definida.
-
-Toda PR que altere materialmente o avanço curricular deve verificar se o foco atual, próximo passo ou maturidade registrados em `docs/roadmap-curricular.md` precisam ser atualizados na mesma mudança. Correções puramente editoriais ou técnicas não precisam mover o roadmap.
+Evitar produzir conteúdo novo para compensar uma lacuna puramente técnica de renderer/catalog.
 
 ## Regra final
 
 A tecnologia serve à aprendizagem.
 
-Ao escolher entre uma solução mais chamativa e uma solução mais clara, preferir a que ajuda o aluno a compreender, praticar e reter o conteúdo com menor carga desnecessária.
+Ao escolher entre solução chamativa e solução clara, preferir a que ajuda o aluno a compreender, praticar e reter com menor carga desnecessária e evidência mais válida.
