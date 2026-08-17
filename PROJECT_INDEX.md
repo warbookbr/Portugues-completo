@@ -234,9 +234,10 @@ auditoria técnica de publicação
 → testes end-to-end e validação com usuários
 ```
 
-## Arquitetura e frontend
+## Arquitetura e produto
 
-- `docs/arquitetura.md`
+- `docs/arquitetura.md` — decisões estruturais e técnicas.
+- `docs/progresso.md` — progresso curricular, evidência/domínio, feedback, revisão, IA assistiva e gamificação opcional.
 - `index.html`
 - `app/css/`
 - `app/js/`
@@ -264,6 +265,7 @@ Mídia pedagógica pesada não pertence a `app/assets/`.
 
 ```text
 arquitetura → docs/arquitetura.md
+progresso/feedback/domínio/revisão/gamificação → docs/progresso.md
 visão geral curricular → docs/mapa-curso.md
 M1 N1–N4 → docs/mapa-niveis-1-4.md
 matriz transversal → docs/matriz-progressao-global.md
