@@ -296,6 +296,55 @@ export function createProgressService(options = {}) {
   return new ProgressService(options);
 }
 
+function chooseEvidenceState(a, b) {
+  if (!a) return b || null;
+  if (!b) return a;
+  return EVIDENCE_STATUS_RANK[a] >= EVIDENCE_STATUS_RANK[b] ? a : b;
+}
+
+function mergeReviewQueue(localQueue = [], remoteQueue = [], baseQueue = []) {
+  const localById = new Map(localQueue.map(item => [item.id, item]));
+  const remoteById = new Map(remoteQueue.map(item => [item.id, item]));
+  const baseById = new Map(baseQueue.map(item => [item.id, item]));
+  const merged = [];
+
+  for (const id of new Set([...localById.keys(), ...remoteById.keys(), ...baseById.keys()])) {
+    const localItem = localById.get(id);
+    const remoteItem = remoteById.get(id);
+    const baseItem = baseById.get(id);
+
+    if (!localItem && !remoteItem) continue;
+    if (!baseItem) {
+      merged.push(clone(localItem || remoteItem));
+      continue;
+    }
+
+    const localChanged = localItem ? JSON.stringify(localItem) !== JSON.stringify(baseItem) : true;
+    const remoteChanged = remoteItem ? JSON.stringify(remoteItem) !== JSON.stringify(baseItem) : true;
+
+    if (!localItem && remoteItem) {
+      if (!remoteChanged) continue;
+      merged.push(clone(remoteItem));
+      continue;
+    }
+    if (localItem && !remoteItem) {
+      if (!localChanged) continue;
+      merged.push(clone(localItem));
+      continue;
+    }
+
+    if (localChanged && !remoteChanged) { merged.push(clone(localItem)); continue; }
+    if (!localChanged && remoteChanged) { merged.push(clone(remoteItem)); continue; }
+
+    const chosen = (localItem.lastReviewedAt || localItem.createdAt || '') >= (remoteItem.lastReviewedAt || remoteItem.createdAt || '') ? localItem : remoteItem;
+    const combined = clone(chosen);
+    if (localItem.priority === 'HIGH' || remoteItem.priority === 'HIGH') combined.priority = 'HIGH';
+    merged.push(combined);
+  }
+
+  return merged;
+}
+
 export function mergeProgress(local, remote, base = null) {
   if (!local) return { progress: clone(remote), conflicts: [] };
   if (!remote) return { progress: clone(local), conflicts: [] };
@@ -323,8 +372,8 @@ export function mergeProgress(local, remote, base = null) {
     if (!b) { merged.curriculum.verifications[id] = clone(a); continue; }
     const clusterStates = {};
     for (const key of new Set([...Object.keys(a.clusterStates || {}), ...Object.keys(b.clusterStates || {})])) {
-      const av = a.clusterStates?.[key]; const bv = b.clusterStates?.[key];
-      clusterStates[key] = EVIDENCE_STATUS_RANK[av] >= EVIDENCE_STATUS_RANK[bv] ? av : bv;
+      const state = chooseEvidenceState(a.clusterStates?.[key], b.clusterStates?.[key]);
+      if (state) clusterStates[key] = state;
     }
     merged.curriculum.verifications[id] = {
       status: LESSON_STATUS_RANK[a.status] >= LESSON_STATUS_RANK[b.status] ? a.status : b.status,
@@ -362,9 +411,7 @@ export function mergeProgress(local, remote, base = null) {
     };
   }
 
-  const reviewById = new Map();
-  for (const item of [...(remote.review?.queue || []), ...(local.review?.queue || [])]) reviewById.set(item.id, clone(item));
-  merged.review.queue = [...reviewById.values()];
+  merged.review.queue = mergeReviewQueue(local.review?.queue || [], remote.review?.queue || [], base?.review?.queue || []);
 
   const conflicts = [];
   for (const id of new Set([...Object.keys(local.responses || {}), ...Object.keys(remote.responses || {})])) {
