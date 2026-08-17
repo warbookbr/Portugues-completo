@@ -69,20 +69,37 @@ Gates do N3:
 ## Nível 4 — Domínio
 
 ```text
-M1 ✓
-M2 — PRÓXIMO MARCO
-M3 pendente
+M1 ✓ — objetivo + 17 competências oficiais + 9 grandes responsabilidades
+M2 ✓ — 9 áreas dimensionadas + revisão horizontal 17/17
+M3 — PRÓXIMO MARCO
 M4 pendente
 M5 pendente
 ```
 
-O N4 começa na fronteira definida pelo checkpoint N3→N4:
+Fonte M2: `docs/areas-nivel-4.md`.
+
+Áreas M2:
 
 ```text
-uso avançado consciente, crítico, argumentativo e adaptável
-→
-controle consciente, flexível, crítico e autoral da língua
+1. Leitura estratégica de alta complexidade, comparação e síntese
+2. Escrita avançada, autoria e transferência entre gêneros
+3. Revisão, edição e precisão linguística
+4. Argumentação, pesquisa, fontes e responsabilidade autoral
+5. Estilo, registro e escolhas autorais
+6. Análise da língua, norma, variação, mudança e efeitos sociais
+7. Literatura e leitura estética autônoma
+8. Oralidade de alta complexidade
+9. Multimodalidade, cultura digital e autoria em múltiplas linguagens
 ```
+
+Fronteiras explicitadas no M2:
+
+- leitura/síntese ≠ pesquisa/seleção/uso de fontes;
+- autoria global ≠ estilo;
+- edição normativa ≠ análise sociolinguística;
+- literatura ≠ multimodalidade, embora possam se integrar em unidades futuras.
+
+O gate M2→M3 foi satisfeito: as 17 competências oficiais possuem responsabilidade identificável e nenhuma área adicional é necessária apenas para cobrir lacuna aparente.
 
 # Marco ativo
 
@@ -92,17 +109,19 @@ N1 — M5 ✓
 N2 — M5 ✓
 N3 — M5 ✓
 N4 — M1 ✓
-└── M2 — PRÓXIMO MARCO
+└── M2 ✓
+    └── M3 — PRÓXIMO MARCO
 ```
 
 ## Próximo subpasso
 
 ```text
-N4 — M2
-→ dimensionar as grandes áreas do Nível 4
-→ verificar cobertura das competências oficiais de saída do N4
-→ distribuir responsabilidades sem transformar áreas em unidades prematuramente
-→ preservar continuidade com o checkpoint N3→N4 e a matriz global
+N4 — M3
+→ transformar as 9 áreas em uma sequência de unidades pedagógicas integradas
+→ definir objetivo, competências, conteúdos nucleares, retomadas/conexões, evidências e limites de cada unidade
+→ não impor 9 unidades apenas porque existem 9 áreas
+→ distribuir transversalmente fontes, escrita, revisão, consulta e acessibilidade
+→ antecipar arquitetura da verificação de saída do N4 sem criar ainda o JSON final
 ```
 
 # Regras de continuidade
@@ -122,6 +141,8 @@ N4 — M2
 13. Revisão deve preservar o que já funciona; quantidade de mudanças não mede qualidade.
 14. Existência de JSON curricular não equivale automaticamente a conteúdo publicado.
 15. Fechamento curricular de nível não equivale a aprovação automática de aluno individual.
+16. N4 deve aumentar integração, flexibilidade, independência crítica e autoria, não apenas comprimento ou raridade.
+17. Pesquisa deve responder a necessidade informacional explícita; quantidade de fontes não é proxy de qualidade.
 
 # Dependências não curriculares
 
@@ -147,6 +168,7 @@ N3 M4 → docs/licoes-nivel-3.md + docs/licoes-nivel-3-u*.md
 N3 saída → docs/checkpoint-saida-nivel-3.md + content/levels/003-avancado/exit-verification.json
 N3-U3 normativo → docs/referencias-gramatica-nivel-3-u3.md
 N3-U9 audiovisual → docs/gate-audiovisual-nivel-3-u9.md
+N4 M2 → docs/areas-nivel-4.md
 estado → docs/roadmap-curricular.md
 conteúdo → content/
 ```
