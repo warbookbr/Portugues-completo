@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "id": "N4-U09-L04",
+  "title": "Imagem, símbolo, figuratividade, ambiguidade e ironia",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Interpretar linguagem figurativa, ambiguidades e ironias por pistas distribuídas no texto, distinguindo leitura sustentada de associação livre ou intenção psicológica inventada.",
+  "competencies": ["identificar pista figurativa", "comparar leitura literal e figurada", "analisar ambiguidade", "reconhecer ironia contextual", "marcar indeterminação"],
+  "prerequisites": ["N4-U09-L01", "N4-U09-L03", "N4-U01-V01"],
+  "limits": ["não procurar símbolo por reflexo", "intenção psicológica do autor não é inferida automaticamente", "ambiguidade pode permanecer produtiva", "associação pessoal sem pista textual não basta"],
+  "media": {"tts": "opcional", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["texto-controlado"]}], "generatedVisualResources": [{"type": "UI_RENDERED_ANNOTATED_TEXT"}, {"type": "UI_RENDERED_INTERPRETATION_EVIDENCE_MAP"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "as pistas decisivas estão no texto e podem ser anotadas semanticamente."},
+  "sequence": [
+    {"id": "L04-B01", "type": "authored-prose", "text": "O elevador voltou a funcionar no dia da despedida. 'Que pontualidade', disse Rosa, olhando a caixa de ferramentas ainda aberta no corredor. Ninguém respondeu. No térreo, a porta se fechou antes que ela apertasse o botão.", "task": "mapear leitura literal, possível ironia e função recorrente de abertura/fechamento"},
+    {"id": "L04-C01", "type": "figurative-boundary-check", "items": [{"claim": "'Que pontualidade' pode ser irônico pelo contexto", "expected": true}, {"claim": "a porta prova que Rosa deseja abandonar todas as relações", "expected": false}, {"claim": "o fechamento pode sustentar mais de uma leitura", "expected": true}], "automaticValidation": true},
+    {"id": "L04-A01", "type": "figurative-analysis", "prompt": "Escolha duas pistas e sustente uma leitura figurativa ou irônica; apresente uma leitura concorrente e indique o que o texto não permite afirmar.", "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"timeLimit": false, "symbolCountScored": false, "authorIntentGuessScored": false, "singleInterpretationKey": false, "openResponseAutoValidated": false},
+  "completionEvidence": {"clusters": {"figurativeAmbiguity": {"evidence": ["L04-A01"], "required": true}}, "completionRule": "a análise precisa ancorar a figuratividade em pistas observáveis e preservar pelo menos um limite de interpretação.", "requiresReliableEvaluatorFor": ["qualidade da inferência figurativa"]}
+}

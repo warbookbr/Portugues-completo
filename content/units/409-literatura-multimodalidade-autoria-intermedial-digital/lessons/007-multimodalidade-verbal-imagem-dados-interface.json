@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "id": "N4-U09-L07",
+  "title": "Multimodalidade: verbal, imagem, dados e interface",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Analisar como texto, elementos visuais descritos, dados e interface distribuem informação, orientam percurso e podem repetir, complementar, tensionar ou omitir conteúdo.",
+  "competencies": ["mapear função de modalidade", "comparar informação repetida e complementar", "ler dados com legenda e valores", "analisar ordem de navegação", "reconstruir mensagem de forma acessível"],
+  "prerequisites": ["N4-U09-L01", "N4-U09-L06", "N4-U02-V01"],
+  "limits": ["design profissional não é requisito", "cor ou posição não podem ser pista única", "aparência não substitui conteúdo semântico", "dados precisam manter valores ou relações acessíveis"],
+  "media": {"tts": "nao necessario", "controlledAudio": [], "video": "nao necessario", "images": "nao obrigatorias; composição é renderizada semanticamente"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [], "generatedVisualResources": [{"type": "UI_RENDERED_ACCESSIBLE_VISUAL_COMPOSITION"}, {"type": "UI_RENDERED_SEMANTIC_PAGE_LAYOUT"}, {"type": "UI_RENDERED_DATA_RELATION"}, {"type": "UI_RENDERED_INTERFACE_FLOW"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "a competência é relação entre modalidades e percurso; estrutura semântica, valores e descrições equivalentes preservam todas as pistas decisivas."},
+  "sequence": [
+    {"id": "L07-B01", "type": "semantic-composition", "elements": [{"role": "headline", "text": "Uso do parque mudou após novo horário"}, {"role": "data", "values": {"antes": 180, "depois": 246}, "label": "entradas semanais registradas"}, {"role": "visual-description", "text": "sequência de três blocos mostra manhã, tarde e noite; o bloco noturno aparece apenas no período posterior"}, {"role": "link", "text": "como os registros foram contados", "destination": "nota metodológica"}], "task": "classificar o que cada modalidade acrescenta e o que ainda falta para interpretar causalidade"},
+    {"id": "L07-C01", "type": "multimodal-check", "items": [{"claim": "o aumento de entradas prova que o novo horário causou todo o crescimento", "expected": false}, {"claim": "o dado e a descrição visual podem ser complementares", "expected": true}, {"claim": "a nota metodológica pode alterar o uso possível do número", "expected": true}], "automaticValidation": true},
+    {"id": "L07-A01", "type": "multimodal-analysis", "prompt": "Reconstrua a mensagem sem depender da aparência, explique a função e o limite de cada modalidade e proponha uma ordem de leitura acessível que preserve as relações decisivas.", "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"timeLimit": false, "visualPolishScored": false, "colorRecognitionScored": false, "openResponseAutoValidated": false},
+  "completionEvidence": {"clusters": {"multimodalRelations": {"evidence": ["L07-A01"], "required": true}}, "completionRule": "a análise deve distinguir funções das modalidades, preservar valores/relações e permitir reconstrução da mensagem sem depender de pista exclusivamente visual.", "requiresReliableEvaluatorFor": ["qualidade da análise multimodal"]}
+}

@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "id": "N4-U09-L12",
+  "title": "Análise e produção integradas: literatura, meio, circulação e autoria",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Integrar interpretação literária, análise multimodal, proveniência, adaptação e autoria acessível em uma tarefa complexa que preserve evidência, atribuição e limites de representação.",
+  "competencies": ["integrar leitura estética e multimodal", "comparar adaptação", "reconstruir circulação", "produzir resposta multimodal acessível", "refletir sobre ganhos, perdas e limites"],
+  "prerequisites": ["N4-U09-L01", "N4-U09-L02", "N4-U09-L03", "N4-U09-L04", "N4-U09-L05", "N4-U09-L06", "N4-U09-L07", "N4-U09-L08", "N4-U09-L09", "N4-U09-L10", "N4-U09-L11"],
+  "limits": ["literatura não é reduzida a pretexto para mídia", "produção aberta não recebe validação automática global", "aparência não pontua por si", "interpretações diferentes podem ser aceitas quando sustentadas", "limite sensorial real deve ser declarado"],
+  "media": {"tts": "opcional quando voz específica não determina resposta", "controlledAudio": [], "video": "nao necessario", "images": "nao obrigatorias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["obra-base", "componentes-verbais"]}], "generatedVisualResources": [{"type": "UI_RENDERED_ANNOTATED_TEXT"}, {"type": "UI_RENDERED_INTERPRETATION_EVIDENCE_MAP"}, {"type": "UI_RENDERED_SOURCE_LINEAGE"}, {"type": "UI_RENDERED_FRAME_SEQUENCE"}, {"type": "UI_RENDERED_MULTIMODAL_TIMELINE"}, {"type": "UI_RENDERED_ACCESSIBLE_VISUAL_COMPOSITION"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória; qualidade global aberta exige avaliador confiável", "decisionRationale": "a tarefa integra apenas recursos semânticos já autorizados pelo gate para texto, sequência, proveniência e composição acessível."},
+  "sequence": [
+    {"id": "L12-B01", "type": "integrated-case", "materials": ["obra literária autoral nova", "adaptação semântica em sequência", "cadeia simulada de publicação", "editor multimodal acessível"], "task": "formular leitura, comparar transformação, reconstruir circulação e planejar resposta autoral"},
+    {"id": "L12-B02", "type": "decision-log", "requiredFields": ["interpretação e evidência", "leitura concorrente", "ganho/perda da adaptação", "proveniência", "decisão de meio", "atribuição", "equivalentes acessíveis", "limite sensorial"], "recordResponse": true, "automaticValidation": false},
+    {"id": "L12-A01", "type": "integrated-analysis-production", "prompt": "Produza análise sustentada e uma resposta multimodal/digital própria em protótipo semântico. Registre o que preservou, transformou, atribuiu, tornou acessível e o que não pode afirmar sem evidência ou mídia real.", "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"timeLimit": false, "visualPolishScored": false, "singleInterpretationKey": false, "mediaCountScored": false, "openResponseAutoValidated": false},
+  "completionEvidence": {"clusters": {"integratedLiteratureMultimodalAuthorship": {"evidence": ["L12-B02", "L12-A01"], "required": true}}, "completionRule": "análise e produção precisam permanecer ligadas por evidência, proveniência, decisão de meio, acessibilidade e limites explícitos; acabamento visual não compensa falhas nesses elementos.", "requiresReliableEvaluatorFor": ["qualidade global da análise", "qualidade da produção autoral", "coerência entre leitura, adaptação e meio", "acessibilidade"]}
+}

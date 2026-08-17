@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "N4-U09-L11",
+  "title": "Autoria multimodal/digital acessível",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Planejar e produzir composição multimodal em que cada modalidade tenha função explícita, fontes permaneçam atribuíveis e toda informação decisiva possua equivalente textual ou semântico acessível.",
+  "competencies": ["distribuir informação entre modalidades", "planejar hierarquia semântica", "atribuir fontes", "criar equivalentes acessíveis", "auditar dependência sensorial"],
+  "prerequisites": ["N4-U09-L07", "N4-U09-L10", "N4-U04-V01", "N4-U06-V01"],
+  "limits": ["design profissional não é requisito", "aparência não substitui clareza", "cor não pode ser pista única", "informação decisiva deve permanecer recuperável sem modalidade sensorial exclusiva", "produção aberta exige avaliador confiável"],
+  "media": {"tts": "opcional para conteúdo verbal", "controlledAudio": [], "video": "nao necessario", "images": "nao obrigatorias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["conteudo-verbal"]}], "generatedVisualResources": [{"type": "UI_RENDERED_ACCESSIBLE_VISUAL_COMPOSITION"}, {"type": "UI_RENDERED_SEMANTIC_PAGE_LAYOUT"}, {"type": "UI_RENDERED_DATA_RELATION"}, {"type": "UI_RENDERED_INTERFACE_FLOW"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória; produção aberta requer avaliador confiável", "decisionRationale": "a autoria usa apenas composição visual acessível, layout semântico, relações de dados e fluxo de interface já autorizados pelo gate; a auditoria é um procedimento, não um novo tipo de mídia."},
+  "sequence": [
+    {"id": "L11-B01", "type": "multimodal-brief", "scenario": "Criar uma página curta sobre um projeto de memória de bairro usando trecho textual, pequena relação de dados, sequência de três momentos e navegação para fontes.", "requiredFunctions": ["contextualizar", "mostrar mudança temporal", "atribuir origem", "permitir leitura sem depender de cor ou imagem"]},
+    {"id": "L11-B02", "type": "accessibility-audit", "checks": ["ordem visual também existe semanticamente", "texto visual é texto real", "dados têm valores/descrição", "sequência é percorrível", "fontes são identificáveis", "pista decisiva possui equivalente"], "automaticValidation": false},
+    {"id": "L11-C01", "type": "accessibility-principle-check", "items": [{"claim": "uma legenda pode ser necessária mesmo quando a imagem parece autoexplicativa", "expected": true}, {"claim": "cor diferente basta como única forma de distinguir duas categorias", "expected": false}], "automaticValidation": true},
+    {"id": "L11-A01", "type": "semantic-prototype", "prompt": "Produza um protótipo semântico com texto, dados/descrição, sequência, navegação e atribuição. Para cada modalidade, declare a função e o equivalente acessível da informação decisiva.", "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"timeLimit": false, "visualPolishScored": false, "mediaCountScored": false, "singleDesignKey": false, "openResponseAutoValidated": false},
+  "completionEvidence": {"clusters": {"accessibleMultimodalAuthorship": {"evidence": ["L11-A01"], "required": true}}, "completionRule": "o protótipo deve distribuir funções entre modalidades, preservar atribuição e manter toda pista decisiva acessível por estrutura semântica equivalente.", "requiresReliableEvaluatorFor": ["coerência da composição", "qualidade da acessibilidade", "adequação das decisões de autoria"]}
+}

@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "id": "N4-U09-L10",
+  "title": "Adaptação/intermedialidade: ganhos, perdas e transformação",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Comparar como um núcleo textual ou literário se transforma ao passar entre meios, identificando preservação, explicitação, omissão, reorganização, ganhos e perdas sem usar fidelidade total como critério automático.",
+  "competencies": ["comparar meios", "identificar preservação e transformação", "analisar ganho e perda", "distinguir mudança funcional de defeito", "justificar decisão interpretativa"],
+  "prerequisites": ["N4-U09-L01", "N4-U09-L09", "N4-U04-V01"],
+  "limits": ["adaptação não precisa reproduzir todos os elementos do original", "diferença não é defeito automático", "mudança de meio pode tornar certas informações explícitas", "comparação deve preservar o que cada versão realmente oferece"],
+  "media": {"tts": "opcional quando componente verbal puder ser lido", "controlledAudio": [], "video": "nao necessario", "images": "nao obrigatorias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["trilha-verbal"]}], "generatedVisualResources": [{"type": "UI_RENDERED_FRAME_SEQUENCE"}, {"type": "UI_RENDERED_MULTIMODAL_TIMELINE"}, {"type": "UI_RENDERED_SEMANTIC_PAGE_LAYOUT"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "as versões são comparadas por sequência, linha do tempo e layout semântico já autorizados pelo gate; o alvo é transformação entre meios, não acabamento audiovisual."},
+  "sequence": [
+    {"id": "L10-B01", "type": "base-and-adaptation", "baseText": "No conto, a personagem descobre aos poucos que o relógio da praça está parado; a revelação ocorre apenas no último parágrafo.", "adaptation": {"medium": "sequência visual semântica", "frames": ["plano geral da praça com relógio visível", "pessoas consultando celulares", "detalhe do ponteiro imóvel", "personagem finalmente olha para o relógio"], "captionPolicy": "sem legenda explicativa até o último quadro"}, "task": "comparar quando a informação se torna disponível em cada meio"},
+    {"id": "L10-C01", "type": "adaptation-check", "items": [{"claim": "mostrar o relógio desde o primeiro quadro pode tornar sua presença mais saliente que no conto", "expected": true}, {"claim": "qualquer diferença em relação ao conto é falha de fidelidade", "expected": false}], "automaticValidation": true},
+    {"id": "L10-A01", "type": "intermedial-analysis", "prompt": "Identifique ao menos um ganho, uma perda e uma transformação de efeito ao mudar de meio. Proponha uma alternativa de adaptação e justifique o que preservaria e o que aceitaria transformar.", "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"timeLimit": false, "fidelityMaximizationScored": false, "visualPolishScored": false, "openResponseAutoValidated": false},
+  "completionEvidence": {"clusters": {"intermedialAdaptation": {"evidence": ["L10-A01"], "required": true}}, "completionRule": "a comparação deve tratar mudança de meio como transformação com ganhos/perdas e justificar escolhas sem exigir cópia integral do original.", "requiresReliableEvaluatorFor": ["qualidade da análise intermedial"]}
+}
