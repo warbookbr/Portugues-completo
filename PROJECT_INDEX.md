@@ -20,10 +20,11 @@ Português Completo
 
 ## Estado e execução
 
-- `docs/roadmap-curricular.md` — estado real, maturidade, marco ativo e próximo subpasso.
+- `docs/roadmap-curricular.md` — estado/maturidade do currículo N0→N4, atualmente fechado em M5.
+- `docs/roadmap-produto.md` — estado e ordem da fase ativa de produto/publicação; **fonte do próximo marco técnico**.
 - `docs/execucao-continua.md` — execução autônoma por marcos autorizados.
 - `.ChatGPT/skills/curricular-orchestration/SKILL.md` — orquestração de marcos longos.
-- `.ChatGPT/skills/course-content-design/SKILL.md` — planejamento e revisão pedagógica.
+- `.ChatGPT/skills/course-content-design/SKILL.md` — planejamento e revisão pedagógica, já alinhado aos contratos de produto.
 - `.ChatGPT/skills/frontend-visual-check/SKILL.md` — verificação de mudanças visuais relevantes.
 
 ## Curso inteiro
@@ -50,7 +51,8 @@ Estas fontes definem como o currículo fechado vira aplicação:
 Regra de leitura para trabalho de produto:
 
 ```text
-arquitetura
+roadmap-produto
+→ arquitetura
 → contrato de conteúdo
 → exercícios/atividades
 → progresso
@@ -194,18 +196,21 @@ M5 ✓ — U1–U9 + N4-EXIT-V01 + checkpoint final
 
 ## Próxima fase do projeto
 
-Os contratos de produto agora estão dimensionados. A implementação técnica deve seguir:
+A sequência oficial está em `docs/roadmap-produto.md`.
+
+Resumo:
 
 ```text
-schemas + validadores de contrato
-→ ContentService/normalizador
-→ manifests unit.json
-→ catálogo course.json
-→ renderer de conteúdo/atividades
-→ ProgressService + persistência/Gist
-→ feedback com IA opt-in
-→ modos Clássico/Gamificado
-→ testes end-to-end e validação com usuários
+P1 schemas + validadores de contrato
+→ P2 ContentService/normalizador
+→ P3 manifests unit.json + catálogo course.json
+→ P4 renderer real
+→ P5 ProgressService + Gist
+→ P6 modos Clássico/Gamificado
+→ P7 feedback com IA
+→ P8 ampliação do catálogo
+→ P9 mídia/publicação
+→ P10 testes/calibração
 ```
 
 Não iniciar reescrita curricular em massa para atender ao renderer; usar adapters/manifests conforme `docs/contrato-conteudo.md`.
@@ -214,7 +219,7 @@ Não iniciar reescrita curricular em massa para atender ao renderer; usar adapte
 
 - `producao-midia/README.md` — contrato operacional de mídia.
 - `producao-midia/FILA-MIDIA.md` — fila oficial.
-- `content/course.json` — catálogo de publicação; atualmente ainda precisa ser populado no marco técnico correspondente.
+- `content/course.json` — catálogo de publicação; ainda precisa ser populado no marco P3.
 - `content/units/` — conteúdo de unidades, lições e verificações.
 - `content/levels/` — verificações de nível.
 
@@ -228,6 +233,8 @@ Não iniciar reescrita curricular em massa para atender ao renderer; usar adapte
 ## Fontes de verdade
 
 ```text
+estado curricular → docs/roadmap-curricular.md
+estado/próximo marco de produto → docs/roadmap-produto.md
 arquitetura → docs/arquitetura.md
 catálogo/manifests/runtime → docs/contrato-conteudo.md
 forma de ensinar/mídia → docs/conteudo.md
@@ -242,7 +249,6 @@ N3 saída → docs/checkpoint-saida-nivel-3.md + content/levels/003-avancado/exi
 N4 saída → content/levels/004-dominio/exit-verification.json + docs/checkpoint-saida-nivel-4.md
 N4 normativo U5/U7 → docs/gate-normativo-nivel-4-u5-u7.md + docs/referencias-gramatica-nivel-4-u5-u7*.md
 N4 mídia/acessibilidade → docs/gate-midia-acessibilidade-nivel-4-u9.md
-estado/marcos → docs/roadmap-curricular.md
 conteúdo detalhado → content/
 produção de mídia → producao-midia/README.md + producao-midia/FILA-MIDIA.md
 validação automática → docs/validacoes.md
