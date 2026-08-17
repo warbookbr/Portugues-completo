@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "id": "N4-U09-L01",
+  "kind": "LESSON",
+  "title": "Interpretação literária autônoma e evidência",
+  "objective": "Formular interpretação própria de um texto literário novo, sustentá-la por evidências internas, reconhecer alternativas plausíveis e delimitar incerteza.",
+  "competencyIds": ["N4-U09-C01"],
+  "prerequisites": ["N3-U09-V01", "N4-U01-V01"],
+  "limits": ["gosto pessoal não substitui evidência", "interpretação aberta exige avaliador confiável"],
+  "blocks": [
+    {
+      "id": "L01-B01",
+      "kind": "CONTENT",
+      "pedagogicalType": "authored-literary-text",
+      "content": {"text": "Na estação vazia, Lia conferiu três vezes o painel apagado. No bolso, o bilhete de volta continuava inteiro. Quando ouviu o trem ao longe, não se aproximou da plataforma; dobrou o bilhete ao meio e sentou-se sobre a mala."}
+    },
+    {
+      "id": "L01-C01",
+      "kind": "ACTIVITY",
+      "pedagogicalType": "interpretation-boundary-check",
+      "focus": "respond",
+      "content": {"claims": ["Lia decidiu definitivamente nunca voltar", "o texto constrói hesitação ou recuo diante da partida", "o bilhete funciona como elemento relevante para a decisão"]},
+      "activity": {
+        "role": "CHECK",
+        "interaction": "CLASSIFY",
+        "evaluation": {"mode": "DETERMINISTIC", "feedbackTiming": "IMMEDIATE", "allowRetry": true, "penalizeSupport": false, "answerKey": {"0": "nao sustentado", "1": "sustentavel", "2": "sustentavel"}, "criteria": [], "threshold": 1},
+        "evidence": {"role": "PRACTICE", "competencyIds": ["N4-U09-C01"], "clusterId": null, "recordResponse": false, "requiredForCompletion": false},
+        "stimuli": [{"type": "TEXT", "payload": {"sourceBlockId": "L01-B01"}}]
+      }
+    },
+    {
+      "id": "L01-A01",
+      "kind": "ACTIVITY",
+      "pedagogicalType": "open-interpretation",
+      "focus": "respond",
+      "content": {"prompt": "Apresente uma interpretação própria, três evidências, uma alternativa plausível e um elemento que limita sua certeza."},
+      "activity": {
+        "role": "PRODUCTION",
+        "interaction": "STRUCTURED_RESPONSE",
+        "evaluation": {
+          "mode": "RELIABLE_EVALUATOR",
+          "feedbackTiming": "AFTER_ACTIVITY",
+          "allowRetry": true,
+          "penalizeSupport": false,
+          "criteria": [
+            {"id": "interpretation", "description": "a leitura é reconstruível a partir do texto", "required": true},
+            {"id": "evidence", "description": "evidências são ligadas à interpretação", "required": true},
+            {"id": "limit", "description": "a resposta reconhece limite real de certeza", "required": true}
+          ],
+          "threshold": null
+        },
+        "evidence": {"role": "REQUIRED", "competencyIds": ["N4-U09-C01"], "clusterId": "interpretationEvidence", "recordResponse": true, "requiredForCompletion": true},
+        "stimuli": [{"type": "TEXT", "payload": {"sourceBlockId": "L01-B01"}}]
+      }
+    }
+  ],
+  "completion": {
+    "clusters": [
+      {"id": "interpretationEvidence", "required": true, "evidenceIds": ["L01-A01"], "satisfaction": "PENDING_ALLOWED"}
+    ],
+    "nonCompensable": true
+  }
+}
