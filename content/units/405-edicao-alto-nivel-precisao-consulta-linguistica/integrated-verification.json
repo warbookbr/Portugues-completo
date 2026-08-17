@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "id": "N4-U05-V01",
+  "title": "Verificação integrada — Edição de alto nível, precisão e consulta linguística",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Verificar se o aluno consegue editar dois textos novos de forma priorizada, proporcional e auditável, usando o recorte normativo documentado, consulta adequada e preservação de autoria.",
+  "prerequisites": ["N4-U05-L01", "N4-U05-L02", "N4-U05-L03", "N4-U05-L04", "N4-U05-L05", "N4-U05-L06", "N4-U05-L07", "N4-U05-L08", "N4-U05-L09", "N4-U05-L10", "N4-U05-L11"],
+  "referenceScope": "docs/referencias-gramatica-nivel-4-u5-u7.md",
+  "materials": {
+    "textA": {"role": "texto derivado de produção própria simulada", "brief": "relatório analítico para público geral", "features": ["recomendação antes de limite", "bloco redundante", "referente ambíguo", "haver impessoal em forma inadequada", "partitiva em variante documentada", "termo lexical marcado como incerto para consulta", "quantificador excessivo"]},
+    "textB": {"role": "texto alheio", "brief": "comunicação pública de tom direto que deve preservar voz do autor", "features": ["arquitetura majoritariamente adequada", "uma ambiguidade real", "uma sugestão estilística opcional", "uma decisão que exige pergunta ao autor", "convenção editorial explicitamente declarada para um trecho"]}
+  },
+  "tasks": [
+    {"id": "V01-A01", "type": "diagnosis-and-priority", "prompt": "Diagnostique os dois textos por camadas e ordene as intervenções de maior impacto.", "recordResponse": true, "automaticValidation": false},
+    {"id": "V01-A02", "type": "global-edit", "prompt": "Faça a revisão global necessária no texto A e justifique ao menos uma mudança de arquitetura e uma manutenção.", "recordResponse": true, "automaticValidation": false},
+    {"id": "V01-A03", "type": "reference-syntax-edit", "prompt": "Repare referenciação e sintaxe apenas onde houver problema real e preserve uma construção complexa que funcione.", "recordResponse": true, "automaticValidation": false},
+    {"id": "V01-Q01", "type": "documented-norm-check", "cases": [{"case": "haver = existir em frase inequívoca", "expectedStatus": "REGRA_PRODUTIVA"}, {"case": "partitiva com singular/plural documentados", "expectedStatus": "VARIANTE_DOCUMENTADA"}, {"case": "posição de clítico em locução sem padrão declarado", "expectedStatus": "CASO_DE_CONSULTA_OU_VARIANTE"}], "automaticValidation": true},
+    {"id": "V01-A04", "type": "consultation-decision", "prompt": "Escolha fonte adequada para o item lexical marcado como incerto, registre o motivo da consulta e não invente resposta de memória.", "recordResponse": true, "automaticValidation": false},
+    {"id": "V01-A05", "type": "lexical-precision", "prompt": "Revise vagueza, quantificação e redundância sem introduzir fatos nem rebuscamento desnecessário.", "recordResponse": true, "automaticValidation": false},
+    {"id": "V01-A06", "type": "edit-other-author", "prompt": "Edite o texto B classificando intervenções como necessárias, recomendadas, pergunta ao autor ou preservação.", "recordResponse": true, "automaticValidation": false},
+    {"id": "V01-A07", "type": "final-version-and-log", "prompt": "Entregue versões finais com histórico curto de mudanças, permanências, categorias normativas e consultas.", "recordResponse": true, "automaticValidation": false}
+  ],
+  "completionEvidence": {
+    "clusters": {
+      "diagnosisPriority": {"evidence": ["V01-A01"], "required": true},
+      "globalRevision": {"evidence": ["V01-A02"], "required": true},
+      "referenceSyntax": {"evidence": ["V01-A03"], "required": true},
+      "normStatus": {"evidence": ["V01-Q01"], "required": true},
+      "consultation": {"evidence": ["V01-A04"], "required": true},
+      "lexicalPrecision": {"evidence": ["V01-A05"], "required": true},
+      "otherAuthorEditing": {"evidence": ["V01-A06"], "required": true},
+      "auditTrail": {"evidence": ["V01-A07"], "required": true},
+      "preservation": {"evidence": ["V01-A02", "V01-A03", "V01-A06", "V01-A07"], "required": true},
+      "normativeBoundary": {"evidence": ["V01-Q01", "V01-A04", "V01-A07"], "required": true},
+      "integratedEditorialJudgment": {"evidence": ["V01-A01", "V01-A02", "V01-A05", "V01-A06", "V01-A07"], "required": true}
+    },
+    "completionRule": "os onze agrupamentos são obrigatórios; itens fechados não compensam ausência de edição própria, consulta, preservação de autoria ou justificativa. Casos normativos objetivos ficam restritos ao documento de referência, e 'preciso consultar' pode ser resposta correta fora do recorte.",
+    "requiresReliableEvaluatorFor": ["qualidade global da edição", "prioridade e proporcionalidade", "preservação de voz", "qualidade das justificativas", "adequação das consultas"]
+  },
+  "assessmentBehavior": {"timeLimit": false, "changeCountScored": false, "errorCountScored": false, "formalityMaximizationScored": false, "rareVocabularyScored": false, "closedNormItemsRestrictedToDocumentedScope": true, "openResponseAutoValidated": false},
+  "media": {"tts": "opcional como apoio de releitura", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["textos A/B e versões"]}, {"type": "REFERENCE_ACCESS", "locations": ["consulta"]}], "generatedVisualResources": [{"type": "UI_RENDERED_LAYERED_DIAGNOSIS_PANEL"}, {"type": "UI_RENDERED_VERSION_HISTORY"}, {"type": "UI_RENDERED_NORM_STATUS_BADGE"}, {"type": "UI_RENDERED_CONSULTATION_LOG"}, {"type": "UI_RENDERED_INTERVENTION_LABELS"}], "productionQueueRequired": false, "publicationDependency": "nenhuma mídia humana obrigatória; respostas abertas exigem avaliador confiável", "decisionRationale": "a verificação mede processo editorial e fronteira normativa; UI versionada e acesso a referências são os recursos essenciais."}
+}
