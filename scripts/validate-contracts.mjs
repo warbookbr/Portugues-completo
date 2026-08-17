@@ -86,7 +86,7 @@ function scanSchema(schema, location) {
   }
 }
 
-function validateValue(schema, value, location) {
+export function validateValue(schema, value, location = 'value') {
   if (schema === true) return [];
   if (schema === false) return [`${location}: valor proibido pelo schema`];
   if (!schema || typeof schema !== 'object' || Array.isArray(schema)) return [`${location}: schema inválido`];
@@ -235,14 +235,19 @@ function runSelfTests() {
   if (valid.length !== 0) addError(`self-test: valor válido foi rejeitado -> ${valid.join('; ')}`);
 }
 
-validateSchemaFiles();
-runSelfTests();
-const validatedFixtures = validateFixtures();
+function main() {
+  validateSchemaFiles();
+  runSelfTests();
+  const validatedFixtures = validateFixtures();
 
-if (errors.length) {
-  for (const message of errors) console.error(`::error::${message}`);
-  console.error(`\nValidação de contratos falhou com ${errors.length} erro(s).`);
-  process.exit(1);
+  if (errors.length) {
+    for (const message of errors) console.error(`::error::${message}`);
+    console.error(`\nValidação de contratos falhou com ${errors.length} erro(s).`);
+    process.exit(1);
+  }
+
+  console.log(`Contratos válidos: ${expectedSchemas.length} schema(s), ${validatedFixtures} fixture(s) P1, 0 erros.`);
 }
 
-console.log(`Contratos válidos: ${expectedSchemas.length} schema(s), ${validatedFixtures} fixture(s) P1, 0 erros.`);
+const invokedPath = process.argv[1] ? path.resolve(process.argv[1]) : null;
+if (invokedPath === fileURLToPath(import.meta.url)) main();
