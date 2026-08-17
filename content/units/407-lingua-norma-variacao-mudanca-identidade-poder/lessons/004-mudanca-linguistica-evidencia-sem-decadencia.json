@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "id": "N4-U07-L04",
+  "title": "Mudança linguística: observar evidência sem narrativa de decadência",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Interpretar indícios de mudança linguística por séries temporais e contexto, distinguindo tendência, coexistência e estabilização parcial sem transformar diferença histórica em narrativa automática de melhoria ou decadência.",
+  "competencies": ["ler série temporal de uso", "distinguir tendência de caso isolado", "reconhecer coexistência de formas", "limitar generalização histórica", "separar mudança de julgamento de valor"],
+  "prerequisites": ["N4-U07-L03"],
+  "limits": ["um exemplo não prova mudança geral", "tendência local não representa toda a língua", "mais recente não significa melhor", "história detalhada do português fica fora desta lição"],
+  "media": {"tts": "nao necessario", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [], "generatedVisualResources": [{"type": "UI_RENDERED_TIME_SERIES_USAGE"}, {"type": "UI_RENDERED_GENERALIZATION_BOUNDARY"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "série didática simulada permite treinar inferência temporal sem alegar história real não documentada."},
+  "sequence": [
+    {"id": "L04-B01", "type": "simulated-corpus", "notice": "dados didáticos simulados; não descrevem uma construção real específica", "periods": [{"period": "P1", "formA": 78, "formB": 22}, {"period": "P2", "formA": 55, "formB": 45}, {"period": "P3", "formA": 38, "formB": 62}], "validInferences": ["a forma B cresce neste corpus", "as duas formas coexistem nos três períodos"], "invalidInferences": ["a forma A desapareceu da língua", "a língua piorou", "todo falante adotou B"]},
+    {"id": "L04-C01", "type": "trend-check", "question": "Qual conclusão é proporcional a uma série local em que uma forma aumenta mas a outra permanece?", "preferredPrinciple": "há mudança de distribuição no corpus, com coexistência; o alcance deve permanecer local aos dados"},
+    {"id": "L04-A01", "type": "change-evidence-analysis", "scenario": "Comparar duas séries didáticas, uma com mudança gradual e outra com oscilação sem tendência clara.", "tasks": ["descrever padrão", "distinguir tendência de oscilação", "explicitar limites do corpus", "reformular uma conclusão de decadência em conclusão baseada em evidência"], "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"timeLimit": false, "newerIsBetterScored": false, "declineNarrativeScored": false, "openResponseAutoValidated": false},
+  "completionEvidence": {"clusters": {"changeEvidence": {"evidence": ["L04-A01"], "required": true}}, "completionRule": "a análise precisa vincular conclusão à série observada e evitar generalização ou julgamento de valor não sustentados.", "requiresReliableEvaluatorFor": ["calibração da conclusão histórica", "qualidade da reformulação"]}
+}
