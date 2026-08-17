@@ -44,3 +44,13 @@ jobs:
 
       - name: Test classic renderer
         run: node scripts/test-classic-renderer.mjs
+
+      - name: Capture classic visual smoke
+        run: bash scripts/capture-classic-visuals.sh
+
+      - name: Upload classic visual smoke
+        uses: actions/upload-artifact@v4
+        with:
+          name: classic-visual-smoke
+          path: artifacts/classic-visuals/*.png
+          if-no-files-found: error
