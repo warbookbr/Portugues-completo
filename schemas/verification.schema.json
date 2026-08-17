@@ -1,0 +1,105 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://warbookbr.github.io/Portugues-completo/schemas/verification.schema.json",
+  "title": "Português Completo — Normalized Verification v1",
+  "type": "object",
+  "required": ["schemaVersion", "id", "kind", "title", "objective", "competencyIds", "prerequisites", "blocks", "completion"],
+  "additionalProperties": false,
+  "properties": {
+    "schemaVersion": {"const": 1},
+    "id": {"type": "string", "pattern": "^N[0-9]+(?:-U[0-9]{2})?-V[0-9]{2}$|^N[0-9]+-EXIT-V[0-9]{2}$"},
+    "kind": {"enum": ["UNIT_VERIFICATION", "LEVEL_VERIFICATION"]},
+    "title": {"type": "string", "minLength": 1},
+    "objective": {"type": "string", "minLength": 1},
+    "competencyIds": {"type": "array", "items": {"type": "string", "minLength": 1}},
+    "prerequisites": {"type": "array", "items": {"type": "string", "minLength": 1}},
+    "blocks": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["id", "kind", "pedagogicalType", "activity"],
+        "additionalProperties": false,
+        "properties": {
+          "id": {"type": "string", "minLength": 1},
+          "kind": {"const": "ACTIVITY"},
+          "pedagogicalType": {"type": "string", "minLength": 1},
+          "focus": {"type": "string"},
+          "content": {"type": "object", "additionalProperties": true},
+          "activity": {
+            "type": "object",
+            "required": ["role", "interaction", "evaluation", "evidence", "stimuli"],
+            "additionalProperties": false,
+            "properties": {
+              "role": {"enum": ["CHECK", "PRACTICE", "EVIDENCE", "VERIFICATION", "PRODUCTION", "REFLECTION"]},
+              "interaction": {"enum": ["SINGLE_CHOICE", "MULTIPLE_CHOICE", "CLASSIFY", "MATCH", "ORDER", "SEQUENCE", "SHORT_TEXT", "STRUCTURED_RESPONSE", "LONG_TEXT", "ORAL_RESPONSE", "COMPOSITE"]},
+              "evaluation": {
+                "type": "object",
+                "required": ["mode", "feedbackTiming", "allowRetry", "penalizeSupport"],
+                "additionalProperties": false,
+                "properties": {
+                  "mode": {"enum": ["NONE", "DETERMINISTIC", "CRITERIA", "AI_ASSISTED", "RELIABLE_EVALUATOR"]},
+                  "feedbackTiming": {"enum": ["IMMEDIATE", "AFTER_ACTIVITY", "AFTER_VERIFICATION"]},
+                  "allowRetry": {"type": "boolean"},
+                  "penalizeSupport": {"type": "boolean"},
+                  "answerKey": {},
+                  "criteria": {"type": "array", "items": {"type": "object", "additionalProperties": true}},
+                  "threshold": {"type": ["number", "null"], "minimum": 0}
+                }
+              },
+              "evidence": {
+                "type": "object",
+                "required": ["role", "competencyIds", "recordResponse", "requiredForCompletion"],
+                "additionalProperties": false,
+                "properties": {
+                  "role": {"enum": ["NONE", "PRACTICE", "REQUIRED", "CHECKPOINT"]},
+                  "competencyIds": {"type": "array", "items": {"type": "string", "minLength": 1}},
+                  "clusterId": {"type": ["string", "null"]},
+                  "recordResponse": {"type": "boolean"},
+                  "requiredForCompletion": {"type": "boolean"}
+                }
+              },
+              "stimuli": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": ["type"],
+                  "additionalProperties": false,
+                  "properties": {
+                    "type": {"enum": ["TEXT", "TTS", "CONTROLLED_AUDIO", "IMAGE", "VIDEO", "SEMANTIC_UI", "DATA_SET", "PREVIOUS_RESPONSE"]},
+                    "mediaId": {"type": "string", "minLength": 1},
+                    "payload": {"type": "object", "additionalProperties": true},
+                    "accessibility": {"type": "object", "additionalProperties": true}
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "completion": {
+      "type": "object",
+      "required": ["clusters", "nonCompensable"],
+      "additionalProperties": false,
+      "properties": {
+        "clusters": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": ["id", "required", "evidenceIds", "satisfaction"],
+            "additionalProperties": false,
+            "properties": {
+              "id": {"type": "string", "minLength": 1},
+              "required": {"type": "boolean"},
+              "evidenceIds": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
+              "satisfaction": {"enum": ["DEMONSTRATED_REQUIRED", "PENDING_ALLOWED", "ATTEMPT_REQUIRED"]}
+            }
+          }
+        },
+        "nonCompensable": {"type": "boolean"}
+      }
+    }
+  }
+}
