@@ -160,8 +160,11 @@ O M4 preserva cobertura 17/17 e explicita como cada unidade exige autonomia, tra
 ### Conteúdo M5
 
 - `content/units/401-leitura-estrategica-alta-complexidade-revisao-interpretacao/` — U1, 10 lições + `N4-U01-V01`, **concluída**.
+- `content/units/402-pesquisa-orientada-problema-fontes-rastreabilidade/` — U2, 11 lições + `N4-U02-V01`, **concluída**.
 
 A U1 exige escolha e eventual troca justificada de estratégia, arquiteturas concorrentes defensáveis, preservação de condições/ressalvas, cadeias distribuídas, implícitos/intertextualidade com evidência, enquadramento sem inferência automática de manipulação, calibração epistêmica e revisão explícita da interpretação após nova evidência.
+
+A U2 transforma pesquisa em processo rastreável: parte de necessidade informacional explícita, planeja/refina a busca, escolhe fontes por função, audita autoria/data/origem/versão/escopo/método, rastreia afirmações até a origem, reconstrói circulação, avalia triangulação real, separa vozes nas notas e exige decisão justificada de suficiência ou continuidade.
 
 Estado:
 
@@ -172,7 +175,8 @@ M3 ✓ — 9 unidades
 M4 ✓ — 93 lições + 9 verificações integradas
 M5 em andamento
 ├── U1 ✓ — 10 lições + N4-U01-V01
-└── U2 — próximo subpasso
+├── U2 ✓ — 11 lições + N4-U02-V01
+└── U3 — próximo subpasso
 ```
 
 A fonte oficial do estado é `docs/roadmap-curricular.md`.
