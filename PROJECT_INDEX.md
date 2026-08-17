@@ -32,6 +32,8 @@ Português Completo
 - `docs/mapa-niveis-1-4.md` — camada M1 dos Níveis 1–4.
 - `docs/matriz-progressao-global.md` — progressão transversal N0–N4.
 
+O percurso **N0→N4 está curricularmente fechado em M5**. Isso não equivale a frontend/publicação concluídos, mídia histórica toda produzida, validação automática plena de respostas abertas ou aprovação automática de aluno individual.
+
 ## Nível 0
 
 - `docs/unidades-nivel-0.md`
@@ -171,6 +173,7 @@ O M4 preserva cobertura 17/17 e explicita como cada unidade exige autonomia, tra
 - `content/units/408-oralidade-complexa-sintese-negociacao-debate/` — U8, 9 lições + `N4-U08-V01`, **concluída**.
 - `content/units/409-literatura-multimodalidade-autoria-intermedial-digital/` — U9, 12 lições + `N4-U09-V01`, **concluída**.
 - `content/levels/004-dominio/exit-verification.json` — `N4-EXIT-V01`, oito agrupamentos obrigatórios com cobertura 17/17, **concluída**.
+- `docs/checkpoint-saida-nivel-4.md` — auditoria final 17/17, gates, progressão N0→N4 e dependências não curriculares, **APROVADA**.
 
 A U1 exige escolha e eventual troca justificada de estratégia, arquiteturas concorrentes defensáveis, preservação de condições/ressalvas, cadeias distribuídas, implícitos/intertextualidade com evidência, enquadramento sem inferência automática de manipulação, calibração epistêmica e revisão explícita da interpretação após nova evidência.
 
@@ -199,7 +202,7 @@ M1 ✓
 M2 ✓ — 9 áreas
 M3 ✓ — 9 unidades
 M4 ✓ — 93 lições + 9 verificações integradas
-M5 em fechamento — U1–U9 + N4-EXIT-V01 concluídos; checkpoint final pendente
+M5 ✓ — U1–U9 + N4-EXIT-V01 + checkpoint final
 ├── U1 ✓ — 10 lições + N4-U01-V01
 ├── U2 ✓ — 11 lições + N4-U02-V01
 ├── U3 ✓ — 10 lições + N4-U03-V01
@@ -210,10 +213,26 @@ M5 em fechamento — U1–U9 + N4-EXIT-V01 concluídos; checkpoint final pendent
 ├── U8 ✓ — 9 lições + N4-U08-V01
 ├── U9 ✓ — 12 lições + N4-U09-V01
 ├── N4-EXIT-V01 ✓ — 8 agrupamentos; cobertura 17/17
-└── checkpoint final — próximo subpasso
+└── checkpoint final ✓
 ```
 
+**N4 curricularmente completo. Curso N0→N4 curricularmente completo.**
+
 A fonte oficial do estado é `docs/roadmap-curricular.md`.
+
+## Próxima fase do projeto
+
+Com o currículo fechado, a prioridade passa a ser transformar o conteúdo desenvolvido em produto utilizável/publicável:
+
+```text
+auditoria técnica de publicação
+→ catálogo/descoberta de conteúdo
+→ renderer e contratos de atividade
+→ acessibilidade/estados de evidência
+→ mídia realmente obrigatória
+→ avaliação confiável de respostas abertas
+→ testes end-to-end e validação com usuários
+```
 
 ## Arquitetura e frontend
 
@@ -256,7 +275,7 @@ N4 M2 → docs/areas-nivel-4.md
 N4 M3 → docs/unidades-nivel-4.md
 N4 M4 → docs/licoes-nivel-4.md + docs/licoes-nivel-4-u*.md
 N4 M5 → content/units/4xx-*/
-N4 saída → content/levels/004-dominio/exit-verification.json
+N4 saída → content/levels/004-dominio/exit-verification.json + docs/checkpoint-saida-nivel-4.md
 N4 normativo U5/U7 → docs/gate-normativo-nivel-4-u5-u7.md + docs/referencias-gramatica-nivel-4-u5-u7.md + docs/referencias-gramatica-nivel-4-u5-u7-atualizacao-2026.md
 N4 mídia/acessibilidade → docs/gate-midia-acessibilidade-nivel-4-u9.md
 estado/marcos → docs/roadmap-curricular.md
