@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "id": "N4-U07-L03",
+  "title": "Variação regional, social, situacional e histórica",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Analisar variação em múltiplas dimensões e reconhecer que uma pista linguística isolada não autoriza inferir identidade, inteligência, origem ou competência global do falante.",
+  "competencies": ["distinguir dimensões de variação", "reconhecer sobreposição entre dimensões", "limitar inferências sobre falantes", "separar observação linguística de estereótipo", "descrever repertório contextual"],
+  "prerequisites": ["N4-U07-L01", "N4-U07-L02", "N3-U08-V01"],
+  "limits": ["não identificar grupo real por traço isolado", "não caricaturar sotaques", "não inferir inteligência por variedade", "não tratar categorias de variação como caixas mutuamente exclusivas"],
+  "media": {"tts": "opcional; não imita sotaques nem define variedade", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["amostras escritas controladas"], "purpose": "leitura opcional sem simular variedade específica"}], "generatedVisualResources": [{"type": "UI_RENDERED_VARIATION_DIMENSION_MAP"}, {"type": "UI_RENDERED_SAFE_INFERENCE_PANEL"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "casos autorais e mapa multidimensional ensinam variação sem exigir performance ou caricatura de fala real."},
+  "sequence": [
+    {"id": "L03-B01", "type": "controlled-repertoire-case", "person": "Rafa", "contexts": [{"context": "grupo de amigos", "traits": ["abreviações", "maior proximidade", "marcadores conversacionais"]}, {"context": "pedido acadêmico", "traits": ["explicitação maior", "tratamento institucional", "menos pressupostos compartilhados"]}, {"context": "mensagem para família", "traits": ["vocabulário compartilhado", "referências internas"]}], "principle": "a mesma pessoa pode mobilizar recursos diferentes sem se tornar outra pessoa"},
+    {"id": "L03-C01", "type": "inference-boundary-check", "claim": "Uma mensagem contém uma forma associada a certo contexto social.", "safe": ["descrever a forma e o contexto fornecido"], "unsafe": ["concluir inteligência", "fixar origem geográfica", "inferir escolaridade sem evidência"]},
+    {"id": "L03-A01", "type": "variation-analysis", "materials": "quatro amostras autorais com contexto explícito e traços sobrepostos", "tasks": ["mapear dimensões possíveis", "distinguir observação de inferência", "listar duas conclusões permitidas e duas não autorizadas"], "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"timeLimit": false, "identityGuessingScored": false, "accentPrestigeScored": false, "openResponseAutoValidated": false},
+  "completionEvidence": {"clusters": {"variationAnalysis": {"evidence": ["L03-A01"], "required": true}}, "completionRule": "a análise precisa reconhecer multidimensionalidade e limitar inferências sobre pessoas/grupos ao que o contexto realmente sustenta.", "requiresReliableEvaluatorFor": ["qualidade da análise", "controle de inferência social"]}
+}
