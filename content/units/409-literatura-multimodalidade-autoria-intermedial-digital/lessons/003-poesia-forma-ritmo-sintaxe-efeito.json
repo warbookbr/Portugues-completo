@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "N4-U09-L03",
+  "title": "Poesia: forma, ritmo, sintaxe e efeito",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Relacionar organização formal de um poema a efeitos de sentido, comparando quebras de verso, repetição, sintaxe, ordem e pausa sem reduzir poesia a métrica ou rima.",
+  "competencies": ["analisar quebra de verso", "relacionar repetição a efeito", "comparar sintaxe e disposição", "testar reconfiguração formal", "justificar efeito por evidência"],
+  "prerequisites": ["N4-U09-L01", "N4-U09-L02", "N4-U06-V01"],
+  "limits": ["métrica técnica não é requisito universal", "rima não define qualidade poética", "TTS não determina interpretação", "efeito formal não recebe gabarito estético único"],
+  "media": {"tts": "opcional para releitura; pequenas diferenças de voz não determinam resposta", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["poema"]}], "generatedVisualResources": [{"type": "UI_RENDERED_ANNOTATED_TEXT"}, {"type": "UI_RENDERED_POETIC_LAYOUT_COMPARE"}, {"type": "UI_RENDERED_RHYTHM_MAP"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "layout preservado, comparação textual e TTS opcional permitem analisar forma sem transformar prosódia real em requisito."},
+  "sequence": [
+    {"id": "L03-B01", "type": "authored-poem", "lines": ["Deixo a chave", "na mesa", "onde a manhã", "não sabe", "se entra", "ou espera."], "task": "observar como quebra, repetição implícita de suspensão e sintaxe distribuem expectativa"},
+    {"id": "L03-B02", "type": "formal-reconfiguration", "versions": [{"label": "verso", "text": "Deixo a chave / na mesa / onde a manhã / não sabe / se entra / ou espera."}, {"label": "prosa", "text": "Deixo a chave na mesa onde a manhã não sabe se entra ou espera."}], "task": "comparar efeitos sem declarar uma forma universalmente superior"},
+    {"id": "L03-C01", "type": "formal-evidence-check", "items": [{"claim": "a quebra depois de 'chave' pode isolar o objeto antes de localizar a cena", "expected": true}, {"claim": "o poema é superior à prosa porque usa versos", "expected": false}], "automaticValidation": true},
+    {"id": "L03-A01", "type": "poetic-analysis", "prompt": "Explique a interação de pelo menos dois recursos formais e faça uma alteração de layout, ordem ou repetição que produza efeito diferente; justifique ganho e perda.", "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"timeLimit": false, "meterKnowledgeScored": false, "rhymeScored": false, "singleAestheticKey": false, "openResponseAutoValidated": false},
+  "completionEvidence": {"clusters": {"poeticForm": {"evidence": ["L03-A01"], "required": true}}, "completionRule": "a resposta deve relacionar pelo menos dois recursos formais a efeitos e demonstrar que a reconfiguração altera possibilidades de leitura.", "requiresReliableEvaluatorFor": ["qualidade da análise poética", "adequação da justificativa de efeito"]}
+}
