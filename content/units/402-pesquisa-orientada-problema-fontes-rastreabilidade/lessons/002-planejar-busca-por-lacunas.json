@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "N4-U02-L02",
+  "title": "Planejar a busca pelo que ainda precisa ser sabido",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Criar um plano de pesquisa em que cada subpergunta, tipo de evidência e próxima ação responda a uma lacuna informacional explícita.",
+  "competencies": ["decompor pergunta central", "associar subperguntas a evidência necessária", "escolher função de fonte antes de buscar", "ordenar prioridades", "revisar plano quando resultados mudarem a necessidade"],
+  "prerequisites": ["N4-U02-L01"],
+  "limits": ["não exigir metodologia científica completa", "plano é revisável", "mais etapas não significam melhor plano", "tipo de fonte é escolhido por função, não prestígio"],
+  "media": {"tts": "opcional como apoio de acesso", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["cenários", "instruções", "feedback"], "purpose": "apoio de acesso"}], "generatedVisualResources": [{"type": "UI_RENDERED_RESEARCH_PLAN"}, {"type": "UI_RENDERED_EVIDENCE_NEED_MAP"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "mapas semânticos bastam para tornar visível a relação entre lacuna, evidência e ação de busca."},
+  "sequence": [
+    {"id": "L02-B01", "type": "worked-search-plan", "question": "Há evidência suficiente para ampliar o horário de sábado nas bibliotecas?", "plan": [{"need": "demanda observada", "subquestion": "Como o uso de sábado se compara a outros períodos?", "evidence": "registros de entrada/empréstimo por faixa", "function": "registro operacional"}, {"need": "demanda não atendida", "subquestion": "Há pessoas que deixam de usar o serviço pelo horário atual?", "evidence": "pedidos, pesquisa ou registro de tentativas", "function": "experiência/demanda potencial"}, {"need": "capacidade", "subquestion": "Que custo e escala de equipe a expansão exige?", "evidence": "escala e orçamento", "function": "restrição operacional"}], "modelDecision": "buscar primeiro dados que podem tornar a decisão claramente inviável ou plausível; depois preencher lacunas de experiência e comparação."},
+    {"id": "L02-C01", "type": "plan-fit-check", "items": [{"need": "custo de equipe", "sourceChoice": "comentários públicos em rede social", "status": "weak-fit", "reason": "não mede custo operacional"}, {"need": "experiência de usuários", "sourceChoice": "questionário com descrição de quem respondeu", "status": "possible-fit", "reason": "pode informar experiência, com limites de representatividade"}, {"need": "horários atuais", "sourceChoice": "página oficial atualizada", "status": "strong-fit", "reason": "serve como fonte operacional para horário vigente"}]},
+    {"id": "L02-A01", "type": "transfer-plan", "scenario": "Uma universidade avalia criar empréstimo de notebooks por 48 horas.", "tasks": ["decompor a pergunta em quatro subperguntas", "definir que evidência responderia cada uma", "indicar a função de fonte desejada", "ordenar as buscas e justificar a prioridade", "registrar uma condição que faria o plano mudar"], "recordResponse": true},
+    {"id": "L02-P01", "type": "reflection", "prompt": "Por que planejar a função da informação antes de pesquisar ajuda a evitar acúmulo de fontes irrelevantes?", "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"timeLimit": false, "planLengthScored": false, "sourcePrestigeScored": false, "openResponseAutoValidated": false},
+  "completionEvidence": {"clusters": {"plan": {"evidence": ["L02-A01"], "required": true}, "rationale": {"evidence": ["L02-P01"], "required": true}}, "completionRule": "cada ação de busca deve responder a uma lacuna real; planos longos sem relação com a pergunta não cumprem o objetivo.", "requiresReliableEvaluatorFor": ["coerência global do plano"]}
+}
