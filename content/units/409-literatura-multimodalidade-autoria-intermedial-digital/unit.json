@@ -40,7 +40,7 @@
     "competencyIds": ["N4-U09-C01", "N4-U09-C02", "N4-U09-C03", "N4-U09-C04", "N4-U09-C05", "N4-U09-C06", "N4-U09-C07", "N4-U09-C08", "N4-U09-C09", "N4-U09-C10", "N4-U09-C11", "N4-U09-C12"]
   },
   "publication": {
-    "status": "BLOCKED",
-    "blockers": ["P4: renderer classico ainda nao implementado"]
+    "status": "READY",
+    "blockers": []
   }
 }

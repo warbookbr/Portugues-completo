@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "id": "portugues-completo",
   "title": "Português Completo",
-  "description": "Plataforma de ensino de português do nível zero ao domínio completo. O catálogo de publicação é expandido progressivamente sem reescrever o conteúdo autoral histórico.",
+  "description": "Curso completo de português, dos fundamentos ao domínio avançado, com explicações, prática, revisão e progressão baseada em evidências de aprendizagem.",
   "levels": [
     {"id": "N0", "order": 0, "title": "Fundamentos"},
     {"id": "N4", "order": 4, "title": "Domínio"}

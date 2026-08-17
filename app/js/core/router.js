@@ -4,11 +4,15 @@ function parseRoute() {
 
   if (path.length === 0) return { name: 'home' };
 
-  if (path[0] === 'unidade' && path[1] && path[2] === 'licao' && path[3]) {
+  if (path[0] === 'unidade' && path[1] && path[2] === 'licao' && path[3] && path.length === 4) {
     return { name: 'lesson', unitId: path[1], lessonId: path[3] };
   }
 
-  if (path[0] === 'unidade' && path[1]) {
+  if (path[0] === 'unidade' && path[1] && path[2] === 'verificacao' && path.length === 3) {
+    return { name: 'verification', unitId: path[1] };
+  }
+
+  if (path[0] === 'unidade' && path[1] && path.length === 2) {
     return { name: 'unit', unitId: path[1] };
   }
 
