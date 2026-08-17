@@ -136,7 +136,8 @@ O N3 está **curricularmente fechado em M5**: U1–U9, `N3-EXIT-V01` e checkpoin
 
 ### Gates do N4
 
-- `docs/gate-normativo-nivel-4-u5-u7.md` — escopo e protocolo do gate normativo; **pesquisa obrigatória antes de congelar respostas normativas no M5 de U5/U7**.
+- `docs/gate-normativo-nivel-4-u5-u7.md` — gate normativo de U5/U7, **SATISFEITO**; reabrir apenas se surgir caso fechado fora do recorte documentado.
+- `docs/referencias-gramatica-nivel-4-u5-u7.md` — recorte normativo/descritivo pesquisado e congelado; separa regra, variante, convenção editorial, consulta e estilo e libera U5/U7 no aspecto normativo.
 - `docs/gate-midia-acessibilidade-nivel-4-u9.md` — gate de mídia/acessibilidade **satisfeito para a arquitetura atual**; nenhuma nova mídia humana obrigatória, com reabertura apenas se M5 introduzir alvo sensorial real insubstituível.
 
 ### Resultado M4
@@ -184,7 +185,7 @@ M5 em andamento
 ├── U2 ✓ — 11 lições + N4-U02-V01
 ├── U3 ✓ — 10 lições + N4-U03-V01
 ├── U4 ✓ — 11 lições + N4-U04-V01
-└── U5 — próximo subpasso; satisfazer gate normativo antes de congelar L5–L7
+└── U5 — próximo subpasso; gate normativo ✓, desenvolver 11 lições + N4-U05-V01
 ```
 
 A fonte oficial do estado é `docs/roadmap-curricular.md`.
@@ -230,7 +231,8 @@ N4 M2 → docs/areas-nivel-4.md
 N4 M3 → docs/unidades-nivel-4.md
 N4 M4 → docs/licoes-nivel-4.md + docs/licoes-nivel-4-u*.md
 N4 M5 → content/units/4xx-*/
-N4 gates → docs/gate-normativo-nivel-4-u5-u7.md + docs/gate-midia-acessibilidade-nivel-4-u9.md
+N4 normativo U5/U7 → docs/gate-normativo-nivel-4-u5-u7.md + docs/referencias-gramatica-nivel-4-u5-u7.md
+N4 mídia/acessibilidade → docs/gate-midia-acessibilidade-nivel-4-u9.md
 estado/marcos → docs/roadmap-curricular.md
 conteúdo detalhado → content/
 forma de ensinar/mídia → docs/conteudo.md
