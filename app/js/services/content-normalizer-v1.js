@@ -82,28 +82,45 @@ function stimulusFromObject(stimulus) {
   return { type: 'DATA_SET', payload: clone(stimulus) };
 }
 
+function stimulusFromPrimitive(stimulus, itemId = null) {
+  if (typeof stimulus !== 'string') return null;
+  if (stimulus.includes('AUD-')) return { type: 'CONTROLLED_AUDIO', mediaId: stimulus, ...(itemId ? { payload: { itemId } } : {}) };
+  return { type: 'TEXT', payload: { content: stimulus, ...(itemId ? { itemId } : {}) } };
+}
+
 function normalizeStimuli(block) {
   const stimuli = [];
   if (block.stimulus && typeof block.stimulus === 'object') {
     const normalized = stimulusFromObject(block.stimulus);
     if (normalized) stimuli.push(normalized);
   } else if (typeof block.stimulus === 'string') {
-    stimuli.push(block.stimulus.includes('AUD-') ? { type: 'CONTROLLED_AUDIO', mediaId: block.stimulus } : { type: 'TEXT', payload: { content: block.stimulus } });
+    const normalized = stimulusFromPrimitive(block.stimulus);
+    if (normalized) stimuli.push(normalized);
   }
   if (Array.isArray(block.stimuli)) {
     for (const stimulus of block.stimuli) {
-      if (typeof stimulus === 'string') {
-        stimuli.push(stimulus.includes('AUD-') ? { type: 'CONTROLLED_AUDIO', mediaId: stimulus } : { type: 'TEXT', payload: { content: stimulus } });
-      } else {
-        const normalized = stimulusFromObject(stimulus);
-        if (normalized) stimuli.push(normalized);
-      }
+      const normalized = typeof stimulus === 'string' ? stimulusFromPrimitive(stimulus) : stimulusFromObject(stimulus);
+      if (normalized) stimuli.push(normalized);
     }
   }
   if (Array.isArray(block.items)) {
     for (const item of block.items) {
-      if (!item || typeof item !== 'object' || !item.stimulus) continue;
-      const normalized = typeof item.stimulus === 'object' ? stimulusFromObject(item.stimulus) : { type: 'SEMANTIC_UI', payload: { content: item.stimulus } };
+      if (!item || typeof item !== 'object') continue;
+      if (Array.isArray(item.stimuli)) {
+        for (const nestedStimulus of item.stimuli) {
+          const normalized = typeof nestedStimulus === 'string'
+            ? stimulusFromPrimitive(nestedStimulus, item.id || null)
+            : stimulusFromObject(nestedStimulus);
+          if (normalized) {
+            if (typeof nestedStimulus !== 'string') normalized.payload = { ...(normalized.payload || {}), itemId: item.id || null };
+            stimuli.push(normalized);
+          }
+        }
+      }
+      if (!item.stimulus) continue;
+      const normalized = typeof item.stimulus === 'object'
+        ? stimulusFromObject(item.stimulus)
+        : { type: 'SEMANTIC_UI', payload: { content: item.stimulus } };
       if (normalized) {
         normalized.payload = { ...(normalized.payload || {}), itemId: item.id || null };
         stimuli.push(normalized);
