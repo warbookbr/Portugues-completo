@@ -1,0 +1,153 @@
+{
+  "schemaVersion": 1,
+  "id": "N3-EXIT-V01",
+  "type": "level-exit-verification",
+  "levelId": "N3",
+  "title": "Verificação de saída — Nível 3 — Avançado",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Verificar transferência integrada das competências centrais do Nível 3 em leitura crítica longa, revisão linguística e estilística avançada, múltiplas fontes, produção longa, argumentação, comunicação oral formal, adequação sociolinguística e literatura/mídia crítica acessível, sem repetir mecanicamente as nove verificações de unidade.",
+  "prerequisites": ["N3-U01-V01", "N3-U02-V01", "N3-U03-V01", "N3-U04-V01", "N3-U05-V01", "N3-U06-V01", "N3-U07-V01", "N3-U08-V01", "N3-U09-V01"],
+  "principles": [
+    "usar materiais novos em relação às verificações de unidade",
+    "avaliar integração e transferência, não memória de exemplos anteriores",
+    "permitir releitura e replay quando velocidade ou memória literal não são a competência",
+    "exigir evidência para inferências, pressupostos, interpretações, argumentos e comparação de fontes",
+    "aceitar insuficiência de evidência e necessidade de confirmação quando forem conclusões corretas",
+    "preservar divergências reais entre fontes em vez de fabricar consenso",
+    "não pontuar opinião ideológica, prestígio social, sotaque, velocidade, extensão ou vocabulário rebuscado",
+    "avaliar norma apenas no recorte sistematizado e documentado no N3",
+    "exigir produção longa e argumentação próprias com planejamento, revisão e reescrita",
+    "exigir processo oral registrado sem declarar automaticamente inteligibilidade",
+    "garantir equivalente acessível para pistas multimodais decisivas",
+    "não usar média global para compensar ausência de qualquer agrupamento obrigatório"
+  ],
+  "normativeScope": "docs/referencias-gramatica-nivel-3-u3.md",
+  "audiovisualGate": "docs/gate-audiovisual-nivel-3-u9.md",
+  "validationBoundary": {
+    "autonomouslyCheckable": [
+      "itens objetivos de arquitetura textual, evidência, alcance e informação insuficiente",
+      "alvos normativos fechados pertencentes ao recorte documentado da N3-U03",
+      "presença de diagnóstico, plano, primeira versão, revisão, segunda versão e histórico de mudanças",
+      "presença estrutural de tese, razões, evidência, qualificação, objeção e resposta",
+      "metadados, escopo, método, convergências, divergências e lacunas explícitas em fontes controladas",
+      "compreensão oral baseada em significado quando a voz exata não determina a resposta",
+      "decisões objetivas de adequação, variação e limites de inferência sociolinguística",
+      "relações multimodais representadas semanticamente com equivalente acessível"
+    ],
+    "requiresReliableEvaluator": [
+      "qualidade global e adequação fina de texto longo livre",
+      "qualidade global de síntese e argumentação abertas",
+      "adequação estilística fina em edição aberta",
+      "inteligibilidade, pronúncia, prosódia e qualidade global da apresentação oral",
+      "qualidade global de interpretação literária e produção multimodal aberta"
+    ],
+    "studentEvidenceStates": {
+      "longWriting": "evidencia-registrada-validacao-linguistica-pendente",
+      "openArgument": "evidencia-registrada-validacao-argumentativa-pendente",
+      "multiSourceSynthesis": "evidencia-registrada-validacao-de-sintese-pendente",
+      "oralProduction": "pratica-realizada-validacao-oral-externa-pendente",
+      "literaryMediaResponse": "evidencia-registrada-validacao-interpretativa-pendente"
+    }
+  },
+  "media": {
+    "tts": "permitido; em compreensão oral o áudio vem antes da transcrição e a voz exata não determina a resposta",
+    "controlledAudio": [],
+    "video": "nao necessario",
+    "images": "nao obrigatorias; multimodalidade usa componentes semânticos acessíveis"
+  },
+  "supportMaterials": {
+    "curatedMedia": [],
+    "runtimeResources": [
+      {"type": "TTS_OK", "locations": ["textos", "fontes", "instruções"], "purpose": "apoio de acesso"},
+      {"type": "TTS_AUDIO_FIRST", "locations": ["N3-EXIT-Q06A"], "purpose": "estímulo de compreensão oral formal"},
+      {"type": "TRANSCRIPT_AFTER_ATTEMPT", "locations": ["N3-EXIT-Q06A"], "purpose": "conferência após tentativa"}
+    ],
+    "generatedVisualResources": [
+      {"type": "UI_RENDERED_SECTION_FUNCTION_MAP"},
+      {"type": "UI_RENDERED_EVIDENCE_LINK"},
+      {"type": "UI_RENDERED_FRAMING_COMPARE"},
+      {"type": "UI_RENDERED_INTEGRATED_REVISION_EDITOR"},
+      {"type": "UI_RENDERED_NORMATIVE_STATUS"},
+      {"type": "UI_RENDERED_MULTI_SOURCE_NOTE_MATRIX"},
+      {"type": "UI_RENDERED_SOURCE_LINEAGE"},
+      {"type": "UI_RENDERED_LONGFORM_WORKSPACE"},
+      {"type": "UI_RENDERED_VERSION_HISTORY"},
+      {"type": "UI_RENDERED_ADVANCED_ARGUMENT_MAP"},
+      {"type": "UI_RENDERED_LISTENING_MAP"},
+      {"type": "UI_RENDERED_PRESENTATION_PLAN"},
+      {"type": "UI_RENDERED_ORAL_OBJECTION_RESPONSE"},
+      {"type": "UI_RENDERED_SOCIO_LINGUISTIC_CASE_ANALYSIS"},
+      {"type": "UI_RENDERED_INTERPRETATION_EVIDENCE_MAP"},
+      {"type": "UI_RENDERED_FRAME_SEQUENCE"},
+      {"type": "UI_RENDERED_CIRCULATION_CHAIN"}
+    ],
+    "productionQueueRequired": false,
+    "publicationDependency": "nenhuma nova mídia humana obrigatória; validação plena de escrita, síntese, argumentação, interpretação e produção oral abertas depende de avaliador confiável",
+    "decisionRationale": "Materiais autorais novos, fontes controladas, TTS e representações multimodais semânticas permitem medir a saída sem criar dependência sensorial artificial."
+  },
+  "materials": {
+    "criticalReading": {
+      "title": "Empréstimo de ferramentas cresce sem justificar um modelo único",
+      "sections": [
+        {"heading": "Primeiro ciclo", "paragraphs": ["Quatro centros comunitários testaram durante doze semanas um serviço de empréstimo de ferramentas para pequenos reparos domésticos. O objetivo declarado era ampliar acesso temporário a equipamentos, não substituir comércio local nem presumir que todas as unidades teriam a mesma demanda.", "No período, foram registrados 1.486 empréstimos para 604 pessoas identificadas. Uma mesma pessoa podia retirar itens em semanas diferentes, por isso o total de empréstimos não equivale ao número de usuários."]},
+        {"heading": "Diferenças entre unidades", "paragraphs": ["Dois centros ampliaram o atendimento até as 20h em dois dias da semana. Neles, os empréstimos cresceram 38% em relação às quatro primeiras semanas; nos outros dois, cresceram 17%. Como os horários, a divulgação e a composição dos estoques mudaram ao mesmo tempo, o relatório evita atribuir a diferença a uma causa única.", "As categorias mais procuradas também variaram: ferramentas de jardinagem concentraram a demanda em um bairro, enquanto kits de medição e furadeiras apareceram mais nos demais. O documento afirma que essa diferença é uma razão para testar estoques locais, não para padronizá-los imediatamente."]},
+        {"heading": "Avaliação e limites", "paragraphs": ["Uma pesquisa voluntária recebeu 238 respostas; 81% dos respondentes disseram que o serviço evitou ao menos uma compra para uso pontual. O questionário foi enviado apenas a pessoas com empréstimo registrado, portanto não mostra por que outros moradores não utilizaram o serviço.", "A taxa de devolução no prazo foi de 96%, mas o relatório não compara esse dado com programas semelhantes nem calcula ainda o custo completo de manutenção e reposição."]},
+        {"heading": "Proposta", "paragraphs": ["A coordenação propõe manter o serviço nos quatro centros e abrir um segundo ciclo em duas novas unidades, com inventários iniciais diferentes e registro separado de usuários únicos, empréstimos repetidos, custos e pedidos não atendidos.", "Segundo a proposta, os resultados sustentam continuidade e expansão experimental, mas ainda não sustentam um catálogo idêntico, o mesmo horário ou uma estimativa definitiva de custo para toda a rede."]}
+      ],
+      "framingVariant": {"headline": "Empréstimos crescem 38% nos centros com horário ampliado", "lead": "Os dois centros que passaram a atender até as 20h registraram crescimento maior de empréstimos no período observado."}
+    },
+    "multiSourceSet": [
+      {"id": "A", "title": "Registro operacional das hortas compartilhadas", "type": "registro institucional original", "date": "30/11", "scope": "agosto a novembro; quatro hortas; sessões registradas", "method": "cada entrada de uso de um canteiro conta como uma sessão; a mesma pessoa pode aparecer várias vezes", "content": ["2.340 sessões de uso", "682 pessoas identificadas", "71% dos canteiros tiveram renovação para o ciclo seguinte", "o registro não mede satisfação"]},
+      {"id": "B", "title": "Questionário de participantes", "type": "pesquisa voluntária", "date": "25/11", "scope": "214 respondentes com participação registrada", "method": "questionário on-line voluntário; uma resposta por pessoa", "content": ["74% avaliaram positivamente o acesso aos materiais", "93 respondentes disseram participar também de atividades de bairro", "não informa total de sessões"]},
+      {"id": "C", "title": "Nota do fórum de moradores", "type": "fonte secundária/comentário", "date": "04/12", "scope": "relatos encaminhados ao fórum; quantidade de pessoas não informada", "method": "não descreve formulário nem critério de contagem", "content": ["afirma que 706 pessoas participaram do programa", "destaca falta de vagas em dois bairros", "defende abertura de novas hortas", "cita reuniões locais, mas não publica a planilha de origem do número 706"]},
+      {"id": "D", "title": "Painel de setembro", "type": "registro institucional parcial", "date": "05/10", "scope": "somente setembro; inscrições ativas", "method": "cada inscrição ativa é contada uma vez no mês", "content": ["391 inscrições ativas em setembro", "63% pertenciam a pessoas que já haviam participado em agosto", "não mede sessões, satisfação ou pedidos sem vaga"]}
+    ],
+    "argumentSource": {"context": "A coordenação avalia abrir duas novas hortas compartilhadas no próximo ciclo.", "facts": ["duas das quatro hortas atuais mantêm lista de espera há seis semanas", "o total combinado das listas é 58 pessoas", "41 das 58 responderam que aceitariam participar em um bairro vizinho", "a estimativa preliminar de implantação existe, mas o custo anual de manutenção ainda não foi concluído", "o registro atual mostra diferenças de procura por tipo de atividade entre bairros"]},
+    "oralStimulus": {"audioText": "A comissão concluiu a primeira etapa do projeto de atendimento itinerante em três bairros. Foram realizados 426 atendimentos, mas a distribuição foi desigual: um dos pontos concentrou quase metade do total. A equipe registrou ainda que 37 pessoas precisaram retornar porque o serviço procurado não estava disponível no primeiro dia. O relatório recomenda um segundo ciclo com calendário diferente e informação prévia mais clara sobre os serviços de cada parada. A recomendação não é tornar o formato permanente agora: os custos de deslocamento e a procura em períodos de chuva ainda não foram avaliados.", "replayAllowed": true, "transcriptAfterAttempt": true},
+    "literaryMedia": {"literaryText": "Na segunda-feira, Lia pendurou na cozinha um cartão: ‘sem pressa’. Passou a manhã adiantando o relógio cinco minutos, a tarde reorganizando a lista de tarefas e, à noite, escreveu no verso do cartão: ‘amanhã começo’. Antes de dormir, deixou o relógio virado para a parede.", "intertext": "Poema-resposta autoral em que o relógio fala e repete ‘amanhã começo’, mas transforma a frase em pergunta dirigida a Lia.", "semanticFrames": ["1 — cartão ‘sem pressa’ preso na cozinha", "2 — mão adiantando o relógio", "3 — lista de tarefas reorganizada", "4 — verso do cartão com ‘amanhã começo’", "5 — relógio virado para a parede"], "publicationVersions": ["versão A destaca o cartão ‘sem pressa’ no título", "versão B destaca o relógio virado para a parede no encerramento"]}
+  },
+  "tasks": [
+    {"id": "N3-EXIT-Q01", "cluster": "criticalReading", "type": "advanced-integrated-reading", "source": "materials.criticalReading", "required": ["mapear a função dos quatro blocos e o movimento global", "reconstruir a cadeia que sustenta continuidade/expansão experimental sem padronização imediata", "identificar uma implicação ou pressuposto sustentado e mostrar as pistas", "distinguir conclusão sustentada de hipótese causal não demonstrada", "explicar o efeito de modalidade em ‘sustentam’ versus ‘ainda não sustentam’", "explicar o referente de ‘essa diferença’ e como a cadeia referencial sustenta a interpretação", "comparar o texto ao framingVariant sem inferir manipulação automática", "produzir síntese crítica própria preservando ao menos duas limitações"], "reReadingAllowed": true, "recordResponse": true, "automaticValidation": "itens objetivos e vínculos de evidência podem ser verificados; síntese crítica aberta não"},
+    {"id": "N3-EXIT-Q02", "cluster": "advancedLanguageEditing", "type": "advanced-language-style-revision", "instruction": "Diagnostique e revise apenas problemas reais. Aplique norma segundo o recorte documentado, preserve variantes e escolhas funcionais e registre consulta quando o caso estiver fora do recorte seguro.", "original": "Embora os resultados tenha sido revistos a comissão informou que houveram três divergências e encaminhou o parecer a diretoria. A maior parte dos analistas consideraram a síntese clara. Nunca explicou-se, porém, se a construção com o verbo atender deveria ser tratada do mesmo modo em todos os contextos. O relatório afirma que a mudança certamente resolverá o problema, embora descreva apenas um teste de seis semanas. Em relação ao comunicado, procedeu-se à realização de uma divulgação muito importante e extremamente significativa aos usuários.", "required": ["corrigir concordância em ‘os resultados tenham sido revistos’", "pontuar a oração concessiva deslocada", "corrigir haver impessoal", "revisar destino com ‘à diretoria’", "reconhecer o partitivo como variante documentada e não obrigar mudança", "em redação formal, revisar ‘Nunca explicou-se’ conforme a convenção documentada", "tratar a regência de atender como consulta quando o recorte não autorizar decisão universal", "recalibrar certeza incompatível com teste curto", "avaliar a construção impessoal ‘procedeu-se...’ e decidir se o agente deve ficar visível conforme a finalidade", "reduzir burocratização/redundância sem apagar informação", "registrar ao menos duas decisões conscientes de manutenção"], "normativeScope": "docs/referencias-gramatica-nivel-3-u3.md", "recordResponse": true, "automaticValidation": "alvos normativos objetivos podem ser verificados; escolhas estilísticas e justificativas abertas não"},
+    {"id": "N3-EXIT-Q03", "cluster": "multiSourceSynthesis", "type": "advanced-multi-source-analysis", "source": "materials.multiSourceSet", "required": ["mapear origem, tipo, escopo e método das quatro fontes", "explicar por que 2.340 sessões, 682 pessoas, 706 participantes e 391 inscrições não são números diretamente equivalentes", "identificar convergência, diferença de escopo e divergência/lacuna não resolvida", "avaliar o alcance da pesquisa voluntária", "rastrear o número 706 antes de tratá-lo como equivalente ao registro institucional", "comparar enquadramentos/interesses sem usar interesse como prova de falsidade", "produzir matriz temática", "escrever síntese crítica atribuída preservando a incerteza sobre 706", "separar o que o conjunto permite afirmar do que exige confirmação"], "recordResponse": true, "automaticValidation": "metadados e relações controladas podem ser verificados; qualidade global da síntese aberta não"},
+    {"id": "N3-EXIT-P04", "cluster": "longFormalAnalyticProduction", "type": "long-formal-analytic-production", "scenario": "Produza para a coordenação uma análise longa sobre o próximo ciclo das hortas compartilhadas, usando as quatro fontes de N3-EXIT-Q03. O texto deve informar resultados e limites e apresentar encaminhamento compatível com a evidência; a preferência política não pontua.", "requiredProcess": ["analisar finalidade e audiência", "delimitar questão/foco", "macroplanejar seções/parágrafos por função", "selecionar e atribuir fontes", "produzir primeira versão preservada", "revisar conteúdo/evidência, arquitetura/progressão, coesão/referência, sintaxe/léxico, registro/estilo e norma no recorte N3", "produzir segunda versão", "comparar versões"], "required": ["usar pelo menos três fontes sem inventar fatos", "preservar diferença entre sessões, pessoas e inscrições", "preservar a lacuna do número 706", "integrar análise própria em vez de empilhar dados", "justificar duas mudanças de naturezas diferentes", "justificar dois trechos mantidos por já funcionarem"], "recordResponse": true, "automaticValidation": false, "validationStateAfterAutonomousCompletion": "evidencia-registrada-validacao-linguistica-pendente"},
+    {"id": "N3-EXIT-P05", "cluster": "advancedOwnArgument", "type": "advanced-argument-production", "source": "materials.argumentSource", "prompt": "Defenda uma posição sobre se a coordenação deve abrir duas novas hortas no próximo ciclo, adiar a decisão ou adotar expansão condicional. A posição em si não pontua; a cadeia de apoio e o tratamento dos limites, sim.", "requiredProcess": ["plano argumentativo", "primeira versão", "revisão da cadeia argumentativa", "segunda versão"], "required": ["tese delimitada", "ao menos duas razões relacionadas à tese", "uso responsável de evidência", "qualificação proporcional", "uma objeção relevante", "concessão quando pertinente", "resposta ou reformulação", "não inventar custo anual ou demanda", "registrar uma mudança argumentativa e uma manutenção"], "opinionContentScored": false, "recordResponse": true, "automaticValidation": false, "validationStateAfterAutonomousCompletion": "evidencia-registrada-validacao-argumentativa-pendente"},
+    {"id": "N3-EXIT-Q06A", "cluster": "formalOralCommunication", "type": "audio-first-formal-comprehension", "source": "materials.oralStimulus", "required": ["propósito", "arquitetura da exposição", "dois resultados", "uma limitação", "encaminhamento", "uma conclusão que a fala não autoriza"], "replayAllowed": true, "transcriptAfterAttempt": true},
+    {"id": "N3-EXIT-P06B", "cluster": "formalOralCommunication", "type": "integrated-oral-presentation-and-objection-cycle", "scenario": "Apresente à comissão os resultados do atendimento itinerante de N3-EXIT-Q06A e recomende um próximo passo compatível com os dados.", "required": ["notas seletivas", "plano com finalidade/audiência/sequência", "apoio acessível opcional sem depender só de imagem/cor", "tentativa oral registrada", "resposta a pergunta de esclarecimento", "tratamento de objeção sobre custos ainda não avaliados", "admissão de limite quando faltar dado", "autorrevisão das notas e estratégia", "separação entre o que o sistema observou, o que foi autoavaliado e o que exige ouvinte confiável"], "recordResponse": true, "automaticValidation": "presença e estrutura do processo; não inteligibilidade, pronúncia ou qualidade prosódica", "validationStateAfterAutonomousCompletion": "pratica-realizada-validacao-oral-externa-pendente"},
+    {"id": "N3-EXIT-Q07", "cluster": "sociolinguisticAdequacy", "type": "integrated-sociolinguistic-case", "case": "Em uma reunião de bairro, uma representante usa traços regionais de sua variedade oral e é compreendida. Depois, ao redigir um requerimento para um órgão público, adapta vocabulário, tratamento e convenções ao gênero. Um avaliador afirma que a fala inicial prova que ela ‘não sabe português’, enquanto outro corrige o requerimento apenas onde a convenção institucional realmente exige.", "required": ["distinguir variação de erro automático", "explicar por que traço isolado não autoriza inferência de capacidade, origem ou identidade completa", "separar prestígio/estigma de competência", "reconhecer adaptação de repertório sem chamá-la de inautenticidade", "distinguir correção contextual de humilhação/preconceito", "produzir trecho do requerimento adequado ao contexto e justificar mudanças sem desqualificar a fala cotidiana"], "recordResponse": true, "automaticValidation": "decisões objetivas de contexto podem ser verificadas; qualidade global da análise aberta não"},
+    {"id": "N3-EXIT-Q08", "cluster": "literatureAndCriticalMedia", "type": "integrated-literature-multimodal-media", "source": "materials.literaryMedia", "required": ["formular interpretação do contraste entre ‘sem pressa’ e as ações de Lia com evidência", "identificar ironia possível e explicar pistas sem automatizar a classificação", "formular uma ambiguidade ou lacuna aberta", "analisar voz/perspectiva e o efeito de virar o relógio para a parede", "explicar a relação intertextual do poema-resposta", "comparar a sequência-base com uma reordenação e explicar mudança de expectativa sem inventar causalidade", "comparar as duas versões de publicação como enquadramentos e rastreá-las ao material-base", "produzir equivalente acessível das pistas decisivas", "identificar pergunta sobre timbre, prosódia ou movimento real que não pode ser respondida sem mídia real", "produzir resposta crítica própria preservando incerteza interpretativa"], "recordResponse": true, "automaticValidation": false, "validationStateAfterAutonomousCompletion": "evidencia-registrada-validacao-interpretativa-pendente"}
+  ],
+  "assessmentBehavior": {
+    "reReadingAllowed": true,
+    "replayPenalty": false,
+    "speedScored": false,
+    "accentScored": false,
+    "ideologyScored": false,
+    "prestigeScored": false,
+    "difficultVocabularyScored": false,
+    "minimumLengthScored": false,
+    "paragraphCountScored": false,
+    "documentedVariantsAccepted": true,
+    "consultationCanBeCorrect": true,
+    "insufficiencyCanBeCorrect": true,
+    "unresolvedDivergenceAllowed": true,
+    "singleLiteraryInterpretationRequired": false,
+    "realMediaRequired": false,
+    "openResponseAutoValidated": false,
+    "globalAverageCanCompensateRequiredCluster": false
+  },
+  "completionEvidence": {
+    "clusters": {
+      "criticalReading": {"evidence": ["N3-EXIT-Q01"], "required": true},
+      "advancedLanguageEditing": {"evidence": ["N3-EXIT-Q02"], "required": true},
+      "multiSourceSynthesis": {"evidence": ["N3-EXIT-Q03"], "required": true},
+      "longFormalAnalyticProduction": {"evidence": ["N3-EXIT-P04"], "required": true},
+      "advancedOwnArgument": {"evidence": ["N3-EXIT-P05"], "required": true},
+      "formalOralCommunication": {"evidence": ["N3-EXIT-Q06A", "N3-EXIT-P06B"], "required": true},
+      "sociolinguisticAdequacy": {"evidence": ["N3-EXIT-Q07"], "required": true},
+      "literatureAndCriticalMedia": {"evidence": ["N3-EXIT-Q08"], "required": true}
+    },
+    "completionRule": "todos os oito agrupamentos são obrigatórios; produção longa, argumentação própria e processo oral não podem ser compensados por desempenho em outros blocos.",
+    "requiresReliableEvaluatorFor": ["qualidade global da produção longa", "qualidade global da síntese multifuente", "qualidade global da argumentação própria", "adequação estilística aberta", "inteligibilidade e qualidade global da produção oral", "qualidade global da interpretação literária e análise multimodal"]
+  }
+}

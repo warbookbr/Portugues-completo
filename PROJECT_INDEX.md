@@ -107,12 +107,14 @@ Português Completo
 - `content/units/303-sintaxe-complexa-norma-efeitos/` — U3, 12 lições + `N3-U03-V01`.
 - `content/units/304-fontes-multiplas-sintese-leitura-critica/` — U4, 11 lições + `N3-U04-V01`.
 - `content/units/305-producao-longa-generos-formais-analiticos/` — U5, 12 lições + `N3-U05-V01`.
-- `content/units/306-estilo-precisao-edicao-avancada/` — U6, 9 lições + `N3-U06-V01`, alinhada a `docs/licoes-nivel-3-u6.md`.
+- `content/units/306-estilo-precisao-edicao-avancada/` — U6, 9 lições + `N3-U06-V01`.
 - `content/units/307-comunicacao-formal-debate-estruturado/` — U7, 9 lições + `N3-U07-V01`.
 - `content/units/308-variacao-norma-prestigio-identidade/` — U8, 8 lições + `N3-U08-V01`.
 - `content/units/309-literatura-intertextualidade-midia-critica/` — U9, 11 lições + `N3-U09-V01`.
+- `content/levels/003-avancado/exit-verification.json` — `N3-EXIT-V01`, saída integrada em oito agrupamentos obrigatórios.
+- `docs/checkpoint-saida-nivel-3.md` — auditoria das 18 competências oficiais e fronteira N3→N4.
 
-O N3 tem **U1–U9 concluídas em M5**. O próximo subpasso é arquitetar e implementar `N3-EXIT-V01`, seguido do checkpoint N3→N4. A fonte oficial desse estado é `docs/roadmap-curricular.md`.
+O N3 está **curricularmente fechado em M5**: U1–U9, `N3-EXIT-V01` e checkpoint N3→N4 concluídos. O próximo marco curricular é N4-M2. A fonte oficial do estado é `docs/roadmap-curricular.md`.
 
 ## Arquitetura e frontend
 
@@ -150,6 +152,7 @@ matriz transversal → docs/matriz-progressao-global.md
 N1 M2/M3/M4 → docs/areas-nivel-1.md + docs/unidades-nivel-1.md + docs/licoes-nivel-1*.md
 N2 M2/M3/M4 → docs/areas-nivel-2.md + docs/unidades-nivel-2.md + docs/licoes-nivel-2*.md
 N3 M2/M3/M4 → docs/areas-nivel-3.md + docs/unidades-nivel-3.md + docs/licoes-nivel-3*.md
+N3 saída → docs/checkpoint-saida-nivel-3.md + content/levels/003-avancado/exit-verification.json
 estado/marcos → docs/roadmap-curricular.md
 conteúdo detalhado → content/
 forma de ensinar/mídia → docs/conteudo.md

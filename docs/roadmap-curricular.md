@@ -28,15 +28,17 @@ Maturidade curricular ≠ progresso do aluno ≠ prontidão de publicação.
 
 ## Nível 3 — Avançado
 
+**M5 concluído curricularmente.**
+
 ```text
 M1 ✓
 M2 ✓ — 10 áreas
 M3 ✓ — 9 unidades
 M4 ✓ — 94 lições + 9 verificações integradas
-M5 — U1–U9 concluídas
+M5 ✓ — U1–U9 + N3-EXIT-V01 + checkpoint N3→N4
 ```
 
-Unidades M5:
+Unidades:
 
 ```text
 U1 ✓ — Leitura crítica de textos longos
@@ -50,31 +52,37 @@ U8 ✓ — Variação, norma, prestígio e identidade
 U9 ✓ — Literatura, intertextualidade e mídia crítica
 ```
 
-### Integridade da U6
+Saída:
 
-A N3-U06 segue `docs/licoes-nivel-3-u6.md` e mantém 9 lições + `N3-U06-V01`:
+- `content/levels/003-avancado/exit-verification.json` — `N3-EXIT-V01`;
+- `docs/checkpoint-saida-nivel-3.md` — auditoria das 18 competências oficiais;
+- oito agrupamentos de transferência são obrigatórios;
+- produção longa, argumentação própria e processo oral não são compensáveis;
+- escrita, síntese, argumentação, interpretação e oralidade abertas preservam limites de validação;
+- nenhuma nova mídia humana obrigatória foi criada.
 
-```text
-diagnóstico de revisão
-→ precisão lexical, vagueza e ambiguidade
-→ concisão x explicitação necessária
-→ repetição/redundância/coerência lexical
-→ ritmo e paralelismo
-→ ordem, foco e ênfase
-→ voz, tom e consistência de registro
-→ consistência editorial, ortografia e consulta qualificada
-→ edição integrada de texto fornecido e texto próprio
-```
+Gates do N3:
 
-Guard rails centrais: palavra rara não é automaticamente melhor; texto menor não é automaticamente melhor; repetição e passiva não são erros por princípio; preferência editorial não vira regra universal; consulta pode ser competência; quantidade de alterações não mede qualidade; trechos adequados devem poder ser preservados.
-
-### U9 e multimodalidade
-
-O gate audiovisual/acessibilidade foi satisfeito em `docs/gate-audiovisual-nivel-3-u9.md`. O desenho atual usa representação semântica acessível por texto/UI quando suficiente. Mídia humana controlada só passa a ser exigida quando uma competência depender de fenômeno sensorial real insubstituível.
+- U3 normativo — **SATISFEITO** em `docs/referencias-gramatica-nivel-3-u3.md`;
+- U9 audiovisual/acessibilidade — **SATISFEITO** em `docs/gate-audiovisual-nivel-3-u9.md`.
 
 ## Nível 4 — Domínio
 
-**M1 concluído.** M2–M5 pendentes.
+```text
+M1 ✓
+M2 — PRÓXIMO MARCO
+M3 pendente
+M4 pendente
+M5 pendente
+```
+
+O N4 começa na fronteira definida pelo checkpoint N3→N4:
+
+```text
+uso avançado consciente, crítico, argumentativo e adaptável
+→
+controle consciente, flexível, crítico e autoral da língua
+```
 
 # Marco ativo
 
@@ -82,31 +90,20 @@ O gate audiovisual/acessibilidade foi satisfeito em `docs/gate-audiovisual-nivel
 N0 — M5 ✓
 N1 — M5 ✓
 N2 — M5 ✓
-N3 — M1–M4 ✓
-└── M5 unidades U1–U9 ✓
-    └── verificação de saída — PRÓXIMO SUBPASSO
+N3 — M5 ✓
+N4 — M1 ✓
+└── M2 — PRÓXIMO MARCO
 ```
 
 ## Próximo subpasso
 
 ```text
-N3-EXIT-V01
-→ definir/implementar a verificação integrada de saída do Nível 3
-→ auditar competências oficiais de saída
-→ checkpoint N3→N4
+N4 — M2
+→ dimensionar as grandes áreas do Nível 4
+→ verificar cobertura das competências oficiais de saída do N4
+→ distribuir responsabilidades sem transformar áreas em unidades prematuramente
+→ preservar continuidade com o checkpoint N3→N4 e a matriz global
 ```
-
-Não criar `content/levels/003-avancado/exit-verification.json` apenas para marcar progresso: primeiro a arquitetura de saída precisa derivar das competências oficiais do N3 e das evidências já exigidas pelas nove unidades.
-
-# Gates
-
-## N3-U3 — normativo — SATISFEITO
-
-Fonte: `docs/referencias-gramatica-nivel-3-u3.md`.
-
-## N3-U9 — audiovisual/acessibilidade — SATISFEITO
-
-Fonte: `docs/gate-audiovisual-nivel-3-u9.md`.
 
 # Regras de continuidade
 
@@ -124,6 +121,7 @@ Fonte: `docs/gate-audiovisual-nivel-3-u9.md`.
 12. `Consultar` pode ser evidência de competência fora do recorte seguro.
 13. Revisão deve preservar o que já funciona; quantidade de mudanças não mede qualidade.
 14. Existência de JSON curricular não equivale automaticamente a conteúdo publicado.
+15. Fechamento curricular de nível não equivale a aprovação automática de aluno individual.
 
 # Dependências não curriculares
 
@@ -146,6 +144,7 @@ N2→N3 → docs/transicao-n2-n3.md
 N3 M2 → docs/areas-nivel-3.md
 N3 M3 → docs/unidades-nivel-3.md
 N3 M4 → docs/licoes-nivel-3.md + docs/licoes-nivel-3-u*.md
+N3 saída → docs/checkpoint-saida-nivel-3.md + content/levels/003-avancado/exit-verification.json
 N3-U3 normativo → docs/referencias-gramatica-nivel-3-u3.md
 N3-U9 audiovisual → docs/gate-audiovisual-nivel-3-u9.md
 estado → docs/roadmap-curricular.md
