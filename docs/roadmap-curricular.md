@@ -28,42 +28,89 @@ Maturidade curricular ≠ progresso do aluno ≠ prontidão de publicação.
 
 ## Nível 3 — Avançado
 
-**M5 concluído curricularmente.** 9 unidades + `N3-EXIT-V01` + checkpoint N3→N4.
+**M5 concluído curricularmente.**
 
-Gates satisfeitos:
+```text
+M1 ✓
+M2 ✓ — 10 áreas
+M3 ✓ — 9 unidades
+M4 ✓ — 94 lições + 9 verificações integradas
+M5 ✓ — U1–U9 + N3-EXIT-V01 + checkpoint N3→N4
+```
 
-- `docs/referencias-gramatica-nivel-3-u3.md`;
-- `docs/gate-audiovisual-nivel-3-u9.md`.
+Unidades:
+
+```text
+U1 ✓ — Leitura crítica de textos longos
+U2 ✓ — Argumentação avançada
+U3 ✓ — Sintaxe complexa, norma e efeitos de estrutura
+U4 ✓ — Fontes múltiplas, síntese e leitura crítica da informação
+U5 ✓ — Produção longa e gêneros formais/analíticos
+U6 ✓ — Estilo, precisão e edição avançada
+U7 ✓ — Comunicação formal e debate estruturado
+U8 ✓ — Variação, norma, prestígio e identidade
+U9 ✓ — Literatura, intertextualidade e mídia crítica
+```
+
+Saída:
+
+- `content/levels/003-avancado/exit-verification.json` — `N3-EXIT-V01`;
+- `docs/checkpoint-saida-nivel-3.md` — auditoria das 18 competências oficiais;
+- oito agrupamentos de transferência são obrigatórios;
+- produção longa, argumentação própria e processo oral não são compensáveis;
+- escrita, síntese, argumentação, interpretação e oralidade abertas preservam limites de validação;
+- nenhuma nova mídia humana obrigatória foi criada.
+
+Gates do N3:
+
+- U3 normativo — **SATISFEITO** em `docs/referencias-gramatica-nivel-3-u3.md`;
+- U9 audiovisual/acessibilidade — **SATISFEITO** em `docs/gate-audiovisual-nivel-3-u9.md`.
 
 ## Nível 4 — Domínio
 
 ```text
-M1 ✓ — objetivo + 17 competências oficiais + 9 responsabilidades
-M2 ✓ — 9 áreas + cobertura 17/17
-M3 ✓ — 9 unidades integradas + saída antecipada
+M1 ✓ — objetivo + 17 competências oficiais + 9 grandes responsabilidades
+M2 ✓ — 9 áreas dimensionadas + revisão horizontal 17/17
+M3 ✓ — 9 unidades integradas + cobertura 17/17 + saída antecipada
 M4 ✓ — 93 lições + 9 verificações integradas
 M5 em andamento
 ```
 
-Fontes estruturais:
+Fontes:
 
-- `docs/areas-nivel-4.md` — M2;
-- `docs/unidades-nivel-4.md` — M3;
-- `docs/licoes-nivel-4.md` + `docs/licoes-nivel-4-u1.md` ... `u9.md` — M4.
+- M2: `docs/areas-nivel-4.md`;
+- M3: `docs/unidades-nivel-4.md`;
+- M4 consolidado: `docs/licoes-nivel-4.md`;
+- M4 por unidade: `docs/licoes-nivel-4-u1.md` ... `docs/licoes-nivel-4-u9.md`.
 
 Arquitetura M4:
 
 ```text
-U1 — 10 — Leitura estratégica de alta complexidade e revisão de interpretação
-U2 — 11 — Pesquisa orientada por problema, fontes e rastreabilidade
-U3 — 10 — Argumentação complexa, evidência e responsabilidade epistêmica
-U4 — 11 — Autoria avançada, gêneros complexos e transferência
-U5 — 11 — Edição de alto nível, precisão e consulta linguística
-U6 —  9 — Estilo, registro e projeto de voz
-U7 — 10 — Língua, norma, variação, mudança, identidade e poder
-U8 —  9 — Oralidade complexa, síntese, negociação e debate
-U9 — 12 — Literatura, multimodalidade e autoria intermedial/digital
+U1 — 10 lições — Leitura estratégica de alta complexidade e revisão de interpretação
+U2 — 11 lições — Pesquisa orientada por problema, fontes e rastreabilidade
+U3 — 10 lições — Argumentação complexa, evidência e responsabilidade epistêmica
+U4 — 11 lições — Autoria avançada, gêneros complexos e transferência
+U5 — 11 lições — Edição de alto nível, precisão e consulta linguística
+U6 —  9 lições — Estilo, registro e projeto de voz
+U7 — 10 lições — Língua, norma, variação, mudança, identidade e poder
+U8 —  9 lições — Oralidade complexa, síntese, negociação e debate
+U9 — 12 lições — Literatura, multimodalidade e autoria intermedial/digital
+────────────────────────────────────────────────────────
+TOTAL — 93 lições + 9 verificações integradas
 ```
+
+Decisões estruturais do M4:
+
+- a progressão do N4 é medida por autonomia, transferência, integração e revisão — não por extensão;
+- U1 exige mudança consciente de estratégia e revisão da interpretação diante de nova evidência;
+- U2 trata pesquisa como processo rastreável orientado por necessidade informacional, não como acúmulo de fontes;
+- U3 exige revisão de tese/posição quando a evidência realmente mudar;
+- U4 exige produção longa em versões e transferência para outro gênero/audiência/meio;
+- U5 distingue regra, variante, convenção, preferência e consulta e preserva trechos adequados;
+- U6 trata estilo como projeto funcional e adaptável;
+- U7 separa descrição, norma, variação, mudança e consequências sociais sem hierarquizar falantes;
+- U8 preserva limite real de validação oral;
+- U9 integra literatura, multimodalidade, circulação e autoria acessível sem exigir mídia decorativa.
 
 ### Estado M5
 
@@ -81,25 +128,24 @@ U9 pendente
 
 U1: `content/units/401-leitura-estrategica-alta-complexidade-revisao-interpretacao/`.
 
-A U1 exige evidências especificamente de Domínio:
+O M5 da U1 consolidou os guard rails do nível:
 
-- escolha de estratégia e mudança apenas quando um obstáculo real justificar;
-- arquitetura textual sem molde único;
-- preservação de condição, exceção, ressalva e alcance;
-- cadeias referenciais/temáticas distribuídas;
-- implícitos, ambiguidade e ironia com evidência;
-- intertextualidade em cadeia, sem repertório secreto;
-- comparação de enquadramentos sem inferir manipulação automaticamente;
-- calibração epistêmica;
-- revisão explícita de interpretação após nova evidência, inclusive manutenção justificada;
-- síntese crítica própria com evidência rastreável.
+- estratégia pode mudar ou ser mantida, desde que a decisão seja justificada;
+- mais de uma arquitetura textual pode ser defensável;
+- condições, exceções e ressalvas decisivas não podem ser apagadas;
+- repetição não é erro automático e proximidade não decide referente sozinha;
+- implícito, ambiguidade, ironia e intertextualidade exigem evidência;
+- enquadramento não equivale automaticamente a manipulação;
+- conclusão deve ser calibrada pela força da evidência;
+- nova evidência pode justificar enfraquecer, ampliar, abandonar ou manter uma interpretação;
+- síntese crítica própria e revisão explícita não são compensáveis por tarefas fechadas.
 
-`N4-U01-V01` usa material novo em duas etapas e torna todos os dez agrupamentos obrigatórios. Síntese crítica e revisão explícita não são compensáveis por itens fechados.
+Gates do N4:
 
-### Gates do N4
+- `docs/gate-normativo-nivel-4-u5-u7.md` — **DELIMITADO; pesquisa obrigatória antes de congelar respostas normativas em M5**;
+- `docs/gate-midia-acessibilidade-nivel-4-u9.md` — **SATISFEITO PARA A ARQUITETURA ATUAL; nenhuma nova mídia humana obrigatória**; reabrir apenas se M5 introduzir alvo sensorial real insubstituível.
 
-- `docs/gate-normativo-nivel-4-u5-u7.md` — **DELIMITADO; pesquisa obrigatória antes de congelar respostas normativas em M5 de U5/U7**.
-- `docs/gate-midia-acessibilidade-nivel-4-u9.md` — **SATISFEITO PARA A ARQUITETURA ATUAL**; reabrir somente se M5 introduzir alvo sensorial real insubstituível.
+O M4 preserva a cobertura 17/17 do N4 e mantém a arquitetura da futura saída em oito agrupamentos integrados.
 
 # Marco ativo
 
@@ -123,19 +169,19 @@ N4 — M1 ✓
 N4-U02 M5 — Pesquisa orientada por problema, fontes e rastreabilidade
 → 11 lições + N4-U02-V01
 → partir de necessidade informacional explícita
-→ ensinar planejamento e refinamento de busca
+→ planejar e refinar busca em vez de acumular resultados
 → distinguir função de fonte de hierarquia automática
-→ trabalhar autoria, data, origem, versão, escopo, método e unidade de análise
-→ rastrear afirmações secundárias até origem quando necessário
+→ avaliar autoria, data, origem, versão, escopo, método e unidade de análise
+→ rastrear afirmações secundárias até a origem quando necessário
 → preservar divergências e lacunas
-→ exigir notas/referências que permitam reconstruir a origem de afirmações
+→ registrar notas/referências que permitam reconstruir a origem das afirmações
 → não premiar quantidade de fontes
 ```
 
 Depois:
 
 ```text
-U3 → U4 → U5 (gate normativo) → U6 → U7 (gate normativo) → U8 → U9
+U3 → U4 → U5 (gate normativo) → U6 → U7 (gate normativo) → U8 → U9 (reavaliar gate de mídia se necessário)
 → N4-EXIT-V01
 → checkpoint final do curso
 ```
@@ -157,10 +203,10 @@ U3 → U4 → U5 (gate normativo) → U6 → U7 (gate normativo) → U8 → U9
 13. Revisão deve preservar o que já funciona; quantidade de mudanças não mede qualidade.
 14. Existência de JSON curricular não equivale automaticamente a conteúdo publicado.
 15. Fechamento curricular de nível não equivale a aprovação automática de aluno individual.
-16. N4 aumenta integração, flexibilidade, independência crítica e autoria, não apenas comprimento ou raridade.
-17. Pesquisa responde a necessidade informacional explícita; quantidade de fontes não é proxy de qualidade.
-18. N4 exige revisão da própria interpretação, argumento, texto ou estratégia quando nova evidência tornar a decisão anterior insuficiente.
-19. M5 não congela resposta normativa de U5/U7 antes do gate de fontes.
+16. N4 deve aumentar integração, flexibilidade, independência crítica e autoria, não apenas comprimento ou raridade.
+17. Pesquisa deve responder a necessidade informacional explícita; quantidade de fontes não é proxy de qualidade.
+18. N4 deve exigir revisão da própria interpretação, argumento, texto ou estratégia quando nova evidência tornar a decisão anterior insuficiente.
+19. M5 não pode congelar resposta normativa de U5/U7 antes do gate de fontes.
 20. U9 não cria mídia humana por variedade; alvo sensorial real reabre o gate antes da produção.
 21. Mudança de estratégia ou interpretação não pontua por si; manutenção justificada pode ser a melhor decisão.
 
@@ -181,8 +227,13 @@ M1 N1–N4 → docs/mapa-niveis-1-4.md
 matriz → docs/matriz-progressao-global.md
 N1 → docs/areas-nivel-1.md + docs/unidades-nivel-1.md + docs/licoes-nivel-1*.md
 N2 → docs/areas-nivel-2.md + docs/unidades-nivel-2.md + docs/licoes-nivel-2*.md
-N3 → docs/areas-nivel-3.md + docs/unidades-nivel-3.md + docs/licoes-nivel-3*.md + content/units/3xx-*
+N2→N3 → docs/transicao-n2-n3.md
+N3 M2 → docs/areas-nivel-3.md
+N3 M3 → docs/unidades-nivel-3.md
+N3 M4 → docs/licoes-nivel-3.md + docs/licoes-nivel-3-u*.md
 N3 saída → docs/checkpoint-saida-nivel-3.md + content/levels/003-avancado/exit-verification.json
+N3-U3 normativo → docs/referencias-gramatica-nivel-3-u3.md
+N3-U9 audiovisual → docs/gate-audiovisual-nivel-3-u9.md
 N4 M2 → docs/areas-nivel-4.md
 N4 M3 → docs/unidades-nivel-4.md
 N4 M4 → docs/licoes-nivel-4.md + docs/licoes-nivel-4-u*.md
