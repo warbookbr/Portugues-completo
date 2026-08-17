@@ -46,6 +46,7 @@ Estas fontes definem como o currículo fechado vira aplicação:
 - `docs/progresso.md` — significado pedagógico de progresso, domínio, feedback, revisão e gamificação.
 - `docs/persistencia-progresso.md` — schema v1 do Gist, cálculo mecânico de conclusão, gates e sincronização.
 - `docs/avaliacao-ia.md` — contrato neutro de feedback com IA, BYOK, consentimento, request/response e limites de autoridade.
+- `docs/calibracao-produto.md` — protocolo de homologação/calibração progressiva para XP, conquistas, missões, revisão e decisões visuais do modo de estudo.
 - `docs/validacoes.md` — guard rails atuais e próximos schemas/checagens de integridade.
 
 Regra de leitura para trabalho de produto:
@@ -57,9 +58,12 @@ roadmap-produto
 → exercícios/atividades
 → progresso
 → persistência
+→ calibração quando houver homologação/experiência
 → IA quando aplicável
 → validações
 ```
+
+Durante homologação de atividade, lição, verificação ou unidade que possa afetar XP, revisão, missões, conquistas ou experiência dos modos, `docs/calibracao-produto.md` é leitura obrigatória.
 
 ## Nível 0
 
@@ -204,13 +208,13 @@ Resumo:
 P1 schemas + validadores de contrato
 → P2 ContentService/normalizador
 → P3 manifests unit.json + catálogo course.json
-→ P4 renderer real
-→ P5 ProgressService + Gist
-→ P6 modos Clássico/Gamificado
+→ P4 renderer real + primeiras âncoras de homologação
+→ P5 ProgressService + Gist + calibração de revisão
+→ P6 modos Clássico/Gamificado + primeira economia calibrada
 → P7 feedback com IA
-→ P8 ampliação do catálogo
+→ P8 ampliação do catálogo + recalibração incremental
 → P9 mídia/publicação
-→ P10 testes/calibração
+→ P10 testes + calibração global
 ```
 
 Não iniciar reescrita curricular em massa para atender ao renderer; usar adapters/manifests conforme `docs/contrato-conteudo.md`.
@@ -241,6 +245,7 @@ forma de ensinar/mídia → docs/conteudo.md
 atividades/interações/avaliação/evidência → docs/exercicios.md
 progresso/domínio/revisão/gamificação → docs/progresso.md
 schema/sincronização/cálculo de progresso → docs/persistencia-progresso.md
+calibração XP/missões/conquistas/revisão/experiência → docs/calibracao-produto.md
 feedback com IA → docs/avaliacao-ia.md
 visão geral curricular → docs/mapa-curso.md
 M1 N1–N4 → docs/mapa-niveis-1-4.md
