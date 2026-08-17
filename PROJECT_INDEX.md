@@ -162,12 +162,15 @@ O M4 preserva cobertura 17/17 e explicita como cada unidade exige autonomia, tra
 - `content/units/401-leitura-estrategica-alta-complexidade-revisao-interpretacao/` — U1, 10 lições + `N4-U01-V01`, **concluída**.
 - `content/units/402-pesquisa-orientada-problema-fontes-rastreabilidade/` — U2, 11 lições + `N4-U02-V01`, **concluída**.
 - `content/units/403-argumentacao-complexa-evidencia-responsabilidade-epistemica/` — U3, 10 lições + `N4-U03-V01`, **concluída**.
+- `content/units/404-autoria-avancada-generos-complexos-transferencia/` — U4, 11 lições + `N4-U04-V01`, **concluída**.
 
 A U1 exige escolha e eventual troca justificada de estratégia, arquiteturas concorrentes defensáveis, preservação de condições/ressalvas, cadeias distribuídas, implícitos/intertextualidade com evidência, enquadramento sem inferência automática de manipulação, calibração epistêmica e revisão explícita da interpretação após nova evidência.
 
 A U2 transforma pesquisa em processo rastreável: parte de necessidade informacional explícita, planeja/refina a busca, escolhe fontes por função, audita autoria/data/origem/versão/escopo/método, rastreia afirmações até a origem, reconstrói circulação, avalia triangulação real, separa vozes nas notas e exige decisão justificada de suficiência ou continuidade.
 
 A U3 transforma dossiê em argumento responsável: exige tese proporcional, cadeia reconstruível, ajuste evidência-afirmação, tratamento de causalidade/generalização, qualificação epistêmica, objeção forte sem caricatura, concessão com consequência, persuasão sem distorção e duas versões autorais com revisão motivada por nova evidência.
+
+A U4 transforma decisões de leitura/pesquisa/argumentação em autoria longa: parte de projeto textual explícito, aprende gêneros pouco familiares por modelos sem fórmula universal, macroplaneja por função, integra fontes e voz própria, sustenta análise em escala longa, trabalha gêneros acadêmicos gerais, profissionais/públicos e digitais/híbridos, executa transferência entre destinos e exige primeira versão, revisão global, segunda versão e justificativa autoral.
 
 Estado:
 
@@ -180,7 +183,8 @@ M5 em andamento
 ├── U1 ✓ — 10 lições + N4-U01-V01
 ├── U2 ✓ — 11 lições + N4-U02-V01
 ├── U3 ✓ — 10 lições + N4-U03-V01
-└── U4 — próximo subpasso
+├── U4 ✓ — 11 lições + N4-U04-V01
+└── U5 — próximo subpasso; satisfazer gate normativo antes de congelar L5–L7
 ```
 
 A fonte oficial do estado é `docs/roadmap-curricular.md`.
