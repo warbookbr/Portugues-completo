@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "id": "N4-U05-L01",
+  "title": "Diagnóstico e prioridade antes de editar",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Diagnosticar a natureza e o impacto de problemas de um texto antes de reescrever, priorizando intervenções que afetam sentido, evidência, arquitetura e coerência antes do polimento superficial.",
+  "competencies": ["classificar problemas editoriais", "estimar impacto", "ordenar prioridades", "distinguir problema global de local", "preservar trecho adequado"],
+  "prerequisites": ["N4-U04-V01", "N3-U06-V01"],
+  "limits": ["mais marcações não significam edição melhor", "erro local não deve esconder problema global", "trecho adequado pode permanecer intacto", "diagnóstico não exige reescrita imediata"],
+  "media": {"tts": "opcional para releitura", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["texto-base", "releitura"]}], "generatedVisualResources": [{"type": "UI_RENDERED_LAYERED_DIAGNOSIS_PANEL"}, {"type": "UI_RENDERED_PRIORITY_BOARD"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "painel por camadas e quadro de prioridade tornam o raciocínio editorial auditável sem acrescentar mídia decorativa."},
+  "sequence": [
+    {"id": "L01-B01", "type": "worked-priority-diagnosis", "text": "Um relatório abre com recomendação definitiva, apresenta a evidência só depois, repete a mesma justificativa em dois blocos e contém uma frase com escolha lexical apenas pouco elegante.", "diagnosis": [{"issue": "recomendação antes da evidência", "layer": "arquitetura/evidencia", "priority": 1}, {"issue": "repetição de justificativa", "layer": "progressao", "priority": 2}, {"issue": "escolha lexical pouco elegante", "layer": "estilo", "priority": 3}]},
+    {"id": "L01-C01", "type": "priority-check", "items": [{"problem": "conclusão contradiz o corpo do texto", "priority": "alta"}, {"problem": "sigla aparece em duas grafias", "priority": "media"}, {"problem": "sinônimo possível soa mais sofisticado", "priority": "baixa-ou-nenhuma"}]},
+    {"id": "L01-A01", "type": "editorial-diagnosis-plan", "scenario": "Diagnosticar um texto de divulgação interna com problemas de evidência, arquitetura, referência, norma, registro e estilo.", "requiredLayers": ["conteudo/evidencia", "arquitetura/coerencia", "referencia", "sintaxe", "lexico", "norma", "registro", "estilo"], "tasks": ["marcar apenas problemas reais", "classificar cada problema", "ordenar as três intervenções de maior impacto", "registrar pelo menos um trecho que deve ser preservado"], "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"timeLimit": false, "issueCountScored": false, "openResponseAutoValidated": false},
+  "completionEvidence": {"clusters": {"diagnosisPlan": {"evidence": ["L01-A01"], "required": true}}, "completionRule": "o plano precisa priorizar intervenções por impacto e reconhecer que preservar texto adequado também é decisão editorial.", "requiresReliableEvaluatorFor": ["qualidade do diagnóstico", "ordem de prioridade", "justificativa de preservação"]}
+}
