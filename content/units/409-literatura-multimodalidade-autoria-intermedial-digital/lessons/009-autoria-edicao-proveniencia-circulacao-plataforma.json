@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "id": "N4-U09-L09",
+  "title": "Autoria, edição, proveniência, circulação e contexto de plataforma",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Rastrear versões, autoria, edição e circulação de material digital, distinguindo proveniência observável de hipóteses não sustentadas sobre intenção ou funcionamento de plataforma.",
+  "competencies": ["reconstruir cadeia de publicação", "distinguir original, edição e repostagem", "identificar contexto perdido", "preservar metadados relevantes", "evitar causalidade algorítmica inventada"],
+  "prerequisites": ["N4-U09-L07", "N4-U09-L08", "N4-U02-V01"],
+  "limits": ["popularidade não prova veracidade", "repostagem não prova autoria", "não inferir algoritmo sem evidência", "edição e recorte exigem análise de versões"],
+  "media": {"tts": "nao necessario", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [], "generatedVisualResources": [{"type": "UI_RENDERED_SOURCE_LINEAGE"}, {"type": "UI_RENDERED_PUBLICATION_CHAIN"}, {"type": "UI_RENDERED_VERSION_COMPARE"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "metadados e versões simuladas permitem ensinar proveniência e circulação sem depender de plataformas reais ou conteúdo externo."},
+  "sequence": [
+    {"id": "L09-B01", "type": "publication-chain", "versions": [{"id": "v1", "author": "Coletivo Norte", "date": "2026-04-02", "content": "relato completo com ressalva final"}, {"id": "v2", "editor": "Boletim Local", "date": "2026-04-03", "content": "trecho de v1 sem a ressalva final", "sourceLink": "v1"}, {"id": "v3", "account": "Arquivo da Cidade", "date": "2026-04-06", "content": "captura de v2", "caption": "texto que circulou esta semana"}], "task": "reconstruir autoria, edição, dependência e perda de contexto"},
+    {"id": "L09-C01", "type": "provenance-check", "items": [{"claim": "v3 é a autora original do texto", "expected": false}, {"claim": "v2 altera contexto ao remover a ressalva", "expected": true}, {"claim": "o maior alcance de v3 prova favorecimento algorítmico", "expected": false}], "automaticValidation": true},
+    {"id": "L09-A01", "type": "lineage-analysis", "prompt": "Reconstrua a cadeia de proveniência, indique duas mudanças de contexto e separe três conclusões sustentadas de duas hipóteses que exigiriam informação adicional da plataforma ou dos autores.", "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"timeLimit": false, "popularityScored": false, "algorithmGuessScored": false, "openResponseAutoValidated": false},
+  "completionEvidence": {"clusters": {"provenanceCirculation": {"evidence": ["L09-A01"], "required": true}}, "completionRule": "a análise deve reconstruir versões e autoria com base em metadados e separar claramente proveniência observada de hipótese sobre circulação/plataforma.", "requiresReliableEvaluatorFor": ["qualidade da reconstrução de proveniência"]}
+}
