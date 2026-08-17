@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "N4-U06-L02",
+  "title": "Voz autoral, presença, distância e ponto de vista discursivo",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Controlar a presença do autor no texto e distinguir voz própria, voz atribuída e construções de maior ou menor distância, escolhendo a solução que melhor serve ao projeto.",
+  "competencies": ["identificar graus de presença autoral", "separar voz própria e alheia", "usar primeira pessoa ou impessoalidade funcionalmente", "comparar efeitos de distância", "justificar presença discursiva"],
+  "prerequisites": ["N4-U06-L01", "N4-U04-L05"],
+  "limits": ["impessoalidade não garante objetividade", "primeira pessoa não é automaticamente informal", "presença autoral não autoriza apagar atribuições", "distância maior não é automaticamente mais rigorosa"],
+  "media": {"tts": "opcional para releitura", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["pares de versoes"]}], "generatedVisualResources": [{"type": "UI_RENDERED_VOICE_PRESENCE_CONTINUUM"}, {"type": "UI_RENDERED_SOURCE_VOICE_MAP"}, {"type": "UI_RENDERED_VERSION_COMPARE"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "um contínuo de presença e um mapa de vozes permitem comparar escolhas sem prescrever primeira pessoa ou impessoalidade como padrão universal."},
+  "sequence": [
+    {"id": "L02-B01", "type": "concept", "text": "A voz autoral pode aparecer de modo explícito, discreto ou mediado por atribuições. O importante é saber quem assume cada afirmação e por quê."},
+    {"id": "L02-B02", "type": "voice-comparison", "sourceFact": "O levantamento registrou maior procura no fim da tarde.", "versions": [{"text": "Ao analisar os registros, considero que o horário da tarde merece novo teste.", "presence": "explicita"}, {"text": "Os registros sugerem que o horário da tarde merece novo teste.", "presence": "discreta"}, {"text": "Foi sugerido novo teste no horário da tarde.", "presence": "agente menos visivel"}], "task": "comparar responsabilidade, distância e informação preservada em cada versão"},
+    {"id": "L02-C01", "type": "voice-boundary-check", "items": [{"statement": "Usar 'eu' torna qualquer análise subjetiva e inválida.", "expected": "falso"}, {"statement": "Uma construção impessoal pode ocultar quem tomou uma decisão relevante.", "expected": "verdadeiro"}, {"statement": "Atribuir uma afirmação a uma fonte ajuda a separar vozes.", "expected": "verdadeiro"}]},
+    {"id": "L02-A01", "type": "dual-voice-production", "scenario": "Com os mesmos fatos controlados, produza uma versão em que sua presença analítica seja explícita e outra em que ela seja mais discreta, mantendo atribuições e limites factuais.", "required": ["duas versoes", "mapa de voz propria/alheia", "justificativa de qual versão serve melhor a um contexto escolhido"], "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"timeLimit": false, "firstPersonPenalty": false, "impersonalityBonus": false, "openResponseAutoValidated": false},
+  "completionEvidence": {"clusters": {"authorialPresence": {"evidence": ["L02-A01"], "required": true}}, "completionRule": "as duas versões devem preservar atribuição e fatos; a escolha entre maior presença ou distância precisa ser funcionalmente justificada.", "requiresReliableEvaluatorFor": ["controle de vozes", "adequação da presença autoral", "qualidade da justificativa"]}
+}
