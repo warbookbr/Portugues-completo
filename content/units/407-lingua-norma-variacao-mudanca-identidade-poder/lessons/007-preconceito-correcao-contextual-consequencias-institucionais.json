@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "id": "N4-U07-L07",
+  "title": "Preconceito linguístico, correção contextual e consequências institucionais",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Distinguir orientação linguística contextual de julgamento humilhante do falante, reconhecendo que convenções podem ter consequências reais sem autorizar hierarquização de pessoas.",
+  "competencies": ["separar texto de falante", "reformular feedback com precisão", "explicar adequação contextual", "reconhecer consequência institucional", "identificar julgamento preconceituoso"],
+  "prerequisites": ["N4-U07-L02", "N4-U07-L05", "N4-U07-L06"],
+  "limits": ["reconhecer preconceito não torna toda forma adequada a todo gênero", "correção contextual não autoriza insulto", "não presumir intenção discriminatória sem evidência", "não apagar autoria em nome da correção"],
+  "media": {"tts": "opcional", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [], "generatedVisualResources": [{"type": "UI_RENDERED_FEEDBACK_LAYER_MAP"}, {"type": "UI_RENDERED_CONTEXT_CONSEQUENCE_MAP"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "cenários escritos permitem comparar feedback técnico, consequência e julgamento pessoal de modo auditável."},
+  "sequence": [
+    {"id": "L07-B01", "type": "feedback-contrast", "textIssue": "Um formulário exige padrão institucional declarado, mas o rascunho usa outra variante documentada.", "responses": [{"label": "contextual", "content": "Neste formulário, o manual pedido adota X; ajuste para atender à convenção desta instituição."}, {"label": "humilhante", "content": "Quem escreve assim não sabe português."}], "analysis": "a primeira resposta delimita contexto e intervenção; a segunda extrapola do texto para a pessoa"},
+    {"id": "L07-C01", "type": "feedback-check", "question": "Qual feedback é mais preciso quando a forma é possível na língua, mas o gênero pede outro padrão?", "correctPrinciple": "explicitar a convenção do contexto, o efeito prático e a alteração necessária sem julgar capacidade global do falante"},
+    {"id": "L07-A01", "type": "feedback-rewrite", "materials": "quatro comentários fictícios misturando correção válida, preferência pessoal, consequência institucional e insulto", "tasks": ["classificar cada comentário", "preservar o que houver de orientação útil", "remover extrapolações sobre a pessoa", "reescrever o feedback com justificativa contextual"], "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"timeLimit": false, "humiliationScored": false, "ideologicalAgreementScored": false, "openResponseAutoValidated": false},
+  "completionEvidence": {"clusters": {"contextualFeedback": {"evidence": ["L07-A01"], "required": true}}, "completionRule": "o feedback deve distinguir requisito contextual, preferência e julgamento do falante, mantendo precisão sobre consequências reais.", "requiresReliableEvaluatorFor": ["precisão do feedback", "separação entre texto e pessoa"]}
+}
