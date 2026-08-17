@@ -68,12 +68,14 @@ Gates do N3:
 
 ## Nível 4 — Domínio
 
+**M5 concluído curricularmente.**
+
 ```text
 M1 ✓ — objetivo + 17 competências oficiais + 9 grandes responsabilidades
 M2 ✓ — 9 áreas dimensionadas + revisão horizontal 17/17
 M3 ✓ — 9 unidades integradas + cobertura 17/17 + saída antecipada
 M4 ✓ — 93 lições + 9 verificações integradas
-M5 em fechamento — U1–U9 + N4-EXIT-V01 concluídos; checkpoint final pendente
+M5 ✓ — U1–U9 + N4-EXIT-V01 + checkpoint final
 ```
 
 Fontes:
@@ -82,7 +84,8 @@ Fontes:
 - M3: `docs/unidades-nivel-4.md`;
 - M4 consolidado: `docs/licoes-nivel-4.md`;
 - M4 por unidade: `docs/licoes-nivel-4-u1.md` ... `docs/licoes-nivel-4-u9.md`;
-- saída: `content/levels/004-dominio/exit-verification.json`.
+- saída: `content/levels/004-dominio/exit-verification.json`;
+- checkpoint final: `docs/checkpoint-saida-nivel-4.md`.
 
 Arquitetura M4:
 
@@ -126,7 +129,7 @@ U7 ✓ — 10 lições + N4-U07-V01; gate normativo ✓
 U8 ✓ — 9 lições + N4-U08-V01
 U9 ✓ — 12 lições + N4-U09-V01; gate de mídia/acessibilidade ✓
 N4-EXIT-V01 ✓ — 8 agrupamentos obrigatórios; cobertura 17/17
-checkpoint final — PRÓXIMO SUBPASSO
+checkpoint final ✓ — 17/17 auditadas; N0→N4 fechado curricularmente
 ```
 
 U1: `content/units/401-leitura-estrategica-alta-complexidade-revisao-interpretacao/`.
@@ -148,6 +151,8 @@ U8: `content/units/408-oralidade-complexa-sintese-negociacao-debate/`.
 U9: `content/units/409-literatura-multimodalidade-autoria-intermedial-digital/`.
 
 Saída: `content/levels/004-dominio/exit-verification.json`.
+
+Checkpoint: `docs/checkpoint-saida-nivel-4.md`.
 
 O M5 da U1 consolidou os guard rails do nível:
 
@@ -310,45 +315,58 @@ Gate de mídia/acessibilidade do N4:
 - nenhum `mediaId` novo foi criado e nenhuma entrada nova na fila de mídia é necessária;
 - reabrir somente se uma futura tarefa tornar timbre, prosódia específica, atuação, movimento contínuo ou timing audiovisual real evidência decisiva.
 
-U1–U9 e `N4-EXIT-V01` preservam cobertura 17/17. O N4 ainda **não está curricularmente fechado** enquanto o checkpoint final não auditar formalmente as competências e dependências restantes.
+O checkpoint final confirma **17/17 competências oficiais do N4** com ensino, evidência e transferência suficientes. Nenhuma lacuna curricular obrigatória permanece conhecida. Os checkpoints N0, N1, N2 e N3 já estavam aprovados, e a matriz global preserva progressão contínua até N4.
+
+**Resultado: N4 curricularmente completo e percurso curricular N0→N4 completo.**
 
 # Marco ativo
 
 ```text
+CURRÍCULO
 N0 — M5 ✓
 N1 — M5 ✓
 N2 — M5 ✓
 N3 — M5 ✓
-N4 — M1 ✓
-└── M2 ✓
-    └── M3 ✓
-        └── M4 ✓
-            └── M5
-                ├── U1 ✓
-                ├── U2 ✓
-                ├── U3 ✓
-                ├── U4 ✓
-                ├── U5 ✓
-                ├── U6 ✓
-                ├── U7 ✓
-                ├── U8 ✓
-                ├── U9 ✓
-                ├── N4-EXIT-V01 ✓
-                └── checkpoint final — PRÓXIMO SUBPASSO
+N4 — M5 ✓
+└── U1–U9 ✓
+    ├── N4-EXIT-V01 ✓
+    └── checkpoint final ✓
+
+CURRÍCULO N0→N4 ✓
 ```
 
-## Próximo subpasso
+# Próxima fase
+
+O próximo marco deixa de ser criação curricular por padrão e passa a ser **produto/publicação**.
+
+Prioridade recomendada:
 
 ```text
-checkpoint final do N4 e do curso
-→ auditar as 17 competências oficiais contra M1–M5, U1–U9 e N4-EXIT-V01
-→ confirmar que cada competência possui evidência observável e fronteira de validação coerente
-→ conferir gates normativo e de mídia/acessibilidade no fechamento
-→ registrar dependências não curriculares sem confundi-las com lacuna curricular
-→ verificar coerência N0→N4 e se não há conteúdo prometido sem cobertura
-→ fechar curricularmente o N4 e o curso somente se a auditoria 17/17 permanecer íntegra
-→ fechamento curricular não equivale a aprovação automática de aluno individual nem a prontidão total de frontend/publicação
+1. auditoria técnica de publicação
+   → content/course.json e descoberta/carregamento real do conteúdo
+   → contratos de schema/renderer existentes
+   → diferenças entre conteúdo desenvolvido e conteúdo publicável
+
+2. frontend/renderer
+   → suportar os tipos de atividade realmente usados
+   → navegação, acessibilidade e estados de evidência
+
+3. mídia pendente
+   → resolver somente mídias realmente obrigatórias da fila
+   → manter TTS/representação semântica quando suficientes
+
+4. avaliação confiável de respostas abertas
+   → escrita, síntese, argumentação, edição, interpretação e oralidade
+   → não substituir avaliação real por heurística enganosa
+
+5. testes end-to-end e validação com usuários
+   → fluxo N0→N4
+   → progresso, retomada e persistência
+   → acessibilidade
+   → calibração pedagógica baseada em evidência
 ```
+
+O currículo pode ser reaberto futuramente quando teste real, revisão especializada ou evidência pedagógica revelar lacuna concreta. Fechamento curricular não significa congelamento permanente.
 
 # Regras de continuidade
 
@@ -397,15 +415,18 @@ checkpoint final do N4 e do curso
 43. Reconhecer que uma pergunta exige mídia real é competência quando a representação semântica não preserva timbre, atuação, movimento ou timing que sejam justamente o alvo.
 44. A saída do N4 exige os oito agrupamentos; nenhum pode ser compensado por média global, itens fechados ou desempenho superior em outro domínio.
 45. Cobertura curricular 17/17 não autoriza aprovação automática de um aluno: produções abertas mantêm estados de evidência e dependem de avaliação confiável onde declarado.
+46. Currículo fechado não significa currículo imutável: evidência empírica, teste com usuários ou revisão especializada podem justificar reabertura localizada.
+47. Depois do fechamento N0→N4, criação de conteúdo novo precisa responder a uma lacuna real; a prioridade padrão passa a ser publicação, renderização, avaliação, mídia obrigatória e validação end-to-end.
 
 # Dependências não curriculares
 
 - mídias humanas antigas do N0;
 - frontend ainda sem catálogo/renderer completo;
 - respostas abertas dependem de avaliador confiável para validação global;
-- inteligibilidade oral depende de observação confiável.
+- inteligibilidade oral depende de observação confiável;
+- validação empírica com alunos reais ainda é trabalho futuro.
 
-Essas dependências não bloqueiam autoria curricular quando os limites estão registrados.
+Essas dependências **não reabrem o currículo por si**. Elas definem a próxima fase do projeto.
 
 # Fontes de verdade
 
@@ -426,7 +447,7 @@ N4 M2 → docs/areas-nivel-4.md
 N4 M3 → docs/unidades-nivel-4.md
 N4 M4 → docs/licoes-nivel-4.md + docs/licoes-nivel-4-u*.md
 N4 M5 → content/units/4xx-*
-N4 saída → content/levels/004-dominio/exit-verification.json
+N4 saída → content/levels/004-dominio/exit-verification.json + docs/checkpoint-saida-nivel-4.md
 N4 normativo U5/U7 → docs/gate-normativo-nivel-4-u5-u7.md + docs/referencias-gramatica-nivel-4-u5-u7.md + docs/referencias-gramatica-nivel-4-u5-u7-atualizacao-2026.md
 N4 mídia/acessibilidade → docs/gate-midia-acessibilidade-nivel-4-u9.md
 estado → docs/roadmap-curricular.md
