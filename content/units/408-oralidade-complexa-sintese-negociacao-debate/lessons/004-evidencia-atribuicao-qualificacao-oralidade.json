@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "N4-U08-L04",
+  "title": "Evidência, atribuição e qualificação na oralidade",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Usar evidências e graus de certeza em fala planejada, mantendo origem identificável, distinguindo fato de inferência e admitindo lacunas sem transformar apresentação em leitura mecânica de referências.",
+  "competencies": ["atribuir evidência oralmente", "resumir fonte", "separar fato e inferência", "qualificar conclusão", "admitir lacuna"],
+  "prerequisites": ["N4-U08-L03", "N4-U02-V01", "N4-U03-V01"],
+  "limits": ["citar nome de fonte sem relação com a afirmação não basta", "dado ausente não pode ser improvisado", "número de fontes não pontua", "linguagem de certeza precisa acompanhar força da evidência"],
+  "media": {"tts": "opcional para ensaio dos trechos planejados", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["trechos-planejados"]}], "generatedVisualResources": [{"type": "UI_RENDERED_ORAL_EVIDENCE_CARDS"}, {"type": "UI_RENDERED_CLAIM_SOURCE_LINK"}, {"type": "UI_RENDERED_EPISTEMIC_LADDER"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "cartões e vínculos afirmação-fonte tornam a rastreabilidade observável sem exigir leitura oral de referências completas."},
+  "sequence": [
+    {"id": "L04-B01", "type": "evidence-packet", "sources": [{"label": "registro-operacional", "supports": "houve 312 entradas após 18h", "limit": "não identifica pessoas únicas"}, {"label": "questionario-voluntario", "supports": "58 de 74 respostas foram favoráveis", "limit": "não representa automaticamente todos os usuários"}, {"label": "planilha-financeira-parcial", "supports": "energia foi estimada", "limit": "segurança ainda não foi separada"}]},
+    {"id": "L04-B02", "type": "oral-attribution-model", "examples": ["Segundo o registro operacional, houve 312 entradas após as 18h; isso não permite afirmar quantas pessoas diferentes compareceram.", "No questionário voluntário, 58 de 74 respostas foram favoráveis; é um sinal útil, mas não uma amostra de todos os usuários."]},
+    {"id": "L04-C01", "type": "evidence-fit-check", "items": [{"claim": "312 pessoas diferentes usaram o serviço", "supported": false}, {"claim": "houve 312 entradas registradas", "supported": true}, {"claim": "o custo adicional total está conhecido", "supported": false}], "automaticValidation": true},
+    {"id": "L04-A01", "type": "planned-oral-evidence", "prompt": "Crie um trecho oral curto que use duas evidências, atribua a origem de modo natural, qualifique pelo menos uma conclusão e diga explicitamente uma lacuna que permanece.", "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"timeLimit": false, "sourceCountScored": false, "citationFormalityScored": false, "openResponseAutoValidated": false},
+  "completionEvidence": {"clusters": {"oralEvidence": {"evidence": ["L04-A01"], "required": true}}, "completionRule": "o trecho deve manter rastreabilidade suficiente, calibrar certeza e não inventar preenchimento para lacunas.", "requiresReliableEvaluatorFor": ["qualidade da atribuição oral", "calibração de certeza", "integração entre evidência e fala"]}
+}
