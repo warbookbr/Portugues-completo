@@ -48,6 +48,9 @@ jobs:
       - name: Test GitHub Gist service
         run: node scripts/test-github-service.mjs
 
+      - name: Test progress sync
+        run: node scripts/test-progress-sync-service.mjs
+
       - name: Test classic renderer
         run: node scripts/test-classic-renderer.mjs
 
