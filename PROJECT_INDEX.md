@@ -123,20 +123,39 @@ O N3 está **curricularmente fechado em M5**: U1–U9, `N3-EXIT-V01` e checkpoin
 - `docs/mapa-niveis-1-4.md` — M1: objetivo, 17 competências oficiais de saída e nove grandes responsabilidades.
 - `docs/areas-nivel-4.md` — M2: nove áreas dimensionadas, revisão horizontal 17/17 e gate M2→M3 satisfeito.
 - `docs/unidades-nivel-4.md` — M3: nove unidades integradas, cobertura 17/17, arquitetura antecipada da saída e gate M3→M4 satisfeito.
+- `docs/licoes-nivel-4.md` — consolidação M4: 93 lições + 9 verificações integradas.
+- `docs/licoes-nivel-4-u1.md`
+- `docs/licoes-nivel-4-u2.md`
+- `docs/licoes-nivel-4-u3.md`
+- `docs/licoes-nivel-4-u4.md`
+- `docs/licoes-nivel-4-u5.md`
+- `docs/licoes-nivel-4-u6.md`
+- `docs/licoes-nivel-4-u7.md`
+- `docs/licoes-nivel-4-u8.md`
+- `docs/licoes-nivel-4-u9.md`
 
-Unidades M3:
+### Gates do N4
+
+- `docs/gate-normativo-nivel-4-u5-u7.md` — escopo e protocolo do gate normativo; **pesquisa obrigatória antes de congelar respostas normativas no M5 de U5/U7**.
+- `docs/gate-midia-acessibilidade-nivel-4-u9.md` — gate de mídia/acessibilidade **satisfeito para o M4**; nenhuma nova mídia humana obrigatória na arquitetura atual.
+
+### Resultado M4
 
 ```text
-U1 — Leitura estratégica de alta complexidade e revisão de interpretação
-U2 — Pesquisa orientada por problema, fontes e rastreabilidade
-U3 — Argumentação complexa, evidência e responsabilidade epistêmica
-U4 — Autoria avançada, gêneros complexos e transferência
-U5 — Edição de alto nível, precisão e consulta linguística
-U6 — Estilo, registro e projeto de voz
-U7 — Língua, norma, variação, mudança, identidade e poder
-U8 — Oralidade complexa, síntese, negociação e debate
-U9 — Literatura, multimodalidade e autoria intermedial/digital
+U1 — 10 lições + verificação
+U2 — 11 lições + verificação
+U3 — 10 lições + verificação
+U4 — 11 lições + verificação
+U5 — 11 lições + verificação
+U6 —  9 lições + verificação
+U7 — 10 lições + verificação
+U8 —  9 lições + verificação
+U9 — 12 lições + verificação
+────────────────────────────
+TOTAL — 93 lições + 9 verificações integradas
 ```
+
+O M4 preserva cobertura 17/17 e explicita como cada unidade exigirá autonomia, transferência e revisão de decisões, sem aumentar dificuldade por extensão ou vocabulário raro.
 
 Estado:
 
@@ -144,16 +163,11 @@ Estado:
 M1 ✓
 M2 ✓ — 9 áreas
 M3 ✓ — 9 unidades
-M4 — próximo marco
-M5 pendente
+M4 ✓ — 93 lições + 9 verificações integradas
+M5 — próximo marco, começando por U1
 ```
 
-Gates antecipados pelo M3:
-
-- U5/U7 — gate normativo antes de congelar respostas avançadas;
-- U9 — gate de mídia/acessibilidade se o M4 exigir fenômeno sensorial real.
-
-O próximo marco curricular é dimensionar as lições do N4 em M4. A fonte oficial do estado é `docs/roadmap-curricular.md`.
+A fonte oficial do estado é `docs/roadmap-curricular.md`.
 
 ## Arquitetura e frontend
 
@@ -194,6 +208,8 @@ N3 M2/M3/M4 → docs/areas-nivel-3.md + docs/unidades-nivel-3.md + docs/licoes-n
 N3 saída → docs/checkpoint-saida-nivel-3.md + content/levels/003-avancado/exit-verification.json
 N4 M2 → docs/areas-nivel-4.md
 N4 M3 → docs/unidades-nivel-4.md
+N4 M4 → docs/licoes-nivel-4.md + docs/licoes-nivel-4-u*.md
+N4 gates → docs/gate-normativo-nivel-4-u5-u7.md + docs/gate-midia-acessibilidade-nivel-4-u9.md
 estado/marcos → docs/roadmap-curricular.md
 conteúdo detalhado → content/
 forma de ensinar/mídia → docs/conteudo.md
