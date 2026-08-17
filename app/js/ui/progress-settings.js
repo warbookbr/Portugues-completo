@@ -1,5 +1,6 @@
 function statusCopy(state) {
   if (state.status === 'SYNCED') return `Sincronizado${state.login ? ` como ${state.login}` : ''}.`;
+  if (state.status === 'LOCAL_CHANGES') return 'Alterações salvas neste navegador aguardam sincronização com o GitHub.';
   if (state.status === 'SYNCING') return 'Sincronizando com o GitHub…';
   if (state.status === 'CONFLICT_PRESERVED') return 'Sincronizado com conflito preservado. Nenhuma resposta foi descartada.';
   if (state.status === 'ERROR') return `Falha de sincronização: ${state.lastError || 'erro desconhecido'}`;
@@ -46,6 +47,7 @@ export function renderProgressSettings(root, { progressSyncService } = {}) {
     busy = true;
     try {
       await progressSyncService.connect(token);
+      unsubscribe();
       renderProgressSettings(root, { progressSyncService });
     } catch {
       refresh(progressSyncService.getState());
@@ -60,6 +62,7 @@ export function renderProgressSettings(root, { progressSyncService } = {}) {
   });
 
   root.querySelector('[data-disconnect-github]')?.addEventListener('click', () => {
+    unsubscribe();
     progressSyncService.disconnect();
     renderProgressSettings(root, { progressSyncService });
   });
