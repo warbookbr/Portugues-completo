@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "id": "N4-U05-L07",
+  "title": "Ortografia, acentuação, terminologia e consistência editorial",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Revisar forma gráfica e consistência em textos longos combinando regras consolidadas, consulta lexical atual e convenções editoriais explicitamente declaradas.",
+  "competencies": ["aplicar ortografia consolidada", "reconhecer incerteza lexical", "consultar VOLP", "distinguir ortografia de política editorial", "manter terminologia consistente"],
+  "prerequisites": ["N4-U05-L05", "N4-U05-L06", "docs/referencias-gramatica-nivel-4-u5-u7.md"],
+  "limits": ["não memorizar exceções raras", "grafia lexical incerta exige consulta atual", "capitalização institucional não vira regra universal", "consistência não autoriza alterar variante correta sem motivo"],
+  "media": {"tts": "opcional; não avalia ortografia", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TEXT_REFERENCE_LINKS", "locations": ["consulta"]}], "generatedVisualResources": [{"type": "UI_RENDERED_STYLE_SHEET"}, {"type": "UI_RENDERED_CONSULTATION_LOG"}, {"type": "UI_RENDERED_TERM_CONSISTENCY_TRACKER"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "folha de estilo, consulta e rastreamento terminológico são o apoio relevante; áudio/imagem não ajudam o alvo."},
+  "sequence": [
+    {"id": "L07-B01", "type": "orthography-versus-editorial", "cases": [{"decision": "grafia de palavra individual", "source": "VOLP atual", "status": "ortografia/consulta"}, {"decision": "forma de escrever datas em relatório institucional", "source": "manual declarado", "status": "CONVENCAO_FORMAL_EDITORIAL"}, {"decision": "usar sempre a mesma sigla após apresentação", "source": "folha de estilo do texto", "status": "consistencia-editorial"}]},
+    {"id": "L07-C01", "type": "hyphen-rule-or-consult", "items": [{"pattern": "prefixo + elemento iniciado por h", "decision": "aplicar núcleo produtivo documentado"}, {"pattern": "forma lexicalizada ou exceção incerta", "decision": "consultar VOLP"}, {"pattern": "preferência de capitalização de setor", "decision": "consultar/declarar manual editorial"}]},
+    {"id": "L07-A01", "type": "long-text-consistency-edit", "tasks": ["corrigir erros gráficos seguros", "registrar consulta lexical onde houver incerteza", "definir folha de estilo curta para siglas/termos", "distinguir decisões editoriais de ortográficas", "preservar variante correta quando não há motivo de padronização"], "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"timeLimit": false, "rareWordMemoryScored": false, "lexicalSpellingRequiresCurrentSource": true, "openResponseAutoValidated": false},
+  "completionEvidence": {"clusters": {"orthographyConsistency": {"evidence": ["L07-A01"], "required": true}}, "completionRule": "combinar aplicação segura, consulta e consistência sem transformar política editorial em ortografia oficial.", "requiresReliableEvaluatorFor": ["adequação da folha de estilo", "qualidade das decisões de consulta"]}
+}
