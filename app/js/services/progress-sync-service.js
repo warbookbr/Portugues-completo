@@ -32,6 +32,16 @@ export class ProgressSyncService {
     this.github = githubService || createGitHubService({ token: this.token });
     if (this.token) this.github.setToken(this.token);
     this.listeners = new Set();
+    this.suppressProgressWatch = false;
+    this.progressService.subscribe(progress => {
+      if (this.suppressProgressWatch) return;
+      const baseline = this.baseline();
+      if (!baseline || JSON.stringify(progress) !== JSON.stringify(baseline)) {
+        this.state.status = this.token ? 'LOCAL_CHANGES' : 'LOCAL_ONLY';
+        this.state.conflicts = [];
+        this.persistState();
+      }
+    });
   }
 
   subscribe(listener) {
@@ -71,6 +81,12 @@ export class ProgressSyncService {
 
   saveBaseline(progress) {
     this.localStorage?.setItem?.(BASELINE_KEY, JSON.stringify(progress));
+  }
+
+  replaceFromSync(progress) {
+    this.suppressProgressWatch = true;
+    try { this.progressService.replaceProgress(progress); }
+    finally { this.suppressProgressWatch = false; }
   }
 
   async connect(token) {
@@ -113,19 +129,19 @@ export class ProgressSyncService {
 
         if (baseline && !localChanged && remoteChanged) {
           resolved = remote.progress;
-          this.progressService.replaceProgress(resolved);
+          this.replaceFromSync(resolved);
         } else if (baseline && localChanged && !remoteChanged) {
           remoteMeta = await this.github.updateProgress(remote.gistId, local);
         } else if (!baseline && isProgressEmpty(local)) {
           resolved = remote.progress;
-          this.progressService.replaceProgress(resolved);
+          this.replaceFromSync(resolved);
         } else if (!baseline && isProgressEmpty(remote.progress)) {
           remoteMeta = await this.github.updateProgress(remote.gistId, local);
         } else if (JSON.stringify(local) !== JSON.stringify(remote.progress)) {
           const merged = mergeProgress(local, remote.progress, baseline);
           resolved = merged.progress;
           conflicts = merged.conflicts;
-          this.progressService.replaceProgress(resolved);
+          this.replaceFromSync(resolved);
           remoteMeta = await this.github.updateProgress(remote.gistId, resolved);
         } else {
           resolved = local;
