@@ -130,6 +130,39 @@ Domínio
 
 Não usar automaticamente o código interno como rótulo público.
 
+## Redundância de navegação e ações
+
+A interface não deve repetir a mesma ação em áreas de destaque próximas quando a navegação principal já oferece essa função de forma clara.
+
+Regra prática:
+
+```text
+mesmo destino
++ mesma função
++ controles simultaneamente visíveis
++ nenhuma vantagem contextual real
+→ manter apenas a ocorrência mais adequada à hierarquia
+```
+
+Duplicação pode existir quando houver benefício contextual comprovável — por exemplo, uma ação de continuidade dentro de uma tarefa longa — mas não deve ser usada apenas para preencher espaço ou repetir o menu.
+
+### Decisão específica da home
+
+Na tela inicial do Modo Clássico:
+
+```text
+Plano de estudos
+→ permanece na navegação superior
+
+botão "Ver plano de estudos" no hero
+→ não usar
+
+CTA principal do hero
+→ "Continuar de onde parou"
+```
+
+A home deve privilegiar a próxima ação de estudo. Destinos estruturais permanentes, como `Plano de estudos`, ficam na navegação quando já estão claramente acessíveis ali.
+
 ## Separação obrigatória no código
 
 Renderer e componentes visuais não devem depender de imprimir diretamente valores crus do runtime.
@@ -174,11 +207,12 @@ Toda mudança visual relevante deve verificar:
 [ ] algum enum interno foi exibido sem tradução?
 [ ] o texto descreve o significado pedagógico real?
 [ ] a interface deixa claro o próximo passo?
-[ ] informação técnica desnecessária aumentou a carga cognitiva?
+[ ] existe ação repetida sem ganho contextual real?
+[ ] informação técnica ou controle redundante aumentou a carga cognitiva?
 [ ] a tradução preserva acessibilidade e precisão?
 ```
 
-Um componente não está visualmente homologado se sua aparência estiver correta, mas a linguagem ainda exigir que o aluno conheça a arquitetura do sistema.
+Um componente não está visualmente homologado se sua aparência estiver correta, mas a linguagem ainda exigir que o aluno conheça a arquitetura do sistema ou se controles redundantes prejudicarem a hierarquia da tela.
 
 ## Relação com o Modo Clássico
 
@@ -187,6 +221,7 @@ O Modo Clássico deve ser direto, calmo e orientado ao estudo. Portanto, este pr
 ```text
 menos linguagem de sistema
 + menos ruído
++ menos controles redundantes
 + hierarquia clara
 + ações compreensíveis
 + estado pedagógico honesto
@@ -199,3 +234,7 @@ A aplicação não deve parecer um painel administrativo do currículo.
 Quando houver conflito entre expor a estrutura interna literalmente e comunicar o mesmo significado de maneira clara ao aluno:
 
 > **preservar a estrutura internamente e traduzir a experiência externamente.**
+
+Quando houver conflito entre repetir uma função já claramente acessível e preservar uma hierarquia simples:
+
+> **manter uma única ação clara, salvo quando a repetição tiver benefício contextual real.**
