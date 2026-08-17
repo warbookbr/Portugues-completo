@@ -119,8 +119,8 @@ U1 ✓ — 10 lições + N4-U01-V01
 U2 ✓ — 11 lições + N4-U02-V01
 U3 ✓ — 10 lições + N4-U03-V01
 U4 ✓ — 11 lições + N4-U04-V01
-U5 — PRÓXIMO SUBPASSO; gate normativo ✓
-U6 pendente
+U5 ✓ — 11 lições + N4-U05-V01; gate normativo ✓
+U6 — PRÓXIMO SUBPASSO
 U7 pendente — gate normativo ✓ para o recorte já documentado
 U8 pendente
 U9 pendente
@@ -133,6 +133,8 @@ U2: `content/units/402-pesquisa-orientada-problema-fontes-rastreabilidade/`.
 U3: `content/units/403-argumentacao-complexa-evidencia-responsabilidade-epistemica/`.
 
 U4: `content/units/404-autoria-avancada-generos-complexos-transferencia/`.
+
+U5: `content/units/405-edicao-alto-nivel-precisao-consulta-linguistica/`.
 
 O M5 da U1 consolidou os guard rails do nível:
 
@@ -192,6 +194,20 @@ O M5 da U4 consolidou autoria longa e transferência:
 - primeira versão longa, revisão global, segunda versão e transferência são evidências obrigatórias;
 - quantidade de mudanças e extensão não pontuam; manutenção consciente pode ser a melhor decisão.
 
+O M5 da U5 consolidou edição como julgamento priorizado e auditável:
+
+- diagnóstico vem antes da reescrita e problemas globais precedem polimento local;
+- referenciação é revisada pela recuperabilidade real do referente, não por aversão mecânica à repetição;
+- sintaxe e pontuação são comparadas por clareza, foco, ritmo e estrutura, sem premiar frases curtas;
+- regra, variante, convenção, consulta e escolha estilística são categorias distintas;
+- itens normativos fechados ficam estritamente dentro do recorte documentado;
+- variante documentada não vira erro e convenção institucional só é exigida quando declarada;
+- grafia lexical incerta exige consulta apropriada, especialmente VOLP atual;
+- precisão lexical não é rebuscamento e não pode ampliar alcance factual;
+- preservar texto adequado é competência editorial, não ausência de trabalho;
+- editar texto alheio exige distinguir correção, sugestão, pergunta ao autor e preservação de voz;
+- `N4-U05-V01` exige onze agrupamentos obrigatórios, incluindo consulta, fronteira normativa, edição de texto alheio e histórico de decisões.
+
 ### Gate normativo N4-U5/U7
 
 - `docs/gate-normativo-nivel-4-u5-u7.md` — **SATISFEITO**;
@@ -202,7 +218,7 @@ O M5 da U4 consolidou autoria longa e transferência:
 - convenção institucional só pode ser exigida quando o padrão estiver declarado;
 - colocação pronominal formal não é tratada como descrição total do português brasileiro;
 - consulta é competência de domínio, não falha automática;
-- U5 está liberada integralmente para M5 dentro desse recorte;
+- U5 está concluída dentro desse recorte;
 - U7 está liberada no aspecto normativo dentro desse recorte;
 - reabrir o gate apenas se uma futura lição precisar congelar resposta específica fora do documento de referências.
 
@@ -228,35 +244,32 @@ N4 — M1 ✓
                 ├── U2 ✓
                 ├── U3 ✓
                 ├── U4 ✓
-                └── U5 — PRÓXIMO SUBPASSO
-                    ├── gate normativo ✓
-                    └── autoria das 11 lições + N4-U05-V01
+                ├── U5 ✓
+                └── U6 — PRÓXIMO SUBPASSO
 ```
 
 ## Próximo subpasso
 
 ```text
-N4-U05 M5 — Edição de alto nível, precisão e consulta linguística
-→ desenvolver 11 lições + N4-U05-V01
-→ usar docs/referencias-gramatica-nivel-4-u5-u7.md como fonte de verdade normativa
-→ diagnóstico e prioridade antes de editar
-→ revisão global de coerência/progressão/arquitetura
-→ referenciação e ambiguidade
-→ sintaxe/pontuação por efeito
-→ distinguir REGRA_PRODUTIVA, VARIANTE_DOCUMENTADA, CONVENCAO_FORMAL_EDITORIAL, CASO_DE_CONSULTA e ESCOLHA_ESTILISTICA
-→ aplicar apenas o recorte normativo documentado em concordância, regência, crase e colocação
-→ revisar ortografia/consistência com consulta quando necessário
-→ precisão lexical sem rebuscamento
-→ comparar alternativas e preservar trechos adequados
-→ editar texto próprio e alheio sem apagar autoria
-→ fechar com edição integrada, histórico e justificativa
-→ itens fechados normativos só podem usar casos cobertos pela referência ou verificados explicitamente em fonte adequada
+N4-U06 M5 — Estilo, registro e projeto de voz
+→ 9 lições + N4-U06-V01
+→ estilo como projeto funcional, não ornamentação
+→ voz autoral, presença, distância e ponto de vista discursivo
+→ tom, registro e relação com a audiência
+→ densidade, explicitação e concisão em tensão funcional
+→ escolha lexical por significado, alcance, registro e conotação
+→ ritmo, extensão de frase, pontuação e cadência sem confundir estilo com norma
+→ repetição, paralelismo, ordem e ênfase
+→ modalidade, voz gramatical, impessoalidade e responsabilidade enunciativa
+→ adaptar estilo entre audiências/meios preservando identidade autoral
+→ aceitar soluções estilísticas diferentes quando funcionais e justificadas
+→ não pontuar formalidade máxima, extensão, vocabulário raro ou quantidade de alterações
 ```
 
 Depois:
 
 ```text
-U6 → U7 (gate normativo já satisfeito; usar a referência e reabrir só se surgir caso fechado fora do recorte) → U8 → U9 (reavaliar gate de mídia se necessário)
+U7 (gate normativo já satisfeito; usar a referência e reabrir só se surgir caso fechado fora do recorte) → U8 → U9 (reavaliar gate de mídia se necessário)
 → N4-EXIT-V01
 → checkpoint final do curso
 ```
@@ -293,6 +306,8 @@ U6 → U7 (gate normativo já satisfeito; usar a referência e reabrir só se su
 28. Variante documentada não recebe gabarito único genérico; convenção editorial precisa ser declarada para poder ser cobrada como convenção.
 29. Ortografia lexical incerta deve ser consultada em fonte atual apropriada; memória de regra não substitui consulta quando o item estiver fora do recorte seguro.
 30. Em colocação pronominal, adequação à escrita formal e descrição do português brasileiro são dimensões distintas; nenhuma delas autoriza hierarquizar falantes.
+31. Edição de domínio prioriza impacto antes de polimento, preserva trechos adequados e registra consultas/manutenções; quantidade de correções não é proxy de qualidade.
+32. Em texto alheio, correção necessária, sugestão opcional, pergunta ao autor e preservação são intervenções distintas; o editor não deve reescrever o autor à própria imagem.
 
 # Dependências não curriculares
 
