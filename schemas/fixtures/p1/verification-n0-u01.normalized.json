@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "id": "N0-U01-V01",
+  "kind": "UNIT_VERIFICATION",
+  "title": "Verificação integrada — Unidade 1",
+  "objective": "Verificar de forma integrada competências essenciais da Unidade 1 sem medir velocidade ou antecipar conteúdos posteriores.",
+  "competencyIds": ["N0-U01-C01", "N0-U01-C02"],
+  "prerequisites": ["N0-U01-L01"],
+  "blocks": [
+    {
+      "id": "V01-Q01",
+      "kind": "ACTIVITY",
+      "pedagogicalType": "modality-identification",
+      "focus": "respond",
+      "content": {"prompt": "Qual opção é a escrita?", "options": ["a opção que eu ouço", "a opção que eu vejo escrita"]},
+      "activity": {
+        "role": "VERIFICATION",
+        "interaction": "SINGLE_CHOICE",
+        "evaluation": {"mode": "DETERMINISTIC", "feedbackTiming": "AFTER_VERIFICATION", "allowRetry": true, "penalizeSupport": false, "answerKey": {"correctIndex": 1}, "criteria": [], "threshold": null},
+        "evidence": {"role": "CHECKPOINT", "competencyIds": ["N0-U01-C01"], "clusterId": "auditoryAndModality", "recordResponse": false, "requiredForCompletion": true},
+        "stimuli": [
+          {"type": "TTS", "payload": {"text": "lua"}},
+          {"type": "SEMANTIC_UI", "payload": {"visibleText": "LUA"}}
+        ]
+      }
+    },
+    {
+      "id": "V01-Q02",
+      "kind": "ACTIVITY",
+      "pedagogicalType": "audio-pair-classify",
+      "focus": "listen-and-respond",
+      "content": {"instruction": "Ouça o par e indique se os começos soam parecidos ou diferentes."},
+      "activity": {
+        "role": "VERIFICATION",
+        "interaction": "CLASSIFY",
+        "evaluation": {"mode": "DETERMINISTIC", "feedbackTiming": "AFTER_VERIFICATION", "allowRetry": true, "penalizeSupport": false, "answerKey": {"pair1": "parecidos"}, "criteria": [], "threshold": 1},
+        "evidence": {"role": "CHECKPOINT", "competencyIds": ["N0-U01-C02"], "clusterId": "auditoryAndModality", "recordResponse": false, "requiredForCompletion": true},
+        "stimuli": [
+          {"type": "CONTROLLED_AUDIO", "mediaId": "N0-U01-V01-AUD-001"},
+          {"type": "CONTROLLED_AUDIO", "mediaId": "N0-U01-V01-AUD-002"}
+        ]
+      }
+    },
+    {
+      "id": "V01-Q07",
+      "kind": "ACTIVITY",
+      "pedagogicalType": "sequence-reproduction",
+      "focus": "observe-and-respond",
+      "content": {"model": ["B", "4", "a", "?"], "availableTokens": ["?", "a", "B", "4"]},
+      "activity": {
+        "role": "VERIFICATION",
+        "interaction": "SEQUENCE",
+        "evaluation": {"mode": "DETERMINISTIC", "feedbackTiming": "AFTER_VERIFICATION", "allowRetry": true, "penalizeSupport": false, "answerKey": {"correctSequence": ["B", "4", "a", "?"]}, "criteria": [], "threshold": null},
+        "evidence": {"role": "CHECKPOINT", "competencyIds": ["N0-U01-C02"], "clusterId": "graphicSystem", "recordResponse": false, "requiredForCompletion": true},
+        "stimuli": [{"type": "SEMANTIC_UI", "payload": {"kind": "token-sequence"}}]
+      }
+    }
+  ],
+  "completion": {
+    "clusters": [
+      {"id": "auditoryAndModality", "required": true, "evidenceIds": ["V01-Q01", "V01-Q02"], "satisfaction": "DEMONSTRATED_REQUIRED"},
+      {"id": "graphicSystem", "required": true, "evidenceIds": ["V01-Q07"], "satisfaction": "DEMONSTRATED_REQUIRED"}
+    ],
+    "nonCompensable": true
+  }
+}
