@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "N4-U08-L07",
+  "title": "Objeção, concessão, resposta e reformulação",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Responder a objeções de forma fiel e consequente, reconhecendo pontos válidos, delimitando a própria posição e reformulando-a quando a objeção alterar o que pode ser sustentado.",
+  "competencies": ["reformular objeção fielmente", "conceder ponto válido", "responder ao núcleo", "pedir evidência adicional", "revisar posição oralmente"],
+  "prerequisites": ["N4-U08-L02", "N4-U08-L06", "N4-U03-L06", "N4-U03-L07"],
+  "limits": ["vencer debate não pontua", "agressividade não pontua", "rapidez não pontua", "concessão não é fraqueza", "manter posição pode ser correto quando a objeção não a atinge"],
+  "media": {"tts": "adequado para ciclos autorais de objeção e resposta", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["ciclos-de-objecao"]}], "generatedVisualResources": [{"type": "UI_RENDERED_OBJECTION_RESPONSE_CHAIN"}, {"type": "UI_RENDERED_CONCESSION_IMPACT_MAP"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "cadeia visual torna observável se a resposta realmente trata a objeção e se a concessão altera ou não o alcance da posição."},
+  "sequence": [
+    {"id": "L07-B01", "type": "objection-cycle", "initialPosition": "vale prolongar o teste nas duas noites por quatro semanas", "objection": "o custo de segurança ainda não foi separado, então prolongar as duas noites pode ampliar um gasto que não conhecemos", "strongRestatement": "a objeção não nega a utilidade do teste; questiona se há base suficiente para manter duas noites antes de conhecer parte do custo"},
+    {"id": "L07-B02", "type": "response-options", "options": [{"response": "manter a proposta, mas condicionar as quatro semanas à obtenção do custo de segurança", "effect": "concessao-com-condicao"}, {"response": "repetir que houve muita procura", "effect": "nao-responde-ao-nucleo"}, {"response": "reduzir provisoriamente para uma noite e reavaliar", "effect": "reformulacao-substantiva"}]},
+    {"id": "L07-C01", "type": "objection-fidelity-check", "items": [{"claim": "a objeção diz que o teste não teve procura", "expected": false}, {"claim": "a objeção questiona decisão diante de custo incompleto", "expected": true}], "automaticValidation": true},
+    {"id": "L07-A01", "type": "objection-response", "prompt": "Receba uma objeção nova, reformule-a de modo que o interlocutor reconheceria, identifique eventual ponto válido, responda ao núcleo e registre se sua posição foi mantida, delimitada ou alterada — com justificativa.", "recordResponse": true, "automaticValidation": false}
+  ],
+  "assessmentBehavior": {"timeLimit": false, "winningScored": false, "aggressivenessScored": false, "positionChangeScoredByItself": false, "openResponseAutoValidated": false},
+  "completionEvidence": {"clusters": {"objectionConcessionReformulation": {"evidence": ["L07-A01"], "required": true}}, "completionRule": "a resposta precisa representar fielmente a objeção e mostrar efeito real — inclusive manutenção justificada quando apropriada — em vez de premiar mudança ou vitória.", "requiresReliableEvaluatorFor": ["fidelidade da reformulação", "qualidade da resposta", "proporcionalidade da concessão/revisão"]}
+}
