@@ -32,3 +32,6 @@ jobs:
 
       - name: Validate contract schemas
         run: node scripts/validate-contracts.mjs
+
+      - name: Test content normalization
+        run: node scripts/test-content-normalizer.mjs
