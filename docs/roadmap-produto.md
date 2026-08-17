@@ -15,9 +15,51 @@ CURRÍCULO N0→N4
 CONTRATOS DE PRODUTO
 → definidos
 
-FRONTEND DE CONTEÚDO REAL
-→ ainda não implementado
+MODO CLÁSSICO REAL
+→ ainda não implementado de ponta a ponta
+
+MODO GAMIFICADO
+→ deliberadamente posterior à homologação do Clássico
 ```
+
+## Decisão de sequência: Clássico primeiro
+
+O **modo Clássico é a linha principal de entrega do produto-base**.
+
+Antes de implementar XP, missões, conquistas, streak, progressão de jogo ou seletor ativo entre modos, o projeto deve provar o núcleo pedagógico completo no Clássico.
+
+Fluxo oficial:
+
+```text
+conteúdo N0→N4
+→ runtime / renderer
+→ atividades + feedback
+→ progresso + domínio + revisão
+→ persistência / Gist
+→ feedback com IA quando aplicável
+→ catálogo N0→N4 + mídia/publicação
+→ MODO CLÁSSICO COMPLETO
+→ homologação end-to-end do Clássico
+────────────────────────────────
+GATE: CLÁSSICO HOMOLOGADO
+────────────────────────────────
+→ MODO GAMIFICADO
+→ XP + conquistas + missões + streak + jornada
+→ homologação e calibração gamificada
+```
+
+### Regra do gate
+
+Enquanto o gate **CLÁSSICO HOMOLOGADO** não estiver satisfeito:
+
+- não implementar economia de XP;
+- não implementar missões ou conquistas como produto;
+- não implementar streak/progressão de jogo;
+- não fazer o Clássico depender de infraestrutura gamificada;
+- não alterar conteúdo pedagógico para preparar recompensas;
+- pode-se registrar casos-âncora de esforço, recuperação e percurso para uso posterior na calibração.
+
+A arquitetura dos dois modos permanece válida. A decisão altera a **ordem de implementação**, não a existência futura do modo Gamificado.
 
 ## Contratos fechados
 
@@ -29,7 +71,7 @@ FRONTEND DE CONTEÚDO REAL
 - serviços separados;
 - progresso em Gist por aluno;
 - IA BYOK por aluno;
-- modos Clássico/Gamificado sobre o mesmo currículo.
+- Clássico e Gamificado sobre o mesmo currículo e motor pedagógico.
 
 ### Conteúdo/runtime
 
@@ -62,7 +104,7 @@ FRONTEND DE CONTEÚDO REAL
 - revisão;
 - schema v1 do Gist;
 - conclusão mecânica por clusters;
-- gamificação sem XP retroativo ao período clássico.
+- Clássico funciona integralmente sem gamificação.
 
 ### IA
 
@@ -86,22 +128,17 @@ FRONTEND DE CONTEÚDO REAL
 
 `docs/calibracao-produto.md`
 
-- primeiro homologar pedagogia/fluxo, depois calibrar a camada de experiência;
-- XP nasce de casos-âncora homologados e comparação entre casos reais;
-- conquistas/missões surgem de padrões úteis observados, não de catálogo inventado antecipadamente;
-- prioridade fina de revisão é calibrada com sinais reais e explicáveis;
-- seletor Clássico/Gamificado só recebe forma visual definitiva quando a interface real puder ser testada;
-- a gamificação nunca força alteração curricular para corrigir sua própria economia.
-
-A calibração é contínua entre P3 e P10; P10 faz a revisão do conjunto, não é o primeiro momento em que ela acontece.
+- primeiro homologar pedagogia/fluxo;
+- durante o Clássico, registrar casos-âncora reais sem implantar economia de XP;
+- revisão é calibrada como parte do núcleo pedagógico clássico;
+- XP, conquistas, missões e streak só são concretizados depois do gate Clássico;
+- gamificação nunca força alteração curricular para corrigir sua economia.
 
 ## Marco P1 — Schemas e contratos executáveis
 
 **Estado:** próximo.
 
-Objetivo:
-
-Transformar os contratos documentados em validações mecânicas sem alterar o conteúdo em massa.
+Objetivo: transformar os contratos documentados em validações mecânicas sem alterar o conteúdo em massa.
 
 Entregas:
 
@@ -116,7 +153,7 @@ schemas/progress.schema.json
 Mais:
 
 - validator de schemas;
-- fixtures de conteúdo real N0 e N4;
+- fixtures reais N0 e N4;
 - estratégia de compatibilidade para autoria v1;
 - CI atualizado.
 
@@ -128,24 +165,21 @@ contratos canônicos validáveis
 + CI detecta violações objetivas
 ```
 
-Não fixar economia numérica de gamificação neste marco.
+Nenhuma economia gamificada é implementada neste marco.
 
 ## Marco P2 — ContentService e normalizador
 
-Objetivo:
-
-Criar camada que transforma conteúdo real em runtime estável.
+Objetivo: criar a camada que transforma conteúdo real em runtime estável.
 
 Entregas:
 
 - `ContentService`;
 - adapters de lição/verificação v1;
-- normalização de blocos;
-- normalização de atividades;
+- normalização de blocos e atividades;
 - normalização de `completionEvidence`;
 - erro explícito para critério não normalizável.
 
-Casos mínimos de teste:
+Casos mínimos:
 
 - lição N0 determinística;
 - verificação N0 com clusters/thresholds;
@@ -153,13 +187,11 @@ Casos mínimos de teste:
 - verificação N4;
 - saída de nível.
 
-O runtime deve conseguir representar eventos que mais tarde serão consumidos pela gamificação/revisão, mas sem exigir valores de XP nesta etapa.
+O runtime pode emitir eventos pedagógicos reutilizáveis no futuro, mas não conhece XP.
 
-## Marco P3 — Manifests e catálogo
+## Marco P3 — Manifests e catálogo inicial
 
-Objetivo:
-
-Tornar unidades reais descobríveis sem lista manual no JavaScript.
+Objetivo: tornar unidades reais descobríveis sem lista manual no JavaScript.
 
 Entregas:
 
@@ -170,26 +202,18 @@ Entregas:
 - `content/course.json` schema v2 populado progressivamente;
 - integridade catálogo → manifesto → conteúdo.
 
-Estratégia:
-
-Começar por um **slice vertical pequeno e representativo**, não publicar N0→N4 inteiro de uma vez.
-
-Slice recomendado:
+Começar por um slice representativo:
 
 ```text
 uma unidade simples de N0
 + uma unidade complexa de N4
 ```
 
-Isso testa extremos antes da migração ampla.
+Durante o slice, registrar hipóteses de esforço/comparabilidade como futuros casos-âncora, sem atribuir economia de XP ao produto Clássico.
 
-Durante a montagem do slice, registrar hipóteses iniciais de esforço/comparabilidade em `docs/calibracao-produto.md`, sem tratá-las ainda como economia final.
+## Marco P4 — Renderer real do Clássico
 
-## Marco P4 — Renderer real
-
-Objetivo:
-
-Substituir placeholders por conteúdo real normalizado.
+Objetivo: substituir placeholders por conteúdo real normalizado em uma experiência **exclusivamente clássica**.
 
 Entregas:
 
@@ -199,17 +223,16 @@ Entregas:
 - primitivas de atividade do primeiro slice;
 - estados de feedback/evidência;
 - acessibilidade e teclado;
-- tratamento explícito de tipo não suportado.
+- tratamento explícito de tipo não suportado;
+- navegação sem qualquer dependência de XP/missões/conquistas.
 
 Validação visual obrigatória em desktop/tablet/mobile.
 
-A partir de atividades funcionando de ponta a ponta, começar a formar **casos-âncora reais** para futura calibração de XP, missão/conquista e revisão. Homologação pedagógica vem antes de qualquer peso gamificado.
+A partir de atividades funcionando de ponta a ponta, registrar casos-âncora de esforço e recuperação para futura gamificação, sem expor pontuação ao aluno.
 
-## Marco P5 — ProgressService e persistência
+## Marco P5 — ProgressService, revisão e persistência
 
-Objetivo:
-
-Implementar progresso pedagógico independente da gamificação.
+Objetivo: implementar o motor pedagógico necessário ao Clássico.
 
 Entregas:
 
@@ -217,135 +240,190 @@ Entregas:
 - clusters de conclusão;
 - fila de revisão;
 - schema v1 de progresso;
-- save/load local da sessão;
+- save/load local;
 - GitHubService/Gist;
 - migração de schema;
 - conflito entre dispositivos;
 - falha de sync sem perda de estado local.
 
-Homologar sinais iniciais de revisão com prioridades explicáveis antes de criar fórmula matemática fina. Registrar decisões e comparadores conforme `docs/calibracao-produto.md`.
+A revisão é parte do produto-base e deve ser homologada aqui com prioridades explicáveis antes de fórmulas finas.
 
-## Marco P6 — Modos Clássico e Gamificado
+## Marco P6 — Feedback por IA no Clássico
 
-Objetivo:
-
-Aplicar duas experiências sobre o mesmo motor pedagógico.
-
-Clássico:
-
-- sem XP;
-- direto;
-- progresso/revisão/domínio.
-
-Gamificado:
-
-- XP;
-- missões/conquistas iniciais;
-- progressão visual;
-- streak sem punição pedagógica.
-
-Troca preserva progresso e não gera XP retroativo.
-
-Este é o primeiro marco em que a calibração concreta da economia gamificada deve usar os casos homologados de P3–P5 como âncoras. Valores continuam revisáveis se novos casos demonstrarem distorções.
-
-A forma visual do seletor de modo também deve ser decidida aqui com o frontend real, acessibilidade e validação visual, não antecipadamente por documentação abstrata.
-
-## Marco P7 — Feedback por IA
-
-Objetivo:
-
-Adicionar feedback opt-in para atividades elegíveis.
+Objetivo: adicionar feedback opt-in para atividades elegíveis **antes** de considerar o Clássico completo.
 
 Entregas:
 
 - configuração de provider/model;
-- armazenamento seguro local da key conforme arquitetura;
+- API key BYOK conforme arquitetura;
 - `AiFeedbackService`;
 - adapter inicial;
 - structured output;
 - fallback;
 - minimização de contexto/custo;
 - fixtures adversariais;
-- pending preservado onde exigido.
+- `VALIDACAO_PENDENTE` preservada onde exigido.
 
-A primeira versão permanece feedback formativo. `ASSISTED_VALIDATION` exige marco separado de calibração.
+A primeira versão permanece formativa. `ASSISTED_VALIDATION` exige calibração específica futura.
 
-Se o uso de IA alterar materialmente o esforço de uma atividade antes usada como âncora de gamificação/revisão, o caso deve ser reavaliado.
+A ausência/falha de IA não pode quebrar atividades determinísticas nem apagar resposta do aluno.
 
-## Marco P8 — Ampliação do catálogo
+## Marco P7 — Ampliação do catálogo Clássico N0→N4
 
-Depois que o slice N0/N4 estiver funcionando:
+Objetivo: levar o pipeline comprovado do slice para o curso inteiro.
+
+Fluxo:
 
 ```text
-migrar/publicar lotes
-→ validar
+migrar/publicar lote
+→ validar schema/integridade
+→ renderizar
 → testar visualmente
-→ homologar
-→ calibrar quando houver novo caso relevante
+→ homologar pedagogia/progresso/revisão
+→ registrar casos-âncora relevantes
 → continuar
 ```
 
-Não fazer migração massiva antes de provar o pipeline.
+Não reescrever conteúdo em massa para atender ao renderer; usar adapters/manifests.
 
-Novos lotes devem ser comparados aos casos-âncora existentes; outliers reais podem justificar recalibração da escala.
+Condição de saída:
 
-## Marco P9 — Mídia obrigatória e publicação
+- catálogo publicado cobrindo N0→N4 conforme escopo aprovado;
+- tipos necessários de atividade suportados ou blockers explicitamente registrados;
+- navegação do Clássico alcança o percurso completo.
+
+## Marco P8 — Mídia obrigatória e prontidão de publicação do Clássico
+
+Objetivo: remover blockers externos que impedem considerar o Clássico publicável.
+
+Entregas:
 
 - resolver fila realmente obrigatória de mídia;
-- validar blockers de publicação;
+- validar `requiredForPublication` e blockers;
 - garantir equivalentes acessíveis;
 - confirmar Pages e rotas reais;
-- reavaliar âncoras cuja experiência/esforço tenha mudado após mídia final.
+- confirmar TTS/áudio controlado conforme contrato;
+- reavaliar experiência de casos cuja mídia final altere materialmente o esforço/fluxo.
 
-## Marco P10 — Teste end-to-end e calibração global
+## Marco P9 — Homologação end-to-end do Modo Clássico
+
+Objetivo: provar que o produto-base funciona de ponta a ponta antes de iniciar gamificação.
+
+Cobrir pelo menos:
+
+- primeira entrada no Clássico;
+- navegação N0→N4;
+- lição simples e complexa;
+- atividades determinísticas, estruturadas e abertas;
+- feedback;
+- revisão;
+- `VALIDACAO_PENDENTE`;
+- progresso/domínio;
+- persistência e Gist;
+- troca de dispositivo/conflito;
+- IA desativada, ativada e falhando;
+- mídia obrigatória;
+- acessibilidade;
+- desktop/tablet/mobile;
+- recuperação após erro;
+- retomada de sessão;
+- falhas sem perda de trabalho.
+
+### Gate de saída: CLÁSSICO HOMOLOGADO
+
+Só considerar o gate satisfeito quando:
+
+```text
+núcleo pedagógico estável
++ percurso N0→N4 utilizável no Clássico
++ feedback/revisão/progresso coerentes
++ persistência confiável dentro do contrato
++ blockers de publicação tratados
++ testes end-to-end aprovados
++ nenhuma dependência de gamificação para estudar
+```
+
+**P10 não pode começar antes desse gate.**
+
+## Marco P10 — Modo Gamificado
+
+Objetivo: adicionar uma segunda experiência sobre o motor pedagógico clássico já homologado.
+
+Entregas iniciais:
+
+- seleção/troca de modo;
+- XP;
+- progressão visual;
+- conquistas iniciais;
+- missões iniciais;
+- streak sem punição pedagógica;
+- preservação do progresso Clássico;
+- ausência de XP retroativo ao período estudado no Clássico;
+- gamificação consumindo eventos pedagógicos sem controlar domínio.
+
+### Calibração
+
+A economia deve nascer dos casos-âncora observados e homologados durante P3–P9.
+
+Fluxo:
+
+```text
+casos clássicos homologados
+→ comparar esforço/complexidade/autonomia
+→ propor valores provisórios
+→ testar economia gamificada
+→ revisar outliers/farm/saturação
+→ homologar baselines
+```
+
+A forma visual do seletor Clássico/Gamificado também é decidida aqui, com validação real de interface.
+
+## Marco P11 — Homologação e calibração global do Gamificado
+
+Objetivo: provar que a camada de jogo melhora a experiência sem contaminar o núcleo já aprovado.
 
 Cobrir:
 
-- primeira entrada;
-- escolha de modo;
-- lição simples;
-- atividade complexa;
-- feedback/revisão;
-- pending;
-- sincronização;
-- troca de dispositivo;
-- IA desativada/ativada/falhando;
-- navegação N0→N4;
-- acessibilidade;
-- testes com usuários reais;
+- troca Clássico ↔ Gamificado;
+- preservação de progresso/domínio/revisão;
 - coerência da escala de XP;
-- utilidade/saturação de missões e conquistas;
-- comportamento da fila de revisão;
-- clareza do seletor de modo e progressão visual.
+- resistência a farm;
+- recuperação/revisão recompensadas sem distorção;
+- utilidade e saturação de missões;
+- relevância das conquistas;
+- streak e fusos/horários;
+- clareza da progressão visual;
+- acessibilidade;
+- desktop/tablet/mobile;
+- usuários reais quando possível.
 
-Condição específica de calibração:
+Condição de saída:
 
 ```text
-casos-âncora suficientes
-+ distorções principais corrigidas
-+ baselines iniciais de produção registrados
-+ nenhuma mecânica de jogo contaminando domínio/progresso curricular
+baselines gamificados homologados
++ principais distorções corrigidas
++ nenhuma mecânica de jogo controlando domínio/gates curriculares
++ Clássico continua plenamente funcional sem a camada de jogo
 ```
 
-Mesmo após P10, calibração baseada em evidência pode continuar sem reabrir princípios arquiteturais.
+Calibração baseada em evidência pode continuar depois de P11.
 
-## Decisões que não bloqueiam P1–P5
+## Decisões deliberadamente calibráveis
 
-São deliberadamente calibráveis e seguem `docs/calibracao-produto.md`:
+Durante P1–P9, coletar evidência e casos-âncora, mas não congelar prematuramente:
 
 - valores exatos de XP;
-- catálogo inicial de conquistas;
+- catálogo de conquistas;
 - quantidade/frequência de missões;
-- aparência final do seletor de modo;
-- algoritmo fino da fila de revisão;
-- detalhes da sequência/progressão visual.
+- streak/progressão visual;
+- aparência final do seletor de modo.
+
+O algoritmo fino da fila de revisão é diferente: pertence ao núcleo Clássico e pode amadurecer a partir de P5, sempre por sinais pedagógicos explicáveis.
 
 Também permanecem decisões separadas de integração:
 
 - provider/model inicial de IA;
-- quais classes de IA poderão um dia participar de validação assistida.
-
-Esses itens só devem ser fixados quando houver evidência/caso real suficiente para justificar a escolha. Não inventar precisão para “completar” a documentação.
+- classes que poderão futuramente participar de validação assistida.
 
 ## Próximo passo oficial
 
@@ -353,4 +431,9 @@ Esses itens só devem ser fixados quando houver evidência/caso real suficiente 
 P1 — schemas e contratos executáveis
 ```
 
-Não iniciar o renderer antes de o runtime saber validar/normalizar conteúdo suficiente para um slice representativo.
+Prioridade estratégica:
+
+```text
+CONCLUIR E HOMOLOGAR O CLÁSSICO
+→ só então construir o GAMIFICADO
+```
