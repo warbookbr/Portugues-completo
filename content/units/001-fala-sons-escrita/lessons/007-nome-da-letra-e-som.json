@@ -1,22 +1,23 @@
 {
   "schemaVersion": 1,
   "id": "N0-U01-L07",
-  "title": "Nome da letra e som que ela pode representar",
+  "title": "Nome da letra e som: coisas diferentes",
   "status": "conteudo-pronto-para-implementacao",
   "objective": "Distinguir o nome de uma letra do som que ela pode representar em uma palavra e iniciar associações simples entre sons iniciais ouvidos e letras já conhecidas.",
+  "studentObjective": "Entender que o nome de uma letra e o som que ela pode representar numa palavra não são a mesma coisa.",
   "competencies": [
     "reconhecer que o nome de uma letra e o som que ela representa em uma palavra não são a mesma coisa",
     "distinguir auditivamente um nome de letra de uma palavra usada como exemplo",
     "associar sons iniciais claros de palavras trabalhadas às letras correspondentes",
     "usar a formulação de que uma letra pode representar um som, sem assumir relação fixa de um para um"
   ],
-  "prerequisites": ["N0-U01-L02", "N0-U01-L03", "N0-U01-L04", "N0-U01-L06"],
+  "prerequisites": ["N0-U01-L02", "N0-U01-L03"],
   "limits": [
-    "não ensinar ainda todas as correspondências entre letras e sons",
+    "não ensinar todas as correspondências entre letras e sons",
     "não afirmar que uma letra possui sempre um único som",
     "não exigir terminologia fonética formal nem símbolos fonéticos",
     "não exigir segmentação completa das palavras em sons mínimos",
-    "não antecipar sistematicamente as variações letra-som reservadas à Lição 8",
+    "não antecipar sistematicamente as variações letra-som reservadas à Unidade 2",
     "não exigir leitura autônoma das palavras usadas como estímulo"
   ],
   "media": {
@@ -107,19 +108,19 @@
       "id": "L07-B01",
       "type": "objective",
       "focus": "read-or-listen",
-      "text": "Você já conhece letras e seus nomes. Agora vamos separar duas ideias: o nome que usamos para chamar uma letra e o som que essa letra pode representar dentro de uma palavra."
+      "text": "Você já conhece letras, seus nomes e alguns sons que aparecem no começo de palavras. Agora vamos separar duas ideias: o nome da letra e o som que ela pode representar dentro de uma palavra."
     },
     {
       "id": "L07-B02",
       "type": "audio-comparison-demonstration",
       "focus": "listen-then-observe",
-      "title": "Pê é o nome; pato começa com um som representado por P",
+      "title": "Pê é o nome; pato começa com um som que P pode representar",
       "letter": "P",
       "letterNameAudio": "N0-U01-L03-AUD-016",
       "wordAudio": "N0-U01-L02-AUD-001",
       "wordRevealAfterListening": "pato",
       "highlight": "P",
-      "explanation": "Ao ouvir pê, ouvimos o nome da letra P. Ao ouvir pato, percebemos no começo da palavra um som que a letra P pode representar. Nome da letra e som representado são ideias diferentes.",
+      "explanation": "Ao ouvir pê, ouvimos o nome da letra P. Ao ouvir pato, percebemos no começo da palavra um som que a letra P pode representar. Nome da letra e som representado são coisas diferentes.",
       "guardRail": "não dizer que P sempre representa esse som; usar sempre pode representar"
     },
     {
@@ -152,7 +153,7 @@
       "focus": "respond",
       "interaction": "name-versus-word-audio",
       "title": "Nome da letra ou palavra?",
-      "instruction": "Em cada rodada, veja a letra e ouça um áudio. Indique se o áudio apresenta o nome da letra ou uma palavra em que ela aparece no começo.",
+      "instruction": "Veja a letra e ouça um áudio. Escolha se você ouviu o nome da letra ou uma palavra que começa com ela.",
       "items": [
         {"letter": "S", "stimulus": "N0-U01-L03-AUD-019", "correct": "nome da letra"},
         {"letter": "S", "stimulus": "N0-U01-L02-AUD-006", "correct": "palavra"},
@@ -168,8 +169,8 @@
       "id": "L07-B04",
       "type": "explanation",
       "focus": "read-or-listen",
-      "title": "Agora ligue o som ouvido à letra",
-      "text": "Podemos ouvir o começo de algumas palavras conhecidas e associar esse som a uma letra. Nesta lição usamos apenas exemplos claros. Mais adiante veremos que uma mesma letra nem sempre representa o mesmo som."
+      "title": "Ligando o som à letra",
+      "text": "Podemos ouvir o começo de algumas palavras conhecidas e associar esse som a uma letra. Aqui usamos exemplos claros. Mais adiante veremos que uma mesma letra nem sempre representa o mesmo som."
     },
     {
       "id": "L07-A02",
@@ -177,7 +178,7 @@
       "focus": "respond",
       "interaction": "initial-sound-to-letter",
       "title": "Qual letra pode representar o começo que você ouviu?",
-      "instruction": "Ouça a palavra sem vê-la escrita e escolha a letra que pode representar o som inicial ouvido. Depois da resposta, a palavra pode ser revelada com a letra inicial destacada.",
+      "instruction": "Ouça a palavra sem vê-la escrita e escolha a letra que pode representar o som inicial. Depois da resposta, a palavra pode aparecer com a letra inicial destacada.",
       "writtenWordsVisibleBeforeResponse": false,
       "items": [
         {"stimulus": "N0-U01-L02-AUD-006", "spokenContent": "sapo", "options": ["S", "B", "M"], "correct": "S", "reveal": "sapo"},
@@ -197,12 +198,12 @@
       "interaction": "single-choice",
       "prompt": "Qual afirmação descreve melhor o que aprendemos?",
       "options": [
-        "O nome de uma letra e o som que ela representa em uma palavra são sempre a mesma coisa.",
-        "Uma letra tem um nome, e também pode representar sons dentro das palavras; essas duas ideias não são a mesma coisa.",
+        "O nome de uma letra e o som que ela representa numa palavra são sempre a mesma coisa.",
+        "Uma letra tem um nome e também pode representar sons dentro das palavras; essas duas coisas são diferentes.",
         "Cada letra representa obrigatoriamente um único som em todas as palavras."
       ],
       "correctIndex": 1,
-      "feedback": "O nome identifica a letra. Dentro das palavras, essa letra pode representar sons; a relação não deve ser tratada como fixa nesta etapa."
+      "feedback": "O nome identifica a letra. Numa palavra, a letra pode representar sons; essa relação nem sempre funciona do mesmo jeito."
     },
     {
       "id": "L07-B05",
@@ -210,11 +211,11 @@
       "focus": "read-or-listen",
       "points": [
         "As letras possuem nomes, como pê, eme, esse, bê e gê.",
-        "O nome da letra não é a mesma coisa que o som que ela pode representar dentro de uma palavra.",
+        "O nome da letra não é a mesma coisa que o som que ela pode representar numa palavra.",
         "Podemos começar a associar sons iniciais claros a letras já conhecidas.",
         "Dizemos que uma letra pode representar um som; não assumimos que ela sempre representa o mesmo som."
       ],
-      "bridgeToNextLesson": "Na próxima lição, veremos diretamente que a relação entre letras e sons pode variar."
+      "bridgeToNextLesson": "Na próxima unidade, você vai começar a ouvir palavras em partes e aprender que essas partes são chamadas de sílabas."
     }
   ],
   "completionEvidence": {
