@@ -29,10 +29,10 @@ Fase estratégica: CONCLUIR E HOMOLOGAR O CLÁSSICO
 Marco transversal ativo: T1 — Fundamentos claros e experiência de lição
 Plano: docs/plano-fundamentos-claros.md
 Skill: .ChatGPT/skills/fundamentos-claros/SKILL.md
-Subfase ativa: T1.5 — contrato técnico da abertura da lição
-Estado T1.5: IMPLEMENTADO NA BRANCH / EM VALIDACAO
+Subfase concluída mais recente: T1.5 — contrato técnico da abertura da lição
+Subfase ativa: T1.6 — nova autoria das unidades/lições iniciais
 P6 — Feedback por IA: AGUARDANDO T1
-Próximo passo exato: validar schema + normalização de presentation.intro; se CI passar, fechar T1.5 e iniciar T1.6 — nova autoria das unidades/lições iniciais
+Próximo passo exato: materializar a nova U1/U2 de docs/redimensionamento-t1-2-n0.md, começando pelas lições da nova U1 com objective interno + studentObjective + explicação clara/completa/simples, sem alterar IDs quando a identidade semântica foi preservada
 Blocker global: nenhum
 Gate final do Clássico: NÃO SATISFEITO
 ```
@@ -48,7 +48,7 @@ Enquanto T1 estiver ativo, não iniciar P6 materialmente.
 | P3 — Manifests/catálogo inicial | `HOMOLOGADO` | PR #107 |
 | P4 — Renderer real do Clássico | `HOMOLOGADO` | PR #108 |
 | P5 — Progresso/revisão/Gist | `HOMOLOGADO` | PR #109 |
-| T1 — Fundamentos claros | `ATIVO` | PRs #116–#120 + trabalho T1.5 |
+| T1 — Fundamentos claros | `ATIVO` | PRs #116–#120 + T1.5/PR #121 |
 | P6 — Feedback por IA | `AGUARDANDO T1` | — |
 | P7 — Catálogo N0→N4 | `NAO_INICIADO` | — |
 | P8 — Mídia/publicação | `NAO_INICIADO` | — |
@@ -141,8 +141,8 @@ T1.1 pesquisa + auditoria                                  ✓
 T1.2 redimensionamento curricular N0                       ✓
 T1.3 contrato de linguagem                                 ✓
 T1.4 skills/fontes canônicas                               ✓
-T1.5 contrato técnico de abertura                          EM VALIDACAO
-T1.6 nova autoria inicial
+T1.5 contrato técnico de abertura                          ✓
+T1.6 nova autoria inicial                                  ← ativo
 T1.7 frontend de intro/fluxo
 T1.8 metodologia em Ajuda
 T1.9 migração/catálogo/progresso/mídia
@@ -240,19 +240,14 @@ A validação visual de lição passa a cobrir primeira abertura, retomada, expl
 
 ## T1.5 — contrato técnico da abertura
 
-### Estado
-
 ```text
-Técnico: IMPLEMENTADO NA BRANCH
-Homologação: EM VALIDACAO
-Mudança de schemaVersion: NÃO
-Reescrita N1–N4: NÃO
-Frontend visual: ainda não; pertence a T1.7
+Estado: HOMOLOGADO
+SchemaVersion: permanece v1
+Reescrita N1–N4: nenhuma
+Frontend visual: pertence a T1.7
 ```
 
-### Decisão técnica
-
-A autoria v1 pode declarar opcionalmente:
+A autoria v1 passa a aceitar opcionalmente:
 
 ```json
 {
@@ -262,7 +257,7 @@ A autoria v1 pode declarar opcionalmente:
 
 `objective` continua obrigatório e técnico.
 
-O carregamento canônico passa a produzir, para `LESSON`:
+O carregamento canônico produz, para `LESSON`:
 
 ```json
 {
@@ -274,7 +269,7 @@ O carregamento canônico passa a produzir, para `LESSON`:
 }
 ```
 
-Quando `studentObjective` não existe ou contém apenas espaço:
+Quando `studentObjective` não existe ou é vazio:
 
 ```json
 {
@@ -285,46 +280,33 @@ Quando `studentObjective` não existe ou contém apenas espaço:
 }
 ```
 
-Regras:
+Regras homologadas:
 
 - nunca usar `objective` como fallback público;
-- fallback é deliberadamente neutro e não tenta inferir o objetivo;
-- `introSource` permite detectar conteúdo ainda não migrado;
-- o schema normalizado v1 aceita `presentation` como extensão **opcional**, preservando compatibilidade com runtimes/fixtures antigos;
-- o `ContentService` atual sempre enriquece lições com `presentation`;
-- verificações permanecem inalteradas nesta subfase;
-- T1.6 fornecerá `studentObjective` real às novas/revisadas lições iniciais;
-- T1.7 consumirá exclusivamente `presentation.intro` na abertura, nunca `objective`.
+- fallback é neutro e não tenta inferir pedagogia;
+- `introSource` torna a migração auditável;
+- `presentation` é extensão opcional do schema normalizado v1, preservando compatibilidade;
+- `ContentService` atual enriquece todas as lições carregadas com `presentation`;
+- verificações não recebem esse contrato nesta subfase;
+- T1.6 fornece `studentObjective` real às lições revisadas;
+- T1.7 usa `presentation.intro` na tela de abertura, nunca `objective`.
 
-Arquivos técnicos T1.5:
+Arquivos:
 
 - `app/js/services/content-presentation-normalizer-v1.js`;
 - `app/js/services/content-service.js`;
 - `schemas/lesson.schema.json`;
 - `scripts/test-content-normalizer.mjs`.
 
-### Gate T1.5
-
-Para fechar:
+Validação T1.5 provou:
 
 ```text
-studentObjective autoral
-→ presentation.intro AUTHORED
-
-studentObjective ausente/vazio
-→ SAFE_FALLBACK
-
-objective técnico
-→ preservado e nunca usado como fallback
-
-conteúdo legado N0/N4
-→ continua válido
-
-verificação
-→ não recebe semântica de lição
-
-CI completo
-→ verde
+studentObjective válido → AUTHORED
+studentObjective ausente/vazio → SAFE_FALLBACK
+objective técnico → preservado e diferente do fallback
+N0 e N4 legados → continuam válidos
+verificações → inalteradas
+CI completo → verde
 ```
 
 ## Estado de publicação do slice
@@ -352,8 +334,7 @@ Nova mídia humana obrigatória: nenhuma
 
 ```text
 Global antes de P6: concluir T1
-Imediato: terminar validação T1.5
-Depois: T1.6 — nova autoria inicial
+Imediato: T1.6 — nova autoria inicial
 Local: mídias N0 históricas, reconciliar em T1.9
 ```
 
