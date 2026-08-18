@@ -30,10 +30,11 @@ Marco concluído mais recente: P5 — ProgressService, revisão e persistência
 Marco transversal ativo: T1 — Fundamentos claros e experiência de lição
 Plano ativo: docs/plano-fundamentos-claros.md
 Skill ativa: .ChatGPT/skills/fundamentos-claros/SKILL.md
-Subfase ativa: T1.1 — pesquisa e auditoria da porta de entrada do N0
+Subfase concluída mais recente: T1.1 — pesquisa e auditoria da porta de entrada do N0
+Subfase ativa: T1.2 — redimensionamento curricular controlado do N0
 P6 — Feedback por IA: AGUARDANDO T1
-Último item concluído: CL-UX-LESSON-FLOW + CL-UX-HOME-REDESIGN + refinamentos responsivos da home (pós-P5)
-Próximo passo exato: executar T1.1, pesquisando e auditando a progressão inicial N0, pré-requisitos, conteúdo real, IDs, mídia e progresso antes de congelar a nova espinha curricular
+Último item concluído: T1.1 + CL-UX-LESSON-FLOW + CL-UX-HOME-REDESIGN + refinamentos responsivos da home (pós-P5)
+Próximo passo exato: executar T1.2, congelando a arquitetura concreta das unidades/lições iniciais N0, competências, pré-requisitos e verificações, e produzindo a matriz de identidade/migração antes de reescrever conteúdo
 Blocker atual: nenhum blocker técnico global; T1 é uma prioridade pedagógica deliberada, não um blocker acidental
 Gate final do Clássico: NÃO SATISFEITO
 ```
@@ -49,7 +50,7 @@ Enquanto T1 estiver ativo, não iniciar P6 materialmente. O plano T1 foi autoriz
 | P3 — Manifests e catálogo inicial | `HOMOLOGADO` | PR #107 + catálogo v2 + manifests + integridade | concluído |
 | P4 — Renderer real do Clássico | `HOMOLOGADO` | PR #108 + 20 lições/2 verificações + smoke Chrome + screenshots | concluído |
 | P5 — ProgressService/revisão/Gist | `HOMOLOGADO` | PR #109 + engine/policies/Gist/sync/conflitos/cache/UI em CI | concluído |
-| T1 — Fundamentos claros e experiência de lição | `ATIVO` | `docs/plano-fundamentos-claros.md` | T1.1 pesquisa/auditoria → T1.10 homologação |
+| T1 — Fundamentos claros e experiência de lição | `ATIVO` | plano + `docs/auditoria-t1-1-porta-entrada-n0.md` | T1.2 redimensionamento → T1.10 homologação |
 | P6 — Feedback por IA | `NAO_INICIADO / AGUARDANDO T1` | — | iniciar após T1 homologado |
 | P7 — Ampliação N0→N4 | `NAO_INICIADO` | — | catálogo clássico cobre escopo aprovado |
 | P8 — Mídia/prontidão de publicação | `NAO_INICIADO` | — | blockers obrigatórios resolvidos |
@@ -344,13 +345,25 @@ Validação da entrega original:
 
 ```text
 Estado consolidado: ATIVO / AUTORIZADO
-Técnico: PLANEJADO; execução material ainda não iniciada
-Subfase: T1.1 — pesquisa e auditoria
+Subfase concluída: T1.1 — pesquisa e auditoria
+Subfase ativa: T1.2 — redimensionamento curricular controlado do N0
+Relatório T1.1: docs/auditoria-t1-1-porta-entrada-n0.md
 Plano: docs/plano-fundamentos-claros.md
 Skill: .ChatGPT/skills/fundamentos-claros/SKILL.md
 Impacto: currículo N0 inicial + conteúdo + contratos + frontend + skills + migração + mídia
 P6: aguardando conclusão de T1
 ```
+
+T1.1 confirmou:
+
+- `Fala e escrita` é conteúdo válido, mas abstrato demais para abrir o curso;
+- o núcleo de alfabeto existente é forte matéria-prima para a nova entrada;
+- letras/conhecimento alfabético e consciência sonora devem se articular cedo, sem uma sequência mecânica de memorização;
+- vogais/consoantes podem permanecer cedo, mas a lição atual mistura categorias demais;
+- a introdução de sílabas da atual U2 é pedagogicamente boa, porém está tarde por depender da U1 inteira;
+- relações letra–som mais complexas devem vir depois de exemplos concretos com letras, sílabas e palavras;
+- a melhor candidata para T1.2 é reorganizar conjuntamente as atuais U1 + U2 em duas unidades iniciais mais naturais, em vez de criar uma U0 artificial;
+- o N0 final não precisa ser reduzido; a escada de pré-requisitos até ele precisa ser melhorada.
 
 Decisões já aprovadas e registradas:
 
@@ -358,12 +371,12 @@ Decisões já aprovadas e registradas:
 - exemplo de objetivo público aprovado: `Entender a diferença entre o que falamos e o que escrevemos.`;
 - objetivo curricular técnico não deve ser impresso diretamente como apresentação ao aluno;
 - linguagem para iniciantes deve partir do concreto, definir termos e avançar em pequenas camadas;
-- a porta de entrada N0 será reavaliada para começar perceptivelmente por fundamentos como letras/alfabeto, vogais/consoantes, sílabas e palavras antes de abstrações inadequadas ao primeiro contato;
+- a porta de entrada N0 deve começar perceptivelmente por fundamentos como letras/alfabeto, vogais/consoantes, sílabas e palavras antes de abstrações inadequadas ao primeiro contato;
 - pode haver reordenação, divisão ou criação de unidades iniciais, mediante auditoria de dependências;
 - IDs publicados não podem mudar de significado silenciosamente;
 - progresso/localStorage/Gist/deep links precisam de migração conservadora quando a identidade mudar;
 - `Metodologia do curso` sairá do rodapé persistente e ficará acessível por Ajuda → Como o curso funciona;
-- skills canônicas serão atualizadas antes do fechamento de T1 para preservar o método em novas instâncias.
+- as skills canônicas já incorporam o padrão de explicação clara, completa e simples e a regra concreto → conceito → prática → abstração.
 
 ## Estado de publicação do slice após P5
 
@@ -394,7 +407,7 @@ Produções abertas continuam `VALIDACAO_PENDENTE` quando exigem avaliador confi
 
 ```text
 Global antes de P6: concluir CL-T1-FUNDAMENTOS-CLAROS
-T1 imediato: pesquisa/auditoria da porta de entrada N0
+T1 imediato: T1.2 — congelar nova arquitetura inicial N0 + matriz de identidade/migração
 Local: áudios controlados obrigatórios do desenho atual de N0-U01, sujeitos à reconciliação T1
 ```
 
@@ -403,8 +416,8 @@ Local: áudios controlados obrigatórios do desenho atual de N0-U01, sujeitos à
 Executar:
 
 ```text
-T1.1 pesquisa + auditoria
-→ T1.2 redimensionamento curricular N0
+T1.1 pesquisa + auditoria                                  ✓
+→ T1.2 redimensionamento curricular N0                    ← ativo
 → T1.3 contrato de linguagem
 → T1.4 skills/fontes canônicas
 → T1.5 contrato técnico de abertura
