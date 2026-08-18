@@ -13,7 +13,6 @@ export class ProgressMigrationError extends Error {
 const clone = value => structuredClone(value);
 const DEMONSTRATED = 'DEMONSTRADA';
 const REVIEW = 'REVISAO_RECOMENDADA';
-const DEVELOPMENT = new Set(['PRATICADA', 'VALIDACAO_PENDENTE', REVIEW]);
 
 const U1_V02_CLUSTERS = Object.freeze({
   alphabetAndForms: ['V02-Q01', 'V02-Q02'],
@@ -113,10 +112,9 @@ function archiveRef(progress, ref, report) {
 }
 
 function syntheticEvidence(source, sourceRef) {
-  const attemptCount = Math.max(1, source?.attemptCount || 1);
   return {
     status: DEMONSTRATED,
-    attemptCount,
+    attemptCount: Math.max(1, source?.attemptCount || 1),
     lastAttemptAt: source?.lastAttemptAt || source?.completedAt || source?.lastVisitedAt || null,
     support: emptySupport(),
     feedbackRef: migrationFeedbackRef(sourceRef)
@@ -182,13 +180,15 @@ function verificationRecordFrom(progress, documentId, sourceRecord, clusters, no
   };
 }
 
-function competencyFromRefs(progress, competencyId, refs, now) {
+function competencyFromRefs(progress, refs, now) {
   const activeRefs = refs.filter(ref => Boolean(evidence(progress, ref)));
   if (!activeRefs.length) return null;
   const statuses = activeRefs.map(ref => evidence(progress, ref).status);
   const reviewRecommended = statuses.includes(REVIEW);
+  const demonstratedRefs = activeRefs.filter(ref => demonstrated(progress, ref));
+  const contexts = new Set(demonstratedRefs.map(ref => ref.split('/')[0]));
   let status = 'EM_DESENVOLVIMENTO';
-  if (!reviewRecommended && statuses.some(item => item === DEMONSTRATED)) status = DEMONSTRATED;
+  if (!reviewRecommended && demonstratedRefs.length) status = contexts.size >= 2 ? 'CONSOLIDADA' : DEMONSTRATED;
   return { status, evidenceRefs: [...new Set(activeRefs)], reviewRecommended, updatedAt: now };
 }
 
@@ -201,8 +201,8 @@ function remapReviews(progress) {
     if (next.competencyId === 'N0-U01-C01') next.competencyId = 'N0-U02-C11';
     if (next.competencyId === 'N0-U01-C08') next.competencyId = 'N0-U02-C10';
 
-    if (next.competencyId === 'N0-U01-C05') {
-      if (/^N0-U01-L05\/(L05-A02|L05-C02|L05-C03)$/.test(source)) next.competencyId = 'N0-U01-C09';
+    if (next.competencyId === 'N0-U01-C05' && /^N0-U01-L05\/(L05-A02|L05-C02|L05-C03)$/.test(source)) {
+      next.competencyId = 'N0-U01-C09';
     }
 
     const sourceMap = {
@@ -275,9 +275,6 @@ function migrateL05Split(progress, now, report) {
   }
   const l09Record = lessonRecordFrom(progress, 'N0-U01-L09', null, [l09Refs.a01, l09Refs.c02], now);
   if (l09Record) progress.curriculum.lessons['N0-U01-L09'] = l09Record;
-
-  const c09 = competencyFromRefs(progress, 'N0-U01-C09', [l09Refs.a01, l09Refs.c02], now);
-  if (c09) progress.competencies['N0-U01-C09'] = c09;
 }
 
 function migrateMovedLesson(progress, config, now, report) {
@@ -288,13 +285,7 @@ function migrateMovedLesson(progress, config, now, report) {
     }
   }
   if (sourceRecord?.status === 'CONCLUIDA') {
-    synthesizeEvidence(
-      progress,
-      sourceRecord,
-      `${config.fromLesson}@pre-t1`,
-      config.required.map(id => evidenceRef(config.toLesson, id)),
-      report
-    );
+    synthesizeEvidence(progress, sourceRecord, `${config.fromLesson}@pre-t1`, config.required.map(id => evidenceRef(config.toLesson, id)), report);
   }
   const requiredRefs = config.required.map(id => evidenceRef(config.toLesson, id));
   const targetRecord = lessonRecordFrom(progress, config.toLesson, sourceRecord, requiredRefs, now);
@@ -344,6 +335,9 @@ function migrateU2Verification(progress, now, report) {
     copyEvidence(progress, evidenceRef(oldId, from), evidenceRef(newId, to), report);
   }
 
+  const syllableTargets = Object.values(U2_V02_CLUSTERS).slice(0, 3).flat().map(id => evidenceRef(newId, id));
+  if (oldRecord?.status === 'CONCLUIDA') synthesizeEvidence(progress, oldRecord, `${oldId}@equivalent`, syllableTargets, report);
+
   const variationSource = evidenceRef('N0-U01-L08', 'L08-A01');
   copyEvidence(progress, variationSource, evidenceRef(newId, 'V02-Q10'), report);
   copyEvidence(progress, variationSource, evidenceRef(newId, 'V02-Q11'), report);
@@ -351,18 +345,31 @@ function migrateU2Verification(progress, now, report) {
   copyEvidence(progress, evidenceRef('N0-U01-V01', 'V01-Q11'), evidenceRef(newId, 'V02-Q11'), report);
   copyEvidence(progress, evidenceRef('N0-U01-L01', 'L01-A01'), evidenceRef(newId, 'V02-Q12'), report);
 
-  const l08Complete = progress.curriculum.lessons['N0-U02-L09']?.status === 'CONCLUIDA';
-  const l01Complete = progress.curriculum.lessons['N0-U02-L10']?.status === 'CONCLUIDA';
-  if (oldRecord?.status === 'CONCLUIDA' && l08Complete && l01Complete) {
-    const allTargets = Object.values(U2_V02_CLUSTERS).flat().map(id => evidenceRef(newId, id));
-    synthesizeEvidence(progress, oldRecord, 'N0-U02-V01+U1-L08+U1-L01@equivalent', allTargets, report);
+  const variationLesson = progress.curriculum.lessons['N0-U02-L09'] || null;
+  const speechWritingLesson = progress.curriculum.lessons['N0-U02-L10'] || null;
+  if (variationLesson?.status === 'CONCLUIDA') {
+    synthesizeEvidence(progress, variationLesson, 'N0-U01-L08@equivalent', [evidenceRef(newId, 'V02-Q10'), evidenceRef(newId, 'V02-Q11')], report);
+  }
+  if (speechWritingLesson?.status === 'CONCLUIDA') {
+    synthesizeEvidence(progress, speechWritingLesson, 'N0-U01-L01@equivalent', [evidenceRef(newId, 'V02-Q12')], report);
   }
 
   const record = verificationRecordFrom(progress, newId, oldRecord, U2_V02_CLUSTERS, now);
   if (record) progress.curriculum.verifications[newId] = record;
 }
 
-function rebuildMovedCompetencies(progress, now) {
+function rebuildActiveCompetencies(progress, now) {
+  const c05Refs = [
+    evidenceRef('N0-U01-L05', 'L05-A01'),
+    evidenceRef('N0-U01-L05', 'L05-A02'),
+    evidenceRef('N0-U01-L05', 'L05-C03'),
+    evidenceRef('N0-U01-V02', 'V02-Q03')
+  ];
+  const c09Refs = [
+    evidenceRef('N0-U01-L09', 'L09-A01'),
+    evidenceRef('N0-U01-L09', 'L09-C02'),
+    evidenceRef('N0-U01-V02', 'V02-Q04')
+  ];
   const c10Refs = [
     evidenceRef('N0-U02-L09', 'L09-A01'),
     evidenceRef('N0-U02-L09', 'L09-A02'),
@@ -377,10 +384,16 @@ function rebuildMovedCompetencies(progress, now) {
     evidenceRef('N0-U02-V02', 'V02-Q12')
   ];
 
-  const c10 = competencyFromRefs(progress, 'N0-U02-C10', c10Refs, now);
-  const c11 = competencyFromRefs(progress, 'N0-U02-C11', c11Refs, now);
-  if (c10) progress.competencies['N0-U02-C10'] = c10;
-  if (c11) progress.competencies['N0-U02-C11'] = c11;
+  for (const [id, refs] of [
+    ['N0-U01-C05', c05Refs],
+    ['N0-U01-C09', c09Refs],
+    ['N0-U02-C10', c10Refs],
+    ['N0-U02-C11', c11Refs]
+  ]) {
+    const competency = competencyFromRefs(progress, refs, now);
+    if (competency) progress.competencies[id] = competency;
+    else delete progress.competencies[id];
+  }
   delete progress.competencies['N0-U01-C08'];
   delete progress.competencies['N0-U01-C01'];
 }
@@ -438,7 +451,7 @@ export function migrateProgressToT1N0(progress, { now = new Date().toISOString()
 
   migrateU1Verification(next, now, report);
   migrateU2Verification(next, now, report);
-  rebuildMovedCompetencies(next, now);
+  rebuildActiveCompetencies(next, now);
   remapReviews(next);
 
   next.meta.contentRevision = T1_N0_CONTENT_REVISION;
