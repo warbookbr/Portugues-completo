@@ -48,6 +48,9 @@ jobs:
       - name: Test progress engine
         run: node scripts/test-progress-service.mjs
 
+      - name: Test T1 progress migration
+        run: node scripts/test-progress-migration-t1.mjs
+
       - name: Test progress policies
         run: node scripts/test-progress-policies.mjs
 
