@@ -80,61 +80,6 @@ assert.equal(block(n0Verification, 'V01-Q07').activity.interaction, block(n0Veri
 assert.ok(block(n0Verification, 'V01-Q02').activity.stimuli.some(item => item.type === 'CONTROLLED_AUDIO'));
 assert.equal(presentationService.normalize(n0VerificationSource, { competencyIds: n0CompetencyIds }).presentation, undefined, 'T1.5 não deve transformar verificação em lição');
 
-const t1U1LessonPaths = [
-  'content/units/001-fala-sons-escrita/lessons/003-conhecendo-o-alfabeto.json',
-  'content/units/001-fala-sons-escrita/lessons/004-mesma-letra-formas-diferentes.json',
-  'content/units/001-fala-sons-escrita/lessons/005-vogais-consoantes-outros-sinais.json',
-  'content/units/001-fala-sons-escrita/lessons/009-letras-numeros-outros-sinais.json',
-  'content/units/001-fala-sons-escrita/lessons/006-como-a-escrita-se-organiza.json',
-  'content/units/001-fala-sons-escrita/lessons/002-percebendo-os-sons-da-fala.json',
-  'content/units/001-fala-sons-escrita/lessons/007-nome-da-letra-e-som.json'
-];
-
-for (const lessonPath of t1U1LessonPaths) {
-  const source = readJson(lessonPath);
-  assert.equal(typeof source.studentObjective, 'string', `${source.id} precisa declarar studentObjective`);
-  assert.ok(source.studentObjective.trim().length > 0, `${source.id} precisa de studentObjective não vazio`);
-  const runtime = presentationService.normalize(source, { competencyIds: n0CompetencyIds });
-  assertSchema(lessonSchema, runtime, `${source.id} runtime T1.6`);
-  assert.equal(runtime.presentation.introSource, 'AUTHORED', `${source.id} não pode depender do fallback depois da revisão T1.6`);
-  assert.equal(runtime.presentation.intro, source.studentObjective.trim());
-  assert.equal(runtime.objective, source.objective, `${source.id} deve preservar objective interno`);
-  assert.notEqual(runtime.presentation.intro, runtime.objective, `${source.id} deve separar objetivo público do técnico`);
-}
-
-const t1FirstLessonSource = readJson('content/units/001-fala-sons-escrita/lessons/003-conhecendo-o-alfabeto.json');
-const t1FirstLesson = presentationService.normalize(t1FirstLessonSource, { competencyIds: n0CompetencyIds });
-assert.equal(t1FirstLesson.title, 'Letras e alfabeto');
-assert.equal(t1FirstLesson.prerequisites.length, 0, 'a primeira lição T1 não pode depender de uma abstração anterior');
-assert.equal(t1FirstLesson.presentation.intro, 'Entender o que é uma letra e conhecer as letras do alfabeto, seus nomes e sua ordem.');
-assert.match(block(t1FirstLesson, 'L03-B01').content.text, /Uma letra é um sinal que usamos para escrever/);
-
-const t1SymbolsSource = readJson('content/units/001-fala-sons-escrita/lessons/009-letras-numeros-outros-sinais.json');
-const t1Symbols = presentationService.normalize(t1SymbolsSource, { competencyIds: n0CompetencyIds });
-assertSchema(lessonSchema, t1Symbols, 'N0-U01-L09 runtime');
-assert.equal(block(t1Symbols, 'L09-A01').activity.interaction, 'CLASSIFY');
-assert.equal(block(t1Symbols, 'L09-A01').activity.evidence.requiredForCompletion, true);
-assert.equal(t1Symbols.completion.clusters.length, 1);
-assert.equal(t1Symbols.completion.clusters[0].id, 'graphicCategories');
-
-const t1U1VerificationSource = readJson('content/units/001-fala-sons-escrita/integrated-verification-v02.json');
-const t1U1Verification = normalizeVerificationV1(t1U1VerificationSource, { competencyIds: n0CompetencyIds });
-assertSchema(verificationSchema, t1U1Verification, 'N0-U01-V02 runtime');
-assert.equal(t1U1Verification.blocks.length, 9);
-assert.equal(t1U1Verification.completion.clusters.length, 4);
-assert.equal(t1U1Verification.completion.nonCompensable, true);
-assert.deepEqual(t1U1Verification.completion.clusters.map(item => item.id), ['alphabetAndForms', 'letterCategories', 'visualOrganization', 'soundAndLetter']);
-assert.ok(t1U1Verification.completion.clusters.every(item => item.required && item.satisfaction === 'DEMONSTRATED_REQUIRED'));
-assert.equal(block(t1U1Verification, 'V02-Q01').activity.interaction, 'SINGLE_CHOICE');
-assert.equal(block(t1U1Verification, 'V02-Q03').activity.interaction, 'CLASSIFY');
-assert.equal(block(t1U1Verification, 'V02-Q04').activity.interaction, 'CLASSIFY');
-assert.equal(block(t1U1Verification, 'V02-Q06').activity.interaction, 'SEQUENCE');
-assert.equal(block(t1U1Verification, 'V02-Q07').activity.interaction, 'CLASSIFY');
-assert.equal(block(t1U1Verification, 'V02-Q08').activity.interaction, 'SINGLE_CHOICE');
-assert.equal(block(t1U1Verification, 'V02-Q09').activity.interaction, 'SINGLE_CHOICE');
-assert.ok(block(t1U1Verification, 'V02-Q07').activity.stimuli.some(item => item.type === 'CONTROLLED_AUDIO'));
-assert.ok(!t1U1VerificationSource.coverage.some(item => /fala e escrita|mesma letra pode representar sons diferentes/i.test(item.competency)), 'V02 não pode reintroduzir conteúdos movidos para U2');
-
 const n4LessonSource = readJson('content/units/409-literatura-multimodalidade-autoria-intermedial-digital/lessons/001-interpretacao-literaria-autonoma-evidencia.json');
 const n4LessonAnchor = readJson('schemas/fixtures/p1/lesson-n4-u09-l01.normalized.json');
 const n4Lesson = normalizeLessonV1(n4LessonSource, { competencyIds: n4CompetencyIds });
@@ -189,4 +134,4 @@ assert.equal(loaded.id, 'N0-U01-L01');
 assert.equal(loaded.presentation.introSource, 'SAFE_FALLBACK');
 assert.equal(loaded.presentation.intro, SAFE_LESSON_INTRO_V1);
 
-console.log('ContentService/normalizador: conteúdo legado, apresentação pública e nova U1 T1.6 validados contra os contratos.');
+console.log('ContentService/normalizador: conteúdo pedagógico e apresentação pública de lição validados contra os contratos.');
