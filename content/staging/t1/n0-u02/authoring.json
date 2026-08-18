@@ -10,49 +10,123 @@
       "source": "content/staging/t1/n0-u02/lessons/001-ouvindo-as-partes-das-palavras.json",
       "title": "O que é uma sílaba?",
       "studentObjective": "Perceber que podemos ouvir uma palavra em partes e aprender que essas partes são chamadas de sílabas.",
-      "prerequisites": ["N0-U01-V02"]
+      "prerequisites": ["N0-U01-V02"],
+      "completion": {
+        "clusters": {
+          "syllablePerception": ["L01-C01", "L01-C03", "L01-A01"]
+        },
+        "activityPolicies": {
+          "L01-A01": {"threshold": 0.8}
+        }
+      }
     },
     {
       "id": "N0-U02-L02",
       "source": "content/staging/t1/n0-u02/lessons/002-separando-e-juntando-palavras-faladas.json",
       "title": "Separando e juntando sílabas",
-      "studentObjective": "Aprender a separar uma palavra em sílabas e juntar as sílabas novamente para formar a palavra."
+      "studentObjective": "Aprender a separar uma palavra em sílabas e juntar as sílabas novamente para formar a palavra.",
+      "completion": {
+        "clusters": {
+          "segmentAndRecombine": ["L02-C01", "L02-C02", "L02-C03", "L02-A01", "L02-A02"]
+        },
+        "activityPolicies": {
+          "L02-A01": {"threshold": 0.75},
+          "L02-A02": {"threshold": 0.75}
+        }
+      }
     },
     {
       "id": "N0-U02-L03",
       "source": "content/staging/t1/n0-u02/lessons/003-da-silaba-ouvida-a-parte-escrita.json",
       "title": "Da sílaba ouvida à escrita",
-      "studentObjective": "Ligar as sílabas que ouvimos às partes que vemos escritas em uma palavra."
+      "studentObjective": "Ligar as sílabas que ouvimos às partes que vemos escritas em uma palavra.",
+      "completion": {
+        "clusters": {
+          "soundWritingMapping": ["L03-C01", "L03-C02", "L03-C03", "L03-A01", "L03-A02"]
+        },
+        "activityPolicies": {
+          "L03-A01": {"threshold": 0.8},
+          "L03-A02": {"threshold": 0.6666666667}
+        }
+      }
     },
     {
       "id": "N0-U02-L04",
       "source": "content/staging/t1/n0-u02/lessons/004-silabas-no-comeco-no-fim-e-repetidas.json",
       "title": "Sílabas no começo e no fim",
-      "studentObjective": "Encontrar sílabas no começo e no fim das palavras e perceber quando a mesma sílaba aparece em palavras diferentes."
+      "studentObjective": "Encontrar sílabas no começo e no fim das palavras e perceber quando a mesma sílaba aparece em palavras diferentes.",
+      "completion": {
+        "clusters": {
+          "syllablePosition": ["L04-A01"],
+          "syllableRecurrence": ["L04-A02"]
+        },
+        "activityPolicies": {
+          "L04-A01": {"threshold": 0.75},
+          "L04-A02": {"threshold": 0.75}
+        }
+      }
     },
     {
       "id": "N0-U02-L05",
       "source": "content/staging/t1/n0-u02/lessons/005-silabas-podem-ter-formas-diferentes.json",
       "title": "Sílabas podem ter formas diferentes",
-      "studentObjective": "Entender que uma sílaba pode ser escrita com quantidades e combinações diferentes de letras."
+      "studentObjective": "Entender que uma sílaba pode ser escrita com quantidades e combinações diferentes de letras.",
+      "completion": {
+        "clusters": {
+          "syllableFormVariation": ["L05-C01", "L05-C02", "L05-A01", "L05-A02"]
+        },
+        "activityPolicies": {
+          "L05-A01": {"threshold": 0.8}
+        }
+      }
     },
     {
       "id": "N0-U02-L06",
       "source": "content/staging/t1/n0-u02/lessons/006-montando-e-completando-palavras.json",
       "title": "Montando palavras",
-      "studentObjective": "Juntar e ordenar sílabas para formar palavras conhecidas."
+      "studentObjective": "Juntar e ordenar sílabas para formar palavras conhecidas.",
+      "completion": {
+        "clusters": {
+          "wordAssembly": ["L06-C01", "L06-C02", "L06-C03", "L06-A01", "L06-A02", "L06-A03"]
+        },
+        "activityPolicies": {
+          "L06-A01": {"threshold": 0.75},
+          "L06-A02": {"threshold": 0.75}
+        }
+      }
     },
     {
       "id": "N0-U02-L07",
       "source": "content/staging/t1/n0-u02/lessons/007-da-leitura-por-partes-a-palavra-inteira.json",
       "title": "Lendo por partes e depois a palavra inteira",
-      "studentObjective": "Usar as sílabas como apoio para ler uma palavra e, aos poucos, reconhecer a palavra inteira."
+      "studentObjective": "Usar as sílabas como apoio para ler uma palavra e, aos poucos, reconhecer a palavra inteira.",
+      "completion": {
+        "clusters": {
+          "supportedReading": ["L07-A01", "L07-A02"],
+          "reducedSupportReading": ["L07-A03", "L07-A04"]
+        },
+        "activityPolicies": {
+          "L07-A01": {"threshold": 0.6666666667},
+          "L07-A02": {"threshold": 0.6666666667},
+          "L07-A03": {"threshold": 0.6666666667}
+        },
+        "runtimePolicyNote": "T1.9 deve preservar também a exigência autoral de ao menos dois acertos de primeira tentativa sem revelar segmentação em L07-A03; uso de apoio não é erro por si só."
+      }
     },
     {
       "id": "N0-U02-L08",
       "source": "content/staging/t1/n0-u02/lessons/008-palavra-lida-e-significado-familiar.json",
       "title": "Palavra e significado",
-      "studentObjective": "Ler palavras simples e ligar cada palavra ao que ela significa."
+      "studentObjective": "Ler palavras simples e ligar cada palavra ao que ela significa.",
+      "completion": {
+        "clusters": {
+          "wordMeaning": ["L08-C01", "L08-C02", "L08-C03", "L08-A01", "L08-A02"]
+        },
+        "activityPolicies": {
+          "L08-A01": {"threshold": 0.8},
+          "L08-A02": {"threshold": 0.6666666667}
+        }
+      }
     },
     {
       "id": "N0-U02-L09",
