@@ -6,6 +6,8 @@ Definir princípios transversais para a interface do **Português Completo**, es
 
 Esta documentação governa o que é mostrado ao aluno. IDs, enums, códigos curriculares e demais estruturas internas continuam pertencendo à infraestrutura.
 
+Para o texto pedagógico público, `docs/linguagem-aluno.md` é o contrato canônico complementar: a UI define **como organizar e apresentar**; o contrato de linguagem define **como escrever para o aluno**.
+
 ## Princípio central
 
 > **A interface fala a linguagem do aluno; a infraestrutura fala a linguagem do sistema.**
@@ -39,6 +41,18 @@ Antes de mostrar um valor interno, perguntar:
 
 Se a resposta indicar que o valor é apenas técnico, ele permanece fora da interface pública.
 
+Objetivos curriculares também obedecem essa separação:
+
+```text
+objective técnico
+→ autoria/avaliação
+
+objetivo público
+→ texto claro, completo e simples conforme docs/linguagem-aluno.md
+```
+
+Não usar `objective` cru como copy pública por fallback automático.
+
 ## Exemplos
 
 ### Estrutura curricular
@@ -57,7 +71,7 @@ Quando o nível não acrescentar contexto útil, simplificar ainda mais:
 
 ```text
 Unidade 1
-Fala, sons e escrita
+Letras e primeiros sons
 ```
 
 Não exibir por padrão:
@@ -95,6 +109,7 @@ Salvo quando houver finalidade explícita de diagnóstico/administração, não 
 - enums como `VALIDACAO_PENDENTE`, `DEMONSTRADA_REQUIRED`, `BLOCKED`, `LOCAL_CHANGES`;
 - nomes de campos JSON;
 - códigos de implementação;
+- objetivo curricular técnico usado como introdução por conveniência;
 - mensagens de erro técnicas quando existe explicação acionável em linguagem humana;
 - detalhes de infraestrutura que não ajudam a aprender ou decidir o próximo passo.
 
@@ -199,7 +214,8 @@ prévia de Unidades do curso
 → acesso a Ver todas as unidades
 
 rodapé
-→ Metodologia do curso
+→ apenas informação secundária realmente necessária
+→ não usar Metodologia como atalho persistente
 ```
 
 A home não usa hero introdutório acima desses blocos. O primeiro conteúdo deve ser útil para decidir ou continuar o estudo.
@@ -220,17 +236,22 @@ Não manter uma sidebar duplicando os mesmos destinos quando o cabeçalho superi
 
 ### Metodologia e Ajuda
 
-As duas funções continuam existindo, mas **não competem com a navegação de estudo**:
+As duas funções continuam existindo, mas **não competem com a navegação de estudo**.
+
+Decisão T1:
 
 ```text
-Metodologia
-→ conteúdo institucional/pedagógico
-→ acesso pelo rodapé como "Metodologia do curso"
-
 Ajuda
-→ função utilitária
-→ acesso discreto no cabeçalho
-→ não ocupar item da navegação principal
+→ utilitário discreto no cabeçalho
+→ contém "Como o curso funciona"
+
+Como o curso funciona
+→ oferece acesso a "Metodologia do curso"
+
+Metodologia
+→ conteúdo institucional/pedagógico secundário
+→ rota pode permanecer para deep link
+→ não aparece como link persistente no rodapé
 ```
 
 Não duplicar Metodologia ou Ajuda em múltiplas áreas simultaneamente sem benefício contextual.
@@ -255,12 +276,47 @@ Regra:
 
 > **preservar todo o conteúdo e a evidência, mas revelar a experiência em etapas pedagógicas de tamanho moderado.**
 
+### Primeira abertura da lição
+
+Antes do fluxo de etapas, a primeira entrada usa uma tela exclusiva de apresentação:
+
+```text
+← Voltar para a unidade
+
+Lição
+
+<Título claro>
+
+<objetivo público simples>
+
+[ Começar lição ]
+```
+
+Na área principal dessa tela não mostrar simultaneamente:
+
+- `Etapa 1 de N`;
+- stepper/barra de progressão das etapas;
+- cards da explicação seguinte;
+- atividade;
+- critérios de evidência;
+- objetivo técnico;
+- códigos/IDs;
+- conteúdo institucional.
+
+O objetivo público segue `docs/linguagem-aluno.md`.
+
+Ao retomar uma lição já iniciada, não obrigar o aluno a rever essa apresentação quando houver estado seguro para restaurar o percurso. A regra técnica de retomada é definida em T1.5/T1.7 e continua separada de domínio/evidência.
+
+### Após começar
+
 Estrutura visual:
 
 ```text
 Unidade
   ↓
-Lição
+Lição — apresentação
+  ↓
+Começar lição
   ↓
 Etapa 1 de N — Observe / Comece / Entenda
 [conteúdo relevante desta etapa]
@@ -335,9 +391,10 @@ Transições entre etapas podem usar deslocamento/fade curto para comunicar cont
 
 - movimento é decorativo, nunca necessário para entender a troca;
 - respeitar `prefers-reduced-motion`;
-- mover foco para o título da nova etapa após navegação;
-- manter `Voltar` e `Avançar` acessíveis por teclado;
-- não apagar respostas já preenchidas ao navegar entre etapas.
+- mover foco para o título da nova tela/etapa após navegação;
+- manter `Começar lição`, `Voltar` e `Avançar` acessíveis por teclado;
+- não apagar respostas já preenchidas ao navegar entre etapas;
+- zoom e escala de fonte não podem esconder a ação principal.
 
 ## Separação obrigatória no código
 
@@ -346,7 +403,7 @@ Renderer e componentes visuais não devem depender de imprimir diretamente valor
 Preferir:
 
 ```text
-estado interno
+estado interno / conteúdo autoral
 → função/mapeamento de apresentação
 → texto acessível ao aluno
 ```
@@ -354,7 +411,7 @@ estado interno
 em vez de:
 
 ```text
-estado interno
+estado interno / objective técnico
 → interpolação direta no HTML
 ```
 
@@ -381,16 +438,20 @@ Toda mudança visual relevante deve verificar:
 ```text
 [ ] algum ID/código técnico apareceu para o aluno?
 [ ] algum enum interno foi exibido sem tradução?
+[ ] objective técnico apareceu como copy pública?
+[ ] o objetivo público segue docs/linguagem-aluno.md?
 [ ] o texto descreve o significado pedagógico real?
 [ ] a interface deixa claro o próximo passo?
 [ ] existe ação repetida sem ganho contextual real?
 [ ] informação técnica ou controle redundante aumentou a carga cognitiva?
 [ ] a home começa por informação acionável em vez de introdução genérica?
 [ ] a navegação principal contém somente destinos de estudo/acompanhamento?
-[ ] Metodologia/Ajuda estão acessíveis sem competir com o fluxo principal?
+[ ] Metodologia está em Ajuda/Como o curso funciona, sem link persistente no rodapé?
 [ ] as métricas mostradas vêm de dados reais?
+[ ] a primeira abertura da lição mostra somente apresentação + Começar lição?
 [ ] uma lição longa está segmentada sem microfragmentação?
 [ ] Voltar/Avançar preservam respostas e permitem revisão livre?
+[ ] a retomada evita repetir introdução sem necessidade?
 [ ] o retorno para unidade é direto e previsível?
 [ ] movimento respeita redução de animações?
 [ ] a tradução preserva acessibilidade e precisão?
@@ -407,6 +468,7 @@ menos linguagem de sistema
 + menos ruído
 + menos controles redundantes
 + hierarquia clara
++ explicações claras, completas e simples
 + ações compreensíveis
 + estado pedagógico honesto
 ```
@@ -426,3 +488,7 @@ Quando houver conflito entre repetir uma função já claramente acessível e pr
 Quando houver conflito entre mostrar todo o conteúdo simultaneamente e manter foco sem perder acesso:
 
 > **segmentar a apresentação, preservar o conteúdo e manter navegação livre entre etapas.**
+
+Quando houver conflito entre uma frase tecnicamente compacta e uma explicação mais fácil de entender:
+
+> **manter a precisão internamente e explicar ao aluno da forma mais clara, completa e simples que continue correta.**
