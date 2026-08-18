@@ -24,6 +24,7 @@ Português Completo
 - `docs/roadmap-produto.md` — ordem e condições dos marcos da fase de produto/publicação; P1–P5 homologados, T1 ativo e P6 aguardando T1.
 - `docs/plano-fundamentos-claros.md` — **plano transversal ativo** para reorganizar a entrada N0, simplificar a linguagem pedagógica, criar a nova abertura de lição, realocar Metodologia e preservar progresso/IDs.
 - `docs/auditoria-t1-1-porta-entrada-n0.md` — **decisão da T1.1**: pesquisa/auditoria da entrada N0, nova espinha recomendada, impactos técnicos e direção para o redimensionamento T1.2.
+- `docs/redimensionamento-t1-2-n0.md` — **arquitetura congelada da T1.2**: novas responsabilidades de U1/U2, ordem das lições, verificações V02 e matriz de identidade/migração.
 - `docs/estado-implementacao-classico.md` — **estado operacional concreto do Modo Clássico**: marco/item ativo, estados técnico/homologação/mídia/publicação, blockers e próximo passo exato.
 - `docs/execucao-continua.md` — execução autônoma por marcos autorizados.
 - `.ChatGPT/skills/fundamentos-claros/SKILL.md` — skill operacional obrigatória enquanto T1 estiver ativo; tem precedência sobre iniciar P6.
@@ -42,6 +43,7 @@ PROJECT_INDEX.md
 → docs/roadmap-produto.md
 → docs/estado-implementacao-classico.md
 → se T1 estiver ativo: docs/plano-fundamentos-claros.md
+→ se T1 estiver ativo e T1.2 concluído: docs/redimensionamento-t1-2-n0.md
 → se T1 estiver ativo: .ChatGPT/skills/fundamentos-claros/SKILL.md
 → .ChatGPT/skills/classic-product-delivery/SKILL.md
 → contratos específicos do item ativo
@@ -96,14 +98,15 @@ Durante homologação de atividade, lição, verificação ou unidade, `docs/cal
 
 ## Nível 0
 
-- `docs/auditoria-t1-1-porta-entrada-n0.md` — diagnóstico T1.1 que governa o redimensionamento inicial enquanto T1 estiver ativo.
+- `docs/auditoria-t1-1-porta-entrada-n0.md` — diagnóstico T1.1 que fundamenta o redimensionamento.
+- `docs/redimensionamento-t1-2-n0.md` — arquitetura vigente de U1/U2 durante T1 até sua materialização em T1.6.
 - `docs/unidades-nivel-0.md`
 - `docs/licoes-nivel-0.md`
 - `docs/licoes-nivel-0-unidade-6.md`
 - `docs/checkpoint-saida-nivel-0.md`
 - `content/levels/000-fundamentos/exit-verification.json`
 
-Durante T1, estas fontes são objeto de auditoria/revisão dirigida; não assumir que a ordem histórica das primeiras lições continua definitiva.
+Durante T1, para U1/U2 prevalece `docs/redimensionamento-t1-2-n0.md`; os documentos históricos de unidades/lições permanecem matéria-prima até a consolidação T1.6. U3–U6 continuam canônicos sem alteração.
 
 ## Nível 1
 
@@ -242,7 +245,7 @@ P2 ContentService/normalizador                          ✓
 P3 manifests + catálogo inicial                         ✓
 P4 renderer real do Clássico                            ✓
 P5 ProgressService + revisão + cache/Gist/sync           ✓
-T1 Fundamentos claros + experiência de lição            ← ativo (T1.2)
+T1 Fundamentos claros + experiência de lição            ← ativo (T1.3)
 P6 feedback por IA no Clássico                          aguardando T1
 P7 ampliação do catálogo Clássico N0→N4
 P8 mídia + prontidão de publicação do Clássico
@@ -295,6 +298,7 @@ estado curricular → docs/roadmap-curricular.md
 ordem/condições dos marcos de produto → docs/roadmap-produto.md
 plano transversal ativo T1 → docs/plano-fundamentos-claros.md
 decisão T1.1 da entrada N0 → docs/auditoria-t1-1-porta-entrada-n0.md
+arquitetura T1.2 da entrada N0 → docs/redimensionamento-t1-2-n0.md
 estado operacional concreto do Clássico → docs/estado-implementacao-classico.md
 arquitetura → docs/arquitetura.md
 linguagem e apresentação ao aluno → docs/ui-ux.md
