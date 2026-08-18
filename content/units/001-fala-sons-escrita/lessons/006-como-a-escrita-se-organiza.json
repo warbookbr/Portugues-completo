@@ -4,13 +4,14 @@
   "title": "Como a escrita se organiza",
   "status": "conteudo-pronto-para-implementacao",
   "objective": "Perceber que, no português escrito, sinais são organizados em uma sequência convencional da esquerda para a direita, que espaços visíveis ajudam a separar grupos escritos e que a ordem precisa ser preservada ao reproduzir uma sequência a partir de um modelo.",
+  "studentObjective": "Entender que letras e outros sinais aparecem em uma ordem e que os espaços também ajudam a organizar o que vemos escrito.",
   "competencies": [
     "acompanhar uma pequena sequência escrita da esquerda para a direita",
     "identificar qual elemento aparece antes ou depois em uma sequência visual",
     "perceber e preservar espaços presentes em um modelo escrito",
     "reproduzir pequenas sequências mantendo ordem e espaços sem depender da leitura das palavras"
   ],
-  "prerequisites": ["N0-U01-L03", "N0-U01-L04", "N0-U01-L05"],
+  "prerequisites": ["N0-U01-L03", "N0-U01-L04", "N0-U01-L05", "N0-U01-L09"],
   "limits": [
     "não exigir leitura sistemática de palavras ou frases",
     "não ensinar ainda segmentação silábica ou formação de palavras",
@@ -54,7 +55,7 @@
       "id": "L06-B01",
       "type": "objective",
       "focus": "read-or-listen",
-      "text": "Na escrita, não basta reconhecer os sinais: também importa onde eles aparecem. Nesta lição, vamos observar direção, ordem e espaços sem precisar ler palavras para responder."
+      "text": "Quando letras e outros sinais aparecem juntos, a posição deles importa. Vamos observar a direção, a ordem e os espaços sem precisar ler palavras para responder."
     },
     {
       "id": "L06-B02",
@@ -64,7 +65,7 @@
       "display": ["A", "B", "C", "D"],
       "direction": "left-to-right",
       "visualGuide": "destacar A, depois B, depois C, depois D; mostrar uma seta discreta apontando da esquerda para a direita",
-      "explanation": "No português escrito, acompanhamos normalmente uma linha começando pelo que está mais à esquerda e avançando para a direita.",
+      "explanation": "No português escrito, normalmente começamos pelo que está mais à esquerda e seguimos para a direita.",
       "guardRail": "a demonstração é de orientação visual; não exigir leitura de palavras"
     },
     {
@@ -72,7 +73,7 @@
       "type": "quick-check",
       "focus": "respond",
       "interaction": "single-choice",
-      "prompt": "Na sequência A B C D, qual sinal encontramos primeiro quando acompanhamos da esquerda para a direita?",
+      "prompt": "Na sequência A B C D, qual sinal encontramos primeiro quando seguimos da esquerda para a direita?",
       "options": ["A", "B", "D"],
       "correct": "A"
     },
@@ -80,12 +81,12 @@
       "id": "L06-B03",
       "type": "visual-demonstration",
       "focus": "observe",
-      "title": "A posição muda a sequência",
+      "title": "A ordem faz diferença",
       "comparisons": [
         {"sequence": ["A", "B", "C"], "label": "primeira sequência"},
         {"sequence": ["C", "B", "A"], "label": "segunda sequência"}
       ],
-      "explanation": "As duas sequências usam os mesmos sinais, mas a ordem mudou. Para copiar um modelo corretamente, precisamos preservar a posição de cada elemento."
+      "explanation": "As duas sequências usam os mesmos sinais, mas estão em ordens diferentes. Para copiar um modelo, precisamos manter cada elemento na posição correta."
     },
     {
       "id": "L06-C02",
@@ -106,13 +107,13 @@
       "id": "L06-B04",
       "type": "visual-demonstration",
       "focus": "observe",
-      "title": "Os espaços também fazem parte da organização",
+      "title": "Os espaços também ajudam a organizar",
       "model": {
         "groups": [["A", "B"], ["C", "D"]],
         "displayText": "AB   CD",
         "spaceVisualization": "na primeira apresentação, realçar temporariamente a região vazia entre AB e CD sem inserir um símbolo que substitua o espaço"
       },
-      "explanation": "Entre alguns grupos escritos existe uma região vazia: o espaço. Ao copiar um modelo, também precisamos observar onde esses espaços aparecem.",
+      "explanation": "Veja a região vazia entre AB e CD. Chamamos essa região de espaço. Ao copiar um modelo, precisamos observar também onde os espaços aparecem.",
       "guardRail": "não definir nesta lição todas as regras de separação de palavras; o objetivo é perceber e preservar o espaço visível"
     },
     {
@@ -135,7 +136,7 @@
       "type": "guided-activity",
       "focus": "respond",
       "interaction": "copy-with-spaces",
-      "title": "Copie ordem e espaços",
+      "title": "Copie a ordem e os espaços",
       "instruction": "Monte uma cópia do modelo mantendo os sinais na mesma ordem e o espaço no mesmo lugar.",
       "items": [
         {"model": "AB CD", "tokens": ["A", "B", "C", "D", "SPACE"], "correct": ["A", "B", "SPACE", "C", "D"]},
@@ -150,25 +151,26 @@
       "type": "quick-check",
       "focus": "respond",
       "interaction": "single-choice",
-      "prompt": "Para copiar um pequeno modelo escrito corretamente nesta lição, o que precisamos preservar?",
+      "prompt": "Para copiar um pequeno modelo corretamente, o que precisamos manter?",
       "options": [
         "Somente quais sinais aparecem, sem importar a ordem.",
         "A ordem dos sinais e os espaços mostrados no modelo.",
         "Somente o tamanho das letras."
       ],
-      "correctIndex": 1
+      "correctIndex": 1,
+      "feedback": "Precisamos manter a ordem e os espaços do modelo."
     },
     {
       "id": "L06-B05",
       "type": "summary",
       "focus": "read-or-listen",
       "points": [
-        "No português escrito, acompanhamos normalmente uma linha da esquerda para a direita.",
-        "A ordem dos sinais importa: mudar a posição muda a sequência.",
-        "Espaços visíveis também ajudam a organizar o que está escrito.",
-        "Podemos copiar uma pequena sequência preservando ordem e espaços mesmo sem precisar lê-la como palavra ou frase."
+        "No português escrito, normalmente seguimos uma linha da esquerda para a direita.",
+        "Mudar a posição dos sinais muda a sequência.",
+        "Espaços são regiões vazias que também ajudam a organizar o que está escrito.",
+        "Podemos copiar um pequeno modelo preservando ordem e espaços mesmo sem lê-lo como palavra ou frase."
       ],
-      "bridgeToNextLesson": "Na próxima lição, vamos ligar o que já sabemos sobre letras ao que ouvimos: o nome de uma letra e o som que ela pode representar não são a mesma coisa."
+      "bridgeToNextLesson": "Agora que você já conhece letras e sabe acompanhar sinais escritos, vamos ouvir palavras e perceber semelhanças e diferenças nos sons."
     }
   ],
   "completionEvidence": {
