@@ -52,9 +52,22 @@ function entryHasAnswer(entry) {
     .some(key => Object.prototype.hasOwnProperty.call(entry, key));
 }
 
+function isInteractiveAuthoringBlock(block) {
+  if (!block || typeof block !== 'object') return false;
+  const type = String(block.type || '');
+  return Boolean(block.interaction)
+    || type === 'quick-check'
+    || type.includes('activity')
+    || block.recordResponse === true
+    || block.automaticValidation === true;
+}
+
 function canonicalizeRuntimeBlock(block) {
+  if (!isInteractiveAuthoringBlock(block)) return clone(block);
+
   const result = canonicalizeAnswerFields(block);
-  if (!result || typeof result !== 'object' || !result.interaction || CANONICAL_INTERACTIONS.has(result.interaction)) return result;
+  if (!result || typeof result !== 'object') return result;
+  if (result.interaction && CANONICAL_INTERACTIONS.has(result.interaction)) return result;
 
   if (Array.isArray(result.categories) && Array.isArray(result.items)) {
     result.interaction = 'classify';
