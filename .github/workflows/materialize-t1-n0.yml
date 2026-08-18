@@ -1,15 +1,17 @@
 name: Materialize T1 N0 promotion
 
 on:
-  push:
+  pull_request:
     branches:
-      - t1-9-atomic-promotion
+      - main
+  workflow_dispatch:
 
 permissions:
   contents: write
 
 jobs:
   materialize:
+    if: github.head_ref == 't1-9-atomic-promotion'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout branch
