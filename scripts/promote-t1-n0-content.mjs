@@ -22,6 +22,15 @@ function removeUndeclaredLessonJson(unitDir, allowedNames) {
   }
 }
 
+function preserveHistoricalLessons(unitDir, filenames) {
+  for (const filename of filenames) {
+    const source = `${unitDir}/lessons/${filename}`;
+    const absolute = path.join(root, source);
+    if (!fs.existsSync(absolute)) continue;
+    copyJson(source, `${unitDir}/legacy/lessons/${filename}`);
+  }
+}
+
 function lessonRef(id, order, title, filename, competencyIds) {
   return { id, order, title, path: `lessons/${filename}`, competencyIds };
 }
@@ -38,6 +47,11 @@ const u1Lessons = [
   ['N0-U01-L07', 7, '007-nome-da-letra-e-som.json', ['N0-U01-C07']]
 ];
 
+preserveHistoricalLessons(u1Dir, [
+  '001-fala-e-escrita.json',
+  '005-vogais-consoantes-outros-sinais.json',
+  '008-letras-sons-relacao-varia.json'
+]);
 for (const [, , filename] of u1Lessons) copyJson(`${u1Staged}/lessons/${filename}`, `${u1Dir}/lessons/${filename}`);
 removeUndeclaredLessonJson(u1Dir, new Set(u1Lessons.map(([, , filename]) => filename)));
 copyJson(`${u1Staged}/integrated-verification-v02.json`, `${u1Dir}/integrated-verification-v02.json`);
