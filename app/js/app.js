@@ -56,8 +56,8 @@ function refreshProgressPresentation(progress = progressService.getProgress()) {
 function mountClassic(html, documentRuntime = null) {
   currentRuntime = documentRuntime;
   app.innerHTML = html;
-  polishClassicPresentation(app);
-  mountGuidedLesson(app, documentRuntime);
+  polishClassicPresentation(app, documentRuntime);
+  mountGuidedLesson(app, documentRuntime, { progress: progressService.getProgress() });
   bindClassicRenderer(app, documentRuntime);
   bindClassicProgress(app, documentRuntime, { progressService, onProgress: refreshProgressPresentation });
   refreshProgressPresentation();

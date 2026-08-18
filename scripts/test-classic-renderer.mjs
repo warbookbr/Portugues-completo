@@ -5,7 +5,7 @@ import { fileURLToPath } from 'node:url';
 import { ContentService } from '../app/js/services/content-service.js';
 import { documentHtml, unitHtml } from '../app/js/ui/classic-renderer.js';
 import { homeHtml } from '../app/js/ui/classic-home.js';
-import { buildLessonStepGroups } from '../app/js/ui/classic-lesson-flow.js';
+import { buildLessonStepGroups, lessonHasStudyHistory } from '../app/js/ui/classic-lesson-flow.js';
 import { createEmptyProgress } from '../app/js/services/progress-service.js';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -43,6 +43,9 @@ for (const unitRef of catalog.units) {
     assert.match(html, new RegExp(escapeRegex(lessonRef.title)));
     assert.doesNotMatch(html, /Interação ainda não suportada/i, `${lessonRef.id} possui interação sem renderer`);
     assert.doesNotMatch(html, /Lição ainda não publicada/i);
+    assert.equal(typeof loaded.runtime.presentation?.intro, 'string', `${lessonRef.id} precisa de apresentação pública no runtime`);
+    assert.ok(loaded.runtime.presentation.intro.trim().length > 0, `${lessonRef.id} precisa de apresentação pública não vazia`);
+    assert.notEqual(loaded.runtime.presentation.intro, loaded.runtime.objective, `${lessonRef.id} não pode reutilizar objective técnico como intro pública`);
     lessonCount += 1;
   }
 
@@ -53,7 +56,8 @@ for (const unitRef of catalog.units) {
   verificationCount += 1;
 }
 
-const home = homeHtml(catalog, units, createEmptyProgress());
+const emptyProgress = createEmptyProgress();
+const home = homeHtml(catalog, units, emptyProgress);
 assert.match(home, /Fala, sons e escrita/);
 assert.match(home, /Literatura, multimodalidade/);
 assert.match(home, /Começar a estudar/);
@@ -71,6 +75,20 @@ assert.ok(guidedGroups.length >= 3 && guidedGroups.length <= 8, 'lição deve se
 assert.ok(guidedGroups.length < n0Lesson.runtime.blocks.length, 'segmentação não deve criar uma tela por bloco');
 assert.equal(guidedGroups.flat().length, n0Lesson.runtime.blocks.length, 'segmentação deve preservar todos os blocos');
 assert.ok(guidedGroups.every(group => group.length <= 3), 'etapa não deve acumular conteúdo demais');
+assert.equal(n0Lesson.runtime.presentation.introSource, 'SAFE_FALLBACK', 'conteúdo legado deve usar fallback público seguro até a migração T1.9');
+assert.equal(n0Lesson.runtime.presentation.intro, 'Nesta lição, você vai estudar o conteúdo passo a passo.');
+assert.notEqual(n0Lesson.runtime.presentation.intro, n0Lesson.runtime.objective);
+
+assert.equal(lessonHasStudyHistory(emptyProgress, n0Lesson.runtime.id), false, 'abrir rota sem evidência não deve contar como lição já iniciada');
+const onlyCurrent = createEmptyProgress();
+onlyCurrent.curriculum.current.lessonId = n0Lesson.runtime.id;
+assert.equal(lessonHasStudyHistory(onlyCurrent, n0Lesson.runtime.id), false, 'posição atual isolada não deve pular a intro');
+const withLessonHistory = createEmptyProgress();
+withLessonHistory.curriculum.lessons[n0Lesson.runtime.id] = { status: 'EM_ESTUDO' };
+assert.equal(lessonHasStudyHistory(withLessonHistory, n0Lesson.runtime.id), true, 'registro pedagógico existente deve permitir retomada sem repetir intro');
+const withEvidenceHistory = createEmptyProgress();
+withEvidenceHistory.evidence[`${n0Lesson.runtime.id}/L01-A01`] = { status: 'PRATICADA' };
+assert.equal(lessonHasStudyHistory(withEvidenceHistory, n0Lesson.runtime.id), true, 'evidência existente deve ser reconhecida como histórico de estudo');
 
 const n0Verification = await service.loadVerification('N0-U01');
 const n0Html = documentHtml(n0Verification.runtime, { unitId: 'N0-U01', unitTitle: 'Fala, sons e escrita', verification: true });
@@ -81,7 +99,9 @@ const n4Lesson = await service.loadLesson('N4-U09', 'N4-U09-L01');
 const n4Html = documentHtml(n4Lesson.runtime, { unitId: 'N4-U09', unitTitle: 'Literatura, multimodalidade, autoria intermedial e digital' });
 assert.match(n4Html, /avaliação pendente/i);
 assert.match(n4Html, /Registrar resposta/i);
+assert.equal(typeof n4Lesson.runtime.presentation?.intro, 'string');
+assert.notEqual(n4Lesson.runtime.presentation.intro, n4Lesson.runtime.objective);
 
 assert.equal(lessonCount, 20);
 assert.equal(verificationCount, 2);
-console.log(`Renderer clássico: ${lessonCount} lições + ${verificationCount} verificações, home sem hero e segmentação guiada validados.`);
+console.log(`Renderer clássico: ${lessonCount} lições + ${verificationCount} verificações, apresentação pública T1.7 e retomada segura validadas.`);
