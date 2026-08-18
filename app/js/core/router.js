@@ -3,6 +3,12 @@ function parseRoute() {
   const path = hash.replace(/^#\/?/, '').split('/').filter(Boolean);
 
   if (path.length === 0) return { name: 'home' };
+  if (path.length === 1 && path[0] === 'plano') return { name: 'plan' };
+  if (path.length === 1 && path[0] === 'unidades') return { name: 'units' };
+  if (path.length === 1 && path[0] === 'revisoes') return { name: 'reviews' };
+  if (path.length === 1 && path[0] === 'desempenho') return { name: 'performance' };
+  if (path.length === 1 && path[0] === 'metodologia') return { name: 'methodology' };
+  if (path.length === 1 && path[0] === 'ajuda') return { name: 'help' };
 
   if (path[0] === 'unidade' && path[1] && path[2] === 'licao' && path[3] && path.length === 4) {
     return { name: 'lesson', unitId: path[1], lessonId: path[3] };

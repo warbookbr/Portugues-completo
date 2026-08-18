@@ -12,10 +12,38 @@
   <link rel="stylesheet" href="./app/css/classic-activities.css">
   <link rel="stylesheet" href="./app/css/progress.css">
   <link rel="stylesheet" href="./app/css/settings.css">
+  <link rel="stylesheet" href="./app/css/classic-dashboard.css">
   <link rel="stylesheet" href="./app/css/themes.css">
 </head>
 <body>
-  <div id="settings-root"></div>
+  <header class="app-header">
+    <div class="app-header-inner">
+      <a class="app-brand" href="#/" aria-label="Português Completo — início">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M4 5.5c2.8-.9 5.4-.5 8 1.1v12c-2.6-1.6-5.2-2-8-1.1v-12Z"></path>
+            <path d="M20 5.5c-2.8-.9-5.4-.5-8 1.1v12c2.6-1.6 5.2-2 8-1.1v-12Z"></path>
+          </svg>
+        </span>
+        <span>Português Completo</span>
+        <span class="mode-label">Modo Clássico</span>
+      </a>
+
+      <nav class="primary-nav" aria-label="Navegação principal">
+        <a href="#/" data-nav-route="home">Início</a>
+        <a href="#/plano" data-nav-route="plan">Plano de estudos</a>
+        <a href="#/unidades" data-nav-route="units">Unidades</a>
+        <a href="#/revisoes" data-nav-route="reviews">Revisões</a>
+        <a href="#/desempenho" data-nav-route="performance">Desempenho</a>
+      </nav>
+
+      <div class="header-utilities">
+        <a class="utility-link" href="#/ajuda" aria-label="Ajuda" title="Ajuda">?</a>
+        <div id="settings-root"></div>
+      </div>
+    </div>
+  </header>
+
   <main class="app-shell" id="app" aria-live="polite">
     <section class="state-page reading-content">
       <span class="eyebrow">Carregando</span>
@@ -23,6 +51,13 @@
       <p>Preparando o Modo Clássico...</p>
     </section>
   </main>
+
+  <footer class="app-footer">
+    <div class="app-footer-inner">
+      <a href="#/metodologia">Metodologia do curso</a>
+    </div>
+  </footer>
+
   <script type="module" src="./app/js/app.js"></script>
 </body>
 </html>

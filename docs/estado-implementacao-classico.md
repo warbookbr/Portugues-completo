@@ -29,7 +29,7 @@ Fase estratégica: CONCLUIR E HOMOLOGAR O CLÁSSICO
 Marco concluído mais recente: P5 — ProgressService, revisão e persistência
 Marco ativo: P6 — Feedback por IA no Clássico
 Item ativo: ainda não iniciado
-Último item concluído: CL-P5-PROGRESS-ENGINE + CL-P5-LOCAL-CACHE + CL-P5-REVIEW + CL-P5-GIST-SYNC + CL-P5-CONFLICT + CL-P5-UI
+Último item concluído: CL-UX-HOME-REDESIGN (refinamento transversal pós-P5) + CL-P5-PROGRESS-ENGINE + CL-P5-LOCAL-CACHE + CL-P5-REVIEW + CL-P5-GIST-SYNC + CL-P5-CONFLICT + CL-P5-UI
 Próximo passo exato: implementar AiFeedbackService/provider adapter sobre o contrato docs/avaliacao-ia.md, com BYOK opt-in, structured output, fallback e preservação de VALIDACAO_PENDENTE
 Blocker atual do próximo passo: nenhum blocker técnico global; provider/model/API atuais devem ser verificados em documentação oficial no início de P6
 Gate final do Clássico: NÃO SATISFEITO
@@ -257,6 +257,40 @@ Casos provados:
 - falha remota sem perda local;
 - DOM Chrome com painel de progresso/configuração presente;
 - screenshots desktop/tablet/mobile sem regressão visual aparente.
+
+## Refinamento transversal de UI após P5
+
+### `CL-UX-HOME-REDESIGN`
+
+```text
+Escopo: home + navegação global do Modo Clássico
+Estado consolidado: HOMOLOGADO
+Técnico: IMPLEMENTADO
+Homologação visual: desktop + tablet + mobile
+Mudança de currículo/progresso: nenhuma
+Marco P6: permanece ativo e ainda não iniciado materialmente
+```
+
+Decisões implementadas:
+
+- navegação principal única no cabeçalho: Início, Plano de estudos, Unidades, Revisões e Desempenho;
+- nenhuma sidebar duplicando os mesmos destinos;
+- `Plano de estudos` aparece somente na navegação e não é repetido no hero;
+- hero orientado a início/retomada com um único CTA principal;
+- primeiro acesso usa “Comece seu percurso de aprendizagem” e “Comece por aqui”; retorno usa linguagem de continuidade;
+- `N0`–`N4` permanecem internos e são apresentados como Fundamentos/Básico/Intermediário/Avançado/Domínio;
+- home mostra somente métricas derivadas de catálogo + `ProgressService`;
+- `Metodologia do curso` permanece acessível pelo rodapé;
+- `Ajuda` permanece acessível como utilitário discreto no cabeçalho;
+- Plano de estudos, Unidades, Revisões e Desempenho possuem destinos funcionais em vez de links decorativos;
+- o redesign segue `docs/ui-ux.md` e `.ChatGPT/skills/student-ui-ux/SKILL.md`.
+
+Validação:
+
+- smoke DOM cobre home e todos os destinos de navegação;
+- guard rails impedem reintrodução de `Ver plano de estudos` no hero e código de nível cru como rótulo público;
+- screenshots 1440px, 768px e 390px inspecionadas;
+- nenhuma regressão funcional observada em unidade/lição N0/N4.
 
 ## Estado de publicação do slice após P5
 

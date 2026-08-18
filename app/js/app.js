@@ -6,7 +6,9 @@ import { createProgressService } from './services/progress-service.js';
 import { createSafeProgressStorage } from './services/progress-storage-service.js';
 import { createProgressSyncService } from './services/progress-sync-service.js';
 import { mountSettingsMenu } from './ui/settings-menu.js';
-import { bindClassicRenderer, documentHtml, homeHtml, unitHtml } from './ui/classic-renderer.js';
+import { bindClassicRenderer, documentHtml, unitHtml } from './ui/classic-renderer.js';
+import { homeHtml } from './ui/classic-home.js';
+import { helpPageHtml, methodologyPageHtml, performancePageHtml, planPageHtml, reviewsPageHtml, unitsPageHtml } from './ui/classic-pages.js';
 import { bindClassicProgress } from './ui/classic-progress-binding.js';
 import { polishClassicPresentation } from './ui/classic-presentation.js';
 import { decorateClassicProgress } from './ui/classic-progress.js';
@@ -59,6 +61,16 @@ function mountClassic(html, documentRuntime = null) {
   refreshProgressPresentation();
 }
 
+function updateNavigation(route) {
+  const primary = ['home', 'plan', 'units', 'reviews', 'performance'];
+  const active = ['unit', 'lesson', 'verification'].includes(route.name) ? 'units' : route.name;
+  document.querySelectorAll('[data-nav-route]').forEach(link => {
+    const selected = primary.includes(active) && link.dataset.navRoute === active;
+    if (selected) link.setAttribute('aria-current', 'page');
+    else link.removeAttribute('aria-current');
+  });
+}
+
 async function ensureCourse() {
   if (!course) course = await contentService.loadCatalog();
   return course;
@@ -70,11 +82,41 @@ async function loadManifest(unitId) {
   return unit.manifest;
 }
 
-async function renderHome(revision) {
+async function loadAllManifests() {
   const catalog = await ensureCourse();
   const manifests = await Promise.all(catalog.units.map(unit => loadManifest(unit.id).catch(() => null)));
+  return manifests.filter(Boolean);
+}
+
+async function renderHome(revision) {
+  const catalog = await ensureCourse();
+  const manifests = await loadAllManifests();
   if (revision !== routeRevision) return;
-  mountClassic(homeHtml(catalog, manifests.filter(Boolean)));
+  mountClassic(homeHtml(catalog, manifests, progressService.getProgress()));
+}
+
+async function renderUnitsPage(revision) {
+  const manifests = await loadAllManifests();
+  if (revision !== routeRevision) return;
+  mountClassic(unitsPageHtml(manifests, progressService.getProgress()));
+}
+
+async function renderPlanPage(revision) {
+  const manifests = await loadAllManifests();
+  if (revision !== routeRevision) return;
+  mountClassic(planPageHtml(manifests, progressService.getProgress()));
+}
+
+async function renderReviewsPage(revision) {
+  const manifests = await loadAllManifests();
+  if (revision !== routeRevision) return;
+  mountClassic(reviewsPageHtml(manifests, progressService.getProgress()));
+}
+
+async function renderPerformancePage(revision) {
+  const manifests = await loadAllManifests();
+  if (revision !== routeRevision) return;
+  mountClassic(performancePageHtml(manifests, progressService.getProgress()));
 }
 
 async function renderUnit(route, revision) {
@@ -103,9 +145,16 @@ async function renderVerification(route, revision) {
 async function renderRoute(route) {
   const revision = ++routeRevision;
   currentRuntime = null;
+  updateNavigation(route);
   loadingPage(route.name === 'home' ? 'Abrindo o curso' : 'Abrindo conteúdo');
   try {
     if (route.name === 'home') return await renderHome(revision);
+    if (route.name === 'plan') return await renderPlanPage(revision);
+    if (route.name === 'units') return await renderUnitsPage(revision);
+    if (route.name === 'reviews') return await renderReviewsPage(revision);
+    if (route.name === 'performance') return await renderPerformancePage(revision);
+    if (route.name === 'methodology') return mountClassic(methodologyPageHtml());
+    if (route.name === 'help') return mountClassic(helpPageHtml());
     if (route.name === 'unit') return await renderUnit(route, revision);
     if (route.name === 'lesson') return await renderLesson(route, revision);
     if (route.name === 'verification') return await renderVerification(route, revision);

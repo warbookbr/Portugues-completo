@@ -63,13 +63,36 @@ mesmo destino + mesma função + sem benefício contextual
 
 Uma repetição só deve permanecer quando reduzir esforço de forma contextual e justificável.
 
-Decisão já aprovada para a home do Clássico:
+Decisão aprovada para a home do Clássico:
 
 ```text
-Plano de estudos → somente na navegação superior
-hero → não repetir "Ver plano de estudos"
-hero → priorizar "Continuar de onde parou"
+navegação principal
+→ Início | Plano de estudos | Unidades | Revisões | Desempenho
+
+sidebar duplicando esses destinos
+→ não usar
+
+Plano de estudos
+→ somente na navegação superior
+
+hero
+→ não repetir "Ver plano de estudos"
+→ priorizar "Continuar de onde parou"
+
+Metodologia
+→ fora da navegação principal
+→ acesso pelo rodapé como "Metodologia do curso"
+
+Ajuda
+→ fora da navegação principal
+→ utilitário discreto no cabeçalho
 ```
+
+## Honestidade de métricas
+
+Não inserir métricas apenas porque deixam o dashboard visualmente mais rico.
+
+Tempo estudado, streak, estimativas, XP, conquistas ou percentuais precisam ter fonte de dados real e significado claro. No Modo Clássico, métricas devem derivar do catálogo/`ProgressService` ou ser identificadas explicitamente como estimativas.
 
 ## Perguntas de revisão
 
@@ -82,6 +105,9 @@ O aluno entende o próximo passo?
 Existe algum código interno visível sem necessidade?
 Existe informação que aumenta carga cognitiva sem ajudar a estudar?
 Existe ação repetida sem ganho contextual real?
+A navegação principal está focada em estudar/acompanhar?
+Metodologia e Ajuda estão acessíveis sem competir com o fluxo principal?
+As métricas exibidas vêm de dados reais?
 A linguagem preserva o significado pedagógico real?
 ```
 
