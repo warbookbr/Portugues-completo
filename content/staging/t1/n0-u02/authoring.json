@@ -7,50 +7,50 @@
   "lessons": [
     {
       "id": "N0-U02-L01",
-      "source": "content/units/002-das-silabas-as-palavras/lessons/001-ouvindo-as-partes-das-palavras.json",
+      "source": "content/staging/t1/n0-u02/lessons/001-ouvindo-as-partes-das-palavras.json",
       "title": "O que é uma sílaba?",
       "studentObjective": "Perceber que podemos ouvir uma palavra em partes e aprender que essas partes são chamadas de sílabas.",
       "prerequisites": ["N0-U01-V02"]
     },
     {
       "id": "N0-U02-L02",
-      "source": "content/units/002-das-silabas-as-palavras/lessons/002-separando-e-juntando-palavras-faladas.json",
+      "source": "content/staging/t1/n0-u02/lessons/002-separando-e-juntando-palavras-faladas.json",
       "title": "Separando e juntando sílabas",
       "studentObjective": "Aprender a separar uma palavra em sílabas e juntar as sílabas novamente para formar a palavra."
     },
     {
       "id": "N0-U02-L03",
-      "source": "content/units/002-das-silabas-as-palavras/lessons/003-da-silaba-ouvida-a-parte-escrita.json",
+      "source": "content/staging/t1/n0-u02/lessons/003-da-silaba-ouvida-a-parte-escrita.json",
       "title": "Da sílaba ouvida à escrita",
       "studentObjective": "Ligar as sílabas que ouvimos às partes que vemos escritas em uma palavra."
     },
     {
       "id": "N0-U02-L04",
-      "source": "content/units/002-das-silabas-as-palavras/lessons/004-silabas-no-comeco-no-fim-e-repetidas.json",
+      "source": "content/staging/t1/n0-u02/lessons/004-silabas-no-comeco-no-fim-e-repetidas.json",
       "title": "Sílabas no começo e no fim",
       "studentObjective": "Encontrar sílabas no começo e no fim das palavras e perceber quando a mesma sílaba aparece em palavras diferentes."
     },
     {
       "id": "N0-U02-L05",
-      "source": "content/units/002-das-silabas-as-palavras/lessons/005-silabas-podem-ter-formas-diferentes.json",
+      "source": "content/staging/t1/n0-u02/lessons/005-silabas-podem-ter-formas-diferentes.json",
       "title": "Sílabas podem ter formas diferentes",
       "studentObjective": "Entender que uma sílaba pode ser escrita com quantidades e combinações diferentes de letras."
     },
     {
       "id": "N0-U02-L06",
-      "source": "content/units/002-das-silabas-as-palavras/lessons/006-montando-e-completando-palavras.json",
+      "source": "content/staging/t1/n0-u02/lessons/006-montando-e-completando-palavras.json",
       "title": "Montando palavras",
       "studentObjective": "Juntar e ordenar sílabas para formar palavras conhecidas."
     },
     {
       "id": "N0-U02-L07",
-      "source": "content/units/002-das-silabas-as-palavras/lessons/007-da-leitura-por-partes-a-palavra-inteira.json",
+      "source": "content/staging/t1/n0-u02/lessons/007-da-leitura-por-partes-a-palavra-inteira.json",
       "title": "Lendo por partes e depois a palavra inteira",
       "studentObjective": "Usar as sílabas como apoio para ler uma palavra e, aos poucos, reconhecer a palavra inteira."
     },
     {
       "id": "N0-U02-L08",
-      "source": "content/units/002-das-silabas-as-palavras/lessons/008-palavra-lida-e-significado-familiar.json",
+      "source": "content/staging/t1/n0-u02/lessons/008-palavra-lida-e-significado-familiar.json",
       "title": "Palavra e significado",
       "studentObjective": "Ler palavras simples e ligar cada palavra ao que ela significa."
     },
