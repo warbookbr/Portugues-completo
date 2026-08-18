@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 1,
+  "id": "N0-U02-V02-EXT",
+  "coverage": [
+    {"competency": "perceber variação entre letras e sons", "evidence": ["V02-Q10", "V02-Q11"]},
+    {"competency": "distinguir fala e escrita de forma concreta", "evidence": ["V02-Q12"]}
+  ],
+  "media": {
+    "controlledAudio": [
+      "N0-U01-L08-AUD-001",
+      "N0-U01-L08-AUD-002",
+      "N0-U01-L02-AUD-006"
+    ],
+    "tts": "V02-Q12 e instruções"
+  },
+  "items": [
+    {
+      "id": "V02-Q10",
+      "type": "letter-sound-variation-check",
+      "focus": "listen-observe-and-respond",
+      "interaction": "single-choice",
+      "prompt": "Ouça e observe casa e cidade. As duas começam com C. Qual afirmação está correta?",
+      "stimuli": ["N0-U01-L08-AUD-001", "N0-U01-L08-AUD-002"],
+      "spokenContent": ["casa", "cidade"],
+      "writtenWords": ["casa", "cidade"],
+      "options": [
+        "A letra C aparece nas duas palavras, mas o começo delas soa diferente.",
+        "A letra C precisa representar sempre o mesmo som.",
+        "As duas palavras começam com letras diferentes."
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "V02-Q11",
+      "type": "sound-writing-variation-check",
+      "focus": "listen-observe-and-respond",
+      "interaction": "single-choice",
+      "prompt": "Ouça e observe sapo e cidade. O começo pode soar parecido. O que percebemos na escrita?",
+      "stimuli": ["N0-U01-L02-AUD-006", "N0-U01-L08-AUD-002"],
+      "spokenContent": ["sapo", "cidade"],
+      "writtenWords": ["sapo", "cidade"],
+      "options": [
+        "As duas palavras precisam começar com a mesma letra.",
+        "Sapo começa com S e cidade começa com C, mesmo que o começo possa soar parecido.",
+        "S e C são a mesma letra."
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "V02-Q12",
+      "type": "speech-writing-classification",
+      "focus": "respond",
+      "interaction": "classify",
+      "instruction": "Classifique cada mensagem pela forma em que ela é apresentada.",
+      "categories": ["fala", "escrita"],
+      "items": [
+        {"id": "v02-q12-1", "stimulus": {"type": "tts", "text": "Bom dia!"}, "correct": "fala"},
+        {"id": "v02-q12-2", "stimulus": {"type": "visible-text", "text": "Bom dia!"}, "correct": "escrita"},
+        {"id": "v02-q12-3", "stimulus": {"type": "tts", "text": "Meu nome é Ana."}, "correct": "fala"},
+        {"id": "v02-q12-4", "stimulus": {"type": "visible-text", "text": "Meu nome é Ana."}, "correct": "escrita"}
+      ]
+    }
+  ]
+}
