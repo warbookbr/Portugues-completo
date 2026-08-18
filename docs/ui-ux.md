@@ -118,14 +118,14 @@ Informações que não ajudam a responder a uma dessas perguntas devem justifica
 
 Os códigos `N0`–`N4` permanecem como identificadores curriculares internos.
 
-Na interface, preferir nomes humanos quando o nível precisar aparecer. A nomenclatura visual definitiva deve seguir os nomes curriculares aprovados do produto, por exemplo conceitos como:
+Na interface, preferir nomes humanos quando o nível precisar aparecer. A nomenclatura visual definitiva deve seguir os nomes curriculares aprovados do produto:
 
 ```text
-Fundamentos
-Básico
-Intermediário
-Avançado
-Domínio
+N0 → Fundamentos
+N1 → Básico
+N2 → Intermediário
+N3 → Avançado
+N4 → Domínio
 ```
 
 Não usar automaticamente o código interno como rótulo público.
@@ -162,6 +162,87 @@ CTA principal do hero
 ```
 
 A home deve privilegiar a próxima ação de estudo. Destinos estruturais permanentes, como `Plano de estudos`, ficam na navegação quando já estão claramente acessíveis ali.
+
+## Arquitetura visual aprovada da home clássica
+
+A home é uma tela de **orientação e retomada**, não um painel administrativo, catálogo completo ou página institucional.
+
+Estrutura aprovada:
+
+```text
+cabeçalho superior
+→ marca + Modo Clássico
+→ Início | Plano de estudos | Unidades | Revisões | Desempenho
+→ Ajuda como utilitário discreto
+→ Configurações como utilitário
+
+hero compacto
+→ mensagem de continuidade
+→ um CTA principal: Continuar de onde parou
+
+bloco Continue estudando
+→ nível em linguagem humana
+→ unidade atual
+→ lição/posição atual
+→ progresso da unidade
+→ ação de continuidade
+
+bloco Seu progresso
+→ percentual do curso disponível
+→ lições concluídas
+→ revisões recomendadas
+
+prévia de Unidades do curso
+→ poucas unidades
+→ progresso resumido
+→ acesso a Ver todas as unidades
+
+rodapé
+→ Metodologia do curso
+```
+
+### Navegação principal
+
+A navegação principal deve conter apenas destinos diretamente ligados ao estudo e acompanhamento:
+
+```text
+Início
+Plano de estudos
+Unidades
+Revisões
+Desempenho
+```
+
+Não manter uma sidebar duplicando os mesmos destinos quando o cabeçalho superior já os apresenta de forma clara.
+
+### Metodologia e Ajuda
+
+As duas funções continuam existindo, mas **não competem com a navegação de estudo**:
+
+```text
+Metodologia
+→ conteúdo institucional/pedagógico
+→ acesso pelo rodapé como "Metodologia do curso"
+
+Ajuda
+→ função utilitária
+→ acesso discreto no cabeçalho
+→ não ocupar item da navegação principal
+```
+
+Não duplicar Metodologia ou Ajuda simultaneamente em menu principal, sidebar e hero.
+
+### Métricas e honestidade
+
+A home deve mostrar apenas métricas derivadas de estado real do produto. Não inventar:
+
+- tempo de estudo não registrado;
+- sequência de dias inexistente;
+- estimativas apresentadas como fatos;
+- conquistas/XP no Modo Clássico;
+- domínio inferido apenas por conclusão de tela.
+
+Toda métrica da home precisa ser calculável a partir do catálogo e do `ProgressService` ou estar claramente identificada como estimativa.
 
 ## Separação obrigatória no código
 
@@ -209,6 +290,9 @@ Toda mudança visual relevante deve verificar:
 [ ] a interface deixa claro o próximo passo?
 [ ] existe ação repetida sem ganho contextual real?
 [ ] informação técnica ou controle redundante aumentou a carga cognitiva?
+[ ] a navegação principal contém somente destinos de estudo/acompanhamento?
+[ ] Metodologia/Ajuda estão acessíveis sem competir com o fluxo principal?
+[ ] as métricas mostradas vêm de dados reais?
 [ ] a tradução preserva acessibilidade e precisão?
 ```
 
@@ -216,7 +300,7 @@ Um componente não está visualmente homologado se sua aparência estiver corret
 
 ## Relação com o Modo Clássico
 
-O Modo Clássico deve ser direto, calmo e orientado ao estudo. Portanto, este princípio é especialmente importante nele:
+O Modo Clássico deve ser direto, calmo e orientado ao estudo:
 
 ```text
 menos linguagem de sistema
