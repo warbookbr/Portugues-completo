@@ -5,21 +5,25 @@
 Registrar a ordem e as condições de saída da fase de produto/publicação após o fechamento curricular N0→N4.
 
 - maturidade curricular: `docs/roadmap-curricular.md`;
-- estado operacional exato: `docs/estado-implementacao-classico.md`.
+- estado operacional exato: `docs/estado-implementacao-classico.md`;
+- refinamento transversal ativo: `docs/plano-fundamentos-claros.md`.
 
 ## Estado atual
 
 ```text
-CURRÍCULO N0→N4 → fechado curricularmente em M5
+CURRÍCULO N0→N4 → fechado curricularmente em M5, com revisão dirigida da porta de entrada N0 autorizada
 P1 — Schemas/contratos executáveis → HOMOLOGADO
 P2 — ContentService/normalizador → HOMOLOGADO
 P3 — Manifests e catálogo inicial → HOMOLOGADO
 P4 — Renderer real do Clássico → HOMOLOGADO
 P5 — ProgressService, revisão e persistência → HOMOLOGADO
-MARCO ATIVO → P6 — Feedback por IA no Clássico
-MODO CLÁSSICO REAL → slice funcional com progresso persistente; ainda não completo N0→N4/E2E
+MARCO TRANSVERSAL ATIVO → T1 — Fundamentos claros e experiência de lição
+P6 — Feedback por IA no Clássico → AGUARDANDO T1
+MODO CLÁSSICO REAL → slice funcional com progresso persistente; porta de entrada em revisão antes de ampliar o produto
 MODO GAMIFICADO → somente após CLÁSSICO HOMOLOGADO
 ```
+
+Enquanto T1 estiver ativo, `docs/plano-fundamentos-claros.md` e `.ChatGPT/skills/fundamentos-claros/SKILL.md` governam a execução e têm precedência operacional sobre iniciar P6.
 
 ## Sequência estratégica: Clássico primeiro
 
@@ -29,6 +33,7 @@ P1 schemas/contratos
 → P3 catálogo/manifests
 → P4 renderer clássico
 → P5 progresso/revisão/Gist
+→ T1 fundamentos claros + experiência de lição
 → P6 feedback IA quando aplicável
 → P7 expansão N0→N4
 → P8 mídia/publicação
@@ -242,9 +247,64 @@ interação
 → falha remota sem perda
 ```
 
+## T1 — Fundamentos claros e experiência de lição
+
+**Estado: ATIVO / AUTORIZADO.**
+
+Plano canônico: `docs/plano-fundamentos-claros.md`.
+
+Skill operacional: `.ChatGPT/skills/fundamentos-claros/SKILL.md`.
+
+Objetivo: corrigir antes de P6 a porta de entrada curricular e visual revelada pela validação do produto.
+
+Escopo resumido:
+
+```text
+pesquisar/auditar a entrada do N0
+→ reorganizar/criar fundamentos iniciais quando necessário
+→ separar objetivo técnico de texto para o aluno
+→ adotar linguagem simples e progressão concreto→conceito→prática
+→ atualizar skills e contratos
+→ criar/revisar conteúdo inicial
+→ abrir lição com tela exclusiva e limpa
+→ manter fluxo em etapas depois de “Começar lição”
+→ mover Metodologia do rodapé para Ajuda/Como o curso funciona
+→ preservar/migrar IDs, progresso, deep links e mídia
+→ validar currículo + CI + desktop estreito/amplo + mobile
+```
+
+Decisões já congeladas incluem a preferência por textos como:
+
+```text
+Entender a diferença entre o que falamos e o que escrevemos.
+```
+
+em vez de expor diretamente objetivos curriculares com metalíngua como `realização sonora`/`representação gráfica`.
+
+O N0 continua historicamente fechado em M5, mas sua porta de entrada está em **revisão dirigida**. A maturidade só será reclassificada nos documentos curriculares quando a nova arquitetura de unidades/lições for decidida e integrada; não tratar “M5 concluído” como motivo para impedir correção pedagógica real.
+
+### Condição de saída T1
+
+```text
+início do N0 parte de fundamentos perceptivelmente básicos
++ ordem/pré-requisitos revalidados
++ primeiras unidades/lições atualizadas ou criadas
++ texto público simples separado do objetivo técnico
++ tela inicial da lição limpa
++ retomada/etapas preservadas
++ metodologia fora do rodapé persistente
++ compatibilidade de progresso/IDs resolvida
++ skills canônicas atualizadas
++ CI e inspeção visual aprovados
+```
+
+T1 pode usar várias PRs e deve seguir `docs/execucao-continua.md`; não pedir nova autorização entre subfases já previstas no plano.
+
 ## P6 — Feedback por IA no Clássico
 
-**Estado: MARCO ATIVO / PRÓXIMO.**
+**Estado: AGUARDANDO T1.**
+
+P6 volta a ser marco ativo somente quando `CL-T1-FUNDAMENTOS-CLAROS` estiver homologado.
 
 Objetivo: acrescentar feedback opt-in em atividades elegíveis sem transformar IA em autoridade automática de domínio.
 
@@ -267,7 +327,7 @@ Antes de congelar provider/model/endpoints, verificar documentação oficial atu
 
 ## P7 — Ampliação do catálogo Clássico N0→N4
 
-Objetivo: levar o pipeline homologado P1–P6 ao curso inteiro.
+Objetivo: levar o pipeline homologado P1–P6 ao curso inteiro, usando a porta de entrada N0 revisada por T1.
 
 ```text
 normalizar
@@ -323,5 +383,6 @@ Cobrir troca de modos, preservação de domínio, coerência/resistência a farm
 ## Próximo passo oficial
 
 ```text
-P6 — Feedback por IA no Clássico
+T1.1 — pesquisa e auditoria da porta de entrada do N0
+→ seguir docs/plano-fundamentos-claros.md
 ```
