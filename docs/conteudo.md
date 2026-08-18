@@ -4,7 +4,7 @@
 
 Este documento define como o conteúdo pedagógico do `Português Completo` deve ser planejado e apresentado.
 
-O mapa geral dos níveis fica em `docs/mapa-curso.md`. O contrato técnico de publicação/runtime fica em `docs/contrato-conteudo.md`, e atividades/exercícios ficam em `docs/exercicios.md`.
+O mapa geral dos níveis fica em `docs/mapa-curso.md`. O contrato técnico de publicação/runtime fica em `docs/contrato-conteudo.md`, atividades/exercícios ficam em `docs/exercicios.md` e a linguagem pública canônica fica em `docs/linguagem-aluno.md`.
 
 A intenção aqui é garantir clareza, consistência e variedade sem transformar cada lição em uma interface saturada.
 
@@ -14,9 +14,47 @@ A intenção aqui é garantir clareza, consistência e variedade sem transformar
 estrutura pedagógica consistente
 +
 recursos de mídia escolhidos conforme a necessidade
++
+linguagem pública adequada ao aluno
 ```
 
 O aluno deve reconhecer o ritmo de uma lição sem sentir que todas as aulas são cópias umas das outras.
+
+## Linguagem do aluno
+
+A forma pública de explicar é parte do conteúdo, não mero acabamento visual.
+
+Regra canônica:
+
+```text
+objetivo curricular interno
+≠
+texto mostrado ao aluno
+```
+
+O objetivo interno pode ser técnico e preciso. A apresentação ao aluno deve ser **clara, completa e simples**, conforme `docs/linguagem-aluno.md`.
+
+```text
+simples
+≠ raso
+≠ infantilizado
+≠ impreciso
+```
+
+Para conceito novo, preferir quando apropriado:
+
+```text
+algo concreto
+→ exemplo
+→ nome do conceito
+→ explicação simples
+→ prática
+→ ampliação
+```
+
+No início do N0, não presumir que termos como `letra`, `alfabeto`, `vogal`, `consoante`, `sílaba`, `palavra` ou `frase` sejam compreendidos antes de terem sido construídos no percurso.
+
+Nunca imprimir automaticamente um objetivo técnico como introdução pública apenas porque ele já existe no JSON. O contrato técnico/fallback dessa separação é responsabilidade de T1.5/`docs/contrato-conteudo.md`.
 
 ## Estrutura pedagógica de uma lição
 
@@ -33,6 +71,8 @@ Objetivo
 Essas funções são mais importantes que uma sequência rígida de componentes visuais.
 
 Uma lição pode repetir ciclos de explicação, exemplo e checagem quando o assunto exigir.
+
+A ordem concreta da explicação deve respeitar pré-requisitos. Quando um exemplo torna um conceito novo mais fácil de entender, ele pode aparecer antes da definição formal.
 
 ## Regra de foco
 
@@ -232,6 +272,8 @@ O conteúdo pode fornecer feedback determinístico local quando a resposta é fe
 
 Para tarefas estruturadas/complexas, o feedback deve se ligar a critérios.
 
+Na fala pública, feedback deve respeitar `docs/linguagem-aluno.md`: quando houver ganho pedagógico, explicar a razão relevante em vez de limitar-se a `certo/errado`, sem antecipar gabarito quando o contrato de avaliação proibir feedback imediato.
+
 A IA, quando usada, segue `docs/avaliacao-ia.md` e não transforma automaticamente uma produção aberta em domínio demonstrado.
 
 ## Informações secundárias
@@ -251,8 +293,8 @@ Nunca esconder conhecimento necessário dentro de conteúdo opcional.
 Lição simples:
 
 ```text
-Objetivo
-Texto
+Objetivo público
+Explicação
 Exemplo
 Checagem
 Resumo
@@ -261,8 +303,8 @@ Resumo
 Com apoio visual:
 
 ```text
-Objetivo
-Texto
+Objetivo público
+Explicação
 Recurso visual
 Exemplo
 Checagem
@@ -272,7 +314,7 @@ Resumo
 Ligada à oralidade:
 
 ```text
-Objetivo
+Objetivo público
 Explicação curta
 TTS ou áudio controlado conforme necessidade
 Prática
@@ -282,16 +324,19 @@ Resumo
 
 São composições possíveis, não templates obrigatórios.
 
-## Clareza da interface
+## Clareza da interface e do conteúdo
 
 Ao criar lição, avaliar:
 
 1. qual ideia precisa ser compreendida agora?
-2. qual forma mais simples de ensiná-la?
-3. alguma mídia realmente melhora isso?
-4. há elementos demais competindo?
-5. existe oportunidade adequada de prática/checagem?
-6. a evidência exigida mede a competência declarada?
+2. o aluno possui os pré-requisitos e termos usados?
+3. qual forma mais simples, completa e correta de ensiná-la?
+4. um exemplo concreto deve vir antes da definição?
+5. alguma mídia realmente melhora isso?
+6. há elementos demais competindo?
+7. existe oportunidade adequada de prática/checagem?
+8. a evidência exigida mede a competência declarada?
+9. o texto parece escrito para o aluno ou para documentação/professor?
 
 Evitar extremos:
 
@@ -301,6 +346,12 @@ curso seco
 
 curso saturado
 → mídia e controles sem necessidade
+
+curso tecnicista
+→ objetivo curricular impresso como explicação pública
+
+curso simplista
+→ frase fácil, mas incompleta ou falsa
 ```
 
 ## Relação entre as fontes
@@ -311,6 +362,9 @@ docs/mapa-curso.md
 
 docs/conteudo.md
 → como transformar isso em experiência pedagógica
+
+docs/linguagem-aluno.md
+→ como comunicar o conteúdo ao aluno com clareza, completude e simplicidade
 
 docs/exercicios.md
 → como atividades interagem, avaliam e produzem evidência

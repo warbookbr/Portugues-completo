@@ -25,6 +25,7 @@ Português Completo
 - `docs/plano-fundamentos-claros.md` — **plano transversal ativo** para reorganizar a entrada N0, simplificar a linguagem pedagógica, criar a nova abertura de lição, realocar Metodologia e preservar progresso/IDs.
 - `docs/auditoria-t1-1-porta-entrada-n0.md` — **decisão da T1.1**: pesquisa/auditoria da entrada N0, nova espinha recomendada, impactos técnicos e direção para o redimensionamento T1.2.
 - `docs/redimensionamento-t1-2-n0.md` — **arquitetura congelada da T1.2**: novas responsabilidades de U1/U2, ordem das lições, verificações V02 e matriz de identidade/migração.
+- `docs/linguagem-aluno.md` — **contrato canônico T1.3** para explicações claras, completas e simples, separando objetivo técnico da fala pública.
 - `docs/estado-implementacao-classico.md` — **estado operacional concreto do Modo Clássico**: marco/item ativo, estados técnico/homologação/mídia/publicação, blockers e próximo passo exato.
 - `docs/execucao-continua.md` — execução autônoma por marcos autorizados.
 - `.ChatGPT/skills/fundamentos-claros/SKILL.md` — skill operacional obrigatória enquanto T1 estiver ativo; tem precedência sobre iniciar P6.
@@ -32,7 +33,7 @@ Português Completo
 - `.ChatGPT/skills/student-ui-ux/SKILL.md` — procedimento obrigatório para qualquer interface visível ao aluno; aplica linguagem humana, reduz vazamento de IDs/enums técnicos e exige clareza pedagógica.
 - `.ChatGPT/skills/curricular-orchestration/SKILL.md` — orquestração de marcos curriculares longos.
 - `.ChatGPT/skills/course-content-design/SKILL.md` — planejamento e revisão pedagógica, alinhado aos contratos de produto.
-- `.ChatGPT/skills/frontend-visual-check/SKILL.md` — verificação de mudanças visuais relevantes.
+- `.ChatGPT/skills/frontend-visual-check/SKILL.md` — verificação visual de estados reais do frontend, incluindo abertura/retomada de lição e larguras intermediárias quando relevantes.
 
 ### Regra para retomar o desenvolvimento do Clássico
 
@@ -43,7 +44,8 @@ PROJECT_INDEX.md
 → docs/roadmap-produto.md
 → docs/estado-implementacao-classico.md
 → se T1 estiver ativo: docs/plano-fundamentos-claros.md
-→ se T1 estiver ativo e T1.2 concluído: docs/redimensionamento-t1-2-n0.md
+→ se T1.2 estiver concluído: docs/redimensionamento-t1-2-n0.md
+→ se houver autoria/copy pública: docs/linguagem-aluno.md
 → se T1 estiver ativo: .ChatGPT/skills/fundamentos-claros/SKILL.md
 → .ChatGPT/skills/classic-product-delivery/SKILL.md
 → contratos específicos do item ativo
@@ -53,6 +55,7 @@ Quando o trabalho envolver interface visível ao aluno, também ler obrigatoriam
 
 ```text
 docs/ui-ux.md
+→ docs/linguagem-aluno.md quando houver texto pedagógico público
 → .ChatGPT/skills/student-ui-ux/SKILL.md
 → .ChatGPT/skills/frontend-visual-check/SKILL.md
 ```
@@ -72,9 +75,10 @@ O percurso **N0→N4 foi curricularmente fechado em M5**. T1 reabre de forma dir
 Estas fontes definem como o currículo fechado vira aplicação:
 
 - `docs/arquitetura.md` — arquitetura geral, serviços, armazenamento e separação de responsabilidades.
-- `docs/ui-ux.md` — linguagem e apresentação ao aluno; regra canônica de separar códigos/estados internos da experiência pública.
+- `docs/ui-ux.md` — linguagem estrutural e apresentação ao aluno; regra canônica de separar códigos/estados internos da experiência pública.
+- `docs/linguagem-aluno.md` — contrato da fala pública pedagógica: clareza, completude, simplicidade, progressão de explicação, instruções e feedback.
 - `docs/contrato-conteudo.md` — catálogo `course.json`, manifests `unit.json`, normalização de conteúdo e versionamento.
-- `docs/conteudo.md` — estrutura pedagógica das lições e uso de mídia.
+- `docs/conteudo.md` — estrutura pedagógica das lições e uso de mídia; remete ao contrato de linguagem para a fala pública.
 - `docs/exercicios.md` — papéis de atividade, primitivas de interação, avaliação, estímulos e evidência.
 - `docs/progresso.md` — significado pedagógico de progresso, domínio, feedback, revisão e gamificação.
 - `docs/persistencia-progresso.md` — schema v1 do Gist, cálculo mecânico de conclusão, gates e sincronização.
@@ -90,6 +94,7 @@ roadmap-produto
 → estado-implementacao-classico
 → plano T1 quando ativo
 → arquitetura/contratos necessários ao item
+→ linguagem-aluno quando houver copy pedagógica pública
 → mídia quando aplicável
 → validações
 ```
@@ -100,6 +105,7 @@ Durante homologação de atividade, lição, verificação ou unidade, `docs/cal
 
 - `docs/auditoria-t1-1-porta-entrada-n0.md` — diagnóstico T1.1 que fundamenta o redimensionamento.
 - `docs/redimensionamento-t1-2-n0.md` — arquitetura vigente de U1/U2 durante T1 até sua materialização em T1.6.
+- `docs/linguagem-aluno.md` — contrato de linguagem aplicado à nova autoria inicial.
 - `docs/unidades-nivel-0.md`
 - `docs/licoes-nivel-0.md`
 - `docs/licoes-nivel-0-unidade-6.md`
@@ -245,7 +251,7 @@ P2 ContentService/normalizador                          ✓
 P3 manifests + catálogo inicial                         ✓
 P4 renderer real do Clássico                            ✓
 P5 ProgressService + revisão + cache/Gist/sync           ✓
-T1 Fundamentos claros + experiência de lição            ← ativo (T1.3)
+T1 Fundamentos claros + experiência de lição            ← ativo (T1.5)
 P6 feedback por IA no Clássico                          aguardando T1
 P7 ampliação do catálogo Clássico N0→N4
 P8 mídia + prontidão de publicação do Clássico
@@ -299,9 +305,10 @@ ordem/condições dos marcos de produto → docs/roadmap-produto.md
 plano transversal ativo T1 → docs/plano-fundamentos-claros.md
 decisão T1.1 da entrada N0 → docs/auditoria-t1-1-porta-entrada-n0.md
 arquitetura T1.2 da entrada N0 → docs/redimensionamento-t1-2-n0.md
+linguagem pública pedagógica → docs/linguagem-aluno.md
 estado operacional concreto do Clássico → docs/estado-implementacao-classico.md
 arquitetura → docs/arquitetura.md
-linguagem e apresentação ao aluno → docs/ui-ux.md
+linguagem estrutural e apresentação ao aluno → docs/ui-ux.md
 catálogo/manifests/runtime → docs/contrato-conteudo.md
 forma de ensinar/mídia → docs/conteudo.md
 atividades/interações/avaliação/evidência → docs/exercicios.md
@@ -322,6 +329,7 @@ validação automática → docs/validacoes.md
 procedimento ativo T1 → .ChatGPT/skills/fundamentos-claros/SKILL.md
 procedimento de entrega do Clássico → .ChatGPT/skills/classic-product-delivery/SKILL.md
 procedimento de UI/UX do aluno → .ChatGPT/skills/student-ui-ux/SKILL.md
+procedimento de validação visual → .ChatGPT/skills/frontend-visual-check/SKILL.md
 procedimentos ChatGPT gerais → .ChatGPT/skills/
 ```
 

@@ -6,6 +6,14 @@
 
 Permitir que o ChatGPT valide visualmente o frontend do projeto `Portugues-completo` durante o desenvolvimento, em vez de depender apenas da leitura de HTML, CSS e JavaScript.
 
+A validação visual deve verificar não só se a tela “cabe”, mas se a hierarquia realmente ajuda o aluno a entender **onde está, o que está vendo e qual é o próximo passo**.
+
+Quando a tela contém conteúdo pedagógico, considerar também:
+
+- `docs/ui-ux.md`;
+- `docs/linguagem-aluno.md`;
+- `.ChatGPT/skills/student-ui-ux/SKILL.md`.
+
 ## Ambiente esperado
 
 O ambiente do ChatGPT pode disponibilizar:
@@ -20,10 +28,11 @@ Quando essas ferramentas estiverem disponíveis, o ChatGPT deve preferir validar
 ## Fluxo recomendado
 
 1. Ler ou alterar os arquivos do frontend.
-2. Renderizar a interface em Chromium usando Playwright.
-3. Gerar um screenshot da página ou do estado relevante.
-4. Inspecionar visualmente o resultado.
-5. Verificar problemas como:
+2. Identificar os **estados reais** que a mudança afeta, não apenas a rota.
+3. Renderizar a interface em Chromium usando Playwright.
+4. Gerar screenshot da página/estado relevante.
+5. Inspecionar visualmente o resultado.
+6. Verificar problemas como:
    - alinhamento;
    - espaçamento;
    - tipografia;
@@ -32,9 +41,64 @@ Quando essas ferramentas estiverem disponíveis, o ChatGPT deve preferir validar
    - elementos cortados;
    - contraste;
    - estados de botões e componentes;
+   - hierarquia visual;
+   - conteúdo demais competindo simultaneamente;
+   - ações duplicadas;
+   - linguagem técnica ou confusa exposta ao aluno;
    - comportamento visual em diferentes larguras de tela.
-6. Corrigir o código quando necessário.
-7. Repetir a renderização até que o resultado esteja coerente.
+7. Corrigir o código quando necessário.
+8. Repetir a renderização até que o resultado esteja coerente.
+
+## Estados mínimos para mudanças em lição
+
+Uma mudança material na experiência de lição não deve ser homologada olhando apenas uma screenshot da primeira etapa.
+
+Quando aplicável, inspecionar:
+
+```text
+primeira abertura da lição
+→ apresentação limpa + Começar lição
+
+lição já iniciada / retomada
+→ não repete introdução sem necessidade
+
+etapa explicativa
+→ foco principal claro
+
+etapa com atividade
+→ instrução, resposta e feedback sem competição visual
+
+navegação entre etapas
+→ Voltar / Avançar preservam contexto e respostas
+```
+
+Quando uma alteração afeta apenas um desses estados de forma comprovadamente isolada, não é necessário fabricar screenshots dos demais; registrar o motivo do escopo reduzido.
+
+## Critérios específicos da primeira abertura
+
+No padrão T1, a primeira tela da lição deve permitir conferir visualmente que a área principal contém apenas o essencial:
+
+```text
+← Voltar para a unidade
+
+Lição
+Título
+Objetivo público simples
+
+[ Começar lição ]
+```
+
+Não homologar se a primeira dobra voltar a exibir simultaneamente:
+
+- stepper/progresso de etapas;
+- cards da explicação seguinte;
+- atividade;
+- objetivo curricular técnico;
+- códigos/IDs;
+- critérios de evidência;
+- informação institucional concorrente.
+
+A aparência limpa não compensa texto difícil. O objetivo público também deve ser revisado conforme `docs/linguagem-aluno.md`.
 
 ## GitHub Pages
 
@@ -76,13 +140,14 @@ Se o ambiente bloquear navegação `file://`, carregar o HTML por outro método 
 
 ## Viewports recomendados
 
-Validar pelo menos:
+Conjunto de referência:
 
-- Desktop: `1920x1080` ou `1440x900`;
+- Desktop amplo: `1920x1080` ou `1440x900`;
+- Desktop estreito/intermediário: aproximadamente `1024px`, `900px` ou `680px` quando o componente muda nesse intervalo;
 - Tablet: largura aproximada de `768px`;
 - Celular: largura aproximada de `390px`.
 
-Não é necessário gerar screenshots de todos os tamanhos para cada pequena alteração. Use-os quando a mudança puder afetar layout ou responsividade.
+Não é necessário gerar screenshots de todos os tamanhos para cada pequena alteração. Escolher os breakpoints que realmente exercitam a mudança. Se um bug foi relatado em largura intermediária, incluir uma captura próxima daquele cenário em vez de testar somente desktop amplo e celular.
 
 ## Regra de trabalho
 
