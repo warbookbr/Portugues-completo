@@ -19,10 +19,10 @@ Fase estratégica: CONCLUIR E HOMOLOGAR O CLÁSSICO
 Marco transversal ativo: T1 — Fundamentos claros e experiência de lição
 Plano: docs/plano-fundamentos-claros.md
 Skill: .ChatGPT/skills/fundamentos-claros/SKILL.md
-Subfase ativa: T1.8 — frontend: metodologia em Ajuda
-T1.7: CONCLUÍDO / HOMOLOGADO
+Subfase ativa: T1.9 — migração, catálogo, progresso e mídia
+T1.8: CONCLUÍDO / HOMOLOGADO
 P6 — Feedback por IA: AGUARDANDO T1
-Próximo passo exato: remover “Metodologia do curso” do rodapé persistente, adicionar “Como o curso funciona” em Ajuda com acesso à metodologia e preservar a rota/deep link existente, conforme docs/plano-fundamentos-claros.md e docs/ui-ux.md
+Próximo passo exato: congelar/validar a matriz de migração de IDs e progresso antes de alterar caminhos publicados; depois promover a autoria staged de N0-U01/N0-U02, atualizar catálogo/manifests/deep links e reconciliar mídia de forma conservadora conforme docs/redimensionamento-t1-2-n0.md e docs/plano-fundamentos-claros.md
 Blocker global: nenhum
 Gate final do Clássico: NÃO SATISFEITO
 ```
@@ -38,7 +38,7 @@ Enquanto T1 estiver ativo, não iniciar P6 materialmente. O T1 foi autorizado co
 | P3 — Manifests/catálogo inicial | `HOMOLOGADO` | PR #107 |
 | P4 — Renderer real do Clássico | `HOMOLOGADO` | PR #108 |
 | P5 — Progresso/revisão/Gist | `HOMOLOGADO` | PR #109 |
-| T1 — Fundamentos claros | `ATIVO` | PRs #116–#125; T1.8 ativo |
+| T1 — Fundamentos claros | `ATIVO` | PRs #116–#126; T1.9 ativo |
 | P6 — Feedback por IA | `AGUARDANDO T1` | — |
 | P7 — Catálogo N0→N4 | `NAO_INICIADO` | — |
 | P8 — Mídia/publicação | `NAO_INICIADO` | — |
@@ -105,8 +105,8 @@ T1.6 nova autoria inicial                                  ✓ staged + validada
   lote U1 — Letras e primeiros sons                        ✓
   lote U2 — Sílabas e primeiras palavras                   ✓
 T1.7 frontend de intro/fluxo                               ✓ homologado
-T1.8 metodologia em Ajuda                                  ← ativo
-T1.9 migração/catálogo/progresso/mídia
+T1.8 metodologia em Ajuda                                  ✓ homologado
+T1.9 migração/catálogo/progresso/mídia                     ← ativo
 T1.10 validação/homologação
 ```
 
@@ -338,6 +338,44 @@ Validação/homologação:
 
 Evidência de integração: PR #125.
 
+## T1.8 — metodologia em Ajuda
+
+**Estado: CONCLUÍDO / HOMOLOGADO.**
+
+Mudança aplicada:
+
+```text
+shell global
+→ remove rodapé persistente “Metodologia do curso”
+
+Ajuda
+→ adiciona “Como o curso funciona”
+→ aponta para #/metodologia
+
+#/metodologia
+→ deep link preservado
+→ retorno explícito para Ajuda
+```
+
+Guard rails preservados:
+
+- nenhum item novo foi criado na navegação principal;
+- Ajuda continua uma grade curta de caminhos, sem virar página institucional carregada;
+- metodologia permanece encontrável em poucos passos;
+- home, unidade e lição deixam de carregar informação institucional persistente;
+- nenhuma alteração de currículo, progresso, evidência, mídia ou rota histórica foi necessária.
+
+Validação/homologação:
+
+- smoke DOM prova ausência de `app-footer` e de link persistente para metodologia no caminho de estudo;
+- smoke DOM prova `Como o curso funciona` + `#/metodologia` dentro de Ajuda;
+- smoke DOM prova retorno `#/ajuda` na página de metodologia;
+- CI completo permaneceu verde, incluindo todas as proteções de T1.7;
+- Ajuda foi inspecionada em desktop e 390px; metodologia foi inspecionada em desktop;
+- hierarquia, legibilidade e navegação permaneceram coerentes.
+
+Evidência de integração: PR #126.
+
 ## Estado de publicação do slice
 
 ### N0-U01 / N0-U02
@@ -346,6 +384,7 @@ Evidência de integração: PR #125.
 Renderer/progresso atual: base técnica homologada
 Autoria T1 nova: STAGED / VALIDADA
 Experiência de abertura/retomada T1.7: HOMOLOGADA
+Navegação secundária T1.8: HOMOLOGADA
 Manifestos públicos: ainda históricos
 Mídia obrigatória histórica/reutilizada: pendente, reconciliar T1.9
 Publicação das novas U1/U2: NÃO ATIVADA antes de T1.9
@@ -356,6 +395,7 @@ Publicação das novas U1/U2: NÃO ATIVADA antes de T1.9
 ```text
 Renderer/progresso/pending: HOMOLOGADOS
 Abertura/retomada T1.7: HOMOLOGADA
+Navegação secundária T1.8: HOMOLOGADA
 Manifesto: READY
 Nova mídia humana obrigatória: nenhuma
 ```
@@ -364,9 +404,8 @@ Nova mídia humana obrigatória: nenhuma
 
 ```text
 Global antes de P6: concluir T1
-Imediato: T1.8 — mover Metodologia para Ajuda / Como o curso funciona
-Depois: T1.9 — promover staging + migrar catálogo/progresso/mídia
-T1.10: validação/homologação transversal
+Imediato: T1.9 — matriz de migração + promoção staged + catálogo/progresso/mídia
+Depois: T1.10 — validação/homologação transversal
 ```
 
 ## Gate `CLÁSSICO HOMOLOGADO`
