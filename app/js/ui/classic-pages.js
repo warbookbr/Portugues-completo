@@ -110,6 +110,7 @@ export function methodologyPageHtml() {
       <h2>Feedback e revisão</h2><p>Atividades objetivas podem oferecer correção imediata. Produções abertas podem permanecer aguardando avaliação. Quando uma dificuldade merece nova tentativa, o curso recomenda revisão sem apagar progresso válido.</p>
       <h2>Modo Clássico</h2><p>O Modo Clássico prioriza conteúdo, clareza e continuidade. Não usa XP, missões ou recompensas de jogo para representar domínio pedagógico.</p>
     </section>
+    <a class="secondary-button inline-action" href="#/ajuda"><span aria-hidden="true">←</span> Voltar para Ajuda</a>
   </div>`;
 }
 
@@ -120,6 +121,7 @@ export function helpPageHtml() {
       <a href="#/" class="help-card"><h2>Continuar estudando</h2><p>Volte ao início para retomar do ponto em que parou.</p></a>
       <a href="#/plano" class="help-card"><h2>Plano de estudos</h2><p>Veja sua posição no percurso e as unidades disponíveis.</p></a>
       <a href="#/revisoes" class="help-card"><h2>Revisões</h2><p>Consulte atividades recomendadas para uma nova tentativa.</p></a>
+      <a href="#/metodologia" class="help-card"><h2>Como o curso funciona</h2><p>Entenda como explicações, prática, evidências de aprendizagem e revisões se organizam.</p></a>
       <div class="help-card"><h2>Configurações</h2><p>Use o botão de configurações no topo para ajustar áudio, aparência e sincronização de progresso.</p></div>
     </section>
   </div>`;

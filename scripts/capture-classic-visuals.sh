@@ -86,12 +86,24 @@ if grep -Eq '>\s*N[0-4]\s*[·•]' <<<"$HOME_DOM$UNIT_DOM"; then
   exit 1
 fi
 grep -Fq 'data-settings-section="progress"' <<<"$HOME_DOM" || { echo 'Smoke DOM P5: acesso às configurações de progresso ausente.' >&2; exit 1; }
-grep -Fq 'href="#/metodologia"' <<<"$HOME_DOM" || { echo 'Smoke DOM UI: Metodologia não foi realocada para o rodapé.' >&2; exit 1; }
-grep -Fq 'href="#/ajuda"' <<<"$HOME_DOM" || { echo 'Smoke DOM UI: Ajuda não foi realocada para utilitário discreto.' >&2; exit 1; }
+grep -Fq 'href="#/ajuda"' <<<"$HOME_DOM" || { echo 'Smoke DOM UI: Ajuda não está disponível como utilitário discreto.' >&2; exit 1; }
 if grep -Eq '>BLOCKED<|N0-U01-C0[1-8]|Catálogo real conectado|TTStext|>OBJECTIVE<|>DEMONSTRATION<' <<<"$UNIT_DOM$LESSON_DOM$RESUME_N0_DOM"; then
   echo 'Smoke DOM: metadado interno ainda aparece na interface pública.' >&2
   exit 1
 fi
+
+# T1.8 — metodologia sai da navegação persistente e permanece acessível por Ajuda.
+if grep -Fq 'class="app-footer"' <<<"$HOME_DOM$UNIT_DOM$LESSON_DOM"; then
+  echo 'Smoke DOM T1.8: rodapé persistente ainda existe no caminho de estudo.' >&2
+  exit 1
+fi
+if grep -Fq 'href="#/metodologia"' <<<"$HOME_DOM$UNIT_DOM$LESSON_DOM"; then
+  echo 'Smoke DOM T1.8: Metodologia ainda aparece persistentemente fora de Ajuda.' >&2
+  exit 1
+fi
+grep -Fq 'Como o curso funciona' <<<"$HELP_DOM" || { echo 'Smoke DOM T1.8: entrada Como o curso funciona ausente em Ajuda.' >&2; exit 1; }
+grep -Fq 'href="#/metodologia"' <<<"$HELP_DOM" || { echo 'Smoke DOM T1.8: Ajuda não aponta para a metodologia.' >&2; exit 1; }
+grep -Fq 'href="#/ajuda"' <<<"$METHODOLOGY_DOM" || { echo 'Smoke DOM T1.8: metodologia não oferece retorno claro para Ajuda.' >&2; exit 1; }
 
 # T1.7 — primeira entrada: só apresentação pública + ação; fluxo existe, mas permanece oculto.
 grep -Fq 'Voltar para a unidade' <<<"$LESSON_DOM" || { echo 'Smoke DOM T1.7: retorno direto para unidade ausente na abertura.' >&2; exit 1; }
@@ -147,6 +159,9 @@ capture home-narrow 680 900 '#/'
 capture home-mobile 390 844 '#/'
 capture plan-desktop 1440 900 '#/plano'
 capture unit-n0-desktop 1440 900 '#/unidade/N0-U01'
+capture help-desktop 1440 900 '#/ajuda'
+capture help-mobile 390 900 '#/ajuda'
+capture methodology-desktop 1440 900 '#/metodologia'
 
 # T1.7: primeira entrada em quatro larguras relevantes.
 capture lesson-n0-intro-desktop 1440 900 '#/unidade/N0-U01/licao/N0-U01-L01'
@@ -160,4 +175,4 @@ capture lesson-n0-activity-desktop 1440 1100 'artifacts/classic-visuals/resume-n
 capture lesson-n0-resume-mobile 390 900 'artifacts/classic-visuals/resume-n0-step0.html'
 capture lesson-n4-activity-desktop 1440 1200 'artifacts/classic-visuals/resume-n4-step2.html'
 
-printf 'Smoke DOM + screenshots clássicos/UI T1.7: %s\n' "$OUT"
+printf 'Smoke DOM + screenshots clássicos/UI T1.7–T1.8: %s\n' "$OUT"
