@@ -154,21 +154,18 @@ Na tela inicial do Modo Clássico:
 Plano de estudos
 → permanece na navegação superior
 
-botão "Ver plano de estudos"
-→ não usar no hero
-
 retomada
 → um único CTA principal
 → "Continuar de onde parou" quando já existe percurso
 → "Começar a estudar" no primeiro acesso
 → CTA fica no bloco Continue estudando / Comece por aqui
 
-hero
-→ contextual e informativo
-→ não duplica a ação de retomada
+hero introdutório
+→ não usar
+→ a home começa diretamente pelo estado acionável do aluno
 ```
 
-A home deve privilegiar a próxima ação de estudo. Destinos estruturais permanentes, como `Plano de estudos`, ficam na navegação quando já estão claramente acessíveis ali.
+A home deve privilegiar a próxima ação de estudo. Mensagens genéricas de boas-vindas ou continuidade não devem ocupar uma faixa grande acima do conteúdo quando não acrescentarem decisão, estado ou orientação nova.
 
 ## Arquitetura visual aprovada da home clássica
 
@@ -183,11 +180,8 @@ cabeçalho superior
 → Ajuda como utilitário discreto
 → Configurações como utilitário
 
-hero compacto
-→ mensagem de início/continuidade
-→ sem CTA redundante
-
-bloco Continue estudando / Comece por aqui
+primeira faixa útil
+→ Continue estudando / Comece por aqui
 → nível em linguagem humana
 → unidade atual
 → lição/posição atual
@@ -207,6 +201,8 @@ prévia de Unidades do curso
 rodapé
 → Metodologia do curso
 ```
+
+A home não usa hero introdutório acima desses blocos. O primeiro conteúdo deve ser útil para decidir ou continuar o estudo.
 
 ### Navegação principal
 
@@ -237,7 +233,7 @@ Ajuda
 → não ocupar item da navegação principal
 ```
 
-Não duplicar Metodologia ou Ajuda simultaneamente em menu principal, sidebar e hero.
+Não duplicar Metodologia ou Ajuda em múltiplas áreas simultaneamente sem benefício contextual.
 
 ### Métricas e honestidade
 
@@ -389,6 +385,7 @@ Toda mudança visual relevante deve verificar:
 [ ] a interface deixa claro o próximo passo?
 [ ] existe ação repetida sem ganho contextual real?
 [ ] informação técnica ou controle redundante aumentou a carga cognitiva?
+[ ] a home começa por informação acionável em vez de introdução genérica?
 [ ] a navegação principal contém somente destinos de estudo/acompanhamento?
 [ ] Metodologia/Ajuda estão acessíveis sem competir com o fluxo principal?
 [ ] as métricas mostradas vêm de dados reais?

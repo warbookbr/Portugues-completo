@@ -75,9 +75,9 @@ sidebar duplicando esses destinos
 Plano de estudos
 → somente na navegação superior
 
-hero
-→ não repetir "Ver plano de estudos"
-→ mensagem contextual, sem CTA de retomada duplicado
+hero introdutório
+→ não usar
+→ a home começa diretamente pelo estado acionável do aluno
 
 Continue estudando / Comece por aqui
 → concentra o único CTA principal
@@ -137,6 +137,7 @@ O aluno entende o próximo passo?
 Existe algum código interno visível sem necessidade?
 Existe informação que aumenta carga cognitiva sem ajudar a estudar?
 Existe ação repetida sem ganho contextual real?
+A home começa por informação acionável em vez de introdução genérica?
 A navegação principal está focada em estudar/acompanhar?
 Metodologia e Ajuda estão acessíveis sem competir com o fluxo principal?
 As métricas exibidas vêm de dados reais?
