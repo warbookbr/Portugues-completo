@@ -20,9 +20,9 @@ Marco transversal ativo: T1 — Fundamentos claros e experiência de lição
 Plano: docs/plano-fundamentos-claros.md
 Skill: .ChatGPT/skills/fundamentos-claros/SKILL.md
 Subfase ativa: T1.9 — migração, catálogo, progresso e mídia
-T1.8: CONCLUÍDO / HOMOLOGADO
+Contrato/matriz de migração: CONGELADO / VALIDADO EM CI
 P6 — Feedback por IA: AGUARDANDO T1
-Próximo passo exato: congelar/validar a matriz de migração de IDs e progresso antes de alterar caminhos publicados; depois promover a autoria staged de N0-U01/N0-U02, atualizar catálogo/manifests/deep links e reconciliar mídia de forma conservadora conforme docs/redimensionamento-t1-2-n0.md e docs/plano-fundamentos-claros.md
+Próximo passo exato: integrar o mapper T1.9 ao carregamento local e ao progresso vindo do Gist, com backup explícito do JSON pré-T1 e baseline remota já migrada; somente depois promover staging e trocar catálogo/manifests/deep links de N0-U01/N0-U02
 Blocker global: nenhum
 Gate final do Clássico: NÃO SATISFEITO
 ```
@@ -38,7 +38,7 @@ Enquanto T1 estiver ativo, não iniciar P6 materialmente. O T1 foi autorizado co
 | P3 — Manifests/catálogo inicial | `HOMOLOGADO` | PR #107 |
 | P4 — Renderer real do Clássico | `HOMOLOGADO` | PR #108 |
 | P5 — Progresso/revisão/Gist | `HOMOLOGADO` | PR #109 |
-| T1 — Fundamentos claros | `ATIVO` | PRs #116–#126; T1.9 ativo |
+| T1 — Fundamentos claros | `ATIVO` | PRs #116–#127; T1.9 ativo |
 | P6 — Feedback por IA | `AGUARDANDO T1` | — |
 | P7 — Catálogo N0→N4 | `NAO_INICIADO` | — |
 | P8 — Mídia/publicação | `NAO_INICIADO` | — |
@@ -107,6 +107,10 @@ T1.6 nova autoria inicial                                  ✓ staged + validada
 T1.7 frontend de intro/fluxo                               ✓ homologado
 T1.8 metodologia em Ajuda                                  ✓ homologado
 T1.9 migração/catálogo/progresso/mídia                     ← ativo
+  contrato + mapper de progresso                           ✓ validado em CI
+  wiring local/Gist + backup                               ← próximo
+  promoção staged + catálogo/manifests/deep links
+  reconciliação de mídia
 T1.10 validação/homologação
 ```
 
@@ -376,6 +380,38 @@ Validação/homologação:
 
 Evidência de integração: PR #126.
 
+## T1.9 — migração, catálogo, progresso e mídia
+
+**Estado: ATIVO.**
+
+### Gate 1 — contrato e mapper de progresso
+
+**Estado: CONCLUÍDO / VALIDADO EM CI.**
+
+Fontes:
+
+- `docs/migracao-t1-9-n0.md` — matriz executável;
+- `app/js/services/progress-migration-t1-n0.js` — mapper puro/idempotente;
+- `scripts/test-progress-migration-t1.mjs` — cenários de migração no CI.
+
+Decisões já provadas:
+
+- revisão-alvo `t1-n0-entry-v2` é idempotente;
+- revisão futura/desconhecida é recusada, nunca rebaixada;
+- colisões de refs da antiga U1-L05 são arquivadas antes de receber novo significado;
+- split L05→L05+L09 preserva somente evidência semanticamente suficiente;
+- U1-L01→U2-L10 e U1-L08→U2-L09 transferem histórico/current sem contar duas lições;
+- U1-V01 concluída pode satisfazer U1-V02 pela equivalência curricular congelada em T1.2;
+- U2-V01 sozinha preserva apenas os clusters silábicos da V02; extensão letra↔som/fala↔escrita exige escopo histórico correspondente;
+- targets já existentes não são sobrescritos por uma fonte histórica;
+- reviews seguem nova identidade somente quando o `sourceEvidenceRef` justifica a mudança;
+- competências reconstruídas por evidência herdada chegam no máximo a `DEMONSTRADA`; migração não inventa `CONSOLIDADA` por duplicar a mesma fonte em lição/verificação;
+- todo resultado testado continua válido contra `progress.schema.json`.
+
+A implementação ainda **não está ativa no app/Gist** e nenhum arquivo staged foi promovido. Isso é intencional: o próximo lote integra backup/carregamento/sync primeiro, mantendo o catálogo histórico até esse gate ficar verde.
+
+Evidência de integração: PR #127.
+
 ## Estado de publicação do slice
 
 ### N0-U01 / N0-U02
@@ -385,9 +421,10 @@ Renderer/progresso atual: base técnica homologada
 Autoria T1 nova: STAGED / VALIDADA
 Experiência de abertura/retomada T1.7: HOMOLOGADA
 Navegação secundária T1.8: HOMOLOGADA
+Migração T1.9: CONTRATO/MAPPER VALIDADO, AINDA NÃO ATIVO
 Manifestos públicos: ainda históricos
 Mídia obrigatória histórica/reutilizada: pendente, reconciliar T1.9
-Publicação das novas U1/U2: NÃO ATIVADA antes de T1.9
+Publicação das novas U1/U2: NÃO ATIVADA até wiring + promoção coerente
 ```
 
 ### N4-U09
@@ -404,7 +441,8 @@ Nova mídia humana obrigatória: nenhuma
 
 ```text
 Global antes de P6: concluir T1
-Imediato: T1.9 — matriz de migração + promoção staged + catálogo/progresso/mídia
+Imediato T1.9: backup explícito + wiring do mapper no cache local e no Gist/sync
+Depois T1.9: promoção staged + catálogo/manifests/deep links + reconciliação de mídia
 Depois: T1.10 — validação/homologação transversal
 ```
 
