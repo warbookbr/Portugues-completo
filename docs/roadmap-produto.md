@@ -7,7 +7,9 @@ Registrar a ordem e as condições de saída da fase de produto/publicação ap�
 - maturidade curricular: `docs/roadmap-curricular.md`;
 - estado operacional exato: `docs/estado-implementacao-classico.md`;
 - refinamento transversal ativo: `docs/plano-fundamentos-claros.md`;
-- decisão da auditoria de entrada: `docs/auditoria-t1-1-porta-entrada-n0.md`.
+- decisão da auditoria de entrada: `docs/auditoria-t1-1-porta-entrada-n0.md`;
+- arquitetura inicial congelada: `docs/redimensionamento-t1-2-n0.md`;
+- linguagem pública canônica: `docs/linguagem-aluno.md`.
 
 ## Estado atual
 
@@ -20,7 +22,10 @@ P4 — Renderer real do Clássico → HOMOLOGADO
 P5 — ProgressService, revisão e persistência → HOMOLOGADO
 MARCO TRANSVERSAL ATIVO → T1 — Fundamentos claros e experiência de lição
 T1.1 — pesquisa/auditoria da entrada N0 → CONCLUÍDO
-T1.2 — redimensionamento curricular controlado do N0 → ATIVO
+T1.2 — redimensionamento curricular controlado do N0 → CONCLUÍDO
+T1.3 — contrato de linguagem para o aluno → CONCLUÍDO
+T1.4 — skills/fontes canônicas → CONCLUÍDO
+T1.5 — contrato técnico da abertura da lição → ATIVO
 P6 — Feedback por IA no Clássico → AGUARDANDO T1
 MODO CLÁSSICO REAL → slice funcional com progresso persistente; porta de entrada em revisão antes de ampliar o produto
 MODO GAMIFICADO → somente após CLÁSSICO HOMOLOGADO
@@ -86,14 +91,14 @@ Prosa histórica ambígua nunca é convertida por heurística. Sem estrutura/reg
 
 **Estado: HOMOLOGADO.**
 
-Slice de publicação/descoberta:
+Slice histórico de publicação/descoberta:
 
 ```text
 N0-U01 → 8 lições + verificação
 N4-U09 → 12 lições + verificação
 ```
 
-`course.json` v2, manifests, registry de competências estáveis e integridade/descoberta em CI estão homologados. Demais unidades entram progressivamente em P7.
+`course.json` v2, manifests, registry de competências estáveis e integridade/descoberta em CI estão homologados. A estrutura histórica de N0-U01 será migrada por T1 sem invalidar a prova técnica de P3. Demais unidades entram progressivamente em P7.
 
 ## P4 — Renderer real do Clássico
 
@@ -123,7 +128,7 @@ Validação do slice:
 Estado local após P4:
 
 ```text
-N0-U01 → BLOCKED somente pelos áudios controlados obrigatórios pendentes
+N0-U01 → BLOCKED somente pelos áudios controlados obrigatórios pendentes no desenho histórico
 N4-U09 → READY
 ```
 
@@ -210,7 +215,7 @@ Falha remota mantém trabalho local e muda o estado para `ERROR`.
 
 ### UI Clássica
 
-A experiência agora mostra, quando aplicável:
+A experiência mostra, quando aplicável:
 
 - continuar estudando;
 - lição em estudo/concluída;
@@ -254,11 +259,13 @@ interação
 
 **Estado: ATIVO / AUTORIZADO.**
 
-Plano canônico: `docs/plano-fundamentos-claros.md`.
+Fontes canônicas:
 
-Skill operacional: `.ChatGPT/skills/fundamentos-claros/SKILL.md`.
-
-Relatório T1.1: `docs/auditoria-t1-1-porta-entrada-n0.md`.
+- plano: `docs/plano-fundamentos-claros.md`;
+- skill operacional: `.ChatGPT/skills/fundamentos-claros/SKILL.md`;
+- T1.1: `docs/auditoria-t1-1-porta-entrada-n0.md`;
+- T1.2: `docs/redimensionamento-t1-2-n0.md`;
+- T1.3: `docs/linguagem-aluno.md`.
 
 Objetivo: corrigir antes de P6 a porta de entrada curricular e visual revelada pela validação do produto.
 
@@ -266,10 +273,10 @@ Estado interno:
 
 ```text
 T1.1 pesquisa + auditoria                                  ✓
-T1.2 redimensionamento curricular N0                      ← ativo
-T1.3 contrato de linguagem
-T1.4 skills/fontes canônicas — regras centrais já antecipadas na PR #117; reconciliar ao fechar a fase
-T1.5 contrato técnico de abertura
+T1.2 redimensionamento curricular N0                       ✓
+T1.3 contrato de linguagem                                 ✓
+T1.4 skills/fontes canônicas                               ✓
+T1.5 contrato técnico de abertura                          ← ativo
 T1.6 nova autoria inicial
 T1.7 frontend de intro/fluxo
 T1.8 metodologia em Ajuda
@@ -277,33 +284,73 @@ T1.9 migração/catálogo/progresso/mídia
 T1.10 validação/homologação
 ```
 
-T1.1 concluiu que a melhor candidata para T1.2 é reorganizar conjuntamente as atuais U1 + U2 em duas unidades iniciais mais naturais, trazendo letras/alfabeto para a porta de entrada, articulando consciência sonora cedo e aproximando sílabas/primeiras palavras. `Fala e escrita` permanece conteúdo válido, mas deixa de ser a abstração inaugural; relações letra–som mais complexas também passam para depois de experiências concretas.
+### T1.1 — auditoria
 
-Escopo resumido:
+Confirmou que:
 
-```text
-pesquisar/auditar a entrada do N0                           ✓
-→ reorganizar/criar fundamentos iniciais quando necessário
-→ separar objetivo técnico de texto para o aluno
-→ adotar linguagem simples e progressão concreto→conceito→prática
-→ atualizar skills e contratos
-→ criar/revisar conteúdo inicial
-→ abrir lição com tela exclusiva e limpa
-→ manter fluxo em etapas depois de “Começar lição”
-→ mover Metodologia do rodapé para Ajuda/Como o curso funciona
-→ preservar/migrar IDs, progresso, deep links e mídia
-→ validar currículo + CI + desktop estreito/amplo + mobile
-```
+- `Fala e escrita` é conteúdo válido, mas abstrato demais para abrir o curso;
+- letras/conhecimento alfabético e consciência sonora devem se articular cedo;
+- não se deve impor memorização perfeita A–Z antes de trabalhar sons/sílabas;
+- a introdução de sílabas existente é boa, mas estava atrasada por pré-requisito amplo;
+- relações letra–som mais complexas devem vir depois de experiências concretas.
 
-Decisões já congeladas incluem a preferência por textos como:
+### T1.2 — arquitetura inicial
+
+N0 continua com seis unidades. U3–U6 mantêm sua responsabilidade e a entrada passa a ser:
 
 ```text
-Entender a diferença entre o que falamos e o que escrevemos.
+U1 — Letras e primeiros sons
+→ letras/alfabeto
+→ maiúsculas/minúsculas
+→ vogais/consoantes
+→ outros sinais/organização
+→ primeiros sons
+→ nome da letra × som
+
+U2 — Sílabas e primeiras palavras
+→ sílabas
+→ separar/juntar
+→ sílaba ouvida ↔ escrita
+→ montar/ler palavras
+→ significado
+→ variação letra–som
+→ falar × escrever como síntese
 ```
 
-em vez de expor diretamente objetivos curriculares com metalíngua como `realização sonora`/`representação gráfica`.
+A matriz de identidade em `docs/redimensionamento-t1-2-n0.md` impede reutilizar ID com significado novo e antecipa migração conservadora de progresso/verificações/mídia.
 
-O N0 continua historicamente fechado em M5, mas sua porta de entrada está em **revisão dirigida**. A maturidade só será reclassificada nos documentos curriculares quando a nova arquitetura de unidades/lições for decidida e integrada; não tratar “M5 concluído” como motivo para impedir correção pedagógica real.
+### T1.3 — linguagem do aluno
+
+`docs/linguagem-aluno.md` congela:
+
+```text
+objetivo técnico
+≠ objetivo público
+
+clara
++ completa
++ simples
+
+concreto
+→ exemplo
+→ nome do conceito
+→ explicação
+→ prática
+→ ampliação
+```
+
+`simples` não pode significar raso, infantilizado ou impreciso. Termos novos precisam ser ensinados antes de usados como pressuposto. O início do N0 aplica regra de zero pressupostos para conceitos como letra, alfabeto, vogal, consoante, sílaba, palavra e frase.
+
+### T1.4 — fontes e skills
+
+Regras duradouras foram antecipadas na PR #117 nas skills `course-content-design`, `curricular-orchestration`, `student-ui-ux` e `classic-product-delivery`.
+
+T1.4 completa a consolidação com:
+
+- `docs/conteudo.md` apontando linguagem pública como parte do conteúdo;
+- `docs/ui-ux.md` incorporando tela inicial limpa e nova posição de Metodologia;
+- `.ChatGPT/skills/frontend-visual-check/SKILL.md` exigindo inspeção de primeira abertura, retomada, explicação e atividade, incluindo largura intermediária quando relevante;
+- `PROJECT_INDEX.md` mapeando as fontes T1.
 
 ### Condição de saída T1
 
@@ -405,7 +452,8 @@ Cobrir troca de modos, preservação de domínio, coerência/resistência a farm
 ## Próximo passo oficial
 
 ```text
-T1.2 — redimensionamento curricular controlado do N0
-→ congelar nova arquitetura de unidades/lições + matriz de identidade/migração
+T1.5 — contrato técnico da abertura da lição
+→ definir authoring/runtime/fallback para title + student-facing intro
+→ preservar retrocompatibilidade sem imprimir objective técnico
 → seguir docs/plano-fundamentos-claros.md
 ```
