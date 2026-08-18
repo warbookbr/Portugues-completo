@@ -20,10 +20,10 @@ Marco transversal ativo: T1 — Fundamentos claros e experiência de lição
 Plano: docs/plano-fundamentos-claros.md
 Skill: .ChatGPT/skills/fundamentos-claros/SKILL.md
 Subfase ativa: T1.6 — nova autoria das unidades/lições iniciais
-Lote atual: nova U1 — Letras e primeiros sons
-Estado do lote U1: AUTORADO NA BRANCH / EM VALIDAÇÃO
+Lote U1: CONCLUÍDO / VALIDADO EM STAGING
+Lote ativo seguinte: nova U2 — Sílabas e primeiras palavras
 P6 — Feedback por IA: AGUARDANDO T1
-Próximo passo exato: validar a nova U1 + N0-U01-V02; após CI verde, integrar o lote U1 e continuar T1.6 com a nova U2 — Sílabas e primeiras palavras
+Próximo passo exato: autorar a nova U2 em content/staging/t1/n0-u02/, preservando os núcleos L01–L08 e criando N0-U02-L09/N0-U02-L10 + N0-U02-V02 conforme docs/redimensionamento-t1-2-n0.md
 Blocker global: nenhum
 Gate final do Clássico: NÃO SATISFEITO
 ```
@@ -66,14 +66,6 @@ percurso curricular
 ≠ gamificação
 ```
 
-Estados centrais:
-
-```text
-Lição: NAO_INICIADA | EM_ESTUDO | CONCLUIDA
-Evidência: NAO_OBSERVADA | PRATICADA | DEMONSTRADA | VALIDACAO_PENDENTE | REVISAO_RECOMENDADA
-Competência: NOVA | EM_DESENVOLVIMENTO | DEMONSTRADA | CONSOLIDADA
-```
-
 O Clássico não possui XP oculto, lives ou punição por erro. Persistência local/Gist, respostas abertas, merge de três vias e falha remota sem perda foram homologados em P5.
 
 ## UX homologada antes de T1
@@ -85,7 +77,7 @@ O Clássico não possui XP oculto, lives ou punição por erro. Persistência lo
 - sem hero/banner grande;
 - `Continue estudando / Comece por aqui` concentra o CTA principal;
 - métricas derivadas de dados reais;
-- card de progresso validado em desktop, mobile e largura intermediária;
+- card de progresso validado também em largura intermediária;
 - `Ajuda` como utilitário discreto.
 
 ### Fluxo de lição
@@ -111,112 +103,75 @@ T1.3 contrato de linguagem                                 ✓
 T1.4 skills/fontes canônicas                               ✓
 T1.5 contrato técnico de abertura                          ✓
 T1.6 nova autoria inicial                                  ← ativo
-  lote U1 — Letras e primeiros sons                        EM VALIDAÇÃO
-  lote U2 — Sílabas e primeiras palavras                   próximo
+  lote U1 — Letras e primeiros sons                        ✓ staged + validado
+  lote U2 — Sílabas e primeiras palavras                   ← próximo
 T1.7 frontend de intro/fluxo
 T1.8 metodologia em Ajuda
 T1.9 migração/catálogo/progresso/mídia
 T1.10 validação/homologação
 ```
 
-## T1.1 — decisão da auditoria
+## T1.1–T1.5 — decisões consolidadas
 
-Fonte: `docs/auditoria-t1-1-porta-entrada-n0.md`.
+Fontes:
 
-Confirmado:
+- auditoria: `docs/auditoria-t1-1-porta-entrada-n0.md`;
+- arquitetura: `docs/redimensionamento-t1-2-n0.md`;
+- linguagem: `docs/linguagem-aluno.md`;
+- contrato técnico: `app/js/services/content-presentation-normalizer-v1.js` + `ContentService`.
 
-- `Fala e escrita` é válido, mas abstrato demais para abrir o curso;
-- letras e consciência sonora devem aparecer cedo e articuladas;
-- não exigir domínio perfeito A–Z antes de sons/sílabas;
-- a introdução de sílaba existente é boa, mas estava tarde demais;
-- relações letra↔som mais complexas devem vir após experiências concretas.
-
-## T1.2 — arquitetura curricular congelada
-
-Fonte: `docs/redimensionamento-t1-2-n0.md`.
-
-N0 continua com seis unidades. U3–U6 preservam responsabilidade.
+Regras vigentes:
 
 ```text
-U1 — Letras e primeiros sons
-→ letras/alfabeto
-→ maiúsculas/minúsculas
-→ vogais/consoantes
-→ letras, números e outros sinais
-→ organização básica da escrita
-→ primeiros sons
-→ nome da letra × som
+fala/escrita não abre mais o curso
+letras + consciência sonora aparecem cedo e articuladas
+não exigir domínio perfeito A–Z antes de sons/sílabas
+sílabas entram cedo na U2
+variação letra↔som vem depois de experiências concretas
 
-U2 — Sílabas e primeiras palavras
-→ sílabas
-→ separar/juntar
-→ sílaba ouvida ↔ escrita
-→ montar/ler palavras
-→ significado
-→ variação letra–som
-→ falar × escrever como síntese
-```
-
-Identidades semanticamente preservadas mantêm ID. Split ou mudança material recebe ID novo. V01 antigas permanecem legado e as novas responsabilidades usam V02.
-
-## T1.3 — linguagem do aluno
-
-Fonte canônica: `docs/linguagem-aluno.md`.
-
-```text
-objetivo técnico
-≠ objetivo público
-
+objetivo técnico ≠ objetivo público
 clara + completa + simples
-
-concreto
-→ exemplo
-→ nome do conceito
-→ explicação simples
-→ prática
-→ ampliação
+concreto → exemplo → conceito → prática → ampliação
 ```
 
-`simples` não significa raso, infantilizado ou impreciso. No início do N0 não presumir que o aluno já compreende letra, alfabeto, vogal, consoante, sílaba, palavra ou frase.
-
-## T1.4 — skills/fontes canônicas
-
-Concluído por PR #117 + PR #120 em:
-
-- `course-content-design`;
-- `curricular-orchestration`;
-- `student-ui-ux`;
-- `classic-product-delivery`;
-- `frontend-visual-check`;
-- `docs/conteudo.md`;
-- `docs/ui-ux.md`;
-- `PROJECT_INDEX.md`.
-
-## T1.5 — contrato técnico da abertura
-
-**Estado: HOMOLOGADO — PR #121.**
-
-A autoria v1 pode declarar `studentObjective`; `objective` permanece técnico. O `ContentService` produz:
-
-```json
-{
-  "objective": "objetivo curricular técnico",
-  "presentation": {
-    "intro": "texto público",
-    "introSource": "AUTHORED"
-  }
-}
-```
-
-Conteúdo legado sem `studentObjective` recebe `SAFE_FALLBACK` neutro. O `objective` técnico nunca é usado automaticamente como fallback público.
+A autoria v1 pode declarar `studentObjective`. O runtime produz `presentation.intro`; conteúdo legado sem copy pública recebe fallback neutro e **nunca** o `objective` técnico.
 
 ## T1.6 — nova autoria inicial
 
+### Estratégia de staging
+
+A nova autoria **não é colocada nos caminhos publicados antes da migração de T1.9**.
+
+Motivo: o catálogo/manifests atuais ainda representam a ordem histórica. Alterar os arquivos vivos antes da troca do manifesto faria o Pages carregar conteúdo novo numa ordem antiga e pedagogicamente incoerente.
+
+Regra:
+
+```text
+T1.6 autoria nova
+→ content/staging/t1/
+→ validação própria no CI
+→ não descoberta pelo catálogo público
+
+T1.9
+→ migração de IDs/progresso/mídia
+→ manifesto/catalog novos
+→ promoção staged → caminhos publicados
+→ troca coerente/atômica
+```
+
+Não enfraquecer `validate-catalog.mjs` para acomodar conteúdo intermediário.
+
 ### Lote U1 — Letras e primeiros sons
 
-**Estado: AUTORADO NA BRANCH / EM VALIDAÇÃO.**
+**Estado: CONCLUÍDO / VALIDADO EM STAGING.**
 
-Nova ordem curricular autorada:
+Local:
+
+```text
+content/staging/t1/n0-u01/
+```
+
+Nova ordem autorada:
 
 ```text
 1. N0-U01-L03 — Letras e alfabeto
@@ -229,23 +184,20 @@ Nova ordem curricular autorada:
 → N0-U01-V02 — Verificação: Letras e primeiros sons
 ```
 
-Mudanças de autoria:
+Decisões de autoria:
 
-- todas as sete lições declaram `studentObjective` próprio;
-- `N0-U01-L03` agora começa explicitamente por **o que é uma letra** e não possui pré-requisito;
-- `N0-U01-L04` usa título e explicações mais diretas;
+- as sete lições possuem `studentObjective` próprio;
+- `N0-U01-L03` começa explicitamente por **o que é uma letra** e não possui pré-requisito;
 - `N0-U01-L05` foi reduzida ao núcleo vogais/consoantes;
-- o segundo núcleo da antiga L05 ganhou o novo ID `N0-U01-L09`, evitando duas classificações novas na mesma lição;
-- `N0-U01-L06` define `espaço` próximo do primeiro uso e depende da nova L09;
-- `N0-U01-L02` foi reposicionada após a base de letras e explica de forma simples o uso de palavras como exemplos auditivos;
-- `N0-U01-L07` preserva a distinção nome da letra × som sem antecipar a variação complexa da U2;
-- antigas `N0-U01-L01` e `N0-U01-L08` permanecem intactas como fontes legadas para a futura U2; não fazem parte da nova U1.
+- o segundo núcleo da antiga L05 ganhou novo `N0-U01-L09`;
+- `N0-U01-L06` define `espaço` perto do primeiro uso;
+- `N0-U01-L02` foi reposicionada depois da base de letras;
+- `N0-U01-L07` encerra U1 sem antecipar a variação complexa da U2;
+- antigas `N0-U01-L01` e `N0-U01-L08` permanecem fontes legadas para a futura U2.
 
 ### Verificação U1 V02
 
-Criada `content/units/001-fala-sons-escrita/integrated-verification-v02.json` sem sobrescrever a V01 histórica.
-
-A V02 cobre quatro agrupamentos não compensáveis:
+A `N0-U01-V02` cobre quatro agrupamentos obrigatórios e não compensáveis:
 
 ```text
 alphabetAndForms
@@ -254,51 +206,49 @@ visualOrganization
 soundAndLetter
 ```
 
-Ela deliberadamente **não** cobra:
+Deliberadamente não cobra:
 
 - síntese fala × escrita;
-- variação mais ampla letra↔som;
-- sílabas/palavras como leitura sistemática.
+- variação ampla letra↔som;
+- sílabas ou leitura sistemática de palavras.
 
-A V02 não cria novas mídias humanas: reutiliza `mediaId`s já reservados de L03 e V01 quando semanticamente adequados.
+Não cria novas mídias humanas: reutiliza `mediaId`s já reservados quando semanticamente adequados.
 
-### Guard rails de teste do lote U1
+### Validação staged
 
-`scripts/test-content-normalizer.mjs` agora exige:
+Novo teste:
 
-- `studentObjective` não vazio nas sete lições da nova U1;
-- `presentation.introSource === AUTHORED` nelas;
-- objetivo público diferente do `objective` técnico;
+```text
+scripts/test-t1-content-authoring.mjs
+```
+
+CI agora executa `Test T1 staged authoring` sem misturar o conteúdo staged ao catálogo de produção.
+
+Provas do lote U1:
+
+- 7/7 lições com `studentObjective` autoral;
+- `presentation.introSource = AUTHORED`;
+- objetivo público diferente do objetivo técnico;
 - primeira lição sem pré-requisito e com definição explícita de letra;
-- nova L09 normalizável e com evidência obrigatória;
-- V02 com nove atividades e quatro clusters obrigatórios/noncompensable;
-- interações da V02 suportadas pelo runtime;
+- nova L09 normalizável/evidenciável;
+- V02 com 9 atividades e 4 clusters obrigatórios/noncompensable;
+- interações suportadas pelo runtime;
 - áudio controlado preservado;
-- ausência de competências movidas para U2 na cobertura da V02.
-
-### Fora do lote U1
-
-Não alterar ainda:
-
-- manifesto/catalog U1 — T1.9;
-- aliases/migração de progresso — T1.9;
-- frontend visual da abertura — T1.7;
-- mídia física/fila final — T1.9;
-- JSONs da nova U2 — próximo lote T1.6.
+- competências movidas para U2 ausentes da V02;
+- `validate-catalog` continua verde porque o conteúdo publicado permanece intacto;
+- renderer/progresso/smoke visual atuais continuam verdes.
 
 ## Estado de publicação do slice
 
 ### N0-U01
 
 ```text
-Renderer/progresso: base técnica homologada
-Autoria nova U1: EM VALIDAÇÃO
-Manifesto público: ainda histórico / migrar em T1.9
-Mídia obrigatória histórica/reutilizada: pendente, reconciliar em T1.9
-Publicação: NÃO PRONTA
+Renderer/progresso atual: base técnica homologada
+Autoria T1 nova: STAGED / VALIDADA
+Manifesto público: ainda histórico
+Mídia obrigatória histórica/reutilizada: pendente, reconciliar T1.9
+Publicação nova U1: NÃO ATIVADA antes de T1.9
 ```
-
-A pendência de mídia não bloqueia T1.
 
 ### N4-U09
 
@@ -312,9 +262,9 @@ Nova mídia humana obrigatória: nenhuma
 
 ```text
 Global antes de P6: concluir T1
-Imediato: validar/mergear lote U1 de T1.6
-Depois: autorar nova U2 em T1.6
-Local: mídias N0, catálogo e progresso — reconciliar em T1.9
+Imediato: T1.6 — autorar nova U2 em staging
+Depois: T1.7 frontend da abertura/fluxo
+T1.9: promover staging + migrar catálogo/progresso/mídia
 ```
 
 ## Gate `CLÁSSICO HOMOLOGADO`
