@@ -11,24 +11,6 @@ function completedLessons(progress, lessonIds) {
   return lessonIds.filter(id => progress?.curriculum?.lessons?.[id]?.status === 'CONCLUIDA').length;
 }
 
-function currentHref(progress) {
-  const current = progress?.curriculum?.current || {};
-  if (current.unitId && current.lessonId) return `#/unidade/${encodeURIComponent(current.unitId)}/licao/${encodeURIComponent(current.lessonId)}`;
-  if (current.unitId) return `#/unidade/${encodeURIComponent(current.unitId)}`;
-  return null;
-}
-
-function homeHeroArt() {
-  return `<div class="dashboard-hero-art" aria-hidden="true">
-    <svg viewBox="0 0 360 190" role="presentation">
-      <path d="M45 55c49-21 99-18 142 7v93c-43-25-93-28-142-7V55Z" fill="currentColor" opacity=".12"/>
-      <path d="M315 55c-49-21-99-18-142 7v93c43-25 93-28 142-7V55Z" fill="currentColor" opacity=".18"/>
-      <path d="M180 64v92M64 79c35-13 70-11 102 5M64 98c35-13 70-11 102 5M64 117c35-13 70-11 102 5M294 79c-35-13-70-11-102 5M294 98c-35-13-70-11-102 5M294 117c-35-13-70-11-102 5" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" opacity=".28"/>
-      <path d="M238 166 309 143" stroke="currentColor" stroke-width="10" stroke-linecap="round" opacity=".55"/>
-    </svg>
-  </div>`;
-}
-
 function currentStudyCard(manifests, progress) {
   const current = progress?.curriculum?.current || {};
   const manifest = manifests.find(item => item.id === current.unitId) || manifests[0];
@@ -91,18 +73,10 @@ function unitsPreview(manifests, progress) {
   </section>`;
 }
 
-export function homeHtml(course, manifests = [], progress = {}) {
+export function homeHtml(_course, manifests = [], progress = {}) {
   const totalLessons = manifests.reduce((sum, manifest) => sum + manifest.lessons.length, 0);
-  const hasProgress = Boolean(currentHref(progress));
 
   return `<div class="dashboard-home reading-content" data-home-total-lessons="${totalLessons}">
-    <section class="dashboard-hero">
-      <div class="dashboard-hero-copy">
-        <h1>${hasProgress ? 'Continue seu percurso de aprendizagem' : 'Comece seu percurso de aprendizagem'}</h1>
-        <p>${hasProgress ? 'Retome do ponto em que parou e avance no seu ritmo.' : 'Comece pelos fundamentos e avance com explicações, prática, revisão e evidências de aprendizagem.'}</p>
-      </div>
-      ${homeHeroArt()}
-    </section>
     <div class="dashboard-grid">
       ${currentStudyCard(manifests, progress)}
       ${progressCard(manifests, progress)}
