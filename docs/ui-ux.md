@@ -154,11 +154,18 @@ Na tela inicial do Modo Clássico:
 Plano de estudos
 → permanece na navegação superior
 
-botão "Ver plano de estudos" no hero
-→ não usar
+botão "Ver plano de estudos"
+→ não usar no hero
 
-CTA principal do hero
-→ "Continuar de onde parou"
+retomada
+→ um único CTA principal
+→ "Continuar de onde parou" quando já existe percurso
+→ "Começar a estudar" no primeiro acesso
+→ CTA fica no bloco Continue estudando / Comece por aqui
+
+hero
+→ contextual e informativo
+→ não duplica a ação de retomada
 ```
 
 A home deve privilegiar a próxima ação de estudo. Destinos estruturais permanentes, como `Plano de estudos`, ficam na navegação quando já estão claramente acessíveis ali.
@@ -177,15 +184,15 @@ cabeçalho superior
 → Configurações como utilitário
 
 hero compacto
-→ mensagem de continuidade
-→ um CTA principal: Continuar de onde parou
+→ mensagem de início/continuidade
+→ sem CTA redundante
 
-bloco Continue estudando
+bloco Continue estudando / Comece por aqui
 → nível em linguagem humana
 → unidade atual
 → lição/posição atual
 → progresso da unidade
-→ ação de continuidade
+→ único CTA principal de retomada/início
 
 bloco Seu progresso
 → percentual do curso disponível
@@ -244,6 +251,98 @@ A home deve mostrar apenas métricas derivadas de estado real do produto. Não i
 
 Toda métrica da home precisa ser calculável a partir do catálogo e do `ProgressService` ou estar claramente identificada como estimativa.
 
+## Fluxo guiado de lição e tarefa
+
+Uma lição não deve despejar todos os blocos de conteúdo e atividade simultaneamente quando isso prejudicar foco e hierarquia.
+
+Regra:
+
+> **preservar todo o conteúdo e a evidência, mas revelar a experiência em etapas pedagógicas de tamanho moderado.**
+
+Estrutura visual:
+
+```text
+Unidade
+  ↓
+Lição
+  ↓
+Etapa 1 de N — Observe / Comece / Entenda
+[conteúdo relevante desta etapa]
+
+[Voltar]                         [Avançar]
+  ↓
+Etapa seguinte — Pratique
+[atividade + resposta + feedback]
+```
+
+### Segmentação
+
+A unidade continua contendo várias lições; não criar uma nova rota ou uma nova "lição" para cada bloco de autoria.
+
+Dentro da lição:
+
+- mostrar uma etapa principal por vez;
+- agrupar blocos relacionados em quantidade moderada;
+- evitar tanto a página longa com tudo expandido quanto a microfragmentação de um clique por parágrafo;
+- atividades podem formar uma etapa própria ou vir acompanhadas de até poucos blocos preparatórios;
+- resumo/consolidação pode ocupar a etapa final.
+
+A segmentação é **apresentacional**. Ela não altera IDs, runtime, contratos de conclusão, evidências ou `ProgressService`.
+
+### Navegação da lição
+
+Usar controles explícitos:
+
+```text
+← Voltar
+Avançar →
+```
+
+O avanço entre etapas não cria gate pedagógico artificial. O aluno pode avançar e voltar para reler ou revisar; requisitos de conclusão continuam sendo determinados pelas evidências e políticas reais do curso.
+
+A etapa visual atual pode ser lembrada apenas como conveniência de interface, sem virar estado de domínio.
+
+### Retorno para a unidade
+
+Dentro de lições e verificações, preferir um controle direto:
+
+```text
+← Voltar para a unidade
+```
+
+em vez de um breadcrumb longo como:
+
+```text
+Curso › Unidade › Lição
+```
+
+O destino do botão deve ser determinístico: a unidade à qual o documento pertence, e não apenas `history.back()`.
+
+### Redução de ruído dentro da etapa
+
+Quando a etapa já comunica sua função (`Observe`, `Entenda`, `Pratique`, `Consolide`), não repetir rótulos que não acrescentam decisão ou significado.
+
+Exemplos de ruído a evitar:
+
+```text
+EXEMPLO + rótulo de etapa equivalente
+Prática + Pratique
+correção objetiva
+nomes de modo de avaliação internos
+```
+
+Manter um badge apenas quando ele comunica algo realmente acionável, por exemplo `Necessária para concluir`.
+
+### Movimento e acessibilidade
+
+Transições entre etapas podem usar deslocamento/fade curto para comunicar continuidade, mas:
+
+- movimento é decorativo, nunca necessário para entender a troca;
+- respeitar `prefers-reduced-motion`;
+- mover foco para o título da nova etapa após navegação;
+- manter `Voltar` e `Avançar` acessíveis por teclado;
+- não apagar respostas já preenchidas ao navegar entre etapas.
+
 ## Separação obrigatória no código
 
 Renderer e componentes visuais não devem depender de imprimir diretamente valores crus do runtime.
@@ -293,6 +392,10 @@ Toda mudança visual relevante deve verificar:
 [ ] a navegação principal contém somente destinos de estudo/acompanhamento?
 [ ] Metodologia/Ajuda estão acessíveis sem competir com o fluxo principal?
 [ ] as métricas mostradas vêm de dados reais?
+[ ] uma lição longa está segmentada sem microfragmentação?
+[ ] Voltar/Avançar preservam respostas e permitem revisão livre?
+[ ] o retorno para unidade é direto e previsível?
+[ ] movimento respeita redução de animações?
 [ ] a tradução preserva acessibilidade e precisão?
 ```
 
@@ -322,3 +425,7 @@ Quando houver conflito entre expor a estrutura interna literalmente e comunicar 
 Quando houver conflito entre repetir uma função já claramente acessível e preservar uma hierarquia simples:
 
 > **manter uma única ação clara, salvo quando a repetição tiver benefício contextual real.**
+
+Quando houver conflito entre mostrar todo o conteúdo simultaneamente e manter foco sem perder acesso:
+
+> **segmentar a apresentação, preservar o conteúdo e manter navegação livre entre etapas.**

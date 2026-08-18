@@ -77,7 +77,11 @@ Plano de estudos
 
 hero
 → não repetir "Ver plano de estudos"
-→ priorizar "Continuar de onde parou"
+→ mensagem contextual, sem CTA de retomada duplicado
+
+Continue estudando / Comece por aqui
+→ concentra o único CTA principal
+→ "Continuar de onde parou" ou "Começar a estudar"
 
 Metodologia
 → fora da navegação principal
@@ -87,6 +91,34 @@ Ajuda
 → fora da navegação principal
 → utilitário discreto no cabeçalho
 ```
+
+## Fluxo guiado de lição
+
+Lições longas não devem mostrar todos os blocos simultaneamente quando isso aumenta ruído e reduz foco.
+
+Padrão aprovado:
+
+```text
+uma etapa principal por vez
+→ Observe / Entenda / Pratique / Consolide
+→ blocos relacionados agrupados em quantidade moderada
+→ Voltar / Avançar livres
+→ nenhuma alteração de IDs, evidência ou domínio
+```
+
+Não criar uma nova rota para cada bloco e não microfragmentar um clique por parágrafo. A segmentação é visual; currículo, runtime e `ProgressService` permanecem autoridades separadas.
+
+Dentro de lição/verificação, preferir:
+
+```text
+← Voltar para a unidade
+```
+
+em vez de breadcrumb longo. O destino deve ser a unidade real, não depender de `history.back()`.
+
+Quando a etapa já comunica a função pedagógica, remover rótulos redundantes como `Prática` + `Pratique` ou `correção objetiva`. Manter badges apenas quando forem acionáveis, por exemplo `Necessária para concluir`.
+
+Transições curtas podem comunicar continuidade, mas devem respeitar `prefers-reduced-motion`, manter navegação por teclado e preservar respostas ao voltar/avançar.
 
 ## Honestidade de métricas
 
@@ -108,6 +140,8 @@ Existe ação repetida sem ganho contextual real?
 A navegação principal está focada em estudar/acompanhar?
 Metodologia e Ajuda estão acessíveis sem competir com o fluxo principal?
 As métricas exibidas vêm de dados reais?
+Uma lição longa está segmentada sem microfragmentação?
+Voltar/Avançar preservam acesso e respostas?
 A linguagem preserva o significado pedagógico real?
 ```
 

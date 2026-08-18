@@ -49,7 +49,14 @@ LESSON_DOM="$(assert_page '#/unidade/N0-U01/licao/N0-U01-L01' 'Duas maneiras de 
 N4_DOM="$(assert_page '#/unidade/N4-U09/licao/N4-U09-L01' 'Interpretação literária autônoma e evidência')"
 
 grep -Fq 'Plano de estudos' <<<"$HOME_DOM" || { echo 'Smoke DOM UI: Plano de estudos ausente da navegação superior.' >&2; exit 1; }
-grep -Fq 'Continuar de onde parou' <<<"$HOME_DOM" && true
+if [[ "$(grep -o 'Começar a estudar' <<<"$HOME_DOM" | wc -l | tr -d ' ')" != "1" ]]; then
+  echo 'Smoke DOM UI: a home deve expor um único CTA de início/retomada.' >&2
+  exit 1
+fi
+if grep -Fq 'Continuar lição' <<<"$HOME_DOM"; then
+  echo 'Smoke DOM UI: CTA concorrente de continuar lição ainda existe na home.' >&2
+  exit 1
+fi
 if grep -Fq 'Ver plano de estudos' <<<"$HOME_DOM"; then
   echo 'Smoke DOM UI: Plano de estudos ainda está duplicado no hero.' >&2
   exit 1
@@ -65,8 +72,21 @@ if grep -Eq '>BLOCKED<|N0-U01-C0[1-8]|Catálogo real conectado|TTStext|>OBJECTIV
   echo 'Smoke DOM: metadado interno ainda aparece na interface pública.' >&2
   exit 1
 fi
+
+grep -Fq 'Voltar para a unidade' <<<"$LESSON_DOM" || { echo 'Smoke DOM UI: retorno direto para unidade ausente na lição.' >&2; exit 1; }
+grep -Fq 'data-lesson-step="0"' <<<"$LESSON_DOM" || { echo 'Smoke DOM UI: fluxo guiado não foi montado na lição.' >&2; exit 1; }
+grep -Fq 'Avançar' <<<"$LESSON_DOM" || { echo 'Smoke DOM UI: controle Avançar ausente no fluxo guiado.' >&2; exit 1; }
+if grep -Fq 'class="breadcrumbs"' <<<"$LESSON_DOM"; then
+  echo 'Smoke DOM UI: breadcrumb longo ainda aparece dentro da lição.' >&2
+  exit 1
+fi
+if grep -Fq 'correção objetiva' <<<"$LESSON_DOM"; then
+  echo 'Smoke DOM UI: rótulo técnico/redundante de correção ainda aparece na lição.' >&2
+  exit 1
+fi
+
 grep -Fq 'Ouvir exemplo' <<<"$LESSON_DOM" || { echo 'Smoke DOM: ttsText não virou controle de TTS.' >&2; exit 1; }
-grep -Fq 'avaliação pendente' <<<"$N4_DOM" || { echo 'Smoke DOM: estado pending N4 ausente.' >&2; exit 1; }
+grep -Fq 'Registrar resposta' <<<"$N4_DOM" || { echo 'Smoke DOM: atividade aberta N4 ausente.' >&2; exit 1; }
 
 grep -Fq 'Plano de estudos' <<<"$PLAN_DOM" || exit 1
 grep -Fq 'Nenhuma revisão pendente' <<<"$REVIEWS_DOM" || true
@@ -85,8 +105,8 @@ capture home-tablet 768 1024 '#/'
 capture home-mobile 390 844 '#/'
 capture plan-desktop 1440 900 '#/plano'
 capture unit-n0-desktop 1440 900 '#/unidade/N0-U01'
-capture lesson-n0-desktop 1440 1800 '#/unidade/N0-U01/licao/N0-U01-L01'
-capture lesson-n4-desktop 1440 1800 '#/unidade/N4-U09/licao/N4-U09-L01'
-capture lesson-n0-mobile 390 1100 '#/unidade/N0-U01/licao/N0-U01-L01'
+capture lesson-n0-desktop 1440 1200 '#/unidade/N0-U01/licao/N0-U01-L01'
+capture lesson-n4-desktop 1440 1200 '#/unidade/N4-U09/licao/N4-U09-L01'
+capture lesson-n0-mobile 390 900 '#/unidade/N0-U01/licao/N0-U01-L01'
 
 printf 'Smoke DOM + screenshots clássicos/UI: %s\n' "$OUT"
