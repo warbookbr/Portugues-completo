@@ -38,16 +38,17 @@ function currentStudyCard(manifests, progress) {
   const total = lessonIds.length;
   const percent = total ? Math.round((done / total) * 100) : 0;
   const lesson = manifest.lessons.find(item => item.id === current.lessonId);
+  const hasCurrent = Boolean(current.unitId);
   const href = lesson ? `#/unidade/${encodeURIComponent(manifest.id)}/licao/${encodeURIComponent(lesson.id)}` : `#/unidade/${encodeURIComponent(manifest.id)}`;
   const position = lesson ? `Lição ${lesson.order} de ${total}` : `${done} de ${total} lições concluídas`;
 
   return `<section class="dashboard-card continue-card" data-current-study data-unit-id="${esc(manifest.id)}" data-lesson-ids="${esc(lessonIds.join(','))}">
-    <div class="dashboard-section-heading"><h2>Continue estudando</h2></div>
+    <div class="dashboard-section-heading"><h2>${hasCurrent ? 'Continue estudando' : 'Comece por aqui'}</h2></div>
     <div class="course-context"><span class="context-pill">${esc(levelLabel(manifest.levelId))}</span><span aria-hidden="true">•</span><span>Unidade ${manifest.order}</span></div>
     <h3>${esc(manifest.title)}</h3>
     <p class="continue-position">${esc(position)}</p>
     <div class="progress-line" aria-label="${percent}% desta unidade concluída"><span style="width:${percent}%"></span></div>
-    <div class="continue-footer"><span data-current-unit-progress>${percent}%</span><a class="secondary-button inline-action" href="${esc(href)}">${lesson ? 'Continuar lição' : 'Abrir unidade'} <span aria-hidden="true">→</span></a></div>
+    <div class="continue-footer"><span data-current-unit-progress>${percent}%</span><a class="secondary-button inline-action" href="${esc(href)}">${lesson ? 'Continuar lição' : hasCurrent ? 'Abrir unidade' : 'Começar unidade'} <span aria-hidden="true">→</span></a></div>
   </section>`;
 }
 
@@ -97,8 +98,7 @@ export function homeHtml(course, manifests = [], progress = {}) {
   return `<div class="dashboard-home reading-content" data-home-total-lessons="${totalLessons}">
     <section class="dashboard-hero">
       <div class="dashboard-hero-copy">
-        <span class="eyebrow">Modo Clássico</span>
-        <h1>${hasProgress ? 'Continue seu percurso de aprendizagem' : esc(course.title)}</h1>
+        <h1>${hasProgress ? 'Continue seu percurso de aprendizagem' : 'Comece seu percurso de aprendizagem'}</h1>
         <p>${hasProgress ? 'Retome do ponto em que parou e avance no seu ritmo.' : 'Comece pelos fundamentos e avance com explicações, prática, revisão e evidências de aprendizagem.'}</p>
         <a class="primary-button hero-primary-action" data-continue-link href="${esc(resumeHref)}">${hasProgress ? 'Continuar de onde parou' : 'Começar a estudar'} <span aria-hidden="true">→</span></a>
       </div>
