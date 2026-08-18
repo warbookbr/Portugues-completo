@@ -53,12 +53,13 @@ for (const unitRef of catalog.units) {
 }
 
 const home = homeHtml(catalog, units, createEmptyProgress());
-assert.match(home, /Modo Clássico/);
+assert.match(home, /Comece seu percurso de aprendizagem/);
 assert.match(home, /Fala, sons e escrita/);
 assert.match(home, /Literatura, multimodalidade/);
 assert.match(home, /Começar a estudar/);
 assert.doesNotMatch(home, />\s*N[0-4]\s*[·•]/, 'home não deve expor código de nível ao aluno');
 assert.doesNotMatch(home, /Ver plano de estudos/i, 'hero não deve duplicar Plano de estudos');
+assert.doesNotMatch(home, /<span class="eyebrow">Modo Clássico<\/span>/, 'hero não deve repetir o modo já visível no cabeçalho');
 
 const n0Verification = await service.loadVerification('N0-U01');
 const n0Html = documentHtml(n0Verification.runtime, { unitId: 'N0-U01', unitTitle: 'Fala, sons e escrita', verification: true });
