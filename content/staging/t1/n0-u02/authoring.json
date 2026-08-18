@@ -72,6 +72,7 @@
     "extensionSource": "content/staging/t1/n0-u02/verification-extension-v02.json",
     "id": "N0-U02-V02",
     "title": "Verificação — Sílabas e primeiras palavras",
+    "objective": "Verificar de forma integrada percepção e manipulação silábica, ligação entre sílaba ouvida e escrita, construção/leitura inicial de palavras, significado familiar e as sínteses introdutórias sobre variação letra-som e fala versus escrita.",
     "prerequisites": [
       "N0-U02-L01",
       "N0-U02-L02",
