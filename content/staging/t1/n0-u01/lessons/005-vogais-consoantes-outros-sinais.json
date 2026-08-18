@@ -1,0 +1,175 @@
+{
+  "schemaVersion": 1,
+  "id": "N0-U01-L05",
+  "title": "Vogais e consoantes",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Reconhecer A, E, I, O e U como vogais e reconhecer introdutoriamente as demais letras do alfabeto como consoantes, sem transformar essa classificação em uma regra simplista de pronúncia.",
+  "studentObjective": "Conhecer as cinco vogais e aprender quais letras chamamos de consoantes.",
+  "competencies": [
+    "identificar A, E, I, O e U como vogais",
+    "classificar as demais letras do alfabeto como consoantes neste nível introdutório",
+    "reconhecer vogais e consoantes mesmo quando as letras aparecem em ordem misturada"
+  ],
+  "prerequisites": ["N0-U01-L03", "N0-U01-L04"],
+  "limits": [
+    "não ensinar classificação fonética de sons vocálicos e consonantais",
+    "não transformar vogal e consoante em regras de pronúncia",
+    "não ensinar ainda sílabas ou famílias silábicas",
+    "não exigir leitura de palavras para concluir a lição",
+    "letras, números, pontuação e outros símbolos serão comparados na lição seguinte"
+  ],
+  "media": {
+    "tts": "apoio opcional para instrucoes, explicacoes e feedback",
+    "controlledAudio": "nao necessario",
+    "video": "nao necessario",
+    "images": "nao necessarias; as letras devem ser renderizadas pela interface"
+  },
+  "supportMaterials": {
+    "curatedMedia": [],
+    "runtimeResources": [
+      {
+        "type": "TTS_OK",
+        "locations": ["instruções", "explicações", "feedback"],
+        "purpose": "oferecer apoio de acesso ao texto sem transformar a voz em parte da resposta correta"
+      }
+    ],
+    "generatedVisualResources": [
+      {
+        "type": "UI_RENDERED_LETTER_GROUPS",
+        "locations": ["L05-B02", "L05-B03", "L05-A01", "L05-A02"],
+        "purpose": "renderizar vogais e consoantes diretamente como texto/componentes da interface em grupos curtos e legíveis"
+      }
+    ],
+    "productionQueueRequired": false,
+    "publicationDependency": "nenhuma mídia humana precisa ser produzida; a lição depende apenas de texto, TTS opcional e componentes visuais simples",
+    "decisionRationale": "a classificação é visual e introdutória; separar outros tipos de sinais em outra lição reduz a quantidade de categorias novas apresentadas ao mesmo tempo"
+  },
+  "classification": {
+    "vowels": ["A", "E", "I", "O", "U"],
+    "consonants": ["B", "C", "D", "F", "G", "H", "J", "K", "L", "M", "N", "P", "Q", "R", "S", "T", "V", "W", "X", "Y", "Z"]
+  },
+  "sequence": [
+    {
+      "id": "L05-B01",
+      "type": "objective",
+      "focus": "read-or-listen",
+      "text": "Você já conheceu as letras do alfabeto. Agora vamos separá-las em dois grupos que têm nomes próprios: vogais e consoantes."
+    },
+    {
+      "id": "L05-B02",
+      "type": "visual-demonstration",
+      "focus": "observe",
+      "title": "As cinco vogais",
+      "display": ["A", "E", "I", "O", "U"],
+      "explanation": "A, E, I, O e U são chamadas de vogais. São cinco letras do alfabeto.",
+      "guardRail": "tratar aqui a classificação das letras; não explicar ainda propriedades fonéticas dos sons"
+    },
+    {
+      "id": "L05-C01",
+      "type": "quick-check",
+      "focus": "respond",
+      "interaction": "single-choice",
+      "prompt": "Qual grupo tem somente vogais?",
+      "options": [
+        ["A", "E", "I", "O", "U"],
+        ["A", "B", "C", "D", "E"],
+        ["M", "N", "O", "P", "Q"]
+      ],
+      "correctIndex": 0,
+      "feedback": "A, E, I, O e U são as cinco vogais."
+    },
+    {
+      "id": "L05-B03",
+      "type": "explanation",
+      "focus": "observe",
+      "title": "As outras letras são consoantes",
+      "text": "As outras 21 letras do alfabeto são chamadas, neste nível, de consoantes. B, C, D, F e M são alguns exemplos. Aqui estamos aprendendo os nomes dos grupos; ainda não estamos criando regras sobre os sons de cada letra.",
+      "examples": ["B", "C", "D", "F", "M", "S", "X", "Z"]
+    },
+    {
+      "id": "L05-A01",
+      "type": "coverage-check",
+      "focus": "respond",
+      "interaction": "vowel-consonant-classify",
+      "title": "Vogal ou consoante?",
+      "instruction": "Veja cada letra e escolha se ela é vogal ou consoante.",
+      "source": "classification.vowels + classification.consonants",
+      "categories": ["vogal", "consoante"],
+      "presentationRule": "apresentar as 26 letras em rodadas curtas e ordem embaralhada; todas devem aparecer antes da conclusão",
+      "feedbackRule": "feedback imediato, nova tentativa sem penalidade e retomada das letras classificadas incorretamente",
+      "important": "a atividade testa a categoria da letra; não pedir qual som ela representa"
+    },
+    {
+      "id": "L05-B04",
+      "type": "comparison",
+      "focus": "observe",
+      "title": "Misturando os dois grupos",
+      "groups": [
+        {"label": "vogais", "examples": ["A", "I", "U"]},
+        {"label": "consoantes", "examples": ["B", "M", "T"]}
+      ],
+      "explanation": "Quando as letras aparecem misturadas, a categoria não muda. A continua sendo vogal; M continua sendo consoante."
+    },
+    {
+      "id": "L05-C02",
+      "type": "quick-check",
+      "focus": "respond",
+      "interaction": "single-choice",
+      "prompt": "Qual destas letras é uma vogal?",
+      "options": ["M", "T", "E", "B"],
+      "correct": "E",
+      "feedback": "E é uma das cinco vogais: A, E, I, O e U."
+    },
+    {
+      "id": "L05-A02",
+      "type": "guided-activity",
+      "focus": "respond",
+      "interaction": "classify",
+      "title": "Classifique letras misturadas",
+      "instruction": "Separe cada letra em vogal ou consoante.",
+      "categories": ["vogal", "consoante"],
+      "items": [
+        {"id": "l05-a02-1", "stimulus": "O", "correct": "vogal"},
+        {"id": "l05-a02-2", "stimulus": "R", "correct": "consoante"},
+        {"id": "l05-a02-3", "stimulus": "U", "correct": "vogal"},
+        {"id": "l05-a02-4", "stimulus": "G", "correct": "consoante"},
+        {"id": "l05-a02-5", "stimulus": "A", "correct": "vogal"},
+        {"id": "l05-a02-6", "stimulus": "N", "correct": "consoante"},
+        {"id": "l05-a02-7", "stimulus": "I", "correct": "vogal"},
+        {"id": "l05-a02-8", "stimulus": "S", "correct": "consoante"}
+      ],
+      "feedbackRule": "feedback imediato e nova tentativa sem penalidade"
+    },
+    {
+      "id": "L05-C03",
+      "type": "quick-check",
+      "focus": "respond",
+      "interaction": "single-choice",
+      "prompt": "Qual afirmação está correta?",
+      "options": [
+        "A, E, I, O e U são vogais.",
+        "Somente as vogais fazem parte do alfabeto.",
+        "Toda consoante tem sempre o mesmo som."
+      ],
+      "correctIndex": 0,
+      "feedback": "As cinco vogais são A, E, I, O e U. As demais letras são chamadas aqui de consoantes."
+    },
+    {
+      "id": "L05-B05",
+      "type": "summary",
+      "focus": "read-or-listen",
+      "points": [
+        "A, E, I, O e U são as cinco vogais.",
+        "As outras letras do alfabeto são chamadas, neste nível, de consoantes.",
+        "Vogal e consoante são nomes de grupos de letras.",
+        "Ainda não estamos dizendo que cada letra possui sempre um único som."
+      ],
+      "bridgeToNextLesson": "Na próxima lição, vamos separar letras de números, pontuação e outros sinais que também podem aparecer numa tela ou num texto."
+    }
+  ],
+  "completionEvidence": {
+    "observablePerformance": "Classificar as 26 letras como vogais ou consoantes, reconhecendo as cinco vogais mesmo em ordem misturada.",
+    "criterion": "concluir L05-A01 com as 26 letras corretamente classificadas após feedback; classificar corretamente pelo menos 7 dos 8 itens de L05-A02 e corrigir qualquer item restante; acertar L05-C03",
+    "notSufficient": "apenas repetir A-E-I-O-U sem conseguir reconhecer vogais quando aparecem misturadas com consoantes"
+  }
+}
