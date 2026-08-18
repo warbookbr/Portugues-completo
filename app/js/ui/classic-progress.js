@@ -27,19 +27,54 @@ function currentHref(progress) {
   return null;
 }
 
+function completedForIds(progress, ids) {
+  return ids.filter(id => progress?.curriculum?.lessons?.[id]?.status === 'CONCLUIDA').length;
+}
+
 function decorateHome(root, progress) {
-  const hero = root.querySelector('.home-hero');
-  if (!hero) return;
-  root.querySelector('.progress-overview')?.remove();
+  const home = root.querySelector('.dashboard-home');
+  if (!home) return;
+
   const data = summary(progress);
+  const total = Number(home.dataset.homeTotalLessons || 0);
+  const percent = total ? Math.round((data.completed / total) * 100) : 0;
+
+  const percentLabel = root.querySelector('[data-progress-percent]');
+  const completedLabel = root.querySelector('[data-progress-completed]');
+  const reviewLabel = root.querySelector('[data-progress-review]');
+  const ring = root.querySelector('.progress-ring');
+  if (percentLabel) percentLabel.textContent = `${percent}%`;
+  if (completedLabel) completedLabel.textContent = String(data.completed);
+  if (reviewLabel) reviewLabel.textContent = String(data.review);
+  if (ring) ring.style.setProperty('--progress-value', String(percent));
+
+  const continueLink = root.querySelector('[data-continue-link]');
   const href = currentHref(progress);
-  const panel = document.createElement('section');
-  panel.className = 'progress-overview';
-  panel.innerHTML = `
-    <div><span class="block-kicker">Seu progresso</span><h2>${data.completed ? `${data.completed} ${data.completed === 1 ? 'lição concluída' : 'lições concluídas'}` : 'Seu percurso começa aqui'}</h2>
-    <p>${data.pending ? `${data.pending} evidência(s) aguardando validação. ` : ''}${data.review ? `${data.review} revisão(ões) recomendada(s).` : 'Você pode estudar sem metas de jogo ou XP.'}</p></div>
-    ${href ? `<a class="primary-button inline-link" href="${esc(href)}">Continuar estudando</a>` : ''}`;
-  hero.insertAdjacentElement('afterend', panel);
+  if (continueLink && href) {
+    continueLink.href = href;
+    continueLink.innerHTML = 'Continuar de onde parou <span aria-hidden="true">→</span>';
+  }
+
+  root.querySelectorAll('[data-dashboard-unit]').forEach(row => {
+    const ids = String(row.dataset.lessonIds || '').split(',').filter(Boolean);
+    const done = completedForIds(progress, ids);
+    const rowPercent = ids.length ? Math.round((done / ids.length) * 100) : 0;
+    const bar = row.querySelector('[data-unit-progress-bar]');
+    const copy = row.querySelector('[data-unit-progress-copy]');
+    if (bar) bar.style.width = `${rowPercent}%`;
+    if (copy) copy.textContent = `${done} de ${ids.length} lições`;
+  });
+
+  const currentCard = root.querySelector('[data-current-study]');
+  if (currentCard) {
+    const ids = String(currentCard.dataset.lessonIds || '').split(',').filter(Boolean);
+    const done = completedForIds(progress, ids);
+    const cardPercent = ids.length ? Math.round((done / ids.length) * 100) : 0;
+    const bar = currentCard.querySelector('.progress-line > span');
+    const label = currentCard.querySelector('[data-current-unit-progress]');
+    if (bar) bar.style.width = `${cardPercent}%`;
+    if (label) label.textContent = `${cardPercent}%`;
+  }
 }
 
 function decorateUnit(root, progress) {
