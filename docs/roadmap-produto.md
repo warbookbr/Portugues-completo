@@ -6,7 +6,8 @@ Registrar a ordem e as condições de saída da fase de produto/publicação ap�
 
 - maturidade curricular: `docs/roadmap-curricular.md`;
 - estado operacional exato: `docs/estado-implementacao-classico.md`;
-- refinamento transversal ativo: `docs/plano-fundamentos-claros.md`.
+- refinamento transversal ativo: `docs/plano-fundamentos-claros.md`;
+- decisão da auditoria de entrada: `docs/auditoria-t1-1-porta-entrada-n0.md`.
 
 ## Estado atual
 
@@ -18,6 +19,8 @@ P3 — Manifests e catálogo inicial → HOMOLOGADO
 P4 — Renderer real do Clássico → HOMOLOGADO
 P5 — ProgressService, revisão e persistência → HOMOLOGADO
 MARCO TRANSVERSAL ATIVO → T1 — Fundamentos claros e experiência de lição
+T1.1 — pesquisa/auditoria da entrada N0 → CONCLUÍDO
+T1.2 — redimensionamento curricular controlado do N0 → ATIVO
 P6 — Feedback por IA no Clássico → AGUARDANDO T1
 MODO CLÁSSICO REAL → slice funcional com progresso persistente; porta de entrada em revisão antes de ampliar o produto
 MODO GAMIFICADO → somente após CLÁSSICO HOMOLOGADO
@@ -255,12 +258,31 @@ Plano canônico: `docs/plano-fundamentos-claros.md`.
 
 Skill operacional: `.ChatGPT/skills/fundamentos-claros/SKILL.md`.
 
+Relatório T1.1: `docs/auditoria-t1-1-porta-entrada-n0.md`.
+
 Objetivo: corrigir antes de P6 a porta de entrada curricular e visual revelada pela validação do produto.
+
+Estado interno:
+
+```text
+T1.1 pesquisa + auditoria                                  ✓
+T1.2 redimensionamento curricular N0                      ← ativo
+T1.3 contrato de linguagem
+T1.4 skills/fontes canônicas — regras centrais já antecipadas na PR #117; reconciliar ao fechar a fase
+T1.5 contrato técnico de abertura
+T1.6 nova autoria inicial
+T1.7 frontend de intro/fluxo
+T1.8 metodologia em Ajuda
+T1.9 migração/catálogo/progresso/mídia
+T1.10 validação/homologação
+```
+
+T1.1 concluiu que a melhor candidata para T1.2 é reorganizar conjuntamente as atuais U1 + U2 em duas unidades iniciais mais naturais, trazendo letras/alfabeto para a porta de entrada, articulando consciência sonora cedo e aproximando sílabas/primeiras palavras. `Fala e escrita` permanece conteúdo válido, mas deixa de ser a abstração inaugural; relações letra–som mais complexas também passam para depois de experiências concretas.
 
 Escopo resumido:
 
 ```text
-pesquisar/auditar a entrada do N0
+pesquisar/auditar a entrada do N0                           ✓
 → reorganizar/criar fundamentos iniciais quando necessário
 → separar objetivo técnico de texto para o aluno
 → adotar linguagem simples e progressão concreto→conceito→prática
@@ -383,6 +405,7 @@ Cobrir troca de modos, preservação de domínio, coerência/resistência a farm
 ## Próximo passo oficial
 
 ```text
-T1.1 — pesquisa e auditoria da porta de entrada do N0
+T1.2 — redimensionamento curricular controlado do N0
+→ congelar nova arquitetura de unidades/lições + matriz de identidade/migração
 → seguir docs/plano-fundamentos-claros.md
 ```

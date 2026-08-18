@@ -23,6 +23,7 @@ Português Completo
 - `docs/roadmap-curricular.md` — estado/maturidade do currículo N0→N4; fechado em M5, com revisão dirigida da porta de entrada N0 autorizada por T1.
 - `docs/roadmap-produto.md` — ordem e condições dos marcos da fase de produto/publicação; P1–P5 homologados, T1 ativo e P6 aguardando T1.
 - `docs/plano-fundamentos-claros.md` — **plano transversal ativo** para reorganizar a entrada N0, simplificar a linguagem pedagógica, criar a nova abertura de lição, realocar Metodologia e preservar progresso/IDs.
+- `docs/auditoria-t1-1-porta-entrada-n0.md` — **decisão da T1.1**: pesquisa/auditoria da entrada N0, nova espinha recomendada, impactos técnicos e direção para o redimensionamento T1.2.
 - `docs/estado-implementacao-classico.md` — **estado operacional concreto do Modo Clássico**: marco/item ativo, estados técnico/homologação/mídia/publicação, blockers e próximo passo exato.
 - `docs/execucao-continua.md` — execução autônoma por marcos autorizados.
 - `.ChatGPT/skills/fundamentos-claros/SKILL.md` — skill operacional obrigatória enquanto T1 estiver ativo; tem precedência sobre iniciar P6.
@@ -95,6 +96,7 @@ Durante homologação de atividade, lição, verificação ou unidade, `docs/cal
 
 ## Nível 0
 
+- `docs/auditoria-t1-1-porta-entrada-n0.md` — diagnóstico T1.1 que governa o redimensionamento inicial enquanto T1 estiver ativo.
 - `docs/unidades-nivel-0.md`
 - `docs/licoes-nivel-0.md`
 - `docs/licoes-nivel-0-unidade-6.md`
@@ -240,7 +242,7 @@ P2 ContentService/normalizador                          ✓
 P3 manifests + catálogo inicial                         ✓
 P4 renderer real do Clássico                            ✓
 P5 ProgressService + revisão + cache/Gist/sync           ✓
-T1 Fundamentos claros + experiência de lição            ← ativo
+T1 Fundamentos claros + experiência de lição            ← ativo (T1.2)
 P6 feedback por IA no Clássico                          aguardando T1
 P7 ampliação do catálogo Clássico N0→N4
 P8 mídia + prontidão de publicação do Clássico
@@ -292,6 +294,7 @@ T1 é uma revisão pedagógica dirigida autorizada por validação real, não um
 estado curricular → docs/roadmap-curricular.md
 ordem/condições dos marcos de produto → docs/roadmap-produto.md
 plano transversal ativo T1 → docs/plano-fundamentos-claros.md
+decisão T1.1 da entrada N0 → docs/auditoria-t1-1-porta-entrada-n0.md
 estado operacional concreto do Clássico → docs/estado-implementacao-classico.md
 arquitetura → docs/arquitetura.md
 linguagem e apresentação ao aluno → docs/ui-ux.md
