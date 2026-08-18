@@ -29,14 +29,23 @@ jobs:
       - name: Materialize T1 N0 publication
         run: node scripts/promote-t1-n0-content.mjs
 
-      - name: Validate generated JSON and catalog
-        run: |
-          node scripts/validate-json.mjs
-          node scripts/validate-contracts.mjs
-          node scripts/validate-catalog.mjs
-          node scripts/test-content-catalog.mjs
-          node scripts/test-t1-content-authoring.mjs
-          node scripts/test-classic-renderer.mjs
+      - name: Validate generated JSON
+        run: node scripts/validate-json.mjs
+
+      - name: Validate generated contracts
+        run: node scripts/validate-contracts.mjs
+
+      - name: Validate generated catalog
+        run: node scripts/validate-catalog.mjs
+
+      - name: Test generated catalog discovery
+        run: node scripts/test-content-catalog.mjs
+
+      - name: Test staged authoring remains reproducible
+        run: node scripts/test-t1-content-authoring.mjs
+
+      - name: Test generated classic renderer
+        run: node scripts/test-classic-renderer.mjs
 
       - name: Commit materialized publication
         run: |
