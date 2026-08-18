@@ -10,22 +10,26 @@ export class SafeProgressStorage {
     this.onBackup = onBackup;
   }
 
+  backupItem(key, raw, reason = 'MANUAL_PROGRESS_BACKUP') {
+    if (raw === null || raw === undefined) return null;
+    const backupKey = `${BACKUP_PREFIX}${timestampKey()}`;
+    this.storage?.setItem?.(backupKey, String(raw));
+    this.onBackup?.({ key, backupKey, reason });
+    return backupKey;
+  }
+
   getItem(key) {
     const raw = this.storage?.getItem?.(key);
     if (!raw) return raw;
     try {
       const parsed = JSON.parse(raw);
       if (parsed?.schemaVersion === 1 && parsed?.courseId === 'portugues-completo') return raw;
-      const backupKey = `${BACKUP_PREFIX}${timestampKey()}`;
-      this.storage?.setItem?.(backupKey, raw);
+      this.backupItem(key, raw, 'UNSUPPORTED_PROGRESS_SCHEMA');
       this.storage?.removeItem?.(key);
-      this.onBackup?.({ key, backupKey, reason: 'UNSUPPORTED_PROGRESS_SCHEMA' });
       return null;
     } catch {
-      const backupKey = `${BACKUP_PREFIX}${timestampKey()}`;
-      this.storage?.setItem?.(backupKey, raw);
+      this.backupItem(key, raw, 'INVALID_PROGRESS_JSON');
       this.storage?.removeItem?.(key);
-      this.onBackup?.({ key, backupKey, reason: 'INVALID_PROGRESS_JSON' });
       return null;
     }
   }
