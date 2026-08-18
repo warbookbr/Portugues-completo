@@ -1,3 +1,5 @@
+import { levelLabel } from './classic-ui-copy.js';
+
 const BLOCK_LABELS = Object.freeze({
   objective: 'Objetivo', demonstration: 'Exemplo', explanation: 'Explicação', 'paired-example': 'Exemplo comparado', summary: 'Resumo', 'quick-check': 'Checagem rápida', 'guided-activity': 'Prática guiada',
   'authored-literary-text': 'Texto literário', 'authored-poem': 'Poema', 'authored-prose': 'Texto literário', 'evidence-map': 'Mapa de evidências', 'controlled-narrative': 'Narrativa', 'formal-reconfiguration': 'Comparação de formas', 'controlled-intertext-set': 'Textos relacionados',
@@ -58,10 +60,14 @@ function hideInternalMetadata(root) {
   root.querySelectorAll('.blocker-card').forEach(element => element.remove());
 }
 
-function polishHome(root) {
-  const status = root.querySelector('.home-status');
-  const count = root.querySelectorAll('.unit-card').length;
-  if (status) status.textContent = `${count} ${count === 1 ? 'unidade disponível' : 'unidades disponíveis'} nesta versão do curso.`;
+function polishUnitLevel(root) {
+  const hero = root.querySelector('.unit-hero');
+  const unit = root.querySelector('[data-unit-id]');
+  const eyebrow = hero?.querySelector('.eyebrow');
+  if (!eyebrow || !unit) return;
+  const match = String(eyebrow.textContent || '').match(/^(N[0-4])\s*·\s*Unidade\s*(\d+)/i);
+  if (!match) return;
+  eyebrow.textContent = `${levelLabel(match[1].toUpperCase())} · Unidade ${match[2]}`;
 }
 
 function polishCompletion(root) {
@@ -73,6 +79,6 @@ function polishCompletion(root) {
 export function polishClassicPresentation(root) {
   polishBlockLabels(root);
   hideInternalMetadata(root);
-  polishHome(root);
+  polishUnitLevel(root);
   polishCompletion(root);
 }
