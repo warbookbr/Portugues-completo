@@ -30,11 +30,11 @@ Marco concluído mais recente: P5 — ProgressService, revisão e persistência
 Marco transversal ativo: T1 — Fundamentos claros e experiência de lição
 Plano ativo: docs/plano-fundamentos-claros.md
 Skill ativa: .ChatGPT/skills/fundamentos-claros/SKILL.md
-Subfase concluída mais recente: T1.2 — redimensionamento curricular controlado do N0
-Subfase ativa: T1.3 — contrato de linguagem para o aluno
+Subfases concluídas mais recentes: T1.3 — contrato de linguagem + T1.4 — skills/fontes canônicas
+Subfase ativa: T1.5 — contrato técnico da abertura da lição
 P6 — Feedback por IA: AGUARDANDO T1
-Último item concluído: T1.2 + T1.1 + CL-UX-LESSON-FLOW + CL-UX-HOME-REDESIGN + refinamentos responsivos da home
-Próximo passo exato: executar T1.3, congelando o contrato objetivo interno ≠ texto público, o padrão de explicação clara/completa/simples, exemplos bons/ruins e checklist de autoria; em seguida preparar T1.5 para materializar esse contrato no runtime sem fallback para objetivo técnico
+Último item concluído: T1.4 + T1.3 + T1.2 + T1.1 + refinamentos UX pós-P5
+Próximo passo exato: executar T1.5, definindo authoring/runtime/fallback para title + apresentação pública da lição, com retrocompatibilidade v1 e sem imprimir objective técnico quando faltar copy pública segura
 Blocker atual: nenhum blocker técnico global; T1 é uma prioridade pedagógica deliberada, não um blocker acidental
 Gate final do Clássico: NÃO SATISFEITO
 ```
@@ -50,7 +50,7 @@ Enquanto T1 estiver ativo, não iniciar P6 materialmente. O plano T1 foi autoriz
 | P3 — Manifests e catálogo inicial | `HOMOLOGADO` | PR #107 + catálogo v2 + manifests + integridade | concluído |
 | P4 — Renderer real do Clássico | `HOMOLOGADO` | PR #108 + 20 lições/2 verificações + smoke Chrome + screenshots | concluído |
 | P5 — ProgressService/revisão/Gist | `HOMOLOGADO` | PR #109 + engine/policies/Gist/sync/conflitos/cache/UI em CI | concluído |
-| T1 — Fundamentos claros e experiência de lição | `ATIVO` | plano + auditoria T1.1 + redimensionamento T1.2 | T1.3 linguagem → T1.10 homologação |
+| T1 — Fundamentos claros e experiência de lição | `ATIVO` | T1.1 auditoria + T1.2 arquitetura + T1.3 linguagem + T1.4 fontes/skills | T1.5 contrato técnico → T1.10 homologação |
 | P6 — Feedback por IA | `NAO_INICIADO / AGUARDANDO T1` | — | iniciar após T1 homologado |
 | P7 — Ampliação N0→N4 | `NAO_INICIADO` | — | catálogo clássico cobre escopo aprovado |
 | P8 — Mídia/prontidão de publicação | `NAO_INICIADO` | — | blockers obrigatórios resolvidos |
@@ -189,9 +189,9 @@ Estado consolidado: ATIVO / AUTORIZADO
 T1.0 baseline/ativação                                      ✓
 T1.1 pesquisa + auditoria                                  ✓
 T1.2 redimensionamento curricular N0                       ✓
-T1.3 contrato de linguagem                                 ← ativo
-T1.4 skills/fontes canônicas                               parcialmente antecipado pela PR #117
-T1.5 contrato técnico de abertura
+T1.3 contrato de linguagem                                 ✓
+T1.4 skills/fontes canônicas                               ✓
+T1.5 contrato técnico de abertura                          ← ativo
 T1.6 nova autoria inicial
 T1.7 frontend de intro/fluxo
 T1.8 metodologia em Ajuda
@@ -203,9 +203,12 @@ Fontes centrais:
 
 - plano: `docs/plano-fundamentos-claros.md`;
 - auditoria T1.1: `docs/auditoria-t1-1-porta-entrada-n0.md`;
-- arquitetura congelada T1.2: `docs/redimensionamento-t1-2-n0.md`;
+- arquitetura T1.2: `docs/redimensionamento-t1-2-n0.md`;
+- contrato T1.3: `docs/linguagem-aluno.md`;
+- conteúdo: `docs/conteudo.md`;
+- UI: `docs/ui-ux.md`;
 - skill temporária: `.ChatGPT/skills/fundamentos-claros/SKILL.md`;
-- regras duradouras já incorporadas às skills canônicas pela PR #117.
+- regras duradouras nas skills canônicas pela PR #117 + complemento de validação visual T1.4.
 
 ### Decisão T1.1
 
@@ -213,7 +216,7 @@ A auditoria confirmou:
 
 - `Fala e escrita` é conteúdo válido, mas abstrato demais para abrir o curso;
 - letras/conhecimento alfabético e consciência sonora devem se articular cedo, sem exigir memorização mecânica A–Z antes de qualquer trabalho sonoro;
-- a introdução silábica existente é boa, mas está atrasada por pré-requisito amplo demais;
+- a introdução silábica existente é boa, mas estava atrasada por pré-requisito amplo demais;
 - relações letra–som mais complexas devem vir após experiências concretas com letras, sílabas e palavras;
 - o N0 final não precisa ser reduzido: é a escada até ele que precisava ser corrigida.
 
@@ -266,6 +269,38 @@ docs/unidades-nivel-0.md + docs/licoes-nivel-0.md
 → material histórico a reutilizar
 ```
 
+### Decisão T1.3 — linguagem
+
+`docs/linguagem-aluno.md` é canônico para a fala pública.
+
+Regra:
+
+```text
+objetivo técnico
+≠ objetivo público
+
+clara + completa + simples
+
+concreto
+→ exemplo
+→ nome do conceito
+→ explicação simples
+→ prática
+→ ampliação
+```
+
+`simples` não significa raso, infantilizado ou impreciso. O início do N0 não presume que letra, alfabeto, vogal, consoante, sílaba, palavra ou frase já sejam conceitos compreendidos.
+
+### Decisão T1.4 — consolidação canônica
+
+T1.4 fecha porque:
+
+- PR #117 já incorporou as regras duradouras em `course-content-design`, `curricular-orchestration`, `student-ui-ux` e `classic-product-delivery`;
+- `docs/conteudo.md` agora trata linguagem pública como parte da autoria;
+- `docs/ui-ux.md` aponta para `docs/linguagem-aluno.md`, formaliza a primeira tela limpa e registra Metodologia em Ajuda/Como o curso funciona;
+- `.ChatGPT/skills/frontend-visual-check/SKILL.md` agora exige validar primeira abertura, retomada, etapa explicativa, atividade e largura intermediária quando relevante;
+- roadmaps/índice/estado registram as fontes T1.
+
 ## Estado de publicação do slice
 
 ### N0-U01
@@ -295,7 +330,7 @@ Produções abertas continuam `VALIDACAO_PENDENTE` quando exigem avaliador confi
 
 ```text
 Global antes de P6: concluir CL-T1-FUNDAMENTOS-CLAROS
-T1 imediato: T1.3 — contrato de linguagem para o aluno
+T1 imediato: T1.5 — contrato técnico da abertura da lição
 Local: mídias obrigatórias históricas de N0-U01/U02, sujeitas à reconciliação T1.9
 ```
 
@@ -304,9 +339,9 @@ Local: mídias obrigatórias históricas de N0-U01/U02, sujeitas à reconciliaç
 ```text
 T1.1 pesquisa + auditoria                                  ✓
 T1.2 redimensionamento curricular N0                       ✓
-→ T1.3 contrato de linguagem                               ← ativo
-→ T1.4 consolidar fontes/skills restantes
-→ T1.5 contrato técnico de abertura
+T1.3 contrato de linguagem                                 ✓
+T1.4 skills/fontes canônicas                               ✓
+→ T1.5 contrato técnico de abertura                        ← ativo
 → T1.6 nova autoria inicial
 → T1.7 frontend de intro/fluxo
 → T1.8 metodologia em Ajuda
