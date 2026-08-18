@@ -1,89 +1,65 @@
 # Skill: Classic Product Delivery
 
-> **Escopo:** esta skill é destinada ao ChatGPT trabalhando na implementação/publicação do **Modo Clássico** do projeto `Portugues-completo`.
+> **Escopo:** implementação/publicação do **Modo Clássico** do projeto `Portugues-completo`.
 
 ## Objetivo
 
-Executar os marcos P1→P9 do Modo Clássico com continuidade, sem perder o ponto exato do desenvolvimento e sem confundir:
+Executar os marcos do Clássico com continuidade, sem perder o estado real e sem confundir:
 
 ```text
 implementação técnica
 homologação pedagógica/funcional
+clareza para o aluno
 mídia/material de apoio
 prontidão de publicação
 ```
 
-A fonte operacional do estado é `docs/estado-implementacao-classico.md`.
+A fonte operacional é `docs/estado-implementacao-classico.md`.
 
 ## Quando usar
 
-Usar para qualquer trabalho material da fase de produto clássico, incluindo:
+Usar para qualquer trabalho material da fase de produto clássico, incluindo schemas, normalização, catálogo, renderer, telas, atividades, progresso, revisão, persistência, GitHub/Gist, feedback por IA, expansão N0→N4, mídia e homologação E2E.
 
-- schemas e validadores;
-- `ContentService`/normalizadores/adapters;
-- manifests e catálogo;
-- renderer/telas/atividades;
-- progresso, domínio, revisão e persistência;
-- GitHub/Gist;
-- feedback por IA;
-- expansão N0→N4;
-- ligação de mídia;
-- homologação visual/funcional/pedagógica;
-- prontidão de publicação;
-- testes E2E do Clássico.
-
-Não usar para implementar gamificação antes do gate `CLÁSSICO HOMOLOGADO`.
+Não implementar gamificação antes do gate `CLÁSSICO HOMOLOGADO`.
 
 ## Fontes obrigatórias de entrada
 
-Antes de iniciar ou continuar um marco do Clássico:
+Antes de iniciar/continuar um marco:
 
 ```text
 1. PROJECT_INDEX.md
 2. docs/roadmap-produto.md
 3. docs/estado-implementacao-classico.md
-4. docs/execucao-continua.md
-5. contratos específicos necessários ao item
-6. producao-midia/README.md + FILA-MIDIA.md quando mídia puder afetar o item
-7. .ChatGPT/skills/frontend-visual-check/SKILL.md quando houver interface visual
+4. plano transversal ativo, quando houver
+5. docs/execucao-continua.md
+6. contratos específicos necessários
+7. .ChatGPT/skills/course-content-design/SKILL.md quando houver conteúdo pedagógico/texto público
+8. .ChatGPT/skills/student-ui-ux/SKILL.md quando houver interface visível ao aluno
+9. .ChatGPT/skills/frontend-visual-check/SKILL.md quando houver mudança visual
+10. mídia quando aplicável
 ```
 
-Contratos específicos podem incluir:
-
-- `docs/arquitetura.md`;
-- `docs/contrato-conteudo.md`;
-- `docs/conteudo.md`;
-- `docs/exercicios.md`;
-- `docs/progresso.md`;
-- `docs/persistencia-progresso.md`;
-- `docs/avaliacao-ia.md`;
-- `docs/calibracao-produto.md`.
-
-Não ler documentação irrelevante por rotina se o estado e o item ativo já delimitarem claramente o trabalho.
+Contratos específicos podem incluir `docs/arquitetura.md`, `docs/contrato-conteudo.md`, `docs/conteudo.md`, `docs/exercicios.md`, `docs/progresso.md`, `docs/persistencia-progresso.md`, `docs/avaliacao-ia.md` e `docs/calibracao-produto.md`.
 
 ## Regra de retomada
 
-Uma instância sem contexto anterior deve conseguir continuar pelo repositório.
-
-Fluxo obrigatório:
+Uma instância sem contexto deve conseguir continuar pelo repositório:
 
 ```text
 ler Cursor operacional
-→ identificar Marco ativo
-→ identificar Item ativo
-→ identificar Próximo passo exato
+→ identificar marco/plano ativo
+→ identificar item ativo
+→ identificar próximo passo exato
 → verificar blockers
-→ ler contratos do item
+→ ler contratos/skills do item
 → continuar dali
 ```
 
-Não assumir que “arquivo existe” significa “item concluído”.
-
-Não inferir homologação a partir de implementação.
+Não assumir que arquivo existente significa item concluído e não inferir homologação de implementação.
 
 ## Modelo de estado
 
-Para cada inclusão relevante, manter separadamente:
+Para cada inclusão relevante, distinguir:
 
 ```text
 estado consolidado
@@ -93,98 +69,138 @@ estado de mídia
 estado de publicação
 ```
 
-Os enums oficiais ficam em `docs/estado-implementacao-classico.md`.
+Se necessário, criar ID operacional estável `CL-P<marco>-<escopo>` ou ID transversal definido pelo plano ativo.
 
-Se o item ainda não existir no registro, criar um ID de implementação estável quando começar trabalho material.
-
-## IDs de implementação
-
-Formato recomendado:
-
-```text
-CL-P<marco>-<escopo-curto>
-```
-
-Exemplos:
-
-```text
-CL-P1-SCHEMA-LESSON
-CL-P2-ADAPTER-VERIFICATION-V1
-CL-P3-N0-U01-MANIFEST
-CL-P4-RENDERER-OPEN-TEXT
-CL-P5-GIST-SYNC
-CL-P6-AI-FEEDBACK
-CL-P7-N3-U06
-CL-P8-N0-U01-L03-AUDIO
-CL-P9-E2E-DEVICE-SWITCH
-```
-
-Não substituir IDs curriculares, de atividade ou `mediaId` por IDs de implementação.
+IDs operacionais não substituem IDs curriculares, de atividade ou `mediaId`.
 
 ## Loop de desenvolvimento
 
-Dentro de um marco autorizado:
+Dentro de marco autorizado:
 
 ```text
 1. ler estado atual
-2. escolher próximo item/subpasso coerente
-3. criar/atualizar registro do item
+2. escolher próximo item
+3. registrar/atualizar item
 4. implementar
-5. revisar contratos e regressões
+5. revisar contratos, pedagogia, clareza e regressões
 6. testar/validar
-7. classificar mídia e blockers
-8. atualizar estado do item
-9. branch/PR/CI/merge conforme fluxo seguro
+7. classificar mídia/blockers
+8. atualizar estado
+9. branch/PR/CI/merge
 10. verificar main
 11. atualizar Cursor operacional
-12. continuar se o marco autorizado não terminou
+12. continuar se o marco não terminou
 ```
 
-Não parar por microdecisões solucionáveis já cobertas pelos contratos.
+Não parar por microdecisões já cobertas pelos contratos.
+
+## Regra canônica para conteúdo e UI pública
+
+Qualquer implementação que mostre conteúdo ao aluno deve obedecer às skills `course-content-design` e `student-ui-ux`.
+
+### Duas camadas de linguagem
+
+```text
+INTERNA
+→ técnica e precisa para objetivo, competência, evidência e runtime
+
+PÚBLICA
+→ clara, completa e simples para o aluno
+```
+
+Nunca interpolar automaticamente objetivo curricular técnico, enum, ID ou regra interna como explicação pública.
+
+### Progressão natural
+
+Ao materializar conteúdo, o renderer não deve tornar uma progressão ruim “aceitável” apenas porque ela renderiza.
+
+Se validação revelar que o aluno recebe abstração antes de fundamento necessário:
+
+```text
+registrar como problema pedagógico/curricular
+→ revisar a sequência pela skill curricular
+→ compatibilizar IDs/progresso/manifests
+→ só então homologar
+```
+
+Não resolver salto curricular apenas com CSS ou texto decorativo.
+
+### Explicação para o aluno
+
+Exigir:
+
+```text
+clara
++ completa
++ simples
++ exemplo cedo quando útil
++ termos ensinados antes de usados como pressuposto
+```
+
+Simples não significa raso; completo não significa técnico.
+
+## Experiência canônica de lição
+
+Primeira entrada, quando aplicável:
+
+```text
+← Voltar para a unidade
+
+Lição
+Título
+Objetivo público simples
+
+[ Começar lição ]
+```
+
+Antes de `Começar lição`, não despejar stepper, conteúdo, atividade, badges ou objetivo interno.
+
+Depois do início:
+
+```text
+uma etapa principal por vez
+→ conteúdo relacionado agrupado
+→ prática/feedback local
+→ Voltar / Avançar livres
+→ sem microfragmentação
+```
+
+Retomada de lição iniciada deve poder retornar ao percurso sem obrigar repetição da apresentação.
+
+## Compatibilidade em mudanças curriculares
+
+Antes de alterar ordem/identidade de conteúdo publicado:
+
+```text
+mapear identidade semântica
+→ progresso existente
+→ competências/evidências
+→ manifests/catalog
+→ deep links
+→ mídia
+→ migração
+```
+
+Não reutilizar ID antigo para conteúdo semanticamente novo só para preservar aparência de compatibilidade.
+
+Conclusão antiga não pode virar domínio de novo conteúdo por coincidência de ID.
 
 ## Política de mídia flexível
-
-### Regra principal
 
 ```text
 mídia pendente
 ≠ desenvolvimento global bloqueado
 ```
 
-Quando faltar imagem, vídeo ou áudio:
+Quando faltar mídia:
 
-1. verificar se TTS/texto/UI semântica resolve adequadamente;
-2. se mídia humana for realmente necessária, confirmar/criar `mediaId` e fila;
-3. implementar tudo que não dependa do arquivo final;
-4. classificar o impacto no estado;
-5. continuar itens independentes;
-6. não declarar homologado/publicável o que realmente depende do estímulo ausente.
+1. verificar se texto/TTS/UI semântica resolve;
+2. se mídia humana for necessária, criar/reutilizar `mediaId` e fila;
+3. implementar partes independentes;
+4. classificar impacto;
+5. não homologar/publicar a parte que realmente depende do estímulo ausente.
 
-### O que pode ser implementado sem a mídia final
-
-Quando tecnicamente útil:
-
-- container/layout;
-- renderer;
-- ligação por `mediaId`;
-- loading/erro/ausência;
-- acessibilidade estrutural;
-- navegação;
-- persistência independente;
-- placeholders informativos;
-- testes que não afirmem validar o estímulo pedagógico final.
-
-### O que não fazer
-
-- gerar mídia fictícia para fingir que a dependência terminou;
-- homologar discriminação sonora com TTS quando o contrato exige áudio controlado;
-- marcar item `PUBLICAVEL` porque o placeholder aparece corretamente;
-- parar um marco inteiro por uma dependência local de mídia;
-- criar imagens/vídeos apenas para preencher ausência visual.
-
-## Classificação de mídia
-
-Aplicar os estados definidos no registro:
+Estados usuais:
 
 ```text
 SEM_DEPENDENCIA
@@ -197,75 +213,56 @@ MIDIA_VALIDADA
 MIDIA_PUBLICADA
 ```
 
-### Regra crítica
-
-`MIDIA_OBRIGATORIA_PARA_ATIVIDADE` permite implementação técnica, mas impede homologação pedagógica daquela atividade até existir estímulo apropriado.
-
-`MIDIA_OBRIGATORIA_PARA_PUBLICACAO` impede `PUBLICAVEL` enquanto a versão final não estiver validada/ligada.
-
-## Placeholders
-
-Placeholder precisa declarar claramente sua natureza no desenvolvimento.
-
-Ele não deve:
-
-- ser confundido com mídia final;
-- carregar resposta implícita;
-- alterar critérios pedagógicos;
-- entrar silenciosamente em produção como recurso definitivo.
-
-Quando o runtime final encontrar mídia obrigatória ausente, o comportamento deve ser explícito e seguro, não falhar de forma opaca.
+Placeholder não é mídia final nem evidência de homologação pedagógica.
 
 ## Homologação
 
-### Homologação técnica
+### Técnica
 
-Verifica se a implementação funciona conforme contrato:
+Verifica carregamento, renderer, interação, persistência, erros, contratos e testes.
 
-- carrega;
-- renderiza;
-- responde;
-- persiste quando aplicável;
-- trata erro;
-- passa validadores/testes.
+### Pedagógica/funcional
 
-### Homologação pedagógica/funcional
+Verifica estímulo, prática, feedback, evidência, pending/revisão, acessibilidade e progressão.
 
-Verifica se a experiência realmente ensina/avalia o que declara:
+### Clareza para o aluno
 
-- estímulo correto;
-- interação apropriada;
-- feedback correto;
-- evidência coerente;
-- pending/revisão corretos;
-- acessibilidade relevante preservada.
+Verifica:
 
-### Homologação visual
+```text
+texto público claro, completo e simples
+termos não antecipados
+uma ação principal por momento
+nenhum objetivo interno cru
+nenhuma abstração indevida na entrada
+hierarquia visual compatível com a tarefa
+```
 
-Quando houver UI, seguir `.ChatGPT/skills/frontend-visual-check/SKILL.md`.
+### Visual
 
-Não declarar UI homologada apenas por inspeção de código.
+Seguir `frontend-visual-check`; inspeção de código não basta.
+
+Um item visível ao aluno só pode ser considerado homologado quando técnica + pedagogia + clareza + visual aplicáveis estiverem satisfeitas.
 
 ## Regra de publicação
 
 Um item só recebe `PUBLICAVEL` quando:
 
 ```text
-implementação aplicável completa
-+ homologação aplicável concluída
-+ mídia obrigatória final resolvida
-+ acessibilidade aplicável resolvida
-+ referências/rotas/providers necessários válidos
-+ nenhum blocker de publicação aberto
+implementação completa aplicável
++ homologação técnica
++ homologação pedagógica/clareza
++ mídia obrigatória resolvida
++ acessibilidade aplicável
++ referências/rotas/providers válidos
++ nenhum blocker de publicação
 ```
 
-Mídia opcional pendente não torna automaticamente o item não publicável.
+Mídia opcional pendente não impede publicação automaticamente.
 
-## Rastreamento de blockers
+## Blockers
 
-Registrar blockers localmente, com escopo exato.
-
-Sempre responder:
+Registrar sempre:
 
 ```text
 o que está bloqueado?
@@ -274,33 +271,29 @@ o que pode continuar?
 o que remove o blocker?
 ```
 
-Não escrever apenas “aguardando mídia”. Informar `mediaId` quando existir e qual etapa ele impede.
+Não escrever apenas “aguardando mídia” ou “aguardando conteúdo”.
 
 ## Atualização de estado em PR
 
-Se uma PR muda materialmente o estado do Clássico, a própria branch deve atualizar `docs/estado-implementacao-classico.md`.
+Se uma PR muda materialmente o estado do Clássico, atualizar `docs/estado-implementacao-classico.md` na mesma mudança.
 
 Antes do merge, revisar:
 
 ```text
-[ ] IDs alterados registrados
+[ ] IDs/migração registrados quando aplicável
 [ ] estado técnico correto
 [ ] homologação não superestimada
+[ ] clareza pedagógica revisada
 [ ] mídia classificada
 [ ] blockers explícitos
 [ ] publicação correta
-[ ] evidência/PR referenciada quando útil
 [ ] Cursor operacional aponta para o próximo passo real
-[ ] marco atualizado se condição de saída mudou
+[ ] roadmap/plano atualizado se o estado mudou
 ```
-
-A documentação de estado faz parte da entrega, não é um relatório opcional posterior.
 
 ## Trabalho parcial
 
-Se o tempo/escopo terminar no meio de um item, não tentar esconder a parcialidade.
-
-Registrar:
+Se o escopo parar no meio:
 
 ```text
 Estado consolidado: EM_ANDAMENTO ou IMPLEMENTADO_COM_PENDENCIA
@@ -310,77 +303,49 @@ Blockers:
 Próximo passo exato:
 ```
 
-Isso é preferível a marcar “feito” e obrigar a próxima instância a redescobrir a lacuna.
+Não marcar “feito” para esconder parcialidade.
 
-## Relação com o roadmap
+## Relação com roadmap e planos transversais
 
-`docs/roadmap-produto.md` define a condição de saída de cada P1→P9.
+`docs/roadmap-produto.md` define ordem/condições dos marcos. Se um plano transversal estiver explicitamente ativo e marcado como precedente a um marco, respeitar essa precedência até homologação do plano.
 
-O registro de estado deve permitir responder se a condição já foi atingida.
-
-Uma pendência não bloqueante pode atravessar marcos quando o roadmap permitir, desde que permaneça rastreada.
-
-Exemplo:
-
-```text
-P4 renderer de áudio implementado
-+ atividade específica depende de áudio humano ainda ausente
-→ registrar pendência
-→ continuar P4/P5 independentes
-→ resolver mídia em P8
-→ homologar item antes do gate P9
-```
+Uma pendência não bloqueante pode atravessar marcos quando documentada e permitida.
 
 ## Gate Clássico
 
-Nenhuma implementação de XP, missão, conquista, streak ou progressão gamificada deve começar antes de `CLÁSSICO HOMOLOGADO`.
+Nenhuma implementação de XP, missões, conquistas, streak ou progressão gamificada antes de `CLÁSSICO HOMOLOGADO`.
 
-Durante P1→P9, `docs/calibracao-produto.md` pode registrar casos-âncora de esforço/recuperação para uso futuro, mas isso não vira economia de jogo.
+`docs/calibracao-produto.md` pode registrar casos-âncora, mas isso não vira economia de jogo antecipada.
 
 ## Pesquisa e fatos atuais
 
-Quando o item depender de APIs, políticas ou comportamentos externos atuais, verificar fontes oficiais atuais antes de implementar.
-
-Exemplo: detalhes atuais de autenticação/permissões GitHub para Gist devem ser confirmados no marco P5, não assumidos apenas de documentação antiga do projeto.
+Quando depender de APIs, políticas ou comportamento externo atual, verificar fontes oficiais atuais antes de implementar.
 
 ## Condições de parada
 
 Seguir `docs/execucao-continua.md`.
 
-Mídia pendente local normalmente **não é** condição de parada quando trabalho independente existe.
-
 Parar quando:
 
-- o marco autorizado terminou;
+- marco autorizado terminou;
 - existe decisão estrutural real não coberta pelos contratos;
-- ação externa indispensável bloqueia todo trabalho restante dentro do escopo;
+- ação externa indispensável bloqueia todo o trabalho restante;
 - há risco técnico não solucionável pelo fluxo seguro;
 - seria necessário quebrar o gate Clássico/Gamificado.
 
+Mídia local não bloqueante, CI corrigível e PR rotineira não são condições de parada.
+
 ## Relato ao usuário
 
-No fim de um marco/submarco relevante, responder de forma curta:
+Ser curto e operacional:
 
 - o que foi implementado;
 - o que foi homologado;
-- o que ficou parcial e por quê;
-- mídia/blockers relevantes;
+- o que ficou parcial;
+- blockers relevantes;
 - PR/CI/merge;
-- próximo passo exato.
-
-Não chamar algo de “concluído” se o registro disser `IMPLEMENTADO_COM_PENDENCIA`.
+- próximo passo.
 
 ## Regra final
 
-O objetivo desta skill é que qualquer instância consiga olhar o repositório e distinguir com precisão:
-
-```text
-onde estamos
-→ o que funciona
-→ o que foi provado
-→ o que ainda depende de material
-→ o que pode continuar agora
-→ o que falta para o Clássico ser homologado
-```
-
-Se isso não estiver reconstruível a partir do repositório, o trabalho operacional ainda não está devidamente registrado.
+O Clássico só é produto-base de qualidade quando **funciona, ensina na ordem certa e fala com o aluno de forma clara, completa e simples**.
