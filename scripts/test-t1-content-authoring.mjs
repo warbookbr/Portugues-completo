@@ -110,6 +110,15 @@ const u2L01 = materializedU2Lessons.get('N0-U02-L01').runtime;
 assert.equal(u2L01.title, 'O que é uma sílaba?');
 assert.deepEqual(u2L01.prerequisites, ['N0-U01-V02']);
 assert.equal(u2L01.presentation.intro, 'Perceber que podemos ouvir uma palavra em partes e aprender que essas partes são chamadas de sílabas.');
+assert.equal(u2L01.completion.clusters.length, 1);
+assert.equal(u2L01.completion.clusters[0].id, 'syllablePerception');
+assert.equal(block(u2L01, 'L01-A01').activity.interaction, 'COMPOSITE');
+assert.equal(block(u2L01, 'L01-A01').activity.evidence.requiredForCompletion, true);
+
+const u2L06 = materializedU2Lessons.get('N0-U02-L06').runtime;
+assert.equal(u2L06.completion.clusters[0].id, 'wordAssembly');
+assert.equal(block(u2L06, 'L06-C01').activity.interaction, 'SEQUENCE');
+assert.equal(block(u2L06, 'L06-A01').activity.interaction, 'COMPOSITE');
 
 const u2L09 = materializedU2Lessons.get('N0-U02-L09').runtime;
 assert.equal(u2L09.title, 'Letras e sons podem variar');
@@ -126,7 +135,7 @@ assert.equal(u2L10.completion.clusters.length, 2);
 assert.equal(u2L10.completion.nonCompensable, true);
 assert.equal(block(u2L10, 'L10-A01').activity.interaction, 'CLASSIFY');
 assert.ok(block(u2L10, 'L10-A01').activity.stimuli.some(item => item.type === 'TTS'));
-assert.ok(block(u2L10, 'L10-A01').activity.stimuli.some(item => item.type === 'TEXT'));
+assert.ok(block(u2L10, 'L10-A01').activity.stimuli.some(item => item.type === 'SEMANTIC_UI'));
 
 const u2BaseVerification = readJson(u2Authoring.verification.baseSource);
 const u2VerificationExtension = readJson(u2Authoring.verification.extensionSource);
