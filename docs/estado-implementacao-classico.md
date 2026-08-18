@@ -19,10 +19,10 @@ Fase estratégica: CONCLUIR E HOMOLOGAR O CLÁSSICO
 Marco transversal ativo: T1 — Fundamentos claros e experiência de lição
 Plano: docs/plano-fundamentos-claros.md
 Skill: .ChatGPT/skills/fundamentos-claros/SKILL.md
-Subfase ativa: T1.7 — frontend: tela inicial exclusiva da lição
-T1.6: CONCLUÍDO / U1 + U2 VALIDADAS EM STAGING
+Subfase ativa: T1.8 — frontend: metodologia em Ajuda
+T1.7: CONCLUÍDO / HOMOLOGADO
 P6 — Feedback por IA: AGUARDANDO T1
-Próximo passo exato: implementar a primeira entrada limpa da lição usando runtime.presentation.intro, manter stepper/conteúdo ocultos antes de “Começar lição” e preservar retomada segura de lição já iniciada conforme docs/plano-fundamentos-claros.md e docs/ui-ux.md
+Próximo passo exato: remover “Metodologia do curso” do rodapé persistente, adicionar “Como o curso funciona” em Ajuda com acesso à metodologia e preservar a rota/deep link existente, conforme docs/plano-fundamentos-claros.md e docs/ui-ux.md
 Blocker global: nenhum
 Gate final do Clássico: NÃO SATISFEITO
 ```
@@ -38,7 +38,7 @@ Enquanto T1 estiver ativo, não iniciar P6 materialmente. O T1 foi autorizado co
 | P3 — Manifests/catálogo inicial | `HOMOLOGADO` | PR #107 |
 | P4 — Renderer real do Clássico | `HOMOLOGADO` | PR #108 |
 | P5 — Progresso/revisão/Gist | `HOMOLOGADO` | PR #109 |
-| T1 — Fundamentos claros | `ATIVO` | PRs #116–#124; T1.7 ativo |
+| T1 — Fundamentos claros | `ATIVO` | PRs #116–#125; T1.8 ativo |
 | P6 — Feedback por IA | `AGUARDANDO T1` | — |
 | P7 — Catálogo N0→N4 | `NAO_INICIADO` | — |
 | P8 — Mídia/publicação | `NAO_INICIADO` | — |
@@ -104,8 +104,8 @@ T1.5 contrato técnico de abertura                          ✓
 T1.6 nova autoria inicial                                  ✓ staged + validada
   lote U1 — Letras e primeiros sons                        ✓
   lote U2 — Sílabas e primeiras palavras                   ✓
-T1.7 frontend de intro/fluxo                               ← ativo
-T1.8 metodologia em Ajuda
+T1.7 frontend de intro/fluxo                               ✓ homologado
+T1.8 metodologia em Ajuda                                  ← ativo
 T1.9 migração/catálogo/progresso/mídia
 T1.10 validação/homologação
 ```
@@ -292,6 +292,52 @@ Provas consolidadas de T1.6:
 - `validate-catalog` continua verde porque o conteúdo publicado permanece intacto;
 - renderer/progresso/smoke visual atuais continuam protegidos pelo CI.
 
+## T1.7 — frontend de abertura e retomada da lição
+
+**Estado: CONCLUÍDO / HOMOLOGADO.**
+
+Implementação principal:
+
+```text
+primeiro acesso
+→ ← Voltar para a unidade
+→ Lição
+→ título
+→ runtime.presentation.intro
+→ Começar lição
+→ stepper/conteúdo/conclusão ocultos
+
+lição já iniciada
+→ intro dispensada
+→ etapa visual segura restaurada
+→ conteúdo/evidência continuam governados pelo runtime e ProgressService
+```
+
+Decisões técnicas:
+
+- `classic-presentation.js` substitui a fala pública da hero pelo `presentation.intro`; ausência de copy pública não faz o `objective` técnico reaparecer;
+- `classic-lesson-flow.js` mantém `começou + etapa visual` em `localStorage` próprio (`lesson-ui:v1`), separado do progresso acadêmico;
+- clicar em `Começar lição` **não** cria evidência, domínio nem conclusão;
+- histórico pedagógico P5 já existente (`curriculum.lessons`, evidência ou resposta registrada) conta como sinal seguro de retomada para não obrigar alunos antigos a rever a intro;
+- `curriculum.current.lessonId` isolado não conta como histórico, porque apenas abrir a rota já atualiza essa posição;
+- o antigo step de sessão continua utilizável como fallback de posição somente quando já há sinal seguro de início;
+- verificações de unidade continuam entrando diretamente no fluxo avaliativo; T1.7 não cria gate visual novo para verificação;
+- foco vai para o título da intro/etapa e o movimento continua respeitando `prefers-reduced-motion`;
+- nenhuma mídia nova é necessária para T1.7.
+
+Validação/homologação:
+
+- CI funcional verde para contratos, normalização, autoria T1, catálogo, progresso, Gist e renderer;
+- smoke DOM prova intro visível + `lesson-stream` oculto no primeiro acesso;
+- smoke DOM prova intro oculta + fluxo restaurado em retomada seedada sem alterar progresso acadêmico;
+- capturas inspecionadas em 1440px, 900px, 680px e 390px;
+- N0 validado em intro, retomada e etapa com atividade determinística;
+- N4 validado em etapa de produção aberta/pending;
+- ação principal permanece visível no celular e não há overflow do conteúdo da lição;
+- a navegação global em largura móvel mantém o comportamento horizontal rolável já existente e não constitui blocker de T1.7.
+
+Evidência de integração: PR #125.
+
 ## Estado de publicação do slice
 
 ### N0-U01 / N0-U02
@@ -299,6 +345,7 @@ Provas consolidadas de T1.6:
 ```text
 Renderer/progresso atual: base técnica homologada
 Autoria T1 nova: STAGED / VALIDADA
+Experiência de abertura/retomada T1.7: HOMOLOGADA
 Manifestos públicos: ainda históricos
 Mídia obrigatória histórica/reutilizada: pendente, reconciliar T1.9
 Publicação das novas U1/U2: NÃO ATIVADA antes de T1.9
@@ -308,6 +355,7 @@ Publicação das novas U1/U2: NÃO ATIVADA antes de T1.9
 
 ```text
 Renderer/progresso/pending: HOMOLOGADOS
+Abertura/retomada T1.7: HOMOLOGADA
 Manifesto: READY
 Nova mídia humana obrigatória: nenhuma
 ```
@@ -316,9 +364,8 @@ Nova mídia humana obrigatória: nenhuma
 
 ```text
 Global antes de P6: concluir T1
-Imediato: T1.7 — frontend da abertura/retomada da lição
-Depois: T1.8 — metodologia em Ajuda
-T1.9: promover staging + migrar catálogo/progresso/mídia
+Imediato: T1.8 — mover Metodologia para Ajuda / Como o curso funciona
+Depois: T1.9 — promover staging + migrar catálogo/progresso/mídia
 T1.10: validação/homologação transversal
 ```
 
