@@ -11,6 +11,15 @@
     "kind": {"const": "LESSON"},
     "title": {"type": "string", "minLength": 1},
     "objective": {"type": "string", "minLength": 1},
+    "presentation": {
+      "type": "object",
+      "required": ["intro", "introSource"],
+      "additionalProperties": false,
+      "properties": {
+        "intro": {"type": "string", "minLength": 1},
+        "introSource": {"enum": ["AUTHORED", "SAFE_FALLBACK"]}
+      }
+    },
     "competencyIds": {"type": "array", "items": {"type": "string", "minLength": 1}},
     "prerequisites": {"type": "array", "items": {"type": "string", "minLength": 1}},
     "limits": {"type": "array", "items": {"type": "string", "minLength": 1}},
