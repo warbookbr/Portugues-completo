@@ -1,0 +1,141 @@
+{
+  "schemaVersion": 1,
+  "id": "N0-U02-L10",
+  "title": "Falar e escrever: duas formas de comunicar",
+  "status": "staged-t1",
+  "objective": "Distinguir de forma concreta uma mensagem apresentada pela fala de uma mensagem apresentada pela escrita e compreender que as duas formas podem comunicar conteúdo relacionado sem serem a mesma forma de apresentação.",
+  "studentObjective": "Entender a diferença entre o que falamos e o que escrevemos.",
+  "competencies": [
+    "identificar quando uma mensagem é apresentada pela fala",
+    "identificar quando uma mensagem é apresentada pela escrita",
+    "reconhecer que uma mensagem pode aparecer de forma falada ou escrita",
+    "compreender que fala e escrita podem comunicar conteúdo relacionado sem serem a mesma coisa"
+  ],
+  "prerequisites": ["N0-U02-L08", "N0-U02-L09"],
+  "limits": [
+    "não transformar a lição em teoria linguística sobre modalidades",
+    "não usar termos como realização sonora ou representação gráfica na fala pública",
+    "não afirmar que a escrita copia exatamente todos os sons da fala",
+    "não ensinar ortografia, transcrição ou variação de fala nesta lição",
+    "não exigir leitura de frases novas como competência central"
+  ],
+  "media": {
+    "tts": "obrigatorio para exemplos falados e apoio às instruções",
+    "controlledAudio": "nao necessario",
+    "video": "nao necessario",
+    "images": "nao necessarias"
+  },
+  "supportMaterials": {
+    "curatedMedia": [],
+    "runtimeResources": [
+      {
+        "type": "TTS_OK",
+        "locations": ["L10-B02", "L10-B04", "L10-A01", "instruções", "feedback"],
+        "purpose": "apresentar exemplos pela fala quando a resposta depende apenas de ouvir uma mensagem, não de características acústicas específicas"
+      }
+    ],
+    "generatedVisualResources": [
+      {
+        "type": "UI_RENDERED_VISIBLE_TEXT",
+        "locations": ["L10-B03", "L10-B04", "L10-A01"],
+        "purpose": "mostrar os exemplos escritos como texto real, não como imagem"
+      }
+    ],
+    "productionQueueRequired": false,
+    "publicationDependency": "nenhuma mídia humana nova precisa ser produzida; a lição depende apenas do TTS e do texto renderizado pela aplicação",
+    "decisionRationale": "a distinção necessária é entre ouvir uma mensagem e vê-la escrita; imagem, vídeo ou áudio humano não acrescentariam informação necessária"
+  },
+  "sequence": [
+    {
+      "id": "L10-B01",
+      "type": "objective",
+      "focus": "read-or-listen",
+      "text": "Até aqui você ouviu palavras, viu letras e leu palavras simples. Agora vamos dar nomes a duas formas que você já encontrou no curso: falar e escrever."
+    },
+    {
+      "id": "L10-B02",
+      "type": "demonstration",
+      "focus": "listen",
+      "title": "Quando ouvimos uma voz",
+      "ttsText": "Bom dia!",
+      "explanation": "Você recebeu a mensagem pelos sons de uma voz. Chamamos essa forma de fala."
+    },
+    {
+      "id": "L10-B03",
+      "type": "demonstration",
+      "focus": "observe",
+      "title": "Quando vemos a mensagem escrita",
+      "visibleText": "Bom dia!",
+      "explanation": "Agora a mensagem aparece por letras e sinais que vemos. Chamamos essa forma de escrita."
+    },
+    {
+      "id": "L10-C01",
+      "type": "quick-check",
+      "focus": "respond",
+      "interaction": "single-choice",
+      "prompt": "Se uma mensagem chega pelos sons de uma voz, qual forma está sendo usada?",
+      "options": ["fala", "escrita"],
+      "correct": "fala",
+      "feedback": "Isso é fala porque a mensagem chegou por sons que ouvimos."
+    },
+    {
+      "id": "L10-B04",
+      "type": "paired-example",
+      "focus": "listen-then-observe",
+      "title": "A mensagem pode ser parecida; a forma é diferente",
+      "spoken": "Meu nome é Ana.",
+      "written": "Meu nome é Ana.",
+      "explanation": "Primeiro você ouve a mensagem. Depois você vê a mesma frase escrita. O conteúdo pode ser relacionado, mas ouvir fala e observar escrita não são a mesma experiência."
+    },
+    {
+      "id": "L10-A01",
+      "type": "guided-activity",
+      "focus": "respond",
+      "interaction": "classify",
+      "title": "Fala ou escrita?",
+      "instruction": "Observe como cada mensagem é apresentada e coloque-a no grupo correto.",
+      "categories": ["fala", "escrita"],
+      "items": [
+        {"id": "l10-a01-1", "stimulus": {"type": "tts", "text": "Olá!"}, "correct": "fala"},
+        {"id": "l10-a01-2", "stimulus": {"type": "visible-text", "text": "Olá!"}, "correct": "escrita"},
+        {"id": "l10-a01-3", "stimulus": {"type": "tts", "text": "Até amanhã."}, "correct": "fala"},
+        {"id": "l10-a01-4", "stimulus": {"type": "visible-text", "text": "Até amanhã."}, "correct": "escrita"}
+      ],
+      "feedbackRule": "feedback imediato, explicando se a mensagem foi ouvida ou vista, com nova tentativa sem penalidade"
+    },
+    {
+      "id": "L10-C02",
+      "type": "quick-check",
+      "focus": "respond",
+      "interaction": "single-choice",
+      "prompt": "Qual afirmação está correta?",
+      "options": [
+        "Fala e escrita são exatamente a mesma coisa.",
+        "Fala e escrita não têm nenhuma relação.",
+        "Podemos comunicar uma mensagem pela fala ou pela escrita, mas as duas formas são diferentes."
+      ],
+      "correctIndex": 2,
+      "feedback": "Podemos comunicar conteúdo relacionado falando ou escrevendo, mas uma forma é ouvida e a outra é vista como escrita."
+    },
+    {
+      "id": "L10-B05",
+      "type": "summary",
+      "focus": "read-or-listen",
+      "points": [
+        "Na fala, recebemos a mensagem por sons que ouvimos.",
+        "Na escrita, vemos letras e outros sinais organizados.",
+        "Uma mensagem pode aparecer de forma falada ou escrita.",
+        "Fala e escrita se relacionam, mas não são a mesma forma de apresentação."
+      ],
+      "bridgeToNextLesson": "Na próxima unidade, você vai usar as palavras que já consegue reconhecer para começar a construir e compreender frases."
+    }
+  ],
+  "completionEvidence": {
+    "clusters": {
+      "identifyMode": {"evidence": ["L10-A01", "L10-C01"], "required": true},
+      "understandRelation": {"evidence": ["L10-C02"], "required": true}
+    },
+    "nonCompensable": true,
+    "completionRule": "distinguir fala e escrita em situações concretas e reconhecer explicitamente que podem comunicar conteúdo relacionado sem serem a mesma forma."
+  }
+}

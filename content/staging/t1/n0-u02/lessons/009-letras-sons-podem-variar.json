@@ -1,0 +1,199 @@
+{
+  "schemaVersion": 1,
+  "id": "N0-U02-L09",
+  "title": "Letras e sons podem variar",
+  "status": "staged-t1",
+  "objective": "Perceber, por comparações simples entre palavras conhecidas, que uma mesma letra pode representar sons diferentes e que sons semelhantes podem aparecer escritos de maneiras diferentes, sem sistematizar regras ortográficas.",
+  "studentObjective": "Perceber que uma mesma letra pode aparecer com sons diferentes e que sons parecidos podem ser escritos de formas diferentes.",
+  "competencies": [
+    "perceber em exemplos controlados que a mesma letra pode representar sons diferentes",
+    "perceber em exemplos controlados que sons iniciais parecidos podem aparecer escritos de maneiras diferentes",
+    "evitar a falsa regra de que cada letra possui sempre um único som",
+    "usar comparação entre palavra ouvida e palavra escrita sem exigir explicação ortográfica formal"
+  ],
+  "prerequisites": ["N0-U02-L07", "N0-U02-L08"],
+  "limits": [
+    "não ensinar regras sistemáticas de C, G, S, QU ou outras grafias",
+    "não introduzir fonema, grafema, dígrafo ou transcrição fonética como terminologia obrigatória",
+    "não exigir ortografia autônoma de palavras novas",
+    "não transformar exceções em listas para memorizar",
+    "não afirmar que sons parecidos em exemplos diferentes são necessariamente idênticos em toda variedade de fala"
+  ],
+  "media": {
+    "tts": "instruções, explicações e feedback que não determinam a resposta auditiva",
+    "controlledAudio": [
+      "N0-U01-L08-AUD-001",
+      "N0-U01-L08-AUD-002",
+      "N0-U01-L08-AUD-003",
+      "N0-U01-L08-AUD-004",
+      "N0-U01-L02-AUD-006",
+      "N0-U01-L02-AUD-007"
+    ],
+    "video": "nao necessario",
+    "images": "nao necessarias"
+  },
+  "supportMaterials": {
+    "curatedMedia": [
+      {
+        "mediaIds": [
+          "N0-U01-L08-AUD-001",
+          "N0-U01-L08-AUD-002",
+          "N0-U01-L08-AUD-003",
+          "N0-U01-L08-AUD-004",
+          "N0-U01-L02-AUD-006",
+          "N0-U01-L02-AUD-007"
+        ],
+        "type": "AUDIO_CONTROLADO",
+        "requiredForPublication": true,
+        "purpose": "reutilizar os contrastes auditivos já reservados para observar variação entre letras e sons",
+        "locations": ["L09-B02", "L09-C01", "L09-B03", "L09-C02", "L09-A01", "L09-A02"],
+        "productionSource": "producao-midia/FILA-MIDIA.md"
+      }
+    ],
+    "runtimeResources": [
+      {
+        "type": "TTS_OK",
+        "locations": ["instruções", "explicações", "feedback", "resumo"],
+        "purpose": "apoio de acesso ao texto sem substituir os exemplos controlados"
+      }
+    ],
+    "generatedVisualResources": [
+      {
+        "type": "UI_RENDERED_WORD_REVEAL_AND_HIGHLIGHT",
+        "locations": ["L09-B02", "L09-C01", "L09-B03", "L09-C02", "L09-A01", "L09-A02"],
+        "purpose": "revelar as palavras como texto da interface depois da escuta e destacar apenas a parte relevante"
+      }
+    ],
+    "productionQueueRequired": false,
+    "publicationDependency": "a lição não cria novos arquivos humanos, mas depende de os áudios reutilizados das famílias históricas U01-L08 e U01-L02 estarem produzidos e validados",
+    "decisionRationale": "mover a lição não justifica renumerar ou regravar ativos semanticamente válidos"
+  },
+  "sequence": [
+    {
+      "id": "L09-B01",
+      "type": "objective",
+      "focus": "read-or-listen",
+      "text": "Você já usou letras e sílabas para ler palavras simples. Agora vamos comparar algumas palavras e perceber uma coisa importante: a relação entre letra e som nem sempre funciona do mesmo jeito."
+    },
+    {
+      "id": "L09-B02",
+      "type": "audio-comparison-demonstration",
+      "focus": "listen-then-observe",
+      "title": "A mesma letra pode aparecer com sons diferentes",
+      "stimuli": ["N0-U01-L08-AUD-001", "N0-U01-L08-AUD-002"],
+      "spokenContent": ["casa", "cidade"],
+      "writtenWordsVisibleBeforeListening": false,
+      "afterListeningReveal": ["casa", "cidade"],
+      "highlight": "C",
+      "explanation": "Casa e cidade começam com a letra C, mas o começo das duas palavras não soa do mesmo jeito. Por isso, não podemos dizer que C sempre representa um único som."
+    },
+    {
+      "id": "L09-C01",
+      "type": "quick-check",
+      "focus": "listen-then-respond",
+      "interaction": "single-choice",
+      "prompt": "Ouça gato e gelo. As duas palavras começam com G. O começo delas soa do mesmo jeito?",
+      "stimuli": ["N0-U01-L02-AUD-007", "N0-U01-L08-AUD-003"],
+      "spokenContent": ["gato", "gelo"],
+      "options": ["Sim.", "Não."],
+      "correctIndex": 1,
+      "afterResponseReveal": ["gato", "gelo"],
+      "highlight": "G",
+      "feedback": "Não. A mesma letra G aparece no começo das duas palavras, mas os sons percebidos são diferentes."
+    },
+    {
+      "id": "L09-B03",
+      "type": "audio-comparison-demonstration",
+      "focus": "listen-then-observe",
+      "title": "Sons parecidos também podem aparecer escritos de formas diferentes",
+      "stimuli": ["N0-U01-L02-AUD-006", "N0-U01-L08-AUD-002"],
+      "spokenContent": ["sapo", "cidade"],
+      "writtenWordsVisibleBeforeListening": false,
+      "afterListeningReveal": ["sapo", "cidade"],
+      "highlight": ["S", "C"],
+      "explanation": "O começo de sapo e cidade pode soar parecido, mas a escrita começa de formas diferentes: S em sapo e C em cidade."
+    },
+    {
+      "id": "L09-C02",
+      "type": "quick-check",
+      "focus": "listen-then-respond",
+      "interaction": "single-choice",
+      "prompt": "Ouça casa e quilo. O começo pode soar parecido. As duas palavras começam escritas com a mesma letra?",
+      "stimuli": ["N0-U01-L08-AUD-001", "N0-U01-L08-AUD-004"],
+      "spokenContent": ["casa", "quilo"],
+      "options": ["Sim.", "Não."],
+      "correctIndex": 1,
+      "afterResponseReveal": ["casa", "quilo"],
+      "highlight": ["C", "QU"],
+      "feedback": "Não. Casa começa com C e quilo começa com QU. Aqui estamos apenas percebendo a diferença, sem estudar ainda a regra ortográfica."
+    },
+    {
+      "id": "L09-A01",
+      "type": "guided-activity",
+      "focus": "listen-observe-and-respond",
+      "interaction": "single-choice",
+      "title": "Mesma letra, som diferente",
+      "prompt": "Depois de ouvir e observar casa e cidade, qual afirmação está correta?",
+      "stimuli": ["N0-U01-L08-AUD-001", "N0-U01-L08-AUD-002"],
+      "writtenWords": ["casa", "cidade"],
+      "options": [
+        "A letra C aparece nas duas palavras e representa exatamente o mesmo som no começo.",
+        "A letra C aparece nas duas palavras, mas o começo delas soa diferente.",
+        "As duas palavras começam com letras diferentes."
+      ],
+      "correctIndex": 1,
+      "feedback": "A mesma letra C aparece nas duas palavras, mas não representa o mesmo som no começo."
+    },
+    {
+      "id": "L09-A02",
+      "type": "guided-activity",
+      "focus": "listen-observe-and-respond",
+      "interaction": "single-choice",
+      "title": "Som parecido, escrita diferente",
+      "prompt": "Depois de ouvir e observar sapo e cidade, qual afirmação está correta?",
+      "stimuli": ["N0-U01-L02-AUD-006", "N0-U01-L08-AUD-002"],
+      "writtenWords": ["sapo", "cidade"],
+      "options": [
+        "O começo pode soar parecido, mas a escrita começa com S em sapo e C em cidade.",
+        "As duas palavras precisam começar com a mesma letra porque o som é parecido.",
+        "S e C são a mesma letra."
+      ],
+      "correctIndex": 0,
+      "feedback": "Sons parecidos não obrigam as palavras a começar com a mesma letra."
+    },
+    {
+      "id": "L09-C03",
+      "type": "quick-check",
+      "focus": "respond",
+      "interaction": "single-choice",
+      "prompt": "Qual ideia é mais segura depois desses exemplos?",
+      "options": [
+        "Cada letra sempre representa um único som.",
+        "A relação entre letras e sons pode variar.",
+        "Os sons não têm nenhuma relação com a escrita."
+      ],
+      "correctIndex": 1,
+      "feedback": "A relação existe, mas pode variar. As regras serão estudadas com mais detalhe em etapas posteriores."
+    },
+    {
+      "id": "L09-B04",
+      "type": "summary",
+      "focus": "read-or-listen",
+      "points": [
+        "Uma mesma letra pode aparecer associada a sons diferentes em palavras diferentes.",
+        "Sons parecidos podem aparecer escritos de formas diferentes.",
+        "Isso não significa que a escrita não tenha regras; significa apenas que a relação não é sempre de um para um.",
+        "As regras ortográficas serão estudadas mais adiante, quando houver base para isso."
+      ],
+      "bridgeToNextLesson": "Na próxima lição, vamos usar tudo que já vimos para entender, de forma simples, a diferença entre falar e escrever."
+    }
+  ],
+  "completionEvidence": {
+    "clusters": {
+      "sameLetterDifferentSound": {"evidence": ["L09-A01", "L09-C03"], "required": true},
+      "similarSoundDifferentWriting": {"evidence": ["L09-A02", "L09-C03"], "required": true}
+    },
+    "nonCompensable": true,
+    "completionRule": "os dois agrupamentos devem ser demonstrados; perceber apenas uma das direções da variação não é suficiente."
+  }
+}

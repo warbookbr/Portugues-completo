@@ -19,11 +19,10 @@ Fase estratégica: CONCLUIR E HOMOLOGAR O CLÁSSICO
 Marco transversal ativo: T1 — Fundamentos claros e experiência de lição
 Plano: docs/plano-fundamentos-claros.md
 Skill: .ChatGPT/skills/fundamentos-claros/SKILL.md
-Subfase ativa: T1.6 — nova autoria das unidades/lições iniciais
-Lote U1: CONCLUÍDO / VALIDADO EM STAGING
-Lote ativo seguinte: nova U2 — Sílabas e primeiras palavras
+Subfase ativa: T1.7 — frontend: tela inicial exclusiva da lição
+T1.6: CONCLUÍDO / U1 + U2 VALIDADAS EM STAGING
 P6 — Feedback por IA: AGUARDANDO T1
-Próximo passo exato: autorar a nova U2 em content/staging/t1/n0-u02/, preservando os núcleos L01–L08 e criando N0-U02-L09/N0-U02-L10 + N0-U02-V02 conforme docs/redimensionamento-t1-2-n0.md
+Próximo passo exato: implementar a primeira entrada limpa da lição usando runtime.presentation.intro, manter stepper/conteúdo ocultos antes de “Começar lição” e preservar retomada segura de lição já iniciada conforme docs/plano-fundamentos-claros.md e docs/ui-ux.md
 Blocker global: nenhum
 Gate final do Clássico: NÃO SATISFEITO
 ```
@@ -39,7 +38,7 @@ Enquanto T1 estiver ativo, não iniciar P6 materialmente. O T1 foi autorizado co
 | P3 — Manifests/catálogo inicial | `HOMOLOGADO` | PR #107 |
 | P4 — Renderer real do Clássico | `HOMOLOGADO` | PR #108 |
 | P5 — Progresso/revisão/Gist | `HOMOLOGADO` | PR #109 |
-| T1 — Fundamentos claros | `ATIVO` | PRs #116–#121 + T1.6 em execução |
+| T1 — Fundamentos claros | `ATIVO` | PRs #116–#124; T1.7 ativo |
 | P6 — Feedback por IA | `AGUARDANDO T1` | — |
 | P7 — Catálogo N0→N4 | `NAO_INICIADO` | — |
 | P8 — Mídia/publicação | `NAO_INICIADO` | — |
@@ -102,10 +101,10 @@ T1.2 redimensionamento curricular N0                       ✓
 T1.3 contrato de linguagem                                 ✓
 T1.4 skills/fontes canônicas                               ✓
 T1.5 contrato técnico de abertura                          ✓
-T1.6 nova autoria inicial                                  ← ativo
-  lote U1 — Letras e primeiros sons                        ✓ staged + validado
-  lote U2 — Sílabas e primeiras palavras                   ← próximo
-T1.7 frontend de intro/fluxo
+T1.6 nova autoria inicial                                  ✓ staged + validada
+  lote U1 — Letras e primeiros sons                        ✓
+  lote U2 — Sílabas e primeiras palavras                   ✓
+T1.7 frontend de intro/fluxo                               ← ativo
 T1.8 metodologia em Ajuda
 T1.9 migração/catálogo/progresso/mídia
 T1.10 validação/homologação
@@ -137,6 +136,8 @@ concreto → exemplo → conceito → prática → ampliação
 A autoria v1 pode declarar `studentObjective`. O runtime produz `presentation.intro`; conteúdo legado sem copy pública recebe fallback neutro e **nunca** o `objective` técnico.
 
 ## T1.6 — nova autoria inicial
+
+**Estado: CONCLUÍDO / VALIDADO EM STAGING.**
 
 ### Estratégia de staging
 
@@ -193,7 +194,7 @@ Decisões de autoria:
 - `N0-U01-L06` define `espaço` perto do primeiro uso;
 - `N0-U01-L02` foi reposicionada depois da base de letras;
 - `N0-U01-L07` encerra U1 sem antecipar a variação complexa da U2;
-- antigas `N0-U01-L01` e `N0-U01-L08` permanecem fontes legadas para a futura U2.
+- antigas `N0-U01-L01` e `N0-U01-L08` permanecem fontes legadas para reaproveitamento na U2.
 
 ### Verificação U1 V02
 
@@ -214,40 +215,93 @@ Deliberadamente não cobra:
 
 Não cria novas mídias humanas: reutiliza `mediaId`s já reservados quando semanticamente adequados.
 
+### Lote U2 — Sílabas e primeiras palavras
+
+**Estado: CONCLUÍDO / VALIDADO EM STAGING.**
+
+Local:
+
+```text
+content/staging/t1/n0-u02/
+```
+
+Nova ordem autorada/materializável:
+
+```text
+1. N0-U02-L01 — O que é uma sílaba?
+2. N0-U02-L02 — Separando e juntando sílabas
+3. N0-U02-L03 — Da sílaba ouvida à escrita
+4. N0-U02-L04 — Sílabas no começo e no fim
+5. N0-U02-L05 — Sílabas podem ter formas diferentes
+6. N0-U02-L06 — Montando palavras
+7. N0-U02-L07 — Lendo por partes e depois a palavra inteira
+8. N0-U02-L08 — Palavra e significado
+9. N0-U02-L09 — Letras e sons podem variar
+10. N0-U02-L10 — Falar e escrever: duas formas de comunicar
+→ N0-U02-V02 — Verificação: Sílabas e primeiras palavras
+```
+
+Decisões de autoria/materialização:
+
+- as dez lições recebem `studentObjective` próprio;
+- L01–L08 preservam o núcleo pedagógico silábico histórico que continuava válido;
+- critérios históricos de conclusão são registrados explicitamente no overlay de autoria, sem inferência a partir de frases;
+- o materializador adapta interações/gabaritos históricos ao contrato canônico de runtime sem reescrever a autoria fonte;
+- blocos demonstrativos não são promovidos falsamente a atividades apenas por conterem metadados internos;
+- L09 reaproveita a responsabilidade de variação letra↔som somente depois da base de sílabas/palavras;
+- L10 fecha a unidade com fala × escrita como síntese concreta, não como abstração inaugural;
+- V02 preserva a evidência silábica válida da verificação histórica e acrescenta apenas relações som-escrita e fala-escrita;
+- staging permanece fora do catálogo público até T1.9.
+
+### Verificação U2 V02
+
+A `N0-U02-V02` possui 12 tarefas e cinco agrupamentos obrigatórios/não compensáveis:
+
+```text
+syllableAwareness
+syllableWriting
+wordReadingAndMeaning
+soundWritingRelations
+speechAndWriting
+```
+
+Mídia humana nova não foi criada: os novos núcleos reutilizam `mediaId`s já reservados quando o estímulo precisa ser controlado; TTS continua restrito aos casos em que a realização específica do som não determina a resposta.
+
 ### Validação staged
 
-Novo teste:
+Teste:
 
 ```text
 scripts/test-t1-content-authoring.mjs
 ```
 
-CI agora executa `Test T1 staged authoring` sem misturar o conteúdo staged ao catálogo de produção.
+CI executa `Test T1 staged authoring` sem misturar o conteúdo staged ao catálogo de produção.
 
-Provas do lote U1:
+Provas consolidadas de T1.6:
 
-- 7/7 lições com `studentObjective` autoral;
-- `presentation.introSource = AUTHORED`;
-- objetivo público diferente do objetivo técnico;
-- primeira lição sem pré-requisito e com definição explícita de letra;
-- nova L09 normalizável/evidenciável;
-- V02 com 9 atividades e 4 clusters obrigatórios/noncompensable;
-- interações suportadas pelo runtime;
-- áudio controlado preservado;
-- competências movidas para U2 ausentes da V02;
+- U1: 7/7 lições com `studentObjective` autoral + V02;
+- U2: 10/10 lições com objetivo público materializado + V02;
+- `presentation.introSource = AUTHORED` nas lições staged;
+- objetivo público separado do objetivo técnico;
+- primeira lição do curso sem pré-requisito e com definição explícita de letra;
+- U2 constrói sílaba antes de reutilizar o termo como pressuposto;
+- L09/L10 entram somente depois da base concreta prevista na nova arquitetura;
+- conclusão e evidência estruturadas para materialização;
+- interações staged normalizáveis para o runtime atual;
+- V01 histórica não vaza como identidade de evidência para V02;
 - `validate-catalog` continua verde porque o conteúdo publicado permanece intacto;
-- renderer/progresso/smoke visual atuais continuam verdes.
+- renderer/progresso/smoke visual atuais continuam protegidos pelo CI.
 
 ## Estado de publicação do slice
 
-### N0-U01
+### N0-U01 / N0-U02
 
 ```text
 Renderer/progresso atual: base técnica homologada
 Autoria T1 nova: STAGED / VALIDADA
-Manifesto público: ainda histórico
+Manifestos públicos: ainda históricos
 Mídia obrigatória histórica/reutilizada: pendente, reconciliar T1.9
-Publicação nova U1: NÃO ATIVADA antes de T1.9
+Publicação das novas U1/U2: NÃO ATIVADA antes de T1.9
 ```
 
 ### N4-U09
@@ -262,9 +316,10 @@ Nova mídia humana obrigatória: nenhuma
 
 ```text
 Global antes de P6: concluir T1
-Imediato: T1.6 — autorar nova U2 em staging
-Depois: T1.7 frontend da abertura/fluxo
+Imediato: T1.7 — frontend da abertura/retomada da lição
+Depois: T1.8 — metodologia em Ajuda
 T1.9: promover staging + migrar catálogo/progresso/mídia
+T1.10: validação/homologação transversal
 ```
 
 ## Gate `CLÁSSICO HOMOLOGADO`
