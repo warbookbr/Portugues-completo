@@ -3,7 +3,9 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { ContentService } from '../app/js/services/content-service.js';
-import { documentHtml, homeHtml, unitHtml } from '../app/js/ui/classic-renderer.js';
+import { documentHtml, unitHtml } from '../app/js/ui/classic-renderer.js';
+import { homeHtml } from '../app/js/ui/classic-home.js';
+import { createEmptyProgress } from '../app/js/services/progress-service.js';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 
@@ -50,10 +52,13 @@ for (const unitRef of catalog.units) {
   verificationCount += 1;
 }
 
-const home = homeHtml(catalog, units);
+const home = homeHtml(catalog, units, createEmptyProgress());
 assert.match(home, /Modo Clássico/);
-assert.match(home, /N0-U01|Fala, sons e escrita/);
-assert.match(home, /N4-U09|Literatura, multimodalidade/);
+assert.match(home, /Fala, sons e escrita/);
+assert.match(home, /Literatura, multimodalidade/);
+assert.match(home, /Começar a estudar/);
+assert.doesNotMatch(home, />\s*N[0-4]\s*[·•]/, 'home não deve expor código de nível ao aluno');
+assert.doesNotMatch(home, /Ver plano de estudos/i, 'hero não deve duplicar Plano de estudos');
 
 const n0Verification = await service.loadVerification('N0-U01');
 const n0Html = documentHtml(n0Verification.runtime, { unitId: 'N0-U01', unitTitle: 'Fala, sons e escrita', verification: true });
@@ -67,4 +72,4 @@ assert.match(n4Html, /Registrar resposta/i);
 
 assert.equal(lessonCount, 20);
 assert.equal(verificationCount, 2);
-console.log(`Renderer clássico P4: ${lessonCount} lições + ${verificationCount} verificações do slice renderizadas sem estado unsupported.`);
+console.log(`Renderer clássico: ${lessonCount} lições + ${verificationCount} verificações e nova home renderizados sem estado unsupported.`);
