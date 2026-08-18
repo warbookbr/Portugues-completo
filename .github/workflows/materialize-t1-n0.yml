@@ -1,0 +1,49 @@
+name: Materialize T1 N0 promotion
+
+on:
+  push:
+    branches:
+      - t1-9-atomic-promotion
+
+permissions:
+  contents: write
+
+jobs:
+  materialize:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout branch
+        uses: actions/checkout@v6
+        with:
+          ref: t1-9-atomic-promotion
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+          package-manager-cache: false
+
+      - name: Materialize T1 N0 publication
+        run: node scripts/promote-t1-n0-content.mjs
+
+      - name: Validate generated JSON and catalog
+        run: |
+          node scripts/validate-json.mjs
+          node scripts/validate-contracts.mjs
+          node scripts/validate-catalog.mjs
+          node scripts/test-content-catalog.mjs
+          node scripts/test-t1-content-authoring.mjs
+          node scripts/test-classic-renderer.mjs
+
+      - name: Commit materialized publication
+        run: |
+          if git diff --quiet; then
+            echo 'Promotion already materialized.'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add content/course.json content/units/001-fala-sons-escrita content/units/002-das-silabas-as-palavras
+          git commit -m 'content: materializa nova entrada N0 T1.9'
+          git push origin HEAD:t1-9-atomic-promotion
