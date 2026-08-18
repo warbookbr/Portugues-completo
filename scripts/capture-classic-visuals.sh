@@ -22,7 +22,7 @@ done
 
 page_dom() {
   local route="$1"
-  "$CHROME" --headless --no-sandbox --disable-gpu --virtual-time-budget=2200 --dump-dom "http://127.0.0.1:${PORT}/${route}" 2>/dev/null
+  "$CHROME" --headless --no-sandbox --disable-gpu --virtual-time-budget=2400 --dump-dom "http://127.0.0.1:${PORT}/${route}" 2>/dev/null
 }
 
 assert_page() {
@@ -37,14 +37,30 @@ assert_page() {
   printf '%s' "$dom"
 }
 
-HOME_DOM="$(assert_page '#/' 'Português Completo')"
+HOME_DOM="$(assert_page '#/' 'Unidades do curso')"
+PLAN_DOM="$(assert_page '#/plano' 'Seu caminho pelo curso')"
+UNITS_DOM="$(assert_page '#/unidades' 'Unidades do curso')"
+REVIEWS_DOM="$(assert_page '#/revisoes' 'Revisões recomendadas')"
+PERFORMANCE_DOM="$(assert_page '#/desempenho' 'Seu progresso de aprendizagem')"
+HELP_DOM="$(assert_page '#/ajuda' 'Como podemos orientar você?')"
+METHODOLOGY_DOM="$(assert_page '#/metodologia' 'Como o Português Completo ensina')"
 UNIT_DOM="$(assert_page '#/unidade/N0-U01' 'Fala, sons e escrita')"
 LESSON_DOM="$(assert_page '#/unidade/N0-U01/licao/N0-U01-L01' 'Duas maneiras de encontrar uma mensagem')"
 N4_DOM="$(assert_page '#/unidade/N4-U09/licao/N4-U09-L01' 'Interpretação literária autônoma e evidência')"
 
-grep -Fq '2 unidades disponíveis nesta versão do curso.' <<<"$HOME_DOM" || { echo 'Smoke DOM: home ainda expõe estado técnico do catálogo.' >&2; exit 1; }
-grep -Fq 'Seu progresso' <<<"$HOME_DOM" || { echo 'Smoke DOM P5: painel de progresso não foi montado na home.' >&2; exit 1; }
+grep -Fq 'Plano de estudos' <<<"$HOME_DOM" || { echo 'Smoke DOM UI: Plano de estudos ausente da navegação superior.' >&2; exit 1; }
+grep -Fq 'Continuar de onde parou' <<<"$HOME_DOM" && true
+if grep -Fq 'Ver plano de estudos' <<<"$HOME_DOM"; then
+  echo 'Smoke DOM UI: Plano de estudos ainda está duplicado no hero.' >&2
+  exit 1
+fi
+if grep -Eq '>\s*N[0-4]\s*[·•]' <<<"$HOME_DOM$UNIT_DOM"; then
+  echo 'Smoke DOM UI: código interno de nível ainda aparece como rótulo público.' >&2
+  exit 1
+fi
 grep -Fq 'data-settings-section="progress"' <<<"$HOME_DOM" || { echo 'Smoke DOM P5: acesso às configurações de progresso ausente.' >&2; exit 1; }
+grep -Fq 'href="#/metodologia"' <<<"$HOME_DOM" || { echo 'Smoke DOM UI: Metodologia não foi realocada para o rodapé.' >&2; exit 1; }
+grep -Fq 'href="#/ajuda"' <<<"$HOME_DOM" || { echo 'Smoke DOM UI: Ajuda não foi realocada para utilitário discreto.' >&2; exit 1; }
 if grep -Eq '>BLOCKED<|N0-U01-C0[1-8]|Catálogo real conectado|TTStext|>OBJECTIVE<|>DEMONSTRATION<' <<<"$UNIT_DOM$LESSON_DOM"; then
   echo 'Smoke DOM: metadado interno ainda aparece na interface pública.' >&2
   exit 1
@@ -52,19 +68,25 @@ fi
 grep -Fq 'Ouvir exemplo' <<<"$LESSON_DOM" || { echo 'Smoke DOM: ttsText não virou controle de TTS.' >&2; exit 1; }
 grep -Fq 'avaliação pendente' <<<"$N4_DOM" || { echo 'Smoke DOM: estado pending N4 ausente.' >&2; exit 1; }
 
+grep -Fq 'Plano de estudos' <<<"$PLAN_DOM" || exit 1
+grep -Fq 'Nenhuma revisão pendente' <<<"$REVIEWS_DOM" || true
+grep -Fq 'Configurações' <<<"$HELP_DOM" || exit 1
+grep -Fq 'Modo Clássico' <<<"$METHODOLOGY_DOM" || exit 1
+
 capture() {
   local name="$1" width="$2" height="$3" route="$4"
   "$CHROME" --headless --no-sandbox --disable-gpu --hide-scrollbars \
-    --virtual-time-budget=2200 --window-size="${width},${height}" \
+    --virtual-time-budget=2400 --window-size="${width},${height}" \
     --screenshot="$OUT/$name.png" "http://127.0.0.1:${PORT}/${route}"
 }
 
 capture home-desktop 1440 900 '#/'
+capture home-tablet 768 1024 '#/'
+capture home-mobile 390 844 '#/'
+capture plan-desktop 1440 900 '#/plano'
 capture unit-n0-desktop 1440 900 '#/unidade/N0-U01'
 capture lesson-n0-desktop 1440 1800 '#/unidade/N0-U01/licao/N0-U01-L01'
 capture lesson-n4-desktop 1440 1800 '#/unidade/N4-U09/licao/N4-U09-L01'
-capture unit-n0-tablet 768 1024 '#/unidade/N0-U01'
-capture home-mobile 390 844 '#/'
 capture lesson-n0-mobile 390 1100 '#/unidade/N0-U01/licao/N0-U01-L01'
 
-printf 'Smoke DOM + screenshots clássicos/P5: %s\n' "$OUT"
+printf 'Smoke DOM + screenshots clássicos/UI: %s\n' "$OUT"
