@@ -1,0 +1,303 @@
+{
+  "schemaVersion": 1,
+  "id": "N0-U02-L01",
+  "title": "Ouvindo as partes das palavras",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Perceber, em palavras faladas acessíveis, que uma palavra pode ser ouvida como uma sequência de partes sonoras e introduzir o termo sílaba para nomear essas partes em nível funcional.",
+  "competencies": [
+    "distinguir uma palavra falada como um todo de uma apresentação em que suas partes sonoras são separadas",
+    "perceber uma, duas ou três partes sonoras em exemplos simples sem depender da forma escrita",
+    "usar o termo sílaba para se referir funcionalmente a cada parte sonora percebida",
+    "acompanhar uma representação visual neutra das partes sonoras sem confundi-la com letras ou grafia"
+  ],
+  "prerequisites": ["N0-U01-V01"],
+  "limits": [
+    "não ensinar classificação de palavras pelo número de sílabas",
+    "não introduzir sílaba tônica",
+    "não ensinar divisão silábica normativa como regra escrita",
+    "não ensinar consoante + vogal como fórmula universal de sílaba",
+    "não exigir leitura das palavras usadas como estímulo",
+    "não mostrar a palavra segmentada graficamente em sílabas antes da Lição 3",
+    "não usar terminologia fonética formal",
+    "não transformar contagem de partes em objetivo central da lição"
+  ],
+  "media": {
+    "tts": "instruções, explicações e feedback que não determinam a segmentação correta",
+    "controlledAudio": [
+      "N0-U02-L01-AUD-001 a N0-U02-L01-AUD-007",
+      "N0-U01-L02-AUD-001",
+      "N0-U01-L02-AUD-003",
+      "N0-U01-L02-AUD-005"
+    ],
+    "video": "nao necessario",
+    "images": "nao necessarias"
+  },
+  "supportMaterials": {
+    "curatedMedia": [
+      {
+        "mediaIds": [
+          "N0-U02-L01-AUD-001",
+          "N0-U02-L01-AUD-002",
+          "N0-U02-L01-AUD-003",
+          "N0-U02-L01-AUD-004",
+          "N0-U02-L01-AUD-005",
+          "N0-U02-L01-AUD-006",
+          "N0-U02-L01-AUD-007"
+        ],
+        "type": "AUDIO_CONTROLADO",
+        "requiredForPublication": true,
+        "purpose": "fornecer palavras novas quando necessário e, principalmente, versões segmentadas com pausas consistentes para que a percepção de sílabas não dependa do comportamento variável do TTS",
+        "locations": ["L01-B02", "L01-C01", "L01-B04", "L01-C02", "L01-A01"],
+        "productionSource": "producao-midia/FILA-MIDIA.md"
+      },
+      {
+        "mediaIds": [
+          "N0-U01-L02-AUD-001",
+          "N0-U01-L02-AUD-003",
+          "N0-U01-L02-AUD-005"
+        ],
+        "type": "AUDIO_CONTROLADO",
+        "requiredForPublication": true,
+        "purpose": "reutilizar as gravações naturais já previstas de pato, mala e sol como versões de palavra inteira, sem duplicar mídia",
+        "locations": ["L01-B02", "L01-C01", "L01-B04", "L01-A01"],
+        "productionSource": "producao-midia/FILA-MIDIA.md"
+      }
+    ],
+    "runtimeResources": [
+      {
+        "type": "TTS_OK",
+        "locations": ["instruções", "explicações", "feedback", "resumo"],
+        "purpose": "dar acesso ao texto da interface sem substituir os estímulos segmentados controlados"
+      }
+    ],
+    "generatedVisualResources": [
+      {
+        "type": "UI_RENDERED_NEUTRAL_PULSES",
+        "locations": ["L01-B02", "L01-B04", "L01-C02", "L01-A01"],
+        "purpose": "representar cada parte sonora com círculos, pulsos ou blocos neutros, sem letras e sem escrita silabificada; a quantidade visual apoia a percepção, mas não constitui classificação gramatical"
+      }
+    ],
+    "productionQueueRequired": true,
+    "publicationDependency": "a estrutura da lição pode ser implementada antes da produção dos arquivos, mas as demonstrações e atividades auditivas não podem ser consideradas publicáveis até os sete áudios da família U02-L01 e os três áudios reutilizados da U01-L02 estarem produzidos, validados e ligados aos IDs",
+    "decisionRationale": "a segmentação em sílabas é o próprio objeto de aprendizagem, então as pausas e a realização das partes precisam ser consistentes. TTS continua adequado para instruções. Palavras escritas, imagens e vídeo não são necessários nesta etapa e poderiam deslocar o foco da escuta para a leitura antes do momento previsto."
+  },
+  "audioSet": [
+    {
+      "mediaId": "N0-U01-L02-AUD-001",
+      "spokenContent": "pato",
+      "role": "whole-word-reuse"
+    },
+    {
+      "mediaId": "N0-U02-L01-AUD-001",
+      "spokenContent": "pa — to",
+      "role": "segmented-word",
+      "syllableCount": 2
+    },
+    {
+      "mediaId": "N0-U01-L02-AUD-003",
+      "spokenContent": "mala",
+      "role": "whole-word-reuse"
+    },
+    {
+      "mediaId": "N0-U02-L01-AUD-002",
+      "spokenContent": "ma — la",
+      "role": "segmented-word",
+      "syllableCount": 2
+    },
+    {
+      "mediaId": "N0-U02-L01-AUD-003",
+      "spokenContent": "bo — la",
+      "role": "segmented-word",
+      "syllableCount": 2
+    },
+    {
+      "mediaId": "N0-U01-L02-AUD-005",
+      "spokenContent": "sol",
+      "role": "whole-word-reuse",
+      "syllableCount": 1
+    },
+    {
+      "mediaId": "N0-U02-L01-AUD-004",
+      "spokenContent": "banana",
+      "role": "whole-word-new"
+    },
+    {
+      "mediaId": "N0-U02-L01-AUD-005",
+      "spokenContent": "ba — na — na",
+      "role": "segmented-word",
+      "syllableCount": 3
+    },
+    {
+      "mediaId": "N0-U02-L01-AUD-006",
+      "spokenContent": "janela",
+      "role": "whole-word-new"
+    },
+    {
+      "mediaId": "N0-U02-L01-AUD-007",
+      "spokenContent": "ja — ne — la",
+      "role": "segmented-word",
+      "syllableCount": 3
+    }
+  ],
+  "sequence": [
+    {
+      "id": "L01-B01",
+      "type": "objective",
+      "focus": "read-or-listen",
+      "text": "Até aqui, você comparou sons e letras. Agora vamos ouvir palavras de outro jeito: perceber pequenas partes sonoras dentro da palavra falada. Nesta lição, você não precisa ler as palavras para responder."
+    },
+    {
+      "id": "L01-B02",
+      "type": "audio-segmentation-demonstration",
+      "focus": "listen",
+      "title": "Uma palavra inteira pode ser ouvida em partes",
+      "wholeWordAudio": "N0-U01-L02-AUD-001",
+      "segmentedAudio": "N0-U02-L01-AUD-001",
+      "spokenContent": "pato",
+      "writtenWordVisible": false,
+      "neutralPulseCount": 2,
+      "explanation": "Primeiro ouvimos pato como uma palavra inteira. Depois ouvimos pa — to, com duas partes sonoras separadas. Cada uma dessas partes é uma sílaba.",
+      "guardRail": "os pulsos visuais não devem conter PA ou TO; a relação sistemática entre sílaba ouvida e escrita começa apenas na Lição 3"
+    },
+    {
+      "id": "L01-B03",
+      "type": "explanation",
+      "focus": "read-or-listen",
+      "title": "O nome dessas partes é sílaba",
+      "text": "Quando separamos uma palavra falada em partes que conseguimos perceber ao pronunciar, chamamos cada parte de sílaba. Aqui usamos a sílaba como uma ferramenta para ouvir melhor a palavra. Não precisamos classificar a palavra nem decorar regras."
+    },
+    {
+      "id": "L01-C01",
+      "type": "quick-check",
+      "focus": "listen-and-respond",
+      "interaction": "whole-versus-segmented-audio",
+      "prompt": "Ouça os dois áudios de mala. Qual deles apresenta a palavra separada em sílabas?",
+      "stimuli": ["N0-U01-L02-AUD-003", "N0-U02-L01-AUD-002"],
+      "spokenContent": ["mala", "ma — la"],
+      "options": ["primeiro áudio", "segundo áudio"],
+      "correctIndex": 1,
+      "writtenWordVisibleBeforeResponse": false,
+      "repeatAudio": true,
+      "feedback": "No segundo áudio ouvimos ma — la: duas partes sonoras separadas."
+    },
+    {
+      "id": "L01-B04",
+      "type": "audio-comparison-demonstration",
+      "focus": "listen-then-observe",
+      "title": "As palavras não precisam ter a mesma quantidade de partes",
+      "examples": [
+        {
+          "wholeWordAudio": "N0-U01-L02-AUD-005",
+          "spokenContent": "sol",
+          "neutralPulseCount": 1,
+          "explanation": "Em sol percebemos uma sílaba."
+        },
+        {
+          "wholeWordAudio": "N0-U02-L01-AUD-004",
+          "segmentedAudio": "N0-U02-L01-AUD-005",
+          "spokenContent": "banana",
+          "neutralPulseCount": 3,
+          "explanation": "Em banana podemos ouvir ba — na — na: três sílabas."
+        }
+      ],
+      "writtenWordsVisible": false,
+      "explanation": "A quantidade de partes pode variar. Perceber quantas partes ouvimos ajuda a notar a segmentação, mas nesta unidade não vamos classificar palavras por quantidade de sílabas."
+    },
+    {
+      "id": "L01-C02",
+      "type": "quick-check",
+      "focus": "listen-and-respond",
+      "interaction": "segmentation-to-neutral-pulses",
+      "prompt": "Ouça janela e depois sua versão separada. Qual conjunto de pulsos combina com as partes que você ouviu?",
+      "stimuli": ["N0-U02-L01-AUD-006", "N0-U02-L01-AUD-007"],
+      "spokenContent": ["janela", "ja — ne — la"],
+      "writtenWordVisibleBeforeResponse": false,
+      "options": [
+        {"pulseCount": 2},
+        {"pulseCount": 3},
+        {"pulseCount": 1}
+      ],
+      "correctIndex": 1,
+      "repeatAudio": true,
+      "feedback": "Na versão separada ouvimos três partes: ja — ne — la."
+    },
+    {
+      "id": "L01-A01",
+      "type": "guided-activity",
+      "focus": "listen-and-respond",
+      "interaction": "audio-to-pulse-pattern",
+      "title": "Quantas partes você percebe?",
+      "instruction": "Ouça cada estímulo quantas vezes precisar e escolha o conjunto de pulsos que representa as partes sonoras percebidas. A contagem serve apenas para mostrar a segmentação; não estamos classificando palavras.",
+      "writtenWordsVisibleBeforeResponse": false,
+      "pulseOptions": [1, 2, 3],
+      "items": [
+        {
+          "stimulus": "N0-U02-L01-AUD-001",
+          "spokenContent": "pa — to",
+          "correctPulseCount": 2
+        },
+        {
+          "stimulus": "N0-U02-L01-AUD-003",
+          "spokenContent": "bo — la",
+          "correctPulseCount": 2
+        },
+        {
+          "stimulus": "N0-U02-L01-AUD-005",
+          "spokenContent": "ba — na — na",
+          "correctPulseCount": 3
+        },
+        {
+          "stimulus": "N0-U02-L01-AUD-007",
+          "spokenContent": "ja — ne — la",
+          "correctPulseCount": 3
+        },
+        {
+          "stimulus": "N0-U01-L02-AUD-005",
+          "spokenContent": "sol",
+          "correctPulseCount": 1
+        }
+      ],
+      "repeatAudio": true,
+      "feedbackRule": "feedback imediato, repetição livre e nova tentativa sem penalidade; não revelar grafia silabificada como feedback"
+    },
+    {
+      "id": "L01-C03",
+      "type": "quick-check",
+      "focus": "respond",
+      "interaction": "single-choice",
+      "prompt": "Nesta lição, o que chamamos de sílaba?",
+      "options": [
+        "Cada parte sonora que percebemos ao separar uma palavra falada.",
+        "Cada letra escrita da palavra.",
+        "Somente palavras que possuem duas partes."
+      ],
+      "correctIndex": 0,
+      "feedback": "Sílaba é o nome que estamos usando para cada parte sonora percebida quando separamos a palavra falada."
+    },
+    {
+      "id": "L01-B05",
+      "type": "summary",
+      "focus": "read-or-listen",
+      "points": [
+        "Uma palavra falada pode ser percebida como um todo e também em partes sonoras.",
+        "Cada parte sonora percebida nessa segmentação é chamada de sílaba.",
+        "Algumas palavras têm uma parte; outras têm duas, três ou mais.",
+        "A quantidade ajuda a perceber a segmentação, mas não estamos classificando palavras por quantidade de sílabas.",
+        "Nesta lição trabalhamos pela escuta; a ligação sistemática entre essas partes e a escrita virá depois."
+      ],
+      "bridgeToNextLesson": "Na próxima lição, vamos começar a separar e juntar essas partes oralmente para reconstruir palavras."
+    }
+  ],
+  "completionEvidence": {
+    "observablePerformance": "Distinguir palavra inteira de apresentação segmentada e representar com pulsos neutros uma, duas ou três sílabas percebidas em exemplos falados, sem depender da escrita.",
+    "criterion": "acertar L01-C01 e L01-C03 e pelo menos 4 dos 5 itens de L01-A01 após oportunidade de repetir os áudios e corrigir erros",
+    "notSufficient": "apenas memorizar o termo sílaba, contar pulsos sem relacioná-los ao que foi ouvido ou reconhecer a palavra pela escrita"
+  },
+  "implementationGuardRails": [
+    "spokenContent é metadado pedagógico e não deve ser automaticamente exibido antes das respostas auditivas",
+    "não sincronizar pulsos visualmente com precisão fictícia se o renderer não possuir marcações temporais reais do áudio; é aceitável mostrar a quantidade de pulsos como apoio antes ou depois da reprodução conforme o bloco",
+    "não introduzir PA, TO, MA, LA ou outras grafias silabificadas nos pulsos desta lição",
+    "não usar limite de tempo nem velocidade como critério de conclusão",
+    "não usar microfone ou produção oral obrigatória como condição de aprovação"
+  ]
+}

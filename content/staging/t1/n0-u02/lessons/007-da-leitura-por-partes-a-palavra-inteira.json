@@ -1,0 +1,351 @@
+{
+  "schemaVersion": 1,
+  "id": "N0-U02-L07",
+  "title": "Da leitura por partes à palavra inteira",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Usar a segmentação silábica como apoio temporário para ler palavras simples e avançar progressivamente para reconhecer e relacionar a palavra escrita inteira à sua forma falada sem depender obrigatoriamente da separação em todas as tentativas.",
+  "competencies": [
+    "usar uma palavra segmentada em sílabas como apoio para combinar as partes e chegar à palavra inteira",
+    "reler uma palavra já trabalhada quando a separação silábica é reduzida ou retirada",
+    "relacionar uma palavra escrita sem marcação silábica à forma falada correspondente depois de uma tentativa visual de leitura",
+    "recorrer ao apoio silábico quando necessário sem tratá-lo como requisito permanente para toda palavra",
+    "aplicar partes já conhecidas para abordar uma palavra compatível apresentada em nova combinação"
+  ],
+  "prerequisites": ["N0-U02-L06"],
+  "limits": [
+    "não usar velocidade ou tempo de resposta como evidência de domínio",
+    "não exigir leitura de frases ou textos; o foco continua sendo a palavra",
+    "não antecipar significado como competência central; a ligação sistemática palavra-significado pertence à Lição 8",
+    "não reproduzir áudio da palavra antes da primeira tentativa visual de leitura",
+    "não exigir microfone ou reconhecimento de voz para concluir a lição",
+    "não afirmar que o aplicativo validou pronúncia ou leitura oral exata quando essa produção não foi observada",
+    "não penalizar o aluno simplesmente por solicitar apoio silábico",
+    "não introduzir novas regras ortográficas, famílias silábicas ou classificações fonéticas como pré-requisito para ler os exemplos"
+  ],
+  "media": {
+    "tts": "instruções gerais e, para as palavras-alvo, apenas confirmação ou opções auditivas apresentadas depois da tentativa visual de leitura; nunca deve tocar automaticamente antes da tentativa",
+    "controlledAudio": [],
+    "video": "nao necessario",
+    "images": "nao necessarias"
+  },
+  "supportMaterials": {
+    "curatedMedia": [],
+    "runtimeResources": [
+      {
+        "type": "TTS_OK",
+        "locations": ["L07-B02", "L07-C01", "L07-B03", "L07-C02", "L07-B04", "L07-C03", "L07-A01", "L07-A02", "L07-A03", "L07-A04", "feedback", "resumo"],
+        "purpose": "confirmar a forma falada depois da tentativa de leitura e oferecer opções auditivas sem rótulo textual nas tarefas de correspondência escrita-fala; variações normais da voz do dispositivo não determinam a competência observada"
+      }
+    ],
+    "generatedVisualResources": [
+      {
+        "type": "UI_RENDERED_PROGRESSIVE_READING_WORD",
+        "locations": ["L07-B02", "L07-B03", "L07-B04", "L07-A01", "L07-A02", "L07-A03", "L07-A04"],
+        "purpose": "renderizar a mesma palavra como texto real em níveis de apoio diferentes: segmentação visível, segmentação sob demanda e palavra inteira sem marcação"
+      },
+      {
+        "type": "UI_RENDERED_SYLLABLE_SUPPORT_TOGGLE",
+        "locations": ["L07-B04", "L07-C03", "L07-A02", "L07-A03", "L07-A04"],
+        "purpose": "permitir que o aluno peça a divisão silábica quando precisar, registrando o uso do apoio sem tratá-lo automaticamente como erro"
+      },
+      {
+        "type": "UI_RENDERED_AUDIO_CHOICE_CONTROLS",
+        "locations": ["L07-C03", "L07-A02", "L07-A03", "L07-A04"],
+        "purpose": "apresentar, somente depois da tentativa visual, opções de TTS identificadas por controles neutros como A, B e C, sem mostrar a palavra escrita de cada opção"
+      }
+    ],
+    "productionQueueRequired": false,
+    "publicationDependency": "não há mídia humana obrigatória para esta lição; palavras, marcações silábicas e controles são renderizados pela interface, e o TTS do dispositivo é suficiente porque não há discriminação fonética sensível como objeto da resposta",
+    "decisionRationale": "a competência central é leitura visual com retirada gradual de apoio. Tocar a palavra antes da tentativa invalidaria a evidência; por isso o áudio fica bloqueado até a tentativa visual. Como o aplicativo não observa produção oral sem microfone, a evidência automática combina reconhecimento da palavra e correspondência escrita-fala, enquanto a leitura oral ou silenciosa é praticada com autochecagem posterior."
+  },
+  "assessmentCaveat": {
+    "automaticEvidence": "o aplicativo pode observar se o aluno reconhece a palavra escrita, mantém a identidade da palavra ao reduzir a segmentação e escolhe a forma falada correspondente depois da tentativa visual",
+    "notAutomaticallyObserved": "pronúncia produzida pelo aluno, fluência oral fina e qualidade articulatória",
+    "practiceResponse": "o aluno pode ler em voz alta ou silenciosamente e depois usar o TTS como conferência; essa autochecagem não deve ser registrada como se fosse reconhecimento de voz"
+  },
+  "readingSet": [
+    {"word": "PATO", "segments": ["PA", "TO"], "role": "familiar-two-syllable"},
+    {"word": "BONECA", "segments": ["BO", "NE", "CA"], "role": "familiar-three-syllable"},
+    {"word": "TOMATE", "segments": ["TO", "MA", "TE"], "role": "familiar-three-syllable"},
+    {"word": "MALA", "segments": ["MA", "LA"], "role": "reduced-support"},
+    {"word": "PRATO", "segments": ["PRA", "TO"], "role": "reduced-support-varied-shape"},
+    {"word": "UVA", "segments": ["U", "VA"], "role": "reduced-support-varied-shape"},
+    {"word": "CASA", "segments": ["CA", "SA"], "role": "whole-word"},
+    {"word": "GATO", "segments": ["GA", "TO"], "role": "whole-word"},
+    {"word": "MATO", "segments": ["MA", "TO"], "role": "whole-word-new-combination-from-l06"},
+    {"word": "PATA", "segments": ["PA", "TA"], "role": "transfer-new-compatible-combination"}
+  ],
+  "supportLevels": [
+    {
+      "id": "segmentado-visivel",
+      "description": "as sílabas aparecem separadas em blocos textuais claros, preservando a ordem da palavra"
+    },
+    {
+      "id": "apoio-sob-demanda",
+      "description": "a palavra aparece inteira; o aluno pode solicitar a divisão silábica depois de tentar lê-la"
+    },
+    {
+      "id": "palavra-inteira",
+      "description": "a palavra aparece sem marcação; apoio pode ser liberado posteriormente para revisão, sem ser o estado inicial"
+    }
+  ],
+  "sequence": [
+    {
+      "id": "L07-B01",
+      "type": "objective",
+      "focus": "read-or-listen",
+      "text": "Até aqui você usou sílabas para perceber, comparar e montar palavras. Agora elas serão um apoio de leitura. Primeiro as partes aparecem claramente; depois esse apoio diminui até a palavra ficar inteira."
+    },
+    {
+      "id": "L07-B02",
+      "type": "reading-demonstration",
+      "focus": "read",
+      "title": "Comece pelas partes e junte",
+      "word": "PATO",
+      "segments": ["PA", "TO"],
+      "supportLevel": "segmentado-visivel",
+      "instruction": "Leia PA, depois TO, e tente juntar as duas partes: PATO.",
+      "ttsAvailableBeforeAttempt": false,
+      "confirmActionLabel": "Conferir depois de tentar",
+      "feedbackTts": "pato",
+      "explanation": "A separação serve como apoio. O objetivo não é parar em PA e TO, mas chegar à palavra inteira PATO."
+    },
+    {
+      "id": "L07-C01",
+      "type": "quick-check",
+      "focus": "read-and-respond",
+      "interaction": "join-visible-syllables-into-whole-word",
+      "prompt": "Leia as partes BO | NE | CA e escolha a palavra inteira que mantém essas partes na mesma ordem.",
+      "segments": ["BO", "NE", "CA"],
+      "options": ["BONECA", "BONETA", "TOMATE"],
+      "correctIndex": 0,
+      "ttsBeforeResponse": false,
+      "feedback": "BO + NE + CA forma BONECA.",
+      "feedbackTts": "boneca"
+    },
+    {
+      "id": "L07-B03",
+      "type": "support-reduction-demonstration",
+      "focus": "read",
+      "title": "A mesma palavra continua igual quando retiramos a separação",
+      "stages": [
+        {"display": "MA | LA", "word": "MALA", "supportLevel": "segmentado-visivel"},
+        {"display": "MALA", "word": "MALA", "supportLevel": "palavra-inteira"}
+      ],
+      "instruction": "Leia primeiro com a divisão. Depois leia novamente quando a mesma palavra aparecer inteira.",
+      "ttsAvailableBeforeBothAttempts": false,
+      "feedbackTtsAfterSecondAttempt": "mala",
+      "explanation": "Retirar a marcação não muda as letras nem a ordem. A segmentação é uma ferramenta que pode ser reduzida quando você já consegue reconhecer a palavra."
+    },
+    {
+      "id": "L07-C02",
+      "type": "quick-check",
+      "focus": "read-and-respond",
+      "interaction": "recognize-whole-word-after-segmented-form",
+      "prompt": "Você viu TO | MA | TE. Qual opção mostra a mesma palavra sem a separação?",
+      "segments": ["TO", "MA", "TE"],
+      "options": ["TOMATE", "TOMATA", "BONECA"],
+      "correctIndex": 0,
+      "ttsBeforeResponse": false,
+      "feedback": "TOMATE mantém TO + MA + TE na mesma ordem.",
+      "feedbackTts": "tomate"
+    },
+    {
+      "id": "L07-B04",
+      "type": "on-demand-support-demonstration",
+      "focus": "read",
+      "title": "Tente a palavra inteira antes de pedir ajuda",
+      "word": "PRATO",
+      "segments": ["PRA", "TO"],
+      "initialSupportLevel": "apoio-sob-demanda",
+      "instruction": "Primeiro tente ler PRATO como está. Se precisar, use o botão Mostrar partes e tente novamente com PRA | TO. Só depois use a conferência em áudio.",
+      "ttsAvailableBeforeAttempt": false,
+      "supportButtonLabel": "Mostrar partes",
+      "supportUseIsError": false,
+      "feedbackTts": "prato",
+      "explanation": "Pedir apoio não é erro. O progresso aparece quando você começa a conseguir ler algumas palavras sem precisar mostrar as partes todas as vezes."
+    },
+    {
+      "id": "L07-C03",
+      "type": "quick-check",
+      "focus": "read-then-listen-and-respond",
+      "interaction": "written-word-to-post-attempt-audio-choice",
+      "prompt": "Leia PORTA primeiro. Depois marque que tentou e ouça as opções A, B e C. Qual áudio corresponde à palavra escrita?",
+      "word": "PORTA",
+      "segments": ["POR", "TA"],
+      "initialSupportLevel": "apoio-sob-demanda",
+      "supportAvailableBeforeAudioChoices": true,
+      "attemptGateRequired": true,
+      "audioOptionsVisibleBeforeAttemptGate": false,
+      "audioOptionTextVisible": false,
+      "audioOptions": [
+        {"label": "A", "ttsText": "porta"},
+        {"label": "B", "ttsText": "prato"},
+        {"label": "C", "ttsText": "boneca"}
+      ],
+      "correctIndex": 0,
+      "feedback": "A opção A diz porta e corresponde a PORTA.",
+      "supportUseIsError": false
+    },
+    {
+      "id": "L07-A01",
+      "type": "guided-activity",
+      "focus": "read-and-respond",
+      "interaction": "progressive-read-with-visible-segmentation",
+      "title": "Leia com as partes visíveis",
+      "instruction": "Leia as sílabas na ordem, tente dizer ou pensar a palavra inteira e depois escolha a forma sem separação. O TTS só fica disponível depois da resposta.",
+      "items": [
+        {"segments": ["PA", "TO"], "options": ["PATO", "POTA", "MALA"], "correctIndex": 0, "feedbackTts": "pato"},
+        {"segments": ["BO", "NE", "CA"], "options": ["BONECA", "BONETA", "CASA"], "correctIndex": 0, "feedbackTts": "boneca"},
+        {"segments": ["TO", "MA", "TE"], "options": ["TOMATE", "TOMETA", "GATO"], "correctIndex": 0, "feedbackTts": "tomate"}
+      ],
+      "ttsBeforeResponse": false
+    },
+    {
+      "id": "L07-A02",
+      "type": "guided-activity",
+      "focus": "read-then-listen-and-respond",
+      "interaction": "whole-written-word-to-post-attempt-audio-choice",
+      "title": "Leia primeiro; peça as partes se precisar",
+      "instruction": "A palavra aparece inteira. Tente lê-la antes. Você pode pedir a divisão silábica. Depois confirme que tentou e escolha, entre os áudios A, B e C, qual corresponde à palavra. Os áudios não mostram texto.",
+      "items": [
+        {
+          "word": "MALA",
+          "segments": ["MA", "LA"],
+          "audioOptions": [
+            {"label": "A", "ttsText": "mala"},
+            {"label": "B", "ttsText": "gato"},
+            {"label": "C", "ttsText": "porta"}
+          ],
+          "correctIndex": 0
+        },
+        {
+          "word": "PRATO",
+          "segments": ["PRA", "TO"],
+          "audioOptions": [
+            {"label": "A", "ttsText": "porta"},
+            {"label": "B", "ttsText": "prato"},
+            {"label": "C", "ttsText": "uva"}
+          ],
+          "correctIndex": 1
+        },
+        {
+          "word": "UVA",
+          "segments": ["U", "VA"],
+          "audioOptions": [
+            {"label": "A", "ttsText": "tomate"},
+            {"label": "B", "ttsText": "mala"},
+            {"label": "C", "ttsText": "uva"}
+          ],
+          "correctIndex": 2
+        }
+      ],
+      "attemptGateRequired": true,
+      "audioOptionTextVisible": false,
+      "supportUseIsError": false,
+      "trackSupportUseSeparatelyFromAccuracy": true
+    },
+    {
+      "id": "L07-A03",
+      "type": "independent-practice",
+      "focus": "read-then-listen-and-respond",
+      "interaction": "plain-written-word-to-post-attempt-audio-choice",
+      "title": "Agora comece pela palavra inteira",
+      "instruction": "Leia a palavra sem marcação. Depois confirme que tentou e escolha o áudio correspondente. Se não conseguir, o apoio silábico pode ser liberado para uma nova tentativa; usar apoio não apaga o que você já tentou.",
+      "items": [
+        {
+          "word": "CASA",
+          "segmentsForRescue": ["CA", "SA"],
+          "audioOptions": [
+            {"label": "A", "ttsText": "mala"},
+            {"label": "B", "ttsText": "casa"},
+            {"label": "C", "ttsText": "gato"}
+          ],
+          "correctIndex": 1
+        },
+        {
+          "word": "GATO",
+          "segmentsForRescue": ["GA", "TO"],
+          "audioOptions": [
+            {"label": "A", "ttsText": "pato"},
+            {"label": "B", "ttsText": "gato"},
+            {"label": "C", "ttsText": "mato"}
+          ],
+          "correctIndex": 1
+        },
+        {
+          "word": "MATO",
+          "segmentsForRescue": ["MA", "TO"],
+          "audioOptions": [
+            {"label": "A", "ttsText": "mato"},
+            {"label": "B", "ttsText": "prato"},
+            {"label": "C", "ttsText": "casa"}
+          ],
+          "correctIndex": 0
+        }
+      ],
+      "attemptGateRequired": true,
+      "audioOptionTextVisible": false,
+      "supportInitiallyHidden": true,
+      "supportAvailableAfterFirstAttempt": true,
+      "supportUseIsError": false,
+      "trackFirstAttemptWithoutSupport": true
+    },
+    {
+      "id": "L07-A04",
+      "type": "transfer-activity",
+      "focus": "read-then-listen-and-respond",
+      "interaction": "read-new-compatible-combination",
+      "title": "Uma combinação nova com partes conhecidas",
+      "instruction": "Leia PATA primeiro como palavra inteira. Se precisar depois da tentativa, revele PA | TA. Em seguida escolha o áudio que corresponde à palavra.",
+      "word": "PATA",
+      "segments": ["PA", "TA"],
+      "knownPartSources": ["PA já apareceu em PATO", "TA já apareceu em PORTA"],
+      "attemptGateRequired": true,
+      "supportInitiallyHidden": true,
+      "supportButtonLabel": "Mostrar PA | TA",
+      "audioOptionTextVisible": false,
+      "audioOptions": [
+        {"label": "A", "ttsText": "mala"},
+        {"label": "B", "ttsText": "pata"},
+        {"label": "C", "ttsText": "tomate"}
+      ],
+      "correctIndex": 1,
+      "supportUseIsError": false,
+      "feedback": "PATA usa PA + TA, duas partes que você já encontrou em outras palavras."
+    },
+    {
+      "id": "L07-B05",
+      "type": "summary",
+      "focus": "read-or-listen",
+      "points": [
+        "Separar a palavra em sílabas pode ajudar a começar a leitura.",
+        "Depois de juntar as partes, o objetivo é reconhecer e ler a palavra inteira.",
+        "O apoio pode diminuir aos poucos; pedir a divisão quando necessário continua sendo uma estratégia válida.",
+        "O áudio deve servir para conferir depois da tentativa visual, não para dizer antecipadamente o que está escrito.",
+        "Partes já conhecidas podem ajudar a abordar combinações novas, como PA + TA em PATA."
+      ],
+      "bridgeToNextLesson": "Na próxima lição, vamos confirmar que a leitura serve para compreender: a palavra lida será ligada a um significado familiar."
+    }
+  ],
+  "completionEvidence": {
+    "observablePerformance": "Ler visualmente com apoio progressivamente reduzido e, depois da tentativa, relacionar palavras escritas à forma falada correspondente, demonstrando que a segmentação deixou de ser obrigatória em pelo menos parte das palavras familiares e que pode ser reutilizada como estratégia de resgate.",
+    "criterion": "acertar pelo menos 2 dos 3 itens de L07-A01; pelo menos 2 dos 3 de L07-A02; pelo menos 2 dos 3 de L07-A03, sendo ao menos 2 acertos de primeira tentativa sem revelar a segmentação; e acertar L07-A04 com ou sem apoio depois da tentativa inicial",
+    "supportInterpretation": "usar apoio silábico não é erro por si só; o indicador relevante é existir evidência de que algumas palavras já são reconhecidas sem ele, enquanto outras ainda podem ser lidas com ajuda",
+    "notSufficient": "apenas navegar pelos blocos, ouvir o TTS antes de tentar, memorizar a posição das respostas, responder rapidamente ou afirmar que leu sem demonstrar correspondência entre escrita e forma falada"
+  },
+  "implementationGuardRails": [
+    "nenhuma palavra-alvo pode ter seu TTS reproduzido automaticamente antes da primeira tentativa visual",
+    "as opções auditivas ficam bloqueadas até o aluno indicar que fez a tentativa de leitura; os textos internos usados pelo TTS não devem aparecer como rótulos visuais das opções",
+    "não considerar o botão 'tentei ler' como evidência suficiente de leitura; a evidência automática vem das respostas posteriores e do padrão de uso de apoio",
+    "registrar separadamente acerto e uso do apoio silábico; pedir ajuda não deve converter automaticamente um acerto em erro",
+    "o modo segmentado deve manter letras e ordem idênticas à palavra inteira; apenas a apresentação visual muda",
+    "segmentos, palavras e opções escritas devem ser texto real da interface e não imagens",
+    "não depender apenas de cor para indicar limites silábicos; usar espaçamento, contorno, agrupamento ou separador acessível",
+    "não exigir fala no microfone, precisão articulatória ou avaliação automática de pronúncia",
+    "não usar cronômetro, bônus por velocidade ou penalidade por leitura lenta",
+    "distratores auditivos devem ser palavras claramente inteligíveis no TTS e não devem depender de distinções fonéticas muito sutis ou de uma variante regional específica",
+    "a transferência PATA deve ser apresentada como nova combinação compatível de partes já conhecidas, não como início de uma família silábica a memorizar",
+    "não ampliar esta lição para leitura de frases; compreensão semântica sistemática fica para a Lição 8"
+  ]
+}
