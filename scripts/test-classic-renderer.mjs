@@ -54,15 +54,16 @@ for (const unitRef of catalog.units) {
 }
 
 const home = homeHtml(catalog, units, createEmptyProgress());
-assert.match(home, /Comece seu percurso de aprendizagem/);
 assert.match(home, /Fala, sons e escrita/);
 assert.match(home, /Literatura, multimodalidade/);
 assert.match(home, /Começar a estudar/);
 assert.equal((home.match(/Começar a estudar/g) || []).length, 1, 'home deve ter um único CTA de início/retomada');
 assert.doesNotMatch(home, /Continuar lição/i, 'home não deve manter CTA concorrente de continuar lição');
+assert.doesNotMatch(home, /dashboard-hero/, 'home não deve manter hero introdutório acima da retomada');
+assert.doesNotMatch(home, /Continue seu percurso de aprendizagem|Retome do ponto em que parou e avance no seu ritmo/i, 'home deve começar direto pela retomada/progresso');
 assert.doesNotMatch(home, />\s*N[0-4]\s*[·•]/, 'home não deve expor código de nível ao aluno');
-assert.doesNotMatch(home, /Ver plano de estudos/i, 'hero não deve duplicar Plano de estudos');
-assert.doesNotMatch(home, /<span class="eyebrow">Modo Clássico<\/span>/, 'hero não deve repetir o modo já visível no cabeçalho');
+assert.doesNotMatch(home, /Ver plano de estudos/i, 'home não deve duplicar Plano de estudos');
+assert.doesNotMatch(home, /<span class="eyebrow">Modo Clássico<\/span>/, 'home não deve repetir o modo já visível no cabeçalho');
 
 const n0Lesson = await service.loadLesson('N0-U01', 'N0-U01-L01');
 const guidedGroups = buildLessonStepGroups(n0Lesson.runtime.blocks);
@@ -83,4 +84,4 @@ assert.match(n4Html, /Registrar resposta/i);
 
 assert.equal(lessonCount, 20);
 assert.equal(verificationCount, 2);
-console.log(`Renderer clássico: ${lessonCount} lições + ${verificationCount} verificações, CTA único e segmentação guiada validados.`);
+console.log(`Renderer clássico: ${lessonCount} lições + ${verificationCount} verificações, home sem hero e segmentação guiada validados.`);
