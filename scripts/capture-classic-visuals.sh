@@ -102,6 +102,7 @@ capture() {
 
 capture home-desktop 1440 900 '#/'
 capture home-tablet 768 1024 '#/'
+capture home-narrow 680 900 '#/'
 capture home-mobile 390 844 '#/'
 capture plan-desktop 1440 900 '#/plano'
 capture unit-n0-desktop 1440 900 '#/unidade/N0-U01'
