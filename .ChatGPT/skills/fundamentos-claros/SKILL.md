@@ -73,6 +73,38 @@ No início do N0, não presumir que o aluno já entende termos como:
 
 Se o termo é objeto da aprendizagem, ensiná-lo antes de usá-lo como pressuposto.
 
+### Clareza depende do momento curricular
+
+Uma palavra pode ser comum, curta e linguisticamente simples e ainda assim ser inadequada naquele ponto do curso se o conceito que ela nomeia ainda não foi construído.
+
+Regra:
+
+```text
+linguagem simples
+≠ conceito já disponível para o aluno
+
+conceito ainda não ensinado/consolidado
+→ não usar seu nome como pressuposto na abertura, explicação ou instrução
+→ primeiro construir significado com percepção/exemplo acessível
+→ depois nomear o conceito
+→ então reutilizar o termo normalmente nas etapas posteriores
+```
+
+Exemplo:
+
+```text
+RUIM CEDO DEMAIS
+→ Aprender a reconhecer vogais.
+
+MELHOR ANTES DE ENSINAR O TERMO
+→ Conhecer um grupo de letras que aparece em muitas palavras.
+
+DEPOIS DA CONSTRUÇÃO DO CONCEITO
+→ Essas letras são chamadas de vogais.
+```
+
+O critério não é evitar para sempre palavras como `vogal`, `sílaba` ou `frase`; é introduzi-las no momento em que o aluno já possui base suficiente para atribuir significado a elas.
+
 ## Duas linguagens obrigatórias
 
 ### Interna
@@ -152,6 +184,7 @@ Também não renomear/reutilizar IDs de forma destrutiva. Mudança semântica ex
 Ao revisar texto para iniciante, procurar especialmente:
 
 - termos usados antes de serem ensinados;
+- termos aparentemente simples cujo conceito ainda não foi construído;
 - frases com mais de uma ideia principal;
 - palavras técnicas substituíveis por linguagem comum;
 - explicações que parecem destinadas a professores;
@@ -209,6 +242,7 @@ Aplicar as quatro passadas da skill curricular e uma quinta:
 ```text
 O aluno entende o objetivo sem metalíngua?
 Os pré-requisitos foram realmente ensinados?
+Algum termo simples está nomeando um conceito que ainda não foi construído?
 O exemplo chega cedo?
 O texto público é mais simples que o objetivo interno?
 Existe salto entre esta lição e a anterior?
