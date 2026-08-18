@@ -41,6 +41,7 @@ function currentStudyCard(manifests, progress) {
   const hasCurrent = Boolean(current.unitId);
   const href = lesson ? `#/unidade/${encodeURIComponent(manifest.id)}/licao/${encodeURIComponent(lesson.id)}` : `#/unidade/${encodeURIComponent(manifest.id)}`;
   const position = lesson ? `Lição ${lesson.order} de ${total}` : `${done} de ${total} lições concluídas`;
+  const action = hasCurrent ? 'Continuar de onde parou' : 'Começar a estudar';
 
   return `<section class="dashboard-card continue-card" data-current-study data-unit-id="${esc(manifest.id)}" data-lesson-ids="${esc(lessonIds.join(','))}">
     <div class="dashboard-section-heading"><h2>${hasCurrent ? 'Continue estudando' : 'Comece por aqui'}</h2></div>
@@ -48,7 +49,7 @@ function currentStudyCard(manifests, progress) {
     <h3>${esc(manifest.title)}</h3>
     <p class="continue-position">${esc(position)}</p>
     <div class="progress-line" aria-label="${percent}% desta unidade concluída"><span style="width:${percent}%"></span></div>
-    <div class="continue-footer"><span data-current-unit-progress>${percent}%</span><a class="secondary-button inline-action" href="${esc(href)}">${lesson ? 'Continuar lição' : hasCurrent ? 'Abrir unidade' : 'Começar unidade'} <span aria-hidden="true">→</span></a></div>
+    <div class="continue-footer"><span data-current-unit-progress>${percent}%</span><a class="primary-button inline-action" data-continue-link href="${esc(href)}">${action} <span aria-hidden="true">→</span></a></div>
   </section>`;
 }
 
@@ -92,7 +93,6 @@ function unitsPreview(manifests, progress) {
 
 export function homeHtml(course, manifests = [], progress = {}) {
   const totalLessons = manifests.reduce((sum, manifest) => sum + manifest.lessons.length, 0);
-  const resumeHref = currentHref(progress) || (manifests[0] ? `#/unidade/${encodeURIComponent(manifests[0].id)}` : '#/unidades');
   const hasProgress = Boolean(currentHref(progress));
 
   return `<div class="dashboard-home reading-content" data-home-total-lessons="${totalLessons}">
@@ -100,7 +100,6 @@ export function homeHtml(course, manifests = [], progress = {}) {
       <div class="dashboard-hero-copy">
         <h1>${hasProgress ? 'Continue seu percurso de aprendizagem' : 'Comece seu percurso de aprendizagem'}</h1>
         <p>${hasProgress ? 'Retome do ponto em que parou e avance no seu ritmo.' : 'Comece pelos fundamentos e avance com explicações, prática, revisão e evidências de aprendizagem.'}</p>
-        <a class="primary-button hero-primary-action" data-continue-link href="${esc(resumeHref)}">${hasProgress ? 'Continuar de onde parou' : 'Começar a estudar'} <span aria-hidden="true">→</span></a>
       </div>
       ${homeHeroArt()}
     </section>
