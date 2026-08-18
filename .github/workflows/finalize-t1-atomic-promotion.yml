@@ -1,0 +1,42 @@
+name: Finalize T1 N0 atomic promotion
+
+on:
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  finalize:
+    if: github.head_ref == 't1-9-atomic-promotion'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout branch
+        uses: actions/checkout@v6
+        with:
+          ref: t1-9-atomic-promotion
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+          package-manager-cache: false
+
+      - name: Finalize promotion and remove temporary tooling
+        run: node scripts/finalize-t1-atomic-promotion.mjs
+
+      - name: Commit final branch shape
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          if git diff --cached --quiet; then
+            echo 'Atomic promotion already finalized.'
+            exit 0
+          fi
+          git commit -m 'chore: finaliza promoção atômica T1.9'
+          git push origin HEAD:t1-9-atomic-promotion
