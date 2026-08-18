@@ -1,0 +1,130 @@
+{
+  "schemaVersion": 1,
+  "id": "N0-U01-L02",
+  "title": "Ouvindo sons nas palavras",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Perceber e comparar semelhanças e diferenças sonoras claras em palavras faladas, sem usar a forma escrita como pista para a resposta.",
+  "studentObjective": "Ouvir palavras e perceber quando elas começam com sons parecidos ou diferentes.",
+  "competencies": [
+    "comparar palavras faladas sem depender da escrita",
+    "perceber quando duas palavras começam de maneira sonora parecida ou diferente",
+    "reconhecer que palavras diferentes podem compartilhar parte de seus sons"
+  ],
+  "prerequisites": ["N0-U01-L03"],
+  "limits": [
+    "não mostrar a forma escrita das palavras antes das respostas auditivas",
+    "não exigir leitura, sílabas ou terminologia fonética",
+    "não exigir segmentação em sons mínimos",
+    "não transformar a atividade em treino de regras letra-som"
+  ],
+  "media": {
+    "tts": "instrucoes e explicacoes",
+    "controlledAudio": ["N0-U01-L02-AUD-*"],
+    "video": "nao necessario",
+    "images": "nao necessarias"
+  },
+  "supportMaterials": {
+    "curatedMedia": [
+      {
+        "mediaIds": "N0-U01-L02-AUD-001 a N0-U01-L02-AUD-008",
+        "type": "AUDIO_CONTROLADO",
+        "requiredForPublication": true,
+        "purpose": "fornecer estímulos auditivos fixos para comparação sonora sem pistas da escrita",
+        "locations": ["L02-B02", "L02-C01", "L02-B03", "L02-A01"],
+        "productionSource": "producao-midia/FILA-MIDIA.md"
+      }
+    ],
+    "runtimeResources": [
+      {
+        "type": "TTS_OK",
+        "locations": ["instruções", "explicações", "feedback"],
+        "purpose": "apoio de acesso ao texto; não determina sozinho respostas de discriminação sonora"
+      }
+    ],
+    "publicationDependency": "a estrutura da lição pode ser implementada antes dos arquivos, mas os blocos auditivos não podem ser publicados como concluídos enquanto os oito áudios controlados não estiverem validados e ligados aos IDs",
+    "decisionRationale": "imagem e vídeo não ajudam o objetivo central e podem introduzir pistas visuais indevidas"
+  },
+  "sequence": [
+    {
+      "id": "L02-B01",
+      "type": "objective",
+      "focus": "read-or-listen",
+      "text": "Vamos ouvir palavras como pato, mala, sol e gato. Aqui, palavra é cada exemplo completo que ouvimos. O importante agora é prestar atenção aos sons, sem precisar ler para responder."
+    },
+    {
+      "id": "L02-B02",
+      "type": "audio-demonstration",
+      "focus": "listen",
+      "title": "Duas palavras podem começar de forma parecida",
+      "stimuli": ["N0-U01-L02-AUD-001", "N0-U01-L02-AUD-002"],
+      "spokenContent": ["pato", "pipa"],
+      "writtenWordsVisibleBeforeResponse": false,
+      "explanation": "Pato e pipa são palavras diferentes, mas o começo delas soa parecido."
+    },
+    {
+      "id": "L02-C01",
+      "type": "quick-check",
+      "focus": "respond",
+      "interaction": "audio-pair-choice",
+      "prompt": "Ouça os dois áudios. As palavras começam de forma parecida ou diferente?",
+      "stimuli": ["N0-U01-L02-AUD-003", "N0-U01-L02-AUD-004"],
+      "spokenContent": ["mala", "mesa"],
+      "options": ["parecida", "diferente"],
+      "correct": "parecida",
+      "writtenWordsVisibleBeforeResponse": false
+    },
+    {
+      "id": "L02-B03",
+      "type": "audio-demonstration",
+      "focus": "listen",
+      "title": "Também podemos ouvir diferenças claras",
+      "stimuli": ["N0-U01-L02-AUD-007", "N0-U01-L02-AUD-008"],
+      "spokenContent": ["gato", "bola"],
+      "writtenWordsVisibleBeforeResponse": false,
+      "explanation": "Gato e bola começam de forma bem diferente. Aqui estamos comparando apenas o que ouvimos."
+    },
+    {
+      "id": "L02-A01",
+      "type": "guided-activity",
+      "focus": "respond",
+      "interaction": "audio-pair-classify",
+      "title": "Começam parecido ou diferente?",
+      "instruction": "Ouça cada par quantas vezes precisar e escolha se o começo soa parecido ou diferente.",
+      "options": ["parecida", "diferente"],
+      "writtenWordsVisibleBeforeResponse": false,
+      "items": [
+        {"stimuli": ["N0-U01-L02-AUD-001", "N0-U01-L02-AUD-002"], "correct": "parecida"},
+        {"stimuli": ["N0-U01-L02-AUD-003", "N0-U01-L02-AUD-007"], "correct": "diferente"},
+        {"stimuli": ["N0-U01-L02-AUD-005", "N0-U01-L02-AUD-006"], "correct": "parecida"},
+        {"stimuli": ["N0-U01-L02-AUD-001", "N0-U01-L02-AUD-008"], "correct": "diferente"}
+      ],
+      "feedbackRule": "feedback imediato, repeticao livre e nova tentativa sem penalidade"
+    },
+    {
+      "id": "L02-C02",
+      "type": "quick-check",
+      "focus": "respond",
+      "interaction": "single-choice",
+      "prompt": "O que estamos usando para comparar as palavras nesta lição?",
+      "options": ["As letras escritas.", "Os sons que ouvimos.", "A quantidade de letras."],
+      "correctIndex": 1,
+      "feedback": "Nesta lição, comparamos os sons que ouvimos."
+    },
+    {
+      "id": "L02-B04",
+      "type": "summary",
+      "focus": "read-or-listen",
+      "points": [
+        "Podemos ouvir semelhanças e diferenças entre palavras.",
+        "Algumas palavras começam com sons parecidos.",
+        "Outras começam de forma bem diferente.",
+        "Podemos fazer essa comparação sem ver a palavra escrita."
+      ],
+      "bridgeToNextLesson": "Na próxima lição, vamos juntar o que você já sabe sobre letras ao que acabou de ouvir: o nome de uma letra e o som que ela pode representar são coisas diferentes."
+    }
+  ],
+  "completionEvidence": {
+    "observablePerformance": "Comparar pares de palavras faladas e identificar semelhanças ou diferenças claras no começo sonoro sem usar a escrita como pista.",
+    "criterion": "acertar L02-C02 e pelo menos 3 dos 4 itens de L02-A01 apos oportunidade de repetir os audios"
+  }
+}
