@@ -25,9 +25,12 @@ T1.1 — pesquisa/auditoria da entrada N0 → CONCLUÍDO
 T1.2 — redimensionamento curricular controlado do N0 → CONCLUÍDO
 T1.3 — contrato de linguagem para o aluno → CONCLUÍDO
 T1.4 — skills/fontes canônicas → CONCLUÍDO
-T1.5 — contrato técnico da abertura da lição → ATIVO
+T1.5 — contrato técnico da abertura da lição → CONCLUÍDO
+T1.6 — nova autoria inicial → CONCLUÍDO / VALIDADO EM STAGING
+T1.7 — frontend de intro/retomada → CONCLUÍDO / HOMOLOGADO
+T1.8 — metodologia em Ajuda → ATIVO
 P6 — Feedback por IA no Clássico → AGUARDANDO T1
-MODO CLÁSSICO REAL → slice funcional com progresso persistente; porta de entrada em revisão antes de ampliar o produto
+MODO CLÁSSICO REAL → slice funcional com progresso persistente; fundamentos/experiência inicial em refinamento transversal antes de ampliar o produto
 MODO GAMIFICADO → somente após CLÁSSICO HOMOLOGADO
 ```
 
@@ -276,10 +279,10 @@ T1.1 pesquisa + auditoria                                  ✓
 T1.2 redimensionamento curricular N0                       ✓
 T1.3 contrato de linguagem                                 ✓
 T1.4 skills/fontes canônicas                               ✓
-T1.5 contrato técnico de abertura                          ← ativo
-T1.6 nova autoria inicial
-T1.7 frontend de intro/fluxo
-T1.8 metodologia em Ajuda
+T1.5 contrato técnico de abertura                          ✓
+T1.6 nova autoria inicial                                  ✓ staged + validada
+T1.7 frontend de intro/fluxo                               ✓ homologado
+T1.8 metodologia em Ajuda                                  ← ativo
 T1.9 migração/catálogo/progresso/mídia
 T1.10 validação/homologação
 ```
@@ -351,6 +354,18 @@ T1.4 completa a consolidação com:
 - `docs/ui-ux.md` incorporando tela inicial limpa e nova posição de Metodologia;
 - `.ChatGPT/skills/frontend-visual-check/SKILL.md` exigindo inspeção de primeira abertura, retomada, explicação e atividade, incluindo largura intermediária quando relevante;
 - `PROJECT_INDEX.md` mapeando as fontes T1.
+
+### T1.5–T1.7 — contrato, autoria e experiência inicial
+
+Consolidado antes de T1.8:
+
+- `studentObjective` autoral pode alimentar `runtime.presentation.intro` sem substituir `objective` técnico;
+- conteúdo legado recebe fallback público neutro, não vazamento de objetivo curricular;
+- novas U1/U2 estão validadas em staging e aguardam promoção/migração em T1.9;
+- a primeira entrada de lição mostra somente retorno à unidade, título, intro pública e `Começar lição`;
+- stepper/conteúdo ficam ocultos até o início;
+- retomada usa estado visual separado e histórico pedagógico real sem criar domínio/evidência;
+- CI e inspeção visual em desktop/intermediário/mobile homologaram a experiência de T1.7.
 
 ### Condição de saída T1
 
@@ -452,8 +467,9 @@ Cobrir troca de modos, preservação de domínio, coerência/resistência a farm
 ## Próximo passo oficial
 
 ```text
-T1.5 — contrato técnico da abertura da lição
-→ definir authoring/runtime/fallback para title + student-facing intro
-→ preservar retrocompatibilidade sem imprimir objective técnico
-→ seguir docs/plano-fundamentos-claros.md
+T1.8 — metodologia em Ajuda
+→ remover “Metodologia do curso” do rodapé persistente
+→ adicionar “Como o curso funciona” em Ajuda
+→ manter acesso à metodologia e preservar deep link existente
+→ seguir docs/plano-fundamentos-claros.md e docs/ui-ux.md
 ```
