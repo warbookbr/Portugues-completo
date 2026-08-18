@@ -134,7 +134,7 @@ export function materializeVerification(baseSource, extensionSource, config) {
     title: config.title,
     objective: config.objective,
     prerequisites: clone(config.prerequisites || []),
-    items: [...clone(base.items || []), ...clone(extension.items || [])],
+    items: [...clone(base.items || []), ...clone(extension.items || [])].map(canonicalizeRuntimeBlock),
     coverage: [...clone(base.coverage || []), ...clone(extension.coverage || [])]
   };
 
