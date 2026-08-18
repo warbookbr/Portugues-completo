@@ -59,12 +59,46 @@ Antes de publicar uma explicação, verificar:
 - há uma ideia principal identificável?
 - algum termo técnico pode ser trocado por palavra comum sem perder precisão?
 - algum termo ainda não ensinado está sendo usado como pré-requisito?
+- algum termo aparentemente simples nomeia um conceito que o aluno ainda não construiu?
 - o exemplo aparece cedo o suficiente?
 - uma frase longa pode ser dividida em duas ideias menores?
 - o texto parece escrito para um professor ou para o aluno?
 - o aluno entende o que fazer depois de ler?
 
 Quando uma formulação tecnicamente precisa for necessária para autoria, mantê-la internamente e criar texto público próprio.
+
+### Clareza é relativa ao momento curricular
+
+Clareza não depende apenas da dificuldade das palavras. Uma palavra curta, cotidiana ou comum na escola pode continuar obscura se o conceito correspondente ainda não tiver sido ensinado ou consolidado naquele ponto do percurso.
+
+Regra:
+
+```text
+palavra simples
+≠ conceito compreendido
+
+conceito ainda não construído
+→ não usar o nome do conceito como pressuposto
+→ começar por algo perceptível/concreto ou por exemplo acessível
+→ construir o significado
+→ nomear o conceito
+→ reutilizar o termo depois que ele passou a ter significado para o aluno
+```
+
+Exemplo:
+
+```text
+RUIM SE "VOGAL" AINDA NÃO FOI ENSINADA
+→ Aprender a reconhecer vogais.
+
+MELHOR NESSE MOMENTO
+→ Conhecer um grupo de letras que aparece em muitas palavras.
+
+DEPOIS DE CONSTRUIR O SIGNIFICADO
+→ Essas letras são chamadas de vogais.
+```
+
+Isso não significa evitar terminologia curricular. Significa introduzi-la no momento certo. Depois que o conceito foi construído e praticado, usar seu nome normalmente ajuda a consolidar e ampliar a aprendizagem.
 
 ## Duas linguagens obrigatórias
 
@@ -360,6 +394,7 @@ Texto, UI, TTS e mídia são adequados e compatíveis com contratos.
 A explicação é clara, completa e simples?
 O aluno entende o objetivo sem metalíngua desnecessária?
 Termos novos são ensinados antes de usados como pressuposto?
+Algum termo simples nomeia um conceito que ainda não foi construído?
 O exemplo chega cedo?
 Existe uma ideia principal por vez?
 Há um salto entre esta lição e a anterior?
@@ -434,4 +469,4 @@ Não depender da conversa anterior para decisões duradouras.
 
 ## Regra final
 
-Ao escolher entre uma formulação tecnicamente elegante e uma que o aluno compreende melhor, preserve a precisão internamente e **ensine externamente da forma mais clara, completa e simples possível**.
+Ao escolher entre uma formulação tecnicamente elegante e uma que o aluno compreende melhor, preserve a precisão internamente e **ensine externamente da forma mais clara, completa e simples possível, respeitando o que o aluno já teve oportunidade de construir naquele ponto do percurso**.
