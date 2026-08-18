@@ -29,7 +29,7 @@ Fase estratégica: CONCLUIR E HOMOLOGAR O CLÁSSICO
 Marco concluído mais recente: P5 — ProgressService, revisão e persistência
 Marco ativo: P6 — Feedback por IA no Clássico
 Item ativo: ainda não iniciado
-Último item concluído: CL-UX-HOME-REDESIGN (refinamento transversal pós-P5) + CL-P5-PROGRESS-ENGINE + CL-P5-LOCAL-CACHE + CL-P5-REVIEW + CL-P5-GIST-SYNC + CL-P5-CONFLICT + CL-P5-UI
+Último item concluído: CL-UX-LESSON-FLOW + CL-UX-HOME-REDESIGN (refinamentos transversais pós-P5) + CL-P5-PROGRESS-ENGINE + CL-P5-LOCAL-CACHE + CL-P5-REVIEW + CL-P5-GIST-SYNC + CL-P5-CONFLICT + CL-P5-UI
 Próximo passo exato: implementar AiFeedbackService/provider adapter sobre o contrato docs/avaliacao-ia.md, com BYOK opt-in, structured output, fallback e preservação de VALIDACAO_PENDENTE
 Blocker atual do próximo passo: nenhum blocker técnico global; provider/model/API atuais devem ser verificados em documentação oficial no início de P6
 Gate final do Clássico: NÃO SATISFEITO
@@ -258,7 +258,7 @@ Casos provados:
 - DOM Chrome com painel de progresso/configuração presente;
 - screenshots desktop/tablet/mobile sem regressão visual aparente.
 
-## Refinamento transversal de UI após P5
+## Refinamentos transversais de UI após P5
 
 ### `CL-UX-HOME-REDESIGN`
 
@@ -276,7 +276,9 @@ Decisões implementadas:
 - navegação principal única no cabeçalho: Início, Plano de estudos, Unidades, Revisões e Desempenho;
 - nenhuma sidebar duplicando os mesmos destinos;
 - `Plano de estudos` aparece somente na navegação e não é repetido no hero;
-- hero orientado a início/retomada com um único CTA principal;
+- hero permanece contextual, sem CTA concorrente de retomada;
+- `Continue estudando / Comece por aqui` concentra o único CTA principal (`Continuar de onde parou` ou `Começar a estudar`);
+- `Continuar lição` foi removido como ação concorrente na home;
 - primeiro acesso usa “Comece seu percurso de aprendizagem” e “Comece por aqui”; retorno usa linguagem de continuidade;
 - `N0`–`N4` permanecem internos e são apresentados como Fundamentos/Básico/Intermediário/Avançado/Domínio;
 - home mostra somente métricas derivadas de catálogo + `ProgressService`;
@@ -288,9 +290,42 @@ Decisões implementadas:
 Validação:
 
 - smoke DOM cobre home e todos os destinos de navegação;
-- guard rails impedem reintrodução de `Ver plano de estudos` no hero e código de nível cru como rótulo público;
+- guard rails impedem reintrodução de CTA duplicado, `Ver plano de estudos` no hero e código de nível cru como rótulo público;
 - screenshots 1440px, 768px e 390px inspecionadas;
 - nenhuma regressão funcional observada em unidade/lição N0/N4.
+
+### `CL-UX-LESSON-FLOW`
+
+```text
+Escopo: apresentação de lições e verificações do Modo Clássico
+Estado consolidado: HOMOLOGADO
+Técnico: IMPLEMENTADO
+Arquivos principais: classic-lesson-flow.js + classic-lesson-flow.css
+Homologação visual: N0 desktop/mobile + N4 desktop
+Mudança de currículo/runtime/progresso: nenhuma
+```
+
+Decisões implementadas:
+
+- a lição deixa de mostrar todos os blocos simultaneamente e passa a exibir uma etapa principal por vez;
+- blocos de conteúdo relacionados são agrupados em quantidade moderada, sem criar uma tela por bloco;
+- atividades podem vir com poucos blocos preparatórios e continuam usando os mesmos IDs/contratos/evidências;
+- controles `Voltar` e `Avançar` permitem revisão livre, sem gate artificial;
+- etapa visual corrente pode ser lembrada em `sessionStorage` apenas como conveniência de interface;
+- breadcrumb `Curso › Unidade › Lição` é substituído por `← Voltar para a unidade`, apontando deterministicamente para a unidade;
+- rótulos redundantes como `Prática` e `correção objetiva` são removidos quando a etapa já comunica a função;
+- badge obrigatório é apresentado como `Necessária para concluir`;
+- transição curta de etapa respeita `prefers-reduced-motion` e move foco para o título da etapa;
+- respostas permanecem no DOM ao navegar entre etapas, portanto não são apagadas por `Voltar/Avançar`.
+
+Validação:
+
+- teste mecânico confirma que N0-U01-L01 é agrupada em poucas etapas, preserva todos os blocos e não microfragmenta um bloco por tela;
+- smoke DOM confirma `Voltar para a unidade`, `Avançar`, montagem de `data-lesson-step` e ausência do breadcrumb longo;
+- smoke DOM impede reintrodução de `correção objetiva` na apresentação final;
+- screenshots da primeira etapa N0 em desktop/mobile inspecionadas;
+- screenshot N4 inspecionada com atividade real dentro do fluxo segmentado;
+- CI completo da PR do refinamento passou antes da homologação.
 
 ## Estado de publicação do slice após P5
 
