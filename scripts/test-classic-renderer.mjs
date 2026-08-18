@@ -5,6 +5,7 @@ import { fileURLToPath } from 'node:url';
 import { ContentService } from '../app/js/services/content-service.js';
 import { documentHtml, unitHtml } from '../app/js/ui/classic-renderer.js';
 import { homeHtml } from '../app/js/ui/classic-home.js';
+import { buildLessonStepGroups } from '../app/js/ui/classic-lesson-flow.js';
 import { createEmptyProgress } from '../app/js/services/progress-service.js';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -57,9 +58,18 @@ assert.match(home, /Comece seu percurso de aprendizagem/);
 assert.match(home, /Fala, sons e escrita/);
 assert.match(home, /Literatura, multimodalidade/);
 assert.match(home, /Começar a estudar/);
+assert.equal((home.match(/Começar a estudar/g) || []).length, 1, 'home deve ter um único CTA de início/retomada');
+assert.doesNotMatch(home, /Continuar lição/i, 'home não deve manter CTA concorrente de continuar lição');
 assert.doesNotMatch(home, />\s*N[0-4]\s*[·•]/, 'home não deve expor código de nível ao aluno');
 assert.doesNotMatch(home, /Ver plano de estudos/i, 'hero não deve duplicar Plano de estudos');
 assert.doesNotMatch(home, /<span class="eyebrow">Modo Clássico<\/span>/, 'hero não deve repetir o modo já visível no cabeçalho');
+
+const n0Lesson = await service.loadLesson('N0-U01', 'N0-U01-L01');
+const guidedGroups = buildLessonStepGroups(n0Lesson.runtime.blocks);
+assert.ok(guidedGroups.length >= 3 && guidedGroups.length <= 8, 'lição deve ser segmentada em poucas etapas significativas');
+assert.ok(guidedGroups.length < n0Lesson.runtime.blocks.length, 'segmentação não deve criar uma tela por bloco');
+assert.equal(guidedGroups.flat().length, n0Lesson.runtime.blocks.length, 'segmentação deve preservar todos os blocos');
+assert.ok(guidedGroups.every(group => group.length <= 3), 'etapa não deve acumular conteúdo demais');
 
 const n0Verification = await service.loadVerification('N0-U01');
 const n0Html = documentHtml(n0Verification.runtime, { unitId: 'N0-U01', unitTitle: 'Fala, sons e escrita', verification: true });
@@ -73,4 +83,4 @@ assert.match(n4Html, /Registrar resposta/i);
 
 assert.equal(lessonCount, 20);
 assert.equal(verificationCount, 2);
-console.log(`Renderer clássico: ${lessonCount} lições + ${verificationCount} verificações e nova home renderizados sem estado unsupported.`);
+console.log(`Renderer clássico: ${lessonCount} lições + ${verificationCount} verificações, CTA único e segmentação guiada validados.`);
