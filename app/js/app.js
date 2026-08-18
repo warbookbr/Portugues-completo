@@ -12,6 +12,7 @@ import { helpPageHtml, methodologyPageHtml, performancePageHtml, planPageHtml, r
 import { bindClassicProgress } from './ui/classic-progress-binding.js';
 import { polishClassicPresentation } from './ui/classic-presentation.js';
 import { decorateClassicProgress } from './ui/classic-progress.js';
+import { mountGuidedLesson } from './ui/classic-lesson-flow.js';
 
 const app = document.getElementById('app');
 const settingsRoot = document.getElementById('settings-root');
@@ -56,6 +57,7 @@ function mountClassic(html, documentRuntime = null) {
   currentRuntime = documentRuntime;
   app.innerHTML = html;
   polishClassicPresentation(app);
+  mountGuidedLesson(app, documentRuntime);
   bindClassicRenderer(app, documentRuntime);
   bindClassicProgress(app, documentRuntime, { progressService, onProgress: refreshProgressPresentation });
   refreshProgressPresentation();
