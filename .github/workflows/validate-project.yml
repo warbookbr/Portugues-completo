@@ -36,6 +36,9 @@ jobs:
       - name: Test content normalization
         run: node scripts/test-content-normalizer.mjs
 
+      - name: Test T1 staged authoring
+        run: node scripts/test-t1-content-authoring.mjs
+
       - name: Validate publication catalog
         run: node scripts/validate-catalog.mjs
 
