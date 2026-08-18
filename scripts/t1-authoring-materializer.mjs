@@ -62,8 +62,8 @@ function isInteractiveAuthoringBlock(block) {
     || block.automaticValidation === true;
 }
 
-function canonicalizeRuntimeBlock(block) {
-  if (!isInteractiveAuthoringBlock(block)) return clone(block);
+function canonicalizeRuntimeBlock(block, forceInteractive = false) {
+  if (!forceInteractive && !isInteractiveAuthoringBlock(block)) return clone(block);
 
   const result = canonicalizeAnswerFields(block);
   if (!result || typeof result !== 'object') return result;
@@ -114,7 +114,7 @@ export function materializeLesson(source, definition) {
   lesson.studentObjective = definition.studentObjective;
   if (Array.isArray(definition.prerequisites)) lesson.prerequisites = clone(definition.prerequisites);
   if (definition.completion) lesson.completionEvidence = materializeCompletion(lesson.completionEvidence, definition.completion);
-  if (Array.isArray(lesson.sequence)) lesson.sequence = lesson.sequence.map(canonicalizeRuntimeBlock);
+  if (Array.isArray(lesson.sequence)) lesson.sequence = lesson.sequence.map(block => canonicalizeRuntimeBlock(block));
   return lesson;
 }
 
@@ -134,7 +134,7 @@ export function materializeVerification(baseSource, extensionSource, config) {
     title: config.title,
     objective: config.objective,
     prerequisites: clone(config.prerequisites || []),
-    items: [...clone(base.items || []), ...clone(extension.items || [])].map(canonicalizeRuntimeBlock),
+    items: [...clone(base.items || []), ...clone(extension.items || [])].map(item => canonicalizeRuntimeBlock(item, true)),
     coverage: [...clone(base.coverage || []), ...clone(extension.coverage || [])]
   };
 
