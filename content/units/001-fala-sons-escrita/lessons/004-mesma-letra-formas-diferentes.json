@@ -1,9 +1,10 @@
 {
   "schemaVersion": 1,
   "id": "N0-U01-L04",
-  "title": "A mesma letra em formas diferentes",
+  "title": "Maiúsculas e minúsculas",
   "status": "conteudo-pronto-para-implementacao",
   "objective": "Reconhecer que letras maiúsculas e minúsculas são formas relacionadas da mesma letra e associá-las visualmente sem ainda estudar regras de uso de maiúsculas.",
+  "studentObjective": "Entender que uma mesma letra pode aparecer em forma maiúscula ou minúscula e aprender a reconhecer os pares.",
   "competencies": [
     "associar letras maiúsculas às minúsculas correspondentes",
     "reconhecer pares mesmo quando as duas formas são visualmente bastante diferentes",
@@ -58,7 +59,7 @@
       "id": "L04-B01",
       "type": "objective",
       "focus": "read-or-listen",
-      "text": "Uma mesma letra pode aparecer em uma forma maiúscula e em uma forma minúscula. Nesta lição, você vai aprender a reconhecer os pares. Ainda não precisamos estudar quando cada forma deve ser usada."
+      "text": "Uma mesma letra pode aparecer em duas formas: maiúscula e minúscula. Vamos aprender a reconhecer qual forma combina com qual, sem estudar ainda as regras de quando usar cada uma."
     },
     {
       "id": "L04-B02",
@@ -71,7 +72,7 @@
         {"upper": "S", "lower": "s"},
         {"upper": "V", "lower": "v"}
       ],
-      "explanation": "A forma muda de tamanho ou de traço, mas continua sendo a mesma letra."
+      "explanation": "A forma muda, mas continua sendo a mesma letra."
     },
     {
       "id": "L04-B03",
@@ -85,7 +86,7 @@
         {"upper": "Q", "lower": "q"},
         {"upper": "R", "lower": "r"}
       ],
-      "explanation": "Mesmo quando as formas parecem bem diferentes, cada par representa a mesma letra em maiúscula e minúscula."
+      "explanation": "Mesmo quando as formas parecem diferentes, cada par representa a mesma letra em maiúscula e minúscula."
     },
     {
       "id": "L04-C01",
@@ -129,20 +130,21 @@
       "type": "quick-check",
       "focus": "respond",
       "interaction": "single-choice",
-      "prompt": "Se A e a têm aparências diferentes, o que isso significa nesta lição?",
+      "prompt": "Se A e a têm aparências diferentes, o que isso significa?",
       "options": [
         "São duas letras diferentes.",
         "São duas formas da mesma letra.",
         "Uma delas não faz parte do alfabeto."
       ],
-      "correctIndex": 1
+      "correctIndex": 1,
+      "feedback": "A e a são duas formas da mesma letra."
     },
     {
       "id": "L04-A02",
       "type": "coverage-check",
       "focus": "respond",
       "interaction": "randomized-pair-recognition",
-      "title": "Reconhecendo todos os pares",
+      "title": "Reconhecendo os pares",
       "source": "letterPairs",
       "instruction": "Associe cada maiúscula à minúscula correspondente. A ordem deve ser embaralhada.",
       "presentationRule": "apresentar em rodadas curtas para evitar sobrecarga visual; todas as 26 letras devem aparecer ao menos uma vez antes da conclusão da lição",
@@ -158,7 +160,7 @@
         "A mudança de forma não transforma uma letra em outra.",
         "As regras de quando usar maiúsculas serão estudadas mais adiante."
       ],
-      "bridgeToNextLesson": "Na próxima lição, vamos separar letras em vogais e consoantes e também distingui-las de números e outros sinais."
+      "bridgeToNextLesson": "Na próxima lição, vamos conhecer as vogais e aprender quais letras chamamos de consoantes."
     }
   ],
   "completionEvidence": {
