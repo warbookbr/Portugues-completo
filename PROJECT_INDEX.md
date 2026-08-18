@@ -25,6 +25,7 @@ Português Completo
 - `docs/plano-fundamentos-claros.md` — **plano transversal ativo** para reorganizar a entrada N0, simplificar a linguagem pedagógica, criar a nova abertura de lição, realocar Metodologia e preservar progresso/IDs.
 - `docs/auditoria-t1-1-porta-entrada-n0.md` — **decisão da T1.1**: pesquisa/auditoria da entrada N0, nova espinha recomendada, impactos técnicos e direção para o redimensionamento T1.2.
 - `docs/redimensionamento-t1-2-n0.md` — **arquitetura congelada da T1.2**: novas responsabilidades de U1/U2, ordem das lições, verificações V02 e matriz de identidade/migração.
+- `docs/migracao-t1-9-n0.md` — **contrato executável da T1.9**: equivalências de IDs/refs de atividade, split da antiga L05, conteúdos movidos, V01→V02, current, reviews, Gist e guard rails contra domínio falso.
 - `docs/linguagem-aluno.md` — **contrato canônico T1.3** para explicações claras, completas e simples, separando objetivo técnico da fala pública.
 - `docs/estado-implementacao-classico.md` — **estado operacional concreto do Modo Clássico**: marco/item ativo, estados técnico/homologação/mídia/publicação, blockers e próximo passo exato.
 - `docs/execucao-continua.md` — execução autônoma por marcos autorizados.
@@ -45,6 +46,7 @@ PROJECT_INDEX.md
 → docs/estado-implementacao-classico.md
 → se T1 estiver ativo: docs/plano-fundamentos-claros.md
 → se T1.2 estiver concluído: docs/redimensionamento-t1-2-n0.md
+→ se T1.9 estiver ativo: docs/migracao-t1-9-n0.md
 → se houver autoria/copy pública: docs/linguagem-aluno.md
 → se T1 estiver ativo: .ChatGPT/skills/fundamentos-claros/SKILL.md
 → .ChatGPT/skills/classic-product-delivery/SKILL.md
@@ -104,7 +106,8 @@ Durante homologação de atividade, lição, verificação ou unidade, `docs/cal
 ## Nível 0
 
 - `docs/auditoria-t1-1-porta-entrada-n0.md` — diagnóstico T1.1 que fundamenta o redimensionamento.
-- `docs/redimensionamento-t1-2-n0.md` — arquitetura vigente de U1/U2 durante T1 até sua materialização em T1.6.
+- `docs/redimensionamento-t1-2-n0.md` — arquitetura vigente de U1/U2 durante T1 até sua promoção controlada.
+- `docs/migracao-t1-9-n0.md` — identidade/progresso executáveis da integração T1.9; prevalece para migração de refs/estado antes da promoção dos manifests.
 - `docs/linguagem-aluno.md` — contrato de linguagem aplicado à nova autoria inicial.
 - `docs/unidades-nivel-0.md`
 - `docs/licoes-nivel-0.md`
@@ -112,7 +115,7 @@ Durante homologação de atividade, lição, verificação ou unidade, `docs/cal
 - `docs/checkpoint-saida-nivel-0.md`
 - `content/levels/000-fundamentos/exit-verification.json`
 
-Durante T1, para U1/U2 prevalece `docs/redimensionamento-t1-2-n0.md`; os documentos históricos de unidades/lições permanecem matéria-prima até a consolidação T1.6. U3–U6 continuam canônicos sem alteração.
+Durante T1.9, para U1/U2 prevalecem `docs/redimensionamento-t1-2-n0.md` + `docs/migracao-t1-9-n0.md`; a autoria nova já está validada em staging e os caminhos históricos permanecem ativos somente até a promoção coerente de catálogo/manifests. U3–U6 continuam canônicos sem alteração.
 
 ## Nível 1
 
@@ -251,7 +254,7 @@ P2 ContentService/normalizador                          ✓
 P3 manifests + catálogo inicial                         ✓
 P4 renderer real do Clássico                            ✓
 P5 ProgressService + revisão + cache/Gist/sync           ✓
-T1 Fundamentos claros + experiência de lição            ← ativo (T1.5)
+T1 Fundamentos claros + experiência de lição            ← ativo (T1.9)
 P6 feedback por IA no Clássico                          aguardando T1
 P7 ampliação do catálogo Clássico N0→N4
 P8 mídia + prontidão de publicação do Clássico
@@ -289,6 +292,7 @@ T1 é uma revisão pedagógica dirigida autorizada por validação real, não um
 - `scripts/validate-catalog.mjs`
 - `scripts/test-content-catalog.mjs`
 - `scripts/test-progress-service.mjs`
+- `scripts/test-progress-migration-t1.mjs`
 - `scripts/test-progress-policies.mjs`
 - `scripts/test-progress-merge-edge-cases.mjs`
 - `scripts/test-github-service.mjs`
@@ -305,6 +309,7 @@ ordem/condições dos marcos de produto → docs/roadmap-produto.md
 plano transversal ativo T1 → docs/plano-fundamentos-claros.md
 decisão T1.1 da entrada N0 → docs/auditoria-t1-1-porta-entrada-n0.md
 arquitetura T1.2 da entrada N0 → docs/redimensionamento-t1-2-n0.md
+contrato de migração T1.9 → docs/migracao-t1-9-n0.md
 linguagem pública pedagógica → docs/linguagem-aluno.md
 estado operacional concreto do Clássico → docs/estado-implementacao-classico.md
 arquitetura → docs/arquitetura.md
