@@ -1,4 +1,5 @@
 import { normalizeAuthoredContentV1 } from './content-normalizer-v1.js';
+import { normalizeStudentPresentationV1 } from './content-presentation-normalizer-v1.js';
 
 function joinUrl(basePath, relativePath) {
   const base = String(basePath || '').replace(/\/+$/, '');
@@ -71,7 +72,8 @@ export class ContentService {
   }
 
   normalize(source, context = {}) {
-    return normalizeAuthoredContentV1(source, context);
+    const runtime = normalizeAuthoredContentV1(source, context);
+    return normalizeStudentPresentationV1(source, runtime);
   }
 
   async loadNormalized(relativePath, context = {}) {
