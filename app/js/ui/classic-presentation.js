@@ -60,6 +60,16 @@ function hideInternalMetadata(root) {
   root.querySelectorAll('.blocker-card').forEach(element => element.remove());
 }
 
+function polishLessonHero(root, documentRuntime) {
+  if (documentRuntime?.kind !== 'LESSON') return;
+  const hero = root.querySelector('.lesson-hero');
+  const publicCopy = documentRuntime.presentation?.intro;
+  const paragraph = hero?.querySelector('p');
+  if (!paragraph) return;
+  if (typeof publicCopy === 'string' && publicCopy.trim()) paragraph.textContent = publicCopy.trim();
+  else paragraph.remove();
+}
+
 function polishUnitLevel(root) {
   const hero = root.querySelector('.unit-hero');
   const unit = root.querySelector('[data-unit-id]');
@@ -76,8 +86,9 @@ function polishCompletion(root) {
   });
 }
 
-export function polishClassicPresentation(root) {
+export function polishClassicPresentation(root, documentRuntime = null) {
   polishBlockLabels(root);
+  polishLessonHero(root, documentRuntime);
   hideInternalMetadata(root);
   polishUnitLevel(root);
   polishCompletion(root);
