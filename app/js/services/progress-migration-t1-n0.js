@@ -186,9 +186,8 @@ function competencyFromRefs(progress, refs, now) {
   const statuses = activeRefs.map(ref => evidence(progress, ref).status);
   const reviewRecommended = statuses.includes(REVIEW);
   const demonstratedRefs = activeRefs.filter(ref => demonstrated(progress, ref));
-  const contexts = new Set(demonstratedRefs.map(ref => ref.split('/')[0]));
   let status = 'EM_DESENVOLVIMENTO';
-  if (!reviewRecommended && demonstratedRefs.length) status = contexts.size >= 2 ? 'CONSOLIDADA' : DEMONSTRATED;
+  if (!reviewRecommended && demonstratedRefs.length) status = DEMONSTRATED;
   return { status, evidenceRefs: [...new Set(activeRefs)], reviewRecommended, updatedAt: now };
 }
 
