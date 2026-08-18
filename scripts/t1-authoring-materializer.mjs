@@ -11,6 +11,85 @@ function unique(items) {
   return [...new Set(items.filter(Boolean))];
 }
 
+const ANSWER_FIELD_RENAMES = Object.freeze({
+  correctPulseCount: 'correct',
+  correctTokenOrder: 'correctSequence',
+  correctWrittenOrder: 'correctSequence',
+  correctPosition: 'correct',
+  correctTile: 'correct',
+  correctOrder: 'correctSequence'
+});
+
+const CANONICAL_INTERACTIONS = new Set([
+  'single-choice',
+  'multiple-choice',
+  'classify',
+  'match',
+  'order',
+  'sequence',
+  'short-text',
+  'structured-response',
+  'long-text',
+  'oral-response',
+  'composite'
+]);
+
+function canonicalizeAnswerFields(value) {
+  if (Array.isArray(value)) return value.map(canonicalizeAnswerFields);
+  if (!value || typeof value !== 'object') return value;
+
+  const result = {};
+  for (const [key, item] of Object.entries(value)) {
+    const canonicalKey = ANSWER_FIELD_RENAMES[key] || key;
+    result[canonicalKey] = canonicalizeAnswerFields(item);
+  }
+  return result;
+}
+
+function entryHasAnswer(entry) {
+  if (!entry || typeof entry !== 'object') return false;
+  return ['correct', 'expected', 'correctIndex', 'correctSequence', 'auditoryCorrect', 'relationCorrectIndex']
+    .some(key => Object.prototype.hasOwnProperty.call(entry, key));
+}
+
+function canonicalizeRuntimeBlock(block) {
+  const result = canonicalizeAnswerFields(block);
+  if (!result || typeof result !== 'object' || !result.interaction || CANONICAL_INTERACTIONS.has(result.interaction)) return result;
+
+  if (Array.isArray(result.categories) && Array.isArray(result.items)) {
+    result.interaction = 'classify';
+  } else if (Array.isArray(result.items) && result.items.some(entryHasAnswer)) {
+    result.interaction = 'composite';
+  } else if (Object.prototype.hasOwnProperty.call(result, 'correctSequence')) {
+    result.interaction = 'sequence';
+  } else if (
+    Array.isArray(result.options)
+    || Object.prototype.hasOwnProperty.call(result, 'correct')
+    || Object.prototype.hasOwnProperty.call(result, 'correctIndex')
+  ) {
+    result.interaction = 'single-choice';
+  }
+
+  return result;
+}
+
+function materializeCompletion(sourceCompletion, definitionCompletion) {
+  if (!definitionCompletion?.clusters) return clone(sourceCompletion);
+
+  const clusters = {};
+  for (const [id, evidence] of Object.entries(definitionCompletion.clusters)) {
+    clusters[id] = { evidence: clone(evidence), required: true };
+  }
+
+  return {
+    ...clone(sourceCompletion || {}),
+    clusters,
+    nonCompensable: definitionCompletion.nonCompensable !== false,
+    ...(definitionCompletion.activityPolicies ? { activityPolicies: clone(definitionCompletion.activityPolicies) } : {}),
+    ...(definitionCompletion.runtimePolicyNote ? { runtimePolicyNote: definitionCompletion.runtimePolicyNote } : {})
+  };
+}
+
 export function materializeLesson(source, definition) {
   if (!source || !definition) throw new TypeError('materializeLesson exige source e definition.');
   if (source.id !== definition.id) {
@@ -21,6 +100,8 @@ export function materializeLesson(source, definition) {
   lesson.title = definition.title;
   lesson.studentObjective = definition.studentObjective;
   if (Array.isArray(definition.prerequisites)) lesson.prerequisites = clone(definition.prerequisites);
+  if (definition.completion) lesson.completionEvidence = materializeCompletion(lesson.completionEvidence, definition.completion);
+  if (Array.isArray(lesson.sequence)) lesson.sequence = lesson.sequence.map(canonicalizeRuntimeBlock);
   return lesson;
 }
 
