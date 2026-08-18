@@ -15,11 +15,19 @@ function safeParse(storage, key, fallback = null) {
 }
 
 export class ProgressSyncService {
-  constructor({ progressService, githubService = null, localStorage = globalThis.localStorage, sessionStorage = globalThis.sessionStorage } = {}) {
+  constructor({
+    progressService,
+    githubService = null,
+    localStorage = globalThis.localStorage,
+    sessionStorage = globalThis.sessionStorage,
+    migrateProgress = null
+  } = {}) {
     if (!progressService) throw new TypeError('ProgressSyncService exige ProgressService.');
+    if (migrateProgress !== null && typeof migrateProgress !== 'function') throw new TypeError('migrateProgress deve ser função ou null.');
     this.progressService = progressService;
     this.localStorage = localStorage;
     this.sessionStorage = sessionStorage;
+    this.migrateProgress = migrateProgress;
     this.state = safeParse(localStorage, SYNC_KEY, {
       gistId: null,
       login: null,
@@ -42,6 +50,14 @@ export class ProgressSyncService {
         this.persistState();
       }
     });
+  }
+
+  prepareProgress(progress) {
+    if (!progress) return { progress: null, changed: false, report: null };
+    if (!this.migrateProgress) return { progress: clone(progress), changed: false, report: null };
+    const result = this.migrateProgress(progress);
+    if (!result?.progress) throw new Error('Migração de progresso não retornou snapshot válido.');
+    return { progress: clone(result.progress), changed: Boolean(result.changed), report: clone(result.report || null) };
   }
 
   subscribe(listener) {
@@ -77,15 +93,22 @@ export class ProgressSyncService {
     this.persistState();
   }
 
-  baseline() { return safeParse(this.localStorage, BASELINE_KEY, null); }
+  baseline() {
+    const baseline = safeParse(this.localStorage, BASELINE_KEY, null);
+    if (!baseline) return null;
+    const prepared = this.prepareProgress(baseline);
+    if (prepared.changed) this.saveBaseline(prepared.progress);
+    return prepared.progress;
+  }
 
   saveBaseline(progress) {
-    this.localStorage?.setItem?.(BASELINE_KEY, JSON.stringify(progress));
+    const prepared = this.prepareProgress(progress);
+    this.localStorage?.setItem?.(BASELINE_KEY, JSON.stringify(prepared.progress));
   }
 
   replaceFromSync(progress) {
     this.suppressProgressWatch = true;
-    try { this.progressService.replaceProgress(progress); }
+    try { return this.progressService.replaceProgress(progress); }
     finally { this.suppressProgressWatch = false; }
   }
 
@@ -112,9 +135,21 @@ export class ProgressSyncService {
     this.persistState();
 
     try {
-      const local = this.progressService.getProgress();
+      const localSource = this.progressService.getProgress();
+      const preparedLocal = this.prepareProgress(localSource);
+      let local = preparedLocal.progress;
+      if (preparedLocal.changed) local = this.replaceFromSync(local);
+
       const baseline = this.baseline();
-      const remote = await this.github.loadProgress({ gistId: this.state.gistId });
+      const loadedRemote = await this.github.loadProgress({ gistId: this.state.gistId });
+      let remote = loadedRemote;
+      let remoteNeedsMigration = false;
+      if (loadedRemote) {
+        const preparedRemote = this.prepareProgress(loadedRemote.progress);
+        remoteNeedsMigration = preparedRemote.changed;
+        remote = { ...loadedRemote, progress: preparedRemote.progress };
+      }
+
       let resolved = local;
       let conflicts = [];
       let remoteMeta = null;
@@ -128,25 +163,25 @@ export class ProgressSyncService {
         const remoteChanged = !baseline || JSON.stringify(remote.progress) !== JSON.stringify(baseline);
 
         if (baseline && !localChanged && remoteChanged) {
-          resolved = remote.progress;
-          this.replaceFromSync(resolved);
+          resolved = this.replaceFromSync(remote.progress);
         } else if (baseline && localChanged && !remoteChanged) {
           remoteMeta = await this.github.updateProgress(remote.gistId, local);
         } else if (!baseline && isProgressEmpty(local)) {
-          resolved = remote.progress;
-          this.replaceFromSync(resolved);
+          resolved = this.replaceFromSync(remote.progress);
         } else if (!baseline && isProgressEmpty(remote.progress)) {
           remoteMeta = await this.github.updateProgress(remote.gistId, local);
         } else if (JSON.stringify(local) !== JSON.stringify(remote.progress)) {
           const merged = mergeProgress(local, remote.progress, baseline);
-          resolved = merged.progress;
+          resolved = this.replaceFromSync(merged.progress);
           conflicts = merged.conflicts;
-          this.replaceFromSync(resolved);
           remoteMeta = await this.github.updateProgress(remote.gistId, resolved);
         } else {
           resolved = local;
         }
 
+        if (remoteNeedsMigration && !remoteMeta) {
+          remoteMeta = await this.github.updateProgress(remote.gistId, resolved);
+        }
         this.state.lastRemoteUpdatedAt = remoteMeta?.gistUpdatedAt || remote.gistUpdatedAt || null;
       }
 

@@ -51,6 +51,9 @@ jobs:
       - name: Test T1 progress migration
         run: node scripts/test-progress-migration-t1.mjs
 
+      - name: Test T1 progress migration wiring
+        run: node scripts/test-progress-migration-wiring.mjs
+
       - name: Test progress policies
         run: node scripts/test-progress-policies.mjs
 
