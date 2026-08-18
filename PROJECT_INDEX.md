@@ -20,10 +20,12 @@ Português Completo
 
 ## Estado e execução
 
-- `docs/roadmap-curricular.md` — estado/maturidade do currículo N0→N4, atualmente fechado em M5.
-- `docs/roadmap-produto.md` — ordem e condições dos marcos da fase de produto/publicação; P1–P5 homologados e P6 ativo.
+- `docs/roadmap-curricular.md` — estado/maturidade do currículo N0→N4; fechado em M5, com revisão dirigida da porta de entrada N0 autorizada por T1.
+- `docs/roadmap-produto.md` — ordem e condições dos marcos da fase de produto/publicação; P1–P5 homologados, T1 ativo e P6 aguardando T1.
+- `docs/plano-fundamentos-claros.md` — **plano transversal ativo** para reorganizar a entrada N0, simplificar a linguagem pedagógica, criar a nova abertura de lição, realocar Metodologia e preservar progresso/IDs.
 - `docs/estado-implementacao-classico.md` — **estado operacional concreto do Modo Clássico**: marco/item ativo, estados técnico/homologação/mídia/publicação, blockers e próximo passo exato.
 - `docs/execucao-continua.md` — execução autônoma por marcos autorizados.
+- `.ChatGPT/skills/fundamentos-claros/SKILL.md` — skill operacional obrigatória enquanto T1 estiver ativo; tem precedência sobre iniciar P6.
 - `.ChatGPT/skills/classic-product-delivery/SKILL.md` — procedimento operacional obrigatório para implementar P1→P9 do Clássico sem perder estado.
 - `.ChatGPT/skills/student-ui-ux/SKILL.md` — procedimento obrigatório para qualquer interface visível ao aluno; aplica linguagem humana, reduz vazamento de IDs/enums técnicos e exige clareza pedagógica.
 - `.ChatGPT/skills/curricular-orchestration/SKILL.md` — orquestração de marcos curriculares longos.
@@ -38,6 +40,8 @@ Uma instância sem contexto deve começar por:
 PROJECT_INDEX.md
 → docs/roadmap-produto.md
 → docs/estado-implementacao-classico.md
+→ se T1 estiver ativo: docs/plano-fundamentos-claros.md
+→ se T1 estiver ativo: .ChatGPT/skills/fundamentos-claros/SKILL.md
 → .ChatGPT/skills/classic-product-delivery/SKILL.md
 → contratos específicos do item ativo
 ```
@@ -50,7 +54,7 @@ docs/ui-ux.md
 → .ChatGPT/skills/frontend-visual-check/SKILL.md
 ```
 
-`docs/roadmap-produto.md` diz **qual marco vem agora**. `docs/estado-implementacao-classico.md` diz **onde exatamente o trabalho parou dentro dele**.
+`docs/roadmap-produto.md` diz **qual marco vem agora**. `docs/estado-implementacao-classico.md` diz **onde exatamente o trabalho parou dentro dele**. Enquanto T1 estiver ativo, `docs/plano-fundamentos-claros.md` define as subfases e gates autorizados.
 
 ## Curso inteiro
 
@@ -58,7 +62,7 @@ docs/ui-ux.md
 - `docs/mapa-niveis-1-4.md` — camada M1 dos Níveis 1–4.
 - `docs/matriz-progressao-global.md` — progressão transversal N0–N4.
 
-O percurso **N0→N4 está curricularmente fechado em M5**. Isso não equivale a frontend/publicação concluídos, mídia histórica toda produzida, validação automática plena de respostas abertas ou aprovação automática de aluno individual.
+O percurso **N0→N4 foi curricularmente fechado em M5**. T1 reabre de forma dirigida apenas a porta de entrada N0 porque a validação de produto revelou problema real de progressão/clareza. Isso não equivale a descartar o restante do currículo nem a reescrever níveis inteiros.
 
 ## Contratos de produto
 
@@ -74,13 +78,14 @@ Estas fontes definem como o currículo fechado vira aplicação:
 - `docs/avaliacao-ia.md` — contrato neutro de feedback com IA, BYOK, consentimento, request/response e limites de autoridade.
 - `docs/calibracao-produto.md` — homologação/calibração progressiva; no Clássico registra casos-âncora e revisão, e só depois do gate clássico concretiza XP/missões/conquistas.
 - `docs/estado-implementacao-classico.md` — status real de cada inclusão/materialização do produto Clássico e impacto de dependências de mídia.
-- `docs/validacoes.md` — guard rails atuais de P1–P5 e próximos testes P6+.
+- `docs/validacoes.md` — guard rails atuais de P1–P5 e próximos testes.
 
 Regra de leitura para trabalho de produto:
 
 ```text
 roadmap-produto
 → estado-implementacao-classico
+→ plano T1 quando ativo
 → arquitetura/contratos necessários ao item
 → mídia quando aplicável
 → validações
@@ -95,6 +100,8 @@ Durante homologação de atividade, lição, verificação ou unidade, `docs/cal
 - `docs/licoes-nivel-0-unidade-6.md`
 - `docs/checkpoint-saida-nivel-0.md`
 - `content/levels/000-fundamentos/exit-verification.json`
+
+Durante T1, estas fontes são objeto de auditoria/revisão dirigida; não assumir que a ordem histórica das primeiras lições continua definitiva.
 
 ## Nível 1
 
@@ -219,7 +226,7 @@ M4 ✓ — 93 lições + 9 verificações integradas
 M5 ✓ — U1–U9 + N4-EXIT-V01 + checkpoint final
 ```
 
-**N4 curricularmente completo. Curso N0→N4 curricularmente completo.**
+**N4 curricularmente completo. Curso N0→N4 curricularmente completo, com revisão dirigida da entrada N0 ativa em T1.**
 
 ## Próxima fase do projeto
 
@@ -233,7 +240,8 @@ P2 ContentService/normalizador                          ✓
 P3 manifests + catálogo inicial                         ✓
 P4 renderer real do Clássico                            ✓
 P5 ProgressService + revisão + cache/Gist/sync           ✓
-P6 feedback por IA no Clássico                          ← ativo
+T1 Fundamentos claros + experiência de lição            ← ativo
+P6 feedback por IA no Clássico                          aguardando T1
 P7 ampliação do catálogo Clássico N0→N4
 P8 mídia + prontidão de publicação do Clássico
 P9 homologação end-to-end do Clássico
@@ -249,14 +257,14 @@ concluir e homologar o CLÁSSICO
 → só então implementar o GAMIFICADO
 ```
 
-Não iniciar reescrita curricular em massa para atender ao renderer; usar adapters/manifests conforme `docs/contrato-conteudo.md`.
+T1 é uma revisão pedagógica dirigida autorizada por validação real, não uma reescrita curricular em massa para atender ao renderer.
 
 ## Conteúdo e mídia
 
 - `producao-midia/README.md` — contrato operacional de mídia; mídia pendente bloqueia somente o escopo que realmente depende dela.
 - `producao-midia/FILA-MIDIA.md` — fila oficial das mídias humanas/curadas.
 - `docs/estado-implementacao-classico.md` — registra o impacto de cada mídia pendente sobre implementação, homologação e publicação.
-- `content/course.json` — catálogo de publicação v2; slice N0-U01 + N4-U09 publicado, expansão N0→N4 prevista no P7.
+- `content/course.json` — catálogo de publicação v2; slice N0-U01 + N4-U09 publicado; a porta N0 será reconciliada por T1 antes da expansão P7.
 - `content/units/` — conteúdo de unidades, lições e verificações.
 - `content/levels/` — verificações de nível.
 
@@ -283,6 +291,7 @@ Não iniciar reescrita curricular em massa para atender ao renderer; usar adapte
 ```text
 estado curricular → docs/roadmap-curricular.md
 ordem/condições dos marcos de produto → docs/roadmap-produto.md
+plano transversal ativo T1 → docs/plano-fundamentos-claros.md
 estado operacional concreto do Clássico → docs/estado-implementacao-classico.md
 arquitetura → docs/arquitetura.md
 linguagem e apresentação ao aluno → docs/ui-ux.md
@@ -303,6 +312,7 @@ N4 mídia/acessibilidade → docs/gate-midia-acessibilidade-nivel-4-u9.md
 conteúdo detalhado → content/
 produção de mídia → producao-midia/README.md + producao-midia/FILA-MIDIA.md
 validação automática → docs/validacoes.md
+procedimento ativo T1 → .ChatGPT/skills/fundamentos-claros/SKILL.md
 procedimento de entrega do Clássico → .ChatGPT/skills/classic-product-delivery/SKILL.md
 procedimento de UI/UX do aluno → .ChatGPT/skills/student-ui-ux/SKILL.md
 procedimentos ChatGPT gerais → .ChatGPT/skills/
