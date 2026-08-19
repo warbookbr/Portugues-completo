@@ -820,24 +820,25 @@ retomada
 T1 fecha somente quando:
 
 ```text
-[ ] início do N0 realmente parte do básico
-[ ] ordem curricular nova está documentada
-[ ] primeiras unidades/lições reais foram atualizadas/criadas
-[ ] texto público está simples e separado do objetivo técnico
-[ ] tela inicial da lição está limpa
-[ ] progressão por etapas continua funcional
-[ ] metodologia saiu do rodapé
-[ ] progresso/IDs antigos foram tratados com segurança
-[ ] skills canônicas incorporaram o método
-[ ] CI passou
-[ ] inspeção visual passou
-[ ] estado/roadmaps foram atualizados
+[x] início do N0 realmente parte do básico
+[x] ordem curricular nova está documentada
+[x] primeiras unidades/lições reais foram atualizadas/criadas
+[x] texto público está simples e separado do objetivo técnico
+[x] tela inicial da lição está limpa
+[x] progressão por etapas continua funcional
+[x] metodologia saiu do rodapé
+[x] progresso/IDs antigos foram tratados com segurança
+[x] skills canônicas incorporaram o método
+[x] CI passou
+[x] inspeção visual passou
+[x] estado/roadmaps foram atualizados
 ```
 
 Após isso:
 
 ```text
-T1 — HOMOLOGADO
+T1 — HOMOLOGADO em 2026-08-19
+→ evidência: docs/homologacao-t1-10.md
 → P6 — Feedback por IA volta a ser o marco ativo
 ```
 
