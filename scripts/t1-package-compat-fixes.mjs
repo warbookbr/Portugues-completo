@@ -24,7 +24,7 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 async function fileFetch(url) {
   const projectPath = String(url).replace(/^\\.\\//, '');
   const filePath = path.resolve(root, projectPath);
-  if (!filePath.startsWith(\`${root}${path.sep}\`) || !fs.existsSync(filePath)) {
+  if (!filePath.startsWith(root + path.sep) || !fs.existsSync(filePath)) {
     return { ok: false, status: 404, async json() { return null; } };
   }
   return {
