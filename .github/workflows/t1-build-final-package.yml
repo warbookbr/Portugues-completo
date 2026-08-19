@@ -35,6 +35,9 @@ jobs:
       - name: Apply historical compatibility fixes
         run: node scripts/t1-package-compat-fixes.mjs
 
+      - name: Apply composite renderer support
+        run: node scripts/t1-package-renderer-fix.mjs
+
       - name: Validate repository structure
         run: node scripts/validate-project.mjs
       - name: Validate JSON syntax
