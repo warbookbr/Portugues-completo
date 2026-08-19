@@ -1,0 +1,37 @@
+name: Apply P7 U03 runtime patch
+
+on:
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    if: github.head_ref == 'p7-n0-u03-catalog' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          ref: p7-n0-u03-catalog
+          fetch-depth: 0
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+          package-manager-cache: false
+      - name: Apply runtime patch
+        run: node scripts/p7-u03-runtime-patch.mjs
+      - name: Validate structure
+        run: node scripts/validate-project.mjs
+      - name: Audit N0-U03
+        run: node scripts/audit-p7-n0-u03.mjs
+      - name: Commit runtime adaptation
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add app/js/services/content-normalizer-v1.js app/js/ui/classic-renderer.js app/js/ui/classic-progress-binding.js scripts/audit-p7-n0-u03.mjs
+          git commit -m 'feat(p7): adapta runtime para autoria da N0-U03'
+          git push origin HEAD:p7-n0-u03-catalog
