@@ -24,7 +24,8 @@ const PUBLIC_LABELS = new Map([
   ['selfCheck', 'Autochecagem'], ['revisedDraft', 'Versão revisada'],
   ['reviewPrompts', 'Perguntas para revisar'], ['starter', 'Início sugerido'],
   ['optionalWordBank', 'Palavras de apoio'], ['wordBank', 'Palavras de apoio'],
-  ['optionalScaffold', 'Apoio opcional'], ['note', 'Observação']
+  ['optionalScaffold', 'Apoio opcional'], ['note', 'Observação'],
+  ['groups', 'Grupos'], ['important', 'Importante']
 ]);
 
 const pretty = value => {
@@ -74,6 +75,7 @@ function renderKnownContent(content = {}) {
     'purpose', 'revealPolicy', 'followUp', 'evidenceOptions', 'evidenceSelectionMode', 'evidenceMatchMode',
     'cards', 'optionalScaffold', 'planningChecklist', 'planningPrompt', 'essentialInformation',
     'principleQuestion', 'principleOptions', 'automaticCheck',
+    'source', 'presentation', 'coverageRule',
     'textRemainsVisible', 'textRef', 'competency'
   ]);
 
@@ -138,6 +140,7 @@ function renderStimulus(stimulus, index) {
     if (payload.sourceBlockId) return `<div class="stimulus-reference">Use como referência o trecho ${esc(payload.sourceBlockId)} acima.</div>`;
     return `<div class="semantic-stimulus">${valueText(payload.content ?? payload)}</div>`;
   }
+  if (stimulus.type === 'DATA_SET') return '';
   return `<details class="stimulus-data"><summary>Material de apoio da atividade</summary>${valueText(stimulus.payload || {})}</details>`;
 }
 
