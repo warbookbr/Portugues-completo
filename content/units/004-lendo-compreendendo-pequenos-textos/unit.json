@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "id": "N0-U04",
+  "levelId": "N0",
+  "order": 4,
+  "title": "Lendo e compreendendo pequenos textos",
+  "objective": "Construir compreensão de pequenos textos escritos, identificando assunto, mensagem principal e informações explícitas, integrando pistas entre frases, acompanhando referentes, ordem, tempo, causa e consequência, distinguindo o que o texto diz do que apenas sugere e usando releitura e evidências para confirmar ou revisar interpretações.",
+  "competencies": [
+    {"id": "N0-U04-C01", "label": "construir sentido global de pequenos textos e voltar ao texto para confirmar a compreensão"},
+    {"id": "N0-U04-C02", "label": "identificar assunto e mensagem principal, distinguindo informação central de detalhes verdadeiros"},
+    {"id": "N0-U04-C03", "label": "localizar informações explícitas e indicar trechos que sustentam a resposta"},
+    {"id": "N0-U04-C04", "label": "integrar informações explícitas distribuídas entre frases ou partes do texto"},
+    {"id": "N0-U04-C05", "label": "resolver referências simples de pessoas, lugares ou elementos usando o contexto próximo"},
+    {"id": "N0-U04-C06", "label": "reconstruir a ordem de acontecimentos e instruções a partir das pistas do texto"},
+    {"id": "N0-U04-C07", "label": "reconhecer relações claras de tempo, causa e consequência sem extrapolar o texto"},
+    {"id": "N0-U04-C08", "label": "distinguir informação explícita de conclusão apoiada por pistas e rejeitar interpretações sem evidência suficiente"},
+    {"id": "N0-U04-C09", "label": "usar releitura e evidências para confirmar, corrigir ou fortalecer uma interpretação"}
+  ],
+  "prerequisites": ["N0-U03-V01"],
+  "lessons": [
+    {"id": "N0-U04-L01", "order": 1, "title": "Ler é construir sentido", "path": "lessons/001-ler-e-construir-sentido.json", "competencyIds": ["N0-U04-C01"]},
+    {"id": "N0-U04-L02", "order": 2, "title": "Assunto e mensagem principal", "path": "lessons/002-assunto-mensagem-principal.json", "competencyIds": ["N0-U04-C02"]},
+    {"id": "N0-U04-L03", "order": 3, "title": "Encontrando informações no texto", "path": "lessons/003-encontrando-informacoes-no-texto.json", "competencyIds": ["N0-U04-C03"]},
+    {"id": "N0-U04-L04", "order": 4, "title": "Ligando informações entre frases", "path": "lessons/004-ligando-informacoes-entre-frases.json", "competencyIds": ["N0-U04-C04"]},
+    {"id": "N0-U04-L05", "order": 5, "title": "A quem ou a que isso se refere?", "path": "lessons/005-a-quem-ou-a-que-isso-se-refere.json", "competencyIds": ["N0-U04-C05"]},
+    {"id": "N0-U04-L06", "order": 6, "title": "A ordem dos acontecimentos e das instruções", "path": "lessons/006-ordem-dos-acontecimentos-e-instrucoes.json", "competencyIds": ["N0-U04-C06"]},
+    {"id": "N0-U04-L07", "order": 7, "title": "Tempo, causa e consequência em relações claras", "path": "lessons/007-tempo-causa-consequencia.json", "competencyIds": ["N0-U04-C07"]},
+    {"id": "N0-U04-L08", "order": 8, "title": "O texto diz ou dá pistas?", "path": "lessons/008-o-texto-diz-ou-da-pistas.json", "competencyIds": ["N0-U04-C08"]},
+    {"id": "N0-U04-L09", "order": 9, "title": "Reler, procurar evidências e revisar a interpretação", "path": "lessons/009-reler-procurar-evidencias-revisar-interpretacao.json", "competencyIds": ["N0-U04-C09"]}
+  ],
+  "verification": {
+    "id": "N0-U04-V01",
+    "path": "integrated-verification.json",
+    "competencyIds": ["N0-U04-C01", "N0-U04-C02", "N0-U04-C03", "N0-U04-C04", "N0-U04-C05", "N0-U04-C06", "N0-U04-C07", "N0-U04-C08", "N0-U04-C09"]
+  },
+  "publication": {"status": "READY", "blockers": []}
+}
