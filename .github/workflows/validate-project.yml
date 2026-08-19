@@ -84,6 +84,9 @@ jobs:
       - name: Audit P7 N0-U04
         run: node scripts/audit-p7-n0-u04.mjs
 
+      - name: Test P7 N0-U04 evidence semantics
+        run: node scripts/test-p7-u04-evidence.mjs
+
       - name: Test progress policies
         run: node scripts/test-progress-policies.mjs
 
