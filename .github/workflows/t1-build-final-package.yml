@@ -82,11 +82,11 @@ jobs:
       - name: Capture classic visual smoke
         run: bash scripts/capture-classic-visuals.sh
 
-      - name: Commit validated atomic shape
+      - name: Commit validated product shape
         run: |
           rm -rf artifacts/classic-visuals
+          git restore .github/workflows/validate-project.yml
           git rm -f \
-            .github/workflows/t1-build-final-package.yml \
             scripts/build-t1-atomic-package.mjs \
             scripts/t1-package-index-fix.mjs \
             scripts/t1-package-compat-fixes.mjs \
@@ -96,6 +96,7 @@ jobs:
             scripts/t1-package-smoke-fix.mjs
           git add -A
           git reset -- artifacts/classic-visuals 2>/dev/null || true
+          git reset -- .github/workflows/t1-build-final-package.yml .github/workflows/validate-project.yml
           if git diff --cached --quiet; then
             echo 'Nenhuma forma final para materializar.' >&2
             exit 1
