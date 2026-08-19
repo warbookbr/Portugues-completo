@@ -31,6 +31,13 @@
       "manifest": "units/002-das-silabas-as-palavras/unit.json"
     },
     {
+      "id": "N0-U03",
+      "levelId": "N0",
+      "order": 3,
+      "title": "Palavras, frases e sentido",
+      "manifest": "units/003-palavras-frases-sentido/unit.json"
+    },
+    {
       "id": "N4-U09",
       "levelId": "N4",
       "order": 9,
