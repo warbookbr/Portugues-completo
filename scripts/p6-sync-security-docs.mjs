@@ -8,6 +8,15 @@ function replaceOnce(file, before, after) {
   fs.writeFileSync(file, source);
 }
 
+function insertAfter(file, anchor, addition) {
+  let source = fs.readFileSync(file, 'utf8');
+  if (source.includes(addition.trim())) return;
+  const count = source.split(anchor).length - 1;
+  if (count !== 1) throw new Error(`${file}: âncora encontrada ${count} vez(es).`);
+  source = source.replace(anchor, `${anchor}${addition}`);
+  fs.writeFileSync(file, source);
+}
+
 replaceOnce('PROJECT_INDEX.md',
 `├── docs/
 ├── scripts/ + .github/
@@ -17,35 +26,23 @@ replaceOnce('PROJECT_INDEX.md',
 ├── tools/
 └── .ChatGPT/`);
 
-replaceOnce('PROJECT_INDEX.md',
-`- \`docs/estado-implementacao-classico.md\` — **estado operacional concreto do Modo Clássico**: marco/item ativo, estados técnico/homologação/mídia/publicação, blockers e próximo passo exato.
-- \`docs/execucao-continua.md\` — execução autônoma por marcos autorizados.`,
-`- \`docs/estado-implementacao-classico.md\` — **estado operacional concreto do Modo Clássico**: marco/item ativo, estados técnico/homologação/mídia/publicação, blockers e próximo passo exato.
-- \`docs/p6-transporte-ia.md\` — **contrato técnico vigente do transporte P6**: serviço neutro, companion local, proteção da API key, structured output e fronteira de autoridade da IA.
-- \`docs/execucao-continua.md\` — execução autônoma por marcos autorizados.`);
+insertAfter(
+  'PROJECT_INDEX.md',
+  '- `docs/estado-implementacao-classico.md` — **estado operacional concreto do Modo Clássico**: marco/item ativo, estados técnico/homologação/mídia/publicação, blockers e próximo passo exato.\n',
+  '- `docs/p6-transporte-ia.md` — **contrato técnico vigente do transporte P6**: serviço neutro, companion local, proteção da API key, structured output e fronteira de autoridade da IA.\n'
+);
 
-replaceOnce('PROJECT_INDEX.md',
-`→ docs/migracao-t1-9-n0.md para compatibilidade histórica/progresso
-→ se houver autoria/copy pública: docs/linguagem-aluno.md`,
-`→ docs/migracao-t1-9-n0.md para compatibilidade histórica/progresso
-→ se P6 estiver ativo: docs/avaliacao-ia.md + docs/p6-transporte-ia.md
-→ se houver autoria/copy pública: docs/linguagem-aluno.md`);
+insertAfter(
+  'PROJECT_INDEX.md',
+  '→ docs/migracao-t1-9-n0.md para compatibilidade histórica/progresso\n',
+  '→ se P6 estiver ativo: docs/avaliacao-ia.md + docs/p6-transporte-ia.md\n'
+);
 
-replaceOnce('PROJECT_INDEX.md',
-`- \`docs/avaliacao-ia.md\` — contrato neutro de feedback com IA, BYOK, consentimento, request/response e limites de autoridade.
-- \`docs/calibracao-produto.md\``,
-`- \`docs/avaliacao-ia.md\` — contrato neutro de feedback com IA, BYOK, consentimento, request/response e limites de autoridade.
-- \`docs/p6-transporte-ia.md\` — transporte seguro implementado no P6; para OpenAI, a API key pertence ao aluno mas permanece no companion local, nunca no navegador.
-- \`docs/calibracao-produto.md\``);
-
-replaceOnce('PROJECT_INDEX.md',
-`|-- scripts/
-|-- .github/
-\`-- .ChatGPT/`,
-`|-- scripts/
-|-- tools/                                  (utilitários locais opcionais; ex.: companion P6)
-|-- .github/
-\`-- .ChatGPT/`);
+insertAfter(
+  'PROJECT_INDEX.md',
+  '- `docs/avaliacao-ia.md` — contrato neutro de feedback com IA, BYOK, consentimento, request/response e limites de autoridade.\n',
+  '- `docs/p6-transporte-ia.md` — transporte seguro implementado no P6; para OpenAI, a API key pertence ao aluno mas permanece no companion local, nunca no navegador.\n'
+);
 
 replaceOnce('docs/arquitetura.md',
 `Qualquer integração direta usa credencial do próprio aluno.`,
