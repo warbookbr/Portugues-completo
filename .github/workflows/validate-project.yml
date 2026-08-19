@@ -93,6 +93,9 @@ jobs:
       - name: Audit P7 N0-U05
         run: node scripts/audit-p7-n0-u05.mjs
 
+      - name: Test P7 N0-U05 writing semantics
+        run: node scripts/test-p7-u05-writing.mjs
+
       - name: Test progress policies
         run: node scripts/test-progress-policies.mjs
 
