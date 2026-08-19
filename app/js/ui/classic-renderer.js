@@ -66,7 +66,7 @@ function renderKnownContent(content = {}) {
     'imageId', 'imageRevealAfterAttempt', 'modelExamplesAfterSubmission', 'preResponseModel',
     'automaticObservations', 'notAutomaticallyJudged', 'humanReview', 'humanOrExternalReview',
     'responseMode', 'selfReviewRequired', 'selfReviewQuestions', 'revisionFlow', 'promptChoices',
-    'purpose', 'revealPolicy'
+    'purpose', 'revealPolicy', 'followUp', 'evidenceOptions', 'evidenceSelectionMode'
   ]);
 
   if (content.title) lead.push(`<h3>${esc(content.title)}</h3>`);
@@ -256,6 +256,14 @@ function renderOpenInput(block, label = 'Sua resposta') {
   return `<label class="response-field"><span>${esc(label)}</span><textarea name="openResponse" rows="${rows}" required></textarea></label>`;
 }
 
+function renderEvidenceSelector(content = {}, name = 'evidence') {
+  const options = content.evidenceOptions;
+  if (!Array.isArray(options) || !options.length) return '';
+  const multiple = content.evidenceSelectionMode === 'MULTIPLE';
+  const prompt = content.followUp || (multiple ? 'Marque os trechos do texto que sustentam sua resposta.' : 'Marque um trecho do texto que sustenta sua resposta.');
+  return `<fieldset class="choice-group evidence-selector" data-evidence-selection><legend>${esc(prompt)}</legend>${optionMarkup(options, name, multiple)}</fieldset>`;
+}
+
 function entryKey(entry, index) {
   return String(entry?.id ?? index);
 }
@@ -293,7 +301,7 @@ function renderCompositeRound(entry, index, block) {
 
   if (Array.isArray(entry.options)) {
     const multiple = Boolean(expected && typeof expected === 'object' && Array.isArray(expected.correctIndexes) && expected.correctIndexes.length > 1);
-    return `<fieldset class="composite-round"><legend>${esc(label)}</legend>${localStimuli}${optionMarkup(entry.options, `round:${key}`, multiple)}</fieldset>`;
+    return `<fieldset class="composite-round"><legend>${esc(label)}</legend>${localStimuli}${optionMarkup(entry.options, `round:${key}`, multiple)}${renderEvidenceSelector(entry, `round-evidence:${key}`)}</fieldset>`;
   }
 
   if (Array.isArray(entry.nonVisualOptions)) {
@@ -401,6 +409,7 @@ export function renderActivity(block) {
       ${renderStimuli(block.activity)}
       <form class="activity-form" data-activity-form novalidate>
         ${renderInteraction(block)}
+        ${renderEvidenceSelector(block.content)}
         ${renderSelfReview(block)}
         <div class="activity-actions"><button class="primary-button" type="submit">${pending ? 'Registrar resposta' : 'Verificar resposta'}</button></div>
         <div class="activity-feedback" data-activity-feedback aria-live="polite"></div>

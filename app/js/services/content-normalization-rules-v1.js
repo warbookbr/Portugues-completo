@@ -191,6 +191,51 @@ export const LEGACY_COMPLETION_RULES_V1 = Object.freeze({
       'V01-Q08': { threshold: 4 / 5 },
       'V01-Q09': { threshold: 0.5, criteria: [{ type: 'REQUIRED_ITEMS_CORRECT', itemIds: ['1'] }] }
     }
+  },
+  'N0-U04-L04': {
+    clusters: [
+      { id: 'integration', required: true, evidenceIds: ['L04-C01', 'L04-A01', 'L04-A02'], minimumEvidence: 2, requiredAnyOf: [['L04-A01', 'L04-A02']], satisfaction: 'DEMONSTRATED_REQUIRED' },
+      { id: 'relationDiscipline', required: true, evidenceIds: ['L04-A02'], satisfaction: 'DEMONSTRATED_REQUIRED' }
+    ],
+    nonCompensable: true,
+    activityPolicies: {}
+  },
+  'N0-U04-L05': {
+    clusters: [
+      {
+        id: 'personPlaceReference', required: true, evidenceIds: ['L05-C01', 'L05-A01', 'L05-A02'], minimumEvidence: 1,
+        requiredAnyOf: [['L05-A01'], ['L05-C01', 'L05-A02']],
+        criteria: [{ type: 'TOTAL_ITEM_HITS_AT_LEAST', evidenceIds: ['L05-C01', 'L05-A01', 'L05-A02'], minimum: 3 }],
+        satisfaction: 'DEMONSTRATED_REQUIRED'
+      },
+      { id: 'contextUse', required: true, evidenceIds: ['L05-A02'], satisfaction: 'DEMONSTRATED_REQUIRED' }
+    ],
+    nonCompensable: true,
+    activityPolicies: {}
+  },
+  'N0-U04-L07': {
+    clusters: [
+      { id: 'timeAndSequence', required: true, evidenceIds: ['L07-A02'], satisfaction: 'DEMONSTRATED_REQUIRED' },
+      {
+        id: 'causeAndEffect', required: true, evidenceIds: ['L07-C01', 'L07-A01', 'L07-A02'], minimumEvidence: 1,
+        criteria: [{ type: 'TOTAL_ITEM_HITS_AT_LEAST', evidenceIds: ['L07-C01', 'L07-A01', 'L07-A02'], minimum: 3 }],
+        satisfaction: 'DEMONSTRATED_REQUIRED'
+      }
+    ],
+    nonCompensable: true,
+    activityPolicies: { 'L07-A02': { threshold: 0.5, criteria: [{ type: 'REQUIRED_ITEMS_CORRECT', itemIds: ['0'] }] } }
+  },
+  'N0-U04-V01': {
+    clusters: [
+      { id: 'globalComprehension', required: true, evidenceIds: ['V01-Q01', 'V01-Q02'], satisfaction: 'DEMONSTRATED_REQUIRED' },
+      { id: 'explicitAndIntegration', required: true, evidenceIds: ['V01-Q03', 'V01-Q04'], minimumEvidence: 2, satisfaction: 'DEMONSTRATED_REQUIRED' },
+      { id: 'reference', required: true, evidenceIds: ['V01-Q05', 'V01-Q06'], minimumEvidence: 1, satisfaction: 'DEMONSTRATED_REQUIRED' },
+      { id: 'sequenceAndRelations', required: true, evidenceIds: ['V01-Q07', 'V01-Q08', 'V01-Q09'], minimumEvidence: 2, requiredAnyOf: [['V01-Q08', 'V01-Q09']], satisfaction: 'DEMONSTRATED_REQUIRED' },
+      { id: 'inferenceDiscipline', required: true, evidenceIds: ['V01-Q10', 'V01-Q11'], satisfaction: 'DEMONSTRATED_REQUIRED' },
+      { id: 'rereadingAndRevision', required: true, evidenceIds: ['V01-Q12'], satisfaction: 'DEMONSTRATED_REQUIRED' }
+    ],
+    nonCompensable: true,
+    activityPolicies: {}
   }
 });
 

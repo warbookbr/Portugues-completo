@@ -54,19 +54,11 @@ function hasEvidenceRequirement(block) {
   return Boolean(
     block && (
       block.requiredEvidence !== undefined
+      || block.requiredEvidenceParts !== undefined
       || block.acceptableEvidence !== undefined
-      || (typeof block.followUp === 'string' && /evid[eê]ncia|parte|trecho|texto/i.test(block.followUp))
+      || (typeof block.followUp === 'string' && /(?:marque|selecione|indique|aponte|volte)[^.!?]*(?:evid[eê]ncia|parte|trecho|texto)/i.test(block.followUp))
     )
   );
-}
-
-function evidenceStrings(block) {
-  const values = [];
-  for (const value of [block?.requiredEvidence, block?.acceptableEvidence]) {
-    if (typeof value === 'string') values.push(value);
-    else if (Array.isArray(value)) values.push(...value.filter(item => typeof item === 'string'));
-  }
-  return values;
 }
 
 function auditEvidenceRequirement(sourceId, authored, runtimeBlock, html) {
@@ -84,11 +76,8 @@ function auditEvidenceRequirement(sourceId, authored, runtimeBlock, html) {
     issue(`${sourceId}/${authored.id}: autoria exige retorno/seleção de evidência, mas o renderer/runtime não oferece controle específico de evidência.`);
   }
 
-  for (const answer of evidenceStrings(authored)) {
-    if (answer && html.includes(answer)) {
-      issue(`${sourceId}/${authored.id}: evidência-gabarito aparece no HTML público antes da resposta -> ${JSON.stringify(answer.slice(0, 80))}.`);
-      break;
-    }
+  if (!Array.isArray(runtimeBlock.content?.evidenceOptions) || !runtimeBlock.content.evidenceOptions.length) {
+    issue(`${sourceId}/${authored.id}: requisito de evidência não foi materializado como opções derivadas do texto visível.`);
   }
 }
 
@@ -146,7 +135,21 @@ function auditRuntimeSource(source, schema, label, renderContext) {
 
   const byId = new Map((runtime.blocks || []).map(block => [block.id, block]));
   for (const authored of authoredActivities(source)) {
-    auditEvidenceRequirement(source.id, authored, byId.get(authored.id), html);
+    const runtimeBlock = byId.get(authored.id);
+    auditEvidenceRequirement(source.id, authored, runtimeBlock, html);
+    if (Array.isArray(authored.items) && Array.isArray(runtimeBlock?.content?.items)) {
+      authored.items.forEach((item, index) => {
+        if (!hasEvidenceRequirement(item)) return;
+        const runtimeItem = runtimeBlock.content.items[index];
+        evidenceRequirements.push(`${source.id}/${authored.id}/item-${index}`);
+        if (!Array.isArray(runtimeItem?.evidenceOptions) || !runtimeItem.evidenceOptions.length) {
+          issue(`${source.id}/${authored.id}/item-${index}: evidência aninhada não foi materializada.`);
+        }
+        if (!new RegExp(`name=[\"']round-evidence:${runtimeItem?.id ?? index}`, 'i').test(html)) {
+          issue(`${source.id}/${authored.id}/item-${index}: renderer não oferece controle de evidência por subitem.`);
+        }
+      });
+    }
   }
   auditCompletionRules(source, runtime);
   countInteraction(runtime);
