@@ -38,6 +38,9 @@ jobs:
       - name: Apply composite renderer support
         run: node scripts/t1-package-renderer-fix.mjs
 
+      - name: Clean public student UI
+        run: node scripts/t1-package-public-ui-fix.mjs
+
       - name: Update T1 renderer regressions
         run: node scripts/t1-package-test-updates.mjs
 
