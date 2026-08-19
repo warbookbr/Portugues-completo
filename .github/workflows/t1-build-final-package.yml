@@ -29,6 +29,9 @@ jobs:
       - name: Build atomic T1.9 shape
         run: node scripts/build-t1-atomic-package.mjs
 
+      - name: Update project index in package
+        run: node scripts/t1-package-index-fix.mjs
+
       - name: Validate repository structure
         run: node scripts/validate-project.mjs
       - name: Validate JSON syntax
