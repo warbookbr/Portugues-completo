@@ -1,0 +1,47 @@
+name: Diagnose P7 U06 patch anchor
+
+on:
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  diagnose:
+    if: github.head_ref == 'p7-n0-u06-catalog' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          ref: p7-n0-u06-catalog
+          fetch-depth: 0
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+          package-manager-cache: false
+      - name: Instrument patch
+        run: python3 scripts/p7-u06-diagnose.py
+      - name: Run patch to first divergent anchor
+        id: patch
+        continue-on-error: true
+        run: python3 scripts/p7-u06-runtime-patch.py
+      - name: Persist diagnostic
+        if: steps.patch.outcome == 'failure'
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          test -f scripts/p7-u06-anchor-error.txt
+          git add scripts/p7-u06-anchor-error.txt
+          git commit -m 'chore(p7): registra âncora divergente U06'
+          git push origin HEAD:p7-n0-u06-catalog
+      - name: Fail after diagnostic
+        if: steps.patch.outcome == 'failure'
+        run: exit 1
+      - name: Patch unexpectedly applied cleanly
+        if: steps.patch.outcome == 'success'
+        run: |
+          echo 'Patch aplicou sem âncora divergente.'
+          exit 0
