@@ -22,6 +22,14 @@ jobs:
         with:
           node-version: '24'
           package-manager-cache: false
+      - name: Neutralize temporary template interpolation
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          path = Path('scripts/p7-u03-runtime-patch.mjs')
+          text = path.read_text()
+          path.write_text(text.replace('${source.id}', r'\${source.id}'))
+          PY
       - name: Apply runtime patch
         run: node scripts/p7-u03-runtime-patch.mjs
       - name: Validate structure
