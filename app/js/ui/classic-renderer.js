@@ -10,9 +10,16 @@ const esc = value => String(value ?? '')
 
 const PUBLIC_LABELS = new Map([
   ['word', 'Palavra'], ['words', 'Palavras'], ['segments', 'Partes'], ['tiles', 'Fichas'],
-  ['examples', 'Exemplos'], ['explanation', 'Explicação'], ['stages', 'Etapas'],
+  ['example', 'Exemplo'], ['examples', 'Exemplos'], ['possibleResponses', 'Exemplos possíveis'],
+  ['explanation', 'Explicação'], ['stages', 'Etapas'], ['stage', 'Etapa'],
   ['display', 'Forma'], ['description', 'Descrição'], ['knownPartSources', 'Partes já conhecidas'],
-  ['nonVisualMeaning', 'Significado'], ['contrast', 'Comparação'], ['contrasts', 'Comparações']
+  ['nonVisualMeaning', 'Significado'], ['contrast', 'Comparação'], ['contrasts', 'Comparações'],
+  ['goal', 'Objetivo da mensagem'], ['candidate', 'Frase para revisar'], ['questions', 'Perguntas'],
+  ['text', 'Pergunta'], ['options', 'Opções'], ['firstDraft', 'Primeira versão'],
+  ['selfCheck', 'Autochecagem'], ['revisedDraft', 'Versão revisada'],
+  ['reviewPrompts', 'Perguntas para revisar'], ['starter', 'Início sugerido'],
+  ['optionalWordBank', 'Palavras de apoio'], ['wordBank', 'Palavras de apoio'],
+  ['optionalScaffold', 'Apoio opcional'], ['note', 'Observação']
 ]);
 
 const pretty = value => {
@@ -58,7 +65,8 @@ function renderKnownContent(content = {}) {
     'ttsBeforeResponse', 'allowReplayWithoutPenalty', 'repeatAudio', 'requiredTileCount', 'optionOrderShouldVaryAcrossAttempts',
     'imageId', 'imageRevealAfterAttempt', 'modelExamplesAfterSubmission', 'preResponseModel',
     'automaticObservations', 'notAutomaticallyJudged', 'humanReview', 'humanOrExternalReview',
-    'responseMode', 'selfReviewRequired', 'selfReviewQuestions', 'revisionFlow', 'promptChoices', 'starter', 'wordBank'
+    'responseMode', 'selfReviewRequired', 'selfReviewQuestions', 'revisionFlow', 'promptChoices',
+    'purpose', 'revealPolicy'
   ]);
 
   if (content.title) lead.push(`<h3>${esc(content.title)}</h3>`);

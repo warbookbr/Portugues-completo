@@ -107,6 +107,11 @@ if grep -Eiq 'correctIndexes|acceptedSequences|acceptedResult|correctFunction|co
   exit 1
 fi
 
+if grep -Eiq '>(example|goal|candidate|questions|purpose|first draft|self check|revised draft|optional word bank)<' <<<"$L10_DOM$V01_DOM"; then
+  echo 'P7 U03: chave autoral crua em inglês vazou para a linguagem pública.' >&2
+  exit 1
+fi
+
 capture() {
   local name="$1" width="$2" height="$3" route="$4"
   "$CHROME" --headless --no-sandbox --disable-gpu --hide-scrollbars \
