@@ -1,4 +1,5 @@
 import { speak } from '../services/narration-service.js';
+import { evaluateDeterministic as evaluateDeterministicActivity } from './classic-deterministic-evaluator.js';
 
 const esc = value => String(value ?? '')
   .replaceAll('&', '&amp;')
@@ -9,9 +10,16 @@ const esc = value => String(value ?? '')
 
 const PUBLIC_LABELS = new Map([
   ['word', 'Palavra'], ['words', 'Palavras'], ['segments', 'Partes'], ['tiles', 'Fichas'],
-  ['examples', 'Exemplos'], ['explanation', 'Explicação'], ['stages', 'Etapas'],
+  ['example', 'Exemplo'], ['examples', 'Exemplos'], ['possibleResponses', 'Exemplos possíveis'],
+  ['explanation', 'Explicação'], ['stages', 'Etapas'], ['stage', 'Etapa'],
   ['display', 'Forma'], ['description', 'Descrição'], ['knownPartSources', 'Partes já conhecidas'],
-  ['nonVisualMeaning', 'Significado'], ['contrast', 'Comparação'], ['contrasts', 'Comparações']
+  ['nonVisualMeaning', 'Significado'], ['contrast', 'Comparação'], ['contrasts', 'Comparações'],
+  ['goal', 'Objetivo da mensagem'], ['candidate', 'Frase para revisar'], ['questions', 'Perguntas'],
+  ['text', 'Pergunta'], ['options', 'Opções'], ['firstDraft', 'Primeira versão'],
+  ['selfCheck', 'Autochecagem'], ['revisedDraft', 'Versão revisada'],
+  ['reviewPrompts', 'Perguntas para revisar'], ['starter', 'Início sugerido'],
+  ['optionalWordBank', 'Palavras de apoio'], ['wordBank', 'Palavras de apoio'],
+  ['optionalScaffold', 'Apoio opcional'], ['note', 'Observação']
 ]);
 
 const pretty = value => {
@@ -55,7 +63,10 @@ function renderKnownContent(content = {}) {
     'audioOptionsVisibleBeforeAttemptGate', 'ttsAvailableBeforeAttempt', 'ttsAvailableBeforeBothAttempts',
     'targetTtsAvailableBeforeResponse', 'targetTtsBeforeResponse', 'targetTtsAvailableBeforeReading',
     'ttsBeforeResponse', 'allowReplayWithoutPenalty', 'repeatAudio', 'requiredTileCount', 'optionOrderShouldVaryAcrossAttempts',
-    'imageId', 'imageRevealAfterAttempt'
+    'imageId', 'imageRevealAfterAttempt', 'modelExamplesAfterSubmission', 'preResponseModel',
+    'automaticObservations', 'notAutomaticallyJudged', 'humanReview', 'humanOrExternalReview',
+    'responseMode', 'selfReviewRequired', 'selfReviewQuestions', 'revisionFlow', 'promptChoices',
+    'purpose', 'revealPolicy'
   ]);
 
   if (content.title) lead.push(`<h3>${esc(content.title)}</h3>`);
@@ -262,13 +273,27 @@ function renderCompositeRound(entry, index, block) {
   const key = entryKey(entry, index);
   const localStimuli = renderItemStimuli(block.activity, key);
   const label = entryLabel(entry, index);
+  const expected = block.activity?.evaluation?.answerKey?.items?.[key];
 
-  if (Array.isArray(entry.pieces) || Array.isArray(entry.tokens) || Array.isArray(entry.availableAudioTokens) || Array.isArray(entry.availableWrittenChunks) || Array.isArray(entry.availableTiles)) {
-    return `<fieldset class="composite-round"><legend>${esc(label)}</legend>${localStimuli}${renderSequenceBuilder(entry.pieces || entry.tokens || entry.availableAudioTokens || entry.availableWrittenChunks || entry.availableTiles, `round-sequence:${key}`)}</fieldset>`;
+  if (entry.stage1 && entry.stage2) {
+    return `<fieldset class="composite-round progressive-round" data-progressive-round><legend>${esc(label)}</legend>${localStimuli}
+      <div class="composite-stage"><strong>1. Primeira decisão</strong><p>${esc(entry.stage1.context || entry.stage1.question || '')}</p>${optionMarkup(entry.stage1.options || [], `round:${key}:stage1`)}</div>
+      <button type="button" class="secondary-button compact-button" data-progressive-reveal>Ver nova pista</button>
+      <div class="composite-stage" data-progressive-stage2 hidden><strong>2. Com a nova pista</strong><p>${esc(entry.stage2.additionalClue || entry.stage2.question || '')}</p>${optionMarkup(entry.stage2.options || [], `round:${key}:stage2`)}</div>
+    </fieldset>`;
+  }
+
+  if (Array.isArray(entry.pieces) || Array.isArray(entry.tokens) || Array.isArray(entry.tiles) || Array.isArray(entry.availableAudioTokens) || Array.isArray(entry.availableWrittenChunks) || Array.isArray(entry.availableTiles)) {
+    return `<fieldset class="composite-round"><legend>${esc(label)}</legend>${localStimuli}${renderSequenceBuilder(entry.pieces || entry.tokens || entry.tiles || entry.availableAudioTokens || entry.availableWrittenChunks || entry.availableTiles, `round-sequence:${key}`)}</fieldset>`;
+  }
+
+  if (expected && typeof expected === 'object' && (Object.prototype.hasOwnProperty.call(expected, 'acceptedResult') || Array.isArray(expected.acceptedResults))) {
+    return `<fieldset class="composite-round"><legend>${esc(label)}</legend>${localStimuli}<label class="response-field"><span>Sua transformação</span><input name="round-text:${esc(key)}" type="text" required></label></fieldset>`;
   }
 
   if (Array.isArray(entry.options)) {
-    return `<fieldset class="composite-round"><legend>${esc(label)}</legend>${localStimuli}${optionMarkup(entry.options, `round:${key}`)}</fieldset>`;
+    const multiple = Boolean(expected && typeof expected === 'object' && Array.isArray(expected.correctIndexes) && expected.correctIndexes.length > 1);
+    return `<fieldset class="composite-round"><legend>${esc(label)}</legend>${localStimuli}${optionMarkup(entry.options, `round:${key}`, multiple)}</fieldset>`;
   }
 
   if (Array.isArray(entry.nonVisualOptions)) {
@@ -290,6 +315,10 @@ function renderCompositeRound(entry, index, block) {
   const sharedOptions = sharedCompositeOptions(block);
   if (sharedOptions.length) {
     return `<fieldset class="composite-round"><legend>${esc(label)}</legend>${localStimuli}${optionMarkup(sharedOptions, `round:${key}`)}</fieldset>`;
+  }
+
+  if (block.activity?.evaluation?.mode === 'RELIABLE_EVALUATOR') {
+    return `<fieldset class="composite-round"><legend>${esc(label)}</legend>${localStimuli}<label class="response-field"><span>Sua resposta</span><textarea name="round-text:${esc(key)}" rows="4" required></textarea></label></fieldset>`;
   }
 
   return `<div class="composite-round">${localStimuli}${unsupported(`${block.id}: rodada ${key} sem controle determinístico`)}</div>`;
@@ -323,6 +352,12 @@ function renderComposite(block) {
   return renderOpenInput(block, 'Registre sua resposta para esta atividade composta');
 }
 
+function renderSelfReview(block) {
+  const questions = block.content?.selfReviewQuestions;
+  if (!Array.isArray(questions) || !questions.length) return '';
+  return `<fieldset class="self-review"><legend>Autochecagem</legend>${questions.map((question, index) => `<label class="choice-option"><input type="checkbox" name="selfReview:${index}" value="done" required><span>${esc(question)}</span></label>`).join('')}</fieldset>`;
+}
+
 function renderInteraction(block) {
   const content = block.content || {};
   switch (block.activity?.interaction) {
@@ -340,8 +375,14 @@ function renderInteraction(block) {
     case 'MATCH': return renderClassify(block);
     case 'SHORT_TEXT':
     case 'STRUCTURED_RESPONSE':
-    case 'LONG_TEXT':
-    case 'ORAL_RESPONSE': return renderOpenInput(block, block.activity.interaction === 'ORAL_RESPONSE' ? 'Rascunho/registro da resposta oral nesta etapa técnica' : 'Sua resposta');
+    case 'LONG_TEXT': {
+      const promptChoice = Array.isArray(content.promptChoices) && content.promptChoices.length
+        ? `<fieldset class="choice-group"><legend>Escolha a intenção</legend>${optionMarkup(content.promptChoices.map(item => item.instruction || item.id), 'openPromptChoice')}</fieldset>`
+        : '';
+      const revision = content.revisionFlow ? '<label class="response-field"><span>Revisão opcional</span><textarea name="revisedResponse" rows="4"></textarea></label>' : '';
+      return `${promptChoice}${renderOpenInput(block, 'Sua resposta')}${revision}`;
+    }
+    case 'ORAL_RESPONSE': return renderOpenInput(block, 'Rascunho/registro da resposta oral nesta etapa técnica');
     case 'COMPOSITE': return renderComposite(block);
     default: return unsupported(block.activity?.interaction || 'desconhecida');
   }
@@ -360,6 +401,7 @@ export function renderActivity(block) {
       ${renderStimuli(block.activity)}
       <form class="activity-form" data-activity-form novalidate>
         ${renderInteraction(block)}
+        ${renderSelfReview(block)}
         <div class="activity-actions"><button class="primary-button" type="submit">${pending ? 'Registrar resposta' : 'Verificar resposta'}</button></div>
         <div class="activity-feedback" data-activity-feedback aria-live="polite"></div>
       </form>
@@ -564,7 +606,7 @@ function bindActivity(form, block) {
   form.addEventListener('submit', event => {
     event.preventDefault();
     if (!form.reportValidity()) return;
-    const result = block.activity.evaluation.mode === 'DETERMINISTIC' ? evaluateDeterministic(form, block) : { complete: true, pending: true };
+    const result = block.activity.evaluation.mode === 'DETERMINISTIC' ? evaluateDeterministicActivity(form, block) : { complete: true, pending: true };
     const feedback = form.querySelector('[data-activity-feedback]');
     if (!result.complete) {
       feedback.dataset.state = 'missing';
@@ -601,6 +643,15 @@ export function bindClassicRenderer(root, document = null) {
     button.textContent = 'Tentativa registrada';
   }));
   root.querySelectorAll('[data-sequence-builder]').forEach(bindSequence);
+  root.querySelectorAll('[data-progressive-reveal]').forEach(button => button.addEventListener('click', () => {
+    const round = button.closest('[data-progressive-round]');
+    const stage1 = round?.querySelector('input[name$=":stage1"]:checked');
+    if (!stage1) return;
+    const stage2 = round.querySelector('[data-progressive-stage2]');
+    if (stage2) stage2.hidden = false;
+    button.disabled = true;
+    button.textContent = 'Nova pista aberta';
+  }));
   if (!document) return;
   const byId = new Map(document.blocks.filter(block => block.kind === 'ACTIVITY').map(block => [block.id, block]));
   root.querySelectorAll('[data-activity-id]').forEach(card => {

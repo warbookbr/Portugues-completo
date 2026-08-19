@@ -66,6 +66,8 @@
           "status": {"enum": ["PRATICADA", "DEMONSTRADA", "VALIDACAO_PENDENTE", "REVISAO_RECOMENDADA"]},
           "attemptCount": {"type": "integer", "minimum": 1},
           "lastAttemptAt": {"type": ["string", "null"]},
+          "score": {"type": ["number", "null"], "minimum": 0},
+          "itemResults": {"type": "object", "additionalProperties": {"type": "boolean"}},
           "support": {
             "type": "object",
             "required": ["hintUsed", "replayCount", "rereadUsed", "consultationUsed"],

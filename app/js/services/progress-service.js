@@ -65,6 +65,22 @@ function statusSatisfies(status, policy) {
   return false;
 }
 
+function clusterCriteriaSatisfied(progress, document, cluster) {
+  for (const criterion of cluster.criteria || []) {
+    if (!criterion || typeof criterion !== 'object') continue;
+    if (criterion.type === 'TOTAL_ITEM_HITS_AT_LEAST') {
+      const evidenceIds = Array.isArray(criterion.evidenceIds) && criterion.evidenceIds.length ? criterion.evidenceIds : (cluster.evidenceIds || []);
+      let hits = 0;
+      for (const evidenceId of evidenceIds) {
+        const itemResults = progress.evidence[progressDocumentRef(document.id, evidenceId)]?.itemResults || {};
+        hits += Object.values(itemResults).filter(Boolean).length;
+      }
+      if (hits < Number(criterion.minimum || 0)) return false;
+    }
+  }
+  return true;
+}
+
 function clusterSatisfied(progress, document, cluster) {
   const statuses = (cluster.evidenceIds || []).map(id => progress.evidence[progressDocumentRef(document.id, id)]?.status || null);
   const satisfiedCount = statuses.filter(status => statusSatisfies(status, cluster.satisfaction)).length;
@@ -74,7 +90,7 @@ function clusterSatisfied(progress, document, cluster) {
     const groupSatisfied = group.some(id => statusSatisfies(progress.evidence[progressDocumentRef(document.id, id)]?.status, cluster.satisfaction));
     if (!groupSatisfied) return false;
   }
-  return true;
+  return clusterCriteriaSatisfied(progress, document, cluster);
 }
 
 function clusterState(progress, document, cluster) {
@@ -260,6 +276,8 @@ export class ProgressService {
       status,
       attemptCount: (previous?.attemptCount || 0) + 1,
       lastAttemptAt: now,
+      score: typeof result.score === 'number' ? result.score : null,
+      itemResults: result.itemResults && typeof result.itemResults === 'object' ? clone(result.itemResults) : {},
       support: {
         hintUsed: previousSupport.hintUsed || currentSupport.hintUsed,
         replayCount: previousSupport.replayCount + currentSupport.replayCount,

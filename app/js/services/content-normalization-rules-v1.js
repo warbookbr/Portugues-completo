@@ -16,6 +16,181 @@ export const LEGACY_COMPLETION_RULES_V1 = Object.freeze({
     ],
     nonCompensable: true,
     activityPolicies: { 'V01-Q02': { threshold: 0.5 }, 'V01-Q05': { threshold: 0.8 } }
+  },
+
+  // N0-U03 — regras históricas explícitas preservadas sem parsear prosa autoral.
+  'N0-U03-L01': {
+    clusters: [
+      { id: 'formVersusMeaning', required: true, evidenceIds: ['L01-C01'], satisfaction: 'DEMONSTRATED_REQUIRED' },
+      { id: 'meaningAssociation', required: true, evidenceIds: ['L01-A01'], satisfaction: 'DEMONSTRATED_REQUIRED' },
+      { id: 'beyondConcreteNaming', required: true, evidenceIds: ['L01-A02'], satisfaction: 'DEMONSTRATED_REQUIRED' },
+      { id: 'transfer', required: true, evidenceIds: ['L01-A03'], satisfaction: 'DEMONSTRATED_REQUIRED' }
+    ],
+    nonCompensable: true,
+    activityPolicies: {
+      'L01-A01': { threshold: 5 / 7 },
+      'L01-A02': { threshold: 2 / 3, criteria: [{ type: 'REQUIRED_ANY_OF', groups: [['1', '2']] }] },
+      'L01-A03': { threshold: 3 / 4 }
+    }
+  },
+  'N0-U03-L02': {
+    clusters: [
+      { id: 'semanticGrouping', required: true, evidenceIds: ['L02-A01'], satisfaction: 'DEMONSTRATED_REQUIRED' },
+      { id: 'closeMeaning', required: true, evidenceIds: ['L02-A02'], satisfaction: 'DEMONSTRATED_REQUIRED' },
+      { id: 'opposition', required: true, evidenceIds: ['L02-A03'], satisfaction: 'DEMONSTRATED_REQUIRED' },
+      { id: 'transfer', required: true, evidenceIds: ['L02-A04'], satisfaction: 'DEMONSTRATED_REQUIRED' }
+    ],
+    nonCompensable: true,
+    activityPolicies: {
+      'L02-A01': { threshold: 5 / 6 },
+      'L02-A02': { threshold: 2 / 3 },
+      'L02-A03': { threshold: 3 / 4 },
+      'L02-A04': { threshold: 3 / 4, criteria: [{ type: 'REQUIRED_ANY_OF', groups: [['0', '3'], ['1', '2']] }] }
+    }
+  },
+  'N0-U03-L03': {
+    clusters: [
+      { id: 'sameWordDifferentSense', required: true, evidenceIds: ['L03-A01'], satisfaction: 'DEMONSTRATED_REQUIRED' },
+      { id: 'strongContextInference', required: true, evidenceIds: ['L03-A02'], satisfaction: 'DEMONSTRATED_REQUIRED' },
+      { id: 'uncertaintyAndRevision', required: true, evidenceIds: ['L03-A03'], satisfaction: 'DEMONSTRATED_REQUIRED' },
+      { id: 'contextEvidence', required: true, evidenceIds: ['L03-A04'], satisfaction: 'DEMONSTRATED_REQUIRED' }
+    ],
+    nonCompensable: true,
+    activityPolicies: {
+      'L03-A01': { threshold: 5 / 6, criteria: [{ type: 'MIN_DISTINCT_GROUPS_CORRECT', minimum: 2, groups: [['0', '1'], ['2', '3'], ['4', '5']] }] },
+      'L03-A02': { threshold: 3 / 4 },
+      'L03-A03': { threshold: 1 },
+      'L03-A04': { threshold: 2 / 3 }
+    }
+  },
+  'N0-U03-L04': {
+    clusters: [
+      { id: 'oneWordMessages', required: true, evidenceIds: ['L04-C01', 'L04-A01'], satisfaction: 'DEMONSTRATED_REQUIRED' },
+      { id: 'contextualRole', required: true, evidenceIds: ['L04-C02', 'L04-A02'], satisfaction: 'DEMONSTRATED_REQUIRED' },
+      { id: 'oneVersusManyWords', required: true, evidenceIds: ['L04-C03', 'L04-A04'], satisfaction: 'DEMONSTRATED_REQUIRED' },
+      { id: 'messageMeaningAndTransfer', required: true, evidenceIds: ['L04-A03', 'L04-A04'], satisfaction: 'DEMONSTRATED_REQUIRED' }
+    ],
+    nonCompensable: true,
+    activityPolicies: {
+      'L04-C01': { threshold: 1 },
+      'L04-A01': { threshold: 3 / 4 },
+      'L04-C02': { threshold: 1 },
+      'L04-A02': { threshold: 3 / 4 },
+      'L04-C03': { threshold: 1 },
+      'L04-A03': { threshold: 2 / 3 },
+      'L04-A04': { threshold: 3 / 4, criteria: [{ type: 'REQUIRED_ITEMS_CORRECT', itemIds: ['0', '1'] }] }
+    }
+  },
+  'N0-U03-L05': {
+    clusters: [
+      { id: 'ordering', required: true, evidenceIds: ['L05-A01'], satisfaction: 'DEMONSTRATED_REQUIRED' },
+      { id: 'relationChange', required: true, evidenceIds: ['L05-A02'], satisfaction: 'DEMONSTRATED_REQUIRED' },
+      { id: 'messageRelations', required: true, evidenceIds: ['L05-A03'], satisfaction: 'DEMONSTRATED_REQUIRED' },
+      { id: 'transfer', required: true, evidenceIds: ['L05-A04'], satisfaction: 'DEMONSTRATED_REQUIRED' }
+    ],
+    nonCompensable: true,
+    activityPolicies: {
+      'L05-A01': { threshold: 3 / 4, criteria: [{ type: 'REQUIRED_ANY_OF', groups: [['0', '1']] }] },
+      'L05-A02': { threshold: 2 / 3 },
+      'L05-A03': { threshold: 2 / 3 },
+      'L05-A04': { threshold: 3 / 4, criteria: [{ type: 'REQUIRED_ITEMS_CORRECT', itemIds: ['0'] }, { type: 'REQUIRED_ANY_OF', groups: [['1', '2']] }] }
+    }
+  },
+  'N0-U03-L06': {
+    clusters: [
+      { id: 'replacementEffect', required: true, evidenceIds: ['L06-A01'], satisfaction: 'DEMONSTRATED_REQUIRED' },
+      { id: 'additionAndRemoval', required: true, evidenceIds: ['L06-A02'], satisfaction: 'DEMONSTRATED_REQUIRED' },
+      { id: 'wordFormMeaning', required: true, evidenceIds: ['L06-A03'], satisfaction: 'DEMONSTRATED_REQUIRED' },
+      { id: 'transfer', required: true, evidenceIds: ['L06-A04'], satisfaction: 'DEMONSTRATED_REQUIRED' }
+    ],
+    nonCompensable: true,
+    activityPolicies: {
+      'L06-A01': { threshold: 2 / 3 },
+      'L06-A02': { threshold: 2 / 3, criteria: [{ type: 'REQUIRED_ITEMS_CORRECT', itemIds: ['1'] }, { type: 'REQUIRED_ANY_OF', groups: [['0', '2']] }] },
+      'L06-A03': { threshold: 1 },
+      'L06-A04': { threshold: 4 / 5, criteria: [{ type: 'REQUIRED_ANY_OF', groups: [['0', '3'], ['1', '2']] }] }
+    }
+  },
+  'N0-U03-L07': {
+    clusters: [
+      { id: 'negationInterpretation', required: true, evidenceIds: ['L07-A01'], satisfaction: 'DEMONSTRATED_REQUIRED' },
+      { id: 'situationMatching', required: true, evidenceIds: ['L07-A02'], satisfaction: 'DEMONSTRATED_REQUIRED' },
+      { id: 'controlledTransformation', required: true, evidenceIds: ['L07-A03'], satisfaction: 'DEMONSTRATED_REQUIRED' },
+      { id: 'transfer', required: true, evidenceIds: ['L07-A04'], satisfaction: 'DEMONSTRATED_REQUIRED' }
+    ],
+    nonCompensable: true,
+    activityPolicies: {
+      'L07-A01': { threshold: 3 / 4 },
+      'L07-A02': { threshold: 3 / 4 },
+      'L07-A03': { threshold: 3 / 4, criteria: [{ type: 'REQUIRED_ANY_OF', groups: [['0', '2'], ['1', '3']] }] },
+      'L07-A04': { threshold: 3 / 4, criteria: [{ type: 'REQUIRED_ITEMS_CORRECT', itemIds: ['0'] }] }
+    }
+  },
+  'N0-U03-L08': {
+    clusters: [
+      { id: 'coreFunctions', required: true, evidenceIds: ['L08-A01'], satisfaction: 'DEMONSTRATED_REQUIRED' },
+      { id: 'goalToMessage', required: true, evidenceIds: ['L08-A02'], satisfaction: 'DEMONSTRATED_REQUIRED' },
+      { id: 'multipleClues', required: true, evidenceIds: ['L08-A03'], satisfaction: 'DEMONSTRATED_REQUIRED' },
+      { id: 'transfer', required: true, evidenceIds: ['L08-A04'], satisfaction: 'DEMONSTRATED_REQUIRED' }
+    ],
+    nonCompensable: true,
+    activityPolicies: {
+      'L08-A01': { threshold: 4 / 5, criteria: [{ type: 'REQUIRED_ANY_OF', groups: [['2', '3']] }] },
+      'L08-A02': { threshold: 3 / 4 },
+      'L08-A03': { threshold: 2 / 3, criteria: [{ type: 'REQUIRED_ITEMS_CORRECT', itemIds: ['1'] }] },
+      'L08-A04': { threshold: 4 / 5, criteria: [{ type: 'REQUIRED_ITEMS_CORRECT', itemIds: ['0'] }, { type: 'REQUIRED_ANY_OF', groups: [['2', '3']] }] }
+    }
+  },
+  'N0-U03-L09': {
+    clusters: [
+      { id: 'completionFromClues', required: true, evidenceIds: ['L09-A01'], satisfaction: 'DEMONSTRATED_REQUIRED' },
+      { id: 'reconstruction', required: true, evidenceIds: ['L09-A02'], satisfaction: 'DEMONSTRATED_REQUIRED' },
+      { id: 'coherenceAndVariation', required: true, evidenceIds: ['L09-A03'], satisfaction: 'DEMONSTRATED_REQUIRED' },
+      { id: 'transferAndReview', required: true, evidenceIds: ['L09-A04'], satisfaction: 'DEMONSTRATED_REQUIRED' }
+    ],
+    nonCompensable: true,
+    activityPolicies: {
+      'L09-A01': { threshold: 3 / 4, criteria: [{ type: 'REQUIRED_ITEMS_CORRECT', itemIds: ['1'] }] },
+      'L09-A02': { threshold: 3 / 4, criteria: [{ type: 'REQUIRED_ANY_OF', groups: [['0', '3']] }] },
+      'L09-A03': { threshold: 1 },
+      'L09-A04': { threshold: 3 / 4, criteria: [{ type: 'REQUIRED_ANY_OF', groups: [['1', '3']] }] }
+    }
+  },
+  'N0-U03-L10': {
+    clusters: [
+      { id: 'understandsMultipleValidFormulations', required: true, evidenceIds: ['L10-C01'], satisfaction: 'DEMONSTRATED_REQUIRED' },
+      { id: 'guidedOpenProduction', required: true, evidenceIds: ['L10-A01'], satisfaction: 'PENDING_ALLOWED' },
+      { id: 'ownWordsProduction', required: true, evidenceIds: ['L10-A02'], satisfaction: 'PENDING_ALLOWED' },
+      { id: 'revisionProcess', required: true, evidenceIds: ['L10-A03'], satisfaction: 'PENDING_ALLOWED' },
+      { id: 'transferOpenProduction', required: true, evidenceIds: ['L10-A04'], satisfaction: 'PENDING_ALLOWED' }
+    ],
+    nonCompensable: true,
+    activityPolicies: { 'L10-C01': { threshold: 1 } }
+  },
+  'N0-U03-V01': {
+    clusters: [
+      {
+        id: 'meaningAndContext', required: true, evidenceIds: ['V01-Q01', 'V01-Q02', 'V01-Q03'], satisfaction: 'DEMONSTRATED_REQUIRED',
+        criteria: [{ type: 'TOTAL_ITEM_HITS_AT_LEAST', evidenceIds: ['V01-Q01', 'V01-Q02', 'V01-Q03'], minimum: 5 }]
+      },
+      {
+        id: 'constructionAndManipulation', required: true, evidenceIds: ['V01-Q05', 'V01-Q06', 'V01-Q09'], satisfaction: 'DEMONSTRATED_REQUIRED',
+        criteria: [{ type: 'TOTAL_ITEM_HITS_AT_LEAST', evidenceIds: ['V01-Q06', 'V01-Q09'], minimum: 3 }]
+      },
+      { id: 'messageComprehensionAndProduction', required: true, evidenceIds: ['V01-Q04', 'V01-Q07', 'V01-Q08', 'V01-Q10'], satisfaction: 'PENDING_ALLOWED' }
+    ],
+    nonCompensable: true,
+    activityPolicies: {
+      'V01-Q01': { threshold: 0.5 },
+      'V01-Q02': { threshold: 0.5 },
+      'V01-Q03': { threshold: 1 },
+      'V01-Q04': { threshold: 2 / 3 },
+      'V01-Q05': { threshold: 1 },
+      'V01-Q06': { threshold: 0.5 },
+      'V01-Q07': { threshold: 1 },
+      'V01-Q08': { threshold: 4 / 5 },
+      'V01-Q09': { threshold: 0.5, criteria: [{ type: 'REQUIRED_ITEMS_CORRECT', itemIds: ['1'] }] }
+    }
   }
 });
 

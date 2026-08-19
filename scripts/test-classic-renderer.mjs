@@ -59,7 +59,7 @@ for (const unitRef of catalog.units) {
 const emptyProgress = createEmptyProgress();
 const home = homeHtml(catalog, units, emptyProgress);
 assert.match(home, /Letras e primeiros sons/);
-assert.match(home, /Literatura, multimodalidade/);
+assert.match(home, /Palavras, frases e sentido/);
 assert.match(home, /Começar a estudar/);
 assert.equal((home.match(/Começar a estudar/g) || []).length, 1, 'home deve ter um único CTA de início/retomada');
 assert.doesNotMatch(home, /Continuar lição/i, 'home não deve manter CTA concorrente de continuar lição');
@@ -95,6 +95,12 @@ const n0Html = documentHtml(n0Verification.runtime, { unitId: 'N0-U01', unitTitl
 assert.match(n0Html, /Áudio ainda não disponível/);
 assert.doesNotMatch(n0Html, /N0-U01-V01-AUD-/);
 
+const u03Lesson = await service.loadLesson('N0-U03', 'N0-U03-L10');
+const u03Html = documentHtml(u03Lesson.runtime, { unitId: 'N0-U03', unitTitle: 'Palavras, frases e sentido' });
+assert.match(u03Html, /Registrar resposta/i);
+assert.match(u03Html, /Autochecagem/i);
+assert.doesNotMatch(u03Html, /Interação ainda não suportada/i);
+
 const n4Lesson = await service.loadLesson('N4-U09', 'N4-U09-L01');
 const n4Html = documentHtml(n4Lesson.runtime, { unitId: 'N4-U09', unitTitle: 'Literatura, multimodalidade, autoria intermedial e digital' });
 assert.match(n4Html, /avaliação pendente/i);
@@ -102,6 +108,6 @@ assert.match(n4Html, /Registrar resposta/i);
 assert.equal(typeof n4Lesson.runtime.presentation?.intro, 'string');
 assert.notEqual(n4Lesson.runtime.presentation.intro, n4Lesson.runtime.objective);
 
-assert.equal(lessonCount, 29);
-assert.equal(verificationCount, 3);
-console.log(`Renderer clássico: ${lessonCount} lições + ${verificationCount} verificações, apresentação pública T1.7 e retomada segura validadas.`);
+assert.equal(lessonCount, 39);
+assert.equal(verificationCount, 4);
+console.log(`Renderer clássico P7: ${lessonCount} lições + ${verificationCount} verificações, N0-U03 e caso-âncora N4 preservados.`);

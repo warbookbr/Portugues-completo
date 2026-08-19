@@ -93,19 +93,21 @@ assert.match(p62, /run 32260852054/);
 
 const p6 = read('docs/homologacao-p6.md');
 assert.match(p6, /P6: HOMOLOGADO/);
+assert.match(p6, /P6\.1/);
+assert.match(p6, /P6\.2/);
 assert.match(p6, /P6\.3/);
 assert.match(p6, /run 32261814336/);
 assert.match(p6, /P7 — Ampliação do catálogo Clássico N0→N4/);
 
+// O estado operacional pode avançar livremente dentro do P7; o gate P6 só exige
+// que o marco fechado continue homologado e que P7 permaneça ativo.
 const state = read('docs/estado-implementacao-classico.md');
 assert.match(state, /P6 — Feedback por IA: HOMOLOGADO/);
-assert.match(state, /P6\.1[^\n]*HOMOLOGADO/);
-assert.match(state, /P6\.2[^\n]*HOMOLOGADO/);
-assert.match(state, /P6\.3[^\n]*HOMOLOGADO/);
+assert.match(state, /Homologação P6: docs\/homologacao-p6\.md/);
 assert.match(state, /P7 — Ampliação do catálogo Clássico N0→N4: ATIVO/);
 
 const roadmap = read('docs/roadmap-produto.md');
 assert.match(roadmap, /## P6 — Feedback por IA no Clássico\n\n\*\*Estado: HOMOLOGADO\.\*\*/);
 assert.match(roadmap, /## P7 — Ampliação do catálogo Clássico N0→N4\n\n\*\*Estado: ATIVO\.\*\*/);
 
-console.log('P6 homologation gate: segredo fora do frontend, consentimento, payload mínimo, companion seguro, structured output, falha segura, neutralidade curricular e cursor P7 preservados.');
+console.log('P6 homologation gate: segurança/consentimento/transporte/neutralidade preservados, P6 segue homologado e P7 pode avançar sem acoplamento ao sublote atual.');

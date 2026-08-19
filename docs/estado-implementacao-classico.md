@@ -22,12 +22,14 @@ Migração T1 `t1-n0-entry-v2`: ATIVA / HOMOLOGADA local + Gist
 P6 — Feedback por IA: HOMOLOGADO
 Homologação P6: docs/homologacao-p6.md
 P7 — Ampliação do catálogo Clássico N0→N4: ATIVO
-Próximo passo exato: inventariar todas as unidades ainda fora de content/course.json, classificar normalização/renderer/mídia e iniciar a expansão incremental pelo próximo percurso N0-U03, preservando N4-U09 como caso-âncora
+Lote P7 N0-U03 — Palavras, frases e sentido: HOMOLOGADO (PR #134)
+Homologação N0-U03: docs/homologacao-p7-n0-u03.md
+Próximo passo exato: iniciar o lote N0-U04 — Lendo e compreendendo pequenos textos — inventariando autoria/verificação, normalização, interações e mídia antes de manifestar/publicar
 Blocker global: nenhum
 Gate final do Clássico: NÃO SATISFEITO
 ```
 
-T1 foi homologado em T1.10. As regras duradouras permanecem nas fontes/skills canônicas; P6 pode avançar materialmente sem reabrir T1, salvo nova evidência concreta de regressão.
+T1 e P6 estão homologados. P7 avança incrementalmente por unidade, preservando os gates anteriores e sem reabrir marcos concluídos salvo nova evidência concreta de regressão.
 
 ## Marcos do produto
 
@@ -40,7 +42,7 @@ T1 foi homologado em T1.10. As regras duradouras permanecem nas fontes/skills ca
 | P5 — Progresso/revisão/Gist | `HOMOLOGADO` | PR #109 |
 | T1 — Fundamentos claros | `HOMOLOGADO` | PRs #116–#130; `docs/homologacao-t1-10.md` |
 | P6 — Feedback por IA | `HOMOLOGADO` | PRs #131–#133; `docs/homologacao-p6.md` |
-| P7 — Catálogo N0→N4 | `ATIVO` | expansão incremental pós-P6 |
+| P7 — Catálogo N0→N4 | `ATIVO` | N0-U03 homologada na PR #134; próximo lote N0-U04 |
 | P8 — Mídia/publicação | `NAO_INICIADO` | — |
 | P9 — E2E / Clássico homologado | `NAO_INICIADO` | — |
 
@@ -471,6 +473,18 @@ Mídia obrigatória: blockers locais explícitos nos manifests/fila
 Publicação pedagógica das interações dependentes de mídia: BLOQUEADA somente onde o estímulo obrigatório falta
 ```
 
+### N0-U03
+
+```text
+Renderer/progresso/evidência agregada: HOMOLOGADOS
+10 lições + N0-U03-V01: PUBLICADAS / HOMOLOGADAS
+Manifesto: READY
+Catálogo: ATIVO
+Produção aberta: VALIDACAO_PENDENTE quando não há avaliador confiável
+Mídia humana obrigatória: nenhuma
+Homologação: docs/homologacao-p7-n0-u03.md
+```
+
 ### N4-U09
 
 ```text
@@ -484,15 +498,12 @@ Nova mídia humana obrigatória: nenhuma
 ## Pendências abertas
 
 ```text
-Global antes de P6: nenhum — T1 homologado
-Ativo: P6 — Feedback por IA no Clássico
-P6.1: HOMOLOGADO — AiFeedbackService neutro + companion OpenAI local + gates de segurança (PR #131)
-P6.2: HOMOLOGADO — opt-in/configuração + piloto N4-U09 + feedback visual (PR #132)
-P6.3: HOMOLOGADO — auditoria transversal e gate permanente (PR #133)
+Global: nenhum blocker técnico
 P6: HOMOLOGADO — docs/homologacao-p6.md
-Ativo P7: expansão incremental do catálogo N0→N4
-Local: resolver mídia obrigatória de U1/U2 quando o marco de publicação exigir esses estímulos
-Depois de P6: P7 — ampliação do catálogo N0→N4
+P7: ATIVO — expansão incremental do catálogo N0→N4
+N0-U03: HOMOLOGADA — docs/homologacao-p7-n0-u03.md
+Ativo agora: N0-U04 — inventário/adaptação/manifesto/publicação/homologação
+Local: resolver mídia obrigatória de U1/U2 quando o marco P8 exigir esses estímulos
 ```
 
 ## Gate `CLÁSSICO HOMOLOGADO`

@@ -437,6 +437,12 @@ normalizar
 
 Não reescrever conteúdo em massa para satisfazer renderer.
 
+Lotes homologados até aqui:
+
+- N0-U03 — Palavras, frases e sentido — PR #134 / `docs/homologacao-p7-n0-u03.md`.
+
+Próximo lote: N0-U04 — Lendo e compreendendo pequenos textos.
+
 Condição de saída: catálogo cobre N0→N4, tipos necessários têm suporte ou blocker explícito e navegação alcança o percurso completo.
 
 ## P8 — Mídia e prontidão de publicação do Clássico
@@ -479,9 +485,10 @@ Cobrir troca de modos, preservação de domínio, coerência/resistência a farm
 
 ```text
 P7 — Ampliação do catálogo Clássico N0→N4
-→ inventariar unidades ausentes de content/course.json e manifests publicados
-→ classificar cada unidade por normalização, interações, mídia e blocker real
-→ expandir incrementalmente, começando pelo percurso N0-U03 após U1/U2 homologadas
+→ N0-U03 HOMOLOGADA / publicada no catálogo
+→ próximo lote: N0-U04 — Lendo e compreendendo pequenos textos
+→ inventariar autoria/verificação e classificar normalização, interações, mídia e blocker real
+→ adaptar somente contratos reutilizáveis necessários antes de manifestar/publicar
 → preservar N4-U09 como caso-âncora de resposta aberta/IA
 → não reescrever autoria apenas para satisfazer renderer
 → registrar blockers locais e continuar por lotes independentes

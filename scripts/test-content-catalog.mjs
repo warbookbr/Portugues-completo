@@ -22,7 +22,8 @@ async function fileFetch(url) {
 const service = new ContentService({ basePath: './content', fetchImpl: fileFetch });
 const catalog = await service.loadCatalog();
 assert.equal(catalog.schemaVersion, 2);
-assert.deepEqual(catalog.units.map(unit => unit.id), ['N0-U01', 'N0-U02', 'N4-U09']);
+assert.deepEqual(catalog.units.map(unit => unit.id), ['N0-U01', 'N0-U02', 'N0-U03', 'N4-U09']);
+assert.deepEqual(catalog.units.filter(unit => unit.levelId === 'N0').map(unit => unit.order), [1, 2, 3]);
 
 const n0u1 = await service.loadUnitManifest('N0-U01', { catalog });
 assert.equal(n0u1.manifest.title, 'Letras e primeiros sons');
@@ -40,6 +41,26 @@ assert.equal(n0u2.manifest.verification.id, 'N0-U02-V02');
 assert.equal(n0u2.manifest.publication.status, 'BLOCKED');
 assert.ok(n0u2.manifest.publication.blockers.length >= 1);
 
+const n0u3 = await service.loadUnitManifest('N0-U03', { catalog });
+assert.equal(n0u3.manifest.title, 'Palavras, frases e sentido');
+assert.equal(n0u3.manifest.order, 3);
+assert.deepEqual(n0u3.manifest.prerequisites, ['N0-U02-V02']);
+assert.equal(n0u3.manifest.lessons.length, 10);
+assert.equal(n0u3.manifest.competencies.length, 10);
+assert.deepEqual(n0u3.manifest.competencies.map(item => item.id), Array.from({ length: 10 }, (_, index) => `N0-U03-C${String(index + 1).padStart(2, '0')}`));
+assert.equal(n0u3.manifest.verification.id, 'N0-U03-V01');
+assert.deepEqual(n0u3.manifest.verification.competencyIds, n0u3.manifest.competencies.map(item => item.id));
+assert.equal(n0u3.manifest.publication.status, 'READY');
+assert.deepEqual(n0u3.manifest.publication.blockers, []);
+
+for (const lessonRef of n0u3.manifest.lessons) {
+  const loaded = await service.loadLesson('N0-U03', lessonRef.id);
+  assert.equal(loaded.runtime.id, lessonRef.id);
+  assert.deepEqual(loaded.runtime.competencyIds, lessonRef.competencyIds);
+  assert.ok(loaded.runtime.blocks.length > 0, `${lessonRef.id}: runtime vazio.`);
+  assert.ok(loaded.runtime.completion.clusters.length > 0, `${lessonRef.id}: sem clusters de conclusão.`);
+}
+
 const n4 = await service.loadUnitManifest('N4-U09', { catalog });
 assert.equal(n4.manifest.lessons.length, 12);
 assert.equal(n4.manifest.competencies.length, 12);
@@ -56,6 +77,11 @@ const movedLesson = await service.loadLesson('N0-U02', 'N0-U02-L10');
 assert.equal(movedLesson.runtime.id, 'N0-U02-L10');
 assert.deepEqual(movedLesson.runtime.competencyIds, ['N0-U02-C11']);
 
+const n0u3OpenLesson = await service.loadLesson('N0-U03', 'N0-U03-L10');
+assert.equal(n0u3OpenLesson.runtime.id, 'N0-U03-L10');
+assert.deepEqual(n0u3OpenLesson.runtime.competencyIds, ['N0-U03-C10']);
+assert.ok(n0u3OpenLesson.runtime.blocks.some(block => block.activity?.evaluation?.mode === 'RELIABLE_EVALUATOR'));
+
 const n4Lesson = await service.loadLesson('N4-U09', 'N4-U09-L01');
 assert.equal(n4Lesson.runtime.id, 'N4-U09-L01');
 assert.deepEqual(n4Lesson.runtime.competencyIds, ['N4-U09-C01']);
@@ -71,6 +97,13 @@ assert.equal(n0u2Verification.runtime.id, 'N0-U02-V02');
 assert.equal(n0u2Verification.runtime.kind, 'UNIT_VERIFICATION');
 assert.equal(n0u2Verification.runtime.competencyIds.length, 11);
 
+const n0u3Verification = await service.loadVerification('N0-U03');
+assert.equal(n0u3Verification.runtime.id, 'N0-U03-V01');
+assert.equal(n0u3Verification.runtime.kind, 'UNIT_VERIFICATION');
+assert.equal(n0u3Verification.runtime.competencyIds.length, 10);
+assert.deepEqual(n0u3Verification.runtime.completion.clusters.map(cluster => cluster.id), ['meaningAndContext', 'constructionAndManipulation', 'messageComprehensionAndProduction']);
+assert.ok(n0u3Verification.runtime.blocks.some(block => block.activity?.evaluation?.mode === 'RELIABLE_EVALUATOR'));
+
 const n4Verification = await service.loadVerification('N4-U09');
 assert.equal(n4Verification.runtime.id, 'N4-U09-V01');
 assert.equal(n4Verification.runtime.kind, 'UNIT_VERIFICATION');
@@ -82,4 +115,4 @@ await assert.rejects(
   error => error instanceof ContentCatalogError && error.code === 'UNIT_NOT_FOUND'
 );
 
-console.log('Catálogo/ContentService T1.9: U1/U2 publicadas com V02, N4-U09 preservada e descoberta consistente.');
+console.log('Catálogo/ContentService P7: U1/U2/U3 publicadas em ordem, N0-U03 READY descoberta ponta a ponta e N4-U09 preservada.');
