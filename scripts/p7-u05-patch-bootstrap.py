@@ -13,5 +13,11 @@ obsolete = '''replace_once(
 '''
 if obsolete not in text:
     raise RuntimeError('Bloco redundante directKeys não encontrado no script temporário.')
-path.write_text(text.replace(obsolete, '', 1))
-print('Bootstrap U05: removida reaplicação redundante de directKeys já suportada pelo runtime.')
+text = text.replace(obsolete, '', 1)
+text = text.replace(
+    "raise RuntimeError(f'{file}: trecho esperado encontrado {count} vez(es)')",
+    "raise RuntimeError(f'{file}: trecho esperado encontrado {count} vez(es): {before[:220]!r}')",
+    1
+)
+path.write_text(text)
+print('Bootstrap U05: removida reaplicação redundante de directKeys e diagnóstico de âncora ampliado.')
