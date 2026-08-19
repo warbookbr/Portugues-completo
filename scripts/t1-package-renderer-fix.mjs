@@ -21,6 +21,14 @@ replaceOnce(
     </label>\`).join('');
 }
 
+function sharedCompositeOptions(block) {
+  const values = Object.values(block.activity?.evaluation?.answerKey?.items || {})
+    .map(value => value && typeof value === 'object' && !Array.isArray(value) ? value.correct ?? value.expected : value)
+    .filter(value => typeof value === 'string');
+  const uniqueValues = [...new Set(values)];
+  return uniqueValues.length >= 2 && uniqueValues.length <= 6 ? uniqueValues : [];
+}
+
 function unsupported(label) {
   return \`<div class="unsupported-state" role="alert"><strong>Interação ainda não suportada</strong><span>\${esc(label)}</span></div>\`;
 }`
@@ -87,6 +95,11 @@ replaceOnce(
     return \`<fieldset class="composite-round"><legend>\${esc(label)}</legend>\${localStimuli}\${optionMarkup(block.content.pulseOptions, \`round:\${key}\`)}</fieldset>\`;
   }
 
+  const sharedOptions = sharedCompositeOptions(block);
+  if (sharedOptions.length) {
+    return \`<fieldset class="composite-round"><legend>\${esc(label)}</legend>\${localStimuli}\${optionMarkup(sharedOptions, \`round:\${key}\`)}</fieldset>\`;
+  }
+
   return \`<div class="composite-round">\${localStimuli}\${unsupported(\`\${block.id}: rodada \${key} sem controle determinístico\`)}</div>\`;`
 );
 
@@ -113,7 +126,8 @@ replaceOnce(
       if (selectedIndex === expected.correctIndex) hits += 1;
       continue;
     }
-    const option = entry.options?.[selectedIndex] ?? entry.wholeWordOptions?.[selectedIndex] ?? content.pulseOptions?.[selectedIndex];
+    const sharedOptions = sharedCompositeOptions(block);
+    const option = entry.options?.[selectedIndex] ?? entry.wholeWordOptions?.[selectedIndex] ?? content.pulseOptions?.[selectedIndex] ?? sharedOptions[selectedIndex];
     const expectedValue = expected && typeof expected === 'object' ? expected.correct ?? expected.expected : expected;
     if (normalizeComparable(option) === normalizeComparable(expectedValue)) hits += 1;`
 );
