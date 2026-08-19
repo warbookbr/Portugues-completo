@@ -1,4 +1,4 @@
-name: Repair P7 U05 public renderer
+name: Close P7 N0-U05
 
 on:
   pull_request:
@@ -10,7 +10,7 @@ permissions:
   contents: write
 
 jobs:
-  repair:
+  close:
     if: github.head_ref == 'p7-n0-u05-catalog' || github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
     steps:
@@ -22,27 +22,28 @@ jobs:
         with:
           node-version: '24'
           package-manager-cache: false
-      - name: Restore renderer from pre-regression head
-        run: git show 839f857e4e9dbfc2b3043d121ce28538156ee8a0^:app/js/ui/classic-renderer.js > app/js/ui/classic-renderer.js
-      - name: Apply minimal U05 public-language fix
-        run: python3 scripts/p7-u05-public-ui-fix.py
-      - name: Validate U04 preservation
+      - name: Update canonical state
+        run: python3 scripts/p7-u05-close-docs.py
+      - name: Validate closure
         run: |
-          node scripts/audit-p7-n0-u04.mjs
-          node scripts/test-p7-u04-evidence.mjs
-          node scripts/test-p7-u04-homologation.mjs
-      - name: Validate U05 semantics and public UI
-        run: |
+          node scripts/validate-project.mjs
+          node scripts/validate-json.mjs
+          node scripts/validate-catalog.mjs
+          node scripts/test-content-catalog.mjs
           node scripts/audit-p7-n0-u05.mjs
           node scripts/test-p7-u05-writing.mjs
           node scripts/test-p7-u05-public-ui.mjs
           node scripts/test-classic-renderer.mjs
-      - name: Capture U05 visual smoke
-        run: bash scripts/capture-p7-u05-visuals.sh
-      - name: Commit repaired renderer
+          grep -Fq 'N0-U06 — Usando a língua no cotidiano' docs/estado-implementacao-classico.md
+          grep -Fq 'docs/homologacao-p7-n0-u05.md' PROJECT_INDEX.md
+      - name: Remove temporary P7 U05 tooling
+        run: |
+          git rm .github/workflows/p7-u05-runtime-patch.yml
+          git rm scripts/p7-u05-*.py
+      - name: Commit closure
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add app/js/ui/classic-renderer.js
-          git commit -m 'fix(p7): preserva renderer U04 ao limpar linguagem U05'
+          git add PROJECT_INDEX.md docs/estado-implementacao-classico.md docs/roadmap-produto.md docs/homologacao-p7-n0-u05.md
+          git commit -m 'docs(p7): homologa N0-U05 e avança para N0-U06'
           git push origin HEAD:p7-n0-u05-catalog
