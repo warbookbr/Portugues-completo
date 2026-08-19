@@ -45,6 +45,13 @@
       "manifest": "units/004-lendo-compreendendo-pequenos-textos/unit.json"
     },
     {
+      "id": "N0-U05",
+      "levelId": "N0",
+      "order": 5,
+      "title": "Escrevendo e organizando mensagens",
+      "manifest": "units/005-escrevendo-organizando-mensagens/unit.json"
+    },
+    {
       "id": "N4-U09",
       "levelId": "N4",
       "order": 9,

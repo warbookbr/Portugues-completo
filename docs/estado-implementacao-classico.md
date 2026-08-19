@@ -22,9 +22,9 @@ Migração T1 `t1-n0-entry-v2`: ATIVA / HOMOLOGADA local + Gist
 P6 — Feedback por IA: HOMOLOGADO
 Homologação P6: docs/homologacao-p6.md
 P7 — Ampliação do catálogo Clássico N0→N4: ATIVO
-Lote P7 N0-U04 — Lendo e compreendendo pequenos textos: HOMOLOGADO (PR #135)
-Homologação N0-U04: docs/homologacao-p7-n0-u04.md
-Próximo passo exato: iniciar o lote N0-U05 — Escrevendo e organizando mensagens — inventariando 10 lições + N0-U05-V01, normalização, produção aberta/revisão, convenções gráficas, interações e mídia antes de manifestar/publicar
+Lote P7 N0-U05 — Escrevendo e organizando mensagens: HOMOLOGADO (PR #136)
+Homologação N0-U05: docs/homologacao-p7-n0-u05.md
+Próximo passo exato: iniciar o lote N0-U06 — Usando a língua no cotidiano — inventariando autoria + N0-U06-V01, interlocutor/finalidade, pergunta/resposta, pedidos/orientações, compreensão oral, adequação formal/informal, variação linguística, mídia e blockers antes de manifestar/publicar
 Blocker global: nenhum
 Gate final do Clássico: NÃO SATISFEITO
 ```
@@ -42,7 +42,7 @@ T1 e P6 estão homologados. P7 avança incrementalmente por unidade, preservando
 | P5 — Progresso/revisão/Gist | `HOMOLOGADO` | PR #109 |
 | T1 — Fundamentos claros | `HOMOLOGADO` | PRs #116–#130; `docs/homologacao-t1-10.md` |
 | P6 — Feedback por IA | `HOMOLOGADO` | PRs #131–#133; `docs/homologacao-p6.md` |
-| P7 — Catálogo N0→N4 | `ATIVO` | N0-U03/U04 homologadas nas PRs #134/#135; próximo lote N0-U05 |
+| P7 — Catálogo N0→N4 | `ATIVO` | N0-U03/U04/U05 homologadas nas PRs #134/#135/#136; próximo lote N0-U06 |
 | P8 — Mídia/publicação | `NAO_INICIADO` | — |
 | P9 — E2E / Clássico homologado | `NAO_INICIADO` | — |
 
@@ -499,6 +499,22 @@ Responsividade mobile do cabeçalho compartilhado: REVALIDADA
 Homologação: docs/homologacao-p7-n0-u04.md
 ```
 
+### N0-U05
+
+```text
+Renderer/progresso/escrita aberta/edição controlada: HOMOLOGADOS
+10 lições + N0-U05-V01: PUBLICADAS / HOMOLOGADAS
+Manifesto: READY
+Catálogo: ATIVO
+Produção própria: VALIDACAO_PENDENTE quando não há avaliador confiável
+Planejamento/autochecagem/apoio opcional: PRESERVADOS / TESTADOS
+Edições textuais controladas: DETERMINÍSTICAS somente nos alvos exatos autorados
+Múltiplas ordens válidas: PRESERVADAS
+Mídia humana obrigatória: nenhuma
+Linguagem pública: HOMOLOGADA
+Homologação: docs/homologacao-p7-n0-u05.md
+```
+
 ### N4-U09
 
 ```text
@@ -517,7 +533,8 @@ P6: HOMOLOGADO — docs/homologacao-p6.md
 P7: ATIVO — expansão incremental do catálogo N0→N4
 N0-U03: HOMOLOGADA — docs/homologacao-p7-n0-u03.md
 N0-U04: HOMOLOGADA — docs/homologacao-p7-n0-u04.md
-Ativo agora: N0-U05 — Escrevendo e organizando mensagens — inventário/adaptação/manifesto/publicação/homologação
+N0-U05: HOMOLOGADA — docs/homologacao-p7-n0-u05.md
+Ativo agora: N0-U06 — Usando a língua no cotidiano — inventário/adaptação/manifesto/publicação/homologação
 Local: resolver mídia obrigatória de U1/U2 quando o marco P8 exigir esses estímulos
 ```
 

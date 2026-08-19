@@ -157,6 +157,7 @@ export function bindClassicProgress(root, documentRuntime, { progressService, on
   if (!documentRuntime || !progressService) return;
   const byId = new Map(documentRuntime.blocks.filter(block => block.kind === 'ACTIVITY').map(block => [block.id, block]));
   const replayCounts = new Map();
+  const hintUsed = new Set();
 
   root.querySelectorAll('[data-activity-id]').forEach(card => {
     const block = byId.get(card.dataset.activityId);
@@ -165,6 +166,9 @@ export function bindClassicProgress(root, documentRuntime, { progressService, on
     restoreResponse(form, block, documentRuntime, progressService.getProgress());
     card.querySelectorAll('[data-tts]').forEach(button => button.addEventListener('click', () => {
       replayCounts.set(block.id, (replayCounts.get(block.id) || 0) + 1);
+    }));
+    card.querySelectorAll('[data-optional-scaffold]').forEach(disclosure => disclosure.addEventListener('toggle', () => {
+      if (disclosure.open) hintUsed.add(block.id);
     }));
 
     form.addEventListener('submit', () => {
@@ -180,7 +184,7 @@ export function bindClassicProgress(root, documentRuntime, { progressService, on
       if (!result.complete) return;
       const snapshot = progressService.recordActivity(documentRuntime, block, result, {
         response: collectResponse(form, block),
-        support: { replayCount: replayCounts.get(block.id) || 0 }
+        support: { replayCount: replayCounts.get(block.id) || 0, hintUsed: hintUsed.has(block.id) }
       });
       replayCounts.set(block.id, 0);
       onProgress?.(snapshot);
