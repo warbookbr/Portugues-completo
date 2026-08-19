@@ -22,6 +22,8 @@ jobs:
         with:
           node-version: '24'
           package-manager-cache: false
+      - name: Stabilize temporary patch script
+        run: python3 scripts/p7-u05-patch-bootstrap.py
       - name: Apply U05 runtime patch
         run: python3 scripts/p7-u05-runtime-patch.py
       - name: Validate contracts
