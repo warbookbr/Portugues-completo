@@ -178,13 +178,24 @@ for (const relationId of ['V01-Q08', 'V01-Q09']) {
   assert.notEqual(snapshot.curriculum.verifications[v01.id].clusterStates.sequenceAndRelations, 'DEMONSTRADA');
 }
 
-// L04: 2 de 3, incluindo uma atividade com múltiplas evidências.
+// L04: integração aceita 2 de 3, mas A02 também sustenta o cluster separado relationDiscipline.
 {
   const progress = newProgress();
-  let snapshot = record(progress, l04, l04ById, 'L04-C01', { correct: true, score: 1, itemResults: { 0: true } });
-  assert.notEqual(snapshot.curriculum.lessons[l04.id].clusterStates.integration, 'DEMONSTRADA');
-  snapshot = record(progress, l04, l04ById, 'L04-A01', { correct: true, score: 1, itemResults: { 0: true } });
-  assert.equal(snapshot.curriculum.lessons[l04.id].clusterStates.integration, 'DEMONSTRADA');
+  record(progress, l04, l04ById, 'L04-A01', { correct: true, score: 1, itemResults: { 0: true } });
+  const snapshot = record(progress, l04, l04ById, 'L04-A02', { correct: true, score: 1, itemResults: { 0: true } });
+  assert.equal(snapshot.curriculum.lessons[l04.id].status, 'CONCLUIDA', 'A01 + A02 satisfazem 2-de-3 e o requisito relacional de A02.');
+}
+{
+  const progress = newProgress();
+  record(progress, l04, l04ById, 'L04-C01', { correct: true, score: 1, itemResults: { 0: true } });
+  const snapshot = record(progress, l04, l04ById, 'L04-A02', { correct: true, score: 1, itemResults: { 0: true } });
+  assert.equal(snapshot.curriculum.lessons[l04.id].status, 'CONCLUIDA', 'C01 + A02 também satisfazem 2-de-3 sem exigir A01.');
+}
+{
+  const progress = newProgress();
+  record(progress, l04, l04ById, 'L04-C01', { correct: true, score: 1, itemResults: { 0: true } });
+  const snapshot = record(progress, l04, l04ById, 'L04-A01', { correct: true, score: 1, itemResults: { 0: true } });
+  assert.notEqual(snapshot.curriculum.lessons[l04.id].status, 'CONCLUIDA', 'Sem A02, relationDiscipline continua pendente mesmo com 2 evidências de integração.');
 }
 
 // L05: pessoa + lugar e pelo menos três acertos agregados.
@@ -195,7 +206,7 @@ const l05ById = activityMap(l05);
   record(progress, l05, l05ById, 'L05-C01', { correct: true, score: 1, itemResults: { 0: true } });
   record(progress, l05, l05ById, 'L05-A01', { correct: true, score: 1, itemResults: { 0: true } });
   const snapshot = record(progress, l05, l05ById, 'L05-A02', { correct: true, score: 1, itemResults: { 0: true } });
-  assert.equal(snapshot.curriculum.lessons[l05.id].clusterStates.personPlaceReference, 'DEMONSTRADA');
+  assert.equal(snapshot.curriculum.lessons[l05.id].status, 'CONCLUIDA');
 }
 
 // L07: causa/efeito exige três acertos agregados; A02 também preserva o item temporal obrigatório.
@@ -208,7 +219,7 @@ assert.deepEqual(l07ById.get('L07-A02').activity.evaluation.criteria, [{ type: '
   record(progress, l07, l07ById, 'L07-C01', { correct: true, score: 1, itemResults: { 0: true } });
   record(progress, l07, l07ById, 'L07-A01', { correct: true, score: 1, itemResults: { 0: true } });
   const snapshot = record(progress, l07, l07ById, 'L07-A02', { correct: true, score: 0.5, itemResults: { 0: true, 1: false } });
-  assert.equal(snapshot.curriculum.lessons[l07.id].clusterStates.causeAndEffect, 'DEMONSTRADA');
+  assert.equal(snapshot.curriculum.lessons[l07.id].status, 'CONCLUIDA');
 }
 
 console.log('P7 U04 evidence: seleção textual participa da correção, correctOrder é determinístico e regras agregadas 1-de-2/2-de-3 são preservadas.');
