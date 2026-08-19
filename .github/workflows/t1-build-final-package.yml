@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   build-package:
@@ -82,48 +82,25 @@ jobs:
       - name: Capture classic visual smoke
         run: bash scripts/capture-classic-visuals.sh
 
-      - name: Assemble package
+      - name: Commit validated atomic shape
         run: |
-          python3 - <<'PY'
-          import json, os, shutil, subprocess
-          root = os.getcwd()
-          out = os.path.join(root, 't1-final-package')
-          files_root = os.path.join(out, 'files')
-          os.makedirs(files_root, exist_ok=True)
-          entries = {}
-          diff = subprocess.check_output(['git','diff','--name-status','HEAD'], text=True)
-          for raw in diff.splitlines():
-              if not raw.strip():
-                  continue
-              parts = raw.split('\t')
-              status = parts[0][0]
-              path = parts[-1]
-              entries[path] = status
-          untracked = subprocess.check_output(['git','ls-files','--others','--exclude-standard'], text=True)
-          for path in untracked.splitlines():
-              if path:
-                  entries[path] = 'A'
-          for path, status in entries.items():
-              if status == 'D':
-                  continue
-              source = os.path.join(root, path)
-              target = os.path.join(files_root, path)
-              os.makedirs(os.path.dirname(target), exist_ok=True)
-              shutil.copy2(source, target)
-          with open(os.path.join(out, 'manifest.json'), 'w', encoding='utf-8') as handle:
-              json.dump({'entries': [{'path': p, 'status': s} for p,s in sorted(entries.items())]}, handle, ensure_ascii=False, indent=2)
-          PY
-
-      - name: Upload final package
-        uses: actions/upload-artifact@v4
-        with:
-          name: t1-final-package
-          path: t1-final-package
-          if-no-files-found: error
-
-      - name: Upload visual smoke
-        uses: actions/upload-artifact@v4
-        with:
-          name: t1-final-visual-smoke
-          path: artifacts/classic-visuals/*.png
-          if-no-files-found: error
+          rm -rf artifacts/classic-visuals
+          git rm -f \
+            .github/workflows/t1-build-final-package.yml \
+            scripts/build-t1-atomic-package.mjs \
+            scripts/t1-package-index-fix.mjs \
+            scripts/t1-package-compat-fixes.mjs \
+            scripts/t1-package-renderer-fix.mjs \
+            scripts/t1-package-public-ui-fix.mjs \
+            scripts/t1-package-test-updates.mjs \
+            scripts/t1-package-smoke-fix.mjs
+          git add -A
+          git reset -- artifacts/classic-visuals 2>/dev/null || true
+          if git diff --cached --quiet; then
+            echo 'Nenhuma forma final para materializar.' >&2
+            exit 1
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'feat: materializa promoção atômica T1.9'
+          git push origin HEAD:t1-9-atomic-promotion
