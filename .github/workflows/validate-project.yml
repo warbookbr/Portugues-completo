@@ -66,6 +66,9 @@ jobs:
       - name: Test P6 AI companion
         run: node scripts/test-ai-feedback-companion.mjs
 
+      - name: Test P6 AI feedback pilot
+        run: node scripts/test-ai-feedback-pilot.mjs
+
       - name: Test progress policies
         run: node scripts/test-progress-policies.mjs
 
