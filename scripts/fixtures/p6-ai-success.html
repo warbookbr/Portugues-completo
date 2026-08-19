@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="/app/css/base.css"><link rel="stylesheet" href="/app/css/components.css"><link rel="stylesheet" href="/app/css/classic.css"><link rel="stylesheet" href="/app/css/classic-activities.css"><link rel="stylesheet" href="/app/css/ai-feedback.css">
+<title>P6 AI Success</title>
+</head>
+<body>
+<main class="app-shell"><div class="course-view reading-content"><article class="lesson-block activity-card" data-activity-id="L01-A01"><header class="block-header"><div><span class="block-kicker">Interpretação aberta</span></div><span class="activity-mode">avaliação pendente</span></header><p>Apresente uma interpretação própria, três evidências, uma alternativa plausível e um elemento que limita sua certeza.</p><form class="activity-form" data-activity-form><label>Sua resposta<textarea name="response">Resposta previamente registrada.</textarea></label><div class="activity-actions"><button class="primary-button" type="submit">Registrar resposta</button></div></form></article></div></main>
+<script type="module">
+localStorage.setItem('portugues-completo:settings:v1',JSON.stringify({aiFeedbackEnabled:true,aiFeedbackConsentVersion:'p6-ai-feedback-consent-v1'}));
+const { bindClassicAiFeedback }=await import('/app/js/ui/classic-ai-feedback.js');
+const runtime={id:'N4-U09-L01',kind:'LESSON',blocks:[{id:'L01-A01',kind:'ACTIVITY',content:{aiFeedback:{enabled:true,criteria:[{id:'C1',description:'formula uma interpretação própria do texto',required:true},{id:'C2',description:'usa evidências internas pertinentes para sustentar a interpretação',required:true}]}},activity:{evaluation:{mode:'RELIABLE_EVALUATOR'}}}]};
+const progress={curriculum:{current:{levelId:'N4',unitId:'N4-U09',lessonId:'N4-U09-L01'}},responses:{'N4-U09-L01/L01-A01':{value:'Resposta previamente registrada.'}}};
+const progressService={getProgress:()=>structuredClone(progress),subscribe:()=>()=>{}};
+const aiFeedbackService={requestFeedback:async()=>({schemaVersion:1,result:'OK',criterionResults:[{criterionId:'C1',status:'MET',evidence:'Há uma interpretação explícita.',feedback:'A leitura está clara.'},{criterionId:'C2',status:'PARTIAL',evidence:'Uma evidência foi relacionada.',feedback:'Explique melhor o vínculo com uma segunda evidência.'}],feedback:{summary:'A interpretação está bem encaminhada e pode ganhar mais sustentação.',strengths:['hipótese própria clara'],improvements:['explicar melhor o vínculo entre evidência e leitura'],nextStep:'Acrescente uma segunda evidência e diga como ela sustenta sua interpretação.'},confidence:'MEDIUM',recommendation:'REVISE',flags:[]})};
+bindClassicAiFeedback(document,runtime,{progressService,aiFeedbackService});
+document.querySelector('[data-request-ai-feedback]').click();
+await new Promise(resolve=>setTimeout(resolve,50));
+document.body.dataset.visibleLeak=/criterionId|mayPromoteEvidence|policyVersion|PROVIDER_REQUEST_FAILED|p6-ai-feedback-consent-v1/.test(document.body.innerText);
+</script>
+</body></html>
