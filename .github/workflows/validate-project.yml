@@ -72,6 +72,9 @@ jobs:
       - name: Test P6 AI settings security
         run: node scripts/test-ai-settings-security.mjs
 
+      - name: Test P6 homologation
+        run: node scripts/test-p6-homologation.mjs
+
       - name: Test progress policies
         run: node scripts/test-progress-policies.mjs
 
