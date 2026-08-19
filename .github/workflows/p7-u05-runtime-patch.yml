@@ -26,6 +26,8 @@ jobs:
         run: python3 scripts/p7-u05-patch-bootstrap.py
       - name: Apply U05 runtime patch
         run: python3 scripts/p7-u05-runtime-patch.py
+      - name: Refine aggregate U05 rules
+        run: python3 scripts/p7-u05-runtime-refine.py
       - name: Validate contracts
         run: node scripts/validate-contracts.mjs
       - name: Audit N0-U05
