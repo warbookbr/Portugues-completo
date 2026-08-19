@@ -21,7 +21,7 @@ replaceOnce(
 
 replaceOnce(
   "grep -Fq 'Ouvir exemplo' <<<\"$RESUME_N0_ACTIVITY_DOM\" || { echo 'Smoke DOM: ttsText não virou controle de TTS no fluxo iniciado.' >&2; exit 1; }",
-  "grep -Fq 'data-tts=' <<<\"$TTS_U2_DOM\" || { echo 'Smoke DOM T1.9: opções de áudio da U2 não viraram controles TTS após a tentativa.' >&2; exit 1; }\ngrep -Fq 'Tentativa registrada' <<<\"$TTS_U2_DOM\" || true"
+  "grep -Fq 'data-tts=' <<<\"$TTS_U2_DOM\" || { echo 'Smoke DOM T1.9: opções de áudio da U2 não viraram controles TTS após a tentativa.' >&2; exit 1; }\nif grep -Eiq 'N0-U01-L03-AUD|initialsupportlevel|feedbacktts|supportbuttonlabel|mediaId' <<<\"$RESUME_N0_ACTIVITY_DOM$TTS_U2_DOM\"; then\n  echo 'Smoke DOM T1.9: metadado técnico vazou para a interface do aluno.' >&2\n  exit 1\nfi"
 );
 
 replaceOnce(
