@@ -24,8 +24,9 @@ T1 — Fundamentos claros e experiência de lição → HOMOLOGADO
 T1.1–T1.8 → CONCLUÍDOS / HOMOLOGADOS conforme gates
 T1.9 — migração, catálogo, progresso e mídia → CONCLUÍDO / HOMOLOGADO
 T1.10 — validação/homologação → CONCLUÍDO / HOMOLOGADO
-P6 — Feedback por IA no Clássico → ATIVO
-MODO CLÁSSICO REAL → slice funcional com progresso persistente e nova entrada N0 homologada; próximo marco é feedback IA opt-in
+P6 — Feedback por IA no Clássico → HOMOLOGADO
+P7 — Ampliação do catálogo Clássico N0→N4 → ATIVO
+MODO CLÁSSICO REAL → slice funcional com progresso persistente, entrada N0 homologada e catálogo sendo ampliado por lotes P7
 MODO GAMIFICADO → somente após CLÁSSICO HOMOLOGADO
 ```
 
@@ -439,9 +440,10 @@ Não reescrever conteúdo em massa para satisfazer renderer.
 
 Lotes homologados até aqui:
 
-- N0-U03 — Palavras, frases e sentido — PR #134 / `docs/homologacao-p7-n0-u03.md`.
+- N0-U03 — Palavras, frases e sentido — PR #134 / `docs/homologacao-p7-n0-u03.md`;
+- N0-U04 — Lendo e compreendendo pequenos textos — PR #135 / `docs/homologacao-p7-n0-u04.md`.
 
-Próximo lote: N0-U04 — Lendo e compreendendo pequenos textos.
+Próximo lote: N0-U05 — Escrevendo e organizando mensagens.
 
 Condição de saída: catálogo cobre N0→N4, tipos necessários têm suporte ou blocker explícito e navegação alcança o percurso completo.
 
@@ -485,9 +487,9 @@ Cobrir troca de modos, preservação de domínio, coerência/resistência a farm
 
 ```text
 P7 — Ampliação do catálogo Clássico N0→N4
-→ N0-U03 HOMOLOGADA / publicada no catálogo
-→ próximo lote: N0-U04 — Lendo e compreendendo pequenos textos
-→ inventariar autoria/verificação e classificar normalização, interações, mídia e blocker real
+→ N0-U03 + N0-U04 HOMOLOGADAS / publicadas no catálogo
+→ próximo lote: N0-U05 — Escrevendo e organizando mensagens
+→ inventariar 10 lições + N0-U05-V01 e classificar normalização, produção aberta/revisão, convenções gráficas, interações, mídia e blocker real
 → adaptar somente contratos reutilizáveis necessários antes de manifestar/publicar
 → preservar N4-U09 como caso-âncora de resposta aberta/IA
 → não reescrever autoria apenas para satisfazer renderer

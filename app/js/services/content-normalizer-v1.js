@@ -60,8 +60,78 @@ function isOpenAuthoredActivity(block) {
     || block?.type === 'required-open-production';
 }
 
+function normalizeEvidenceText(value) {
+  return String(value || '')
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLocaleLowerCase('pt-BR')
+    .replace(/[“”"'`´]/g, '')
+    .replace(/[^a-z0-9áéíóúâêôãõç]+/gi, ' ')
+    .trim()
+    .replace(/\s+/g, ' ');
+}
+
+function evidenceSourceText(block, sourceDocument) {
+  if (typeof block?.text === 'string') return block.text;
+  if (typeof block?.standaloneText === 'string') return block.standaloneText;
+  if (block?.textRef && Array.isArray(sourceDocument?.texts)) {
+    const referenced = sourceDocument.texts.find(item => item?.id === block.textRef);
+    if (typeof referenced?.text === 'string') return referenced.text;
+  }
+  return '';
+}
+
+function splitEvidenceOptions(text) {
+  const matches = String(text || '').match(/[^.!?]+[.!?]?/g) || [];
+  return matches.map(item => item.trim()).filter(Boolean);
+}
+
+function evidenceRequirement(entry) {
+  if (!entry || typeof entry !== 'object') return null;
+  if (Array.isArray(entry.acceptableEvidence) && entry.acceptableEvidence.length) {
+    return { expected: entry.acceptableEvidence, match: 'ANY' };
+  }
+  if (Array.isArray(entry.requiredEvidenceParts) && entry.requiredEvidenceParts.length) {
+    return { expected: entry.requiredEvidenceParts, match: 'ALL' };
+  }
+  if (Array.isArray(entry.requiredEvidence) && entry.requiredEvidence.length) {
+    return { expected: entry.requiredEvidence, match: 'ALL' };
+  }
+  if (typeof entry.requiredEvidence === 'string' && entry.requiredEvidence.trim()) {
+    return { expected: [entry.requiredEvidence], match: 'ALL' };
+  }
+  return null;
+}
+
+function evidenceIndexes(options, expected) {
+  const normalizedOptions = options.map(normalizeEvidenceText);
+  const indexes = [];
+  for (const expectedValue of expected) {
+    const normalizedExpected = normalizeEvidenceText(expectedValue);
+    const index = normalizedOptions.findIndex(option => option.includes(normalizedExpected) || normalizedExpected.includes(option));
+    if (index >= 0 && !indexes.includes(index)) indexes.push(index);
+  }
+  return indexes.sort((a, b) => a - b);
+}
+
+function materializeEvidenceSelection(entry, sourceText) {
+  const requirement = evidenceRequirement(entry);
+  if (!requirement) return clone(entry);
+  const options = splitEvidenceOptions(sourceText);
+  const correctIndexes = evidenceIndexes(options, requirement.expected);
+  if (!options.length || !correctIndexes.length) return clone(entry);
+  return {
+    ...clone(entry),
+    evidenceOptions: options,
+    evidenceSelectionMode: requirement.match === 'ANY' || correctIndexes.length === 1 ? 'SINGLE' : 'MULTIPLE',
+    evidenceMatchMode: requirement.match,
+    evidenceCorrectIndexes: correctIndexes
+  };
+}
+
 function materializeCommonLegacyActivity(block, sourceDocument) {
-  let materialized = clone(block);
+  const sourceText = evidenceSourceText(block, sourceDocument);
+  let materialized = materializeEvidenceSelection(block, sourceText);
 
   if (!Array.isArray(materialized.items) && Array.isArray(materialized.contexts)) {
     materialized.items = materialized.contexts.map((item, index) => ({ ...clone(item), id: item.id || String(index) }));
@@ -69,9 +139,15 @@ function materializeCommonLegacyActivity(block, sourceDocument) {
 
   if (Array.isArray(materialized.items)) {
     materialized.items = materialized.items.map(item => {
-      if (!item || Array.isArray(item.options) || !Array.isArray(item.cases) || !Object.prototype.hasOwnProperty.call(item, 'correctIndex')) return item;
-      return { ...clone(item), options: clone(item.cases) };
+      const evidenceReady = materializeEvidenceSelection(item, sourceText);
+      if (!evidenceReady || Array.isArray(evidenceReady.options) || !Array.isArray(evidenceReady.cases) || !Object.prototype.hasOwnProperty.call(evidenceReady, 'correctIndex')) return evidenceReady;
+      return { ...clone(evidenceReady), options: clone(evidenceReady.cases) };
     });
+  }
+
+  if (Array.isArray(materialized.cards) && Array.isArray(materialized.correctOrder)) {
+    materialized.availableTiles = clone(materialized.cards);
+    materialized.correctSequence = clone(materialized.correctOrder);
   }
 
   if (!Array.isArray(materialized.items) && materialized.stage1 && materialized.stage2) {
@@ -211,18 +287,27 @@ function normalizeEvaluationMode(block) {
   return 'NONE';
 }
 
+function evidenceAnswer(entry) {
+  if (!Array.isArray(entry?.evidenceCorrectIndexes) || !entry.evidenceCorrectIndexes.length) return null;
+  return { correctIndexes: clone(entry.evidenceCorrectIndexes), match: entry.evidenceMatchMode === 'ANY' ? 'ANY' : 'ALL' };
+}
+
 function answerFromEntry(entry) {
+  const evidence = evidenceAnswer(entry);
   if (entry?.stage1 && entry?.stage2 && Object.prototype.hasOwnProperty.call(entry.stage1, 'correctIndex') && Object.prototype.hasOwnProperty.call(entry.stage2, 'correctIndex')) {
-    return { stage1CorrectIndex: entry.stage1.correctIndex, stage2CorrectIndex: entry.stage2.correctIndex };
+    return { stage1CorrectIndex: entry.stage1.correctIndex, stage2CorrectIndex: entry.stage2.correctIndex, ...(evidence ? { evidence } : {}) };
   }
   const scalarKeys = ['correct', 'expected', 'correctFunction', 'correctGroup', 'correctAnswer'];
   const scalarPresent = scalarKeys.filter(key => Object.prototype.hasOwnProperty.call(entry, key));
   const structuredKeys = ['correctIndex', 'correctIndexes', 'correctSequence', 'acceptedSequences', 'acceptedResult', 'acceptedResults', 'auditoryCorrect', 'relationCorrectIndex'];
   const structuredPresent = structuredKeys.filter(key => Object.prototype.hasOwnProperty.call(entry, key));
-  if (!scalarPresent.length && !structuredPresent.length) return undefined;
-  if (scalarPresent.length === 1 && !structuredPresent.length) return clone(entry[scalarPresent[0]]);
+  if (!scalarPresent.length && !structuredPresent.length) return evidence ? { evidence } : undefined;
+  if (scalarPresent.length === 1 && !structuredPresent.length && !evidence) return clone(entry[scalarPresent[0]]);
   const answer = {};
-  for (const key of [...scalarPresent, ...structuredPresent]) answer[key] = clone(entry[key]);
+  if (scalarPresent.length === 1) answer[scalarPresent[0]] = clone(entry[scalarPresent[0]]);
+  else for (const key of scalarPresent) answer[key] = clone(entry[key]);
+  for (const key of structuredPresent) answer[key] = clone(entry[key]);
+  if (evidence) answer.evidence = evidence;
   return answer;
 }
 
@@ -230,6 +315,8 @@ function normalizeAnswerKey(block) {
   const answerKey = {};
   const topLevelKeys = ['correct', 'correctIndex', 'correctIndexes', 'correctSequence', 'acceptedSequences', 'auditoryCorrect', 'relationCorrectIndex'];
   for (const key of topLevelKeys) if (Object.prototype.hasOwnProperty.call(block, key)) answerKey[key] = clone(block[key]);
+  const blockEvidence = evidenceAnswer(block);
+  if (blockEvidence) answerKey.evidence = blockEvidence;
   const itemAnswers = {};
   for (const collection of [block.items, block.rounds, block.contexts]) {
     if (!Array.isArray(collection)) continue;
@@ -326,7 +413,12 @@ function normalizeStructuralCompletion(source, activitySources) {
   return { completion: { clusters, nonCompensable: authored.nonCompensable === true || (Array.isArray(authored.nonCompensable) && authored.nonCompensable.length > 0) }, activityPolicies: {} };
 }
 
-const PRESENTATION_SECRET_KEYS = new Set(['correct', 'expected', 'correctIndex', 'correctIndexes', 'correctSequence', 'acceptedSequences', 'acceptedResult', 'acceptedResults', 'correctFunction', 'correctGroup', 'correctAnswer', 'auditoryCorrect', 'relationCorrectIndex']);
+const PRESENTATION_SECRET_KEYS = new Set([
+  'correct', 'expected', 'correctIndex', 'correctIndexes', 'correctSequence', 'correctOrder',
+  'acceptedSequences', 'acceptedResult', 'acceptedResults', 'correctFunction', 'correctGroup', 'correctAnswer',
+  'auditoryCorrect', 'relationCorrectIndex', 'requiredEvidence', 'requiredEvidenceParts', 'acceptableEvidence',
+  'supportingParts', 'evidenceCorrectIndexes', 'evidenceMatchMode', 'revisedAnswer'
+]);
 
 function sanitizePresentation(value) {
   if (Array.isArray(value)) return value.map(sanitizePresentation);

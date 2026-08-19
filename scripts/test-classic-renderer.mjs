@@ -101,6 +101,24 @@ assert.match(u03Html, /Registrar resposta/i);
 assert.match(u03Html, /Autochecagem/i);
 assert.doesNotMatch(u03Html, /Interação ainda não suportada/i);
 
+const u04EvidenceLesson = await service.loadLesson('N0-U04', 'N0-U04-L04');
+const u04EvidenceHtml = documentHtml(u04EvidenceLesson.runtime, { unitId: 'N0-U04', unitTitle: 'Lendo e compreendendo pequenos textos' });
+assert.match(u04EvidenceHtml, /data-evidence-selection/);
+assert.match(u04EvidenceHtml, /Marque os trechos do texto que sustentam sua resposta/i);
+assert.doesNotMatch(u04EvidenceHtml, /requiredEvidence|requiredEvidenceParts|evidenceCorrectIndexes/);
+assert.doesNotMatch(u04EvidenceHtml, /Interação ainda não suportada/i);
+
+const u04SequenceLesson = await service.loadLesson('N0-U04', 'N0-U04-L06');
+const u04SequenceHtml = documentHtml(u04SequenceLesson.runtime, { unitId: 'N0-U04', unitTitle: 'Lendo e compreendendo pequenos textos' });
+assert.match(u04SequenceHtml, /data-sequence-builder/);
+assert.doesNotMatch(u04SequenceHtml, /Interação ainda não suportada/i);
+
+const u04Verification = await service.loadVerification('N0-U04');
+const u04VerificationHtml = documentHtml(u04Verification.runtime, { unitId: 'N0-U04', unitTitle: 'Lendo e compreendendo pequenos textos', verification: true });
+assert.match(u04VerificationHtml, /Nesta verificação, você vai usar o que estudou nesta unidade/i);
+assert.doesNotMatch(u04VerificationHtml, /Verificar se o aluno/i);
+assert.doesNotMatch(u04VerificationHtml, />\s*(WRONG CONCLUSION|QUESTION|ORDERED EVENTS|CARDS|TEXT REMAINS VISIBLE|TEXT REF|COMPETENCY)\s*</i);
+
 const n4Lesson = await service.loadLesson('N4-U09', 'N4-U09-L01');
 const n4Html = documentHtml(n4Lesson.runtime, { unitId: 'N4-U09', unitTitle: 'Literatura, multimodalidade, autoria intermedial e digital' });
 assert.match(n4Html, /avaliação pendente/i);
@@ -108,6 +126,6 @@ assert.match(n4Html, /Registrar resposta/i);
 assert.equal(typeof n4Lesson.runtime.presentation?.intro, 'string');
 assert.notEqual(n4Lesson.runtime.presentation.intro, n4Lesson.runtime.objective);
 
-assert.equal(lessonCount, 39);
-assert.equal(verificationCount, 4);
-console.log(`Renderer clássico P7: ${lessonCount} lições + ${verificationCount} verificações, N0-U03 e caso-âncora N4 preservados.`);
+assert.equal(lessonCount, 48);
+assert.equal(verificationCount, 5);
+console.log(`Renderer clássico P7: ${lessonCount} lições + ${verificationCount} verificações, N0-U03/U04 e caso-âncora N4 preservados.`);

@@ -35,6 +35,7 @@ Português Completo
 - `docs/homologacao-p6-2.md` — **homologação da P6.2**: opt-in/consentimento, piloto N4-U09, neutralidade do progresso e inspeção visual dos estados de IA.
 - `docs/homologacao-p6.md` — **homologação final do P6**: segurança, consentimento, transporte, piloto, falha segura, neutralidade curricular e gate transversal antes do P7.
 - `docs/homologacao-p7-n0-u03.md` — **homologação do primeiro lote P7**: N0-U03 publicada, adapter legado, evidência agregada, renderer, linguagem pública, mídia e inspeção visual.
+- `docs/homologacao-p7-n0-u04.md` — **homologação do segundo lote P7**: N0-U04 publicada, evidência textual, ordenação, regras agregadas, linguagem pública, responsividade mobile e inspeção visual.
 - `docs/execucao-continua.md` — execução autônoma por marcos autorizados.
 - `.ChatGPT/skills/fundamentos-claros/SKILL.md` — histórico operacional do T1 homologado e referência para regressões futuras da entrada clara.
 - `.ChatGPT/skills/classic-product-delivery/SKILL.md` — procedimento operacional obrigatório para implementar P1→P9 do Clássico sem perder estado.

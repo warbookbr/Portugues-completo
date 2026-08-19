@@ -33,6 +33,24 @@ function arraysEqual(a, b) {
   return JSON.stringify(a) === JSON.stringify(b);
 }
 
+function evaluateEvidenceSelection(form, name, expected) {
+  if (!expected || !Array.isArray(expected.correctIndexes) || !expected.correctIndexes.length) return { complete: true, correct: true };
+  const selected = selectedIndexes(form, name);
+  if (!selected.length) return { complete: false, correct: false };
+  const correctIndexes = [...expected.correctIndexes].sort((a, b) => a - b);
+  if (expected.match === 'ANY') {
+    return { complete: true, correct: selected.length === 1 && correctIndexes.includes(selected[0]) };
+  }
+  return { complete: true, correct: arraysEqual(selected, correctIndexes) };
+}
+
+function applyEvidenceResult(form, name, expected, result) {
+  if (!result.complete || result.pending || !expected) return result;
+  const evidence = evaluateEvidenceSelection(form, name, expected);
+  if (!evidence.complete) return { complete: false };
+  return { ...result, correct: result.correct === true && evidence.correct === true };
+}
+
 function expectedScalar(expected) {
   if (!expected || typeof expected !== 'object' || Array.isArray(expected)) return expected;
   if (Object.prototype.hasOwnProperty.call(expected, 'correct')) return expected.correct;
@@ -77,10 +95,12 @@ function evaluateChoice(form, block) {
   if (!selected) return { complete: false };
   const index = Number(selected.value);
   const option = optionValue(block.content || {}, block.content || {}, index) ?? block.content?.options?.[index];
-  if (Object.prototype.hasOwnProperty.call(key, 'correctIndex')) return { complete: true, correct: index === key.correctIndex };
-  if (Object.prototype.hasOwnProperty.call(key, 'correctIndexes')) return { complete: true, correct: key.correctIndexes.length === 1 && index === key.correctIndexes[0] };
-  if (Object.prototype.hasOwnProperty.call(key, 'correct')) return { complete: true, correct: normalizeComparable(option) === normalizeComparable(key.correct) };
-  return { complete: true, pending: true };
+  let correct;
+  if (Object.prototype.hasOwnProperty.call(key, 'correctIndex')) correct = index === key.correctIndex;
+  else if (Object.prototype.hasOwnProperty.call(key, 'correctIndexes')) correct = key.correctIndexes.length === 1 && index === key.correctIndexes[0];
+  else if (Object.prototype.hasOwnProperty.call(key, 'correct')) correct = normalizeComparable(option) === normalizeComparable(key.correct);
+  else return { complete: true, pending: true };
+  return { complete: true, correct, score: correct ? 1 : 0, itemResults: { 0: correct } };
 }
 
 function evaluateMultipleChoice(form, block) {
@@ -201,9 +221,11 @@ function evaluateComposite(form, block) {
   for (let index = 0; index < entries.length; index += 1) {
     const entry = entries[index];
     const key = entryKey(entry, index);
-    const result = evaluateCompositeEntry(form, block, entry, index, expectedItems[key]);
+    let result = evaluateCompositeEntry(form, block, entry, index, expectedItems[key]);
     if (!result.complete) return result;
     if (result.pending) return { complete: true, pending: true };
+    result = applyEvidenceResult(form, `round-evidence:${key}`, expectedItems[key]?.evidence, result);
+    if (!result.complete) return result;
     itemResults[key] = result.correct === true;
     if (result.correct) hits += 1;
   }
@@ -214,10 +236,12 @@ function evaluateComposite(form, block) {
 
 export function evaluateDeterministic(form, block) {
   const interaction = block.activity?.interaction;
-  if (interaction === 'SINGLE_CHOICE') return evaluateChoice(form, block);
-  if (interaction === 'MULTIPLE_CHOICE') return evaluateMultipleChoice(form, block);
-  if (interaction === 'CLASSIFY' || interaction === 'MATCH') return evaluateClassify(form, block);
-  if (interaction === 'SEQUENCE' || interaction === 'ORDER') return evaluateSequence(form, block);
-  if (interaction === 'COMPOSITE') return evaluateComposite(form, block);
-  return { complete: true, pending: true };
+  let result;
+  if (interaction === 'SINGLE_CHOICE') result = evaluateChoice(form, block);
+  else if (interaction === 'MULTIPLE_CHOICE') result = evaluateMultipleChoice(form, block);
+  else if (interaction === 'CLASSIFY' || interaction === 'MATCH') result = evaluateClassify(form, block);
+  else if (interaction === 'SEQUENCE' || interaction === 'ORDER') result = evaluateSequence(form, block);
+  else if (interaction === 'COMPOSITE') result = evaluateComposite(form, block);
+  else result = { complete: true, pending: true };
+  return applyEvidenceResult(form, 'evidence', block.activity?.evaluation?.answerKey?.evidence, result);
 }
