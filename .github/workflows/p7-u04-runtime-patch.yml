@@ -24,6 +24,8 @@ jobs:
           package-manager-cache: false
       - name: Align lesson assertions with progress contract
         run: python3 scripts/p7-u04-test-fix-status.py
+      - name: Refine L04 aggregate case
+        run: python3 scripts/p7-u04-test-fix-l04.py
       - name: Test N0-U04 evidence semantics
         run: node scripts/test-p7-u04-evidence.mjs
       - name: Commit semantic test fix
@@ -31,5 +33,5 @@ jobs:
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add scripts/test-p7-u04-evidence.mjs
-          git commit -m 'test(p7): alinha gate semântico da N0-U04 ao ProgressService'
+          git commit -m 'test(p7): fecha semântica agregada da N0-U04'
           git push origin HEAD:p7-n0-u04-catalog
