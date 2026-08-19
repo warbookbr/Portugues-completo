@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="/app/css/base.css"><link rel="stylesheet" href="/app/css/components.css"><link rel="stylesheet" href="/app/css/settings.css"><link rel="stylesheet" href="/app/css/progress.css">
+<title>P6 AI Settings</title>
+</head>
+<body>
+<main><aside class="settings-panel" id="panel"></aside></main>
+<script type="module">
+localStorage.clear(); sessionStorage.clear();
+const { renderAiSettings } = await import('/app/js/ui/ai-settings.js');
+const token={value:null};
+renderAiSettings(document.querySelector('#panel'),{credentialService:{get:()=>token.value,set:(_p,v)=>{token.value=v;},clear:()=>{token.value=null;}}});
+document.body.dataset.visibleLeak=/criterionId|mayPromoteEvidence|policyVersion|PROVIDER_REQUEST_FAILED/.test(document.body.innerText);
+</script>
+</body></html>
