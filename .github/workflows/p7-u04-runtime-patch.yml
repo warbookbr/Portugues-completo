@@ -1,4 +1,4 @@
-name: Apply P7 U04 public UI fix
+name: Close P7 N0-U04
 
 on:
   pull_request:
@@ -10,7 +10,7 @@ permissions:
   contents: write
 
 jobs:
-  patch:
+  close:
     if: github.head_ref == 'p7-n0-u04-catalog' || github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
     steps:
@@ -22,16 +22,27 @@ jobs:
         with:
           node-version: '24'
           package-manager-cache: false
-      - name: Apply public UI fix
-        run: python3 scripts/p7-u04-public-ui-fix.py
-      - name: Test classic renderer
-        run: node scripts/test-classic-renderer.mjs
-      - name: Capture N0-U04 visual smoke
-        run: bash scripts/capture-p7-u04-visuals.sh
-      - name: Commit public UI fix
+      - name: Update canonical state
+        run: python3 scripts/p7-u04-close-docs.py
+      - name: Validate closure
+        run: |
+          node scripts/validate-project.mjs
+          node scripts/validate-json.mjs
+          node scripts/validate-catalog.mjs
+          node scripts/test-content-catalog.mjs
+          node scripts/audit-p7-n0-u04.mjs
+          node scripts/test-p7-u04-evidence.mjs
+          node scripts/test-classic-renderer.mjs
+          grep -Fq 'N0-U05 — Escrevendo e organizando mensagens' docs/estado-implementacao-classico.md
+          grep -Fq 'docs/homologacao-p7-n0-u04.md' PROJECT_INDEX.md
+      - name: Remove temporary P7 U04 tooling
+        run: |
+          git rm .github/workflows/p7-u04-runtime-patch.yml
+          git rm scripts/p7-u04-*.py
+      - name: Commit closure
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add app/js/ui/classic-renderer.js scripts/test-classic-renderer.mjs scripts/capture-p7-u04-visuals.sh
-          git commit -m 'fix(p7): limpa linguagem pública da N0-U04'
+          git add PROJECT_INDEX.md docs/estado-implementacao-classico.md docs/roadmap-produto.md docs/homologacao-p7-n0-u04.md
+          git commit -m 'docs(p7): homologa N0-U04 e avança para N0-U05'
           git push origin HEAD:p7-n0-u04-catalog
