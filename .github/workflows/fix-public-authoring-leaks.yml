@@ -1,0 +1,35 @@
+name: Fix public authoring leaks
+
+on:
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    if: github.head_ref == 'fix-public-authoring-leaks' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          ref: fix-public-authoring-leaks
+          fetch-depth: 0
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+          package-manager-cache: false
+      - name: Apply patch
+        run: python3 scripts/fix-public-authoring-leaks.py
+      - name: Test renderer
+        run: node scripts/test-classic-renderer.mjs
+      - name: Commit fix
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add app/js/ui/classic-renderer.js scripts/test-classic-renderer.mjs
+          git commit -m 'fix(ui): remove metadados autorais do front'
+          git push origin HEAD:fix-public-authoring-leaks
