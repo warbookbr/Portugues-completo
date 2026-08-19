@@ -121,8 +121,8 @@ if grep -Eiq 'modelExamplesAfterSubmission|notAutomaticallyJudged|humanOrExterna
   exit 1
 fi
 
-if grep -Eiq '>(quick open production|assessment open|function choice|revision choice|format choice|edit choice|multi edit|boundary choice|punctuation choice|enumeration principle|purpose choice|sequence choice)<' <<<"$L02_DOM$L08_DOM$V01_DOM"; then
-  echo 'P7 U05: rótulo pedagógico autoral cru em inglês vazou para a interface.' >&2
+if grep -Eiq '>(before|after|planning prompt|essential information|quick open production|assessment open|function choice|revision choice|format choice|edit choice|multi edit|boundary choice|punctuation choice|enumeration principle|purpose choice|sequence choice)<' <<<"$L02_DOM$L08_DOM$V01_DOM"; then
+  echo 'P7 U05: rótulo pedagógico/autoral cru em inglês vazou para a interface.' >&2
   exit 1
 fi
 
