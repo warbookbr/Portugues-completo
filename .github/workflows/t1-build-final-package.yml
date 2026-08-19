@@ -41,6 +41,9 @@ jobs:
       - name: Update T1 renderer regressions
         run: node scripts/t1-package-test-updates.mjs
 
+      - name: Update T1 visual smoke
+        run: node scripts/t1-package-smoke-fix.mjs
+
       - name: Validate repository structure
         run: node scripts/validate-project.mjs
       - name: Validate JSON syntax
