@@ -392,8 +392,8 @@ Subfases:
 
 ```text
 P6.1 — núcleo neutro + transporte seguro → HOMOLOGADO (PR #131)
-P6.2 — opt-in/configuração + piloto N4-U09 + feedback visual → ATIVO
-P6.3 — homologação transversal do feedback IA → depois de P6.2
+P6.2 — opt-in/configuração + piloto N4-U09 + feedback visual → HOMOLOGADO (PR #132)
+P6.3 — homologação transversal do feedback IA → ATIVO
 ```
 
 P6.1 consolidou `AiFeedbackService`, adapter neutro, companion local OpenAI, structured output, `store:false`, chave fora do navegador e gates que impedem IA de promover evidência. Contrato técnico: `docs/p6-transporte-ia.md`.
@@ -475,11 +475,12 @@ Cobrir troca de modos, preservação de domínio, coerência/resistência a farm
 ## Próximo passo oficial
 
 ```text
-P6.2 — opt-in/configuração + piloto N4-U09 + feedback visual
-→ expor configuração não secreta do companion/modelo e token efêmero somente em sessão
-→ exigir consentimento explícito antes de qualquer chamada paga
-→ habilitar uma atividade aberta piloto em N4-U09 com critérios explícitos
-→ apresentar feedback estruturado sem tratar recomendação como domínio
-→ provar IA desligada, companion ausente, sucesso e falha do provider sem perda da resposta
-→ preservar VALIDACAO_PENDENTE quando a policy exigir avaliador confiável
+P6.3 — homologação transversal do feedback IA
+→ provar que segredo de provider não entra no frontend/Gist/progresso
+→ provar opt-in + consentimento antes de chamada
+→ provar payload mínimo e critérios explícitos
+→ provar structured output validado e falha segura
+→ provar que sucesso/falha não mutam ProgressService nem promovem VALIDACAO_PENDENTE
+→ revalidar documentação/provider e ausência de códigos internos na UI
+→ fechar P6 e liberar P7 somente se todos os invariantes forem satisfeitos
 ```
