@@ -22,9 +22,9 @@ Migração T1 `t1-n0-entry-v2`: ATIVA / HOMOLOGADA local + Gist
 P6 — Feedback por IA: HOMOLOGADO
 Homologação P6: docs/homologacao-p6.md
 P7 — Ampliação do catálogo Clássico N0→N4: ATIVO
-Lote P7 N0-U03 — Palavras, frases e sentido: HOMOLOGADO (PR #134)
-Homologação N0-U03: docs/homologacao-p7-n0-u03.md
-Próximo passo exato: iniciar o lote N0-U04 — Lendo e compreendendo pequenos textos — inventariando autoria/verificação, normalização, interações e mídia antes de manifestar/publicar
+Lote P7 N0-U04 — Lendo e compreendendo pequenos textos: HOMOLOGADO (PR #135)
+Homologação N0-U04: docs/homologacao-p7-n0-u04.md
+Próximo passo exato: iniciar o lote N0-U05 — Escrevendo e organizando mensagens — inventariando 10 lições + N0-U05-V01, normalização, produção aberta/revisão, convenções gráficas, interações e mídia antes de manifestar/publicar
 Blocker global: nenhum
 Gate final do Clássico: NÃO SATISFEITO
 ```
@@ -42,7 +42,7 @@ T1 e P6 estão homologados. P7 avança incrementalmente por unidade, preservando
 | P5 — Progresso/revisão/Gist | `HOMOLOGADO` | PR #109 |
 | T1 — Fundamentos claros | `HOMOLOGADO` | PRs #116–#130; `docs/homologacao-t1-10.md` |
 | P6 — Feedback por IA | `HOMOLOGADO` | PRs #131–#133; `docs/homologacao-p6.md` |
-| P7 — Catálogo N0→N4 | `ATIVO` | N0-U03 homologada na PR #134; próximo lote N0-U04 |
+| P7 — Catálogo N0→N4 | `ATIVO` | N0-U03/U04 homologadas nas PRs #134/#135; próximo lote N0-U05 |
 | P8 — Mídia/publicação | `NAO_INICIADO` | — |
 | P9 — E2E / Clássico homologado | `NAO_INICIADO` | — |
 
@@ -485,6 +485,20 @@ Mídia humana obrigatória: nenhuma
 Homologação: docs/homologacao-p7-n0-u03.md
 ```
 
+### N0-U04
+
+```text
+Renderer/progresso/evidência textual/ordenação: HOMOLOGADOS
+9 lições + N0-U04-V01: PUBLICADAS / HOMOLOGADAS
+Manifesto: READY
+Catálogo: ATIVO
+Regras agregadas de conclusão: PRESERVADAS / TESTADAS
+Mídia humana obrigatória: nenhuma
+Linguagem pública + abertura de verificação: HOMOLOGADAS
+Responsividade mobile do cabeçalho compartilhado: REVALIDADA
+Homologação: docs/homologacao-p7-n0-u04.md
+```
+
 ### N4-U09
 
 ```text
@@ -502,7 +516,8 @@ Global: nenhum blocker técnico
 P6: HOMOLOGADO — docs/homologacao-p6.md
 P7: ATIVO — expansão incremental do catálogo N0→N4
 N0-U03: HOMOLOGADA — docs/homologacao-p7-n0-u03.md
-Ativo agora: N0-U04 — inventário/adaptação/manifesto/publicação/homologação
+N0-U04: HOMOLOGADA — docs/homologacao-p7-n0-u04.md
+Ativo agora: N0-U05 — Escrevendo e organizando mensagens — inventário/adaptação/manifesto/publicação/homologação
 Local: resolver mídia obrigatória de U1/U2 quando o marco P8 exigir esses estímulos
 ```
 
