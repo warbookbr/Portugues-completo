@@ -22,6 +22,16 @@ jobs:
         with:
           node-version: '24'
           package-manager-cache: false
+      - name: Neutralize temporary template interpolation
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          path = Path('scripts/p7-u03-evidence-patch.mjs')
+          text = path.read_text()
+          for token in ('${documentRuntime.id}', '${block.id}', '${CSS.escape(key)}'):
+              text = text.replace(token, '\\' + token)
+          path.write_text(text)
+          PY
       - name: Apply evidence contract patch
         run: node scripts/p7-u03-evidence-patch.mjs
       - name: Validate contracts
