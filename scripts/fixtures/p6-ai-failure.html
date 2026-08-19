@@ -6,7 +6,7 @@
 <title>P6 AI Failure</title>
 </head>
 <body>
-<main class="app-shell"><div class="course-view reading-content"><article class="lesson-block activity-card" data-activity-id="L01-A01"><header class="block-header"><div><span class="block-kicker">Interpretação aberta</span></div><span class="activity-mode">avaliação pendente</span></header><p>Resposta já registrada antes da chamada.</p><form class="activity-form" data-activity-form><textarea name="response">Resposta previamente registrada.</textarea></form></article></div></main>
+<main class="app-shell"><div class="course-view reading-content"><article class="lesson-block activity-card" data-activity-id="L01-A01"><header class="block-header"><div><span class="block-kicker">Interpretação aberta</span></div><span class="activity-mode">avaliação pendente</span></header><p class="activity-prompt">Resposta já registrada antes da chamada.</p><form class="activity-form" data-activity-form><label class="response-field"><span>Sua resposta</span><textarea name="response" rows="7">Resposta previamente registrada.</textarea></label></form></article></div></main>
 <script type="module">
 localStorage.setItem('portugues-completo:settings:v1',JSON.stringify({aiFeedbackEnabled:true,aiFeedbackConsentVersion:'p6-ai-feedback-consent-v1'}));
 const { bindClassicAiFeedback }=await import('/app/js/ui/classic-ai-feedback.js');
