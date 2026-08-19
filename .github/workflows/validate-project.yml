@@ -87,6 +87,9 @@ jobs:
       - name: Capture classic visual smoke
         run: bash scripts/capture-classic-visuals.sh
 
+      - name: Capture P6 AI visual smoke
+        run: bash scripts/capture-ai-feedback-visuals.sh
+
       - name: Upload classic visual smoke
         uses: actions/upload-artifact@v4
         with:
