@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+# Gate visual canônico do lote P7 N0-U04: unidade, evidência textual, ordenação e V01.
 PORT=4176
 OUT="artifacts/p7-u04-visuals"
 mkdir -p "$OUT"
