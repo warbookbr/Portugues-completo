@@ -28,9 +28,15 @@ jobs:
           from pathlib import Path
           path = Path('scripts/p7-u03-evidence-patch.mjs')
           text = path.read_text()
-          for token in ('${documentRuntime.id}', '${block.id}', '${CSS.escape(key)}'):
+          for token in ('${documentRuntime.id}', '${block.id}'):
               text = text.replace(token, '\\' + token)
-          path.write_text(text)
+          lines = []
+          for line in text.splitlines():
+              if 'const controls = [...form.querySelectorAll(`' in line:
+                  lines.append('    const controls = [...form.elements].filter(control => control.name === key);')
+              else:
+                  lines.append(line)
+          path.write_text('\n'.join(lines) + '\n')
           PY
       - name: Apply evidence contract patch
         run: node scripts/p7-u03-evidence-patch.mjs
