@@ -56,7 +56,7 @@ function renderSequence(block) {
 }
 
 function renderSequence(block) {
-  const tokens = block.content?.availableTokens || block.content?.availableAudioTokens || block.content?.options || block.content?.model || [];
+  const tokens = block.content?.availableTokens || block.content?.availableAudioTokens || block.content?.availableWrittenChunks || block.content?.options || block.content?.model || [];
   return renderSequenceBuilder(tokens, 'sequence');
 }`
 );
@@ -71,8 +71,8 @@ replaceOnce(
   }
 
   return \`<div class="composite-round">\${localStimuli}\${unsupported(\`\${block.id}: rodada \${key} sem controle determinístico\`)}</div>\`;`,
-`  if (Array.isArray(entry.pieces) || Array.isArray(entry.tokens) || Array.isArray(entry.availableAudioTokens)) {
-    return \`<fieldset class="composite-round"><legend>\${esc(label)}</legend>\${localStimuli}\${renderSequenceBuilder(entry.pieces || entry.tokens || entry.availableAudioTokens, \`round-sequence:\${key}\`)}</fieldset>\`;
+`  if (Array.isArray(entry.pieces) || Array.isArray(entry.tokens) || Array.isArray(entry.availableAudioTokens) || Array.isArray(entry.availableWrittenChunks)) {
+    return \`<fieldset class="composite-round"><legend>\${esc(label)}</legend>\${localStimuli}\${renderSequenceBuilder(entry.pieces || entry.tokens || entry.availableAudioTokens || entry.availableWrittenChunks, \`round-sequence:\${key}\`)}</fieldset>\`;
   }
 
   if (Array.isArray(entry.options)) {
