@@ -1,0 +1,33 @@
+name: Finalize P6.1 state
+
+on:
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  finalize:
+    if: github.head_ref == 'p6-ai-feedback-core' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          ref: p6-ai-feedback-core
+          fetch-depth: 0
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+          package-manager-cache: false
+      - name: Advance canonical P6 state
+        run: node scripts/p6-finalize-core-state.mjs
+      - name: Commit canonical state
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add docs/estado-implementacao-classico.md docs/roadmap-produto.md
+          git commit -m 'docs(p6): homologa P6.1 e ativa P6.2'
+          git push origin HEAD:p6-ai-feedback-core
