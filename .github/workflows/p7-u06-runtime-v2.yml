@@ -1,0 +1,52 @@
+name: Apply P7 U06 runtime v2
+
+on:
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    if: github.head_ref == 'p7-n0-u06-catalog' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          ref: p7-n0-u06-catalog
+          fetch-depth: 0
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+          package-manager-cache: false
+      - name: Apply U06 structural runtime patch
+        run: python3 scripts/p7-u06-runtime-patch-v2.py
+      - name: Validate contracts
+        run: node scripts/validate-contracts.mjs
+      - name: Audit N0-U06
+        run: node scripts/audit-p7-n0-u06.mjs
+      - name: Test U05 regressions
+        run: |
+          node scripts/audit-p7-n0-u05.mjs
+          node scripts/test-p7-u05-writing.mjs
+          node scripts/test-p7-u05-public-ui.mjs
+          node scripts/test-p7-u05-homologation.mjs
+      - name: Test U04 regressions
+        run: |
+          node scripts/audit-p7-n0-u04.mjs
+          node scripts/test-p7-u04-evidence.mjs
+          node scripts/test-p7-u04-homologation.mjs
+      - name: Test progress regression
+        run: node scripts/test-progress-service.mjs
+      - name: Test classic renderer regression
+        run: node scripts/test-classic-renderer.mjs
+      - name: Commit runtime adaptation
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add app/js/services/content-normalizer-v1.js app/js/services/content-normalization-rules-v1.js app/js/ui/classic-renderer.js app/js/ui/classic-progress-binding.js scripts/audit-p7-n0-u06.mjs
+          git commit -m 'feat(p7): adapta runtime para autoria da N0-U06'
+          git push origin HEAD:p7-n0-u06-catalog
