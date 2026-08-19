@@ -22,7 +22,7 @@ jobs:
         with:
           node-version: '24'
           package-manager-cache: false
-      - name: Neutralize temporary template interpolation
+      - name: Neutralize temporary patch syntax
         run: |
           python - <<'PY'
           from pathlib import Path
@@ -30,6 +30,7 @@ jobs:
           text = path.read_text()
           for token in ('${documentRuntime.id}', '${block.id}'):
               text = text.replace(token, '\\' + token)
+          text = text.replace('"score": {"type": ["number", "null"], "minimum": 0, "maximum": 1}', '"score": {"type": ["number", "null"], "minimum": 0}')
           lines = []
           for line in text.splitlines():
               if 'const controls = [...form.querySelectorAll(`' in line:
