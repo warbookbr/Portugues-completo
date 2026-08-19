@@ -388,6 +388,16 @@ T1 pode usar várias PRs e deve seguir `docs/execucao-continua.md`; não pedir n
 
 T1 foi homologado em T1.10; P6 volta a ser o marco ativo do Modo Clássico.
 
+Subfases:
+
+```text
+P6.1 — núcleo neutro + transporte seguro → HOMOLOGADO (PR #131)
+P6.2 — opt-in/configuração + piloto N4-U09 + feedback visual → ATIVO
+P6.3 — homologação transversal do feedback IA → depois de P6.2
+```
+
+P6.1 consolidou `AiFeedbackService`, adapter neutro, companion local OpenAI, structured output, `store:false`, chave fora do navegador e gates que impedem IA de promover evidência. Contrato técnico: `docs/p6-transporte-ia.md`.
+
 Objetivo: acrescentar feedback opt-in em atividades elegíveis sem transformar IA em autoridade automática de domínio.
 
 Entregas:
@@ -465,10 +475,11 @@ Cobrir troca de modos, preservação de domínio, coerência/resistência a farm
 ## Próximo passo oficial
 
 ```text
-P6 — Feedback por IA no Clássico
-→ reler docs/avaliacao-ia.md + regras BYOK/segurança
-→ verificar documentação oficial atual do provider antes de congelar API/modelo
-→ implementar feedback opt-in sem transformar IA em autoridade de domínio
+P6.2 — opt-in/configuração + piloto N4-U09 + feedback visual
+→ expor configuração não secreta do companion/modelo e token efêmero somente em sessão
+→ exigir consentimento explícito antes de qualquer chamada paga
+→ habilitar uma atividade aberta piloto em N4-U09 com critérios explícitos
+→ apresentar feedback estruturado sem tratar recomendação como domínio
+→ provar IA desligada, companion ausente, sucesso e falha do provider sem perda da resposta
 → preservar VALIDACAO_PENDENTE quando a policy exigir avaliador confiável
-→ manter falha/ausência de IA sem perda da resposta ou bloqueio indevido do percurso
 ```

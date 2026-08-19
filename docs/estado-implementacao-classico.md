@@ -20,8 +20,9 @@ Marco transversal T1 — Fundamentos claros e experiência de lição: HOMOLOGAD
 Homologação: docs/homologacao-t1-10.md
 Migração T1 `t1-n0-entry-v2`: ATIVA / HOMOLOGADA local + Gist
 P6 — Feedback por IA: ATIVO
-Subfase P6.1 — núcleo neutro + transporte seguro: EM VALIDAÇÃO (PR #131)
-Próximo passo exato: homologar P6.1 no CI e então implementar opt-in/configuração na UI + atividade piloto N4-U09, mantendo `VALIDACAO_PENDENTE` e a API key OpenAI fora do navegador
+Subfase P6.1 — núcleo neutro + transporte seguro: HOMOLOGADO (PR #131)
+Subfase ativa: P6.2 — opt-in/configuração + piloto N4-U09 + feedback visual
+Próximo passo exato: ligar AiFeedbackService à UI com consentimento explícito, configurar companion/model/token efêmero, habilitar uma atividade aberta piloto em N4-U09 e provar sucesso/falha sem alterar `VALIDACAO_PENDENTE`
 Blocker global: nenhum
 Gate final do Clássico: NÃO SATISFEITO
 ```
@@ -38,7 +39,7 @@ T1 foi homologado em T1.10. As regras duradouras permanecem nas fontes/skills ca
 | P4 — Renderer real do Clássico | `HOMOLOGADO` | PR #108 |
 | P5 — Progresso/revisão/Gist | `HOMOLOGADO` | PR #109 |
 | T1 — Fundamentos claros | `HOMOLOGADO` | PRs #116–#130; `docs/homologacao-t1-10.md` |
-| P6 — Feedback por IA | `ATIVO` | P6.1 núcleo/transporte em validação na PR #131 |
+| P6 — Feedback por IA | `ATIVO` | P6.1 núcleo/transporte homologado na PR #131; P6.2 ativo |
 | P7 — Catálogo N0→N4 | `NAO_INICIADO` | — |
 | P8 — Mídia/publicação | `NAO_INICIADO` | — |
 | P9 — E2E / Clássico homologado | `NAO_INICIADO` | — |
@@ -485,8 +486,8 @@ Nova mídia humana obrigatória: nenhuma
 ```text
 Global antes de P6: nenhum — T1 homologado
 Ativo: P6 — Feedback por IA no Clássico
-P6.1: AiFeedbackService neutro + companion OpenAI local + gates de segurança em validação na PR #131
-Depois de P6.1: opt-in/configuração UI + piloto N4-U09 + feedback visual + smoke de sucesso/falha
+P6.1: HOMOLOGADO — AiFeedbackService neutro + companion OpenAI local + gates de segurança (PR #131)
+Ativo P6.2: opt-in/configuração UI + piloto N4-U09 + feedback visual + smoke de sucesso/falha
 Local: resolver mídia obrigatória de U1/U2 quando o marco de publicação exigir esses estímulos
 Depois de P6: P7 — ampliação do catálogo N0→N4
 ```
