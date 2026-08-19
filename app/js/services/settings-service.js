@@ -1,4 +1,5 @@
 const STORAGE_KEY = 'portugues-completo:settings:v1';
+export const AI_FEEDBACK_CONSENT_VERSION = 'p6-ai-feedback-consent-v1';
 
 const defaults = {
   theme: 'light',
