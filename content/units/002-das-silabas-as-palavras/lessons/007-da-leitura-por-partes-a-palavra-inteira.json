@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "N0-U02-L07",
-  "title": "Da leitura por partes à palavra inteira",
+  "title": "Lendo por partes e depois a palavra inteira",
   "status": "conteudo-pronto-para-implementacao",
   "objective": "Usar a segmentação silábica como apoio temporário para ler palavras simples e avançar progressivamente para reconhecer e relacionar a palavra escrita inteira à sua forma falada sem depender obrigatoriamente da separação em todas as tentativas.",
   "competencies": [
@@ -11,7 +11,9 @@
     "recorrer ao apoio silábico quando necessário sem tratá-lo como requisito permanente para toda palavra",
     "aplicar partes já conhecidas para abordar uma palavra compatível apresentada em nova combinação"
   ],
-  "prerequisites": ["N0-U02-L06"],
+  "prerequisites": [
+    "N0-U02-L06"
+  ],
   "limits": [
     "não usar velocidade ou tempo de resposta como evidência de domínio",
     "não exigir leitura de frases ou textos; o foco continua sendo a palavra",
@@ -33,24 +35,56 @@
     "runtimeResources": [
       {
         "type": "TTS_OK",
-        "locations": ["L07-B02", "L07-C01", "L07-B03", "L07-C02", "L07-B04", "L07-C03", "L07-A01", "L07-A02", "L07-A03", "L07-A04", "feedback", "resumo"],
+        "locations": [
+          "L07-B02",
+          "L07-C01",
+          "L07-B03",
+          "L07-C02",
+          "L07-B04",
+          "L07-C03",
+          "L07-A01",
+          "L07-A02",
+          "L07-A03",
+          "L07-A04",
+          "feedback",
+          "resumo"
+        ],
         "purpose": "confirmar a forma falada depois da tentativa de leitura e oferecer opções auditivas sem rótulo textual nas tarefas de correspondência escrita-fala; variações normais da voz do dispositivo não determinam a competência observada"
       }
     ],
     "generatedVisualResources": [
       {
         "type": "UI_RENDERED_PROGRESSIVE_READING_WORD",
-        "locations": ["L07-B02", "L07-B03", "L07-B04", "L07-A01", "L07-A02", "L07-A03", "L07-A04"],
+        "locations": [
+          "L07-B02",
+          "L07-B03",
+          "L07-B04",
+          "L07-A01",
+          "L07-A02",
+          "L07-A03",
+          "L07-A04"
+        ],
         "purpose": "renderizar a mesma palavra como texto real em níveis de apoio diferentes: segmentação visível, segmentação sob demanda e palavra inteira sem marcação"
       },
       {
         "type": "UI_RENDERED_SYLLABLE_SUPPORT_TOGGLE",
-        "locations": ["L07-B04", "L07-C03", "L07-A02", "L07-A03", "L07-A04"],
+        "locations": [
+          "L07-B04",
+          "L07-C03",
+          "L07-A02",
+          "L07-A03",
+          "L07-A04"
+        ],
         "purpose": "permitir que o aluno peça a divisão silábica quando precisar, registrando o uso do apoio sem tratá-lo automaticamente como erro"
       },
       {
         "type": "UI_RENDERED_AUDIO_CHOICE_CONTROLS",
-        "locations": ["L07-C03", "L07-A02", "L07-A03", "L07-A04"],
+        "locations": [
+          "L07-C03",
+          "L07-A02",
+          "L07-A03",
+          "L07-A04"
+        ],
         "purpose": "apresentar, somente depois da tentativa visual, opções de TTS identificadas por controles neutros como A, B e C, sem mostrar a palavra escrita de cada opção"
       }
     ],
@@ -64,16 +98,88 @@
     "practiceResponse": "o aluno pode ler em voz alta ou silenciosamente e depois usar o TTS como conferência; essa autochecagem não deve ser registrada como se fosse reconhecimento de voz"
   },
   "readingSet": [
-    {"word": "PATO", "segments": ["PA", "TO"], "role": "familiar-two-syllable"},
-    {"word": "BONECA", "segments": ["BO", "NE", "CA"], "role": "familiar-three-syllable"},
-    {"word": "TOMATE", "segments": ["TO", "MA", "TE"], "role": "familiar-three-syllable"},
-    {"word": "MALA", "segments": ["MA", "LA"], "role": "reduced-support"},
-    {"word": "PRATO", "segments": ["PRA", "TO"], "role": "reduced-support-varied-shape"},
-    {"word": "UVA", "segments": ["U", "VA"], "role": "reduced-support-varied-shape"},
-    {"word": "CASA", "segments": ["CA", "SA"], "role": "whole-word"},
-    {"word": "GATO", "segments": ["GA", "TO"], "role": "whole-word"},
-    {"word": "MATO", "segments": ["MA", "TO"], "role": "whole-word-new-combination-from-l06"},
-    {"word": "PATA", "segments": ["PA", "TA"], "role": "transfer-new-compatible-combination"}
+    {
+      "word": "PATO",
+      "segments": [
+        "PA",
+        "TO"
+      ],
+      "role": "familiar-two-syllable"
+    },
+    {
+      "word": "BONECA",
+      "segments": [
+        "BO",
+        "NE",
+        "CA"
+      ],
+      "role": "familiar-three-syllable"
+    },
+    {
+      "word": "TOMATE",
+      "segments": [
+        "TO",
+        "MA",
+        "TE"
+      ],
+      "role": "familiar-three-syllable"
+    },
+    {
+      "word": "MALA",
+      "segments": [
+        "MA",
+        "LA"
+      ],
+      "role": "reduced-support"
+    },
+    {
+      "word": "PRATO",
+      "segments": [
+        "PRA",
+        "TO"
+      ],
+      "role": "reduced-support-varied-shape"
+    },
+    {
+      "word": "UVA",
+      "segments": [
+        "U",
+        "VA"
+      ],
+      "role": "reduced-support-varied-shape"
+    },
+    {
+      "word": "CASA",
+      "segments": [
+        "CA",
+        "SA"
+      ],
+      "role": "whole-word"
+    },
+    {
+      "word": "GATO",
+      "segments": [
+        "GA",
+        "TO"
+      ],
+      "role": "whole-word"
+    },
+    {
+      "word": "MATO",
+      "segments": [
+        "MA",
+        "TO"
+      ],
+      "role": "whole-word-new-combination-from-l06"
+    },
+    {
+      "word": "PATA",
+      "segments": [
+        "PA",
+        "TA"
+      ],
+      "role": "transfer-new-compatible-combination"
+    }
   ],
   "supportLevels": [
     {
@@ -102,7 +208,10 @@
       "focus": "read",
       "title": "Comece pelas partes e junte",
       "word": "PATO",
-      "segments": ["PA", "TO"],
+      "segments": [
+        "PA",
+        "TO"
+      ],
       "supportLevel": "segmentado-visivel",
       "instruction": "Leia PA, depois TO, e tente juntar as duas partes: PATO.",
       "ttsAvailableBeforeAttempt": false,
@@ -114,10 +223,18 @@
       "id": "L07-C01",
       "type": "quick-check",
       "focus": "read-and-respond",
-      "interaction": "join-visible-syllables-into-whole-word",
+      "interaction": "single-choice",
       "prompt": "Leia as partes BO | NE | CA e escolha a palavra inteira que mantém essas partes na mesma ordem.",
-      "segments": ["BO", "NE", "CA"],
-      "options": ["BONECA", "BONETA", "TOMATE"],
+      "segments": [
+        "BO",
+        "NE",
+        "CA"
+      ],
+      "options": [
+        "BONECA",
+        "BONETA",
+        "TOMATE"
+      ],
       "correctIndex": 0,
       "ttsBeforeResponse": false,
       "feedback": "BO + NE + CA forma BONECA.",
@@ -129,8 +246,16 @@
       "focus": "read",
       "title": "A mesma palavra continua igual quando retiramos a separação",
       "stages": [
-        {"display": "MA | LA", "word": "MALA", "supportLevel": "segmentado-visivel"},
-        {"display": "MALA", "word": "MALA", "supportLevel": "palavra-inteira"}
+        {
+          "display": "MA | LA",
+          "word": "MALA",
+          "supportLevel": "segmentado-visivel"
+        },
+        {
+          "display": "MALA",
+          "word": "MALA",
+          "supportLevel": "palavra-inteira"
+        }
       ],
       "instruction": "Leia primeiro com a divisão. Depois leia novamente quando a mesma palavra aparecer inteira.",
       "ttsAvailableBeforeBothAttempts": false,
@@ -141,10 +266,18 @@
       "id": "L07-C02",
       "type": "quick-check",
       "focus": "read-and-respond",
-      "interaction": "recognize-whole-word-after-segmented-form",
+      "interaction": "single-choice",
       "prompt": "Você viu TO | MA | TE. Qual opção mostra a mesma palavra sem a separação?",
-      "segments": ["TO", "MA", "TE"],
-      "options": ["TOMATE", "TOMATA", "BONECA"],
+      "segments": [
+        "TO",
+        "MA",
+        "TE"
+      ],
+      "options": [
+        "TOMATE",
+        "TOMATA",
+        "BONECA"
+      ],
       "correctIndex": 0,
       "ttsBeforeResponse": false,
       "feedback": "TOMATE mantém TO + MA + TE na mesma ordem.",
@@ -156,7 +289,10 @@
       "focus": "read",
       "title": "Tente a palavra inteira antes de pedir ajuda",
       "word": "PRATO",
-      "segments": ["PRA", "TO"],
+      "segments": [
+        "PRA",
+        "TO"
+      ],
       "initialSupportLevel": "apoio-sob-demanda",
       "instruction": "Primeiro tente ler PRATO como está. Se precisar, use o botão Mostrar partes e tente novamente com PRA | TO. Só depois use a conferência em áudio.",
       "ttsAvailableBeforeAttempt": false,
@@ -169,19 +305,31 @@
       "id": "L07-C03",
       "type": "quick-check",
       "focus": "read-then-listen-and-respond",
-      "interaction": "written-word-to-post-attempt-audio-choice",
+      "interaction": "single-choice",
       "prompt": "Leia PORTA primeiro. Depois marque que tentou e ouça as opções A, B e C. Qual áudio corresponde à palavra escrita?",
       "word": "PORTA",
-      "segments": ["POR", "TA"],
+      "segments": [
+        "POR",
+        "TA"
+      ],
       "initialSupportLevel": "apoio-sob-demanda",
       "supportAvailableBeforeAudioChoices": true,
       "attemptGateRequired": true,
       "audioOptionsVisibleBeforeAttemptGate": false,
       "audioOptionTextVisible": false,
       "audioOptions": [
-        {"label": "A", "ttsText": "porta"},
-        {"label": "B", "ttsText": "prato"},
-        {"label": "C", "ttsText": "boneca"}
+        {
+          "label": "A",
+          "ttsText": "porta"
+        },
+        {
+          "label": "B",
+          "ttsText": "prato"
+        },
+        {
+          "label": "C",
+          "ttsText": "boneca"
+        }
       ],
       "correctIndex": 0,
       "feedback": "A opção A diz porta e corresponde a PORTA.",
@@ -191,13 +339,51 @@
       "id": "L07-A01",
       "type": "guided-activity",
       "focus": "read-and-respond",
-      "interaction": "progressive-read-with-visible-segmentation",
+      "interaction": "composite",
       "title": "Leia com as partes visíveis",
       "instruction": "Leia as sílabas na ordem, tente dizer ou pensar a palavra inteira e depois escolha a forma sem separação. O TTS só fica disponível depois da resposta.",
       "items": [
-        {"segments": ["PA", "TO"], "options": ["PATO", "POTA", "MALA"], "correctIndex": 0, "feedbackTts": "pato"},
-        {"segments": ["BO", "NE", "CA"], "options": ["BONECA", "BONETA", "CASA"], "correctIndex": 0, "feedbackTts": "boneca"},
-        {"segments": ["TO", "MA", "TE"], "options": ["TOMATE", "TOMETA", "GATO"], "correctIndex": 0, "feedbackTts": "tomate"}
+        {
+          "segments": [
+            "PA",
+            "TO"
+          ],
+          "options": [
+            "PATO",
+            "POTA",
+            "MALA"
+          ],
+          "correctIndex": 0,
+          "feedbackTts": "pato"
+        },
+        {
+          "segments": [
+            "BO",
+            "NE",
+            "CA"
+          ],
+          "options": [
+            "BONECA",
+            "BONETA",
+            "CASA"
+          ],
+          "correctIndex": 0,
+          "feedbackTts": "boneca"
+        },
+        {
+          "segments": [
+            "TO",
+            "MA",
+            "TE"
+          ],
+          "options": [
+            "TOMATE",
+            "TOMETA",
+            "GATO"
+          ],
+          "correctIndex": 0,
+          "feedbackTts": "tomate"
+        }
       ],
       "ttsBeforeResponse": false
     },
@@ -205,37 +391,73 @@
       "id": "L07-A02",
       "type": "guided-activity",
       "focus": "read-then-listen-and-respond",
-      "interaction": "whole-written-word-to-post-attempt-audio-choice",
+      "interaction": "composite",
       "title": "Leia primeiro; peça as partes se precisar",
       "instruction": "A palavra aparece inteira. Tente lê-la antes. Você pode pedir a divisão silábica. Depois confirme que tentou e escolha, entre os áudios A, B e C, qual corresponde à palavra. Os áudios não mostram texto.",
       "items": [
         {
           "word": "MALA",
-          "segments": ["MA", "LA"],
+          "segments": [
+            "MA",
+            "LA"
+          ],
           "audioOptions": [
-            {"label": "A", "ttsText": "mala"},
-            {"label": "B", "ttsText": "gato"},
-            {"label": "C", "ttsText": "porta"}
+            {
+              "label": "A",
+              "ttsText": "mala"
+            },
+            {
+              "label": "B",
+              "ttsText": "gato"
+            },
+            {
+              "label": "C",
+              "ttsText": "porta"
+            }
           ],
           "correctIndex": 0
         },
         {
           "word": "PRATO",
-          "segments": ["PRA", "TO"],
+          "segments": [
+            "PRA",
+            "TO"
+          ],
           "audioOptions": [
-            {"label": "A", "ttsText": "porta"},
-            {"label": "B", "ttsText": "prato"},
-            {"label": "C", "ttsText": "uva"}
+            {
+              "label": "A",
+              "ttsText": "porta"
+            },
+            {
+              "label": "B",
+              "ttsText": "prato"
+            },
+            {
+              "label": "C",
+              "ttsText": "uva"
+            }
           ],
           "correctIndex": 1
         },
         {
           "word": "UVA",
-          "segments": ["U", "VA"],
+          "segments": [
+            "U",
+            "VA"
+          ],
           "audioOptions": [
-            {"label": "A", "ttsText": "tomate"},
-            {"label": "B", "ttsText": "mala"},
-            {"label": "C", "ttsText": "uva"}
+            {
+              "label": "A",
+              "ttsText": "tomate"
+            },
+            {
+              "label": "B",
+              "ttsText": "mala"
+            },
+            {
+              "label": "C",
+              "ttsText": "uva"
+            }
           ],
           "correctIndex": 2
         }
@@ -249,37 +471,73 @@
       "id": "L07-A03",
       "type": "independent-practice",
       "focus": "read-then-listen-and-respond",
-      "interaction": "plain-written-word-to-post-attempt-audio-choice",
+      "interaction": "composite",
       "title": "Agora comece pela palavra inteira",
       "instruction": "Leia a palavra sem marcação. Depois confirme que tentou e escolha o áudio correspondente. Se não conseguir, o apoio silábico pode ser liberado para uma nova tentativa; usar apoio não apaga o que você já tentou.",
       "items": [
         {
           "word": "CASA",
-          "segmentsForRescue": ["CA", "SA"],
+          "segmentsForRescue": [
+            "CA",
+            "SA"
+          ],
           "audioOptions": [
-            {"label": "A", "ttsText": "mala"},
-            {"label": "B", "ttsText": "casa"},
-            {"label": "C", "ttsText": "gato"}
+            {
+              "label": "A",
+              "ttsText": "mala"
+            },
+            {
+              "label": "B",
+              "ttsText": "casa"
+            },
+            {
+              "label": "C",
+              "ttsText": "gato"
+            }
           ],
           "correctIndex": 1
         },
         {
           "word": "GATO",
-          "segmentsForRescue": ["GA", "TO"],
+          "segmentsForRescue": [
+            "GA",
+            "TO"
+          ],
           "audioOptions": [
-            {"label": "A", "ttsText": "pato"},
-            {"label": "B", "ttsText": "gato"},
-            {"label": "C", "ttsText": "mato"}
+            {
+              "label": "A",
+              "ttsText": "pato"
+            },
+            {
+              "label": "B",
+              "ttsText": "gato"
+            },
+            {
+              "label": "C",
+              "ttsText": "mato"
+            }
           ],
           "correctIndex": 1
         },
         {
           "word": "MATO",
-          "segmentsForRescue": ["MA", "TO"],
+          "segmentsForRescue": [
+            "MA",
+            "TO"
+          ],
           "audioOptions": [
-            {"label": "A", "ttsText": "mato"},
-            {"label": "B", "ttsText": "prato"},
-            {"label": "C", "ttsText": "casa"}
+            {
+              "label": "A",
+              "ttsText": "mato"
+            },
+            {
+              "label": "B",
+              "ttsText": "prato"
+            },
+            {
+              "label": "C",
+              "ttsText": "casa"
+            }
           ],
           "correctIndex": 0
         }
@@ -295,20 +553,35 @@
       "id": "L07-A04",
       "type": "transfer-activity",
       "focus": "read-then-listen-and-respond",
-      "interaction": "read-new-compatible-combination",
+      "interaction": "single-choice",
       "title": "Uma combinação nova com partes conhecidas",
       "instruction": "Leia PATA primeiro como palavra inteira. Se precisar depois da tentativa, revele PA | TA. Em seguida escolha o áudio que corresponde à palavra.",
       "word": "PATA",
-      "segments": ["PA", "TA"],
-      "knownPartSources": ["PA já apareceu em PATO", "TA já apareceu em PORTA"],
+      "segments": [
+        "PA",
+        "TA"
+      ],
+      "knownPartSources": [
+        "PA já apareceu em PATO",
+        "TA já apareceu em PORTA"
+      ],
       "attemptGateRequired": true,
       "supportInitiallyHidden": true,
       "supportButtonLabel": "Mostrar PA | TA",
       "audioOptionTextVisible": false,
       "audioOptions": [
-        {"label": "A", "ttsText": "mala"},
-        {"label": "B", "ttsText": "pata"},
-        {"label": "C", "ttsText": "tomate"}
+        {
+          "label": "A",
+          "ttsText": "mala"
+        },
+        {
+          "label": "B",
+          "ttsText": "pata"
+        },
+        {
+          "label": "C",
+          "ttsText": "tomate"
+        }
       ],
       "correctIndex": 1,
       "supportUseIsError": false,
@@ -332,7 +605,36 @@
     "observablePerformance": "Ler visualmente com apoio progressivamente reduzido e, depois da tentativa, relacionar palavras escritas à forma falada correspondente, demonstrando que a segmentação deixou de ser obrigatória em pelo menos parte das palavras familiares e que pode ser reutilizada como estratégia de resgate.",
     "criterion": "acertar pelo menos 2 dos 3 itens de L07-A01; pelo menos 2 dos 3 de L07-A02; pelo menos 2 dos 3 de L07-A03, sendo ao menos 2 acertos de primeira tentativa sem revelar a segmentação; e acertar L07-A04 com ou sem apoio depois da tentativa inicial",
     "supportInterpretation": "usar apoio silábico não é erro por si só; o indicador relevante é existir evidência de que algumas palavras já são reconhecidas sem ele, enquanto outras ainda podem ser lidas com ajuda",
-    "notSufficient": "apenas navegar pelos blocos, ouvir o TTS antes de tentar, memorizar a posição das respostas, responder rapidamente ou afirmar que leu sem demonstrar correspondência entre escrita e forma falada"
+    "notSufficient": "apenas navegar pelos blocos, ouvir o TTS antes de tentar, memorizar a posição das respostas, responder rapidamente ou afirmar que leu sem demonstrar correspondência entre escrita e forma falada",
+    "clusters": {
+      "supportedReading": {
+        "evidence": [
+          "L07-A01",
+          "L07-A02"
+        ],
+        "required": true
+      },
+      "reducedSupportReading": {
+        "evidence": [
+          "L07-A03",
+          "L07-A04"
+        ],
+        "required": true
+      }
+    },
+    "nonCompensable": true,
+    "activityPolicies": {
+      "L07-A01": {
+        "threshold": 0.6666666667
+      },
+      "L07-A02": {
+        "threshold": 0.6666666667
+      },
+      "L07-A03": {
+        "threshold": 0.6666666667
+      }
+    },
+    "runtimePolicyNote": "T1.9 deve preservar também a exigência autoral de ao menos dois acertos de primeira tentativa sem revelar segmentação em L07-A03; uso de apoio não é erro por si só."
   },
   "implementationGuardRails": [
     "nenhuma palavra-alvo pode ter seu TTS reproduzido automaticamente antes da primeira tentativa visual",
@@ -347,5 +649,6 @@
     "distratores auditivos devem ser palavras claramente inteligíveis no TTS e não devem depender de distinções fonéticas muito sutis ou de uma variante regional específica",
     "a transferência PATA deve ser apresentada como nova combinação compatível de partes já conhecidas, não como início de uma família silábica a memorizar",
     "não ampliar esta lição para leitura de frases; compreensão semântica sistemática fica para a Lição 8"
-  ]
+  ],
+  "studentObjective": "Usar as sílabas como apoio para ler uma palavra e, aos poucos, reconhecer a palavra inteira."
 }

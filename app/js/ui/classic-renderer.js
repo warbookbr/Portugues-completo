@@ -7,7 +7,22 @@ const esc = value => String(value ?? '')
   .replaceAll('"', '&quot;')
   .replaceAll("'", '&#039;');
 
-const pretty = value => String(value ?? '').replaceAll('_', ' ').toLowerCase();
+const PUBLIC_LABELS = new Map([
+  ['word', 'Palavra'], ['words', 'Palavras'], ['segments', 'Partes'], ['tiles', 'Fichas'],
+  ['examples', 'Exemplos'], ['explanation', 'Explicação'], ['stages', 'Etapas'],
+  ['display', 'Forma'], ['description', 'Descrição'], ['knownPartSources', 'Partes já conhecidas'],
+  ['nonVisualMeaning', 'Significado'], ['contrast', 'Comparação'], ['contrasts', 'Comparações']
+]);
+
+const pretty = value => {
+  const raw = String(value ?? '');
+  if (PUBLIC_LABELS.has(raw)) return PUBLIC_LABELS.get(raw);
+  return raw
+    .replace(/([a-z0-9])([A-Z])/g, '$1 $2')
+    .replaceAll('_', ' ')
+    .replaceAll('-', ' ')
+    .toLowerCase();
+};
 
 function valueText(value) {
   if (value === null || value === undefined || value === '') return '';
@@ -27,7 +42,21 @@ function valueText(value) {
 function renderKnownContent(content = {}) {
   const lead = [];
   const details = [];
-  const hiddenKeys = new Set(['options', 'categories', 'items', 'rounds', 'itemIds', 'claims', 'availableTokens', 'auditoryOptions', 'relationOptions']);
+  const hiddenKeys = new Set([
+    'options', 'categories', 'items', 'rounds', 'itemIds', 'claims',
+    'availableTokens', 'availableAudioTokens', 'availableWrittenChunks', 'availableTiles',
+    'auditoryOptions', 'relationOptions', 'pulseOptions', 'wholeWordOptions', 'audioOptions',
+    'visualOptions', 'nonVisualOptions', 'word', 'wordDisplay', 'canonicalWord', 'segments', 'segmentsForRescue',
+    'ttsCue', 'ttsText', 'feedbackTts', 'feedbackTtsAfterSecondAttempt', 'feedbackRule',
+    'initialSupportLevel', 'supportLevel', 'initialDisplay', 'supportButtonLabel', 'supportInitiallyHidden',
+    'supportAvailableAfterFirstAttempt', 'supportAvailableBeforeAudioChoices', 'syllableSupportAvailable',
+    'supportUseIsError', 'syllableSupportUseIsError', 'trackSupportUseSeparatelyFromAccuracy',
+    'trackFirstAttemptWithoutSupport', 'attemptGateRequired', 'audioOptionTextVisible',
+    'audioOptionsVisibleBeforeAttemptGate', 'ttsAvailableBeforeAttempt', 'ttsAvailableBeforeBothAttempts',
+    'targetTtsAvailableBeforeResponse', 'targetTtsBeforeResponse', 'targetTtsAvailableBeforeReading',
+    'ttsBeforeResponse', 'allowReplayWithoutPenalty', 'repeatAudio', 'requiredTileCount', 'optionOrderShouldVaryAcrossAttempts',
+    'imageId', 'imageRevealAfterAttempt'
+  ]);
 
   if (content.title) lead.push(`<h3>${esc(content.title)}</h3>`);
   if (content.text) lead.push(`<p>${esc(content.text)}</p>`);
@@ -36,9 +65,35 @@ function renderKnownContent(content = {}) {
   if (content.model !== undefined) lead.push(`<div class="model-box"><span>Modelo</span><strong>${valueText(content.model)}</strong></div>`);
   if (content.letter) lead.push(`<div class="model-box"><span>Letra</span><strong>${esc(content.letter)}</strong></div>`);
 
+  const word = content.wordDisplay ?? content.word ?? content.canonicalWord;
+  if (word) lead.push(`<div class="model-box"><span>Palavra</span><strong>${esc(word)}</strong></div>`);
+
+  if (content.ttsCue) {
+    lead.push(`<button type="button" class="secondary-button stimulus-button" data-tts="${esc(content.ttsCue)}">Ouvir palavra</button>`);
+  }
+  if (content.ttsText) {
+    lead.push(`<button type="button" class="secondary-button stimulus-button" data-tts="${esc(content.ttsText)}">Ouvir exemplo</button>`);
+  }
+
+  const segments = content.segments ?? content.segmentsForRescue;
+  if (Array.isArray(segments) && segments.length) {
+    const onDemand = Boolean(content.supportButtonLabel || content.supportInitiallyHidden || content.initialSupportLevel === 'apoio-sob-demanda');
+    if (onDemand) {
+      const label = content.supportButtonLabel || 'Mostrar partes';
+      lead.push(`<details class="support-disclosure"><summary>${esc(label)}</summary><div class="model-box"><span>Partes</span><strong>${valueText(segments)}</strong></div></details>`);
+    } else {
+      lead.push(`<div class="model-box"><span>Partes</span><strong>${valueText(segments)}</strong></div>`);
+    }
+  }
+
+  if (content.nonVisualMeaning) {
+    lead.push(`<div class="meaning-support"><strong>Significado</strong><p>${esc(content.nonVisualMeaning)}</p></div>`);
+  }
+
   for (const [key, value] of Object.entries(content)) {
-    if (['title', 'text', 'prompt', 'instruction', 'model', 'letter'].includes(key) || hiddenKeys.has(key)) continue;
-    if (key.toLowerCase().includes('guard') || key.toLowerCase().includes('correct') || key === 'feedback') continue;
+    if (['title', 'text', 'prompt', 'instruction', 'model', 'letter', 'nonVisualMeaning'].includes(key) || hiddenKeys.has(key)) continue;
+    const lower = key.toLowerCase();
+    if (lower.includes('guard') || lower.includes('correct') || lower.includes('feedback') || lower.includes('available') || lower.includes('support') || lower.includes('tts') || lower.includes('media') || lower.includes('audio') || key === 'feedback') continue;
     if (value === null || value === undefined || value === false || value === '') continue;
     details.push(`<div class="content-detail"><strong>${esc(pretty(key))}</strong><div>${valueText(value)}</div></div>`);
   }
@@ -53,7 +108,7 @@ function renderStimulus(stimulus, index) {
     return `<button type="button" class="secondary-button stimulus-button" data-tts="${esc(text)}">Ouvir com TTS</button>`;
   }
   if (stimulus.type === 'CONTROLLED_AUDIO') {
-    return `<div class="media-placeholder" role="status"><strong>Áudio controlado pendente</strong><span>${esc(stimulus.mediaId || id)}</span><small>O estímulo final ainda precisa ser ligado a este mediaId.</small></div>`;
+    return `<div class="media-placeholder" role="status"><strong>Áudio ainda não disponível</strong><span>Este exercício precisa de um áudio específico que ainda está em preparação.</span></div>`;
   }
   if (stimulus.type === 'SEMANTIC_UI') {
     const payload = stimulus.payload || {};
@@ -92,6 +147,40 @@ function optionMarkup(options = [], name, multiple = false) {
       <input type="${multiple ? 'checkbox' : 'radio'}" name="${esc(name)}" value="${index}">
       <span>${valueText(option)}</span>
     </label>`).join('');
+}
+
+function audioOptionMarkup(options = [], name) {
+  return options.map((mediaId, index) => `
+    <label class="choice-option audio-choice-option">
+      <input type="radio" name="${esc(name)}" value="${index}">
+      <span><strong>Opção ${index + 1}</strong><small>áudio controlado pendente</small></span>
+    </label>`).join('');
+}
+
+function ttsAudioOptionMarkup(options = [], name, gated = false) {
+  const controls = options.map((option, index) => {
+    const label = option?.label || `Opção ${index + 1}`;
+    const ttsText = option?.ttsText || '';
+    const disabled = gated ? ' disabled data-gated-control' : '';
+    return `
+      <div class="choice-option audio-choice-option">
+        <label><input type="radio" name="${esc(name)}" value="${index}"${disabled}><span>${esc(label)}</span></label>
+        <button type="button" class="secondary-button compact-button" data-tts="${esc(ttsText)}"${disabled}>Ouvir ${esc(label)}</button>
+      </div>`;
+  }).join('');
+  if (!gated) return controls;
+  return `<div class="gated-choice-set" data-gated-choice-set>
+    <button type="button" class="secondary-button compact-button" data-attempt-gate>Marcar que tentei ler</button>
+    <div class="gated-choice-options">${controls}</div>
+  </div>`;
+}
+
+function sharedCompositeOptions(block) {
+  const values = Object.values(block.activity?.evaluation?.answerKey?.items || {})
+    .map(value => value && typeof value === 'object' && !Array.isArray(value) ? value.correct ?? value.expected : value)
+    .filter(value => ['string', 'number', 'boolean'].includes(typeof value));
+  const uniqueValues = [...new Set(values)];
+  return uniqueValues.length >= 2 && uniqueValues.length <= 6 ? uniqueValues : [];
 }
 
 function unsupported(label) {
@@ -134,7 +223,11 @@ function renderClassify(block) {
 function renderSequenceBuilder(tokens, name = 'sequence') {
   if (!Array.isArray(tokens) || !tokens.length) return unsupported(`sequência ${name} sem peças`);
   return `<div class="sequence-builder" data-sequence-builder>
-    <div class="token-bank" aria-label="Itens disponíveis">${tokens.map((token, index) => `<button type="button" class="token-button" data-sequence-token="${index}" data-value="${esc(typeof token === 'string' ? token : JSON.stringify(token))}">${valueText(token === 'SPACE' ? 'espaço' : token)}</button>`).join('')}</div>
+    <div class="token-bank" aria-label="Itens disponíveis">${tokens.map((token, index) => {
+      const audioToken = typeof token === 'string' && token.includes('AUD-');
+      const label = audioToken ? `<span>Ficha ${index + 1}</span><small>áudio pendente</small>` : valueText(token === 'SPACE' ? 'espaço' : token);
+      return `<button type="button" class="token-button" data-sequence-token="${index}" data-value="${esc(typeof token === 'string' ? token : JSON.stringify(token))}">${label}</button>`;
+    }).join('')}</div>
     <input type="hidden" name="${esc(name)}" data-sequence-value value="[]">
     <div class="sequence-answer" data-sequence-answer aria-live="polite">Sua sequência aparecerá aqui.</div>
     <button type="button" class="secondary-button compact-button" data-sequence-clear>Limpar sequência</button>
@@ -142,7 +235,7 @@ function renderSequenceBuilder(tokens, name = 'sequence') {
 }
 
 function renderSequence(block) {
-  const tokens = block.content?.availableTokens || block.content?.options || block.content?.model || [];
+  const tokens = block.content?.availableTokens || block.content?.availableAudioTokens || block.content?.availableWrittenChunks || block.content?.availableTiles || block.content?.options || block.content?.model || [];
   return renderSequenceBuilder(tokens, 'sequence');
 }
 
@@ -170,12 +263,33 @@ function renderCompositeRound(entry, index, block) {
   const localStimuli = renderItemStimuli(block.activity, key);
   const label = entryLabel(entry, index);
 
-  if (Array.isArray(entry.pieces) || Array.isArray(entry.tokens)) {
-    return `<fieldset class="composite-round"><legend>${esc(label)}</legend>${localStimuli}${renderSequenceBuilder(entry.pieces || entry.tokens, `round-sequence:${key}`)}</fieldset>`;
+  if (Array.isArray(entry.pieces) || Array.isArray(entry.tokens) || Array.isArray(entry.availableAudioTokens) || Array.isArray(entry.availableWrittenChunks) || Array.isArray(entry.availableTiles)) {
+    return `<fieldset class="composite-round"><legend>${esc(label)}</legend>${localStimuli}${renderSequenceBuilder(entry.pieces || entry.tokens || entry.availableAudioTokens || entry.availableWrittenChunks || entry.availableTiles, `round-sequence:${key}`)}</fieldset>`;
   }
 
   if (Array.isArray(entry.options)) {
     return `<fieldset class="composite-round"><legend>${esc(label)}</legend>${localStimuli}${optionMarkup(entry.options, `round:${key}`)}</fieldset>`;
+  }
+
+  if (Array.isArray(entry.nonVisualOptions)) {
+    return `<fieldset class="composite-round"><legend>${esc(label)}</legend>${localStimuli}${optionMarkup(entry.nonVisualOptions, `round:${key}`)}</fieldset>`;
+  }
+
+  if (Array.isArray(entry.audioOptions)) {
+    return `<fieldset class="composite-round"><legend>${esc(label)}</legend>${localStimuli}${ttsAudioOptionMarkup(entry.audioOptions, `round:${key}`, Boolean(block.content?.attemptGateRequired || entry.attemptGateRequired))}</fieldset>`;
+  }
+
+  if (Array.isArray(entry.wholeWordOptions)) {
+    return `<fieldset class="composite-round"><legend>${esc(label)}</legend>${localStimuli}${audioOptionMarkup(entry.wholeWordOptions, `round:${key}`)}</fieldset>`;
+  }
+
+  if (Array.isArray(block.content?.pulseOptions)) {
+    return `<fieldset class="composite-round"><legend>${esc(label)}</legend>${localStimuli}${optionMarkup(block.content.pulseOptions, `round:${key}`)}</fieldset>`;
+  }
+
+  const sharedOptions = sharedCompositeOptions(block);
+  if (sharedOptions.length) {
+    return `<fieldset class="composite-round"><legend>${esc(label)}</legend>${localStimuli}${optionMarkup(sharedOptions, `round:${key}`)}</fieldset>`;
   }
 
   return `<div class="composite-round">${localStimuli}${unsupported(`${block.id}: rodada ${key} sem controle determinístico`)}</div>`;
@@ -212,7 +326,13 @@ function renderComposite(block) {
 function renderInteraction(block) {
   const content = block.content || {};
   switch (block.activity?.interaction) {
-    case 'SINGLE_CHOICE': return `<fieldset class="choice-group"><legend class="sr-only">Escolha uma opção</legend>${optionMarkup(content.options || [], 'choice')}</fieldset>`;
+    case 'SINGLE_CHOICE': {
+      if (Array.isArray(content.audioOptions)) {
+        return `<fieldset class="choice-group"><legend class="sr-only">Escolha uma opção de áudio</legend>${ttsAudioOptionMarkup(content.audioOptions, 'choice', Boolean(content.attemptGateRequired))}</fieldset>`;
+      }
+      const choices = content.nonVisualOptions || content.wholeWordOptions || content.options || content.availableTiles || [];
+      return `<fieldset class="choice-group"><legend class="sr-only">Escolha uma opção</legend>${Array.isArray(content.wholeWordOptions) && !content.nonVisualOptions ? audioOptionMarkup(choices, 'choice') : optionMarkup(choices, 'choice')}</fieldset>`;
+    }
     case 'MULTIPLE_CHOICE': return `<fieldset class="choice-group"><legend class="sr-only">Escolha uma ou mais opções</legend>${optionMarkup(content.options || [], 'choice', true)}</fieldset>`;
     case 'CLASSIFY': return renderClassify(block);
     case 'SEQUENCE':
@@ -312,7 +432,7 @@ function evaluateChoice(form, block) {
   const selected = selectedRadio(form, 'choice');
   if (!selected) return { complete: false };
   const index = Number(selected.value);
-  const option = block.content?.options?.[index];
+  const option = block.content?.options?.[index] ?? block.content?.nonVisualOptions?.[index] ?? block.content?.audioOptions?.[index] ?? block.content?.wholeWordOptions?.[index] ?? block.content?.availableTiles?.[index];
   if (Object.prototype.hasOwnProperty.call(key, 'correctIndex')) return { complete: true, correct: index === key.correctIndex };
   if (Object.prototype.hasOwnProperty.call(key, 'correct')) return { complete: true, correct: normalizeComparable(option) === normalizeComparable(key.correct) };
   return { complete: true, pending: true };
@@ -387,7 +507,17 @@ function evaluateComposite(form, block) {
     }
     const selected = selectedRadio(form, `round:${key}`);
     if (!selected) return { complete: false };
-    const option = entry.options?.[Number(selected.value)];
+    const selectedIndex = Number(selected.value);
+    if (Number.isInteger(expected)) {
+      if (selectedIndex === expected) hits += 1;
+      continue;
+    }
+    if (expected && typeof expected === 'object' && Number.isInteger(expected.correctIndex)) {
+      if (selectedIndex === expected.correctIndex) hits += 1;
+      continue;
+    }
+    const sharedOptions = sharedCompositeOptions(block);
+    const option = entry.options?.[selectedIndex] ?? entry.nonVisualOptions?.[selectedIndex] ?? entry.audioOptions?.[selectedIndex] ?? entry.wholeWordOptions?.[selectedIndex] ?? entry.availableTiles?.[selectedIndex] ?? content.pulseOptions?.[selectedIndex] ?? sharedOptions[selectedIndex];
     const expectedValue = expected && typeof expected === 'object' ? expected.correct ?? expected.expected : expected;
     if (normalizeComparable(option) === normalizeComparable(expectedValue)) hits += 1;
   }
@@ -464,6 +594,12 @@ function bindSequence(builder) {
 
 export function bindClassicRenderer(root, document = null) {
   root.querySelectorAll('[data-tts]').forEach(button => button.addEventListener('click', () => speak(button.dataset.tts || '')));
+  root.querySelectorAll('[data-attempt-gate]').forEach(button => button.addEventListener('click', () => {
+    const group = button.closest('[data-gated-choice-set]');
+    group?.querySelectorAll('[data-gated-control]').forEach(control => { control.disabled = false; });
+    button.disabled = true;
+    button.textContent = 'Tentativa registrada';
+  }));
   root.querySelectorAll('[data-sequence-builder]').forEach(bindSequence);
   if (!document) return;
   const byId = new Map(document.blocks.filter(block => block.kind === 'ACTIVITY').map(block => [block.id, block]));

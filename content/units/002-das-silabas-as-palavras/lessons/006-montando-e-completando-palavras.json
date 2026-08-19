@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "N0-U02-L06",
-  "title": "Montando e completando palavras",
+  "title": "Montando palavras",
   "status": "conteudo-pronto-para-implementacao",
   "objective": "Usar sílabas escritas fornecidas como unidades de construção para ordenar, completar e formar palavras familiares, preservando a ordem das partes e sem depender de famílias silábicas memorizadas.",
   "competencies": [
@@ -10,7 +10,12 @@
     "manter agrupamentos silábicos de diferentes tamanhos como unidades inteiras durante a montagem, incluindo U, PRA e POR",
     "recombinar sílabas já encontradas em contextos anteriores para formar uma palavra familiar em nova combinação"
   ],
-  "prerequisites": ["N0-U02-L02", "N0-U02-L03", "N0-U02-L04", "N0-U02-L05"],
+  "prerequisites": [
+    "N0-U02-L02",
+    "N0-U02-L03",
+    "N0-U02-L04",
+    "N0-U02-L05"
+  ],
   "limits": [
     "não transformar a lição em memorização de famílias silábicas como ba, be, bi, bo, bu",
     "não exigir que o aluno invente grafias ou escreva palavras sem material fornecido",
@@ -31,24 +36,52 @@
     "runtimeResources": [
       {
         "type": "TTS_OK",
-        "locations": ["L06-B02", "L06-C01", "L06-C03", "L06-A01", "L06-A03", "feedback", "resumo"],
+        "locations": [
+          "L06-B02",
+          "L06-C01",
+          "L06-C03",
+          "L06-A01",
+          "L06-A03",
+          "feedback",
+          "resumo"
+        ],
         "purpose": "fornecer a palavra inteira como pista oral quando a atividade mede montagem de fichas escritas e confirmar a palavra formada depois da resposta; pequenas diferenças de voz não determinam a correção"
       }
     ],
     "generatedVisualResources": [
       {
         "type": "UI_RENDERED_SYLLABLE_TILES",
-        "locations": ["L06-B02", "L06-C01", "L06-B03", "L06-C02", "L06-B04", "L06-C03", "L06-A01", "L06-A02", "L06-A03"],
+        "locations": [
+          "L06-B02",
+          "L06-C01",
+          "L06-B03",
+          "L06-C02",
+          "L06-B04",
+          "L06-C03",
+          "L06-A01",
+          "L06-A02",
+          "L06-A03"
+        ],
         "purpose": "renderizar sílabas como fichas de texto manipuláveis, preservando cada agrupamento como unidade e evitando imagens estáticas"
       },
       {
         "type": "UI_RENDERED_ASSEMBLY_SLOTS",
-        "locations": ["L06-B02", "L06-C01", "L06-C03", "L06-A01", "L06-A03"],
+        "locations": [
+          "L06-B02",
+          "L06-C01",
+          "L06-C03",
+          "L06-A01",
+          "L06-A03"
+        ],
         "purpose": "mostrar posições ordenadas onde as fichas podem ser colocadas sem revelar antecipadamente qual ficha pertence a cada posição"
       },
       {
         "type": "UI_RENDERED_MISSING_SYLLABLE_SLOT",
-        "locations": ["L06-B03", "L06-C02", "L06-A02"],
+        "locations": [
+          "L06-B03",
+          "L06-C02",
+          "L06-A02"
+        ],
         "purpose": "mostrar uma lacuna dentro de uma segmentação escrita fornecida para que o aluno escolha a parte ausente"
       }
     ],
@@ -57,14 +90,73 @@
     "decisionRationale": "a competência central é manipular unidades escritas já fornecidas. A palavra inteira pode ser oferecida por TTS quando funciona apenas como alvo oral da montagem, sem exigir discriminação fonética sensível. Nas tarefas visuais de completar, o TTS fica depois da resposta para não entregar a solução. Imagem ou vídeo não acrescentariam informação pedagógica além dos componentes textuais interativos."
   },
   "constructionSet": [
-    {"word": "CASA", "segments": ["CA", "SA"], "ttsCue": "casa"},
-    {"word": "GATO", "segments": ["GA", "TO"], "ttsCue": "gato"},
-    {"word": "UVA", "segments": ["U", "VA"], "ttsCue": "uva"},
-    {"word": "PRATO", "segments": ["PRA", "TO"], "ttsCue": "prato"},
-    {"word": "PORTA", "segments": ["POR", "TA"], "ttsCue": "porta"},
-    {"word": "BONECA", "segments": ["BO", "NE", "CA"], "ttsCue": "boneca"},
-    {"word": "TOMATE", "segments": ["TO", "MA", "TE"], "ttsCue": "tomate"},
-    {"word": "MATO", "segments": ["MA", "TO"], "ttsCue": "mato", "role": "transfer-new-combination"}
+    {
+      "word": "CASA",
+      "segments": [
+        "CA",
+        "SA"
+      ],
+      "ttsCue": "casa"
+    },
+    {
+      "word": "GATO",
+      "segments": [
+        "GA",
+        "TO"
+      ],
+      "ttsCue": "gato"
+    },
+    {
+      "word": "UVA",
+      "segments": [
+        "U",
+        "VA"
+      ],
+      "ttsCue": "uva"
+    },
+    {
+      "word": "PRATO",
+      "segments": [
+        "PRA",
+        "TO"
+      ],
+      "ttsCue": "prato"
+    },
+    {
+      "word": "PORTA",
+      "segments": [
+        "POR",
+        "TA"
+      ],
+      "ttsCue": "porta"
+    },
+    {
+      "word": "BONECA",
+      "segments": [
+        "BO",
+        "NE",
+        "CA"
+      ],
+      "ttsCue": "boneca"
+    },
+    {
+      "word": "TOMATE",
+      "segments": [
+        "TO",
+        "MA",
+        "TE"
+      ],
+      "ttsCue": "tomate"
+    },
+    {
+      "word": "MATO",
+      "segments": [
+        "MA",
+        "TO"
+      ],
+      "ttsCue": "mato",
+      "role": "transfer-new-combination"
+    }
   ],
   "sequence": [
     {
@@ -80,8 +172,14 @@
       "title": "A palavra falada pode orientar a montagem",
       "ttsCue": "casa",
       "writtenTargetVisibleBeforeResponse": false,
-      "availableTiles": ["SA", "CA"],
-      "correctOrder": ["CA", "SA"],
+      "availableTiles": [
+        "SA",
+        "CA"
+      ],
+      "correctOrder": [
+        "CA",
+        "SA"
+      ],
       "explanation": "Ouvimos casa. As fichas disponíveis são SA e CA. Para formar a palavra na ordem em que suas partes aparecem, colocamos CA primeiro e SA depois. Só então a interface revela CASA como palavra inteira e pode lê-la novamente.",
       "feedbackTts": "casa"
     },
@@ -89,13 +187,20 @@
       "id": "L06-C01",
       "type": "quick-check",
       "focus": "listen-and-respond",
-      "interaction": "spoken-target-to-ordered-syllable-tiles",
+      "interaction": "sequence",
       "prompt": "Ouça a palavra e monte-a com as fichas fornecidas.",
       "ttsCue": "gato",
       "writtenTargetVisibleBeforeResponse": false,
-      "availableTiles": ["TO", "LA", "GA"],
+      "availableTiles": [
+        "TO",
+        "LA",
+        "GA"
+      ],
       "requiredTileCount": 2,
-      "correctOrder": ["GA", "TO"],
+      "correctSequence": [
+        "GA",
+        "TO"
+      ],
       "allowReplayWithoutPenalty": true,
       "feedback": "GA vem primeiro e TO vem depois: GATO.",
       "feedbackTts": "gato"
@@ -106,8 +211,16 @@
       "focus": "observe-then-operate",
       "title": "Também podemos descobrir a parte que falta",
       "writtenTarget": "TOMATE",
-      "segments": ["TO", null, "TE"],
-      "availableTiles": ["CA", "MA", "BO"],
+      "segments": [
+        "TO",
+        null,
+        "TE"
+      ],
+      "availableTiles": [
+        "CA",
+        "MA",
+        "BO"
+      ],
       "correctTile": "MA",
       "ttsBeforeResponse": false,
       "explanation": "A palavra inteira TOMATE está visível e sua divisão aparece como TO | __ | TE. Comparando a palavra com as partes fornecidas, MA completa a posição que falta. O áudio pode confirmar tomate somente depois da escolha.",
@@ -117,12 +230,20 @@
       "id": "L06-C02",
       "type": "quick-check",
       "focus": "observe-and-respond",
-      "interaction": "complete-written-word-with-syllable-tile",
+      "interaction": "single-choice",
       "prompt": "Observe BONECA e escolha a parte que completa a segmentação.",
       "writtenTarget": "BONECA",
-      "segments": ["BO", "NE", null],
-      "availableTiles": ["TO", "CA", "SA"],
-      "correctTile": "CA",
+      "segments": [
+        "BO",
+        "NE",
+        null
+      ],
+      "availableTiles": [
+        "TO",
+        "CA",
+        "SA"
+      ],
+      "correct": "CA",
       "ttsBeforeResponse": false,
       "feedback": "BO | NE | CA forma BONECA.",
       "feedbackTts": "boneca"
@@ -133,9 +254,27 @@
       "focus": "observe",
       "title": "Cada ficha representa uma sílaba inteira, mesmo quando o tamanho muda",
       "examples": [
-        {"word": "UVA", "tiles": ["U", "VA"]},
-        {"word": "PRATO", "tiles": ["PRA", "TO"]},
-        {"word": "PORTA", "tiles": ["POR", "TA"]}
+        {
+          "word": "UVA",
+          "tiles": [
+            "U",
+            "VA"
+          ]
+        },
+        {
+          "word": "PRATO",
+          "tiles": [
+            "PRA",
+            "TO"
+          ]
+        },
+        {
+          "word": "PORTA",
+          "tiles": [
+            "POR",
+            "TA"
+          ]
+        }
       ],
       "explanation": "U, PRA e POR têm tamanhos diferentes, mas entram na montagem como fichas inteiras. Não precisamos quebrá-las em partes menores para encaixar todas as sílabas no mesmo formato.",
       "guardRail": "não introduzir nomes técnicos para as estruturas das fichas"
@@ -144,13 +283,21 @@
       "id": "L06-C03",
       "type": "quick-check",
       "focus": "listen-and-respond",
-      "interaction": "spoken-target-to-ordered-syllable-tiles",
+      "interaction": "sequence",
       "prompt": "Ouça a palavra e escolha as duas fichas que a formam na ordem correta.",
       "ttsCue": "prato",
       "writtenTargetVisibleBeforeResponse": false,
-      "availableTiles": ["TO", "POR", "PRA", "TA"],
+      "availableTiles": [
+        "TO",
+        "POR",
+        "PRA",
+        "TA"
+      ],
       "requiredTileCount": 2,
-      "correctOrder": ["PRA", "TO"],
+      "correctSequence": [
+        "PRA",
+        "TO"
+      ],
       "allowReplayWithoutPenalty": true,
       "feedback": "PRA | TO forma PRATO. A ficha PRA permanece inteira.",
       "feedbackTts": "prato"
@@ -159,14 +306,64 @@
       "id": "L06-A01",
       "type": "guided-activity",
       "focus": "listen-and-operate",
-      "interaction": "spoken-target-to-ordered-syllable-tiles",
+      "interaction": "composite",
       "title": "Monte a palavra que você ouvir",
       "instruction": "Ouça a palavra inteira e coloque as fichas necessárias na ordem correta. A forma escrita completa aparece somente depois da resposta. Você pode repetir o TTS quantas vezes precisar.",
       "items": [
-        {"ttsCue": "casa", "availableTiles": ["SA", "CA", "TO"], "correctOrder": ["CA", "SA"], "revealWordAfterResponse": "CASA"},
-        {"ttsCue": "uva", "availableTiles": ["VA", "U", "LA"], "correctOrder": ["U", "VA"], "revealWordAfterResponse": "UVA"},
-        {"ttsCue": "prato", "availableTiles": ["TO", "PRA", "POR"], "correctOrder": ["PRA", "TO"], "revealWordAfterResponse": "PRATO"},
-        {"ttsCue": "tomate", "availableTiles": ["TE", "MA", "TO", "CA"], "correctOrder": ["TO", "MA", "TE"], "revealWordAfterResponse": "TOMATE"}
+        {
+          "ttsCue": "casa",
+          "availableTiles": [
+            "SA",
+            "CA",
+            "TO"
+          ],
+          "correctSequence": [
+            "CA",
+            "SA"
+          ],
+          "revealWordAfterResponse": "CASA"
+        },
+        {
+          "ttsCue": "uva",
+          "availableTiles": [
+            "VA",
+            "U",
+            "LA"
+          ],
+          "correctSequence": [
+            "U",
+            "VA"
+          ],
+          "revealWordAfterResponse": "UVA"
+        },
+        {
+          "ttsCue": "prato",
+          "availableTiles": [
+            "TO",
+            "PRA",
+            "POR"
+          ],
+          "correctSequence": [
+            "PRA",
+            "TO"
+          ],
+          "revealWordAfterResponse": "PRATO"
+        },
+        {
+          "ttsCue": "tomate",
+          "availableTiles": [
+            "TE",
+            "MA",
+            "TO",
+            "CA"
+          ],
+          "correctSequence": [
+            "TO",
+            "MA",
+            "TE"
+          ],
+          "revealWordAfterResponse": "TOMATE"
+        }
       ],
       "feedbackRule": "depois da resposta, mostrar a palavra inteira, preservar visualmente as fichas que a formaram e permitir TTS de confirmação"
     },
@@ -174,14 +371,67 @@
       "id": "L06-A02",
       "type": "guided-activity",
       "focus": "observe-and-operate",
-      "interaction": "complete-segmented-written-word",
+      "interaction": "composite",
       "title": "Qual parte está faltando?",
       "instruction": "A palavra inteira fica visível. Complete apenas a lacuna da divisão apresentada. O TTS de confirmação aparece depois da resposta.",
       "items": [
-        {"writtenTarget": "GATO", "segments": ["GA", null], "availableTiles": ["TO", "NE", "VA"], "correctTile": "TO", "feedbackTts": "gato"},
-        {"writtenTarget": "CASA", "segments": [null, "SA"], "availableTiles": ["CA", "PRA", "BO"], "correctTile": "CA", "feedbackTts": "casa"},
-        {"writtenTarget": "PORTA", "segments": ["POR", null], "availableTiles": ["TA", "TE", "VA"], "correctTile": "TA", "feedbackTts": "porta"},
-        {"writtenTarget": "BONECA", "segments": ["BO", null, "CA"], "availableTiles": ["NE", "MA", "TO"], "correctTile": "NE", "feedbackTts": "boneca"}
+        {
+          "writtenTarget": "GATO",
+          "segments": [
+            "GA",
+            null
+          ],
+          "availableTiles": [
+            "TO",
+            "NE",
+            "VA"
+          ],
+          "correct": "TO",
+          "feedbackTts": "gato"
+        },
+        {
+          "writtenTarget": "CASA",
+          "segments": [
+            null,
+            "SA"
+          ],
+          "availableTiles": [
+            "CA",
+            "PRA",
+            "BO"
+          ],
+          "correct": "CA",
+          "feedbackTts": "casa"
+        },
+        {
+          "writtenTarget": "PORTA",
+          "segments": [
+            "POR",
+            null
+          ],
+          "availableTiles": [
+            "TA",
+            "TE",
+            "VA"
+          ],
+          "correct": "TA",
+          "feedbackTts": "porta"
+        },
+        {
+          "writtenTarget": "BONECA",
+          "segments": [
+            "BO",
+            null,
+            "CA"
+          ],
+          "availableTiles": [
+            "NE",
+            "MA",
+            "TO"
+          ],
+          "correct": "NE",
+          "feedbackTts": "boneca"
+        }
       ],
       "ttsBeforeResponse": false
     },
@@ -189,14 +439,22 @@
       "id": "L06-A03",
       "type": "transfer-activity",
       "focus": "listen-and-operate",
-      "interaction": "recombine-known-syllables-into-new-word",
+      "interaction": "sequence",
       "title": "Use partes conhecidas em uma nova combinação",
       "instruction": "Ouça uma palavra familiar que ainda não montamos nesta lição. As fichas necessárias já apareceram em outros exemplos do curso. Selecione e ordene as partes corretas.",
       "ttsCue": "mato",
       "writtenTargetVisibleBeforeResponse": false,
-      "availableTiles": ["TO", "GA", "MA", "LA"],
+      "availableTiles": [
+        "TO",
+        "GA",
+        "MA",
+        "LA"
+      ],
       "requiredTileCount": 2,
-      "correctOrder": ["MA", "TO"],
+      "correctSequence": [
+        "MA",
+        "TO"
+      ],
       "allowReplayWithoutPenalty": true,
       "revealWordAfterResponse": "MATO",
       "feedback": "MA | TO forma MATO. Você reutilizou partes conhecidas em uma combinação nova.",
@@ -219,7 +477,29 @@
   "completionEvidence": {
     "observablePerformance": "Ordenar sílabas fornecidas para formar palavras indicadas oralmente, completar lacunas em palavras escritas segmentadas e recombinar partes conhecidas em uma nova palavra familiar.",
     "criterion": "acertar L06-C01, L06-C02 e L06-C03; acertar pelo menos 3 dos 4 itens de L06-A01 e 3 dos 4 itens de L06-A02; e concluir L06-A03 corretamente após oportunidade de revisar e tentar novamente",
-    "notSufficient": "apenas arrastar fichas até receber feedback, copiar uma palavra completa já mostrada em todas as tarefas ou memorizar uma sequência fixa de famílias silábicas"
+    "notSufficient": "apenas arrastar fichas até receber feedback, copiar uma palavra completa já mostrada em todas as tarefas ou memorizar uma sequência fixa de famílias silábicas",
+    "clusters": {
+      "wordAssembly": {
+        "evidence": [
+          "L06-C01",
+          "L06-C02",
+          "L06-C03",
+          "L06-A01",
+          "L06-A02",
+          "L06-A03"
+        ],
+        "required": true
+      }
+    },
+    "nonCompensable": true,
+    "activityPolicies": {
+      "L06-A01": {
+        "threshold": 0.75
+      },
+      "L06-A02": {
+        "threshold": 0.75
+      }
+    }
   },
   "implementationGuardRails": [
     "em tarefas com alvo oral, não exibir a palavra escrita completa antes da resposta; o TTS pode ser repetido livremente e sem penalidade",
@@ -232,5 +512,6 @@
     "depois da resposta, o feedback pode juntar visualmente as fichas e revelar a palavra inteira, mas deve distinguir claramente tentativa do aluno e solução correta",
     "distratores devem ser plausíveis como fichas, mas não devem criar um padrão de posição que permita acertar sem observar ou ouvir o alvo",
     "não exigir escrita livre, pronúncia gravada ou leitura rápida para concluir a lição"
-  ]
+  ],
+  "studentObjective": "Juntar e ordenar sílabas para formar palavras conhecidas."
 }

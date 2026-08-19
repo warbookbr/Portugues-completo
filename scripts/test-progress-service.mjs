@@ -34,7 +34,7 @@ const storage = new MemoryStorage();
 const progress = new ProgressService({ storage, clock });
 const content = new ContentService({ basePath: './content', fetchImpl: fileFetch });
 
-const n0 = (await content.loadLesson('N0-U01', 'N0-U01-L01')).runtime;
+const n0 = content.normalize(readJson('content/units/001-fala-sons-escrita/legacy/lessons/001-fala-e-escrita.json'), { competencyIds: ['N0-U01-C01'] });
 const a01 = n0.blocks.find(block => block.id === 'L01-A01');
 const c03 = n0.blocks.find(block => block.id === 'L01-C03');
 

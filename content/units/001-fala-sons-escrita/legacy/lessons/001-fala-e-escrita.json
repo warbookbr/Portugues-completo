@@ -28,7 +28,11 @@
     "runtimeResources": [
       {
         "type": "TTS_OK",
-        "locations": ["L01-B02", "L01-B05", "L01-A01"],
+        "locations": [
+          "L01-B02",
+          "L01-B05",
+          "L01-A01"
+        ],
         "purpose": "apresentar exemplos pela modalidade falada sem transformar características específicas da voz em objeto de avaliação"
       }
     ],
@@ -73,7 +77,10 @@
       "focus": "respond",
       "interaction": "single-choice",
       "prompt": "Se a mensagem chega pelos sons de uma voz, qual forma está sendo usada?",
-      "options": ["fala", "escrita"],
+      "options": [
+        "fala",
+        "escrita"
+      ],
       "correct": "fala",
       "feedback": "A fala chega por sons que ouvimos."
     },
@@ -92,7 +99,10 @@
       "focus": "respond",
       "interaction": "single-choice",
       "prompt": "Se você olha para “Meu nome é Ana.” na tela sem ativar a voz, o que está diante dos seus olhos?",
-      "options": ["fala", "escrita"],
+      "options": [
+        "fala",
+        "escrita"
+      ],
       "correct": "escrita",
       "feedback": "Marcas visíveis na tela formam a escrita."
     },
@@ -103,12 +113,43 @@
       "interaction": "classify",
       "title": "Fala ou escrita?",
       "instruction": "Classifique cada situação pela forma principal apresentada.",
-      "categories": ["fala", "escrita"],
+      "categories": [
+        "fala",
+        "escrita"
+      ],
       "items": [
-        {"id": "a1", "stimulus": {"type": "tts", "text": "Olá!"}, "correct": "fala"},
-        {"id": "a2", "stimulus": {"type": "visible-text", "text": "Olá!"}, "correct": "escrita"},
-        {"id": "a3", "stimulus": {"type": "tts", "text": "Até amanhã."}, "correct": "fala"},
-        {"id": "a4", "stimulus": {"type": "visible-text", "text": "Até amanhã."}, "correct": "escrita"}
+        {
+          "id": "a1",
+          "stimulus": {
+            "type": "tts",
+            "text": "Olá!"
+          },
+          "correct": "fala"
+        },
+        {
+          "id": "a2",
+          "stimulus": {
+            "type": "visible-text",
+            "text": "Olá!"
+          },
+          "correct": "escrita"
+        },
+        {
+          "id": "a3",
+          "stimulus": {
+            "type": "tts",
+            "text": "Até amanhã."
+          },
+          "correct": "fala"
+        },
+        {
+          "id": "a4",
+          "stimulus": {
+            "type": "visible-text",
+            "text": "Até amanhã."
+          },
+          "correct": "escrita"
+        }
       ],
       "feedbackRule": "feedback imediato e nova tentativa sem penalidade"
     },

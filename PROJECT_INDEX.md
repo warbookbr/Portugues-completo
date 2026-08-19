@@ -26,6 +26,7 @@ Português Completo
 - `docs/auditoria-t1-1-porta-entrada-n0.md` — **decisão da T1.1**: pesquisa/auditoria da entrada N0, nova espinha recomendada, impactos técnicos e direção para o redimensionamento T1.2.
 - `docs/redimensionamento-t1-2-n0.md` — **arquitetura congelada da T1.2**: novas responsabilidades de U1/U2, ordem das lições, verificações V02 e matriz de identidade/migração.
 - `docs/migracao-t1-9-n0.md` — **contrato executável da T1.9**: equivalências de IDs/refs de atividade, split da antiga L05, conteúdos movidos, V01→V02, current, reviews, Gist e guard rails contra domínio falso.
+- `docs/t1-9-integracao-atomica-n0.md` — registro da promoção atômica de catálogo, manifests, migração local/Gist, aliases históricos e reconciliação de mídia da T1.9.
 - `docs/linguagem-aluno.md` — **contrato canônico T1.3** para explicações claras, completas e simples, separando objetivo técnico da fala pública.
 - `docs/estado-implementacao-classico.md` — **estado operacional concreto do Modo Clássico**: marco/item ativo, estados técnico/homologação/mídia/publicação, blockers e próximo passo exato.
 - `docs/execucao-continua.md` — execução autônoma por marcos autorizados.

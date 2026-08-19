@@ -10,7 +10,11 @@
     "reconhecer que começos sonoros semelhantes podem ser escritos de formas diferentes",
     "expressar que a relação entre letras e sons pode variar sem precisar explicar ainda as regras ortográficas responsáveis pela variação"
   ],
-  "prerequisites": ["N0-U01-L02", "N0-U01-L03", "N0-U01-L07"],
+  "prerequisites": [
+    "N0-U01-L02",
+    "N0-U01-L03",
+    "N0-U01-L07"
+  ],
   "limits": [
     "não ensinar regras ortográficas para explicar por que C ou G representam sons diferentes nos exemplos",
     "não exigir que o aluno escolha grafias corretas de palavras novas",
@@ -33,33 +37,62 @@
   "supportMaterials": {
     "curatedMedia": [
       {
-        "mediaIds": ["N0-U01-L08-AUD-001", "N0-U01-L08-AUD-002", "N0-U01-L08-AUD-003", "N0-U01-L08-AUD-004"],
+        "mediaIds": [
+          "N0-U01-L08-AUD-001",
+          "N0-U01-L08-AUD-002",
+          "N0-U01-L08-AUD-003",
+          "N0-U01-L08-AUD-004"
+        ],
         "type": "AUDIO_CONTROLADO",
         "requiredForPublication": true,
         "purpose": "fornecer estímulos fixos para observar variação entre som ouvido e começo escrito nos contrastes casa/cidade, gato/gelo, sapo/cidade e casa/quilo",
-        "locations": ["L08-B02", "L08-C01", "L08-B04", "L08-C02", "L08-A01"],
+        "locations": [
+          "L08-B02",
+          "L08-C01",
+          "L08-B04",
+          "L08-C02",
+          "L08-A01"
+        ],
         "productionSource": "producao-midia/FILA-MIDIA.md"
       },
       {
-        "mediaIds": ["N0-U01-L02-AUD-006", "N0-U01-L02-AUD-007"],
+        "mediaIds": [
+          "N0-U01-L02-AUD-006",
+          "N0-U01-L02-AUD-007"
+        ],
         "type": "AUDIO_CONTROLADO",
         "requiredForPublication": true,
         "purpose": "reutilizar as gravações já controladas de sapo e gato sem criar cópias ou novos IDs",
-        "locations": ["L08-C01", "L08-B04", "L08-A01"],
+        "locations": [
+          "L08-C01",
+          "L08-B04",
+          "L08-A01"
+        ],
         "productionSource": "producao-midia/FILA-MIDIA.md"
       }
     ],
     "runtimeResources": [
       {
         "type": "TTS_OK",
-        "locations": ["instruções", "explicações", "feedback", "resumo"],
+        "locations": [
+          "instruções",
+          "explicações",
+          "feedback",
+          "resumo"
+        ],
         "purpose": "dar apoio de acesso ao texto sem substituir os estímulos controlados cuja realização sonora determina a observação pedagógica"
       }
     ],
     "generatedVisualResources": [
       {
         "type": "UI_RENDERED_WORD_REVEAL_AND_HIGHLIGHT",
-        "locations": ["L08-B02", "L08-C01", "L08-B04", "L08-C02", "L08-A01"],
+        "locations": [
+          "L08-B02",
+          "L08-C01",
+          "L08-B04",
+          "L08-C02",
+          "L08-A01"
+        ],
         "purpose": "revelar as palavras como texto da interface somente depois do julgamento auditivo quando necessário e destacar C, G, S ou QU sem transformar letras e palavras em imagens"
       }
     ],
@@ -70,34 +103,82 @@
   "contrastExamples": [
     {
       "relation": "same-letter-different-sound",
-      "stimuli": ["N0-U01-L08-AUD-001", "N0-U01-L08-AUD-002"],
-      "spokenContent": ["casa", "cidade"],
-      "writtenForms": ["casa", "cidade"],
-      "highlightedStarts": ["C", "C"],
+      "stimuli": [
+        "N0-U01-L08-AUD-001",
+        "N0-U01-L08-AUD-002"
+      ],
+      "spokenContent": [
+        "casa",
+        "cidade"
+      ],
+      "writtenForms": [
+        "casa",
+        "cidade"
+      ],
+      "highlightedStarts": [
+        "C",
+        "C"
+      ],
       "teachingPoint": "A letra C aparece no começo das duas palavras, mas o começo que ouvimos não é o mesmo."
     },
     {
       "relation": "same-letter-different-sound",
-      "stimuli": ["N0-U01-L02-AUD-007", "N0-U01-L08-AUD-003"],
-      "spokenContent": ["gato", "gelo"],
-      "writtenForms": ["gato", "gelo"],
-      "highlightedStarts": ["G", "G"],
+      "stimuli": [
+        "N0-U01-L02-AUD-007",
+        "N0-U01-L08-AUD-003"
+      ],
+      "spokenContent": [
+        "gato",
+        "gelo"
+      ],
+      "writtenForms": [
+        "gato",
+        "gelo"
+      ],
+      "highlightedStarts": [
+        "G",
+        "G"
+      ],
       "teachingPoint": "A letra G aparece no começo das duas palavras, mas o começo que ouvimos é diferente."
     },
     {
       "relation": "similar-sound-different-writing",
-      "stimuli": ["N0-U01-L02-AUD-006", "N0-U01-L08-AUD-002"],
-      "spokenContent": ["sapo", "cidade"],
-      "writtenForms": ["sapo", "cidade"],
-      "highlightedStarts": ["S", "C"],
+      "stimuli": [
+        "N0-U01-L02-AUD-006",
+        "N0-U01-L08-AUD-002"
+      ],
+      "spokenContent": [
+        "sapo",
+        "cidade"
+      ],
+      "writtenForms": [
+        "sapo",
+        "cidade"
+      ],
+      "highlightedStarts": [
+        "S",
+        "C"
+      ],
       "teachingPoint": "Os começos sonoros são semelhantes, mas uma palavra começa com S e a outra com C."
     },
     {
       "relation": "similar-sound-different-writing",
-      "stimuli": ["N0-U01-L08-AUD-001", "N0-U01-L08-AUD-004"],
-      "spokenContent": ["casa", "quilo"],
-      "writtenForms": ["casa", "quilo"],
-      "highlightedStarts": ["C", "QU"],
+      "stimuli": [
+        "N0-U01-L08-AUD-001",
+        "N0-U01-L08-AUD-004"
+      ],
+      "spokenContent": [
+        "casa",
+        "quilo"
+      ],
+      "writtenForms": [
+        "casa",
+        "quilo"
+      ],
+      "highlightedStarts": [
+        "C",
+        "QU"
+      ],
       "teachingPoint": "Os começos sonoros são semelhantes, mas casa começa com C e quilo começa com QU. Nesta etapa basta perceber a diferença de escrita."
     }
   ],
@@ -113,11 +194,23 @@
       "type": "audio-then-writing-demonstration",
       "focus": "listen-then-observe",
       "title": "A mesma letra pode aparecer com sons diferentes",
-      "stimuli": ["N0-U01-L08-AUD-001", "N0-U01-L08-AUD-002"],
-      "spokenContent": ["casa", "cidade"],
+      "stimuli": [
+        "N0-U01-L08-AUD-001",
+        "N0-U01-L08-AUD-002"
+      ],
+      "spokenContent": [
+        "casa",
+        "cidade"
+      ],
       "writtenWordsVisibleBeforeListening": false,
-      "revealAfterListening": ["casa", "cidade"],
-      "highlightedStarts": ["C", "C"],
+      "revealAfterListening": [
+        "casa",
+        "cidade"
+      ],
+      "highlightedStarts": [
+        "C",
+        "C"
+      ],
       "explanation": "Primeiro, ouvimos casa e cidade. Os começos não soam do mesmo jeito. Depois, ao ver a escrita, percebemos que as duas palavras começam com a letra C. Isso mostra que a mesma letra pode representar sons diferentes.",
       "guardRail": "não explicar nesta etapa as regras que determinam as realizações de C; o objetivo é apenas perceber que a relação varia"
     },
@@ -127,13 +220,28 @@
       "focus": "respond",
       "interaction": "audio-judgment-then-writing-reveal",
       "prompt": "Ouça gato e gelo sem ver as palavras. O começo das duas palavras soa igual ou diferente?",
-      "stimuli": ["N0-U01-L02-AUD-007", "N0-U01-L08-AUD-003"],
-      "spokenContent": ["gato", "gelo"],
-      "options": ["igual", "diferente"],
+      "stimuli": [
+        "N0-U01-L02-AUD-007",
+        "N0-U01-L08-AUD-003"
+      ],
+      "spokenContent": [
+        "gato",
+        "gelo"
+      ],
+      "options": [
+        "igual",
+        "diferente"
+      ],
       "correctIndex": 1,
       "writtenWordsVisibleBeforeResponse": false,
-      "afterResponseReveal": ["gato", "gelo"],
-      "highlightedStarts": ["G", "G"],
+      "afterResponseReveal": [
+        "gato",
+        "gelo"
+      ],
+      "highlightedStarts": [
+        "G",
+        "G"
+      ],
       "feedback": "Os começos soam diferentes. Quando a escrita aparece, vemos que as duas palavras começam com G. A mesma letra pode representar sons diferentes."
     },
     {
@@ -148,11 +256,23 @@
       "type": "audio-then-writing-demonstration",
       "focus": "listen-then-observe",
       "title": "Um começo sonoro parecido pode aparecer escrito de outro jeito",
-      "stimuli": ["N0-U01-L02-AUD-006", "N0-U01-L08-AUD-002"],
-      "spokenContent": ["sapo", "cidade"],
+      "stimuli": [
+        "N0-U01-L02-AUD-006",
+        "N0-U01-L08-AUD-002"
+      ],
+      "spokenContent": [
+        "sapo",
+        "cidade"
+      ],
       "writtenWordsVisibleBeforeListening": false,
-      "revealAfterListening": ["sapo", "cidade"],
-      "highlightedStarts": ["S", "C"],
+      "revealAfterListening": [
+        "sapo",
+        "cidade"
+      ],
+      "highlightedStarts": [
+        "S",
+        "C"
+      ],
       "explanation": "Ao ouvir sapo e cidade, percebemos começos sonoros semelhantes. Quando vemos a escrita, porém, sapo começa com S e cidade começa com C. Um som parecido pode aparecer representado de formas diferentes.",
       "guardRail": "não transformar o contraste em regra de escolha entre S e C; a ortografia sistemática pertence a etapas posteriores"
     },
@@ -162,13 +282,28 @@
       "focus": "respond",
       "interaction": "audio-judgment-then-writing-reveal",
       "prompt": "Ouça casa e quilo sem ver as palavras. O começo delas soa parecido ou diferente?",
-      "stimuli": ["N0-U01-L08-AUD-001", "N0-U01-L08-AUD-004"],
-      "spokenContent": ["casa", "quilo"],
-      "options": ["parecido", "diferente"],
+      "stimuli": [
+        "N0-U01-L08-AUD-001",
+        "N0-U01-L08-AUD-004"
+      ],
+      "spokenContent": [
+        "casa",
+        "quilo"
+      ],
+      "options": [
+        "parecido",
+        "diferente"
+      ],
       "correctIndex": 0,
       "writtenWordsVisibleBeforeResponse": false,
-      "afterResponseReveal": ["casa", "quilo"],
-      "highlightedStarts": ["C", "QU"],
+      "afterResponseReveal": [
+        "casa",
+        "quilo"
+      ],
+      "highlightedStarts": [
+        "C",
+        "QU"
+      ],
       "feedback": "O começo sonoro é parecido. Depois da resposta, a escrita mostra que casa começa com C e quilo começa com QU. Não precisamos classificar QU nem explicar a regra agora; basta notar que a escrita pode variar."
     },
     {
@@ -185,7 +320,10 @@
       "interaction": "listen-reveal-relation-classify",
       "title": "O que mudou: o som ou a escrita?",
       "instruction": "Em cada rodada, primeiro ouça as duas palavras sem vê-las escritas e indique se os começos soam parecidos ou diferentes. Depois, revele as palavras e escolha qual relação aparece no par.",
-      "auditoryOptions": ["parecidos", "diferentes"],
+      "auditoryOptions": [
+        "parecidos",
+        "diferentes"
+      ],
       "relationOptions": [
         "a mesma letra aparece no começo, mas o som muda",
         "o começo soa parecido, mas a escrita começa de outro jeito"
@@ -193,35 +331,83 @@
       "writtenWordsVisibleBeforeAuditoryResponse": false,
       "items": [
         {
-          "stimuli": ["N0-U01-L08-AUD-001", "N0-U01-L08-AUD-002"],
-          "spokenContent": ["casa", "cidade"],
+          "stimuli": [
+            "N0-U01-L08-AUD-001",
+            "N0-U01-L08-AUD-002"
+          ],
+          "spokenContent": [
+            "casa",
+            "cidade"
+          ],
           "auditoryCorrect": "diferentes",
-          "reveal": ["casa", "cidade"],
-          "highlightedStarts": ["C", "C"],
+          "reveal": [
+            "casa",
+            "cidade"
+          ],
+          "highlightedStarts": [
+            "C",
+            "C"
+          ],
           "relationCorrectIndex": 0
         },
         {
-          "stimuli": ["N0-U01-L02-AUD-007", "N0-U01-L08-AUD-003"],
-          "spokenContent": ["gato", "gelo"],
+          "stimuli": [
+            "N0-U01-L02-AUD-007",
+            "N0-U01-L08-AUD-003"
+          ],
+          "spokenContent": [
+            "gato",
+            "gelo"
+          ],
           "auditoryCorrect": "diferentes",
-          "reveal": ["gato", "gelo"],
-          "highlightedStarts": ["G", "G"],
+          "reveal": [
+            "gato",
+            "gelo"
+          ],
+          "highlightedStarts": [
+            "G",
+            "G"
+          ],
           "relationCorrectIndex": 0
         },
         {
-          "stimuli": ["N0-U01-L02-AUD-006", "N0-U01-L08-AUD-002"],
-          "spokenContent": ["sapo", "cidade"],
+          "stimuli": [
+            "N0-U01-L02-AUD-006",
+            "N0-U01-L08-AUD-002"
+          ],
+          "spokenContent": [
+            "sapo",
+            "cidade"
+          ],
           "auditoryCorrect": "parecidos",
-          "reveal": ["sapo", "cidade"],
-          "highlightedStarts": ["S", "C"],
+          "reveal": [
+            "sapo",
+            "cidade"
+          ],
+          "highlightedStarts": [
+            "S",
+            "C"
+          ],
           "relationCorrectIndex": 1
         },
         {
-          "stimuli": ["N0-U01-L08-AUD-001", "N0-U01-L08-AUD-004"],
-          "spokenContent": ["casa", "quilo"],
+          "stimuli": [
+            "N0-U01-L08-AUD-001",
+            "N0-U01-L08-AUD-004"
+          ],
+          "spokenContent": [
+            "casa",
+            "quilo"
+          ],
           "auditoryCorrect": "parecidos",
-          "reveal": ["casa", "quilo"],
-          "highlightedStarts": ["C", "QU"],
+          "reveal": [
+            "casa",
+            "quilo"
+          ],
+          "highlightedStarts": [
+            "C",
+            "QU"
+          ],
           "relationCorrectIndex": 1
         }
       ],

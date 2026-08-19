@@ -58,7 +58,7 @@ for (const unitRef of catalog.units) {
 
 const emptyProgress = createEmptyProgress();
 const home = homeHtml(catalog, units, emptyProgress);
-assert.match(home, /Fala, sons e escrita/);
+assert.match(home, /Letras e primeiros sons/);
 assert.match(home, /Literatura, multimodalidade/);
 assert.match(home, /Começar a estudar/);
 assert.equal((home.match(/Começar a estudar/g) || []).length, 1, 'home deve ter um único CTA de início/retomada');
@@ -69,14 +69,14 @@ assert.doesNotMatch(home, />\s*N[0-4]\s*[·•]/, 'home não deve expor código 
 assert.doesNotMatch(home, /Ver plano de estudos/i, 'home não deve duplicar Plano de estudos');
 assert.doesNotMatch(home, /<span class="eyebrow">Modo Clássico<\/span>/, 'home não deve repetir o modo já visível no cabeçalho');
 
-const n0Lesson = await service.loadLesson('N0-U01', 'N0-U01-L01');
+const n0Lesson = await service.loadLesson('N0-U01', 'N0-U01-L03');
 const guidedGroups = buildLessonStepGroups(n0Lesson.runtime.blocks);
 assert.ok(guidedGroups.length >= 3 && guidedGroups.length <= 8, 'lição deve ser segmentada em poucas etapas significativas');
 assert.ok(guidedGroups.length < n0Lesson.runtime.blocks.length, 'segmentação não deve criar uma tela por bloco');
 assert.equal(guidedGroups.flat().length, n0Lesson.runtime.blocks.length, 'segmentação deve preservar todos os blocos');
 assert.ok(guidedGroups.every(group => group.length <= 3), 'etapa não deve acumular conteúdo demais');
-assert.equal(n0Lesson.runtime.presentation.introSource, 'SAFE_FALLBACK', 'conteúdo legado deve usar fallback público seguro até a migração T1.9');
-assert.equal(n0Lesson.runtime.presentation.intro, 'Nesta lição, você vai estudar o conteúdo passo a passo.');
+assert.equal(n0Lesson.runtime.presentation.introSource, 'AUTHORED', 'a nova primeira lição deve usar intro pública autorada');
+assert.equal(n0Lesson.runtime.presentation.intro, 'Entender o que é uma letra e conhecer as letras do alfabeto, seus nomes e sua ordem.');
 assert.notEqual(n0Lesson.runtime.presentation.intro, n0Lesson.runtime.objective);
 
 assert.equal(lessonHasStudyHistory(emptyProgress, n0Lesson.runtime.id), false, 'abrir rota sem evidência não deve contar como lição já iniciada');
@@ -87,13 +87,13 @@ const withLessonHistory = createEmptyProgress();
 withLessonHistory.curriculum.lessons[n0Lesson.runtime.id] = { status: 'EM_ESTUDO' };
 assert.equal(lessonHasStudyHistory(withLessonHistory, n0Lesson.runtime.id), true, 'registro pedagógico existente deve permitir retomada sem repetir intro');
 const withEvidenceHistory = createEmptyProgress();
-withEvidenceHistory.evidence[`${n0Lesson.runtime.id}/L01-A01`] = { status: 'PRATICADA' };
+withEvidenceHistory.evidence[`${n0Lesson.runtime.id}/L03-A01`] = { status: 'PRATICADA' };
 assert.equal(lessonHasStudyHistory(withEvidenceHistory, n0Lesson.runtime.id), true, 'evidência existente deve ser reconhecida como histórico de estudo');
 
 const n0Verification = await service.loadVerification('N0-U01');
-const n0Html = documentHtml(n0Verification.runtime, { unitId: 'N0-U01', unitTitle: 'Fala, sons e escrita', verification: true });
-assert.match(n0Html, /Áudio controlado pendente/);
-assert.match(n0Html, /N0-U01-V01-AUD-/);
+const n0Html = documentHtml(n0Verification.runtime, { unitId: 'N0-U01', unitTitle: 'Letras e primeiros sons', verification: true });
+assert.match(n0Html, /Áudio ainda não disponível/);
+assert.doesNotMatch(n0Html, /N0-U01-V01-AUD-/);
 
 const n4Lesson = await service.loadLesson('N4-U09', 'N4-U09-L01');
 const n4Html = documentHtml(n4Lesson.runtime, { unitId: 'N4-U09', unitTitle: 'Literatura, multimodalidade, autoria intermedial e digital' });
@@ -102,6 +102,6 @@ assert.match(n4Html, /Registrar resposta/i);
 assert.equal(typeof n4Lesson.runtime.presentation?.intro, 'string');
 assert.notEqual(n4Lesson.runtime.presentation.intro, n4Lesson.runtime.objective);
 
-assert.equal(lessonCount, 20);
-assert.equal(verificationCount, 2);
+assert.equal(lessonCount, 29);
+assert.equal(verificationCount, 3);
 console.log(`Renderer clássico: ${lessonCount} lições + ${verificationCount} verificações, apresentação pública T1.7 e retomada segura validadas.`);

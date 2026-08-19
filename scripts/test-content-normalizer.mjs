@@ -30,7 +30,7 @@ const n4Unit = readJson('schemas/fixtures/p1/unit-n4-u09.json');
 const n0CompetencyIds = n0Unit.competencies.map(item => item.id);
 const n4CompetencyIds = n4Unit.competencies.map(item => item.id);
 
-const n0LessonSource = readJson('content/units/001-fala-sons-escrita/lessons/001-fala-e-escrita.json');
+const n0LessonSource = readJson('content/units/001-fala-sons-escrita/legacy/lessons/001-fala-e-escrita.json');
 const n0LessonAnchor = readJson('schemas/fixtures/p1/lesson-n0-u01-l01.normalized.json');
 const n0Lesson = normalizeLessonV1(n0LessonSource, { competencyIds: n0CompetencyIds });
 assertSchema(lessonSchema, n0Lesson, 'N0-U01-L01 runtime');

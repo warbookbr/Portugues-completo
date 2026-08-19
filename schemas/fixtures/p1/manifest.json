@@ -6,54 +6,85 @@
       "id": "P1-COURSE-V2",
       "schema": "schemas/course.schema.json",
       "data": "schemas/fixtures/p1/course-v2-slice.json",
-      "sources": ["content/course.json"],
-      "compatibility": {"expectSourceSchemaVersion": 2, "expectSameId": true}
+      "sources": [
+        "content/course.json"
+      ],
+      "compatibility": {
+        "expectSourceSchemaVersion": 2,
+        "expectSameId": true
+      }
     },
     {
       "id": "P1-UNIT-N0-U01",
       "schema": "schemas/unit.schema.json",
       "data": "schemas/fixtures/p1/unit-n0-u01.json",
-      "sources": ["content/units/001-fala-sons-escrita"]
+      "sources": [
+        "content/units/001-fala-sons-escrita"
+      ]
     },
     {
       "id": "P1-UNIT-N4-U09",
       "schema": "schemas/unit.schema.json",
       "data": "schemas/fixtures/p1/unit-n4-u09.json",
-      "sources": ["content/units/409-literatura-multimodalidade-autoria-intermedial-digital"]
+      "sources": [
+        "content/units/409-literatura-multimodalidade-autoria-intermedial-digital"
+      ]
     },
     {
       "id": "P1-LESSON-N0-U01-L01",
       "schema": "schemas/lesson.schema.json",
       "data": "schemas/fixtures/p1/lesson-n0-u01-l01.normalized.json",
-      "sources": ["content/units/001-fala-sons-escrita/lessons/001-fala-e-escrita.json"],
-      "compatibility": {"expectSourceSchemaVersion": 1, "expectSameId": true}
+      "sources": [
+        "content/units/001-fala-sons-escrita/legacy/lessons/001-fala-e-escrita.json"
+      ],
+      "compatibility": {
+        "expectSourceSchemaVersion": 1,
+        "expectSameId": true
+      }
     },
     {
       "id": "P1-LESSON-N4-U09-L01",
       "schema": "schemas/lesson.schema.json",
       "data": "schemas/fixtures/p1/lesson-n4-u09-l01.normalized.json",
-      "sources": ["content/units/409-literatura-multimodalidade-autoria-intermedial-digital/lessons/001-interpretacao-literaria-autonoma-evidencia.json"],
-      "compatibility": {"expectSourceSchemaVersion": 1, "expectSameId": true}
+      "sources": [
+        "content/units/409-literatura-multimodalidade-autoria-intermedial-digital/lessons/001-interpretacao-literaria-autonoma-evidencia.json"
+      ],
+      "compatibility": {
+        "expectSourceSchemaVersion": 1,
+        "expectSameId": true
+      }
     },
     {
       "id": "P1-VERIFICATION-N0-U01",
       "schema": "schemas/verification.schema.json",
       "data": "schemas/fixtures/p1/verification-n0-u01.normalized.json",
-      "sources": ["content/units/001-fala-sons-escrita/integrated-verification.json"],
-      "compatibility": {"expectSourceSchemaVersion": 1, "expectSameId": true}
+      "sources": [
+        "content/units/001-fala-sons-escrita/integrated-verification.json"
+      ],
+      "compatibility": {
+        "expectSourceSchemaVersion": 1,
+        "expectSameId": true
+      }
     },
     {
       "id": "P1-VERIFICATION-N4-U09",
       "schema": "schemas/verification.schema.json",
       "data": "schemas/fixtures/p1/verification-n4-u09.normalized.json",
-      "sources": ["content/units/409-literatura-multimodalidade-autoria-intermedial-digital/integrated-verification.json"],
-      "compatibility": {"expectSourceSchemaVersion": 1, "expectSameId": true}
+      "sources": [
+        "content/units/409-literatura-multimodalidade-autoria-intermedial-digital/integrated-verification.json"
+      ],
+      "compatibility": {
+        "expectSourceSchemaVersion": 1,
+        "expectSameId": true
+      }
     },
     {
       "id": "P1-PROGRESS-V1",
       "schema": "schemas/progress.schema.json",
       "data": "schemas/fixtures/p1/progress-v1.json",
-      "sources": ["docs/persistencia-progresso.md"]
+      "sources": [
+        "docs/persistencia-progresso.md"
+      ]
     }
   ]
 }

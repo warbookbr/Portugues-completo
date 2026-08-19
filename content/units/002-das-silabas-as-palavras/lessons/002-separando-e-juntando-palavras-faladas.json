@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "N0-U02-L02",
-  "title": "Separando e juntando palavras faladas",
+  "title": "Separando e juntando sílabas",
   "status": "conteudo-pronto-para-implementacao",
   "objective": "Operar sobre sílabas percebidas na fala: separar palavras simples em partes sonoras ordenadas e recombinar essas partes para recuperar a palavra inteira, ainda sem depender da escrita.",
   "competencies": [
@@ -10,7 +10,9 @@
     "perceber que a ordem das partes importa para reconstruir a palavra",
     "usar a segmentação oral como ferramenta sem depender de grafia silabificada"
   ],
-  "prerequisites": ["N0-U02-L01"],
+  "prerequisites": [
+    "N0-U02-L01"
+  ],
   "limits": [
     "não mostrar grafia silabificada como pista antes da Lição 3",
     "não exigir escrita ou leitura das palavras usadas nas tarefas",
@@ -53,7 +55,16 @@
         "type": "AUDIO_CONTROLADO",
         "requiredForPublication": true,
         "purpose": "fornecer fichas de sílabas contextuais às palavras-alvo e duas palavras inteiras novas, mantendo a realização sonora de cada parte coerente com a palavra de origem",
-        "locations": ["L02-B02", "L02-C01", "L02-B03", "L02-C02", "L02-C03", "L02-A01", "L02-A02", "L02-P01"],
+        "locations": [
+          "L02-B02",
+          "L02-C01",
+          "L02-B03",
+          "L02-C02",
+          "L02-C03",
+          "L02-A01",
+          "L02-A02",
+          "L02-P01"
+        ],
         "productionSource": "producao-midia/FILA-MIDIA.md"
       },
       {
@@ -65,21 +76,45 @@
         "type": "AUDIO_CONTROLADO",
         "requiredForPublication": true,
         "purpose": "reutilizar as palavras inteiras pato, mala e gato já previstas no lote da Unidade 1, evitando duplicação de gravação",
-        "locations": ["L02-B02", "L02-C01", "L02-B03", "L02-C02", "L02-C03", "L02-A01", "L02-A02", "L02-P01"],
+        "locations": [
+          "L02-B02",
+          "L02-C01",
+          "L02-B03",
+          "L02-C02",
+          "L02-C03",
+          "L02-A01",
+          "L02-A02",
+          "L02-P01"
+        ],
         "productionSource": "producao-midia/FILA-MIDIA.md"
       }
     ],
     "runtimeResources": [
       {
         "type": "TTS_OK",
-        "locations": ["instruções", "explicações", "feedback", "resumo", "L02-P01"],
+        "locations": [
+          "instruções",
+          "explicações",
+          "feedback",
+          "resumo",
+          "L02-P01"
+        ],
         "purpose": "dar suporte textual e convidar à repetição oral opcional sem substituir os estímulos auditivos que determinam as respostas"
       }
     ],
     "generatedVisualResources": [
       {
         "type": "UI_RENDERED_AUDIO_TOKENS",
-        "locations": ["L02-B02", "L02-C01", "L02-B03", "L02-C02", "L02-C03", "L02-A01", "L02-A02", "L02-P01"],
+        "locations": [
+          "L02-B02",
+          "L02-C01",
+          "L02-B03",
+          "L02-C02",
+          "L02-C03",
+          "L02-A01",
+          "L02-A02",
+          "L02-P01"
+        ],
         "purpose": "representar cada sílaba como ficha neutra clicável que reproduz áudio; a ficha não deve exibir letras ou grafia da sílaba"
       }
     ],
@@ -88,25 +123,102 @@
     "decisionRationale": "esta lição precisa que o aluno opere sobre partes sonoras sem apoio da escrita. As fichas são contextuais à palavra para evitar supor que sílabas grafadas de modo igual tenham automaticamente a mesma realização em contextos diferentes. TTS variável não é adequado para os estímulos que determinam a resposta. Não há ganho pedagógico em imagem ou vídeo."
   },
   "audioTokenSet": [
-    {"mediaId": "N0-U02-L02-AUD-001", "spokenContent": "ga", "sourceWord": "gato", "position": 1},
-    {"mediaId": "N0-U02-L02-AUD-002", "spokenContent": "to", "sourceWord": "gato", "position": 2},
-    {"mediaId": "N0-U02-L02-AUD-003", "spokenContent": "ma", "sourceWord": "mala", "position": 1},
-    {"mediaId": "N0-U02-L02-AUD-004", "spokenContent": "la", "sourceWord": "mala", "position": 2},
-    {"mediaId": "N0-U02-L02-AUD-005", "spokenContent": "pa", "sourceWord": "pato", "position": 1},
-    {"mediaId": "N0-U02-L02-AUD-006", "spokenContent": "to", "sourceWord": "pato", "position": 2},
-    {"mediaId": "N0-U02-L02-AUD-007", "spokenContent": "bo", "sourceWord": "boneca", "position": 1},
-    {"mediaId": "N0-U02-L02-AUD-008", "spokenContent": "ne", "sourceWord": "boneca", "position": 2},
-    {"mediaId": "N0-U02-L02-AUD-009", "spokenContent": "ca", "sourceWord": "boneca", "position": 3},
-    {"mediaId": "N0-U02-L02-AUD-010", "spokenContent": "to", "sourceWord": "tomate", "position": 1},
-    {"mediaId": "N0-U02-L02-AUD-011", "spokenContent": "ma", "sourceWord": "tomate", "position": 2},
-    {"mediaId": "N0-U02-L02-AUD-012", "spokenContent": "te", "sourceWord": "tomate", "position": 3},
-    {"mediaId": "N0-U02-L02-AUD-013", "spokenContent": "boneca", "role": "whole-word-new"},
-    {"mediaId": "N0-U02-L02-AUD-014", "spokenContent": "tomate", "role": "whole-word-new"}
+    {
+      "mediaId": "N0-U02-L02-AUD-001",
+      "spokenContent": "ga",
+      "sourceWord": "gato",
+      "position": 1
+    },
+    {
+      "mediaId": "N0-U02-L02-AUD-002",
+      "spokenContent": "to",
+      "sourceWord": "gato",
+      "position": 2
+    },
+    {
+      "mediaId": "N0-U02-L02-AUD-003",
+      "spokenContent": "ma",
+      "sourceWord": "mala",
+      "position": 1
+    },
+    {
+      "mediaId": "N0-U02-L02-AUD-004",
+      "spokenContent": "la",
+      "sourceWord": "mala",
+      "position": 2
+    },
+    {
+      "mediaId": "N0-U02-L02-AUD-005",
+      "spokenContent": "pa",
+      "sourceWord": "pato",
+      "position": 1
+    },
+    {
+      "mediaId": "N0-U02-L02-AUD-006",
+      "spokenContent": "to",
+      "sourceWord": "pato",
+      "position": 2
+    },
+    {
+      "mediaId": "N0-U02-L02-AUD-007",
+      "spokenContent": "bo",
+      "sourceWord": "boneca",
+      "position": 1
+    },
+    {
+      "mediaId": "N0-U02-L02-AUD-008",
+      "spokenContent": "ne",
+      "sourceWord": "boneca",
+      "position": 2
+    },
+    {
+      "mediaId": "N0-U02-L02-AUD-009",
+      "spokenContent": "ca",
+      "sourceWord": "boneca",
+      "position": 3
+    },
+    {
+      "mediaId": "N0-U02-L02-AUD-010",
+      "spokenContent": "to",
+      "sourceWord": "tomate",
+      "position": 1
+    },
+    {
+      "mediaId": "N0-U02-L02-AUD-011",
+      "spokenContent": "ma",
+      "sourceWord": "tomate",
+      "position": 2
+    },
+    {
+      "mediaId": "N0-U02-L02-AUD-012",
+      "spokenContent": "te",
+      "sourceWord": "tomate",
+      "position": 3
+    },
+    {
+      "mediaId": "N0-U02-L02-AUD-013",
+      "spokenContent": "boneca",
+      "role": "whole-word-new"
+    },
+    {
+      "mediaId": "N0-U02-L02-AUD-014",
+      "spokenContent": "tomate",
+      "role": "whole-word-new"
+    }
   ],
   "wholeWordReuse": [
-    {"mediaId": "N0-U01-L02-AUD-007", "spokenContent": "gato"},
-    {"mediaId": "N0-U01-L02-AUD-003", "spokenContent": "mala"},
-    {"mediaId": "N0-U01-L02-AUD-001", "spokenContent": "pato"}
+    {
+      "mediaId": "N0-U01-L02-AUD-007",
+      "spokenContent": "gato"
+    },
+    {
+      "mediaId": "N0-U01-L02-AUD-003",
+      "spokenContent": "mala"
+    },
+    {
+      "mediaId": "N0-U01-L02-AUD-001",
+      "spokenContent": "pato"
+    }
   ],
   "sequence": [
     {
@@ -122,8 +234,14 @@
       "title": "Separar é encontrar as partes e manter a ordem",
       "wholeWordAudio": "N0-U01-L02-AUD-007",
       "spokenContent": "gato",
-      "availableAudioTokens": ["N0-U02-L02-AUD-001", "N0-U02-L02-AUD-002"],
-      "correctTokenOrder": ["N0-U02-L02-AUD-001", "N0-U02-L02-AUD-002"],
+      "availableAudioTokens": [
+        "N0-U02-L02-AUD-001",
+        "N0-U02-L02-AUD-002"
+      ],
+      "correctTokenOrder": [
+        "N0-U02-L02-AUD-001",
+        "N0-U02-L02-AUD-002"
+      ],
       "writtenWordVisible": false,
       "explanation": "Ouvimos gato. Depois ouvimos duas fichas com as duas partes sonoras da palavra. Quando reconhecemos essas partes na mesma ordem, estamos separando a palavra em sílabas.",
       "guardRail": "as fichas devem mostrar apenas um controle neutro de áudio; não exibir GA ou TO"
@@ -132,12 +250,19 @@
       "id": "L02-C01",
       "type": "quick-check",
       "focus": "listen-and-respond",
-      "interaction": "whole-word-to-ordered-audio-tokens",
+      "interaction": "sequence",
       "prompt": "Ouça mala. Entre as fichas de áudio disponíveis, escolha as duas partes que formam a palavra e coloque-as na ordem em que você ouve.",
       "wholeWordAudio": "N0-U01-L02-AUD-003",
       "spokenContent": "mala",
-      "availableAudioTokens": ["N0-U02-L02-AUD-003", "N0-U02-L02-AUD-004", "N0-U02-L02-AUD-001"],
-      "correctTokenOrder": ["N0-U02-L02-AUD-003", "N0-U02-L02-AUD-004"],
+      "availableAudioTokens": [
+        "N0-U02-L02-AUD-003",
+        "N0-U02-L02-AUD-004",
+        "N0-U02-L02-AUD-001"
+      ],
+      "correctSequence": [
+        "N0-U02-L02-AUD-003",
+        "N0-U02-L02-AUD-004"
+      ],
       "writtenWordVisibleBeforeResponse": false,
       "repeatAudio": true,
       "feedback": "As duas fichas corretas apresentam as partes de mala na ordem certa."
@@ -147,7 +272,10 @@
       "type": "audio-token-recombination-demonstration",
       "focus": "listen-then-identify",
       "title": "Juntar é recuperar a palavra inteira",
-      "audioTokens": ["N0-U02-L02-AUD-005", "N0-U02-L02-AUD-006"],
+      "audioTokens": [
+        "N0-U02-L02-AUD-005",
+        "N0-U02-L02-AUD-006"
+      ],
       "wholeWordAudio": "N0-U01-L02-AUD-001",
       "wholeSpokenContent": "pato",
       "writtenWordVisible": false,
@@ -157,11 +285,22 @@
       "id": "L02-C02",
       "type": "quick-check",
       "focus": "listen-and-respond",
-      "interaction": "ordered-audio-tokens-to-whole-word",
+      "interaction": "single-choice",
       "prompt": "Ouça as duas fichas na ordem apresentada. Qual palavra inteira elas formam?",
-      "audioTokens": ["N0-U02-L02-AUD-001", "N0-U02-L02-AUD-002"],
-      "wholeWordOptions": ["N0-U01-L02-AUD-007", "N0-U01-L02-AUD-003", "N0-U01-L02-AUD-001"],
-      "optionSpokenContent": ["gato", "mala", "pato"],
+      "audioTokens": [
+        "N0-U02-L02-AUD-001",
+        "N0-U02-L02-AUD-002"
+      ],
+      "wholeWordOptions": [
+        "N0-U01-L02-AUD-007",
+        "N0-U01-L02-AUD-003",
+        "N0-U01-L02-AUD-001"
+      ],
+      "optionSpokenContent": [
+        "gato",
+        "mala",
+        "pato"
+      ],
       "correctIndex": 0,
       "writtenWordsVisibleBeforeResponse": false,
       "repeatAudio": true,
@@ -178,13 +317,19 @@
       "id": "L02-C03",
       "type": "quick-check",
       "focus": "listen-and-respond",
-      "interaction": "audio-token-order-choice",
+      "interaction": "single-choice",
       "prompt": "Ouça pato. Qual ordem de fichas reconstrói a palavra?",
       "wholeWordAudio": "N0-U01-L02-AUD-001",
       "spokenContent": "pato",
       "options": [
-        ["N0-U02-L02-AUD-005", "N0-U02-L02-AUD-006"],
-        ["N0-U02-L02-AUD-006", "N0-U02-L02-AUD-005"]
+        [
+          "N0-U02-L02-AUD-005",
+          "N0-U02-L02-AUD-006"
+        ],
+        [
+          "N0-U02-L02-AUD-006",
+          "N0-U02-L02-AUD-005"
+        ]
       ],
       "correctIndex": 0,
       "writtenWordVisibleBeforeResponse": false,
@@ -197,7 +342,10 @@
       "focus": "listen-and-optionally-speak",
       "title": "Se quiser, experimente falar junto",
       "instruction": "Ouça as duas fichas de gato. Se puder e quiser, repita as duas partes em voz alta e depois diga a palavra inteira sem pausa. Em seguida, ouça gato para se conferir.",
-      "audioTokens": ["N0-U02-L02-AUD-001", "N0-U02-L02-AUD-002"],
+      "audioTokens": [
+        "N0-U02-L02-AUD-001",
+        "N0-U02-L02-AUD-002"
+      ],
       "wholeWordAudio": "N0-U01-L02-AUD-007",
       "requiredForCompletion": false,
       "microphoneRequired": false,
@@ -207,7 +355,7 @@
       "id": "L02-A01",
       "type": "guided-activity",
       "focus": "listen-and-operate",
-      "interaction": "whole-word-to-ordered-audio-tokens",
+      "interaction": "composite",
       "title": "Separe a palavra",
       "instruction": "Ouça a palavra inteira e selecione, na ordem, as fichas de áudio que representam suas sílabas. Você pode ouvir tudo novamente quantas vezes precisar.",
       "writtenWordsVisibleBeforeResponse": false,
@@ -215,26 +363,58 @@
         {
           "wholeWordAudio": "N0-U01-L02-AUD-007",
           "spokenContent": "gato",
-          "availableAudioTokens": ["N0-U02-L02-AUD-001", "N0-U02-L02-AUD-002", "N0-U02-L02-AUD-003"],
-          "correctTokenOrder": ["N0-U02-L02-AUD-001", "N0-U02-L02-AUD-002"]
+          "availableAudioTokens": [
+            "N0-U02-L02-AUD-001",
+            "N0-U02-L02-AUD-002",
+            "N0-U02-L02-AUD-003"
+          ],
+          "correctSequence": [
+            "N0-U02-L02-AUD-001",
+            "N0-U02-L02-AUD-002"
+          ]
         },
         {
           "wholeWordAudio": "N0-U01-L02-AUD-003",
           "spokenContent": "mala",
-          "availableAudioTokens": ["N0-U02-L02-AUD-003", "N0-U02-L02-AUD-004", "N0-U02-L02-AUD-005"],
-          "correctTokenOrder": ["N0-U02-L02-AUD-003", "N0-U02-L02-AUD-004"]
+          "availableAudioTokens": [
+            "N0-U02-L02-AUD-003",
+            "N0-U02-L02-AUD-004",
+            "N0-U02-L02-AUD-005"
+          ],
+          "correctSequence": [
+            "N0-U02-L02-AUD-003",
+            "N0-U02-L02-AUD-004"
+          ]
         },
         {
           "wholeWordAudio": "N0-U02-L02-AUD-013",
           "spokenContent": "boneca",
-          "availableAudioTokens": ["N0-U02-L02-AUD-007", "N0-U02-L02-AUD-008", "N0-U02-L02-AUD-009", "N0-U02-L02-AUD-002"],
-          "correctTokenOrder": ["N0-U02-L02-AUD-007", "N0-U02-L02-AUD-008", "N0-U02-L02-AUD-009"]
+          "availableAudioTokens": [
+            "N0-U02-L02-AUD-007",
+            "N0-U02-L02-AUD-008",
+            "N0-U02-L02-AUD-009",
+            "N0-U02-L02-AUD-002"
+          ],
+          "correctSequence": [
+            "N0-U02-L02-AUD-007",
+            "N0-U02-L02-AUD-008",
+            "N0-U02-L02-AUD-009"
+          ]
         },
         {
           "wholeWordAudio": "N0-U02-L02-AUD-014",
           "spokenContent": "tomate",
-          "availableAudioTokens": ["N0-U02-L02-AUD-010", "N0-U02-L02-AUD-011", "N0-U02-L02-AUD-012", "N0-U02-L02-AUD-001"],
-          "correctTokenOrder": ["N0-U02-L02-AUD-010", "N0-U02-L02-AUD-011", "N0-U02-L02-AUD-012"]
+          "availableAudioTokens": [
+            "N0-U02-L02-AUD-010",
+            "N0-U02-L02-AUD-011",
+            "N0-U02-L02-AUD-012",
+            "N0-U02-L02-AUD-001"
+          ],
+          "correctSequence": [
+            "N0-U02-L02-AUD-010",
+            "N0-U02-L02-AUD-011",
+            "N0-U02-L02-AUD-012"
+          ]
         }
       ],
       "repeatAudio": true,
@@ -244,29 +424,59 @@
       "id": "L02-A02",
       "type": "guided-activity",
       "focus": "listen-and-respond",
-      "interaction": "ordered-audio-tokens-to-whole-word",
+      "interaction": "composite",
       "title": "Junte as partes",
       "instruction": "Ouça as fichas na ordem apresentada e escolha qual palavra inteira elas formam. Todas as opções são apresentadas por áudio, sem depender da escrita.",
       "writtenWordsVisibleBeforeResponse": false,
       "items": [
         {
-          "audioTokens": ["N0-U02-L02-AUD-005", "N0-U02-L02-AUD-006"],
-          "wholeWordOptions": ["N0-U01-L02-AUD-001", "N0-U01-L02-AUD-007", "N0-U01-L02-AUD-003"],
+          "audioTokens": [
+            "N0-U02-L02-AUD-005",
+            "N0-U02-L02-AUD-006"
+          ],
+          "wholeWordOptions": [
+            "N0-U01-L02-AUD-001",
+            "N0-U01-L02-AUD-007",
+            "N0-U01-L02-AUD-003"
+          ],
           "correctIndex": 0
         },
         {
-          "audioTokens": ["N0-U02-L02-AUD-007", "N0-U02-L02-AUD-008", "N0-U02-L02-AUD-009"],
-          "wholeWordOptions": ["N0-U02-L02-AUD-013", "N0-U02-L02-AUD-014", "N0-U01-L02-AUD-001"],
+          "audioTokens": [
+            "N0-U02-L02-AUD-007",
+            "N0-U02-L02-AUD-008",
+            "N0-U02-L02-AUD-009"
+          ],
+          "wholeWordOptions": [
+            "N0-U02-L02-AUD-013",
+            "N0-U02-L02-AUD-014",
+            "N0-U01-L02-AUD-001"
+          ],
           "correctIndex": 0
         },
         {
-          "audioTokens": ["N0-U02-L02-AUD-010", "N0-U02-L02-AUD-011", "N0-U02-L02-AUD-012"],
-          "wholeWordOptions": ["N0-U02-L02-AUD-014", "N0-U02-L02-AUD-013", "N0-U01-L02-AUD-007"],
+          "audioTokens": [
+            "N0-U02-L02-AUD-010",
+            "N0-U02-L02-AUD-011",
+            "N0-U02-L02-AUD-012"
+          ],
+          "wholeWordOptions": [
+            "N0-U02-L02-AUD-014",
+            "N0-U02-L02-AUD-013",
+            "N0-U01-L02-AUD-007"
+          ],
           "correctIndex": 0
         },
         {
-          "audioTokens": ["N0-U02-L02-AUD-003", "N0-U02-L02-AUD-004"],
-          "wholeWordOptions": ["N0-U01-L02-AUD-003", "N0-U01-L02-AUD-001", "N0-U01-L02-AUD-007"],
+          "audioTokens": [
+            "N0-U02-L02-AUD-003",
+            "N0-U02-L02-AUD-004"
+          ],
+          "wholeWordOptions": [
+            "N0-U01-L02-AUD-003",
+            "N0-U01-L02-AUD-001",
+            "N0-U01-L02-AUD-007"
+          ],
           "correctIndex": 0
         }
       ],
@@ -290,7 +500,28 @@
   "completionEvidence": {
     "observablePerformance": "Selecionar e ordenar sílabas em áudio para segmentar palavras faladas e identificar palavras inteiras formadas pela recombinação de duas ou três sílabas, sem depender de grafia.",
     "criterion": "acertar L02-C01, L02-C02 e L02-C03 e pelo menos 3 dos 4 itens de L02-A01 e 3 dos 4 itens de L02-A02 após oportunidade de repetir os áudios e corrigir erros",
-    "notSufficient": "apenas contar sílabas, reconhecer palavras pela escrita, repetir uma sequência decorada ou concluir a prática oral opcional sem demonstrar segmentação e recombinação nas atividades"
+    "notSufficient": "apenas contar sílabas, reconhecer palavras pela escrita, repetir uma sequência decorada ou concluir a prática oral opcional sem demonstrar segmentação e recombinação nas atividades",
+    "clusters": {
+      "segmentAndRecombine": {
+        "evidence": [
+          "L02-C01",
+          "L02-C02",
+          "L02-C03",
+          "L02-A01",
+          "L02-A02"
+        ],
+        "required": true
+      }
+    },
+    "nonCompensable": true,
+    "activityPolicies": {
+      "L02-A01": {
+        "threshold": 0.75
+      },
+      "L02-A02": {
+        "threshold": 0.75
+      }
+    }
   },
   "implementationGuardRails": [
     "spokenContent, sourceWord e position são metadados pedagógicos e não devem ser exibidos automaticamente antes das respostas auditivas",
@@ -300,5 +531,6 @@
     "não avaliar sincronização motora, rapidez ou qualidade de pronúncia",
     "a prática em voz alta é opcional e não usa microfone como requisito",
     "não antecipar grafia silabificada; essa relação começa na Lição 3"
-  ]
+  ],
+  "studentObjective": "Aprender a separar uma palavra em sílabas e juntar as sílabas novamente para formar a palavra."
 }
