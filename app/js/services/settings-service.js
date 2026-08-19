@@ -10,7 +10,12 @@ const defaults = {
   voiceURI: '',
   rate: 1,
   pitch: 1,
-  volume: 1
+  volume: 1,
+  aiFeedbackEnabled: false,
+  aiProvider: 'openai-companion',
+  aiModel: 'gpt-5.6-terra',
+  aiEndpoint: 'http://127.0.0.1:43117/feedback',
+  aiFeedbackConsentVersion: null
 };
 
 let settings = load();
