@@ -1,4 +1,4 @@
-name: Apply P7 U04 test fix
+name: Apply P7 U04 public UI fix
 
 on:
   pull_request:
@@ -22,16 +22,16 @@ jobs:
         with:
           node-version: '24'
           package-manager-cache: false
-      - name: Align lesson assertions with progress contract
-        run: python3 scripts/p7-u04-test-fix-status.py
-      - name: Refine L04 aggregate case
-        run: python3 scripts/p7-u04-test-fix-l04.py
-      - name: Test N0-U04 evidence semantics
-        run: node scripts/test-p7-u04-evidence.mjs
-      - name: Commit semantic test fix
+      - name: Apply public UI fix
+        run: python3 scripts/p7-u04-public-ui-fix.py
+      - name: Test classic renderer
+        run: node scripts/test-classic-renderer.mjs
+      - name: Capture N0-U04 visual smoke
+        run: bash scripts/capture-p7-u04-visuals.sh
+      - name: Commit public UI fix
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add scripts/test-p7-u04-evidence.mjs
-          git commit -m 'test(p7): fecha semântica agregada da N0-U04'
+          git add app/js/ui/classic-renderer.js scripts/test-classic-renderer.mjs scripts/capture-p7-u04-visuals.sh
+          git commit -m 'fix(p7): limpa linguagem pública da N0-U04'
           git push origin HEAD:p7-n0-u04-catalog
