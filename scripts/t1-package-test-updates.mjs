@@ -16,6 +16,7 @@ replaceOnce("assert.equal(n0Lesson.runtime.presentation.intro, 'Nesta lição, v
 replaceOnce('withEvidenceHistory.evidence[`${n0Lesson.runtime.id}/L01-A01`] = { status: \'PRATICADA\' };', 'withEvidenceHistory.evidence[`${n0Lesson.runtime.id}/L03-A01`] = { status: \'PRATICADA\' };');
 replaceOnce("const n0Html = documentHtml(n0Verification.runtime, { unitId: 'N0-U01', unitTitle: 'Fala, sons e escrita', verification: true });", "const n0Html = documentHtml(n0Verification.runtime, { unitId: 'N0-U01', unitTitle: 'Letras e primeiros sons', verification: true });");
 replaceOnce('assert.match(n0Html, /Áudio controlado pendente/);', 'assert.match(n0Html, /Áudio ainda não disponível/);');
+replaceOnce('assert.match(n0Html, /N0-U01-V01-AUD-/);', 'assert.doesNotMatch(n0Html, /N0-U01-V01-AUD-/);');
 replaceOnce('assert.equal(lessonCount, 20);', 'assert.equal(lessonCount, 29);');
 replaceOnce('assert.equal(verificationCount, 2);', 'assert.equal(verificationCount, 3);');
 
