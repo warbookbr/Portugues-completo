@@ -99,6 +99,9 @@ jobs:
       - name: Test P7 N0-U05 public UI
         run: node scripts/test-p7-u05-public-ui.mjs
 
+      - name: Test P7 N0-U05 homologation
+        run: node scripts/test-p7-u05-homologation.mjs
+
       - name: Test progress policies
         run: node scripts/test-progress-policies.mjs
 
