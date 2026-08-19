@@ -22,7 +22,7 @@ Português Completo
 ## Estado e execução
 
 - `docs/roadmap-curricular.md` — estado/maturidade do currículo N0→N4; fechado em M5, com revisão dirigida da porta de entrada N0 autorizada por T1.
-- `docs/roadmap-produto.md` — ordem e condições dos marcos da fase de produto/publicação; P1–P5 e T1 homologados, P6 ativo.
+- `docs/roadmap-produto.md` — ordem e condições dos marcos da fase de produto/publicação; P1–P6 e T1 homologados, P7 ativo por lotes incrementais.
 - `docs/plano-fundamentos-claros.md` — plano transversal **homologado** que reorganizou a entrada N0, linguagem pedagógica, abertura de lição, Metodologia e compatibilidade de progresso/IDs.
 - `docs/auditoria-t1-1-porta-entrada-n0.md` — **decisão da T1.1**: pesquisa/auditoria da entrada N0, nova espinha recomendada, impactos técnicos e direção para o redimensionamento T1.2.
 - `docs/redimensionamento-t1-2-n0.md` — **arquitetura congelada da T1.2**: novas responsabilidades de U1/U2, ordem das lições, verificações V02 e matriz de identidade/migração.
@@ -34,6 +34,7 @@ Português Completo
 - `docs/p6-transporte-ia.md` — **contrato técnico vigente do transporte P6**: serviço neutro, companion local, proteção da API key, structured output e fronteira de autoridade da IA.
 - `docs/homologacao-p6-2.md` — **homologação da P6.2**: opt-in/consentimento, piloto N4-U09, neutralidade do progresso e inspeção visual dos estados de IA.
 - `docs/homologacao-p6.md` — **homologação final do P6**: segurança, consentimento, transporte, piloto, falha segura, neutralidade curricular e gate transversal antes do P7.
+- `docs/homologacao-p7-n0-u03.md` — **homologação do primeiro lote P7**: N0-U03 publicada, adapter legado, evidência agregada, renderer, linguagem pública, mídia e inspeção visual.
 - `docs/execucao-continua.md` — execução autônoma por marcos autorizados.
 - `.ChatGPT/skills/fundamentos-claros/SKILL.md` — histórico operacional do T1 homologado e referência para regressões futuras da entrada clara.
 - `.ChatGPT/skills/classic-product-delivery/SKILL.md` — procedimento operacional obrigatório para implementar P1→P9 do Clássico sem perder estado.
