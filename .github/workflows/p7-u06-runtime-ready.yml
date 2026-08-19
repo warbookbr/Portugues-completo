@@ -1,0 +1,58 @@
+name: Gate P7 U06 runtime ready
+
+on:
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  ready:
+    if: github.head_ref == 'p7-n0-u06-catalog' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          ref: p7-n0-u06-catalog
+          fetch-depth: 0
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+          package-manager-cache: false
+      - name: Require permanent U06 runtime capabilities
+        run: |
+          grep -Fq 'function hasOralRehearsal(block)' app/js/services/content-normalizer-v1.js
+          grep -Fq "'N0-U06-V01':" app/js/services/content-normalization-rules-v1.js
+          grep -Fq 'function renderOralRehearsal(block)' app/js/ui/classic-renderer.js
+          grep -Fq 'function revealPostAttemptTranscripts(form, block)' app/js/ui/classic-renderer.js
+          grep -Fq 'oralRehearsalDone' app/js/ui/classic-progress-binding.js
+      - name: Validate U06 semantics
+        run: |
+          node scripts/validate-contracts.mjs
+          node scripts/audit-p7-n0-u06.mjs
+          node scripts/test-p7-u06-communication.mjs
+      - name: Preserve prior P7 lots
+        run: |
+          node scripts/audit-p7-n0-u05.mjs
+          node scripts/test-p7-u05-writing.mjs
+          node scripts/test-p7-u05-public-ui.mjs
+          node scripts/test-p7-u05-homologation.mjs
+          node scripts/audit-p7-n0-u04.mjs
+          node scripts/test-p7-u04-evidence.mjs
+          node scripts/test-p7-u04-homologation.mjs
+      - name: Validate progress and renderer regression
+        run: |
+          node scripts/test-progress-service.mjs
+          node scripts/test-classic-renderer.mjs
+      - name: Mark runtime ready
+        run: |
+          printf '%s\n' 'P7 N0-U06 runtime-ready: audit + communication semantics + U05/U04 regressions passed.' > scripts/p7-u06-runtime-ready.marker
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add scripts/p7-u06-runtime-ready.marker
+          git diff --cached --quiet && exit 0
+          git commit -m 'test(p7): marca runtime da N0-U06 como pronto'
+          git push origin HEAD:p7-n0-u06-catalog
