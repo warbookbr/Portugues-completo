@@ -1,3 +1,7 @@
+.nav-label-short {
+  display: none;
+}
+
 @media (max-width: 700px) {
   .primary-nav {
     justify-content: space-between;
@@ -10,5 +14,13 @@
     min-height: 40px;
     padding-inline: 4px;
     font-size: clamp(11px, 3vw, 12px);
+  }
+
+  .nav-label-full {
+    display: none;
+  }
+
+  .nav-label-short {
+    display: inline;
   }
 }
