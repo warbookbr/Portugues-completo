@@ -32,6 +32,8 @@ jobs:
           PY
       - name: Apply runtime patch
         run: node scripts/p7-u03-runtime-patch.mjs
+      - name: Apply U03 cases compatibility
+        run: node scripts/p7-u03-runtime-fix.mjs
       - name: Validate structure
         run: node scripts/validate-project.mjs
       - name: Audit N0-U03
