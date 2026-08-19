@@ -53,7 +53,7 @@ for (const file of lessonFiles) {
 
   const html = documentHtml(runtime, { unitId: 'N0-U03', unitTitle: 'Palavras, frases e sentido' });
   assert.doesNotMatch(html, /Interação ainda não suportada/i, `${source.id}: renderer encontrou interação não suportada.`);
-  assert.doesNotMatch(html, /\b(?:schemaVersion|answerKey|competencyIds|evidenceRole)\b/i, `${source.id}: metadado técnico vazou no HTML.`);
+  assert.doesNotMatch(html, /\b(?:schemaVersion|answerKey|competencyIds|evidenceRole|acceptedSequences|correctIndexes|correctFunction|correctGroup|notAutomaticallyJudged|automaticObservations)\b/i, `${source.id}: metadado técnico vazou no HTML.`);
 
   for (const prerequisite of source.prerequisites || []) {
     if (/^N0-U03-L\d{2}$/.test(prerequisite)) {

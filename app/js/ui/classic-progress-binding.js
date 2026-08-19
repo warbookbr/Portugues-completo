@@ -1,3 +1,5 @@
+import { evaluateDeterministic as evaluateDeterministicActivity } from './classic-deterministic-evaluator.js';
+
 function selectedRadio(form, name) {
   return form.querySelector(`input[name="${name}"]:checked`);
 }
@@ -158,7 +160,7 @@ export function bindClassicProgress(root, documentRuntime, { progressService, on
       if (state === 'correct') result = { complete: true, correct: true };
       else if (state === 'retry') result = { complete: true, correct: false };
       else if (state === 'pending') result = { complete: true, pending: true };
-      else result = block.activity.evaluation.mode === 'DETERMINISTIC' ? evaluateDeterministic(form, block) : { complete: true, pending: true };
+      else result = block.activity.evaluation.mode === 'DETERMINISTIC' ? evaluateDeterministicActivity(form, block) : { complete: true, pending: true };
       if (!result.complete) return;
       const snapshot = progressService.recordActivity(documentRuntime, block, result, {
         response: collectResponse(form, block),

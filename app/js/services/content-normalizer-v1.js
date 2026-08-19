@@ -44,8 +44,94 @@ function materializeExpectedItems(block) {
   };
 }
 
+const LEGACY_PUBLIC_ANSWER_LABELS = Object.freeze({
+  'esta-funcionando-como-mensagem-na-situacao': 'está funcionando como mensagem nesta situação',
+  'nao-esta-funcionando-como-mensagem-na-situacao': 'não está funcionando como mensagem nesta situação'
+});
+
+function publicLegacyAnswer(value) {
+  return LEGACY_PUBLIC_ANSWER_LABELS[value] || value;
+}
+
+function isOpenAuthoredActivity(block) {
+  return block?.responseMode === 'free-text'
+    || String(block?.interaction || '').includes('free-text')
+    || String(block?.type || '').includes('open-production')
+    || block?.type === 'required-open-production';
+}
+
+function materializeCommonLegacyActivity(block, sourceDocument) {
+  let materialized = clone(block);
+
+  if (!Array.isArray(materialized.items) && Array.isArray(materialized.contexts)) {
+    materialized.items = materialized.contexts.map((item, index) => ({ ...clone(item), id: item.id || String(index) }));
+  }
+
+  if (Array.isArray(materialized.items)) {
+    materialized.items = materialized.items.map(item => {
+      if (!item || Array.isArray(item.options) || !Array.isArray(item.cases) || !Object.prototype.hasOwnProperty.call(item, 'correctIndex')) return item;
+      return { ...clone(item), options: clone(item.cases) };
+    });
+  }
+
+  if (!Array.isArray(materialized.items) && materialized.stage1 && materialized.stage2) {
+    materialized.items = [{ id: '0', stage1: clone(materialized.stage1), stage2: clone(materialized.stage2) }];
+    materialized.interaction = 'composite';
+  }
+
+  if (Array.isArray(materialized.tiles) && Array.isArray(materialized.acceptedSequences)) {
+    materialized.availableTiles = clone(materialized.tiles);
+  }
+
+  if (Array.isArray(materialized.groups) && Array.isArray(materialized.items)) {
+    const labelsById = new Map(materialized.groups.map(group => [group.id, group.label || group.id]));
+    const options = materialized.groups.map(group => group.label || group.id);
+    materialized.items = materialized.items.map(item => {
+      if (!item || !Object.prototype.hasOwnProperty.call(item, 'correctGroup')) return item;
+      const { correctGroup, ...rest } = item;
+      return { ...clone(rest), options: clone(options), correct: labelsById.get(correctGroup) || correctGroup };
+    });
+  }
+
+  const functions = Array.isArray(materialized.availableFunctions) ? materialized.availableFunctions : Array.isArray(materialized.functions) ? materialized.functions : null;
+  if (functions && Array.isArray(materialized.items)) {
+    materialized.items = materialized.items.map(item => {
+      if (!item || !Object.prototype.hasOwnProperty.call(item, 'correctFunction')) return item;
+      const { correctFunction, ...rest } = item;
+      return { ...clone(rest), options: clone(functions), correct: correctFunction };
+    });
+  }
+
+  if (Array.isArray(materialized.items) && materialized.items.some(item => item && Object.prototype.hasOwnProperty.call(item, 'correctAnswer'))) {
+    const rawAnswers = [...new Set(materialized.items.map(item => item?.correctAnswer).filter(Boolean))];
+    const options = rawAnswers.map(publicLegacyAnswer);
+    materialized.items = materialized.items.map(item => {
+      if (!item || !Object.prototype.hasOwnProperty.call(item, 'correctAnswer')) return item;
+      const { correctAnswer, ...rest } = item;
+      return { ...clone(rest), options: clone(options), correct: publicLegacyAnswer(correctAnswer) };
+    });
+  }
+
+  if (isOpenAuthoredActivity(materialized)) {
+    const selfReviewQuestions = Array.isArray(materialized.selfReviewQuestions)
+      ? materialized.selfReviewQuestions
+      : Array.isArray(sourceDocument?.assessmentBehavior?.selfReview?.questions)
+        ? sourceDocument.assessmentBehavior.selfReview.questions
+        : [];
+    materialized = {
+      ...materialized,
+      automaticValidation: false,
+      recordResponse: true,
+      interaction: Array.isArray(materialized.items) && materialized.items.length ? 'composite' : 'long-text',
+      ...(selfReviewQuestions.length ? { selfReviewQuestions: clone(selfReviewQuestions) } : {})
+    };
+  }
+
+  return materialized;
+}
+
 function materializeLegacyActivity(block, sourceDocument) {
-  let materialized = materializeExpectedItems(block);
+  let materialized = materializeExpectedItems(materializeCommonLegacyActivity(block, sourceDocument));
   if (!sourceDocument || !block?.id) return materialized;
 
   if (block.id === 'L03-A01' && Array.isArray(sourceDocument.letterSet)) {
@@ -81,6 +167,26 @@ function materializeLegacyActivity(block, sourceDocument) {
   return materialized;
 }
 
+function entryHasAnswer(entry) {
+  if (!entry || typeof entry !== 'object') return false;
+  const directKeys = ['correct', 'expected', 'correctIndex', 'correctIndexes', 'correctSequence', 'acceptedSequences', 'acceptedResult', 'acceptedResults', 'correctFunction', 'correctGroup', 'correctAnswer', 'auditoryCorrect', 'relationCorrectIndex'];
+  if (directKeys.some(key => Object.prototype.hasOwnProperty.call(entry, key))) return true;
+  return Boolean(entry.stage1 && entry.stage2 && Object.prototype.hasOwnProperty.call(entry.stage1, 'correctIndex') && Object.prototype.hasOwnProperty.call(entry.stage2, 'correctIndex'));
+}
+
+function collectionHasAnswer(collection) {
+  return Array.isArray(collection) && collection.some(entryHasAnswer);
+}
+
+function hasDeterministicKey(block) {
+  const directKeys = ['correct', 'correctIndex', 'correctIndexes', 'correctSequence', 'acceptedSequences', 'auditoryCorrect', 'relationCorrectIndex'];
+  return block.automaticValidation === true
+    || directKeys.some(key => Object.prototype.hasOwnProperty.call(block, key))
+    || collectionHasAnswer(block.items)
+    || collectionHasAnswer(block.rounds)
+    || collectionHasAnswer(block.contexts);
+}
+
 function normalizeInteraction(block) {
   if (block.interaction === 'audio-to-letter' && Array.isArray(block.options)) return 'SINGLE_CHOICE';
   if (block.interaction === 'initial-sound-to-letter' && Array.isArray(block.items)) return 'COMPOSITE';
@@ -88,19 +194,14 @@ function normalizeInteraction(block) {
   if (fromInteraction) return fromInteraction;
   const fromType = INTERACTION_BY_PEDAGOGICAL_TYPE_V1[block.type];
   if (fromType) return fromType;
-  if (block.correctSequence) return 'SEQUENCE';
-  if (Array.isArray(block.categories) && Array.isArray(block.items)) return 'CLASSIFY';
-  if (Array.isArray(block.options)) return 'SINGLE_CHOICE';
+  if (block.recordResponse === true && Array.isArray(block.items) && block.items.length) return 'COMPOSITE';
   if (block.recordResponse === true) return 'LONG_TEXT';
+  if (block.correctIndexes && Array.isArray(block.options)) return 'MULTIPLE_CHOICE';
+  if (block.correctSequence || block.acceptedSequences || (Array.isArray(block.availableTiles) && block.acceptedSequences)) return 'SEQUENCE';
+  if (Array.isArray(block.categories) && Array.isArray(block.items)) return 'CLASSIFY';
+  if (Array.isArray(block.items) && collectionHasAnswer(block.items)) return 'COMPOSITE';
+  if (Array.isArray(block.options)) return 'SINGLE_CHOICE';
   throw new ContentNormalizationError('UNSUPPORTED_INTERACTION', `Não foi possível normalizar a interação de ${block.id || block.type}.`, { id: block.id, pedagogicalType: block.type, interaction: block.interaction });
-}
-
-function collectionHasAnswer(collection) {
-  return Array.isArray(collection) && collection.some(item => item && typeof item === 'object' && ['correct', 'expected', 'correctIndex', 'correctSequence', 'auditoryCorrect', 'relationCorrectIndex'].some(key => Object.prototype.hasOwnProperty.call(item, key)));
-}
-
-function hasDeterministicKey(block) {
-  return block.automaticValidation === true || ['correct', 'correctIndex', 'correctSequence', 'auditoryCorrect', 'relationCorrectIndex'].some(key => Object.prototype.hasOwnProperty.call(block, key)) || collectionHasAnswer(block.items) || collectionHasAnswer(block.rounds);
 }
 
 function normalizeEvaluationMode(block) {
@@ -111,20 +212,26 @@ function normalizeEvaluationMode(block) {
 }
 
 function answerFromEntry(entry) {
-  const keys = ['correct', 'expected', 'correctIndex', 'correctSequence', 'auditoryCorrect', 'relationCorrectIndex'];
-  const present = keys.filter(key => Object.prototype.hasOwnProperty.call(entry, key));
-  if (!present.length) return undefined;
-  if (present.length === 1 && (present[0] === 'correct' || present[0] === 'expected')) return clone(entry[present[0]]);
+  if (entry?.stage1 && entry?.stage2 && Object.prototype.hasOwnProperty.call(entry.stage1, 'correctIndex') && Object.prototype.hasOwnProperty.call(entry.stage2, 'correctIndex')) {
+    return { stage1CorrectIndex: entry.stage1.correctIndex, stage2CorrectIndex: entry.stage2.correctIndex };
+  }
+  const scalarKeys = ['correct', 'expected', 'correctFunction', 'correctGroup', 'correctAnswer'];
+  const scalarPresent = scalarKeys.filter(key => Object.prototype.hasOwnProperty.call(entry, key));
+  const structuredKeys = ['correctIndex', 'correctIndexes', 'correctSequence', 'acceptedSequences', 'acceptedResult', 'acceptedResults', 'auditoryCorrect', 'relationCorrectIndex'];
+  const structuredPresent = structuredKeys.filter(key => Object.prototype.hasOwnProperty.call(entry, key));
+  if (!scalarPresent.length && !structuredPresent.length) return undefined;
+  if (scalarPresent.length === 1 && !structuredPresent.length) return clone(entry[scalarPresent[0]]);
   const answer = {};
-  for (const key of present) answer[key] = clone(entry[key]);
+  for (const key of [...scalarPresent, ...structuredPresent]) answer[key] = clone(entry[key]);
   return answer;
 }
 
 function normalizeAnswerKey(block) {
   const answerKey = {};
-  for (const key of ['correct', 'correctIndex', 'correctSequence', 'auditoryCorrect', 'relationCorrectIndex']) if (Object.prototype.hasOwnProperty.call(block, key)) answerKey[key] = clone(block[key]);
+  const topLevelKeys = ['correct', 'correctIndex', 'correctIndexes', 'correctSequence', 'acceptedSequences', 'auditoryCorrect', 'relationCorrectIndex'];
+  for (const key of topLevelKeys) if (Object.prototype.hasOwnProperty.call(block, key)) answerKey[key] = clone(block[key]);
   const itemAnswers = {};
-  for (const collection of [block.items, block.rounds]) {
+  for (const collection of [block.items, block.rounds, block.contexts]) {
     if (!Array.isArray(collection)) continue;
     collection.forEach((item, index) => {
       if (!item || typeof item !== 'object') return;
@@ -219,7 +326,7 @@ function normalizeStructuralCompletion(source, activitySources) {
   return { completion: { clusters, nonCompensable: authored.nonCompensable === true || (Array.isArray(authored.nonCompensable) && authored.nonCompensable.length > 0) }, activityPolicies: {} };
 }
 
-const PRESENTATION_SECRET_KEYS = new Set(['correct', 'expected', 'correctIndex', 'correctSequence', 'auditoryCorrect', 'relationCorrectIndex']);
+const PRESENTATION_SECRET_KEYS = new Set(['correct', 'expected', 'correctIndex', 'correctIndexes', 'correctSequence', 'acceptedSequences', 'acceptedResult', 'acceptedResults', 'correctFunction', 'correctGroup', 'correctAnswer', 'auditoryCorrect', 'relationCorrectIndex']);
 
 function sanitizePresentation(value) {
   if (Array.isArray(value)) return value.map(sanitizePresentation);
@@ -251,7 +358,7 @@ function normalizeActivity(block, context) {
     feedbackTiming: parentKind === 'LESSON' ? (normalizedBlock.type === 'quick-check' || String(normalizedBlock.feedbackRule || '').toLowerCase().includes('imediat') ? 'IMMEDIATE' : 'AFTER_ACTIVITY') : 'AFTER_VERIFICATION',
     allowRetry: true,
     penalizeSupport: false,
-    criteria: [],
+    criteria: clone(policy.criteria || []),
     threshold: Object.prototype.hasOwnProperty.call(policy, 'threshold') ? policy.threshold : null
   };
   if (answerKey) evaluation.answerKey = answerKey;
