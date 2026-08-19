@@ -33,6 +33,7 @@ Português Completo
 - `docs/estado-implementacao-classico.md` — **estado operacional concreto do Modo Clássico**: marco/item ativo, estados técnico/homologação/mídia/publicação, blockers e próximo passo exato.
 - `docs/p6-transporte-ia.md` — **contrato técnico vigente do transporte P6**: serviço neutro, companion local, proteção da API key, structured output e fronteira de autoridade da IA.
 - `docs/homologacao-p6-2.md` — **homologação da P6.2**: opt-in/consentimento, piloto N4-U09, neutralidade do progresso e inspeção visual dos estados de IA.
+- `docs/homologacao-p6.md` — **homologação final do P6**: segurança, consentimento, transporte, piloto, falha segura, neutralidade curricular e gate transversal antes do P7.
 - `docs/execucao-continua.md` — execução autônoma por marcos autorizados.
 - `.ChatGPT/skills/fundamentos-claros/SKILL.md` — histórico operacional do T1 homologado e referência para regressões futuras da entrada clara.
 - `.ChatGPT/skills/classic-product-delivery/SKILL.md` — procedimento operacional obrigatório para implementar P1→P9 do Clássico sem perder estado.
