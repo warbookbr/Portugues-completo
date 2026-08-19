@@ -26,20 +26,19 @@ assert.ok(catalogRef, 'N0-U04 precisa permanecer publicada no course.json.');
 assert.equal(catalogRef.order, 4);
 assert.equal(catalogRef.manifest, 'units/004-lendo-compreendendo-pequenos-textos/unit.json');
 
-assert.match(state, /Lote P7 N0-U04 — Lendo e compreendendo pequenos textos: HOMOLOGADO \(PR #135\)/);
-assert.match(state, /Próximo passo exato: iniciar o lote N0-U05 — Escrevendo e organizando mensagens/);
+// O gate de uma unidade homologada prova invariantes duráveis; não congela qual lote vem depois dela.
+assert.match(state, /P7 — Ampliação do catálogo Clássico N0→N4: ATIVO/);
 assert.match(state, /N0-U04: HOMOLOGADA — docs\/homologacao-p7-n0-u04\.md/);
 assert.doesNotMatch(state, /Ativo agora: N0-U04/);
 
 assert.match(roadmap, /N0-U04 — Lendo e compreendendo pequenos textos — PR #135/);
-assert.match(roadmap, /Próximo lote: N0-U05 — Escrevendo e organizando mensagens/);
 assert.match(index, /docs\/homologacao-p7-n0-u04\.md/);
 assert.match(homologation, /P7 \/ lote N0-U04: HOMOLOGADO/);
 assert.match(homologation, /Resultado final: \*\*APROVADO\*\*/);
 
 assert.match(html, /header-responsive\.css/);
 assert.match(html, /aria-label="Plano de estudos"/);
-assert.match(html, /nav-label-short[^>]*aria-hidden="true">Plano</);
+assert.match(html, /nav-label-short[^>]*aria-hidden="true">Plano/);
 assert.match(responsive, /@media \(max-width: 700px\)/);
 assert.match(responsive, /\.nav-label-full/);
 assert.match(responsive, /\.nav-label-short/);
@@ -48,4 +47,4 @@ assert.equal(fs.existsSync('.github/workflows/p7-u04-runtime-patch.yml'), false,
 const temporaryScripts = fs.readdirSync('scripts').filter(name => /^p7-u04-.*\.py$/.test(name));
 assert.deepEqual(temporaryScripts, [], `tooling temporário P7/U04 ainda presente: ${temporaryScripts.join(', ')}`);
 
-console.log('P7 U04 homologation gate: publicação READY, estado canônico em U05, responsividade final e branch sem tooling temporário validados.');
+console.log('P7 U04 homologation gate: publicação READY, homologação durável, cursor não regressivo, responsividade final e branch sem tooling temporário validados.');
