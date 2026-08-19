@@ -32,6 +32,9 @@ jobs:
       - name: Update project index in package
         run: node scripts/t1-package-index-fix.mjs
 
+      - name: Apply historical compatibility fixes
+        run: node scripts/t1-package-compat-fixes.mjs
+
       - name: Validate repository structure
         run: node scripts/validate-project.mjs
       - name: Validate JSON syntax
