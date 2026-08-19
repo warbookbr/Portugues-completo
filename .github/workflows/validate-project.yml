@@ -60,6 +60,12 @@ jobs:
       - name: Test T1 homologation
         run: node scripts/test-t1-homologation.mjs
 
+      - name: Test P6 AI feedback core
+        run: node scripts/test-ai-feedback-service.mjs
+
+      - name: Test P6 AI companion
+        run: node scripts/test-ai-feedback-companion.mjs
+
       - name: Test progress policies
         run: node scripts/test-progress-policies.mjs
 
