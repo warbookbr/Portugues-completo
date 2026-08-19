@@ -1,0 +1,145 @@
+{
+  "schemaVersion": 1,
+  "id": "N0-U03",
+  "levelId": "N0",
+  "order": 3,
+  "title": "Palavras, frases e sentido",
+  "objective": "Compreender palavras pelo significado e pelo contexto e perceber como escolha, forma, organização e relações entre palavras constroem mensagens em frases simples, permitindo compreender, modificar, reconstruir e começar a produzir frases próprias.",
+  "competencies": [
+    {
+      "id": "N0-U03-C01",
+      "label": "relacionar palavras simples ao que representam ou fazem em contexto"
+    },
+    {
+      "id": "N0-U03-C02",
+      "label": "perceber proximidade e oposição simples de sentido sem depender de terminologia técnica"
+    },
+    {
+      "id": "N0-U03-C03",
+      "label": "usar contexto forte para interpretar uma palavra com mais de um significado possível"
+    },
+    {
+      "id": "N0-U03-C04",
+      "label": "reconhecer frase ou expressão como mensagem em situação, inclusive mensagem de uma palavra"
+    },
+    {
+      "id": "N0-U03-C05",
+      "label": "organizar palavras fornecidas para comunicar uma relação simples"
+    },
+    {
+      "id": "N0-U03-C06",
+      "label": "perceber o efeito de substituição, acréscimo, retirada ou modificação de palavras na mensagem"
+    },
+    {
+      "id": "N0-U03-C07",
+      "label": "compreender o efeito básico da negação sem concluir automaticamente o contrário"
+    },
+    {
+      "id": "N0-U03-C08",
+      "label": "reconhecer funcionalmente mensagens que informam, perguntam, pedem, ordenam ou expressam reação"
+    },
+    {
+      "id": "N0-U03-C09",
+      "label": "completar e reconstruir frases usando pistas de sentido e organização"
+    },
+    {
+      "id": "N0-U03-C10",
+      "label": "produzir e autorrevisar uma mensagem curta com palavras próprias"
+    }
+  ],
+  "prerequisites": [
+    "N0-U02-V02"
+  ],
+  "lessons": [
+    {
+      "id": "N0-U03-L01",
+      "order": 1,
+      "title": "Palavra e significado: além da forma",
+      "path": "lessons/001-palavra-significado-alem-forma.json",
+      "competencyIds": ["N0-U03-C01"]
+    },
+    {
+      "id": "N0-U03-L02",
+      "order": 2,
+      "title": "Palavras se relacionam pelo sentido",
+      "path": "lessons/002-palavras-relacionam-sentido.json",
+      "competencyIds": ["N0-U03-C02"]
+    },
+    {
+      "id": "N0-U03-L03",
+      "order": 3,
+      "title": "O contexto ajuda a entender uma palavra",
+      "path": "lessons/003-contexto-ajuda-entender-palavra.json",
+      "competencyIds": ["N0-U03-C03"]
+    },
+    {
+      "id": "N0-U03-L04",
+      "order": 4,
+      "title": "Da palavra à frase: uma mensagem em contexto",
+      "path": "lessons/004-da-palavra-a-frase-mensagem-contexto.json",
+      "competencyIds": ["N0-U03-C04"]
+    },
+    {
+      "id": "N0-U03-L05",
+      "order": 5,
+      "title": "Organizando palavras para construir sentido",
+      "path": "lessons/005-organizando-palavras-construir-sentido.json",
+      "competencyIds": ["N0-U03-C05"]
+    },
+    {
+      "id": "N0-U03-L06",
+      "order": 6,
+      "title": "Mudando palavras, mudando a mensagem",
+      "path": "lessons/006-mudando-palavras-mudando-mensagem.json",
+      "competencyIds": ["N0-U03-C06"]
+    },
+    {
+      "id": "N0-U03-L07",
+      "order": 7,
+      "title": "O efeito da negação",
+      "path": "lessons/007-efeito-negacao.json",
+      "competencyIds": ["N0-U03-C07"]
+    },
+    {
+      "id": "N0-U03-L08",
+      "order": 8,
+      "title": "Mensagens diferentes: informar, perguntar, pedir, ordenar e reagir",
+      "path": "lessons/008-mensagens-diferentes-informar-perguntar-pedir-ordenar-reagir.json",
+      "competencyIds": ["N0-U03-C08"]
+    },
+    {
+      "id": "N0-U03-L09",
+      "order": 9,
+      "title": "Completando e reconstruindo frases",
+      "path": "lessons/009-completando-reconstruindo-frases.json",
+      "competencyIds": ["N0-U03-C09"]
+    },
+    {
+      "id": "N0-U03-L10",
+      "order": 10,
+      "title": "Criando frases próprias",
+      "path": "lessons/010-criando-frases-proprias.json",
+      "competencyIds": ["N0-U03-C10"]
+    }
+  ],
+  "verification": {
+    "id": "N0-U03-V01",
+    "path": "integrated-verification.json",
+    "competencyIds": [
+      "N0-U03-C01",
+      "N0-U03-C02",
+      "N0-U03-C03",
+      "N0-U03-C04",
+      "N0-U03-C05",
+      "N0-U03-C06",
+      "N0-U03-C07",
+      "N0-U03-C08",
+      "N0-U03-C09",
+      "N0-U03-C10"
+    ]
+  },
+  "publication": {
+    "status": "READY",
+    "blockers": []
+  }
+}
