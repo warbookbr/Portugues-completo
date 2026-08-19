@@ -90,7 +90,7 @@ assert_page() {
 }
 
 UNIT_DOM="$(assert_page '#/unidade/N0-U03' 'Palavras, frases e sentido')"
-L03_DOM="$(assert_page 'artifacts/p7-u03-visuals/u03-l03-progressive.html' 'Nova pista')"
+L03_DOM="$(assert_page 'artifacts/p7-u03-visuals/u03-l03-progressive.html' 'Ver nova pista')"
 L10_DOM="$(assert_page 'artifacts/p7-u03-visuals/u03-l10-open.html' 'Autochecagem')"
 V01_DOM="$(assert_page 'artifacts/p7-u03-visuals/u03-v01-open.html' 'Autochecagem')"
 
