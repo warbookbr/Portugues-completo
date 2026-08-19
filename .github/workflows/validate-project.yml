@@ -66,6 +66,12 @@ jobs:
       - name: Test P6 AI companion
         run: node scripts/test-ai-feedback-companion.mjs
 
+      - name: Test P6 AI feedback pilot
+        run: node scripts/test-ai-feedback-pilot.mjs
+
+      - name: Test P6 AI settings security
+        run: node scripts/test-ai-settings-security.mjs
+
       - name: Test progress policies
         run: node scripts/test-progress-policies.mjs
 
@@ -83,6 +89,9 @@ jobs:
 
       - name: Capture classic visual smoke
         run: bash scripts/capture-classic-visuals.sh
+
+      - name: Capture P6 AI visual smoke
+        run: bash scripts/capture-ai-feedback-visuals.sh
 
       - name: Upload classic visual smoke
         uses: actions/upload-artifact@v4

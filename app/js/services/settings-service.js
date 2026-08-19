@@ -1,4 +1,5 @@
 const STORAGE_KEY = 'portugues-completo:settings:v1';
+export const AI_FEEDBACK_CONSENT_VERSION = 'p6-ai-feedback-consent-v1';
 
 const defaults = {
   theme: 'light',
@@ -10,16 +11,27 @@ const defaults = {
   voiceURI: '',
   rate: 1,
   pitch: 1,
-  volume: 1
+  volume: 1,
+  aiFeedbackEnabled: false,
+  aiProvider: 'openai-companion',
+  aiModel: 'gpt-5.6-terra',
+  aiEndpoint: 'http://127.0.0.1:43117/feedback',
+  aiFeedbackConsentVersion: null
 };
 
+const knownSettingKeys = new Set(Object.keys(defaults));
 let settings = load();
 const listeners = new Set();
+
+function sanitizeStoredSettings(stored) {
+  if (!stored || typeof stored !== 'object' || Array.isArray(stored)) return {};
+  return Object.fromEntries(Object.entries(stored).filter(([key]) => knownSettingKeys.has(key)));
+}
 
 function load() {
   try {
     const stored = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
-    return { ...defaults, ...stored };
+    return { ...defaults, ...sanitizeStoredSettings(stored) };
   } catch {
     return { ...defaults };
   }
@@ -38,7 +50,7 @@ export function getSettings() {
 }
 
 export function updateSettings(patch) {
-  settings = { ...settings, ...patch };
+  settings = { ...settings, ...sanitizeStoredSettings(patch) };
   persist();
   applySettings();
   notify();

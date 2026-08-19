@@ -21,8 +21,10 @@ Homologação: docs/homologacao-t1-10.md
 Migração T1 `t1-n0-entry-v2`: ATIVA / HOMOLOGADA local + Gist
 P6 — Feedback por IA: ATIVO
 Subfase P6.1 — núcleo neutro + transporte seguro: HOMOLOGADO (PR #131)
-Subfase ativa: P6.2 — opt-in/configuração + piloto N4-U09 + feedback visual
-Próximo passo exato: ligar AiFeedbackService à UI com consentimento explícito, configurar companion/model/token efêmero, habilitar uma atividade aberta piloto em N4-U09 e provar sucesso/falha sem alterar `VALIDACAO_PENDENTE`
+Subfase P6.2 — opt-in/configuração + piloto N4-U09 + feedback visual: HOMOLOGADO (PR #132)
+Homologação P6.2: docs/homologacao-p6-2.md
+Subfase ativa: P6.3 — homologação transversal do feedback IA
+Próximo passo exato: auditar os invariantes P6 ponta a ponta — segurança de credencial, opt-in, payload mínimo, structured output, falha segura e neutralidade sobre ProgressService — e fechar P6 somente se todos permanecerem provados
 Blocker global: nenhum
 Gate final do Clássico: NÃO SATISFEITO
 ```
@@ -39,7 +41,7 @@ T1 foi homologado em T1.10. As regras duradouras permanecem nas fontes/skills ca
 | P4 — Renderer real do Clássico | `HOMOLOGADO` | PR #108 |
 | P5 — Progresso/revisão/Gist | `HOMOLOGADO` | PR #109 |
 | T1 — Fundamentos claros | `HOMOLOGADO` | PRs #116–#130; `docs/homologacao-t1-10.md` |
-| P6 — Feedback por IA | `ATIVO` | P6.1 núcleo/transporte homologado na PR #131; P6.2 ativo |
+| P6 — Feedback por IA | `ATIVO` | P6.1 homologado #131; P6.2 homologado #132; P6.3 ativo |
 | P7 — Catálogo N0→N4 | `NAO_INICIADO` | — |
 | P8 — Mídia/publicação | `NAO_INICIADO` | — |
 | P9 — E2E / Clássico homologado | `NAO_INICIADO` | — |
@@ -487,7 +489,8 @@ Nova mídia humana obrigatória: nenhuma
 Global antes de P6: nenhum — T1 homologado
 Ativo: P6 — Feedback por IA no Clássico
 P6.1: HOMOLOGADO — AiFeedbackService neutro + companion OpenAI local + gates de segurança (PR #131)
-Ativo P6.2: opt-in/configuração UI + piloto N4-U09 + feedback visual + smoke de sucesso/falha
+P6.2: HOMOLOGADO — opt-in/configuração + piloto N4-U09 + feedback visual (PR #132)
+Ativo P6.3: homologação transversal do feedback IA antes de liberar P7
 Local: resolver mídia obrigatória de U1/U2 quando o marco de publicação exigir esses estímulos
 Depois de P6: P7 — ampliação do catálogo N0→N4
 ```
