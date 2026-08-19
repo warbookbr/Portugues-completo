@@ -64,7 +64,7 @@ function renderSequence(block) {
 }
 
 function renderSequence(block) {
-  const tokens = block.content?.availableTokens || block.content?.availableAudioTokens || block.content?.availableWrittenChunks || block.content?.options || block.content?.model || [];
+  const tokens = block.content?.availableTokens || block.content?.availableAudioTokens || block.content?.availableWrittenChunks || block.content?.availableTiles || block.content?.options || block.content?.model || [];
   return renderSequenceBuilder(tokens, 'sequence');
 }`
 );
@@ -79,8 +79,8 @@ replaceOnce(
   }
 
   return \`<div class="composite-round">\${localStimuli}\${unsupported(\`\${block.id}: rodada \${key} sem controle determinístico\`)}</div>\`;`,
-`  if (Array.isArray(entry.pieces) || Array.isArray(entry.tokens) || Array.isArray(entry.availableAudioTokens) || Array.isArray(entry.availableWrittenChunks)) {
-    return \`<fieldset class="composite-round"><legend>\${esc(label)}</legend>\${localStimuli}\${renderSequenceBuilder(entry.pieces || entry.tokens || entry.availableAudioTokens || entry.availableWrittenChunks, \`round-sequence:\${key}\`)}</fieldset>\`;
+`  if (Array.isArray(entry.pieces) || Array.isArray(entry.tokens) || Array.isArray(entry.availableAudioTokens) || Array.isArray(entry.availableWrittenChunks) || Array.isArray(entry.availableTiles)) {
+    return \`<fieldset class="composite-round"><legend>\${esc(label)}</legend>\${localStimuli}\${renderSequenceBuilder(entry.pieces || entry.tokens || entry.availableAudioTokens || entry.availableWrittenChunks || entry.availableTiles, \`round-sequence:\${key}\`)}</fieldset>\`;
   }
 
   if (Array.isArray(entry.options)) {
@@ -105,12 +105,15 @@ replaceOnce(
 
 replaceOnce(
 `    case 'SINGLE_CHOICE': return \`<fieldset class="choice-group"><legend class="sr-only">Escolha uma opção</legend>\${optionMarkup(content.options || [], 'choice')}</fieldset>\`;`,
-`    case 'SINGLE_CHOICE': return \`<fieldset class="choice-group"><legend class="sr-only">Escolha uma opção</legend>\${Array.isArray(content.wholeWordOptions) ? audioOptionMarkup(content.wholeWordOptions, 'choice') : optionMarkup(content.options || [], 'choice')}</fieldset>\`;`
+`    case 'SINGLE_CHOICE': {
+      const choices = content.wholeWordOptions || content.options || content.availableTiles || [];
+      return \`<fieldset class="choice-group"><legend class="sr-only">Escolha uma opção</legend>\${Array.isArray(content.wholeWordOptions) ? audioOptionMarkup(choices, 'choice') : optionMarkup(choices, 'choice')}</fieldset>\`;
+    }`
 );
 
 replaceOnce(
 `  const option = block.content?.options?.[index];`,
-`  const option = block.content?.options?.[index] ?? block.content?.wholeWordOptions?.[index];`
+`  const option = block.content?.options?.[index] ?? block.content?.wholeWordOptions?.[index] ?? block.content?.availableTiles?.[index];`
 );
 
 replaceOnce(
@@ -127,7 +130,7 @@ replaceOnce(
       continue;
     }
     const sharedOptions = sharedCompositeOptions(block);
-    const option = entry.options?.[selectedIndex] ?? entry.wholeWordOptions?.[selectedIndex] ?? content.pulseOptions?.[selectedIndex] ?? sharedOptions[selectedIndex];
+    const option = entry.options?.[selectedIndex] ?? entry.wholeWordOptions?.[selectedIndex] ?? entry.availableTiles?.[selectedIndex] ?? content.pulseOptions?.[selectedIndex] ?? sharedOptions[selectedIndex];
     const expectedValue = expected && typeof expected === 'object' ? expected.correct ?? expected.expected : expected;
     if (normalizeComparable(option) === normalizeComparable(expectedValue)) hits += 1;`
 );
