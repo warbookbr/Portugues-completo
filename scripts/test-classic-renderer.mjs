@@ -106,18 +106,33 @@ const u04EvidenceHtml = documentHtml(u04EvidenceLesson.runtime, { unitId: 'N0-U0
 assert.match(u04EvidenceHtml, /data-evidence-selection/);
 assert.match(u04EvidenceHtml, /Marque os trechos do texto que sustentam sua resposta/i);
 assert.doesNotMatch(u04EvidenceHtml, /requiredEvidence|requiredEvidenceParts|evidenceCorrectIndexes/);
-assert.doesNotMatch(u04EvidenceHtml, /Interação ainda não suportada/i);
-
-const u04SequenceLesson = await service.loadLesson('N0-U04', 'N0-U04-L06');
-const u04SequenceHtml = documentHtml(u04SequenceLesson.runtime, { unitId: 'N0-U04', unitTitle: 'Lendo e compreendendo pequenos textos' });
-assert.match(u04SequenceHtml, /data-sequence-builder/);
-assert.doesNotMatch(u04SequenceHtml, /Interação ainda não suportada/i);
 
 const u04Verification = await service.loadVerification('N0-U04');
 const u04VerificationHtml = documentHtml(u04Verification.runtime, { unitId: 'N0-U04', unitTitle: 'Lendo e compreendendo pequenos textos', verification: true });
 assert.match(u04VerificationHtml, /Nesta verificação, você vai usar o que estudou nesta unidade/i);
 assert.doesNotMatch(u04VerificationHtml, /Verificar se o aluno/i);
-assert.doesNotMatch(u04VerificationHtml, />\s*(WRONG CONCLUSION|QUESTION|ORDERED EVENTS|CARDS|TEXT REMAINS VISIBLE|TEXT REF|COMPETENCY)\s*</i);
+
+const u05OpenLesson = await service.loadLesson('N0-U05', 'N0-U05-L02');
+const u05OpenHtml = documentHtml(u05OpenLesson.runtime, { unitId: 'N0-U05', unitTitle: 'Escrevendo e organizando mensagens' });
+assert.match(u05OpenHtml, /Registrar resposta/i);
+assert.match(u05OpenHtml, /Autochecagem/i);
+assert.match(u05OpenHtml, /Ver apoio opcional/i);
+assert.doesNotMatch(u05OpenHtml, /A biblioteca está fechada hoje\./, 'modelo pós-envio não pode aparecer antes da tentativa');
+assert.doesNotMatch(u05OpenHtml, /modelExamplesAfterSubmission|notAutomaticallyJudged|automaticObservations|selfReviewRequired/i);
+
+const u05ControlledLesson = await service.loadLesson('N0-U05', 'N0-U05-L08');
+const u05ControlledHtml = documentHtml(u05ControlledLesson.runtime, { unitId: 'N0-U05', unitTitle: 'Escrevendo e organizando mensagens' });
+assert.match(u05ControlledHtml, /Verificar resposta/i);
+assert.match(u05ControlledHtml, /textarea/i);
+assert.doesNotMatch(u05ControlledHtml, /Interação ainda não suportada/i);
+
+const u05Verification = await service.loadVerification('N0-U05');
+const u05VerificationHtml = documentHtml(u05Verification.runtime, { unitId: 'N0-U05', unitTitle: 'Escrevendo e organizando mensagens', verification: true });
+assert.match(u05VerificationHtml, /Nesta verificação, você vai usar o que estudou nesta unidade/i);
+assert.match(u05VerificationHtml, /Antes de escrever|informações essenciais/i);
+assert.match(u05VerificationHtml, /Autochecagem/i);
+assert.match(u05VerificationHtml, /Registrar resposta/i);
+assert.doesNotMatch(u05VerificationHtml, /humanOrExternalReview|notAutomaticallyJudged|correctEssentialIndexes|acceptableOrders|principleCorrectIndex/i);
 
 const n4Lesson = await service.loadLesson('N4-U09', 'N4-U09-L01');
 const n4Html = documentHtml(n4Lesson.runtime, { unitId: 'N4-U09', unitTitle: 'Literatura, multimodalidade, autoria intermedial e digital' });
@@ -126,6 +141,6 @@ assert.match(n4Html, /Registrar resposta/i);
 assert.equal(typeof n4Lesson.runtime.presentation?.intro, 'string');
 assert.notEqual(n4Lesson.runtime.presentation.intro, n4Lesson.runtime.objective);
 
-assert.equal(lessonCount, 48);
-assert.equal(verificationCount, 5);
-console.log(`Renderer clássico P7: ${lessonCount} lições + ${verificationCount} verificações, N0-U03/U04 e caso-âncora N4 preservados.`);
+assert.equal(lessonCount, 58);
+assert.equal(verificationCount, 6);
+console.log(`Renderer clássico P7: ${lessonCount} lições + ${verificationCount} verificações, N0-U03/U04/U05 e caso-âncora N4 preservados.`);
