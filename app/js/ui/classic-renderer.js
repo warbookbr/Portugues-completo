@@ -95,93 +95,166 @@ function renderKnownContent(content = {}) {
   }
 
   const segments = content.segments ?? content.segmentsForRescue;
-  if (Array.isArray(segments)) {
-    lead.push(`<div class="segmented-word" aria-label="Partes da palavra">${segments.map(item => `<span>${esc(item)}</span>`).join('<b>·</b>')}</div>`);
+  if (Array.isArray(segments) && segments.length) {
+    const onDemand = Boolean(content.supportButtonLabel || content.supportInitiallyHidden || content.initialSupportLevel === 'apoio-sob-demanda');
+    if (onDemand) {
+      const label = content.supportButtonLabel || 'Mostrar partes';
+      lead.push(`<details class="support-disclosure"><summary>${esc(label)}</summary><div class="model-box"><span>Partes</span><strong>${valueText(segments)}</strong></div></details>`);
+    } else {
+      lead.push(`<div class="model-box"><span>Partes</span><strong>${valueText(segments)}</strong></div>`);
+    }
+  }
+
+  if (content.nonVisualMeaning) {
+    lead.push(`<div class="meaning-support"><strong>Significado</strong><p>${esc(content.nonVisualMeaning)}</p></div>`);
   }
 
   for (const [key, value] of Object.entries(content)) {
-    if (hiddenKeys.has(key) || ['title', 'text', 'prompt', 'instruction', 'model', 'letter'].includes(key) || value === undefined || value === null || value === '') continue;
-    if (Array.isArray(value) && value.length === 0) continue;
-    if (typeof value === 'boolean') continue;
+    if (['title', 'text', 'prompt', 'instruction', 'model', 'letter', 'nonVisualMeaning'].includes(key) || hiddenKeys.has(key)) continue;
+    const lower = key.toLowerCase();
+    if (lower.includes('guard') || lower.includes('correct') || lower.includes('feedback') || lower.includes('available') || lower.includes('support') || lower.includes('tts') || lower.includes('media') || lower.includes('audio') || key === 'feedback') continue;
+    if (value === null || value === undefined || value === false || value === '') continue;
     details.push(`<div class="content-detail"><strong>${esc(pretty(key))}</strong><div>${valueText(value)}</div></div>`);
   }
 
   return `${lead.join('')}${details.length ? `<div class="content-details">${details.join('')}</div>` : ''}`;
 }
 
-function evidenceBadge(activity) {
-  const evidence = activity?.evidence;
-  if (!evidence?.required) return '';
-  return '<span class="evidence-badge">Necessária para concluir</span>';
+function renderStimulus(stimulus, index) {
+  const id = `stimulus-${index}`;
+  if (stimulus.type === 'TTS') {
+    const text = stimulus.payload?.text || stimulus.payload?.content || '';
+    return `<button type="button" class="secondary-button stimulus-button" data-tts="${esc(text)}">Ouvir com TTS</button>`;
+  }
+  if (stimulus.type === 'CONTROLLED_AUDIO') {
+    return `<div class="media-placeholder" role="status"><strong>Áudio ainda não disponível</strong><span>Este exercício precisa de um áudio específico que ainda está em preparação.</span></div>`;
+  }
+  if (stimulus.type === 'SEMANTIC_UI') {
+    const payload = stimulus.payload || {};
+    return `<div class="semantic-stimulus">${valueText(payload.visibleText ?? payload.content ?? payload.model ?? payload)}</div>`;
+  }
+  if (stimulus.type === 'TEXT') {
+    const payload = stimulus.payload || {};
+    if (payload.sourceBlockId) return `<div class="stimulus-reference">Use como referência o trecho ${esc(payload.sourceBlockId)} acima.</div>`;
+    return `<div class="semantic-stimulus">${valueText(payload.content ?? payload)}</div>`;
+  }
+  return `<details class="stimulus-data"><summary>Material de apoio da atividade</summary>${valueText(stimulus.payload || {})}</details>`;
 }
 
-function optionMarkup(options = [], name = 'choice', multiple = false) {
-  return options.map((option, index) => {
-    const input = multiple ? 'checkbox' : 'radio';
-    return `<label class="choice-option"><input type="${input}" name="${esc(name)}" value="${index}" required><span>${valueText(option)}</span></label>`;
-  }).join('');
-}
-
-function ttsAudioOptionMarkup(options = [], name = 'choice', attemptGateRequired = false) {
-  return options.map((cue, index) => `<label class="choice-option audio-option"><input type="radio" name="${esc(name)}" value="${index}" required><span><button type="button" class="audio-choice-button" data-tts="${esc(cue)}">Ouvir opção ${index + 1}</button>${attemptGateRequired ? '<small>Ouça antes de decidir.</small>' : ''}</span></label>`).join('');
-}
-
-function audioOptionMarkup(options = [], name = 'choice') {
-  return options.map((option, index) => `<label class="choice-option"><input type="radio" name="${esc(name)}" value="${index}" required><span>${valueText(option)}</span></label>`).join('');
-}
-
-function renderItemStimuli(activity, itemId) {
-  const stimuli = activity?.stimuli?.filter(stimulus => stimulus.itemId === itemId) || [];
-  return stimuli.map(renderStimulus).join('');
-}
-
-function renderStimulus(stimulus) {
-  if (stimulus.type === 'CONTROLLED_AUDIO') return `<div class="stimulus unavailable"><strong>Áudio ainda não disponível</strong><p>Este estímulo controlado está rastreado como pendência local de mídia.</p></div>`;
-  if (stimulus.type === 'TTS') return `<button type="button" class="secondary-button stimulus-button" data-tts="${esc(stimulus.source)}">Ouvir</button>`;
-  if (stimulus.type === 'IMAGE') return `<figure class="stimulus unavailable"><strong>Imagem ainda não disponível</strong><figcaption>Pendência local de mídia.</figcaption></figure>`;
-  return '';
+function renderStimulusList(stimuli) {
+  return stimuli.length ? `<div class="stimuli">${stimuli.map(renderStimulus).join('')}</div>` : '';
 }
 
 function renderStimuli(activity) {
-  const shared = activity?.stimuli?.filter(stimulus => !stimulus.itemId) || [];
-  return shared.map(renderStimulus).join('');
+  return renderStimulusList((activity?.stimuli || []).filter(stimulus => stimulus.payload?.itemId === undefined || stimulus.payload?.itemId === null));
 }
 
-function renderEvidenceSelector(content = {}, name = 'evidence') {
-  const options = content.evidenceOptions;
-  if (!Array.isArray(options) || !options.length) return '';
-  const multiple = content.evidenceSelectionMode === 'MULTIPLE';
-  const instruction = multiple ? 'Marque os trechos do texto que sustentam sua resposta.' : 'Marque um trecho do texto que sustenta sua resposta.';
-  return `<fieldset class="evidence-selector" data-evidence-selection><legend>${instruction}</legend>${optionMarkup(options, name, multiple)}</fieldset>`;
+function renderItemStimuli(activity, key) {
+  const match = String(key);
+  return renderStimulusList((activity?.stimuli || []).filter(stimulus => String(stimulus.payload?.itemId) === match));
+}
+
+function evidenceBadge(activity) {
+  const evidence = activity.evidence || {};
+  const label = evidence.requiredForCompletion ? 'Evidência necessária' : evidence.role === 'PRACTICE' ? 'Prática' : pretty(evidence.role || 'atividade');
+  return `<span class="activity-badge ${evidence.requiredForCompletion ? 'is-required' : ''}">${esc(label)}</span>`;
+}
+
+function optionMarkup(options = [], name, multiple = false) {
+  return options.map((option, index) => `
+    <label class="choice-option">
+      <input type="${multiple ? 'checkbox' : 'radio'}" name="${esc(name)}" value="${index}">
+      <span>${valueText(option)}</span>
+    </label>`).join('');
+}
+
+function audioOptionMarkup(options = [], name) {
+  return options.map((mediaId, index) => `
+    <label class="choice-option audio-choice-option">
+      <input type="radio" name="${esc(name)}" value="${index}">
+      <span><strong>Opção ${index + 1}</strong><small>áudio controlado pendente</small></span>
+    </label>`).join('');
+}
+
+function ttsAudioOptionMarkup(options = [], name, gated = false) {
+  const controls = options.map((option, index) => {
+    const label = option?.label || `Opção ${index + 1}`;
+    const ttsText = option?.ttsText || '';
+    const disabled = gated ? ' disabled data-gated-control' : '';
+    return `
+      <div class="choice-option audio-choice-option">
+        <label><input type="radio" name="${esc(name)}" value="${index}"${disabled}><span>${esc(label)}</span></label>
+        <button type="button" class="secondary-button compact-button" data-tts="${esc(ttsText)}"${disabled}>Ouvir ${esc(label)}</button>
+      </div>`;
+  }).join('');
+  if (!gated) return controls;
+  return `<div class="gated-choice-set" data-gated-choice-set>
+    <button type="button" class="secondary-button compact-button" data-attempt-gate>Marcar que tentei ler</button>
+    <div class="gated-choice-options">${controls}</div>
+  </div>`;
 }
 
 function sharedCompositeOptions(block) {
+  const values = Object.values(block.activity?.evaluation?.answerKey?.items || {})
+    .map(value => value && typeof value === 'object' && !Array.isArray(value) ? value.correct ?? value.expected : value)
+    .filter(value => ['string', 'number', 'boolean'].includes(typeof value));
+  const uniqueValues = [...new Set(values)];
+  return uniqueValues.length >= 2 && uniqueValues.length <= 6 ? uniqueValues : [];
+}
+
+function unsupported(label) {
+  return `<div class="unsupported-state" role="alert"><strong>Interação ainda não suportada</strong><span>${esc(label)}</span></div>`;
+}
+
+function classifyItems(block) {
   const content = block.content || {};
-  if (Array.isArray(content.options)) return content.options;
-  if (Array.isArray(content.functions)) return content.functions;
-  if (Array.isArray(content.availableFunctions)) return content.availableFunctions;
-  return [];
+  if (Array.isArray(content.items) && content.items.length) return content.items.map((item, index) => ({
+    key: item.id || String(index),
+    label: item.displayLabel ?? item.stimulus ?? item.text ?? item.claim ?? `Item ${index + 1}`
+  }));
+  if (Array.isArray(content.claims)) return content.claims.map((claim, index) => ({ key: String(index), label: claim }));
+  if (Array.isArray(content.itemIds)) return content.itemIds.map((key, index) => ({ key: String(key), label: `Item ${index + 1}` }));
+  const answerItems = block.activity?.evaluation?.answerKey?.items || {};
+  return Object.keys(answerItems).map((key, index) => ({ key, label: `Item ${index + 1}` }));
+}
+
+function classifyCategories(block) {
+  const content = block.content || {};
+  if (Array.isArray(content.categories)) return content.categories;
+  const key = block.activity?.evaluation?.answerKey?.items || {};
+  return [...new Set(Object.values(key).filter(value => typeof value === 'string'))];
 }
 
 function renderClassify(block) {
-  const content = block.content || {};
-  const categories = content.categories || [];
-  const items = content.items || [];
-  return `<div class="classify-grid">${items.map((item, index) => {
-    const key = String(item.id ?? index);
-    const label = item.displayLabel || item.claim || item.question || item.text || item.stimulus || `Item ${index + 1}`;
-    return `<label class="classify-row"><span>${valueText(label)}</span><select name="classify:${esc(key)}" required><option value="">Escolha</option>${categories.map(category => `<option value="${esc(category)}">${esc(category)}</option>`).join('')}</select></label>`;
-  }).join('')}</div>`;
+  const items = classifyItems(block);
+  const categories = classifyCategories(block);
+  if (!items.length || !categories.length) return unsupported(`${block.id}: classificação sem itens/categorias suficientes`);
+  return `<div class="classify-grid">${items.map(item => `
+    <div class="classify-row">
+      <div class="classify-stimulus"><span>${valueText(item.label)}</span>${renderItemStimuli(block.activity, item.key)}</div>
+      <label><span class="sr-only">Classificação de ${esc(item.label)}</span><select name="classify:${esc(item.key)}" required>
+        <option value="">Selecione</option>
+        ${categories.map(category => `<option value="${esc(category)}">${esc(category)}</option>`).join('')}
+      </select></label>
+    </div>`).join('')}</div>`;
 }
 
-function renderSequenceBuilder(tokens, name) {
-  const safe = Array.isArray(tokens) ? tokens : [];
-  return `<div class="sequence-builder" data-sequence-builder data-name="${esc(name)}"><div class="sequence-pool">${safe.map((item, index) => `<button type="button" class="sequence-token" data-sequence-token data-index="${index}">${valueText(item)}</button>`).join('')}</div><div class="sequence-result" data-sequence-result>Sua sequência aparecerá aqui.</div><input type="hidden" name="${esc(name)}" value="[]" data-sequence-value required><button type="button" class="secondary-button compact-button" data-sequence-reset>Limpar</button></div>`;
+function renderSequenceBuilder(tokens, name = 'sequence') {
+  if (!Array.isArray(tokens) || !tokens.length) return unsupported(`sequência ${name} sem peças`);
+  return `<div class="sequence-builder" data-sequence-builder>
+    <div class="token-bank" aria-label="Itens disponíveis">${tokens.map((token, index) => {
+      const audioToken = typeof token === 'string' && token.includes('AUD-');
+      const label = audioToken ? `<span>Ficha ${index + 1}</span><small>áudio pendente</small>` : valueText(token === 'SPACE' ? 'espaço' : token);
+      return `<button type="button" class="token-button" data-sequence-token="${index}" data-value="${esc(typeof token === 'string' ? token : JSON.stringify(token))}">${label}</button>`;
+    }).join('')}</div>
+    <input type="hidden" name="${esc(name)}" data-sequence-value value="[]">
+    <div class="sequence-answer" data-sequence-answer aria-live="polite">Sua sequência aparecerá aqui.</div>
+    <button type="button" class="secondary-button compact-button" data-sequence-clear>Limpar sequência</button>
+  </div>`;
 }
 
 function renderSequence(block) {
-  const content = block.content || {};
-  const tokens = content.availableTiles || content.tiles || content.tokens || [];
+  const tokens = block.content?.availableTokens || block.content?.availableAudioTokens || block.content?.availableWrittenChunks || block.content?.availableTiles || block.content?.options || block.content?.model || [];
   return renderSequenceBuilder(tokens, 'sequence');
 }
 
@@ -189,6 +262,14 @@ function renderOpenInput(block, label = 'Sua resposta') {
   const interaction = block.activity?.interaction;
   const rows = interaction === 'SHORT_TEXT' ? 2 : interaction === 'LONG_TEXT' ? 9 : 6;
   return `<label class="response-field"><span>${esc(label)}</span><textarea name="openResponse" rows="${rows}" required></textarea></label>`;
+}
+
+function renderEvidenceSelector(content = {}, name = 'evidence') {
+  const options = content.evidenceOptions;
+  if (!Array.isArray(options) || !options.length) return '';
+  const multiple = content.evidenceSelectionMode === 'MULTIPLE';
+  const prompt = content.followUp || (multiple ? 'Marque os trechos do texto que sustentam sua resposta.' : 'Marque um trecho do texto que sustenta sua resposta.');
+  return `<fieldset class="choice-group evidence-selector" data-evidence-selection><legend>${esc(prompt)}</legend>${optionMarkup(options, name, multiple)}</fieldset>`;
 }
 
 function entryKey(entry, index) {
@@ -228,7 +309,7 @@ function renderCompositeRound(entry, index, block) {
 
   if (Array.isArray(entry.options)) {
     const multiple = Boolean(expected && typeof expected === 'object' && Array.isArray(expected.correctIndexes) && expected.correctIndexes.length > 1);
-    return `<fieldset class="composite-round"><legend>${esc(label)}</legend>${localStimuli}${optionMarkup(entry.options, `round:${key}`, multiple)}</fieldset>`;
+    return `<fieldset class="composite-round"><legend>${esc(label)}</legend>${localStimuli}${optionMarkup(entry.options, `round:${key}`, multiple)}${renderEvidenceSelector(entry, `round-evidence:${key}`)}</fieldset>`;
   }
 
   if (Array.isArray(entry.nonVisualOptions)) {
@@ -280,7 +361,7 @@ function renderComposite(block) {
     return `
       <fieldset class="choice-group"><legend>${esc(content.prompt || 'Primeira etapa')}</legend>${optionMarkup(content.auditoryOptions, 'auditory')}</fieldset>
       <div class="reveal-note">A relação escrita pode ser observada após registrar sua percepção auditiva.</div>
-      <div class="composite-stage"><strong>2. Relação observada</strong>${optionMarkup(content.relationOptions, 'relation')}</div>`;
+      <fieldset class="choice-group"><legend>${esc(content.relationPrompt || 'Segunda etapa')}</legend>${optionMarkup(content.relationOptions, 'relation')}</fieldset>`;
   }
 
   if (block.activity?.evaluation?.mode === 'DETERMINISTIC') return unsupported(`${block.id}: atividade composta determinística sem estrutura renderizável`);
@@ -415,15 +496,157 @@ export function unitHtml(manifest) {
     </div>`;
 }
 
-function unsupported(label) {
-  return `<div class="unsupported-interaction"><strong>Interação ainda não suportada</strong><p>${esc(label)}</p></div>`;
+export function homeHtml(course, manifests = []) {
+  return `
+    <div class="course-view reading-content">
+      <header class="home-hero"><span class="eyebrow">Modo Clássico</span><h1>${esc(course.title)}</h1><p>${esc(course.description)}</p><div class="home-status">Catálogo real conectado · ${course.units.length} unidades no slice atual · sem gamificação</div></header>
+      <section class="catalog-grid">${course.units.map(unit => {
+        const manifest = manifests.find(item => item.id === unit.id);
+        return `<a class="unit-card" href="#/unidade/${esc(unit.id)}"><span class="block-kicker">${esc(unit.levelId)} · Unidade ${unit.order}</span><h2>${esc(unit.title)}</h2><p>${manifest ? esc(manifest.objective) : 'Carregar unidade'}</p><footer><span>${manifest ? `${manifest.lessons.length} lições` : 'manifesto'}</span><strong>Estudar →</strong></footer></a>`;
+      }).join('')}</section>
+    </div>`;
 }
 
-function resultMessage(result, pending) {
-  if (!result.complete) return { state: 'incomplete', text: 'Complete a atividade antes de registrar.' };
-  if (result.pending || pending) return { state: 'pending', text: 'Resposta registrada. Esta produção ainda precisa de validação confiável para virar evidência de domínio.' };
-  if (result.correct) return { state: 'correct', text: 'Boa! Sua resposta atende ao critério desta atividade.' };
-  return { state: 'incorrect', text: 'Ainda não. Revise a resposta e tente novamente.' };
+function selectedRadio(form, name) {
+  return form.querySelector(`input[name="${name}"]:checked`);
+}
+
+function normalizeComparable(value) {
+  if (typeof value === 'string') return value.trim().toLocaleLowerCase('pt-BR');
+  return value;
+}
+
+function evaluateChoice(form, block) {
+  const key = block.activity.evaluation.answerKey || {};
+  const selected = selectedRadio(form, 'choice');
+  if (!selected) return { complete: false };
+  const index = Number(selected.value);
+  const option = block.content?.options?.[index] ?? block.content?.nonVisualOptions?.[index] ?? block.content?.audioOptions?.[index] ?? block.content?.wholeWordOptions?.[index] ?? block.content?.availableTiles?.[index];
+  if (Object.prototype.hasOwnProperty.call(key, 'correctIndex')) return { complete: true, correct: index === key.correctIndex };
+  if (Object.prototype.hasOwnProperty.call(key, 'correct')) return { complete: true, correct: normalizeComparable(option) === normalizeComparable(key.correct) };
+  return { complete: true, pending: true };
+}
+
+function evaluateClassify(form, block) {
+  const evaluation = block.activity.evaluation || {};
+  const expected = evaluation.answerKey?.items || evaluation.answerKey || {};
+  const entries = [...form.querySelectorAll('select[name^="classify:"]')];
+  if (!entries.length || entries.some(select => !select.value)) return { complete: false };
+  let hits = 0;
+  for (const select of entries) {
+    const itemKey = select.name.slice('classify:'.length);
+    if (normalizeComparable(select.value) === normalizeComparable(expected[itemKey])) hits += 1;
+  }
+  const score = hits / entries.length;
+  const threshold = evaluation.threshold ?? 1;
+  return { complete: true, correct: score >= threshold, score };
+}
+
+function parseSequence(form, name) {
+  const input = [...form.querySelectorAll('[data-sequence-value]')].find(item => item.name === name);
+  try { return JSON.parse(input?.value || '[]'); } catch { return []; }
+}
+
+function evaluateComposite(form, block) {
+  const content = block.content || {};
+  const evaluation = block.activity.evaluation || {};
+  const expectedItems = evaluation.answerKey?.items || {};
+  const entries = Array.isArray(content.items) && content.items.length ? content.items : Array.isArray(content.rounds) ? content.rounds : [];
+  const threshold = evaluation.threshold ?? 1;
+
+  if (!entries.length && Object.prototype.hasOwnProperty.call(evaluation.answerKey || {}, 'auditoryCorrect')) {
+    const auditory = selectedRadio(form, 'auditory');
+    const relation = selectedRadio(form, 'relation');
+    if (!auditory || !relation) return { complete: false };
+    const auditoryValue = content.auditoryOptions?.[Number(auditory.value)];
+    return { complete: true, correct: normalizeComparable(auditoryValue) === normalizeComparable(evaluation.answerKey.auditoryCorrect) && Number(relation.value) === evaluation.answerKey.relationCorrectIndex };
+  }
+
+  if (!entries.length) return { complete: true, pending: true };
+
+  const multidimensional = Object.values(expectedItems).some(value => value && typeof value === 'object' && !Array.isArray(value) && ('auditoryCorrect' in value || 'relationCorrectIndex' in value));
+  if (multidimensional) {
+    let auditoryHits = 0;
+    let relationHits = 0;
+    for (let index = 0; index < entries.length; index += 1) {
+      const key = entryKey(entries[index], index);
+      const expected = expectedItems[key] || {};
+      const auditory = selectedRadio(form, `round:${key}:auditory`);
+      const relation = selectedRadio(form, `round:${key}:relation`);
+      if (!auditory || !relation) return { complete: false };
+      const auditoryValue = content.auditoryOptions?.[Number(auditory.value)];
+      if (normalizeComparable(auditoryValue) === normalizeComparable(expected.auditoryCorrect)) auditoryHits += 1;
+      if (Number(relation.value) === expected.relationCorrectIndex) relationHits += 1;
+    }
+    const auditoryScore = auditoryHits / entries.length;
+    const relationScore = relationHits / entries.length;
+    return { complete: true, correct: auditoryScore >= threshold && relationScore >= threshold, score: Math.min(auditoryScore, relationScore) };
+  }
+
+  let hits = 0;
+  for (let index = 0; index < entries.length; index += 1) {
+    const entry = entries[index];
+    const key = entryKey(entry, index);
+    const expected = expectedItems[key];
+    if (Array.isArray(expected)) {
+      const value = parseSequence(form, `round-sequence:${key}`);
+      if (!value.length) return { complete: false };
+      if (JSON.stringify(value) === JSON.stringify(expected)) hits += 1;
+      continue;
+    }
+    const selected = selectedRadio(form, `round:${key}`);
+    if (!selected) return { complete: false };
+    const selectedIndex = Number(selected.value);
+    if (Number.isInteger(expected)) {
+      if (selectedIndex === expected) hits += 1;
+      continue;
+    }
+    if (expected && typeof expected === 'object' && Number.isInteger(expected.correctIndex)) {
+      if (selectedIndex === expected.correctIndex) hits += 1;
+      continue;
+    }
+    const sharedOptions = sharedCompositeOptions(block);
+    const option = entry.options?.[selectedIndex] ?? entry.nonVisualOptions?.[selectedIndex] ?? entry.audioOptions?.[selectedIndex] ?? entry.wholeWordOptions?.[selectedIndex] ?? entry.availableTiles?.[selectedIndex] ?? content.pulseOptions?.[selectedIndex] ?? sharedOptions[selectedIndex];
+    const expectedValue = expected && typeof expected === 'object' ? expected.correct ?? expected.expected : expected;
+    if (normalizeComparable(option) === normalizeComparable(expectedValue)) hits += 1;
+  }
+  const score = hits / entries.length;
+  return { complete: true, correct: score >= threshold, score };
+}
+
+function evaluateDeterministic(form, block) {
+  const evaluation = block.activity.evaluation || {};
+  const key = evaluation.answerKey || {};
+  const interaction = block.activity.interaction;
+
+  if (interaction === 'SINGLE_CHOICE') return evaluateChoice(form, block);
+
+  if (interaction === 'MULTIPLE_CHOICE') {
+    const selected = [...form.querySelectorAll('input[name="choice"]:checked')].map(input => Number(input.value));
+    if (!selected.length) return { complete: false };
+    const expected = Array.isArray(key.correct) ? key.correct : [];
+    return { complete: true, correct: JSON.stringify([...selected].sort()) === JSON.stringify([...expected].sort()) };
+  }
+
+  if (interaction === 'CLASSIFY' || interaction === 'MATCH') return evaluateClassify(form, block);
+
+  if (interaction === 'SEQUENCE' || interaction === 'ORDER') {
+    const value = parseSequence(form, 'sequence');
+    if (!value.length) return { complete: false };
+    return { complete: true, correct: JSON.stringify(value) === JSON.stringify(key.correctSequence || key.correct || []) };
+  }
+
+  if (interaction === 'COMPOSITE') return evaluateComposite(form, block);
+  return { complete: true, pending: true };
+}
+
+function feedbackMessage(block, result) {
+  const evaluation = block.activity.evaluation || {};
+  if (evaluation.mode === 'RELIABLE_EVALUATOR') return { state: 'pending', text: 'Resposta registrada nesta sessão. A validação permanece pendente e não declara domínio.' };
+  if (evaluation.mode !== 'DETERMINISTIC' || result.pending) return { state: 'pending', text: 'Resposta registrada nesta sessão. A avaliação completa será ligada ao motor de progresso.' };
+  if (evaluation.feedbackTiming === 'AFTER_VERIFICATION') return { state: 'recorded', text: 'Resposta registrada. A verificação evita revelar a correção detalhada antes do fim.' };
+  if (result.correct) return { state: 'correct', text: result.score !== undefined ? `Resposta suficiente para este critério (${Math.round(result.score * 100)}%).` : 'Resposta correta.' };
+  return { state: 'retry', text: 'Ainda não. Revise o conteúdo e tente novamente; não há penalidade por nova tentativa.' };
 }
 
 function revealPostSubmissionExamples(form, block) {
@@ -447,63 +670,59 @@ function revealPostSubmissionExamples(form, block) {
 function bindActivity(form, block) {
   form.addEventListener('submit', event => {
     event.preventDefault();
-    const evaluation = block.activity?.evaluation || {};
-    const pending = evaluation.mode === 'RELIABLE_EVALUATOR';
-    let result = pending
-      ? { complete: form.checkValidity(), pending: true }
-      : evaluateDeterministicActivity(form, block);
-    if (!pending && !form.checkValidity()) result = { complete: false };
-    const message = resultMessage(result, pending);
-    form.dataset.activityResult = JSON.stringify(result);
+    if (!form.reportValidity()) return;
+    const result = block.activity.evaluation.mode === 'DETERMINISTIC' ? evaluateDeterministicActivity(form, block) : { complete: true, pending: true };
     const feedback = form.querySelector('[data-activity-feedback]');
+    if (!result.complete) {
+      feedback.dataset.state = 'missing';
+      feedback.textContent = 'Complete a resposta antes de verificar.';
+      return;
+    }
+    const message = feedbackMessage(block, result);
     feedback.dataset.state = message.state;
     feedback.textContent = message.text;
     revealPostSubmissionExamples(form, block);
   });
 }
 
-function bindSequence(root) {
-  root.querySelectorAll('[data-sequence-builder]').forEach(builder => {
-    const result = builder.querySelector('[data-sequence-result]');
-    const hidden = builder.querySelector('[data-sequence-value]');
-    const tokens = [];
-    const redraw = () => {
-      result.textContent = tokens.length ? tokens.join(' · ') : 'Sua sequência aparecerá aqui.';
-      hidden.value = JSON.stringify(tokens);
-    };
-    builder.querySelectorAll('[data-sequence-token]').forEach(button => button.addEventListener('click', () => {
-      tokens.push(button.textContent.trim());
-      button.disabled = true;
-      redraw();
-    }));
-    builder.querySelector('[data-sequence-reset]')?.addEventListener('click', () => {
-      tokens.length = 0;
-      builder.querySelectorAll('[data-sequence-token]').forEach(button => { button.disabled = false; });
-      redraw();
-    });
-  });
+function bindSequence(builder) {
+  const input = builder.querySelector('[data-sequence-value]');
+  const answer = builder.querySelector('[data-sequence-answer]');
+  let sequence = [];
+  const sync = () => {
+    input.value = JSON.stringify(sequence);
+    answer.innerHTML = sequence.length ? sequence.map(item => `<span class="token">${esc(item === 'SPACE' ? 'espaço' : item)}</span>`).join(' ') : 'Sua sequência aparecerá aqui.';
+  };
+  builder.querySelectorAll('[data-sequence-token]').forEach(button => button.addEventListener('click', () => {
+    sequence.push(button.dataset.value);
+    sync();
+  }));
+  builder.querySelector('[data-sequence-clear]')?.addEventListener('click', () => { sequence = []; sync(); });
 }
 
-function bindProgressive(root) {
-  root.querySelectorAll('[data-progressive-round]').forEach(round => {
-    const button = round.querySelector('[data-progressive-reveal]');
+export function bindClassicRenderer(root, document = null) {
+  root.querySelectorAll('[data-tts]').forEach(button => button.addEventListener('click', () => speak(button.dataset.tts || '')));
+  root.querySelectorAll('[data-attempt-gate]').forEach(button => button.addEventListener('click', () => {
+    const group = button.closest('[data-gated-choice-set]');
+    group?.querySelectorAll('[data-gated-control]').forEach(control => { control.disabled = false; });
+    button.disabled = true;
+    button.textContent = 'Tentativa registrada';
+  }));
+  root.querySelectorAll('[data-sequence-builder]').forEach(bindSequence);
+  root.querySelectorAll('[data-progressive-reveal]').forEach(button => button.addEventListener('click', () => {
+    const round = button.closest('[data-progressive-round]');
+    const stage1 = round?.querySelector('input[name$=":stage1"]:checked');
+    if (!stage1) return;
     const stage2 = round.querySelector('[data-progressive-stage2]');
-    if (!button || !stage2) return;
-    button.addEventListener('click', () => {
-      stage2.hidden = false;
-      button.hidden = true;
-    });
-  });
-}
-
-export function bindDocumentInteractions(root) {
-  if (!root) return;
-  bindSequence(root);
-  bindProgressive(root);
-  root.querySelectorAll('[data-tts]').forEach(button => button.addEventListener('click', () => speak(button.dataset.tts)));
-  root.querySelectorAll('[data-activity-form]').forEach(form => {
-    const card = form.closest('[data-activity-id]');
-    const block = card?.dataset.activityId ? root.__documentRuntime?.blocks?.find(item => item.id === card.dataset.activityId) : null;
-    if (block) bindActivity(form, block);
+    if (stage2) stage2.hidden = false;
+    button.disabled = true;
+    button.textContent = 'Nova pista aberta';
+  }));
+  if (!document) return;
+  const byId = new Map(document.blocks.filter(block => block.kind === 'ACTIVITY').map(block => [block.id, block]));
+  root.querySelectorAll('[data-activity-id]').forEach(card => {
+    const block = byId.get(card.dataset.activityId);
+    const form = card.querySelector('[data-activity-form]');
+    if (block && form) bindActivity(form, block);
   });
 }
