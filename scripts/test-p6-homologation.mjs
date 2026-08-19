@@ -80,7 +80,7 @@ assert.match(ui, /não concede domínio/);
 assert.match(ui, /Sua resposta continua salva/);
 assert.doesNotMatch(ui, /criterionId\}\}|flags\}\}|policyVersion\}\}/, 'UI não deve imprimir metadados técnicos diretamente.');
 
-// 8. Documentação canônica registra transporte seguro e P6.2 homologado.
+// 8. Documentação canônica registra transporte seguro e o fechamento completo do P6.
 const transport = read('docs/p6-transporte-ia.md');
 assert.match(transport, /API key da OpenAI \*\*não entra no navegador\*\*/);
 assert.match(transport, /store: false/);
@@ -91,9 +91,21 @@ assert.match(p62, /P6\.2: HOMOLOGADO/);
 assert.match(p62, /VALIDACAO_PENDENTE/);
 assert.match(p62, /run 32260852054/);
 
+const p6 = read('docs/homologacao-p6.md');
+assert.match(p6, /P6: HOMOLOGADO/);
+assert.match(p6, /P6\.3/);
+assert.match(p6, /run 32261814336/);
+assert.match(p6, /P7 — Ampliação do catálogo Clássico N0→N4/);
+
 const state = read('docs/estado-implementacao-classico.md');
+assert.match(state, /P6 — Feedback por IA: HOMOLOGADO/);
 assert.match(state, /P6\.1[^\n]*HOMOLOGADO/);
 assert.match(state, /P6\.2[^\n]*HOMOLOGADO/);
-assert.match(state, /P6\.3[^\n]*homologação transversal/i);
+assert.match(state, /P6\.3[^\n]*HOMOLOGADO/);
+assert.match(state, /P7 — Ampliação do catálogo Clássico N0→N4: ATIVO/);
 
-console.log('P6.3 gate: segredo fora do frontend, consentimento, payload mínimo, companion seguro, structured output, falha segura e neutralidade curricular preservados.');
+const roadmap = read('docs/roadmap-produto.md');
+assert.match(roadmap, /## P6 — Feedback por IA no Clássico\n\n\*\*Estado: HOMOLOGADO\.\*\*/);
+assert.match(roadmap, /## P7 — Ampliação do catálogo Clássico N0→N4\n\n\*\*Estado: ATIVO\.\*\*/);
+
+console.log('P6 homologation gate: segredo fora do frontend, consentimento, payload mínimo, companion seguro, structured output, falha segura, neutralidade curricular e cursor P7 preservados.');
