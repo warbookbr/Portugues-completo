@@ -79,6 +79,12 @@ assert.equal(n0Lesson.runtime.presentation.introSource, 'AUTHORED', 'a nova prim
 assert.equal(n0Lesson.runtime.presentation.intro, 'Entender o que é uma letra e conhecer as letras do alfabeto, seus nomes e sua ordem.');
 assert.notEqual(n0Lesson.runtime.presentation.intro, n0Lesson.runtime.objective);
 
+const n0LessonHtml = documentHtml(n0Lesson.runtime, { unitId: 'N0-U01', unitTitle: 'Letras e primeiros sons' });
+assert.match(n0LessonHtml, /Grupos/i, 'groups deve receber rótulo público em português');
+assert.match(n0LessonHtml, /Importante/i, 'important deve receber rótulo público em português');
+assert.match(n0LessonHtml, /o audio diz o nome da letra/i, 'aviso pedagógico importante deve permanecer visível');
+assert.doesNotMatch(n0LessonHtml, /\bSOURCE\b|\bletterSet\b|\bPRESENTATION\b|\bCOVERAGE RULE\b|\bcoverageRule\b/i, 'metadados de autoria não podem vazar para o aluno');
+
 assert.equal(lessonHasStudyHistory(emptyProgress, n0Lesson.runtime.id), false, 'abrir rota sem evidência não deve contar como lição já iniciada');
 const onlyCurrent = createEmptyProgress();
 onlyCurrent.curriculum.current.lessonId = n0Lesson.runtime.id;
