@@ -54,7 +54,7 @@ function publicLegacyAnswer(value) {
 }
 
 function isOpenAuthoredActivity(block) {
-  return block?.responseMode === 'free-text'
+  return String(block?.responseMode || '').startsWith('free-text')
     || String(block?.interaction || '').includes('free-text')
     || String(block?.type || '').includes('open-production')
     || block?.type === 'required-open-production';
@@ -129,9 +129,57 @@ function materializeEvidenceSelection(entry, sourceText) {
   };
 }
 
+const CONTROLLED_TEXT_INTERACTIONS = new Set(['insert-spaces', 'edit-capitalization-and-boundary', 'edit-controlled-text', 'insert-commas']);
+const GENERIC_SELF_REVIEW = Object.freeze([
+  'Minha resposta comunica o objetivo apresentado?',
+  'Reli minha resposta antes de enviar?'
+]);
+
 function materializeCommonLegacyActivity(block, sourceDocument) {
   const sourceText = evidenceSourceText(block, sourceDocument);
   let materialized = materializeEvidenceSelection(block, sourceText);
+
+  // Planejamento por seleção: transforma cartões autorais em múltipla escolha sem expor flags essential.
+  const planningIndexes = Array.isArray(materialized.correctEssentialIndexes)
+    ? materialized.correctEssentialIndexes
+    : Array.isArray(materialized.informationCards) && Array.isArray(materialized.correctIndexes)
+      ? materialized.correctIndexes
+      : null;
+  if (Array.isArray(materialized.informationCards) && planningIndexes) {
+    const { informationCards, correctEssentialIndexes, ...rest } = materialized;
+    materialized = {
+      ...clone(rest),
+      options: informationCards.map(item => typeof item === 'string' ? item : item?.text ?? String(item)),
+      correctIndexes: clone(planningIndexes),
+      interaction: 'multiple-choice'
+    };
+  }
+
+  // Algumas atividades históricas chamam as alternativas de versions.
+  if (!Array.isArray(materialized.options) && Array.isArray(materialized.versions) && Object.prototype.hasOwnProperty.call(materialized, 'correctIndex')) {
+    const { versions, ...rest } = materialized;
+    materialized = { ...clone(rest), options: clone(versions) };
+  }
+
+  // Ordenação pode aceitar mais de uma sequência correta.
+  if (Array.isArray(materialized.cards) && Array.isArray(materialized.acceptableOrders) && materialized.acceptableOrders.length) {
+    materialized.availableTiles = clone(materialized.cards);
+    materialized.acceptedSequences = clone(materialized.acceptableOrders);
+  }
+
+  // Edições controladas têm um alvo exato e podem ser verificadas deterministicamente.
+  if (CONTROLLED_TEXT_INTERACTIONS.has(String(materialized.interaction || '')) && typeof materialized.expected === 'string') {
+    if (Array.isArray(materialized.principleOptions) && Number.isInteger(materialized.principleCorrectIndex)) {
+      materialized.items = [
+        { id: 'edit', acceptedResult: materialized.expected },
+        { id: 'principle', prompt: materialized.principleQuestion || 'Qual princípio explica esta edição?', options: clone(materialized.principleOptions), correctIndex: materialized.principleCorrectIndex }
+      ];
+      materialized.interaction = 'composite';
+    } else {
+      materialized.interaction = 'short-text';
+    }
+    materialized.automaticValidation = true;
+  }
 
   if (!Array.isArray(materialized.items) && Array.isArray(materialized.contexts)) {
     materialized.items = materialized.contexts.map((item, index) => ({ ...clone(item), id: item.id || String(index) }));
@@ -189,17 +237,24 @@ function materializeCommonLegacyActivity(block, sourceDocument) {
   }
 
   if (isOpenAuthoredActivity(materialized)) {
-    const selfReviewQuestions = Array.isArray(materialized.selfReviewQuestions)
+    const selfReviewQuestions = Array.isArray(materialized.selfReviewQuestions) && materialized.selfReviewQuestions.length
       ? materialized.selfReviewQuestions
-      : Array.isArray(sourceDocument?.assessmentBehavior?.selfReview?.questions)
-        ? sourceDocument.assessmentBehavior.selfReview.questions
-        : [];
+      : Array.isArray(materialized.selfReview) && materialized.selfReview.length
+        ? materialized.selfReview
+        : Array.isArray(sourceDocument?.assessmentBehavior?.selfReview?.questions) && sourceDocument.assessmentBehavior.selfReview.questions.length
+          ? sourceDocument.assessmentBehavior.selfReview.questions
+          : materialized.selfReviewRequired === true
+            ? GENERIC_SELF_REVIEW
+            : [];
     materialized = {
       ...materialized,
       automaticValidation: false,
       recordResponse: true,
       interaction: Array.isArray(materialized.items) && materialized.items.length ? 'composite' : 'long-text',
-      ...(selfReviewQuestions.length ? { selfReviewQuestions: clone(selfReviewQuestions) } : {})
+      ...(selfReviewQuestions.length ? { selfReviewQuestions: clone(selfReviewQuestions) } : {}),
+      ...(Array.isArray(materialized.essentialInformation) && materialized.essentialInformation.length
+        ? { planningChecklist: clone(materialized.essentialInformation) }
+        : {})
     };
   }
 
@@ -313,7 +368,7 @@ function answerFromEntry(entry) {
 
 function normalizeAnswerKey(block) {
   const answerKey = {};
-  const topLevelKeys = ['correct', 'correctIndex', 'correctIndexes', 'correctSequence', 'acceptedSequences', 'auditoryCorrect', 'relationCorrectIndex'];
+  const topLevelKeys = ['correct', 'expected', 'acceptedResult', 'acceptedResults', 'correctIndex', 'correctIndexes', 'correctSequence', 'acceptedSequences', 'auditoryCorrect', 'relationCorrectIndex'];
   for (const key of topLevelKeys) if (Object.prototype.hasOwnProperty.call(block, key)) answerKey[key] = clone(block[key]);
   const blockEvidence = evidenceAnswer(block);
   if (blockEvidence) answerKey.evidence = blockEvidence;
@@ -415,8 +470,8 @@ function normalizeStructuralCompletion(source, activitySources) {
 
 const PRESENTATION_SECRET_KEYS = new Set([
   'correct', 'expected', 'correctIndex', 'correctIndexes', 'correctSequence', 'correctOrder',
-  'acceptedSequences', 'acceptedResult', 'acceptedResults', 'correctFunction', 'correctGroup', 'correctAnswer',
-  'auditoryCorrect', 'relationCorrectIndex', 'requiredEvidence', 'requiredEvidenceParts', 'acceptableEvidence',
+  'acceptedSequences', 'acceptableOrders', 'acceptedResult', 'acceptedResults', 'correctFunction', 'correctGroup', 'correctAnswer',
+  'auditoryCorrect', 'relationCorrectIndex', 'correctEssentialIndexes', 'principleCorrectIndex', 'requiredEvidence', 'requiredEvidenceParts', 'acceptableEvidence',
   'supportingParts', 'evidenceCorrectIndexes', 'evidenceMatchMode', 'revisedAnswer'
 ]);
 
@@ -480,6 +535,7 @@ function recognizedInteraction(block) {
 function isLessonActivity(block, requiredIds) {
   if (!block || typeof block !== 'object') return false;
   if (requiredIds.has(block.id)) return true;
+  if (isOpenAuthoredActivity(block)) return true;
   if (block.recordResponse === true || block.automaticValidation === true) return true;
   if (hasDeterministicKey(block)) return true;
   if (recognizedInteraction(block)) return true;

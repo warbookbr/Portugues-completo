@@ -76,6 +76,16 @@ function clusterCriteriaSatisfied(progress, document, cluster) {
         hits += Object.values(itemResults).filter(Boolean).length;
       }
       if (hits < Number(criterion.minimum || 0)) return false;
+      continue;
+    }
+    if (criterion.type === 'MIN_EVIDENCE_WITHOUT_HINT') {
+      const evidenceIds = Array.isArray(criterion.evidenceIds) && criterion.evidenceIds.length ? criterion.evidenceIds : (cluster.evidenceIds || []);
+      const minimum = Number(criterion.minimum || 0);
+      const count = evidenceIds.filter(evidenceId => {
+        const evidence = progress.evidence[progressDocumentRef(document.id, evidenceId)];
+        return evidence && statusSatisfies(evidence.status, cluster.satisfaction) && evidence.support?.hintUsed !== true;
+      }).length;
+      if (count < minimum) return false;
     }
   }
   return true;

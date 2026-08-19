@@ -69,9 +69,10 @@ function renderKnownContent(content = {}) {
     'ttsBeforeResponse', 'allowReplayWithoutPenalty', 'repeatAudio', 'requiredTileCount', 'optionOrderShouldVaryAcrossAttempts',
     'imageId', 'imageRevealAfterAttempt', 'modelExamplesAfterSubmission', 'preResponseModel',
     'automaticObservations', 'notAutomaticallyJudged', 'humanReview', 'humanOrExternalReview',
-    'responseMode', 'selfReviewRequired', 'selfReviewQuestions', 'revisionFlow', 'promptChoices',
+    'responseMode', 'selfReview', 'selfReviewRequired', 'selfReviewQuestions', 'revisionFlow', 'promptChoices',
     'purpose', 'revealPolicy', 'followUp', 'evidenceOptions', 'evidenceSelectionMode', 'evidenceMatchMode',
-    'cards', 'textRemainsVisible', 'textRef', 'competency'
+    'cards', 'optionalScaffold', 'planningChecklist', 'principleQuestion', 'principleOptions', 'automaticCheck',
+    'textRemainsVisible', 'textRef', 'competency'
   ]);
 
   if (content.title) lead.push(`<h3>${esc(content.title)}</h3>`);
@@ -365,6 +366,26 @@ function renderComposite(block) {
   return renderOpenInput(block, 'Registre sua resposta para esta atividade composta');
 }
 
+function renderOptionalScaffold(block) {
+  const scaffold = block.content?.optionalScaffold;
+  if (!scaffold || scaffold.availableOnDemand === false) return '';
+  const starter = typeof scaffold.starter === 'string' && scaffold.starter.trim()
+    ? `<div class="content-detail"><strong>Início sugerido</strong><div>${esc(scaffold.starter)}</div></div>`
+    : '';
+  const words = Array.isArray(scaffold.wordBank) && scaffold.wordBank.length
+    ? `<div class="content-detail"><strong>Palavras de apoio</strong><div>${scaffold.wordBank.map(item => `<span class="token">${esc(item)}</span>`).join(' ')}</div></div>`
+    : '';
+  if (!starter && !words) return '';
+  return `<details class="support-disclosure optional-scaffold" data-optional-scaffold><summary>Ver apoio opcional</summary><div class="content-details">${starter}${words}</div></details>`;
+}
+
+function renderPlanningChecklist(block) {
+  const items = block.content?.planningChecklist;
+  if (!Array.isArray(items) || !items.length) return '';
+  const prompt = block.content?.planningPrompt || 'Antes de escrever, confirme as informações essenciais.';
+  return `<fieldset class="self-review planning-checklist"><legend>${esc(prompt)}</legend>${items.map((item, index) => `<label class="choice-option"><input type="checkbox" name="planning:${index}" value="done" required><span>${esc(item)}</span></label>`).join('')}</fieldset>`;
+}
+
 function renderSelfReview(block) {
   const questions = block.content?.selfReviewQuestions;
   if (!Array.isArray(questions) || !questions.length) return '';
@@ -413,6 +434,8 @@ export function renderActivity(block) {
       ${renderKnownContent(block.content)}
       ${renderStimuli(block.activity)}
       <form class="activity-form" data-activity-form novalidate>
+        ${renderOptionalScaffold(block)}
+        ${renderPlanningChecklist(block)}
         ${renderInteraction(block)}
         ${renderEvidenceSelector(block.content)}
         ${renderSelfReview(block)}
@@ -624,6 +647,24 @@ function feedbackMessage(block, result) {
   return { state: 'retry', text: 'Ainda não. Revise o conteúdo e tente novamente; não há penalidade por nova tentativa.' };
 }
 
+function revealPostSubmissionExamples(form, block) {
+  const examples = block.content?.modelExamplesAfterSubmission;
+  if (!Array.isArray(examples) || !examples.length || form.querySelector('[data-post-submission-examples]')) return;
+  const box = document.createElement('div');
+  box.className = 'content-detail post-submission-examples';
+  box.dataset.postSubmissionExamples = 'true';
+  const title = document.createElement('strong');
+  title.textContent = 'Exemplos possíveis depois da sua tentativa';
+  const body = document.createElement('div');
+  examples.forEach(example => {
+    const item = document.createElement('p');
+    item.textContent = example;
+    body.appendChild(item);
+  });
+  box.append(title, body);
+  form.appendChild(box);
+}
+
 function bindActivity(form, block) {
   form.addEventListener('submit', event => {
     event.preventDefault();
@@ -638,6 +679,7 @@ function bindActivity(form, block) {
     const message = feedbackMessage(block, result);
     feedback.dataset.state = message.state;
     feedback.textContent = message.text;
+    revealPostSubmissionExamples(form, block);
   });
 }
 

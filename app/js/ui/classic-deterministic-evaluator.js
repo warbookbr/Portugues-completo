@@ -103,6 +103,25 @@ function evaluateChoice(form, block) {
   return { complete: true, correct, score: correct ? 1 : 0, itemResults: { 0: correct } };
 }
 
+function normalizeControlledText(value) {
+  return String(value ?? '').replace(/\r\n/g, '\n').trim();
+}
+
+function evaluateControlledText(form, block) {
+  const input = form.elements.namedItem('openResponse');
+  const value = typeof input?.value === 'string' ? input.value : '';
+  if (!value.trim()) return { complete: false };
+  const key = block.activity.evaluation?.answerKey || {};
+  const accepted = Array.isArray(key.acceptedResults) ? key.acceptedResults
+    : Object.prototype.hasOwnProperty.call(key, 'acceptedResult') ? [key.acceptedResult]
+      : Object.prototype.hasOwnProperty.call(key, 'expected') ? [key.expected]
+        : Object.prototype.hasOwnProperty.call(key, 'correct') ? [key.correct]
+          : [];
+  if (!accepted.length) return { complete: true, pending: true };
+  const correct = accepted.some(expected => normalizeControlledText(value) === normalizeControlledText(expected));
+  return { complete: true, correct, score: correct ? 1 : 0, itemResults: { 0: correct } };
+}
+
 function evaluateMultipleChoice(form, block) {
   const key = block.activity.evaluation?.answerKey || {};
   const selected = selectedIndexes(form, 'choice');
@@ -241,6 +260,7 @@ export function evaluateDeterministic(form, block) {
   else if (interaction === 'MULTIPLE_CHOICE') result = evaluateMultipleChoice(form, block);
   else if (interaction === 'CLASSIFY' || interaction === 'MATCH') result = evaluateClassify(form, block);
   else if (interaction === 'SEQUENCE' || interaction === 'ORDER') result = evaluateSequence(form, block);
+  else if (interaction === 'SHORT_TEXT') result = evaluateControlledText(form, block);
   else if (interaction === 'COMPOSITE') result = evaluateComposite(form, block);
   else result = { complete: true, pending: true };
   return applyEvidenceResult(form, 'evidence', block.activity?.evaluation?.answerKey?.evidence, result);

@@ -19,6 +19,51 @@ export const LEGACY_COMPLETION_RULES_V1 = Object.freeze({
   },
 
   // N0-U03 — regras históricas explícitas preservadas sem parsear prosa autoral.
+  // N0-U05 — escrita autoral: pending não equivale a domínio e apoio não é penalidade.
+  'N0-U05-L02': {
+    clusters: [
+      { id: 'ownWords', required: true, evidenceIds: ['L02-A01', 'L02-A02'], satisfaction: 'PENDING_ALLOWED', criteria: [{ type: 'MIN_EVIDENCE_WITHOUT_HINT', minimum: 1 }] },
+      { id: 'selfReview', required: true, evidenceIds: ['L02-A01', 'L02-A02'], satisfaction: 'PENDING_ALLOWED' }
+    ],
+    nonCompensable: true,
+    activityPolicies: {}
+  },
+  'N0-U05-L03': {
+    clusters: [
+      { id: 'organization', required: true, evidenceIds: ['L03-C01', 'L03-A01'], satisfaction: 'DEMONSTRATED_REQUIRED' },
+      { id: 'ownMessage', required: true, evidenceIds: ['L03-A02'], satisfaction: 'PENDING_ALLOWED' }
+    ],
+    nonCompensable: true,
+    activityPolicies: {}
+  },
+  'N0-U05-L04': {
+    clusters: [
+      { id: 'purposeRecognition', required: true, evidenceIds: ['L04-C01', 'L04-A01'], satisfaction: 'DEMONSTRATED_REQUIRED' },
+      { id: 'functionalProduction', required: true, evidenceIds: ['L04-A02'], satisfaction: 'PENDING_ALLOWED' }
+    ],
+    nonCompensable: true,
+    activityPolicies: {}
+  },
+  'N0-U05-L09': {
+    clusters: [
+      { id: 'basicUse', required: true, evidenceIds: ['L09-C01', 'L09-A01'], satisfaction: 'DEMONSTRATED_REQUIRED', criteria: [{ type: 'TOTAL_ITEM_HITS_AT_LEAST', evidenceIds: ['L09-C01', 'L09-A01'], minimum: 4 }] },
+      { id: 'contextualUnderstanding', required: true, evidenceIds: ['L09-A02'], satisfaction: 'DEMONSTRATED_REQUIRED' }
+    ],
+    nonCompensable: true,
+    activityPolicies: { 'L09-C01': { threshold: 0.5 }, 'L09-A01': { threshold: 2 / 3 } }
+  },
+  'N0-U05-V01': {
+    clusters: [
+      { id: 'planningAndPurpose', required: true, evidenceIds: ['V01-Q01', 'V01-Q02'], satisfaction: 'DEMONSTRATED_REQUIRED' },
+      { id: 'organizationAndSufficiency', required: true, evidenceIds: ['V01-Q03', 'V01-Q04'], satisfaction: 'DEMONSTRATED_REQUIRED' },
+      { id: 'revision', required: true, evidenceIds: ['V01-Q05', 'V01-Q06'], satisfaction: 'DEMONSTRATED_REQUIRED' },
+      { id: 'graphicConventions', required: true, evidenceIds: ['V01-Q07', 'V01-Q09', 'V01-Q10'], satisfaction: 'DEMONSTRATED_REQUIRED', criteria: [{ type: 'TOTAL_ITEM_HITS_AT_LEAST', evidenceIds: ['V01-Q09'], minimum: 2 }] },
+      { id: 'ownProduction', required: true, evidenceIds: ['V01-Q08'], satisfaction: 'PENDING_ALLOWED' }
+    ],
+    nonCompensable: true,
+    activityPolicies: { 'V01-Q09': { threshold: 2 / 3 } }
+  },
+
   'N0-U03-L01': {
     clusters: [
       { id: 'formVersusMeaning', required: true, evidenceIds: ['L01-C01'], satisfaction: 'DEMONSTRATED_REQUIRED' },
@@ -300,5 +345,9 @@ export const INTERACTION_BY_LEGACY_INTERACTION_V1 = Object.freeze({
   'audio-role-choice': 'SINGLE_CHOICE',
   'name-versus-word-audio': 'CLASSIFY',
   'audio-judgment-then-writing-reveal': 'SINGLE_CHOICE',
-  'listen-reveal-relation-classify': 'COMPOSITE'
+  'listen-reveal-relation-classify': 'COMPOSITE',
+  'insert-spaces': 'SHORT_TEXT',
+  'edit-capitalization-and-boundary': 'SHORT_TEXT',
+  'edit-controlled-text': 'SHORT_TEXT',
+  'insert-commas': 'SHORT_TEXT'
 });
