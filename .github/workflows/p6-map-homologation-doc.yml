@@ -1,0 +1,35 @@
+name: Map P6.2 homologation doc
+
+on:
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  map-doc:
+    if: github.head_ref == 'p6-ai-feedback-ui-pilot' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          ref: p6-ai-feedback-ui-pilot
+          fetch-depth: 0
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+          package-manager-cache: false
+      - name: Map homologation document
+        run: node scripts/p6-map-homologation-doc.mjs
+      - name: Validate structure
+        run: node scripts/validate-project.mjs
+      - name: Commit index
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add PROJECT_INDEX.md
+          git commit -m 'docs(p6): mapeia homologacao P6.2 no indice'
+          git push origin HEAD:p6-ai-feedback-ui-pilot
