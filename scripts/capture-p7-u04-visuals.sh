@@ -105,6 +105,16 @@ if grep -Eiq 'requiredEvidence|requiredEvidenceParts|acceptableEvidence|evidence
   exit 1
 fi
 
+if grep -Eiq '>(wrong conclusion|question|ordered events|cards|text remains visible|text ref|competency)<' <<<"$L04_DOM$L06_DOM$V01_DOM"; then
+  echo 'P7 U04: chave autoral crua em inglês vazou para a linguagem pública.' >&2
+  exit 1
+fi
+
+if grep -Fq 'Verificar se o aluno' <<<"$V01_DOM"; then
+  echo 'P7 U04: objective técnico da verificação vazou para a abertura pública.' >&2
+  exit 1
+fi
+
 capture() {
   local name="$1" width="$2" height="$3" route="$4"
   "$CHROME" --headless --no-sandbox --disable-gpu --hide-scrollbars \

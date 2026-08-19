@@ -15,6 +15,10 @@ const PUBLIC_LABELS = new Map([
   ['display', 'Forma'], ['description', 'Descrição'], ['knownPartSources', 'Partes já conhecidas'],
   ['nonVisualMeaning', 'Significado'], ['contrast', 'Comparação'], ['contrasts', 'Comparações'],
   ['goal', 'Objetivo da mensagem'], ['candidate', 'Frase para revisar'], ['questions', 'Perguntas'],
+  ['question', 'Pergunta'], ['wrongConclusion', 'Conclusão incorreta'],
+  ['orderedEvents', 'Ordem dos acontecimentos'], ['firstInterpretation', 'Primeira interpretação'],
+  ['revisedInterpretation', 'Interpretação revisada'], ['firstAnswer', 'Primeira resposta'],
+  ['situation', 'Situação'], ['central', 'Ideia central'], ['detail', 'Detalhe'],
   ['text', 'Pergunta'], ['options', 'Opções'], ['firstDraft', 'Primeira versão'],
   ['selfCheck', 'Autochecagem'], ['revisedDraft', 'Versão revisada'],
   ['reviewPrompts', 'Perguntas para revisar'], ['starter', 'Início sugerido'],
@@ -66,7 +70,8 @@ function renderKnownContent(content = {}) {
     'imageId', 'imageRevealAfterAttempt', 'modelExamplesAfterSubmission', 'preResponseModel',
     'automaticObservations', 'notAutomaticallyJudged', 'humanReview', 'humanOrExternalReview',
     'responseMode', 'selfReviewRequired', 'selfReviewQuestions', 'revisionFlow', 'promptChoices',
-    'purpose', 'revealPolicy', 'followUp', 'evidenceOptions', 'evidenceSelectionMode'
+    'purpose', 'revealPolicy', 'followUp', 'evidenceOptions', 'evidenceSelectionMode', 'evidenceMatchMode',
+    'cards', 'textRemainsVisible', 'textRef', 'competency'
   ]);
 
   if (content.title) lead.push(`<h3>${esc(content.title)}</h3>`);
@@ -427,6 +432,14 @@ function completionSummary(document) {
   return `<aside class="completion-card"><h2>Como esta etapa é concluída</h2><p>Conclusão não significa automaticamente domínio consolidado. As evidências abaixo serão conectadas ao progresso no P5.</p><ul>${clusters.map(cluster => `<li><strong>${esc(pretty(cluster.id))}</strong> · ${esc(pretty(cluster.satisfaction))}${cluster.minimumEvidence ? ` · mínimo ${cluster.minimumEvidence}` : ''}</li>`).join('')}</ul></aside>`;
 }
 
+const SAFE_VERIFICATION_INTRO = 'Nesta verificação, você vai usar o que estudou nesta unidade em novas atividades. Leia com atenção e volte ao texto sempre que precisar.';
+const SAFE_LESSON_INTRO = 'Nesta lição, você vai estudar o conteúdo passo a passo.';
+
+function publicDocumentIntro(document, verification) {
+  if (verification) return document.presentation?.intro || SAFE_VERIFICATION_INTRO;
+  return document.presentation?.intro || SAFE_LESSON_INTRO;
+}
+
 export function documentHtml(document, { unitId, unitTitle, verification = false } = {}) {
   const kindLabel = verification ? 'Verificação da unidade' : 'Lição';
   return `
@@ -435,7 +448,7 @@ export function documentHtml(document, { unitId, unitTitle, verification = false
       <header class="lesson-hero">
         <span class="eyebrow">${kindLabel}</span>
         <h1>${esc(document.title)}</h1>
-        <p>${esc(document.objective)}</p>
+        <p>${esc(publicDocumentIntro(document, verification))}</p>
         ${document.competencyIds?.length ? `<div class="competency-chips">${document.competencyIds.map(id => `<span>${esc(id)}</span>`).join('')}</div>` : ''}
       </header>
       <section class="lesson-stream">${document.blocks.map(block => block.kind === 'ACTIVITY' ? renderActivity(block) : renderContentBlock(block)).join('')}</section>

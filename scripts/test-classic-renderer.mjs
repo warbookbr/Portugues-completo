@@ -113,6 +113,12 @@ const u04SequenceHtml = documentHtml(u04SequenceLesson.runtime, { unitId: 'N0-U0
 assert.match(u04SequenceHtml, /data-sequence-builder/);
 assert.doesNotMatch(u04SequenceHtml, /Interação ainda não suportada/i);
 
+const u04Verification = await service.loadVerification('N0-U04');
+const u04VerificationHtml = documentHtml(u04Verification.runtime, { unitId: 'N0-U04', unitTitle: 'Lendo e compreendendo pequenos textos', verification: true });
+assert.match(u04VerificationHtml, /Nesta verificação, você vai usar o que estudou nesta unidade/i);
+assert.doesNotMatch(u04VerificationHtml, /Verificar se o aluno/i);
+assert.doesNotMatch(u04VerificationHtml, />\s*(WRONG CONCLUSION|QUESTION|ORDERED EVENTS|CARDS|TEXT REMAINS VISIBLE|TEXT REF|COMPETENCY)\s*</i);
+
 const n4Lesson = await service.loadLesson('N4-U09', 'N4-U09-L01');
 const n4Html = documentHtml(n4Lesson.runtime, { unitId: 'N4-U09', unitTitle: 'Literatura, multimodalidade, autoria intermedial e digital' });
 assert.match(n4Html, /avaliação pendente/i);
