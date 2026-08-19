@@ -120,10 +120,12 @@ function evaluateDeterministic(form, block) {
 
 function collectResponse(form, block) {
   if (!block.activity?.evidence?.recordResponse) return undefined;
+  const data = new FormData(form);
   const open = form.elements.namedItem('openResponse');
-  if (open && typeof open.value === 'string') return open.value;
+  const hasStructuredCompanions = [...data.keys()].some(key => key !== 'openResponse');
+  if (open && typeof open.value === 'string' && !hasStructuredCompanions) return open.value;
   const values = {};
-  for (const [key, value] of new FormData(form).entries()) {
+  for (const [key, value] of data.entries()) {
     if (key in values) values[key] = Array.isArray(values[key]) ? [...values[key], value] : [values[key], value];
     else values[key] = value;
   }
@@ -134,8 +136,21 @@ function restoreResponse(form, block, documentRuntime, progress) {
   if (!block.activity?.evidence?.recordResponse) return;
   const ref = `${documentRuntime.id}/${block.id}`;
   const saved = progress?.responses?.[ref];
+  if (!saved) return;
   const open = form.elements.namedItem('openResponse');
-  if (saved && open && typeof saved.value === 'string') open.value = saved.value;
+  if (open && typeof saved.value === 'string') {
+    open.value = saved.value;
+    return;
+  }
+  if (!saved.value || typeof saved.value !== 'object') return;
+  for (const [key, stored] of Object.entries(saved.value)) {
+    const values = Array.isArray(stored) ? stored : [stored];
+    const controls = [...form.elements].filter(control => control.name === key);
+    for (const control of controls) {
+      if (control.type === 'checkbox' || control.type === 'radio') control.checked = values.includes(control.value);
+      else if (values.length) control.value = values[0];
+    }
+  }
 }
 
 export function bindClassicProgress(root, documentRuntime, { progressService, onProgress = null } = {}) {
@@ -157,10 +172,11 @@ export function bindClassicProgress(root, documentRuntime, { progressService, on
       const state = feedback?.dataset.state;
       if (!state || state === 'missing') return;
       let result;
-      if (state === 'correct') result = { complete: true, correct: true };
-      else if (state === 'retry') result = { complete: true, correct: false };
+      if (block.activity.evaluation.mode === 'DETERMINISTIC') result = evaluateDeterministicActivity(form, block);
       else if (state === 'pending') result = { complete: true, pending: true };
-      else result = block.activity.evaluation.mode === 'DETERMINISTIC' ? evaluateDeterministicActivity(form, block) : { complete: true, pending: true };
+      else if (state === 'correct') result = { complete: true, correct: true };
+      else if (state === 'retry') result = { complete: true, correct: false };
+      else result = { complete: true, pending: true };
       if (!result.complete) return;
       const snapshot = progressService.recordActivity(documentRuntime, block, result, {
         response: collectResponse(form, block),

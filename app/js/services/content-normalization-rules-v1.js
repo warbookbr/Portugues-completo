@@ -166,6 +166,31 @@ export const LEGACY_COMPLETION_RULES_V1 = Object.freeze({
     ],
     nonCompensable: true,
     activityPolicies: { 'L10-C01': { threshold: 1 } }
+  },
+  'N0-U03-V01': {
+    clusters: [
+      {
+        id: 'meaningAndContext', required: true, evidenceIds: ['V01-Q01', 'V01-Q02', 'V01-Q03'], satisfaction: 'DEMONSTRATED_REQUIRED',
+        criteria: [{ type: 'TOTAL_ITEM_HITS_AT_LEAST', evidenceIds: ['V01-Q01', 'V01-Q02', 'V01-Q03'], minimum: 5 }]
+      },
+      {
+        id: 'constructionAndManipulation', required: true, evidenceIds: ['V01-Q05', 'V01-Q06', 'V01-Q09'], satisfaction: 'DEMONSTRATED_REQUIRED',
+        criteria: [{ type: 'TOTAL_ITEM_HITS_AT_LEAST', evidenceIds: ['V01-Q06', 'V01-Q09'], minimum: 3 }]
+      },
+      { id: 'messageComprehensionAndProduction', required: true, evidenceIds: ['V01-Q04', 'V01-Q07', 'V01-Q08', 'V01-Q10'], satisfaction: 'PENDING_ALLOWED' }
+    ],
+    nonCompensable: true,
+    activityPolicies: {
+      'V01-Q01': { threshold: 0.5 },
+      'V01-Q02': { threshold: 0.5 },
+      'V01-Q03': { threshold: 1 },
+      'V01-Q04': { threshold: 2 / 3 },
+      'V01-Q05': { threshold: 1 },
+      'V01-Q06': { threshold: 0.5 },
+      'V01-Q07': { threshold: 1 },
+      'V01-Q08': { threshold: 4 / 5 },
+      'V01-Q09': { threshold: 0.5, criteria: [{ type: 'REQUIRED_ITEMS_CORRECT', itemIds: ['1'] }] }
+    }
   }
 });
 
