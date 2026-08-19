@@ -69,6 +69,9 @@ jobs:
       - name: Test P6 AI feedback pilot
         run: node scripts/test-ai-feedback-pilot.mjs
 
+      - name: Test P6 AI settings security
+        run: node scripts/test-ai-settings-security.mjs
+
       - name: Test progress policies
         run: node scripts/test-progress-policies.mjs
 
