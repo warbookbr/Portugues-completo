@@ -24,8 +24,8 @@ jobs:
           package-manager-cache: false
       - name: Apply U04 runtime patch
         run: python3 scripts/p7-u04-runtime-patch.py
-      - name: Apply U04 audit/runtime refinements
-        run: python3 scripts/p7-u04-runtime-fix.py
+      - name: Apply U04 audit/runtime refinements v2
+        run: python3 scripts/p7-u04-runtime-fix-v2.py
       - name: Validate contracts
         run: node scripts/validate-contracts.mjs
       - name: Audit N0-U04
