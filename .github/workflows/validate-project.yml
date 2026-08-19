@@ -57,6 +57,9 @@ jobs:
       - name: Test T1 atomic promotion
         run: node scripts/test-t1-atomic-promotion.mjs
 
+      - name: Test T1 homologation
+        run: node scripts/test-t1-homologation.mjs
+
       - name: Test progress policies
         run: node scripts/test-progress-policies.mjs
 
