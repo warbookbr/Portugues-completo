@@ -24,7 +24,7 @@ replaceOnce(
 function sharedCompositeOptions(block) {
   const values = Object.values(block.activity?.evaluation?.answerKey?.items || {})
     .map(value => value && typeof value === 'object' && !Array.isArray(value) ? value.correct ?? value.expected : value)
-    .filter(value => typeof value === 'string');
+    .filter(value => ['string', 'number', 'boolean'].includes(typeof value));
   const uniqueValues = [...new Set(values)];
   return uniqueValues.length >= 2 && uniqueValues.length <= 6 ? uniqueValues : [];
 }
