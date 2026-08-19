@@ -13,6 +13,12 @@ replaceOnce(
   "const n0LessonSource = readJson('content/units/001-fala-sons-escrita/legacy/lessons/001-fala-e-escrita.json');"
 );
 
+replaceOnce(
+  'scripts/test-progress-service.mjs',
+  "const n0 = (await content.loadLesson('N0-U01', 'N0-U01-L01')).runtime;",
+  "const n0 = content.normalize(readJson('content/units/001-fala-sons-escrita/legacy/lessons/001-fala-e-escrita.json'), { competencyIds: ['N0-U01-C01'] });"
+);
+
 fs.writeFileSync('scripts/test-content-catalog.mjs', `import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
