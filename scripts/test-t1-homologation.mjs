@@ -61,12 +61,14 @@ assert.equal(auditedLessons, 17, 'T1.10 deve auditar todas as 17 lições inicia
 
 const firstU1 = readJson('content/units/001-fala-sons-escrita/lessons/003-conhecendo-o-alfabeto.json');
 assert.deepEqual(firstU1.prerequisites, [], 'A primeira lição do curso não pode exigir abstração anterior.');
-assert.match(JSON.stringify(firstU1.blocks), /Uma letra é um sinal que usamos para escrever/i, 'A primeira lição precisa definir letra concretamente.');
-assert.match(JSON.stringify(firstU1.blocks), /alfabeto/i, 'A primeira lição precisa construir alfabeto explicitamente.');
+const firstU1Teaching = JSON.stringify(firstU1.sequence ?? firstU1.blocks ?? []);
+assert.match(firstU1Teaching, /Uma letra é um sinal que usamos para escrever/i, 'A primeira lição precisa definir letra concretamente.');
+assert.match(firstU1Teaching, /alfabeto/i, 'A primeira lição precisa construir alfabeto explicitamente.');
 
 const firstU2 = readJson('content/units/002-das-silabas-as-palavras/lessons/001-ouvindo-as-partes-das-palavras.json');
 assert.deepEqual(firstU2.prerequisites, ['N0-U01-V02']);
-assert.match(JSON.stringify(firstU2.blocks), /sílaba/i, 'A entrada da U2 precisa construir explicitamente o conceito de sílaba.');
+const firstU2Teaching = JSON.stringify(firstU2.sequence ?? firstU2.blocks ?? []);
+assert.match(firstU2Teaching, /sílaba/i, 'A entrada da U2 precisa construir explicitamente o conceito de sílaba.');
 
 const prerequisiteIds = exit.prerequisiteEvidence.map(item => item.verification);
 assert.ok(prerequisiteIds.includes('N0-U01-V02'));
