@@ -105,14 +105,17 @@ assert.doesNotMatch(l03Html, /requiredEvidence|requiredEvidenceParts|evidenceCor
 // ---------------------------------------------------------------------------
 // 2. correctOrder virou ordenação determinística canônica.
 // ---------------------------------------------------------------------------
-const l06 = normalize('content/units/004-lendo-compreendendo-pequenos-textos/lessons/006-ordem-dos-acontecimentos-e-instrucoes.json');
+const l06Source = readJson('content/units/004-lendo-compreendendo-pequenos-textos/lessons/006-ordem-dos-acontecimentos-e-instrucoes.json');
+const l06 = service.normalize(l06Source);
 const l06ById = activityMap(l06);
+const l06AuthoredById = new Map(l06Source.sequence.filter(block => block?.id).map(block => [block.id, block]));
 for (const id of ['L06-C01', 'L06-A01']) {
   const block = l06ById.get(id);
+  const authored = l06AuthoredById.get(id);
   assert.equal(block.activity.interaction, 'SEQUENCE', `${id}: deve ser SEQUENCE.`);
   assert.equal(block.activity.evaluation.mode, 'DETERMINISTIC', `${id}: deve ser determinístico.`);
   assert.ok(Array.isArray(block.activity.evaluation.answerKey.correctSequence));
-  assert.deepEqual(block.activity.evaluation.answerKey.correctSequence, block.content.availableTiles.map((_item, index) => index), `${id}: ordem canônica deve corresponder à autoria.`);
+  assert.deepEqual(block.activity.evaluation.answerKey.correctSequence, authored.correctOrder, `${id}: sequência canônica deve preservar literalmente o correctOrder autoral.`);
 }
 
 const v01Source = readJson('content/units/004-lendo-compreendendo-pequenos-textos/integrated-verification.json');
@@ -167,7 +170,7 @@ for (const relationId of ['V01-Q08', 'V01-Q09']) {
   assert.equal(snapshot.curriculum.verifications[v01.id].clusterStates.sequenceAndRelations, 'DEMONSTRADA', `Q07 + ${relationId} deve satisfazer 2-de-3 com relação obrigatória.`);
 }
 
-// Dois resultados que não incluem Q08/Q09 não podem satisfazer o grupo de relações.
+// Relação errada não pode completar o agrupamento mesmo com sequência correta.
 {
   const progress = newProgress();
   record(progress, v01, v01ById, 'V01-Q07', { correct: true, score: 1, itemResults: { 0: true } });
