@@ -1,0 +1,35 @@
+name: Finalize P7 N0-U03 state
+
+on:
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  finalize:
+    if: github.head_ref == 'p7-n0-u03-catalog' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          ref: p7-n0-u03-catalog
+          fetch-depth: 0
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+          package-manager-cache: false
+      - name: Synchronize canonical state
+        run: node scripts/p7-u03-finalize-state.mjs
+      - name: Validate structure
+        run: node scripts/validate-project.mjs
+      - name: Commit canonical state
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add PROJECT_INDEX.md docs/estado-implementacao-classico.md docs/roadmap-produto.md
+          git commit -m 'docs(p7): homologa N0-U03 e avança para N0-U04'
+          git push origin HEAD:p7-n0-u03-catalog
