@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "N0-U05",
+  "levelId": "N0",
+  "order": 5,
+  "title": "Escrevendo e organizando mensagens",
+  "objective": "Construir a capacidade de transformar ideias simples em frases e pequenas mensagens escritas compreensíveis, organizando informações, relendo e realizando melhorias orientadas, enquanto consolida convenções gráficas básicas como espaçamento, maiúscula inicial e pontuação fundamental.",
+  "competencies": [
+    {"id": "N0-U05-C01", "label": "planejar o que precisa comunicar e selecionar informações essenciais antes de escrever"},
+    {"id": "N0-U05-C02", "label": "produzir frases próprias com autonomia crescente, usando apoio opcional sem depender de modelo único"},
+    {"id": "N0-U05-C03", "label": "organizar duas ou mais frases relacionadas quando a mensagem exigir uma sequência curta"},
+    {"id": "N0-U05-C04", "label": "produzir pequenas mensagens adequadas a propósitos funcionais simples"},
+    {"id": "N0-U05-C05", "label": "avaliar se uma mensagem contém informação suficiente para outra pessoa compreender"},
+    {"id": "N0-U05-C06", "label": "reler a própria escrita e comparar o texto produzido com o que pretendia comunicar"},
+    {"id": "N0-U05-C07", "label": "revisar palavras, ordem e informações para tornar uma mensagem mais clara"},
+    {"id": "N0-U05-C08", "label": "organizar a escrita com espaços, maiúscula inicial e limites de frase nos contextos ensinados"},
+    {"id": "N0-U05-C09", "label": "usar ponto final, interrogação e exclamação em situações simples e reconhecer seu efeito no sentido"},
+    {"id": "N0-U05-C10", "label": "usar vírgula de forma introdutória e apoiada em enumerações simples"}
+  ],
+  "prerequisites": ["N0-U04-V01"],
+  "lessons": [
+    {"id": "N0-U05-L01", "order": 1, "title": "Da ideia à mensagem: o que preciso comunicar?", "path": "lessons/001-da-ideia-a-mensagem.json", "competencyIds": ["N0-U05-C01"]},
+    {"id": "N0-U05-L02", "order": 2, "title": "Escrevendo frases com mais autonomia", "path": "lessons/002-escrevendo-frases-com-mais-autonomia.json", "competencyIds": ["N0-U05-C02"]},
+    {"id": "N0-U05-L03", "order": 3, "title": "Duas ou mais frases que se relacionam", "path": "lessons/003-duas-ou-mais-frases-relacionadas.json", "competencyIds": ["N0-U05-C03"]},
+    {"id": "N0-U05-L04", "order": 4, "title": "Escrever para um propósito", "path": "lessons/004-escrever-para-um-proposito.json", "competencyIds": ["N0-U05-C04"]},
+    {"id": "N0-U05-L05", "order": 5, "title": "Informação suficiente para quem vai ler", "path": "lessons/005-informacao-suficiente-para-quem-vai-ler.json", "competencyIds": ["N0-U05-C05"]},
+    {"id": "N0-U05-L06", "order": 6, "title": "Reler: escrevi o que eu queria dizer?", "path": "lessons/006-reler-escrevi-o-que-queria-dizer.json", "competencyIds": ["N0-U05-C06"]},
+    {"id": "N0-U05-L07", "order": 7, "title": "Revisando palavras, ordem e clareza", "path": "lessons/007-revisando-palavras-ordem-clareza.json", "competencyIds": ["N0-U05-C07"]},
+    {"id": "N0-U05-L08", "order": 8, "title": "Organizando a escrita: espaços, maiúscula e limites da frase", "path": "lessons/008-organizando-a-escrita-espacos-maiuscula-limites.json", "competencyIds": ["N0-U05-C08"]},
+    {"id": "N0-U05-L09", "order": 9, "title": "Ponto final, interrogação e exclamação em uso", "path": "lessons/009-ponto-interrogacao-exclamacao-em-uso.json", "competencyIds": ["N0-U05-C09"]},
+    {"id": "N0-U05-L10", "order": 10, "title": "Primeiro contato com a vírgula em enumerações", "path": "lessons/010-primeiro-contato-virgula-enumeracoes.json", "competencyIds": ["N0-U05-C10"]}
+  ],
+  "verification": {
+    "id": "N0-U05-V01",
+    "path": "integrated-verification.json",
+    "competencyIds": ["N0-U05-C01", "N0-U05-C02", "N0-U05-C03", "N0-U05-C04", "N0-U05-C05", "N0-U05-C06", "N0-U05-C07", "N0-U05-C08", "N0-U05-C09", "N0-U05-C10"]
+  },
+  "publication": {"status": "READY", "blockers": []}
+}
