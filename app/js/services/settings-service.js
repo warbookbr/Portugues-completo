@@ -19,13 +19,19 @@ const defaults = {
   aiFeedbackConsentVersion: null
 };
 
+const knownSettingKeys = new Set(Object.keys(defaults));
 let settings = load();
 const listeners = new Set();
+
+function sanitizeStoredSettings(stored) {
+  if (!stored || typeof stored !== 'object' || Array.isArray(stored)) return {};
+  return Object.fromEntries(Object.entries(stored).filter(([key]) => knownSettingKeys.has(key)));
+}
 
 function load() {
   try {
     const stored = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
-    return { ...defaults, ...stored };
+    return { ...defaults, ...sanitizeStoredSettings(stored) };
   } catch {
     return { ...defaults };
   }
@@ -44,7 +50,7 @@ export function getSettings() {
 }
 
 export function updateSettings(patch) {
-  settings = { ...settings, ...patch };
+  settings = { ...settings, ...sanitizeStoredSettings(patch) };
   persist();
   applySettings();
   notify();
