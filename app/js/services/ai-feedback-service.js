@@ -203,6 +203,9 @@ export class AiFeedbackService {
       if (error instanceof AiFeedbackError && error.code === 'INVALID_RESPONSE') {
         return failureResult('INVALID_RESPONSE', 'O provider respondeu fora do contrato esperado.', ['STRUCTURED_OUTPUT_INVALID']);
       }
+      if (error instanceof AiFeedbackError && error.code === 'PROVIDER_REQUEST_FAILED') {
+        return failureResult('PROVIDER_ERROR', 'O feedback por IA está indisponível agora. Sua resposta continua registrada.', ['PROVIDER_REQUEST_FAILED']);
+      }
       if (error instanceof AiFeedbackError) throw error;
       return failureResult('PROVIDER_ERROR', 'O feedback por IA está indisponível agora. Sua resposta continua registrada.', ['PROVIDER_REQUEST_FAILED']);
     }
