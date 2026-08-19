@@ -45,17 +45,17 @@ múltipla escolha com gabarito local
 
 ## Credencial
 
-A credencial segue `docs/arquitetura.md`:
+A credencial segue `docs/arquitetura.md` e a política de segurança do provider:
 
 ```text
-API key pertence ao aluno
-→ sessão por padrão
-→ persistência local somente se o aluno escolher
+credencial pertence ao aluno
+→ segredo de longa duração nunca vai para o frontend quando o provider o proíbe
 → nunca GitHub/Gist
+→ nunca progresso
 → nunca conteúdo do curso
 ```
 
-Nenhuma chave privada do projeto pode ser usada diretamente pelo frontend estático.
+Nenhuma chave privada do projeto pode ser usada diretamente pelo frontend estático. Para OpenAI, a API key do aluno permanece no companion local descrito em `docs/p6-transporte-ia.md`; o navegador conhece somente um token efêmero do companion.
 
 ## Consentimento e custos
 
@@ -63,7 +63,7 @@ A integração de IA deve ser **opt-in**.
 
 Antes da primeira chamada, a interface deve deixar claro que:
 
-- a chamada usa a API key do próprio aluno;
+- a chamada usa a conta/credencial do próprio aluno por meio do transporte seguro do adapter escolhido;
 - o provedor pode cobrar pelo uso conforme o plano do titular;
 - o Português Completo envia ao provedor somente o contexto necessário para produzir o feedback;
 - feedback de IA pode conter erros e deve ser apresentado com esse limite;
@@ -107,10 +107,10 @@ Podem incluir:
 aiFeedbackEnabled
 provider
 model
-rememberApiKey
+endpoint não secreto quando aplicável
 ```
 
-A própria API key segue a política de armazenamento definida na arquitetura e não deve ser serializada junto das outras preferências se isso criar exposição desnecessária. O serviço de credenciais deve controlar sua leitura/escrita separadamente.
+Segredos de longa duração não pertencem a essas preferências. Credenciais efêmeras de transporte devem ficar em armazenamento de sessão separado quando aplicável. Para OpenAI/P6, ver `docs/p6-transporte-ia.md`.
 
 ## Contrato de entrada
 

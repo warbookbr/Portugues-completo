@@ -15,6 +15,7 @@ Português Completo
 ├── producao-midia/
 ├── docs/
 ├── scripts/ + .github/
+├── tools/
 └── .ChatGPT/
 ```
 
@@ -30,6 +31,7 @@ Português Completo
 - `docs/homologacao-t1-10.md` — **fechamento canônico do T1**: checkpoint N0 reexecutado, auditoria das 17 lições, transição N0→N1, CI, inspeção visual e checklist final.
 - `docs/linguagem-aluno.md` — **contrato canônico T1.3** para explicações claras, completas e simples, separando objetivo técnico da fala pública.
 - `docs/estado-implementacao-classico.md` — **estado operacional concreto do Modo Clássico**: marco/item ativo, estados técnico/homologação/mídia/publicação, blockers e próximo passo exato.
+- `docs/p6-transporte-ia.md` — **contrato técnico vigente do transporte P6**: serviço neutro, companion local, proteção da API key, structured output e fronteira de autoridade da IA.
 - `docs/execucao-continua.md` — execução autônoma por marcos autorizados.
 - `.ChatGPT/skills/fundamentos-claros/SKILL.md` — histórico operacional do T1 homologado e referência para regressões futuras da entrada clara.
 - `.ChatGPT/skills/classic-product-delivery/SKILL.md` — procedimento operacional obrigatório para implementar P1→P9 do Clássico sem perder estado.
@@ -49,6 +51,7 @@ PROJECT_INDEX.md
 → docs/homologacao-t1-10.md para o fechamento da entrada N0
 → docs/redimensionamento-t1-2-n0.md para a arquitetura U1/U2
 → docs/migracao-t1-9-n0.md para compatibilidade histórica/progresso
+→ se P6 estiver ativo: docs/avaliacao-ia.md + docs/p6-transporte-ia.md
 → se houver autoria/copy pública: docs/linguagem-aluno.md
 → .ChatGPT/skills/fundamentos-claros/SKILL.md quando houver regressão/revisão da entrada T1
 → .ChatGPT/skills/classic-product-delivery/SKILL.md
@@ -87,6 +90,7 @@ Estas fontes definem como o currículo fechado vira aplicação:
 - `docs/progresso.md` — significado pedagógico de progresso, domínio, feedback, revisão e gamificação.
 - `docs/persistencia-progresso.md` — schema v1 do Gist, cálculo mecânico de conclusão, gates e sincronização.
 - `docs/avaliacao-ia.md` — contrato neutro de feedback com IA, BYOK, consentimento, request/response e limites de autoridade.
+- `docs/p6-transporte-ia.md` — transporte seguro implementado no P6; para OpenAI, a API key pertence ao aluno mas permanece no companion local, nunca no navegador.
 - `docs/calibracao-produto.md` — homologação/calibração progressiva; no Clássico registra casos-âncora e revisão, e só depois do gate clássico concretiza XP/missões/conquistas.
 - `docs/estado-implementacao-classico.md` — status real de cada inclusão/materialização do produto Clássico e impacto de dependências de mídia.
 - `docs/validacoes.md` — guard rails atuais de P1–P5 e próximos testes.

@@ -490,7 +490,7 @@ nenhuma chave privada do projeto para IA
 → configuração pública
 ```
 
-Qualquer integração direta usa credencial do próprio aluno.
+Qualquer integração com provider pago usa credencial pertencente ao próprio aluno, mas o transporte deve respeitar a política de segredo do provider. Credenciais classificadas como segredo **não podem ser inseridas ou persistidas no código client-side**. Para OpenAI, o P6 usa o companion local documentado em `docs/p6-transporte-ia.md`.
 
 ### Separação entre credenciais
 
@@ -506,26 +506,30 @@ API key de IA
 
 O `ProgressService` e o `GitHubService` não devem receber/persistir a API key de IA como dado acadêmico.
 
-### Persistência da API key
+### Segredos de provider e credenciais de sessão
 
-Padrão:
-
-```text
-aluno informa key
-→ somente sessão
-```
-
-Opção explícita:
+Regra vigente:
 
 ```text
-☐ Lembrar minha chave neste dispositivo
+segredo de longa duração do provider
+→ nunca frontend/browser
+→ nunca localStorage/sessionStorage do GitHub Pages
+→ nunca Gist/progresso
 ```
 
-Quando marcada, a chave pode permanecer apenas no armazenamento local daquele navegador/dispositivo.
+Um adapter pode usar credencial **efêmera e limitada ao próprio transporte**, desde que ela não seja a API key do provider. No adapter OpenAI do P6:
 
-Troca de aparelho/navegador ou limpeza de dados pode exigir inserir novamente.
+```text
+OPENAI_API_KEY do aluno
+→ processo local em 127.0.0.1
 
-Em dispositivo público/compartilhado, lembrar a chave não é recomendado.
+browser
+→ token efêmero do companion
+→ sessionStorage
+→ nunca Gist/progresso
+```
+
+Detalhes, threat model e execução: `docs/p6-transporte-ia.md`.
 
 ### Responsabilidade e transparência
 
@@ -548,8 +552,13 @@ Preferências do dispositivo
 Credenciais temporárias
 → armazenamento de sessão quando aplicável
 
-API key de IA lembrada
-→ armazenamento local separado mediante escolha explícita
+Segredo de provider de IA
+→ fora do frontend conforme política do provider
+→ no OpenAI/P6: companion local
+→ nunca Gist/progresso
+
+Token efêmero do companion
+→ sessionStorage
 → nunca Gist/progresso
 
 Progresso acadêmico
@@ -626,8 +635,8 @@ A próxima camada deve implementar schemas e integridade conforme contratos agor
 - sincronização entre dispositivos exige estratégia de conflito testada;
 - vozes de narração variam entre sistemas/navegadores;
 - mídias externas dependem do provider;
-- uma API key de IA lembrada não acompanha automaticamente outros dispositivos;
-- limpar dados locais pode exigir informar a chave novamente;
+- credenciais de provider permanecem dependentes do ambiente seguro escolhido pelo aluno;
+- no adapter OpenAI, iniciar o companion em outro dispositivo exige configurar a API key novamente naquele processo local;
 - uso de IA depende de conta/chave/custos do próprio aluno;
 - valores exatos de XP e catálogo inicial de missões/conquistas continuam calibráveis sem alterar o contrato pedagógico;
 - a arquitetura foi escolhida para um grupo pequeno de usuários, não milhares simultâneos.
