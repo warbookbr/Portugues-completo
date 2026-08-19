@@ -1,7 +1,5 @@
-import { getSettings, updateSettings } from '../services/settings-service.js';
+import { AI_FEEDBACK_CONSENT_VERSION, getSettings, updateSettings } from '../services/settings-service.js';
 import { isOpenAiCompanionEndpointSafe } from '../services/ai-providers/openai-companion.js';
-
-const CONSENT_VERSION = 'p6-ai-feedback-consent-v1';
 
 function escapeHtml(value) {
   return String(value ?? '')
@@ -15,7 +13,7 @@ function escapeHtml(value) {
 export function renderAiSettings(root, { credentialService } = {}) {
   const settings = getSettings();
   const tokenConfigured = Boolean(credentialService?.get?.('openai-companion'));
-  const consented = settings.aiFeedbackConsentVersion === CONSENT_VERSION;
+  const consented = settings.aiFeedbackConsentVersion === AI_FEEDBACK_CONSENT_VERSION;
 
   root.innerHTML = `
     <div class="settings-header">
@@ -119,7 +117,7 @@ export function renderAiSettings(root, { credentialService } = {}) {
       aiProvider: provider,
       aiModel: model,
       aiEndpoint: endpoint,
-      aiFeedbackConsentVersion: enabled && consent ? CONSENT_VERSION : null
+      aiFeedbackConsentVersion: enabled && consent ? AI_FEEDBACK_CONSENT_VERSION : null
     });
 
     status.dataset.state = 'SYNCED';
@@ -134,5 +132,3 @@ export function renderAiSettings(root, { credentialService } = {}) {
     renderAiSettings(root, { credentialService });
   });
 }
-
-export { CONSENT_VERSION as AI_FEEDBACK_CONSENT_VERSION };
