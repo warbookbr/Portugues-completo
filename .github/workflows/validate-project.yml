@@ -75,6 +75,9 @@ jobs:
       - name: Test P6 homologation
         run: node scripts/test-p6-homologation.mjs
 
+      - name: Audit P7 N0-U03
+        run: node scripts/audit-p7-n0-u03.mjs
+
       - name: Test progress policies
         run: node scripts/test-progress-policies.mjs
 
