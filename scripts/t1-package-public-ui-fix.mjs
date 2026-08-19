@@ -66,7 +66,7 @@ replaceOnce(
     'trackFirstAttemptWithoutSupport', 'attemptGateRequired', 'audioOptionTextVisible',
     'audioOptionsVisibleBeforeAttemptGate', 'ttsAvailableBeforeAttempt', 'ttsAvailableBeforeBothAttempts',
     'targetTtsAvailableBeforeResponse', 'targetTtsBeforeResponse', 'targetTtsAvailableBeforeReading',
-    'ttsBeforeResponse', 'allowReplayWithoutPenalty', 'requiredTileCount', 'optionOrderShouldVaryAcrossAttempts',
+    'ttsBeforeResponse', 'allowReplayWithoutPenalty', 'repeatAudio', 'requiredTileCount', 'optionOrderShouldVaryAcrossAttempts',
     'imageId', 'imageRevealAfterAttempt'
   ]);
 
@@ -105,7 +105,7 @@ replaceOnce(
   for (const [key, value] of Object.entries(content)) {
     if (['title', 'text', 'prompt', 'instruction', 'model', 'letter', 'nonVisualMeaning'].includes(key) || hiddenKeys.has(key)) continue;
     const lower = key.toLowerCase();
-    if (lower.includes('guard') || lower.includes('correct') || lower.includes('feedback') || lower.includes('available') || lower.includes('support') || lower.includes('tts') || lower.includes('media') || key === 'feedback') continue;
+    if (lower.includes('guard') || lower.includes('correct') || lower.includes('feedback') || lower.includes('available') || lower.includes('support') || lower.includes('tts') || lower.includes('media') || lower.includes('audio') || key === 'feedback') continue;
     if (value === null || value === undefined || value === false || value === '') continue;
     details.push(\`<div class="content-detail"><strong>\${esc(pretty(key))}</strong><div>\${valueText(value)}</div></div>\`);
   }
