@@ -1,17 +1,21 @@
 import { initRouter } from './core/router.js';
 import { initNarration } from './services/narration-service.js';
-import { initSettings } from './services/settings-service.js';
+import { AI_FEEDBACK_CONSENT_VERSION, getSettings, initSettings } from './services/settings-service.js';
 import { createContentService } from './services/content-service.js';
 import { createProgressService } from './services/progress-service.js';
 import { createSafeProgressStorage } from './services/progress-storage-service.js';
 import { createMigratingProgressStorage } from './services/progress-migration-storage.js';
 import { migrateProgressToT1N0 } from './services/progress-migration-t1-n0.js';
 import { createProgressSyncService } from './services/progress-sync-service.js';
+import { createAiFeedbackService } from './services/ai-feedback-service.js';
+import { createAiFeedbackCredentialService } from './services/ai-feedback-credential-service.js';
+import { createOpenAiCompanionAdapter } from './services/ai-providers/openai-companion.js';
 import { mountSettingsMenu } from './ui/settings-menu.js';
 import { bindClassicRenderer, documentHtml, unitHtml } from './ui/classic-renderer.js';
 import { homeHtml } from './ui/classic-home.js';
 import { helpPageHtml, methodologyPageHtml, performancePageHtml, planPageHtml, reviewsPageHtml, unitsPageHtml } from './ui/classic-pages.js';
 import { bindClassicProgress } from './ui/classic-progress-binding.js';
+import { bindClassicAiFeedback } from './ui/classic-ai-feedback.js';
 import { polishClassicPresentation } from './ui/classic-presentation.js';
 import { decorateClassicProgress } from './ui/classic-progress.js';
 import { mountGuidedLesson } from './ui/classic-lesson-flow.js';
@@ -23,10 +27,27 @@ const baseProgressStorage = createSafeProgressStorage();
 const progressStorage = createMigratingProgressStorage({ storage: baseProgressStorage, migrateProgress: migrateProgressToT1N0 });
 const progressService = createProgressService({ storage: progressStorage });
 const progressSyncService = createProgressSyncService({ progressService, migrateProgress: migrateProgressToT1N0 });
+const aiFeedbackCredentialService = createAiFeedbackCredentialService();
+const aiFeedbackService = createAiFeedbackService({
+  adapters: {
+    'openai-companion': createOpenAiCompanionAdapter()
+  },
+  getConfig: () => {
+    const settings = getSettings();
+    return {
+      enabled: settings.aiFeedbackEnabled === true && settings.aiFeedbackConsentVersion === AI_FEEDBACK_CONSENT_VERSION,
+      provider: settings.aiProvider,
+      model: settings.aiModel,
+      endpoint: settings.aiEndpoint
+    };
+  },
+  getCredential: provider => aiFeedbackCredentialService.get(provider)
+});
 
 let course = null;
 let routeRevision = 0;
 let currentRuntime = null;
+let cleanupAiFeedback = null;
 
 function escapeHtml(value) {
   return String(value ?? '')
@@ -57,12 +78,15 @@ function refreshProgressPresentation(progress = progressService.getProgress()) {
 }
 
 function mountClassic(html, documentRuntime = null) {
+  cleanupAiFeedback?.();
+  cleanupAiFeedback = null;
   currentRuntime = documentRuntime;
   app.innerHTML = html;
   polishClassicPresentation(app, documentRuntime);
   mountGuidedLesson(app, documentRuntime, { progress: progressService.getProgress() });
   bindClassicRenderer(app, documentRuntime);
   bindClassicProgress(app, documentRuntime, { progressService, onProgress: refreshProgressPresentation });
+  cleanupAiFeedback = bindClassicAiFeedback(app, documentRuntime, { progressService, aiFeedbackService });
   refreshProgressPresentation();
 }
 
@@ -192,7 +216,7 @@ function bootstrap() {
   initSettings();
   initNarration();
   progressService.subscribe(refreshProgressPresentation);
-  mountSettingsMenu(settingsRoot, { progressSyncService });
+  mountSettingsMenu(settingsRoot, { progressSyncService, aiFeedbackCredentialService });
   initRouter(renderRoute);
 }
 
