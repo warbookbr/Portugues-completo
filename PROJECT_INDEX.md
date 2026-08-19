@@ -21,16 +21,17 @@ Português Completo
 ## Estado e execução
 
 - `docs/roadmap-curricular.md` — estado/maturidade do currículo N0→N4; fechado em M5, com revisão dirigida da porta de entrada N0 autorizada por T1.
-- `docs/roadmap-produto.md` — ordem e condições dos marcos da fase de produto/publicação; P1–P5 homologados, T1 ativo e P6 aguardando T1.
-- `docs/plano-fundamentos-claros.md` — **plano transversal ativo** para reorganizar a entrada N0, simplificar a linguagem pedagógica, criar a nova abertura de lição, realocar Metodologia e preservar progresso/IDs.
+- `docs/roadmap-produto.md` — ordem e condições dos marcos da fase de produto/publicação; P1–P5 e T1 homologados, P6 ativo.
+- `docs/plano-fundamentos-claros.md` — plano transversal **homologado** que reorganizou a entrada N0, linguagem pedagógica, abertura de lição, Metodologia e compatibilidade de progresso/IDs.
 - `docs/auditoria-t1-1-porta-entrada-n0.md` — **decisão da T1.1**: pesquisa/auditoria da entrada N0, nova espinha recomendada, impactos técnicos e direção para o redimensionamento T1.2.
 - `docs/redimensionamento-t1-2-n0.md` — **arquitetura congelada da T1.2**: novas responsabilidades de U1/U2, ordem das lições, verificações V02 e matriz de identidade/migração.
 - `docs/migracao-t1-9-n0.md` — **contrato executável da T1.9**: equivalências de IDs/refs de atividade, split da antiga L05, conteúdos movidos, V01→V02, current, reviews, Gist e guard rails contra domínio falso.
 - `docs/t1-9-integracao-atomica-n0.md` — registro da promoção atômica de catálogo, manifests, migração local/Gist, aliases históricos e reconciliação de mídia da T1.9.
+- `docs/homologacao-t1-10.md` — **fechamento canônico do T1**: checkpoint N0 reexecutado, auditoria das 17 lições, transição N0→N1, CI, inspeção visual e checklist final.
 - `docs/linguagem-aluno.md` — **contrato canônico T1.3** para explicações claras, completas e simples, separando objetivo técnico da fala pública.
 - `docs/estado-implementacao-classico.md` — **estado operacional concreto do Modo Clássico**: marco/item ativo, estados técnico/homologação/mídia/publicação, blockers e próximo passo exato.
 - `docs/execucao-continua.md` — execução autônoma por marcos autorizados.
-- `.ChatGPT/skills/fundamentos-claros/SKILL.md` — skill operacional obrigatória enquanto T1 estiver ativo; tem precedência sobre iniciar P6.
+- `.ChatGPT/skills/fundamentos-claros/SKILL.md` — histórico operacional do T1 homologado e referência para regressões futuras da entrada clara.
 - `.ChatGPT/skills/classic-product-delivery/SKILL.md` — procedimento operacional obrigatório para implementar P1→P9 do Clássico sem perder estado.
 - `.ChatGPT/skills/student-ui-ux/SKILL.md` — procedimento obrigatório para qualquer interface visível ao aluno; aplica linguagem humana, reduz vazamento de IDs/enums técnicos e exige clareza pedagógica.
 - `.ChatGPT/skills/curricular-orchestration/SKILL.md` — orquestração de marcos curriculares longos.
@@ -45,11 +46,11 @@ Uma instância sem contexto deve começar por:
 PROJECT_INDEX.md
 → docs/roadmap-produto.md
 → docs/estado-implementacao-classico.md
-→ se T1 estiver ativo: docs/plano-fundamentos-claros.md
-→ se T1.2 estiver concluído: docs/redimensionamento-t1-2-n0.md
-→ se T1.9 estiver ativo: docs/migracao-t1-9-n0.md
+→ docs/homologacao-t1-10.md para o fechamento da entrada N0
+→ docs/redimensionamento-t1-2-n0.md para a arquitetura U1/U2
+→ docs/migracao-t1-9-n0.md para compatibilidade histórica/progresso
 → se houver autoria/copy pública: docs/linguagem-aluno.md
-→ se T1 estiver ativo: .ChatGPT/skills/fundamentos-claros/SKILL.md
+→ .ChatGPT/skills/fundamentos-claros/SKILL.md quando houver regressão/revisão da entrada T1
 → .ChatGPT/skills/classic-product-delivery/SKILL.md
 → contratos específicos do item ativo
 ```
@@ -63,7 +64,7 @@ docs/ui-ux.md
 → .ChatGPT/skills/frontend-visual-check/SKILL.md
 ```
 
-`docs/roadmap-produto.md` diz **qual marco vem agora**. `docs/estado-implementacao-classico.md` diz **onde exatamente o trabalho parou dentro dele**. Enquanto T1 estiver ativo, `docs/plano-fundamentos-claros.md` define as subfases e gates autorizados.
+`docs/roadmap-produto.md` diz **qual marco vem agora**. `docs/estado-implementacao-classico.md` diz **onde exatamente o trabalho parou dentro dele**. T1 está homologado; `docs/homologacao-t1-10.md` registra o fechamento e as proteções que continuam válidas.
 
 ## Curso inteiro
 
@@ -116,7 +117,7 @@ Durante homologação de atividade, lição, verificação ou unidade, `docs/cal
 - `docs/checkpoint-saida-nivel-0.md`
 - `content/levels/000-fundamentos/exit-verification.json`
 
-Durante T1.9, para U1/U2 prevalecem `docs/redimensionamento-t1-2-n0.md` + `docs/migracao-t1-9-n0.md`; a autoria nova já está validada em staging e os caminhos históricos permanecem ativos somente até a promoção coerente de catálogo/manifests. U3–U6 continuam canônicos sem alteração.
+Para U1/U2, a arquitetura T1 publicada é explicada por `docs/redimensionamento-t1-2-n0.md`, a compatibilidade histórica por `docs/migracao-t1-9-n0.md` e a homologação final por `docs/homologacao-t1-10.md`. U3–U6 continuam canônicos sem alteração.
 
 ## Nível 1
 

@@ -16,19 +16,16 @@ implementado tecnicamente
 
 ```text
 Fase estratégica: CONCLUIR E HOMOLOGAR O CLÁSSICO
-Marco transversal ativo: T1 — Fundamentos claros e experiência de lição
-Plano: docs/plano-fundamentos-claros.md
-Skill: .ChatGPT/skills/fundamentos-claros/SKILL.md
-Subfase ativa: T1.9 — migração, catálogo, progresso e mídia
-Contrato/matriz de migração: CONGELADO / VALIDADO EM CI
-Wiring local/Gist + backup: HOMOLOGADO / INATIVO EM PRODUÇÃO
-P6 — Feedback por IA: AGUARDANDO T1
-Próximo passo exato: fazer a promoção atômica da nova N0-U01/N0-U02, ativando no mesmo lote `MigratingProgressStorage` + mapper do sync + `contentRevision=t1-n0-entry-v2`, atualizando course.json/manifests/deep-link aliases e reconciliando mídia; não ativar migração sem trocar o catálogo na mesma PR
+Marco transversal T1 — Fundamentos claros e experiência de lição: HOMOLOGADO
+Homologação: docs/homologacao-t1-10.md
+Migração T1 `t1-n0-entry-v2`: ATIVA / HOMOLOGADA local + Gist
+P6 — Feedback por IA: ATIVO
+Próximo passo exato: iniciar P6 pelo contrato de feedback opt-in, preservando `VALIDACAO_PENDENTE` como padrão para produção aberta e rechecando documentação oficial do provider antes de congelar endpoints/modelo
 Blocker global: nenhum
 Gate final do Clássico: NÃO SATISFEITO
 ```
 
-Enquanto T1 estiver ativo, não iniciar P6 materialmente. O T1 foi autorizado como uma unidade de trabalho completa e pode usar múltiplas PRs sem nova autorização entre subfases previstas.
+T1 foi homologado em T1.10. As regras duradouras permanecem nas fontes/skills canônicas; P6 pode avançar materialmente sem reabrir T1, salvo nova evidência concreta de regressão.
 
 ## Marcos do produto
 
@@ -39,8 +36,8 @@ Enquanto T1 estiver ativo, não iniciar P6 materialmente. O T1 foi autorizado co
 | P3 — Manifests/catálogo inicial | `HOMOLOGADO` | PR #107 |
 | P4 — Renderer real do Clássico | `HOMOLOGADO` | PR #108 |
 | P5 — Progresso/revisão/Gist | `HOMOLOGADO` | PR #109 |
-| T1 — Fundamentos claros | `ATIVO` | PRs #116–#128; T1.9 ativo |
-| P6 — Feedback por IA | `AGUARDANDO T1` | — |
+| T1 — Fundamentos claros | `HOMOLOGADO` | PRs #116–#130; `docs/homologacao-t1-10.md` |
+| P6 — Feedback por IA | `ATIVO` | próximo marco após T1 |
 | P7 — Catálogo N0→N4 | `NAO_INICIADO` | — |
 | P8 — Mídia/publicação | `NAO_INICIADO` | — |
 | P9 — E2E / Clássico homologado | `NAO_INICIADO` | — |
@@ -107,12 +104,12 @@ T1.6 nova autoria inicial                                  ✓ staged + validada
   lote U2 — Sílabas e primeiras palavras                   ✓
 T1.7 frontend de intro/fluxo                               ✓ homologado
 T1.8 metodologia em Ajuda                                  ✓ homologado
-T1.9 migração/catálogo/progresso/mídia                     ← ativo
-  contrato + mapper de progresso                           ✓ homologado
-  wiring local/Gist + backup                               ✓ homologado / inativo
-  promoção staged + ativação + catálogo/manifests          ← próximo
-  deep-link aliases + reconciliação de mídia
-T1.10 validação/homologação
+T1.9 migração/catálogo/progresso/mídia                     ✓ homologado
+  contrato + mapper de progresso                           ✓
+  wiring local/Gist + backup                               ✓ ativo
+  promoção + ativação + catálogo/manifests                 ✓
+  deep-link aliases + reconciliação de mídia               ✓
+T1.10 validação/homologação                                ✓ homologado
 ```
 
 ## T1.1–T1.5 — decisões consolidadas
@@ -383,7 +380,7 @@ Evidência de integração: PR #126.
 
 ## T1.9 — migração, catálogo, progresso e mídia
 
-**Estado: ATIVO.**
+**Estado: CONCLUÍDO / HOMOLOGADO.**
 
 ### Gate 1 — contrato e mapper de progresso
 
@@ -413,7 +410,7 @@ Evidência de integração: PR #127.
 
 ### Gate 2 — backup, cache local e Gist/sync
 
-**Estado: CONCLUÍDO / HOMOLOGADO / INATIVO EM PRODUÇÃO.**
+**Estado: CONCLUÍDO / HOMOLOGADO / ATIVO EM PRODUÇÃO.**
 
 Entregas:
 
@@ -426,34 +423,50 @@ Entregas:
 - Gist de revisão futura falha fechado, sem alterar local/remoto;
 - todos os testes antigos de P5 permanecem verdes.
 
-Guard rail de ativação:
+Ativação final:
 
 ```text
-infraestrutura pronta
-≠ mapper ativo no app
-
-app.js continua SEM configurar migration storage/mapper
-→ até a mesma PR que trocar course.json/manifests
+catálogo/manifests T1
++ MigratingProgressStorage
++ mapper do ProgressSyncService
++ contentRevision=t1-n0-entry-v2
+→ ativos no mesmo lote
 ```
 
-Isso evita a janela inválida “progresso novo + catálogo antigo”. A ativação será atômica com a promoção de conteúdo.
+A janela inválida “progresso novo + catálogo antigo” não existiu. Backup local, baseline e Gist são normalizados conservadoramente antes de virarem estado ativo.
 
-Evidência de integração: PR #128.
+Evidência de infraestrutura: PR #128. Evidência de ativação atômica: PR #129.
+
+## T1.10 — validação e homologação
+
+**Estado: CONCLUÍDO / HOMOLOGADO.**
+
+Evidência: `docs/homologacao-t1-10.md` + PR #130.
+
+Provas fechadas:
+
+- 17/17 lições iniciais auditadas por ordem, pré-requisito e objetivo público;
+- checkpoint N0 reexecutado e realinhado para `N0-U01-V02`/`N0-U02-V02`;
+- transição N0→N1 revalidada;
+- CI funcional completo verde, incluindo gate permanente `Test T1 homologation`;
+- smoke e inspeção visual aprovados em desktop, ~900px, ~680px e 390px;
+- ausência de IDs/metadados internos na interface protegida pelo smoke;
+- blockers de mídia permanecem locais e explícitos.
 
 ## Estado de publicação do slice
 
 ### N0-U01 / N0-U02
 
 ```text
-Renderer/progresso atual: base técnica homologada
-Autoria T1 nova: STAGED / VALIDADA
+Renderer/progresso: HOMOLOGADOS
+Autoria T1 U1/U2: PUBLICADA / HOMOLOGADA
 Experiência de abertura/retomada T1.7: HOMOLOGADA
 Navegação secundária T1.8: HOMOLOGADA
-Migração T1.9 Gate 1: HOMOLOGADA
-Wiring T1.9 Gate 2: HOMOLOGADO / INATIVO
-Manifestos públicos: ainda históricos
-Mídia obrigatória histórica/reutilizada: pendente, reconciliar na promoção
-Publicação das novas U1/U2: NÃO ATIVADA até a troca atômica
+Migração T1.9 local/Gist: ATIVA / HOMOLOGADA
+Manifestos públicos: V02 ATIVOS
+Deep links históricos: ALIASES ATIVOS
+Mídia obrigatória: blockers locais explícitos nos manifests/fila
+Publicação pedagógica das interações dependentes de mídia: BLOQUEADA somente onde o estímulo obrigatório falta
 ```
 
 ### N4-U09
@@ -469,10 +482,10 @@ Nova mídia humana obrigatória: nenhuma
 ## Pendências abertas
 
 ```text
-Global antes de P6: concluir T1
-Imediato T1.9: promoção atômica staged + ativação do mapper + catálogo/manifests/deep links
-Mesmo lote/seguinte T1.9: reconciliação final de mídia e estados de publicação
-Depois: T1.10 — validação/homologação transversal
+Global antes de P6: nenhum — T1 homologado
+Ativo: P6 — Feedback por IA no Clássico
+Local: resolver mídia obrigatória de U1/U2 quando o marco de publicação exigir esses estímulos
+Depois de P6: P7 — ampliação do catálogo N0→N4
 ```
 
 ## Gate `CLÁSSICO HOMOLOGADO`

@@ -20,22 +20,16 @@ P2 — ContentService/normalizador → HOMOLOGADO
 P3 — Manifests e catálogo inicial → HOMOLOGADO
 P4 — Renderer real do Clássico → HOMOLOGADO
 P5 — ProgressService, revisão e persistência → HOMOLOGADO
-MARCO TRANSVERSAL ATIVO → T1 — Fundamentos claros e experiência de lição
-T1.1 — pesquisa/auditoria da entrada N0 → CONCLUÍDO
-T1.2 — redimensionamento curricular controlado do N0 → CONCLUÍDO
-T1.3 — contrato de linguagem para o aluno → CONCLUÍDO
-T1.4 — skills/fontes canônicas → CONCLUÍDO
-T1.5 — contrato técnico da abertura da lição → CONCLUÍDO
-T1.6 — nova autoria inicial → CONCLUÍDO / VALIDADO EM STAGING
-T1.7 — frontend de intro/retomada → CONCLUÍDO / HOMOLOGADO
-T1.8 — metodologia em Ajuda → CONCLUÍDO / HOMOLOGADO
-T1.9 — migração, catálogo, progresso e mídia → ATIVO
-P6 — Feedback por IA no Clássico → AGUARDANDO T1
-MODO CLÁSSICO REAL → slice funcional com progresso persistente; nova entrada N0 em integração controlada antes de ampliar o produto
+T1 — Fundamentos claros e experiência de lição → HOMOLOGADO
+T1.1–T1.8 → CONCLUÍDOS / HOMOLOGADOS conforme gates
+T1.9 — migração, catálogo, progresso e mídia → CONCLUÍDO / HOMOLOGADO
+T1.10 — validação/homologação → CONCLUÍDO / HOMOLOGADO
+P6 — Feedback por IA no Clássico → ATIVO
+MODO CLÁSSICO REAL → slice funcional com progresso persistente e nova entrada N0 homologada; próximo marco é feedback IA opt-in
 MODO GAMIFICADO → somente após CLÁSSICO HOMOLOGADO
 ```
 
-Enquanto T1 estiver ativo, `docs/plano-fundamentos-claros.md` e `.ChatGPT/skills/fundamentos-claros/SKILL.md` governam a execução e têm precedência operacional sobre iniciar P6.
+T1 está homologado. Suas regras duradouras permanecem nas fontes/skills canônicas; o cursor operacional volta a P6.
 
 ## Sequência estratégica: Clássico primeiro
 
@@ -95,14 +89,15 @@ Prosa histórica ambígua nunca é convertida por heurística. Sem estrutura/reg
 
 **Estado: HOMOLOGADO.**
 
-Slice histórico de publicação/descoberta:
+O P3 homologou o pipeline inicial de catálogo/manifests. Após T1, o slice publicado usado para regressão é:
 
 ```text
-N0-U01 → 8 lições + verificação
-N4-U09 → 12 lições + verificação
+N0-U01 → 7 lições + V02
+N0-U02 → 10 lições + V02
+N4-U09 → 12 lições + V01
 ```
 
-`course.json` v2, manifests, registry de competências estáveis e integridade/descoberta em CI estão homologados. A estrutura histórica de N0-U01 será migrada por T1 sem invalidar a prova técnica de P3. Demais unidades entram progressivamente em P7.
+`course.json` v2, manifests, registry de competências estáveis e integridade/descoberta em CI continuam homologados. Demais unidades entram progressivamente em P7.
 
 ## P4 — Renderer real do Clássico
 
@@ -124,15 +119,16 @@ Entregas principais:
 Validação do slice:
 
 ```text
-20/20 lições
-+ 2/2 verificações
+29/29 lições
++ 3/3 verificações
 → sem unsupported
 ```
 
 Estado local após P4:
 
 ```text
-N0-U01 → BLOCKED somente pelos áudios controlados obrigatórios pendentes no desenho histórico
+N0-U01 → BLOCKED somente por mídia obrigatória local ainda pendente
+N0-U02 → BLOCKED somente por mídia obrigatória local ainda pendente
 N4-U09 → READY
 ```
 
@@ -261,7 +257,7 @@ interação
 
 ## T1 — Fundamentos claros e experiência de lição
 
-**Estado: ATIVO / AUTORIZADO.**
+**Estado: HOMOLOGADO.**
 
 Fontes canônicas:
 
@@ -281,11 +277,11 @@ T1.2 redimensionamento curricular N0                       ✓
 T1.3 contrato de linguagem                                 ✓
 T1.4 skills/fontes canônicas                               ✓
 T1.5 contrato técnico de abertura                          ✓
-T1.6 nova autoria inicial                                  ✓ staged + validada
-T1.7 frontend de intro/fluxo                               ✓ homologado
-T1.8 metodologia em Ajuda                                  ✓ homologado
-T1.9 migração/catálogo/progresso/mídia                     ← ativo
-T1.10 validação/homologação
+T1.6 nova autoria inicial                                  ✓
+T1.7 frontend de intro/fluxo                               ✓
+T1.8 metodologia em Ajuda                                  ✓
+T1.9 migração/catálogo/progresso/mídia                     ✓
+T1.10 validação/homologação                                ✓
 ```
 
 ### T1.1 — auditoria
@@ -362,7 +358,7 @@ Consolidado antes de T1.9:
 
 - `studentObjective` autoral pode alimentar `runtime.presentation.intro` sem substituir `objective` técnico;
 - conteúdo legado recebe fallback público neutro, não vazamento de objetivo curricular;
-- novas U1/U2 estão validadas em staging e aguardam promoção/migração em T1.9;
+- novas U1/U2 foram promovidas de forma atômica em T1.9 e estão publicadas no slice ativo;
 - a primeira entrada de lição mostra somente retorno à unidade, título, intro pública e `Começar lição`;
 - stepper/conteúdo ficam ocultos até o início;
 - retomada usa estado visual separado e histórico pedagógico real sem criar domínio/evidência;
@@ -388,9 +384,9 @@ T1 pode usar várias PRs e deve seguir `docs/execucao-continua.md`; não pedir n
 
 ## P6 — Feedback por IA no Clássico
 
-**Estado: AGUARDANDO T1.**
+**Estado: ATIVO.**
 
-P6 volta a ser marco ativo somente quando `CL-T1-FUNDAMENTOS-CLAROS` estiver homologado.
+T1 foi homologado em T1.10; P6 volta a ser o marco ativo do Modo Clássico.
 
 Objetivo: acrescentar feedback opt-in em atividades elegíveis sem transformar IA em autoridade automática de domínio.
 
@@ -469,11 +465,10 @@ Cobrir troca de modos, preservação de domínio, coerência/resistência a farm
 ## Próximo passo oficial
 
 ```text
-T1.9 — migração, catálogo, progresso e mídia
-→ congelar/validar a matriz de migração antes de alterar IDs publicados
-→ promover o staging de N0-U01/N0-U02 de forma coerente com catálogo/manifests
-→ atualizar course.json, manifests, deep links e testes de descoberta
-→ migrar/normalizar progresso de forma conservadora, sem atribuir domínio por coincidência de nome ou posição
-→ reconciliar mídia e bloquear somente o escopo que realmente depende de estímulo pendente
-→ seguir docs/redimensionamento-t1-2-n0.md e docs/plano-fundamentos-claros.md
+P6 — Feedback por IA no Clássico
+→ reler docs/avaliacao-ia.md + regras BYOK/segurança
+→ verificar documentação oficial atual do provider antes de congelar API/modelo
+→ implementar feedback opt-in sem transformar IA em autoridade de domínio
+→ preservar VALIDACAO_PENDENTE quando a policy exigir avaliador confiável
+→ manter falha/ausência de IA sem perda da resposta ou bloqueio indevido do percurso
 ```
