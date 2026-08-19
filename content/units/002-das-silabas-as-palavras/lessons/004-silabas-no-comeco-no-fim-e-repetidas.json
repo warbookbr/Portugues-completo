@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "N0-U02-L04",
-  "title": "Sílabas no começo, no fim e repetidas",
+  "title": "Sílabas no começo e no fim",
   "status": "conteudo-pronto-para-implementacao",
   "objective": "Localizar sílabas no começo e no fim de palavras e reconhecer uma mesma sílaba em palavras diferentes, articulando escuta e escrita sem transformar posição ou recorrência em taxonomia formal.",
   "competencies": [
@@ -10,7 +10,9 @@
     "reconhecer uma sílaba recorrente em duas palavras diferentes mesmo quando ela ocupa posições diferentes",
     "acompanhar visualmente o trecho escrito correspondente à sílaba localizada sem depender apenas de cor ou de memorização da palavra"
   ],
-  "prerequisites": ["N0-U02-L03"],
+  "prerequisites": [
+    "N0-U02-L03"
+  ],
   "limits": [
     "não introduzir classificação formal de sílaba inicial, medial ou final como conteúdo gramatical",
     "não ensinar sílaba tônica ou posição da tonicidade",
@@ -65,7 +67,16 @@
         "type": "AUDIO_CONTROLADO",
         "requiredForPublication": true,
         "purpose": "reutilizar fichas silábicas contextuais e palavras inteiras da Lição 2 para localizar começo, fim e recorrência sem regravar estímulos equivalentes",
-        "locations": ["L04-B02", "L04-C01", "L04-B03", "L04-C02", "L04-B04", "L04-C03", "L04-A01", "L04-A02"],
+        "locations": [
+          "L04-B02",
+          "L04-C01",
+          "L04-B03",
+          "L04-C02",
+          "L04-B04",
+          "L04-C03",
+          "L04-A01",
+          "L04-A02"
+        ],
         "productionSource": "producao-midia/FILA-MIDIA.md"
       },
       {
@@ -80,26 +91,53 @@
         "type": "AUDIO_CONTROLADO",
         "requiredForPublication": true,
         "purpose": "reutilizar palavras inteiras já previstas para criar comparações posicionais novas: gato, mala, mesa, pato, casa e foca",
-        "locations": ["L04-B02", "L04-C01", "L04-B03", "L04-C02", "L04-B04", "L04-C03", "L04-A01", "L04-A02"],
+        "locations": [
+          "L04-B02",
+          "L04-C01",
+          "L04-B03",
+          "L04-C02",
+          "L04-B04",
+          "L04-C03",
+          "L04-A01",
+          "L04-A02"
+        ],
         "productionSource": "producao-midia/FILA-MIDIA.md"
       }
     ],
     "runtimeResources": [
       {
         "type": "TTS_OK",
-        "locations": ["instruções", "explicações", "feedback", "resumo"],
+        "locations": [
+          "instruções",
+          "explicações",
+          "feedback",
+          "resumo"
+        ],
         "purpose": "dar acesso ao texto da interface sem substituir os estímulos auditivos que definem a sílaba observada"
       }
     ],
     "generatedVisualResources": [
       {
         "type": "UI_RENDERED_SYLLABLE_SPANS",
-        "locations": ["L04-B02", "L04-C01", "L04-B03", "L04-C02", "L04-B04", "L04-C03", "L04-A01", "L04-A02"],
+        "locations": [
+          "L04-B02",
+          "L04-C01",
+          "L04-B03",
+          "L04-C02",
+          "L04-B04",
+          "L04-C03",
+          "L04-A01",
+          "L04-A02"
+        ],
         "purpose": "renderizar palavras como texto dividido em trechos silábicos clicáveis/destacáveis, com posição preservada e sem converter texto em imagem"
       },
       {
         "type": "UI_RENDERED_POSITION_LABELS",
-        "locations": ["L04-B02", "L04-B03", "L04-A01"],
+        "locations": [
+          "L04-B02",
+          "L04-B03",
+          "L04-A01"
+        ],
         "purpose": "marcar começo e fim com rótulos textuais e posição, sem depender apenas de cor"
       }
     ],
@@ -123,7 +161,10 @@
       "spokenContent": "gato",
       "syllableAudio": "N0-U02-L02-AUD-001",
       "writtenWord": "GATO",
-      "writtenSegments": ["GA", "TO"],
+      "writtenSegments": [
+        "GA",
+        "TO"
+      ],
       "targetSegmentIndex": 0,
       "positionLabel": "começo",
       "revealWrittenSegmentsAfterListening": true,
@@ -133,16 +174,23 @@
       "id": "L04-C01",
       "type": "quick-check",
       "focus": "listen-and-respond",
-      "interaction": "locate-initial-syllable",
+      "interaction": "single-choice",
       "prompt": "Ouça boneca e depois a ficha indicada. Em que posição essa sílaba aparece na palavra?",
       "wholeWordAudio": "N0-U02-L02-AUD-013",
       "syllableAudio": "N0-U02-L02-AUD-007",
       "spokenContent": "boneca",
       "writtenWord": "BONECA",
-      "writtenSegments": ["BO", "NE", "CA"],
+      "writtenSegments": [
+        "BO",
+        "NE",
+        "CA"
+      ],
       "targetSegment": "BO",
       "writtenSegmentsVisibleAfterFirstListen": true,
-      "options": ["no começo", "no fim"],
+      "options": [
+        "no começo",
+        "no fim"
+      ],
       "correctIndex": 0,
       "repeatAudio": true,
       "feedback": "BO aparece primeiro: é a sílaba do começo de boneca."
@@ -156,7 +204,10 @@
       "spokenContent": "mala",
       "syllableAudio": "N0-U02-L02-AUD-004",
       "writtenWord": "MALA",
-      "writtenSegments": ["MA", "LA"],
+      "writtenSegments": [
+        "MA",
+        "LA"
+      ],
       "targetSegmentIndex": 1,
       "positionLabel": "fim",
       "revealWrittenSegmentsAfterListening": true,
@@ -166,16 +217,23 @@
       "id": "L04-C02",
       "type": "quick-check",
       "focus": "listen-and-respond",
-      "interaction": "locate-final-syllable",
+      "interaction": "single-choice",
       "prompt": "Ouça tomate e depois a ficha te. Onde essa sílaba aparece?",
       "wholeWordAudio": "N0-U02-L02-AUD-014",
       "syllableAudio": "N0-U02-L02-AUD-012",
       "spokenContent": "tomate",
       "writtenWord": "TOMATE",
-      "writtenSegments": ["TO", "MA", "TE"],
+      "writtenSegments": [
+        "TO",
+        "MA",
+        "TE"
+      ],
       "targetSegment": "TE",
       "writtenSegmentsVisibleAfterFirstListen": true,
-      "options": ["no começo", "no fim"],
+      "options": [
+        "no começo",
+        "no fim"
+      ],
       "correctIndex": 1,
       "repeatAudio": true,
       "feedback": "TE aparece por último em tomate: está no fim."
@@ -191,7 +249,10 @@
           "spokenContent": "mala",
           "syllableAudio": "N0-U02-L02-AUD-003",
           "writtenWord": "MALA",
-          "writtenSegments": ["MA", "LA"],
+          "writtenSegments": [
+            "MA",
+            "LA"
+          ],
           "repeatedSegment": "MA",
           "positionDescription": "começo"
         },
@@ -200,7 +261,11 @@
           "spokenContent": "tomate",
           "syllableAudio": "N0-U02-L02-AUD-011",
           "writtenWord": "TOMATE",
-          "writtenSegments": ["TO", "MA", "TE"],
+          "writtenSegments": [
+            "TO",
+            "MA",
+            "TE"
+          ],
           "repeatedSegment": "MA",
           "positionDescription": "depois da primeira sílaba"
         }
@@ -212,16 +277,39 @@
       "id": "L04-C03",
       "type": "quick-check",
       "focus": "listen-observe-and-respond",
-      "interaction": "find-repeated-final-syllable",
+      "interaction": "single-choice",
       "prompt": "Ouça foca e boneca. Depois observe as palavras divididas em partes. Qual trecho aparece no fim das duas?",
-      "wordAudios": ["N0-U01-V01-AUD-001", "N0-U02-L02-AUD-013"],
-      "spokenContent": ["foca", "boneca"],
+      "wordAudios": [
+        "N0-U01-V01-AUD-001",
+        "N0-U02-L02-AUD-013"
+      ],
+      "spokenContent": [
+        "foca",
+        "boneca"
+      ],
       "writtenWords": [
-        {"word": "FOCA", "segments": ["FO", "CA"]},
-        {"word": "BONECA", "segments": ["BO", "NE", "CA"]}
+        {
+          "word": "FOCA",
+          "segments": [
+            "FO",
+            "CA"
+          ]
+        },
+        {
+          "word": "BONECA",
+          "segments": [
+            "BO",
+            "NE",
+            "CA"
+          ]
+        }
       ],
       "writtenWordsVisibleAfterListening": true,
-      "options": ["CA", "FO", "NE"],
+      "options": [
+        "CA",
+        "FO",
+        "NE"
+      ],
       "correctIndex": 0,
       "repeatAudio": true,
       "feedback": "As duas palavras terminam com CA. A mesma sílaba aparece no fim de foca e de boneca."
@@ -230,7 +318,7 @@
       "id": "L04-A01",
       "type": "guided-activity",
       "focus": "listen-observe-and-respond",
-      "interaction": "locate-syllable-position",
+      "interaction": "composite",
       "title": "Onde está a sílaba?",
       "instruction": "Ouça a palavra e a ficha sonora indicada. Depois escolha se o trecho correspondente está no começo ou no fim. A escrita pode aparecer depois da primeira escuta para você conferir a relação.",
       "items": [
@@ -239,36 +327,50 @@
           "spokenContent": "pato",
           "syllableAudio": "N0-U02-L02-AUD-006",
           "writtenWord": "PATO",
-          "writtenSegments": ["PA", "TO"],
+          "writtenSegments": [
+            "PA",
+            "TO"
+          ],
           "targetSegment": "TO",
-          "correctPosition": "fim"
+          "correct": "fim"
         },
         {
           "wholeWordAudio": "N0-U02-L02-AUD-013",
           "spokenContent": "boneca",
           "syllableAudio": "N0-U02-L02-AUD-009",
           "writtenWord": "BONECA",
-          "writtenSegments": ["BO", "NE", "CA"],
+          "writtenSegments": [
+            "BO",
+            "NE",
+            "CA"
+          ],
           "targetSegment": "CA",
-          "correctPosition": "fim"
+          "correct": "fim"
         },
         {
           "wholeWordAudio": "N0-U02-L02-AUD-014",
           "spokenContent": "tomate",
           "syllableAudio": "N0-U02-L02-AUD-010",
           "writtenWord": "TOMATE",
-          "writtenSegments": ["TO", "MA", "TE"],
+          "writtenSegments": [
+            "TO",
+            "MA",
+            "TE"
+          ],
           "targetSegment": "TO",
-          "correctPosition": "começo"
+          "correct": "começo"
         },
         {
           "wholeWordAudio": "N0-U01-L02-AUD-007",
           "spokenContent": "gato",
           "syllableAudio": "N0-U02-L02-AUD-001",
           "writtenWord": "GATO",
-          "writtenSegments": ["GA", "TO"],
+          "writtenSegments": [
+            "GA",
+            "TO"
+          ],
           "targetSegment": "GA",
-          "correctPosition": "começo"
+          "correct": "começo"
         }
       ],
       "repeatAudio": true,
@@ -278,49 +380,142 @@
       "id": "L04-A02",
       "type": "guided-activity",
       "focus": "listen-observe-and-compare",
-      "interaction": "find-repeated-syllable-across-words",
+      "interaction": "composite",
       "title": "Qual sílaba aparece nas duas palavras?",
       "instruction": "Ouça as duas palavras. Depois observe os trechos escritos e escolha a sílaba que aparece nas duas. As comparações são novas, mesmo quando as palavras já apareceram em outras atividades.",
       "items": [
         {
-          "wordAudios": ["N0-U01-L02-AUD-003", "N0-U02-L02-AUD-014"],
-          "spokenContent": ["mala", "tomate"],
-          "writtenWords": [
-            {"word": "MALA", "segments": ["MA", "LA"]},
-            {"word": "TOMATE", "segments": ["TO", "MA", "TE"]}
+          "wordAudios": [
+            "N0-U01-L02-AUD-003",
+            "N0-U02-L02-AUD-014"
           ],
-          "options": ["MA", "LA", "TE"],
+          "spokenContent": [
+            "mala",
+            "tomate"
+          ],
+          "writtenWords": [
+            {
+              "word": "MALA",
+              "segments": [
+                "MA",
+                "LA"
+              ]
+            },
+            {
+              "word": "TOMATE",
+              "segments": [
+                "TO",
+                "MA",
+                "TE"
+              ]
+            }
+          ],
+          "options": [
+            "MA",
+            "LA",
+            "TE"
+          ],
           "correctIndex": 0
         },
         {
-          "wordAudios": ["N0-U01-V01-AUD-001", "N0-U02-L02-AUD-013"],
-          "spokenContent": ["foca", "boneca"],
-          "writtenWords": [
-            {"word": "FOCA", "segments": ["FO", "CA"]},
-            {"word": "BONECA", "segments": ["BO", "NE", "CA"]}
+          "wordAudios": [
+            "N0-U01-V01-AUD-001",
+            "N0-U02-L02-AUD-013"
           ],
-          "options": ["FO", "BO", "CA"],
+          "spokenContent": [
+            "foca",
+            "boneca"
+          ],
+          "writtenWords": [
+            {
+              "word": "FOCA",
+              "segments": [
+                "FO",
+                "CA"
+              ]
+            },
+            {
+              "word": "BONECA",
+              "segments": [
+                "BO",
+                "NE",
+                "CA"
+              ]
+            }
+          ],
+          "options": [
+            "FO",
+            "BO",
+            "CA"
+          ],
           "correctIndex": 2
         },
         {
-          "wordAudios": ["N0-U01-L02-AUD-007", "N0-U01-L02-AUD-001"],
-          "spokenContent": ["gato", "pato"],
-          "contextualSyllableAudios": ["N0-U02-L02-AUD-002", "N0-U02-L02-AUD-006"],
-          "writtenWords": [
-            {"word": "GATO", "segments": ["GA", "TO"]},
-            {"word": "PATO", "segments": ["PA", "TO"]}
+          "wordAudios": [
+            "N0-U01-L02-AUD-007",
+            "N0-U01-L02-AUD-001"
           ],
-          "options": ["GA", "PA", "TO"],
+          "spokenContent": [
+            "gato",
+            "pato"
+          ],
+          "contextualSyllableAudios": [
+            "N0-U02-L02-AUD-002",
+            "N0-U02-L02-AUD-006"
+          ],
+          "writtenWords": [
+            {
+              "word": "GATO",
+              "segments": [
+                "GA",
+                "TO"
+              ]
+            },
+            {
+              "word": "PATO",
+              "segments": [
+                "PA",
+                "TO"
+              ]
+            }
+          ],
+          "options": [
+            "GA",
+            "PA",
+            "TO"
+          ],
           "correctIndex": 2
         },
         {
-          "wordAudios": ["N0-U01-L08-AUD-001", "N0-U01-L02-AUD-004"],
-          "spokenContent": ["casa", "mesa"],
-          "writtenWords": [
-            {"word": "CASA", "segments": ["CA", "SA"]},
-            {"word": "MESA", "segments": ["ME", "SA"]}
+          "wordAudios": [
+            "N0-U01-L08-AUD-001",
+            "N0-U01-L02-AUD-004"
           ],
-          "options": ["CA", "ME", "SA"],
+          "spokenContent": [
+            "casa",
+            "mesa"
+          ],
+          "writtenWords": [
+            {
+              "word": "CASA",
+              "segments": [
+                "CA",
+                "SA"
+              ]
+            },
+            {
+              "word": "MESA",
+              "segments": [
+                "ME",
+                "SA"
+              ]
+            }
+          ],
+          "options": [
+            "CA",
+            "ME",
+            "SA"
+          ],
           "correctIndex": 2
         }
       ],
@@ -345,7 +540,30 @@
   "completionEvidence": {
     "observablePerformance": "Localizar corretamente sílabas no começo e no fim de palavras e reconhecer uma sílaba recorrente entre palavras diferentes articulando escuta e escrita.",
     "criterion": "acertar pelo menos 3 dos 4 itens de L04-A01 e pelo menos 3 dos 4 itens de L04-A02, com pelo menos uma evidência correta de começo, uma de fim e uma de recorrência",
-    "notSufficient": "acertar apenas pela posição visual sem relacionar a sílaba ao áudio, memorizar uma lista fixa de palavras ou responder rapidamente sem demonstrar as três competências"
+    "notSufficient": "acertar apenas pela posição visual sem relacionar a sílaba ao áudio, memorizar uma lista fixa de palavras ou responder rapidamente sem demonstrar as três competências",
+    "clusters": {
+      "syllablePosition": {
+        "evidence": [
+          "L04-A01"
+        ],
+        "required": true
+      },
+      "syllableRecurrence": {
+        "evidence": [
+          "L04-A02"
+        ],
+        "required": true
+      }
+    },
+    "nonCompensable": true,
+    "activityPolicies": {
+      "L04-A01": {
+        "threshold": 0.75
+      },
+      "L04-A02": {
+        "threshold": 0.75
+      }
+    }
   },
   "implementationGuardRails": [
     "quando a atividade depender primeiro da escuta, reproduzir o áudio antes de revelar a segmentação escrita",
@@ -354,5 +572,6 @@
     "contextualSyllableAudios continuam ligados às palavras de origem; não substituir fichas entre palavras apenas por coincidência de grafia",
     "não introduzir terminologia como sílaba medial como requisito de aprendizagem; descrições como depois da primeira sílaba são suficientes",
     "não usar limite de tempo nem velocidade como critério de conclusão"
-  ]
+  ],
+  "studentObjective": "Encontrar sílabas no começo e no fim das palavras e perceber quando a mesma sílaba aparece em palavras diferentes."
 }

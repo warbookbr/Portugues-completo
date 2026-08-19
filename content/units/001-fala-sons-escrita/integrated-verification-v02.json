@@ -1,0 +1,429 @@
+{
+  "schemaVersion": 1,
+  "id": "N0-U01-V02",
+  "type": "integrated-unit-verification",
+  "title": "Verificação — Letras e primeiros sons",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Verificar de forma integrada se o aluno reconhece a base gráfica da escrita e realiza comparações sonoras e associações iniciais entre letras e sons, sem exigir conteúdos movidos para a Unidade 2.",
+  "prerequisites": [
+    "N0-U01-L03",
+    "N0-U01-L04",
+    "N0-U01-L05",
+    "N0-U01-L09",
+    "N0-U01-L06",
+    "N0-U01-L02",
+    "N0-U01-L07"
+  ],
+  "designPrinciples": [
+    "usar exemplos novos ou recombinados quando isso reduzir acerto por memória",
+    "não depender de recitação do alfabeto",
+    "permitir repetição de estímulos auditivos sem penalidade",
+    "ocultar a escrita quando ela entregaria uma resposta auditiva",
+    "não exigir leitura autônoma de palavras",
+    "não usar tempo de resposta como critério",
+    "não avaliar ainda a síntese fala versus escrita nem variações letra-som movidas para a Unidade 2"
+  ],
+  "limits": [
+    "não avaliar sílabas",
+    "não avaliar formação ou leitura sistemática de palavras",
+    "não exigir regras de uso de maiúsculas",
+    "não exigir ortografia",
+    "não exigir terminologia fonética",
+    "não exigir memorização perfeita da ordem alfabética",
+    "não exigir compreender ainda que uma mesma letra pode representar sons diferentes"
+  ],
+  "coverage": [
+    {
+      "competency": "reconhecer letras e seus nomes",
+      "evidence": [
+        "V02-Q01"
+      ]
+    },
+    {
+      "competency": "associar maiúscula e minúscula",
+      "evidence": [
+        "V02-Q02"
+      ]
+    },
+    {
+      "competency": "distinguir vogais e consoantes",
+      "evidence": [
+        "V02-Q03"
+      ]
+    },
+    {
+      "competency": "distinguir letras de algarismos, pontuação e outros símbolos",
+      "evidence": [
+        "V02-Q04"
+      ]
+    },
+    {
+      "competency": "acompanhar direção, ordem e espaços",
+      "evidence": [
+        "V02-Q05",
+        "V02-Q06"
+      ]
+    },
+    {
+      "competency": "comparar começos sonoros de palavras",
+      "evidence": [
+        "V02-Q07"
+      ]
+    },
+    {
+      "competency": "distinguir nome de letra de palavra",
+      "evidence": [
+        "V02-Q08"
+      ]
+    },
+    {
+      "competency": "associar som inicial claro a letra trabalhada",
+      "evidence": [
+        "V02-Q09"
+      ]
+    }
+  ],
+  "media": {
+    "tts": "instruções e feedback quando o som específico não determina a resposta",
+    "controlledAudio": [
+      "N0-U01-L03-AUD-012",
+      "N0-U01-L03-AUD-006",
+      "N0-U01-V01-AUD-001",
+      "N0-U01-V01-AUD-002",
+      "N0-U01-V01-AUD-003",
+      "N0-U01-V01-AUD-004"
+    ],
+    "video": "nao necessario",
+    "images": "nao necessarias"
+  },
+  "supportMaterials": {
+    "curatedMedia": [
+      {
+        "mediaIds": [
+          "N0-U01-L03-AUD-012",
+          "N0-U01-L03-AUD-006"
+        ],
+        "type": "AUDIO_CONTROLADO",
+        "requiredForPublication": true,
+        "purpose": "reutilizar referências fixas dos nomes das letras L e F",
+        "locations": [
+          "V02-Q01",
+          "V02-Q08"
+        ],
+        "productionSource": "producao-midia/FILA-MIDIA.md"
+      },
+      {
+        "mediaIds": [
+          "N0-U01-V01-AUD-001",
+          "N0-U01-V01-AUD-002",
+          "N0-U01-V01-AUD-003",
+          "N0-U01-V01-AUD-004"
+        ],
+        "type": "AUDIO_CONTROLADO",
+        "requiredForPublication": true,
+        "purpose": "reutilizar palavras novas já reservadas para comparação sonora e associação inicial som-letra",
+        "locations": [
+          "V02-Q07",
+          "V02-Q08",
+          "V02-Q09"
+        ],
+        "productionSource": "producao-midia/FILA-MIDIA.md"
+      }
+    ],
+    "runtimeResources": [
+      {
+        "type": "TTS_OK",
+        "locations": [
+          "instruções",
+          "feedback final"
+        ],
+        "purpose": "apoio de acesso ao texto sem substituir estímulos auditivos que determinam a resposta"
+      }
+    ],
+    "generatedVisualResources": [
+      {
+        "type": "UI_RENDERED_TEXT_TOKENS_AND_HIGHLIGHTS",
+        "locations": [
+          "V02-Q01",
+          "V02-Q02",
+          "V02-Q03",
+          "V02-Q04",
+          "V02-Q05",
+          "V02-Q06",
+          "V02-Q08",
+          "V02-Q09"
+        ],
+        "purpose": "renderizar letras, categorias, sequências e revelações como conteúdo semântico da interface"
+      }
+    ],
+    "productionQueueRequired": false,
+    "publicationDependency": "a V02 não cria novos arquivos humanos, mas depende de áudios já reservados nas famílias L03 e V01 estarem produzidos e validados antes de sua homologação pedagógica/publicação",
+    "decisionRationale": "reutilizar mídia semanticamente adequada evita regravação por mudança de posição curricular e preserva os mediaIds já documentados"
+  },
+  "items": [
+    {
+      "id": "V02-Q01",
+      "type": "letter-recognition",
+      "focus": "listen-and-respond",
+      "interaction": "audio-to-letter",
+      "prompt": "Ouça o nome da letra e escolha a letra correspondente.",
+      "stimulus": "N0-U01-L03-AUD-012",
+      "options": [
+        "L",
+        "M",
+        "R"
+      ],
+      "correct": "L",
+      "repeatAudio": true
+    },
+    {
+      "id": "V02-Q02",
+      "type": "case-matching",
+      "focus": "respond",
+      "prompt": "Qual minúscula corresponde à letra G?",
+      "model": "G",
+      "options": [
+        "q",
+        "g",
+        "j"
+      ],
+      "correct": "g"
+    },
+    {
+      "id": "V02-Q03",
+      "type": "letter-category-classification",
+      "focus": "respond",
+      "instruction": "Classifique cada letra como vogal ou consoante.",
+      "categories": [
+        "vogal",
+        "consoante"
+      ],
+      "items": [
+        {
+          "id": "v02-q03-1",
+          "stimulus": "E",
+          "correct": "vogal"
+        },
+        {
+          "id": "v02-q03-2",
+          "stimulus": "R",
+          "correct": "consoante"
+        },
+        {
+          "id": "v02-q03-3",
+          "stimulus": "U",
+          "correct": "vogal"
+        },
+        {
+          "id": "v02-q03-4",
+          "stimulus": "B",
+          "correct": "consoante"
+        },
+        {
+          "id": "v02-q03-5",
+          "stimulus": "O",
+          "correct": "vogal"
+        },
+        {
+          "id": "v02-q03-6",
+          "stimulus": "T",
+          "correct": "consoante"
+        }
+      ]
+    },
+    {
+      "id": "V02-Q04",
+      "type": "graphic-category-classification",
+      "focus": "respond",
+      "instruction": "Coloque cada sinal no grupo correto.",
+      "categories": [
+        "letra",
+        "algarismo",
+        "pontuação",
+        "outro símbolo"
+      ],
+      "items": [
+        {
+          "id": "v02-q04-1",
+          "stimulus": "N",
+          "correct": "letra"
+        },
+        {
+          "id": "v02-q04-2",
+          "stimulus": "5",
+          "correct": "algarismo"
+        },
+        {
+          "id": "v02-q04-3",
+          "stimulus": "!",
+          "correct": "pontuação"
+        },
+        {
+          "id": "v02-q04-4",
+          "stimulus": "%",
+          "correct": "outro símbolo"
+        },
+        {
+          "id": "v02-q04-5",
+          "stimulus": "a",
+          "correct": "letra"
+        },
+        {
+          "id": "v02-q04-6",
+          "stimulus": "?",
+          "correct": "pontuação"
+        }
+      ]
+    },
+    {
+      "id": "V02-Q05",
+      "type": "visual-organization-choice",
+      "focus": "observe-and-respond",
+      "prompt": "O modelo é A B  7 ?, seguindo da esquerda para a direita. Qual opção mantém a mesma ordem e o espaço?",
+      "model": "AB 7?",
+      "options": [
+        "AB 7?",
+        "BA 7?",
+        "AB7 ?"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "V02-Q06",
+      "type": "sequence-reproduction",
+      "focus": "observe-and-respond",
+      "prompt": "Reproduza a sequência exatamente como aparece no modelo.",
+      "model": [
+        "m",
+        "4",
+        "B",
+        "!"
+      ],
+      "availableTokens": [
+        "!",
+        "B",
+        "m",
+        "4"
+      ],
+      "correctSequence": [
+        "m",
+        "4",
+        "B",
+        "!"
+      ]
+    },
+    {
+      "id": "V02-Q07",
+      "type": "audio-pair-classify",
+      "focus": "listen-and-respond",
+      "instruction": "Ouça cada par e escolha se as palavras começam de forma parecida ou diferente.",
+      "writtenWordsVisibleBeforeResponse": false,
+      "categories": [
+        "parecida",
+        "diferente"
+      ],
+      "items": [
+        {
+          "id": "v02-q07-1",
+          "stimuli": [
+            "N0-U01-V01-AUD-001",
+            "N0-U01-V01-AUD-002"
+          ],
+          "spokenContent": [
+            "foca",
+            "fita"
+          ],
+          "correct": "parecida"
+        },
+        {
+          "id": "v02-q07-2",
+          "stimuli": [
+            "N0-U01-V01-AUD-003",
+            "N0-U01-V01-AUD-004"
+          ],
+          "spokenContent": [
+            "vaca",
+            "rato"
+          ],
+          "correct": "diferente"
+        }
+      ],
+      "repeatAudio": true
+    },
+    {
+      "id": "V02-Q08",
+      "type": "letter-name-versus-word",
+      "focus": "listen-and-respond",
+      "prompt": "Você está vendo a letra F. Qual áudio apresenta o nome da letra?",
+      "letter": "F",
+      "stimuli": [
+        "N0-U01-L03-AUD-006",
+        "N0-U01-V01-AUD-001"
+      ],
+      "spokenContent": [
+        "efe",
+        "foca"
+      ],
+      "options": [
+        "primeiro áudio",
+        "segundo áudio"
+      ],
+      "correctIndex": 0,
+      "writtenWordVisibleBeforeResponse": false,
+      "repeatAudio": true
+    },
+    {
+      "id": "V02-Q09",
+      "type": "initial-sound-to-letter",
+      "focus": "listen-and-respond",
+      "prompt": "Ouça a palavra sem vê-la escrita. Qual letra pode representar o som inicial que você ouviu?",
+      "stimulus": "N0-U01-V01-AUD-003",
+      "spokenContent": "vaca",
+      "options": [
+        "B",
+        "V",
+        "M"
+      ],
+      "correct": "V",
+      "writtenWordVisibleBeforeResponse": false,
+      "afterResponseReveal": "vaca",
+      "highlight": "V",
+      "repeatAudio": true
+    }
+  ],
+  "completionEvidence": {
+    "clusters": {
+      "alphabetAndForms": {
+        "evidence": [
+          "V02-Q01",
+          "V02-Q02"
+        ],
+        "required": true
+      },
+      "letterCategories": {
+        "evidence": [
+          "V02-Q03",
+          "V02-Q04"
+        ],
+        "required": true
+      },
+      "visualOrganization": {
+        "evidence": [
+          "V02-Q05",
+          "V02-Q06"
+        ],
+        "required": true
+      },
+      "soundAndLetter": {
+        "evidence": [
+          "V02-Q07",
+          "V02-Q08",
+          "V02-Q09"
+        ],
+        "required": true
+      }
+    },
+    "nonCompensable": true,
+    "completionRule": "os quatro agrupamentos são obrigatórios; bom desempenho visual não compensa ausência de evidência auditiva e vice-versa."
+  }
+}

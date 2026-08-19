@@ -3,38 +3,123 @@
   "id": "N0-U01",
   "levelId": "N0",
   "order": 1,
-  "title": "Fala, sons e escrita",
-  "objective": "Construir distinções iniciais entre fala, sons e representação escrita sem antecipar leitura sistemática.",
+  "title": "Letras e primeiros sons",
+  "objective": "Construir uma base concreta para reconhecer letras, organizar a escrita e começar a relacionar o que vemos ao que ouvimos.",
   "competencies": [
-    {"id": "N0-U01-C01", "label": "distinguir fala e escrita como formas relacionadas", "sourceLabels": ["Fala e escrita: duas formas relacionadas"]},
-    {"id": "N0-U01-C02", "label": "perceber e comparar sons da fala antes da escrita", "sourceLabels": ["Percebendo os sons da fala"]},
-    {"id": "N0-U01-C03", "label": "reconhecer as letras, seus nomes e a ordem alfabética como convenção", "sourceLabels": ["Conhecendo o alfabeto"]},
-    {"id": "N0-U01-C04", "label": "associar formas maiúsculas e minúsculas da mesma letra", "sourceLabels": ["A mesma letra em formas diferentes"]},
-    {"id": "N0-U01-C05", "label": "distinguir vogais, consoantes e outros sinais gráficos", "sourceLabels": ["Vogais, consoantes e outros sinais"]},
-    {"id": "N0-U01-C06", "label": "acompanhar ordem, direção e espaços em sequências escritas", "sourceLabels": ["Como a escrita se organiza"]},
-    {"id": "N0-U01-C07", "label": "distinguir nome da letra do som que ela pode representar", "sourceLabels": ["Nome da letra e som que ela pode representar"]},
-    {"id": "N0-U01-C08", "label": "reconhecer que relações entre letras e sons podem variar", "sourceLabels": ["Letras e sons: a relação pode variar"]}
+    {
+      "id": "N0-U01-C03",
+      "label": "entender o que é uma letra e reconhecer o alfabeto"
+    },
+    {
+      "id": "N0-U01-C04",
+      "label": "relacionar formas maiúsculas e minúsculas da mesma letra"
+    },
+    {
+      "id": "N0-U01-C05",
+      "label": "reconhecer vogais e consoantes em nível introdutório"
+    },
+    {
+      "id": "N0-U01-C09",
+      "label": "distinguir letras de algarismos, pontuação e outros sinais"
+    },
+    {
+      "id": "N0-U01-C06",
+      "label": "reconhecer organização visual básica da escrita"
+    },
+    {
+      "id": "N0-U01-C02",
+      "label": "perceber sons em palavras faladas sem confundi-los com letras"
+    },
+    {
+      "id": "N0-U01-C07",
+      "label": "distinguir nome da letra do som que ela pode representar"
+    }
   ],
   "prerequisites": [],
   "lessons": [
-    {"id": "N0-U01-L01", "order": 1, "title": "Fala e escrita: duas formas relacionadas", "path": "lessons/001-fala-e-escrita.json", "competencyIds": ["N0-U01-C01"]},
-    {"id": "N0-U01-L02", "order": 2, "title": "Percebendo os sons da fala", "path": "lessons/002-percebendo-os-sons-da-fala.json", "competencyIds": ["N0-U01-C02"]},
-    {"id": "N0-U01-L03", "order": 3, "title": "Conhecendo o alfabeto", "path": "lessons/003-conhecendo-o-alfabeto.json", "competencyIds": ["N0-U01-C03"]},
-    {"id": "N0-U01-L04", "order": 4, "title": "A mesma letra em formas diferentes", "path": "lessons/004-mesma-letra-formas-diferentes.json", "competencyIds": ["N0-U01-C04"]},
-    {"id": "N0-U01-L05", "order": 5, "title": "Vogais, consoantes e outros sinais", "path": "lessons/005-vogais-consoantes-outros-sinais.json", "competencyIds": ["N0-U01-C05"]},
-    {"id": "N0-U01-L06", "order": 6, "title": "Como a escrita se organiza", "path": "lessons/006-como-a-escrita-se-organiza.json", "competencyIds": ["N0-U01-C06"]},
-    {"id": "N0-U01-L07", "order": 7, "title": "Nome da letra e som que ela pode representar", "path": "lessons/007-nome-da-letra-e-som.json", "competencyIds": ["N0-U01-C07"]},
-    {"id": "N0-U01-L08", "order": 8, "title": "Letras e sons: a relação pode variar", "path": "lessons/008-letras-sons-relacao-varia.json", "competencyIds": ["N0-U01-C08"]}
+    {
+      "id": "N0-U01-L03",
+      "order": 1,
+      "title": "Letras e alfabeto",
+      "path": "lessons/003-conhecendo-o-alfabeto.json",
+      "competencyIds": [
+        "N0-U01-C03"
+      ]
+    },
+    {
+      "id": "N0-U01-L04",
+      "order": 2,
+      "title": "Maiúsculas e minúsculas",
+      "path": "lessons/004-mesma-letra-formas-diferentes.json",
+      "competencyIds": [
+        "N0-U01-C04"
+      ]
+    },
+    {
+      "id": "N0-U01-L05",
+      "order": 3,
+      "title": "Vogais e consoantes",
+      "path": "lessons/005-vogais-consoantes-outros-sinais.json",
+      "competencyIds": [
+        "N0-U01-C05"
+      ]
+    },
+    {
+      "id": "N0-U01-L09",
+      "order": 4,
+      "title": "Letras, números e outros sinais",
+      "path": "lessons/009-letras-numeros-outros-sinais.json",
+      "competencyIds": [
+        "N0-U01-C09"
+      ]
+    },
+    {
+      "id": "N0-U01-L06",
+      "order": 5,
+      "title": "Como a escrita se organiza",
+      "path": "lessons/006-como-a-escrita-se-organiza.json",
+      "competencyIds": [
+        "N0-U01-C06"
+      ]
+    },
+    {
+      "id": "N0-U01-L02",
+      "order": 6,
+      "title": "Ouvindo sons nas palavras",
+      "path": "lessons/002-percebendo-os-sons-da-fala.json",
+      "competencyIds": [
+        "N0-U01-C02"
+      ]
+    },
+    {
+      "id": "N0-U01-L07",
+      "order": 7,
+      "title": "Nome da letra e som: coisas diferentes",
+      "path": "lessons/007-nome-da-letra-e-som.json",
+      "competencyIds": [
+        "N0-U01-C07"
+      ]
+    }
   ],
   "verification": {
-    "id": "N0-U01-V01",
-    "path": "integrated-verification.json",
-    "competencyIds": ["N0-U01-C01", "N0-U01-C02", "N0-U01-C03", "N0-U01-C04", "N0-U01-C05", "N0-U01-C06", "N0-U01-C07", "N0-U01-C08"]
+    "id": "N0-U01-V02",
+    "path": "integrated-verification-v02.json",
+    "competencyIds": [
+      "N0-U01-C03",
+      "N0-U01-C04",
+      "N0-U01-C05",
+      "N0-U01-C09",
+      "N0-U01-C06",
+      "N0-U01-C02",
+      "N0-U01-C07"
+    ]
   },
   "publication": {
     "status": "BLOCKED",
     "blockers": [
-      "MIDIA_OBRIGATORIA_PARA_ATIVIDADE: audios controlados de N0-U01 ainda pendentes de producao/validacao"
+      "Mídia controlada obrigatória pendente: N0-U01-L02-AUD-*",
+      "Mídia controlada obrigatória pendente: N0-U01-L03-AUD-*",
+      "Mídia controlada obrigatória pendente/reutilizada na V02: N0-U01-V01-AUD-*"
     ]
   }
 }

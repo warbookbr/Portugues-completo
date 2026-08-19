@@ -1,0 +1,247 @@
+{
+  "schemaVersion": 1,
+  "id": "N0-U01-L09",
+  "title": "Letras, números e outros sinais",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Distinguir visualmente letras de algarismos, sinais de pontuação e outros símbolos simples, compreendendo que diferentes tipos de sinais podem aparecer na escrita e em interfaces sem pertencerem à mesma categoria.",
+  "studentObjective": "Aprender a separar letras de números, pontuação e outros sinais que podemos ver numa tela ou num texto.",
+  "competencies": [
+    "distinguir letras de algarismos em exemplos visuais simples",
+    "reconhecer sinais básicos de pontuação como uma categoria diferente de letra",
+    "reconhecer outros símbolos simples sem tratá-los como letras",
+    "compreender que nem todo sinal visível faz parte do alfabeto"
+  ],
+  "prerequisites": [
+    "N0-U01-L03",
+    "N0-U01-L05"
+  ],
+  "limits": [
+    "não ensinar operações matemáticas",
+    "não ensinar ainda funções detalhadas dos sinais de pontuação",
+    "não exigir nomes formais para todos os símbolos",
+    "não usar sinais visualmente ambíguos como critério central",
+    "não exigir leitura de palavras ou frases"
+  ],
+  "media": {
+    "tts": "apoio opcional para instrucoes, explicacoes e feedback",
+    "controlledAudio": "nao necessario",
+    "video": "nao necessario",
+    "images": "nao necessarias; os sinais devem ser renderizados diretamente pela interface"
+  },
+  "supportMaterials": {
+    "curatedMedia": [],
+    "runtimeResources": [
+      {
+        "type": "TTS_OK",
+        "locations": [
+          "instruções",
+          "explicações",
+          "feedback"
+        ],
+        "purpose": "oferecer apoio de acesso ao texto sem interferir no objeto visual avaliado"
+      }
+    ],
+    "generatedVisualResources": [
+      {
+        "type": "UI_RENDERED_CHARACTERS",
+        "locations": [
+          "L09-B02",
+          "L09-B03",
+          "L09-A01"
+        ],
+        "purpose": "mostrar letras, algarismos, pontuação e símbolos como caracteres reais e acessíveis, não como imagens"
+      }
+    ],
+    "productionQueueRequired": false,
+    "publicationDependency": "nenhuma mídia humana precisa ser produzida",
+    "decisionRationale": "o próprio texto/interface representa os sinais com maior nitidez, adaptação de tamanho e acessibilidade do que uma imagem estática"
+  },
+  "sequence": [
+    {
+      "id": "L09-B01",
+      "type": "objective",
+      "focus": "read-or-listen",
+      "text": "Você já conhece as letras. Mas uma tela ou um texto também pode mostrar números, pontuação e outros símbolos. Agora vamos aprender a reconhecer a diferença entre esses tipos de sinais."
+    },
+    {
+      "id": "L09-B02",
+      "type": "visual-demonstration",
+      "focus": "observe",
+      "title": "Compare os grupos",
+      "groups": [
+        {
+          "category": "letras",
+          "examples": [
+            "A",
+            "m",
+            "T"
+          ]
+        },
+        {
+          "category": "algarismos",
+          "examples": [
+            "3",
+            "7",
+            "9"
+          ]
+        },
+        {
+          "category": "pontuação",
+          "examples": [
+            ".",
+            "?",
+            "!"
+          ]
+        },
+        {
+          "category": "outros símbolos",
+          "examples": [
+            "@",
+            "%",
+            "="
+          ]
+        }
+      ],
+      "explanation": "Todos esses sinais podem aparecer diante dos nossos olhos, mas só o primeiro grupo é formado por letras do alfabeto."
+    },
+    {
+      "id": "L09-C01",
+      "type": "quick-check",
+      "focus": "respond",
+      "interaction": "single-choice",
+      "prompt": "Qual destes sinais é uma letra?",
+      "options": [
+        "7",
+        "M",
+        "?",
+        "@"
+      ],
+      "correct": "M",
+      "feedback": "M é uma letra. 7 é um algarismo, ? é pontuação e @ é outro símbolo."
+    },
+    {
+      "id": "L09-B03",
+      "type": "explanation",
+      "focus": "observe",
+      "title": "Não precisamos aprender a função de tudo agora",
+      "text": "Nesta etapa, basta reconhecer a categoria visual. Mais adiante o curso vai ensinar como usamos sinais como ponto, interrogação e exclamação. Por enquanto, o importante é não confundi-los com letras."
+    },
+    {
+      "id": "L09-A01",
+      "type": "guided-activity",
+      "focus": "respond",
+      "interaction": "classify",
+      "title": "Que tipo de sinal é este?",
+      "instruction": "Observe cada sinal e coloque-o no grupo correto.",
+      "categories": [
+        "letra",
+        "algarismo",
+        "pontuação",
+        "outro símbolo"
+      ],
+      "items": [
+        {
+          "id": "l09-a01-1",
+          "stimulus": "E",
+          "correct": "letra"
+        },
+        {
+          "id": "l09-a01-2",
+          "stimulus": "b",
+          "correct": "letra"
+        },
+        {
+          "id": "l09-a01-3",
+          "stimulus": "R",
+          "correct": "letra"
+        },
+        {
+          "id": "l09-a01-4",
+          "stimulus": "3",
+          "correct": "algarismo"
+        },
+        {
+          "id": "l09-a01-5",
+          "stimulus": "9",
+          "correct": "algarismo"
+        },
+        {
+          "id": "l09-a01-6",
+          "stimulus": "0",
+          "correct": "algarismo"
+        },
+        {
+          "id": "l09-a01-7",
+          "stimulus": ".",
+          "correct": "pontuação"
+        },
+        {
+          "id": "l09-a01-8",
+          "stimulus": "?",
+          "correct": "pontuação"
+        },
+        {
+          "id": "l09-a01-9",
+          "stimulus": "!",
+          "correct": "pontuação"
+        },
+        {
+          "id": "l09-a01-10",
+          "stimulus": "@",
+          "correct": "outro símbolo"
+        },
+        {
+          "id": "l09-a01-11",
+          "stimulus": "%",
+          "correct": "outro símbolo"
+        },
+        {
+          "id": "l09-a01-12",
+          "stimulus": "=",
+          "correct": "outro símbolo"
+        }
+      ],
+      "feedbackRule": "feedback imediato, explicação curta da categoria e nova tentativa sem penalidade"
+    },
+    {
+      "id": "L09-C02",
+      "type": "quick-check",
+      "focus": "respond",
+      "interaction": "single-choice",
+      "prompt": "Qual afirmação está correta?",
+      "options": [
+        "Tudo o que vemos escrito é uma letra.",
+        "Letras, algarismos, pontuação e outros símbolos são tipos diferentes de sinais.",
+        "Números também fazem parte do alfabeto."
+      ],
+      "correctIndex": 1,
+      "feedback": "Nem todo sinal visível é uma letra. Podemos reconhecer categorias diferentes sem precisar estudar todas as funções agora."
+    },
+    {
+      "id": "L09-B04",
+      "type": "summary",
+      "focus": "read-or-listen",
+      "points": [
+        "Letras fazem parte do alfabeto.",
+        "Algarismos, como 3 e 9, são usados para representar números e não são letras.",
+        "Ponto, interrogação e exclamação são exemplos de pontuação.",
+        "Também existem outros símbolos, como @, % e =.",
+        "Nesta etapa, basta reconhecer que esses grupos são diferentes."
+      ],
+      "bridgeToNextLesson": "Na próxima lição, vamos observar como a escrita se organiza da esquerda para a direita e como os espaços ajudam a separar partes do que vemos."
+    }
+  ],
+  "completionEvidence": {
+    "clusters": {
+      "graphicCategories": {
+        "evidence": [
+          "L09-A01",
+          "L09-C02"
+        ],
+        "required": true
+      }
+    },
+    "completionRule": "distinguir letras, algarismos, pontuação e outros símbolos em exemplos claros, com oportunidade de corrigir erros após feedback.",
+    "notSufficient": "reconhecer apenas uma letra isolada sem conseguir separar os quatro grupos trabalhados"
+  }
+}

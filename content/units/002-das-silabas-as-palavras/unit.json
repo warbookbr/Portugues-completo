@@ -1,0 +1,176 @@
+{
+  "schemaVersion": 1,
+  "id": "N0-U02",
+  "levelId": "N0",
+  "order": 2,
+  "title": "Sílabas e primeiras palavras",
+  "objective": "Perceber sílabas, relacionar som e escrita e usar essas partes como apoio para formar, ler e compreender primeiras palavras.",
+  "competencies": [
+    {
+      "id": "N0-U02-C01",
+      "label": "perceber uma palavra falada como um todo e como sequência de partes sonoras"
+    },
+    {
+      "id": "N0-U02-C02",
+      "label": "usar o termo sílaba para nomear funcionalmente as partes sonoras da palavra"
+    },
+    {
+      "id": "N0-U02-C03",
+      "label": "segmentar e recombinar sílabas em palavras faladas"
+    },
+    {
+      "id": "N0-U02-C04",
+      "label": "relacionar sílabas ouvidas a trechos da palavra escrita"
+    },
+    {
+      "id": "N0-U02-C05",
+      "label": "localizar sílabas no começo e no fim e reconhecer recorrências"
+    },
+    {
+      "id": "N0-U02-C06",
+      "label": "reconhecer que sílabas escritas podem ter formatos diferentes"
+    },
+    {
+      "id": "N0-U02-C07",
+      "label": "ordenar e completar sílabas para formar palavras familiares"
+    },
+    {
+      "id": "N0-U02-C08",
+      "label": "usar apoio silábico para ler palavras e reduzir esse apoio progressivamente"
+    },
+    {
+      "id": "N0-U02-C09",
+      "label": "relacionar palavras simples lidas a significados familiares"
+    },
+    {
+      "id": "N0-U02-C10",
+      "label": "perceber que a relação entre letras e sons pode variar"
+    },
+    {
+      "id": "N0-U02-C11",
+      "label": "distinguir fala e escrita como formas diferentes de comunicar"
+    }
+  ],
+  "prerequisites": [
+    "N0-U01-V02"
+  ],
+  "lessons": [
+    {
+      "id": "N0-U02-L01",
+      "order": 1,
+      "title": "O que é uma sílaba?",
+      "path": "lessons/001-ouvindo-as-partes-das-palavras.json",
+      "competencyIds": [
+        "N0-U02-C01",
+        "N0-U02-C02"
+      ]
+    },
+    {
+      "id": "N0-U02-L02",
+      "order": 2,
+      "title": "Separando e juntando sílabas",
+      "path": "lessons/002-separando-e-juntando-palavras-faladas.json",
+      "competencyIds": [
+        "N0-U02-C03"
+      ]
+    },
+    {
+      "id": "N0-U02-L03",
+      "order": 3,
+      "title": "Da sílaba ouvida à escrita",
+      "path": "lessons/003-da-silaba-ouvida-a-parte-escrita.json",
+      "competencyIds": [
+        "N0-U02-C04"
+      ]
+    },
+    {
+      "id": "N0-U02-L04",
+      "order": 4,
+      "title": "Sílabas no começo e no fim",
+      "path": "lessons/004-silabas-no-comeco-no-fim-e-repetidas.json",
+      "competencyIds": [
+        "N0-U02-C05"
+      ]
+    },
+    {
+      "id": "N0-U02-L05",
+      "order": 5,
+      "title": "Sílabas podem ter formas diferentes",
+      "path": "lessons/005-silabas-podem-ter-formas-diferentes.json",
+      "competencyIds": [
+        "N0-U02-C06"
+      ]
+    },
+    {
+      "id": "N0-U02-L06",
+      "order": 6,
+      "title": "Montando palavras",
+      "path": "lessons/006-montando-e-completando-palavras.json",
+      "competencyIds": [
+        "N0-U02-C07"
+      ]
+    },
+    {
+      "id": "N0-U02-L07",
+      "order": 7,
+      "title": "Lendo por partes e depois a palavra inteira",
+      "path": "lessons/007-da-leitura-por-partes-a-palavra-inteira.json",
+      "competencyIds": [
+        "N0-U02-C08"
+      ]
+    },
+    {
+      "id": "N0-U02-L08",
+      "order": 8,
+      "title": "Palavra e significado",
+      "path": "lessons/008-palavra-lida-e-significado-familiar.json",
+      "competencyIds": [
+        "N0-U02-C09"
+      ]
+    },
+    {
+      "id": "N0-U02-L09",
+      "order": 9,
+      "title": "Letras e sons podem variar",
+      "path": "lessons/009-letras-sons-podem-variar.json",
+      "competencyIds": [
+        "N0-U02-C10"
+      ]
+    },
+    {
+      "id": "N0-U02-L10",
+      "order": 10,
+      "title": "Falar e escrever: duas formas de comunicar",
+      "path": "lessons/010-falar-e-escrever.json",
+      "competencyIds": [
+        "N0-U02-C11"
+      ]
+    }
+  ],
+  "verification": {
+    "id": "N0-U02-V02",
+    "path": "integrated-verification-v02.json",
+    "competencyIds": [
+      "N0-U02-C01",
+      "N0-U02-C02",
+      "N0-U02-C03",
+      "N0-U02-C04",
+      "N0-U02-C05",
+      "N0-U02-C06",
+      "N0-U02-C07",
+      "N0-U02-C08",
+      "N0-U02-C09",
+      "N0-U02-C10",
+      "N0-U02-C11"
+    ]
+  },
+  "publication": {
+    "status": "BLOCKED",
+    "blockers": [
+      "Mídia controlada obrigatória pendente/reutilizada: N0-U01-L02-AUD-* e N0-U01-L08-AUD-*",
+      "Mídia controlada obrigatória pendente: N0-U02-L01-AUD-* e N0-U02-L02-AUD-*",
+      "Imagens obrigatórias pendentes: N0-U02-L08-IMG-*",
+      "Mídia da verificação V02 pendente/reutilizada: N0-U02-V01-AUD-* e N0-U02-V01-IMG-*"
+    ]
+  }
+}

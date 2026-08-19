@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "N0-U02-L08",
-  "title": "Palavra lida e significado familiar",
+  "title": "Palavra e significado",
   "status": "conteudo-pronto-para-implementacao",
   "objective": "Relacionar palavras simples lidas a significados familiares, demonstrando compreensão funcional da palavra escrita sem depender de áudio prévio, leitura de frases ou explicações semânticas longas.",
   "competencies": [
@@ -11,7 +11,9 @@
     "usar apoio silábico sob demanda sem transformar a segmentação em parte obrigatória da resposta semântica",
     "demonstrar compreensão sem depender de ouvir a palavra-alvo antes de responder"
   ],
-  "prerequisites": ["N0-U02-L07"],
+  "prerequisites": [
+    "N0-U02-L07"
+  ],
   "limits": [
     "não usar frases ou pequenos textos como objeto central da leitura",
     "não exigir definições verbais longas ou vocabulário abstrato para demonstrar compreensão",
@@ -51,31 +53,73 @@
         "type": "IMAGEM_CURADA",
         "requiredForPublication": true,
         "purpose": "permitir associação direta entre a palavra lida e um significado concreto sem acrescentar outra exigência de leitura; as imagens formam um conjunto visual consistente e sem texto incorporado",
-        "locations": ["L08-B02", "L08-C01", "L08-B03", "L08-C02", "L08-B04", "L08-C03", "L08-A01", "L08-A02"],
+        "locations": [
+          "L08-B02",
+          "L08-C01",
+          "L08-B03",
+          "L08-C02",
+          "L08-B04",
+          "L08-C03",
+          "L08-A01",
+          "L08-A02"
+        ],
         "productionSource": "producao-midia/FILA-MIDIA.md"
       }
     ],
     "runtimeResources": [
       {
         "type": "TTS_OK",
-        "locations": ["instruções", "feedback", "L08-B02", "L08-C01", "L08-B03", "L08-C02", "L08-B04", "L08-C03", "L08-A01", "L08-A02", "resumo"],
+        "locations": [
+          "instruções",
+          "feedback",
+          "L08-B02",
+          "L08-C01",
+          "L08-B03",
+          "L08-C02",
+          "L08-B04",
+          "L08-C03",
+          "L08-A01",
+          "L08-A02",
+          "resumo"
+        ],
         "purpose": "narrar instruções e confirmar a palavra somente depois da resposta; também pode verbalizar descrições semânticas curtas na alternativa não visual, sem fornecer previamente a pronúncia da palavra-alvo"
       }
     ],
     "generatedVisualResources": [
       {
         "type": "UI_RENDERED_TARGET_WORD",
-        "locations": ["L08-B02", "L08-C01", "L08-B03", "L08-C02", "L08-B04", "L08-C03", "L08-A01", "L08-A02"],
+        "locations": [
+          "L08-B02",
+          "L08-C01",
+          "L08-B03",
+          "L08-C02",
+          "L08-B04",
+          "L08-C03",
+          "L08-A01",
+          "L08-A02"
+        ],
         "purpose": "renderizar a palavra-alvo como texto real, com possibilidade de segmentação silábica sob demanda e sem transformá-la em imagem"
       },
       {
         "type": "UI_RENDERED_IMAGE_CHOICE_GRID",
-        "locations": ["L08-C01", "L08-C02", "L08-C03", "L08-A01", "L08-A02"],
+        "locations": [
+          "L08-C01",
+          "L08-C02",
+          "L08-C03",
+          "L08-A01",
+          "L08-A02"
+        ],
         "purpose": "apresentar opções visuais em ordem variável, sem rótulo textual e sem usar posição fixa como pista de resposta"
       },
       {
         "type": "UI_RENDERED_NONVISUAL_MEANING_CHOICES",
-        "locations": ["L08-C01", "L08-C02", "L08-C03", "L08-A01", "L08-A02"],
+        "locations": [
+          "L08-C01",
+          "L08-C02",
+          "L08-C03",
+          "L08-A01",
+          "L08-A02"
+        ],
         "purpose": "oferecer uma alternativa acessível de escolha por descrições semânticas curtas para quem não usa as imagens, mantendo a palavra-alvo escrita como estímulo inicial"
       }
     ],
@@ -86,43 +130,64 @@
   "meaningSet": [
     {
       "word": "GATO",
-      "segments": ["GA", "TO"],
+      "segments": [
+        "GA",
+        "TO"
+      ],
       "imageId": "N0-U02-L08-IMG-001",
       "nonVisualMeaning": "um animal doméstico que mia"
     },
     {
       "word": "PATO",
-      "segments": ["PA", "TO"],
+      "segments": [
+        "PA",
+        "TO"
+      ],
       "imageId": "N0-U02-L08-IMG-002",
       "nonVisualMeaning": "uma ave com bico que pode nadar"
     },
     {
       "word": "PRATO",
-      "segments": ["PRA", "TO"],
+      "segments": [
+        "PRA",
+        "TO"
+      ],
       "imageId": "N0-U02-L08-IMG-003",
       "nonVisualMeaning": "um objeto usado para colocar comida"
     },
     {
       "word": "MALA",
-      "segments": ["MA", "LA"],
+      "segments": [
+        "MA",
+        "LA"
+      ],
       "imageId": "N0-U02-L08-IMG-004",
       "nonVisualMeaning": "um objeto usado para levar roupas em uma viagem"
     },
     {
       "word": "MESA",
-      "segments": ["ME", "SA"],
+      "segments": [
+        "ME",
+        "SA"
+      ],
       "imageId": "N0-U02-L08-IMG-005",
       "nonVisualMeaning": "um móvel com tampo apoiado por pés ou uma base"
     },
     {
       "word": "UVA",
-      "segments": ["U", "VA"],
+      "segments": [
+        "U",
+        "VA"
+      ],
       "imageId": "N0-U02-L08-IMG-006",
       "nonVisualMeaning": "uma fruta pequena que costuma aparecer em cachos"
     },
     {
       "word": "CASA",
-      "segments": ["CA", "SA"],
+      "segments": [
+        "CA",
+        "SA"
+      ],
       "imageId": "N0-U02-L08-IMG-007",
       "nonVisualMeaning": "um lugar construído para pessoas morarem"
     }
@@ -140,7 +205,10 @@
       "focus": "read-then-observe",
       "title": "Da palavra ao significado",
       "word": "CASA",
-      "segments": ["CA", "SA"],
+      "segments": [
+        "CA",
+        "SA"
+      ],
       "initialDisplay": "whole-word",
       "syllableSupportAvailable": true,
       "targetTtsAvailableBeforeResponse": false,
@@ -152,10 +220,13 @@
       "id": "L08-C01",
       "type": "quick-check",
       "focus": "read-and-respond",
-      "interaction": "written-word-to-meaning-choice",
+      "interaction": "single-choice",
       "prompt": "Leia GATO. Qual opção representa o significado da palavra?",
       "word": "GATO",
-      "segments": ["GA", "TO"],
+      "segments": [
+        "GA",
+        "TO"
+      ],
       "syllableSupportAvailable": true,
       "targetTtsBeforeResponse": false,
       "visualOptions": [
@@ -180,13 +251,19 @@
       "examples": [
         {
           "word": "PATO",
-          "segments": ["PA", "TO"],
+          "segments": [
+            "PA",
+            "TO"
+          ],
           "imageId": "N0-U02-L08-IMG-002",
           "nonVisualMeaning": "uma ave com bico que pode nadar"
         },
         {
           "word": "PRATO",
-          "segments": ["PRA", "TO"],
+          "segments": [
+            "PRA",
+            "TO"
+          ],
           "imageId": "N0-U02-L08-IMG-003",
           "nonVisualMeaning": "um objeto usado para colocar comida"
         }
@@ -198,10 +275,13 @@
       "id": "L08-C02",
       "type": "quick-check",
       "focus": "read-and-respond",
-      "interaction": "discriminate-similar-written-words-by-meaning",
+      "interaction": "single-choice",
       "prompt": "Leia PRATO. Qual opção representa essa palavra?",
       "word": "PRATO",
-      "segments": ["PRA", "TO"],
+      "segments": [
+        "PRA",
+        "TO"
+      ],
       "syllableSupportAvailable": true,
       "targetTtsBeforeResponse": false,
       "visualOptions": [
@@ -224,8 +304,14 @@
       "focus": "read-then-observe",
       "title": "A apresentação pode mudar sem mudar o significado",
       "stages": [
-        {"display": "UVA", "word": "UVA"},
-        {"display": "uva", "word": "UVA"}
+        {
+          "display": "UVA",
+          "word": "UVA"
+        },
+        {
+          "display": "uva",
+          "word": "UVA"
+        }
       ],
       "imageId": "N0-U02-L08-IMG-006",
       "nonVisualMeaning": "uma fruta pequena que costuma aparecer em cachos",
@@ -236,11 +322,14 @@
       "id": "L08-C03",
       "type": "quick-check",
       "focus": "read-and-respond",
-      "interaction": "lowercase-written-word-to-meaning-choice",
+      "interaction": "single-choice",
       "prompt": "Leia mala. Qual opção representa o significado da palavra?",
       "wordDisplay": "mala",
       "canonicalWord": "MALA",
-      "segments": ["ma", "la"],
+      "segments": [
+        "ma",
+        "la"
+      ],
       "syllableSupportAvailable": true,
       "targetTtsBeforeResponse": false,
       "visualOptions": [
@@ -261,47 +350,102 @@
       "id": "L08-A01",
       "type": "guided-activity",
       "focus": "read-and-respond",
-      "interaction": "written-word-to-meaning-choice",
+      "interaction": "composite",
       "title": "Leia e escolha o significado",
       "instruction": "Leia a palavra antes de escolher. Se precisar, você pode mostrar as partes. O áudio da palavra só fica disponível depois da resposta. As opções visuais não mostram texto.",
       "items": [
         {
           "word": "PATO",
-          "segments": ["PA", "TO"],
-          "visualOptions": ["N0-U02-L08-IMG-003", "N0-U02-L08-IMG-002", "N0-U02-L08-IMG-001"],
-          "nonVisualOptions": ["um objeto usado para colocar comida", "uma ave com bico que pode nadar", "um animal doméstico que mia"],
+          "segments": [
+            "PA",
+            "TO"
+          ],
+          "visualOptions": [
+            "N0-U02-L08-IMG-003",
+            "N0-U02-L08-IMG-002",
+            "N0-U02-L08-IMG-001"
+          ],
+          "nonVisualOptions": [
+            "um objeto usado para colocar comida",
+            "uma ave com bico que pode nadar",
+            "um animal doméstico que mia"
+          ],
           "correctIndex": 1,
           "feedbackTts": "pato"
         },
         {
           "word": "PRATO",
-          "segments": ["PRA", "TO"],
-          "visualOptions": ["N0-U02-L08-IMG-002", "N0-U02-L08-IMG-005", "N0-U02-L08-IMG-003"],
-          "nonVisualOptions": ["uma ave com bico que pode nadar", "um móvel com tampo apoiado por pés ou uma base", "um objeto usado para colocar comida"],
+          "segments": [
+            "PRA",
+            "TO"
+          ],
+          "visualOptions": [
+            "N0-U02-L08-IMG-002",
+            "N0-U02-L08-IMG-005",
+            "N0-U02-L08-IMG-003"
+          ],
+          "nonVisualOptions": [
+            "uma ave com bico que pode nadar",
+            "um móvel com tampo apoiado por pés ou uma base",
+            "um objeto usado para colocar comida"
+          ],
           "correctIndex": 2,
           "feedbackTts": "prato"
         },
         {
           "word": "MALA",
-          "segments": ["MA", "LA"],
-          "visualOptions": ["N0-U02-L08-IMG-004", "N0-U02-L08-IMG-007", "N0-U02-L08-IMG-005"],
-          "nonVisualOptions": ["um objeto usado para levar roupas em uma viagem", "um lugar construído para pessoas morarem", "um móvel com tampo apoiado por pés ou uma base"],
+          "segments": [
+            "MA",
+            "LA"
+          ],
+          "visualOptions": [
+            "N0-U02-L08-IMG-004",
+            "N0-U02-L08-IMG-007",
+            "N0-U02-L08-IMG-005"
+          ],
+          "nonVisualOptions": [
+            "um objeto usado para levar roupas em uma viagem",
+            "um lugar construído para pessoas morarem",
+            "um móvel com tampo apoiado por pés ou uma base"
+          ],
           "correctIndex": 0,
           "feedbackTts": "mala"
         },
         {
           "word": "MESA",
-          "segments": ["ME", "SA"],
-          "visualOptions": ["N0-U02-L08-IMG-006", "N0-U02-L08-IMG-005", "N0-U02-L08-IMG-004"],
-          "nonVisualOptions": ["uma fruta pequena que costuma aparecer em cachos", "um móvel com tampo apoiado por pés ou uma base", "um objeto usado para levar roupas em uma viagem"],
+          "segments": [
+            "ME",
+            "SA"
+          ],
+          "visualOptions": [
+            "N0-U02-L08-IMG-006",
+            "N0-U02-L08-IMG-005",
+            "N0-U02-L08-IMG-004"
+          ],
+          "nonVisualOptions": [
+            "uma fruta pequena que costuma aparecer em cachos",
+            "um móvel com tampo apoiado por pés ou uma base",
+            "um objeto usado para levar roupas em uma viagem"
+          ],
           "correctIndex": 1,
           "feedbackTts": "mesa"
         },
         {
           "word": "UVA",
-          "segments": ["U", "VA"],
-          "visualOptions": ["N0-U02-L08-IMG-007", "N0-U02-L08-IMG-001", "N0-U02-L08-IMG-006"],
-          "nonVisualOptions": ["um lugar construído para pessoas morarem", "um animal doméstico que mia", "uma fruta pequena que costuma aparecer em cachos"],
+          "segments": [
+            "U",
+            "VA"
+          ],
+          "visualOptions": [
+            "N0-U02-L08-IMG-007",
+            "N0-U02-L08-IMG-001",
+            "N0-U02-L08-IMG-006"
+          ],
+          "nonVisualOptions": [
+            "um lugar construído para pessoas morarem",
+            "um animal doméstico que mia",
+            "uma fruta pequena que costuma aparecer em cachos"
+          ],
           "correctIndex": 2,
           "feedbackTts": "uva"
         }
@@ -314,34 +458,67 @@
       "id": "L08-A02",
       "type": "transfer-activity",
       "focus": "read-and-respond",
-      "interaction": "presentation-variation-to-meaning-choice",
+      "interaction": "composite",
       "title": "O significado continua quando a apresentação muda",
       "instruction": "Leia as palavras em minúsculas e escolha o significado. As palavras já apareceram em outras formas durante o curso; o objetivo é reconhecer que a mudança de apresentação não cria outra palavra.",
       "items": [
         {
           "wordDisplay": "gato",
           "canonicalWord": "GATO",
-          "segments": ["ga", "to"],
-          "visualOptions": ["N0-U02-L08-IMG-002", "N0-U02-L08-IMG-007", "N0-U02-L08-IMG-001"],
-          "nonVisualOptions": ["uma ave com bico que pode nadar", "um lugar construído para pessoas morarem", "um animal doméstico que mia"],
+          "segments": [
+            "ga",
+            "to"
+          ],
+          "visualOptions": [
+            "N0-U02-L08-IMG-002",
+            "N0-U02-L08-IMG-007",
+            "N0-U02-L08-IMG-001"
+          ],
+          "nonVisualOptions": [
+            "uma ave com bico que pode nadar",
+            "um lugar construído para pessoas morarem",
+            "um animal doméstico que mia"
+          ],
           "correctIndex": 2,
           "feedbackTts": "gato"
         },
         {
           "wordDisplay": "casa",
           "canonicalWord": "CASA",
-          "segments": ["ca", "sa"],
-          "visualOptions": ["N0-U02-L08-IMG-007", "N0-U02-L08-IMG-004", "N0-U02-L08-IMG-003"],
-          "nonVisualOptions": ["um lugar construído para pessoas morarem", "um objeto usado para levar roupas em uma viagem", "um objeto usado para colocar comida"],
+          "segments": [
+            "ca",
+            "sa"
+          ],
+          "visualOptions": [
+            "N0-U02-L08-IMG-007",
+            "N0-U02-L08-IMG-004",
+            "N0-U02-L08-IMG-003"
+          ],
+          "nonVisualOptions": [
+            "um lugar construído para pessoas morarem",
+            "um objeto usado para levar roupas em uma viagem",
+            "um objeto usado para colocar comida"
+          ],
           "correctIndex": 0,
           "feedbackTts": "casa"
         },
         {
           "wordDisplay": "uva",
           "canonicalWord": "UVA",
-          "segments": ["u", "va"],
-          "visualOptions": ["N0-U02-L08-IMG-005", "N0-U02-L08-IMG-006", "N0-U02-L08-IMG-001"],
-          "nonVisualOptions": ["um móvel com tampo apoiado por pés ou uma base", "uma fruta pequena que costuma aparecer em cachos", "um animal doméstico que mia"],
+          "segments": [
+            "u",
+            "va"
+          ],
+          "visualOptions": [
+            "N0-U02-L08-IMG-005",
+            "N0-U02-L08-IMG-006",
+            "N0-U02-L08-IMG-001"
+          ],
+          "nonVisualOptions": [
+            "um móvel com tampo apoiado por pés ou uma base",
+            "uma fruta pequena que costuma aparecer em cachos",
+            "um animal doméstico que mia"
+          ],
           "correctIndex": 1,
           "feedbackTts": "uva"
         }
@@ -375,7 +552,28 @@
     "observablePerformance": "Relacionar corretamente palavras simples lidas a significados familiares em opções visuais ou em alternativa semântica não visual equivalente, incluindo contraste entre palavras próximas e uma pequena mudança de apresentação.",
     "criterion": "acertar L08-C01, L08-C02 e L08-C03; acertar pelo menos 4 dos 5 itens de L08-A01 e pelo menos 2 dos 3 itens de L08-A02 após oportunidade de revisão",
     "supportPolicy": "usar segmentação silábica não invalida um acerto; o uso do apoio pode ser registrado para orientar revisão, mas a competência principal desta lição é a relação palavra-significado",
-    "notSufficient": "acertar por ter ouvido previamente a palavra-alvo, escolher sempre pela posição da figura, memorizar uma ordem fixa de opções ou apenas repetir verbalmente que palavras têm significado"
+    "notSufficient": "acertar por ter ouvido previamente a palavra-alvo, escolher sempre pela posição da figura, memorizar uma ordem fixa de opções ou apenas repetir verbalmente que palavras têm significado",
+    "clusters": {
+      "wordMeaning": {
+        "evidence": [
+          "L08-C01",
+          "L08-C02",
+          "L08-C03",
+          "L08-A01",
+          "L08-A02"
+        ],
+        "required": true
+      }
+    },
+    "nonCompensable": true,
+    "activityPolicies": {
+      "L08-A01": {
+        "threshold": 0.8
+      },
+      "L08-A02": {
+        "threshold": 0.6666666667
+      }
+    }
   },
   "implementationGuardRails": [
     "não tocar TTS da palavra-alvo antes da primeira resposta semântica",
@@ -388,5 +586,6 @@
     "o apoio silábico deve ser opcional e não pode pronunciar a palavra antes da resposta",
     "feedback pode revelar imagem correta, palavra inteira e TTS depois da resposta",
     "não converter as próprias palavras em imagens; o alvo de leitura deve permanecer texto real"
-  ]
+  ],
+  "studentObjective": "Ler palavras simples e ligar cada palavra ao que ela significa."
 }

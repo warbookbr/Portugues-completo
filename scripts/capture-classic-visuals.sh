@@ -50,8 +50,9 @@ location.replace('/${route}');
 EOF
 }
 
-seed_lesson_page resume-n0-step0 N0-U01-L01 0 '#/unidade/N0-U01/licao/N0-U01-L01'
-seed_lesson_page resume-n0-step2 N0-U01-L01 2 '#/unidade/N0-U01/licao/N0-U01-L01'
+seed_lesson_page resume-n0-step0 N0-U01-L03 0 '#/unidade/N0-U01/licao/N0-U01-L03'
+seed_lesson_page resume-n0-step2 N0-U01-L03 2 '#/unidade/N0-U01/licao/N0-U01-L03'
+seed_lesson_page tts-u2-step2 N0-U02-L07 2 '#/unidade/N0-U02/licao/N0-U02-L07'
 seed_lesson_page resume-n4-step2 N4-U09-L01 2 '#/unidade/N4-U09/licao/N4-U09-L01'
 
 HOME_DOM="$(assert_page '#/' 'Unidades do curso')"
@@ -61,10 +62,13 @@ REVIEWS_DOM="$(assert_page '#/revisoes' 'Revisões recomendadas')"
 PERFORMANCE_DOM="$(assert_page '#/desempenho' 'Seu progresso de aprendizagem')"
 HELP_DOM="$(assert_page '#/ajuda' 'Como podemos orientar você?')"
 METHODOLOGY_DOM="$(assert_page '#/metodologia' 'Como o Português Completo ensina')"
-UNIT_DOM="$(assert_page '#/unidade/N0-U01' 'Fala, sons e escrita')"
-LESSON_DOM="$(assert_page '#/unidade/N0-U01/licao/N0-U01-L01' 'Começar lição')"
+UNIT_DOM="$(assert_page '#/unidade/N0-U01' 'Letras e primeiros sons')"
+LESSON_DOM="$(assert_page '#/unidade/N0-U01/licao/N0-U01-L03' 'Começar lição')"
+LEGACY_L01_DOM="$(assert_page '#/unidade/N0-U01/licao/N0-U01-L01' 'Falar e escrever: duas formas de comunicar')"
+LEGACY_L08_DOM="$(assert_page '#/unidade/N0-U01/licao/N0-U01-L08' 'Letras e sons podem variar')"
 RESUME_N0_DOM="$(assert_page 'artifacts/classic-visuals/resume-n0-step0.html' 'Etapa 1 de')"
 RESUME_N0_ACTIVITY_DOM="$(assert_page 'artifacts/classic-visuals/resume-n0-step2.html' 'Voltar para a unidade')"
+TTS_U2_DOM="$(assert_page 'artifacts/classic-visuals/tts-u2-step2.html' 'Ouvir A')"
 N4_DOM="$(assert_page '#/unidade/N4-U09/licao/N4-U09-L01' 'Começar lição')"
 N4_ACTIVITY_DOM="$(assert_page 'artifacts/classic-visuals/resume-n4-step2.html' 'Interpretação literária autônoma e evidência')"
 
@@ -107,7 +111,8 @@ grep -Fq 'href="#/ajuda"' <<<"$METHODOLOGY_DOM" || { echo 'Smoke DOM T1.8: metod
 
 # T1.7 — primeira entrada: só apresentação pública + ação; fluxo existe, mas permanece oculto.
 grep -Fq 'Voltar para a unidade' <<<"$LESSON_DOM" || { echo 'Smoke DOM T1.7: retorno direto para unidade ausente na abertura.' >&2; exit 1; }
-grep -Fq 'Nesta lição, você vai estudar o conteúdo passo a passo.' <<<"$LESSON_DOM" || { echo 'Smoke DOM T1.7: fallback público seguro ausente.' >&2; exit 1; }
+grep -Fq 'Entender o que é uma letra e conhecer as letras do alfabeto, seus nomes e sua ordem.' <<<"$LESSON_DOM" || { echo 'Smoke DOM T1.9: abertura pública autorada da nova primeira lição ausente.' >&2; exit 1; }
+grep -Fq 'href="#/unidade/N0-U02"' <<<"$LEGACY_L01_DOM$LEGACY_L08_DOM" || { echo 'Smoke DOM T1.9: alias histórico não aponta de volta para a unidade canônica.' >&2; exit 1; }
 grep -Fq 'data-lesson-start' <<<"$LESSON_DOM" || { echo 'Smoke DOM T1.7: botão Começar lição ausente.' >&2; exit 1; }
 grep -Fq 'data-lesson-step="0"' <<<"$LESSON_DOM" || { echo 'Smoke DOM T1.7: fluxo guiado não foi montado sob a abertura.' >&2; exit 1; }
 if ! grep -Eq '<section class="lesson-stream"[^>]*hidden' <<<"$LESSON_DOM"; then
@@ -138,7 +143,11 @@ if grep -Fq 'correção objetiva' <<<"$RESUME_N0_ACTIVITY_DOM"; then
   exit 1
 fi
 
-grep -Fq 'Ouvir exemplo' <<<"$RESUME_N0_ACTIVITY_DOM" || { echo 'Smoke DOM: ttsText não virou controle de TTS no fluxo iniciado.' >&2; exit 1; }
+grep -Fq 'data-tts=' <<<"$TTS_U2_DOM" || { echo 'Smoke DOM T1.9: opções de áudio da U2 não viraram controles TTS após a tentativa.' >&2; exit 1; }
+if grep -Eiq 'N0-U01-L03-AUD|initialsupportlevel|feedbacktts|supportbuttonlabel|mediaId' <<<"$RESUME_N0_ACTIVITY_DOM$TTS_U2_DOM"; then
+  echo 'Smoke DOM T1.9: metadado técnico vazou para a interface do aluno.' >&2
+  exit 1
+fi
 grep -Fq 'Registrar resposta' <<<"$N4_ACTIVITY_DOM" || { echo 'Smoke DOM: atividade aberta N4 ausente na retomada.' >&2; exit 1; }
 
 grep -Fq 'Plano de estudos' <<<"$PLAN_DOM" || exit 1
@@ -164,14 +173,15 @@ capture help-mobile 390 900 '#/ajuda'
 capture methodology-desktop 1440 900 '#/metodologia'
 
 # T1.7: primeira entrada em quatro larguras relevantes.
-capture lesson-n0-intro-desktop 1440 900 '#/unidade/N0-U01/licao/N0-U01-L01'
-capture lesson-n0-intro-tablet 900 900 '#/unidade/N0-U01/licao/N0-U01-L01'
-capture lesson-n0-intro-narrow 680 900 '#/unidade/N0-U01/licao/N0-U01-L01'
-capture lesson-n0-intro-mobile 390 844 '#/unidade/N0-U01/licao/N0-U01-L01'
+capture lesson-n0-intro-desktop 1440 900 '#/unidade/N0-U01/licao/N0-U01-L03'
+capture lesson-n0-intro-tablet 900 900 '#/unidade/N0-U01/licao/N0-U01-L03'
+capture lesson-n0-intro-narrow 680 900 '#/unidade/N0-U01/licao/N0-U01-L03'
+capture lesson-n0-intro-mobile 390 844 '#/unidade/N0-U01/licao/N0-U01-L03'
 
 # T1.7: retomada/etapas posteriores usando estado visual local, sem alterar progresso acadêmico.
 capture lesson-n0-resume-desktop 1440 1100 'artifacts/classic-visuals/resume-n0-step0.html'
 capture lesson-n0-activity-desktop 1440 1100 'artifacts/classic-visuals/resume-n0-step2.html'
+capture lesson-u2-tts-desktop 1440 1100 'artifacts/classic-visuals/tts-u2-step2.html'
 capture lesson-n0-resume-mobile 390 900 'artifacts/classic-visuals/resume-n0-step0.html'
 capture lesson-n4-activity-desktop 1440 1200 'artifacts/classic-visuals/resume-n4-step2.html'
 

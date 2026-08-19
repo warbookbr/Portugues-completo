@@ -4,6 +4,8 @@ import { initSettings } from './services/settings-service.js';
 import { createContentService } from './services/content-service.js';
 import { createProgressService } from './services/progress-service.js';
 import { createSafeProgressStorage } from './services/progress-storage-service.js';
+import { createMigratingProgressStorage } from './services/progress-migration-storage.js';
+import { migrateProgressToT1N0 } from './services/progress-migration-t1-n0.js';
 import { createProgressSyncService } from './services/progress-sync-service.js';
 import { mountSettingsMenu } from './ui/settings-menu.js';
 import { bindClassicRenderer, documentHtml, unitHtml } from './ui/classic-renderer.js';
@@ -17,9 +19,10 @@ import { mountGuidedLesson } from './ui/classic-lesson-flow.js';
 const app = document.getElementById('app');
 const settingsRoot = document.getElementById('settings-root');
 const contentService = createContentService({ basePath: './content' });
-const progressStorage = createSafeProgressStorage();
+const baseProgressStorage = createSafeProgressStorage();
+const progressStorage = createMigratingProgressStorage({ storage: baseProgressStorage, migrateProgress: migrateProgressToT1N0 });
 const progressService = createProgressService({ storage: progressStorage });
-const progressSyncService = createProgressSyncService({ progressService });
+const progressSyncService = createProgressSyncService({ progressService, migrateProgress: migrateProgressToT1N0 });
 
 let course = null;
 let routeRevision = 0;
@@ -128,9 +131,19 @@ async function renderUnit(route, revision) {
   mountClassic(unitHtml(manifest));
 }
 
+const LESSON_ROUTE_ALIASES = new Map([
+  ['N0-U01/N0-U01-L01', { unitId: 'N0-U02', lessonId: 'N0-U02-L10' }],
+  ['N0-U01/N0-U01-L08', { unitId: 'N0-U02', lessonId: 'N0-U02-L09' }]
+]);
+
+function resolveLessonRoute(route) {
+  return LESSON_ROUTE_ALIASES.get(`${route.unitId}/${route.lessonId}`) || route;
+}
+
 async function renderLesson(route, revision) {
-  const manifest = await loadManifest(route.unitId);
-  const loaded = await contentService.loadLesson(route.unitId, route.lessonId);
+  const resolved = resolveLessonRoute(route);
+  const manifest = await loadManifest(resolved.unitId);
+  const loaded = await contentService.loadLesson(resolved.unitId, resolved.lessonId);
   if (revision !== routeRevision) return;
   progressService.visitDocument(loaded.runtime, { levelId: manifest.levelId, unitId: manifest.id });
   mountClassic(documentHtml(loaded.runtime, { unitId: manifest.id, unitTitle: manifest.title }), loaded.runtime);

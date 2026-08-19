@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "N0-U02-L03",
-  "title": "Da sílaba ouvida à parte escrita",
+  "title": "Da sílaba ouvida à escrita",
   "status": "conteudo-pronto-para-implementacao",
   "objective": "Relacionar sílabas percebidas na fala aos trechos correspondentes de palavras escritas controladas, preservando a ordem entre o que se ouve e o que se vê sem transformar os exemplos em uma fórmula universal de formação silábica.",
   "competencies": [
@@ -10,7 +10,10 @@
     "distinguir trechos escritos diferentes dentro da mesma palavra a partir do estímulo auditivo apresentado",
     "perceber por exemplos controlados que o trecho escrito correspondente a uma sílaba não precisa ter sempre a mesma quantidade de letras"
   ],
-  "prerequisites": ["N0-U02-L02", "N0-U01-L06"],
+  "prerequisites": [
+    "N0-U02-L02",
+    "N0-U01-L06"
+  ],
   "limits": [
     "não exigir leitura autônoma de palavras novas como evidência central nesta lição",
     "não ensinar consoante + vogal como fórmula universal de sílaba",
@@ -54,7 +57,15 @@
         "type": "AUDIO_CONTROLADO",
         "requiredForPublication": true,
         "purpose": "reutilizar as fichas sonoras contextuais e as palavras inteiras da Lição 2 para acrescentar a camada visual da escrita sem criar novas gravações para os mesmos estímulos",
-        "locations": ["L03-B02", "L03-C01", "L03-C02", "L03-B04", "L03-C03", "L03-A01", "L03-A02"],
+        "locations": [
+          "L03-B02",
+          "L03-C01",
+          "L03-C02",
+          "L03-B04",
+          "L03-C03",
+          "L03-A01",
+          "L03-A02"
+        ],
         "productionSource": "producao-midia/FILA-MIDIA.md"
       },
       {
@@ -67,21 +78,42 @@
         "type": "AUDIO_CONTROLADO",
         "requiredForPublication": true,
         "purpose": "reutilizar pato, mala, sol e gato como referências de palavra inteira já previstas, evitando duplicação de mídia",
-        "locations": ["L03-B02", "L03-C01", "L03-B03", "L03-C02", "L03-A01", "L03-A02"],
+        "locations": [
+          "L03-B02",
+          "L03-C01",
+          "L03-B03",
+          "L03-C02",
+          "L03-A01",
+          "L03-A02"
+        ],
         "productionSource": "producao-midia/FILA-MIDIA.md"
       }
     ],
     "runtimeResources": [
       {
         "type": "TTS_OK",
-        "locations": ["instruções", "explicações", "feedback", "resumo"],
+        "locations": [
+          "instruções",
+          "explicações",
+          "feedback",
+          "resumo"
+        ],
         "purpose": "dar acesso ao texto da interface sem substituir os estímulos auditivos controlados usados nas correspondências"
       }
     ],
     "generatedVisualResources": [
       {
         "type": "UI_RENDERED_WRITTEN_WORD_CHUNKS",
-        "locations": ["L03-B02", "L03-C01", "L03-B03", "L03-C02", "L03-B04", "L03-C03", "L03-A01", "L03-A02"],
+        "locations": [
+          "L03-B02",
+          "L03-C01",
+          "L03-B03",
+          "L03-C02",
+          "L03-B04",
+          "L03-C03",
+          "L03-A01",
+          "L03-A02"
+        ],
         "purpose": "renderizar palavras e trechos escritos como texto acessível da interface, com realce e limites visuais temporários entre partes; não criar imagens estáticas de palavras ou sílabas"
       }
     ],
@@ -94,49 +126,88 @@
       "word": "GATO",
       "wholeWordAudio": "N0-U01-L02-AUD-007",
       "chunks": [
-        {"text": "GA", "audioToken": "N0-U02-L02-AUD-001"},
-        {"text": "TO", "audioToken": "N0-U02-L02-AUD-002"}
+        {
+          "text": "GA",
+          "audioToken": "N0-U02-L02-AUD-001"
+        },
+        {
+          "text": "TO",
+          "audioToken": "N0-U02-L02-AUD-002"
+        }
       ]
     },
     {
       "word": "MALA",
       "wholeWordAudio": "N0-U01-L02-AUD-003",
       "chunks": [
-        {"text": "MA", "audioToken": "N0-U02-L02-AUD-003"},
-        {"text": "LA", "audioToken": "N0-U02-L02-AUD-004"}
+        {
+          "text": "MA",
+          "audioToken": "N0-U02-L02-AUD-003"
+        },
+        {
+          "text": "LA",
+          "audioToken": "N0-U02-L02-AUD-004"
+        }
       ]
     },
     {
       "word": "PATO",
       "wholeWordAudio": "N0-U01-L02-AUD-001",
       "chunks": [
-        {"text": "PA", "audioToken": "N0-U02-L02-AUD-005"},
-        {"text": "TO", "audioToken": "N0-U02-L02-AUD-006"}
+        {
+          "text": "PA",
+          "audioToken": "N0-U02-L02-AUD-005"
+        },
+        {
+          "text": "TO",
+          "audioToken": "N0-U02-L02-AUD-006"
+        }
       ]
     },
     {
       "word": "SOL",
       "wholeWordAudio": "N0-U01-L02-AUD-005",
       "chunks": [
-        {"text": "SOL", "audioToken": "N0-U01-L02-AUD-005"}
+        {
+          "text": "SOL",
+          "audioToken": "N0-U01-L02-AUD-005"
+        }
       ]
     },
     {
       "word": "BONECA",
       "wholeWordAudio": "N0-U02-L02-AUD-013",
       "chunks": [
-        {"text": "BO", "audioToken": "N0-U02-L02-AUD-007"},
-        {"text": "NE", "audioToken": "N0-U02-L02-AUD-008"},
-        {"text": "CA", "audioToken": "N0-U02-L02-AUD-009"}
+        {
+          "text": "BO",
+          "audioToken": "N0-U02-L02-AUD-007"
+        },
+        {
+          "text": "NE",
+          "audioToken": "N0-U02-L02-AUD-008"
+        },
+        {
+          "text": "CA",
+          "audioToken": "N0-U02-L02-AUD-009"
+        }
       ]
     },
     {
       "word": "TOMATE",
       "wholeWordAudio": "N0-U02-L02-AUD-014",
       "chunks": [
-        {"text": "TO", "audioToken": "N0-U02-L02-AUD-010"},
-        {"text": "MA", "audioToken": "N0-U02-L02-AUD-011"},
-        {"text": "TE", "audioToken": "N0-U02-L02-AUD-012"}
+        {
+          "text": "TO",
+          "audioToken": "N0-U02-L02-AUD-010"
+        },
+        {
+          "text": "MA",
+          "audioToken": "N0-U02-L02-AUD-011"
+        },
+        {
+          "text": "TE",
+          "audioToken": "N0-U02-L02-AUD-012"
+        }
       ]
     }
   ],
@@ -154,14 +225,26 @@
       "title": "Cada parte ouvida pode ser ligada a um trecho da palavra escrita",
       "wholeWordAudio": "N0-U01-L02-AUD-007",
       "spokenContent": "gato",
-      "audioTokens": ["N0-U02-L02-AUD-001", "N0-U02-L02-AUD-002"],
+      "audioTokens": [
+        "N0-U02-L02-AUD-001",
+        "N0-U02-L02-AUD-002"
+      ],
       "writtenWord": "GATO",
-      "writtenChunks": ["GA", "TO"],
+      "writtenChunks": [
+        "GA",
+        "TO"
+      ],
       "writtenWordVisibleBeforeAudio": false,
       "revealAfterListening": true,
       "mapping": [
-        {"audioToken": "N0-U02-L02-AUD-001", "writtenChunk": "GA"},
-        {"audioToken": "N0-U02-L02-AUD-002", "writtenChunk": "TO"}
+        {
+          "audioToken": "N0-U02-L02-AUD-001",
+          "writtenChunk": "GA"
+        },
+        {
+          "audioToken": "N0-U02-L02-AUD-002",
+          "writtenChunk": "TO"
+        }
       ],
       "explanation": "Primeiro ouvimos gato e depois suas duas partes. Em seguida vemos GATO. A primeira parte ouvida corresponde ao trecho GA; a segunda corresponde a TO. O som e a escrita aparecem na mesma ordem dentro desta palavra."
     },
@@ -169,14 +252,17 @@
       "id": "L03-C01",
       "type": "quick-check",
       "focus": "listen-then-observe-and-respond",
-      "interaction": "audio-token-to-written-chunk",
+      "interaction": "single-choice",
       "prompt": "Ouça mala e depois a ficha sonora indicada. Quando a palavra escrita aparecer, qual trecho corresponde à ficha que você ouviu?",
       "wholeWordAudio": "N0-U01-L02-AUD-003",
       "targetAudioToken": "N0-U02-L02-AUD-004",
       "targetSpokenContent": "la",
       "writtenWord": "MALA",
       "writtenWordVisibleBeforeTargetAudio": false,
-      "options": ["MA", "LA"],
+      "options": [
+        "MA",
+        "LA"
+      ],
       "correctIndex": 1,
       "repeatAudio": true,
       "feedback": "A ficha apresenta a segunda parte sonora de mala; na escrita, ela corresponde ao trecho LA."
@@ -189,7 +275,9 @@
       "wholeWordAudio": "N0-U01-L02-AUD-005",
       "spokenContent": "sol",
       "writtenWord": "SOL",
-      "writtenChunks": ["SOL"],
+      "writtenChunks": [
+        "SOL"
+      ],
       "writtenWordVisibleBeforeAudio": false,
       "explanation": "Sol é percebida aqui como uma única sílaba. Na escrita desta palavra, essa parte corresponde ao trecho SOL, com três letras. Por enquanto, basta perceber a correspondência neste exemplo; não precisamos criar uma regra sobre quantas letras uma sílaba deve ter.",
       "guardRail": "usar este exemplo apenas para impedir a falsa regra de duas letras por sílaba; a variedade de estruturas será trabalhada de forma explícita na Lição 5"
@@ -198,12 +286,21 @@
       "id": "L03-C02",
       "type": "quick-check",
       "focus": "listen-then-observe-and-respond",
-      "interaction": "ordered-audio-tokens-to-written-chunks",
+      "interaction": "sequence",
       "prompt": "Ouça pato e suas duas fichas sonoras. Depois organize os dois trechos escritos na mesma ordem em que as partes aparecem na palavra.",
       "wholeWordAudio": "N0-U01-L02-AUD-001",
-      "audioTokens": ["N0-U02-L02-AUD-005", "N0-U02-L02-AUD-006"],
-      "availableWrittenChunks": ["TO", "PA"],
-      "correctWrittenOrder": ["PA", "TO"],
+      "audioTokens": [
+        "N0-U02-L02-AUD-005",
+        "N0-U02-L02-AUD-006"
+      ],
+      "availableWrittenChunks": [
+        "TO",
+        "PA"
+      ],
+      "correctSequence": [
+        "PA",
+        "TO"
+      ],
       "writtenWordVisibleBeforeAudio": false,
       "repeatAudio": true,
       "feedback": "A sequência sonora de pato corresponde a PA e depois TO."
@@ -215,14 +312,31 @@
       "title": "A mesma ligação funciona quando há mais partes",
       "wholeWordAudio": "N0-U02-L02-AUD-013",
       "spokenContent": "boneca",
-      "audioTokens": ["N0-U02-L02-AUD-007", "N0-U02-L02-AUD-008", "N0-U02-L02-AUD-009"],
+      "audioTokens": [
+        "N0-U02-L02-AUD-007",
+        "N0-U02-L02-AUD-008",
+        "N0-U02-L02-AUD-009"
+      ],
       "writtenWord": "BONECA",
-      "writtenChunks": ["BO", "NE", "CA"],
+      "writtenChunks": [
+        "BO",
+        "NE",
+        "CA"
+      ],
       "writtenWordVisibleBeforeAudio": false,
       "mapping": [
-        {"audioToken": "N0-U02-L02-AUD-007", "writtenChunk": "BO"},
-        {"audioToken": "N0-U02-L02-AUD-008", "writtenChunk": "NE"},
-        {"audioToken": "N0-U02-L02-AUD-009", "writtenChunk": "CA"}
+        {
+          "audioToken": "N0-U02-L02-AUD-007",
+          "writtenChunk": "BO"
+        },
+        {
+          "audioToken": "N0-U02-L02-AUD-008",
+          "writtenChunk": "NE"
+        },
+        {
+          "audioToken": "N0-U02-L02-AUD-009",
+          "writtenChunk": "CA"
+        }
       ],
       "explanation": "Em boneca, ouvimos três partes. Quando a escrita aparece, podemos acompanhar BO, NE e CA na mesma sequência."
     },
@@ -230,16 +344,32 @@
       "id": "L03-C03",
       "type": "quick-check",
       "focus": "listen-then-observe-and-respond",
-      "interaction": "choose-written-segmentation-for-audio-sequence",
+      "interaction": "single-choice",
       "prompt": "Ouça tomate e suas três partes. Qual divisão visual acompanha a sequência sonora apresentada?",
       "wholeWordAudio": "N0-U02-L02-AUD-014",
-      "audioTokens": ["N0-U02-L02-AUD-010", "N0-U02-L02-AUD-011", "N0-U02-L02-AUD-012"],
+      "audioTokens": [
+        "N0-U02-L02-AUD-010",
+        "N0-U02-L02-AUD-011",
+        "N0-U02-L02-AUD-012"
+      ],
       "writtenWord": "TOMATE",
       "writtenWordVisibleBeforeAudio": false,
       "options": [
-        ["TO", "MA", "TE"],
-        ["TOM", "A", "TE"],
-        ["TO", "MAT", "E"]
+        [
+          "TO",
+          "MA",
+          "TE"
+        ],
+        [
+          "TOM",
+          "A",
+          "TE"
+        ],
+        [
+          "TO",
+          "MAT",
+          "E"
+        ]
       ],
       "correctIndex": 0,
       "repeatAudio": true,
@@ -249,7 +379,7 @@
       "id": "L03-A01",
       "type": "guided-activity",
       "focus": "listen-then-observe-and-respond",
-      "interaction": "audio-to-written-chunk",
+      "interaction": "composite",
       "title": "Ligue o que você ouve ao que está escrito",
       "instruction": "Ouça a palavra e a ficha indicada. Depois escolha o trecho escrito correspondente. A escrita aparece somente depois do estímulo auditivo quando isso for necessário para não antecipar a resposta.",
       "items": [
@@ -258,7 +388,10 @@
           "word": "GATO",
           "targetAudioToken": "N0-U02-L02-AUD-001",
           "targetSpokenContent": "ga",
-          "options": ["GA", "TO"],
+          "options": [
+            "GA",
+            "TO"
+          ],
           "correctIndex": 0
         },
         {
@@ -266,7 +399,10 @@
           "word": "MALA",
           "targetAudioToken": "N0-U02-L02-AUD-004",
           "targetSpokenContent": "la",
-          "options": ["MA", "LA"],
+          "options": [
+            "MA",
+            "LA"
+          ],
           "correctIndex": 1
         },
         {
@@ -274,7 +410,10 @@
           "word": "PATO",
           "targetAudioToken": "N0-U02-L02-AUD-005",
           "targetSpokenContent": "pa",
-          "options": ["TO", "PA"],
+          "options": [
+            "TO",
+            "PA"
+          ],
           "correctIndex": 1
         },
         {
@@ -282,7 +421,11 @@
           "word": "BONECA",
           "targetAudioToken": "N0-U02-L02-AUD-008",
           "targetSpokenContent": "ne",
-          "options": ["BO", "NE", "CA"],
+          "options": [
+            "BO",
+            "NE",
+            "CA"
+          ],
           "correctIndex": 1
         },
         {
@@ -290,7 +433,11 @@
           "word": "SOL",
           "targetAudioToken": "N0-U01-L02-AUD-005",
           "targetSpokenContent": "sol",
-          "options": ["SOL", "SO", "OL"],
+          "options": [
+            "SOL",
+            "SO",
+            "OL"
+          ],
           "correctIndex": 0,
           "guardRail": "o item verifica o exemplo ensinado de uma única sílaba; não apresentar SO ou OL como sílabas corretas alternativas da palavra"
         }
@@ -303,30 +450,63 @@
       "id": "L03-A02",
       "type": "guided-activity",
       "focus": "listen-then-operate",
-      "interaction": "ordered-audio-to-ordered-written-chunks",
+      "interaction": "composite",
       "title": "Acompanhe a palavra do som para a escrita",
       "instruction": "Ouça as partes na ordem e organize os trechos escritos para acompanhar a mesma sequência.",
       "items": [
         {
           "wholeWordAudio": "N0-U01-L02-AUD-007",
           "word": "GATO",
-          "audioTokens": ["N0-U02-L02-AUD-001", "N0-U02-L02-AUD-002"],
-          "availableWrittenChunks": ["TO", "GA"],
-          "correctWrittenOrder": ["GA", "TO"]
+          "audioTokens": [
+            "N0-U02-L02-AUD-001",
+            "N0-U02-L02-AUD-002"
+          ],
+          "availableWrittenChunks": [
+            "TO",
+            "GA"
+          ],
+          "correctSequence": [
+            "GA",
+            "TO"
+          ]
         },
         {
           "wholeWordAudio": "N0-U02-L02-AUD-013",
           "word": "BONECA",
-          "audioTokens": ["N0-U02-L02-AUD-007", "N0-U02-L02-AUD-008", "N0-U02-L02-AUD-009"],
-          "availableWrittenChunks": ["CA", "BO", "NE"],
-          "correctWrittenOrder": ["BO", "NE", "CA"]
+          "audioTokens": [
+            "N0-U02-L02-AUD-007",
+            "N0-U02-L02-AUD-008",
+            "N0-U02-L02-AUD-009"
+          ],
+          "availableWrittenChunks": [
+            "CA",
+            "BO",
+            "NE"
+          ],
+          "correctSequence": [
+            "BO",
+            "NE",
+            "CA"
+          ]
         },
         {
           "wholeWordAudio": "N0-U02-L02-AUD-014",
           "word": "TOMATE",
-          "audioTokens": ["N0-U02-L02-AUD-010", "N0-U02-L02-AUD-011", "N0-U02-L02-AUD-012"],
-          "availableWrittenChunks": ["TE", "TO", "MA"],
-          "correctWrittenOrder": ["TO", "MA", "TE"]
+          "audioTokens": [
+            "N0-U02-L02-AUD-010",
+            "N0-U02-L02-AUD-011",
+            "N0-U02-L02-AUD-012"
+          ],
+          "availableWrittenChunks": [
+            "TE",
+            "TO",
+            "MA"
+          ],
+          "correctSequence": [
+            "TO",
+            "MA",
+            "TE"
+          ]
         }
       ],
       "writtenWordVisibleBeforeAudio": false,
@@ -349,7 +529,28 @@
   "completionEvidence": {
     "observablePerformance": "Relacionar corretamente sílabas ouvidas a trechos escritos e manter a ordem entre som e escrita em palavras controladas de duas e três sílabas, além de reconhecer o exemplo de uma sílaba escrita com três letras.",
     "criterion": "acertar L03-C01, L03-C02 e L03-C03 e pelo menos 4 dos 5 itens de L03-A01, além de organizar corretamente pelo menos 2 dos 3 itens de L03-A02 após oportunidade de repetir os áudios e corrigir erros",
-    "notSufficient": "apenas reconhecer visualmente a palavra inteira, decorar uma divisão sem relacioná-la ao áudio ou repetir a falsa regra de que cada sílaba possui sempre duas letras"
+    "notSufficient": "apenas reconhecer visualmente a palavra inteira, decorar uma divisão sem relacioná-la ao áudio ou repetir a falsa regra de que cada sílaba possui sempre duas letras",
+    "clusters": {
+      "soundWritingMapping": {
+        "evidence": [
+          "L03-C01",
+          "L03-C02",
+          "L03-C03",
+          "L03-A01",
+          "L03-A02"
+        ],
+        "required": true
+      }
+    },
+    "nonCompensable": true,
+    "activityPolicies": {
+      "L03-A01": {
+        "threshold": 0.8
+      },
+      "L03-A02": {
+        "threshold": 0.6666666667
+      }
+    }
   },
   "implementationGuardRails": [
     "spokenContent e targetSpokenContent são metadados pedagógicos e não devem ser exibidos como texto antes de respostas que medem a relação auditiva",
@@ -358,5 +559,6 @@
     "não transformar os limites visuais entre chunks em uma regra de hifenização ou divisão silábica normativa geral",
     "não reutilizar automaticamente um audioToken de outra palavra apenas porque o trecho escrito coincide; manter a contextualização definida na Lição 2",
     "não usar limite de tempo nem velocidade como critério de conclusão"
-  ]
+  ],
+  "studentObjective": "Ligar as sílabas que ouvimos às partes que vemos escritas em uma palavra."
 }
