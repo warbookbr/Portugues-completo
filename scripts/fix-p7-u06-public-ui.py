@@ -28,6 +28,7 @@ anchor = """assert.doesNotMatch(v01Html, /transcriptAfterAttempt|externalReview|
 """
 replacement = """assert.doesNotMatch(v01Html, /transcriptAfterAttempt|externalReview|requiredForClaimOfValidatedOralComprehensibility|notAutomaticallyJudged|automaticObservations/);
 assert.doesNotMatch(v01Html, /REQUIRED INTENT|\\bMEANING\\b|requiredIntent/i, 'metadados de autoria não podem aparecer na UI pública da U06.');
+assert.doesNotMatch(v01Html, /<strong>Autochecagem<\\/strong>/, 'selfCheck autoral não pode duplicar o componente público de autochecagem.');
 """
 if anchor not in test:
     raise RuntimeError('teste U06: âncora de metadata ausente')
@@ -46,12 +47,14 @@ s = s.replace(old, new, 1)
 anchor = """grep -Fq 'não avalia pronúncia, sotaque ou compreensibilidade da fala' <<<"$V01_DOM" || { echo 'P7 U06: V01 precisa explicar o limite de validação oral.' >&2; exit 1; }
 """
 addition = """grep -Fq 'não avalia pronúncia, sotaque ou compreensibilidade da fala' <<<"$V01_DOM" || { echo 'P7 U06: V01 precisa explicar o limite de validação oral.' >&2; exit 1; }
-AUTOCHECK_COUNT="$(grep -o 'Autochecagem' <<<"$V01_DOM" | wc -l | tr -d ' ')"
-[[ "$AUTOCHECK_COUNT" == "1" ]] || { echo "P7 U06: etapa oral deve mostrar uma única autochecagem; encontrou $AUTOCHECK_COUNT." >&2; exit 1; }
+if grep -Fq '<strong>Autochecagem</strong>' <<<"$V01_DOM"; then
+  echo 'P7 U06: selfCheck autoral duplicou a autochecagem pública.' >&2
+  exit 1
+fi
 """
 if anchor not in s:
     raise RuntimeError('smoke: âncora de limite oral ausente')
 s = s.replace(anchor, addition, 1)
 smoke.write_text(s)
 
-print('UI pública U06 corrigida: sem requiredIntent/meaning duplicado e autochecagem/instrução sem duplicação.')
+print('UI pública U06 corrigida: sem requiredIntent/meaning e sem duplicação genérica de autochecagem/instrução.')
