@@ -135,6 +135,11 @@ const GENERIC_SELF_REVIEW = Object.freeze([
   'Reli minha resposta antes de enviar?'
 ]);
 
+function hasOralRehearsal(block) {
+  return block?.oralRehearsal === true
+    || (block?.oralRehearsal && typeof block.oralRehearsal === 'object' && block.oralRehearsal.enabled !== false);
+}
+
 function materializeCommonLegacyActivity(block, sourceDocument) {
   const sourceText = evidenceSourceText(block, sourceDocument);
   let materialized = materializeEvidenceSelection(block, sourceText);
@@ -234,6 +239,25 @@ function materializeCommonLegacyActivity(block, sourceDocument) {
       const { correctAnswer, ...rest } = item;
       return { ...clone(rest), options: clone(options), correct: publicLegacyAnswer(correctAnswer) };
     });
+  }
+
+  if (hasOralRehearsal(materialized)) {
+    const authoredRehearsal = materialized.oralRehearsal;
+    const rehearsal = authoredRehearsal === true
+      ? { enabled: true, required: true, instruction: materialized.instruction || 'Faça um ensaio oral curto e marque quando concluir.' }
+      : {
+          enabled: authoredRehearsal.enabled !== false,
+          required: authoredRehearsal.required === true,
+          instruction: authoredRehearsal.instruction || materialized.instruction || 'Faça um ensaio oral curto.'
+        };
+    materialized.oralRehearsal = rehearsal;
+    if (!Array.isArray(materialized.selfReviewQuestions) && Array.isArray(materialized.selfCheck)) materialized.selfReviewQuestions = clone(materialized.selfCheck);
+    if (!Array.isArray(materialized.selfReviewQuestions) && Array.isArray(materialized.selfReview)) materialized.selfReviewQuestions = clone(materialized.selfReview);
+    if (!isOpenAuthoredActivity(materialized)) {
+      materialized.automaticValidation = false;
+      materialized.recordResponse = true;
+      materialized.interaction = 'oral-response';
+    }
   }
 
   if (isOpenAuthoredActivity(materialized)) {
@@ -535,7 +559,7 @@ function recognizedInteraction(block) {
 function isLessonActivity(block, requiredIds) {
   if (!block || typeof block !== 'object') return false;
   if (requiredIds.has(block.id)) return true;
-  if (isOpenAuthoredActivity(block)) return true;
+  if (isOpenAuthoredActivity(block) || hasOralRehearsal(block)) return true;
   if (block.recordResponse === true || block.automaticValidation === true) return true;
   if (hasDeterministicKey(block)) return true;
   if (recognizedInteraction(block)) return true;
