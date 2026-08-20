@@ -138,6 +138,9 @@ jobs:
       - name: Capture P7 N0-U05 visual smoke
         run: bash scripts/capture-p7-u05-visuals.sh
 
+      - name: Capture P7 N0-U06 visual smoke
+        run: bash scripts/capture-p7-u06-visuals.sh
+
       - name: Upload classic visual smoke
         uses: actions/upload-artifact@v4
         with:
@@ -164,4 +167,11 @@ jobs:
         with:
           name: p7-n0-u05-visual-smoke
           path: artifacts/p7-u05-visuals/*.png
+          if-no-files-found: error
+
+      - name: Upload P7 N0-U06 visual smoke
+        uses: actions/upload-artifact@v4
+        with:
+          name: p7-n0-u06-visual-smoke
+          path: artifacts/p7-u06-visuals/*.png
           if-no-files-found: error
