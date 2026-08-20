@@ -22,13 +22,8 @@ jobs:
         with:
           node-version: '24'
           package-manager-cache: false
-      - name: Recover publication recipe
-        run: git show origin/p7-n0-u06-catalog:scripts/p7-u06-publish.py > /tmp/p7-u06-publish.py
-      - name: Materialize U06 publication
-        run: |
-          printf '%s\n' 'temporary runtime-ready gate for clean publication' > scripts/p7-u06-runtime-ready.marker
-          python3 /tmp/p7-u06-publish.py
-          rm scripts/p7-u06-runtime-ready.marker
+      - name: Materialize current U06 publication
+        run: python3 scripts/p7-u06-publish-current.py
       - name: Validate publication
         run: |
           node scripts/validate-contracts.mjs
