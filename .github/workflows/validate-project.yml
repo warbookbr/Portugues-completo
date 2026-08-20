@@ -42,6 +42,7 @@ jobs:
           text = text.replace("if 'bindContentTranscriptControls(root);' not in text:", "if 'bindContentTranscriptControls(root, document);' not in text:")
           text = text.replace("marker = '  bindProgressive(root);'", "marker = '  if (!document) return;'")
           text = text.replace("text = text.replace(marker, marker + '\\n  bindContentTranscriptControls(root);', 1)", "text = text.replace(marker, '  bindContentTranscriptControls(root, document);\\n' + marker, 1)")
+          text = text.replace("'replayAllowed', 'externalReview'\"", "'replayAllowed', 'externalReview',\"")
           section_start = text.index("# ---------------------------------------------------------------------------\n# 4. Progress binding")
           section_end = text.index("# ---------------------------------------------------------------------------\n# 5. Audit", section_start)
           text = text[:section_start] + text[section_end:]
