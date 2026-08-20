@@ -42,6 +42,10 @@ jobs:
           text = text.replace("if 'bindContentTranscriptControls(root);' not in text:", "if 'bindContentTranscriptControls(root, document);' not in text:")
           text = text.replace("marker = '  bindProgressive(root);'", "marker = '  if (!document) return;'")
           text = text.replace("text = text.replace(marker, marker + '\\n  bindContentTranscriptControls(root);', 1)", "text = text.replace(marker, '  bindContentTranscriptControls(root, document);\\n' + marker, 1)")
+          section_start = text.index("# ---------------------------------------------------------------------------\n# 4. Progress binding")
+          section_end = text.index("# ---------------------------------------------------------------------------\n# 5. Audit", section_start)
+          text = text[:section_start] + text[section_end:]
+          text = text.replace("    'app/js/ui/classic-progress-binding.js': ['oralRehearsalDone']\n", "")
           p.write_text(text)
           PY
           python3 /tmp/p7-u06-runtime-patch-v2.py
@@ -73,7 +77,6 @@ jobs:
             app/js/services/content-normalizer-v1.js \
             app/js/services/content-normalization-rules-v1.js \
             app/js/ui/classic-renderer.js \
-            app/js/ui/classic-progress-binding.js \
             scripts/audit-p7-n0-u06.mjs \
             scripts/test-p7-u06-communication.mjs
           if ! git diff --cached --quiet; then
