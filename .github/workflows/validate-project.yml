@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   validate:
@@ -17,12 +17,69 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
 
       - name: Setup Node.js
         uses: actions/setup-node@v6
         with:
           node-version: '24'
           package-manager-cache: false
+
+      - name: Materialize P7 N0-U06 runtime on clean branch
+        if: github.head_ref == 'p7-n0-u06-catalog-v2'
+        run: |
+          git show origin/p7-n0-u06-catalog:scripts/audit-p7-n0-u06.mjs > scripts/audit-p7-n0-u06.mjs
+          git show origin/p7-n0-u06-catalog:scripts/test-p7-u06-communication.mjs > scripts/test-p7-u06-communication.mjs
+          git show origin/p7-n0-u06-catalog:scripts/p7-u06-runtime-patch-v2.py > /tmp/p7-u06-runtime-patch-v2.py
+          python3 - <<'PY'
+          from pathlib import Path
+          p = Path('/tmp/p7-u06-runtime-patch-v2.py')
+          text = p.read_text()
+          text = text.replace("function bindContentTranscriptControls(root)", "function bindContentTranscriptControls(root, document)")
+          text = text.replace("const runtime = root.__documentRuntime;\\n  if (!runtime) return;\\n  const byId = new Map((runtime.blocks || []).map(block => [block.id, block]));", "if (!document) return;\\n  const byId = new Map((document.blocks || []).map(block => [block.id, block]));")
+          text = text.replace("marker = '\\nfunction bindProgressive(root) {'", "marker = '\\nexport function bindClassicRenderer(root, document = null) {'")
+          text = text.replace("if 'bindContentTranscriptControls(root);' not in text:", "if 'bindContentTranscriptControls(root, document);' not in text:")
+          text = text.replace("marker = '  bindProgressive(root);'", "marker = '  if (!document) return;'")
+          text = text.replace("text = text.replace(marker, marker + '\\n  bindContentTranscriptControls(root);', 1)", "text = text.replace(marker, '  bindContentTranscriptControls(root, document);\\n' + marker, 1)")
+          p.write_text(text)
+          PY
+          python3 /tmp/p7-u06-runtime-patch-v2.py
+
+      - name: Validate U06 materialization before commit
+        if: github.head_ref == 'p7-n0-u06-catalog-v2'
+        run: |
+          node scripts/validate-contracts.mjs
+          node scripts/audit-p7-n0-u06.mjs
+          node scripts/test-p7-u06-communication.mjs
+          node scripts/audit-p7-n0-u05.mjs
+          node scripts/test-p7-u05-writing.mjs
+          node scripts/test-p7-u05-public-ui.mjs
+          node scripts/test-p7-u05-homologation.mjs
+          node scripts/audit-p7-n0-u04.mjs
+          node scripts/test-p7-u04-evidence.mjs
+          node scripts/test-p7-u04-homologation.mjs
+          node scripts/audit-p7-n0-u03.mjs
+          node scripts/test-p7-u03-evidence.mjs
+          node scripts/test-progress-service.mjs
+          node scripts/test-classic-renderer.mjs
+
+      - name: Persist durable U06 runtime
+        if: github.head_ref == 'p7-n0-u06-catalog-v2'
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add \
+            app/js/services/content-normalizer-v1.js \
+            app/js/services/content-normalization-rules-v1.js \
+            app/js/ui/classic-renderer.js \
+            app/js/ui/classic-progress-binding.js \
+            scripts/audit-p7-n0-u06.mjs \
+            scripts/test-p7-u06-communication.mjs
+          if ! git diff --cached --quiet; then
+            git commit -m 'feat(p7): adapta runtime para N0-U06'
+            git push origin HEAD:p7-n0-u06-catalog-v2
+          fi
 
       - name: Validate repository structure
         run: node scripts/validate-project.mjs
