@@ -7,6 +7,18 @@ import { documentHtml } from '../app/js/ui/classic-renderer.js';
 
 const readJson = file => JSON.parse(fs.readFileSync(file, 'utf8'));
 const service = new ContentService({ fetchImpl: async () => ({ ok: false, status: 500 }) });
+const rendererSource = fs.readFileSync('app/js/ui/classic-renderer.js', 'utf8');
+assert.doesNotMatch(
+  rendererSource,
+  /function bindContentTranscriptControls\(root, documentRuntime\) \{\s*bindContentTranscriptControls\(root, document\);/,
+  'binder de transcrição não pode chamar a si mesmo recursivamente.'
+);
+assert.match(
+  rendererSource,
+  /if \(!document\) return;\s*bindContentTranscriptControls\(root, document\);/,
+  'bindClassicRenderer precisa ligar a transcrição pós-tentativa uma única vez com o runtime atual.'
+);
+
 const normalize = file => service.normalize(readJson(file));
 const activityMap = runtime => new Map(runtime.blocks.filter(block => block.kind === 'ACTIVITY').map(block => [block.id, block]));
 

@@ -754,7 +754,6 @@ function bindSequence(builder) {
 }
 
 function bindContentTranscriptControls(root, documentRuntime) {
-  bindContentTranscriptControls(root, document);
   if (!documentRuntime) return;
   const byId = new Map((documentRuntime.blocks || []).map(block => [block.id, block]));
   root.querySelectorAll('[data-delayed-transcript-control]').forEach(control => {
@@ -800,6 +799,7 @@ export function bindClassicRenderer(root, document = null) {
     button.textContent = 'Nova pista aberta';
   }));
   if (!document) return;
+  bindContentTranscriptControls(root, document);
   const byId = new Map(document.blocks.filter(block => block.kind === 'ACTIVITY').map(block => [block.id, block]));
   root.querySelectorAll('[data-activity-id]').forEach(card => {
     const block = byId.get(card.dataset.activityId);
