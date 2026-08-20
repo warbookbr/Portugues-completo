@@ -53,10 +53,14 @@ p.write_text(text.replace(before, after, 1))
 # aceitável quando a atividade existe justamente para rejeitá-lo.
 p = Path('scripts/test-p7-u06-communication.mjs')
 text = p.read_text()
+text = text.replace(
+    "assert.match(JSON.stringify(l07Source.limits), /não tratar linguagem informal como errada|não apresentar linguagem mais formal como automaticamente melhor/i);",
+    "assert.match(JSON.stringify(l07Source.limits), /não apresentar linguagem informal como errada|não apresentar linguagem formal como universalmente superior/i);"
+)
 before = """assert.doesNotMatch(l07Html + l08Html, /linguagem informal é sempre errada[.!]|mais formal é automaticamente melhor[.!]|sotaque[^.!?]{0,40}é erro[.!]|variedade[^.!?]{0,40}é inferior[.!]/i);"""
 after = """const antiStigmaAssertionsHtml = (l07Html + l08Html).replace(/<label class=\"choice-option\"[\\s\\S]*?<\\/label>/g, '');\nassert.doesNotMatch(antiStigmaAssertionsHtml, /linguagem informal é sempre errada[.!]|mais formal é automaticamente melhor[.!]|sotaque[^.!?]{0,40}é erro[.!]|variedade[^.!?]{0,40}é inferior[.!]/i);"""
 if before not in text:
     raise RuntimeError('teste U06: asserção antiestigma esperada não encontrada')
 p.write_text(text.replace(before, after, 1))
 
-print('Compatibilidade U06 atual aplicada: TTS protegido, transcrição demonstrativa controlada e distractors tratados semanticamente.')
+print('Compatibilidade U06 atual aplicada: TTS protegido, transcrição demonstrativa controlada e regras sociolinguísticas alinhadas à autoria.')
