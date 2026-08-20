@@ -442,9 +442,10 @@ Lotes homologados até aqui:
 
 - N0-U03 — Palavras, frases e sentido — PR #134 / `docs/homologacao-p7-n0-u03.md`;
 - N0-U04 — Lendo e compreendendo pequenos textos — PR #135 / `docs/homologacao-p7-n0-u04.md`;
-- N0-U05 — Escrevendo e organizando mensagens — PR #136 / `docs/homologacao-p7-n0-u05.md`.
+- N0-U05 — Escrevendo e organizando mensagens — PR #136 / `docs/homologacao-p7-n0-u05.md`;
+- N0-U06 — Usando a língua no cotidiano — PR #139 / `docs/homologacao-p7-n0-u06.md`.
 
-Próximo lote: N0-U06 — Usando a língua no cotidiano.
+Nível 0 está integralmente coberto pelo catálogo Clássico. Próximo lote: N1-U01 — Lendo textos com mais autonomia.
 
 Condição de saída: catálogo cobre N0→N4, tipos necessários têm suporte ou blocker explícito e navegação alcança o percurso completo.
 
@@ -488,9 +489,10 @@ Cobrir troca de modos, preservação de domínio, coerência/resistência a farm
 
 ```text
 P7 — Ampliação do catálogo Clássico N0→N4
-→ N0-U03 + N0-U04 + N0-U05 HOMOLOGADAS / publicadas no catálogo
-→ próximo lote: N0-U06 — Usando a língua no cotidiano
-→ inventariar autoria + N0-U06-V01 e classificar interlocutor/finalidade, pergunta/resposta, pedidos/orientações, compreensão oral, adequação formal/informal, variação linguística, mídia e blocker real
+→ N0-U03 + N0-U04 + N0-U05 + N0-U06 HOMOLOGADAS / publicadas no catálogo
+→ Nível 0 integralmente coberto no Clássico
+→ próximo lote: N1-U01 — Lendo textos com mais autonomia
+→ inventariar 9 lições + N1-U01-V01 e classificar objetivo de leitura, assunto/finalidade, informações explícitas, referências, relações, inferência, apoios multimodais, fonte/opinião/razão, resumo, mídia e blocker real
 → adaptar somente contratos reutilizáveis necessários antes de manifestar/publicar
 → preservar N4-U09 como caso-âncora de resposta aberta/IA
 → não reescrever autoria apenas para satisfazer renderer
