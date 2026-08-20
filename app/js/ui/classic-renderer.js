@@ -76,14 +76,14 @@ function renderKnownContent(content = {}) {
     'cards', 'optionalScaffold', 'planningChecklist', 'planningPrompt', 'essentialInformation',
     'principleQuestion', 'principleOptions', 'automaticCheck', 'oralRehearsal',
     'transcriptHiddenUntilAttempt', 'transcriptAfterAttempt', 'replayAllowed', 'externalReview',
-    'source', 'presentation', 'coverageRule',
+    'source', 'presentation', 'coverageRule', 'requiredIntent', 'meaning', 'selfCheck',
     'textRemainsVisible', 'textRef', 'competency'
   ]);
 
   if (content.title) lead.push(`<h3>${esc(content.title)}</h3>`);
   if (content.text) lead.push(`<p>${esc(content.text)}</p>`);
   if (content.prompt) lead.push(`<p class="activity-prompt">${esc(content.prompt)}</p>`);
-  if (content.instruction) lead.push(`<p class="activity-instruction">${esc(content.instruction)}</p>`);
+  if (content.instruction && !content.oralRehearsal?.enabled) lead.push(`<p class="activity-instruction">${esc(content.instruction)}</p>`);
   if (content.model !== undefined) lead.push(`<div class="model-box"><span>Modelo</span><strong>${valueText(content.model)}</strong></div>`);
   if (content.letter) lead.push(`<div class="model-box"><span>Letra</span><strong>${esc(content.letter)}</strong></div>`);
 

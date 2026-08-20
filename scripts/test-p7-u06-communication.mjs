@@ -135,6 +135,8 @@ assert.match(v01Html, /Ensaio oral/);
 assert.match(v01Html, /Concluí o ensaio oral/);
 assert.match(v01Html, /não avalia pronúncia, sotaque ou compreensibilidade da fala/i);
 assert.doesNotMatch(v01Html, /transcriptAfterAttempt|externalReview|requiredForClaimOfValidatedOralComprehensibility|notAutomaticallyJudged|automaticObservations/);
+assert.doesNotMatch(v01Html, /REQUIRED INTENT|\bMEANING\b|requiredIntent/i, 'metadados de autoria não podem aparecer na UI pública da U06.');
+assert.doesNotMatch(v01Html, /<strong>Autochecagem<\/strong>/, 'selfCheck autoral não pode duplicar o componente público de autochecagem.');
 for (const item of v01Source.items || []) {
   if (typeof item.transcriptAfterAttempt === 'string') assert.equal(v01Html.includes(item.transcriptAfterAttempt), false, `${item.id}: transcrição não pode aparecer antes da tentativa.`);
 }

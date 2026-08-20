@@ -117,12 +117,16 @@ fi
 grep -Fq 'Ensaio oral' <<<"$V01_DOM" || { echo 'P7 U06: prática oral da V01 ausente.' >&2; exit 1; }
 grep -Fq 'Concluí o ensaio oral.' <<<"$V01_DOM" || { echo 'P7 U06: registro explícito do ensaio oral ausente.' >&2; exit 1; }
 grep -Fq 'não avalia pronúncia, sotaque ou compreensibilidade da fala' <<<"$V01_DOM" || { echo 'P7 U06: V01 precisa explicar o limite de validação oral.' >&2; exit 1; }
+if grep -Fq '<strong>Autochecagem</strong>' <<<"$V01_DOM"; then
+  echo 'P7 U06: selfCheck autoral duplicou a autochecagem pública.' >&2
+  exit 1
+fi
 if grep -Eiq 'Rascunho/registro da resposta oral|oralidade-validada|produção oral compreensível' <<<"$V01_DOM"; then
   echo 'P7 U06: V01 sugere validação oral que o sistema não possui.' >&2
   exit 1
 fi
 
-if grep -Eiq 'transcriptAfterAttempt|transcriptHiddenUntilAttempt|externalReview|requiredForClaimOfValidatedOralComprehensibility|statusWhenApproved|automaticValidation|completionEvidence|activityPolicies|answerKey|schemaVersion' <<<"$UNIT_DOM$L06_DOM$L10_DOM$V01_DOM"; then
+if grep -Eiq 'transcriptAfterAttempt|transcriptHiddenUntilAttempt|externalReview|requiredForClaimOfValidatedOralComprehensibility|statusWhenApproved|automaticValidation|completionEvidence|activityPolicies|answerKey|schemaVersion|requiredIntent|>REQUIRED INTENT<|>MEANING<' <<<"$UNIT_DOM$L06_DOM$L10_DOM$V01_DOM"; then
   echo 'P7 U06: metadado técnico/autoral vazou para a interface do aluno.' >&2
   exit 1
 fi
