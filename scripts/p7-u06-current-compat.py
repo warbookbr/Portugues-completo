@@ -31,13 +31,14 @@ text = text.replace("      const title = document.createElement('strong');", "  
 text = text.replace("      const body = document.createElement('div');", "      const body = globalThis.document.createElement('div');")
 p.write_text(text)
 
-# O detector antiestigma examina afirmações públicas, não distractors de escolha.
+# O patch estrutural já troca o detector original por affirmedStigma; aqui excluímos
+# as alternativas de escolha, pois uma frase estigmatizante pode aparecer como distractor a rejeitar.
 p = Path('scripts/audit-p7-n0-u06.mjs')
 text = p.read_text()
-before = """  if (sourceHasAntiStigmaRule(source)) {\n    if (/linguagem informal é sempre errada|mais formal é automaticamente melhor|sotaque.*erro|variedade.*inferior/i.test(html)) {\n      issue(`${source.id}: linguagem pública contradiz a proteção contra estigmatização/false hierarchy.`);\n    }\n  }"""
-after = """  if (sourceHasAntiStigmaRule(source)) {\n    const publicAssertionsHtml = html.replace(/<label class=\"choice-option\"[\\s\\S]*?<\\/label>/g, '');\n    if (/linguagem informal é sempre errada|mais formal é automaticamente melhor|sotaque.*erro|variedade.*inferior/i.test(publicAssertionsHtml)) {\n      issue(`${source.id}: linguagem pública contradiz a proteção contra estigmatização/false hierarchy.`);\n    }\n  }"""
+before = """  if (sourceHasAntiStigmaRule(source)) {\n    const affirmedStigma = /linguagem informal é sempre errada[.!]|mais formal é automaticamente melhor[.!]|sotaque[^.!?]{0,40}é erro[.!]|variedade[^.!?]{0,40}é inferior[.!]/i;\n    if (affirmedStigma.test(html)) issue(`${source.id}: linguagem pública afirma hierarquia/estigma incompatível com a autoria.`);\n  }"""
+after = """  if (sourceHasAntiStigmaRule(source)) {\n    const publicAssertionsHtml = html.replace(/<label class=\"choice-option\"[\\s\\S]*?<\\/label>/g, '');\n    const affirmedStigma = /linguagem informal é sempre errada[.!]|mais formal é automaticamente melhor[.!]|sotaque[^.!?]{0,40}é erro[.!]|variedade[^.!?]{0,40}é inferior[.!]/i;\n    if (affirmedStigma.test(publicAssertionsHtml)) issue(`${source.id}: linguagem pública afirma hierarquia/estigma incompatível com a autoria.`);\n  }"""
 if before not in text:
-    raise RuntimeError('audit U06: detector antiestigma esperado não encontrado')
+    raise RuntimeError('audit U06: detector affirmedStigma pós-patch não encontrado')
 p.write_text(text.replace(before, after, 1))
 
 print('Compatibilidade U06 atual aplicada: TTS protegido no runtime e distractors excluídos do detector antiestigma.')
