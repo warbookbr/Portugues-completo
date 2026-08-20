@@ -140,6 +140,28 @@ assert.match(u05VerificationHtml, /Autochecagem/i);
 assert.match(u05VerificationHtml, /Registrar resposta/i);
 assert.doesNotMatch(u05VerificationHtml, /humanOrExternalReview|notAutomaticallyJudged|correctEssentialIndexes|acceptableOrders|principleCorrectIndex/i);
 
+const u06AudioLesson = await service.loadLesson('N0-U06', 'N0-U06-L06');
+const u06AudioHtml = documentHtml(u06AudioLesson.runtime, { unitId: 'N0-U06', unitTitle: 'Usando a língua no cotidiano' });
+assert.match(u06AudioHtml, /data-delayed-transcript-control/);
+assert.match(u06AudioHtml, /Mostrar transcrição depois de ouvir/);
+for (const block of u06AudioLesson.runtime.blocks) {
+  if (typeof block.content?.transcriptAfterAttempt === 'string') assert.equal(u06AudioHtml.includes(block.content.transcriptAfterAttempt), false);
+  for (const item of block.content?.items || []) if (typeof item.transcriptAfterAttempt === 'string') assert.equal(u06AudioHtml.includes(item.transcriptAfterAttempt), false);
+}
+
+const u06RepairLesson = await service.loadLesson('N0-U06', 'N0-U06-L10');
+const u06RepairHtml = documentHtml(u06RepairLesson.runtime, { unitId: 'N0-U06', unitTitle: 'Usando a língua no cotidiano' });
+assert.match(u06RepairHtml, /Ensaio oral/);
+assert.match(u06RepairHtml, /Este ensaio é opcional nesta etapa escrita/);
+assert.match(u06RepairHtml, /Registrar resposta/);
+
+const u06Verification = await service.loadVerification('N0-U06');
+const u06VerificationHtml = documentHtml(u06Verification.runtime, { unitId: 'N0-U06', unitTitle: 'Usando a língua no cotidiano', verification: true });
+assert.match(u06VerificationHtml, /Ensaio oral/);
+assert.match(u06VerificationHtml, /Concluí o ensaio oral/);
+assert.match(u06VerificationHtml, /não avalia pronúncia, sotaque ou compreensibilidade da fala/i);
+assert.doesNotMatch(u06VerificationHtml, /transcriptAfterAttempt|requiredForClaimOfValidatedOralComprehensibility|externalReview/);
+
 const n4Lesson = await service.loadLesson('N4-U09', 'N4-U09-L01');
 const n4Html = documentHtml(n4Lesson.runtime, { unitId: 'N4-U09', unitTitle: 'Literatura, multimodalidade, autoria intermedial e digital' });
 assert.match(n4Html, /avaliação pendente/i);
@@ -147,6 +169,6 @@ assert.match(n4Html, /Registrar resposta/i);
 assert.equal(typeof n4Lesson.runtime.presentation?.intro, 'string');
 assert.notEqual(n4Lesson.runtime.presentation.intro, n4Lesson.runtime.objective);
 
-assert.equal(lessonCount, 58);
-assert.equal(verificationCount, 6);
-console.log(`Renderer clássico P7: ${lessonCount} lições + ${verificationCount} verificações, N0-U03/U04/U05 e caso-âncora N4 preservados.`);
+assert.equal(lessonCount, 68);
+assert.equal(verificationCount, 7);
+console.log(`Renderer clássico P7: ${lessonCount} lições + ${verificationCount} verificações, N0-U03/U04/U05/U06 e caso-âncora N4 preservados.`);
