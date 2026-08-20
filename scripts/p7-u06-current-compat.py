@@ -22,6 +22,14 @@ replace_once(
     """  const runtimeBlocks = document ? new Map((document.blocks || []).map(block => [block.id, block])) : new Map();\n  root.querySelectorAll('[data-tts]').forEach(button => button.addEventListener('click', () => {\n    const cardId = button.closest('[id]')?.id;\n    const runtimeText = button.hasAttribute('data-runtime-tts') ? runtimeBlocks.get(cardId)?.content?.ttsText : null;\n    speak(runtimeText || button.dataset.tts || '');\n  }));"""
 )
 
+# A demonstração B02 é atividade determinística no runtime atual; ela recebe um
+# controle manual de transcrição que só é habilitado depois de ouvir o TTS.
+replace_once(
+    'app/js/ui/classic-renderer.js',
+    """      ${renderKnownContent(block.content)}\n      ${renderStimuli(block.activity)}\n      <form class=\"activity-form\" data-activity-form novalidate>""",
+    """      ${renderKnownContent(block.content)}\n      ${block.pedagogicalType === 'audio-first-demonstration' ? renderDelayedTranscriptControl(block) : ''}\n      ${renderStimuli(block.activity)}\n      <form class=\"activity-form\" data-activity-form novalidate>"""
+)
+
 # O helper U06 recebe o runtime; criação de elementos continua usando o DOM real.
 p = Path('app/js/ui/classic-renderer.js')
 text = p.read_text()
@@ -41,4 +49,14 @@ if before not in text:
     raise RuntimeError('audit U06: detector affirmedStigma pós-patch não encontrado')
 p.write_text(text.replace(before, after, 1))
 
-print('Compatibilidade U06 atual aplicada: TTS protegido no runtime e distractors excluídos do detector antiestigma.')
+# O teste comportamental aplica a mesma distinção: distractor estigmatizante é
+# aceitável quando a atividade existe justamente para rejeitá-lo.
+p = Path('scripts/test-p7-u06-communication.mjs')
+text = p.read_text()
+before = """assert.doesNotMatch(l07Html + l08Html, /linguagem informal é sempre errada[.!]|mais formal é automaticamente melhor[.!]|sotaque[^.!?]{0,40}é erro[.!]|variedade[^.!?]{0,40}é inferior[.!]/i);"""
+after = """const antiStigmaAssertionsHtml = (l07Html + l08Html).replace(/<label class=\"choice-option\"[\\s\\S]*?<\\/label>/g, '');\nassert.doesNotMatch(antiStigmaAssertionsHtml, /linguagem informal é sempre errada[.!]|mais formal é automaticamente melhor[.!]|sotaque[^.!?]{0,40}é erro[.!]|variedade[^.!?]{0,40}é inferior[.!]/i);"""
+if before not in text:
+    raise RuntimeError('teste U06: asserção antiestigma esperada não encontrada')
+p.write_text(text.replace(before, after, 1))
+
+print('Compatibilidade U06 atual aplicada: TTS protegido, transcrição demonstrativa controlada e distractors tratados semanticamente.')
