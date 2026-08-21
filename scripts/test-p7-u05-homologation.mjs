@@ -26,13 +26,12 @@ assert.ok(catalogRef, 'N0-U05 precisa permanecer publicada no course.json.');
 assert.equal(catalogRef.order, 5);
 assert.equal(catalogRef.manifest, 'units/005-escrevendo-organizando-mensagens/unit.json');
 
-assert.match(state, /Lote P7 N0-U05 — Escrevendo e organizando mensagens: HOMOLOGADO \(PR #136\)/);
-assert.match(state, /Próximo passo exato: iniciar o lote N0-U06 — Usando a língua no cotidiano/);
+// O gate da U05 protege a homologação histórica sem congelar o cursor operacional
+// no lote seguinte. Lotes posteriores podem avançar de U06 para N1+ sem invalidar U05.
 assert.match(state, /N0-U05: HOMOLOGADA — docs\/homologacao-p7-n0-u05\.md/);
 assert.doesNotMatch(state, /Ativo agora: N0-U05/);
 
 assert.match(roadmap, /N0-U05 — Escrevendo e organizando mensagens — PR #136/);
-assert.match(roadmap, /Próximo lote: N0-U06 — Usando a língua no cotidiano/);
 assert.match(index, /docs\/homologacao-p7-n0-u05\.md/);
 assert.match(homologation, /P7 \/ lote N0-U05: HOMOLOGADO/);
 assert.match(homologation, /Resultado: \*\*APROVADO\*\*/);
@@ -49,4 +48,4 @@ assert.equal(fs.existsSync('.github/workflows/p7-u05-runtime-patch.yml'), false,
 const temporaryScripts = fs.readdirSync('scripts').filter(name => /^p7-u05-.*\.py$/.test(name));
 assert.deepEqual(temporaryScripts, [], `tooling temporário P7/U05 ainda presente: ${temporaryScripts.join(', ')}`);
 
-console.log('P7 U05 homologation gate: READY, escrita/pending/apoio protegidos, U04 preservada, estado canônico em U06 e branch sem tooling temporário validados.');
+console.log('P7 U05 homologation gate: READY, escrita/pending/apoio protegidos, U04 preservada, homologação histórica durável e branch sem tooling temporário validados.');
