@@ -71,13 +71,28 @@ function normalizeEvidenceText(value) {
     .replace(/\s+/g, ' ');
 }
 
+function referencedText(sourceDocument, textRef) {
+  if (!textRef || !sourceDocument?.texts) return null;
+  if (Array.isArray(sourceDocument.texts)) {
+    return sourceDocument.texts.find(item => item?.id === textRef) || null;
+  }
+  if (typeof sourceDocument.texts === 'object') return sourceDocument.texts[textRef] || null;
+  return null;
+}
+
+function referencedTextBody(sourceDocument, textRef) {
+  const referenced = referencedText(sourceDocument, textRef);
+  if (!referenced) return '';
+  if (typeof referenced.text === 'string') return referenced.text;
+  if (typeof referenced.body === 'string') return referenced.body;
+  return '';
+}
+
 function evidenceSourceText(block, sourceDocument) {
   if (typeof block?.text === 'string') return block.text;
+  if (typeof block?.bodyText === 'string') return block.bodyText;
   if (typeof block?.standaloneText === 'string') return block.standaloneText;
-  if (block?.textRef && Array.isArray(sourceDocument?.texts)) {
-    const referenced = sourceDocument.texts.find(item => item?.id === block.textRef);
-    if (typeof referenced?.text === 'string') return referenced.text;
-  }
+  if (block?.textRef) return referencedTextBody(sourceDocument, block.textRef);
   return '';
 }
 
@@ -144,6 +159,24 @@ function materializeCommonLegacyActivity(block, sourceDocument) {
   const sourceText = evidenceSourceText(block, sourceDocument);
   let materialized = materializeEvidenceSelection(block, sourceText);
 
+  // Verificações podem referenciar textos nomeados em um mapa/array autoral.
+  // O runtime materializa o texto consultável sem depender de o renderer conhecer o documento-fonte.
+  if (materialized.textRef) {
+    const referenced = referencedText(sourceDocument, materialized.textRef);
+    const body = referencedTextBody(sourceDocument, materialized.textRef);
+    if (body && typeof materialized.text !== 'string' && typeof materialized.bodyText !== 'string') materialized.text = body;
+    if (referenced?.title && !materialized.title) materialized.title = referenced.title;
+  }
+
+  // Perguntas binárias autoradas com resposta textual clara viram escolha determinística.
+  if (!Array.isArray(materialized.options) && typeof materialized.answer === 'string') {
+    const normalizedAnswer = normalizeEvidenceText(materialized.answer);
+    if (normalizedAnswer === 'sim' || normalizedAnswer === 'nao') {
+      const { answer, ...rest } = materialized;
+      materialized = { ...clone(rest), options: ['sim', 'não'], correctIndex: normalizedAnswer === 'sim' ? 0 : 1 };
+    }
+  }
+
   // Planejamento por seleção: transforma cartões autorais em múltipla escolha sem expor flags essential.
   const planningIndexes = Array.isArray(materialized.correctEssentialIndexes)
     ? materialized.correctEssentialIndexes
@@ -192,7 +225,11 @@ function materializeCommonLegacyActivity(block, sourceDocument) {
 
   if (Array.isArray(materialized.items)) {
     materialized.items = materialized.items.map(item => {
-      const evidenceReady = materializeEvidenceSelection(item, sourceText);
+      let evidenceReady = materializeEvidenceSelection(item, sourceText);
+      if (evidenceReady?.responseMode === 'short-text' && typeof evidenceReady.acceptedCore === 'string' && evidenceReady.acceptedCore.trim()) {
+        const { acceptedCore, ...rest } = evidenceReady;
+        evidenceReady = { ...clone(rest), acceptedResult: acceptedCore };
+      }
       if (!evidenceReady || Array.isArray(evidenceReady.options) || !Array.isArray(evidenceReady.cases) || !Object.prototype.hasOwnProperty.call(evidenceReady, 'correctIndex')) return evidenceReady;
       return { ...clone(evidenceReady), options: clone(evidenceReady.cases) };
     });
@@ -496,7 +533,7 @@ const PRESENTATION_SECRET_KEYS = new Set([
   'correct', 'expected', 'correctIndex', 'correctIndexes', 'correctSequence', 'correctOrder',
   'acceptedSequences', 'acceptableOrders', 'acceptedResult', 'acceptedResults', 'correctFunction', 'correctGroup', 'correctAnswer',
   'auditoryCorrect', 'relationCorrectIndex', 'correctEssentialIndexes', 'principleCorrectIndex', 'requiredEvidence', 'requiredEvidenceParts', 'acceptableEvidence',
-  'supportingParts', 'evidenceCorrectIndexes', 'evidenceMatchMode', 'revisedAnswer'
+  'acceptedCore', 'evidenceSourcesRequired', 'supportingParts', 'evidenceCorrectIndexes', 'evidenceMatchMode', 'revisedAnswer'
 ]);
 
 function sanitizePresentation(value) {
