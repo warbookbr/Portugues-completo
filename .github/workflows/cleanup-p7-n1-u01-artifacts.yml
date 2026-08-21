@@ -1,0 +1,31 @@
+name: Cleanup P7 N1 U01 generated artifacts
+
+on:
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  cleanup:
+    if: github.head_ref == 'p7-n1-u01-inventory' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          ref: p7-n1-u01-inventory
+          fetch-depth: 0
+      - name: Remove generated files and cleanup workflow
+        run: |
+          rm -rf artifacts
+          rm .github/workflows/cleanup-p7-n1-u01-artifacts.yml
+      - name: Commit clean branch
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          git commit -m 'chore(p7): remove artefatos visuais gerados da N1-U01'
+          git push origin HEAD:p7-n1-u01-inventory
