@@ -6,128 +6,32 @@
   "title": "Lendo textos com mais autonomia",
   "objective": "Ler textos curtos com objetivos definidos, identificando assunto, finalidade e informação principal; localizar e combinar informações explícitas; acompanhar referências e relações entre partes; distinguir informação explícita, inferência sustentada e informação insuficiente; integrar apoios multimodais acessíveis; reconhecer autoria, fonte, opinião e razão em situações introdutórias; e produzir resumos breves com palavras próprias sem transformar produção aberta em acerto automático.",
   "competencies": [
-    {
-      "id": "N1-U01-C01",
-      "label": "escolher uma estratégia de leitura adequada ao objetivo imediato e consultar o texto sempre que necessário"
-    },
-    {
-      "id": "N1-U01-C02",
-      "label": "identificar assunto, finalidade e informação principal sem substituir o núcleo por um detalhe verdadeiro"
-    },
-    {
-      "id": "N1-U01-C03",
-      "label": "localizar e combinar informações explícitas em diferentes partes de um texto, apoiando respostas em evidências quando solicitado"
-    },
-    {
-      "id": "N1-U01-C04",
-      "label": "acompanhar referências claras entre palavras, expressões, pessoas, objetos e ideias ao longo do texto"
-    },
-    {
-      "id": "N1-U01-C05",
-      "label": "compreender relações claras de tempo, causa, consequência, contraste e explicação sem confundir sequência temporal com causalidade"
-    },
-    {
-      "id": "N1-U01-C06",
-      "label": "distinguir o que o texto afirma, o que permite concluir por pistas suficientes e o que não informa"
-    },
-    {
-      "id": "N1-U01-C07",
-      "label": "integrar título, corpo, imagem, legenda e equivalentes acessíveis quando esses elementos participam da compreensão"
-    },
-    {
-      "id": "N1-U01-C08",
-      "label": "reconhecer autoria ou fonte explicitada e distinguir informação, opinião e razão em casos introdutórios"
-    },
-    {
-      "id": "N1-U01-C09",
-      "label": "produzir um resumo breve com palavras próprias, selecionando ideias essenciais e realizando autochecagem sem validação automática por palavra-chave"
-    }
+    {"id": "N1-U01-C01", "label": "escolher uma estratégia de leitura adequada ao objetivo imediato e consultar o texto sempre que necessário"},
+    {"id": "N1-U01-C02", "label": "identificar assunto, finalidade e informação principal sem substituir o núcleo por um detalhe verdadeiro"},
+    {"id": "N1-U01-C03", "label": "localizar e combinar informações explícitas em diferentes partes de um texto, apoiando respostas em evidências quando solicitado"},
+    {"id": "N1-U01-C04", "label": "acompanhar referências claras entre palavras, expressões, pessoas, objetos e ideias ao longo do texto"},
+    {"id": "N1-U01-C05", "label": "compreender relações claras de tempo, causa, consequência, contraste e explicação sem confundir sequência temporal com causalidade"},
+    {"id": "N1-U01-C06", "label": "distinguir o que o texto afirma, o que permite concluir por pistas suficientes e o que não informa"},
+    {"id": "N1-U01-C07", "label": "integrar título, corpo, imagem, legenda e equivalentes acessíveis quando esses elementos participam da compreensão"},
+    {"id": "N1-U01-C08", "label": "reconhecer autoria ou fonte explicitada e distinguir informação, opinião e razão em casos introdutórios"},
+    {"id": "N1-U01-C09", "label": "produzir um resumo breve com palavras próprias, selecionando ideias essenciais e realizando autochecagem sem validação automática por palavra-chave"}
   ],
-  "prerequisites": [
-    "N0-U06-V01"
-  ],
+  "prerequisites": ["N0-U06-V01"],
   "lessons": [
-    {
-      "id": "N1-U01-L01",
-      "order": 1,
-      "title": "Ler com um objetivo",
-      "path": "lessons/001-ler-com-um-objetivo.json",
-      "competencyIds": ["N1-U01-C01"]
-    },
-    {
-      "id": "N1-U01-L02",
-      "order": 2,
-      "title": "Assunto, finalidade e informação principal",
-      "path": "lessons/002-assunto-finalidade-informacao-principal.json",
-      "competencyIds": ["N1-U01-C02"]
-    },
-    {
-      "id": "N1-U01-L03",
-      "order": 3,
-      "title": "Encontrar e combinar informações explícitas",
-      "path": "lessons/003-encontrar-combinar-informacoes-explicitas.json",
-      "competencyIds": ["N1-U01-C03"]
-    },
-    {
-      "id": "N1-U01-L04",
-      "order": 4,
-      "title": "Acompanhando referências ao longo do texto",
-      "path": "lessons/004-acompanhando-referencias-texto.json",
-      "competencyIds": ["N1-U01-C04"]
-    },
-    {
-      "id": "N1-U01-L05",
-      "order": 5,
-      "title": "Relações entre as partes: tempo, causa, contraste e explicação",
-      "path": "lessons/005-relacoes-tempo-causa-contraste-explicacao.json",
-      "competencyIds": ["N1-U01-C05"]
-    },
-    {
-      "id": "N1-U01-L06",
-      "order": 6,
-      "title": "O texto diz, permite concluir ou não informa?",
-      "path": "lessons/006-explicito-inferencia-ou-nao-informa.json",
-      "competencyIds": ["N1-U01-C06"]
-    },
-    {
-      "id": "N1-U01-L07",
-      "order": 7,
-      "title": "Título, imagem, legenda e outros apoios",
-      "path": "lessons/007-titulo-imagem-legenda-apoios.json",
-      "competencyIds": ["N1-U01-C07"]
-    },
-    {
-      "id": "N1-U01-L08",
-      "order": 8,
-      "title": "Quem escreveu? De onde veio? Opinião e razão",
-      "path": "lessons/008-quem-escreveu-fonte-opiniao-razao.json",
-      "competencyIds": ["N1-U01-C08"]
-    },
-    {
-      "id": "N1-U01-L09",
-      "order": 9,
-      "title": "Resumindo a ideia principal com palavras próprias",
-      "path": "lessons/009-resumindo-ideia-principal-palavras-proprias.json",
-      "competencyIds": ["N1-U01-C09"]
-    }
+    {"id": "N1-U01-L01", "order": 1, "title": "Ler com um objetivo", "path": "lessons/001-ler-com-um-objetivo.json", "competencyIds": ["N1-U01-C01"]},
+    {"id": "N1-U01-L02", "order": 2, "title": "Assunto, finalidade e informação principal", "path": "lessons/002-assunto-finalidade-informacao-principal.json", "competencyIds": ["N1-U01-C02"]},
+    {"id": "N1-U01-L03", "order": 3, "title": "Encontrar e combinar informações explícitas", "path": "lessons/003-encontrar-combinar-informacoes-explicitas.json", "competencyIds": ["N1-U01-C03"]},
+    {"id": "N1-U01-L04", "order": 4, "title": "Acompanhando referências ao longo do texto", "path": "lessons/004-acompanhando-referencias.json", "competencyIds": ["N1-U01-C04"]},
+    {"id": "N1-U01-L05", "order": 5, "title": "Relações entre as partes: tempo, causa, contraste e explicação", "path": "lessons/005-relacoes-tempo-causa-contraste-explicacao.json", "competencyIds": ["N1-U01-C05"]},
+    {"id": "N1-U01-L06", "order": 6, "title": "O texto diz, permite concluir ou não informa?", "path": "lessons/006-explicito-inferencia-ou-nao-informa.json", "competencyIds": ["N1-U01-C06"]},
+    {"id": "N1-U01-L07", "order": 7, "title": "Título, imagem, legenda e outros apoios", "path": "lessons/007-titulo-imagem-legenda-apoios.json", "competencyIds": ["N1-U01-C07"]},
+    {"id": "N1-U01-L08", "order": 8, "title": "Quem escreveu? De onde veio? Opinião e razão", "path": "lessons/008-quem-escreveu-fonte-opiniao-razao.json", "competencyIds": ["N1-U01-C08"]},
+    {"id": "N1-U01-L09", "order": 9, "title": "Resumindo a ideia principal com palavras próprias", "path": "lessons/009-resumindo-ideia-principal-palavras-proprias.json", "competencyIds": ["N1-U01-C09"]}
   ],
   "verification": {
     "id": "N1-U01-V01",
     "path": "integrated-verification.json",
-    "competencyIds": [
-      "N1-U01-C01",
-      "N1-U01-C02",
-      "N1-U01-C03",
-      "N1-U01-C04",
-      "N1-U01-C05",
-      "N1-U01-C06",
-      "N1-U01-C07",
-      "N1-U01-C08",
-      "N1-U01-C09"
-    ]
+    "competencyIds": ["N1-U01-C01", "N1-U01-C02", "N1-U01-C03", "N1-U01-C04", "N1-U01-C05", "N1-U01-C06", "N1-U01-C07", "N1-U01-C08", "N1-U01-C09"]
   },
-  "publication": {
-    "status": "READY",
-    "blockers": []
-  }
+  "publication": {"status": "READY", "blockers": []}
 }
