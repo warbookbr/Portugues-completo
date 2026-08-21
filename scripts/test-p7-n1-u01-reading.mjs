@@ -102,10 +102,10 @@ for (const model of v01Source.items.find(item => item.id === 'V01-Q07').modelExa
 // 6. Não compensação: Q01-Q06 corretas não concluem sem o resumo próprio.
 {
   const progress = newProgress();
+  let snapshot = null;
   for (const id of ['V01-Q01', 'V01-Q02', 'V01-Q03', 'V01-Q04', 'V01-Q05', 'V01-Q06']) {
-    record(progress, v01, vById, id, { correct: true, score: 1, itemResults: { 0: true, 1: true, 2: true } });
+    snapshot = record(progress, v01, vById, id, { correct: true, score: 1, itemResults: { 0: true, 1: true, 2: true } });
   }
-  const snapshot = progress.getSnapshot();
   assert.equal(snapshot.curriculum.verifications[v01.id].status, 'EM_ESTUDO', 'Tarefas fechadas não podem compensar ausência do resumo próprio.');
 }
 
