@@ -37,7 +37,9 @@ for (const temporary of [
   '.github/workflows/p7-u06-publish-clean.yml',
   'scripts/p7-u06-publish-current.py',
   '.github/workflows/fix-p7-u06-public-ui.yml',
-  'scripts/fix-p7-u06-public-ui.py'
+  'scripts/fix-p7-u06-public-ui.py',
+  '.github/workflows/close-p7-u06.yml',
+  'scripts/close-p7-u06.py'
 ]) {
   assert.equal(fs.existsSync(temporary), false, `tooling temporário não pode permanecer: ${temporary}`);
 }
@@ -45,6 +47,7 @@ for (const temporary of [
 for (const permanent of [
   'scripts/audit-p7-n0-u06.mjs',
   'scripts/test-p7-u06-communication.mjs',
+  'scripts/test-p7-u06-homologation.mjs',
   'scripts/capture-p7-u06-visuals.sh'
 ]) {
   assert.equal(fs.existsSync(permanent), true, `gate permanente ausente: ${permanent}`);
