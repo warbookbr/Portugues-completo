@@ -108,6 +108,9 @@ jobs:
       - name: Test P7 N0-U06 communication semantics
         run: node scripts/test-p7-u06-communication.mjs
 
+      - name: Test P7 N0-U06 homologation
+        run: node scripts/test-p7-u06-homologation.mjs
+
       - name: Test progress policies
         run: node scripts/test-progress-policies.mjs
 
