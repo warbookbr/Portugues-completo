@@ -1,0 +1,46 @@
+name: Apply P7 N1 U01 publication patch
+
+on:
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    if: github.head_ref == 'p7-n1-u01-inventory' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          ref: p7-n1-u01-inventory
+          fetch-depth: 0
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+          package-manager-cache: false
+      - name: Apply catalog and public UI adaptation
+        run: python3 scripts/p7-n1-u01-publication-patch.py
+      - name: Validate catalog and N1-U01 public UI
+        run: |
+          node scripts/validate-project.mjs
+          node scripts/validate-catalog.mjs
+          node scripts/test-content-catalog.mjs
+          node scripts/audit-p7-n1-u01.mjs
+          node scripts/test-p7-n1-u01-reading.mjs
+          node scripts/test-p7-n1-u01-public-ui.mjs
+          node scripts/test-classic-renderer.mjs
+      - name: Remove temporary publication tooling
+        run: |
+          rm scripts/p7-n1-u01-publication-patch.py
+          rm .github/workflows/p7-n1-u01-publication-patch.yml
+      - name: Commit durable publication layer
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          git commit -m 'feat(p7): publica camada Clássica da N1-U01'
+          git push origin HEAD:p7-n1-u01-inventory
