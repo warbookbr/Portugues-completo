@@ -18,8 +18,8 @@ async function fileFetch(url) {
 const service = new ContentService({ basePath: './content', fetchImpl: fileFetch });
 const catalog = await service.loadCatalog();
 assert.equal(catalog.schemaVersion, 2);
-assert.deepEqual(catalog.units.map(unit => unit.id), ['N0-U01', 'N0-U02', 'N0-U03', 'N0-U04', 'N0-U05', 'N4-U09']);
-assert.deepEqual(catalog.units.filter(unit => unit.levelId === 'N0').map(unit => unit.order), [1, 2, 3, 4, 5]);
+assert.deepEqual(catalog.units.map(unit => unit.id), ['N0-U01', 'N0-U02', 'N0-U03', 'N0-U04', 'N0-U05', 'N0-U06', 'N4-U09']);
+assert.deepEqual(catalog.units.filter(unit => unit.levelId === 'N0').map(unit => unit.order), [1, 2, 3, 4, 5, 6]);
 
 const n0u1 = await service.loadUnitManifest('N0-U01', { catalog });
 assert.equal(n0u1.manifest.title, 'Letras e primeiros sons');
@@ -97,6 +97,26 @@ for (const lessonRef of n0u5.manifest.lessons) {
   assert.ok(loaded.runtime.completion.clusters.length > 0, `${lessonRef.id}: sem clusters de conclusão.`);
 }
 
+const n0u6 = await service.loadUnitManifest('N0-U06', { catalog });
+assert.equal(n0u6.manifest.title, 'Usando a língua no cotidiano');
+assert.equal(n0u6.manifest.order, 6);
+assert.deepEqual(n0u6.manifest.prerequisites, ['N0-U05-V01']);
+assert.equal(n0u6.manifest.lessons.length, 10);
+assert.equal(n0u6.manifest.competencies.length, 10);
+assert.deepEqual(n0u6.manifest.competencies.map(item => item.id), Array.from({ length: 10 }, (_, index) => `N0-U06-C${String(index + 1).padStart(2, '0')}`));
+assert.equal(n0u6.manifest.verification.id, 'N0-U06-V01');
+assert.deepEqual(n0u6.manifest.verification.competencyIds, n0u6.manifest.competencies.map(item => item.id));
+assert.equal(n0u6.manifest.publication.status, 'READY');
+assert.deepEqual(n0u6.manifest.publication.blockers, []);
+
+for (const lessonRef of n0u6.manifest.lessons) {
+  const loaded = await service.loadLesson('N0-U06', lessonRef.id);
+  assert.equal(loaded.runtime.id, lessonRef.id);
+  assert.deepEqual(loaded.runtime.competencyIds, lessonRef.competencyIds);
+  assert.ok(loaded.runtime.blocks.length > 0, `${lessonRef.id}: runtime vazio.`);
+  assert.ok(loaded.runtime.completion.clusters.length > 0, `${lessonRef.id}: sem clusters de conclusão.`);
+}
+
 const n4 = await service.loadUnitManifest('N4-U09', { catalog });
 assert.equal(n4.manifest.lessons.length, 12);
 assert.equal(n4.manifest.competencies.length, 12);
@@ -130,6 +150,16 @@ const n0u5ControlledLesson = await service.loadLesson('N0-U05', 'N0-U05-L08');
 assert.deepEqual(n0u5ControlledLesson.runtime.competencyIds, ['N0-U05-C08']);
 assert.ok(n0u5ControlledLesson.runtime.blocks.some(block => block.activity?.interaction === 'SHORT_TEXT' && block.activity?.evaluation?.mode === 'DETERMINISTIC'));
 
+const n0u6AudioLesson = await service.loadLesson('N0-U06', 'N0-U06-L06');
+assert.deepEqual(n0u6AudioLesson.runtime.competencyIds, ['N0-U06-C06']);
+assert.ok(n0u6AudioLesson.runtime.blocks.some(block => block.content?.transcriptHiddenUntilAttempt === true));
+assert.ok(n0u6AudioLesson.runtime.blocks.some(block => block.content?.ttsText));
+
+const n0u6RepairLesson = await service.loadLesson('N0-U06', 'N0-U06-L10');
+assert.deepEqual(n0u6RepairLesson.runtime.competencyIds, ['N0-U06-C10']);
+assert.ok(n0u6RepairLesson.runtime.blocks.some(block => block.activity?.evaluation?.mode === 'RELIABLE_EVALUATOR'));
+assert.ok(n0u6RepairLesson.runtime.blocks.some(block => block.content?.oralRehearsal?.enabled === true));
+
 const n4Lesson = await service.loadLesson('N4-U09', 'N4-U09-L01');
 assert.deepEqual(n4Lesson.runtime.competencyIds, ['N4-U09-C01']);
 
@@ -161,6 +191,14 @@ assert.equal(n0u5Verification.runtime.completion.clusters.find(cluster => cluste
 assert.equal(n0u5Verification.runtime.blocks.find(block => block.id === 'V01-Q08')?.activity?.evaluation?.mode, 'RELIABLE_EVALUATOR');
 assert.equal(n0u5Verification.runtime.blocks.find(block => block.id === 'V01-Q10')?.activity?.interaction, 'COMPOSITE');
 
+const n0u6Verification = await service.loadVerification('N0-U06');
+assert.equal(n0u6Verification.runtime.id, 'N0-U06-V01');
+assert.equal(n0u6Verification.runtime.kind, 'UNIT_VERIFICATION');
+assert.equal(n0u6Verification.runtime.competencyIds.length, 10);
+assert.deepEqual(n0u6Verification.runtime.completion.clusters.map(cluster => cluster.id), ['comprehensionAndPurpose', 'functionalUseAndProduction', 'oralComprehension', 'adequacyVariationAndRepair', 'oralProductionPractice']);
+assert.equal(n0u6Verification.runtime.blocks.find(block => block.id === 'V01-Q12')?.activity?.interaction, 'ORAL_RESPONSE');
+assert.equal(n0u6Verification.runtime.blocks.find(block => block.id === 'V01-Q12')?.activity?.evaluation?.mode, 'RELIABLE_EVALUATOR');
+
 const n4Verification = await service.loadVerification('N4-U09');
 assert.equal(n4Verification.runtime.id, 'N4-U09-V01');
 assert.equal(n4Verification.runtime.competencyIds.length, 12);
@@ -171,4 +209,4 @@ await assert.rejects(
   error => error instanceof ContentCatalogError && error.code === 'UNIT_NOT_FOUND'
 );
 
-console.log('Catálogo/ContentService P7: U1–U5 publicadas em ordem, U05 escrita aberta/controlada descoberta ponta a ponta e N4-U09 preservada.');
+console.log('Catálogo/ContentService P7: U1–U6 publicadas em ordem, U05 preservada e U06 comunicação cotidiana descoberta ponta a ponta e N4-U09 preservada.');

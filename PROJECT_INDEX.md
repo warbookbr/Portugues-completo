@@ -37,6 +37,7 @@ Português Completo
 - `docs/homologacao-p7-n0-u03.md` — **homologação do primeiro lote P7**: N0-U03 publicada, adapter legado, evidência agregada, renderer, linguagem pública, mídia e inspeção visual.
 - `docs/homologacao-p7-n0-u04.md` — **homologação do segundo lote P7**: N0-U04 publicada, evidência textual, ordenação, regras agregadas, linguagem pública, responsividade mobile e inspeção visual.
 - `docs/homologacao-p7-n0-u05.md` — **homologação do terceiro lote P7**: N0-U05 publicada, escrita aberta pending, planejamento/autochecagem, apoio opcional, edição controlada, linguagem pública e inspeção visual.
+- `docs/homologacao-p7-n0-u06.md` — **homologação do quarto lote P7 e fechamento do N0 no catálogo**: comunicação cotidiana, audio-first, reparo, adequação/variação, ensaio oral sem falsa validação e inspeção visual.
 - `docs/execucao-continua.md` — execução autônoma por marcos autorizados.
 - `.ChatGPT/skills/fundamentos-claros/SKILL.md` — histórico operacional do T1 homologado e referência para regressões futuras da entrada clara.
 - `.ChatGPT/skills/classic-product-delivery/SKILL.md` — procedimento operacional obrigatório para implementar P1→P9 do Clássico sem perder estado.

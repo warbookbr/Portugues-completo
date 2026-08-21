@@ -22,9 +22,9 @@ Migração T1 `t1-n0-entry-v2`: ATIVA / HOMOLOGADA local + Gist
 P6 — Feedback por IA: HOMOLOGADO
 Homologação P6: docs/homologacao-p6.md
 P7 — Ampliação do catálogo Clássico N0→N4: ATIVO
-Lote P7 N0-U05 — Escrevendo e organizando mensagens: HOMOLOGADO (PR #136)
-Homologação N0-U05: docs/homologacao-p7-n0-u05.md
-Próximo passo exato: iniciar o lote N0-U06 — Usando a língua no cotidiano — inventariando autoria + N0-U06-V01, interlocutor/finalidade, pergunta/resposta, pedidos/orientações, compreensão oral, adequação formal/informal, variação linguística, mídia e blockers antes de manifestar/publicar
+Lote P7 N0-U06 — Usando a língua no cotidiano: HOMOLOGADO (PR #139)
+Homologação N0-U06: docs/homologacao-p7-n0-u06.md
+Próximo passo exato: iniciar o lote N1-U01 — Lendo textos com mais autonomia — inventariando 9 lições + N1-U01-V01, objetivo de leitura, assunto/finalidade, informações explícitas, referências, relações, inferência, apoios multimodais, fonte/opinião/razão, resumo, mídia e blockers antes de manifestar/publicar
 Blocker global: nenhum
 Gate final do Clássico: NÃO SATISFEITO
 ```
@@ -42,7 +42,7 @@ T1 e P6 estão homologados. P7 avança incrementalmente por unidade, preservando
 | P5 — Progresso/revisão/Gist | `HOMOLOGADO` | PR #109 |
 | T1 — Fundamentos claros | `HOMOLOGADO` | PRs #116–#130; `docs/homologacao-t1-10.md` |
 | P6 — Feedback por IA | `HOMOLOGADO` | PRs #131–#133; `docs/homologacao-p6.md` |
-| P7 — Catálogo N0→N4 | `ATIVO` | N0-U03/U04/U05 homologadas nas PRs #134/#135/#136; próximo lote N0-U06 |
+| P7 — Catálogo N0→N4 | `ATIVO` | N0-U03/U04/U05/U06 homologadas nas PRs #134/#135/#136/#139; N0 completo; próximo lote N1-U01 |
 | P8 — Mídia/publicação | `NAO_INICIADO` | — |
 | P9 — E2E / Clássico homologado | `NAO_INICIADO` | — |
 

@@ -74,15 +74,16 @@ function renderKnownContent(content = {}) {
     'responseMode', 'selfReview', 'selfReviewRequired', 'selfReviewQuestions', 'revisionFlow', 'promptChoices',
     'purpose', 'revealPolicy', 'followUp', 'evidenceOptions', 'evidenceSelectionMode', 'evidenceMatchMode',
     'cards', 'optionalScaffold', 'planningChecklist', 'planningPrompt', 'essentialInformation',
-    'principleQuestion', 'principleOptions', 'automaticCheck',
-    'source', 'presentation', 'coverageRule',
+    'principleQuestion', 'principleOptions', 'automaticCheck', 'oralRehearsal',
+    'transcriptHiddenUntilAttempt', 'transcriptAfterAttempt', 'replayAllowed', 'externalReview',
+    'source', 'presentation', 'coverageRule', 'requiredIntent', 'meaning', 'selfCheck',
     'textRemainsVisible', 'textRef', 'competency'
   ]);
 
   if (content.title) lead.push(`<h3>${esc(content.title)}</h3>`);
   if (content.text) lead.push(`<p>${esc(content.text)}</p>`);
   if (content.prompt) lead.push(`<p class="activity-prompt">${esc(content.prompt)}</p>`);
-  if (content.instruction) lead.push(`<p class="activity-instruction">${esc(content.instruction)}</p>`);
+  if (content.instruction && !content.oralRehearsal?.enabled) lead.push(`<p class="activity-instruction">${esc(content.instruction)}</p>`);
   if (content.model !== undefined) lead.push(`<div class="model-box"><span>Modelo</span><strong>${valueText(content.model)}</strong></div>`);
   if (content.letter) lead.push(`<div class="model-box"><span>Letra</span><strong>${esc(content.letter)}</strong></div>`);
 
@@ -93,7 +94,8 @@ function renderKnownContent(content = {}) {
     lead.push(`<button type="button" class="secondary-button stimulus-button" data-tts="${esc(content.ttsCue)}">Ouvir palavra</button>`);
   }
   if (content.ttsText) {
-    lead.push(`<button type="button" class="secondary-button stimulus-button" data-tts="${esc(content.ttsText)}">Ouvir exemplo</button>`);
+    const runtimeOnlyTts = content.transcriptHiddenUntilAttempt === true;
+    lead.push(`<button type="button" class="secondary-button stimulus-button" data-tts="${runtimeOnlyTts ? '' : esc(content.ttsText)}"${runtimeOnlyTts ? ' data-runtime-tts' : ''}>Ouvir exemplo</button>`);
   }
 
   const segments = content.segments ?? content.segmentsForRescue;
@@ -391,6 +393,20 @@ function renderPlanningChecklist(block) {
   return `<fieldset class="self-review planning-checklist"><legend>${esc(prompt)}</legend>${items.map((item, index) => `<label class="choice-option"><input type="checkbox" name="planning:${index}" value="done" required><span>${esc(item)}</span></label>`).join('')}</fieldset>`;
 }
 
+function renderOralRehearsal(block) {
+  const rehearsal = block.content?.oralRehearsal;
+  if (!rehearsal || rehearsal.enabled === false) return '';
+  const instruction = rehearsal.instruction || 'Faça um ensaio oral curto.';
+  const required = rehearsal.required === true ? ' required' : '';
+  const optional = rehearsal.required === true ? '' : '<p class="reveal-note">Este ensaio é opcional nesta etapa escrita.</p>';
+  return `<fieldset class="self-review oral-rehearsal" data-oral-rehearsal><legend>Ensaio oral</legend><p>${esc(instruction)}</p>${optional}<label class="choice-option"><input type="checkbox" name="oralRehearsalDone" value="done"${required}><span>Concluí o ensaio oral.</span></label><p class="reveal-note">Este registro confirma a prática, não avalia pronúncia, sotaque ou compreensibilidade da fala.</p></fieldset>`;
+}
+
+function renderDelayedTranscriptControl(block) {
+  if (block.content?.transcriptHiddenUntilAttempt !== true || typeof block.content?.transcriptAfterAttempt !== 'string') return '';
+  return `<div class="delayed-transcript-control" data-delayed-transcript-control><button type="button" class="secondary-button compact-button" data-transcript-reveal disabled>Mostrar transcrição depois de ouvir</button><div class="content-detail" data-transcript-slot aria-live="polite"></div></div>`;
+}
+
 function renderSelfReview(block) {
   const questions = block.content?.selfReviewQuestions;
   if (!Array.isArray(questions) || !questions.length) return '';
@@ -421,7 +437,7 @@ function renderInteraction(block) {
       const revision = content.revisionFlow ? '<label class="response-field"><span>Revisão opcional</span><textarea name="revisedResponse" rows="4"></textarea></label>' : '';
       return `${promptChoice}${renderOpenInput(block, 'Sua resposta')}${revision}`;
     }
-    case 'ORAL_RESPONSE': return renderOpenInput(block, 'Rascunho/registro da resposta oral nesta etapa técnica');
+    case 'ORAL_RESPONSE': return '';
     case 'COMPOSITE': return renderComposite(block);
     default: return unsupported(block.activity?.interaction || 'desconhecida');
   }
@@ -437,12 +453,14 @@ export function renderActivity(block) {
         <span class="activity-mode">${pending ? 'avaliação pendente' : evaluation.mode === 'DETERMINISTIC' ? 'correção objetiva' : 'atividade'}</span>
       </header>
       ${renderKnownContent(block.content)}
+      ${block.pedagogicalType === 'audio-first-demonstration' ? renderDelayedTranscriptControl(block) : ''}
       ${renderStimuli(block.activity)}
       <form class="activity-form" data-activity-form novalidate>
         ${renderOptionalScaffold(block)}
         ${renderPlanningChecklist(block)}
         ${renderInteraction(block)}
         ${renderEvidenceSelector(block.content)}
+        ${renderOralRehearsal(block)}
         ${renderSelfReview(block)}
         <div class="activity-actions"><button class="primary-button" type="submit">${pending ? 'Registrar resposta' : 'Verificar resposta'}</button></div>
         <div class="activity-feedback" data-activity-feedback aria-live="polite"></div>
@@ -451,7 +469,7 @@ export function renderActivity(block) {
 }
 
 export function renderContentBlock(block) {
-  return `<article class="lesson-block content-card" id="${esc(block.id)}"><span class="block-kicker">${esc(pretty(block.pedagogicalType || 'conteúdo'))}</span>${renderKnownContent(block.content)}</article>`;
+  return `<article class="lesson-block content-card" id="${esc(block.id)}"><span class="block-kicker">${esc(pretty(block.pedagogicalType || 'conteúdo'))}</span>${renderKnownContent(block.content)}${renderDelayedTranscriptControl(block)}</article>`;
 }
 
 function completionSummary(document) {
@@ -652,6 +670,35 @@ function feedbackMessage(block, result) {
   return { state: 'retry', text: 'Ainda não. Revise o conteúdo e tente novamente; não há penalidade por nova tentativa.' };
 }
 
+function transcriptEntries(block) {
+  const entries = [];
+  if (block.content?.transcriptHiddenUntilAttempt === true && typeof block.content?.transcriptAfterAttempt === 'string') entries.push({ label: 'Transcrição', text: block.content.transcriptAfterAttempt });
+  const items = Array.isArray(block.content?.items) ? block.content.items : Array.isArray(block.content?.rounds) ? block.content.rounds : [];
+  items.forEach((item, index) => {
+    if (item?.transcriptHiddenUntilAttempt === true && typeof item?.transcriptAfterAttempt === 'string') entries.push({ label: `Transcrição ${index + 1}`, text: item.transcriptAfterAttempt });
+  });
+  return entries;
+}
+
+function revealPostAttemptTranscripts(form, block) {
+  const entries = transcriptEntries(block);
+  if (!entries.length || form.querySelector('[data-post-attempt-transcripts]')) return;
+  const box = document.createElement('div');
+  box.className = 'content-details post-attempt-transcripts';
+  box.dataset.postAttemptTranscripts = 'true';
+  entries.forEach(entry => {
+    const detail = document.createElement('div');
+    detail.className = 'content-detail';
+    const title = document.createElement('strong');
+    title.textContent = entry.label;
+    const body = document.createElement('div');
+    body.textContent = entry.text;
+    detail.append(title, body);
+    box.appendChild(detail);
+  });
+  form.appendChild(box);
+}
+
 function revealPostSubmissionExamples(form, block) {
   const examples = block.content?.modelExamplesAfterSubmission;
   if (!Array.isArray(examples) || !examples.length || form.querySelector('[data-post-submission-examples]')) return;
@@ -684,7 +731,10 @@ function bindActivity(form, block) {
     const message = feedbackMessage(block, result);
     feedback.dataset.state = message.state;
     feedback.textContent = message.text;
-    revealPostSubmissionExamples(form, block);
+    if (result.complete) {
+      revealPostSubmissionExamples(form, block);
+      revealPostAttemptTranscripts(form, block);
+    }
   });
 }
 
@@ -703,8 +753,35 @@ function bindSequence(builder) {
   builder.querySelector('[data-sequence-clear]')?.addEventListener('click', () => { sequence = []; sync(); });
 }
 
+function bindContentTranscriptControls(root, documentRuntime) {
+  if (!documentRuntime) return;
+  const byId = new Map((documentRuntime.blocks || []).map(block => [block.id, block]));
+  root.querySelectorAll('[data-delayed-transcript-control]').forEach(control => {
+    const card = control.closest('[id]');
+    const block = card ? byId.get(card.id) : null;
+    const button = control.querySelector('[data-transcript-reveal]');
+    const slot = control.querySelector('[data-transcript-slot]');
+    const tts = card?.querySelector('[data-tts]');
+    if (!block || !button || !slot || typeof block.content?.transcriptAfterAttempt !== 'string') return;
+    if (tts) tts.addEventListener('click', () => { button.disabled = false; });
+    button.addEventListener('click', () => {
+      const title = globalThis.document.createElement('strong');
+      title.textContent = 'Transcrição';
+      const body = globalThis.document.createElement('div');
+      body.textContent = block.content.transcriptAfterAttempt;
+      slot.replaceChildren(title, body);
+      button.hidden = true;
+    });
+  });
+}
+
 export function bindClassicRenderer(root, document = null) {
-  root.querySelectorAll('[data-tts]').forEach(button => button.addEventListener('click', () => speak(button.dataset.tts || '')));
+  const runtimeBlocks = document ? new Map((document.blocks || []).map(block => [block.id, block])) : new Map();
+  root.querySelectorAll('[data-tts]').forEach(button => button.addEventListener('click', () => {
+    const cardId = button.closest('[id]')?.id;
+    const runtimeText = button.hasAttribute('data-runtime-tts') ? runtimeBlocks.get(cardId)?.content?.ttsText : null;
+    speak(runtimeText || button.dataset.tts || '');
+  }));
   root.querySelectorAll('[data-attempt-gate]').forEach(button => button.addEventListener('click', () => {
     const group = button.closest('[data-gated-choice-set]');
     group?.querySelectorAll('[data-gated-control]').forEach(control => { control.disabled = false; });
@@ -722,6 +799,7 @@ export function bindClassicRenderer(root, document = null) {
     button.textContent = 'Nova pista aberta';
   }));
   if (!document) return;
+  bindContentTranscriptControls(root, document);
   const byId = new Map(document.blocks.filter(block => block.kind === 'ACTIVITY').map(block => [block.id, block]));
   root.querySelectorAll('[data-activity-id]').forEach(card => {
     const block = byId.get(card.dataset.activityId);

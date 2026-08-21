@@ -52,6 +52,13 @@
       "manifest": "units/005-escrevendo-organizando-mensagens/unit.json"
     },
     {
+      "id": "N0-U06",
+      "levelId": "N0",
+      "order": 6,
+      "title": "Usando a língua no cotidiano",
+      "manifest": "units/006-usando-lingua-cotidiano/unit.json"
+    },
+    {
       "id": "N4-U09",
       "levelId": "N4",
       "order": 9,

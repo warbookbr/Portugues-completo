@@ -19,6 +19,36 @@ export const LEGACY_COMPLETION_RULES_V1 = Object.freeze({
   },
 
   // N0-U03 — regras históricas explícitas preservadas sem parsear prosa autoral.
+  // N0-U06 — comunicação cotidiana: oralidade, adequação e reparo sem falsa autoridade automática.
+  'N0-U06-L09': {
+    clusters: [
+      { id: 'chooseRepair', required: true, evidenceIds: ['L09-C01', 'L09-A01', 'L09-A02'], satisfaction: 'DEMONSTRATED_REQUIRED' },
+      { id: 'ownRepairMessage', required: true, evidenceIds: ['L09-A03'], satisfaction: 'PENDING_ALLOWED' }
+    ],
+    nonCompensable: true,
+    activityPolicies: {}
+  },
+  'N0-U06-L10': {
+    clusters: [
+      { id: 'reformulation', required: true, evidenceIds: ['L10-C01', 'L10-A01'], satisfaction: 'DEMONSTRATED_REQUIRED' },
+      { id: 'ownReformulation', required: true, evidenceIds: ['L10-A02'], satisfaction: 'PENDING_ALLOWED' },
+      { id: 'strategyChoice', required: true, evidenceIds: ['L10-A03'], satisfaction: 'DEMONSTRATED_REQUIRED' }
+    ],
+    nonCompensable: true,
+    activityPolicies: {}
+  },
+  'N0-U06-V01': {
+    clusters: [
+      { id: 'comprehensionAndPurpose', required: true, evidenceIds: ['V01-Q01', 'V01-Q05'], satisfaction: 'DEMONSTRATED_REQUIRED' },
+      { id: 'functionalUseAndProduction', required: true, evidenceIds: ['V01-Q02', 'V01-Q03', 'V01-Q04', 'V01-Q11'], satisfaction: 'PENDING_ALLOWED', requiredAnyOf: [['V01-Q02'], ['V01-Q03'], ['V01-Q04'], ['V01-Q11']] },
+      { id: 'oralComprehension', required: true, evidenceIds: ['V01-Q06', 'V01-Q07'], satisfaction: 'DEMONSTRATED_REQUIRED' },
+      { id: 'adequacyVariationAndRepair', required: true, evidenceIds: ['V01-Q08', 'V01-Q09', 'V01-Q10'], satisfaction: 'DEMONSTRATED_REQUIRED' },
+      { id: 'oralProductionPractice', required: true, evidenceIds: ['V01-Q12'], satisfaction: 'PENDING_ALLOWED' }
+    ],
+    nonCompensable: true,
+    activityPolicies: {}
+  },
+
   // N0-U05 — escrita autoral: pending não equivale a domínio e apoio não é penalidade.
   'N0-U05-L02': {
     clusters: [
