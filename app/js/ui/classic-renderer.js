@@ -25,6 +25,7 @@ const PUBLIC_LABELS = new Map([
   ['reviewPrompts', 'Perguntas para revisar'], ['starter', 'Início sugerido'],
   ['optionalWordBank', 'Palavras de apoio'], ['wordBank', 'Palavras de apoio'],
   ['optionalScaffold', 'Apoio opcional'], ['note', 'Observação'],
+  ['answer', 'Resposta'], ['classification', 'Classificação'],
   ['groups', 'Grupos'], ['important', 'Importante']
 ]);
 
@@ -53,6 +54,33 @@ function valueText(value) {
   return esc(value);
 }
 
+function renderSourceMetadata(metadata) {
+  if (!metadata || typeof metadata !== 'object' || Array.isArray(metadata)) return '';
+  const rows = [];
+  if (metadata.title) rows.push(`<div><dt>Título</dt><dd>${esc(metadata.title)}</dd></div>`);
+  const author = metadata.authorOrInstitution || metadata.author || metadata.institution;
+  if (author) rows.push(`<div><dt>Autoria / instituição</dt><dd>${esc(author)}</dd></div>`);
+  if (metadata.section) rows.push(`<div><dt>Seção</dt><dd>${esc(metadata.section)}</dd></div>`);
+  if (metadata.date) rows.push(`<div><dt>Data</dt><dd>${esc(metadata.date)}</dd></div>`);
+  return rows.length ? `<div class="content-detail source-metadata"><strong>Fonte do texto</strong><dl class="data-list">${rows.join('')}</dl></div>` : '';
+}
+
+function renderSemanticVisual(visual, fallbackLabel = 'Apoio visual') {
+  if (!visual || typeof visual !== 'object' || Array.isArray(visual)) return '';
+  const equivalent = visual.accessibleEquivalent;
+  if (typeof equivalent !== 'string' || !equivalent.trim()) return '';
+  const label = visual.label || fallbackLabel;
+  return `<div class="meaning-support semantic-visual" role="img" aria-label="${esc(equivalent)}"><strong>${esc(label)}</strong><p>${esc(equivalent)}</p></div>`;
+}
+
+function renderOpinionReason(analysis) {
+  if (!analysis || typeof analysis !== 'object' || Array.isArray(analysis)) return '';
+  const rows = [];
+  if (analysis.opinion) rows.push(`<div class="content-detail"><strong>Opinião</strong><div>${esc(analysis.opinion)}</div></div>`);
+  if (analysis.reason) rows.push(`<div class="content-detail"><strong>Razão</strong><div>${esc(analysis.reason)}</div></div>`);
+  return rows.length ? `<div class="content-details opinion-reason">${rows.join('')}</div>` : '';
+}
+
 function renderKnownContent(content = {}) {
   const lead = [];
   const details = [];
@@ -77,11 +105,18 @@ function renderKnownContent(content = {}) {
     'principleQuestion', 'principleOptions', 'automaticCheck', 'oralRehearsal',
     'transcriptHiddenUntilAttempt', 'transcriptAfterAttempt', 'replayAllowed', 'externalReview',
     'source', 'presentation', 'coverageRule', 'requiredIntent', 'meaning', 'selfCheck',
+    'bodyText', 'caption', 'visual', 'visualBadge', 'sourceMetadata', 'analysis',
     'textRemainsVisible', 'textRef', 'competency'
   ]);
 
   if (content.title) lead.push(`<h3>${esc(content.title)}</h3>`);
   if (content.text) lead.push(`<p>${esc(content.text)}</p>`);
+  if (content.bodyText) lead.push(`<div class="content-detail reading-text"><strong>Texto</strong><p>${esc(content.bodyText)}</p></div>`);
+  if (content.caption) lead.push(`<p class="reveal-note reading-caption"><strong>Legenda:</strong> ${esc(content.caption)}</p>`);
+  if (content.sourceMetadata) lead.push(renderSourceMetadata(content.sourceMetadata));
+  if (content.visual) lead.push(renderSemanticVisual(content.visual));
+  if (content.visualBadge) lead.push(renderSemanticVisual(content.visualBadge, content.visualBadge.label || 'Informação visual'));
+  if (content.analysis) lead.push(renderOpinionReason(content.analysis));
   if (content.prompt) lead.push(`<p class="activity-prompt">${esc(content.prompt)}</p>`);
   if (content.instruction && !content.oralRehearsal?.enabled) lead.push(`<p class="activity-instruction">${esc(content.instruction)}</p>`);
   if (content.model !== undefined) lead.push(`<div class="model-box"><span>Modelo</span><strong>${valueText(content.model)}</strong></div>`);
