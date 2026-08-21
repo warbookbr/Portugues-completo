@@ -18,9 +18,11 @@ const issues = [];
 const interactions = new Map();
 const lessonSummary = [];
 const evidenceRequirements = [];
+const sourceRequirements = [];
 const openProductions = [];
 const multimodal = [];
 const sourceMetadataActivities = [];
+const runtimes = new Map();
 const media = { controlledAudio: new Set(), images: new Set(), video: new Set(), ttsDocuments: 0 };
 
 const issue = message => issues.push(message);
@@ -47,8 +49,16 @@ function isOpen(block) {
     || /quick-open-summary|assessment-open/i.test(String(block?.type || ''));
 }
 
-function evidenceNeeded(block) {
-  return Boolean(block?.requiredEvidence || block?.evidenceSourcesRequired);
+function evidenceSelectionNeeded(block) {
+  return Boolean(
+    block?.requiredEvidence
+    || block?.requiredEvidenceParts
+    || block?.acceptableEvidence
+  );
+}
+
+function hasSourceRequirement(block) {
+  return Array.isArray(block?.evidenceSourcesRequired) && block.evidenceSourcesRequired.length > 0;
 }
 
 function hasAccessibleVisual(block) {
@@ -58,7 +68,8 @@ function hasAccessibleVisual(block) {
 
 function inspectAuthoredBlock(source, block) {
   if (isOpen(block)) openProductions.push(`${source.id}/${block.id}`);
-  if (evidenceNeeded(block)) evidenceRequirements.push(`${source.id}/${block.id}`);
+  if (evidenceSelectionNeeded(block)) evidenceRequirements.push(`${source.id}/${block.id}`);
+  if (hasSourceRequirement(block)) sourceRequirements.push(`${source.id}/${block.id}`);
   if (block.visual || block.visualBadge || /multimodal/i.test(String(block.type || ''))) multimodal.push(`${source.id}/${block.id}`);
   if (block.sourceMetadata) sourceMetadataActivities.push(`${source.id}/${block.id}`);
 
@@ -70,9 +81,31 @@ function inspectAuthoredBlock(source, block) {
   }
   if (Array.isArray(block.items)) {
     block.items.forEach((item, index) => {
-      if (evidenceNeeded(item)) evidenceRequirements.push(`${source.id}/${block.id}/item-${index}`);
+      if (evidenceSelectionNeeded(item)) evidenceRequirements.push(`${source.id}/${block.id}/item-${index}`);
+      if (hasSourceRequirement(item)) sourceRequirements.push(`${source.id}/${block.id}/item-${index}`);
       if (isOpen(item)) openProductions.push(`${source.id}/${block.id}/item-${index}`);
     });
+  }
+}
+
+function auditSourceAvailability(source, authored, html) {
+  if (!hasSourceRequirement(authored)) return;
+  for (const requirement of authored.evidenceSourcesRequired) {
+    if (requirement === 'bodyText') {
+      if (typeof authored.bodyText !== 'string' || !authored.bodyText.trim()) {
+        issue(`${source.id}/${authored.id}: exige bodyText, mas a autoria não fornece corpo textual.`);
+      } else if (!html.includes(authored.bodyText)) {
+        issue(`${source.id}/${authored.id}: bodyText necessário não aparece na apresentação pública.`);
+      }
+    }
+    if (requirement === 'visual-or-accessible-equivalent') {
+      const equivalent = authored.visual?.accessibleEquivalent;
+      if (typeof equivalent !== 'string' || !equivalent.trim()) {
+        issue(`${source.id}/${authored.id}: exige visual/equivalente acessível, mas accessibleEquivalent está ausente.`);
+      } else if (!html.includes(equivalent)) {
+        issue(`${source.id}/${authored.id}: equivalente acessível necessário não aparece na apresentação pública.`);
+      }
+    }
   }
 }
 
@@ -87,6 +120,7 @@ function auditRuntime(source, schema, renderContext) {
     return null;
   }
 
+  runtimes.set(source.id, runtime);
   const schemaErrors = validateValue(schema, runtime, `${source.id} runtime`);
   if (schemaErrors.length) issue(`${source.id}: runtime inválido -> ${schemaErrors.join(' | ')}`);
 
@@ -104,7 +138,7 @@ function auditRuntime(source, schema, renderContext) {
   const byId = new Map((runtime.blocks || []).map(block => [block.id, block]));
   for (const authored of authoredBlocks(source)) {
     const normalized = byId.get(authored.id);
-    const relevant = authored.correctIndex !== undefined || Array.isArray(authored.items) || isOpen(authored) || evidenceNeeded(authored) || authored.visual || authored.sourceMetadata;
+    const relevant = authored.correctIndex !== undefined || Array.isArray(authored.items) || isOpen(authored) || evidenceSelectionNeeded(authored) || hasSourceRequirement(authored) || authored.visual || authored.sourceMetadata;
     if (relevant && !normalized) {
       issue(`${source.id}/${authored.id}: bloco relevante desapareceu do runtime.`);
       continue;
@@ -124,22 +158,24 @@ function auditRuntime(source, schema, renderContext) {
       }
     }
 
-    if (evidenceNeeded(authored)) {
+    if (evidenceSelectionNeeded(authored)) {
       const hasEvidenceControl = /data-evidence-(?:selection|response|choice)/i.test(html)
         || /name=["'][^"']*evidence/i.test(html)
         || normalized?.activity?.interaction === 'STRUCTURED_RESPONSE';
-      if (!hasEvidenceControl) issue(`${source.id}/${authored.id}: autoria exige evidência, mas runtime/renderer não oferece controle específico.`);
+      if (!hasEvidenceControl) issue(`${source.id}/${authored.id}: autoria exige seleção de evidência, mas runtime/renderer não oferece controle específico.`);
     }
 
     if (Array.isArray(authored.items) && Array.isArray(normalized?.content?.items)) {
       authored.items.forEach((item, index) => {
-        if (!evidenceNeeded(item)) return;
+        if (!evidenceSelectionNeeded(item)) return;
         const runtimeItem = normalized.content.items[index];
         if (!Array.isArray(runtimeItem?.evidenceOptions) || !runtimeItem.evidenceOptions.length) {
           issue(`${source.id}/${authored.id}/item-${index}: evidência aninhada não foi materializada.`);
         }
       });
     }
+
+    auditSourceAvailability(source, authored, html);
 
     if (authored.visual) {
       const equivalent = authored.visual.accessibleEquivalent;
@@ -151,6 +187,10 @@ function auditRuntime(source, schema, renderContext) {
 
   for (const block of runtime.blocks || []) if (block.kind === 'ACTIVITY') count(block.activity?.interaction || 'NONE');
   return runtime;
+}
+
+function cluster(runtime, id) {
+  return runtime?.completion?.clusters?.find(item => item.id === id);
 }
 
 assert.equal(lessonFiles.length, 9, 'N1-U01 deve conter 9 lições autoradas.');
@@ -177,6 +217,19 @@ const verificationRuntime = auditRuntime(verificationSource, verificationSchema,
 collectMedia(verificationSource);
 
 // Fronteiras pedagógicas irredutíveis do lote.
+const l05Runtime = runtimes.get('N1-U01-L05');
+if (l05Runtime) {
+  const relations = cluster(l05Runtime, 'relations');
+  const hasFourOfFiveRule = (relations?.criteria || []).some(item => item?.type === 'TOTAL_ITEM_HITS_AT_LEAST' && item.minimum === 4);
+  if (!hasFourOfFiveRule) issue('N1-U01-L05: regra autoral de pelo menos 4/5 relações precisa permanecer estrutural no runtime.');
+}
+
+const l09Runtime = runtimes.get('N1-U01-L09');
+if (l09Runtime) {
+  if (cluster(l09Runtime, 'ownSummary')?.satisfaction !== 'PENDING_ALLOWED') issue('N1-U01-L09: ownSummary precisa permitir VALIDACAO_PENDENTE sem alegar resumo validado.');
+  if (cluster(l09Runtime, 'selectionOfEssential')?.satisfaction !== 'PENDING_ALLOWED') issue('N1-U01-L09: seleção ligada à produção aberta precisa preservar VALIDACAO_PENDENTE.');
+}
+
 const vById = new Map((verificationRuntime?.blocks || []).map(block => [block.id, block]));
 const q07 = vById.get('V01-Q07');
 if (!q07) issue('N1-U01-V01/V01-Q07: resumo próprio obrigatório desapareceu do runtime.');
@@ -184,6 +237,10 @@ else {
   if (q07.activity?.evaluation?.mode !== 'RELIABLE_EVALUATOR') issue('N1-U01-V01/V01-Q07: resumo próprio não pode virar avaliação determinística.');
   if (q07.activity?.evidence?.recordResponse !== true) issue('N1-U01-V01/V01-Q07: resumo próprio precisa ser persistido.');
 }
+if (verificationRuntime && cluster(verificationRuntime, 'ownSummary')?.satisfaction !== 'PENDING_ALLOWED') {
+  issue('N1-U01-V01: ownSummary precisa permitir percurso concluído com resumo produzido/autorrevisado ainda VALIDACAO_PENDENTE.');
+}
+if (verificationRuntime?.completion?.nonCompensable !== true) issue('N1-U01-V01: os sete agrupamentos precisam permanecer não compensáveis no runtime.');
 
 if (!verificationSource.completionEvidence?.clusters?.ownSummary) issue('N1-U01-V01: cluster ownSummary ausente na autoria.');
 const completionText = JSON.stringify(verificationSource.completionEvidence || {});
@@ -198,7 +255,8 @@ console.log('P7 inventário N1-U01:');
 for (const item of lessonSummary) console.log(`- ${item.id}: ${item.title} — ${item.activities} atividade(s), ${item.blocks} bloco(s)`);
 console.log(`- N1-U01-V01: ${verificationRuntime?.blocks?.filter(block => block.kind === 'ACTIVITY').length ?? 0} atividade(s), ${verificationRuntime?.blocks?.length ?? 0} bloco(s)`);
 console.log(`Interações normalizadas: ${[...interactions.entries()].sort().map(([key, value]) => `${key}=${value}`).join(', ') || 'nenhuma'}`);
-console.log(`Requisitos de evidência: ${evidenceRequirements.length} -> ${evidenceRequirements.join(', ') || 'nenhum'}`);
+console.log(`Seleções de evidência: ${evidenceRequirements.length} -> ${evidenceRequirements.join(', ') || 'nenhuma'}`);
+console.log(`Fontes multimodais obrigatórias: ${sourceRequirements.length} -> ${sourceRequirements.join(', ') || 'nenhuma'}`);
 console.log(`Produções abertas: ${openProductions.length} -> ${openProductions.join(', ') || 'nenhuma'}`);
 console.log(`Blocos multimodais: ${multimodal.length} -> ${multimodal.join(', ') || 'nenhum'}`);
 console.log(`Blocos com fonte/autoria explícita: ${sourceMetadataActivities.length} -> ${sourceMetadataActivities.join(', ') || 'nenhum'}`);
