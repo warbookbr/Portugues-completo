@@ -111,6 +111,15 @@ jobs:
       - name: Test P7 N0-U06 homologation
         run: node scripts/test-p7-u06-homologation.mjs
 
+      - name: Audit P7 N1-U01
+        run: node scripts/audit-p7-n1-u01.mjs
+
+      - name: Test P7 N1-U01 reading semantics
+        run: node scripts/test-p7-n1-u01-reading.mjs
+
+      - name: Test P7 N1-U01 public UI
+        run: node scripts/test-p7-n1-u01-public-ui.mjs
+
       - name: Test progress policies
         run: node scripts/test-progress-policies.mjs
 
@@ -143,6 +152,9 @@ jobs:
 
       - name: Capture P7 N0-U06 visual smoke
         run: bash scripts/capture-p7-u06-visuals.sh
+
+      - name: Capture P7 N1-U01 visual smoke
+        run: bash scripts/capture-p7-n1-u01-visuals.sh
 
       - name: Upload classic visual smoke
         uses: actions/upload-artifact@v4
@@ -177,4 +189,11 @@ jobs:
         with:
           name: p7-n0-u06-visual-smoke
           path: artifacts/p7-u06-visuals/*.png
+          if-no-files-found: error
+
+      - name: Upload P7 N1-U01 visual smoke
+        uses: actions/upload-artifact@v4
+        with:
+          name: p7-n1-u01-visual-smoke
+          path: artifacts/p7-n1-u01-visuals/*.png
           if-no-files-found: error

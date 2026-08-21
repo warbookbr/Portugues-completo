@@ -162,6 +162,29 @@ assert.match(u06VerificationHtml, /Concluí o ensaio oral/);
 assert.match(u06VerificationHtml, /não avalia pronúncia, sotaque ou compreensibilidade da fala/i);
 assert.doesNotMatch(u06VerificationHtml, /transcriptAfterAttempt|requiredForClaimOfValidatedOralComprehensibility|externalReview/);
 
+const n1MultimodalLesson = await service.loadLesson('N1-U01', 'N1-U01-L07');
+const n1MultimodalHtml = documentHtml(n1MultimodalLesson.runtime, { unitId: 'N1-U01', unitTitle: 'Lendo textos com mais autonomia' });
+assert.match(n1MultimodalHtml, /Apoio visual/);
+assert.match(n1MultimodalHtml, /Entrada principal → Recepção → Sala de inscrição/);
+assert.doesNotMatch(n1MultimodalHtml, /Interação ainda não suportada/i);
+
+const n1SourceLesson = await service.loadLesson('N1-U01', 'N1-U01-L08');
+const n1SourceHtml = documentHtml(n1SourceLesson.runtime, { unitId: 'N1-U01', unitTitle: 'Lendo textos com mais autonomia' });
+assert.match(n1SourceHtml, /Fonte do texto/);
+assert.match(n1SourceHtml, /Secretaria Municipal de Saúde/);
+assert.doesNotMatch(n1SourceHtml, /Interação ainda não suportada/i);
+
+const n1SummaryLesson = await service.loadLesson('N1-U01', 'N1-U01-L09');
+const n1SummaryHtml = documentHtml(n1SummaryLesson.runtime, { unitId: 'N1-U01', unitTitle: 'Lendo textos com mais autonomia' });
+assert.match(n1SummaryHtml, /Registrar resposta/i);
+assert.doesNotMatch(n1SummaryHtml, /Interação ainda não suportada/i);
+
+const n1Verification = await service.loadVerification('N1-U01');
+const n1VerificationHtml = documentHtml(n1Verification.runtime, { unitId: 'N1-U01', unitTitle: 'Lendo textos com mais autonomia', verification: true });
+assert.match(n1VerificationHtml, /Registrar resposta/i);
+assert.match(n1VerificationHtml, /A rota indicada é Entrada → Balcão → Corredor A → Sala 12/);
+assert.doesNotMatch(n1VerificationHtml, /Interação ainda não suportada/i);
+
 const n4Lesson = await service.loadLesson('N4-U09', 'N4-U09-L01');
 const n4Html = documentHtml(n4Lesson.runtime, { unitId: 'N4-U09', unitTitle: 'Literatura, multimodalidade, autoria intermedial e digital' });
 assert.match(n4Html, /avaliação pendente/i);
@@ -169,6 +192,6 @@ assert.match(n4Html, /Registrar resposta/i);
 assert.equal(typeof n4Lesson.runtime.presentation?.intro, 'string');
 assert.notEqual(n4Lesson.runtime.presentation.intro, n4Lesson.runtime.objective);
 
-assert.equal(lessonCount, 68);
-assert.equal(verificationCount, 7);
-console.log(`Renderer clássico P7: ${lessonCount} lições + ${verificationCount} verificações, N0-U03/U04/U05/U06 e caso-âncora N4 preservados.`);
+assert.equal(lessonCount, 77);
+assert.equal(verificationCount, 8);
+console.log(`Renderer clássico P7: ${lessonCount} lições + ${verificationCount} verificações, N0 completo + N1-U01 e caso-âncora N4 preservados.`);

@@ -49,6 +49,38 @@ export const LEGACY_COMPLETION_RULES_V1 = Object.freeze({
     activityPolicies: {}
   },
 
+  // N1-U01 — leitura autônoma: regras agregadas e resumo aberto não podem ser achatados.
+  'N1-U01-L05': {
+    clusters: [
+      { id: 'relations', required: true, evidenceIds: ['L05-C01', 'L05-A01', 'L05-A02'], satisfaction: 'DEMONSTRATED_REQUIRED', criteria: [{ type: 'TOTAL_ITEM_HITS_AT_LEAST', evidenceIds: ['L05-C01', 'L05-A01', 'L05-A02'], minimum: 4 }] },
+      { id: 'sequenceVsCause', required: true, evidenceIds: ['L05-B03', 'L05-A02'], satisfaction: 'DEMONSTRATED_REQUIRED' }
+    ],
+    nonCompensable: true,
+    activityPolicies: { 'L05-C01': { threshold: 1 }, 'L05-A01': { threshold: 0.5 }, 'L05-A02': { threshold: 0.5 } }
+  },
+  'N1-U01-L09': {
+    clusters: [
+      { id: 'summaryJudgment', required: true, evidenceIds: ['L09-A02'], satisfaction: 'DEMONSTRATED_REQUIRED' },
+      { id: 'ownSummary', required: true, evidenceIds: ['L09-A01'], satisfaction: 'PENDING_ALLOWED' },
+      { id: 'selectionOfEssential', required: true, evidenceIds: ['L09-C01', 'L09-A01'], satisfaction: 'PENDING_ALLOWED' }
+    ],
+    nonCompensable: true,
+    activityPolicies: {}
+  },
+  'N1-U01-V01': {
+    clusters: [
+      { id: 'globalComprehension', required: true, evidenceIds: ['V01-Q01'], satisfaction: 'DEMONSTRATED_REQUIRED' },
+      { id: 'locationAndIntegration', required: true, evidenceIds: ['V01-Q02'], satisfaction: 'DEMONSTRATED_REQUIRED' },
+      { id: 'referenceAndRelations', required: true, evidenceIds: ['V01-Q03'], satisfaction: 'DEMONSTRATED_REQUIRED' },
+      { id: 'inferenceAndInsufficiency', required: true, evidenceIds: ['V01-Q04'], satisfaction: 'DEMONSTRATED_REQUIRED' },
+      { id: 'multimodality', required: true, evidenceIds: ['V01-Q05'], satisfaction: 'DEMONSTRATED_REQUIRED' },
+      { id: 'sourceOpinionReason', required: true, evidenceIds: ['V01-Q06'], satisfaction: 'DEMONSTRATED_REQUIRED' },
+      { id: 'ownSummary', required: true, evidenceIds: ['V01-Q07'], satisfaction: 'PENDING_ALLOWED' }
+    ],
+    nonCompensable: true,
+    activityPolicies: {}
+  },
+
   // N0-U05 — escrita autoral: pending não equivale a domínio e apoio não é penalidade.
   'N0-U05-L02': {
     clusters: [
