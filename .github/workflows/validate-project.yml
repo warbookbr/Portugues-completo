@@ -114,6 +114,9 @@ jobs:
       - name: Audit P7 N1-U01
         run: node scripts/audit-p7-n1-u01.mjs
 
+      - name: Test P7 N1-U01 reading semantics
+        run: node scripts/test-p7-n1-u01-reading.mjs
+
       - name: Test progress policies
         run: node scripts/test-progress-policies.mjs
 
