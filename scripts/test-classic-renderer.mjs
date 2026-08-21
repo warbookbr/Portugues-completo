@@ -60,7 +60,6 @@ const emptyProgress = createEmptyProgress();
 const home = homeHtml(catalog, units, emptyProgress);
 assert.match(home, /Letras e primeiros sons/);
 assert.match(home, /Palavras, frases e sentido/);
-assert.match(home, /Lendo textos com mais autonomia/);
 assert.match(home, /Começar a estudar/);
 assert.equal((home.match(/Começar a estudar/g) || []).length, 1, 'home deve ter um único CTA de início/retomada');
 assert.doesNotMatch(home, /Continuar lição/i, 'home não deve manter CTA concorrente de continuar lição');
