@@ -2,12 +2,18 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 
 import { ContentService } from '../app/js/services/content-service.js';
-import { documentHtml } from '../app/js/ui/classic-renderer.js';
+import { documentHtml, unitHtml } from '../app/js/ui/classic-renderer.js';
 
 const readJson = file => JSON.parse(fs.readFileSync(file, 'utf8'));
 const service = new ContentService({ fetchImpl: async () => ({ ok: false, status: 500 }) });
 const normalize = file => service.normalize(readJson(file));
 const context = { unitId: 'N1-U01', unitTitle: 'Lendo textos com mais autonomia' };
+
+const unit = readJson('content/units/101-lendo-textos-mais-autonomia/unit.json');
+const unitMarkup = unitHtml(unit);
+assert.match(unitMarkup, /Ler textos curtos com mais autonomia/);
+assert.match(unitMarkup, /resumir as ideias principais com suas próprias palavras/);
+assert.doesNotMatch(unitMarkup, /produção aberta|acerto automático|RELIABLE_EVALUATOR|PENDING_ALLOWED/i);
 
 const l07 = normalize('content/units/101-lendo-textos-mais-autonomia/lessons/007-titulo-imagem-legenda-apoios.json');
 const l07Html = documentHtml(l07, context);
@@ -52,4 +58,4 @@ assert.match(vHtml, /Fonte do texto/);
 assert.doesNotMatch(vHtml, /evidenceSourcesRequired|accessibleEquivalent|sourceMetadata|bodyText|textRef|humanOrExternalReview|automaticObservations|notAutomaticallyJudged/);
 assert.doesNotMatch(vHtml, /Interação ainda não suportada/i);
 
-console.log('P7 N1-U01 public UI: leitura, diagrama acessível, legenda, fonte/opinião/razão e versões de resumo aparecem sem metadados autorais crus.');
+console.log('P7 N1-U01 public UI: objetivo simples, leitura, diagrama acessível, legenda, fonte/opinião/razão e versões de resumo aparecem sem metadados autorais crus.');
