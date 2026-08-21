@@ -10,6 +10,11 @@
       "title": "Fundamentos"
     },
     {
+      "id": "N1",
+      "order": 1,
+      "title": "Básico"
+    },
+    {
       "id": "N4",
       "order": 4,
       "title": "Domínio"
@@ -57,6 +62,13 @@
       "order": 6,
       "title": "Usando a língua no cotidiano",
       "manifest": "units/006-usando-lingua-cotidiano/unit.json"
+    },
+    {
+      "id": "N1-U01",
+      "levelId": "N1",
+      "order": 1,
+      "title": "Lendo textos com mais autonomia",
+      "manifest": "units/101-lendo-textos-mais-autonomia/unit.json"
     },
     {
       "id": "N4-U09",
