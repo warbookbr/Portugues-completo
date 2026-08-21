@@ -4,7 +4,7 @@
   "levelId": "N1",
   "order": 1,
   "title": "Lendo textos com mais autonomia",
-  "objective": "Ler textos curtos com objetivos definidos, identificando assunto, finalidade e informação principal; localizar e combinar informações explícitas; acompanhar referências e relações entre partes; distinguir informação explícita, inferência sustentada e informação insuficiente; integrar apoios multimodais acessíveis; reconhecer autoria, fonte, opinião e razão em situações introdutórias; e produzir resumos breves com palavras próprias sem transformar produção aberta em acerto automático.",
+  "objective": "Ler textos curtos com mais autonomia: identificar assunto e finalidade, encontrar e relacionar informações, usar pistas do texto, combinar texto e apoio visual, reconhecer a fonte e resumir as ideias principais com suas próprias palavras.",
   "competencies": [
     {"id": "N1-U01-C01", "label": "escolher uma estratégia de leitura adequada ao objetivo imediato e consultar o texto sempre que necessário"},
     {"id": "N1-U01-C02", "label": "identificar assunto, finalidade e informação principal sem substituir o núcleo por um detalhe verdadeiro"},
