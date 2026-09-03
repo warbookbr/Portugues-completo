@@ -182,6 +182,43 @@ hero introdutório
 
 A home deve privilegiar a próxima ação de estudo. Mensagens genéricas de boas-vindas ou continuidade não devem ocupar uma faixa grande acima do conteúdo quando não acrescentarem decisão, estado ou orientação nova.
 
+## Estilo da interface: Simples e Completo
+
+A mesma tela pode ser apresentada em dois estilos, escolhidos pelo aluno em `Configurações → Aparência → Estilo da interface`. O estilo é preferência local do dispositivo e camada de apresentação: ele não altera currículo, progresso, evidência nem domínio, e não se confunde com o **modo de estudo** (Clássico e Gamificado), que é outro eixo.
+
+```text
+Simples
+→ padrão de fábrica
+→ para quem tem pouca familiaridade com interface e quer só estudar
+
+Completo
+→ painel atual inteiro, sem redução
+```
+
+No estilo Simples:
+
+```text
+cabeçalho
+→ sem marca e sem selo de modo
+→ Início | Unidades
+→ Tamanho das letras
+→ Ajuda e Configurações
+
+corpo
+→ Continue estudando / Comece por aqui
+→ card de revisão quando houver revisão recomendada
+→ prévia de Unidades do curso
+```
+
+O bloco `Seu progresso` não aparece no Simples: a posição na unidade e a barra da primeira faixa já respondem onde o aluno está.
+
+Regras que o Simples não pode quebrar:
+
+- reduzir tela não é esconder caminho de estudo; Unidades continua alcançável e a revisão recomendada vira card acionável na home em vez de sumir junto com o item de menu;
+- `Plano de estudos` e `Desempenho` saem da navegação por serem leitura secundária, não por serem dispensáveis ao curso;
+- `Tamanho das letras` existe apenas no Simples e opera a mesma preferência de `Configurações → Aparência → Tamanho da fonte`, sem criar estado próprio. No Completo o botão não é montado, para não duplicar um controle já disponível;
+- os tamanhos oferecidos publicamente são `Padrão`, `Grande` e `Extra grande`, reaproveitando escalas que já existem no tema.
+
 ## Arquitetura visual aprovada da home clássica
 
 A home é uma tela de **orientação e retomada**, não um painel administrativo, catálogo completo ou página institucional.

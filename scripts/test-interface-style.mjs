@@ -1,0 +1,84 @@
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { homeHtml } from '../app/js/ui/classic-home.js';
+import { SIMPLE_FONT_SIZES, fontSizeLabel } from '../app/js/ui/font-size-control.js';
+
+const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+const read = relative => fs.readFileSync(path.join(root, relative), 'utf8');
+
+const manifests = [
+  {
+    id: 'N0-U01',
+    levelId: 'N0',
+    order: 1,
+    title: 'Letras e primeiros sons',
+    lessons: [
+      { id: 'N0-U01-L01', order: 1, title: 'Lição 1' },
+      { id: 'N0-U01-L02', order: 2, title: 'Lição 2' }
+    ]
+  }
+];
+
+const emptyProgress = { curriculum: { lessons: {}, current: {} }, review: { queue: [] } };
+const withReviews = { curriculum: { lessons: {}, current: {} }, review: { queue: ['N0-U01-L01', 'N0-U01-L02'] } };
+
+// O estilo Completo preserva o painel atual.
+const complete = homeHtml({}, manifests, emptyProgress, { interfaceStyle: 'complete' });
+assert.match(complete, /Seu progresso/, 'estilo Completo deve manter o card de progresso');
+assert.match(complete, /Comece por aqui/);
+assert.match(complete, /Unidades do curso/);
+
+// O estilo Simples esconde o painel de métricas sem esconder o caminho de estudo.
+const simple = homeHtml({}, manifests, emptyProgress, { interfaceStyle: 'simple' });
+assert.doesNotMatch(simple, /Seu progresso/, 'estilo Simples não deve exibir o card de métricas');
+assert.match(simple, /Comece por aqui/, 'estilo Simples deve manter a ação principal');
+assert.match(simple, /Unidades do curso/, 'estilo Simples deve manter as unidades');
+assert.doesNotMatch(simple, /revisões recomendadas/, 'sem revisões pendentes não existe card de revisão');
+
+// A revisão continua alcançável no Simples quando existe algo a revisar.
+const simpleWithReviews = homeHtml({}, manifests, withReviews, { interfaceStyle: 'simple' });
+assert.match(simpleWithReviews, /Você tem 2 revisões recomendadas\./);
+assert.match(simpleWithReviews, /href="#\/revisoes"/, 'o card de revisão deve levar às revisões');
+
+const singleReview = homeHtml({}, manifests, { review: { queue: ['N0-U01-L01'] } }, { interfaceStyle: 'simple' });
+assert.match(singleReview, /Você tem 1 revisão recomendada\./, 'o texto público deve concordar em número');
+
+// Sem opção declarada, a home mantém o comportamento anterior.
+assert.match(homeHtml({}, manifests, emptyProgress), /Seu progresso/);
+
+// O controle público reaproveita as escalas já existentes, sem inventar nível novo.
+const themes = read('app/css/themes.css');
+for (const option of SIMPLE_FONT_SIZES) {
+  assert.match(themes, new RegExp(`html\\[data-font-size="${option.value}"\\]`), `escala ${option.value} precisa existir no tema`);
+}
+assert.equal(SIMPLE_FONT_SIZES.length, 3);
+assert.equal(fontSizeLabel('xlarge'), 'Extra grande');
+assert.equal(fontSizeLabel('small'), 'Padrão', 'escala fora do controle público cai no rótulo padrão');
+
+// A preferência é local, tem o Simples como padrão e é aplicada na raiz do documento.
+const settingsService = read('app/js/services/settings-service.js');
+assert.match(settingsService, /interfaceStyle: 'simple'/, 'o estilo Simples deve vir ligado de fábrica');
+assert.match(settingsService, /root\.dataset\.interfaceStyle = settings\.interfaceStyle;/);
+
+// O estilo é apresentação: não pode virar dado de progresso nem de curso.
+const progressSchema = JSON.parse(read('schemas/progress.schema.json'));
+assert.ok(!JSON.stringify(progressSchema).includes('interfaceStyle'), 'estilo da interface não pertence ao progresso');
+
+// O cabeçalho enxuto e o botão só existem no estilo Simples.
+const interfaceCss = read('app/css/interface-style.css');
+assert.match(interfaceCss, /html\[data-interface-style="simple"\] \.app-brand/);
+assert.match(interfaceCss, /data-nav-route="plan"/);
+assert.match(interfaceCss, /data-nav-route="performance"/);
+assert.doesNotMatch(interfaceCss, /data-nav-route="units"\]\s*\{?\s*\n?\s*display: none/, 'Unidades deve continuar alcançável no Simples');
+
+const appJs = read('app/js/app.js');
+assert.match(appJs, /mountFontSizeControl\(fontSizeRoot\)/);
+assert.match(appJs, /style !== 'simple' && unmountFontSizeControl/, 'o botão só deve existir no estilo Simples');
+
+const indexHtml = read('index.html');
+assert.match(indexHtml, /id="font-size-root"/);
+assert.match(indexHtml, /interface-style\.css/);
+
+console.log('Estilo da interface: Simples/Completo, card de revisão e tamanhos públicos validados.');

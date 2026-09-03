@@ -1,0 +1,108 @@
+/* Estilo da interface: Simples (padrão) e Completo.
+   Camada de apresentação apenas: não altera currículo, progresso nem evidência. */
+
+.font-size-control {
+  position: relative;
+  display: block;
+}
+
+.font-size-trigger {
+  min-height: 40px;
+  padding: 0 14px;
+  border-radius: 11px;
+  border: 2px solid var(--accent);
+  background: var(--surface);
+  color: var(--reading-text);
+  font-size: calc(14px * var(--font-scale));
+  font-weight: 750;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.font-size-trigger:hover,
+.font-size-trigger:focus-visible {
+  background: var(--surface-muted);
+}
+
+.font-size-panel {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  z-index: 30;
+  display: grid;
+  gap: 4px;
+  min-width: 190px;
+  padding: 8px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.font-size-option {
+  min-height: 44px;
+  padding: 0 12px;
+  border: 0;
+  border-radius: 10px;
+  background: transparent;
+  color: var(--reading-text);
+  font-size: calc(15px * var(--font-scale));
+  font-weight: 700;
+  text-align: left;
+  cursor: pointer;
+}
+
+.font-size-option:hover,
+.font-size-option:focus-visible {
+  background: var(--surface-muted);
+}
+
+.font-size-option[aria-pressed="true"] {
+  background: color-mix(in srgb, var(--accent) 12%, var(--surface));
+  color: var(--accent);
+}
+
+/* Estilo Simples: cabeçalho enxuto, sem marca, sem selo de modo e sem
+   destinos que o aluno iniciante não precisa para estudar. */
+html[data-interface-style="simple"] .app-brand,
+html[data-interface-style="simple"] .primary-nav a[data-nav-route="plan"],
+html[data-interface-style="simple"] .primary-nav a[data-nav-route="reviews"],
+html[data-interface-style="simple"] .primary-nav a[data-nav-route="performance"] {
+  display: none;
+}
+
+html[data-interface-style="simple"] .app-header-inner {
+  grid-template-columns: 1fr auto;
+  grid-template-areas: "nav utilities";
+}
+
+html[data-interface-style="simple"] .primary-nav {
+  justify-content: flex-start;
+}
+
+html[data-interface-style="simple"] .dashboard-grid {
+  grid-template-columns: 1fr;
+}
+
+@media (max-width: 1020px) {
+  html[data-interface-style="simple"] .app-header-inner {
+    grid-template-columns: 1fr auto;
+    grid-template-areas: "nav utilities";
+  }
+}
+
+@media (max-width: 700px) {
+  html[data-interface-style="simple"] .app-header-inner {
+    grid-template-columns: 1fr;
+    grid-template-areas: "utilities" "nav";
+  }
+
+  html[data-interface-style="simple"] .header-utilities {
+    justify-self: end;
+  }
+
+  html[data-interface-style="simple"] .font-size-trigger {
+    padding: 0 12px;
+    font-size: calc(14px * var(--font-scale));
+  }
+}

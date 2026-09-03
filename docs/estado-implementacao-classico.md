@@ -25,6 +25,7 @@ P7 — Ampliação do catálogo Clássico N0→N4: ATIVO
 Lote P7 N0-U06 — Usando a língua no cotidiano: HOMOLOGADO (PR #139)
 Homologação N0-U06: docs/homologacao-p7-n0-u06.md
 Próximo passo exato: iniciar o lote N1-U01 — Lendo textos com mais autonomia — inventariando 9 lições + N1-U01-V01, objetivo de leitura, assunto/finalidade, informações explícitas, referências, relações, inferência, apoios multimodais, fonte/opinião/razão, resumo, mídia e blockers antes de manifestar/publicar
+Estilo da interface (Simples/Completo): IMPLEMENTADO / não homologado
 Blocker global: nenhum
 Gate final do Clássico: NÃO SATISFEITO
 ```
@@ -45,6 +46,32 @@ T1 e P6 estão homologados. P7 avança incrementalmente por unidade, preservando
 | P7 — Catálogo N0→N4 | `ATIVO` | N0-U03/U04/U05/U06 homologadas nas PRs #134/#135/#136/#139; N0 completo; próximo lote N1-U01 |
 | P8 — Mídia/publicação | `NAO_INICIADO` | — |
 | P9 — E2E / Clássico homologado | `NAO_INICIADO` | — |
+
+## Estilo da interface — Simples e Completo
+
+```text
+Estado consolidado: IMPLEMENTADO_COM_PENDENCIA
+Estado técnico: implementado
+Estado de homologação: pendente de homologação pedagógica/clareza com aluno real
+Estado de mídia: SEM_DEPENDENCIA
+Estado de publicação: aguarda homologação
+```
+
+Item transversal de interface, decidido com o usuário e fora do lote P7 ativo. Contrato público em `docs/ui-ux.md`.
+
+Entregas:
+
+- preferência local `interfaceStyle`, com `simple` de fábrica, aplicada em `data-interface-style` na raiz;
+- estilo Simples: cabeçalho sem marca e sem selo de modo, navegação reduzida a Início e Unidades, sem o card `Seu progresso`;
+- revisão recomendada vira card acionável na home do Simples, preservando o acesso que saiu da navegação;
+- botão `Tamanho das letras` montado apenas no Simples, operando a mesma preferência de Aparência, com `Padrão`, `Grande` e `Extra grande`;
+- estilo Completo idêntico ao painel anterior;
+- `scripts/test-interface-style.mjs` no CI e smoke DOM + capturas dos dois estilos em `scripts/capture-classic-visuals.sh`.
+
+O que falta para homologar:
+
+- verificação de clareza com pessoa do público-alvo real, que é o critério que motivou o recurso;
+- decidir se as escalas de fonte devem crescer também os títulos: hoje `--font-scale` não alcança alguns títulos da home, comportamento anterior ao item e comum aos dois estilos.
 
 ## Base homologada P1–P5
 

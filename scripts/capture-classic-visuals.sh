@@ -55,6 +55,17 @@ seed_lesson_page resume-n0-step2 N0-U01-L03 2 '#/unidade/N0-U01/licao/N0-U01-L03
 seed_lesson_page tts-u2-step2 N0-U02-L07 2 '#/unidade/N0-U02/licao/N0-U02-L07'
 seed_lesson_page resume-n4-step2 N4-U09-L01 2 '#/unidade/N4-U09/licao/N4-U09-L01'
 
+# Estilo da interface: o Simples é o padrão; o Completo precisa ser semeado.
+cat >"$OUT/style-complete.html" <<'EOF'
+<!doctype html>
+<meta charset="utf-8">
+<title>Seed estilo Completo</title>
+<script>
+localStorage.setItem('portugues-completo:settings:v1', JSON.stringify({interfaceStyle:'complete'}));
+location.replace('/#/');
+</script>
+EOF
+
 HOME_DOM="$(assert_page '#/' 'Unidades do curso')"
 PLAN_DOM="$(assert_page '#/plano' 'Seu caminho pelo curso')"
 UNITS_DOM="$(assert_page '#/unidades' 'Unidades do curso')"
@@ -91,6 +102,22 @@ if grep -Eq '>\s*N[0-4]\s*[·•]' <<<"$HOME_DOM$UNIT_DOM"; then
 fi
 grep -Fq 'data-settings-section="progress"' <<<"$HOME_DOM" || { echo 'Smoke DOM P5: acesso às configurações de progresso ausente.' >&2; exit 1; }
 grep -Fq 'href="#/ajuda"' <<<"$HOME_DOM" || { echo 'Smoke DOM UI: Ajuda não está disponível como utilitário discreto.' >&2; exit 1; }
+
+# Estilo da interface: Simples de fábrica, sem esconder o caminho de estudo.
+COMPLETE_DOM="$(assert_page 'artifacts/classic-visuals/style-complete.html' 'Unidades do curso')"
+grep -Fq 'data-interface-style="simple"' <<<"$HOME_DOM" || { echo 'Estilo da interface: o Simples deve vir ligado de fábrica.' >&2; exit 1; }
+grep -Fq 'Tamanho das letras' <<<"$HOME_DOM" || { echo 'Estilo da interface: botão de tamanho das letras ausente no Simples.' >&2; exit 1; }
+grep -Fq 'href="#/unidades"' <<<"$HOME_DOM" || { echo 'Estilo da interface: Unidades deixou de ser alcançável no Simples.' >&2; exit 1; }
+if grep -Fq 'Seu progresso' <<<"$HOME_DOM"; then
+  echo 'Estilo da interface: o card de métricas não deve aparecer no Simples.' >&2
+  exit 1
+fi
+grep -Fq 'data-interface-style="complete"' <<<"$COMPLETE_DOM" || { echo 'Estilo da interface: preferência Completo não foi aplicada.' >&2; exit 1; }
+grep -Fq 'Seu progresso' <<<"$COMPLETE_DOM" || { echo 'Estilo da interface: o Completo deve preservar o painel atual.' >&2; exit 1; }
+if grep -Fq 'Tamanho das letras' <<<"$COMPLETE_DOM"; then
+  echo 'Estilo da interface: o botão de tamanho não deve duplicar Aparência no Completo.' >&2
+  exit 1
+fi
 if grep -Eq '>BLOCKED<|N0-U01-C0[1-8]|Catálogo real conectado|TTStext|>OBJECTIVE<|>DEMONSTRATION<' <<<"$UNIT_DOM$LESSON_DOM$RESUME_N0_DOM"; then
   echo 'Smoke DOM: metadado interno ainda aparece na interface pública.' >&2
   exit 1
@@ -171,6 +198,12 @@ capture unit-n0-desktop 1440 900 '#/unidade/N0-U01'
 capture help-desktop 1440 900 '#/ajuda'
 capture help-mobile 390 900 '#/ajuda'
 capture methodology-desktop 1440 900 '#/metodologia'
+
+# Estilo da interface: Simples e Completo nas larguras que mudam o cabeçalho.
+capture style-simple-desktop 1440 900 '#/'
+capture style-simple-narrow 680 900 '#/'
+capture style-simple-mobile 390 844 '#/'
+capture style-complete-desktop 1440 900 'artifacts/classic-visuals/style-complete.html'
 
 # T1.7: primeira entrada em quatro larguras relevantes.
 capture lesson-n0-intro-desktop 1440 900 '#/unidade/N0-U01/licao/N0-U01-L03'
