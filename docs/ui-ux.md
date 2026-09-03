@@ -173,7 +173,11 @@ retomada
 → um único CTA principal
 → "Continuar de onde parou" quando já existe percurso
 → "Começar a estudar" no primeiro acesso
-→ CTA fica no bloco Continue estudando / Comece por aqui
+→ CTA fica no bloco de retomada
+
+título do bloco de retomada
+→ "Continue estudando" quando já existe percurso, porque informa um estado que o botão sozinho não diz
+→ nenhum título no primeiro acesso: "Comece por aqui" seria redundante com o próprio botão "Começar a estudar"
 
 hero introdutório
 → não usar
@@ -205,7 +209,7 @@ cabeçalho
 → Ajuda e Configurações
 
 corpo
-→ Continue estudando / Comece por aqui
+→ bloco de retomada (com título "Continue estudando" só quando já existe percurso)
 → card de revisão quando houver revisão recomendada
 → prévia de Unidades do curso
 ```
@@ -233,7 +237,7 @@ cabeçalho superior
 → Configurações como utilitário
 
 primeira faixa útil
-→ Continue estudando / Comece por aqui
+→ bloco de retomada (com título "Continue estudando" só quando já existe percurso)
 → nível em linguagem humana
 → unidade atual
 → lição/posição atual

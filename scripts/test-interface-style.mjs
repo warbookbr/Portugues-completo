@@ -27,15 +27,23 @@ const withReviews = { curriculum: { lessons: {}, current: {} }, review: { queue:
 // O estilo Completo preserva o painel atual.
 const complete = homeHtml({}, manifests, emptyProgress, { interfaceStyle: 'complete' });
 assert.match(complete, /Seu progresso/, 'estilo Completo deve manter o card de progresso');
-assert.match(complete, /Comece por aqui/);
+assert.match(complete, /Começar a estudar/, 'estilo Completo deve manter a ação principal');
+assert.doesNotMatch(complete, /Comece por aqui/, 'o título é redundante com o botão Começar a estudar em qualquer estilo');
 assert.match(complete, /Unidades do curso/);
 
 // O estilo Simples esconde o painel de métricas sem esconder o caminho de estudo.
 const simple = homeHtml({}, manifests, emptyProgress, { interfaceStyle: 'simple' });
 assert.doesNotMatch(simple, /Seu progresso/, 'estilo Simples não deve exibir o card de métricas');
-assert.match(simple, /Comece por aqui/, 'estilo Simples deve manter a ação principal');
+assert.match(simple, /Começar a estudar/, 'estilo Simples deve manter a ação principal');
+assert.doesNotMatch(simple, /Comece por aqui/, 'o título é redundante com o botão Começar a estudar em qualquer estilo');
 assert.match(simple, /Unidades do curso/, 'estilo Simples deve manter as unidades');
 assert.doesNotMatch(simple, /revisões recomendadas/, 'sem revisões pendentes não existe card de revisão');
+
+// No estado de retomada, o título 'Continue estudando' permanece: ele comunica
+// algo que o botão sozinho não diz.
+const withCurrent = { curriculum: { lessons: {}, current: { unitId: 'N0-U01', lessonId: 'N0-U01-L01' } }, review: { queue: [] } };
+const resumed = homeHtml({}, manifests, withCurrent, { interfaceStyle: 'simple' });
+assert.match(resumed, /Continue estudando/, 'ao retomar, o título de estado deve continuar visível');
 
 // A revisão continua alcançável no Simples quando existe algo a revisar.
 const simpleWithReviews = homeHtml({}, manifests, withReviews, { interfaceStyle: 'simple' });
