@@ -16,7 +16,8 @@ Português Completo
 ├── docs/
 ├── scripts/ + .github/
 ├── tools/
-└── .ChatGPT/
+├── .ChatGPT/
+└── .claude/
 ```
 
 ## Estado e execução
@@ -45,6 +46,7 @@ Português Completo
 - `.ChatGPT/skills/curricular-orchestration/SKILL.md` — orquestração de marcos curriculares longos.
 - `.ChatGPT/skills/course-content-design/SKILL.md` — planejamento e revisão pedagógica, alinhado aos contratos de produto.
 - `.ChatGPT/skills/frontend-visual-check/SKILL.md` — verificação visual de estados reais do frontend, incluindo abertura/retomada de lição e larguras intermediárias quando relevantes.
+- `.claude/skills/` — espelho das skills acima no formato do Claude Code; cada arquivo aponta para a fonte canônica em `.ChatGPT/skills/` e não a duplica.
 
 ### Regra para retomar o desenvolvimento do Clássico
 
