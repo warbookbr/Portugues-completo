@@ -47,6 +47,20 @@ T1 e P6 estão homologados. P7 avança incrementalmente por unidade, preservando
 | P8 — Mídia/publicação | `NAO_INICIADO` | — |
 | P9 — E2E / Clássico homologado | `NAO_INICIADO` | — |
 
+## Reduzir metadados internos da tela de unidade no Simples
+
+```text
+Estado consolidado: IMPLEMENTADO
+Estado técnico: implementado
+Estado de homologação: correção visual pontual, validada por captura real
+Estado de mídia: SEM_DEPENDENCIA
+Estado de publicação: PUBLICAVEL
+```
+
+Achado do usuário: dentro de uma unidade, a trilha `Curso › <título>` e a pílula `<Nível> · Unidade <N>` competiam com o título da unidade sem ajudar quem só quer estudar — no Simples o cabeçalho já mantém Início/Unidades sempre visíveis, então essa navegação é redundante.
+
+Correção: no estilo Simples, `[data-unit-id] > .breadcrumbs` e `.unit-hero .eyebrow` ficam ocultos por CSS. O Completo preserva os dois, sem alteração. Lições e verificações não são afetadas: `.breadcrumbs` ali já é substituído por `← Voltar para a unidade` independentemente do estilo.
+
 ## Affordance de clique nas linhas de lição/unidade
 
 ```text
