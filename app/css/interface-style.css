@@ -92,6 +92,18 @@ html[data-interface-style="simple"] .unit-hero .eyebrow {
   display: none;
 }
 
+/* Na home, a pílula "<Nível> · Unidade <N>" duplica a informação que já
+   aparece no card de unidades logo abaixo. */
+html[data-interface-style="simple"] .course-context {
+  display: none;
+}
+
+/* Ajuda reúne sobretudo atalhos que no Simples já saíram da navegação;
+   quem quer o conteúdo técnico completo troca para o estilo Completo. */
+html[data-interface-style="simple"] .header-utilities .utility-link[href="#/ajuda"] {
+  display: none;
+}
+
 @media (max-width: 1020px) {
   html[data-interface-style="simple"] .app-header-inner {
     grid-template-columns: 1fr auto;

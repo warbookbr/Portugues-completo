@@ -47,6 +47,36 @@ T1 e P6 estão homologados. P7 avança incrementalmente por unidade, preservando
 | P8 — Mídia/publicação | `NAO_INICIADO` | — |
 | P9 — E2E / Clássico homologado | `NAO_INICIADO` | — |
 
+## Remover o título redundante do primeiro acesso
+
+```text
+Estado consolidado: IMPLEMENTADO
+Estado técnico: implementado
+Estado de homologação: correção visual pontual, validada por captura real
+Estado de mídia: SEM_DEPENDENCIA
+Estado de publicação: PUBLICAVEL
+```
+
+Achado do usuário: o título "Comece por aqui" apenas repetia o que o botão "Começar a estudar" logo abaixo já dizia. Vale para os dois estilos, Simples e Completo, e não é específico do estilo Simples — por isso a correção não é uma regra de `interface-style.css`, é mudança no próprio `classic-home.js`.
+
+Correção: `currentStudyCard` só renderiza o `<h2>` quando já existe percurso em andamento (`hasCurrent`), mostrando "Continue estudando". No primeiro acesso, o card vai direto para o contexto da unidade e o CTA, sem título. "Continue estudando" permanece porque comunica um estado (retomada) que o botão sozinho não diz.
+
+## Reduzir a home e o cabeçalho no Simples
+
+```text
+Estado consolidado: IMPLEMENTADO
+Estado técnico: implementado
+Estado de homologação: correção visual pontual, validada por captura real
+Estado de mídia: SEM_DEPENDENCIA
+Estado de publicação: PUBLICAVEL
+```
+
+Achado do usuário: na home, a pílula `<Nível> · Unidade <N>` do card "Comece por aqui" duplicava o que já aparece no card `Unidades do curso` logo abaixo; e o botão `?` de Ajuda não agregava nada essencial ao Simples, já que a página de Ajuda reúne sobretudo atalhos (continuar estudando, plano, revisões) que no Simples já saíram da navegação ou viraram card na home.
+
+Correção: `.course-context` (a pílula) e `.header-utilities .utility-link[href="#/ajuda"]` ficam ocultos por CSS só no Simples. O Completo preserva os dois.
+
+Trade-off registrado: no Simples não há mais caminho até `#/metodologia` ("Como o curso funciona"). É aceitável porque essa página é material de apoio institucional, não currículo, e quem quiser esse nível de detalhe pode trocar para o estilo Completo em Configurações.
+
 ## Reduzir metadados internos da tela de unidade no Simples
 
 ```text
@@ -131,7 +161,7 @@ O Clássico não possui XP oculto, lives ou punição por erro. Persistência lo
 - navegação superior única;
 - sem sidebar duplicada;
 - sem hero/banner grande;
-- `Continue estudando / Comece por aqui` concentra o CTA principal;
+- botão único de retomada/início concentra o CTA principal, com o título "Continue estudando" só quando já existe percurso;
 - métricas derivadas de dados reais;
 - card de progresso validado também em largura intermediária;
 - `Ajuda` como utilitário discreto.

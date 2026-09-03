@@ -26,7 +26,7 @@ function currentStudyCard(manifests, progress) {
   const action = hasCurrent ? 'Continuar de onde parou' : 'Começar a estudar';
 
   return `<section class="dashboard-card continue-card" data-current-study data-unit-id="${esc(manifest.id)}" data-lesson-ids="${esc(lessonIds.join(','))}">
-    <div class="dashboard-section-heading"><h2>${hasCurrent ? 'Continue estudando' : 'Comece por aqui'}</h2></div>
+    ${hasCurrent ? '<div class="dashboard-section-heading"><h2>Continue estudando</h2></div>' : ''}
     <div class="course-context"><span class="context-pill">${esc(levelLabel(manifest.levelId))}</span><span aria-hidden="true">•</span><span>Unidade ${manifest.order}</span></div>
     <h3>${esc(manifest.title)}</h3>
     <p class="continue-position">${esc(position)}</p>
