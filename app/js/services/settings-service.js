@@ -3,6 +3,7 @@ export const AI_FEEDBACK_CONSENT_VERSION = 'p6-ai-feedback-consent-v1';
 
 const defaults = {
   theme: 'light',
+  interfaceStyle: 'simple',
   fontSize: 'normal',
   fontFamily: 'system',
   textColorMode: 'auto',
@@ -73,6 +74,7 @@ export function subscribeSettings(listener) {
 export function applySettings() {
   const root = document.documentElement;
   root.dataset.theme = settings.theme;
+  root.dataset.interfaceStyle = settings.interfaceStyle;
   root.dataset.fontSize = settings.fontSize;
 
   const fonts = {

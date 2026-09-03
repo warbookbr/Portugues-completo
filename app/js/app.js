@@ -1,6 +1,6 @@
 import { initRouter } from './core/router.js';
 import { initNarration } from './services/narration-service.js';
-import { AI_FEEDBACK_CONSENT_VERSION, getSettings, initSettings } from './services/settings-service.js';
+import { AI_FEEDBACK_CONSENT_VERSION, getSettings, initSettings, subscribeSettings } from './services/settings-service.js';
 import { createContentService } from './services/content-service.js';
 import { createProgressService } from './services/progress-service.js';
 import { createSafeProgressStorage } from './services/progress-storage-service.js';
@@ -11,6 +11,7 @@ import { createAiFeedbackService } from './services/ai-feedback-service.js';
 import { createAiFeedbackCredentialService } from './services/ai-feedback-credential-service.js';
 import { createOpenAiCompanionAdapter } from './services/ai-providers/openai-companion.js';
 import { mountSettingsMenu } from './ui/settings-menu.js';
+import { mountFontSizeControl } from './ui/font-size-control.js';
 import { bindClassicRenderer, documentHtml, unitHtml } from './ui/classic-renderer.js';
 import { homeHtml } from './ui/classic-home.js';
 import { helpPageHtml, methodologyPageHtml, performancePageHtml, planPageHtml, reviewsPageHtml, unitsPageHtml } from './ui/classic-pages.js';
@@ -22,6 +23,7 @@ import { mountGuidedLesson } from './ui/classic-lesson-flow.js';
 
 const app = document.getElementById('app');
 const settingsRoot = document.getElementById('settings-root');
+const fontSizeRoot = document.getElementById('font-size-root');
 const contentService = createContentService({ basePath: './content' });
 const baseProgressStorage = createSafeProgressStorage();
 const progressStorage = createMigratingProgressStorage({ storage: baseProgressStorage, migrateProgress: migrateProgressToT1N0 });
@@ -46,6 +48,7 @@ const aiFeedbackService = createAiFeedbackService({
 
 let course = null;
 let routeRevision = 0;
+let currentRoute = { name: 'home' };
 let currentRuntime = null;
 let cleanupAiFeedback = null;
 
@@ -121,7 +124,7 @@ async function renderHome(revision) {
   const catalog = await ensureCourse();
   const manifests = await loadAllManifests();
   if (revision !== routeRevision) return;
-  mountClassic(homeHtml(catalog, manifests, progressService.getProgress()));
+  mountClassic(homeHtml(catalog, manifests, progressService.getProgress(), { interfaceStyle: getSettings().interfaceStyle }));
 }
 
 async function renderUnitsPage(revision) {
@@ -183,6 +186,7 @@ async function renderVerification(route, revision) {
 
 async function renderRoute(route) {
   const revision = ++routeRevision;
+  currentRoute = route;
   currentRuntime = null;
   updateNavigation(route);
   loadingPage(route.name === 'home' ? 'Abrindo o curso' : 'Abrindo conteúdo');
@@ -217,6 +221,27 @@ function bootstrap() {
   initNarration();
   progressService.subscribe(refreshProgressPresentation);
   mountSettingsMenu(settingsRoot, { progressSyncService, aiFeedbackCredentialService });
+  let interfaceStyle = getSettings().interfaceStyle;
+  let unmountFontSizeControl = null;
+
+  function syncInterfaceStyle(style) {
+    if (style === 'simple' && !unmountFontSizeControl) {
+      unmountFontSizeControl = mountFontSizeControl(fontSizeRoot);
+    } else if (style !== 'simple' && unmountFontSizeControl) {
+      unmountFontSizeControl();
+      unmountFontSizeControl = null;
+      fontSizeRoot.innerHTML = '';
+    }
+  }
+
+  syncInterfaceStyle(interfaceStyle);
+  subscribeSettings(settings => {
+    if (settings.interfaceStyle === interfaceStyle) return;
+    interfaceStyle = settings.interfaceStyle;
+    syncInterfaceStyle(interfaceStyle);
+    renderRoute(currentRoute);
+  });
+
   initRouter(renderRoute);
 }
 

@@ -126,6 +126,9 @@ jobs:
       - name: Test classic renderer
         run: node scripts/test-classic-renderer.mjs
 
+      - name: Test interface style
+        run: node scripts/test-interface-style.mjs
+
       - name: Capture classic visual smoke
         run: bash scripts/capture-classic-visuals.sh
 

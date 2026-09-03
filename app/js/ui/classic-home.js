@@ -52,6 +52,18 @@ function progressCard(manifests, progress) {
   </section>`;
 }
 
+function reviewCard(progress) {
+  const pending = progress?.review?.queue?.length || 0;
+  if (!pending) return '';
+  const copy = pending === 1 ? 'Você tem 1 revisão recomendada.' : `Você tem ${pending} revisões recomendadas.`;
+
+  return `<section class="dashboard-card review-callout">
+    <div class="dashboard-section-heading"><h2>Revisar o que você já estudou</h2></div>
+    <p>${esc(copy)}</p>
+    <a class="secondary-button inline-action" href="#/revisoes">Ver revisões <span aria-hidden="true">→</span></a>
+  </section>`;
+}
+
 function unitsPreview(manifests, progress) {
   const rows = manifests.slice(0, 3).map(manifest => {
     const lessonIds = manifest.lessons.map(item => item.id);
@@ -73,13 +85,14 @@ function unitsPreview(manifests, progress) {
   </section>`;
 }
 
-export function homeHtml(_course, manifests = [], progress = {}) {
+export function homeHtml(_course, manifests = [], progress = {}, options = {}) {
   const totalLessons = manifests.reduce((sum, manifest) => sum + manifest.lessons.length, 0);
+  const simple = options.interfaceStyle === 'simple';
 
   return `<div class="dashboard-home reading-content" data-home-total-lessons="${totalLessons}">
     <div class="dashboard-grid">
       ${currentStudyCard(manifests, progress)}
-      ${progressCard(manifests, progress)}
+      ${simple ? reviewCard(progress) : progressCard(manifests, progress)}
     </div>
     ${unitsPreview(manifests, progress)}
   </div>`;

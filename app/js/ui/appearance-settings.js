@@ -12,6 +12,15 @@ export function renderAppearanceSettings(container) {
       </div>
     </div>
 
+    <div class="settings-row">
+      <label for="interfaceStyle">Estilo da interface</label>
+      <select id="interfaceStyle">
+        <option value="simple">Simples</option>
+        <option value="complete">Completo</option>
+      </select>
+      <p class="settings-subtitle">Simples mostra só o essencial para estudar e um botão de tamanho das letras. Completo mostra o painel inteiro.</p>
+    </div>
+
     <div class="settings-inline">
       <label for="darkTheme">Tema escuro</label>
       <input id="darkTheme" type="checkbox" ${settings.theme === 'dark' ? 'checked' : ''}>
@@ -55,16 +64,22 @@ export function renderAppearanceSettings(container) {
     </div>
   `;
 
+  const interfaceStyle = container.querySelector('#interfaceStyle');
   const fontSize = container.querySelector('#fontSize');
   const fontFamily = container.querySelector('#fontFamily');
   const autoTextColor = container.querySelector('#autoTextColor');
   const textColor = container.querySelector('#textColor');
 
+  interfaceStyle.value = settings.interfaceStyle;
   fontSize.value = settings.fontSize;
   fontFamily.value = settings.fontFamily;
 
   container.querySelector('#darkTheme').addEventListener('change', event => {
     updateSettings({ theme: event.target.checked ? 'dark' : 'light' });
+  });
+
+  interfaceStyle.addEventListener('change', event => {
+    updateSettings({ interfaceStyle: event.target.value });
   });
 
   fontSize.addEventListener('change', event => {
