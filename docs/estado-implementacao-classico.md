@@ -47,6 +47,20 @@ T1 e P6 estão homologados. P7 avança incrementalmente por unidade, preservando
 | P8 — Mídia/publicação | `NAO_INICIADO` | — |
 | P9 — E2E / Clássico homologado | `NAO_INICIADO` | — |
 
+## Affordance de clique nas linhas de lição/unidade
+
+```text
+Estado consolidado: IMPLEMENTADO
+Estado técnico: implementado
+Estado de homologação: correção visual pontual, validada por captura real
+Estado de mídia: SEM_DEPENDENCIA
+Estado de publicação: PUBLICAVEL
+```
+
+Achado do usuário: dentro de uma unidade, as linhas de lição não deixavam claro que eram clicáveis — a seta `→` era só texto cinza-claro sem nenhum estado de interação na linha.
+
+Correção: `.row-arrow` virou um selo circular com a cor de destaque do curso, visível em repouso (não só no hover), reaproveitado nas linhas de unidade da home e nas linhas de lição/verificação dentro da unidade. A linha inteira ganhou fundo ao passar o mouse/focar e o título destaca a cor de destaque. No mobile, a seta deixou de ser escondida por completo — fica visível em versão compacta, mantendo a affordance para o público de baixa familiaridade com interface que motivou o estilo Simples.
+
 ## Estilo da interface — Simples e Completo
 
 ```text

@@ -36,6 +36,7 @@ for (const unitRef of catalog.units) {
   const unitMarkup = unitHtml(manifest);
   assert.match(unitMarkup, new RegExp(manifest.id));
   assert.doesNotMatch(unitMarkup, /Unidade ainda não publicada/i);
+  assert.ok((unitMarkup.match(/class="row-arrow"/g) || []).length >= manifest.lessons.length, `${manifest.id} precisa de affordance visível (row-arrow) em cada lição listada`);
 
   for (const lessonRef of manifest.lessons) {
     const loaded = await service.loadLesson(manifest.id, lessonRef.id);
