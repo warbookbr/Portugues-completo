@@ -67,11 +67,17 @@ const progressSchema = JSON.parse(read('schemas/progress.schema.json'));
 assert.ok(!JSON.stringify(progressSchema).includes('interfaceStyle'), 'estilo da interface não pertence ao progresso');
 
 // O cabeçalho enxuto e o botão só existem no estilo Simples.
+
+// Dentro de uma unidade, a trilha "Curso > ..." e a pílula de nível/ordem
+// somem no Simples: já são redundantes com o cabeçalho e o título.
 const interfaceCss = read('app/css/interface-style.css');
 assert.match(interfaceCss, /html\[data-interface-style="simple"\] \.app-brand/);
 assert.match(interfaceCss, /data-nav-route="plan"/);
 assert.match(interfaceCss, /data-nav-route="performance"/);
 assert.doesNotMatch(interfaceCss, /data-nav-route="units"\]\s*\{?\s*\n?\s*display: none/, 'Unidades deve continuar alcançável no Simples');
+assert.match(interfaceCss, /\[data-unit-id\] > \.breadcrumbs/, 'a trilha da unidade deve ser escondida no Simples');
+assert.match(interfaceCss, /\.unit-hero \.eyebrow/, 'a pílula de nível/ordem da unidade deve ser escondida no Simples');
+
 
 const appJs = read('app/js/app.js');
 assert.match(appJs, /mountFontSizeControl\(fontSizeRoot\)/);

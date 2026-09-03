@@ -84,6 +84,14 @@ html[data-interface-style="simple"] .dashboard-grid {
   grid-template-columns: 1fr;
 }
 
+/* Dentro de uma unidade, a trilha "Curso › ..." e a pílula de nível/ordem
+   já são redundantes com o cabeçalho enxuto (Início/Unidades sempre visíveis)
+   e com o próprio título da unidade. */
+html[data-interface-style="simple"] [data-unit-id] > .breadcrumbs,
+html[data-interface-style="simple"] .unit-hero .eyebrow {
+  display: none;
+}
+
 @media (max-width: 1020px) {
   html[data-interface-style="simple"] .app-header-inner {
     grid-template-columns: 1fr auto;
