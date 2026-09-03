@@ -47,6 +47,22 @@ T1 e P6 estão homologados. P7 avança incrementalmente por unidade, preservando
 | P8 — Mídia/publicação | `NAO_INICIADO` | — |
 | P9 — E2E / Clássico homologado | `NAO_INICIADO` | — |
 
+## Reduzir a home e o cabeçalho no Simples
+
+```text
+Estado consolidado: IMPLEMENTADO
+Estado técnico: implementado
+Estado de homologação: correção visual pontual, validada por captura real
+Estado de mídia: SEM_DEPENDENCIA
+Estado de publicação: PUBLICAVEL
+```
+
+Achado do usuário: na home, a pílula `<Nível> · Unidade <N>` do card "Comece por aqui" duplicava o que já aparece no card `Unidades do curso` logo abaixo; e o botão `?` de Ajuda não agregava nada essencial ao Simples, já que a página de Ajuda reúne sobretudo atalhos (continuar estudando, plano, revisões) que no Simples já saíram da navegação ou viraram card na home.
+
+Correção: `.course-context` (a pílula) e `.header-utilities .utility-link[href="#/ajuda"]` ficam ocultos por CSS só no Simples. O Completo preserva os dois.
+
+Trade-off registrado: no Simples não há mais caminho até `#/metodologia` ("Como o curso funciona"). É aceitável porque essa página é material de apoio institucional, não currículo, e quem quiser esse nível de detalhe pode trocar para o estilo Completo em Configurações.
+
 ## Reduzir metadados internos da tela de unidade no Simples
 
 ```text

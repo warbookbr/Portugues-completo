@@ -77,6 +77,9 @@ assert.match(interfaceCss, /data-nav-route="performance"/);
 assert.doesNotMatch(interfaceCss, /data-nav-route="units"\]\s*\{?\s*\n?\s*display: none/, 'Unidades deve continuar alcançável no Simples');
 assert.match(interfaceCss, /\[data-unit-id\] > \.breadcrumbs/, 'a trilha da unidade deve ser escondida no Simples');
 assert.match(interfaceCss, /\.unit-hero \.eyebrow/, 'a pílula de nível/ordem da unidade deve ser escondida no Simples');
+assert.match(interfaceCss, /\.course-context\s*\{/, 'a pílula de nível/unidade na home deve ser escondida no Simples');
+assert.match(interfaceCss, /\.utility-link\[href="#\/ajuda"\]/, 'o botão de Ajuda deve ser escondido no Simples');
+
 
 
 const appJs = read('app/js/app.js');
