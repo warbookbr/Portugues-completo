@@ -1,0 +1,487 @@
+{
+  "schemaVersion": 1,
+  "id": "N0-U07-V01",
+  "type": "integrated-unit-verification",
+  "title": "Verificação: ler e escrever palavras",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Verificar se o aluno lê palavras e frases inéditas e escreve com fichas palavras ouvidas inéditas formadas por sílabas de consoante e vogal com todas as letras e posições ensinadas na unidade, incluindo o H inicial sem som.",
+  "prerequisites": [
+    "N0-U07-L01",
+    "N0-U07-L02",
+    "N0-U07-L03",
+    "N0-U07-L04",
+    "N0-U07-L05",
+    "N0-U07-L06",
+    "N0-U07-L07"
+  ],
+  "designPrinciples": [
+    "usar só palavras que não aparecem nas lições da unidade, com o mesmo padrão de sílabas e letras",
+    "liberar o áudio da palavra-alvo de leitura só depois que o aluno marca que tentou ler",
+    "nos itens de escrita, oferecer a palavra inteira por TTS e letras como fichas, com distratores plausíveis",
+    "manter leitura e escrita como agrupamentos separados e não compensáveis",
+    "não mostrar a resposta correta antes do fim da verificação",
+    "não usar velocidade, pronúncia ou sotaque como critério"
+  ],
+  "limits": [
+    "não usar dígrafos (ch, lh, nh, rr, ss, qu, gu), til, cedilha nem sílabas com consoante no fim ou com duas consoantes no começo; esses casos ficam para a N0-U08",
+    "não ensinar regras de posição (S entre vogais, R e X no meio da palavra, C e G antes de E e I); quando necessário, apenas avisar que esses casos ficam para depois",
+    "não usar áudio de som isolado de letra; todo áudio é de palavra inteira",
+    "não liberar o áudio da palavra-alvo antes da tentativa de leitura",
+    "não transformar a lição em recitação de famílias silábicas",
+    "não avaliar pronúncia, sotaque ou velocidade",
+    "não cobrar escrita livre; a escrita própria foi registrada na lição 7",
+    "não cobrar a distinção entre E e O abertos e fechados"
+  ],
+  "coverage": [
+    {
+      "competency": "ler palavras inéditas formadas por sílabas de consoante e vogal com as letras da unidade",
+      "evidence": [
+        "V01-Q01"
+      ]
+    },
+    {
+      "competency": "ler palavras inéditas com H inicial sem som",
+      "evidence": [
+        "V01-Q01"
+      ]
+    },
+    {
+      "competency": "ler frases curtas formadas só com letras ensinadas",
+      "evidence": [
+        "V01-Q02"
+      ]
+    },
+    {
+      "competency": "escrever com fichas palavras ouvidas inéditas, distinguindo letras parecidas",
+      "evidence": [
+        "V01-Q03"
+      ]
+    }
+  ],
+  "media": {
+    "tts": "palavras inteiras: opções de áudio liberadas depois da tentativa de leitura em V01-Q01 e estímulo dos itens de escrita em V01-Q03",
+    "controlledAudio": [],
+    "video": "nao necessario",
+    "images": "nao necessarias"
+  },
+  "supportMaterials": {
+    "curatedMedia": [],
+    "runtimeResources": [
+      {
+        "type": "TTS_OK",
+        "locations": [
+          "V01-Q01 (depois da tentativa)",
+          "V01-Q03"
+        ],
+        "purpose": "falar palavras inteiras comuns; a resposta depende de reconhecer a palavra, não de detalhe acústico sensível à voz do dispositivo"
+      }
+    ],
+    "generatedVisualResources": [
+      {
+        "type": "UI_RENDERED_ATTEMPT_GATED_AUDIO_OPTIONS",
+        "locations": [
+          "V01-Q01"
+        ],
+        "purpose": "mostrar a palavra escrita primeiro e liberar as opções de áudio só depois da tentativa de leitura"
+      },
+      {
+        "type": "UI_RENDERED_LETTER_TILES",
+        "locations": [
+          "V01-Q03"
+        ],
+        "purpose": "oferecer letras como fichas de texto para montar a palavra ouvida, com distratores plausíveis"
+      }
+    ],
+    "productionQueueRequired": false,
+    "publicationDependency": "não há mídia humana obrigatória",
+    "decisionRationale": "texto, fichas e TTS de palavra inteira produzem a evidência de leitura e escrita de palavras inéditas sem depender de áudio de fonema isolado."
+  },
+  "tasks": [
+    {
+      "id": "V01-Q01",
+      "cluster": "wordReading",
+      "type": "word-reading-transfer",
+      "interaction": "composite",
+      "title": "Leia palavras novas",
+      "instruction": "As palavras que respondem às perguntas ainda não apareceram nas lições. Leia as opções e escolha a que responde à pergunta. Quando a pergunta disser Leia, tente ler a palavra primeiro; o áudio só fica disponível depois que você marcar que tentou.",
+      "items": [
+        {
+          "prompt": "Qual destas coisas usamos para construir uma parede?",
+          "options": [
+            "tapete",
+            "tijolo",
+            "tomate"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "prompt": "Qual destas é uma fruta verde, boa para fazer vitamina?",
+          "options": [
+            "acabado",
+            "abacate",
+            "abafado"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "prompt": "Qual destas palavras fala de um emprego aberto ou de um lugar livre para estacionar?",
+          "options": [
+            "vala",
+            "vaga",
+            "saga"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "prompt": "Qual destas coisas usamos para trancar um portão?",
+          "options": [
+            "cadeado",
+            "calado",
+            "colado"
+          ],
+          "correctIndex": 0
+        },
+        {
+          "prompt": "Leia: BIGODE. Depois marque que tentou e escolha o áudio que diz essa palavra.",
+          "audioOptions": [
+            {
+              "label": "A",
+              "ttsText": "pagode"
+            },
+            {
+              "label": "B",
+              "ttsText": "bigode"
+            },
+            {
+              "label": "C",
+              "ttsText": "bife"
+            }
+          ],
+          "correctIndex": 1,
+          "attemptGateRequired": true,
+          "audioOptionTextVisible": false
+        },
+        {
+          "prompt": "Leia: TAPIOCA. Depois marque que tentou e escolha o áudio que diz essa palavra.",
+          "audioOptions": [
+            {
+              "label": "A",
+              "ttsText": "pipoca"
+            },
+            {
+              "label": "B",
+              "ttsText": "tampa"
+            },
+            {
+              "label": "C",
+              "ttsText": "tapioca"
+            }
+          ],
+          "correctIndex": 2,
+          "attemptGateRequired": true,
+          "audioOptionTextVisible": false
+        },
+        {
+          "prompt": "Leia: LAGOA. Depois marque que tentou e escolha o áudio que diz essa palavra.",
+          "audioOptions": [
+            {
+              "label": "A",
+              "ttsText": "lagoa"
+            },
+            {
+              "label": "B",
+              "ttsText": "lajota"
+            },
+            {
+              "label": "C",
+              "ttsText": "alagado"
+            }
+          ],
+          "correctIndex": 0,
+          "attemptGateRequired": true,
+          "audioOptionTextVisible": false
+        },
+        {
+          "prompt": "Qual palavra fala de todas as pessoas do mundo?",
+          "options": [
+            "unidade",
+            "umidade",
+            "humanidade"
+          ],
+          "correctIndex": 2
+        }
+      ]
+    },
+    {
+      "id": "V01-Q02",
+      "cluster": "wordReading",
+      "type": "sentence-reading-transfer",
+      "interaction": "composite",
+      "title": "Leia frases novas",
+      "instruction": "Leia a frase com calma, palavra por palavra. Depois responda à pergunta.",
+      "items": [
+        {
+          "sentence": "Renato pega o tijolo.",
+          "prompt": "O que Renato pega?",
+          "options": [
+            "o cadeado",
+            "o tijolo",
+            "o abacate"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "sentence": "Dona Lena come tapioca de coco.",
+          "prompt": "De que é a tapioca?",
+          "options": [
+            "de banana",
+            "de abacate",
+            "de coco"
+          ],
+          "correctIndex": 2
+        },
+        {
+          "sentence": "A lagoa da vila é bonita.",
+          "prompt": "Como é a lagoa?",
+          "options": [
+            "lotada",
+            "bonita",
+            "vazia"
+          ],
+          "correctIndex": 1
+        }
+      ]
+    },
+    {
+      "id": "V01-Q03",
+      "cluster": "wordWriting",
+      "type": "dictation-with-tiles-transfer",
+      "interaction": "composite",
+      "title": "Escreva palavras novas",
+      "instruction": "Ouça a palavra e toque nas letras na ordem certa. Uma letra pode ser usada mais de uma vez. Se errar, toque em Limpar sequência e monte de novo. Você pode ouvir quantas vezes quiser.",
+      "items": [
+        {
+          "ttsCue": "pomada",
+          "availableTiles": [
+            "o",
+            "p",
+            "a",
+            "b",
+            "m",
+            "t",
+            "d"
+          ],
+          "correctSequence": [
+            "p",
+            "o",
+            "m",
+            "a",
+            "d",
+            "a"
+          ]
+        },
+        {
+          "ttsCue": "medida",
+          "availableTiles": [
+            "t",
+            "a",
+            "n",
+            "i",
+            "m",
+            "e",
+            "d"
+          ],
+          "correctSequence": [
+            "m",
+            "e",
+            "d",
+            "i",
+            "d",
+            "a"
+          ]
+        },
+        {
+          "ttsCue": "cavalo",
+          "availableTiles": [
+            "v",
+            "c",
+            "o",
+            "f",
+            "l",
+            "g",
+            "a"
+          ],
+          "correctSequence": [
+            "c",
+            "a",
+            "v",
+            "a",
+            "l",
+            "o"
+          ]
+        },
+        {
+          "ttsCue": "dezena",
+          "availableTiles": [
+            "a",
+            "z",
+            "t",
+            "d",
+            "n",
+            "e",
+            "s"
+          ],
+          "correctSequence": [
+            "d",
+            "e",
+            "z",
+            "e",
+            "n",
+            "a"
+          ]
+        },
+        {
+          "ttsCue": "rota",
+          "availableTiles": [
+            "d",
+            "r",
+            "l",
+            "t",
+            "o",
+            "a"
+          ],
+          "correctSequence": [
+            "r",
+            "o",
+            "t",
+            "a"
+          ]
+        },
+        {
+          "ttsCue": "jogada",
+          "availableTiles": [
+            "d",
+            "o",
+            "c",
+            "j",
+            "g",
+            "a",
+            "z"
+          ],
+          "correctSequence": [
+            "j",
+            "o",
+            "g",
+            "a",
+            "d",
+            "a"
+          ]
+        },
+        {
+          "ttsCue": "nuca",
+          "availableTiles": [
+            "a",
+            "n",
+            "g",
+            "u",
+            "m",
+            "c"
+          ],
+          "correctSequence": [
+            "n",
+            "u",
+            "c",
+            "a"
+          ]
+        },
+        {
+          "ttsCue": "sujo",
+          "availableTiles": [
+            "j",
+            "z",
+            "g",
+            "s",
+            "u",
+            "o"
+          ],
+          "correctSequence": [
+            "s",
+            "u",
+            "j",
+            "o"
+          ]
+        }
+      ]
+    }
+  ],
+  "assessmentBehavior": {
+    "pronunciationPolicy": "não avaliar sotaque nem pronúncia",
+    "ttsPolicy": "áudio sempre de palavra inteira; na leitura, só depois da tentativa; na escrita, repetição livre sem penalidade",
+    "feedbackPolicy": "a correção detalhada aparece só no fim da verificação",
+    "timeLimit": false
+  },
+  "completionEvidence": {
+    "observablePerformance": "Ler palavras e frases que não apareceram nas lições e montar com fichas palavras ouvidas inéditas.",
+    "clusters": {
+      "wordReading": {
+        "evidence": [
+          "V01-Q01",
+          "V01-Q02"
+        ],
+        "required": true,
+        "rule": "acertar pelo menos 7 dos 8 itens de V01-Q01, incluindo pelo menos 2 dos 3 itens com áudio depois da tentativa, e pelo menos 2 das 3 frases de V01-Q02"
+      },
+      "wordWriting": {
+        "evidence": [
+          "V01-Q03"
+        ],
+        "required": true,
+        "rule": "montar corretamente pelo menos 7 das 8 palavras"
+      }
+    },
+    "nonCompensable": true,
+    "completionRule": "leitura e escrita são obrigatórias e não se compensam: ir muito bem na leitura não supre a escrita, e o contrário também vale. Se um agrupamento não for atingido, o aluno volta às lições ligadas às letras em que errou.",
+    "notSufficient": [
+      "ouvir o áudio das opções sem tentar ler antes",
+      "acertar a leitura por eliminação sem ler as opções",
+      "acertar só um dos agrupamentos"
+    ],
+    "activityPolicies": {
+      "V01-Q01": {
+        "threshold": 0.875
+      },
+      "V01-Q02": {
+        "threshold": 0.6667
+      },
+      "V01-Q03": {
+        "threshold": 0.875
+      }
+    }
+  },
+  "remediationRoutes": [
+    {
+      "when": "erros com vogais ou palavras só de vogais",
+      "goTo": "N0-U07-L01"
+    },
+    {
+      "when": "erros com M, L, S, F, V ou N",
+      "goTo": "N0-U07-L02"
+    },
+    {
+      "when": "erros com P ou T",
+      "goTo": "N0-U07-L03"
+    },
+    {
+      "when": "erros com B ou D, ou troca entre P e B ou entre T e D",
+      "goTo": "N0-U07-L04"
+    },
+    {
+      "when": "erros com C, G, J, Z, X ou R",
+      "goTo": "N0-U07-L05"
+    },
+    {
+      "when": "erros com H no começo da palavra",
+      "goTo": "N0-U07-L06"
+    }
+  ]
+}

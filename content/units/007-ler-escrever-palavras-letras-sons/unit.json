@@ -1,0 +1,142 @@
+{
+  "schemaVersion": 1,
+  "id": "N0-U07",
+  "levelId": "N0",
+  "order": 7,
+  "title": "Ler e escrever palavras: letras e sons",
+  "objective": "Ler e escrever palavras novas juntando o som de cada letra com as vogais, sílaba por sílaba.",
+  "competencies": [
+    {
+      "id": "N0-U07-C01",
+      "label": "reconhecer o som das vogais em palavras ouvidas, incluindo pelo uso E e O abertos e fechados"
+    },
+    {
+      "id": "N0-U07-C02",
+      "label": "ligar som e letra pela sílaba de consoante e vogal com M, L, S, F, V, N, P, T, B, D, C, G, J, Z, X e R nas posições ensinadas"
+    },
+    {
+      "id": "N0-U07-C03",
+      "label": "ler sílabas e palavras inéditas formadas por sílabas de consoante e vogal com as letras ensinadas"
+    },
+    {
+      "id": "N0-U07-C04",
+      "label": "escrever com fichas palavras ouvidas formadas por sílabas de consoante e vogal"
+    },
+    {
+      "id": "N0-U07-C05",
+      "label": "ler frases curtas formadas só com palavras de letras e sílabas ensinadas"
+    },
+    {
+      "id": "N0-U07-C06",
+      "label": "reconhecer que o H no começo da palavra não tem som e lembrar palavras frequentes escritas com H"
+    },
+    {
+      "id": "N0-U07-C07",
+      "label": "distinguir na escuta e na escrita as letras parecidas P e B, T e D"
+    }
+  ],
+  "prerequisites": [
+    "N0-U02-V02"
+  ],
+  "lessons": [
+    {
+      "id": "N0-U07-L01",
+      "order": 1,
+      "title": "Os sons das vogais",
+      "path": "lessons/001-sons-das-vogais.json",
+      "competencyIds": [
+        "N0-U07-C01",
+        "N0-U07-C03",
+        "N0-U07-C04",
+        "N0-U07-C05"
+      ]
+    },
+    {
+      "id": "N0-U07-L02",
+      "order": 2,
+      "title": "M, L, S, F, V e N",
+      "path": "lessons/002-letras-m-l-s-f-v-n.json",
+      "competencyIds": [
+        "N0-U07-C02",
+        "N0-U07-C03",
+        "N0-U07-C04",
+        "N0-U07-C05"
+      ]
+    },
+    {
+      "id": "N0-U07-L03",
+      "order": 3,
+      "title": "P e T",
+      "path": "lessons/003-letras-p-e-t.json",
+      "competencyIds": [
+        "N0-U07-C02",
+        "N0-U07-C03",
+        "N0-U07-C04",
+        "N0-U07-C05"
+      ]
+    },
+    {
+      "id": "N0-U07-L04",
+      "order": 4,
+      "title": "B e D",
+      "path": "lessons/004-letras-b-e-d.json",
+      "competencyIds": [
+        "N0-U07-C02",
+        "N0-U07-C03",
+        "N0-U07-C04",
+        "N0-U07-C05",
+        "N0-U07-C07"
+      ]
+    },
+    {
+      "id": "N0-U07-L05",
+      "order": 5,
+      "title": "C, G, J, Z, X e R",
+      "path": "lessons/005-letras-c-g-j-z-x-r.json",
+      "competencyIds": [
+        "N0-U07-C02",
+        "N0-U07-C03",
+        "N0-U07-C04",
+        "N0-U07-C05"
+      ]
+    },
+    {
+      "id": "N0-U07-L06",
+      "order": 6,
+      "title": "H no começo da palavra",
+      "path": "lessons/006-h-no-comeco-da-palavra.json",
+      "competencyIds": [
+        "N0-U07-C03",
+        "N0-U07-C04",
+        "N0-U07-C05",
+        "N0-U07-C06"
+      ]
+    },
+    {
+      "id": "N0-U07-L07",
+      "order": 7,
+      "title": "Revisão: ler e escrever palavras novas",
+      "path": "lessons/007-revisao-ler-escrever-palavras-novas.json",
+      "competencyIds": [
+        "N0-U07-C03",
+        "N0-U07-C04",
+        "N0-U07-C05"
+      ]
+    }
+  ],
+  "verification": {
+    "id": "N0-U07-V01",
+    "path": "integrated-verification.json",
+    "competencyIds": [
+      "N0-U07-C03",
+      "N0-U07-C04",
+      "N0-U07-C05",
+      "N0-U07-C06",
+      "N0-U07-C07"
+    ]
+  },
+  "publication": {
+    "status": "READY",
+    "blockers": []
+  }
+}

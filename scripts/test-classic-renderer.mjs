@@ -174,6 +174,6 @@ assert.match(n4Html, /Registrar resposta/i);
 assert.equal(typeof n4Lesson.runtime.presentation?.intro, 'string');
 assert.notEqual(n4Lesson.runtime.presentation.intro, n4Lesson.runtime.objective);
 
-assert.equal(lessonCount, 68);
-assert.equal(verificationCount, 7);
-console.log(`Renderer clássico P7: ${lessonCount} lições + ${verificationCount} verificações, N0-U03/U04/U05/U06 e caso-âncora N4 preservados.`);
+assert.equal(lessonCount, 82);
+assert.equal(verificationCount, 9);
+console.log(`Renderer clássico P7: ${lessonCount} lições + ${verificationCount} verificações, N0 (caminho principal e Trilha de Alfabetização) e caso-âncora N4 preservados.`);

@@ -1,0 +1,447 @@
+{
+  "schemaVersion": 1,
+  "id": "N0-U07-L01",
+  "title": "Os sons das vogais",
+  "studentObjective": "Ouvir o som de A, E, I, O e U dentro das palavras e ler e escrever palavras curtas feitas só com essas letras.",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Relacionar cada vogal ao seu som em palavras faladas, perceber pelo uso que E e O podem ser abertos ou fechados, reconhecer a vogal sozinha como sílaba e ler e escrever palavras formadas só por vogais.",
+  "competencies": [
+    "reconhecer o som de cada vogal no começo de palavras ouvidas",
+    "perceber pelo uso que E e O podem soar abertos ou fechados, sem regra de acentuação",
+    "reconhecer que uma vogal sozinha pode formar uma sílaba",
+    "ler e escrever com fichas palavras formadas só por vogais",
+    "localizar palavras numa frase curta formada só por vogais"
+  ],
+  "prerequisites": [
+    "N0-U02-V02"
+  ],
+  "limits": [
+    "não usar dígrafos (ch, lh, nh, rr, ss, qu, gu), til, cedilha nem sílabas com consoante no fim ou com duas consoantes no começo; esses casos ficam para a N0-U08",
+    "não ensinar regras de posição (S entre vogais, R e X no meio da palavra, C e G antes de E e I); quando necessário, apenas avisar que esses casos ficam para depois",
+    "não usar áudio de som isolado de letra; todo áudio é de palavra inteira",
+    "não liberar o áudio da palavra-alvo antes da tentativa de leitura",
+    "não transformar a lição em recitação de famílias silábicas",
+    "não avaliar pronúncia, sotaque ou velocidade",
+    "não ensinar regras de acentuação; o acento aparece só como sinal que ajuda a mostrar o som em pé, avó e avô",
+    "não avaliar a distinção entre E e O abertos e fechados; ela fica em prática não obrigatória"
+  ],
+  "media": {
+    "tts": "TTS do dispositivo apenas com palavras inteiras: palavras-chave das demonstrações, estímulo dos itens de escuta e de escrita com fichas, e opções de áudio liberadas depois da tentativa de leitura",
+    "controlledAudio": [],
+    "video": "nao necessario",
+    "images": "nao necessarias"
+  },
+  "supportMaterials": {
+    "curatedMedia": [],
+    "runtimeResources": [
+      {
+        "type": "TTS_OK",
+        "locations": [
+          "L01-B02",
+          "L01-B03",
+          "L01-C01",
+          "L01-A01",
+          "L01-A02 (depois da tentativa)",
+          "L01-A03"
+        ],
+        "purpose": "falar palavras inteiras conhecidas; a decisão do aluno depende de reconhecer a palavra, não de detalhe acústico sensível à voz do dispositivo"
+      }
+    ],
+    "generatedVisualResources": [
+      {
+        "type": "UI_RENDERED_LETTER_TILES",
+        "locations": [
+          "L01-A03"
+        ],
+        "purpose": "oferecer letras como fichas de texto para montar a palavra ouvida, com distratores plausíveis e sem revelar a ordem"
+      },
+      {
+        "type": "UI_RENDERED_ATTEMPT_GATED_AUDIO_OPTIONS",
+        "locations": [
+          "L01-A02"
+        ],
+        "purpose": "mostrar a palavra escrita primeiro e liberar as opções de áudio só depois que o aluno marca que tentou ler"
+      }
+    ],
+    "productionQueueRequired": false,
+    "publicationDependency": "não há mídia humana obrigatória; texto, fichas e TTS de palavra inteira bastam",
+    "decisionRationale": "a lição liga som e letra por palavras inteiras faladas e por sílabas escritas. Áudio de fonema isolado não é usado porque o TTS é pouco confiável nesse caso. A distinção entre vogal aberta e fechada usa palavras comuns cuja pronúncia o TTS realiza de forma estável e fica em prática não obrigatória."
+  },
+  "sequence": [
+    {
+      "id": "L01-B01",
+      "type": "objective",
+      "focus": "read-or-listen",
+      "text": "Você já conhece as vogais: A, E, I, O e U. Agora vai ouvir o som de cada uma dentro de palavras. No fim, vai ler e escrever palavras curtas feitas só com vogais."
+    },
+    {
+      "id": "L01-B02",
+      "type": "demonstration",
+      "focus": "listen-then-observe",
+      "title": "O som de cada vogal",
+      "text": "Ouça cada palavra e preste atenção no primeiro som. Esse primeiro som é o som da vogal que aparece no começo da palavra escrita.",
+      "examples": [
+        "A: ano",
+        "E: ela",
+        "I: ida, como em ida e volta",
+        "O: ovo",
+        "U: uva"
+      ],
+      "ttsText": "ano. ela. ida. ovo. uva.",
+      "note": "A vogal tem o mesmo som quando a letra é maiúscula ou minúscula: A e a, E e e, I e i, O e o, U e u."
+    },
+    {
+      "id": "L01-B03",
+      "type": "demonstration",
+      "focus": "listen-then-compare",
+      "title": "E e O podem soar de dois jeitos",
+      "text": "Ouça pé e ele. No E de pé, a boca fica mais aberta. No E de ele, a boca fica mais fechada. A letra é a mesma, mas o som muda um pouco.\n\nCom o O acontece a mesma coisa. Ouça avó e avô. No O de avó, a boca fica mais aberta. No O de avô, fica mais fechada.",
+      "examples": [
+        "E aberto: pé, ela",
+        "E fechado: ele",
+        "O aberto: avó",
+        "O fechado: avô, ovo"
+      ],
+      "ttsText": "pé. ela. ele. avó. avô. ovo.",
+      "note": "Em pé, avó e avô aparece um pequeno sinal em cima da vogal. Esse sinal se chama acento e ajuda a mostrar o som. Em muitas palavras não há acento, como em ela e ele; aí você reconhece o som pelo uso da palavra. As regras do acento ficam para depois."
+    },
+    {
+      "id": "L01-C01",
+      "type": "quick-check-set",
+      "focus": "listen-and-respond",
+      "instruction": "Ouça cada palavra e responda. Esta parte é só para praticar.",
+      "items": [
+        {
+          "question": "Em café, o E soa como em pé ou como em ele?",
+          "ttsCue": "café",
+          "options": [
+            "como em pé",
+            "como em ele"
+          ],
+          "correctIndex": 0
+        },
+        {
+          "question": "Em medo, o E soa como em pé ou como em ele?",
+          "ttsCue": "medo",
+          "options": [
+            "como em pé",
+            "como em ele"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "question": "Em bola, o O soa como em avó ou como em avô?",
+          "ttsCue": "bola",
+          "options": [
+            "como em avó",
+            "como em avô"
+          ],
+          "correctIndex": 0
+        },
+        {
+          "question": "Em bolo, o O soa como em avó ou como em avô?",
+          "ttsCue": "bolo",
+          "options": [
+            "como em avó",
+            "como em avô"
+          ],
+          "correctIndex": 1
+        }
+      ]
+    },
+    {
+      "id": "L01-B04",
+      "type": "strategy",
+      "focus": "listen-and-observe",
+      "title": "Uma vogal sozinha pode ser uma sílaba",
+      "text": "Fale devagar: u-va. A primeira sílaba é só o som de U. Em o-vo, a primeira sílaba é só o O. Quando uma sílaba tem uma letra só, essa letra é uma vogal.\n\nPor isso, algumas palavras curtas são feitas só com vogais. Para ler uma delas, diga o som de cada vogal, uma depois da outra, sem parar no meio.",
+      "examples": [
+        "u-va",
+        "o-vo",
+        "a-no",
+        "e-la",
+        "i-da"
+      ]
+    },
+    {
+      "id": "L01-A01",
+      "type": "guided-activity",
+      "focus": "listen-and-respond",
+      "interaction": "composite",
+      "title": "Ouça e escolha a vogal do começo",
+      "instruction": "Ouça cada palavra. Escolha a vogal que escreve o primeiro som. Você pode ouvir quantas vezes quiser.",
+      "items": [
+        {
+          "prompt": "Qual vogal começa esta palavra?",
+          "ttsCue": "aluguel",
+          "options": [
+            "A",
+            "E",
+            "O"
+          ],
+          "correctIndex": 0
+        },
+        {
+          "prompt": "Qual vogal começa esta palavra?",
+          "ttsCue": "idade",
+          "options": [
+            "E",
+            "I",
+            "U"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "prompt": "Qual vogal começa esta palavra?",
+          "ttsCue": "unha",
+          "options": [
+            "O",
+            "I",
+            "U"
+          ],
+          "correctIndex": 2
+        },
+        {
+          "prompt": "Qual vogal começa esta palavra?",
+          "ttsCue": "economia",
+          "options": [
+            "E",
+            "A",
+            "I"
+          ],
+          "correctIndex": 0
+        },
+        {
+          "prompt": "Qual vogal começa esta palavra?",
+          "ttsCue": "ônibus",
+          "options": [
+            "U",
+            "O",
+            "A"
+          ],
+          "correctIndex": 1
+        }
+      ]
+    },
+    {
+      "id": "L01-A02",
+      "type": "guided-activity",
+      "focus": "read-and-respond",
+      "interaction": "composite",
+      "title": "Leia palavras feitas só com vogais",
+      "instruction": "Leia as palavras das opções e escolha a que responde à pergunta. Quando a pergunta disser Leia, tente ler a palavra primeiro; o áudio só fica disponível depois que você marcar que tentou.",
+      "items": [
+        {
+          "prompt": "Qual palavra usamos para cumprimentar alguém?",
+          "options": [
+            "ai",
+            "oi",
+            "eu"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "prompt": "Qual palavra uma pessoa diz quando sente dor?",
+          "options": [
+            "eu",
+            "oi",
+            "ai"
+          ],
+          "correctIndex": 2
+        },
+        {
+          "prompt": "Qual palavra completa a frase: ___ moro nesta rua.",
+          "options": [
+            "oi",
+            "eu",
+            "ai"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "prompt": "Leia: EI. Depois marque que tentou e escolha o áudio que diz essa palavra.",
+          "audioOptions": [
+            {
+              "label": "A",
+              "ttsText": "ai"
+            },
+            {
+              "label": "B",
+              "ttsText": "ei"
+            },
+            {
+              "label": "C",
+              "ttsText": "oi"
+            }
+          ],
+          "correctIndex": 1,
+          "attemptGateRequired": true,
+          "audioOptionTextVisible": false
+        }
+      ]
+    },
+    {
+      "id": "L01-A03",
+      "type": "guided-activity",
+      "focus": "listen-and-write",
+      "interaction": "composite",
+      "title": "Escreva a palavra que ouvir",
+      "instruction": "Ouça a palavra e toque nas letras na ordem certa. Uma letra pode ser usada mais de uma vez. Se errar, toque em Limpar sequência e monte de novo. Depois de verificar, a palavra escrita aparece para você conferir.",
+      "items": [
+        {
+          "ttsCue": "oi",
+          "availableTiles": [
+            "u",
+            "o",
+            "i",
+            "a"
+          ],
+          "correctSequence": [
+            "o",
+            "i"
+          ],
+          "transcriptHiddenUntilAttempt": true,
+          "transcriptAfterAttempt": "oi"
+        },
+        {
+          "ttsCue": "eu",
+          "availableTiles": [
+            "u",
+            "e",
+            "o",
+            "i"
+          ],
+          "correctSequence": [
+            "e",
+            "u"
+          ],
+          "transcriptHiddenUntilAttempt": true,
+          "transcriptAfterAttempt": "eu"
+        },
+        {
+          "ttsCue": "ai",
+          "availableTiles": [
+            "e",
+            "i",
+            "a",
+            "o"
+          ],
+          "correctSequence": [
+            "a",
+            "i"
+          ],
+          "transcriptHiddenUntilAttempt": true,
+          "transcriptAfterAttempt": "ai"
+        },
+        {
+          "ttsCue": "ei",
+          "availableTiles": [
+            "a",
+            "e",
+            "i",
+            "u"
+          ],
+          "correctSequence": [
+            "e",
+            "i"
+          ],
+          "transcriptHiddenUntilAttempt": true,
+          "transcriptAfterAttempt": "ei"
+        }
+      ]
+    },
+    {
+      "id": "L01-A04",
+      "type": "guided-activity",
+      "focus": "read-and-respond",
+      "interaction": "composite",
+      "title": "Leia uma frase curta",
+      "instruction": "Leia a frase com calma, palavra por palavra. Depois responda à pergunta.",
+      "items": [
+        {
+          "sentence": "Oi! E eu?",
+          "prompt": "Qual palavra da frase é um cumprimento?",
+          "options": [
+            "Oi",
+            "E",
+            "eu"
+          ],
+          "correctIndex": 0
+        },
+        {
+          "sentence": "Oi! E eu?",
+          "prompt": "Com qual palavra a pessoa fala dela mesma?",
+          "options": [
+            "Oi",
+            "E",
+            "eu"
+          ],
+          "correctIndex": 2
+        }
+      ]
+    },
+    {
+      "id": "L01-B05",
+      "type": "summary",
+      "focus": "read-or-listen",
+      "points": [
+        "As vogais A, E, I, O e U aparecem em quase todas as palavras.",
+        "O E e o O podem soar abertos, como em pé e avó, ou fechados, como em ele e avô.",
+        "Uma vogal sozinha pode formar uma sílaba, como o U de u-va.",
+        "Algumas palavras curtas são feitas só com vogais: oi, eu, ai, ei."
+      ],
+      "bridgeToNextLesson": "Na próxima lição, você vai juntar as vogais com as letras M, L, S, F, V e N para ler e escrever palavras como mala e fila."
+    }
+  ],
+  "assessmentBehavior": {
+    "pronunciationPolicy": "não avaliar sotaque nem pronúncia; variações regionais (TI e DI como tchi e dji, vogais finais, som do R) são aceitas",
+    "ttsPolicy": "áudio sempre de palavra inteira; nos itens de leitura, o áudio só é liberado depois que o aluno marca que tentou ler; nos itens de escuta e de escrita, o áudio pode ser repetido sem penalidade",
+    "retryPolicy": "nova tentativa sem penalidade",
+    "timeLimit": false
+  },
+  "completionEvidence": {
+    "observablePerformance": "Identificar a vogal inicial de palavras ouvidas, ler palavras formadas só por vogais escolhendo-as pelo sentido ou conferindo com áudio depois da tentativa, montar com fichas palavras ouvidas e localizar palavras numa frase curta.",
+    "clusters": {
+      "vowelSounds": {
+        "evidence": [
+          "L01-A01"
+        ],
+        "required": true,
+        "rule": "acertar pelo menos 4 dos 5 itens"
+      },
+      "wordReading": {
+        "evidence": [
+          "L01-A02",
+          "L01-A04"
+        ],
+        "required": true,
+        "rule": "acertar pelo menos 3 dos 4 itens de L01-A02 e os 2 itens da frase em L01-A04"
+      },
+      "wordWriting": {
+        "evidence": [
+          "L01-A03"
+        ],
+        "required": true,
+        "rule": "montar corretamente pelo menos 3 das 4 palavras"
+      }
+    },
+    "nonCompensable": true,
+    "completionRule": "os três agrupamentos são obrigatórios; acertar muito em um não compensa outro. A prática de L01-C01 sobre E e O abertos e fechados não entra na conclusão.",
+    "notSufficient": [
+      "ouvir o áudio das opções sem tentar ler antes",
+      "copiar a palavra mostrada depois da verificação",
+      "acertar só a escuta sem ler e escrever"
+    ],
+    "activityPolicies": {
+      "L01-A01": {
+        "threshold": 0.8
+      },
+      "L01-A02": {
+        "threshold": 0.75
+      },
+      "L01-A03": {
+        "threshold": 0.75
+      }
+    }
+  }
+}

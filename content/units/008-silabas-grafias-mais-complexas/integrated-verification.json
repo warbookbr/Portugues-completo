@@ -614,7 +614,18 @@
       "acertar a leitura só depois de ouvir a palavra-alvo",
       "reconhecer palavras de exemplo das lições sem ler palavras novas",
       "responder à pergunta da frase sem ler a frase"
-    ]
+    ],
+    "activityPolicies": {
+      "V01-Q01": {
+        "threshold": 0.875
+      },
+      "V01-Q02": {
+        "threshold": 0.8333
+      },
+      "V01-Q03": {
+        "threshold": 0.875
+      }
+    }
   },
   "remediationRoutes": {
     "leitura": [

@@ -1,0 +1,549 @@
+{
+  "schemaVersion": 1,
+  "id": "N0-U07-L02",
+  "title": "M, L, S, F, V e N",
+  "studentObjective": "Juntar o som de M, L, S, F, V e N com as vogais para ler e escrever palavras como mala, fila e vila.",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Estabelecer a correspondência entre as consoantes de som contínuo M, L, S, F, V e N e seus sons em sílabas de consoante e vogal, aplicando-a na leitura de palavras inéditas e na escrita de palavras ouvidas.",
+  "competencies": [
+    "relacionar M, L, S, F, V e N aos seus sons pela sílaba de consoante e vogal",
+    "ler sílabas e palavras inéditas com essas letras juntando consoante e vogal",
+    "escrever com fichas palavras ouvidas com essas letras",
+    "ler frases curtas formadas só com letras ensinadas",
+    "perceber que E e O no fim da palavra podem soar como I e U sem mudar a escrita"
+  ],
+  "prerequisites": [
+    "N0-U07-L01"
+  ],
+  "limits": [
+    "não usar dígrafos (ch, lh, nh, rr, ss, qu, gu), til, cedilha nem sílabas com consoante no fim ou com duas consoantes no começo; esses casos ficam para a N0-U08",
+    "não ensinar regras de posição (S entre vogais, R e X no meio da palavra, C e G antes de E e I); quando necessário, apenas avisar que esses casos ficam para depois",
+    "não usar áudio de som isolado de letra; todo áudio é de palavra inteira",
+    "não liberar o áudio da palavra-alvo antes da tentativa de leitura",
+    "não transformar a lição em recitação de famílias silábicas",
+    "não avaliar pronúncia, sotaque ou velocidade",
+    "usar S só no começo da palavra"
+  ],
+  "media": {
+    "tts": "TTS do dispositivo apenas com palavras inteiras: palavras-chave das demonstrações, estímulo dos itens de escuta e de escrita com fichas, e opções de áudio liberadas depois da tentativa de leitura",
+    "controlledAudio": [],
+    "video": "nao necessario",
+    "images": "nao necessarias"
+  },
+  "supportMaterials": {
+    "curatedMedia": [],
+    "runtimeResources": [
+      {
+        "type": "TTS_OK",
+        "locations": [
+          "L02-B02",
+          "L02-B03",
+          "L02-B04",
+          "L02-A01",
+          "L02-A02 (depois da tentativa)",
+          "L02-A03"
+        ],
+        "purpose": "falar palavras inteiras conhecidas; a decisão do aluno depende de reconhecer a palavra, não de detalhe acústico sensível à voz do dispositivo"
+      }
+    ],
+    "generatedVisualResources": [
+      {
+        "type": "UI_RENDERED_LETTER_TILES",
+        "locations": [
+          "L02-A03"
+        ],
+        "purpose": "oferecer letras como fichas de texto para montar a palavra ouvida, com distratores plausíveis e sem revelar a ordem"
+      },
+      {
+        "type": "UI_RENDERED_ATTEMPT_GATED_AUDIO_OPTIONS",
+        "locations": [
+          "L02-A02"
+        ],
+        "purpose": "mostrar a palavra escrita primeiro e liberar as opções de áudio só depois que o aluno marca que tentou ler"
+      }
+    ],
+    "productionQueueRequired": false,
+    "publicationDependency": "não há mídia humana obrigatória; texto, fichas e TTS de palavra inteira bastam",
+    "decisionRationale": "a lição liga som e letra por palavras inteiras faladas e por sílabas escritas. Áudio de fonema isolado não é usado porque o TTS é pouco confiável nesse caso. "
+  },
+  "sequence": [
+    {
+      "id": "L02-B01",
+      "type": "objective",
+      "focus": "read-or-listen",
+      "text": "Nesta lição, você vai juntar seis consoantes com as vogais: M, L, S, F, V e N. O som dessas letras pode ser esticado enquanto falamos, como mmmm ou ssss. Isso ajuda a ouvir a consoante e a vogal juntas."
+    },
+    {
+      "id": "L02-B02",
+      "type": "demonstration",
+      "focus": "listen-then-observe",
+      "title": "M e L",
+      "text": "Ouça mala. Para começar essa palavra, os lábios ficam fechados e o som sai pelo nariz: mmmala. Esse som é escrito com a letra M.\n\nOuça lua. A ponta da língua encosta atrás dos dentes de cima: llllua. Esse som é escrito com a letra L.",
+      "examples": [
+        "M m: MA, ME, MI, MO, MU",
+        "L l: LA, LE, LI, LO, LU",
+        "MA-LA: mala",
+        "LU-A: lua"
+      ],
+      "ttsText": "mala. lua."
+    },
+    {
+      "id": "L02-B03",
+      "type": "demonstration",
+      "focus": "listen-then-observe",
+      "title": "S e F",
+      "text": "Ouça sala. O ar passa entre os dentes, como um chiado fino: ssssala. Esse som é escrito com a letra S.\n\nOuça fila, como a fila do banco. Os dentes de cima encostam no lábio de baixo e o ar passa: ffffila. Esse som é escrito com a letra F.",
+      "examples": [
+        "S s: SA, SE, SI, SO, SU",
+        "F f: FA, FE, FI, FO, FU",
+        "SA-LA: sala",
+        "FI-LA: fila"
+      ],
+      "ttsText": "sala. fila.",
+      "note": "Nesta lição, o S aparece só no começo da palavra. No meio da palavra, entre duas vogais, ele pode ter outro som. Isso fica para depois."
+    },
+    {
+      "id": "L02-B04",
+      "type": "demonstration",
+      "focus": "listen-then-observe",
+      "title": "V e N",
+      "text": "Ouça vila. A boca fica como no F, mas a voz vibra: vvvvila. Esse som é escrito com a letra V. Ponha a mão no pescoço e compare ffff com vvvv: no V, você sente a vibração.\n\nOuça navio. A ponta da língua encosta atrás dos dentes de cima e o som sai pelo nariz: nnnavio. Esse som é escrito com a letra N.",
+      "examples": [
+        "V v: VA, VE, VI, VO, VU",
+        "N n: NA, NE, NI, NO, NU",
+        "VI-LA: vila",
+        "NA-VI-O: navio"
+      ],
+      "ttsText": "vila. navio."
+    },
+    {
+      "id": "L02-B05",
+      "type": "strategy",
+      "focus": "read",
+      "title": "Como ler uma sílaba e juntar a palavra",
+      "text": "Para ler uma sílaba, comece o som da consoante e passe para a vogal sem parar: mmmaaa, ma. Depois leia a sílaba seguinte e junte as duas: ma, la, mala.\n\nSe a palavra lida fizer sentido para você, provavelmente você leu certo. Se não fizer, leia de novo, sílaba por sílaba.",
+      "examples": [
+        "MA + LA = MALA",
+        "FI + LA = FILA",
+        "VI + LA = VILA"
+      ],
+      "note": "No fim de muitas palavras, o E soa quase como I, e o O soa quase como U. Mole soa como moli; levo soa como levu. Na escrita, continuam o E e o O."
+    },
+    {
+      "id": "L02-C01",
+      "type": "quick-check-set",
+      "focus": "read-and-respond",
+      "instruction": "Leia a sílaba e escolha a palavra que começa com ela. Esta parte é só para praticar.",
+      "items": [
+        {
+          "question": "Qual palavra começa com MU?",
+          "options": [
+            "mola",
+            "mula",
+            "mala"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "question": "Qual palavra começa com SO?",
+          "options": [
+            "sola",
+            "sala",
+            "sela"
+          ],
+          "correctIndex": 0
+        }
+      ]
+    },
+    {
+      "id": "L02-A01",
+      "type": "guided-activity",
+      "focus": "listen-and-respond",
+      "interaction": "composite",
+      "title": "Ouça e escolha a primeira sílaba",
+      "instruction": "Ouça cada palavra. Escolha a sílaba escrita que começa a palavra. Você pode ouvir quantas vezes quiser.",
+      "items": [
+        {
+          "prompt": "Qual sílaba começa esta palavra?",
+          "ttsCue": "sofá",
+          "options": [
+            "SU",
+            "SO",
+            "FO"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "prompt": "Qual sílaba começa esta palavra?",
+          "ttsCue": "fumaça",
+          "options": [
+            "FU",
+            "VU",
+            "FO"
+          ],
+          "correctIndex": 0
+        },
+        {
+          "prompt": "Qual sílaba começa esta palavra?",
+          "ttsCue": "neto",
+          "options": [
+            "ME",
+            "NI",
+            "NE"
+          ],
+          "correctIndex": 2
+        },
+        {
+          "prompt": "Qual sílaba começa esta palavra?",
+          "ttsCue": "vaca",
+          "options": [
+            "VA",
+            "FA",
+            "VE"
+          ],
+          "correctIndex": 0
+        },
+        {
+          "prompt": "Qual sílaba começa esta palavra?",
+          "ttsCue": "limão",
+          "options": [
+            "LE",
+            "LI",
+            "NI"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "prompt": "Qual sílaba começa esta palavra?",
+          "ttsCue": "museu",
+          "options": [
+            "MO",
+            "NU",
+            "MU"
+          ],
+          "correctIndex": 2
+        }
+      ]
+    },
+    {
+      "id": "L02-A02",
+      "type": "guided-activity",
+      "focus": "read-and-respond",
+      "interaction": "composite",
+      "title": "Leia palavras novas",
+      "instruction": "Leia as palavras das opções e escolha a que responde à pergunta. Quando a pergunta disser Leia, tente ler a palavra primeiro; o áudio só fica disponível depois que você marcar que tentou.",
+      "items": [
+        {
+          "prompt": "Qual destas palavras é um número?",
+          "options": [
+            "neve",
+            "nove",
+            "nave"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "prompt": "Qual destas coisas usamos nas mãos quando faz frio?",
+          "options": [
+            "uva",
+            "lava",
+            "luva"
+          ],
+          "correctIndex": 2
+        },
+        {
+          "prompt": "Qual palavra fala da vontade de comer?",
+          "options": [
+            "fome",
+            "fama",
+            "fumo"
+          ],
+          "correctIndex": 0
+        },
+        {
+          "prompt": "Qual palavra fala de um grupo de sete dias?",
+          "options": [
+            "salame",
+            "semana",
+            "Simone"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "prompt": "Leia: SONO. Depois marque que tentou e escolha o áudio que diz essa palavra.",
+          "audioOptions": [
+            {
+              "label": "A",
+              "ttsText": "sino"
+            },
+            {
+              "label": "B",
+              "ttsText": "sono"
+            },
+            {
+              "label": "C",
+              "ttsText": "sola"
+            }
+          ],
+          "correctIndex": 1,
+          "attemptGateRequired": true,
+          "audioOptionTextVisible": false
+        },
+        {
+          "prompt": "Leia: FIVELA. Depois marque que tentou e escolha o áudio que diz essa palavra.",
+          "audioOptions": [
+            {
+              "label": "A",
+              "ttsText": "favela"
+            },
+            {
+              "label": "B",
+              "ttsText": "fila"
+            },
+            {
+              "label": "C",
+              "ttsText": "fivela"
+            }
+          ],
+          "correctIndex": 2,
+          "attemptGateRequired": true,
+          "audioOptionTextVisible": false
+        }
+      ]
+    },
+    {
+      "id": "L02-A03",
+      "type": "guided-activity",
+      "focus": "listen-and-write",
+      "interaction": "composite",
+      "title": "Escreva a palavra que ouvir",
+      "instruction": "Ouça a palavra e toque nas letras na ordem certa. Uma letra pode ser usada mais de uma vez. Se errar, toque em Limpar sequência e monte de novo. Depois de verificar, a palavra escrita aparece para você conferir. Lembre: no fim da palavra, o som parecido com U costuma ser escrito com O.",
+      "items": [
+        {
+          "ttsCue": "mola",
+          "availableTiles": [
+            "u",
+            "o",
+            "l",
+            "m",
+            "a",
+            "n"
+          ],
+          "correctSequence": [
+            "m",
+            "o",
+            "l",
+            "a"
+          ],
+          "transcriptHiddenUntilAttempt": true,
+          "transcriptAfterAttempt": "mola"
+        },
+        {
+          "ttsCue": "vela",
+          "availableTiles": [
+            "e",
+            "v",
+            "a",
+            "l",
+            "f",
+            "i"
+          ],
+          "correctSequence": [
+            "v",
+            "e",
+            "l",
+            "a"
+          ],
+          "transcriptHiddenUntilAttempt": true,
+          "transcriptAfterAttempt": "vela"
+        },
+        {
+          "ttsCue": "fino",
+          "availableTiles": [
+            "v",
+            "f",
+            "i",
+            "o",
+            "n",
+            "u"
+          ],
+          "correctSequence": [
+            "f",
+            "i",
+            "n",
+            "o"
+          ],
+          "transcriptHiddenUntilAttempt": true,
+          "transcriptAfterAttempt": "fino"
+        },
+        {
+          "ttsCue": "lima",
+          "availableTiles": [
+            "e",
+            "l",
+            "m",
+            "i",
+            "a",
+            "n"
+          ],
+          "correctSequence": [
+            "l",
+            "i",
+            "m",
+            "a"
+          ],
+          "transcriptHiddenUntilAttempt": true,
+          "transcriptAfterAttempt": "lima"
+        },
+        {
+          "ttsCue": "selo",
+          "availableTiles": [
+            "f",
+            "l",
+            "e",
+            "s",
+            "o",
+            "u"
+          ],
+          "correctSequence": [
+            "s",
+            "e",
+            "l",
+            "o"
+          ],
+          "transcriptHiddenUntilAttempt": true,
+          "transcriptAfterAttempt": "selo"
+        },
+        {
+          "ttsCue": "menino",
+          "availableTiles": [
+            "l",
+            "u",
+            "o",
+            "e",
+            "m",
+            "n",
+            "i"
+          ],
+          "correctSequence": [
+            "m",
+            "e",
+            "n",
+            "i",
+            "n",
+            "o"
+          ],
+          "transcriptHiddenUntilAttempt": true,
+          "transcriptAfterAttempt": "menino"
+        }
+      ]
+    },
+    {
+      "id": "L02-A04",
+      "type": "guided-activity",
+      "focus": "read-and-respond",
+      "interaction": "composite",
+      "title": "Leia frases curtas",
+      "instruction": "Leia a frase com calma, palavra por palavra. Depois responda à pergunta.",
+      "items": [
+        {
+          "sentence": "A mala é leve.",
+          "prompt": "O que é leve?",
+          "options": [
+            "a vela",
+            "a mala",
+            "a luva"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "sentence": "Ana fala no sono.",
+          "prompt": "Quando Ana fala?",
+          "options": [
+            "na fila",
+            "na sala",
+            "no sono"
+          ],
+          "correctIndex": 2
+        },
+        {
+          "sentence": "Ivo fala na sala.",
+          "prompt": "Onde Ivo fala?",
+          "options": [
+            "na sala",
+            "na fila",
+            "na vila"
+          ],
+          "correctIndex": 0
+        }
+      ]
+    },
+    {
+      "id": "L02-B06",
+      "type": "summary",
+      "focus": "read-or-listen",
+      "points": [
+        "M, L, S, F, V e N têm sons que podemos esticar: mmm, lll, sss, fff, vvv, nnn.",
+        "Para ler uma sílaba, junte o som da consoante com o da vogal: ma, le, si, fo, nu.",
+        "Para ler uma palavra, leia sílaba por sílaba e depois junte: fi-la, fila.",
+        "F e V são parecidos; no V, a voz vibra.",
+        "No fim da palavra, o E pode soar como I e o O como U, mas a escrita continua com E e O."
+      ],
+      "bridgeToNextLesson": "Na próxima lição, você vai conhecer P e T, letras com um som que sai de uma vez."
+    }
+  ],
+  "assessmentBehavior": {
+    "pronunciationPolicy": "não avaliar sotaque nem pronúncia; variações regionais (TI e DI como tchi e dji, vogais finais, som do R) são aceitas",
+    "ttsPolicy": "áudio sempre de palavra inteira; nos itens de leitura, o áudio só é liberado depois que o aluno marca que tentou ler; nos itens de escuta e de escrita, o áudio pode ser repetido sem penalidade",
+    "retryPolicy": "nova tentativa sem penalidade",
+    "timeLimit": false
+  },
+  "completionEvidence": {
+    "observablePerformance": "Ligar a primeira sílaba de palavras ouvidas à sílaba escrita, ler palavras inéditas com M, L, S, F, V e N, montar com fichas palavras ouvidas e responder a perguntas sobre frases curtas.",
+    "clusters": {
+      "soundLetter": {
+        "evidence": [
+          "L02-A01"
+        ],
+        "required": true,
+        "rule": "acertar pelo menos 5 dos 6 itens"
+      },
+      "wordReading": {
+        "evidence": [
+          "L02-A02",
+          "L02-A04"
+        ],
+        "required": true,
+        "rule": "acertar pelo menos 5 dos 6 itens de L02-A02 e pelo menos 2 das 3 frases de L02-A04"
+      },
+      "wordWriting": {
+        "evidence": [
+          "L02-A03"
+        ],
+        "required": true,
+        "rule": "montar corretamente pelo menos 5 das 6 palavras"
+      }
+    },
+    "nonCompensable": true,
+    "completionRule": "os três agrupamentos são obrigatórios; acertar muito em um não compensa outro.",
+    "notSufficient": [
+      "ouvir o áudio das opções sem tentar ler antes",
+      "copiar a palavra mostrada depois da verificação",
+      "recitar MA, ME, MI, MO, MU sem ler palavras"
+    ],
+    "activityPolicies": {
+      "L02-A01": {
+        "threshold": 0.8333
+      },
+      "L02-A02": {
+        "threshold": 0.8333
+      },
+      "L02-A03": {
+        "threshold": 0.8333
+      },
+      "L02-A04": {
+        "threshold": 0.6667
+      }
+    }
+  }
+}

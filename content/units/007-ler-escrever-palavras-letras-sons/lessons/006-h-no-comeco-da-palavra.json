@@ -1,0 +1,433 @@
+{
+  "schemaVersion": 1,
+  "id": "N0-U07-L06",
+  "title": "H no começo da palavra",
+  "studentObjective": "Entender que o H no começo da palavra não tem som, mas precisa ser escrito, e ler e escrever palavras como hoje e hino.",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Reconhecer que o H em posição inicial não representa som, ler palavras inéditas iniciadas por H começando pela vogal seguinte e escrever palavras ouvidas decidindo pela memória da palavra quando há H inicial.",
+  "competencies": [
+    "reconhecer que o H no começo da palavra não tem som",
+    "ler palavras inéditas começadas por H, lendo a partir da vogal seguinte",
+    "escrever com fichas palavras ouvidas com e sem H inicial",
+    "saber que pelo som não se decide o H e que a palavra precisa ser lembrada ou consultada",
+    "ler frases curtas formadas só com letras ensinadas"
+  ],
+  "prerequisites": [
+    "N0-U07-L05"
+  ],
+  "limits": [
+    "não usar dígrafos (ch, lh, nh, rr, ss, qu, gu), til, cedilha nem sílabas com consoante no fim ou com duas consoantes no começo; esses casos ficam para a N0-U08",
+    "não ensinar regras de posição (S entre vogais, R e X no meio da palavra, C e G antes de E e I); quando necessário, apenas avisar que esses casos ficam para depois",
+    "não usar áudio de som isolado de letra; todo áudio é de palavra inteira",
+    "não liberar o áudio da palavra-alvo antes da tentativa de leitura",
+    "não transformar a lição em recitação de famílias silábicas",
+    "não avaliar pronúncia, sotaque ou velocidade",
+    "tratar só do H no começo da palavra; CH, LH e NH ficam para a N0-U08",
+    "não ensinar origem das palavras nem listas longas de palavras com H"
+  ],
+  "media": {
+    "tts": "TTS do dispositivo apenas com palavras inteiras: palavras-chave das demonstrações, estímulo dos itens de escuta e de escrita com fichas, e opções de áudio liberadas depois da tentativa de leitura",
+    "controlledAudio": [],
+    "video": "nao necessario",
+    "images": "nao necessarias"
+  },
+  "supportMaterials": {
+    "curatedMedia": [],
+    "runtimeResources": [
+      {
+        "type": "TTS_OK",
+        "locations": [
+          "L06-B02",
+          "L06-A01",
+          "L06-A02 (depois da tentativa)",
+          "L06-A03"
+        ],
+        "purpose": "falar palavras inteiras conhecidas; a decisão do aluno depende de reconhecer a palavra, não de detalhe acústico sensível à voz do dispositivo"
+      }
+    ],
+    "generatedVisualResources": [
+      {
+        "type": "UI_RENDERED_LETTER_TILES",
+        "locations": [
+          "L06-A03"
+        ],
+        "purpose": "oferecer letras como fichas de texto para montar a palavra ouvida, com distratores plausíveis e sem revelar a ordem"
+      },
+      {
+        "type": "UI_RENDERED_ATTEMPT_GATED_AUDIO_OPTIONS",
+        "locations": [
+          "L06-A02"
+        ],
+        "purpose": "mostrar a palavra escrita primeiro e liberar as opções de áudio só depois que o aluno marca que tentou ler"
+      }
+    ],
+    "productionQueueRequired": false,
+    "publicationDependency": "não há mídia humana obrigatória; texto, fichas e TTS de palavra inteira bastam",
+    "decisionRationale": "a lição liga som e letra por palavras inteiras faladas e por sílabas escritas. Áudio de fonema isolado não é usado porque o TTS é pouco confiável nesse caso. Hora e homem, exemplos comuns de H inicial, não foram usados porque trazem R entre vogais e M no fim da sílaba, que ficam para a N0-U08."
+  },
+  "sequence": [
+    {
+      "id": "L06-B01",
+      "type": "objective",
+      "focus": "read-or-listen",
+      "text": "Até aqui, cada letra que você estudou tinha um som. Agora vem o H. No começo da palavra, o H não tem som. Mesmo assim, ele precisa ser escrito."
+    },
+    {
+      "id": "L06-B02",
+      "type": "demonstration",
+      "focus": "listen-then-observe",
+      "title": "H no começo: escrito, mas sem som",
+      "letter": "H",
+      "text": "Ouça hoje. O primeiro som que você ouve é o do O. Mas, na escrita, a palavra começa com H: HO-JE. O H está lá, sem som nenhum.\n\nOuça também hino, como o hino nacional. A palavra começa com o som de I, mas é escrita com H: HI-NO.",
+      "examples": [
+        "HO-JE: hoje",
+        "HI-NO: hino"
+      ],
+      "ttsText": "hoje. hino."
+    },
+    {
+      "id": "L06-B03",
+      "type": "strategy",
+      "focus": "read-and-write",
+      "title": "Como saber se a palavra tem H",
+      "text": "Pelo som, não dá para saber. Ovo começa sem H, e hoje começa com H, mas as duas começam com o som de O. Por isso, as palavras com H no começo precisam ser lembradas. Comece pelas mais usadas, como hoje, que aparece o tempo todo em recados, avisos e conversas.\n\nNa leitura, faça assim: viu um H no começo, comece a ler pela vogal que vem depois. HI-NO soa como ino.\n\nNa escrita, quando tiver dúvida, procure a palavra escrita em um lugar confiável, como um documento, uma placa ou um dicionário.",
+      "examples": [
+        "com H: hoje, hino",
+        "sem H: ovo, uva, ano"
+      ]
+    },
+    {
+      "id": "L06-C01",
+      "type": "quick-check",
+      "focus": "observe-and-respond",
+      "prompt": "Na palavra HOJE, qual letra não tem som?",
+      "options": [
+        "H",
+        "O",
+        "J"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "L06-A01",
+      "type": "guided-activity",
+      "focus": "listen-and-respond",
+      "interaction": "composite",
+      "title": "Com H ou sem H?",
+      "instruction": "Ouça cada palavra e escolha a forma escrita certa. Lembre das palavras que você viu com H e sem H.",
+      "items": [
+        {
+          "prompt": "Como se escreve a palavra que você ouviu?",
+          "ttsCue": "hoje",
+          "options": [
+            "oje",
+            "hoje"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "prompt": "Como se escreve a palavra que você ouviu?",
+          "ttsCue": "ovo",
+          "options": [
+            "ovo",
+            "hovo"
+          ],
+          "correctIndex": 0
+        },
+        {
+          "prompt": "Como se escreve a palavra que você ouviu?",
+          "ttsCue": "hino",
+          "options": [
+            "ino",
+            "hino"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "prompt": "Como se escreve a palavra que você ouviu?",
+          "ttsCue": "uva",
+          "options": [
+            "huva",
+            "uva"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "prompt": "Como se escreve a palavra que você ouviu?",
+          "ttsCue": "ano",
+          "options": [
+            "ano",
+            "hano"
+          ],
+          "correctIndex": 0
+        }
+      ]
+    },
+    {
+      "id": "L06-A02",
+      "type": "guided-activity",
+      "focus": "read-and-respond",
+      "interaction": "composite",
+      "title": "Leia palavras novas com H",
+      "instruction": "Leia as palavras das opções e escolha a que responde à pergunta. Quando a pergunta disser Leia, tente ler a palavra primeiro; o áudio só fica disponível depois que você marcar que tentou. Lembre: o H do começo não tem som.",
+      "items": [
+        {
+          "prompt": "Leia: HUMANO. Depois marque que tentou e escolha o áudio que diz essa palavra.",
+          "audioOptions": [
+            {
+              "label": "A",
+              "ttsText": "romano"
+            },
+            {
+              "label": "B",
+              "ttsText": "humano"
+            },
+            {
+              "label": "C",
+              "ttsText": "fulano"
+            }
+          ],
+          "correctIndex": 1,
+          "attemptGateRequired": true,
+          "audioOptionTextVisible": false
+        },
+        {
+          "prompt": "Qual palavra fala de uma doença que ataca o fígado?",
+          "options": [
+            "apetite",
+            "hepatite",
+            "picada"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "prompt": "Qual destes animais parece dar risada?",
+          "options": [
+            "hiena",
+            "pena",
+            "Helena"
+          ],
+          "correctIndex": 0
+        },
+        {
+          "prompt": "Qual destas palavras começa com uma letra que não tem som?",
+          "options": [
+            "Hugo",
+            "uva",
+            "Ivo"
+          ],
+          "correctIndex": 0
+        }
+      ]
+    },
+    {
+      "id": "L06-A03",
+      "type": "guided-activity",
+      "focus": "listen-and-write",
+      "interaction": "composite",
+      "title": "Escreva a palavra que ouvir",
+      "instruction": "Ouça a palavra e toque nas letras na ordem certa. Uma letra pode ser usada mais de uma vez. Se errar, toque em Limpar sequência e monte de novo. Depois de verificar, a palavra escrita aparece para você conferir. Atenção: só algumas destas palavras começam com H.",
+      "items": [
+        {
+          "ttsCue": "hoje",
+          "availableTiles": [
+            "o",
+            "e",
+            "h",
+            "i",
+            "j",
+            "g"
+          ],
+          "correctSequence": [
+            "h",
+            "o",
+            "j",
+            "e"
+          ],
+          "transcriptHiddenUntilAttempt": true,
+          "transcriptAfterAttempt": "hoje"
+        },
+        {
+          "ttsCue": "hino",
+          "availableTiles": [
+            "o",
+            "e",
+            "i",
+            "h",
+            "n",
+            "u"
+          ],
+          "correctSequence": [
+            "h",
+            "i",
+            "n",
+            "o"
+          ],
+          "transcriptHiddenUntilAttempt": true,
+          "transcriptAfterAttempt": "hino"
+        },
+        {
+          "ttsCue": "humano",
+          "availableTiles": [
+            "a",
+            "o",
+            "n",
+            "h",
+            "m",
+            "u",
+            "e",
+            "r"
+          ],
+          "correctSequence": [
+            "h",
+            "u",
+            "m",
+            "a",
+            "n",
+            "o"
+          ],
+          "transcriptHiddenUntilAttempt": true,
+          "transcriptAfterAttempt": "humano"
+        },
+        {
+          "ttsCue": "idade",
+          "availableTiles": [
+            "a",
+            "e",
+            "i",
+            "d",
+            "h",
+            "t"
+          ],
+          "correctSequence": [
+            "i",
+            "d",
+            "a",
+            "d",
+            "e"
+          ],
+          "transcriptHiddenUntilAttempt": true,
+          "transcriptAfterAttempt": "idade"
+        },
+        {
+          "ttsCue": "hepatite",
+          "availableTiles": [
+            "t",
+            "p",
+            "i",
+            "a",
+            "h",
+            "d",
+            "o",
+            "e"
+          ],
+          "correctSequence": [
+            "h",
+            "e",
+            "p",
+            "a",
+            "t",
+            "i",
+            "t",
+            "e"
+          ],
+          "transcriptHiddenUntilAttempt": true,
+          "transcriptAfterAttempt": "hepatite"
+        }
+      ]
+    },
+    {
+      "id": "L06-A04",
+      "type": "guided-activity",
+      "focus": "read-and-respond",
+      "interaction": "composite",
+      "title": "Leia frases curtas",
+      "instruction": "Leia a frase com calma, palavra por palavra. Depois responda à pergunta.",
+      "items": [
+        {
+          "sentence": "Hoje Hugo lava a moto.",
+          "prompt": "Quem lava a moto?",
+          "options": [
+            "Helena",
+            "Hugo",
+            "Rita"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "sentence": "Hoje a comida é sopa.",
+          "prompt": "Qual é a comida de hoje?",
+          "options": [
+            "salada",
+            "sopa",
+            "bife"
+          ],
+          "correctIndex": 1
+        }
+      ]
+    },
+    {
+      "id": "L06-B04",
+      "type": "summary",
+      "focus": "read-or-listen",
+      "points": [
+        "No começo da palavra, o H não tem som: hoje soa como oje.",
+        "Mesmo sem som, o H precisa ser escrito.",
+        "Pelo som, não dá para saber se a palavra começa com H. É preciso lembrar a palavra ou consultar.",
+        "Ao ler, comece pela vogal que vem depois do H."
+      ],
+      "bridgeToNextLesson": "Na próxima lição, você vai ler e escrever palavras novas com todas as letras desta unidade."
+    }
+  ],
+  "assessmentBehavior": {
+    "pronunciationPolicy": "não avaliar sotaque nem pronúncia; variações regionais (TI e DI como tchi e dji, vogais finais, som do R) são aceitas",
+    "ttsPolicy": "áudio sempre de palavra inteira; nos itens de leitura, o áudio só é liberado depois que o aluno marca que tentou ler; nos itens de escuta e de escrita, o áudio pode ser repetido sem penalidade",
+    "retryPolicy": "nova tentativa sem penalidade",
+    "timeLimit": false
+  },
+  "completionEvidence": {
+    "observablePerformance": "Escolher a forma escrita de palavras ouvidas com e sem H, ler palavras inéditas começadas por H, montar com fichas palavras ouvidas decidindo quando há H e responder a perguntas sobre frases curtas.",
+    "clusters": {
+      "silentH": {
+        "evidence": [
+          "L06-A01"
+        ],
+        "required": true,
+        "rule": "acertar pelo menos 4 dos 5 itens"
+      },
+      "wordReading": {
+        "evidence": [
+          "L06-A02",
+          "L06-A04"
+        ],
+        "required": true,
+        "rule": "acertar pelo menos 3 dos 4 itens de L06-A02 e as 2 frases de L06-A04"
+      },
+      "wordWriting": {
+        "evidence": [
+          "L06-A03"
+        ],
+        "required": true,
+        "rule": "montar corretamente pelo menos 4 das 5 palavras, incluindo idade sem H"
+      }
+    },
+    "nonCompensable": true,
+    "completionRule": "os três agrupamentos são obrigatórios; acertar muito em um não compensa outro.",
+    "notSufficient": [
+      "pôr H em toda palavra que começa com vogal",
+      "ouvir o áudio das opções sem tentar ler antes",
+      "copiar a palavra mostrada depois da verificação"
+    ],
+    "activityPolicies": {
+      "L06-A01": {
+        "threshold": 0.8
+      },
+      "L06-A02": {
+        "threshold": 0.75
+      },
+      "L06-A03": {
+        "threshold": 0.8
+      }
+    }
+  }
+}

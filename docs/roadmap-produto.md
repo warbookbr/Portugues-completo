@@ -450,7 +450,7 @@ R1.8 produto: trilha separada no catálogo, N0 a partir de U3, nivelamento
 R1.9 Trilha de Alfabetização completa
 ```
 
-Andamento: R1.1 a R1.6 e R1.8 (trilha separada e N0 a partir de U3) concluídos; R1.7 em execução; nivelamento aguarda a publicação do N1 pelo P7; R1.9 pendente.
+Andamento: R1.1 a R1.6, R1.8 (trilha separada e N0 a partir de U3) e R1.9 (trilha completa com N0-U07 e N0-U08) concluídos; R1.7 em execução; nivelamento aguarda a publicação do N1 pelo P7.
 
 Regras:
 

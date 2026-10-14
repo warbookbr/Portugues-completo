@@ -1,0 +1,129 @@
+{
+  "schemaVersion": 1,
+  "id": "N0-U08",
+  "levelId": "N0",
+  "order": 8,
+  "title": "Sílabas e grafias mais complexas",
+  "objective": "Ler e escrever palavras com sílabas e grafias mais complexas, como porta, prato, chave, carro, mão e pai, e entender frases curtas do dia a dia.",
+  "competencies": [
+    {
+      "id": "N0-U08-C01",
+      "label": "ler e escrever palavras com sílabas que terminam com r, s, l, m ou n"
+    },
+    {
+      "id": "N0-U08-C02",
+      "label": "ler e escrever palavras com sílabas que começam com consoante seguida de r ou l"
+    },
+    {
+      "id": "N0-U08-C03",
+      "label": "ler e escrever palavras com ch, lh e nh"
+    },
+    {
+      "id": "N0-U08-C04",
+      "label": "ler e escrever palavras com r e rr, s e ss entre vogais, qu e gu"
+    },
+    {
+      "id": "N0-U08-C05",
+      "label": "ler e escrever palavras com til, com m ou n depois da vogal e com ç"
+    },
+    {
+      "id": "N0-U08-C06",
+      "label": "ler e escrever palavras com duas vogais na mesma sílaba"
+    },
+    {
+      "id": "N0-U08-C07",
+      "label": "ler palavras longas e frases curtas com compreensão, combinando todas as estruturas"
+    }
+  ],
+  "prerequisites": [
+    "N0-U07-V01"
+  ],
+  "lessons": [
+    {
+      "id": "N0-U08-L01",
+      "order": 1,
+      "title": "Sílabas que terminam com consoante",
+      "path": "lessons/001-silabas-com-consoante-no-fim.json",
+      "competencyIds": [
+        "N0-U08-C01"
+      ]
+    },
+    {
+      "id": "N0-U08-L02",
+      "order": 2,
+      "title": "Sílabas que começam com duas consoantes",
+      "path": "lessons/002-duas-consoantes-no-comeco.json",
+      "competencyIds": [
+        "N0-U08-C02"
+      ]
+    },
+    {
+      "id": "N0-U08-L03",
+      "order": 3,
+      "title": "CH, LH e NH: duas letras, um som",
+      "path": "lessons/003-ch-lh-nh.json",
+      "competencyIds": [
+        "N0-U08-C03"
+      ]
+    },
+    {
+      "id": "N0-U08-L04",
+      "order": 4,
+      "title": "R e RR, S e SS, QU e GU",
+      "path": "lessons/004-rr-ss-qu-gu.json",
+      "competencyIds": [
+        "N0-U08-C04"
+      ]
+    },
+    {
+      "id": "N0-U08-L05",
+      "order": 5,
+      "title": "Til, sons pelo nariz e Ç",
+      "path": "lessons/005-til-sons-pelo-nariz-e-cedilha.json",
+      "competencyIds": [
+        "N0-U08-C05"
+      ]
+    },
+    {
+      "id": "N0-U08-L06",
+      "order": 6,
+      "title": "Duas vogais na mesma sílaba",
+      "path": "lessons/006-duas-vogais-na-mesma-silaba.json",
+      "competencyIds": [
+        "N0-U08-C06"
+      ]
+    },
+    {
+      "id": "N0-U08-L07",
+      "order": 7,
+      "title": "Palavras longas e frases curtas",
+      "path": "lessons/007-palavras-longas-e-frases-curtas.json",
+      "competencyIds": [
+        "N0-U08-C01",
+        "N0-U08-C02",
+        "N0-U08-C03",
+        "N0-U08-C04",
+        "N0-U08-C05",
+        "N0-U08-C06",
+        "N0-U08-C07"
+      ]
+    }
+  ],
+  "verification": {
+    "id": "N0-U08-V01",
+    "path": "integrated-verification.json",
+    "competencyIds": [
+      "N0-U08-C01",
+      "N0-U08-C02",
+      "N0-U08-C03",
+      "N0-U08-C04",
+      "N0-U08-C05",
+      "N0-U08-C06",
+      "N0-U08-C07"
+    ]
+  },
+  "publication": {
+    "status": "READY",
+    "blockers": []
+  }
+}

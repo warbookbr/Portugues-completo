@@ -69,6 +69,22 @@
       "manifest": "units/006-usando-lingua-cotidiano/unit.json"
     },
     {
+      "id": "N0-U07",
+      "levelId": "N0",
+      "trackId": "alfabetizacao",
+      "order": 7,
+      "title": "Ler e escrever palavras: letras e sons",
+      "manifest": "units/007-ler-escrever-palavras-letras-sons/unit.json"
+    },
+    {
+      "id": "N0-U08",
+      "levelId": "N0",
+      "trackId": "alfabetizacao",
+      "order": 8,
+      "title": "Sílabas e grafias mais complexas",
+      "manifest": "units/008-silabas-grafias-mais-complexas/unit.json"
+    },
+    {
       "id": "N4-U09",
       "levelId": "N4",
       "order": 9,

@@ -61,7 +61,7 @@ R1.5 N2: CONCLUÍDO (conteúdo); publicação do N2 segue no P7
 R1.6 N3: CONCLUÍDO (conteúdo); publicação do N3 segue no P7
 R1.7 N4: em execução
 R1.8 trilha separada + N0 a partir de U3: CONCLUÍDO; nivelamento: aguarda publicação do N1 (P7)
-R1.9 Trilha de Alfabetização completa: pendente
+R1.9 Trilha de Alfabetização completa: CONCLUÍDO (N0-U07 e N0-U08 publicadas na trilha)
 ```
 
 R1.2 aplicou:
@@ -134,6 +134,17 @@ R1.8 implementou a estrutura de entrada decidida em `docs/auditoria-plano-ensino
 - novo gate `Test course tracks` no CI; smokes visuais e capturas em 1280px e 390px inspecionados.
 
 Nivelamento: a terceira opção ("leio e escrevo bem" → teste curto → N1, N2 ou adiante) depende de existirem níveis publicados para onde encaminhar. Hoje o catálogo publica N0 e N4-U09. O nivelamento entra quando o P7 publicar o N1.
+
+R1.9 completou a Trilha de Alfabetização com o ensino que faltava (Blocos A e B da auditoria):
+
+- N0-U07 "Ler e escrever palavras: letras e sons": sons das vogais; letras de som contínuo (m, l, s, f, v, n); p e t; b e d (pares p/b e t/d só no fim); c e g antes de a, o, u, j, z, x e r no começo; h inicial; revisão. Cada lição faz ler palavras inéditas (áudio só para conferir depois da tentativa) e escrever palavras ouvidas com fichas de letras; o vocabulário de cada lição usa só letras já ensinadas, conferido por script;
+- N0-U08 "Sílabas e grafias mais complexas": consoante no fim da sílaba, duas consoantes no começo, ch/lh/nh, rr/ss/qu/gu, til e sons pelo nariz com cedilha, vogais juntas na mesma sílaba e leitura de palavras longas e frases; N0-U08-V01 funciona como verificação de decodificação consolidada da trilha (leitura, escrita e compreensão de frase, não compensáveis, com palavras inéditas);
+- trilha completa: N0-U01 → N0-U02 → N0-U07 → N0-U08, exibidas como Trilha de Alfabetização · Unidades 1 a 4; manifestos `READY`, apenas TTS de palavra inteira ou frase, sem nova mídia humana;
+- normalizador passa a aplicar limiares autorados por atividade (`completionEvidence.activityPolicies`, por exemplo 7 de 8 itens);
+- renderer: cada rodada de exercício mostra seu próprio botão Ouvir (antes, itens com `ttsCue` em N0-U02-L06 não tinham áudio);
+- catálogo, renderer e trilhas cobertos pelos testes do CI (82 lições e 9 verificações renderizadas sem interação não suportada).
+
+Pendência registrada: enunciados das lições da trilha ainda dependem de leitura; narração das instruções para quem ainda não lê é melhoria de produto a avaliar no P8/P9.
 
 R1.3b corrigiu a apresentação de conteúdo já publicado (N0 e N4-U09):
 

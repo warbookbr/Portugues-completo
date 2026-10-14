@@ -1,0 +1,550 @@
+{
+  "schemaVersion": 1,
+  "id": "N0-U07-L05",
+  "title": "C, G, J, Z, X e R",
+  "studentObjective": "Ler e escrever palavras com C e G antes de A, O e U, com J e Z, e com X e R no começo, como cama, gato, janela e rua.",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Estabelecer a correspondência de C e G antes de A, O e U, de J e Z, e de X e R em posição inicial com seus sons em sílabas de consoante e vogal, aplicando-a na leitura de palavras inéditas e na escrita de palavras ouvidas, sem regras de posição.",
+  "competencies": [
+    "relacionar C e G antes de A, O e U aos seus sons",
+    "relacionar J e Z aos seus sons e distinguir Z de S no começo da palavra",
+    "relacionar X e R no começo da palavra aos seus sons",
+    "ler palavras inéditas e escrever com fichas palavras ouvidas com essas letras nas posições ensinadas",
+    "ler frases curtas formadas só com letras ensinadas"
+  ],
+  "prerequisites": [
+    "N0-U07-L04"
+  ],
+  "limits": [
+    "não usar dígrafos (ch, lh, nh, rr, ss, qu, gu), til, cedilha nem sílabas com consoante no fim ou com duas consoantes no começo; esses casos ficam para a N0-U08",
+    "não ensinar regras de posição (S entre vogais, R e X no meio da palavra, C e G antes de E e I); quando necessário, apenas avisar que esses casos ficam para depois",
+    "não usar áudio de som isolado de letra; todo áudio é de palavra inteira",
+    "não liberar o áudio da palavra-alvo antes da tentativa de leitura",
+    "não transformar a lição em recitação de famílias silábicas",
+    "não avaliar pronúncia, sotaque ou velocidade",
+    "usar C e G só antes de A, O e U",
+    "usar X e R só no começo da palavra"
+  ],
+  "media": {
+    "tts": "TTS do dispositivo apenas com palavras inteiras: palavras-chave das demonstrações, estímulo dos itens de escuta e de escrita com fichas, e opções de áudio liberadas depois da tentativa de leitura",
+    "controlledAudio": [],
+    "video": "nao necessario",
+    "images": "nao necessarias"
+  },
+  "supportMaterials": {
+    "curatedMedia": [],
+    "runtimeResources": [
+      {
+        "type": "TTS_OK",
+        "locations": [
+          "L05-B02",
+          "L05-B03",
+          "L05-B04",
+          "L05-A01",
+          "L05-A02 (depois da tentativa)",
+          "L05-A03"
+        ],
+        "purpose": "falar palavras inteiras conhecidas; a decisão do aluno depende de reconhecer a palavra, não de detalhe acústico sensível à voz do dispositivo"
+      }
+    ],
+    "generatedVisualResources": [
+      {
+        "type": "UI_RENDERED_LETTER_TILES",
+        "locations": [
+          "L05-A03"
+        ],
+        "purpose": "oferecer letras como fichas de texto para montar a palavra ouvida, com distratores plausíveis e sem revelar a ordem"
+      },
+      {
+        "type": "UI_RENDERED_ATTEMPT_GATED_AUDIO_OPTIONS",
+        "locations": [
+          "L05-A02"
+        ],
+        "purpose": "mostrar a palavra escrita primeiro e liberar as opções de áudio só depois que o aluno marca que tentou ler"
+      }
+    ],
+    "productionQueueRequired": false,
+    "publicationDependency": "não há mídia humana obrigatória; texto, fichas e TTS de palavra inteira bastam",
+    "decisionRationale": "a lição liga som e letra por palavras inteiras faladas e por sílabas escritas. Áudio de fonema isolado não é usado porque o TTS é pouco confiável nesse caso. "
+  },
+  "sequence": [
+    {
+      "id": "L05-B01",
+      "type": "objective",
+      "focus": "read-or-listen",
+      "text": "Nesta lição, você vai conhecer mais seis letras: C, G, J, Z, X e R. Para começar sem confusão, C e G aparecem só antes de A, O e U, e X e R aparecem só no começo da palavra. Em outras posições, algumas dessas letras mudam de som. Isso fica para depois."
+    },
+    {
+      "id": "L05-B02",
+      "type": "demonstration",
+      "focus": "listen-then-observe",
+      "title": "C e G antes de A, O e U",
+      "text": "Ouça cama. O som do começo sai do fundo da boca, de uma vez, como acontece com P e T: ca. Esse som é escrito com a letra C.\n\nOuça gato. O som também sai do fundo da boca, mas com a voz vibrando, como acontece com B e D: ga. Esse som é escrito com a letra G.",
+      "examples": [
+        "C c: CA, CO, CU",
+        "G g: GA, GO, GU",
+        "CA-MA: cama",
+        "GA-TO: gato"
+      ],
+      "ttsText": "cama. gato.",
+      "note": "Antes de E e de I, o C e o G têm outros sons, como em cebola e gelo. Por isso, nesta lição, eles aparecem só com A, O e U."
+    },
+    {
+      "id": "L05-B03",
+      "type": "demonstration",
+      "focus": "listen-then-observe",
+      "title": "J e Z",
+      "text": "Ouça janela. O som do começo pode ser esticado: jjjjanela. Esse som é escrito com a letra J.\n\nOuça zona, como em zona rural. Esse som também pode ser esticado, como um zumbido: zzzzona. Ele é escrito com a letra Z.",
+      "examples": [
+        "J j: JA, JE, JI, JO, JU",
+        "Z z: ZA, ZE, ZI, ZO, ZU",
+        "JA-NE-LA: janela",
+        "ZO-NA: zona"
+      ],
+      "ttsText": "janela. zona.",
+      "note": "Z e S do começo da palavra são parecidos. No Z, a voz vibra; no S, não. Compare sala e zona."
+    },
+    {
+      "id": "L05-B04",
+      "type": "demonstration",
+      "focus": "listen-then-observe",
+      "title": "X e R no começo da palavra",
+      "text": "Ouça xale. No começo da palavra, o X costuma ter este som, que pode ser esticado: xxxxale. É o mesmo som que fazemos para pedir silêncio.\n\nOuça rua. No começo da palavra, o R tem um som forte, que sai do fundo da boca ou da garganta: rrrrua. Esse som muda um pouco de uma região para outra, e todas essas formas estão certas.",
+      "examples": [
+        "X x no começo: XA, XE, XI, XO, XU",
+        "R r no começo: RA, RE, RI, RO, RU",
+        "XA-LE: xale",
+        "RU-A: rua"
+      ],
+      "ttsText": "xale. rua.",
+      "note": "No meio da palavra, X e R podem ter outros sons, como em táxi e cara. Isso fica para depois."
+    },
+    {
+      "id": "L05-C01",
+      "type": "quick-check-set",
+      "focus": "read-and-respond",
+      "instruction": "Leia a sílaba e escolha a palavra que começa com ela. Esta parte é só para praticar.",
+      "items": [
+        {
+          "question": "Qual palavra começa com GU?",
+          "options": [
+            "gola",
+            "gula",
+            "gala"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "question": "Qual palavra começa com RI?",
+          "options": [
+            "rico",
+            "ruga",
+            "roda"
+          ],
+          "correctIndex": 0
+        }
+      ]
+    },
+    {
+      "id": "L05-A01",
+      "type": "guided-activity",
+      "focus": "listen-and-respond",
+      "interaction": "composite",
+      "title": "Ouça e escolha a primeira sílaba",
+      "instruction": "Ouça cada palavra. Escolha a sílaba escrita que começa a palavra. Você pode ouvir quantas vezes quiser.",
+      "items": [
+        {
+          "prompt": "Qual sílaba começa esta palavra?",
+          "ttsCue": "copo",
+          "options": [
+            "CA",
+            "CO",
+            "GO"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "prompt": "Qual sílaba começa esta palavra?",
+          "ttsCue": "gota",
+          "options": [
+            "GO",
+            "GU",
+            "CO"
+          ],
+          "correctIndex": 0
+        },
+        {
+          "prompt": "Qual sílaba começa esta palavra?",
+          "ttsCue": "joelho",
+          "options": [
+            "ZO",
+            "JU",
+            "JO"
+          ],
+          "correctIndex": 2
+        },
+        {
+          "prompt": "Qual sílaba começa esta palavra?",
+          "ttsCue": "zebra",
+          "options": [
+            "SE",
+            "ZE",
+            "JE"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "prompt": "Qual sílaba começa esta palavra?",
+          "ttsCue": "xarope",
+          "options": [
+            "XA",
+            "JA",
+            "CA"
+          ],
+          "correctIndex": 0
+        },
+        {
+          "prompt": "Qual sílaba começa esta palavra?",
+          "ttsCue": "remédio",
+          "options": [
+            "RA",
+            "LE",
+            "RE"
+          ],
+          "correctIndex": 2
+        }
+      ]
+    },
+    {
+      "id": "L05-A02",
+      "type": "guided-activity",
+      "focus": "read-and-respond",
+      "interaction": "composite",
+      "title": "Leia palavras novas",
+      "instruction": "Leia as palavras das opções e escolha a que responde à pergunta. Quando a pergunta disser Leia, tente ler a palavra primeiro; o áudio só fica disponível depois que você marcar que tentou.",
+      "items": [
+        {
+          "prompt": "Em qual destas coisas tomamos café?",
+          "options": [
+            "canela",
+            "caneca",
+            "cabana"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "prompt": "Qual destas é uma fruta grande, de cheiro forte?",
+          "options": [
+            "faca",
+            "vaca",
+            "jaca"
+          ],
+          "correctIndex": 2
+        },
+        {
+          "prompt": "Qual destas palavras é um número?",
+          "options": [
+            "dono",
+            "doze",
+            "dado"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "prompt": "Qual palavra é o contrário de cheio?",
+          "options": [
+            "vazio",
+            "navio",
+            "vadio"
+          ],
+          "correctIndex": 0
+        },
+        {
+          "prompt": "Em qual destas coisas podemos deitar e balançar?",
+          "options": [
+            "roda",
+            "reta",
+            "rede"
+          ],
+          "correctIndex": 2
+        },
+        {
+          "prompt": "Leia: COMIDA. Depois marque que tentou e escolha o áudio que diz essa palavra.",
+          "audioOptions": [
+            {
+              "label": "A",
+              "ttsText": "comida"
+            },
+            {
+              "label": "B",
+              "ttsText": "batida"
+            },
+            {
+              "label": "C",
+              "ttsText": "caminho"
+            }
+          ],
+          "correctIndex": 0,
+          "attemptGateRequired": true,
+          "audioOptionTextVisible": false
+        },
+        {
+          "prompt": "Leia: XEPA. Depois marque que tentou e escolha o áudio que diz essa palavra.",
+          "audioOptions": [
+            {
+              "label": "A",
+              "ttsText": "seca"
+            },
+            {
+              "label": "B",
+              "ttsText": "xepa"
+            },
+            {
+              "label": "C",
+              "ttsText": "capa"
+            }
+          ],
+          "correctIndex": 1,
+          "attemptGateRequired": true,
+          "audioOptionTextVisible": false
+        }
+      ]
+    },
+    {
+      "id": "L05-A03",
+      "type": "guided-activity",
+      "focus": "listen-and-write",
+      "interaction": "composite",
+      "title": "Escreva a palavra que ouvir",
+      "instruction": "Ouça a palavra e toque nas letras na ordem certa. Uma letra pode ser usada mais de uma vez. Se errar, toque em Limpar sequência e monte de novo. Depois de verificar, a palavra escrita aparece para você conferir.",
+      "items": [
+        {
+          "ttsCue": "gola",
+          "availableTiles": [
+            "l",
+            "c",
+            "u",
+            "g",
+            "a",
+            "o"
+          ],
+          "correctSequence": [
+            "g",
+            "o",
+            "l",
+            "a"
+          ],
+          "transcriptHiddenUntilAttempt": true,
+          "transcriptAfterAttempt": "gola"
+        },
+        {
+          "ttsCue": "fogo",
+          "availableTiles": [
+            "c",
+            "u",
+            "g",
+            "f",
+            "o"
+          ],
+          "correctSequence": [
+            "f",
+            "o",
+            "g",
+            "o"
+          ],
+          "transcriptHiddenUntilAttempt": true,
+          "transcriptAfterAttempt": "fogo"
+        },
+        {
+          "ttsCue": "loja",
+          "availableTiles": [
+            "g",
+            "z",
+            "j",
+            "a",
+            "l",
+            "o"
+          ],
+          "correctSequence": [
+            "l",
+            "o",
+            "j",
+            "a"
+          ],
+          "transcriptHiddenUntilAttempt": true,
+          "transcriptAfterAttempt": "loja"
+        },
+        {
+          "ttsCue": "beleza",
+          "availableTiles": [
+            "s",
+            "d",
+            "a",
+            "l",
+            "z",
+            "b",
+            "e"
+          ],
+          "correctSequence": [
+            "b",
+            "e",
+            "l",
+            "e",
+            "z",
+            "a"
+          ],
+          "transcriptHiddenUntilAttempt": true,
+          "transcriptAfterAttempt": "beleza"
+        },
+        {
+          "ttsCue": "roda",
+          "availableTiles": [
+            "l",
+            "t",
+            "o",
+            "a",
+            "r",
+            "d"
+          ],
+          "correctSequence": [
+            "r",
+            "o",
+            "d",
+            "a"
+          ],
+          "transcriptHiddenUntilAttempt": true,
+          "transcriptAfterAttempt": "roda"
+        },
+        {
+          "ttsCue": "cabelo",
+          "availableTiles": [
+            "o",
+            "l",
+            "c",
+            "a",
+            "b",
+            "e",
+            "g",
+            "p"
+          ],
+          "correctSequence": [
+            "c",
+            "a",
+            "b",
+            "e",
+            "l",
+            "o"
+          ],
+          "transcriptHiddenUntilAttempt": true,
+          "transcriptAfterAttempt": "cabelo"
+        }
+      ]
+    },
+    {
+      "id": "L05-A04",
+      "type": "guided-activity",
+      "focus": "read-and-respond",
+      "interaction": "composite",
+      "title": "Leia frases curtas",
+      "instruction": "Leia a frase com calma, palavra por palavra. Depois responda à pergunta.",
+      "items": [
+        {
+          "sentence": "O gato da Rita fica na janela.",
+          "prompt": "Onde fica o gato?",
+          "options": [
+            "na cama",
+            "na janela",
+            "na rua"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "sentence": "Zeca lava a caneca e o copo.",
+          "prompt": "O que Zeca lava?",
+          "options": [
+            "a caneca e o copo",
+            "a gola e o cabelo",
+            "a faca e o pote"
+          ],
+          "correctIndex": 0
+        },
+        {
+          "sentence": "A comida da Rita é boa.",
+          "prompt": "Como é a comida da Rita?",
+          "options": [
+            "nova",
+            "fina",
+            "boa"
+          ],
+          "correctIndex": 2
+        }
+      ]
+    },
+    {
+      "id": "L05-B05",
+      "type": "summary",
+      "focus": "read-or-listen",
+      "points": [
+        "C e G antes de A, O e U: ca, co, cu; ga, go, gu. O G tem a voz vibrando.",
+        "J e Z têm sons que podemos esticar: jjj, zzz.",
+        "No começo da palavra, o X soa como em xale, e o R tem o som forte de rua.",
+        "Em outras posições, algumas dessas letras mudam de som. Você vai estudar isso depois."
+      ],
+      "bridgeToNextLesson": "Na próxima lição, você vai conhecer uma letra que, no começo da palavra, não tem som: o H."
+    }
+  ],
+  "assessmentBehavior": {
+    "pronunciationPolicy": "não avaliar sotaque nem pronúncia; variações regionais (TI e DI como tchi e dji, vogais finais, som do R) são aceitas",
+    "ttsPolicy": "áudio sempre de palavra inteira; nos itens de leitura, o áudio só é liberado depois que o aluno marca que tentou ler; nos itens de escuta e de escrita, o áudio pode ser repetido sem penalidade",
+    "retryPolicy": "nova tentativa sem penalidade",
+    "timeLimit": false
+  },
+  "completionEvidence": {
+    "observablePerformance": "Ligar a primeira sílaba de palavras ouvidas à sílaba escrita com C, G, J, Z, X ou R, ler palavras inéditas com essas letras nas posições ensinadas, montar com fichas palavras ouvidas e responder a perguntas sobre frases curtas.",
+    "clusters": {
+      "soundLetter": {
+        "evidence": [
+          "L05-A01"
+        ],
+        "required": true,
+        "rule": "acertar pelo menos 5 dos 6 itens"
+      },
+      "wordReading": {
+        "evidence": [
+          "L05-A02",
+          "L05-A04"
+        ],
+        "required": true,
+        "rule": "acertar pelo menos 6 dos 7 itens de L05-A02 e pelo menos 2 das 3 frases de L05-A04"
+      },
+      "wordWriting": {
+        "evidence": [
+          "L05-A03"
+        ],
+        "required": true,
+        "rule": "montar corretamente pelo menos 5 das 6 palavras"
+      }
+    },
+    "nonCompensable": true,
+    "completionRule": "os três agrupamentos são obrigatórios; acertar muito em um não compensa outro.",
+    "notSufficient": [
+      "ouvir o áudio das opções sem tentar ler antes",
+      "copiar a palavra mostrada depois da verificação",
+      "recitar famílias silábicas sem ler palavras"
+    ],
+    "activityPolicies": {
+      "L05-A01": {
+        "threshold": 0.8333
+      },
+      "L05-A02": {
+        "threshold": 0.8571
+      },
+      "L05-A03": {
+        "threshold": 0.8333
+      },
+      "L05-A04": {
+        "threshold": 0.6667
+      }
+    }
+  }
+}

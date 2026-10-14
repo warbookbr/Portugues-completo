@@ -473,6 +473,19 @@ function activityIdsByCluster(completion) {
   return map;
 }
 
+// R1.9: limiares autorados por atividade (ex.: 7 de 8 itens) em completionEvidence.activityPolicies.
+// Só aceita threshold numérico entre 0 e 1; qualquer outro campo é ignorado.
+function authoredActivityPolicies(authored) {
+  const policies = authored?.activityPolicies;
+  if (!policies || typeof policies !== 'object' || Array.isArray(policies)) return {};
+  const result = {};
+  for (const [activityId, policy] of Object.entries(policies)) {
+    const threshold = policy?.threshold;
+    if (typeof threshold === 'number' && threshold > 0 && threshold <= 1) result[activityId] = { threshold };
+  }
+  return result;
+}
+
 function normalizeStructuralCompletion(source, activitySources) {
   const legacy = LEGACY_COMPLETION_RULES_V1[source.id];
   if (legacy) return { completion: { clusters: clone(legacy.clusters), nonCompensable: Boolean(legacy.nonCompensable) }, activityPolicies: clone(legacy.activityPolicies || {}) };
@@ -489,7 +502,7 @@ function normalizeStructuralCompletion(source, activitySources) {
     });
     return { id, required: cluster.required !== false, evidenceIds: clone(evidenceIds), satisfaction: reliableEvaluatorDeclared && containsOpenEvidence ? 'PENDING_ALLOWED' : 'DEMONSTRATED_REQUIRED' };
   });
-  return { completion: { clusters, nonCompensable: authored.nonCompensable === true || (Array.isArray(authored.nonCompensable) && authored.nonCompensable.length > 0) }, activityPolicies: {} };
+  return { completion: { clusters, nonCompensable: authored.nonCompensable === true || (Array.isArray(authored.nonCompensable) && authored.nonCompensable.length > 0) }, activityPolicies: authoredActivityPolicies(authored) };
 }
 
 const PRESENTATION_SECRET_KEYS = new Set([

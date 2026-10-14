@@ -18,8 +18,9 @@ async function fileFetch(url) {
 const service = new ContentService({ basePath: './content', fetchImpl: fileFetch });
 const catalog = await service.loadCatalog();
 assert.equal(catalog.schemaVersion, 2);
-assert.deepEqual(catalog.units.map(unit => unit.id), ['N0-U01', 'N0-U02', 'N0-U03', 'N0-U04', 'N0-U05', 'N0-U06', 'N4-U09']);
-assert.deepEqual(catalog.units.filter(unit => unit.levelId === 'N0').map(unit => unit.order), [1, 2, 3, 4, 5, 6]);
+assert.deepEqual(catalog.units.map(unit => unit.id), ['N0-U01', 'N0-U02', 'N0-U03', 'N0-U04', 'N0-U05', 'N0-U06', 'N0-U07', 'N0-U08', 'N4-U09']);
+assert.deepEqual(catalog.units.filter(unit => unit.levelId === 'N0').map(unit => unit.order), [1, 2, 3, 4, 5, 6, 7, 8]);
+assert.deepEqual(catalog.units.filter(unit => unit.trackId === 'alfabetizacao').map(unit => unit.id), ['N0-U01', 'N0-U02', 'N0-U07', 'N0-U08'], 'Trilha de Alfabetização no catálogo');
 
 const n0u1 = await service.loadUnitManifest('N0-U01', { catalog });
 assert.equal(n0u1.manifest.title, 'Letras e primeiros sons');

@@ -14,12 +14,14 @@ const annotated = annotateManifests(catalog, manifests);
 const track = catalog.tracks.find(item => item.id === 'alfabetizacao');
 assert.ok(track, 'catálogo precisa declarar a Trilha de Alfabetização');
 assert.equal(track.optional, true, 'a trilha é opcional');
-assert.deepEqual(literacyTrack(annotated).map(item => item.id), ['N0-U01', 'N0-U02'], 'a trilha reúne as unidades de letras e sílabas');
+assert.deepEqual(literacyTrack(annotated).map(item => item.id), ['N0-U01', 'N0-U02', 'N0-U07', 'N0-U08'], 'a trilha reúne letras, sílabas, decodificação e grafias complexas');
 assert.equal(mainPath(annotated)[0].id, 'N0-U03', 'o caminho principal começa em Palavras, frases e sentido');
 
 const byId = Object.fromEntries(annotated.map(item => [item.id, item]));
 assert.equal(unitLabel(byId['N0-U01']), 'Trilha de Alfabetização · Unidade 1');
 assert.equal(unitLabel(byId['N0-U02']), 'Trilha de Alfabetização · Unidade 2');
+assert.equal(unitLabel(byId['N0-U07']), 'Trilha de Alfabetização · Unidade 3');
+assert.equal(unitLabel(byId['N0-U08']), 'Trilha de Alfabetização · Unidade 4');
 assert.equal(unitLabel(byId['N0-U03']), 'Fundamentos · Unidade 1', 'numeração exibida segue a posição no caminho principal');
 assert.equal(unitLabel(byId['N0-U06']), 'Fundamentos · Unidade 4');
 assert.equal(unitLabel(byId['N4-U09']), 'Domínio · Unidade 9', 'níveis sem trilha mantêm a numeração original');
@@ -35,7 +37,7 @@ assert.doesNotMatch(units, />\s*N[0-4]\s*[·•]/, 'sem códigos de nível');
 
 assert.deepEqual(studentPath(annotated, empty).map(item => item.id)[0], 'N0-U03', 'sem uso da trilha, o plano começa no caminho principal');
 const withTrack = { curriculum: { lessons: { 'N0-U01-L03': { status: 'EM_ESTUDO' } }, current: { unitId: 'N0-U01', lessonId: 'N0-U01-L03' } }, review: { queue: [] } };
-assert.deepEqual(studentPath(annotated, withTrack).slice(0, 3).map(item => item.id), ['N0-U01', 'N0-U02', 'N0-U03'], 'quem usa a trilha vê a trilha antes do caminho principal');
+assert.deepEqual(studentPath(annotated, withTrack).slice(0, 5).map(item => item.id), ['N0-U01', 'N0-U02', 'N0-U07', 'N0-U08', 'N0-U03'], 'quem usa a trilha vê a trilha inteira antes do caminho principal');
 assert.doesNotMatch(planPageHtml(manifests, empty, catalog), /Letras e primeiros sons/, 'plano sem trilha não lista a trilha');
 assert.match(planPageHtml(manifests, withTrack, catalog), /Letras e primeiros sons/, 'plano de quem usa a trilha inclui a trilha');
 

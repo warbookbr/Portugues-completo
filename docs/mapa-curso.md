@@ -21,7 +21,7 @@ Leio e escrevo bem
 → nivelamento curto → N1, N2 ou adiante
 ```
 
-A **Trilha de Alfabetização** reúne letras, sons, sílabas, decodificação e escrita de palavras (as atuais N0-U01 e N0-U02, ampliadas). Ela fica fora do caminho principal, mas usa as mesmas regras de progressão e linguagem. As áreas 1 e 2 descritas abaixo no Nível 0 passam a ser responsabilidade dessa trilha.
+A **Trilha de Alfabetização** reúne letras, sons, sílabas, decodificação e escrita de palavras: N0-U01 (letras e primeiros sons), N0-U02 (sílabas e primeiras palavras), N0-U07 (ler e escrever palavras: letras e sons) e N0-U08 (sílabas e grafias mais complexas, com a verificação de decodificação consolidada). Ela fica fora do caminho principal, mas usa as mesmas regras de progressão e linguagem. As áreas 1 e 2 descritas abaixo no Nível 0 passam a ser responsabilidade dessa trilha.
 
 ### Nível 0 — Fundamentos
 

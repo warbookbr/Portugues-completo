@@ -1,0 +1,512 @@
+{
+  "schemaVersion": 1,
+  "id": "N0-U07-L07",
+  "title": "Revisão: ler e escrever palavras novas",
+  "studentObjective": "Ler e escrever palavras novas usando todas as letras desta unidade, sílaba por sílaba.",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Integrar as correspondências letra-som da unidade na leitura de palavras e frases inéditas e na escrita de palavras ouvidas e próprias, usando a estratégia explícita de ler e escrever sílaba por sílaba.",
+  "competencies": [
+    "ler palavras inéditas com todas as letras da unidade usando a estratégia sílaba por sílaba",
+    "escrever com fichas palavras ouvidas com todas as letras da unidade",
+    "ler frases curtas formadas só com letras ensinadas",
+    "escrever palavras próprias do cotidiano e revisá-las com autochecagem"
+  ],
+  "prerequisites": [
+    "N0-U07-L06"
+  ],
+  "limits": [
+    "não usar dígrafos (ch, lh, nh, rr, ss, qu, gu), til, cedilha nem sílabas com consoante no fim ou com duas consoantes no começo; esses casos ficam para a N0-U08",
+    "não ensinar regras de posição (S entre vogais, R e X no meio da palavra, C e G antes de E e I); quando necessário, apenas avisar que esses casos ficam para depois",
+    "não usar áudio de som isolado de letra; todo áudio é de palavra inteira",
+    "não liberar o áudio da palavra-alvo antes da tentativa de leitura",
+    "não transformar a lição em recitação de famílias silábicas",
+    "não avaliar pronúncia, sotaque ou velocidade",
+    "não introduzir letra nova nem posição nova"
+  ],
+  "media": {
+    "tts": "TTS do dispositivo apenas com palavras inteiras: palavras-chave das demonstrações, estímulo dos itens de escuta e de escrita com fichas, e opções de áudio liberadas depois da tentativa de leitura",
+    "controlledAudio": [],
+    "video": "nao necessario",
+    "images": "nao necessarias"
+  },
+  "supportMaterials": {
+    "curatedMedia": [],
+    "runtimeResources": [
+      {
+        "type": "TTS_OK",
+        "locations": [
+          "L07-A01 (depois da tentativa)",
+          "L07-A02"
+        ],
+        "purpose": "falar palavras inteiras conhecidas; a decisão do aluno depende de reconhecer a palavra, não de detalhe acústico sensível à voz do dispositivo"
+      }
+    ],
+    "generatedVisualResources": [
+      {
+        "type": "UI_RENDERED_LETTER_TILES",
+        "locations": [
+          "L07-A02"
+        ],
+        "purpose": "oferecer letras como fichas de texto para montar a palavra ouvida, com distratores plausíveis e sem revelar a ordem"
+      },
+      {
+        "type": "UI_RENDERED_ATTEMPT_GATED_AUDIO_OPTIONS",
+        "locations": [
+          "L07-A01"
+        ],
+        "purpose": "mostrar a palavra escrita primeiro e liberar as opções de áudio só depois que o aluno marca que tentou ler"
+      }
+    ],
+    "productionQueueRequired": false,
+    "publicationDependency": "não há mídia humana obrigatória; texto, fichas e TTS de palavra inteira bastam",
+    "decisionRationale": "a lição liga som e letra por palavras inteiras faladas e por sílabas escritas. Áudio de fonema isolado não é usado porque o TTS é pouco confiável nesse caso. A escrita própria é registrada e autorrevisada; não há correção automática da ortografia."
+  },
+  "sequence": [
+    {
+      "id": "L07-B01",
+      "type": "objective",
+      "focus": "read-or-listen",
+      "text": "Nesta lição, você vai usar tudo o que aprendeu nesta unidade. As palavras são novas, mas você já conhece todas as letras delas."
+    },
+    {
+      "id": "L07-B02",
+      "type": "strategy",
+      "focus": "read",
+      "title": "Como ler uma palavra nova",
+      "text": "Use estes passos sempre que encontrar uma palavra que você ainda não leu.",
+      "steps": [
+        "Separe a palavra em sílabas.",
+        "Leia cada sílaba juntando a consoante com a vogal.",
+        "Junte as sílabas e diga a palavra inteira.",
+        "Pergunte a si mesmo se a palavra faz sentido. Se não fizer, leia de novo."
+      ],
+      "examples": [
+        "PE-TE-CA: peteca"
+      ]
+    },
+    {
+      "id": "L07-B03",
+      "type": "strategy",
+      "focus": "write",
+      "title": "Como escrever uma palavra que você ouviu",
+      "text": "Para escrever, faça o caminho contrário da leitura.",
+      "steps": [
+        "Fale a palavra devagar, sílaba por sílaba.",
+        "Para cada sílaba, pense no som da consoante e no som da vogal.",
+        "Escreva as sílabas na ordem em que aparecem.",
+        "Leia o que escreveu e confira se soa como a palavra."
+      ],
+      "examples": [
+        "ma-ca-co: macaco"
+      ]
+    },
+    {
+      "id": "L07-B04",
+      "type": "demonstration",
+      "focus": "observe",
+      "title": "As letras desta unidade",
+      "examples": [
+        "Vogais: A, E, I, O, U",
+        "Sons que podemos esticar: M, L, S, F, V, N, J, Z, X",
+        "Sons que saem de uma vez: P, T, B, D, C, G",
+        "R no começo da palavra: som forte, como em rua",
+        "H no começo da palavra: sem som, como em hoje"
+      ],
+      "note": "Nesta unidade, S, X e R aparecem só no começo da palavra, e C e G só antes de A, O e U."
+    },
+    {
+      "id": "L07-A01",
+      "type": "independent-practice",
+      "focus": "read-and-respond",
+      "interaction": "composite",
+      "title": "Leia palavras novas",
+      "instruction": "Leia as palavras das opções e escolha a que responde à pergunta. Quando a pergunta disser Leia, tente ler a palavra primeiro; o áudio só fica disponível depois que você marcar que tentou.",
+      "items": [
+        {
+          "prompt": "Qual destas coisas usamos para ligar para alguém?",
+          "options": [
+            "tapete",
+            "telefone",
+            "tomate"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "prompt": "Onde ligamos o fio da geladeira?",
+          "options": [
+            "tomada",
+            "tabela",
+            "tomate"
+          ],
+          "correctIndex": 0
+        },
+        {
+          "prompt": "Qual destas coisas usamos para escrever?",
+          "options": [
+            "caneca",
+            "canela",
+            "caneta"
+          ],
+          "correctIndex": 2
+        },
+        {
+          "prompt": "Qual destas coisas usamos no banho?",
+          "options": [
+            "sapato",
+            "sabonete",
+            "salame"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "prompt": "Qual destas é uma roupa de dormir?",
+          "options": [
+            "pepino",
+            "piada",
+            "pijama"
+          ],
+          "correctIndex": 2
+        },
+        {
+          "prompt": "Leia: GAVETA. Depois marque que tentou e escolha o áudio que diz essa palavra.",
+          "audioOptions": [
+            {
+              "label": "A",
+              "ttsText": "caneta"
+            },
+            {
+              "label": "B",
+              "ttsText": "galeto"
+            },
+            {
+              "label": "C",
+              "ttsText": "gaveta"
+            }
+          ],
+          "correctIndex": 2,
+          "attemptGateRequired": true,
+          "audioOptionTextVisible": false
+        },
+        {
+          "prompt": "Leia: RODOVIA. Depois marque que tentou e escolha o áudio que diz essa palavra.",
+          "audioOptions": [
+            {
+              "label": "A",
+              "ttsText": "rodovia"
+            },
+            {
+              "label": "B",
+              "ttsText": "rotina"
+            },
+            {
+              "label": "C",
+              "ttsText": "rodela"
+            }
+          ],
+          "correctIndex": 0,
+          "attemptGateRequired": true,
+          "audioOptionTextVisible": false
+        },
+        {
+          "prompt": "Qual palavra fala de um ônibus muito cheio?",
+          "options": [
+            "lavado",
+            "lotado",
+            "nadado"
+          ],
+          "correctIndex": 1
+        }
+      ]
+    },
+    {
+      "id": "L07-A02",
+      "type": "independent-practice",
+      "focus": "listen-and-write",
+      "interaction": "composite",
+      "title": "Escreva a palavra que ouvir",
+      "instruction": "Ouça a palavra e toque nas letras na ordem certa. Uma letra pode ser usada mais de uma vez. Se errar, toque em Limpar sequência e monte de novo. Depois de verificar, a palavra escrita aparece para você conferir.",
+      "items": [
+        {
+          "ttsCue": "salada",
+          "availableTiles": [
+            "d",
+            "s",
+            "a",
+            "z",
+            "l"
+          ],
+          "correctSequence": [
+            "s",
+            "a",
+            "l",
+            "a",
+            "d",
+            "a"
+          ],
+          "transcriptHiddenUntilAttempt": true,
+          "transcriptAfterAttempt": "salada"
+        },
+        {
+          "ttsCue": "pepino",
+          "availableTiles": [
+            "u",
+            "i",
+            "p",
+            "b",
+            "e",
+            "n",
+            "o"
+          ],
+          "correctSequence": [
+            "p",
+            "e",
+            "p",
+            "i",
+            "n",
+            "o"
+          ],
+          "transcriptHiddenUntilAttempt": true,
+          "transcriptAfterAttempt": "pepino"
+        },
+        {
+          "ttsCue": "cabide",
+          "availableTiles": [
+            "b",
+            "d",
+            "c",
+            "i",
+            "t",
+            "e",
+            "p",
+            "a"
+          ],
+          "correctSequence": [
+            "c",
+            "a",
+            "b",
+            "i",
+            "d",
+            "e"
+          ],
+          "transcriptHiddenUntilAttempt": true,
+          "transcriptAfterAttempt": "cabide"
+        },
+        {
+          "ttsCue": "sacola",
+          "availableTiles": [
+            "g",
+            "z",
+            "o",
+            "s",
+            "l",
+            "a",
+            "c"
+          ],
+          "correctSequence": [
+            "s",
+            "a",
+            "c",
+            "o",
+            "l",
+            "a"
+          ],
+          "transcriptHiddenUntilAttempt": true,
+          "transcriptAfterAttempt": "sacola"
+        },
+        {
+          "ttsCue": "vitamina",
+          "availableTiles": [
+            "m",
+            "n",
+            "a",
+            "f",
+            "i",
+            "d",
+            "v",
+            "t"
+          ],
+          "correctSequence": [
+            "v",
+            "i",
+            "t",
+            "a",
+            "m",
+            "i",
+            "n",
+            "a"
+          ],
+          "transcriptHiddenUntilAttempt": true,
+          "transcriptAfterAttempt": "vitamina"
+        },
+        {
+          "ttsCue": "jaleco",
+          "availableTiles": [
+            "o",
+            "l",
+            "j",
+            "g",
+            "c",
+            "x",
+            "e",
+            "a"
+          ],
+          "correctSequence": [
+            "j",
+            "a",
+            "l",
+            "e",
+            "c",
+            "o"
+          ],
+          "transcriptHiddenUntilAttempt": true,
+          "transcriptAfterAttempt": "jaleco"
+        }
+      ]
+    },
+    {
+      "id": "L07-A03",
+      "type": "independent-practice",
+      "focus": "read-and-respond",
+      "interaction": "composite",
+      "title": "Leia frases",
+      "instruction": "Leia a frase com calma, palavra por palavra. Depois responda à pergunta.",
+      "items": [
+        {
+          "sentence": "A caneta fica na gaveta.",
+          "prompt": "Onde fica a caneta?",
+          "options": [
+            "na sacola",
+            "na gaveta",
+            "no pote"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "sentence": "A rodovia fica lotada de dia.",
+          "prompt": "Como fica a rodovia de dia?",
+          "options": [
+            "vazia",
+            "nova",
+            "lotada"
+          ],
+          "correctIndex": 2
+        },
+        {
+          "sentence": "Zeca toma a vitamina de banana.",
+          "prompt": "De que é a vitamina?",
+          "options": [
+            "de banana",
+            "de jaca",
+            "de caju"
+          ],
+          "correctIndex": 0
+        }
+      ]
+    },
+    {
+      "id": "L07-A04",
+      "type": "short-open-production",
+      "focus": "escrever-e-revisar",
+      "title": "Agora escreva você",
+      "prompt": "Escreva três palavras do seu dia a dia: nomes de pessoas, comidas ou coisas da casa. Escolha palavras que você consiga escrever sílaba por sílaba, como cama, sopa ou Rita. Depois leia cada palavra em voz alta e confira com a lista abaixo.",
+      "responseMode": "free-text",
+      "recordResponse": true,
+      "automaticValidation": false,
+      "optionalScaffold": {
+        "wordBank": [
+          "cama",
+          "sopa",
+          "bolo",
+          "panela",
+          "tapete",
+          "Rita",
+          "Davi",
+          "Zeca"
+        ],
+        "availableOnDemand": true
+      },
+      "selfReview": [
+        "Falei cada palavra devagar, sílaba por sílaba?",
+        "Cada sílaba tem uma letra para cada som que eu falei?",
+        "Li o que escrevi e soou como a palavra?",
+        "Corrigi o que precisava ser corrigido?"
+      ],
+      "automaticObservations": [
+        "há texto além de espaços ou sinais",
+        "o campo livre foi usado",
+        "o apoio opcional foi ou não aberto",
+        "a autochecagem foi concluída"
+      ],
+      "notAutomaticallyJudged": [
+        "ortografia de cada palavra",
+        "se as palavras usam só as letras da unidade",
+        "veracidade pessoal da informação"
+      ]
+    },
+    {
+      "id": "L07-B05",
+      "type": "summary",
+      "focus": "read-or-listen",
+      "points": [
+        "Para ler uma palavra nova: separe as sílabas, junte consoante e vogal, junte as sílabas e confira se faz sentido.",
+        "Para escrever uma palavra ouvida: fale devagar, escreva sílaba por sílaba e releia.",
+        "Você já lê e escreve palavras com as vogais e com M, L, S, F, V, N, P, T, B, D, C, G, J, Z, X, R e H nas posições estudadas."
+      ],
+      "bridgeToUnitVerification": "Na verificação da unidade, você vai ler e escrever palavras que ainda não apareceram nas lições."
+    }
+  ],
+  "assessmentBehavior": {
+    "pronunciationPolicy": "não avaliar sotaque nem pronúncia; variações regionais (TI e DI como tchi e dji, vogais finais, som do R) são aceitas",
+    "ttsPolicy": "áudio sempre de palavra inteira; nos itens de leitura, o áudio só é liberado depois que o aluno marca que tentou ler; nos itens de escuta e de escrita, o áudio pode ser repetido sem penalidade",
+    "retryPolicy": "nova tentativa sem penalidade",
+    "timeLimit": false
+  },
+  "completionEvidence": {
+    "observablePerformance": "Ler palavras e frases inéditas com todas as letras da unidade, montar com fichas palavras ouvidas e escrever palavras próprias com autochecagem.",
+    "clusters": {
+      "wordReading": {
+        "evidence": [
+          "L07-A01",
+          "L07-A03"
+        ],
+        "required": true,
+        "rule": "acertar pelo menos 7 dos 8 itens de L07-A01 e pelo menos 2 das 3 frases de L07-A03"
+      },
+      "wordWriting": {
+        "evidence": [
+          "L07-A02"
+        ],
+        "required": true,
+        "rule": "montar corretamente pelo menos 5 das 6 palavras"
+      },
+      "ownWriting": {
+        "evidence": [
+          "L07-A04"
+        ],
+        "required": true,
+        "rule": "escrever três palavras próprias em campo livre e concluir a autochecagem"
+      }
+    },
+    "nonCompensable": true,
+    "completionRule": "os três agrupamentos são obrigatórios; a escrita própria conta como realizada e autorrevisada, não como ortografia validada.",
+    "requiresReliableEvaluatorFor": [
+      "ortografia das palavras próprias"
+    ],
+    "notSufficient": [
+      "ouvir o áudio das opções sem tentar ler antes",
+      "copiar a palavra mostrada depois da verificação",
+      "copiar as palavras de apoio sem ler"
+    ],
+    "activityPolicies": {
+      "L07-A01": {
+        "threshold": 0.875
+      },
+      "L07-A02": {
+        "threshold": 0.8333
+      },
+      "L07-A03": {
+        "threshold": 0.6667
+      }
+    }
+  }
+}

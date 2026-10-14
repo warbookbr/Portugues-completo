@@ -1,0 +1,541 @@
+{
+  "schemaVersion": 1,
+  "id": "N0-U07-L04",
+  "title": "B e D",
+  "studentObjective": "Ler e escrever palavras com B e D, como bolo, dedo e boleto, e não confundir essas letras com P e T.",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Estabelecer a correspondência entre B e D e seus sons em sílabas de consoante e vogal, aplicá-la na leitura de palavras e frases inéditas e na escrita de palavras ouvidas, e só então contrastar os pares P/B e T/D pela escuta e pela escrita.",
+  "competencies": [
+    "relacionar B e D aos seus sons pela sílaba de consoante e vogal",
+    "ler palavras e frases inéditas com B e D e letras já ensinadas",
+    "escrever com fichas palavras ouvidas com B e D",
+    "distinguir pela escuta e pela escrita palavras que mudam só P e B ou T e D",
+    "diferenciar visualmente b e d minúsculos"
+  ],
+  "prerequisites": [
+    "N0-U07-L03"
+  ],
+  "limits": [
+    "não usar dígrafos (ch, lh, nh, rr, ss, qu, gu), til, cedilha nem sílabas com consoante no fim ou com duas consoantes no começo; esses casos ficam para a N0-U08",
+    "não ensinar regras de posição (S entre vogais, R e X no meio da palavra, C e G antes de E e I); quando necessário, apenas avisar que esses casos ficam para depois",
+    "não usar áudio de som isolado de letra; todo áudio é de palavra inteira",
+    "não liberar o áudio da palavra-alvo antes da tentativa de leitura",
+    "não transformar a lição em recitação de famílias silábicas",
+    "não avaliar pronúncia, sotaque ou velocidade",
+    "trabalhar os pares P/B e T/D só no fim da lição, depois de B e D estarem estabelecidos"
+  ],
+  "media": {
+    "tts": "TTS do dispositivo apenas com palavras inteiras: palavras-chave das demonstrações, estímulo dos itens de escuta e de escrita com fichas, e opções de áudio liberadas depois da tentativa de leitura",
+    "controlledAudio": [],
+    "video": "nao necessario",
+    "images": "nao necessarias"
+  },
+  "supportMaterials": {
+    "curatedMedia": [],
+    "runtimeResources": [
+      {
+        "type": "TTS_OK",
+        "locations": [
+          "L04-B02",
+          "L04-B03",
+          "L04-A01",
+          "L04-A02 (depois da tentativa)",
+          "L04-A03",
+          "L04-A04"
+        ],
+        "purpose": "falar palavras inteiras conhecidas; a decisão do aluno depende de reconhecer a palavra, não de detalhe acústico sensível à voz do dispositivo"
+      }
+    ],
+    "generatedVisualResources": [
+      {
+        "type": "UI_RENDERED_LETTER_TILES",
+        "locations": [
+          "L04-A03"
+        ],
+        "purpose": "oferecer letras como fichas de texto para montar a palavra ouvida, com distratores plausíveis e sem revelar a ordem"
+      },
+      {
+        "type": "UI_RENDERED_ATTEMPT_GATED_AUDIO_OPTIONS",
+        "locations": [
+          "L04-A02"
+        ],
+        "purpose": "mostrar a palavra escrita primeiro e liberar as opções de áudio só depois que o aluno marca que tentou ler"
+      }
+    ],
+    "productionQueueRequired": false,
+    "publicationDependency": "não há mídia humana obrigatória; texto, fichas e TTS de palavra inteira bastam",
+    "decisionRationale": "a lição liga som e letra por palavras inteiras faladas e por sílabas escritas. Áudio de fonema isolado não é usado porque o TTS é pouco confiável nesse caso. Os pares P/B e T/D usam palavras inteiras comuns, cuja diferença o TTS realiza de forma estável."
+  },
+  "sequence": [
+    {
+      "id": "L04-B01",
+      "type": "objective",
+      "focus": "read-or-listen",
+      "text": "Nesta lição, você vai conhecer B e D. Primeiro vai trabalhar só com elas. No fim, vai comparar B com P e D com T, porque esses pares costumam confundir na leitura e na escrita."
+    },
+    {
+      "id": "L04-B02",
+      "type": "demonstration",
+      "focus": "listen-then-observe",
+      "title": "A letra B",
+      "letter": "B",
+      "text": "Ouça bolo. Os lábios se fecham e se abrem de uma vez, e a voz vibra: bo. Esse som é escrito com a letra B.",
+      "examples": [
+        "B b: BA, BE, BI, BO, BU",
+        "BO-LO: bolo"
+      ],
+      "ttsText": "bolo."
+    },
+    {
+      "id": "L04-B03",
+      "type": "demonstration",
+      "focus": "listen-then-observe",
+      "title": "A letra D",
+      "letter": "D",
+      "text": "Ouça dedo. A ponta da língua toca atrás dos dentes de cima e solta de uma vez, com a voz vibrando: de. Esse som é escrito com a letra D.",
+      "examples": [
+        "D d: DA, DE, DI, DO, DU",
+        "DE-DO: dedo"
+      ],
+      "ttsText": "dedo.",
+      "note": "Em muitas regiões, DI soa parecido com dji, como em dia. Isso também acontece com DE no fim da palavra, como em pode. A letra continua sendo D."
+    },
+    {
+      "id": "L04-B04",
+      "type": "strategy",
+      "focus": "observe",
+      "title": "Não confunda b e d na escrita",
+      "text": "O b e o d minúsculos têm um círculo e um traço alto. No b, o traço fica à esquerda e o círculo à direita. No d, o círculo fica à esquerda e o traço à direita. Nas maiúsculas, B e D têm formas bem diferentes.",
+      "examples": [
+        "b: traço à esquerda, círculo à direita",
+        "d: círculo à esquerda, traço à direita",
+        "B e D maiúsculos"
+      ]
+    },
+    {
+      "id": "L04-C01",
+      "type": "quick-check-set",
+      "focus": "read-and-respond",
+      "instruction": "Leia a sílaba e escolha a palavra que começa com ela. Esta parte é só para praticar.",
+      "items": [
+        {
+          "question": "Qual palavra começa com BU?",
+          "options": [
+            "bola",
+            "bula",
+            "bala"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "question": "Qual palavra começa com DO?",
+          "options": [
+            "dona",
+            "dama",
+            "duna"
+          ],
+          "correctIndex": 0
+        }
+      ]
+    },
+    {
+      "id": "L04-A01",
+      "type": "guided-activity",
+      "focus": "listen-and-respond",
+      "interaction": "composite",
+      "title": "Ouça e escolha a primeira sílaba",
+      "instruction": "Ouça cada palavra. Escolha a sílaba escrita que começa a palavra. Você pode ouvir quantas vezes quiser.",
+      "items": [
+        {
+          "prompt": "Qual sílaba começa esta palavra?",
+          "ttsCue": "batata",
+          "options": [
+            "BE",
+            "BA",
+            "BO"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "prompt": "Qual sílaba começa esta palavra?",
+          "ttsCue": "dúvida",
+          "options": [
+            "DU",
+            "DO",
+            "DA"
+          ],
+          "correctIndex": 0
+        },
+        {
+          "prompt": "Qual sílaba começa esta palavra?",
+          "ttsCue": "bicicleta",
+          "options": [
+            "BE",
+            "BU",
+            "BI"
+          ],
+          "correctIndex": 2
+        },
+        {
+          "prompt": "Qual sílaba começa esta palavra?",
+          "ttsCue": "doce",
+          "options": [
+            "DU",
+            "DO",
+            "DE"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "prompt": "Qual sílaba começa esta palavra?",
+          "ttsCue": "bermuda",
+          "options": [
+            "BE",
+            "BI",
+            "BA"
+          ],
+          "correctIndex": 0
+        }
+      ]
+    },
+    {
+      "id": "L04-A02",
+      "type": "guided-activity",
+      "focus": "read-and-respond",
+      "interaction": "composite",
+      "title": "Leia palavras e frases novas",
+      "instruction": "Leia as palavras das opções e escolha a que responde à pergunta. Quando a pergunta disser Leia, tente ler a palavra primeiro; o áudio só fica disponível depois que você marcar que tentou. Nas frases, leia com calma, palavra por palavra.",
+      "items": [
+        {
+          "prompt": "Qual destas coisas é um papel para pagar uma conta?",
+          "options": [
+            "boleto",
+            "bonito",
+            "bolada"
+          ],
+          "correctIndex": 0
+        },
+        {
+          "prompt": "Qual destas coisas usamos nos pés?",
+          "options": [
+            "bola",
+            "bota",
+            "bata"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "prompt": "Qual palavra é o contrário de tudo?",
+          "options": [
+            "moda",
+            "nave",
+            "nada"
+          ],
+          "correctIndex": 2
+        },
+        {
+          "prompt": "Leia: BEBIDA. Depois marque que tentou e escolha o áudio que diz essa palavra.",
+          "audioOptions": [
+            {
+              "label": "A",
+              "ttsText": "batida"
+            },
+            {
+              "label": "B",
+              "ttsText": "bebida"
+            },
+            {
+              "label": "C",
+              "ttsText": "comida"
+            }
+          ],
+          "correctIndex": 1,
+          "attemptGateRequired": true,
+          "audioOptionTextVisible": false
+        },
+        {
+          "prompt": "Leia: TABELA. Depois marque que tentou e escolha o áudio que diz essa palavra.",
+          "audioOptions": [
+            {
+              "label": "A",
+              "ttsText": "tabela"
+            },
+            {
+              "label": "B",
+              "ttsText": "panela"
+            },
+            {
+              "label": "C",
+              "ttsText": "fivela"
+            }
+          ],
+          "correctIndex": 0,
+          "attemptGateRequired": true,
+          "audioOptionTextVisible": false
+        },
+        {
+          "sentence": "O bolo da Bia é de banana.",
+          "prompt": "De que é o bolo?",
+          "options": [
+            "de batata",
+            "de tomate",
+            "de banana"
+          ],
+          "correctIndex": 2
+        },
+        {
+          "sentence": "Duda pede o boleto.",
+          "prompt": "O que Duda pede?",
+          "options": [
+            "a bota",
+            "o boleto",
+            "o bolo"
+          ],
+          "correctIndex": 1
+        }
+      ]
+    },
+    {
+      "id": "L04-A03",
+      "type": "guided-activity",
+      "focus": "listen-and-write",
+      "interaction": "composite",
+      "title": "Escreva a palavra que ouvir",
+      "instruction": "Ouça a palavra e toque nas letras na ordem certa. Uma letra pode ser usada mais de uma vez. Se errar, toque em Limpar sequência e monte de novo. Depois de verificar, a palavra escrita aparece para você conferir.",
+      "items": [
+        {
+          "ttsCue": "bife",
+          "availableTiles": [
+            "o",
+            "d",
+            "e",
+            "b",
+            "i",
+            "f"
+          ],
+          "correctSequence": [
+            "b",
+            "i",
+            "f",
+            "e"
+          ],
+          "transcriptHiddenUntilAttempt": true,
+          "transcriptAfterAttempt": "bife"
+        },
+        {
+          "ttsCue": "moda",
+          "availableTiles": [
+            "b",
+            "d",
+            "a",
+            "e",
+            "m",
+            "o"
+          ],
+          "correctSequence": [
+            "m",
+            "o",
+            "d",
+            "a"
+          ],
+          "transcriptHiddenUntilAttempt": true,
+          "transcriptAfterAttempt": "moda"
+        },
+        {
+          "ttsCue": "lado",
+          "availableTiles": [
+            "o",
+            "l",
+            "b",
+            "u",
+            "d",
+            "a"
+          ],
+          "correctSequence": [
+            "l",
+            "a",
+            "d",
+            "o"
+          ],
+          "transcriptHiddenUntilAttempt": true,
+          "transcriptAfterAttempt": "lado"
+        },
+        {
+          "ttsCue": "bule",
+          "availableTiles": [
+            "l",
+            "u",
+            "d",
+            "e",
+            "b",
+            "o"
+          ],
+          "correctSequence": [
+            "b",
+            "u",
+            "l",
+            "e"
+          ],
+          "transcriptHiddenUntilAttempt": true,
+          "transcriptAfterAttempt": "bule"
+        },
+        {
+          "ttsCue": "banana",
+          "availableTiles": [
+            "n",
+            "m",
+            "d",
+            "b",
+            "a"
+          ],
+          "correctSequence": [
+            "b",
+            "a",
+            "n",
+            "a",
+            "n",
+            "a"
+          ],
+          "transcriptHiddenUntilAttempt": true,
+          "transcriptAfterAttempt": "banana"
+        }
+      ]
+    },
+    {
+      "id": "L04-A04",
+      "type": "guided-activity",
+      "focus": "listen-and-respond",
+      "interaction": "composite",
+      "title": "P ou B? T ou D?",
+      "instruction": "Agora compare as letras parecidas. Ouça a palavra e escolha como ela se escreve. As duas opções mudam só uma letra: P ou B, T ou D. Fale em voz baixa junto com o áudio e preste atenção ao começo da palavra.",
+      "items": [
+        {
+          "prompt": "Como se escreve a palavra que você ouviu?",
+          "ttsCue": "pote",
+          "options": [
+            "bote",
+            "pote"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "prompt": "Como se escreve a palavra que você ouviu?",
+          "ttsCue": "bote",
+          "options": [
+            "bote",
+            "pote"
+          ],
+          "correctIndex": 0
+        },
+        {
+          "prompt": "Como se escreve a palavra que você ouviu?",
+          "ttsCue": "tia",
+          "options": [
+            "dia",
+            "tia"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "prompt": "Como se escreve a palavra que você ouviu?",
+          "ttsCue": "nada",
+          "options": [
+            "nata",
+            "nada"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "prompt": "Como se escreve a palavra que você ouviu?",
+          "ttsCue": "bala",
+          "options": [
+            "bala",
+            "pala"
+          ],
+          "correctIndex": 0
+        },
+        {
+          "prompt": "Como se escreve a palavra que você ouviu?",
+          "ttsCue": "tela",
+          "options": [
+            "tela",
+            "dela"
+          ],
+          "correctIndex": 0
+        }
+      ]
+    },
+    {
+      "id": "L04-B05",
+      "type": "summary",
+      "focus": "read-or-listen",
+      "points": [
+        "O B se faz como o P, mas com a voz vibrando: pa, ba.",
+        "O D se faz como o T, mas com a voz vibrando: ta, da.",
+        "No b minúsculo, o círculo fica à direita do traço; no d, fica à esquerda.",
+        "Quando a dúvida for entre P e B ou entre T e D, fale a palavra devagar e preste atenção ao começo: pote e bote, tia e dia."
+      ],
+      "bridgeToNextLesson": "Na próxima lição, você vai conhecer C, G, J, Z, X e R."
+    }
+  ],
+  "assessmentBehavior": {
+    "pronunciationPolicy": "não avaliar sotaque nem pronúncia; variações regionais (TI e DI como tchi e dji, vogais finais, som do R) são aceitas",
+    "ttsPolicy": "áudio sempre de palavra inteira; nos itens de leitura, o áudio só é liberado depois que o aluno marca que tentou ler; nos itens de escuta e de escrita, o áudio pode ser repetido sem penalidade",
+    "retryPolicy": "nova tentativa sem penalidade",
+    "timeLimit": false
+  },
+  "completionEvidence": {
+    "observablePerformance": "Ligar a primeira sílaba de palavras ouvidas à sílaba escrita com B ou D, ler palavras e frases inéditas, montar com fichas palavras ouvidas e distinguir pela escuta pares de palavras que mudam só P e B ou T e D.",
+    "clusters": {
+      "soundLetter": {
+        "evidence": [
+          "L04-A01"
+        ],
+        "required": true,
+        "rule": "acertar pelo menos 4 dos 5 itens"
+      },
+      "wordReading": {
+        "evidence": [
+          "L04-A02"
+        ],
+        "required": true,
+        "rule": "acertar pelo menos 6 dos 7 itens, incluindo pelo menos uma das duas frases"
+      },
+      "wordWriting": {
+        "evidence": [
+          "L04-A03"
+        ],
+        "required": true,
+        "rule": "montar corretamente pelo menos 4 das 5 palavras"
+      },
+      "confusablePairs": {
+        "evidence": [
+          "L04-A04"
+        ],
+        "required": true,
+        "rule": "acertar pelo menos 5 dos 6 pares"
+      }
+    },
+    "nonCompensable": true,
+    "completionRule": "os quatro agrupamentos são obrigatórios; acertar muito em um não compensa outro.",
+    "notSufficient": [
+      "ouvir o áudio das opções sem tentar ler antes",
+      "copiar a palavra mostrada depois da verificação",
+      "acertar os pares por exclusão sem ouvir"
+    ],
+    "activityPolicies": {
+      "L04-A01": {
+        "threshold": 0.8
+      },
+      "L04-A02": {
+        "threshold": 0.8571
+      },
+      "L04-A03": {
+        "threshold": 0.8
+      },
+      "L04-A04": {
+        "threshold": 0.8333
+      }
+    }
+  }
+}

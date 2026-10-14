@@ -1,0 +1,494 @@
+{
+  "schemaVersion": 1,
+  "id": "N0-U07-L03",
+  "title": "P e T",
+  "studentObjective": "Ler e escrever palavras com P e T, como pano, tela e tapete, juntando o som da letra com a vogal.",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Estabelecer a correspondência entre P e T e seus sons em sílabas de consoante e vogal, reconhecendo que o som sai de uma vez, e aplicá-la na leitura de palavras inéditas e na escrita de palavras ouvidas junto com as letras anteriores.",
+  "competencies": [
+    "relacionar P e T aos seus sons pela sílaba de consoante e vogal",
+    "ler sílabas e palavras inéditas com P e T e letras já ensinadas",
+    "escrever com fichas palavras ouvidas com P e T",
+    "ler frases curtas formadas só com letras ensinadas",
+    "aceitar variações regionais de TI e TE sem mudar a escrita"
+  ],
+  "prerequisites": [
+    "N0-U07-L02"
+  ],
+  "limits": [
+    "não usar dígrafos (ch, lh, nh, rr, ss, qu, gu), til, cedilha nem sílabas com consoante no fim ou com duas consoantes no começo; esses casos ficam para a N0-U08",
+    "não ensinar regras de posição (S entre vogais, R e X no meio da palavra, C e G antes de E e I); quando necessário, apenas avisar que esses casos ficam para depois",
+    "não usar áudio de som isolado de letra; todo áudio é de palavra inteira",
+    "não liberar o áudio da palavra-alvo antes da tentativa de leitura",
+    "não transformar a lição em recitação de famílias silábicas",
+    "não avaliar pronúncia, sotaque ou velocidade"
+  ],
+  "media": {
+    "tts": "TTS do dispositivo apenas com palavras inteiras: palavras-chave das demonstrações, estímulo dos itens de escuta e de escrita com fichas, e opções de áudio liberadas depois da tentativa de leitura",
+    "controlledAudio": [],
+    "video": "nao necessario",
+    "images": "nao necessarias"
+  },
+  "supportMaterials": {
+    "curatedMedia": [],
+    "runtimeResources": [
+      {
+        "type": "TTS_OK",
+        "locations": [
+          "L03-B02",
+          "L03-B03",
+          "L03-A01",
+          "L03-A02 (depois da tentativa)",
+          "L03-A03"
+        ],
+        "purpose": "falar palavras inteiras conhecidas; a decisão do aluno depende de reconhecer a palavra, não de detalhe acústico sensível à voz do dispositivo"
+      }
+    ],
+    "generatedVisualResources": [
+      {
+        "type": "UI_RENDERED_LETTER_TILES",
+        "locations": [
+          "L03-A03"
+        ],
+        "purpose": "oferecer letras como fichas de texto para montar a palavra ouvida, com distratores plausíveis e sem revelar a ordem"
+      },
+      {
+        "type": "UI_RENDERED_ATTEMPT_GATED_AUDIO_OPTIONS",
+        "locations": [
+          "L03-A02"
+        ],
+        "purpose": "mostrar a palavra escrita primeiro e liberar as opções de áudio só depois que o aluno marca que tentou ler"
+      }
+    ],
+    "productionQueueRequired": false,
+    "publicationDependency": "não há mídia humana obrigatória; texto, fichas e TTS de palavra inteira bastam",
+    "decisionRationale": "a lição liga som e letra por palavras inteiras faladas e por sílabas escritas. Áudio de fonema isolado não é usado porque o TTS é pouco confiável nesse caso. "
+  },
+  "sequence": [
+    {
+      "id": "L03-B01",
+      "type": "objective",
+      "focus": "read-or-listen",
+      "text": "Agora você vai conhecer P e T. O som dessas letras não dá para esticar como mmmm. Ele sai de uma vez, junto com a vogal. Você vai ler e escrever palavras com P e T e com as letras que já conhece."
+    },
+    {
+      "id": "L03-B02",
+      "type": "demonstration",
+      "focus": "listen-then-observe",
+      "title": "A letra P",
+      "letter": "P",
+      "text": "Ouça pano. Os lábios se fecham e se abrem de uma vez, e o som sai junto com o A: pa. Esse som é escrito com a letra P.",
+      "examples": [
+        "P p: PA, PE, PI, PO, PU",
+        "PA-NO: pano"
+      ],
+      "ttsText": "pano."
+    },
+    {
+      "id": "L03-B03",
+      "type": "demonstration",
+      "focus": "listen-then-observe",
+      "title": "A letra T",
+      "letter": "T",
+      "text": "Ouça tela, como a tela do celular. A ponta da língua toca atrás dos dentes de cima e solta de uma vez: te. Esse som é escrito com a letra T.",
+      "examples": [
+        "T t: TA, TE, TI, TO, TU",
+        "TE-LA: tela"
+      ],
+      "ttsText": "tela.",
+      "note": "Em muitas regiões, TI soa parecido com tchi, como em time. Isso também acontece com TE no fim da palavra, como em mate. A letra continua sendo T."
+    },
+    {
+      "id": "L03-B04",
+      "type": "strategy",
+      "focus": "read",
+      "title": "Não pare na consoante",
+      "text": "O som de P e de T não se sustenta sozinho. Por isso, leia a consoante já junto com a vogal: diga pa de uma vez, sem separar o P do A. Depois junte as sílabas: pa-no, pano; te-la, tela.",
+      "examples": [
+        "PA + NO = PANO",
+        "TE + LA = TELA"
+      ]
+    },
+    {
+      "id": "L03-C01",
+      "type": "quick-check-set",
+      "focus": "read-and-respond",
+      "instruction": "Leia a sílaba e escolha a palavra que começa com ela. Esta parte é só para praticar.",
+      "items": [
+        {
+          "question": "Qual palavra começa com PU?",
+          "options": [
+            "polo",
+            "pala",
+            "pulo"
+          ],
+          "correctIndex": 2
+        },
+        {
+          "question": "Qual palavra começa com TA?",
+          "options": [
+            "tala",
+            "tolo",
+            "tule"
+          ],
+          "correctIndex": 0
+        }
+      ]
+    },
+    {
+      "id": "L03-A01",
+      "type": "guided-activity",
+      "focus": "listen-and-respond",
+      "interaction": "composite",
+      "title": "Ouça e escolha a primeira sílaba",
+      "instruction": "Ouça cada palavra. Escolha a sílaba escrita que começa a palavra. Você pode ouvir quantas vezes quiser.",
+      "items": [
+        {
+          "prompt": "Qual sílaba começa esta palavra?",
+          "ttsCue": "tomate",
+          "options": [
+            "PO",
+            "TO",
+            "TU"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "prompt": "Qual sílaba começa esta palavra?",
+          "ttsCue": "pena",
+          "options": [
+            "PE",
+            "TE",
+            "PI"
+          ],
+          "correctIndex": 0
+        },
+        {
+          "prompt": "Qual sílaba começa esta palavra?",
+          "ttsCue": "tatu",
+          "options": [
+            "PA",
+            "TE",
+            "TA"
+          ],
+          "correctIndex": 2
+        },
+        {
+          "prompt": "Qual sílaba começa esta palavra?",
+          "ttsCue": "pilha",
+          "options": [
+            "TI",
+            "PI",
+            "PE"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "prompt": "Qual sílaba começa esta palavra?",
+          "ttsCue": "tudo",
+          "options": [
+            "TU",
+            "PU",
+            "TO"
+          ],
+          "correctIndex": 0
+        }
+      ]
+    },
+    {
+      "id": "L03-A02",
+      "type": "guided-activity",
+      "focus": "read-and-respond",
+      "interaction": "composite",
+      "title": "Leia palavras novas",
+      "instruction": "Leia as palavras das opções e escolha a que responde à pergunta. Quando a pergunta disser Leia, tente ler a palavra primeiro; o áudio só fica disponível depois que você marcar que tentou.",
+      "items": [
+        {
+          "prompt": "Qual destas coisas fica no chão da sala?",
+          "options": [
+            "tomate",
+            "tapete",
+            "topete"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "prompt": "Em qual destas coisas podemos guardar comida?",
+          "options": [
+            "pato",
+            "pote",
+            "pata"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "prompt": "Qual destas coisas mostra ruas e caminhos?",
+          "options": [
+            "mala",
+            "mata",
+            "mapa"
+          ],
+          "correctIndex": 2
+        },
+        {
+          "prompt": "Qual destas coisas usamos nos pés?",
+          "options": [
+            "sopa",
+            "sapato",
+            "sapo"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "prompt": "Leia: PANELA. Depois marque que tentou e escolha o áudio que diz essa palavra.",
+          "audioOptions": [
+            {
+              "label": "A",
+              "ttsText": "janela"
+            },
+            {
+              "label": "B",
+              "ttsText": "panela"
+            },
+            {
+              "label": "C",
+              "ttsText": "tapete"
+            }
+          ],
+          "correctIndex": 1,
+          "attemptGateRequired": true,
+          "audioOptionTextVisible": false
+        },
+        {
+          "prompt": "Leia: APITO. Depois marque que tentou e escolha o áudio que diz essa palavra.",
+          "audioOptions": [
+            {
+              "label": "A",
+              "ttsText": "palito"
+            },
+            {
+              "label": "B",
+              "ttsText": "pipa"
+            },
+            {
+              "label": "C",
+              "ttsText": "apito"
+            }
+          ],
+          "correctIndex": 2,
+          "attemptGateRequired": true,
+          "audioOptionTextVisible": false
+        }
+      ]
+    },
+    {
+      "id": "L03-A03",
+      "type": "guided-activity",
+      "focus": "listen-and-write",
+      "interaction": "composite",
+      "title": "Escreva a palavra que ouvir",
+      "instruction": "Ouça a palavra e toque nas letras na ordem certa. Uma letra pode ser usada mais de uma vez. Se errar, toque em Limpar sequência e monte de novo. Depois de verificar, a palavra escrita aparece para você conferir.",
+      "items": [
+        {
+          "ttsCue": "lata",
+          "availableTiles": [
+            "p",
+            "l",
+            "o",
+            "a",
+            "t"
+          ],
+          "correctSequence": [
+            "l",
+            "a",
+            "t",
+            "a"
+          ],
+          "transcriptHiddenUntilAttempt": true,
+          "transcriptAfterAttempt": "lata"
+        },
+        {
+          "ttsCue": "tipo",
+          "availableTiles": [
+            "p",
+            "e",
+            "f",
+            "t",
+            "i",
+            "o"
+          ],
+          "correctSequence": [
+            "t",
+            "i",
+            "p",
+            "o"
+          ],
+          "transcriptHiddenUntilAttempt": true,
+          "transcriptAfterAttempt": "tipo"
+        },
+        {
+          "ttsCue": "moto",
+          "availableTiles": [
+            "u",
+            "o",
+            "p",
+            "t",
+            "m"
+          ],
+          "correctSequence": [
+            "m",
+            "o",
+            "t",
+            "o"
+          ],
+          "transcriptHiddenUntilAttempt": true,
+          "transcriptAfterAttempt": "moto"
+        },
+        {
+          "ttsCue": "fita",
+          "availableTiles": [
+            "a",
+            "v",
+            "e",
+            "t",
+            "i",
+            "f"
+          ],
+          "correctSequence": [
+            "f",
+            "i",
+            "t",
+            "a"
+          ],
+          "transcriptHiddenUntilAttempt": true,
+          "transcriptAfterAttempt": "fita"
+        },
+        {
+          "ttsCue": "nota",
+          "availableTiles": [
+            "m",
+            "p",
+            "a",
+            "t",
+            "o",
+            "n"
+          ],
+          "correctSequence": [
+            "n",
+            "o",
+            "t",
+            "a"
+          ],
+          "transcriptHiddenUntilAttempt": true,
+          "transcriptAfterAttempt": "nota"
+        }
+      ]
+    },
+    {
+      "id": "L03-A04",
+      "type": "guided-activity",
+      "focus": "read-and-respond",
+      "interaction": "composite",
+      "title": "Leia frases curtas",
+      "instruction": "Leia a frase com calma, palavra por palavra. Depois responda à pergunta.",
+      "items": [
+        {
+          "sentence": "Tito lava o pote.",
+          "prompt": "O que Tito lava?",
+          "options": [
+            "a panela",
+            "o pote",
+            "a moto"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "sentence": "O pano é fino.",
+          "prompt": "Como é o pano?",
+          "options": [
+            "leve",
+            "novo",
+            "fino"
+          ],
+          "correctIndex": 2
+        },
+        {
+          "sentence": "Tati toma a sopa.",
+          "prompt": "O que Tati toma?",
+          "options": [
+            "a sopa",
+            "o mate",
+            "a nota"
+          ],
+          "correctIndex": 0
+        }
+      ]
+    },
+    {
+      "id": "L03-B05",
+      "type": "summary",
+      "focus": "read-or-listen",
+      "points": [
+        "O som de P e de T sai de uma vez e vem junto com a vogal: pa, te.",
+        "O P se faz com os lábios; o T, com a ponta da língua atrás dos dentes de cima.",
+        "Em muitas regiões, TI soa como tchi. A letra continua sendo T.",
+        "Para ler, junte cada consoante com a vogal e depois junte as sílabas: ta-pe-te, tapete."
+      ],
+      "bridgeToNextLesson": "Na próxima lição, você vai conhecer B e D. Elas se parecem com P e T, mas a voz vibra."
+    }
+  ],
+  "assessmentBehavior": {
+    "pronunciationPolicy": "não avaliar sotaque nem pronúncia; variações regionais (TI e DI como tchi e dji, vogais finais, som do R) são aceitas",
+    "ttsPolicy": "áudio sempre de palavra inteira; nos itens de leitura, o áudio só é liberado depois que o aluno marca que tentou ler; nos itens de escuta e de escrita, o áudio pode ser repetido sem penalidade",
+    "retryPolicy": "nova tentativa sem penalidade",
+    "timeLimit": false
+  },
+  "completionEvidence": {
+    "observablePerformance": "Ligar a primeira sílaba de palavras ouvidas à sílaba escrita com P ou T, ler palavras inéditas com P e T e letras anteriores, montar com fichas palavras ouvidas e responder a perguntas sobre frases curtas.",
+    "clusters": {
+      "soundLetter": {
+        "evidence": [
+          "L03-A01"
+        ],
+        "required": true,
+        "rule": "acertar pelo menos 4 dos 5 itens"
+      },
+      "wordReading": {
+        "evidence": [
+          "L03-A02",
+          "L03-A04"
+        ],
+        "required": true,
+        "rule": "acertar pelo menos 5 dos 6 itens de L03-A02 e pelo menos 2 das 3 frases de L03-A04"
+      },
+      "wordWriting": {
+        "evidence": [
+          "L03-A03"
+        ],
+        "required": true,
+        "rule": "montar corretamente pelo menos 4 das 5 palavras"
+      }
+    },
+    "nonCompensable": true,
+    "completionRule": "os três agrupamentos são obrigatórios; acertar muito em um não compensa outro.",
+    "notSufficient": [
+      "ouvir o áudio das opções sem tentar ler antes",
+      "copiar a palavra mostrada depois da verificação",
+      "recitar famílias silábicas sem ler palavras"
+    ],
+    "activityPolicies": {
+      "L03-A01": {
+        "threshold": 0.8
+      },
+      "L03-A02": {
+        "threshold": 0.8333
+      },
+      "L03-A03": {
+        "threshold": 0.8
+      },
+      "L03-A04": {
+        "threshold": 0.6667
+      }
+    }
+  }
+}
