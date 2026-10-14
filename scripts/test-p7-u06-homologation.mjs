@@ -26,7 +26,7 @@ assert.equal(courseUnit.manifest, 'units/006-usando-lingua-cotidiano/unit.json')
 
 assert.match(homologation, /P7 \/ lote N0-U06: HOMOLOGADO/);
 assert.match(homologation, /Próximo lote: N1-U01 — Lendo textos com mais autonomia/);
-assert.match(state, /P7 — Ampliação do catálogo Clássico N0→N4: ATIVO/);
+assert.match(state, /P7 — Ampliação do catálogo Clássico N0→N4: (ATIVO|PAUSADO por R1)/);
 assert.match(state, /N0-U06[^\n]*HOMOLOGADO/);
 assert.doesNotMatch(state, /Próximo passo exato: iniciar o lote N0-U06/);
 assert.match(roadmap, /N0-U06[^\n]*homologad/i);

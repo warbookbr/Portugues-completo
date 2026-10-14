@@ -6,6 +6,23 @@ O objetivo é organizar a progressão geral do curso antes de detalhar todas as 
 
 ## Estrutura de níveis
 
+### Público e pontos de entrada
+
+O curso atende principalmente quem **já lê e escreve**, com qualquer grau de segurança. Decisão registrada em `docs/auditoria-plano-ensino.md` (seção 6):
+
+```text
+Ainda estou aprendendo a ler e escrever
+→ Trilha de Alfabetização (separada e opcional) → N0
+
+Leio e escrevo com pouca segurança
+→ N0 (a partir de "Palavras, frases e sentido")
+
+Leio e escrevo bem
+→ nivelamento curto → N1, N2 ou adiante
+```
+
+A **Trilha de Alfabetização** reúne letras, sons, sílabas, decodificação e escrita de palavras (as atuais N0-U01 e N0-U02, ampliadas). Ela fica fora do caminho principal, mas usa as mesmas regras de progressão e linguagem. As áreas 1 e 2 descritas abaixo no Nível 0 passam a ser responsabilidade dessa trilha.
+
 ### Nível 0 — Fundamentos
 
 Base inicial da língua portuguesa, partindo do zero.

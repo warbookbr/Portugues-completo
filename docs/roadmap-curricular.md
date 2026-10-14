@@ -333,7 +333,14 @@ N4 — M5 ✓
     └── checkpoint final ✓
 
 CURRÍCULO N0→N4 ✓
+
+REABERTURA LOCALIZADA
+R1 — Revisão do plano de ensino → ATIVO
 ```
+
+A auditoria `docs/auditoria-plano-ensino.md` comparou o currículo com a sequência real de ensino (BNCC, alfabetização) e com o conteúdo efetivo das lições. Resultado: ordem macro mantida; alfabetização separada em **Trilha de Alfabetização** opcional; N0 do caminho principal começa em "Palavras, frases e sentido"; lacunas de escopo no N1/N2 e defeitos de método em todos os níveis passam a ser corrigidos por nível. Ordem e subpassos em `docs/roadmap-produto.md` (seção R1).
+
+Esta reabertura aplica a regra 46 (evidência concreta justifica reabertura localizada) e não descarta o currículo fechado.
 
 # Próxima fase
 

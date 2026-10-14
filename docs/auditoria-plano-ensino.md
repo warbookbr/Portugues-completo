@@ -1,12 +1,14 @@
 # Auditoria do plano de ensino N0→N4
 
-**Status:** `PROPOSTA / AGUARDANDO DECISÃO DO DONO DO PROJETO`
+**Status:** `DECIDIDA` (estrutura e prioridades aprovadas pelo dono do projeto em 2026-10-14)
+
+**Marco gerado:** `R1 — Revisão do plano de ensino` (ver `docs/roadmap-produto.md`)
 
 **Data:** 2026-10-14
 
 **Escopo:** progressão curricular de todo o curso (níveis, unidades e lições), comparada com a sequência real de ensino de português no Brasil e com o conteúdo efetivamente escrito nas lições.
 
-Este documento é diagnóstico e proposta. Ele **não** altera conteúdo, catálogo, IDs ou progresso. Nenhuma correção aqui listada está autorizada até decisão explícita. Quando aprovadas, as regras da Parte 2 devem migrar para as fontes canônicas (`docs/conteudo.md`, `docs/exercicios.md`, `docs/linguagem-aluno.md` e skills) em vez de permanecer apenas aqui.
+Este documento registra o diagnóstico, a decisão de estrutura (seção 6) e a ordem de correção. As regras de método da Parte 2 foram promovidas às fontes canônicas (`docs/conteudo.md`, `docs/exercicios.md`, `docs/linguagem-aluno.md` e skill `course-content-design`); este arquivo mantém a rastreabilidade do diagnóstico.
 
 ---
 
@@ -117,7 +119,7 @@ Nota: a própria auditoria T1.1 citou a recomendação do IES de "ensinar decodi
 
 A ordem macro dos níveis e unidades é mantida. As inclusões são:
 
-**N0: núcleo de alfabetização completo**
+**Alfabetização completa** (pela decisão da seção 6, esta sequência passa a formar a Trilha de Alfabetização separada; o N0 do caminho principal começa em U3)
 
 ```text
 U1  Letras e primeiros sons (atual, com ajustes)
@@ -262,6 +264,8 @@ Cada regra abaixo responde a um defeito encontrado repetidamente no conteúdo at
 
 ### Prioridade 1: alfabetização do N0 (bloqueia o aluno real)
 
+Pela decisão da seção 6, este bloco passa a ser escopo da Trilha de Alfabetização (R1.9). Os itens 1.6 (espaço e maiúscula) e o restante do que afeta N0-U03 em diante continuam no caminho principal (R1.3).
+
 | # | Problema | Evidência | Correção |
 |---|---|---|---|
 | 1.1 | Decodificação nunca ensinada | N0-U01-L05: "ainda não estamos criando regras sobre os sons de cada letra"; sons das vogais nunca trabalhados; N0-U03-L01 pede "Leia CORRER" com sílabas nunca vistas | Bloco A da seção 2.3 |
@@ -317,21 +321,61 @@ Aplicar as regras transversais da seção 3.1. Ordem sugerida:
 
 ---
 
-## 6. Impacto no produto e decisões pendentes
+## 6. Decisão de estrutura e ordem de execução
 
-O N0 inteiro já está publicado no Modo Clássico. O P7 está ativo e o próximo lote seria N1-U01.
+### 6.1 Público e estrutura
 
-Corrigir o N0 exige criar lições novas e, possivelmente, mudar o significado de lições publicadas. Pelas regras do projeto, isso passa por mapeamento de identidade, progresso, manifests, deep links e mídia antes de qualquer alteração.
+O curso é voltado principalmente a quem **já lê e escreve**, com qualquer grau de segurança. A alfabetização inicial passa a ser uma **trilha separada e opcional**, fora do caminho principal.
 
-Decisões que pertencem ao dono do projeto:
+```text
+Primeira entrada: "Por onde você quer começar?"
+│
+├─ Ainda estou aprendendo a ler e escrever
+│     → Trilha de Alfabetização (separada, opcional)
+│     → ao concluir, segue para o N0
+│
+├─ Leio e escrevo, mas com pouca segurança
+│     → começa no N0
+│
+└─ Leio e escrevo bem
+      → nivelamento curto
+      → começa no N1, N2 ou adiante (sempre pode mudar)
+```
 
-1. **Pausar o P7** e abrir um marco curricular de revisão começando pela alfabetização, ou continuar publicando N1 em paralelo.
-   Recomendação: pausar. Publicar N1 agora significa publicar conteúdo que a Prioridade 2 e 3 vão reescrever, e o aluno real que entrar no N0 hoje não consegue atravessar U2 → U3.
-2. **Profundidade da alfabetização:** confirmar que o curso deve atender quem ainda não sabe ler (adulto ou jovem em alfabetização). Se sim, o Bloco A e o Bloco B são obrigatórios.
-3. **Escopo de literatura:** só interpretação e fruição, ou também literatura no tempo e leitura integral guiada, como no ensino médio.
-4. **Destino da Parte 2:** depois de aprovada, migrar as regras para `docs/conteudo.md`, `docs/exercicios.md`, `docs/linguagem-aluno.md` e para a skill `course-content-design`, transformando-as em critério obrigatório de revisão.
+Consequências:
 
----
+- **Trilha de Alfabetização:** reúne as atuais N0-U01 (letras e primeiros sons) e N0-U02 (sílabas e primeiras palavras) e recebe os Blocos A e B da seção 2.3 e a verificação de decodificação consolidada. A lacuna 1.1 a 1.7 da Parte 3 passa a ser escopo dessa trilha.
+- **N0 do caminho principal:** começa em "Palavras, frases e sentido" (atual N0-U03), para quem lê com pouca segurança. Os pré-requisitos de N0-U03-L01 deixam de exigir a verificação de sílabas; o aluno que vem da trilha chega ao N0 pela conclusão dela.
+- **Nivelamento:** escolha de perfil na primeira entrada; teste curto apenas para quem declara ler bem. A escolha é recomendação, não bloqueio.
+- **Identidade:** IDs publicados (`N0-U01`, `N0-U02` e suas lições) são preservados para não exigir migração de progresso; muda apenas o pertencimento de trilha no catálogo. A decisão final de identidade é registrada no subpasso de produto que implementar a trilha.
+- **Ordem N0 → N4:** mantida.
+
+### 6.2 Ordem de execução aprovada
+
+```text
+R1.1 documentação, roadmap e regras de método nas fontes canônicas
+R1.2 correções objetivas (IDs históricos, erros pontuais, pontes)
+R1.3 N0 a partir de U3: método (termos, espaço/maiúscula, oralidade, literatura, repetição)
+R1.4 N1: método + lacunas de ortografia
+R1.5 N2: método + modos verbais, passiva/relativa/formas nominais,
+     discurso direto e indireto, pares que confundem
+R1.6 N3: construção da sintaxe da U3, exemplos reais, crescimento de textos, checagens
+R1.7 N4: condensar repetição do N3, material longo real, termos novos
+R1.8 produto: trilha separada no catálogo, N0 a partir de U3, nivelamento
+R1.9 Trilha de Alfabetização completa (Blocos A e B + verificação de decodificação)
+```
+
+O P7 fica **pausado**. A publicação de cada nível no Clássico é retomada quando a revisão daquele nível (R1.4 para o N1, R1.5 para o N2 e assim por diante) estiver concluída, evitando publicar conteúdo que será reescrito.
+
+### 6.3 Literatura
+
+Escopo mantido em interpretação e fruição com exigência crescente. Literatura no tempo e leitura integral guiada ficam como ampliação opcional futura, sem compromisso no R1.
+
+### 6.4 Regras de execução do R1
+
+- Correção de método em lição publicada preserva o ID quando o objetivo e a competência continuam os mesmos; mudança de significado exige novo ID e mapeamento, como em T1.9.
+- Lição nova recebe ID novo, sem reaproveitar ID de outra lição.
+- Toda correção passa pelas cinco revisões da skill `curricular-orchestration` e mantém CI verde.
 
 ## 7. Fontes
 

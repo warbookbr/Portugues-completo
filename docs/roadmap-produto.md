@@ -25,12 +25,13 @@ T1.1–T1.8 → CONCLUÍDOS / HOMOLOGADOS conforme gates
 T1.9 — migração, catálogo, progresso e mídia → CONCLUÍDO / HOMOLOGADO
 T1.10 — validação/homologação → CONCLUÍDO / HOMOLOGADO
 P6 — Feedback por IA no Clássico → HOMOLOGADO
-P7 — Ampliação do catálogo Clássico N0→N4 → ATIVO
-MODO CLÁSSICO REAL → slice funcional com progresso persistente, entrada N0 homologada e catálogo sendo ampliado por lotes P7
+R1 — Revisão do plano de ensino → ATIVO
+P7 — Ampliação do catálogo Clássico N0→N4 → PAUSADO (N0 publicado; N1+ aguardam R1 do respectivo nível)
+MODO CLÁSSICO REAL → slice funcional com progresso persistente e N0 publicado; expansão retomada nível a nível após R1
 MODO GAMIFICADO → somente após CLÁSSICO HOMOLOGADO
 ```
 
-T1 está homologado. Suas regras duradouras permanecem nas fontes/skills canônicas; o cursor operacional volta a P6.
+T1 e P6 estão homologados. A auditoria `docs/auditoria-plano-ensino.md` abriu o marco R1, que pausa o P7 até a revisão de cada nível.
 
 ## Sequência estratégica: Clássico primeiro
 
@@ -42,7 +43,8 @@ P1 schemas/contratos
 → P5 progresso/revisão/Gist
 → T1 fundamentos claros + experiência de lição
 → P6 feedback IA quando aplicável
-→ P7 expansão N0→N4
+→ R1 revisão do plano de ensino (escopo, método, trilha de alfabetização, nivelamento)
+→ P7 expansão N0→N4, retomada nível a nível conforme R1
 → P8 mídia/publicação
 → P9 homologação E2E
 ────────────────────────────
@@ -419,9 +421,47 @@ Entregas:
 
 Antes de congelar provider/model/endpoints, verificar documentação oficial atual. Se a implementação usar OpenAI, usar documentação oficial da OpenAI como fonte técnica.
 
-## P7 — Ampliação do catálogo Clássico N0→N4
+## R1 — Revisão do plano de ensino
 
 **Estado: ATIVO.**
+
+Origem: `docs/auditoria-plano-ensino.md`, que comparou o curso com a sequência real de ensino (BNCC, alfabetização) e com o conteúdo efetivo das lições.
+
+Decisões aprovadas:
+
+- o curso atende principalmente quem já lê e escreve;
+- a alfabetização inicial vira **Trilha de Alfabetização** separada e opcional, reunindo as atuais N0-U01/U02 e as lições de decodificação e escrita de palavras que faltam;
+- o N0 do caminho principal começa em "Palavras, frases e sentido" (atual N0-U03);
+- a primeira entrada oferece escolha de perfil e nivelamento curto para quem já lê bem;
+- a ordem dos níveis N0→N4 e das unidades é mantida;
+- regras de método (termo ensinado antes do uso, exemplo mostrado, produção própria por unidade, textos que crescem, variedade, espiral com ganho real) passam a ser critério obrigatório de autoria e revisão.
+
+Subpassos:
+
+```text
+R1.1 documentação, roadmap e regras de método nas fontes canônicas
+R1.2 correções objetivas (IDs históricos, erros pontuais, pontes)
+R1.3 N0 a partir de U3: método
+R1.4 N1: método + lacunas de ortografia
+R1.5 N2: método + modos verbais, passiva/relativa/formas nominais, discurso direto e indireto, pares que confundem
+R1.6 N3: sintaxe da U3, exemplos reais, crescimento de textos, checagens
+R1.7 N4: condensar repetição do N3, material longo real, termos novos
+R1.8 produto: trilha separada no catálogo, N0 a partir de U3, nivelamento
+R1.9 Trilha de Alfabetização completa
+```
+
+Regras:
+
+- correção de método preserva o ID quando objetivo e competência continuam os mesmos; mudança de significado exige novo ID e mapeamento de progresso, como em T1.9;
+- lição nova recebe ID novo;
+- cada subpasso mantém CI verde e atualiza `docs/estado-implementacao-classico.md`;
+- P7 retoma a publicação de um nível somente depois do subpasso R1 correspondente.
+
+Condição de saída: N0 (a partir de U3) a N4 revisados pelas regras de método, lacunas de escopo N1/N2 preenchidas, trilha separada e nivelamento implementados, Trilha de Alfabetização completa e verificada.
+
+## P7 — Ampliação do catálogo Clássico N0→N4
+
+**Estado: PAUSADO por R1.** N0-U03 a U06 seguem publicadas; a publicação de N1 em diante é retomada após o subpasso R1 de cada nível.
 
 Objetivo: levar o pipeline homologado P1–P6 ao curso inteiro, usando a porta de entrada N0 revisada por T1.
 
@@ -488,14 +528,11 @@ Cobrir troca de modos, preservação de domínio, coerência/resistência a farm
 ## Próximo passo oficial
 
 ```text
-P7 — Ampliação do catálogo Clássico N0→N4
-→ N0-U03 + N0-U04 + N0-U05 + N0-U06 HOMOLOGADAS / publicadas no catálogo
-→ Nível 0 integralmente coberto no Clássico
-→ próximo lote: N1-U01 — Lendo textos com mais autonomia
-→ inventariar 9 lições + N1-U01-V01 e classificar objetivo de leitura, assunto/finalidade, informações explícitas, referências, relações, inferência, apoios multimodais, fonte/opinião/razão, resumo, mídia e blocker real
-→ adaptar somente contratos reutilizáveis necessários antes de manifestar/publicar
-→ preservar N4-U09 como caso-âncora de resposta aberta/IA
-→ não reescrever autoria apenas para satisfazer renderer
-→ não transformar sotaque, variedade ou informalidade em erro automático
-→ registrar blockers locais e continuar por lotes independentes
+N0-U03 + N0-U04 + N0-U05 + N0-U06 HOMOLOGADAS / publicadas (P7 pausado após o N0)
+R1 — Revisão do plano de ensino
+→ R1.1 documentação e regras de método
+→ R1.2 correções objetivas
+→ R1.3 N0 a partir de U3
+→ R1.4 N1 → retomar P7 com N1-U01 já revisada
+→ seguir nível a nível
 ```

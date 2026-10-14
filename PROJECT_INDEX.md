@@ -23,7 +23,7 @@ Português Completo
 ## Estado e execução
 
 - `docs/roadmap-curricular.md` — estado/maturidade do currículo N0→N4; fechado em M5, com revisão dirigida da porta de entrada N0 autorizada por T1.
-- `docs/roadmap-produto.md` — ordem e condições dos marcos da fase de produto/publicação; P1–P6 e T1 homologados, P7 ativo por lotes incrementais.
+- `docs/roadmap-produto.md` — ordem e condições dos marcos da fase de produto/publicação; P1–P6 e T1 homologados, R1 ativo, P7 pausado após o N0.
 - `docs/plano-fundamentos-claros.md` — plano transversal **homologado** que reorganizou a entrada N0, linguagem pedagógica, abertura de lição, Metodologia e compatibilidade de progresso/IDs.
 - `docs/auditoria-t1-1-porta-entrada-n0.md` — **decisão da T1.1**: pesquisa/auditoria da entrada N0, nova espinha recomendada, impactos técnicos e direção para o redimensionamento T1.2.
 - `docs/redimensionamento-t1-2-n0.md` — **arquitetura congelada da T1.2**: novas responsabilidades de U1/U2, ordem das lições, verificações V02 e matriz de identidade/migração.
@@ -39,7 +39,7 @@ Português Completo
 - `docs/homologacao-p7-n0-u04.md` — **homologação do segundo lote P7**: N0-U04 publicada, evidência textual, ordenação, regras agregadas, linguagem pública, responsividade mobile e inspeção visual.
 - `docs/homologacao-p7-n0-u05.md` — **homologação do terceiro lote P7**: N0-U05 publicada, escrita aberta pending, planejamento/autochecagem, apoio opcional, edição controlada, linguagem pública e inspeção visual.
 - `docs/homologacao-p7-n0-u06.md` — **homologação do quarto lote P7 e fechamento do N0 no catálogo**: comunicação cotidiana, audio-first, reparo, adequação/variação, ensaio oral sem falsa validação e inspeção visual.
-- `docs/auditoria-plano-ensino.md` — **proposta aguardando decisão**: auditoria da progressão N0→N4 contra a sequência real de ensino (BNCC/alfabetização), lacunas de escopo, regras de método e diagnóstico priorizado; não altera conteúdo por si só.
+- `docs/auditoria-plano-ensino.md` — **decisão do R1**: auditoria da progressão N0→N4 contra a sequência real de ensino (BNCC/alfabetização), Trilha de Alfabetização separada, N0 a partir de U3, nivelamento, regras de método e ordem de correção.
 - `docs/execucao-continua.md` — execução autônoma por marcos autorizados.
 - `.ChatGPT/skills/fundamentos-claros/SKILL.md` — histórico operacional do T1 homologado e referência para regressões futuras da entrada clara.
 - `.ChatGPT/skills/classic-product-delivery/SKILL.md` — procedimento operacional obrigatório para implementar P1→P9 do Clássico sem perder estado.
@@ -57,6 +57,7 @@ Uma instância sem contexto deve começar por:
 PROJECT_INDEX.md
 → docs/roadmap-produto.md
 → docs/estado-implementacao-classico.md
+→ docs/auditoria-plano-ensino.md enquanto R1 estiver ativo
 → docs/homologacao-t1-10.md para o fechamento da entrada N0
 → docs/redimensionamento-t1-2-n0.md para a arquitetura U1/U2
 → docs/migracao-t1-9-n0.md para compatibilidade histórica/progresso
@@ -269,9 +270,10 @@ P2 ContentService/normalizador                          ✓
 P3 manifests + catálogo inicial                         ✓
 P4 renderer real do Clássico                            ✓
 P5 ProgressService + revisão + cache/Gist/sync           ✓
-T1 Fundamentos claros + experiência de lição            ← ativo (T1.9)
-P6 feedback por IA no Clássico                          aguardando T1
-P7 ampliação do catálogo Clássico N0→N4
+T1 Fundamentos claros + experiência de lição            ✓
+P6 feedback por IA no Clássico                          ✓
+R1 revisão do plano de ensino                           ← ativo
+P7 ampliação do catálogo Clássico N0→N4                 pausado após o N0; retoma nível a nível após R1
 P8 mídia + prontidão de publicação do Clássico
 P9 homologação end-to-end do Clássico
 → GATE: CLÁSSICO HOMOLOGADO
@@ -321,6 +323,7 @@ T1 é uma revisão pedagógica dirigida autorizada por validação real, não um
 ```text
 estado curricular → docs/roadmap-curricular.md
 ordem/condições dos marcos de produto → docs/roadmap-produto.md
+revisão do plano de ensino, trilhas e nivelamento → docs/auditoria-plano-ensino.md
 plano transversal ativo T1 → docs/plano-fundamentos-claros.md
 decisão T1.1 da entrada N0 → docs/auditoria-t1-1-porta-entrada-n0.md
 arquitetura T1.2 da entrada N0 → docs/redimensionamento-t1-2-n0.md

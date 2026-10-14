@@ -21,10 +21,10 @@ Homologação: docs/homologacao-t1-10.md
 Migração T1 `t1-n0-entry-v2`: ATIVA / HOMOLOGADA local + Gist
 P6 — Feedback por IA: HOMOLOGADO
 Homologação P6: docs/homologacao-p6.md
-P7 — Ampliação do catálogo Clássico N0→N4: ATIVO
+P7 — Ampliação do catálogo Clássico N0→N4: PAUSADO por R1 (N0 publicado)
 Lote P7 N0-U06 — Usando a língua no cotidiano: HOMOLOGADO (PR #139)
-Homologação N0-U06: docs/homologacao-p7-n0-u06.md
-Próximo passo exato: iniciar o lote N1-U01 — Lendo textos com mais autonomia — inventariando 9 lições + N1-U01-V01, objetivo de leitura, assunto/finalidade, informações explícitas, referências, relações, inferência, apoios multimodais, fonte/opinião/razão, resumo, mídia e blockers antes de manifestar/publicar
+R1 — Revisão do plano de ensino: ATIVO (docs/auditoria-plano-ensino.md)
+Próximo passo exato: executar R1.1 a R1.3 e depois R1.4 (N1); P7 retoma com N1-U01 revisada
 Estilo da interface (Simples/Completo): IMPLEMENTADO / não homologado
 Blocker global: nenhum
 Gate final do Clássico: NÃO SATISFEITO
@@ -43,7 +43,8 @@ T1 e P6 estão homologados. P7 avança incrementalmente por unidade, preservando
 | P5 — Progresso/revisão/Gist | `HOMOLOGADO` | PR #109 |
 | T1 — Fundamentos claros | `HOMOLOGADO` | PRs #116–#130; `docs/homologacao-t1-10.md` |
 | P6 — Feedback por IA | `HOMOLOGADO` | PRs #131–#133; `docs/homologacao-p6.md` |
-| P7 — Catálogo N0→N4 | `ATIVO` | N0-U03/U04/U05/U06 homologadas nas PRs #134/#135/#136/#139; N0 completo; próximo lote N1-U01 |
+| R1 — Revisão do plano de ensino | `ATIVO` | `docs/auditoria-plano-ensino.md` |
+| P7 — Catálogo N0→N4 | `PAUSADO` | N0-U03/U04/U05/U06 homologadas nas PRs #134/#135/#136/#139; N0 completo; N1 retoma após R1.4 |
 | P8 — Mídia/publicação | `NAO_INICIADO` | — |
 | P9 — E2E / Clássico homologado | `NAO_INICIADO` | — |
 
@@ -619,7 +620,9 @@ P7: ATIVO — expansão incremental do catálogo N0→N4
 N0-U03: HOMOLOGADA — docs/homologacao-p7-n0-u03.md
 N0-U04: HOMOLOGADA — docs/homologacao-p7-n0-u04.md
 N0-U05: HOMOLOGADA — docs/homologacao-p7-n0-u05.md
-Ativo agora: N0-U06 — Usando a língua no cotidiano — inventário/adaptação/manifesto/publicação/homologação
+N0-U06: HOMOLOGADA — docs/homologacao-p7-n0-u06.md
+Ativo agora: R1 — Revisão do plano de ensino; P7 pausado até a revisão de cada nível
+Estrutural: Trilha de Alfabetização separada + N0 a partir de U3 + nivelamento (R1.8/R1.9)
 Local: resolver mídia obrigatória de U1/U2 quando o marco P8 exigir esses estímulos
 ```
 
