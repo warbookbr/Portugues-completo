@@ -2,6 +2,7 @@
   "schemaVersion": 1,
   "id": "N1-U03-L01",
   "title": "Para que servem as classes de palavras?",
+  "studentObjective": "Perceber que as palavras fazem trabalhos diferentes numa frase, como nomear, dar uma característica ou indicar o que acontece, e que a própria frase ajuda a descobrir esse trabalho.",
   "status": "conteudo-pronto-para-implementacao",
   "objective": "Compreender classes de palavras como ferramentas para observar padrões de funcionamento em frases reais, usando nomes gramaticais somente depois de perceber o que as palavras fazem no contexto.",
   "competencies": [
@@ -67,7 +68,7 @@
       "type": "assessment-function-to-class",
       "items": [
         {"sentence": "A reunião começou.", "target": "reunião", "function": "nomeia", "options": ["substantivo", "verbo", "pronome"], "correctIndex": 0},
-        {"sentence": "A reunião começou.", "target": "começou", "function": "expressa acontecimento", "options": ["verbo", "adjetivo", "artigo"], "correctIndex": 0},
+        {"sentence": "A reunião começou.", "target": "começou", "function": "expressa acontecimento", "options": ["verbo", "adjetivo", "substantivo"], "correctIndex": 0},
         {"sentence": "Ela chegou cedo.", "target": "Ela", "function": "retoma/indica participante", "options": ["pronome", "substantivo", "adjetivo"], "correctIndex": 0}
       ]
     },

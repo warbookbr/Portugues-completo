@@ -20,6 +20,8 @@ ler com objetivo
 → resumir e revisar
 ```
 
+**Extensão dos textos (R1):** os textos de leitura crescem em relação ao N0. Nas lições 1 a 6, os textos principais têm, em geral, de 40 a 60 palavras; exemplos de contraste e casos de ambiguidade continuam curtos de propósito. Nas lições 7, 8 e 9 e na verificação integrada, há textos completos de dois ou três parágrafos (80 a 150 palavras), com gêneros variados: notícia curta de bairro, comunicado, carta de leitor, relato pessoal e texto informativo.
+
 ## Lição 1 — Ler com um objetivo
 
 - **Objetivo:** perceber que a estratégia de leitura pode mudar conforme o que se precisa descobrir.
@@ -51,6 +53,8 @@ ler com objetivo
 - **Prática:** ligar `ele/ela/isso/esse lugar/a pessoa` ao referente; substituir repetição sem criar ambiguidade.
 - **Evidência:** resolver referências novas pelo contexto, não apenas pela proximidade gráfica.
 - **Limite:** não formalizar coesão/análise pronominal completa.
+- **Linguagem (R1):** o termo `pronome` só é ensinado em N1-U03; aqui usar linguagem comum ("palavras como ele, ela, isso, que retomam algo já dito"). `Ambígua` é explicado no ponto de uso.
+- **Variedade (R1):** a ambiguidade aparece uma vez com objetos (portão/interfone) e uma vez com três pessoas em contexto de trabalho; não repetir o molde "duas mulheres + ela ambígua".
 
 ## Lição 5 — Relações entre as partes: tempo, causa, contraste e explicação
 
@@ -67,6 +71,7 @@ ler com objetivo
 - **Prática:** selecionar pistas; formular conclusão próxima; escolher `não há informação suficiente` quando necessário.
 - **Evidência:** pelo menos uma inferência sustentada + um caso de insuficiência corretamente reconhecido.
 - **Limite:** sem inferência distante, ironia ou intenção oculta complexa.
+- **Literatura (R1):** microconto autoral completo ("A chave") com checagem não obrigatória que aplica as três categorias (diz, permite concluir, não informa) a um texto literário.
 
 ## Lição 7 — Título, imagem, legenda e outros apoios
 
@@ -75,6 +80,7 @@ ler com objetivo
 - **Recursos:** texto real da UI + elemento visual apenas quando informativo; imagem nunca deve tornar a leitura dispensável se leitura for o alvo.
 - **Prática:** título como pista, legenda que acrescenta informação, imagem que confirma/completa, comparação de apoio relevante/irrelevante.
 - **Evidência:** usar informação dos dois modos quando necessária e distinguir apoio de resposta pronta.
+- **Textos (R1):** notícia de bairro (horta comunitária) e comunicado (mutirão de documentos) em dois parágrafos.
 
 ## Lição 8 — Quem escreveu? De onde veio? Opinião e razão
 
@@ -83,6 +89,7 @@ ler com objetivo
 - **Prática:** localizar autor/instituição/veículo; distinguir informação de opinião simples; relacionar uma opinião à razão apresentada.
 - **Evidência:** reconhecer origem explicitada e identificar `opinião → razão` em exemplo novo.
 - **Limite:** não avaliar viés/credibilidade de modo avançado nem ensinar tese formal.
+- **Textos (R1):** carta de leitor completa (iluminação da praça) e comunicado de secretaria (vacinação) em dois parágrafos.
 
 ## Lição 9 — Resumindo a ideia principal com palavras próprias
 
@@ -92,6 +99,8 @@ ler com objetivo
 - **Prática:** escolher o essencial, eliminar detalhes, parafrasear, comparar resumo fiel/distorcido, autorrevisar.
 - **Evidência:** resumo próprio + autochecagem; avaliação automática não deve se basear em palavra-chave ou tamanho.
 - **Limite:** não exigir resumo formal extenso.
+- **Textos (R1):** relato pessoal (sala de estudos) e texto informativo de três parágrafos (coleta de óleo).
+- **Oralidade (R1):** ensaio oral opcional antes do resumo escrito (L09-C01) e escuta antes da leitura não obrigatória (L09-C02), com transcrição só depois da tentativa.
 
 ## Verificação integrada — arquitetura
 
@@ -106,5 +115,7 @@ multimodalidade
 fonte/opinião/razão
 resumo próprio
 ```
+
+Os textos A (notícia) e B (comunicado) têm três parágrafos cada (cerca de 100 palavras). O item multimodal usa um mapa com dois caminhos que partem da recepção, diferente do percurso linear da lição 7.
 
 Todos os agrupamentos centrais devem ser obrigatórios; localização não pode compensar ausência de compreensão global ou resumo.

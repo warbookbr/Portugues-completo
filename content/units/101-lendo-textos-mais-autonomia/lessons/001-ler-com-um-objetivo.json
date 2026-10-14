@@ -2,6 +2,7 @@
   "schemaVersion": 1,
   "id": "N1-U01-L01",
   "title": "Ler com um objetivo",
+  "studentObjective": "Aprender a escolher como ler um texto conforme o que você precisa descobrir: às vezes basta achar um dado; outras vezes, é preciso entender a mensagem inteira.",
   "status": "conteudo-pronto-para-implementacao",
   "objective": "Perceber que a forma de ler pode mudar conforme aquilo que se precisa descobrir, escolhendo estratégias adequadas sem transformar leitura em corrida ou teste de memória.",
   "competencies": [
@@ -37,7 +38,7 @@
       "id": "L01-B02",
       "type": "demonstration",
       "readingGoal": "descobrir o horário de encerramento",
-      "text": "A feira abre às oito da manhã. Durante o dia haverá apresentações e oficinas. O encerramento será às cinco da tarde.",
+      "text": "A feira de artesanato da Praça Central abre às oito da manhã de sábado. Durante o dia, haverá apresentações de música, oficinas de cerâmica para crianças e venda de comidas típicas. Os expositores começam a desmontar as barracas às quatro e meia, e o encerramento oficial será às cinco da tarde.",
       "strategy": "procurar no texto a parte que informa o encerramento",
       "answer": "às cinco da tarde",
       "textRemainsVisible": true
@@ -46,9 +47,9 @@
       "id": "L01-C01",
       "type": "quick-check",
       "readingGoal": "compreender de que trata o aviso como um todo",
-      "text": "Nesta sexta-feira, a biblioteca fechará às quatro para manutenção. Os empréstimos com devolução prevista para sexta poderão ser entregues na segunda sem multa.",
+      "text": "Aviso aos usuários: nesta sexta-feira, a biblioteca fechará às quatro da tarde para a troca da iluminação. Os computadores de uso público também ficarão desligados a partir das três. Quem tem livros com devolução marcada para sexta poderá entregá-los na segunda-feira, sem multa. Pedimos desculpas pelo transtorno.",
       "question": "Qual estratégia é mais adequada primeiro?",
-      "options": ["ler o aviso inteiro para compreender a mudança e sua consequência", "procurar apenas uma palavra sem considerar o restante", "tentar responder sem ler"],
+      "options": ["ler o aviso inteiro para compreender a mudança e sua consequência", "procurar só o horário de fechamento e parar de ler", "ler só a primeira frase, que costuma trazer o mais importante"],
       "correctIndex": 0,
       "textRemainsVisible": true
     },
@@ -65,9 +66,9 @@
       "id": "L01-A01",
       "type": "assessment",
       "readingGoal": "descobrir quais documentos levar",
-      "text": "Para fazer a inscrição, leve documento com foto e comprovante de endereço. O atendimento ocorre de segunda a quinta, das nove às quinze horas.",
+      "text": "Estão abertas as inscrições para o curso gratuito de corte e costura do centro comunitário. Para fazer a inscrição, leve documento com foto e comprovante de endereço. Menores de dezoito anos devem estar acompanhados de um responsável. O atendimento ocorre de segunda a quinta, das nove às quinze horas, na sala 2. As aulas começam em março.",
       "question": "O que você deve fazer para responder com eficiência?",
-      "options": ["localizar a parte que lista os documentos", "decorar todo o texto antes de responder", "procurar apenas o horário"],
+      "options": ["localizar a parte que lista os documentos", "decorar todo o texto antes de responder", "procurar a parte que informa quando as aulas começam"],
       "correctIndex": 0,
       "followUp": {"question": "Quais documentos são pedidos?", "answer": "documento com foto e comprovante de endereço"},
       "textRemainsVisible": true
@@ -76,9 +77,9 @@
       "id": "L01-A02",
       "type": "assessment",
       "readingGoal": "explicar a mudança principal comunicada",
-      "text": "O treino de sábado foi transferido para domingo por causa da previsão de chuva. O horário permanece às dez da manhã.",
+      "text": "Atenção, equipe de vôlei: o treino de sábado foi transferido para domingo por causa da previsão de chuva forte. A quadra coberta da escola estará ocupada por outro evento no sábado, e a quadra da praça não tem cobertura. O horário permanece às dez da manhã. Tragam garrafa de água, porque o bebedouro está em conserto.",
       "question": "Qual estratégia é mais adequada?",
-      "options": ["ler o texto suficiente para relacionar o dia antigo, o novo dia e o horário", "procurar apenas a palavra sábado", "responder pelo que costuma acontecer nos fins de semana"],
+      "options": ["ler o texto suficiente para relacionar o dia antigo, o novo dia e o horário", "procurar apenas a palavra sábado", "procurar só o que a equipe deve levar ao treino"],
       "correctIndex": 0,
       "followUp": {"question": "Qual foi a mudança principal?", "options": ["o treino passou de sábado para domingo e continua às dez", "o treino foi cancelado", "o horário mudou para sábado à noite"], "correctIndex": 0},
       "textRemainsVisible": true

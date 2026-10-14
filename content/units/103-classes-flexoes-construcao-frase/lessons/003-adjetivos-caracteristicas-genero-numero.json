@@ -2,6 +2,7 @@
   "schemaVersion": 1,
   "id": "N1-U03-L03",
   "title": "Adjetivos, características, gênero e número",
+  "studentObjective": "Reconhecer as palavras que dão características e ajustar todas as palavras de uma expressão quando ela fala de uma ou de várias coisas.",
   "status": "conteudo-pronto-para-implementacao",
   "objective": "Reconhecer adjetivos em uso e aplicar concordâncias transparentes de gênero e número dentro do grupo nominal, percebendo também que nem todo adjetivo apresenta uma forma diferente para masculino e feminino.",
   "competencies": [
@@ -44,6 +45,8 @@
       ],
       "teachingPoint": "o adjetivo acrescenta uma característica ao referente no contexto"
     },
+    {"id": "L03-B04", "type": "explanation", "title": "Uma ou várias; masculina ou feminina", "text": "Compare \"o relatório claro\" com \"os relatórios claros\". Na segunda expressão falamos de mais de um relatório, e todas as palavras mudam juntas: os, relatórios, claros. Quando a expressão indica uma só coisa, dizemos que ela está no singular. Quando indica mais de uma, dizemos que está no plural. No plural, muitas palavras ganham -s no final.", "examples": ["o relatório claro → os relatórios claros", "a porta aberta → as portas abertas"], "explanation": "Agora compare \"o aviso claro\" com \"a mensagem clara\". A palavra aviso combina com o; a palavra mensagem combina com a. Por isso dizemos que aviso é uma palavra masculina e mensagem é uma palavra feminina. Essa característica se chama gênero da palavra. As palavras que acompanham o nome seguem o gênero dele: o aviso claro, a mensagem clara.", "note": "O gênero da palavra não depende de a coisa ser homem ou mulher: mesa é feminina (a mesa), sapato é masculino (o sapato). Mais adiante você vai encontrar a expressão gênero de texto, que fala de tipos de texto, como carta, receita e notícia. É outra ideia; nesta lição, gênero é sempre o da palavra."},
+    {"id": "L03-C03", "type": "quick-check-set", "instruction": "Observe as palavras de cada expressão e escolha a resposta.", "items": [{"question": "Em \"as janelas abertas\", a expressão está no singular ou no plural?", "options": ["no singular: fala de uma janela só", "no plural: fala de mais de uma janela", "não dá para saber sem ver as janelas"], "correctIndex": 1}, {"question": "Qual expressão está com todas as palavras combinando?", "options": ["o ponte largo", "a ponte largo", "a ponte larga"], "correctIndex": 2}, {"question": "A palavra sofá é masculina ou feminina?", "options": ["masculina: dizemos o sofá", "feminina: dizemos a sofá", "depende de quem senta nele"], "correctIndex": 0}]},
     {
       "id": "L03-B02",
       "type": "transparent-inflection",
@@ -88,8 +91,8 @@
       "type": "assessment-inflection",
       "items": [
         {"base": "o aviso curto", "target": "plural", "options": ["os avisos curtos", "os aviso curto", "o avisos curtos"], "correctIndex": 0},
-        {"base": "o documento completo", "target": "referente feminino: a ficha", "options": ["a ficha completa", "a ficha completo", "o ficha completa"], "correctIndex": 0},
-        {"base": "um cliente feliz", "target": "referente feminino", "options": ["uma cliente feliz", "uma cliente feliza"], "correctIndex": 0}
+        {"base": "o documento completo", "target": "feminino: a ficha", "options": ["a ficha completa", "a ficha completo", "o ficha completa"], "correctIndex": 0},
+        {"base": "um cliente feliz", "target": "feminino", "options": ["uma cliente feliz", "uma cliente feliza"], "correctIndex": 0}
       ]
     },
     {

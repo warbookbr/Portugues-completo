@@ -2,6 +2,7 @@
   "schemaVersion": 1,
   "id": "N1-U01-L09",
   "title": "Resumindo a ideia principal com palavras próprias",
+  "studentObjective": "Resumir um texto com suas próprias palavras, dizendo o essencial sem copiar tudo e sem inventar nada.",
   "status": "conteudo-pronto-para-implementacao",
   "objective": "Produzir um resumo breve da ideia principal de texto acessível, selecionando o essencial e reformulando com palavras próprias sem copiar o texto integralmente nem distorcer sua mensagem.",
   "competencies": [
@@ -49,11 +50,12 @@
     {
       "id": "L09-C01",
       "type": "quick-open-summary",
-      "text": "O centro comunitário abrirá uma sala de estudos na segunda-feira. O espaço terá mesas, acesso à internet e funcionará das oito às seis. A entrada será gratuita.",
-      "planningPrompt": "Antes de escrever, selecione o que é essencial para explicar a novidade.",
+      "text": "Quando entrei no curso técnico, eu não tinha um lugar tranquilo para estudar. Em casa, somos cinco pessoas em dois cômodos, e a televisão fica ligada até tarde. Por isso, fiquei animada quando soube que o centro comunitário ia abrir uma sala de estudos.\n\nA sala abriu na segunda-feira passada. Tem mesas grandes e internet, funciona das oito da manhã às seis da tarde, e a entrada é gratuita. Desde então, vou para lá todos os dias depois do almoço. Consigo me concentrar e já terminei dois trabalhos que estavam atrasados.",
+      "planningPrompt": "Neste texto, uma estudante conta o que aconteceu com ela. Antes de escrever, escolha o essencial: qual era o problema dela, qual foi a novidade e o que mudou depois.",
       "responseMode": "free-text",
-      "selfReview": ["Meu resumo informa qual é a novidade?", "Evitei acrescentar algo que o texto não diz?", "Usei minhas próprias palavras em vez de copiar tudo?"],
-      "modelExamplesAfterSubmission": ["O centro comunitário abrirá na segunda uma sala de estudos gratuita, com mesas e internet, que funcionará das oito às seis."],
+      "selfReview": ["Meu resumo informa a novidade e o que mudou para quem conta?", "Evitei acrescentar algo que o texto não diz?", "Usei minhas próprias palavras em vez de copiar tudo?"],
+      "oralRehearsal": {"enabled": true, "required": false, "instruction": "Se quiser, antes de escrever, conte o resumo em voz alta, como se explicasse para alguém que não leu o texto. Depois, escreva o que você disse, revisando o que for preciso."},
+      "modelExamplesAfterSubmission": ["Uma estudante que não tinha lugar tranquilo para estudar em casa passou a usar a nova sala de estudos gratuita do centro comunitário e agora consegue se concentrar e pôr os trabalhos em dia."],
       "automaticObservations": ["há texto livre", "autochecagem concluída", "planejamento foi realizado"],
       "notAutomaticallyJudged": ["fidelidade semântica plena", "qualidade global", "paráfrase real por comparação superficial"]
     },
@@ -67,14 +69,15 @@
         {"text": "Há um posto.", "classification": "insuficiente para a ideia central"}
       ]
     },
+    {"id": "L09-C02", "type": "audio-first-check", "focus": "listen-and-respond", "instruction": "Ouça a notícia antes de ler. Depois escolha o resumo mais fiel.", "ttsText": "O cinema do centro cultural vai mudar o dia das sessões gratuitas. A partir do mês que vem, elas acontecem aos domingos, e não mais às quartas-feiras. Segundo a organização, muitos moradores trabalham durante a semana e não conseguiam assistir aos filmes. O horário continua o mesmo, às três da tarde.", "transcriptHiddenUntilAttempt": true, "question": "Qual resumo é mais fiel ao que você ouviu?", "options": ["As sessões gratuitas do cinema passarão das quartas para os domingos, para que mais moradores possam assistir.", "As sessões gratuitas continuarão às quartas, mas passarão a começar às três da tarde.", "O cinema terá sessões gratuitas às quartas e também aos domingos."], "correctIndex": 0, "replayAllowed": true, "transcriptAfterAttempt": "O cinema do centro cultural vai mudar o dia das sessões gratuitas. A partir do mês que vem, elas acontecem aos domingos, e não mais às quartas-feiras. Segundo a organização, muitos moradores trabalham durante a semana e não conseguiam assistir aos filmes. O horário continua o mesmo, às três da tarde."},
     {
       "id": "L09-A01",
       "type": "assessment-open",
-      "text": "A prefeitura iniciou um programa de coleta de óleo de cozinha usado. Os moradores podem levar o óleo em garrafas fechadas a cinco pontos de coleta. O material será encaminhado para reciclagem e não deve ser despejado na pia.",
-      "planningPrompt": "Selecione a novidade e o que as pessoas podem fazer.",
+      "text": "A prefeitura iniciou um programa de coleta de óleo de cozinha usado. Desde o dia 1º, os moradores podem levar o óleo em garrafas plásticas bem fechadas a cinco pontos de coleta, entre eles o mercado da Avenida Brasil e a escola estadual do bairro.\n\nO material recolhido será encaminhado para reciclagem e transformado em sabão e outros produtos. Segundo a prefeitura, o óleo não deve ser despejado na pia, porque endurece dentro dos canos, causa entupimentos e polui rios e córregos.\n\nA lista completa dos pontos de coleta, com endereços e horários, está no site da prefeitura e no mural da unidade de saúde.",
+      "planningPrompt": "Selecione a novidade, o que os moradores podem fazer e por que isso é importante.",
       "responseMode": "free-text",
-      "selfReview": ["Meu resumo explica o programa?", "Informa a ação principal para os moradores?", "Evitei inventar informação?"],
-      "modelExamplesAfterSubmission": ["A prefeitura criou pontos para receber óleo de cozinha usado e encaminhá-lo à reciclagem, evitando que seja jogado na pia."],
+      "selfReview": ["Meu resumo explica o programa?", "Informa a ação principal para os moradores?", "Deixei de fora detalhes que não são essenciais, como onde fica a lista de endereços?", "Evitei inventar informação?"],
+      "modelExamplesAfterSubmission": ["A prefeitura criou pontos para receber óleo de cozinha usado, que será reciclado; assim, os moradores deixam de jogar o óleo na pia, o que entope canos e polui a água."],
       "automaticObservations": ["há texto livre", "planejamento e autochecagem concluídos"],
       "notAutomaticallyJudged": ["compreensibilidade plena", "fidelidade global por palavra-chave", "extensão ideal"]
     },

@@ -2,6 +2,7 @@
   "schemaVersion": 1,
   "id": "N1-U04-L02",
   "title": "Mantendo continuidade entre frases",
+  "studentObjective": "Organizar frases numa ordem que faça sentido e perceber quando uma frase foge do assunto ou contradiz outra.",
   "status": "conteudo-pronto-para-implementacao",
   "objective": "Construir continuidade simples entre frases de um parágrafo, evitando saltos de foco e contradições claras sem transformar coerência em taxonomia abstrata.",
   "competencies": ["ordenar frases em sequência compreensível", "escolher continuação que mantém o foco", "identificar frase intrusa", "detectar contradição explícita não explicada", "acrescentar informação compatível com o parágrafo"],

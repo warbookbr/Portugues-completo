@@ -2,6 +2,7 @@
   "schemaVersion": 1,
   "id": "N1-U01-L03",
   "title": "Encontrar e combinar informações explícitas",
+  "studentObjective": "Encontrar informações que estão escritas no texto e juntar partes diferentes quando a resposta depende de mais de uma frase.",
   "status": "conteudo-pronto-para-implementacao",
   "objective": "Localizar informações diretamente apresentadas e combinar duas ou mais partes do texto quando a resposta depende de integração, mantendo evidências consultáveis.",
   "competencies": [
@@ -33,35 +34,35 @@
     "decisionRationale": "integração de informação é melhor observada com texto e seleção de trechos."
   },
   "sequence": [
-    {"id": "L03-B01", "type": "objective", "text": "Algumas perguntas são respondidas por uma única parte do texto. Outras exigem juntar informações que aparecem em lugares diferentes."},
+    {"id": "L03-B01", "type": "objective", "text": "Informações explícitas são as que estão escritas no próprio texto, sem que você precise deduzir nada. Algumas perguntas são respondidas por uma única parte do texto. Outras exigem juntar informações que aparecem em lugares diferentes."},
     {
       "id": "L03-B02",
       "type": "demonstration",
-      "text": "O curso começa na terça-feira. As aulas acontecem às 19h. Nos primeiros dois encontros, a turma ficará na sala 4; depois passará para a sala 8.",
+      "text": "O curso de informática básica começa na terça-feira. As aulas acontecem às 19h e duram uma hora e meia. Nos primeiros dois encontros, a turma ficará na sala 4; depois passará para a sala 8, que terá computadores novos. Cada aluno deve levar um caderno para anotações.",
       "items": [
-        {"question": "Que horas acontecem as aulas?", "answer": "19h", "evidence": ["As aulas acontecem às 19h."]},
-        {"question": "Em qual sala será a primeira aula e em que dia?", "answer": "terça-feira, na sala 4", "evidence": ["O curso começa na terça-feira.", "Nos primeiros dois encontros, a turma ficará na sala 4"]}
+        {"question": "Que horas acontecem as aulas?", "answer": "19h", "evidence": ["As aulas acontecem às 19h e duram uma hora e meia."]},
+        {"question": "Em qual sala será a primeira aula e em que dia?", "answer": "terça-feira, na sala 4", "evidence": ["O curso de informática básica começa na terça-feira.", "Nos primeiros dois encontros, a turma ficará na sala 4"]}
       ]
     },
     {
       "id": "L03-C01",
       "type": "quick-check",
-      "text": "A entrega de documentos ocorre no balcão 6. O atendimento funciona das nove às quatro. Às sextas-feiras, o balcão encerra uma hora mais cedo.",
+      "text": "A entrega de documentos para a matrícula ocorre no balcão 6, no térreo. O atendimento funciona das nove às quatro, de segunda a sexta. Às sextas-feiras, porém, o balcão encerra uma hora mais cedo, por causa da reunião semanal da equipe. Documentos enviados por e-mail não serão aceitos.",
       "question": "Até que horas é possível entregar documentos na sexta-feira?",
       "options": ["até as três", "até as quatro", "até as nove"],
       "correctIndex": 0,
-      "requiredEvidence": ["O atendimento funciona das nove às quatro.", "Às sextas-feiras, o balcão encerra uma hora mais cedo."],
+      "requiredEvidence": ["O atendimento funciona das nove às quatro, de segunda a sexta.", "Às sextas-feiras, porém, o balcão encerra uma hora mais cedo"],
       "textRemainsVisible": true
     },
     {
       "id": "L03-B03",
       "type": "strategy",
-      "text": "Se a pergunta inclui duas condições — por exemplo, dia e horário — procure onde cada condição aparece e combine somente informações compatíveis entre si."
+      "text": "Se a pergunta inclui duas condições, por exemplo dia e horário, procure onde cada condição aparece e combine somente informações compatíveis entre si."
     },
     {
       "id": "L03-A01",
       "type": "assessment",
-      "text": "A oficina de fotografia será no sábado. A atividade começa às dez e termina ao meio-dia. Participantes devem levar um celular ou uma câmera. A inscrição é feita na recepção até quinta-feira.",
+      "text": "A oficina gratuita de fotografia será no sábado, no salão da associação de moradores. A atividade começa às dez e termina ao meio-dia. Participantes devem levar um celular ou uma câmera. As vagas são limitadas a quinze pessoas. A inscrição é feita na recepção até quinta-feira.",
       "question": "Até quando é possível se inscrever e onde?",
       "options": ["até quinta-feira, na recepção", "sábado, na oficina", "ao meio-dia, pelo celular"],
       "correctIndex": 0,
@@ -71,7 +72,7 @@
     {
       "id": "L03-A02",
       "type": "assessment-set",
-      "text": "A linha 205 sai do Terminal Norte às 7h. Nos dias úteis, passa pela Avenida Central antes de seguir para o hospital. Aos domingos, não passa pela Avenida Central, mas o horário de saída continua o mesmo.",
+      "text": "A linha 205 sai do Terminal Norte às 7h. Nos dias úteis, passa pela Avenida Central antes de seguir para o hospital. Aos domingos, não passa pela Avenida Central, mas o horário de saída continua o mesmo. Nos feriados, a linha não circula.",
       "items": [
         {"question": "Que horas a linha 205 sai aos domingos?", "options": ["às 7h", "o texto não informa", "depois da Avenida Central"], "correctIndex": 0, "requiredEvidence": ["sai do Terminal Norte às 7h", "o horário de saída continua o mesmo"]},
         {"question": "Ela passa pela Avenida Central aos domingos?", "options": ["não", "sim", "o texto diz que depende do horário"], "correctIndex": 0, "requiredEvidence": ["Aos domingos, não passa pela Avenida Central"]}

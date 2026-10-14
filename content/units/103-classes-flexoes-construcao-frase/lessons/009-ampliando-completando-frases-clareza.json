@@ -2,6 +2,7 @@
   "schemaVersion": 1,
   "id": "N1-U03-L09",
   "title": "Ampliando e completando frases com clareza",
+  "studentObjective": "Completar uma frase com a informação que falta e decidir quando um detalhe a mais ajuda ou não é necessário.",
   "status": "conteudo-pronto-para-implementacao",
   "objective": "Completar ou ampliar frases com informações de participante, objeto, lugar, tempo ou modo quando a mensagem e a finalidade pedem, distinguindo informação necessária de detalhe opcional sem introduzir transitividade formal.",
   "competencies": [

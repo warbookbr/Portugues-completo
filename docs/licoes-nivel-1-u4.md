@@ -22,7 +22,7 @@ parágrafo como unidade inicial
 
 - **Objetivo:** perceber o parágrafo como unidade gráfica e de sentido que organiza frases relacionadas.
 - **Dependências:** N1-U01 e N1-U03.
-- **Prática:** agrupar frases por foco, comparar divisão útil e divisão arbitrária, reconhecer começo/fim de parágrafo.
+- **Prática:** apresentar o termo `parágrafo` com um texto de dois blocos (cada um começa em nova linha) antes de usá-lo; agrupar frases por foco, comparar divisão útil e divisão arbitrária, reconhecer começo/fim de parágrafo.
 - **Evidência:** organizar frases relacionadas em bloco coerente e rejeitar agrupamento que mistura focos sem motivo.
 - **Limite:** não ensinar tamanho ideal fixo nem fórmula universal de parágrafo.
 
@@ -38,7 +38,7 @@ parágrafo como unidade inicial
 
 - **Objetivo:** usar pronomes, expressões nominais e repetição controlada para manter referência.
 - **Dependências:** L2 + N1-U03-L06.
-- **Prática:** substituir repetição, recuperar referente, comparar versão clara/ambígua.
+- **Prática:** substituir repetição, recuperar referente, comparar versão clara/ambígua; a ambiguidade trabalhada é a de retomada por outra expressão (`o motorista` / `o mecânico` → `o profissional`), não a de "ela" com duas pessoas.
 - **Evidência:** revisar um parágrafo reduzindo repetição desnecessária sem criar referência confusa.
 - **Limite:** repetição não é tratada como erro automático.
 
@@ -46,7 +46,7 @@ parágrafo como unidade inicial
 
 - **Objetivo:** usar conectores simples para acrescentar e ordenar informações quando isso melhora a leitura.
 - **Dependências:** L1–L3.
-- **Prática:** relações como `e`, `também`, `depois`, `em seguida`, escolhidas pelo efeito no contexto.
+- **Prática:** apresentar `conector` com par antes/depois; relações como `e`, `também`, `depois`, `em seguida`, escolhidas pelo efeito no contexto.
 - **Evidência:** selecionar/usar conector compatível e rejeitar conector que altera a relação.
 - **Limite:** lista de conectivos decorada não é objetivo.
 
@@ -56,13 +56,14 @@ parágrafo como unidade inicial
 - **Dependências:** L4 + relações lidas em N1-U01.
 - **Prática:** `porque`, `por isso`, `mas`, formulações explicativas e equivalentes adequados ao nível.
 - **Evidência:** construir relação coerente e distinguir causa de mera sequência.
+- **Produção própria (unidade):** depois de um parágrafo-modelo completo, o aluno escreve um parágrafo de 3 a 4 frases sobre situação cotidiana com conector de causa ou contraste, com autochecagem curta (registrado, sem correção automática).
 - **Limite:** coordenação/subordinação ainda não é sistema sintático formal.
 
 ## Lição 6 — Ponto final, interrogação e exclamação dentro de textos
 
 - **Objetivo:** consolidar sinais finais em parágrafos/mensagens maiores, relacionando pontuação a sentido e organização.
 - **Dependências:** N0-U05 + L1–L5.
-- **Prática:** delimitar frases, perguntas e reações; comparar efeitos sem regra rígida `função = sinal único`.
+- **Prática:** retomada breve do N0-U05-L09; o foco novo é delimitar frases dentro de um parágrafo (frases coladas sem sinal, maiúscula depois do sinal final); comparações de efeito feitas dentro de textos curtos, não em frases soltas.
 - **Evidência:** pontuar texto curto controlado e interpretar efeito de alteração de sinal.
 
 ## Lição 7 — Vírgula em enumeração e chamamento simples
@@ -85,7 +86,7 @@ parágrafo como unidade inicial
 
 - **Objetivo:** integrar continuidade, referência, conectores e pontuação em revisão focada de um parágrafo simples.
 - **Dependências:** todas as anteriores.
-- **Prática:** primeira leitura pelo sentido → foco de continuidade → foco de referência → foco de pontuação; preservar histórico de versões.
+- **Prática:** primeira leitura pelo sentido → foco de continuidade → foco de referência → foco de pontuação; preservar histórico de versões; aplicar os quatro passos ao próprio parágrafo (o da L5 ou um novo) com checklist curto.
 - **Evidência:** revisar problemas reais sem alterar trechos corretos ao acaso.
 - **Limite:** não exigir `corrija tudo` nem edição avançada.
 

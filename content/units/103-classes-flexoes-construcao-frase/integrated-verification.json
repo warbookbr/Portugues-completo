@@ -51,11 +51,11 @@
       "cluster": "inflections",
       "type": "gender-number-person-time",
       "items": [
-        {"base": "o aviso claro", "target": "plural", "options": ["os avisos claros", "os aviso claro", "o avisos claros"], "correctIndex": 0},
-        {"base": "um cliente feliz", "target": "referente feminino", "options": ["uma cliente feliz", "uma cliente feliza"], "correctIndex": 0},
-        {"prompt": "Nós ____ o texto agora.", "options": ["revisamos", "reviso", "revisam"], "correctIndex": 0, "focus": "pessoa/número"},
-        {"prompt": "Ontem eles ____ cedo.", "options": ["saíram", "saem", "vão sair"], "correctIndex": 0, "focus": "tempo"},
-        {"prompt": "Amanhã eles ____ cedo.", "options": ["vão sair", "saíram", "saem ontem"], "correctIndex": 0, "focus": "tempo"}
+        {"base": "o caderno velho", "target": "plural", "options": ["os cadernos velhos", "os caderno velho", "o cadernos velhos"], "correctIndex": 0},
+        {"base": "um estudante gentil", "target": "feminino", "options": ["uma estudante gentil", "uma estudante gentila", "um estudante gentila"], "correctIndex": 0},
+        {"prompt": "Nós ____ o jantar agora.", "options": ["preparamos", "preparo", "preparam"], "correctIndex": 0, "focus": "pessoa/número"},
+        {"prompt": "Ontem as crianças ____ no parque.", "options": ["brincaram", "brincarão", "vão brincar"], "correctIndex": 0, "focus": "tempo"},
+        {"prompt": "Amanhã as crianças ____ no parque.", "options": ["brincarão", "brincaram", "brincaram ontem"], "correctIndex": 0, "focus": "tempo"}
       ]
     },
     {
@@ -64,8 +64,8 @@
       "type": "reference-clarity",
       "items": [
         {"text": "Luciana recebeu o convite. Ela confirmou a presença.", "question": "Quem 'Ela' retoma?", "options": ["Luciana", "convite", "presença"], "correctIndex": 0},
-        {"text": "Rafael entregou o relatório a Marcos quando ele chegou.", "question": "Sem mais contexto, quem 'ele' retoma?", "options": ["a referência é ambígua entre Rafael e Marcos", "certamente Rafael", "certamente Marcos"], "correctIndex": 0},
-        {"prompt": "Se quem chegou foi Marcos, qual versão é mais clara?", "options": ["Rafael entregou o relatório a Marcos quando Marcos chegou.", "Rafael entregou o relatório a Marcos quando ele chegou."], "correctIndex": 0}
+        {"text": "Sérgio contou à irmã que seu carro foi consertado.", "question": "Sem mais contexto, de quem é o carro?", "options": ["pode ser de Sérgio ou da irmã", "certamente de Sérgio", "certamente da irmã"], "correctIndex": 0},
+        {"prompt": "Se o carro é da irmã, qual versão é mais clara?", "options": ["Sérgio contou à irmã que o carro dela foi consertado.", "Sérgio contou à irmã que seu carro foi consertado.", "Sérgio contou à irmã que o carro dele foi consertado."], "correctIndex": 0}
       ]
     },
     {
@@ -105,10 +105,10 @@
       "cluster": "agreementRevision",
       "type": "integrated-revision",
       "items": [
-        {"before": "As mensagem novas chegaram.", "after": "As mensagens novas chegaram.", "focus": "concordância nominal"},
-        {"before": "Os clientes chegou cedo.", "after": "Os clientes chegaram cedo.", "focus": "sujeito simples plural + verbo"},
-        {"before": "A ficha completo está aqui.", "after": "A ficha completa está aqui.", "focus": "gênero transparente"},
-        {"before": "O técnico revisam o equipamento.", "after": "O técnico revisa o equipamento.", "focus": "sujeito simples singular + verbo"}
+        {"before": "As cadeira novas chegaram.", "after": "As cadeiras novas chegaram.", "focus": "palavra que nomeia e palavras que a acompanham"},
+        {"before": "Os vizinhos reclamou do barulho.", "after": "Os vizinhos reclamaram do barulho.", "focus": "sujeito no plural + verbo"},
+        {"before": "A janela quebrado foi trocada.", "after": "A janela quebrada foi trocada.", "focus": "gênero da palavra"},
+        {"before": "A motorista esperam na saída.", "after": "A motorista espera na saída.", "focus": "sujeito no singular + verbo"}
       ]
     }
   ],

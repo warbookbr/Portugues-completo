@@ -2,6 +2,7 @@
   "schemaVersion": 1,
   "id": "N1-U01-L06",
   "title": "O texto diz, permite concluir ou não informa?",
+  "studentObjective": "Saber diferenciar o que o texto diz, o que ele permite concluir pelas pistas e o que ele não informa.",
   "status": "conteudo-pronto-para-implementacao",
   "objective": "Distinguir informação explicitamente apresentada, inferência simples sustentada e ausência de informação suficiente, justificando conclusões com evidências do texto.",
   "competencies": [
@@ -38,21 +39,21 @@
     {
       "id": "L06-B02",
       "type": "demonstration",
-      "text": "Quando Elisa chegou ao ponto, várias pessoas fechavam os guarda-chuvas. A calçada estava molhada e havia pequenas poças perto do meio-fio.",
+      "text": "Quando Elisa chegou ao ponto de ônibus, várias pessoas fechavam os guarda-chuvas e sacudiam a água dos casacos. A calçada estava molhada e havia pequenas poças perto do meio-fio. No céu, as nuvens escuras começavam a se afastar. Elisa olhou o relógio, sentou no banco e abriu um livro.",
       "statements": [
-        {"text": "A calçada estava molhada.", "classification": "explicita"},
-        {"text": "Provavelmente havia chovido pouco antes.", "classification": "inferida", "evidence": ["pessoas fechavam os guarda-chuvas", "calçada estava molhada", "havia pequenas poças"]},
-        {"text": "Elisa mora perto do ponto.", "classification": "nao-informa"}
+        {"text": "A calçada estava molhada.", "classification": "o texto diz"},
+        {"text": "Provavelmente havia chovido pouco antes.", "classification": "o texto permite concluir", "evidence": ["pessoas fechavam os guarda-chuvas", "calçada estava molhada", "havia pequenas poças", "as nuvens escuras começavam a se afastar"]},
+        {"text": "Elisa mora perto do ponto.", "classification": "o texto não informa"}
       ]
     },
     {
       "id": "L06-C01",
       "type": "quick-check",
-      "text": "A padaria estava com as luzes apagadas. Na porta, um cartaz dizia: 'Voltamos às 14h'. Eram 13h20.",
-      "question": "É sustentado concluir que naquele momento a padaria ainda estava fechada?",
-      "options": ["sim", "não", "não há nenhuma pista"],
+      "text": "A padaria da esquina estava com as luzes apagadas e as portas fechadas. Na porta, um cartaz escrito à mão dizia: 'Voltamos às 14h'. Pelo relógio da farmácia ao lado, eram 13h20. Duas pessoas esperavam na calçada, olhando o celular.",
+      "question": "As pistas permitem concluir que, naquele momento, a padaria ainda estava fechada?",
+      "options": ["sim", "não; as pessoas na calçada mostram que estava aberta", "não há nenhuma pista sobre isso"],
       "correctIndex": 0,
-      "requiredEvidence": ["luzes apagadas", "Voltamos às 14h", "Eram 13h20"],
+      "requiredEvidence": ["luzes apagadas", "Voltamos às 14h", "eram 13h20"],
       "textRemainsVisible": true
     },
     {
@@ -66,22 +67,24 @@
     {
       "id": "L06-A01",
       "type": "assessment-set",
-      "text": "A sala estava vazia quando o professor entrou. Sobre cada mesa havia uma folha com o título 'Avaliação'. Alguns minutos depois, os alunos começaram a chegar.",
+      "text": "A sala 5 estava vazia quando o professor entrou. Sobre cada mesa havia uma folha virada para baixo com o título 'Avaliação'. No quadro, estava escrito que a atividade começaria às oito e que era preciso usar caneta azul ou preta. Alguns minutos depois, os alunos começaram a chegar.",
       "items": [
-        {"statement": "Havia folhas com o título 'Avaliação' sobre as mesas.", "options": ["explícita", "inferida", "não informa"], "correctIndex": 0},
-        {"statement": "Uma avaliação provavelmente aconteceria naquela sala.", "options": ["inferida pelas pistas", "explícita com essas palavras", "não pode ter relação com o texto"], "correctIndex": 0, "requiredEvidence": ["folha com o título 'Avaliação'", "alunos começaram a chegar"]}
+        {"statement": "Havia folhas com o título 'Avaliação' sobre as mesas.", "options": ["o texto diz", "o texto permite concluir", "o texto não informa"], "correctIndex": 0},
+        {"statement": "Uma avaliação provavelmente aconteceria naquela sala.", "options": ["o texto permite concluir pelas pistas", "o texto diz com essas palavras", "o texto não informa"], "correctIndex": 0, "requiredEvidence": ["folha virada para baixo com o título 'Avaliação'", "alunos começaram a chegar"]}
       ],
       "textRemainsVisible": true
     },
     {
       "id": "L06-A02",
       "type": "assessment-insufficient",
-      "text": "Marta abriu o armário, pegou um casaco e saiu de casa.",
+      "text": "Às sete da manhã, Marta abriu o armário, pegou um casaco grosso e um guarda-chuva e saiu de casa. Na rua, o vento estava frio. Ela andou até a esquina e esperou o sinal abrir.",
       "question": "Para onde Marta foi?",
-      "options": ["não há informação suficiente", "para o trabalho", "para o mercado"],
+      "options": ["não há informação suficiente", "para o trabalho, porque saiu cedo", "para o mercado da esquina"],
       "correctIndex": 0,
       "textRemainsVisible": true
-    }
+    },
+    {"id": "L06-B04", "type": "authored-literary-text", "focus": "read-or-listen", "title": "Para ler e pensar: A chave", "text": "Durante trinta anos, dona Celina deixou a chave de casa debaixo do vaso de samambaia, para o filho que chegava tarde. Hoje ela comprou um vaso novo, de flores amarelas. Plantou, regou e colocou o vaso ao lado da porta. Depois, guardou a chave na gaveta da cozinha.", "ttsText": "A chave. Durante trinta anos, dona Celina deixou a chave de casa debaixo do vaso de samambaia, para o filho que chegava tarde. Hoje ela comprou um vaso novo, de flores amarelas. Plantou, regou e colocou o vaso ao lado da porta. Depois, guardou a chave na gaveta da cozinha.", "explanation": "Este é um microconto: uma história completa contada em poucas linhas. Em textos assim, quem lê precisa juntar as pistas para perceber o que mudou na vida da personagem. As mesmas perguntas da lição ajudam aqui: o que o texto diz, o que ele permite concluir e o que ele não informa?"},
+    {"id": "L06-C02", "type": "quick-check-set", "instruction": "Releia o microconto. Para cada frase, escolha se o texto diz, se permite concluir pelas pistas ou se não informa.", "items": [{"question": "Dona Celina guardou a chave na gaveta da cozinha.", "options": ["o texto diz", "o texto permite concluir", "o texto não informa"], "correctIndex": 0}, {"question": "Dona Celina não espera mais que o filho use a chave debaixo do vaso.", "options": ["o texto diz", "o texto permite concluir", "o texto não informa"], "correctIndex": 1}, {"question": "O filho de dona Celina se mudou para outra cidade.", "options": ["o texto diz", "o texto permite concluir", "o texto não informa"], "correctIndex": 2}], "feedbackAfterAttempt": "A primeira frase está escrita no texto. A segunda junta duas pistas: por trinta anos a chave ficou no vaso para o filho, e hoje ela foi guardada na gaveta. A terceira é possível, mas o texto não diz por que o filho não precisa mais da chave: ele pode ter se mudado, ter outra chave ou outro motivo."}
   ],
   "assessmentBehavior": {"textVisibility": "sempre disponível", "evidenceSelection": "obrigatória quando a resposta é inferência", "readingSupport": "TTS opcional", "timeLimit": false},
   "completionEvidence": {

@@ -2,6 +2,7 @@
   "schemaVersion": 1,
   "id": "N1-U04-L08",
   "title": "Dois-pontos, fala e citação simples",
+  "studentObjective": "Usar os dois-pontos para anunciar uma lista, uma explicação ou uma fala, e reconhecer como a escrita mostra a fala de alguém.",
   "status": "conteudo-pronto-para-implementacao",
   "objective": "Usar dois-pontos em introduções transparentes de lista, explicação e fala e reconhecer formas simples de marcar fala ou citação com travessão e aspas, sem sistematizar convenções editoriais complexas.",
   "competencies": ["usar dois-pontos para introduzir lista após expressão que a anuncia", "usar dois-pontos antes de explicação curta quando a primeira parte a prepara", "reconhecer dois-pontos introduzindo fala", "reconhecer travessão em diálogo simples", "reconhecer aspas em citação curta", "selecionar marcação compatível com exemplos transparentes"],

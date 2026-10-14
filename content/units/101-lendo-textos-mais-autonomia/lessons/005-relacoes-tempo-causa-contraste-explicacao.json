@@ -2,6 +2,7 @@
   "schemaVersion": 1,
   "id": "N1-U01-L05",
   "title": "Relações entre as partes: tempo, causa, contraste e explicação",
+  "studentObjective": "Entender como as partes de um texto se ligam: o que vem antes ou depois, o que causa algo, o que se opõe e o que explica.",
   "status": "conteudo-pronto-para-implementacao",
   "objective": "Compreender relações claras de tempo, causa, consequência, contraste e explicação entre partes de um texto, usando palavras e organização textual como pistas sem transformar conectores em lista decorada.",
   "competencies": [
@@ -47,9 +48,9 @@
     {
       "id": "L05-C01",
       "type": "quick-check",
-      "text": "A rua ficou alagada porque choveu durante muitas horas. Por isso, os ônibus usaram um caminho diferente.",
+      "text": "Na terça-feira, choveu durante muitas horas sem parar. A Rua do Porto ficou alagada porque a água não conseguia escorrer pelos bueiros entupidos. Por isso, a escola da rua cancelou as aulas da tarde. A prefeitura informou que vai limpar os bueiros nesta semana.",
       "question": "Qual relação o texto apresenta?",
-      "options": ["causa e consequência", "apenas uma lista sem relação", "contraste entre duas opiniões"],
+      "options": ["causa e consequência", "apenas uma sequência de horários, sem causa", "contraste entre a chuva e o alagamento"],
       "correctIndex": 0,
       "textRemainsVisible": true
     },
@@ -66,13 +67,13 @@
       "type": "assessment-set",
       "items": [
         {"text": "O prédio é antigo, mas recebeu novos elevadores neste ano.", "question": "Que relação 'mas' ajuda a construir?", "options": ["contraste", "causa", "sequência"], "correctIndex": 0},
-        {"text": "O ônibus atrasou porque houve um acidente na avenida.", "question": "O que é apresentado como causa do atraso?", "options": ["o acidente na avenida", "o ônibus", "o horário"], "correctIndex": 0}
+        {"text": "A entrega das encomendas atrasou porque houve um acidente na avenida.", "question": "O que é apresentado como causa do atraso?", "options": ["o acidente na avenida", "a entrega das encomendas", "a própria avenida"], "correctIndex": 0}
       ]
     },
     {
       "id": "L05-A02",
       "type": "assessment",
-      "text": "O evento terá duas atividades principais. Pela manhã, haverá uma oficina. À tarde, os participantes poderão visitar a exposição. A entrada é gratuita, mas as vagas da oficina são limitadas.",
+      "text": "O aniversário da biblioteca terá duas atividades principais. Pela manhã, haverá uma oficina de encadernação. À tarde, os participantes poderão visitar a exposição de fotos antigas do bairro. A entrada é gratuita, mas as vagas da oficina são limitadas a vinte pessoas. Por isso, quem quiser participar deve se inscrever antes, na recepção.",
       "items": [
         {"question": "Qual relação existe entre 'pela manhã' e 'à tarde'?", "options": ["organização temporal", "causa", "opinião"], "correctIndex": 0},
         {"question": "O que é contrastado na última frase?", "options": ["a entrada gratuita e o limite de vagas da oficina", "manhã e tarde como causas", "a oficina e a exposição como a mesma atividade"], "correctIndex": 0}

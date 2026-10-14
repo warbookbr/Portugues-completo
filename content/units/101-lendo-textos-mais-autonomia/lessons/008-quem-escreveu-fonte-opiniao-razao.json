@@ -2,6 +2,7 @@
   "schemaVersion": 1,
   "id": "N1-U01-L08",
   "title": "Quem escreveu? De onde veio? Opinião e razão",
+  "studentObjective": "Reconhecer quem escreveu um texto ou de onde veio uma informação, e separar uma opinião da razão que a pessoa dá para ela.",
   "status": "conteudo-pronto-para-implementacao",
   "objective": "Reconhecer autoria ou origem explicitada de uma informação e distinguir, em exemplos transparentes, uma opinião simples da razão apresentada para sustentá-la, sem antecipar avaliação avançada de fontes ou argumentação formal.",
   "competencies": [
@@ -56,10 +57,10 @@
       "id": "L08-C01",
       "type": "quick-check",
       "sourceMetadata": {"author": "Lúcia Ramos", "section": "Carta de leitores"},
-      "text": "A praça precisa de mais iluminação à noite porque o caminho entre o ponto de ônibus e as casas fica muito escuro.",
+      "text": "Moro na Rua das Acácias há doze anos e uso o ponto de ônibus da praça todos os dias, quando volto do trabalho. Desde o começo do ano, três postes da praça estão com as lâmpadas queimadas.\n\nNa minha opinião, a praça precisa de mais iluminação à noite, porque o caminho entre o ponto de ônibus e as casas fica muito escuro. Muitas pessoas, principalmente estudantes que saem da escola às dez, preferem dar a volta pela avenida para não atravessar a praça. Peço que a prefeitura troque as lâmpadas e instale pelo menos mais dois postes perto do ponto.",
       "items": [
-        {"question": "Quem aparece como autora?", "options": ["Lúcia Ramos", "o ponto de ônibus", "a praça"], "correctIndex": 0},
-        {"question": "Qual é a razão apresentada?", "options": ["o caminho fica muito escuro à noite", "a praça existe", "a autora se chama Lúcia"], "correctIndex": 0}
+        {"question": "Quem aparece como autora?", "options": ["Lúcia Ramos", "a prefeitura", "os estudantes da escola"], "correctIndex": 0},
+        {"question": "Qual é a razão apresentada?", "options": ["o caminho entre o ponto e as casas fica muito escuro à noite", "a autora mora na Rua das Acácias há doze anos", "a prefeitura deve instalar mais dois postes"], "correctIndex": 0}
       ]
     },
     {
@@ -75,9 +76,9 @@
       "id": "L08-A01",
       "type": "assessment-source",
       "sourceMetadata": {"title": "Calendário de vacinação", "institution": "Secretaria Municipal de Saúde", "date": "5 de maio"},
-      "text": "A vacinação no bairro ocorrerá terça e quinta, das 8h às 16h.",
+      "text": "A campanha de vacinação contra a gripe chega ao bairro na próxima semana. A vacinação ocorrerá terça e quinta, das 8h às 16h, na Escola Municipal Bairro Alto. Podem se vacinar pessoas com mais de sessenta anos, gestantes, crianças de seis meses a seis anos e profissionais da saúde e da educação.\n\nÉ preciso levar documento com foto e, se tiver, a caderneta de vacinação. Quem não puder ir nesses dias pode procurar a unidade de saúde do bairro, de segunda a sexta, das 8h às 17h.",
       "items": [
-        {"question": "Qual é a origem explicitada?", "options": ["Secretaria Municipal de Saúde", "o bairro", "terça-feira"], "correctIndex": 0},
+        {"question": "Segundo o texto, quem é responsável pela informação?", "options": ["Secretaria Municipal de Saúde", "Escola Municipal Bairro Alto", "unidade de saúde do bairro"], "correctIndex": 0},
         {"question": "Registre de forma simples de onde veio a informação.", "responseMode": "short-text", "acceptedCore": "Secretaria Municipal de Saúde", "note": "não exigir formato acadêmico"}
       ]
     },

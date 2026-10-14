@@ -42,6 +42,7 @@ classes como ferramentas
 - **Dependências:** L2.
 - **Prática:** trocar característica, comparar singular/plural e masculino/feminino em casos produtivos, revisar grupo nominal.
 - **Evidência:** usar adjetivo compatível e corrigir incompatibilidade simples.
+- **Termos:** `singular`, `plural`, `masculino`, `feminino` e `gênero da palavra` são ensinados com exemplo antes do nome; a lição avisa que `gênero de texto`, visto depois, é outra ideia.
 - **Limite:** exceções de gênero e classificações de adjetivo ficam fora.
 
 ## Lição 4 — Verbos: ação, estado e acontecimento; pessoa e número
@@ -57,13 +58,14 @@ classes como ferramentas
 - **Dependências:** L4.
 - **Prática:** transformar contexto temporal, comparar `hoje/ontem/amanhã`, observar ordem/pedido sem sistematizar modos verbais completos.
 - **Evidência:** escolher/usar forma temporal compatível em frases novas.
+- **Ortografia em uso:** bloco curto e checagem sobre `-am` (passado: `falaram`) × `-ão` (futuro: `falarão`), conferindo pela palavra de tempo.
 - **Limite:** paradigma completo, tempos compostos e subjuntivo sistemático ficam depois.
 
 ## Lição 6 — Pronomes: pessoas, posse e referência sem repetir tudo
 
 - **Objetivo:** usar pronomes pessoais, possessivos e demonstrativos frequentes para indicar participantes/referentes e reduzir repetição sem perder clareza.
 - **Dependências:** L2–L5 + referenciação N1-U1.
-- **Prática:** substituir nome por pronome quando referência é clara, indicar posse/proximidade, detectar ambiguidade.
+- **Prática:** substituir nome por pronome quando referência é clara, indicar posse/proximidade, detectar ambiguidade de posse (`seu` com dois possuidores; `dele/dela` ou repetição do nome para resolver), sem repetir o molde de "ela" com duas pessoas já visto no N0 e em N1-U01.
 - **Evidência:** escolher pronome/referente adequado e rejeitar substituição que torne o texto confuso.
 - **Limite:** subclasses completas de pronomes não entram.
 
@@ -71,7 +73,7 @@ classes como ferramentas
 
 - **Objetivo:** perceber que nem toda frase precisa ter verbo e que `oração` é uma estrutura organizada em torno de verbo, usando a distinção apenas quando útil.
 - **Dependências:** L4–L6 + conceito funcional de frase do N0.
-- **Prática:** comparar `Silêncio!`, `Que surpresa!`, `A loja abriu.`; localizar verbo e reconhecer oração em casos simples.
+- **Prática:** comparar `Silêncio!`, `Que surpresa!`, `A loja abriu.`; apresentar `locução verbal` com exemplos (`vou sair`, `está chovendo`, `vai chegar`) antes da definição de oração; localizar verbo e reconhecer oração em casos simples.
 - **Evidência:** distinguir frase/oração em exemplos claros sem redefinir frase como fórmula rígida.
 
 ## Lição 8 — Sujeito e predicado em casos básicos, sem fórmula universal
@@ -94,7 +96,7 @@ classes como ferramentas
 
 - **Objetivo:** integrar flexões e relações sintáticas em concordância nominal/verbal básica e revisar apenas os casos já ensinados.
 - **Dependências:** todas as anteriores.
-- **Prática:** artigo/substantivo/adjetivo; sujeito simples + verbo; antes/depois de revisão; produção curta com checklist.
+- **Prática:** `concordância` definida a partir de um par antes/depois (`Os meninos chegou.` → `Os meninos chegaram.`); palavra que nomeia + palavras que a acompanham; sujeito + verbo; produção curta própria com checklist em linguagem comum (sem `grupo nominal` nem `sujeito simples`).
 - **Evidência:** corrigir incompatibilidades transparentes e aplicar concordância em exemplos novos.
 - **Limite:** sujeito distante/composto, concordâncias especiais e exceções ficam para progressão posterior.
 

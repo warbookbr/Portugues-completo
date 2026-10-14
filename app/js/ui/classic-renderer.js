@@ -40,6 +40,7 @@ const pretty = value => {
 
 function valueText(value) {
   if (value === null || value === undefined || value === '') return '';
+  if (typeof value === 'string' && /\n\s*\n/.test(value)) return paragraphs(value);
   if (typeof value === 'string' || typeof value === 'number') return esc(value);
   if (typeof value === 'boolean') return value ? 'sim' : 'não';
   if (Array.isArray(value)) return value.map(item => `<span class="token">${valueText(item)}</span>`).join(' ');
@@ -51,6 +52,10 @@ function valueText(value) {
     return `<dl class="data-list">${Object.entries(value).map(([key, item]) => `<div><dt>${esc(pretty(key))}</dt><dd>${valueText(item)}</dd></div>`).join('')}</dl>`;
   }
   return esc(value);
+}
+
+function paragraphs(text) {
+  return String(text).split(/\n\s*\n/).map(part => part.trim()).filter(Boolean).map(part => `<p>${esc(part).replaceAll('\n', '<br>')}</p>`).join('');
 }
 
 function renderKnownContent(content = {}) {
@@ -81,7 +86,7 @@ function renderKnownContent(content = {}) {
   ]);
 
   if (content.title) lead.push(`<h3>${esc(content.title)}</h3>`);
-  if (content.text) lead.push(`<p>${esc(content.text)}</p>`);
+  if (content.text) lead.push(paragraphs(content.text));
   if (content.prompt) lead.push(`<p class="activity-prompt">${esc(content.prompt)}</p>`);
   if (content.instruction && !content.oralRehearsal?.enabled) lead.push(`<p class="activity-instruction">${esc(content.instruction)}</p>`);
   if (Array.isArray(content.lines) && content.lines.length && content.lines.every(line => typeof line === 'string')) {

@@ -2,6 +2,7 @@
   "schemaVersion": 1,
   "id": "N1-U01-L07",
   "title": "Título, imagem, legenda e outros apoios",
+  "studentObjective": "Usar o título, a legenda, um mapa simples e outros elementos que acompanham um texto, percebendo quando eles acrescentam informação e quando só enfeitam.",
   "status": "conteudo-pronto-para-implementacao",
   "objective": "Integrar informações verbais e visuais simples quando ambas participam da compreensão, distinguindo elemento que apoia, complementa ou apenas decora sem permitir que a imagem substitua a leitura quando o alvo é textual.",
   "competencies": [
@@ -39,10 +40,10 @@
       "id": "L07-B02",
       "type": "demonstration",
       "title": "Horta comunitária amplia atendimento",
-      "bodyText": "A horta do bairro passará a receber visitantes também nas quartas-feiras pela manhã. Aos sábados, o horário continua o mesmo.",
+      "bodyText": "A horta comunitária do Jardim das Palmeiras passará a receber visitantes também às quartas-feiras, das 8h às 11h, a partir da próxima semana. Até agora, as visitas aconteciam apenas aos sábados. Segundo a coordenadora da horta, Neusa Ferreira, a procura cresceu depois que escolas da região começaram a levar turmas para conhecer os canteiros.\n\nAos sábados, o horário continua o mesmo, das 8h ao meio-dia. Nas quartas, grupos com mais de dez pessoas devem avisar antes pelo telefone da associação de moradores. Quem quiser ajudar no plantio pode levar luvas e chapéu; as ferramentas são emprestadas no local.",
       "caption": "Canteiros da horta comunitária durante atividade de sábado.",
       "questions": [
-        {"question": "O título ajuda a antecipar qual assunto?", "answer": "uma mudança/ampliação no atendimento da horta"},
+        {"question": "O título ajuda a antecipar qual assunto da notícia?", "answer": "uma mudança/ampliação no atendimento da horta"},
         {"question": "A legenda informa o novo horário de quarta-feira?", "answer": "não; ela identifica a situação mostrada e menciona sábado"}
       ]
     },
@@ -88,10 +89,10 @@
       "id": "L07-A02",
       "type": "assessment-relevance",
       "title": "Mutirão de documentos",
-      "bodyText": "O atendimento será sábado, das 9h às 13h, no centro comunitário. É preciso levar documento com foto.",
+      "bodyText": "No próximo sábado, o centro comunitário da Vila Nova recebe um mutirão para emissão de documentos. O atendimento será das 9h às 13h, por ordem de chegada. Será possível tirar a segunda via da carteira de identidade e do CPF e atualizar o cadastro em programas sociais.\n\nÉ preciso levar documento com foto e, para atualizar o cadastro, um comprovante de endereço recente. Crianças e adolescentes devem estar acompanhados de um responsável. A organização recomenda chegar cedo, porque o número de senhas é limitado.",
       "visualBadge": {"label": "Entrada gratuita", "accessibleEquivalent": "Selo informativo: Entrada gratuita."},
       "question": "Qual afirmação descreve corretamente o papel do selo?",
-      "options": ["ele acrescenta uma informação que não aparece no corpo do texto", "ele substitui a necessidade de ler horário e documentos", "ele prova que o evento acontece domingo"],
+      "options": ["ele acrescenta uma informação que não aparece no corpo do texto", "ele repete uma informação que já está no corpo do texto", "ele substitui a necessidade de ler horário e documentos"],
       "correctIndex": 0
     }
   ],

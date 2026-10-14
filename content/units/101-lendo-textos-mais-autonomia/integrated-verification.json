@@ -8,6 +8,7 @@
   "prerequisites": ["N1-U01-L01", "N1-U01-L02", "N1-U01-L03", "N1-U01-L04", "N1-U01-L05", "N1-U01-L06", "N1-U01-L07", "N1-U01-L08", "N1-U01-L09"],
   "designPrinciples": [
     "usar textos e situações novos",
+    "usar ao menos dois textos de dois ou três parágrafos, maiores que os do N0",
     "manter o texto disponível durante toda a avaliação",
     "permitir releitura sem penalidade",
     "separar compreensão global de localização de detalhes",
@@ -43,12 +44,12 @@
   },
   "texts": {
     "A": {
-      "title": "Oficina de consertos amplia vagas",
-      "body": "A oficina comunitária de pequenos consertos abrirá uma segunda turma a partir do próximo mês. A primeira turma, realizada às terças-feiras, continuará normalmente. A nova turma acontecerá às quintas, das 18h às 20h. Segundo a organização, a mudança foi feita porque a lista de espera cresceu nos últimos meses. As inscrições para a nova turma começam na segunda-feira, na recepção do centro comunitário."
+      "title": "Oficina de consertos abre segunda turma",
+      "body": "A oficina comunitária de pequenos consertos, que funciona no centro comunitário da Vila Esperança, abrirá uma segunda turma a partir do próximo mês. Nas aulas, os participantes aprendem a consertar ferros de passar, ventiladores, cadeiras e outros objetos de uso diário.\n\nA primeira turma, realizada às terças-feiras, continuará normalmente. A nova turma acontecerá às quintas, das 18h às 20h. Segundo a organização, a mudança foi feita porque a lista de espera cresceu nos últimos meses: hoje, mais de quarenta pessoas aguardam uma vaga.\n\nAs inscrições para a nova turma começam na segunda-feira, na recepção do centro comunitário. Cada participante deve trazer, no primeiro dia, um objeto quebrado para consertar."
     },
     "B": {
-      "title": "Mudança no ponto de coleta",
-      "body": "O ponto de coleta de materiais recicláveis que funcionava na Praça Azul será transferido para a Rua do Mercado, 45. O novo local começa a funcionar no sábado. O horário permanece das 8h às 13h. A prefeitura informou que a mudança facilitará a retirada do material pelos caminhões."
+      "title": "Ponto de coleta muda de endereço",
+      "body": "O ponto de coleta de materiais recicláveis que funcionava na Praça Azul será transferido para a Rua do Mercado, 45, ao lado da quadra de esportes. O novo local começa a funcionar no sábado, dia 12. O horário permanece o mesmo: das 8h às 13h, sempre aos sábados.\n\nSegundo a prefeitura, a mudança facilitará a retirada do material. A rua da praça é estreita, e os caminhões não conseguiam estacionar perto do ponto. No novo endereço, há espaço para eles pararem em frente ao portão.\n\nContinuam sendo aceitos papel, plástico, vidro e metal, limpos e separados por tipo."
     }
   },
   "items": [
@@ -57,8 +58,8 @@
       "competency": "objetivo, assunto, finalidade e principal",
       "textRef": "A",
       "items": [
-        {"question": "Qual é a principal novidade?", "options": ["será aberta uma segunda turma da oficina", "a primeira turma será cancelada", "a oficina deixará de receber inscrições"], "correctIndex": 0},
-        {"question": "Qual é a finalidade principal do texto?", "options": ["informar a criação da nova turma e como ela funcionará", "ensinar a fazer consertos", "contar uma história fictícia"], "correctIndex": 0}
+        {"question": "Qual é a principal novidade?", "options": ["será aberta uma segunda turma da oficina, às quintas", "a turma de terça passará a acontecer às quintas", "a oficina começará a consertar objetos para os moradores"], "correctIndex": 0},
+        {"question": "Qual é a finalidade principal do texto?", "options": ["informar a criação da nova turma e como participar", "ensinar a consertar ferros de passar e ventiladores", "reclamar da demora para conseguir uma vaga"], "correctIndex": 0}
       ],
       "textRemainsVisible": true
     },
@@ -67,7 +68,7 @@
       "competency": "localização e integração explícita",
       "textRef": "A",
       "question": "Quando e onde começam as inscrições para a nova turma?",
-      "options": ["na segunda-feira, na recepção do centro comunitário", "na quinta-feira, durante a aula", "no próximo mês, pela internet"],
+      "options": ["na segunda-feira, na recepção do centro comunitário", "na quinta-feira, durante a primeira aula", "no próximo mês, na recepção do centro comunitário"],
       "correctIndex": 0,
       "requiredEvidence": ["As inscrições para a nova turma começam na segunda-feira, na recepção do centro comunitário."],
       "textRemainsVisible": true
@@ -77,8 +78,8 @@
       "competency": "referência e relações",
       "textRef": "A",
       "items": [
-        {"question": "A que 'a mudança' se refere no texto?", "options": ["à abertura de uma segunda turma", "ao cancelamento das terças", "à mudança de prédio"], "correctIndex": 0},
-        {"question": "Que relação existe entre o crescimento da lista de espera e a abertura da nova turma?", "options": ["o crescimento é apresentado como motivo para a mudança", "são fatos sem relação", "a nova turma causou a lista de espera no passado"], "correctIndex": 0}
+        {"question": "A que 'a mudança' se refere no texto?", "options": ["à abertura de uma segunda turma", "à troca do dia da primeira turma", "ao crescimento da lista de espera"], "correctIndex": 0},
+        {"question": "Que relação existe entre o crescimento da lista de espera e a abertura da nova turma?", "options": ["o crescimento é apresentado como motivo para a mudança", "o crescimento aconteceu depois da abertura da nova turma", "o texto só apresenta os dois fatos, sem relação entre eles"], "correctIndex": 0}
       ],
       "requiredEvidence": ["a lista de espera cresceu nos últimos meses"],
       "textRemainsVisible": true
@@ -88,45 +89,45 @@
       "competency": "inferência e informação insuficiente",
       "textRef": "B",
       "items": [
-        {"question": "É sustentado concluir que o horário não mudou?", "options": ["sim", "não", "o texto não menciona horário"], "correctIndex": 0, "requiredEvidence": ["O horário permanece das 8h às 13h."]},
-        {"question": "Quantas pessoas usam o ponto de coleta por dia?", "options": ["não há informação suficiente", "45 pessoas", "13 pessoas"], "correctIndex": 0}
+        {"question": "É possível concluir que, no sábado, dia 12, quem levar material à Praça Azul não vai encontrar o ponto de coleta lá?", "options": ["sim, porque o ponto foi transferido e o novo local começa a funcionar nesse dia", "não, porque o horário continua o mesmo", "não há informação suficiente"], "correctIndex": 0, "requiredEvidence": ["será transferido para a Rua do Mercado, 45", "O novo local começa a funcionar no sábado, dia 12."]},
+        {"question": "Quantas pessoas costumam levar material ao ponto de coleta em cada sábado?", "options": ["não há informação suficiente", "cerca de 45 pessoas", "poucas, porque o ponto vai mudar de lugar"], "correctIndex": 0}
       ],
       "textRemainsVisible": true
     },
     {
       "id": "V01-Q05",
       "competency": "integração multimodal",
-      "bodyText": "Depois de entregar a ficha no balcão, siga o percurso indicado para chegar à sala da entrevista.",
+      "bodyText": "Na unidade de saúde, todos passam primeiro pela recepção. Quem vai fazer exame de sangue segue depois para o laboratório. Quem tem consulta marcada segue para a sala de espera do segundo andar.",
       "visual": {
         "type": "simple-route-diagram",
-        "nodes": ["Entrada", "Balcão", "Corredor A", "Sala 12"],
-        "connections": [["Entrada", "Balcão"], ["Balcão", "Corredor A"], ["Corredor A", "Sala 12"]],
-        "accessibleEquivalent": "A rota indicada é Entrada → Balcão → Corredor A → Sala 12."
+        "nodes": ["Entrada", "Recepção", "Corredor azul", "Laboratório", "Escada", "Sala de espera"],
+        "connections": [["Entrada", "Recepção"], ["Recepção", "Corredor azul"], ["Corredor azul", "Laboratório"], ["Recepção", "Escada"], ["Escada", "Sala de espera"]],
+        "accessibleEquivalent": "O mapa mostra dois caminhos que saem da recepção. Um vai pelo Corredor azul até o Laboratório. O outro vai pela Escada até a Sala de espera."
       },
-      "question": "Por onde a pessoa passa depois do balcão e antes da sala da entrevista?",
-      "options": ["Corredor A", "Entrada", "o material não informa"],
+      "question": "Uma pessoa vai fazer exame de sangue. Depois da recepção, por onde ela passa?",
+      "options": ["pelo Corredor azul", "pela Escada", "o material não informa"],
       "correctIndex": 0,
       "evidenceSourcesRequired": ["bodyText", "visual-or-accessible-equivalent"]
     },
     {
       "id": "V01-Q06",
       "competency": "fonte, opinião e razão",
-      "sourceMetadata": {"author": "Marta Souza", "section": "Opinião dos leitores"},
-      "text": "Marta defende que o bairro precisa de mais árvores porque as ruas com pouca sombra ficam muito quentes durante a tarde.",
+      "sourceMetadata": {"author": "Sérgio Lima", "section": "Opinião dos leitores"},
+      "text": "Sérgio defende que o bairro precisa de mais árvores nas calçadas, porque as ruas com pouca sombra ficam muito quentes durante a tarde.",
       "items": [
-        {"question": "Quem aparece como autora?", "options": ["Marta Souza", "o bairro", "as árvores"], "correctIndex": 0},
-        {"question": "Qual é a opinião?", "options": ["o bairro precisa de mais árvores", "as ruas existem", "a tarde ocorre depois da manhã"], "correctIndex": 0},
-        {"question": "Qual razão é apresentada?", "options": ["ruas com pouca sombra ficam muito quentes à tarde", "Marta escreve uma opinião", "árvores têm folhas"], "correctIndex": 0}
+        {"question": "Quem aparece como autor?", "options": ["Sérgio Lima", "a prefeitura", "os moradores do bairro"], "correctIndex": 0},
+        {"question": "Qual é a opinião?", "options": ["o bairro precisa de mais árvores nas calçadas", "as ruas com pouca sombra ficam muito quentes à tarde", "as árvores deixam as calçadas sujas"], "correctIndex": 0},
+        {"question": "Qual razão é apresentada?", "options": ["as ruas com pouca sombra ficam muito quentes durante a tarde", "o bairro precisa de mais árvores nas calçadas", "Sérgio prefere caminhar à tarde"], "correctIndex": 0}
       ]
     },
     {
       "id": "V01-Q07",
       "competency": "resumo próprio",
       "textRef": "B",
-      "planningPrompt": "Selecione a mudança principal, o novo local e o que permaneceu igual antes de escrever.",
+      "planningPrompt": "Antes de escrever, selecione a mudança principal, o novo local, o motivo e o que permaneceu igual.",
       "responseMode": "free-text",
       "selfReview": ["Meu resumo informa que o ponto mudou de lugar?", "Indica o novo local de forma suficiente?", "Evitei dizer que o horário mudou, já que ele permaneceu igual?", "Usei formulação própria em vez de copiar todo o texto?"],
-      "modelExamplesAfterSubmission": ["O ponto de coleta será transferido da Praça Azul para a Rua do Mercado, 45, a partir de sábado, mantendo o horário das 8h às 13h."],
+      "modelExamplesAfterSubmission": ["O ponto de coleta de recicláveis sairá da Praça Azul e passará a funcionar na Rua do Mercado, 45, a partir do sábado, dia 12, no mesmo horário, porque lá os caminhões conseguem estacionar."],
       "automaticObservations": ["há texto livre", "planejamento realizado", "autochecagem concluída"],
       "notAutomaticallyJudged": ["fidelidade semântica plena", "compreensibilidade linguística plena", "paráfrase real por palavra-chave", "extensão ideal"],
       "humanOrExternalReview": {"requiredForClaimOfValidatedSummary": true, "statusWhenApproved": "resumo-validado"},
