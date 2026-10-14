@@ -74,6 +74,34 @@ Uma lição pode repetir ciclos de explicação, exemplo e checagem quando o ass
 
 A ordem concreta da explicação deve respeitar pré-requisitos. Quando um exemplo torna um conceito novo mais fácil de entender, ele pode aparecer antes da definição formal.
 
+## Regras de método (R1)
+
+Origem: `docs/auditoria-plano-ensino.md`. Estas regras valem para autoria e revisão de qualquer lição, verificação ou unidade, em qualquer nível. Cada uma corrige um defeito encontrado de forma repetida no conteúdo.
+
+### Regras transversais
+
+1. **Termo novo só depois de exemplo, nome e explicação, no ponto do primeiro uso.** Título, rótulo de opção, checklist ou feedback não contam como ensino. Se o termo não for necessário, usar linguagem comum. Ver `docs/linguagem-aluno.md`, seção 5.
+2. **Exemplo é mostrado, nunca descrito.** O texto, poema, documento, modelo de gênero ou forma linguística aparece inteiro. Frases como "texto fornecido pela interface" ou "poema autoral sobre..." não são conteúdo publicável.
+3. **Toda unidade tem pelo menos uma produção própria do aluno**, mesmo curta (uma frase no N0, um parágrafo no N1), revisada com o recorte da unidade. Revisar trecho dado não substitui escrever.
+4. **Textos de leitura crescem de forma planejada** em extensão, densidade e variedade de gênero. Cada nível começa um pouco acima do anterior; nenhuma unidade de abertura de nível usa textos do mesmo tamanho do nível anterior.
+5. **Variedade de cenários, temas e gêneros.** Um mesmo cenário não domina uma unidade, nem se repete entre unidades com a mesma função.
+6. **Retorno em espiral precisa acrescentar algo novo** (nova estrutura, maior distância, mais variáveis, outro gênero). Quando não acrescenta, vira retomada curta e diagnóstica, sem ocupar uma lição inteira.
+7. **Oralidade e literatura aparecem em todas as unidades** de forma breve (ouvir antes de ler, ensaio oral opcional, microtexto literário), além das unidades dedicadas.
+8. **Linguagem interna não aparece para o aluno.** Nomes de recorte, categorias de autoria, "sistema", "interface" e referências a fontes internas ficam fora do texto público.
+9. **Volume sem massividade:** lição curta, uma ideia por vez, prática suficiente e variada, revisão espaçada e avanço por evidência.
+
+### Modelo por tipo de conteúdo
+
+| Tipo | Sequência da lição | Prática típica | Avançar quando |
+|---|---|---|---|
+| Alfabetização (Trilha) | ouvir palavra-chave → ver letra/grupo → ligar som e letra → ler sílabas e palavras **inéditas** → escrever palavras ouvidas → ler frase curta só com o que foi ensinado | ditado com fichas e teclado, montar palavra ouvida, ler e escolher imagem, distinguir palavras parecidas, leitura repetida; áudio para conferir **depois** da tentativa | lê e escreve palavras inéditas da estrutura nova sem apoio, de forma consistente |
+| Ortografia e acentuação | observar conjunto de palavras → descobrir padrão → nomear regra → aplicar em palavras novas → separar regra de memória/consulta | completar letra, classificar por padrão, ditado, revisar texto próprio | aplica em palavras novas e em texto próprio |
+| Gramática e análise linguística | uso em frase real → perceber função → nomear → explicar → manipular (trocar, expandir, reduzir, reordenar) → aplicar em revisão | transformar frases, escolher entre versões, explicar efeito, revisar texto próprio | manipula com consciência do efeito em frase nova |
+| Leitura | objetivo de leitura → texto completo adequado ao nível → localizar, relacionar, inferir, avaliar → justificar com trecho | perguntas com evidência, resposta "o texto não informa" quando cabível | responde e justifica em texto inédito do nível |
+| Produção escrita | ler modelo completo do gênero → planejar → escrever → revisar com critérios curtos → reescrever | produção própria por unidade, segunda versão | atende aos critérios declarados; avaliação aberta segue `docs/exercicios.md` |
+| Oralidade | ouvir antes de ler → identificar o principal → responder ou reformular (ensaio opcional) → comparar com modelo | escuta, síntese oral, reparo, recursos próprios da fala | conforme critérios e limites de avaliação oral |
+| Literatura | texto inteiro → fruição → pergunta de sentido → justificativa com o texto | leitura, interpretação sustentada, comparação | interpretação sustentada por evidência textual |
+
 ## Regra de foco
 
 Cada momento deve ter foco principal:

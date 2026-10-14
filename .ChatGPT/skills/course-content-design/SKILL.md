@@ -368,6 +368,19 @@ Tipos de prática
 Evidência de conclusão
 ```
 
+## Regras de método obrigatórias (R1)
+
+Antes de escrever ou revisar, aplicar as **Regras de método** de `docs/conteudo.md` e os princípios 9 a 12 de `docs/exercicios.md`. Checklist mínimo:
+
+- todo termo novo é ensinado (exemplo, nome, explicação) no primeiro uso, inclusive em níveis avançados;
+- todo exemplo, texto ou modelo aparece inteiro, nunca descrito;
+- a unidade tem produção própria do aluno;
+- os textos crescem em relação ao nível anterior;
+- o cenário não repete o de lições vizinhas;
+- o retorno em espiral acrescenta algo novo ou é encurtado;
+- oralidade e literatura aparecem, mesmo que brevemente;
+- itens fechados têm distratores plausíveis; a verificação usa itens novos.
+
 ## Revisão obrigatória de conteúdo
 
 Antes de considerar conteúdo pronto, revisar cinco dimensões:

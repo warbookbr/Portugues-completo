@@ -202,6 +202,15 @@ exemplo
 
 Glossário e `Saiba mais` podem complementar, nunca substituir uma definição necessária.
 
+Falhas encontradas na auditoria R1 (`docs/auditoria-plano-ensino.md`) que esta regra proíbe:
+
+- termo que aparece só no **título** da lição e nunca no corpo (ex.: "sinônimos", "polissemia");
+- termo usado como **opção, rótulo ou checklist** antes de ser ensinado (ex.: "grupo nominal", "sujeito simples", "período composto");
+- termo com **dois sentidos** no curso sem ponte entre eles (ex.: "gênero" gramatical e "gênero de texto"; "modalidade" e "multimodalidade");
+- termo técnico novo em nível avançado tratado como óbvio (ex.: "clítico", "triangulação", "linguagem epistêmica").
+
+Isso vale para todos os níveis, não só para o N0.
+
 ---
 
 # 6. Títulos devem dizer do que a lição trata

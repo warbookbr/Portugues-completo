@@ -15,3 +15,4 @@ Regras centrais:
 - progressão do concreto ao abstrato, com pré-requisito realmente ensinado antes de ser pressuposto;
 - mídia só quando melhora compreensão, demonstração, memória, contextualização, percepção ou prática;
 - resposta aberta não vira palavra-chave frágil para automatizar correção.
+- regras de método R1 (termo ensinado no primeiro uso, exemplo mostrado, produção própria por unidade, textos que crescem, espiral com ganho real, distratores plausíveis) estão em `docs/conteudo.md` e `docs/exercicios.md`.

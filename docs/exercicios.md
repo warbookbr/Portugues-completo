@@ -33,6 +33,10 @@ Uma atividade pode ter um nome pedagógico específico no conteúdo e ainda reut
 6. Uma verificação integrada pode exigir vários agrupamentos não compensáveis.
 7. Feedback e domínio são separados: uma atividade pode fornecer feedback sem ter autoridade para declarar domínio.
 8. Acessibilidade faz parte do contrato da atividade, não é correção posterior.
+9. Item fechado tem distratores plausíveis. Pergunta sim/não só quando a distinção é realmente difícil; o enunciado não pode entregar a resposta (por exemplo, "sempre", "qualquer", "automaticamente" sinalizando a opção falsa).
+10. Verificação integrada usa itens novos do mesmo padrão, nunca cópia ou variação mínima (só troca de número ou nome) de itens das lições; caso contrário mede memória, não transferência.
+11. Cada unidade inclui ao menos uma produção própria do aluno; revisar trecho fornecido não substitui produção (ver `docs/conteudo.md`, Regras de método).
+12. Nível mais alto não pode ter checagens mais fáceis que o nível anterior; a exigência cresce em distratores, extensão e número de variáveis.
 
 ## As quatro dimensões de uma atividade
 
