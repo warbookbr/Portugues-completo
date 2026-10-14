@@ -132,6 +132,9 @@ jobs:
       - name: Test public labels
         run: node scripts/test-public-labels.mjs
 
+      - name: Test course tracks
+        run: node scripts/test-course-tracks.mjs
+
       - name: Capture classic visual smoke
         run: bash scripts/capture-classic-visuals.sh
 

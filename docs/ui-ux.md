@@ -186,6 +186,11 @@ hero introdutório
 
 A home deve privilegiar a próxima ação de estudo. Mensagens genéricas de boas-vindas ou continuidade não devem ocupar uma faixa grande acima do conteúdo quando não acrescentarem decisão, estado ou orientação nova.
 
+
+### Trilha de Alfabetização na home (R1.8)
+
+O caminho principal começa em "Palavras, frases e sentido". A Trilha de Alfabetização é opcional e não compete com o CTA principal: no primeiro acesso, aparece apenas como link discreto abaixo de "Começar a estudar" ("Ainda está aprendendo a ler e escrever? Comece pela Trilha de Alfabetização"). Em Unidades, a trilha fica em seção própria, depois do caminho principal. A numeração pública das unidades segue a posição no caminho principal ou na trilha, nunca o ID interno.
+
 ## Estilo da interface: Simples e Completo
 
 A mesma tela pode ser apresentada em dois estilos, escolhidos pelo aluno em `Configurações → Aparência → Estilo da interface`. O estilo é preferência local do dispositivo e camada de apresentação: ele não altera currículo, progresso, evidência nem domínio, e não se confunde com o **modo de estudo** (Clássico e Gamificado), que é outro eixo.

@@ -15,10 +15,19 @@
       "title": "Domínio"
     }
   ],
+  "tracks": [
+    {
+      "id": "alfabetizacao",
+      "title": "Trilha de Alfabetização",
+      "description": "Trilha opcional para quem ainda está aprendendo a ler e escrever: letras, sons, sílabas e primeiras palavras. Ao terminar, o aluno segue para o caminho principal.",
+      "optional": true
+    }
+  ],
   "units": [
     {
       "id": "N0-U01",
       "levelId": "N0",
+      "trackId": "alfabetizacao",
       "order": 1,
       "title": "Letras e primeiros sons",
       "manifest": "units/001-fala-sons-escrita/unit.json"
@@ -26,6 +35,7 @@
     {
       "id": "N0-U02",
       "levelId": "N0",
+      "trackId": "alfabetizacao",
       "order": 2,
       "title": "Sílabas e primeiras palavras",
       "manifest": "units/002-das-silabas-as-palavras/unit.json"

@@ -1,4 +1,5 @@
 import { levelLabel, lessonStatusLabel } from './classic-ui-copy.js';
+import { annotateManifests, literacyTrack, mainPath, studentPath, unitLabel } from './course-tracks.js';
 
 const esc = value => String(value ?? '')
   .replaceAll('&', '&amp;')
@@ -27,22 +28,35 @@ function unitState(progress, manifest) {
   return 'Não iniciada';
 }
 
-export function unitsPageHtml(manifests = [], progress = {}) {
-  return `<div class="course-view reading-content overview-page">
-    ${pageIntro('Unidades', 'Unidades do curso', 'Explore o conteúdo disponível e retome qualquer unidade quando quiser.')}
-    <section class="overview-list">${manifests.map(manifest => {
-      const done = completedIn(progress, manifest);
-      const total = manifest.lessons.length;
-      const percent = total ? Math.round((done / total) * 100) : 0;
-      return `<a class="overview-unit-card" href="#/unidade/${esc(manifest.id)}">
-        <div><span class="block-kicker">${esc(levelLabel(manifest.levelId))} · Unidade ${manifest.order}</span><h2>${esc(manifest.title)}</h2><p>${esc(manifest.objective)}</p></div>
+function unitCard(manifest, progress) {
+  const done = completedIn(progress, manifest);
+  const total = manifest.lessons.length;
+  const percent = total ? Math.round((done / total) * 100) : 0;
+  return `<a class="overview-unit-card" href="#/unidade/${esc(manifest.id)}">
+        <div><span class="block-kicker">${esc(unitLabel(manifest))}</span><h2>${esc(manifest.title)}</h2><p>${esc(manifest.objective)}</p></div>
         <div class="overview-unit-meta"><span>${esc(unitState(progress, manifest))}</span><span>${done} de ${total} lições</span><span>${percent}%</span></div>
       </a>`;
-    }).join('')}</section>
+}
+
+export function unitsPageHtml(rawManifests = [], progress = {}, course = null) {
+  const manifests = annotateManifests(course, rawManifests);
+  const main = mainPath(manifests);
+  const literacy = literacyTrack(manifests);
+  const literacySection = literacy.length
+    ? `<section class="overview-list track-section" data-literacy-track aria-labelledby="literacy-track-title">
+      <div class="track-section-heading"><h2 id="literacy-track-title">Trilha de Alfabetização</h2><p>Opcional. Para quem ainda está aprendendo a ler e escrever: letras, sons, sílabas e primeiras palavras. Ao terminar, siga para o caminho principal.</p></div>
+      ${literacy.map(manifest => unitCard(manifest, progress)).join('')}
+    </section>`
+    : '';
+  return `<div class="course-view reading-content overview-page">
+    ${pageIntro('Unidades', 'Unidades do curso', 'Explore o conteúdo disponível e retome qualquer unidade quando quiser.')}
+    <section class="overview-list">${main.map(manifest => unitCard(manifest, progress)).join('')}</section>
+    ${literacySection}
   </div>`;
 }
 
-export function planPageHtml(manifests = [], progress = {}) {
+export function planPageHtml(rawManifests = [], progress = {}, course = null) {
+  const manifests = studentPath(annotateManifests(course, rawManifests), progress);
   const currentUnitId = progress?.curriculum?.current?.unitId;
   return `<div class="course-view reading-content overview-page">
     ${pageIntro('Plano de estudos', 'Seu caminho pelo curso', 'Veja a sequência disponível, seu ponto atual e o que vem depois.')}
@@ -51,7 +65,7 @@ export function planPageHtml(manifests = [], progress = {}) {
       const current = manifest.id === currentUnitId;
       return `<article class="plan-step ${current ? 'is-current' : ''}">
         <div class="plan-step-index">${index + 1}</div>
-        <div><span class="block-kicker">${esc(levelLabel(manifest.levelId))} · Unidade ${manifest.order}</span><h2>${esc(manifest.title)}</h2><p>${esc(manifest.objective)}</p><div class="plan-step-status">${current ? 'Você está aqui · ' : ''}${esc(state)}</div></div>
+        <div><span class="block-kicker">${esc(unitLabel(manifest))}</span><h2>${esc(manifest.title)}</h2><p>${esc(manifest.objective)}</p><div class="plan-step-status">${current ? 'Você está aqui · ' : ''}${esc(state)}</div></div>
         <a class="secondary-button inline-action" href="#/unidade/${esc(manifest.id)}">${state === 'Não iniciada' ? 'Começar' : 'Abrir'} <span aria-hidden="true">→</span></a>
       </article>`;
     }).join('')}</section>

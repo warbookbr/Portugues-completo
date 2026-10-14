@@ -11,7 +11,7 @@
     "relacionar palavras a diferentes tipos de significado sem depender de terminologia gramatical",
     "ler a palavra-alvo antes de receber sua pronúncia quando a leitura fizer parte da evidência, usando apoio silábico quando necessário"
   ],
-  "prerequisites": ["N0-U02-V02"],
+  "prerequisites": [],
   "limits": [
     "não ensinar classes gramaticais como substantivo, verbo ou adjetivo",
     "não ensinar que toda palavra apenas nomeia uma pessoa, animal, objeto ou lugar",

@@ -1,4 +1,5 @@
 import { levelLabel } from './classic-ui-copy.js';
+import { annotateManifests, literacyTrack, mainPath, studentPath, unitLabel } from './course-tracks.js';
 
 const esc = value => String(value ?? '')
   .replaceAll('&', '&amp;')
@@ -11,9 +12,17 @@ function completedLessons(progress, lessonIds) {
   return lessonIds.filter(id => progress?.curriculum?.lessons?.[id]?.status === 'CONCLUIDA').length;
 }
 
+function literacyHint(literacy) {
+  const first = literacy[0];
+  if (!first) return '';
+  return `<p class="track-hint">Ainda está aprendendo a ler e escrever? <a class="text-link" data-literacy-track-link href="#/unidade/${esc(first.id)}">Comece pela Trilha de Alfabetização</a></p>`;
+}
+
 function currentStudyCard(manifests, progress) {
   const current = progress?.curriculum?.current || {};
-  const manifest = manifests.find(item => item.id === current.unitId) || manifests[0];
+  const main = mainPath(manifests);
+  const literacy = literacyTrack(manifests);
+  const manifest = manifests.find(item => item.id === current.unitId) || main[0] || manifests[0];
   if (!manifest) return '';
   const lessonIds = manifest.lessons.map(item => item.id);
   const done = completedLessons(progress, lessonIds);
@@ -27,11 +36,12 @@ function currentStudyCard(manifests, progress) {
 
   return `<section class="dashboard-card continue-card" data-current-study data-unit-id="${esc(manifest.id)}" data-lesson-ids="${esc(lessonIds.join(','))}">
     ${hasCurrent ? '<div class="dashboard-section-heading"><h2>Continue estudando</h2></div>' : ''}
-    <div class="course-context"><span class="context-pill">${esc(levelLabel(manifest.levelId))}</span><span aria-hidden="true">•</span><span>Unidade ${manifest.order}</span></div>
+    <div class="course-context"><span class="context-pill">${esc(manifest.trackTitle || levelLabel(manifest.levelId))}</span><span aria-hidden="true">•</span><span>Unidade ${manifest.displayOrder ?? manifest.order}</span></div>
     <h3>${esc(manifest.title)}</h3>
     <p class="continue-position">${esc(position)}</p>
     <div class="progress-line" aria-label="${percent}% desta unidade concluída"><span style="width:${percent}%"></span></div>
     <div class="continue-footer"><span data-current-unit-progress>${percent}%</span><a class="primary-button inline-action" data-continue-link href="${esc(href)}">${action} <span aria-hidden="true">→</span></a></div>
+    ${hasCurrent ? '' : literacyHint(literacy)}
   </section>`;
 }
 
@@ -71,8 +81,8 @@ function unitsPreview(manifests, progress) {
     const total = lessonIds.length;
     const percent = total ? Math.round((done / total) * 100) : 0;
     return `<a class="dashboard-unit-row" data-dashboard-unit data-unit-id="${esc(manifest.id)}" data-lesson-ids="${esc(lessonIds.join(','))}" href="#/unidade/${esc(manifest.id)}">
-      <span class="unit-index" aria-hidden="true">${manifest.order}</span>
-      <span class="unit-copy"><strong>${esc(manifest.title)}</strong><small>${esc(levelLabel(manifest.levelId))} · Unidade ${manifest.order}</small></span>
+      <span class="unit-index" aria-hidden="true">${manifest.displayOrder ?? manifest.order}</span>
+      <span class="unit-copy"><strong>${esc(manifest.title)}</strong><small>${esc(unitLabel(manifest))}</small></span>
       <span class="unit-progress"><span class="progress-line"><span data-unit-progress-bar style="width:${percent}%"></span></span><small data-unit-progress-copy>${done} de ${total} lições</small></span>
       <span class="row-arrow" aria-hidden="true">›</span>
     </a>`;
@@ -85,15 +95,17 @@ function unitsPreview(manifests, progress) {
   </section>`;
 }
 
-export function homeHtml(_course, manifests = [], progress = {}, options = {}) {
-  const totalLessons = manifests.reduce((sum, manifest) => sum + manifest.lessons.length, 0);
+export function homeHtml(course, rawManifests = [], progress = {}, options = {}) {
+  const manifests = annotateManifests(course, rawManifests);
+  const path = studentPath(manifests, progress);
+  const totalLessons = path.reduce((sum, manifest) => sum + manifest.lessons.length, 0);
   const simple = options.interfaceStyle === 'simple';
 
   return `<div class="dashboard-home reading-content" data-home-total-lessons="${totalLessons}">
     <div class="dashboard-grid">
       ${currentStudyCard(manifests, progress)}
-      ${simple ? reviewCard(progress) : progressCard(manifests, progress)}
+      ${simple ? reviewCard(progress) : progressCard(path, progress)}
     </div>
-    ${unitsPreview(manifests, progress)}
+    ${unitsPreview(path, progress)}
   </div>`;
 }

@@ -14,6 +14,7 @@ import { mountSettingsMenu } from './ui/settings-menu.js';
 import { mountFontSizeControl } from './ui/font-size-control.js';
 import { bindClassicRenderer, documentHtml, unitHtml } from './ui/classic-renderer.js';
 import { homeHtml } from './ui/classic-home.js';
+import { annotateManifest } from './ui/course-tracks.js';
 import { helpPageHtml, methodologyPageHtml, performancePageHtml, planPageHtml, reviewsPageHtml, unitsPageHtml } from './ui/classic-pages.js';
 import { bindClassicProgress } from './ui/classic-progress-binding.js';
 import { bindClassicAiFeedback } from './ui/classic-ai-feedback.js';
@@ -111,7 +112,7 @@ async function ensureCourse() {
 async function loadManifest(unitId) {
   const catalog = await ensureCourse();
   const unit = await contentService.loadUnitManifest(unitId, { catalog });
-  return unit.manifest;
+  return annotateManifest(catalog, unit.manifest);
 }
 
 async function loadAllManifests() {
@@ -130,13 +131,13 @@ async function renderHome(revision) {
 async function renderUnitsPage(revision) {
   const manifests = await loadAllManifests();
   if (revision !== routeRevision) return;
-  mountClassic(unitsPageHtml(manifests, progressService.getProgress()));
+  mountClassic(unitsPageHtml(manifests, progressService.getProgress(), await ensureCourse()));
 }
 
 async function renderPlanPage(revision) {
   const manifests = await loadAllManifests();
   if (revision !== routeRevision) return;
-  mountClassic(planPageHtml(manifests, progressService.getProgress()));
+  mountClassic(planPageHtml(manifests, progressService.getProgress(), await ensureCourse()));
 }
 
 async function renderReviewsPage(revision) {

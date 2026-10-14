@@ -59,8 +59,12 @@ for (const unitRef of catalog.units) {
 
 const emptyProgress = createEmptyProgress();
 const home = homeHtml(catalog, units, emptyProgress);
-assert.match(home, /Letras e primeiros sons/);
+// R1.8: o caminho principal começa em N0-U03; a alfabetização é uma trilha opcional
+// oferecida por um link discreto, sem competir com o CTA principal.
 assert.match(home, /Palavras, frases e sentido/);
+assert.match(home, /data-continue-link href="#\/unidade\/N0-U03"/, 'o primeiro acesso começa pelo caminho principal');
+assert.match(home, /data-literacy-track-link href="#\/unidade\/N0-U01"/, 'a Trilha de Alfabetização precisa estar a um clique no primeiro acesso');
+assert.doesNotMatch(home, /data-dashboard-unit data-unit-id="N0-U01"/, 'unidades da trilha não entram na lista do caminho principal');
 assert.match(home, /Começar a estudar/);
 assert.equal((home.match(/Começar a estudar/g) || []).length, 1, 'home deve ter um único CTA de início/retomada');
 assert.doesNotMatch(home, /Continuar lição/i, 'home não deve manter CTA concorrente de continuar lição');

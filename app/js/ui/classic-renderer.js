@@ -564,7 +564,7 @@ export function unitHtml(manifest) {
     <div class="course-view reading-content" data-unit-id="${esc(manifest.id)}">
       <nav class="breadcrumbs" aria-label="Navegação estrutural"><a href="#/">Curso</a><span>›</span><span aria-current="page">${esc(manifest.title)}</span></nav>
       <header class="unit-hero">
-        <div><span class="eyebrow">${esc(manifest.levelId)} · Unidade ${manifest.order}</span><h1>${esc(manifest.title)}</h1><p>${esc(manifest.objective)}</p></div>
+        <div><span class="eyebrow">${esc(manifest.trackTitle || manifest.levelId)} · Unidade ${manifest.displayOrder ?? manifest.order}</span><h1>${esc(manifest.title)}</h1><p>${esc(manifest.objective)}</p></div>
         <div class="publication-state"><strong>${esc(manifest.publication.status)}</strong><span>${manifest.publication.blockers.length ? `${manifest.publication.blockers.length} pendência(s) rastreada(s)` : 'sem blockers registrados'}</span></div>
       </header>
       <section class="competency-panel"><h2>Competências desta unidade</h2><div class="competency-list">${manifest.competencies.map(item => `<article><span>${esc(item.id)}</span><p>${esc(item.label)}</p></article>`).join('')}</div></section>

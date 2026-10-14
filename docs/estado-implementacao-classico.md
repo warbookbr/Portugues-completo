@@ -60,6 +60,8 @@ R1.4 N1: CONCLUÍDO (conteúdo); publicação do N1 segue no P7
 R1.5 N2: CONCLUÍDO (conteúdo); publicação do N2 segue no P7
 R1.6 N3: CONCLUÍDO (conteúdo); publicação do N3 segue no P7
 R1.7 N4: em execução
+R1.8 trilha separada + N0 a partir de U3: CONCLUÍDO; nivelamento: aguarda publicação do N1 (P7)
+R1.9 Trilha de Alfabetização completa: pendente
 ```
 
 R1.2 aplicou:
@@ -121,6 +123,17 @@ R1.6 aplicou no N3 (nove unidades), preservando IDs:
 - U07 trata recursos próprios da fala formal em vez de repetir o N2;
 - repetições internas ("dois títulos, mesmos fatos", dados clonados, calibração de certeza) substituídas por variações com dimensão nova;
 - checagens sim/não convertidas em três opções plausíveis; verificações com itens novos.
+
+R1.8 implementou a estrutura de entrada decidida em `docs/auditoria-plano-ensino.md` (seção 6):
+
+- `content/course.json` declara `tracks` com a Trilha de Alfabetização (opcional); N0-U01 e N0-U02 recebem `trackId: "alfabetizacao"`. IDs, manifests, progresso e deep links foram preservados, sem migração;
+- `app/js/ui/course-tracks.js` separa caminho principal e trilha e calcula a numeração exibida: o caminho principal começa em "Palavras, frases e sentido" como Fundamentos · Unidade 1; a trilha numera as próprias unidades; níveis sem trilha mantêm a numeração original;
+- home: o CTA único "Começar a estudar" leva ao caminho principal; abaixo dele, só no primeiro acesso, um link discreto "Ainda está aprendendo a ler e escrever? Comece pela Trilha de Alfabetização"; a lista de unidades e as métricas consideram o caminho principal, e a trilha entra quando o aluno a usa;
+- Unidades: caminho principal primeiro e trilha em seção própria marcada como opcional; Plano de estudos inclui a trilha só para quem a usa;
+- N0-U03-L01 deixa de exigir a verificação de sílabas;
+- novo gate `Test course tracks` no CI; smokes visuais e capturas em 1280px e 390px inspecionados.
+
+Nivelamento: a terceira opção ("leio e escrevo bem" → teste curto → N1, N2 ou adiante) depende de existirem níveis publicados para onde encaminhar. Hoje o catálogo publica N0 e N4-U09. O nivelamento entra quando o P7 publicar o N1.
 
 R1.3b corrigiu a apresentação de conteúdo já publicado (N0 e N4-U09):
 

@@ -450,6 +450,8 @@ R1.8 produto: trilha separada no catálogo, N0 a partir de U3, nivelamento
 R1.9 Trilha de Alfabetização completa
 ```
 
+Andamento: R1.1 a R1.6 e R1.8 (trilha separada e N0 a partir de U3) concluídos; R1.7 em execução; nivelamento aguarda a publicação do N1 pelo P7; R1.9 pendente.
+
 Regras:
 
 - correção de método preserva o ID quando objetivo e competência continuam os mesmos; mudança de significado exige novo ID e mapeamento de progresso, como em T1.9;
