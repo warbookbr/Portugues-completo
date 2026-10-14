@@ -98,7 +98,14 @@ Renderer (afeta também conteúdo publicado):
 
 Pendências registradas para o P7 do N1: várias lições ainda não normalizam (mesmo estado de antes do R1); textos da verificação N1-U01-V01 usam um formato (`texts` como objeto) que o normalizador não exibe; ordem por nome de arquivo (`005a`, `005b`) deve ser respeitada no manifesto; respostas certas de itens antigos ficam sempre na primeira posição.
 
-Pendência transversal identificada: chaves internas em inglês (por exemplo `sequence`, `judgment`, `spoken content`, `answer`, `strong clue`) aparecem como rótulos em blocos de conteúdo publicados; algumas revelam a resposta. Tratamento em R1.3b.
+R1.3b corrigiu a apresentação de conteúdo já publicado (N0 e N4-U09):
+
+- o renderer deixou de exibir qualquer campo autoral como detalhe; só aparecem campos de uma lista pública com rótulo em português (`KEY_LABELS` em `classic-renderer.js`);
+- em atividades, campos que revelam a resposta (exemplo completo, versão revisada, significado, pista, evidência, palavra a ouvir, conclusão) ficam ocultos até a correção;
+- notas internas de autoria (regras de apresentação, de distratores, de avaliação) deixaram de aparecer para o aluno;
+- listas de frases aparecem como lista legível, não como fichas monoespaçadas;
+- falas para ouvir (`spoken`, `spokenContent`) viram botão de áudio em conteúdo explicativo;
+- novo gate de CI `Test public labels` (`scripts/test-public-labels.mjs`) falha se algum documento publicado expuser rótulo interno.
 
 ## Remover o título redundante do primeiro acesso
 

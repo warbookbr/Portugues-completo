@@ -28,6 +28,15 @@ const PUBLIC_LABELS = new Map([
   ['groups', 'Grupos'], ['important', 'Importante']
 ]);
 
+const KEY_LABELS = new Map(Object.entries({"explanation": "Explicação", "examples": "Exemplos", "example": "Exemplo", "points": "Pontos principais", "bridgeToNextLesson": "Próxima lição", "bridgeToUnitVerification": "Próxima etapa", "task": "Tarefa", "question": "Pergunta", "questions": "Perguntas", "goal": "Objetivo da mensagem", "answer": "Resposta", "answers": "Respostas", "before": "Antes", "after": "Depois", "pairs": "Pares", "pair": "Par", "segments": "Partes", "targetWord": "Palavra", "writtenWord": "Palavra escrita", "word": "Palavra", "words": "Palavras", "situation": "Situação", "situations": "Situações", "display": "Forma", "note": "Observação", "highlight": "Destaque", "versions": "Versões", "groups": "Grupos", "stages": "Etapas", "stage": "Etapa", "contexts": "Contextos", "context": "Contexto", "targetSegments": "Partes", "writtenSegments": "Partes escritas", "mapping": "Correspondência", "positionLabel": "Posição", "positionDescription": "Posição", "sentences": "Frases", "sentence": "Frase", "possibleResponses": "Exemplos possíveis", "evidence": "Evidência", "acceptableExamples": "Exemplos aceitáveis", "problem": "Problema", "message": "Mensagem", "messages": "Mensagens", "comparisons": "Comparações", "writtenTarget": "Forma escrita", "visibleText": "Texto na tela", "written": "Forma escrita", "meaningDescription": "Significado", "meaning": "Significado", "groupLabel": "Grupo", "members": "Fazem parte", "nonMember": "Não faz parte", "strongClue": "Pista", "strongClues": "Pistas", "cases": "Casos", "case": "Caso", "observations": "Observações", "observation": "Observação", "renderedSentence": "Frase", "sameWords": "Mesmas palavras", "connection": "Ligação", "sentenceWithBlank": "Frase com lacuna", "candidate": "Frase para revisar", "knownWords": "Palavras conhecidas", "central": "Ideia central", "detail": "Detalhe", "evidenceParts": "Trechos que comprovam", "wrongConclusion": "Conclusão incorreta", "orderedEvents": "Ordem dos acontecimentos", "cause": "Causa", "consequence": "Consequência", "firstInterpretation": "Primeira interpretação", "revisedInterpretation": "Interpretação revisada", "informationCards": "Informações", "candidateInformation": "Informações possíveis", "missing": "O que falta", "necessary": "Necessário", "optional": "Opcional", "firstDraft": "Primeira versão", "revisedDraft": "Versão revisada", "draft": "Rascunho", "changedElement": "O que mudou", "falseRule": "Regra falsa", "correctPrinciple": "Princípio", "missingInformation": "Informação que falta", "usefulQuestion": "Pergunta útil", "notUsefulForGoal": "Não ajuda neste objetivo", "responses": "Respostas", "insufficient": "Insuficiente", "sufficient": "Suficiente", "forms": "Formas", "reformulated": "Versão reformulada", "changes": "Mudanças", "textA": "Texto A", "textB": "Texto B", "contextNote": "Contexto", "readingA": "Leitura A", "readingB": "Leitura B", "elements": "Elementos", "frames": "Quadros", "baseText": "Texto-base", "adaptation": "Adaptação", "scenario": "Situação", "requiredFunctions": "Funções necessárias", "checks": "O que verificar", "materials": "Materiais", "reviewPrompts": "Perguntas para revisar", "expression": "Expressão", "effect": "Efeito", "claim": "Afirmação", "function": "Função", "primaryFunction": "Função principal", "possibleEffects": "Efeitos possíveis", "why": "Por quê", "messageMeaning": "O que a mensagem comunica", "upper": "Maiúscula", "lower": "Minúscula", "statement": "Afirmação", "affirmative": "Frase afirmativa", "negative": "Frase negativa", "operation": "Operação", "change": "Mudança", "result": "Resultado", "description": "Descrição", "category": "Categoria", "judgment": "Avaliação", "sequence": "Sequência", "beforeText": "Antes", "afterText": "Depois", "addedText": "Acrescentado", "removedText": "Retirado", "changedSegments": "Partes alteradas", "transformation": "Transformação", "visibleClue": "Pista visível", "possibleUseInThisExample": "Uso neste exemplo", "essential": "Essencial", "order": "Ordem", "relation": "Relação", "about": "Fala de", "information": "Informa", "preservesCoreMeaning": "Mantém a informação principal", "sharedCoreMeaning": "Informação principal comum", "reason": "Motivo", "adequate": "Adequada", "strategy": "Estratégia", "date": "Data", "content": "Conteúdo", "sharedIdea": "Ideia comum", "functionsAsContextualMessage": "Funciona como mensagem", "supportedMeaning": "Sentido sustentado", "unsupportedConclusion": "Conclusão sem apoio", "safeInterpretation": "Interpretação segura", "notGuaranteed": "Não garantido", "beginning": "Início", "refersTo": "Refere-se a", "classification": "Classificação", "coherent": "Coerente", "principle": "Princípio", "visualDescription": "Descrição da imagem", "caption": "Legenda", "who": "Quem", "toWhom": "Para quem", "review": "Revisão", "revised": "Versão revisada", "values": "Valores", "destination": "Destino", "speech": "Fala", "event": "Acontecimento", "author": "Autoria", "editor": "Edição", "sourceLink": "Fonte", "account": "Conta", "medium": "Meio", "label": "Descrição", "axis": "Eixo", "interval": "Intervalo", "role": "Papel", "completedSentence": "Frase completa", "completedExample": "Exemplo completo", "completionExample": "Exemplo completo", "revisedExample": "Exemplo revisado", "afterExample": "Depois", "conclusion": "Conclusão", "initialClaim": "Afirmação inicial", "standaloneText": "Texto", "text": "Texto", "options": "Opções", "starter": "Início sugerido", "wordBank": "Palavras de apoio", "optionalWordBank": "Palavras de apoio", "important": "Importante", "tiles": "Fichas", "knownPartSources": "Partes já conhecidas", "nonVisualMeaning": "Significado", "orderedSteps": "Etapas", "steps": "Etapas", "title": "Título", "lines": "Versos", "additionalClue": "Nova pista", "baseSentence": "Frase-base", "original": "Original", "base": "Base", "target": "Alvo", "targetMeaning": "Significado", "reviewFocus": "Foco da revisão", "scenarioNote": "Contexto", "firstAnswer": "Primeira resposta", "topicQuestion": "Pergunta sobre o assunto", "topicOptions": "Opções", "mainMessageQuestion": "Pergunta sobre a mensagem principal", "mainMessageOptions": "Opções", "shuffledTiles": "Fichas misturadas", "targetSequence": "Ordem que forma a mensagem", "stage1": "Primeira etapa", "stage2": "Com a nova pista", "writtenChunks": "Partes escritas", "afterListeningReveal": "Depois de ouvir", "requiredFields": "O que registrar"}));
+const ACTIVITY_SECRET_KEYS = new Set(["answer", "answers", "acceptable", "acceptableExamples", "meaning", "meaningDescription", "messageMeaning", "strongClue", "strongClues", "why", "evidence", "evidenceParts", "refersTo", "classification", "function", "primaryFunction", "supportedMeaning", "safeInterpretation", "completedSentence", "completedExample", "completionExample", "revisedExample", "afterExample", "revised", "reformulated", "revisedDraft", "conclusion", "result", "after", "afterText", "transformation", "changedElement", "correctPrinciple", "targetMeaning", "missingInformation", "sufficient", "insufficient", "adequate", "coherent", "judgment", "unsupportedConclusion", "notGuaranteed", "possibleUseInThisExample", "preservesCoreMeaning", "functionsAsContextualMessage"]);
+
+function visibleKey(key, context = {}) {
+  if (!KEY_LABELS.has(key)) return false;
+  if (context.activity && ACTIVITY_SECRET_KEYS.has(key)) return false;
+  return true;
+}
+
 const pretty = value => {
   const raw = String(value ?? '');
   if (PUBLIC_LABELS.has(raw)) return PUBLIC_LABELS.get(raw);
@@ -38,18 +47,32 @@ const pretty = value => {
     .toLowerCase();
 };
 
-function valueText(value) {
+function valueText(value, context = {}) {
   if (value === null || value === undefined || value === '') return '';
   if (typeof value === 'string' && /\n\s*\n/.test(value)) return paragraphs(value);
   if (typeof value === 'string' || typeof value === 'number') return esc(value);
   if (typeof value === 'boolean') return value ? 'sim' : 'não';
-  if (Array.isArray(value)) return value.map(item => `<span class="token">${valueText(item)}</span>`).join(' ');
+  if (Array.isArray(value)) {
+    if (value.length && value.every(item => typeof item === 'string') && value.some(item => /\s/.test(item.trim()))) {
+      return `<ul class="plain-list">${value.map(item => `<li>${esc(item)}</li>`).join('')}</ul>`;
+    }
+    return value.map(item => {
+      const rendered = valueText(item, context);
+      if (!rendered) return '';
+      return item && typeof item === 'object' && !Array.isArray(item) && !Array.isArray(item.tokens) ? rendered : `<span class="token">${rendered}</span>`;
+    }).join(' ');
+  }
   if (typeof value === 'object') {
     if (Array.isArray(value.tokens)) {
       const spacer = value.spaces === false ? '' : ' ';
       return esc(value.tokens.join(spacer));
     }
-    return `<dl class="data-list">${Object.entries(value).map(([key, item]) => `<div><dt>${esc(pretty(key))}</dt><dd>${valueText(item)}</dd></div>`).join('')}</dl>`;
+    const rows = Object.entries(value)
+      .filter(([key, item]) => visibleKey(key, context) && item !== null && item !== undefined && item !== '' && item !== false)
+      .map(([key, item]) => [key, valueText(item, context)])
+      .filter(([, rendered]) => rendered);
+    if (!rows.length) return '';
+    return `<dl class="data-list">${rows.map(([key, rendered]) => `<div><dt>${esc(KEY_LABELS.get(key))}</dt><dd>${rendered}</dd></div>`).join('')}</dl>`;
   }
   return esc(value);
 }
@@ -58,7 +81,7 @@ function paragraphs(text) {
   return String(text).split(/\n\s*\n/).map(part => part.trim()).filter(Boolean).map(part => `<p>${esc(part).replaceAll('\n', '<br>')}</p>`).join('');
 }
 
-function renderKnownContent(content = {}) {
+function renderKnownContent(content = {}, context = {}) {
   const lead = [];
   const details = [];
   const hiddenKeys = new Set([
@@ -101,6 +124,10 @@ function renderKnownContent(content = {}) {
   if (content.ttsCue) {
     lead.push(`<button type="button" class="secondary-button stimulus-button" data-tts="${esc(content.ttsCue)}">Ouvir palavra</button>`);
   }
+  const spokenText = [content.spoken, content.spokenContent, content.wholeSpokenContent].find(value => typeof value === 'string' && value.trim()) || '';
+  if (spokenText && !context.activity) {
+    lead.push(`<button type="button" class="secondary-button stimulus-button" data-tts="${esc(spokenText)}">Ouvir forma falada</button>`);
+  }
   if (content.ttsText) {
     const runtimeOnlyTts = content.transcriptHiddenUntilAttempt === true;
     lead.push(`<button type="button" class="secondary-button stimulus-button" data-tts="${runtimeOnlyTts ? '' : esc(content.ttsText)}"${runtimeOnlyTts ? ' data-runtime-tts' : ''}>Ouvir exemplo</button>`);
@@ -124,10 +151,11 @@ function renderKnownContent(content = {}) {
   for (const [key, value] of Object.entries(content)) {
     if (['title', 'text', 'prompt', 'instruction', 'model', 'letter', 'nonVisualMeaning'].includes(key) || hiddenKeys.has(key)) continue;
     if (key === 'lines' && Array.isArray(value) && value.every(line => typeof line === 'string')) continue;
-    const lower = key.toLowerCase();
-    if (lower.includes('guard') || lower.includes('correct') || lower.includes('feedback') || lower.includes('available') || lower.includes('support') || lower.includes('tts') || lower.includes('media') || lower.includes('audio') || key === 'feedback') continue;
+    if (!visibleKey(key, context)) continue;
     if (value === null || value === undefined || value === false || value === '') continue;
-    details.push(`<div class="content-detail"><strong>${esc(pretty(key))}</strong><div>${valueText(value)}</div></div>`);
+    const rendered = valueText(value, context);
+    if (!rendered) continue;
+    details.push(`<div class="content-detail"><strong>${esc(KEY_LABELS.get(key))}</strong><div>${rendered}</div></div>`);
   }
 
   return `${lead.join('')}${details.length ? `<div class="content-details">${details.join('')}</div>` : ''}`;
@@ -481,7 +509,7 @@ export function renderActivity(block) {
         <div><span class="block-kicker">${esc(pretty(block.pedagogicalType || 'atividade'))}</span>${evidenceBadge(block.activity)}</div>
         <span class="activity-mode">${pending ? 'avaliação pendente' : evaluation.mode === 'DETERMINISTIC' ? 'correção objetiva' : 'atividade'}</span>
       </header>
-      ${renderKnownContent(block.content)}
+      ${renderKnownContent(block.content, { activity: true })}
       ${block.pedagogicalType === 'audio-first-demonstration' ? renderDelayedTranscriptControl(block) : ''}
       ${renderStimuli(block.activity)}
       <form class="activity-form" data-activity-form novalidate>

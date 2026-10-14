@@ -265,3 +265,7 @@ Antes de adicionar automação:
 5. pertence a schema, integridade, código, UI ou revisão humana?
 
 Não criar heurística automática para substituir julgamento pedagógico aberto.
+
+## Rótulos públicos (R1.3b)
+
+`scripts/test-public-labels.mjs` renderiza todos os documentos publicados no catálogo e falha se algum rótulo de campo exibido ao aluno for chave interna (camelCase, inglês em minúsculas) ou campo de resposta. Campos novos só aparecem depois de receber rótulo em português em `KEY_LABELS` (`app/js/ui/classic-renderer.js`); em atividades, campos de resposta ficam em `ACTIVITY_SECRET_KEYS`.

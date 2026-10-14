@@ -129,6 +129,9 @@ jobs:
       - name: Test interface style
         run: node scripts/test-interface-style.mjs
 
+      - name: Test public labels
+        run: node scripts/test-public-labels.mjs
+
       - name: Capture classic visual smoke
         run: bash scripts/capture-classic-visuals.sh
 
