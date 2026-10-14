@@ -30,6 +30,14 @@ escuta crítica
 - apoio visual/textual acessível quando houver ganho pedagógico;
 - nenhuma gravação humana obrigatória neste M4.
 
+### Revisão R1 (método)
+
+- **Sem espelhar o N2:** N2-U08 já ensina escuta com objetivo, notas, plano curto, apresentação com notas, reparo e discussão curta. No JSON, N3-U07-L01 a L04 abrem com retomada curta (diagnóstica) e usam o espaço para recursos próprios da fala formal: **sinalização oral** (L01: "vou apresentar três partes", "passo agora", "por fim"), **citar a fonte falando** e notas com fonte e limite (L02), **plano de tempo** com transições e corte previsto (L03), **apresentar dentro do tempo** e retomar após interrupção (L04). IDs e objetivos centrais mantidos; títulos ajustados para não repetir os do N2.
+- **Tomada de turno em tempo real:** L06 (pedir a palavra numa sessão de perguntas, mediador/mesa) e L07 (debate com tempo por turno, réplica e tréplica).
+- **Concessão oral:** L08-B01 passou de contraste escrito para roteiro de fala com marcas de oralidade ("olha", "deixa eu ver se entendi", "é isso?"), precedido de escuta antes da leitura (L08-C02), e comparado com a mesma concessão por escrito.
+- **Cenários variados:** clube de leitura (L01), agendamento no posto de saúde (L02), bicicletário da escola técnica (L03, L04, L06), campanha de doações (L05), feira noturna (L07), fechamento da rua da escola (L08). Evitar "piloto de serviço" nos textos novos.
+- **Checagens:** sim/não convertidas em três opções plausíveis; `studentObjective` em todas as lições.
+
 ---
 
 ## Lição 1 — Escuta crítica de exposição e argumento oral

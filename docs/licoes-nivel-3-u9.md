@@ -35,6 +35,14 @@ No M5:
 - sempre fornecer transcrição, descrição/estrutura equivalente e alternativa acessível para pistas decisivas;
 - nenhuma imagem deve ser criada apenas para ornamentação.
 
+### Revisão R1 (método)
+
+- Textos literários completos e autorais nas lições: "O quarto dos fundos" (L01), relato de Dona Ivone + registro da portaria (L02), "A janela da cozinha" (L03, imagem recorrente), "A porta do 12" + poema "Do lado de fora" (L04, retomada e inversão de perspectiva), poema "Ponte" com contexto de circulação (L05), microconto "Passos" e sua versão em quadros (L06). L04 também usa a primeira estrofe da Canção do exílio (Gonçalves Dias, domínio público) para alusão.
+- L04-C01 deixou de repetir o caso "chuva" de N3-U01-L10: agora distingue retomada de estrutura, tema comum e alusão.
+- L10 deixou de repetir "dois títulos, mesmos fatos": compara uma entrevista completa com um vídeo curto que corta a condição da fala e uma foto cortada que tira o mapa da obra.
+- Termos ensinados no primeiro uso: ambiguidade, narrador em primeira pessoa, perspectiva, confiabilidade, imagem recorrente, símbolo, alusão, contexto de produção/circulação, recepção, modo, adaptação, elipse, hierarquia visual, plano, corte, montagem, justaposição, trilha, recorte, enquadramento, plataforma.
+- Na verificação, o poema-resposta passou a ser escrito por inteiro e os itens Q01, Q02 e Q04 trazem o texto-base no próprio item. Checagens sim/não convertidas em três opções; `studentObjective` em todas as lições.
+
 ---
 
 ## Lição 1 — Ambiguidade literária e evidência: quando mais de uma leitura cabe

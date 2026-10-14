@@ -27,6 +27,14 @@ variação em múltiplas dimensões
 - TTS apenas quando útil, nunca para imitar sotaques como objeto de avaliação;
 - nenhuma mídia humana obrigatória.
 
+### Revisão R1 (método)
+
+- N2-U08-L08 já mostra pronúncia regional, tu/você, mandioca/aipim/macaxeira e nós vamos/a gente vai/nós vai; aqui esses casos aparecem só como retomada.
+- Formas mostradas, nunca descritas: artigo antes de nome próprio (regional), plural marcado só no primeiro termo (social), supimpa/bacana/top (geração), tem × há existencial, assistir o/ao, prefiro … do que/a, me empresta × empreste-me, faz/fazem dois meses.
+- Prestígio e estigma com formas reais: far-se-á, nós vamos (prestígio) × pranta, broco, Cráudia, pobrema, menas (estigma); a troca l > r já documentada em obrigar (obligare), praia (plagia), igreja (ecclesia).
+- Mudança linguística com casos documentados: vossa mercê > vosmecê > você > cê; haver > ter existencial; nós > a gente; formidável (sentido antigo "que causa medo"). Arcaísmo definido no ponto de uso.
+- Distinção entre forma regular de uma variedade e deslize ocasional (L01). Checagens sim/não convertidas em três opções; `studentObjective` em todas as lições.
+
 ---
 
 ## Lição 1 — Variação regional, social, situacional e histórica
