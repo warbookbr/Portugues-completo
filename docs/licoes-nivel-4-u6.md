@@ -56,6 +56,7 @@ estilo como projeto
 - **Prática:** adaptar comunicado, análise, recomendação e explicação sem mudar fatos.
 - **Evidência:** escolher registro/tom e justificar pelo efeito esperado sobre a audiência.
 - **Limites:** formalidade máxima não é padrão; registro não mede inteligência.
+- **Revisão R1.7:** o que repetia N3-U06-L07 virou retomada curta; a lição trata cinco marcas de tom decididas ao mesmo tempo numa resposta longa.
 
 ## Lição 4 — Densidade, explicitação e concisão em tensão funcional
 
@@ -83,6 +84,7 @@ estilo como projeto
 - **Prática:** alternar períodos, pausas, enumerações e transições; comparar ritmo sem confundir com correção normativa.
 - **Evidência:** produzir duas versões com ritmos distintos e explicar efeito funcional.
 - **Limites:** frase longa/curta não é boa ou ruim por si; TTS variável não define resposta correta.
+- **Revisão R1.7:** inclui o soneto XIII da série Via Láctea, de Olavo Bilac, e a comparação de cadências num parágrafo; a checagem repetida do N3 foi substituída.
 
 ## Lição 7 — Repetição, paralelismo, ordem e ênfase
 
@@ -101,6 +103,7 @@ estilo como projeto
 - **Prática:** destacar/ocultar agente por função legítima, calibrar certeza e responsabilidade enunciativa.
 - **Evidência:** escolher estrutura e modalidade compatíveis com evidência, finalidade e ética de atribuição.
 - **Limites:** ativa não é sempre melhor; omitir agente pode ser problemático quando responsabilidade é relevante.
+- **Revisão R1.7:** responsabilidade enunciativa, modalidade, voz gramatical e impessoalidade passam a ser definidas no corpo da lição.
 
 ## Lição 9 — Adaptar estilo entre audiências/meios preservando identidade autoral
 
@@ -129,3 +132,4 @@ preservação justificada de traços autorais
 ```
 
 A verificação deve aceitar soluções estilísticas diferentes quando funcionais e justificadas. Não pontuar formalidade máxima, extensão mínima, vocabulário raro ou quantidade de alterações.
+- **Revisão R1.7:** o pacote de fatos e os destinos passam a aparecer dentro dos itens V01-A01, V01-A08 e V01-A09.

@@ -72,6 +72,7 @@ As lições L5–L7 não congelam casos avançados sem pesquisa. O M5 deve obede
 - **Prática:** ordem, encaixe, paralelismo, subordinação, coordenação, segmentação e pontuação; avaliar clareza, foco, ambiguidade e cadência.
 - **Evidência:** escolher entre alternativas e justificar a decisão pelo efeito/contexto.
 - **Limites:** frase longa não é erro por si; pontuação expressiva não substitui coerência estrutural.
+- **Revisão R1.7:** o foco passa a ser o alcance (escopo) de condições e negações marcado por pontuação e ordem; a comparação de frase longa e segmentada fica em N4-U06-L06.
 
 ## Lição 5 — Regra, variante, convenção, preferência e caso de consulta
 
@@ -81,6 +82,7 @@ As lições L5–L7 não congelam casos avançados sem pesquisa. O M5 deve obede
 - **Prática:** distinguir `REGRA_PRODUTIVA`, `VARIANTE_DOCUMENTADA`, `CONVENCAO_FORMAL_EDITORIAL`, `CASO_DE_CONSULTA`, `ESCOLHA_ESTILISTICA`.
 - **Evidência:** classificar caso e indicar que tipo de fonte seria adequado para decidir.
 - **Limites:** exemplos normativos específicos de M5 dependem do gate; preferência não vira regra.
+- **Revisão R1.7:** foco no uso prático da consulta durante a edição (marcar, classificar, consultar, registrar, aplicar), com os rótulos públicos do N3-U03-L08; status normativo e escolha de fonte em profundidade ficam em N4-U07-L02/L08.
 
 ## Lição 6 — Concordância, regência, crase e colocação em recorte formal de alta utilidade
 
@@ -90,6 +92,7 @@ As lições L5–L7 não congelam casos avançados sem pesquisa. O M5 deve obede
 - **Prática:** somente casos selecionados após pesquisa; análise em contexto e reescrita quando necessário.
 - **Evidência:** decisão correta dentro do recorte documentado + justificativa/consulta quando o caso exceder o recorte.
 - **Limites:** não criar catálogo de raridades; não fingir consenso normativo onde houver variação documentada.
+- **Revisão R1.7:** título público passa a ser "Concordância, regência, crase e colocação na edição de textos formais"; o termo clítico foi substituído por pronome átono, ensinado na lição.
 
 ## Lição 7 — Ortografia, acentuação, terminologia e consistência editorial
 
@@ -157,3 +160,4 @@ histórico + justificativa
 ```
 
 Itens normativos só podem ser avaliados automaticamente dentro do recorte documentado após o gate. `Preciso consultar` pode ser resposta correta fora dele.
+- **Revisão R1.7:** textos A (Programa Gota a Gota) e B (Rede de Leitura nas Praças) substituem os anteriores, com problemas de alcance, terminologia, referência a distância, concordância com núcleo distante, preferível a, crase em enumeração e consulta de grafia; V01-Q01 passa a ter itens fechados com rótulos públicos.

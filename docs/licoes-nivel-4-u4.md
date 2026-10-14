@@ -50,6 +50,7 @@ projeto textual
 - **Prática:** identificar funções recorrentes, diferenças legítimas e convenções que precisam ser consultadas.
 - **Evidência:** produzir mapa funcional do gênero e justificar o que é obrigatório, frequente ou opcional no corpus fornecido.
 - **Limites:** poucos modelos não autorizam universalizar toda característica observada.
+- **Revisão R1.7:** o gênero pouco familiar é a nota de esclarecimento pública, com cinco exemplares completos (A a C na explicação, D e E na produção) e mapa de funções em todos, em vários, em um só.
 
 ## Lição 3 — Macroplanejamento e arquitetura global flexível
 
@@ -77,6 +78,7 @@ projeto textual
 - **Prática:** citação curta, paráfrase, resumo, atribuição, comentário, síntese e inferência própria; detectar colagem de fontes.
 - **Evidência:** trecho em que leitor consegue distinguir fonte, interpretação e posição do autor.
 - **Limites:** citação não substitui análise; estilo bibliográfico especializado não é o foco geral.
+- **Revisão R1.7:** o ponto de atribuição e alcance (já visto em N3-U05-L05) virou retomada curta; a lição passa a tratar as cinco formas de trazer fonte e a integração de fontes que discordam entre si.
 
 ## Lição 6 — Exposição e análise em escala longa
 
@@ -95,6 +97,7 @@ projeto textual
 - **Prática:** delimitar questão, apresentar material, analisar, atribuir fontes e concluir sem fingir metodologia especializada inexistente.
 - **Evidência:** produção parcial/completa em gênero acadêmico geral com arquitetura adequada.
 - **Limites:** não exigir artigo científico publicável, metodologia de pesquisa especializada ou jargão disciplinar.
+- **Revisão R1.7:** dois exemplares completos (relatório de estudo e ensaio analítico) substituem os rótulos de modelo.
 
 ## Lição 8 — Gêneros profissionais e públicos de alta complexidade geral
 
@@ -151,3 +154,4 @@ justificativa de mudanças e permanências
 ```
 
 Tarefas fechadas não compensam ausência de produção longa própria. Extensão fixa e número de parágrafos não pontuam por si.
+- **Revisão R1.7:** situação, dossiê S1 a S5 e três notas de decisão completas (M1 a M3) passam a aparecer dentro dos itens V01-Q01 e V01-Q02.
