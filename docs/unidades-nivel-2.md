@@ -170,9 +170,10 @@ O aluno deve conseguir:
 - reconhecer núcleo e expansão de grupos nominais;
 - identificar complementação essencial em estruturas frequentes;
 - distinguir informação nuclear de modificadores;
+- reconhecer e transformar voz ativa e voz passiva com ser + particípio, com agente explícito ou omitido, e escolher entre elas pelo que se quer destacar;
 - aplicar concordância nominal/verbal em conjunto maior de casos frequentes;
-- perceber ambiguidade produzida por ordem/referência;
-- usar terminologia para explicar uma revisão real.
+- perceber ambiguidade produzida por ordem e posição de modificadores;
+- usar terminologia para explicar uma revisão real, inclusive de parágrafo próprio.
 
 ## Conteúdos nucleares
 
@@ -181,6 +182,7 @@ O aluno deve conseguir:
 - sujeito/predicado;
 - núcleo;
 - complementos e modificadores em abordagem funcional;
+- voz ativa e voz passiva analítica, com particípio apresentado pelo uso (L11; passiva com `se` fica para o N3);
 - ordem dos termos;
 - concordância ampliada;
 - revisão sintática.
@@ -194,7 +196,8 @@ Amplia N1-U3 e prepara U4/U5/U6.
 - análise contextualizada de períodos;
 - reconstrução de frase ambígua;
 - revisão de concordância ligada à estrutura;
-- contraexemplos que impeçam regras falsas como `sujeito = primeira palavra`.
+- contraexemplos que impeçam regras falsas como `sujeito = primeira palavra`;
+- frases próprias em voz ativa e passiva (L11) e parágrafo próprio revisado com o foco da unidade (L10).
 
 ## Limites
 
@@ -222,6 +225,8 @@ O aluno deve conseguir:
 - distinguir período simples e composto em casos adequados;
 - reconhecer relações coordenativas frequentes pelo sentido;
 - reconhecer subordinação inicial sem taxonomia exaustiva;
+- usar orações que caracterizam um nome com que, quem e onde, com e sem vírgulas;
+- reconhecer infinitivo, gerúndio e particípio pelo uso;
 - escolher conectores compatíveis com a relação;
 - usar vírgula/pontuação nos padrões sintáticos ensinados;
 - aplicar regência selecionada de alta frequência;
@@ -234,6 +239,8 @@ O aluno deve conseguir:
 - período simples/composto;
 - coordenação em relações frequentes;
 - subordinação introdutória por função/sentido;
+- orações que caracterizam um nome e pronome relativo (L12);
+- formas do verbo em -r, -ndo e -do pelo uso (L13);
 - conectores;
 - pontuação e estrutura;
 - regência verbal/nominal selecionada;
@@ -250,7 +257,9 @@ Depende da U3 e prepara coesão/produção/argumentação.
 - combinar/separar orações preservando sentido;
 - selecionar conector e pontuação por relação;
 - revisar casos de regência/crase do escopo;
-- explicar por que uma vírgula é usada sem recorrer apenas a `pausa`.
+- explicar por que uma vírgula é usada sem recorrer apenas a `pausa`;
+- escrever parágrafo próprio com períodos compostos e regência estudada, revisado com checklist;
+- escrever frases próprias com orações que caracterizam um nome e com formas do verbo em -r, -ndo e -do.
 
 ## Limites
 
