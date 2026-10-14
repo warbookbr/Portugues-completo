@@ -20,6 +20,12 @@ posição
 → produção/revisão
 ```
 
+## Temas e oralidade (revisão R1)
+
+- As lições usam questões reais e debatíveis do cotidiano adulto, variando o tema entre lições: celular durante as aulas, semana de quatro dias, trabalho em casa, cobrança de sacolas plásticas, bicicletas compartilhadas e vagas de carro, horário de silêncio no condomínio, entregadores nos apartamentos, faixa exclusiva de ônibus, fogos com estampido. A verificação usa um tema novo (rua de lazer aos domingos).
+- Os exemplos mostram razões relevantes dos dois lados de uma mesma questão; avalia-se clareza, apoio e organização, nunca o lado escolhido.
+- Oralidade: escuta antes da leitura na L1 (duas posições opostas) e defesa oral curta opcional, a partir de três notas, na L9.
+
 ## Lição 1 — Da opinião à posição argumentativa
 
 - **Objetivo:** perceber que argumentar envolve uma posição que pode ser sustentada, e não apenas declarar preferência.

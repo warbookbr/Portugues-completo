@@ -68,21 +68,21 @@ escuta estratégica
 - **Evidência:** plano/turnos registrados contendo posição + apoio + resposta ao interlocutor.
 - **Limite:** debate formal, vitória retórica e avaliação ideológica ficam fora; validação forte da produção oral continua externa.
 
-## Lição 7 — Registro e adequação entre situações
+## Lição 7 — Registro na fala: a mesma informação para uma banca e para um colega
 
-- **Objetivo:** adaptar vocabulário, tratamento, explicitação e formulação entre situações pessoais, institucionais, escolares/profissionais acessíveis e digitais.
-- **Dependências:** N1-U06-L07 + experiências L3–L6.
-- **Prática:** versões da mesma mensagem, formalidade relativa, escolhas que aumentam clareza/respeito conforme contexto.
-- **Evidência:** escolher/reformular enunciado para situação nova e justificar a adequação funcional.
-- **Limite:** formal ≠ melhor; informal ≠ incorreto; gíria não é julgada fora de contexto.
+- **Objetivo:** adaptar vocabulário, tratamento, explicitação e formulação entre situações, tratando formalidade como escolha relativa ao contexto; nesta unidade oral, a adaptação é feita na fala.
+- **Dependências:** N1-U06-L07 + experiências L3–L6; amplia para a fala a adequação de registro que N2-U06-L08 trabalha na escrita.
+- **Prática:** ouvir antes de ler a mesma informação falada em dois registros (explicar a um colega × apresentar a uma banca), perceber marcas da fala descontraída e da apresentação formal, preparar duas versões faladas de uma informação nova com ensaio oral opcional.
+- **Evidência:** duas versões faladas (ditas ou registradas como seriam ditas) que preservam os fatos, com justificativa das diferenças.
+- **Limite:** formal ≠ melhor; informal ≠ incorreto; formal na fala não é ler texto escrito; não repetir a adaptação escrita de N2-U06-L08.
 
-## Lição 8 — Variação, norma, preconceito e revisão de escolhas
+## Lição 8 — Variação, norma e preconceito: jeitos reais de falar o português
 
 - **Objetivo:** integrar variedade regional/social/situacional, norma-padrão e adequação, distinguindo convenção formal de julgamento sobre falantes.
 - **Dependências:** L7 + N1-U06-L08.
-- **Prática:** exemplos respeitosos, reformulação para gênero formal, reconhecimento de estigma e escolha de reparo comunicativo.
+- **Prática:** dados concretos descritos por escrito (pronúncias regionais de "porta", "festa", "tia", "leite"; "tu vais / tu vai / você vai"; mandioca/aipim/macaxeira, farol/sinal/sinaleira, pão francês/pão de sal/cacetinho; "nós vamos / a gente vai / nós vai"), reformulação para gênero formal e distinção entre orientação de adequação e preconceito linguístico.
 - **Evidência:** preservar simultaneamente `diferença não é erro automático` e `nem toda forma é adequada a toda situação`.
-- **Limite:** sem caricaturas de sotaque, hierarquia de variedades ou relativismo que negue convenções formais.
+- **Limite:** sem caricaturas de sotaque, hierarquia de variedades ou relativismo que negue convenções formais; formas socialmente estigmatizadas aparecem só para explicar o preconceito, nunca como piada.
 
 ## Verificação integrada — arquitetura
 
