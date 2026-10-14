@@ -57,7 +57,8 @@ R1.1 documentação, roadmap e regras de método: CONCLUÍDO
 R1.2 correções objetivas: CONCLUÍDO
 R1.3 N0 a partir de U3: CONCLUÍDO
 R1.4 N1: CONCLUÍDO (conteúdo); publicação do N1 segue no P7
-R1.5 N2: próximo
+R1.5 N2: CONCLUÍDO (conteúdo); publicação do N2 segue no P7
+R1.6 N3: próximo
 ```
 
 R1.2 aplicou:
@@ -97,6 +98,17 @@ Renderer (afeta também conteúdo publicado):
 - exercícios com várias rodadas passam a mostrar a pergunta e o contexto de cada item (situação, frase, mensagem, rascunho). Antes, o aluno via apenas "Rodada N" e as opções; em N0-U03-L05, por exemplo, a situação a ser montada não aparecia.
 
 Pendências registradas para o P7 do N1: várias lições ainda não normalizam (mesmo estado de antes do R1); textos da verificação N1-U01-V01 usam um formato (`texts` como objeto) que o normalizador não exibe; ordem por nome de arquivo (`005a`, `005b`) deve ser respeitada no manifesto; respostas certas de itens antigos ficam sempre na primeira posição.
+
+R1.5 aplicou no N2 (nove unidades), preservando IDs:
+
+- `studentObjective` em todas as lições; termo central de cada lição ensinado no primeiro uso (ditongo, hiato, regência, oração principal, coordenação e subordinação pela dependência, próclise e ênclise, período, coesão, coerência, referente, progressão temática, entre outros);
+- lacunas de escopo preenchidas com lições novas: N2-U02-L12 (tempos, modos e conjugação), N2-U02-L13 (palavras que confundem na escrita e parônimos), N2-U03-L11 (voz ativa e passiva), N2-U04-L12 (orações que caracterizam e pronome relativo), N2-U04-L13 (infinitivo, gerúndio e particípio pelo uso), N2-U06-L11 (discurso direto e indireto); verificações cobrem as lições novas;
+- produção própria em U02, U03, U04 e U05, que antes só revisavam trechos dados;
+- leitura com gêneros variados (narrativa, crônica, opinião, carta, divulgação, reportagem) e textos que crescem até cerca de 250 palavras;
+- argumentação com questões reais e debatíveis; U08 com registro na fala e dados concretos de variação;
+- retomada à distância entre parágrafos, quadro de conectores por relação, rascunhos e modelos completos;
+- itens de verificação que copiavam as lições substituídos por itens novos;
+- conteúdo que estava em campos não exibidos passou para campos visíveis; normalização do N2 passou de 53 para 88 documentos válidos (14 ainda pendentes para o P7).
 
 R1.3b corrigiu a apresentação de conteúdo já publicado (N0 e N4-U09):
 

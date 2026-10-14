@@ -4,130 +4,45 @@
   "type": "integrated-unit-verification",
   "title": "Verificação integrada — Nível 2, Unidade 2",
   "status": "conteudo-pronto-para-implementacao",
-  "objective": "Verificar uso integrado de estratégia ortográfica, regularidades do recorte, acentuação de paroxítonas e hiatos, famílias/formação de palavras, classes ampliadas e interpretação lexical contextual sem transformar padrões parciais em regras universais.",
-  "prerequisites": ["N2-U02-L01", "N2-U02-L02", "N2-U02-L03", "N2-U02-L04", "N2-U02-L05", "N2-U02-L06", "N2-U02-L07", "N2-U02-L08", "N2-U02-L09", "N2-U02-L10", "N2-U02-L11"],
+  "objective": "Verificar uso integrado de estratégia ortográfica, regularidades do recorte, acentuação de paroxítonas e hiatos, famílias/formação de palavras, classes ampliadas, formas verbais de tempo e modo, palavras que confundem na escrita, interpretação lexical contextual e correção contextualizada de texto curto, sem transformar padrões parciais em regras universais.",
+  "prerequisites": ["N2-U02-L01", "N2-U02-L02", "N2-U02-L03", "N2-U02-L04", "N2-U02-L05", "N2-U02-L06", "N2-U02-L07", "N2-U02-L08", "N2-U02-L09", "N2-U02-L12", "N2-U02-L13", "N2-U02-L10", "N2-U02-L11"],
   "normativeScopeRef": "docs/referencias-ortografia-nivel-2.md",
-  "designPrinciples": ["avaliar apenas regras pertencentes ao recorte normativo", "usar exemplos de transferência e não somente os modelos das lições", "caso lexical pode exigir consulta como resposta correta", "não usar pronúncia como regra ortográfica única", "classes são avaliadas em contexto", "sinônimos não são equivalência perfeita", "acepção é escolhida pelo contexto, não pela posição no verbete", "não usar média global para esconder lacuna normativa"],
+  "designPrinciples": ["avaliar apenas regras pertencentes ao recorte normativo", "usar exemplos de transferência e não somente os modelos das lições", "caso lexical pode exigir consulta como resposta correta", "não usar pronúncia como regra ortográfica única", "classes são avaliadas em contexto", "formas verbais são avaliadas em frase e pelo efeito de sentido, sem tabela de conjugação", "pares que confundem são avaliados em frases novas", "a correção de texto curto usa texto inédito e inclui item em que a forma já está correta", "sinônimos não são equivalência perfeita", "acepção é escolhida pelo contexto, não pela posição no verbete", "não usar média global para esconder lacuna normativa"],
   "limits": ["sem hífen como sistema", "sem todas as grafias de s/z/x/ch/g/j", "sem etimologia", "sem acentuação exaustiva", "sem taxonomia completa de formação/classes", "sem ironia sofisticada"],
   "media": {"tts": "opcional; nunca é a única regra para grafia", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
-  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["instruções", "frases", "feedback"], "purpose": "apoio"}], "generatedVisualResources": [{"type": "UI_RENDERED_ORTHOGRAPHIC_DECISION_PATH", "locations": ["V01-Q01", "V01-Q02"], "purpose": "avaliar estratégia/padrão/consulta"}, {"type": "UI_RENDERED_ACCENT_RULE_PATH", "locations": ["V01-Q03", "V01-Q04"], "purpose": "avaliar acentuação"}, {"type": "UI_RENDERED_WORD_FORMATION_TREE", "locations": ["V01-Q05", "V01-Q06"], "purpose": "avaliar família/formação"}, {"type": "UI_RENDERED_FUNCTION_IN_SENTENCE", "locations": ["V01-Q07"], "purpose": "avaliar classes em uso"}, {"type": "UI_RENDERED_MULTIPLE_SENSE_CARD", "locations": ["V01-Q08", "V01-Q09"], "purpose": "avaliar semântica/acepção"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "todos os alvos são textuais/gráficos e podem ser avaliados por componentes acessíveis."},
+  "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["instruções", "frases", "feedback"], "purpose": "apoio"}], "generatedVisualResources": [{"type": "UI_RENDERED_ORTHOGRAPHIC_DECISION_PATH", "locations": ["V01-Q01", "V01-Q02"], "purpose": "avaliar estratégia/padrão/consulta"}, {"type": "UI_RENDERED_ACCENT_RULE_PATH", "locations": ["V01-Q03", "V01-Q04"], "purpose": "avaliar acentuação"}, {"type": "UI_RENDERED_WORD_FORMATION_TREE", "locations": ["V01-Q05", "V01-Q06"], "purpose": "avaliar família/formação"}, {"type": "UI_RENDERED_FUNCTION_IN_SENTENCE", "locations": ["V01-Q07"], "purpose": "avaliar classes em uso"}, {"type": "UI_RENDERED_MULTIPLE_SENSE_CARD", "locations": ["V01-Q08", "V01-Q09"], "purpose": "avaliar semântica/acepção"}, {"type": "UI_RENDERED_VERB_FORM_IN_SENTENCE", "locations": ["V01-Q10"], "purpose": "avaliar formas verbais em frase"}, {"type": "UI_RENDERED_WORD_IN_SENTENCE", "locations": ["V01-Q11"], "purpose": "avaliar pares que confundem"}, {"type": "UI_RENDERED_TEXT_REVISION", "locations": ["V01-Q12"], "purpose": "correção contextualizada de texto curto"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "todos os alvos são textuais/gráficos e podem ser avaliados por componentes acessíveis."},
   "items": [
-    {
-      "id": "V01-Q01",
-      "cluster": "orthographicStrategy",
-      "type": "strategy-set",
-      "items": [
-        {"case": "ta__bém", "options": ["aplicar m antes de p/b", "consultar porque não existe regularidade"], "correctIndex": 0},
-        {"case": "uma palavra desconhecida pode plausivelmente ser grafada com ch ou x e nenhuma família conhecida resolve", "options": ["consultar a grafia", "inventar uma regra pela pronúncia"], "correctIndex": 0},
-        {"case": "há uma regra que cobre exatamente o padrão observado", "options": ["aplicar a regra e conferir se o caso realmente pertence ao recorte", "ignorar a regra e memorizar a palavra isolada"], "correctIndex": 0}
-      ]
-    },
-    {
-      "id": "V01-Q02",
-      "cluster": "orthographicRegularities",
-      "type": "scope-and-position-set",
-      "items": [
-        {"sentence": "O __enário foi montado cedo.", "options": ["c", "ç"], "correctIndex": 0, "result": "cenário", "target": "ç não ocorre antes de e/i"},
-        {"sentence": "O la__o da fita soltou.", "options": ["ç", "c"], "correctIndex": 0, "result": "laço", "target": "no contraste c/ç oferecido, ç preserva o valor sibilante pretendido antes de o"},
-        {"question": "Som e posição bastam para decidir entre g e j em qualquer palavra diante de e/i?", "options": ["não", "sim"], "correctIndex": 0},
-        {"question": "Som e posição bastam para decidir entre ch e x em toda palavra?", "options": ["não", "sim"], "correctIndex": 0}
-      ]
-    },
-    {
-      "id": "V01-Q03",
-      "cluster": "paroxytoneAccent",
-      "type": "accentuation-set",
-      "items": [
-        {"base": "dificil", "options": ["difícil", "dificil"], "correctIndex": 0, "rule": "paroxítona terminada em l"},
-        {"base": "impar", "options": ["ímpar", "impar"], "correctIndex": 0, "rule": "paroxítona terminada em r"},
-        {"base": "forum", "options": ["fórum", "forum"], "correctIndex": 0, "rule": "paroxítona terminada em um"},
-        {"base": "orfao", "options": ["órfão", "orfão"], "correctIndex": 0, "rule": "paroxítona terminada em ão"},
-        {"base": "plateia", "options": ["plateia", "platéia"], "correctIndex": 0, "rule": "ditongo aberto ei em paroxítona sem acento no padrão atual"}
-      ]
-    },
-    {
-      "id": "V01-Q04",
-      "cluster": "hiatusAccent",
-      "type": "hiatus-set",
-      "items": [
-        {"base": "saude", "options": ["saúde", "saude"], "correctIndex": 0},
-        {"base": "faisca", "options": ["faísca", "faisca"], "correctIndex": 0},
-        {"base": "paraiso", "options": ["paraíso", "paraiso"], "correctIndex": 0},
-        {"base": "rainha", "options": ["rainha", "raínha"], "correctIndex": 0},
-        {"base": "juiz", "options": ["juiz", "juíz"], "correctIndex": 0}
-      ]
-    },
-    {
-      "id": "V01-Q05",
-      "cluster": "wordFamily",
-      "type": "family-set",
-      "items": [
-        {"group": ["jornal", "jornalista", "jornalismo"], "question": "Há família transparente?", "options": ["sim; compartilham base e núcleo de sentido ligado a jornal", "não; letras iguais nunca indicam família"], "correctIndex": 0},
-        {"groups": [["pedra", "pedreiro", "pedrinha"], ["mar", "martelo", "margem"]], "question": "Qual grupo mostra família transparente no recorte?", "correctIndex": 0},
-        {"question": "Semelhança gráfica sozinha prova parentesco?", "options": ["não", "sim"], "correctIndex": 0}
-      ]
-    },
-    {
-      "id": "V01-Q06",
-      "cluster": "formation",
-      "type": "formation-and-effect-set",
-      "items": [
-        {"word": "recontar", "parts": ["re-", "contar"], "process": "derivação", "effectOptions": ["contar novamente no contexto", "diminuir o tamanho"], "correctIndex": 0},
-        {"word": "calmamente", "parts": ["calma", "-mente"], "process": "derivação", "sentence": "Ela respondeu calmamente.", "effectOptions": ["indica modo", "indica quantidade"], "correctIndex": 0},
-        {"word": "guarda-chuva", "parts": ["guarda", "chuva"], "question": "Quanto ao processo de formação no recorte, é um caso transparente de quê?", "options": ["composição", "flexão de número"], "correctIndex": 0, "note": "o hífen é fornecido; não é alvo de avaliação"},
-        {"question": "Conhecer as partes garante todo o sentido de qualquer palavra nova?", "options": ["não; contexto e uso lexical continuam necessários", "sim"], "correctIndex": 0}
-      ]
-    },
-    {
-      "id": "V01-Q07",
-      "cluster": "expandedClasses",
-      "type": "class-in-context-set",
-      "items": [
-        {"sentence": "Voltaremos amanhã.", "target": "amanhã", "options": ["advérbio", "numeral", "preposição"], "correctIndex": 0},
-        {"sentence": "O arquivo de Ana chegou.", "target": "de", "options": ["preposição", "adjetivo", "verbo"], "correctIndex": 0},
-        {"sentence": "Queria ir, mas estava doente.", "target": "mas", "options": ["conjunção", "numeral", "substantivo"], "correctIndex": 0},
-        {"sentence": "A quarta etapa começa hoje.", "target": "quarta", "options": ["numeral", "advérbio", "preposição"], "correctIndex": 0}
-      ]
-    },
-    {
-      "id": "V01-Q08",
-      "cluster": "semanticsPrecision",
-      "type": "meaning-and-precision-set",
-      "items": [
-        {"sentence": "A manga estava madura e doce.", "target": "manga", "options": ["fruta", "parte de roupa"], "correctIndex": 0},
-        {"sentence": "O banco da praça estava molhado.", "target": "banco", "options": ["assento", "instituição financeira"], "correctIndex": 0},
-        {"context": "o texto já informa que o veículo era um ônibus", "before": "O veículo parou no ponto.", "options": ["O ônibus parou no ponto.", "O objeto parou no ponto."], "correctIndex": 0},
-        {"question": "É correto escolher uma palavra mais específica se o texto não fornece o detalhe?", "options": ["não", "sim; especificidade é sempre melhor"], "correctIndex": 0}
-      ]
-    },
-    {
-      "id": "V01-Q09",
-      "cluster": "figurativeContextualSense",
-      "type": "figurative-and-dictionary-set",
-      "entry": {"word": "raiz", "senses": [{"n": 1, "definition": "parte da planta"}, {"n": 2, "definition": "origem/fundamento/causa de algo"}]},
-      "items": [
-        {"sentence": "Precisamos encontrar a raiz do problema.", "correctSense": 2, "reading": "figurado"},
-        {"sentence": "A raiz da árvore apareceu na superfície.", "correctSense": 1, "reading": "literal"},
-        {"sentence": "O projeto deu seus primeiros passos.", "context": "as primeiras ações começaram", "options": ["uso figurado ligado a início/avanço", "o projeto possui pernas"], "correctIndex": 0},
-        {"question": "Se uma frase não fornece contexto suficiente para escolher entre duas acepções, o que fazer?", "options": ["registrar a insuficiência ou buscar mais contexto", "escolher automaticamente a primeira definição"], "correctIndex": 0}
-      ]
-    }
+    {"id": "V01-Q01", "cluster": "orthographicStrategy", "type": "strategy-set", "instruction": "Escolha o caminho adequado para cada dúvida de escrita.", "items": [{"prompt": "e__bora: como decidir a letra que falta?", "context": "A letra que falta vem antes de b.", "options": ["consultar, porque não existe regra", "aplicar a regra de m antes de p e b", "escrever n, porque é o som que se ouve"], "correctIndex": 1}, {"prompt": "Você vai escrever uma palavra que pode ter ch ou x, e nenhuma palavra da família resolve. O que fazer?", "options": ["consultar a grafia", "inventar uma regra pela pronúncia"], "correctIndex": 0}, {"prompt": "Há uma regra que parece cobrir o caso. O que fazer?", "options": ["ignorar a regra e decorar a palavra isolada", "aplicar a regra e conferir se o caso realmente pertence a ela"], "correctIndex": 1}]},
+    {"id": "V01-Q02", "cluster": "orthographicRegularities", "type": "scope-and-position-set", "instruction": "Use o que a posição elimina para escolher a letra.", "items": [{"prompt": "O __abonete acabou.", "options": ["ç", "s", "ss"], "correctIndex": 1, "result": "sabonete"}, {"prompt": "A conver__a durou horas.", "options": ["s", "ss"], "correctIndex": 0, "result": "conversa"}, {"prompt": "O pa__eio no parque foi ótimo.", "options": ["s", "ss"], "correctIndex": 1, "result": "passeio"}, {"prompt": "A ca__ula da família nasceu em maio.", "options": ["ç", "c"], "correctIndex": 0, "result": "caçula"}, {"prompt": "A __aqueta ficou pequena.", "options": ["j", "g"], "correctIndex": 0, "result": "jaqueta"}, {"question": "Diante de e e de i, a posição basta para decidir entre g e j em qualquer palavra?", "options": ["sim", "não"], "correctIndex": 1}]},
+    {"id": "V01-Q03", "cluster": "paroxytoneAccent", "type": "accentuation-set", "instruction": "Leia a frase e escolha a forma escrita da palavra.", "items": [{"prompt": "A última questão da prova foi ____.", "options": ["difícil", "dificil"], "correctIndex": 0, "rule": "paroxítona terminada em l"}, {"prompt": "Sete é um número ____.", "options": ["ímpar", "impar"], "correctIndex": 0, "rule": "paroxítona terminada em r"}, {"prompt": "O ____ de moradores discutiu a reforma da praça.", "options": ["forum", "fórum"], "correctIndex": 1, "rule": "paroxítona terminada em um"}, {"prompt": "O menino ____ foi acolhido pelos tios.", "options": ["órfão", "orfão"], "correctIndex": 0, "rule": "paroxítona terminada em ão"}, {"prompt": "A ____ aplaudiu de pé.", "options": ["plateia", "platéia"], "correctIndex": 0, "rule": "ditongo aberto ei em paroxítona sem acento no padrão atual"}]},
+    {"id": "V01-Q04", "cluster": "hiatusAccent", "type": "hiatus-set", "instruction": "Leia a frase e escolha a forma escrita da palavra.", "items": [{"prompt": "O ____ do livro agradou aos leitores.", "options": ["conteudo", "conteúdo"], "correctIndex": 1}, {"prompt": "Uma ____ do fogão queimou o pano de prato.", "options": ["faísca", "faisca"], "correctIndex": 0}, {"prompt": "A praia parecia um ____.", "options": ["paraíso", "paraiso"], "correctIndex": 0}, {"prompt": "Ela guardou a faca na ____ de couro.", "options": ["baínha", "bainha"], "correctIndex": 1}, {"prompt": "O sinal do celular está ____ aqui.", "options": ["ruim", "ruím"], "correctIndex": 0}]},
+    {"id": "V01-Q05", "cluster": "wordFamily", "type": "family-set", "items": [{"context": "jornal, jornalista, jornalismo", "question": "Essas palavras formam uma família?", "options": ["não; letras iguais nunca indicam família", "sim; têm a parte comum jornal e sentidos ligados"], "correctIndex": 1}, {"question": "Qual grupo forma uma família de palavras?", "options": ["ferro, ferreiro, ferradura", "fera, ferro, feriado"], "correctIndex": 0}, {"question": "Letras parecidas, sozinhas, provam que duas palavras são da mesma família?", "options": ["sim", "não"], "correctIndex": 1}]},
+    {"id": "V01-Q06", "cluster": "formation", "type": "formation-and-effect-set", "items": [{"prompt": "recontar = re- + contar. Qual é o efeito de re-?", "word": "recontar", "process": "derivação", "options": ["diminuir o tamanho", "contar novamente"], "correctIndex": 1}, {"prompt": "calmamente = calma + -mente. O que a palavra indica nesta frase?", "word": "calmamente", "process": "derivação", "sentence": "Ela respondeu calmamente.", "options": ["o modo como ela respondeu", "a quantidade de respostas"], "correctIndex": 0}, {"prompt": "porta-retrato = porta + retrato. Como a palavra foi formada?", "word": "porta-retrato", "options": ["derivação", "composição"], "correctIndex": 1}, {"question": "Conhecer as partes garante todo o sentido de qualquer palavra nova?", "options": ["sim", "não; a frase e o uso da palavra continuam necessários"], "correctIndex": 1}]},
+    {"id": "V01-Q07", "cluster": "expandedClasses", "type": "class-in-context-set", "instruction": "Leia a frase e escolha o tipo da palavra indicada.", "items": [{"prompt": "Que tipo de palavra é tarde?", "sentence": "Ela chegou tarde ao trabalho.", "options": ["advérbio", "numeral", "preposição"], "correctIndex": 0}, {"prompt": "Que tipo de palavra é para?", "sentence": "O presente é para você.", "options": ["adjetivo", "preposição", "verbo"], "correctIndex": 1}, {"prompt": "Que tipo de palavra é porque?", "sentence": "Fiquei em casa porque chovia.", "options": ["numeral", "substantivo", "conjunção"], "correctIndex": 2}, {"prompt": "Que tipo de palavra é quinto?", "sentence": "Moro no quinto andar.", "options": ["numeral", "advérbio", "preposição"], "correctIndex": 0}]},
+    {"id": "V01-Q08", "cluster": "semanticsPrecision", "type": "meaning-and-precision-set", "items": [{"prompt": "O que pena quer dizer nesta frase?", "sentence": "Uma pena do pássaro caiu no quintal.", "options": ["pluma que cobre o corpo da ave", "punição"], "correctIndex": 0}, {"prompt": "E nesta frase?", "sentence": "O juiz aumentou a pena do réu.", "options": ["pluma que cobre o corpo da ave", "punição"], "correctIndex": 1}, {"prompt": "Qual versão é mais precisa?", "context": "O texto já informou que a ferramenta era uma chave de fenda.", "before": "Ele pegou a ferramenta e apertou o parafuso.", "options": ["Ele pegou o objeto e apertou o parafuso.", "Ele pegou a chave de fenda e apertou o parafuso."], "correctIndex": 1}, {"question": "É correto escolher uma palavra mais específica se o texto não dá essa informação?", "options": ["não", "sim; especificidade é sempre melhor"], "correctIndex": 0}]},
+    {"id": "V01-Q09", "cluster": "figurativeContextualSense", "type": "figurative-and-dictionary-set", "instruction": "Leia o verbete e responda. Verbete ponte: 1. construção que liga as duas margens de um rio ou dois lados de uma via. 2. aquilo que liga ou aproxima pessoas, ideias ou lugares.", "entry": {"word": "ponte", "senses": [{"n": 1, "definition": "construção que liga as duas margens de um rio ou dois lados de uma via"}, {"n": 2, "definition": "aquilo que liga ou aproxima pessoas, ideias ou lugares"}]}, "items": [{"prompt": "A música foi uma ponte entre as duas famílias.", "options": ["acepção 1", "acepção 2"], "correctIndex": 1, "correctSense": 2, "reading": "figurado"}, {"prompt": "A ponte sobre o rio foi reformada.", "options": ["acepção 1", "acepção 2"], "correctIndex": 0, "correctSense": 1, "reading": "literal"}, {"prompt": "Qual leitura combina com a frase?", "sentence": "O prazo de entrega está batendo à porta.", "options": ["literal: alguém bate na porta", "figurado: o prazo está chegando"], "correctIndex": 1}, {"question": "Se uma frase não dá contexto suficiente para escolher entre duas acepções, o que fazer?", "options": ["escolher a primeira acepção do verbete", "dizer que falta contexto ou buscar mais informação"], "correctIndex": 1}]},
+    {"id": "V01-Q10", "cluster": "verbFormsModes", "type": "verb-form-set", "instruction": "Leia cada frase e escolha a forma do verbo ou a resposta adequada.", "items": [{"prompt": "Quando meu pai era jovem, ele ____ de bicicleta para o trabalho.", "options": ["foi", "ia", "irá"], "correctIndex": 1}, {"prompt": "Na semana passada, a escola ____ uma feira de ciências.", "options": ["fazia", "fará", "fez"], "correctIndex": 2}, {"prompt": "É melhor que vocês ____ mais cedo amanhã.", "options": ["vêm", "venham", "viessem"], "correctIndex": 1}, {"prompt": "Se a loja ____ aberta, eu compraria o presente hoje.", "options": ["estivesse", "está", "estiver"], "correctIndex": 0}, {"prompt": "Assim que você ____ a resposta, avise a equipe.", "options": ["ter", "tiver", "tem"], "correctIndex": 1}, {"prompt": "Qual frase faz um pedido?", "options": ["Você trouxe o documento.", "Se você trouxesse o documento, tudo seria mais rápido.", "Traga o documento amanhã, por favor."], "correctIndex": 2}, {"prompt": "Você ficou em dúvida entre quando eu ver e quando eu vir a mensagem. O que fazer?", "options": ["consultar a conjugação de ver no subjuntivo", "escrever quando eu ver, porque é igual ao infinitivo", "trocar a frase por qualquer outra"], "correctIndex": 0}]},
+    {"id": "V01-Q11", "cluster": "confusingWords", "type": "confusing-words-set", "instruction": "Faça o teste de troca e escolha a forma que completa a frase.", "items": [{"prompt": "____ você escolheu esse caminho?", "options": ["Porque", "Por que", "Porquê"], "correctIndex": 1}, {"prompt": "Escolhi esse caminho ____ é mais curto.", "options": ["por que", "porque", "por quê"], "correctIndex": 1}, {"prompt": "Ela nunca explicou o ____ de tanta pressa.", "options": ["porquê", "por que", "porque"], "correctIndex": 0}, {"prompt": "O jantar estava gostoso, ____ esfriou rápido.", "options": ["mas", "mais"], "correctIndex": 0}, {"prompt": "Ele tratou ____ o colega novo.", "options": ["mal", "mau"], "correctIndex": 0}, {"prompt": "A palestra começa daqui ____ dez minutos.", "options": ["há", "a"], "correctIndex": 1}, {"prompt": "____ vocês pretendem chegar com essa ideia?", "options": ["Aonde", "Onde"], "correctIndex": 0}, {"prompt": "No fim da palestra, ela recebeu os ____ dos colegas.", "options": ["comprimentos", "cumprimentos"], "correctIndex": 1}]},
+    {"id": "V01-Q12", "cluster": "contextualCorrection", "type": "contextual-text-correction-set", "instruction": "Leia o aviso inteiro. Depois decida, para cada palavra indicada, se ela deve ser mantida ou corrigida. Atenção: nem toda palavra indicada está errada.", "baseText": "Aviso aos moradores\n\nA partir de segunda-feira, a saida da garagem vai ficar fechada por três dias, por que o piso será refeito. Durante a obra, use o portão da rua lateral.\n\nSabemos que a mudança não é facil, mais a obra vai deixar o açesso mais seguro. Quem tiver dúvidas pode procurar o síndico quando ele poder, de preferência à tarde.\n\nUma obra parecida foi feita a dois anos e terminou antes do prazo. Tivemos a idéia de avisar com antecedência para ninguém ser pego de surpresa.", "items": [{"prompt": "No aviso, saida deve ficar como?", "options": ["saida", "saída", "saidá"], "correctIndex": 1}, {"prompt": "Em por que o piso será refeito, o que fazer?", "options": ["manter por que", "trocar por porque", "trocar por porquê"], "correctIndex": 1}, {"prompt": "No aviso, facil deve ficar como?", "options": ["fácil", "facil", "fácel"], "correctIndex": 0}, {"prompt": "Em mais a obra vai deixar, o que fazer?", "options": ["trocar por mas", "manter mais"], "correctIndex": 0}, {"prompt": "No aviso, açesso deve ficar como?", "options": ["acesso", "açesso"], "correctIndex": 0}, {"prompt": "Em quando ele poder, o que fazer?", "options": ["trocar por pudesse", "manter poder", "trocar por puder"], "correctIndex": 2}, {"prompt": "Em feita a dois anos, o que fazer?", "options": ["trocar por há", "manter a"], "correctIndex": 0}, {"prompt": "No aviso, idéia deve ficar como?", "options": ["idéia", "ideia"], "correctIndex": 1}, {"prompt": "No aviso, síndico deve ficar como?", "options": ["síndico, como está", "sindico, sem acento"], "correctIndex": 0}]}
   ],
   "assessmentBehavior": {"consultationAllowedWhereLexical": true, "normativeCorpusBound": true, "contextRequiredForClassesAndMeaning": true, "ttsPolicy": "opcional", "timeLimit": false},
   "completionEvidence": {
     "clusters": {
       "orthographicStrategy": {"evidence": ["V01-Q01"], "rule": "resolver os três casos de estratégia"},
-      "orthographicRegularities": {"evidence": ["V01-Q02"], "rule": "aplicar restrições e reconhecer limites sem universalizar"},
+      "orthographicRegularities": {"evidence": ["V01-Q02"], "rule": "aplicar as restrições de posição e reconhecer o limite de g/j sem universalizar"},
       "paroxytoneAccent": {"evidence": ["V01-Q03"], "rule": "acertar pelo menos quatro dos cinco itens, incluindo plateia sem acento"},
-      "hiatusAccent": {"evidence": ["V01-Q04"], "rule": "acertar pelo menos quatro dos cinco itens, incluindo um caso sem acento"},
+      "hiatusAccent": {"evidence": ["V01-Q04"], "rule": "acertar pelo menos quatro dos cinco itens, incluindo um dos casos sem acento (bainha, ruim)"},
       "wordFamily": {"evidence": ["V01-Q05"], "rule": "resolver família, falso parentesco e princípio"},
       "formation": {"evidence": ["V01-Q06"], "rule": "resolver processo/efeito e limite contextual"},
       "expandedClasses": {"evidence": ["V01-Q07"], "rule": "reconhecer as quatro classes em contexto"},
       "semanticsPrecision": {"evidence": ["V01-Q08"], "rule": "resolver polissemia/precisão sem inventar detalhe"},
-      "figurativeContextualSense": {"evidence": ["V01-Q09"], "rule": "usar contexto para literal/figurado/acepção e reconhecer insuficiência"}
+      "figurativeContextualSense": {"evidence": ["V01-Q09"], "rule": "usar contexto para literal/figurado/acepção e reconhecer insuficiência"},
+      "verbFormsModes": {"evidence": ["V01-Q10"], "rule": "acertar pelo menos seis dos sete itens, incluindo o item de consulta"},
+      "confusingWords": {"evidence": ["V01-Q11"], "rule": "acertar pelo menos seis dos oito itens, incluindo o item de parônimo"},
+      "contextualCorrection": {"evidence": ["V01-Q12"], "rule": "acertar pelo menos sete dos nove itens, incluindo o item que deve ser mantido"}
     },
-    "completionRule": "todos os nove agrupamentos são obrigatórios; acertos lexicais não compensam falha em aplicar regras, e regras não compensam incapacidade de reconhecer quando consultar.",
-    "notSufficient": ["memorizar palavras do modelo", "escrever pelo som", "acentuar por aparência", "classificar palavra fora de contexto", "escolher primeira acepção do verbete"]
+    "completionRule": "todos os doze agrupamentos são obrigatórios; acertos lexicais não compensam falha em aplicar regras, e regras não compensam incapacidade de reconhecer quando consultar.",
+    "notSufficient": ["memorizar palavras do modelo", "escrever pelo som", "acentuar por aparência", "classificar palavra fora de contexto", "escolher primeira acepção do verbete", "recitar conjugações sem usar em frase", "decidir pares que confundem pelo som"]
   },
   "remediationRoutes": [
     {"when": "estratégia/consulta", "review": ["N2-U02-L01", "N2-U02-L03"]},
@@ -138,6 +53,9 @@
     {"when": "formação", "review": ["N2-U02-L07", "N2-U02-L08"]},
     {"when": "classes", "review": ["N2-U02-L09"]},
     {"when": "semântica/precisão", "review": ["N2-U02-L10"]},
-    {"when": "figurado/acepção", "review": ["N2-U02-L11"]}
+    {"when": "figurado/acepção", "review": ["N2-U02-L11"]},
+    {"when": "formas verbais/tempos e modos", "review": ["N2-U02-L12"]},
+    {"when": "palavras que confundem/parônimos", "review": ["N2-U02-L13"]},
+    {"when": "correção de texto curto", "review": ["N2-U02-L02", "N2-U02-L04", "N2-U02-L05", "N2-U02-L12", "N2-U02-L13"]}
   ]
 }

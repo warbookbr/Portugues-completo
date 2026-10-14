@@ -124,6 +124,8 @@ O aluno deve conseguir:
 - morfemas básicos;
 - derivação/composição;
 - classes/flexões ampliadas;
+- formas verbais em uso: tempos do indicativo, subjuntivo e imperativo pelo efeito de sentido, conjugação regular e irregulares frequentes (N2-U02-L12);
+- palavras que confundem na escrita (por que/porque, mas/mais, mal/mau, há/a, onde/aonde) e parônimos frequentes (N2-U02-L13);
 - polissemia, ambiguidade, campos lexicais;
 - precisão lexical;
 - consulta.
