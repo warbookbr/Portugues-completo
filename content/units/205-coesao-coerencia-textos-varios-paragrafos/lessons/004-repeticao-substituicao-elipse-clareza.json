@@ -2,6 +2,7 @@
   "schemaVersion": 1,
   "id": "N2-U05-L04",
   "title": "Repetição, substituição e elipse: variar sem perder clareza",
+  "studentObjective": "Decidir quando repetir uma palavra, trocá-la por outra ou deixá-la subentendida, sem deixar o leitor em dúvida.",
   "status": "conteudo-pronto-para-implementacao",
   "objective": "Usar repetição controlada, substituição e elipse recuperável para evitar monotonia quando houver ganho real, preservando referência e informação ao longo de vários parágrafos.",
   "competencies": [
@@ -33,64 +34,11 @@
     "decisionRationale": "os mecanismos são textuais e podem ser observados em versões paralelas."
   },
   "sequence": [
-    {
-      "id": "L04-B01",
-      "type": "revision-contrast",
-      "versions": [
-        {
-          "before": "O laboratório publicou o novo horário. O laboratório também informou as regras de acesso. O laboratório manterá atendimento aos sábados.",
-          "after": "O laboratório publicou o novo horário e também informou as regras de acesso. A unidade manterá atendimento aos sábados.",
-          "analysis": "parte da repetição foi reduzida, mas uma expressão nominal mantém o referente"
-        },
-        {
-          "before": "Ana falou com Carla. Ela entregou o relatório.",
-          "after": "Ana falou com Carla. Carla entregou o relatório.",
-          "analysis": "a repetição é melhor que o pronome quando o contexto precisa identificar Carla"
-        }
-      ]
-    },
-    {
-      "id": "L04-B02",
-      "type": "ellipsis-demonstration",
-      "items": [
-        {"text": "Rui revisou o primeiro arquivo; Lia, o segundo.", "recovered": "Lia revisou o segundo arquivo", "judgment": "elipse recuperável pelo paralelismo"},
-        {"text": "O primeiro grupo chegou às oito. O segundo, às nove.", "recovered": "O segundo grupo chegou às nove", "judgment": "a ação é recuperável"},
-        {"text": "Marina enviou o formulário. Paula, amanhã.", "judgment": "sem contexto suficiente, a leitura do que Paula fará pode ficar incerta", "guardRail": "não omitir informação central apenas para encurtar"}
-      ]
-    },
-    {
-      "id": "L04-C01",
-      "type": "quick-check",
-      "items": [
-        {"before": "A oficina abriu inscrições. A oficina terá vinte vagas.", "options": ["A oficina abriu inscrições. Ela terá vinte vagas.", "A oficina abriu inscrições. Ele terá vinte vagas."], "correctIndex": 0},
-        {"before": "Lia encontrou Marina. Ela levou a chave.", "situation": "Quem levou foi Marina.", "options": ["Lia encontrou Marina. Marina levou a chave.", "Lia encontrou Marina. Ela levou a chave."], "correctIndex": 0},
-        {"text": "A turma A apresentou de manhã; a turma B, à tarde.", "question": "O que fica recuperável?", "options": ["a turma B apresentou à tarde", "a turma B chegou à tarde"], "correctIndex": 0}
-      ]
-    },
-    {
-      "id": "L04-A01",
-      "type": "assessment-revision",
-      "paragraphs": [
-        "O projeto abriu inscrições na segunda-feira. O projeto recebeu cinquenta cadastros no primeiro dia.",
-        "O projeto terá duas turmas. O projeto publicará a divisão dos participantes na sexta-feira."
-      ],
-      "options": [
-        "O projeto abriu inscrições na segunda-feira e recebeu cinquenta cadastros no primeiro dia. Ele terá duas turmas e publicará a divisão dos participantes na sexta-feira.",
-        "O projeto abriu inscrições na segunda-feira. A iniciativa recebeu cinquenta cadastros. Ela terá duas turmas e publicará a divisão na sexta-feira.",
-        "Ambas podem funcionar se 'Ele/Ela' e a expressão nominal continuarem com referente claro."
-      ],
-      "correctIndex": 2,
-      "teachingPoint": "não existe uma única revisão lexical obrigatória"
-    },
-    {
-      "id": "L04-A02",
-      "type": "assessment-ellipsis",
-      "items": [
-        {"text": "Carlos revisou a introdução; Bia, a conclusão.", "options": ["Bia revisou a conclusão", "Bia escreveu necessariamente a conclusão"], "correctIndex": 0},
-        {"text": "O primeiro ônibus saiu às sete. O segundo, às oito.", "options": ["o segundo ônibus saiu às oito", "o segundo ônibus chegou às oito"], "correctIndex": 0},
-        {"question": "Uma elipse deve ser usada mesmo quando cria duas leituras relevantes?", "options": ["não; explicitar pode preservar clareza", "sim; texto curto é sempre melhor"], "correctIndex": 0}
-      ]
-    }
+    {"id": "L04-B01", "type": "revision-contrast", "title": "Repetir, trocar ou retomar com outra expressão", "text": "Compare as duas duplas abaixo. Na primeira, o nome o laboratório se repetia em todas as frases sem necessidade. A revisão juntou duas frases e trocou uma das repetições por a unidade. Trocar uma palavra por outra que retoma o mesmo referente se chama substituição. Ela pode ser feita com um pronome (ele, ela) ou com outra expressão (a unidade, o local, a iniciativa).\n\nNa segunda dupla, o pronome Ela aparece dois parágrafos depois da impressora, e no meio surgiu outra máquina. Aqui, a melhor escolha é uma expressão que só sirva para o referente certo, como a impressora doada pela papelaria. Variar palavras só ajuda quando o leitor continua sabendo de quem ou do que se fala.", "versions": [{"before": "O laboratório publicou o novo horário. O laboratório também informou as regras de acesso. O laboratório manterá atendimento aos sábados.", "after": "O laboratório publicou o novo horário e também informou as regras de acesso. A unidade manterá atendimento aos sábados.", "analysis": "parte da repetição foi reduzida, mas uma expressão nominal mantém o referente"}, {"before": "A biblioteca ganhou uma impressora nova de uma papelaria do bairro. O aparelho imprime em cores e dos dois lados da folha.\n\nNa mesma semana, a prefeitura enviou uma máquina de plastificar, pedida pelos professores no ano anterior.\n\nEla ficará na sala de leitura e poderá ser usada pelos alunos com autorização.", "after": "A biblioteca ganhou uma impressora nova de uma papelaria do bairro. O aparelho imprime em cores e dos dois lados da folha.\n\nNa mesma semana, a prefeitura enviou uma máquina de plastificar, pedida pelos professores no ano anterior.\n\nA impressora doada pela papelaria ficará na sala de leitura e poderá ser usada pelos alunos com autorização.", "analysis": "com a máquina de plastificar no parágrafo do meio, o pronome Ela fica ambíguo; uma expressão que só serve para a impressora resolve"}]},
+    {"id": "L04-B02", "type": "ellipsis-demonstration", "title": "Deixar uma palavra subentendida", "text": "Leia: Rui revisou o primeiro arquivo; Lia, o segundo. A segunda parte não repete revisou, mas o leitor entende que Lia revisou o segundo arquivo. Quando uma palavra fica de fora porque o leitor consegue recuperá-la pelo que veio antes, temos uma elipse. A vírgula depois de Lia marca o lugar da palavra subentendida.\n\nA elipse só ajuda quando a palavra pode ser recuperada com segurança.", "examples": ["Funciona: O primeiro grupo chegou às oito. O segundo, às nove. (O segundo grupo chegou às nove.)", "Atrapalha: Marina enviou o formulário. Paula, amanhã. (Paula vai enviar o formulário, preenchê-lo ou recebê-lo? Sem mais contexto, é melhor escrever a palavra.)"], "items": [{"text": "Rui revisou o primeiro arquivo; Lia, o segundo.", "recovered": "Lia revisou o segundo arquivo", "judgment": "elipse recuperável pelo paralelismo"}, {"text": "O primeiro grupo chegou às oito. O segundo, às nove.", "recovered": "O segundo grupo chegou às nove", "judgment": "a ação é recuperável"}, {"text": "Marina enviou o formulário. Paula, amanhã.", "judgment": "sem contexto suficiente, a leitura do que Paula fará pode ficar incerta", "guardRail": "não omitir informação central apenas para encurtar"}]},
+    {"id": "L04-C01", "type": "quick-check", "items": [{"prompt": "Qual revisão evita a repetição sem mudar o sentido?", "before": "A oficina abriu inscrições. A oficina terá vinte vagas.", "options": ["A oficina abriu inscrições. Ela terá vinte vagas.", "A oficina abriu inscrições. Ele terá vinte vagas."], "correctIndex": 0}, {"prompt": "A regra de limpeza vale para o aspirador. Qual versão do terceiro parágrafo deixa isso claro?", "text": ["O condomínio comprou um aspirador novo para a área comum. O aparelho fica guardado no depósito do térreo.", "Na mesma compra, veio um carrinho para levar as sacolas dos moradores até o elevador.", "Ele deve ser devolvido limpo depois de cada uso."], "options": ["Ele deve ser devolvido limpo depois de cada uso.", "O aspirador deve ser devolvido limpo depois de cada uso.", "O carrinho deve ser devolvido limpo depois de cada uso."], "correctIndex": 1}, {"text": "A turma A apresentou de manhã; a turma B, à tarde.", "question": "O que fica recuperável?", "options": ["a turma B apresentou à tarde", "a turma B chegou à tarde"], "correctIndex": 0}]},
+    {"id": "L04-A01", "type": "assessment-revision", "prompt": "O texto abaixo repete “O projeto” em todas as frases. Leia as duas revisões propostas nas opções e escolha a avaliação adequada.", "text": "O projeto abriu inscrições na segunda-feira. O projeto recebeu cinquenta cadastros no primeiro dia.\n\nO projeto terá duas turmas. O projeto publicará a divisão dos participantes na sexta-feira.", "paragraphs": ["O projeto abriu inscrições na segunda-feira. O projeto recebeu cinquenta cadastros no primeiro dia.", "O projeto terá duas turmas. O projeto publicará a divisão dos participantes na sexta-feira."], "options": ["O projeto abriu inscrições na segunda-feira e recebeu cinquenta cadastros no primeiro dia. Ele terá duas turmas e publicará a divisão dos participantes na sexta-feira.", "O projeto abriu inscrições na segunda-feira. A iniciativa recebeu cinquenta cadastros. Ela terá duas turmas e publicará a divisão na sexta-feira.", "Ambas podem funcionar se 'Ele/Ela' e a expressão nominal continuarem com referente claro."], "correctIndex": 2, "teachingPoint": "não existe uma única revisão lexical obrigatória"},
+    {"id": "L04-A02", "type": "assessment-ellipsis", "items": [{"prompt": "O que fica subentendido na segunda parte?", "text": "Carlos revisou a introdução; Bia, a conclusão.", "options": ["Bia revisou a conclusão", "Bia escreveu necessariamente a conclusão"], "correctIndex": 0}, {"prompt": "O que fica subentendido na segunda frase?", "text": "O primeiro ônibus saiu às sete. O segundo, às oito.", "options": ["o segundo ônibus saiu às oito", "o segundo ônibus chegou às oito"], "correctIndex": 0}, {"question": "Uma elipse deve ser usada mesmo quando cria duas leituras relevantes?", "options": ["não; explicitar pode preservar clareza", "sim; texto curto é sempre melhor"], "correctIndex": 0}]}
   ],
   "assessmentBehavior": {"equivalentClearRevisionsAccepted": true, "clarityOverridesVariation": true, "ttsPolicy": "opcional", "timeLimit": false},
   "completionEvidence": {

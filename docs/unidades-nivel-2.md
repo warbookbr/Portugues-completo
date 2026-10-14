@@ -344,6 +344,7 @@ O aluno deve conseguir:
 - escrever texto narrativo, explicativo, informativo ou instrucional de complexidade intermediária;
 - produzir resumo e paráfrase responsáveis;
 - usar fonte fornecida sem apagar origem;
+- contar a fala de outra pessoa em discurso direto e indireto, escolhendo a forma pelo efeito;
 - integrar descrição/exemplo quando funcional;
 - revisar conteúdo, organização, coesão, sintaxe, léxico, ortografia e pontuação em camadas;
 - reescrever preservando versão anterior;
@@ -357,6 +358,7 @@ O aluno deve conseguir:
 - explicação e exemplificação;
 - resumo/paráfrase;
 - fonte fornecida;
+- discurso direto e indireto;
 - revisão por camadas;
 - reescrita/versionamento;
 - adequação de registro.

@@ -2,6 +2,7 @@
   "schemaVersion": 1,
   "id": "N2-U05-L03",
   "title": "Cadeias de referência ao longo de vários parágrafos",
+  "studentObjective": "Acompanhar quem ou o que está sendo retomado ao longo de vários parágrafos e deixar isso claro quando outro nome parecido aparece no caminho.",
   "status": "conteudo-pronto-para-implementacao",
   "objective": "Manter e recuperar referentes ao longo de vários parágrafos por repetição funcional, pronomes e expressões nominais, preservando clareza quando há mudança de foco ou mais de um referente plausível.",
   "competencies": [
@@ -33,70 +34,11 @@
     "decisionRationale": "referenciação entre parágrafos é uma relação textual diretamente observável."
   },
   "sequence": [
-    {
-      "id": "L03-B01",
-      "type": "model-analysis",
-      "paragraphs": [
-        "O centro cultural abriu uma sala de ensaio para grupos do bairro. O novo espaço pode ser reservado por até duas horas.",
-        "A sala possui mesa de som, caixas acústicas e suportes. Esses equipamentos devem permanecer no local depois do uso.",
-        "Os grupos recebem uma lista de cuidados antes da primeira reserva. O documento também informa como comunicar problemas encontrados nos aparelhos.",
-        "A equipe técnica analisa cada comunicado. Ela registra o defeito e informa ao grupo quando o equipamento volta a ficar disponível."
-      ],
-      "chains": [
-        {"referent": "sala de ensaio", "forms": ["O novo espaço", "A sala"]},
-        {"referent": "mesa de som, caixas e suportes", "forms": ["Esses equipamentos", "aparelhos"]},
-        {"referent": "lista de cuidados", "forms": ["O documento"]},
-        {"referent": "equipe técnica", "forms": ["A equipe técnica", "Ela"]}
-      ]
-    },
-    {
-      "id": "L03-B02",
-      "type": "ambiguity-repair",
-      "before": "A coordenadora falou com a técnica sobre a nova sala. No dia seguinte, ela publicou as orientações.",
-      "problem": "coordenadora e técnica são referentes femininos plausíveis",
-      "clearVersions": [
-        "A coordenadora falou com a técnica sobre a nova sala. No dia seguinte, a coordenadora publicou as orientações.",
-        "A coordenadora falou com a técnica sobre a nova sala. No dia seguinte, a técnica publicou as orientações."
-      ],
-      "teachingPoint": "a repetição explícita é preferível quando o pronome apaga a referência pretendida"
-    },
-    {
-      "id": "L03-C01",
-      "type": "quick-check",
-      "paragraphs": [
-        "A associação recebeu uma van para transportar materiais. O veículo será usado nos projetos comunitários.",
-        "Antes de cada saída, um responsável confere os itens carregados. Essa verificação fica registrada numa ficha digital."
-      ],
-      "items": [
-        {"target": "O veículo", "options": ["a van", "a associação", "os materiais"], "correctIndex": 0},
-        {"target": "Essa verificação", "options": ["a conferência dos itens", "a saída", "a ficha digital"], "correctIndex": 0}
-      ]
-    },
-    {
-      "id": "L03-A01",
-      "type": "assessment-chain",
-      "paragraphs": [
-        "A escola recebeu novos computadores para o laboratório. Os equipamentos serão instalados em duas etapas.",
-        "Primeiro, a equipe de tecnologia vai configurar as máquinas. Esse trabalho inclui atualização do sistema e criação das contas de acesso.",
-        "Depois, os professores testarão os programas usados nas aulas. Eles registrarão eventuais problemas num formulário.",
-        "A equipe de tecnologia receberá esses registros e fará os ajustes necessários. O grupo só liberará as máquinas depois dos testes."
-      ],
-      "items": [
-        {"target": "Os equipamentos", "options": ["os novos computadores", "os professores", "os programas"], "correctIndex": 0},
-        {"target": "Esse trabalho", "options": ["a configuração das máquinas", "a entrega dos computadores", "o teste dos professores"], "correctIndex": 0},
-        {"target": "Eles", "options": ["os professores", "os programas", "os computadores"], "correctIndex": 0},
-        {"target": "esses registros", "options": ["os problemas/formulários registrados pelos professores", "as contas de acesso", "as etapas de instalação"], "correctIndex": 0},
-        {"target": "O grupo", "options": ["a equipe de tecnologia", "os professores", "os computadores"], "correctIndex": 0}
-      ]
-    },
-    {
-      "id": "L03-A02",
-      "type": "assessment-repair",
-      "items": [
-        {"before": "Marina apresentou Paula à diretora. Ela explicou o projeto.", "situation": "Quem explicou foi Paula.", "options": ["Marina apresentou Paula à diretora. Paula explicou o projeto.", "Marina apresentou Paula à diretora. Ela explicou o projeto."], "correctIndex": 0},
-        {"question": "Repetir 'Paula' nessa versão é falha de coesão?", "options": ["não; a repetição resolve a referência", "sim; todo nome repetido deve virar pronome"], "correctIndex": 0}
-      ]
-    }
+    {"id": "L03-B01", "type": "model-analysis", "title": "Uma sala, quatro parágrafos", "text": "O centro cultural abriu uma sala de ensaio para grupos do bairro. O novo espaço pode ser reservado por até duas horas.\n\nA sala possui mesa de som, caixas acústicas e suportes. Esses equipamentos devem permanecer no local depois do uso.\n\nOs grupos recebem uma lista de cuidados antes da primeira reserva. O documento também informa como comunicar problemas encontrados nos aparelhos.\n\nA equipe técnica analisa cada comunicado. Ela registra o defeito e informa ao grupo quando o equipamento volta a ficar disponível.", "explanation": "No primeiro parágrafo, a sala de ensaio aparece com seu nome. Depois ela volta como o novo espaço e como a sala. Aquilo de que o texto fala e que volta a ser mencionado se chama referente. Cada nova menção ao referente é uma retomada. Juntas, as retomadas de um mesmo referente formam uma cadeia de referência, que pode atravessar vários parágrafos.\n\nUma retomada pode ser feita de três jeitos: repetindo o nome (a sala), usando um pronome (ela, eles) ou usando uma expressão com um nome, como esses equipamentos ou o documento. Esse último tipo se chama expressão nominal. Além de retomar, ela pode dizer algo novo sobre o referente: chamar a lista de cuidados de o documento mostra que se trata de um papel com regras.", "paragraphs": ["O centro cultural abriu uma sala de ensaio para grupos do bairro. O novo espaço pode ser reservado por até duas horas.", "A sala possui mesa de som, caixas acústicas e suportes. Esses equipamentos devem permanecer no local depois do uso.", "Os grupos recebem uma lista de cuidados antes da primeira reserva. O documento também informa como comunicar problemas encontrados nos aparelhos.", "A equipe técnica analisa cada comunicado. Ela registra o defeito e informa ao grupo quando o equipamento volta a ficar disponível."], "chains": [{"referent": "sala de ensaio", "forms": ["O novo espaço", "A sala"]}, {"referent": "mesa de som, caixas e suportes", "forms": ["Esses equipamentos", "aparelhos"]}, {"referent": "lista de cuidados", "forms": ["O documento"]}, {"referent": "equipe técnica", "forms": ["A equipe técnica", "Ela"]}]},
+    {"id": "L03-B02", "type": "ambiguity-repair", "title": "Quando a retomada fica longe do referente", "text": "Uma retomada pode aparecer dois parágrafos depois do referente. No caminho, porém, pode surgir outro nome que também combina com ela. Leia o texto e procure a quem se refere Ela no terceiro parágrafo.", "before": "A diretora da escola apresentou o projeto da horta aos pais na reunião de março. O plano prevê canteiros no pátio e aulas ao ar livre uma vez por semana.\n\nNa mesma reunião, uma professora de ciências contou como funcionou uma horta parecida na escola onde trabalhava antes. Os pais fizeram perguntas sobre custos e sobre o cuidado com as plantas nas férias.\n\nEla prometeu enviar o cronograma de plantio até o fim do mês.", "problem": "No primeiro parágrafo, a diretora apresenta o projeto. No segundo, aparece a professora de ciências. No terceiro, Ela pode retomar qualquer uma das duas: a mais próxima é a professora, mas quem cuida do projeto é a diretora. O leitor fica sem saber quem vai enviar o cronograma.", "examples": ["Se foi a diretora: A diretora prometeu enviar o cronograma de plantio até o fim do mês.", "Se foi a professora: A professora de ciências prometeu enviar o cronograma de plantio até o fim do mês."], "note": "Quando outro nome do mesmo tipo aparece entre o referente e a retomada, repita o nome ou use uma expressão que só sirva para ele, como a responsável pelo projeto. Se o texto não informa quem fez a ação, não escolha por conta própria: confirme a informação antes de revisar.", "teachingPoint": "retomada a distância com referente concorrente no parágrafo do meio; repetir o nome ou usar expressão exclusiva resolve"},
+    {"id": "L03-C01", "type": "quick-check", "text": "A associação recebeu uma van para transportar materiais. O veículo será usado nos projetos comunitários.\n\nAntes de cada saída, um responsável confere os itens carregados. Essa verificação fica registrada numa ficha digital.", "instruction": "Leia o texto e indique a que se refere cada expressão destacada.", "paragraphs": ["A associação recebeu uma van para transportar materiais. O veículo será usado nos projetos comunitários.", "Antes de cada saída, um responsável confere os itens carregados. Essa verificação fica registrada numa ficha digital."], "items": [{"target": "O veículo", "options": ["a van", "a associação", "os materiais"], "correctIndex": 0, "prompt": "A que se refere “O veículo”?"}, {"target": "Essa verificação", "options": ["a conferência dos itens", "a saída", "a ficha digital"], "correctIndex": 0, "prompt": "A que se refere “Essa verificação”?"}]},
+    {"id": "L03-A01", "type": "assessment-chain", "text": "A escola recebeu novos computadores para o laboratório. Os equipamentos serão instalados em duas etapas.\n\nPrimeiro, a equipe de tecnologia vai configurar as máquinas. Esse trabalho inclui atualização do sistema e criação das contas de acesso.\n\nDepois, os professores testarão os programas usados nas aulas. Eles registrarão eventuais problemas num formulário.\n\nA equipe de tecnologia receberá esses registros e fará os ajustes necessários. O grupo só liberará as máquinas depois dos testes.", "instruction": "Leia o texto e indique a que se refere cada retomada.", "paragraphs": ["A escola recebeu novos computadores para o laboratório. Os equipamentos serão instalados em duas etapas.", "Primeiro, a equipe de tecnologia vai configurar as máquinas. Esse trabalho inclui atualização do sistema e criação das contas de acesso.", "Depois, os professores testarão os programas usados nas aulas. Eles registrarão eventuais problemas num formulário.", "A equipe de tecnologia receberá esses registros e fará os ajustes necessários. O grupo só liberará as máquinas depois dos testes."], "items": [{"target": "Os equipamentos", "options": ["os novos computadores", "os professores", "os programas"], "correctIndex": 0, "prompt": "A que se refere “Os equipamentos”?"}, {"target": "Esse trabalho", "options": ["a configuração das máquinas", "a entrega dos computadores", "o teste dos professores"], "correctIndex": 0, "prompt": "A que se refere “Esse trabalho”?"}, {"target": "Eles", "options": ["os professores", "os programas", "os computadores"], "correctIndex": 0, "prompt": "A que se refere “Eles”?"}, {"target": "esses registros", "options": ["os problemas que os professores anotaram no formulário", "as contas de acesso", "as etapas de instalação"], "correctIndex": 0, "prompt": "A que se refere “esses registros”?"}, {"target": "O grupo", "options": ["a equipe de tecnologia", "os professores", "os computadores"], "correctIndex": 0, "prompt": "A que se refere “O grupo”?"}]},
+    {"id": "L03-A02", "type": "assessment-repair", "items": [{"prompt": "Quem pediu o voto foi o síndico. Qual versão do terceiro parágrafo deixa isso claro?", "text": ["O síndico convocou uma assembleia para discutir a troca do portão da garagem. Ele levou dois orçamentos impressos.", "O zelador falou sobre os defeitos do portão atual e mostrou fotos dos estragos.", "No fim da reunião, ele pediu que cada morador votasse até sexta-feira."], "options": ["No fim da reunião, ele pediu que cada morador votasse até sexta-feira.", "No fim da reunião, o zelador pediu que cada morador votasse até sexta-feira.", "No fim da reunião, o síndico pediu que cada morador votasse até sexta-feira."], "correctIndex": 2}, {"question": "Repetir “o síndico” no terceiro parágrafo é uma falha de coesão?", "options": ["Não. Com o zelador no parágrafo do meio, repetir o nome evita a dúvida.", "Sim. O pronome ele sempre retoma o primeiro nome que apareceu no texto.", "Sim. Um nome já usado no primeiro parágrafo não pode voltar no terceiro."], "correctIndex": 0}]}
   ],
   "assessmentBehavior": {"clarityOverridesVariation": true, "textVisibility": "sempre disponível", "ttsPolicy": "opcional", "timeLimit": false},
   "completionEvidence": {

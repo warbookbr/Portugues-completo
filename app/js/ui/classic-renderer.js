@@ -60,7 +60,7 @@ function valueText(value, context = {}) {
       const rendered = valueText(item, context);
       if (!rendered) return '';
       return item && typeof item === 'object' && !Array.isArray(item) && !Array.isArray(item.tokens) ? rendered : `<span class="token">${rendered}</span>`;
-    }).join(' ');
+    }).filter(Boolean).join(' ');
   }
   if (typeof value === 'object') {
     if (Array.isArray(value.tokens)) {

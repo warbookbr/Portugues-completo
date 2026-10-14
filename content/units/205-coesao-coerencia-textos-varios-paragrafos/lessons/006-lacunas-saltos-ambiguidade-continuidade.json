@@ -2,6 +2,7 @@
   "schemaVersion": 1,
   "id": "N2-U05-L06",
   "title": "Lacunas, saltos de continuidade e ambiguidades",
+  "studentObjective": "Encontrar no texto o que falta, o que muda de assunto de repente e o que pode ser lido de dois jeitos, e consertar sem inventar fatos.",
   "status": "conteudo-pronto-para-implementacao",
   "objective": "Identificar problemas de continuidade causados por informação essencial ausente, mudança brusca de foco ou referência ambígua e escolher reparos proporcionais sem acrescentar fatos não disponíveis.",
   "competencies": [
@@ -33,63 +34,11 @@
     "decisionRationale": "lacunas e saltos podem ser diagnosticados e reparados em texto controlado."
   },
   "sequence": [
-    {
-      "id": "L06-B01",
-      "type": "problem-demonstration",
-      "cases": [
-        {
-          "text": "O atendimento mudou para a sala 8. Por isso, os usuários devem chegar dez minutos antes.",
-          "problem": "a causa de precisar chegar antes não é explicada; a simples mudança de sala não sustenta necessariamente essa consequência",
-          "repairOptions": ["informar que a sala 8 fica em outro prédio, se essa informação estiver disponível", "retirar 'Por isso' se não houver relação causal"]
-        },
-        {
-          "text": "O curso recebeu quarenta inscrições. A horta do centro foi reformada. As vagas serão distribuídas por ordem de cadastro.",
-          "problem": "o parágrafo sobre a horta interrompe o foco sem ligação construída",
-          "repair": "retirar ou deslocar a informação para texto/contexto em que seja relevante"
-        },
-        {
-          "text": "Ana falou com Bia sobre o evento. Ela enviou o cronograma.",
-          "problem": "referência de 'Ela' não é suficientemente determinada",
-          "repair": "explicitar Ana ou Bia conforme o fato disponível"
-        }
-      ]
-    },
-    {
-      "id": "L06-B02",
-      "type": "proportional-repair",
-      "examples": [
-        {"problem": "frase intrusa", "bestFirstMove": "retirar ou reposicionar, não criar conectores artificiais para mantê-la"},
-        {"problem": "referente ambíguo", "bestFirstMove": "explicitar o nome/referente"},
-        {"problem": "relação causal sem dado que a sustente", "bestFirstMove": "retirar a causalidade ou acrescentar a informação apenas se ela estiver fornecida"}
-      ],
-      "guardRail": "revisão não autoriza inventar fatos"
-    },
-    {
-      "id": "L06-C01",
-      "type": "quick-check",
-      "items": [
-        {"text": "A oficina mudou para o prédio B. O prédio B fica a quinze minutos a pé da entrada principal. Por isso, a organização recomenda chegar mais cedo.", "question": "A relação agora está sustentada?", "options": ["sim", "não; toda recomendação é incoerente"], "correctIndex": 0},
-        {"text": "Paula encontrou Marina depois que ela saiu da reunião.", "question": "Sem contexto, quem saiu?", "options": ["não é possível decidir com segurança", "obrigatoriamente Marina"], "correctIndex": 0}
-      ]
-    },
-    {
-      "id": "L06-A01",
-      "type": "assessment-diagnosis",
-      "items": [
-        {"paragraphs": ["O centro abriu uma turma extra porque a primeira atingiu o limite.", "A nova turma ocorrerá às quartas-feiras.", "O telhado do prédio foi pintado no ano passado.", "As inscrições para a nova turma abrem amanhã."], "problemOptions": ["há um salto de foco no terceiro parágrafo", "faltam conectores em todos os parágrafos"], "correctIndex": 0},
-        {"text": "Rui entregou o arquivo a Carlos depois que ele revisou o texto.", "problemOptions": ["'ele' pode retomar Rui ou Carlos", "o verbo entregar não possui complemento"], "correctIndex": 0},
-        {"text": "O prazo foi ampliado. Portanto, a equipe gostou do novo sistema.", "problemOptions": ["o conector cria uma relação conclusiva não sustentada pelas duas afirmações", "a palavra equipe deveria ser repetida"], "correctIndex": 0}
-      ]
-    },
-    {
-      "id": "L06-A02",
-      "type": "assessment-repair",
-      "items": [
-        {"before": "A sala mudou. Por isso, chegue vinte minutos antes.", "providedFact": "a nova sala fica em outro prédio, a quinze minutos da entrada", "options": ["A sala mudou para outro prédio, a quinze minutos da entrada. Por isso, chegue mais cedo.", "A sala mudou. Por isso, chegue vinte minutos antes."], "correctIndex": 0},
-        {"before": "Lia falou com Bia. Ela enviará o contrato.", "providedFact": "quem enviará é Lia", "options": ["Lia falou com Bia. Lia enviará o contrato.", "Lia falou com Bia. Ela enviará o contrato."], "correctIndex": 0},
-        {"question": "Se o fato que falta não foi fornecido, o revisor deve inventá-lo para deixar o texto coerente?", "options": ["não; deve reformular com o que sabe ou marcar a necessidade de informação", "sim"], "correctIndex": 0}
-      ]
-    }
+    {"id": "L06-B01", "type": "problem-demonstration", "title": "Três problemas de continuidade", "text": "Um texto pode tropeçar de três jeitos.\n\nLacuna: falta uma informação de que o leitor precisa para entender uma relação. Salto: o texto muda de assunto sem ponte e depois volta. Ambiguidade: uma palavra ou retomada permite duas leituras, e o texto não ajuda a escolher.\n\nVeja um caso de cada tipo, na ordem: lacuna, salto e ambiguidade.", "cases": [{"text": "O atendimento mudou para a sala 8. Por isso, os usuários devem chegar dez minutos antes.", "problem": "Falta a informação que explica por que é preciso chegar antes. A mudança de sala, sozinha, não justifica essa recomendação.", "repairOptions": ["informar que a sala 8 fica em outro prédio, se essa informação estiver disponível", "retirar 'Por isso' se não houver relação causal"]}, {"text": "O curso recebeu quarenta inscrições. A horta do centro foi reformada. As vagas serão distribuídas por ordem de cadastro.", "problem": "A frase sobre a horta muda de assunto e não tem ligação com as inscrições do curso.", "repair": "retirar ou deslocar a informação para texto/contexto em que seja relevante"}, {"text": "Os voluntários montaram as barracas da feira no sábado de manhã. Eles também organizaram a fila de doações.\n\nÀ tarde, os músicos da banda do bairro chegaram para o ensaio e testaram o som.\n\nNo domingo, eles chegaram às sete horas para abrir os portões.", "problem": "No terceiro parágrafo, eles pode retomar os voluntários, do primeiro parágrafo, ou os músicos, do segundo. Para revisar, é preciso saber quem abriu os portões e escrever o nome desse grupo.", "repair": "explicitar os voluntários ou os músicos conforme o fato disponível"}]},
+    {"id": "L06-B02", "type": "proportional-repair", "title": "Conserto do tamanho do problema", "examples": [{"problem": "frase intrusa", "strategy": "retirar ou reposicionar, não criar conectores artificiais para mantê-la", "bestFirstMove": "retirar ou reposicionar, não criar conectores artificiais para mantê-la"}, {"problem": "referente ambíguo", "strategy": "explicitar o nome/referente", "bestFirstMove": "explicitar o nome/referente"}, {"problem": "relação causal sem dado que a sustente", "strategy": "retirar a causalidade ou acrescentar a informação apenas se ela estiver fornecida", "bestFirstMove": "retirar a causalidade ou acrescentar a informação apenas se ela estiver fornecida"}], "guardRail": "revisão não autoriza inventar fatos", "note": "Revisar não autoriza inventar fatos. Se a informação que falta não está disponível, reformule com o que se sabe ou peça a informação."},
+    {"id": "L06-C01", "type": "quick-check", "items": [{"text": "A oficina mudou para o prédio B. O prédio B fica a quinze minutos a pé da entrada principal. Por isso, a organização recomenda chegar mais cedo.", "question": "A relação agora está sustentada?", "options": ["sim", "não; toda recomendação é incoerente"], "correctIndex": 0}, {"question": "No terceiro parágrafo, o que foi distribuído nas escolas?", "text": ["A organização imprimiu as fichas de inscrição da corrida na segunda-feira.", "Na terça, chegaram as camisetas dos participantes, com o desenho do evento.", "Na quarta, elas foram distribuídas nas escolas do bairro."], "options": ["As camisetas, porque são o nome mais próximo.", "As fichas, porque aparecem primeiro no texto.", "O texto não permite decidir com segurança."], "correctIndex": 2}]},
+    {"id": "L06-A01", "type": "assessment-diagnosis", "items": [{"prompt": "Qual é o problema principal deste texto?", "text": ["O centro abriu uma turma extra porque a primeira atingiu o limite.", "A nova turma ocorrerá às quartas-feiras.", "O telhado do prédio foi pintado no ano passado.", "As inscrições para a nova turma abrem amanhã."], "paragraphs": ["O centro abriu uma turma extra porque a primeira atingiu o limite.", "A nova turma ocorrerá às quartas-feiras.", "O telhado do prédio foi pintado no ano passado.", "As inscrições para a nova turma abrem amanhã."], "options": ["há um salto de assunto no terceiro parágrafo", "faltam conectores no começo de todos os parágrafos", "o quarto parágrafo contradiz o primeiro"], "correctIndex": 0}, {"prompt": "Qual é o problema principal deste texto?", "text": ["A bibliotecária organizou um clube de leitura para adolescentes. A primeira reunião discutiu um livro de contos.", "No segundo encontro, uma escritora da cidade visitou o grupo e respondeu a perguntas sobre seu trabalho.", "No mês seguinte, ela escolheu um romance curto para a turma ler."], "options": ["o terceiro parágrafo muda de assunto e deveria ser retirado", "“ela” pode retomar a bibliotecária ou a escritora", "falta um conector de conclusão no terceiro parágrafo"], "correctIndex": 1}, {"prompt": "Qual é o problema principal deste trecho?", "text": "O prazo foi ampliado. Portanto, a equipe gostou do novo sistema.", "options": ["“Portanto” anuncia uma conclusão que as frases não sustentam", "a palavra equipe deveria ser repetida", "o trecho precisa de mais um conector"], "correctIndex": 0}], "instruction": "Leia cada trecho e escolha o problema principal."},
+    {"id": "L06-A02", "type": "assessment-repair", "items": [{"prompt": "Qual revisão usa a informação disponível?", "situation": "A nova sala fica em outro prédio, a quinze minutos da entrada.", "before": "A sala mudou. Por isso, chegue vinte minutos antes.", "options": ["A sala mudou para outro prédio, a quinze minutos da entrada. Por isso, chegue mais cedo.", "A sala mudou. Por isso, chegue vinte minutos antes."], "correctIndex": 0}, {"prompt": "Qual versão do terceiro parágrafo deixa isso claro?", "situation": "A escola informou que serão entregues na última semana os convites, e não os ingressos.", "text": ["A escola mandou fazer os convites da formatura em setembro.", "Em outubro, a gráfica entregou também os ingressos para a festa, numerados por família.", "Eles serão entregues aos alunos na última semana de aula."], "options": ["Eles serão entregues aos alunos na última semana de aula.", "Os convites serão entregues aos alunos na última semana de aula.", "Os ingressos serão entregues aos alunos na última semana de aula."], "correctIndex": 1}, {"question": "Se o fato que falta não foi fornecido, o revisor deve inventá-lo para deixar o texto coerente?", "options": ["não; deve reformular com o que sabe ou marcar a necessidade de informação", "sim"], "correctIndex": 0}]}
   ],
   "assessmentBehavior": {"noInventedFacts": true, "equivalentRepairsAccepted": true, "textVisibility": "sempre disponível", "ttsPolicy": "opcional", "timeLimit": false},
   "completionEvidence": {

@@ -6,6 +6,16 @@
 
 **9 lições + verificação integrada.**
 
+### Revisão R1.5 (método)
+
+Os IDs e a ordem dos arquivos foram preservados (a numeração abaixo, por arquivo, é a dos JSON; as seções seguintes mantêm o planejamento original). Mudanças:
+
+- Toda lição tem `studentObjective`. Termos são ensinados no primeiro uso, com exemplo, nome e explicação: coesão e coerência (L01), progressão temática (L02), referente, retomada, cadeia de referência e expressão nominal (L03), substituição e elipse (L04), conector e relações (L05), lacuna, salto e ambiguidade (L06), contradição e perspectiva (L07), transição (L08), revisão em passadas (L09).
+- Retomada a distância: os reparos de pronome ambíguo no nível da frase (L03-B02/A02, L04-B01/C01, L06-B01/C01/A01/A02) passaram a usar referente no primeiro parágrafo, concorrente no segundo e retomada no terceiro, com variação de gênero, número e tipo de referente (pessoas, objetos, grupos). A verificação ganhou um item novo do mesmo padrão (V01-Q04).
+- L05: quadro de conectores por relação (L05-B03: adição, oposição, causa, consequência, conclusão, tempo, exemplificação, com exemplos entre parágrafos) e checagem não obrigatória (L05-C02). O item "sequência não é causa" de L05-A02, que repetia N2-U01-L06 e N2-U04-L04, foi trocado por um caso de contraste falso ("No entanto" ligando causa e resultado esperado).
+- Produção própria: L09-P01 passou a ser uma escrita do aluno (três ou quatro parágrafos sobre uma mudança vivida), revisada em passadas com autochecagem; é prática registrada, não obrigatória, sem validação automática.
+- Textos, parágrafos numerados e informações que as atividades exigem passaram a aparecer em campos exibidos (`text`, `prompt`, `situation`). L06-A01, L08-A02 e L09-A01 deixaram de falhar na normalização; a verificação mostra o texto-base na primeira questão.
+
 Progressão:
 
 ```text

@@ -2,6 +2,7 @@
   "schemaVersion": 1,
   "id": "N2-U05-L09",
   "title": "Revisão global de coesão e coerência",
+  "studentObjective": "Revisar um texto de vários parágrafos em etapas, começando pelo sentido do conjunto, e consertar só o que realmente atrapalha.",
   "status": "conteudo-pronto-para-implementacao",
   "objective": "Revisar um texto de vários parágrafos em passes de finalidade, progressão, referência, conexão, consistência e clareza, corrigindo problemas reais sem transformar revisão em substituição indiscriminada de palavras ou conectores.",
   "competencies": [
@@ -36,82 +37,12 @@
     "decisionRationale": "revisão global é uma atividade textual e deve preservar histórico de versões."
   },
   "sequence": [
-    {
-      "id": "L09-B01",
-      "type": "revision-demonstration",
-      "original": [
-        "O centro comunitário abriu inscrições para um curso de informática. O curso terá duas turmas de vinte vagas.",
-        "A primeira turma será às quartas à noite. A praça ao lado do centro recebeu bancos novos. Ela começará em 10 de setembro.",
-        "A segunda turma ocorrerá aos sábados pela manhã. Por isso, os participantes das duas turmas receberão o mesmo material.",
-        "As inscrições terminam quando as vagas forem preenchidas. O centro divulgará a lista de participantes no dia seguinte ao encerramento."
-      ],
-      "passes": [
-        {"focus": "finalidade/foco", "action": "retirar a frase sobre os bancos da praça por não contribuir para o texto do curso"},
-        {"focus": "referência", "action": "substituir 'Ela começará' por 'A turma da noite começará' ou outra retomada clara, pois 'Ela' ficou próxima de praça/frase intrusa"},
-        {"focus": "conectores", "action": "retirar 'Por isso' antes da informação sobre material, pois o horário de sábado não causa o uso do mesmo material; usar adição ou nenhuma marca se a relação for apenas informativa"},
-        {"focus": "consistência", "action": "manter as informações de duas turmas porque são compatíveis e complementares"}
-      ],
-      "revised": [
-        "O centro comunitário abriu inscrições para um curso de informática. O curso terá duas turmas de vinte vagas.",
-        "A primeira turma será às quartas à noite e começará em 10 de setembro.",
-        "A segunda turma ocorrerá aos sábados pela manhã. Os participantes das duas turmas receberão o mesmo material.",
-        "As inscrições terminam quando as vagas forem preenchidas. O centro divulgará a lista de participantes no dia seguinte ao encerramento."
-      ]
-    },
-    {
-      "id": "L09-B02",
-      "type": "revision-order",
-      "passes": ["finalidade e sentido global", "função/progressão dos parágrafos", "referências e omissões", "conectores/relações", "consistência e ambiguidades", "convenções locais já ensinadas quando necessário"],
-      "reason": "trocar um pronome ou conector não resolve um texto cujo problema principal é informação intrusa ou contradição global"
-    },
-    {
-      "id": "L09-C01",
-      "type": "guided-revision",
-      "original": [
-        "A oficina recebeu trinta inscrições no primeiro dia. Havia vinte vagas.",
-        "O prédio possui três janelas na fachada. Por isso, a organização criou uma lista de espera.",
-        "Os inscritos receberão confirmação por e-mail. Ela será enviada até sexta-feira."
-      ],
-      "tasks": [
-        {"focus": "foco", "expected": "retirar a frase sobre as janelas"},
-        {"focus": "relação", "expected": "manter/criar relação entre excesso de inscrições e lista de espera; após retirada da frase intrusa, 'Por isso' pode retomar a situação de vagas insuficientes"},
-        {"focus": "referência", "expected": "'Ela' pode retomar confirmação por e-mail de modo claro; não é obrigatório alterar"}
-      ]
-    },
-    {
-      "id": "L09-A01",
-      "type": "assessment-integrated-edit",
-      "original": [
-        "A biblioteca testará um novo sistema de reserva de salas por seis semanas.",
-        "Na primeira etapa, três salas poderão ser reservadas pelo aplicativo. A cafeteria lançou um cardápio novo. Os usuários também poderão cancelar a reserva até duas horas antes do horário marcado.",
-        "No fim da terceira semana, a equipe analisará quantas reservas foram usadas e quantas foram canceladas. No entanto, com esses dados, poderá ajustar as regras da segunda etapa.",
-        "A direção considera que o teste pode reduzir conflitos de horário. Alguns usuários disseram que preferem reservar pessoalmente. Essa diferença de preferência também será registrada na avaliação."
-      ],
-      "requiredEdits": [
-        {"target": "A cafeteria lançou um cardápio novo.", "action": "remover", "reason": "salto de foco sem função no texto"},
-        {"target": "No entanto, com esses dados, poderá ajustar...", "action": "trocar/retirar 'No entanto'", "acceptedExamples": ["Com esses dados, a equipe poderá ajustar as regras da segunda etapa.", "Por isso, com base nesses dados, a equipe poderá ajustar as regras da segunda etapa."], "reason": "a relação é continuidade/uso dos dados, não contraste"},
-        {"target": "poderá ajustar", "action": "explicitar 'a equipe' se necessário após a revisão", "reason": "preservar referente claro"},
-        {"target": "direção considera... / usuários disseram...", "action": "manter", "reason": "perspectivas diferentes são atribuídas a fontes distintas e podem coexistir"}
-      ],
-      "acceptEquivalent": true
-    },
-    {
-      "id": "L09-A02",
-      "type": "assessment-reasons",
-      "items": [
-        {"change": "retirar a frase sobre a cafeteria", "options": ["ela interrompe a progressão sobre reserva de salas", "todo texto deve ter menos frases"], "correctIndex": 0},
-        {"change": "substituir 'No entanto'", "options": ["o conector indicava contraste que o contexto não sustentava", "é obrigatório variar conectores"], "correctIndex": 0},
-        {"change": "manter as avaliações diferentes de direção e usuários", "options": ["são perspectivas atribuídas a fontes diferentes, não contradição automática", "coerência exige que todas as pessoas concordem"], "correctIndex": 0},
-        {"change": "manter repetição explícita se ela resolver referente", "options": ["clareza pode justificar repetição", "repetição é sempre erro"], "correctIndex": 0}
-      ]
-    },
-    {
-      "id": "L09-P01",
-      "type": "practice-version-history",
-      "instruction": "Revise um texto novo de quatro ou cinco parágrafos em passes. Registre ao menos uma mudança realizada e uma decisão de manter um trecho que já funcionava.",
-      "recordBeforeAfter": true,
-      "automaticValidation": "somente alvos controlados; justificativas e reescritas livres ficam registradas sem selo semântico automático"
-    }
+    {"id": "L09-B01", "type": "revision-demonstration", "title": "Uma revisão em quatro passadas", "text": "Revisar um texto inteiro de uma vez costuma deixar problemas para trás. Funciona melhor fazer passadas, isto é, leituras com um foco de cada vez. Veja o texto original, o que cada passada encontrou e a versão revisada.", "steps": ["Foco do texto: a frase sobre os bancos da praça não tem relação com o curso e foi retirada.", "Retomadas: Ela começará ficou perto da praça e podia ser lida como a praça; a revisão juntou a informação à frase da turma da noite.", "Conectores: Por isso, antes da frase sobre o material, indicava uma consequência que não existe; o conector foi retirado.", "Consistência: as informações sobre as duas turmas combinam entre si e foram mantidas."], "original": ["O centro comunitário abriu inscrições para um curso de informática. O curso terá duas turmas de vinte vagas.", "A primeira turma será às quartas à noite. A praça ao lado do centro recebeu bancos novos. Ela começará em 10 de setembro.", "A segunda turma ocorrerá aos sábados pela manhã. Por isso, os participantes das duas turmas receberão o mesmo material.", "As inscrições terminam quando as vagas forem preenchidas. O centro divulgará a lista de participantes no dia seguinte ao encerramento."], "passes": [{"focus": "finalidade/foco", "action": "retirar a frase sobre os bancos da praça por não contribuir para o texto do curso"}, {"focus": "referência", "action": "substituir 'Ela começará' por 'A turma da noite começará' ou outra retomada clara, pois 'Ela' ficou próxima de praça/frase intrusa"}, {"focus": "conectores", "action": "retirar 'Por isso' antes da informação sobre material, pois o horário de sábado não causa o uso do mesmo material; usar adição ou nenhuma marca se a relação for apenas informativa"}, {"focus": "consistência", "action": "manter as informações de duas turmas porque são compatíveis e complementares"}], "revised": ["O centro comunitário abriu inscrições para um curso de informática. O curso terá duas turmas de vinte vagas.", "A primeira turma será às quartas à noite e começará em 10 de setembro.", "A segunda turma ocorrerá aos sábados pela manhã. Os participantes das duas turmas receberão o mesmo material.", "As inscrições terminam quando as vagas forem preenchidas. O centro divulgará a lista de participantes no dia seguinte ao encerramento."]},
+    {"id": "L09-B02", "type": "revision-order", "title": "A ordem das passadas", "steps": ["1. Finalidade e sentido do conjunto", "2. Função de cada parágrafo e avanço do assunto", "3. Retomadas e palavras subentendidas", "4. Conectores e relações entre as partes", "5. Contradições e frases ambíguas", "6. Pontuação, ortografia e outras convenções já estudadas"], "note": "Trocar um pronome ou um conector não resolve um texto cujo problema principal é uma informação fora do assunto ou uma contradição. Por isso, o sentido do conjunto vem primeiro.", "passes": ["finalidade e sentido global", "função/progressão dos parágrafos", "referências e omissões", "conectores/relações", "consistência e ambiguidades", "convenções locais já ensinadas quando necessário"], "rationale": "trocar um pronome ou conector não resolve um texto cujo problema principal é informação intrusa ou contradição global"},
+    {"id": "L09-C01", "type": "guided-revision", "title": "Revise com as passadas", "text": "Leia o texto abaixo e faça as passadas mentalmente, uma de cada vez.", "reviewPrompts": ["Foco: alguma frase foge do assunto?", "Relações: depois de retirar o que foge do assunto, os conectores mostram a relação certa?", "Retomadas: cada pronome tem um referente claro? Se já está claro, não é preciso mudar."], "original": ["A oficina recebeu trinta inscrições no primeiro dia. Havia vinte vagas.", "O prédio possui três janelas na fachada. Por isso, a organização criou uma lista de espera.", "Os inscritos receberão confirmação por e-mail. Ela será enviada até sexta-feira."], "tasks": [{"focus": "foco", "expected": "retirar a frase sobre as janelas"}, {"focus": "relação", "expected": "manter/criar relação entre excesso de inscrições e lista de espera; após retirada da frase intrusa, 'Por isso' pode retomar a situação de vagas insuficientes"}, {"focus": "referência", "expected": "'Ela' pode retomar confirmação por e-mail de modo claro; não é obrigatório alterar"}]},
+    {"id": "L09-A01", "type": "assessment-integrated-edit", "prompt": "Revise o texto abaixo em passadas. Escreva a versão revisada e, em seguida, anote as mudanças que fez e um trecho que decidiu manter, com o motivo.", "original": ["A biblioteca testará um novo sistema de reserva de salas por seis semanas.", "Na primeira etapa, três salas poderão ser reservadas pelo aplicativo. A cafeteria lançou um cardápio novo. Os usuários também poderão cancelar a reserva até duas horas antes do horário marcado.", "No fim da terceira semana, a equipe analisará quantas reservas foram usadas e quantas foram canceladas. No entanto, com esses dados, poderá ajustar as regras da segunda etapa.", "A direção considera que o teste pode reduzir conflitos de horário. Alguns usuários disseram que preferem reservar pessoalmente. Essa diferença de preferência também será registrada na avaliação."], "requiredEdits": [{"target": "A cafeteria lançou um cardápio novo.", "action": "remover", "reason": "salto de foco sem função no texto"}, {"target": "No entanto, com esses dados, poderá ajustar...", "action": "trocar/retirar 'No entanto'", "acceptedExamples": ["Com esses dados, a equipe poderá ajustar as regras da segunda etapa.", "Por isso, com base nesses dados, a equipe poderá ajustar as regras da segunda etapa."], "reason": "a relação é continuidade/uso dos dados, não contraste"}, {"target": "poderá ajustar", "action": "explicitar 'a equipe' se necessário após a revisão", "reason": "preservar referente claro"}, {"target": "direção considera... / usuários disseram...", "action": "manter", "reason": "perspectivas diferentes são atribuídas a fontes distintas e podem coexistir"}], "acceptEquivalent": true, "recordResponse": true},
+    {"id": "L09-A02", "type": "assessment-reasons", "items": [{"prompt": "Mudança: retirar a frase sobre a cafeteria. Qual é o motivo?", "change": "retirar a frase sobre a cafeteria", "options": ["ela interrompe a progressão sobre reserva de salas", "todo texto deve ter menos frases"], "correctIndex": 0}, {"prompt": "Mudança: substituir 'No entanto'. Qual é o motivo?", "change": "substituir 'No entanto'", "options": ["o conector indicava contraste que o contexto não sustentava", "é obrigatório variar conectores"], "correctIndex": 0}, {"prompt": "Mudança: manter as avaliações diferentes de direção e usuários. Qual é o motivo?", "change": "manter as avaliações diferentes de direção e usuários", "options": ["são perspectivas atribuídas a fontes diferentes, não contradição automática", "coerência exige que todas as pessoas concordem"], "correctIndex": 0}, {"prompt": "Mudança: manter repetição explícita se ela resolver referente. Qual é o motivo?", "change": "manter repetição explícita se ela resolver referente", "options": ["clareza pode justificar repetição", "repetição é sempre erro"], "correctIndex": 0}], "instruction": "Para cada mudança feita no texto da atividade anterior, escolha o motivo."},
+    {"id": "L09-P01", "type": "practice-version-history", "title": "Agora escreva e revise um texto seu", "prompt": "Escreva um texto seu, de três ou quatro parágrafos, sobre uma mudança que aconteceu no seu bairro, na sua escola ou no seu trabalho: o que mudou, por que mudou e o que aconteceu depois. Em seguida, revise o texto em passadas e registre pelo menos uma mudança que você fez e um trecho que decidiu manter, com o motivo.", "responseMode": "free-text", "recordResponse": true, "automaticValidation": false, "selfReview": ["Todos os parágrafos tratam da mesma mudança, e cada um acrescenta algo novo?", "Cada retomada (ele, ela, esse, a mudança) deixa claro de quem ou do que se fala, mesmo depois de outro nome aparecer no caminho?", "Os conectores mostram a relação certa (causa, consequência, oposição, tempo)?", "Alguma informação se contradiz ou foge do assunto?"], "recordBeforeAfter": true, "notAutomaticallyJudged": ["coerência global do texto livre", "qualidade da revisão"]}
   ],
   "assessmentBehavior": {"preserveCorrectText": true, "acceptEquivalentRevisions": true, "noInventedFacts": true, "openRevisionAutoValidated": false, "ttsPolicy": "opcional", "timeLimit": false},
   "completionEvidence": {

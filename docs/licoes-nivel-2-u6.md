@@ -4,7 +4,11 @@
 
 ## Arquitetura
 
-**10 lições + verificação integrada.**
+**11 lições + verificação integrada.**
+
+Ordem de estudo: L1 → L2 → L3 → L11 → L4 → L5 → L6 → L7 → L8 → L9 → L10. A Lição 11 foi acrescentada no R1.5 com ID novo (`N2-U06-L11`) e fica, pelo nome de arquivo (`003a-discurso-direto-indireto.json`), logo depois da narrativa.
+
+Toda lição tem `studentObjective`. Termos novos (finalidade, leitor, função do parágrafo, texto explicativo, resíduo eletrônico, texto informativo, procedimento, condição, resumo, paráfrase, fonte, registro, revisão em camadas, versionamento, discurso direto e indireto, verbo de dizer) são apresentados com exemplo, nome e explicação no ponto do primeiro uso.
 
 A unidade exige produção própria. Modelos, reorganização e questões fechadas são apoio, não substitutos da escrita autônoma.
 
@@ -14,6 +18,7 @@ Progressão:
 planejamento global
 → função dos parágrafos
 → narrativa
+→ discurso direto e indireto
 → explicação
 → informação
 → instrução
@@ -45,7 +50,17 @@ planejamento global
 - **Dependências:** L1–L2 + N1-U05-L04 + N2-U05.
 - **Prática:** seleção de eventos, elipse de detalhes irrelevantes, transição temporal, revisão de referência.
 - **Evidência:** narrativa própria de vários parágrafos com continuidade e revisão registrada.
+- **Modelo (R1.5):** relato completo de quatro parágrafos ("O violino no trem") antes da produção, com análise de função dos parágrafos, marcas de tempo e retomada do nome depois de um concorrente. O cenário do ônibus atrasado foi substituído para não repetir N1-U05-L04.
 - **Limite:** teoria narrativa avançada e extensão mínima fixa ficam fora.
+
+## Lição 11 — Contar o que alguém disse: discurso direto e indireto
+
+- **ID:** `N2-U06-L11` (arquivo `003a-discurso-direto-indireto.json`; estudada depois da L3).
+- **Objetivo:** reconhecer e produzir discurso direto (dois-pontos, travessão ou aspas) e indireto (verbo de dizer + que/se), com ajustes de pessoa (eu → ele), forma verbal (vou → ia) e tempo e lugar (amanhã → no dia seguinte; aqui → ali), e avaliar o efeito de cada forma em narrativa e notícia.
+- **Dependências:** L3 + N1-U04-L08 (dois-pontos, fala e citação) + N1-U03-L04 (pessoa do verbo).
+- **Prática:** quatro blocos de explicação, checagem não obrigatória, escuta antes da leitura (TTS) e transformação de falas.
+- **Evidência:** L11-A01 (cinco transformações direto → indireto, determinística), L11-A02 (forma, marcação e efeito, determinística) e L11-A03 (produção própria: transformar um diálogo em parágrafo narrado, mantendo uma fala direta; autochecagem, sem validação automática).
+- **Limite:** sem nomear tempos e modos verbais, sem discurso indireto livre e sem exigir transformação de ordens e pedidos.
 
 ## Lição 4 — Texto explicativo: explicar e exemplificar
 
@@ -53,6 +68,7 @@ planejamento global
 - **Dependências:** L1–L2 + N2-U01/U05.
 - **Prática:** explicação insuficiente/excessiva, exemplo pertinente, sequência `ideia → explicação → exemplo` quando útil.
 - **Evidência:** produzir explicação própria em mais de um parágrafo com exemplo realmente ligado ao ponto explicado.
+- **Modelo (R1.5):** texto explicativo completo de quatro parágrafos ("Por que pilhas não vão para o lixo comum") com ideia, explicação, exemplo e fecho prático, antes da produção.
 - **Limite:** texto acadêmico e exposição conceitual densa ficam depois.
 
 ## Lição 5 — Texto informativo com seleção e hierarquia de informações
@@ -93,6 +109,7 @@ planejamento global
 - **Dependências:** L1–L8 + N2-U02–U05.
 - **Prática:** passes separados, histórico, motivos das mudanças e decisão consciente de manter trechos corretos.
 - **Evidência:** revisão própria com problemas globais e locais tratados na ordem apropriada.
+- **Textos (R1.5):** L09-B01 mostra rascunho completo, as três camadas e a versão revisada; L09-A01 traz um texto de quatro parágrafos com informação fora do assunto, retomada ambígua a distância, concordância inadequada e um parágrafo correto.
 - **Limite:** ausência absoluta de erros não é critério; checklist não substitui julgamento de sentido.
 
 ## Lição 10 — Reescrita, versionamento e justificativa de mudanças
@@ -101,6 +118,7 @@ planejamento global
 - **Dependências:** L9.
 - **Prática:** diff antes/depois, mudança relevante x cosmética, justificar inclusão/remoção/reorganização/manutenção.
 - **Evidência:** texto próprio com pelo menos duas versões e reflexão sobre mudanças reais.
+- **Texto (R1.5):** L10-A01 traz um texto de três parágrafos com repetição que não avança, ordem pouco funcional e um parágrafo correto.
 - **Limite:** quantidade de alterações não mede qualidade; a versão nova pode manter grande parte da anterior.
 
 ## Verificação integrada — arquitetura
@@ -115,6 +133,7 @@ planejamento
 + uma tarefa de resumo/paráfrase com fonte
 + revisão em camadas
 + reescrita com histórico
++ discurso direto e indireto (V01-D01, itens novos e determinísticos)
 ```
 
 Uma das produções deve ser informativa/explicativa ou instrucional e outra pode ser narrativa. Tarefas fechadas não compensam ausência de produção. A aplicação pode validar etapas e alvos objetivos, mas qualidade global do texto livre requer avaliador confiável.

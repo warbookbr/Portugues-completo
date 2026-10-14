@@ -2,6 +2,7 @@
   "schemaVersion": 1,
   "id": "N2-U05-L01",
   "title": "Coesão e coerência: dimensões diferentes e complementares",
+  "studentObjective": "Perceber que um texto pode ter muitas palavras de ligação e ainda assim não fazer sentido, e que pode fazer sentido com poucas delas.",
   "status": "conteudo-pronto-para-implementacao",
   "objective": "Distinguir coesão e coerência em textos curtos de vários parágrafos, percebendo que marcas de ligação não garantem sentido global e que um texto pode manter sentido mesmo com poucas marcas explícitas.",
   "competencies": [
@@ -32,37 +33,8 @@
     "decisionRationale": "o alvo é textual e pode ser demonstrado por contraste entre versões."
   },
   "sequence": [
-    {
-      "id": "L01-B01",
-      "type": "contrast",
-      "texts": [
-        {
-          "label": "muitas ligações, sentido global problemático",
-          "paragraphs": [
-            "A biblioteca ampliou o horário de atendimento. Por isso, agora fecha duas horas mais tarde.",
-            "Além disso, o oceano Pacífico é muito extenso. Portanto, os usuários podem devolver livros até as 20h."
-          ],
-          "analysis": "há conectores e retomadas, mas a informação sobre o oceano rompe o assunto e não sustenta a conclusão"
-        },
-        {
-          "label": "sentido global claro com poucas marcas explícitas",
-          "paragraphs": [
-            "A biblioteca ampliou o horário de atendimento. Agora fecha às 20h.",
-            "As devoluções podem ser feitas até esse horário. O serviço de empréstimo continua funcionando normalmente."
-          ],
-          "analysis": "as informações permanecem no mesmo campo temático e se relacionam com clareza"
-        }
-      ]
-    },
-    {
-      "id": "L01-B02",
-      "type": "concept-map",
-      "dimensions": [
-        {"name": "coesão", "question": "como partes do texto se ligam?", "examples": ["pronomes", "repetição funcional", "expressões nominais", "conectores", "elipse recuperável"]},
-        {"name": "coerência", "question": "o conjunto constrói um sentido compatível com a situação e com o que já foi dito?", "examples": ["manter foco", "não criar contradição indevida", "não saltar etapa essencial", "preservar relações plausíveis"]}
-      ],
-      "guardRail": "as duas dimensões interagem, mas não são sinônimas"
-    },
+    {"id": "L01-B01", "type": "contrast", "title": "Bem ligado não é o mesmo que fazer sentido", "text": "Leia dois textos curtos sobre o mesmo assunto.\n\nTexto 1\n\nA biblioteca ampliou o horário de atendimento. Por isso, agora fecha duas horas mais tarde.\n\nAlém disso, o oceano Pacífico é muito extenso. Portanto, os usuários podem devolver livros até as 20h.\n\nTexto 2\n\nA biblioteca ampliou o horário de atendimento. Agora fecha às 20h.\n\nAs devoluções podem ser feitas até esse horário. O serviço de empréstimo continua funcionando normalmente.", "explanation": "O texto 1 tem muitas palavras que ligam as frases: por isso, além disso, portanto. Mesmo assim, o oceano Pacífico não tem relação com a biblioteca, e o tamanho do oceano não explica o novo prazo de devolução. O texto 2 quase não usa essas palavras, mas tudo trata do mesmo assunto e uma informação puxa a outra.\n\nAs ligações visíveis entre as partes de um texto se chamam coesão. Elas aparecem em pronomes (ela, eles), em expressões que retomam algo (esse horário), na repetição de um nome e em conectores (por isso, além disso). O sentido do conjunto se chama coerência: as informações tratam do mesmo assunto, combinam entre si e não se contradizem.\n\nUm texto precisa das duas, mas uma não garante a outra. O texto 1 tem coesão e falha na coerência. O texto 2 tem poucas marcas de ligação e é coerente.", "texts": [{"label": "muitas ligações, sentido global problemático", "paragraphs": ["A biblioteca ampliou o horário de atendimento. Por isso, agora fecha duas horas mais tarde.", "Além disso, o oceano Pacífico é muito extenso. Portanto, os usuários podem devolver livros até as 20h."], "analysis": "há conectores e retomadas, mas a informação sobre o oceano rompe o assunto e não sustenta a conclusão"}, {"label": "sentido global claro com poucas marcas explícitas", "paragraphs": ["A biblioteca ampliou o horário de atendimento. Agora fecha às 20h.", "As devoluções podem ser feitas até esse horário. O serviço de empréstimo continua funcionando normalmente."], "analysis": "as informações permanecem no mesmo campo temático e se relacionam com clareza"}]},
+    {"id": "L01-B02", "type": "concept-map", "title": "Para conferir", "examples": ["Coesão: como as partes se ligam? Por pronomes, por expressões que retomam algo já dito, pela repetição de um nome, por conectores e por palavras que ficam subentendidas sem prejudicar a leitura.", "Coerência: o conjunto faz sentido? O texto mantém o assunto, não se contradiz, não pula uma informação necessária e liga fatos que realmente se relacionam."], "note": "As duas trabalham juntas, mas não são a mesma coisa. Contar conectores não mostra se um texto é coerente.", "dimensions": [{"name": "coesão", "question": "como partes do texto se ligam?", "examples": ["pronomes", "repetição funcional", "expressões nominais", "conectores", "elipse recuperável"]}, {"name": "coerência", "question": "o conjunto constrói um sentido compatível com a situação e com o que já foi dito?", "examples": ["manter foco", "não criar contradição indevida", "não saltar etapa essencial", "preservar relações plausíveis"]}], "guardRail": "as duas dimensões interagem, mas não são sinônimas"},
     {
       "id": "L01-C01",
       "type": "quick-check",
@@ -71,20 +43,13 @@
         {"text": "O curso foi adiado. Portanto, a parede da sala é azul. Além disso, a nova data será divulgada amanhã.", "question": "Qual é o principal problema?", "options": ["há uma informação sem relação construída com o assunto", "faltam mais conectores"], "correctIndex": 0}
       ]
     },
-    {
-      "id": "L01-A01",
-      "type": "assessment-diagnosis",
-      "items": [
-        {"paragraphs": ["O posto ampliou o atendimento aos sábados.", "A mudança busca atender pessoas que trabalham durante a semana."], "options": ["há coerência e a relação pode ser compreendida mesmo sem conector obrigatório", "o texto é incoerente porque não usa 'por isso'"], "correctIndex": 0},
-        {"paragraphs": ["A equipe criou uma nova fila digital. Além disso, o prédio foi construído em 1998. Portanto, a fila reduz a espera na recepção."], "options": ["o detalhe sobre o ano do prédio quebra a progressão do argumento apresentado", "o texto fica melhor porque tem mais informações"], "correctIndex": 0}
-      ]
-    },
+    {"id": "L01-A01", "type": "assessment-diagnosis", "items": [{"prompt": "Qual avaliação combina com este texto?", "text": ["O posto ampliou o atendimento aos sábados.", "A mudança busca atender pessoas que trabalham durante a semana."], "paragraphs": ["O posto ampliou o atendimento aos sábados.", "A mudança busca atender pessoas que trabalham durante a semana."], "options": ["há coerência e a relação pode ser compreendida mesmo sem conector obrigatório", "o texto é incoerente porque não usa 'por isso'"], "correctIndex": 0}, {"prompt": "Qual avaliação combina com este texto?", "text": ["A equipe criou uma nova fila digital. Além disso, o prédio foi construído em 1998. Portanto, a fila reduz a espera na recepção."], "paragraphs": ["A equipe criou uma nova fila digital. Além disso, o prédio foi construído em 1998. Portanto, a fila reduz a espera na recepção."], "options": ["o ano do prédio foge do assunto e não ajuda a explicar a conclusão sobre a fila", "o texto fica melhor porque tem mais informações"], "correctIndex": 0}], "instruction": "Leia cada texto e escolha a avaliação adequada."},
     {
       "id": "L01-A02",
       "type": "assessment-principle",
       "question": "Qual afirmação é correta?",
       "options": [
-        "um texto pode ter conectores corretos localmente e ainda assim apresentar problema de coerência global",
+        "um texto pode ter conectores corretos localmente e ainda assim apresentar problema de coerência no conjunto do texto",
         "quanto mais conectores houver, mais coerente o texto será",
         "coesão e coerência são exatamente a mesma coisa"
       ],

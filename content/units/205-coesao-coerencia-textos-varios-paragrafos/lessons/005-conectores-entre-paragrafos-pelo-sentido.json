@@ -2,6 +2,7 @@
   "schemaVersion": 1,
   "id": "N2-U05-L05",
   "title": "Conectores entre frases e parágrafos: usar pelo sentido",
+  "studentObjective": "Escolher a palavra de ligação entre parágrafos pelo sentido que você quer mostrar, como soma, oposição, causa ou conclusão, e perceber quando ela não é necessária.",
   "status": "conteudo-pronto-para-implementacao",
   "objective": "Usar conectores entre frases e parágrafos para explicitar relações de adição, sequência, causa, resultado e contraste quando isso melhora a leitura, evitando repetição mecânica e acúmulo de marcadores.",
   "competencies": [
@@ -33,22 +34,14 @@
     "decisionRationale": "a escolha do conector depende do sentido textual e pode ser avaliada diretamente."
   },
   "sequence": [
-    {
-      "id": "L05-B01",
-      "type": "model-analysis",
-      "pairs": [
-        {"paragraph1": "A procura pelo curso superou o número de vagas.", "paragraph2": "Por isso, a organização abriu uma segunda turma.", "relation": "resultado/consequência"},
-        {"paragraph1": "O aplicativo permite reservar horários pela internet.", "paragraph2": "Também é possível fazer a reserva presencialmente.", "relation": "adição"},
-        {"paragraph1": "O novo espaço tem menos mesas.", "paragraph2": "Mesmo assim, comporta todas as atividades previstas.", "relation": "contraste"},
-        {"paragraph1": "A equipe conferiu os documentos pela manhã.", "paragraph2": "À tarde, iniciou a análise dos pedidos.", "relation": "sequência temporal sem necessidade de conector causal"}
-      ]
-    },
+    {"id": "L05-B03", "type": "explanation", "title": "Quadro de conectores por relação", "text": "Conectores são palavras e expressões que mostram a relação entre partes do texto, como por isso, no entanto e além disso. Entre parágrafos, o conector costuma aparecer no começo do parágrafo novo e mostra como ele se liga ao anterior.\n\nCada conector tem um sentido. Escolha o grupo pela relação que você quer mostrar. Nos exemplos, a primeira frase fecha um parágrafo e a segunda abre o parágrafo seguinte.", "examples": ["Adição (soma mais uma informação): além disso, também, ainda, outro ponto é que. Exemplo: “A oficina terá encontros presenciais.” / “Além disso, haverá materiais de estudo na internet.”", "Oposição (mostra contraste ou algo inesperado): no entanto, porém, por outro lado, mesmo assim. Exemplo: “O novo espaço tem menos mesas.” / “Mesmo assim, comporta todas as atividades previstas.”", "Causa (diz o motivo do que veio antes): isso aconteceu porque, o motivo é que, já que. Exemplo: “O jogo foi adiado.” / “Isso aconteceu porque o gramado ficou alagado com a chuva da madrugada.”", "Consequência (diz o resultado do que veio antes): por isso, com isso, assim, como resultado. Exemplo: “A procura pelo curso superou o número de vagas.” / “Por isso, a organização abriu uma segunda turma.”", "Conclusão (fecha o que foi apresentado): portanto, em resumo, enfim, dessa forma. Exemplo: “Os parágrafos anteriores mostraram mais público, mais vendas e novos expositores.” / “Portanto, a feira deste ano foi a melhor desde a sua criação.”", "Tempo (situa no tempo): depois, em seguida, mais tarde, enquanto isso, no dia seguinte. Exemplo: “A equipe fechou as inscrições na sexta-feira.” / “No dia seguinte, começou a separar os participantes por turma.”", "Exemplificação (dá um caso concreto): por exemplo, é o caso de, um exemplo disso é. Exemplo: “Muitos objetos podem ser consertados em casa.” / “Por exemplo, uma cadeira com o pé solto pode voltar a ser usada com cola de madeira.”"], "note": "Causa e consequência olham para lados opostos: a causa explica por que algo aconteceu; a consequência mostra o que aconteceu depois e por causa disso. Nem toda passagem precisa de conector: quando a relação já está clara pela ordem e pelo assunto, o parágrafo pode começar direto."},
+    {"id": "L05-B01", "type": "model-analysis", "title": "Relações entre parágrafos", "text": "Veja quatro passagens de um parágrafo para o seguinte. Nas três primeiras, um conector mostra a relação. Na última, as marcas de tempo (pela manhã, à tarde) já organizam a passagem, e nenhum conector é necessário.", "examples": ["A procura pelo curso superou o número de vagas. / Por isso, a organização abriu uma segunda turma. (consequência)", "O aplicativo permite reservar horários pela internet. / Também é possível fazer a reserva presencialmente. (adição)", "O novo espaço tem menos mesas. / Mesmo assim, comporta todas as atividades previstas. (oposição)", "A equipe conferiu os documentos pela manhã. / À tarde, iniciou a análise dos pedidos. (tempo, sem conector)"], "connectedPairs": [{"paragraph1": "A procura pelo curso superou o número de vagas.", "paragraph2": "Por isso, a organização abriu uma segunda turma.", "relation": "resultado/consequência"}, {"paragraph1": "O aplicativo permite reservar horários pela internet.", "paragraph2": "Também é possível fazer a reserva presencialmente.", "relation": "adição"}, {"paragraph1": "O novo espaço tem menos mesas.", "paragraph2": "Mesmo assim, comporta todas as atividades previstas.", "relation": "contraste"}, {"paragraph1": "A equipe conferiu os documentos pela manhã.", "paragraph2": "À tarde, iniciou a análise dos pedidos.", "relation": "sequência temporal sem necessidade de conector causal"}]},
     {
       "id": "L05-B02",
       "type": "redundancy-contrast",
       "versions": [
         {"text": "A chuva aumentou durante a tarde. Por isso, o jogo foi interrompido.", "judgment": "relação explicitada de forma suficiente"},
-        {"text": "A chuva aumentou durante a tarde. Por isso, portanto, consequentemente, o jogo foi interrompido.", "judgment": "acúmulo redundante; mais conectores não melhora a relação"},
+        {"text": "A chuva aumentou durante a tarde. Por isso, portanto, consequentemente, o jogo foi interrompido.", "judgment": "três conectores com o mesmo sentido; mais conectores não melhoram a relação"},
         {"text": "A chuva aumentou durante a tarde. O jogo foi interrompido.", "judgment": "pode permitir leitura causal pelo contexto; a escolha de explicitar depende da clareza desejada"}
       ]
     },
@@ -61,24 +54,9 @@
         {"question": "Todo parágrafo novo precisa começar com um conector?", "options": ["não", "sim"], "correctIndex": 0}
       ]
     },
-    {
-      "id": "L05-A01",
-      "type": "assessment-relation",
-      "items": [
-        {"paragraph1": "As inscrições encerraram antes do previsto porque todas as vagas foram preenchidas.", "paragraph2Stem": "____, a equipe criou uma lista de espera.", "options": ["Por isso", "Em seguida apenas como tempo", "No entanto"], "correctIndex": 0},
-        {"paragraph1": "O relatório mostra queda no consumo de papel.", "paragraph2Stem": "____, o uso de impressoras coloridas aumentou.", "context": "o texto destaca tendências diferentes", "options": ["Em contraste", "Por isso", "Além disso obrigatoriamente"], "correctIndex": 0},
-        {"paragraph1": "A oficina terá encontros presenciais.", "paragraph2Stem": "____ haverá materiais de estudo na plataforma.", "options": ["Além disso,", "Por isso,", "Apesar disso, necessariamente"], "correctIndex": 0}
-      ]
-    },
-    {
-      "id": "L05-A02",
-      "type": "assessment-revision",
-      "items": [
-        {"before": "O serviço foi suspenso por falta de energia. Além disso, por isso, o prazo foi ampliado.", "options": ["O serviço foi suspenso por falta de energia. Por isso, o prazo foi ampliado.", "manter os dois conectores porque quantidade melhora coesão"], "correctIndex": 0},
-        {"before": "A equipe realizou o teste. Depois, publicou os resultados.", "question": "'Depois' prova que o teste causou a publicação?", "options": ["não; marca sequência", "sim"], "correctIndex": 0},
-        {"question": "Uma transição clara sem conector explícito é automaticamente defeituosa?", "options": ["não", "sim"], "correctIndex": 0}
-      ]
-    }
+    {"id": "L05-C02", "type": "quick-check-set", "instruction": "Use o quadro de conectores. Em cada caso, a primeira frase fecha um parágrafo e a segunda abre o seguinte. Escolha o conector que mostra a relação.", "items": [{"question": "“Muitos objetos do dia a dia podem ser consertados em casa.” / “____, um ventilador que parou de girar às vezes só precisa de limpeza no eixo.”", "options": ["Por exemplo", "No entanto", "Em resumo"], "correctIndex": 0}, {"question": "“O jogo da final foi adiado para domingo.” / “____ o gramado ficou alagado com a chuva da madrugada.”", "options": ["Como resultado,", "Isso aconteceu porque", "Além disso,"], "correctIndex": 1}, {"question": "Os três parágrafos anteriores mostraram que a feira teve mais público, mais vendas e novos expositores. Último parágrafo: “____, a edição deste ano foi a mais bem-sucedida desde a criação do evento.”", "options": ["Enquanto isso", "Por exemplo", "Portanto"], "correctIndex": 2}, {"question": "“A equipe fechou as inscrições na sexta-feira.” / “____, começou a separar os participantes por turma.”", "options": ["Em seguida", "Porém", "É o caso de"], "correctIndex": 0}]},
+    {"id": "L05-A01", "type": "assessment-relation", "items": [{"prompt": "Qual conector combina com a relação entre os dois parágrafos?", "text": ["As inscrições encerraram antes do previsto porque todas as vagas foram preenchidas.", "____, a equipe criou uma lista de espera."], "paragraph1": "As inscrições encerraram antes do previsto porque todas as vagas foram preenchidas.", "paragraph2Stem": "____, a equipe criou uma lista de espera.", "options": ["Por isso", "Por exemplo", "No entanto"], "correctIndex": 0}, {"prompt": "Qual conector combina com a relação entre os dois parágrafos?", "text": ["O relatório mostra queda no consumo de papel.", "____, o uso de impressoras coloridas aumentou."], "paragraph1": "O relatório mostra queda no consumo de papel.", "paragraph2Stem": "____, o uso de impressoras coloridas aumentou.", "context": "o texto destaca tendências diferentes", "options": ["Em contraste", "Por isso", "Além disso"], "correctIndex": 0}, {"prompt": "Qual conector combina com a relação entre os dois parágrafos?", "text": ["A oficina terá encontros presenciais.", "____ haverá materiais de estudo na plataforma."], "paragraph1": "A oficina terá encontros presenciais.", "paragraph2Stem": "____ haverá materiais de estudo na plataforma.", "options": ["Além disso,", "Por isso,", "Apesar disso,"], "correctIndex": 0}]},
+    {"id": "L05-A02", "type": "assessment-revision", "items": [{"prompt": "Qual revisão resolve o problema dos conectores?", "before": "O serviço foi suspenso por falta de energia. Além disso, por isso, o prazo foi ampliado.", "options": ["O serviço foi suspenso por falta de energia. Por isso, o prazo foi ampliado.", "O serviço foi suspenso por falta de energia. Além disso, por isso, consequentemente, o prazo foi ampliado."], "correctIndex": 0}, {"question": "O que há de errado com “No entanto” neste trecho?", "before": "A biblioteca passou a abrir até as 22h. No entanto, mais estudantes começaram a usar a sala de leitura à noite.", "options": ["Ele anuncia uma oposição, mas a segunda frase mostra um resultado esperado da mudança; “Com isso” combina melhor.", "Nada; “No entanto” serve para ligar quaisquer duas frases sobre o mesmo assunto.", "Ele deveria vir junto com “Por isso”, para reforçar a ligação entre as frases."], "correctIndex": 0}, {"question": "Uma transição clara sem conector explícito é automaticamente defeituosa?", "options": ["não", "sim"], "correctIndex": 0}]}
   ],
   "assessmentBehavior": {"connectorCountNotScore": true, "contextRequired": true, "ttsPolicy": "opcional", "timeLimit": false},
   "completionEvidence": {
