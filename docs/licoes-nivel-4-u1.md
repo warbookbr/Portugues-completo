@@ -40,6 +40,7 @@ objetivo e estratégia
 - **Prática:** localizar, mapear, ler profundamente, comparar e voltar a trechos; identificar quando leitura linear não é eficiente.
 - **Evidência:** justificar estratégia inicial, modificá-la diante de obstáculo real e mostrar ganho de compreensão.
 - **Limites:** velocidade não pontua; mudar de estratégia não é erro; leitura seletiva não autoriza ignorar ressalvas relevantes.
+- **Revisão R1.7:** retomada diagnóstica do N3-U01-L01 (checagem curta) no lugar do caso de armários; texto longo de economia doméstica (conta de luz, cerca de 750 palavras) com duas perguntas que exigem trocar de estratégia; sinais de troca ensinados em bloco próprio; checagens fechadas.
 
 ## Lição 2 — Arquitetura de textos densos, híbridos e pouco familiares
 
@@ -49,6 +50,7 @@ objetivo e estratégia
 - **Prática:** identificar problema, contextualização, contraste, análise, ressalva, síntese, instrução ou exemplificação quando existirem; testar segmentações alternativas.
 - **Evidência:** propor mapa global justificável e explicar por que uma segmentação alternativa é inferior ou também defensável.
 - **Limites:** não impor `introdução-desenvolvimento-conclusão`; nome do gênero não resolve arquitetura automaticamente.
+- **Revisão R1.7:** documento híbrido mostrado inteiro (guia sobre abelhas sem ferrão, cerca de 620 palavras) e edital de concurso de contos para a transferência; "texto híbrido" definido; dois mapas defensáveis.
 
 ## Lição 3 — Hierarquia, condição, exceção, ressalva e alcance
 
@@ -58,6 +60,7 @@ objetivo e estratégia
 - **Prática:** detectar afirmação principal, condição, exceção, restrição e detalhe; comparar sínteses que omitem qualificações.
 - **Evidência:** produzir síntese parcial que preserve a conclusão e seus limites necessários.
 - **Limites:** frase curta não é automaticamente central; ressalva não é detalhe descartável.
+- **Revisão R1.7:** política de trocas de loja + nota de guia do consumidor (cerca de 610 palavras, com regras do CDC parafraseadas); condição, exceção, restrição e ressalva definidas; hierarquia entre fontes (lei e política); regras de festival de cinema na transferência.
 
 ## Lição 4 — Cadeias referenciais, temáticas e coesão distribuída
 
@@ -67,6 +70,7 @@ objetivo e estratégia
 - **Prática:** retomadas nominais/pronominais, elipse recuperável, mudança de tópico, ambiguidade referencial e progressão temática.
 - **Evidência:** reconstruir cadeia longa e justificar reparo de uma ambiguidade sem eliminar repetição funcional.
 - **Limites:** proximidade não decide referente por si; repetição não é erro automático.
+- **Revisão R1.7:** retomada diagnóstica do N3-U01-L04; divulgação científica com referentes concorrentes do mesmo tipo (duas equipes, duas hipóteses, duas lagoas, cerca de 600 palavras); "cadeia temática" e "coesão distribuída" definidas.
 
 ## Lição 5 — Implícitos, pressupostos, ambiguidade e ironia com evidência
 
@@ -76,6 +80,7 @@ objetivo e estratégia
 - **Prática:** separar explicitado, pressuposto, implicação contextual, ambiguidade real e ironia sustentada; testar leitura literal concorrente.
 - **Evidência:** justificar leitura por múltiplas pistas e reconhecer caso em que não há base para fechar interpretação.
 - **Limites:** não transformar todo implícito em termo técnico; entonação imaginada não basta para provar ironia.
+- **Revisão R1.7:** literatura: soneto "Círculo vicioso", de Machado de Assis, transcrito inteiro, com ironia de situação e uma ambiguidade real; crônica autoral irônica ("Elogio da fila") para a transferência; ironia definida a partir da implicação do N3.
 
 ## Lição 6 — Intertextualidade em camadas e dependência de contexto
 
@@ -85,6 +90,7 @@ objetivo e estratégia
 - **Prática:** citação, alusão contextualizada, resposta, inversão, eco formal e transformação temática.
 - **Evidência:** explicar uma cadeia intertextual e mostrar o que se perde quando uma das referências é removida.
 - **Limites:** não exigir repertório cultural secreto; reconhecer referência sem explicar função não basta.
+- **Revisão R1.7:** cadeia em três camadas: soneto de Machado (A), crônica autoral que o parodia (B) e carta de leitor que comenta os dois (C); "paródia" definida; produção própria de texto que retoma a cadeia.
 
 ## Lição 7 — Perspectiva, enquadramento e interpretações concorrentes
 
@@ -94,6 +100,7 @@ objetivo e estratégia
 - **Prática:** seleção, ordem, foco, vocabulário, omissão e alcance; avaliar leitura alternativa mais/menos sustentada.
 - **Evidência:** classificar interpretações como forte, possível ou incompatível e justificar por elementos concretos.
 - **Limites:** enquadramento não prova manipulação; intenção do autor não é inferida sem base.
+- **Revisão R1.7:** três textos sobre a alta do aluguel (duas reportagens e uma coluna) com interpretações concorrentes; "interpretações concorrentes" definida; escuta de comentário de rádio (oralidade).
 
 ## Lição 8 — Força da evidência e linguagem epistêmica da leitura
 
@@ -103,6 +110,7 @@ objetivo e estratégia
 - **Prática:** comparar formulações categóricas e qualificadas; retirar/adicionar evidências e observar mudança de alcance.
 - **Evidência:** escolher grau de compromisso adequado e explicar por que uma versão mais forte excede o material.
 - **Limites:** linguagem categórica não pontua mais; dúvida vaga sem análise também não basta.
+- **Revisão R1.7:** dona da escala "forte demais / proporcional / fraca demais" no N4; "linguagem epistêmica" definida como parte da modalidade do N3; três ajustes simultâneos (certeza, alcance, tipo de relação); texto de saúde sobre estudo de glicose (cerca de 590 palavras).
 
 ## Lição 9 — Nova evidência e revisão explícita de interpretação
 
@@ -112,6 +120,7 @@ objetivo e estratégia
 - **Prática:** manter, enfraquecer, ampliar ou abandonar interpretação; distinguir revisão por evidência de simples troca de opinião.
 - **Evidência:** registrar decisão inicial, evidência nova e revisão proporcional, inclusive manutenção quando a nova informação não muda o ponto.
 - **Limites:** mudar sempre não é mérito; preservar uma leitura ainda forte pode ser correto.
+- **Revisão R1.7:** revisão em duas etapas preservada, com caso novo (atribuição de uma carta a uma poeta); registro da interpretação antes da etapa 2; treino fechado em duas etapas com nova pista.
 
 ## Lição 10 — Síntese crítica de alta complexidade
 
@@ -121,6 +130,7 @@ objetivo e estratégia
 - **Prática:** síntese analítica + pergunta crítica + revisão após informação adicional.
 - **Evidência:** resposta em voz própria na qual conclusões centrais têm evidência rastreável e graus de certeza compatíveis.
 - **Limites:** qualidade global de resposta aberta exige avaliador confiável; síntese não é soma de resumos locais.
+- **Revisão R1.7:** síntese crítica de texto longo de economia doméstica sobre assinaturas (cerca de 670 palavras, várias fontes em conflito) com correções posteriores; síntese registrada antes da nova evidência.
 
 ---
 
@@ -142,3 +152,5 @@ síntese crítica sustentada
 ```
 
 Releitura é permitida; velocidade não pontua. A revisão da interpretação é obrigatória, mas pode resultar em **manutenção justificada**. Itens fechados não compensam incapacidade de produzir síntese crítica sustentada.
+
+- **Revisão R1.7:** material novo de saúde pública (armadilhas contra o mosquito da dengue, cerca de 600 palavras) exibido dentro da primeira atividade; cadeia intertextual, enquadramento e auditoria exibidos nas próprias atividades; itens fechados de referência, implícitos e calibragem; a calibragem usa formulações que erram em dimensões diferentes, sem repetir a escala da L8.

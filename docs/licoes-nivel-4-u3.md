@@ -39,6 +39,7 @@ problema → tese proporcional
 - **Prática:** tese ampla, estreita, condicional, provisória; relação entre pergunta e resposta defendida.
 - **Evidência:** formular tese e explicar por que ela tem alcance compatível com o material.
 - **Limites:** tese mais categórica não é melhor; posição pode ser `ainda não decidir` quando sustentada.
+- **Revisão R1.7:** retomada diagnóstica do N3-U02-L01; tese com condição para decisão sob incerteza com várias variáveis (aquecedor solar de família que mora de aluguel); a escala forte/fraca não é repetida.
 
 ## Lição 2 — Arquitetura de afirmações, razões, inferências e conclusões
 
@@ -48,6 +49,7 @@ problema → tese proporcional
 - **Prática:** detectar salto de raciocínio, razão lateral, pressuposto necessário e conclusão que não decorre do apoio.
 - **Evidência:** reconstruir e reparar cadeia complexa.
 - **Limites:** terminologia lógica formal não é requisito; diagrama não substitui texto argumentativo.
+- **Revisão R1.7:** novidade: razões independentes, razões ligadas, subconclusão e premissa implícita, definidas e aplicadas a carta sobre árvores nativas nas calçadas.
 
 ## Lição 3 — Ajuste entre afirmação e evidência: relevância e suficiência
 
@@ -57,6 +59,7 @@ problema → tese proporcional
 - **Prática:** apoio direto, indireto, irrelevante, insuficiente e suficiente apenas para conclusão limitada.
 - **Evidência:** revisar uma afirmação para que corresponda ao apoio real ou buscar evidência adicional necessária.
 - **Limites:** dado verdadeiro pode ser irrelevante; citação não substitui relação lógica.
+- **Revisão R1.7:** retomada diagnóstica do N3-U02-L04/L05; novidade: peso do conjunto de evidências de qualidade e direção diferentes (garantia estendida, conta de gasto esperado).
 
 ## Lição 4 — Generalização, causalidade e explicações alternativas
 
@@ -66,6 +69,7 @@ problema → tese proporcional
 - **Prática:** amostra restrita, tendência, causa possível, causa demonstrada, contraexemplo e explicação alternativa.
 - **Evidência:** qualificar conclusão e indicar alternativa que precisa ser testada/considerada.
 - **Limites:** não exigir estatística avançada; nome de falácia sem análise não basta.
+- **Revisão R1.7:** retomada diagnóstica do N3-U02-L06/L07; novidade: estudo observacional, fator de confusão, causalidade invertida e seleção (café e longevidade).
 
 ## Lição 5 — Qualificação, alcance e responsabilidade epistêmica
 
@@ -75,6 +79,7 @@ problema → tese proporcional
 - **Prática:** `mostra`, `sugere`, `é compatível`, `não permite concluir`, condições e exceções.
 - **Evidência:** ajustar tese/conclusão e justificar o grau de compromisso.
 - **Limites:** cautela excessiva que esvazia toda conclusão também pode ser inadequada.
+- **Revisão R1.7:** "responsabilidade epistêmica" definida; retoma a escala da U1-L08 sem reconstruí-la e acrescenta a variável nova das consequências de errar (alarme falso e aviso perdido) e do público (boletim de chuva, água de poço).
 
 ## Lição 6 — Objeção forte, contra-argumento e representação fiel da posição alheia
 
@@ -84,6 +89,7 @@ problema → tese proporcional
 - **Prática:** distinguir objeção real de espantalho; reformular posição alheia de modo que seu defensor reconheceria.
 - **Evidência:** apresentar objeção forte e resposta que trata o ponto central.
 - **Limites:** vencer interlocutor não é objetivo; concordar parcialmente pode ser necessário.
+- **Revisão R1.7:** representação fiel preservada, com caso novo (teatro do centro ou seis centros de bairro); escuta de comentário caricatural (oralidade).
 
 ## Lição 7 — Conceder, responder e reformular sem desviar do ponto
 
@@ -93,6 +99,7 @@ problema → tese proporcional
 - **Prática:** concessão parcial, delimitação, abandono de subargumento, revisão de tese e resposta direta.
 - **Evidência:** modificar argumento preservando o que continua sustentado e abandonando o que perdeu apoio.
 - **Limites:** manter posição a qualquer custo não pontua; concessão vazia sem consequência não basta.
+- **Revisão R1.7:** retomada do N3-U02-L10; novidade: várias objeções atingindo partes diferentes do argumento ao mesmo tempo (prova final de Ciências; feira de domingo).
 
 ## Lição 8 — Persuasão, enquadramento e responsabilidade retórica
 
@@ -102,6 +109,7 @@ problema → tese proporcional
 - **Prática:** ordem, exemplo, vocabulário, autoridade, emoção contextualizada, omissão e grau de explicitação.
 - **Evidência:** explicar efeito persuasivo e revisar recurso que exceda ou obscureça a evidência.
 - **Limites:** emoção não é automaticamente inválida; persuasão não autoriza manipulação factual.
+- **Revisão R1.7:** persuasão responsável para público específico (campanha de doação de sangue; cinema de rua); apólogo autoral sobre exagero e confiança (literatura).
 
 ## Lição 9 — Nova evidência: revisar tese, posição ou grau de certeza
 
@@ -111,6 +119,7 @@ problema → tese proporcional
 - **Prática:** manter, qualificar, inverter ou suspender conclusão; explicar o que a nova evidência altera.
 - **Evidência:** revisão explícita e proporcional da tese, inclusive manutenção justificada quando apropriada.
 - **Limites:** mudar sempre não é mérito; coerência não significa ignorar evidência nova.
+- **Revisão R1.7:** revisão da própria tese em duas etapas preservada, com caso novo (iluminação de LED); registro da tese antes da etapa 2; treino fechado com nova pista.
 
 ## Lição 10 — Produção argumentativa complexa com segunda versão
 
@@ -120,6 +129,7 @@ problema → tese proporcional
 - **Prática:** plano, primeira versão, objeção recebida/nova evidência, revisão e segunda versão.
 - **Evidência:** duas versões + justificativa de pelo menos uma mudança argumentativa e uma manutenção consciente.
 - **Limites:** qualidade global não recebe validação automática forte; opinião defendida não pontua por concordância.
+- **Revisão R1.7:** duas versões preservadas, com dossiê novo (tarifa zero aos domingos); tipos de mudança entre versões ensinados e checados (argumentativa, manutenção consciente, cosmética, regressão).
 
 ---
 
@@ -139,3 +149,5 @@ autorias em primeira e segunda versão
 ```
 
 A mudança de posição pode ser exigida apenas quando a nova evidência realmente a justificar. A verificação não recompensa rigidez nem volubilidade por si mesmas.
+
+- **Revisão R1.7:** cenário novo (proibição de fogos com estampido) exibido na primeira atividade; nova evidência exibida só na atividade da segunda versão; itens fechados de ajuste afirmação-evidência.

@@ -1,6 +1,6 @@
 # Auditoria do plano de ensino N0→N4
 
-**Status:** `DECIDIDA` (estrutura e prioridades aprovadas pelo dono do projeto em 2026-10-14)
+**Status:** `DECIDIDA E EXECUTADA` (estrutura e prioridades aprovadas pelo dono do projeto em 2026-10-14; R1.1 a R1.9 concluídos, nivelamento transferido ao P7)
 
 **Marco gerado:** `R1 — Revisão do plano de ensino` (ver `docs/roadmap-produto.md`)
 

@@ -23,7 +23,7 @@ Português Completo
 ## Estado e execução
 
 - `docs/roadmap-curricular.md` — estado/maturidade do currículo N0→N4; fechado em M5, com revisão dirigida da porta de entrada N0 autorizada por T1.
-- `docs/roadmap-produto.md` — ordem e condições dos marcos da fase de produto/publicação; P1–P6 e T1 homologados, R1 ativo, P7 pausado após o N0.
+- `docs/roadmap-produto.md` — ordem e condições dos marcos da fase de produto/publicação; P1–P6 e T1 homologados, R1 concluído, P7 ativo a partir do N1.
 - `docs/plano-fundamentos-claros.md` — plano transversal **homologado** que reorganizou a entrada N0, linguagem pedagógica, abertura de lição, Metodologia e compatibilidade de progresso/IDs.
 - `docs/auditoria-t1-1-porta-entrada-n0.md` — **decisão da T1.1**: pesquisa/auditoria da entrada N0, nova espinha recomendada, impactos técnicos e direção para o redimensionamento T1.2.
 - `docs/redimensionamento-t1-2-n0.md` — **arquitetura congelada da T1.2**: novas responsabilidades de U1/U2, ordem das lições, verificações V02 e matriz de identidade/migração.
@@ -57,7 +57,7 @@ Uma instância sem contexto deve começar por:
 PROJECT_INDEX.md
 → docs/roadmap-produto.md
 → docs/estado-implementacao-classico.md
-→ docs/auditoria-plano-ensino.md enquanto R1 estiver ativo
+→ docs/auditoria-plano-ensino.md para as decisões do R1 (trilha, método, escopo)
 → docs/homologacao-t1-10.md para o fechamento da entrada N0
 → docs/redimensionamento-t1-2-n0.md para a arquitetura U1/U2
 → docs/migracao-t1-9-n0.md para compatibilidade histórica/progresso
@@ -272,8 +272,8 @@ P4 renderer real do Clássico                            ✓
 P5 ProgressService + revisão + cache/Gist/sync           ✓
 T1 Fundamentos claros + experiência de lição            ✓
 P6 feedback por IA no Clássico                          ✓
-R1 revisão do plano de ensino                           ← ativo
-P7 ampliação do catálogo Clássico N0→N4                 pausado após o N0; retoma nível a nível após R1
+R1 revisão do plano de ensino                           ✓
+P7 ampliação do catálogo Clássico N0→N4                 ← ativo (retomado após R1; próximo lote N1-U01)
 P8 mídia + prontidão de publicação do Clássico
 P9 homologação end-to-end do Clássico
 → GATE: CLÁSSICO HOMOLOGADO

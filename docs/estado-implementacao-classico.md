@@ -21,10 +21,10 @@ Homologação: docs/homologacao-t1-10.md
 Migração T1 `t1-n0-entry-v2`: ATIVA / HOMOLOGADA local + Gist
 P6 — Feedback por IA: HOMOLOGADO
 Homologação P6: docs/homologacao-p6.md
-P7 — Ampliação do catálogo Clássico N0→N4: PAUSADO por R1 (N0 publicado)
+P7 — Ampliação do catálogo Clássico N0→N4: ATIVO (retomado após R1)
 Lote P7 N0-U06 — Usando a língua no cotidiano: HOMOLOGADO (PR #139)
-R1 — Revisão do plano de ensino: ATIVO (docs/auditoria-plano-ensino.md)
-Próximo passo exato: executar R1.1 a R1.3 e depois R1.4 (N1); P7 retoma com N1-U01 revisada
+R1 — Revisão do plano de ensino: CONCLUÍDO (docs/auditoria-plano-ensino.md); nivelamento transferido ao P7
+Próximo passo exato: P7 retoma com o lote N1-U01 — Lendo textos com mais autonomia (conteúdo já revisado pelo R1.4): manifestar, normalizar as atividades pendentes, publicar e homologar; quando o N1 estiver publicado, implementar o nivelamento da primeira entrada
 Estilo da interface (Simples/Completo): IMPLEMENTADO / não homologado
 Blocker global: nenhum
 Gate final do Clássico: NÃO SATISFEITO
@@ -43,15 +43,15 @@ T1 e P6 estão homologados. P7 avança incrementalmente por unidade, preservando
 | P5 — Progresso/revisão/Gist | `HOMOLOGADO` | PR #109 |
 | T1 — Fundamentos claros | `HOMOLOGADO` | PRs #116–#130; `docs/homologacao-t1-10.md` |
 | P6 — Feedback por IA | `HOMOLOGADO` | PRs #131–#133; `docs/homologacao-p6.md` |
-| R1 — Revisão do plano de ensino | `ATIVO` | `docs/auditoria-plano-ensino.md` |
-| P7 — Catálogo N0→N4 | `PAUSADO` | N0-U03/U04/U05/U06 homologadas nas PRs #134/#135/#136/#139; N0 completo; N1 retoma após R1.4 |
+| R1 — Revisão do plano de ensino | `CONCLUÍDO` | `docs/auditoria-plano-ensino.md` |
+| P7 — Catálogo N0→N4 | `ATIVO` | N0-U03/U04/U05/U06 homologadas nas PRs #134/#135/#136/#139; N0 completo; N1 retoma após R1.4 |
 | P8 — Mídia/publicação | `NAO_INICIADO` | — |
 | P9 — E2E / Clássico homologado | `NAO_INICIADO` | — |
 
 ## R1 — Revisão do plano de ensino
 
 ```text
-Estado consolidado: ATIVO
+Estado consolidado: CONCLUÍDO
 Fonte: docs/auditoria-plano-ensino.md
 R1.1 documentação, roadmap e regras de método: CONCLUÍDO
 R1.2 correções objetivas: CONCLUÍDO
@@ -59,7 +59,7 @@ R1.3 N0 a partir de U3: CONCLUÍDO
 R1.4 N1: CONCLUÍDO (conteúdo); publicação do N1 segue no P7
 R1.5 N2: CONCLUÍDO (conteúdo); publicação do N2 segue no P7
 R1.6 N3: CONCLUÍDO (conteúdo); publicação do N3 segue no P7
-R1.7 N4: em execução
+R1.7 N4: CONCLUÍDO (conteúdo); publicação do N4 segue no P7
 R1.8 trilha separada + N0 a partir de U3: CONCLUÍDO; nivelamento: aguarda publicação do N1 (P7)
 R1.9 Trilha de Alfabetização completa: CONCLUÍDO (N0-U07 e N0-U08 publicadas na trilha)
 ```
@@ -145,6 +145,18 @@ R1.9 completou a Trilha de Alfabetização com o ensino que faltava (Blocos A e 
 - catálogo, renderer e trilhas cobertos pelos testes do CI (82 lições e 9 verificações renderizadas sem interação não suportada).
 
 Pendência registrada: enunciados das lições da trilha ainda dependem de leitura; narração das instruções para quem ainda não lê é melhoria de produto a avaliar no P8/P9.
+
+R1.7 aplicou no N4 (nove unidades), preservando IDs e, em N4-U09 (publicada), evidências e feedback por IA:
+
+- `studentObjective` em todas as lições (exceto N4-U09-L01, mantida sem objetivo próprio por exigência do teste de apresentação);
+- o que repetia o N3 virou retomada curta e diagnóstica; o espaço foi para o que é próprio do domínio (várias variáveis, taxa e denominador, cadeias de fontes ramificadas, erratas, fator de confusão, várias objeções, negociação de definições, adaptação em tempo real, decisões simultâneas de estilo);
+- textos de leitura de 590 a 760 palavras em domínios variados; exemplares reais de gênero (notas de esclarecimento, relatório, ensaio); contos completos em U09-L05 e L10; "Círculo vicioso" (Machado de Assis) e soneto XIII de "Via Láctea" (Bilac);
+- termos definidos no primeiro uso (linguagem e responsabilidade epistêmica, triangulação, unidade de análise, proveniência, pronome átono no lugar de clítico, responsabilidade enunciativa, normatização, entre outros);
+- mudança linguística com dados documentados e fonte (nós/a gente, haver/ter, tu/você);
+- todas as lições ganharam checagem fechada com três opções antes das produções abertas;
+- conteúdo que estava em campos não exibidos passou para campos visíveis.
+
+Resultado do R1 em normalização (N1 a N4, incluindo lições novas): 193 → 244 documentos válidos; 136 ainda dependem de adaptação de atividades no P7.
 
 R1.3b corrigiu a apresentação de conteúdo já publicado (N0 e N4-U09):
 

@@ -25,8 +25,8 @@ T1.1–T1.8 → CONCLUÍDOS / HOMOLOGADOS conforme gates
 T1.9 — migração, catálogo, progresso e mídia → CONCLUÍDO / HOMOLOGADO
 T1.10 — validação/homologação → CONCLUÍDO / HOMOLOGADO
 P6 — Feedback por IA no Clássico → HOMOLOGADO
-R1 — Revisão do plano de ensino → ATIVO
-P7 — Ampliação do catálogo Clássico N0→N4 → PAUSADO (N0 publicado; N1+ aguardam R1 do respectivo nível)
+R1 — Revisão do plano de ensino → CONCLUÍDO
+P7 — Ampliação do catálogo Clássico N0→N4 → ATIVO (retomado após R1; próximo lote N1-U01)
 MODO CLÁSSICO REAL → slice funcional com progresso persistente e N0 publicado; expansão retomada nível a nível após R1
 MODO GAMIFICADO → somente após CLÁSSICO HOMOLOGADO
 ```
@@ -423,7 +423,7 @@ Antes de congelar provider/model/endpoints, verificar documentação oficial atu
 
 ## R1 — Revisão do plano de ensino
 
-**Estado: ATIVO.**
+**Estado: CONCLUÍDO.** O nivelamento da primeira entrada foi transferido ao P7, porque depende de o N1 estar publicado.
 
 Origem: `docs/auditoria-plano-ensino.md`, que comparou o curso com a sequência real de ensino (BNCC, alfabetização) e com o conteúdo efetivo das lições.
 
@@ -450,7 +450,7 @@ R1.8 produto: trilha separada no catálogo, N0 a partir de U3, nivelamento
 R1.9 Trilha de Alfabetização completa
 ```
 
-Andamento: R1.1 a R1.6, R1.8 (trilha separada e N0 a partir de U3) e R1.9 (trilha completa com N0-U07 e N0-U08) concluídos; R1.7 em execução; nivelamento aguarda a publicação do N1 pelo P7.
+Andamento: R1.1 a R1.9 concluídos. Nivelamento transferido ao P7.
 
 Regras:
 
@@ -463,7 +463,7 @@ Condição de saída: N0 (a partir de U3) a N4 revisados pelas regras de método
 
 ## P7 — Ampliação do catálogo Clássico N0→N4
 
-**Estado: PAUSADO por R1.** N0-U03 a U06 seguem publicadas; a publicação de N1 em diante é retomada após o subpasso R1 de cada nível.
+**Estado: ATIVO.** Retomado após o R1. N0 (caminho principal e Trilha de Alfabetização) e N4-U09 publicados. O conteúdo de N1 a N4 já foi revisado pelo R1; os lotes P7 manifestam, normalizam as atividades pendentes, publicam e homologam. Quando o N1 estiver publicado, o P7 implementa o nivelamento da primeira entrada ("leio e escrevo bem" → teste curto → N1, N2 ou adiante).
 
 Objetivo: levar o pipeline homologado P1–P6 ao curso inteiro, usando a porta de entrada N0 revisada por T1.
 
@@ -530,11 +530,10 @@ Cobrir troca de modos, preservação de domínio, coerência/resistência a farm
 ## Próximo passo oficial
 
 ```text
-N0-U03 + N0-U04 + N0-U05 + N0-U06 HOMOLOGADAS / publicadas (P7 pausado após o N0)
-R1 — Revisão do plano de ensino
-→ R1.1 documentação e regras de método
-→ R1.2 correções objetivas
-→ R1.3 N0 a partir de U3
-→ R1.4 N1 → retomar P7 com N1-U01 já revisada
-→ seguir nível a nível
+N0-U03 + N0-U04 + N0-U05 + N0-U06 HOMOLOGADAS / publicadas
+R1 — Revisão do plano de ensino CONCLUÍDO
+→ Trilha de Alfabetização completa (N0-U01, U02, U07, U08) publicada
+→ P7 retoma com N1-U01 — Lendo textos com mais autonomia
+→ normalizar as atividades pendentes do N1 sem reescrever a autoria revisada
+→ ao publicar o N1, implementar o nivelamento da primeira entrada
 ```
