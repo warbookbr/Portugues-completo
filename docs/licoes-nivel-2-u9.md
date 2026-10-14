@@ -29,6 +29,7 @@ voz/perspectiva
 - **Prática:** primeira pessoa, narrador externo, informação conhecida/desconhecida pela voz e comparação de versões.
 - **Evidência:** identificar perspectiva em texto novo e explicar que informação ela torna disponível ou limitada.
 - **Limite:** focalização teórica avançada e taxonomia narratológica extensa ficam para níveis posteriores.
+- **Ponte de sentido:** a lição distingue explicitamente os dois usos de "perspectiva": em N2-U01-L08, posição de quem avalia um assunto; aqui, o que o narrador ou a personagem sabe e vê dentro da história.
 
 ## Lição 2 — Personagem, conflito e transformação sem molde fixo
 
@@ -93,6 +94,10 @@ voz/perspectiva
 - **Prática:** atribuição simples, paráfrase fiel, comparação com cópia, síntese de convergência/diferença e resposta própria marcada como tal.
 - **Evidência:** produzir registro que preserve origem e não misture opinião pessoal como se fosse afirmação da fonte.
 - **Limite:** normalização bibliográfica acadêmica e síntese de muitas fontes ficam depois.
+
+## Materiais mostrados por inteiro (revisão R1)
+
+Toda atividade que pede leitura de "texto novo" traz o material completo na própria lição: narrativas autorais "O bilhete" (L1-P01), "Seu Valdir e as roseiras" (L2-P01) e "A cadeira da varanda" (L5-P01), poema autoral "Varal" (L3-P01), trecho "O aviso" (L4-P01), cartaz do mutirão da praia (L6-P01), cartão de fonte (L7-P01) e pares de fontes (L8-P01, L9-P01). As três interpretações avaliadas em L5-A01 também aparecem escritas. Cada lição abre com explicação curta dos termos que usa (narrador e perspectiva, objetivo/tensão/decisão/transformação, verso/ritmo/imagem/disposição, figuras de linguagem, humor e ironia, interpretação, texto multimodal/legenda/link/equivalente acessível, fonte/autoria/origem/circulação, convergência/divergência/limite, atribuição/paráfrase).
 
 ## Verificação integrada — arquitetura
 

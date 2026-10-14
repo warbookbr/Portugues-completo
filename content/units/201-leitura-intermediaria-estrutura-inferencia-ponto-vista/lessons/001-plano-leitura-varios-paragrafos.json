@@ -2,6 +2,7 @@
   "schemaVersion": 1,
   "id": "N2-U01-L01",
   "title": "Ler textos de vários parágrafos com um plano de leitura",
+  "studentObjective": "Escolher o jeito de ler conforme a pergunta: ler o texto inteiro para entender o conjunto ou ir direto ao trecho que traz a informação procurada.",
   "status": "conteudo-pronto-para-implementacao",
   "objective": "Escolher e aplicar estratégias de leitura compatíveis com diferentes finalidades em textos de vários parágrafos, usando leitura global, busca orientada e releitura seletiva sem transformar velocidade ou memória em critério de compreensão.",
   "competencies": [
@@ -34,89 +35,13 @@
     "decisionRationale": "o alvo é estratégia de leitura; texto e marcação de evidência na interface são suficientes."
   },
   "sequence": [
-    {"id": "L01-B01", "type": "objective", "text": "Em textos maiores, você não precisa ler sempre do mesmo jeito. A pergunta orienta a estratégia: compreender o conjunto, localizar um dado ou confirmar uma relação pedem movimentos diferentes."},
-    {
-      "id": "L01-B02",
-      "type": "demonstration",
-      "textTitle": "Atendimento no centro comunitário",
-      "paragraphs": [
-        "O centro comunitário do bairro passará a atender em dois prédios durante o mês de setembro. A mudança será temporária enquanto a sede principal recebe manutenção elétrica.",
-        "As oficinas de artes continuarão na sede principal, mas ocorrerão somente no período da manhã. Os encontros de leitura serão transferidos para a biblioteca da praça.",
-        "Quem precisar emitir a carteirinha do centro deverá procurar a biblioteca às terças e quintas, das 13h às 17h. Não é necessário fazer novo cadastro para participar das atividades já inscritas.",
-        "A administração divulgará qualquer alteração adicional no mural dos dois prédios e no boletim eletrônico semanal."
-      ],
-      "contrasts": [
-        {"goal": "descobrir em quais dias a carteirinha pode ser emitida", "strategy": "ir ao parágrafo que trata da carteirinha e confirmar o horário", "evidence": "terças e quintas, das 13h às 17h"},
-        {"goal": "explicar o que muda durante setembro", "strategy": "ler o conjunto e relacionar motivo, locais e atividades afetadas", "evidence": "os quatro parágrafos contribuem em graus diferentes"}
-      ]
-    },
-    {
-      "id": "L01-C01",
-      "type": "quick-check",
-      "readingGoal": "descobrir se quem já está inscrito precisa fazer novo cadastro",
-      "paragraphsRef": "L01-B02",
-      "question": "Qual é a estratégia mais eficiente sem perder confiabilidade?",
-      "options": [
-        "localizar o parágrafo sobre cadastro, ler a frase completa e confirmar a resposta no texto",
-        "tentar lembrar a primeira leitura sem consultar o texto",
-        "ler apenas o título e deduzir a resposta"
-      ],
-      "correctIndex": 0,
-      "followUp": {"question": "Qual é a resposta?", "options": ["não precisa fazer novo cadastro", "precisa fazer cadastro toda semana", "o texto não menciona cadastro"], "correctIndex": 0},
-      "textRemainsVisible": true
-    },
-    {
-      "id": "L01-B03",
-      "type": "strategy-repair",
-      "situation": "Você leu rapidamente e não consegue explicar por que os encontros de leitura mudaram de lugar.",
-      "options": [
-        "voltar aos parágrafos sobre a mudança e o motivo geral, verificando se o texto liga diretamente as duas informações",
-        "responder pelo que costuma acontecer em centros comunitários",
-        "evitar reler porque releitura indica falha"
-      ],
-      "correctIndex": 0,
-      "teachingPoint": "reler é estratégia; também é importante não inventar uma relação que o texto não afirma"
-    },
-    {
-      "id": "L01-A01",
-      "type": "assessment",
-      "readingGoal": "localizar até quando uma inscrição pode ser feita",
-      "textTitle": "Curso de manutenção de bicicletas",
-      "paragraphs": [
-        "A oficina escola abrirá uma turma de manutenção básica de bicicletas para moradores a partir de 16 anos. As aulas acontecerão aos sábados pela manhã durante quatro semanas.",
-        "As inscrições ficam abertas de 3 a 12 de outubro. Para se inscrever, é preciso preencher a ficha na recepção ou no formulário digital indicado no mural.",
-        "A oficina fornecerá as ferramentas usadas durante as aulas. Cada participante deverá levar apenas uma bicicleta em condições de ser transportada com segurança.",
-        "Se houver mais candidatos do que vagas, a escola fará um sorteio e publicará a lista no dia 14."
-      ],
-      "question": "Qual estratégia atende melhor ao objetivo?",
-      "options": ["procurar o parágrafo que informa o período de inscrição e conferir as datas", "memorizar todos os detalhes das quatro partes antes de responder", "ler apenas o último parágrafo"],
-      "correctIndex": 0,
-      "followUp": {"question": "Até quando a inscrição pode ser feita?", "options": ["12 de outubro", "14 de outubro", "durante quatro semanas"], "correctIndex": 0},
-      "textRemainsVisible": true
-    },
-    {
-      "id": "L01-A02",
-      "type": "assessment",
-      "readingGoal": "explicar como funciona a participação no curso, da inscrição até a confirmação da vaga",
-      "paragraphsRef": "L01-A01",
-      "question": "Qual estratégia é necessária?",
-      "options": [
-        "ler os parágrafos relevantes em conjunto, relacionando inscrição, possível sorteio e publicação da lista",
-        "localizar apenas a palavra bicicleta e responder com o trecho mais próximo",
-        "usar somente a data do primeiro parágrafo"
-      ],
-      "correctIndex": 0,
-      "followUp": {
-        "question": "Qual descrição corresponde ao texto?",
-        "options": [
-          "a pessoa se inscreve entre 3 e 12; se houver candidatos demais, ocorre sorteio e a lista sai no dia 14",
-          "a vaga é confirmada automaticamente no momento em que a bicicleta é levada",
-          "a lista de vagas é publicada antes do início das inscrições"
-        ],
-        "correctIndex": 0
-      },
-      "textRemainsVisible": true
-    }
+    {"id": "L01-B01", "type": "objective", "text": "Em textos maiores, você não precisa ler sempre do mesmo jeito. É a pergunta que orienta a leitura: entender o conjunto, achar um dado ou confirmar uma ligação entre duas informações pedem movimentos diferentes."},
+    {"id": "L01-B04", "type": "explanation", "title": "Três jeitos de ler o mesmo texto", "text": "Antes de começar, pergunte a si mesmo: o que eu preciso descobrir? A resposta muda o jeito de ler. Decidir isso antes de começar é fazer um plano de leitura.\n\nSe a pergunta é sobre o texto inteiro (do que ele trata, o que muda, por que algo aconteceu), leia todos os parágrafos e ligue as partes. Se a pergunta pede um dado (uma data, um horário, um lugar), vá direto ao parágrafo que fala daquele assunto. Se você já tem uma resposta, mas não tem certeza, volte ao trecho e releia só a parte que confirma ou desmente o que você pensou.\n\nVoltar ao texto não é sinal de leitura fraca. Quem lê bem volta ao texto sempre que precisa conferir.", "examples": ["Pergunta sobre o conjunto: \"O que muda no centro comunitário em setembro?\" Ler os quatro parágrafos e juntar o motivo, os lugares e as atividades.", "Pergunta sobre um dado: \"Em que dias posso fazer a carteirinha?\" Ir ao parágrafo da carteirinha.", "Pergunta para conferir: \"Acho que quem já está inscrito precisa se cadastrar de novo. Será?\" Reler a frase sobre cadastro."]},
+    {"id": "L01-B02", "type": "demonstration", "title": "Atendimento no centro comunitário", "text": "O centro comunitário do bairro vai atender em dois prédios durante o mês de setembro. A mudança é temporária: a sede principal vai passar por uma reforma na parte elétrica.\n\nAs oficinas de artes continuam na sede principal, mas só no período da manhã. Os encontros de leitura vão para a biblioteca da praça, que fica a duas quadras dali.\n\nQuem precisar fazer a carteirinha do centro deve procurar a biblioteca às terças e quintas, das 13h às 17h. Quem já está inscrito em alguma atividade não precisa fazer novo cadastro.\n\nQualquer outra mudança será avisada no mural dos dois prédios e no boletim que o centro envia por mensagem toda semana.", "examples": ["Pergunta: em que dias posso fazer a carteirinha? Jeito de ler: ir ao terceiro parágrafo, que trata da carteirinha. Resposta: às terças e quintas, das 13h às 17h.", "Pergunta: o que muda no centro durante setembro? Jeito de ler: ler os quatro parágrafos e juntar o motivo (a reforma), os lugares (dois prédios) e as atividades afetadas (oficinas só de manhã, leitura na biblioteca da praça)."]},
+    {"id": "L01-C01", "type": "quick-check", "instruction": "Use o texto \"Atendimento no centro comunitário\", acima. Pergunta de leitura: quem já está inscrito em uma atividade precisa fazer novo cadastro?", "items": [{"question": "Qual é o jeito mais seguro de responder a essa pergunta?", "options": ["tentar lembrar o que leu na primeira vez, sem voltar ao texto", "achar o parágrafo que fala de cadastro, ler a frase inteira e conferir a resposta", "ler só o título e deduzir a resposta"], "correctIndex": 1}, {"question": "Agora responda: quem já está inscrito precisa fazer novo cadastro?", "options": ["sim, precisa fazer novo cadastro na biblioteca", "o texto não fala de cadastro", "não, quem já está inscrito não precisa"], "correctIndex": 2}], "textRemainsVisible": true},
+    {"id": "L01-B03", "type": "strategy-repair", "situation": "Você leu o texto do centro comunitário rapidamente e agora não consegue explicar por que os encontros de leitura mudaram de lugar.", "question": "O que é melhor fazer?", "options": ["responder pelo que costuma acontecer em outros centros comunitários", "evitar reler, porque reler mostra que a leitura falhou", "voltar ao primeiro e ao segundo parágrafos e ver se o texto liga a reforma à mudança de lugar"], "correctIndex": 2},
+    {"id": "L01-A01", "type": "assessment", "title": "Curso de manutenção de bicicletas", "text": "A oficina-escola do bairro vai abrir uma turma de manutenção básica de bicicletas para moradores a partir de 16 anos. As aulas acontecem aos sábados de manhã, durante quatro semanas.\n\nAs inscrições ficam abertas de 3 a 12 de outubro. Para se inscrever, basta preencher a ficha na recepção ou o formulário indicado no mural.\n\nA oficina empresta as ferramentas usadas nas aulas. Cada participante deve levar apenas a própria bicicleta, em condições de ser levada até lá com segurança.\n\nSe houver mais interessados do que vagas, a escola fará um sorteio e publicará a lista dos sorteados no dia 14.", "instruction": "Pergunta de leitura: até quando é possível se inscrever?", "items": [{"question": "Qual jeito de ler atende melhor a essa pergunta?", "options": ["procurar o parágrafo que fala do período de inscrição e conferir as datas", "decorar todos os detalhes dos quatro parágrafos antes de responder", "ler só o último parágrafo, porque ele traz uma data"], "correctIndex": 0}, {"question": "Até quando a inscrição pode ser feita?", "options": ["até 14 de outubro", "até 12 de outubro", "durante as quatro semanas do curso"], "correctIndex": 1}], "textRemainsVisible": true},
+    {"id": "L01-A02", "type": "assessment", "instruction": "Use o texto \"Curso de manutenção de bicicletas\", acima. Pergunta de leitura: como funciona a participação no curso, da inscrição até a confirmação da vaga?", "items": [{"question": "Qual jeito de ler é necessário?", "options": ["procurar só a palavra bicicleta e responder com a frase mais próxima", "usar apenas a informação do primeiro parágrafo", "ler juntos os parágrafos sobre inscrição e sorteio e ligar as etapas"], "correctIndex": 2}, {"question": "Qual descrição corresponde ao texto?", "options": ["a pessoa se inscreve entre 3 e 12 de outubro; se houver interessados demais, há sorteio, e a lista sai no dia 14", "a vaga é garantida no momento em que a pessoa leva a bicicleta à oficina", "a lista dos sorteados sai antes de começarem as inscrições"], "correctIndex": 0}], "textRemainsVisible": true}
   ],
   "assessmentBehavior": {"textVisibility": "sempre disponível", "rereading": "permitida e ensinada", "evidenceSelection": "registrada quando solicitada", "ttsPolicy": "apoio opcional", "timeLimit": false},
   "completionEvidence": {

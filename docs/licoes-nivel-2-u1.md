@@ -21,6 +21,14 @@ plano de leitura
 → síntese
 ```
 
+## Gêneros, extensão e oralidade (revisão R1)
+
+- **Gêneros e temas variados:** aviso (L1), texto expositivo de divulgação científica (L2), notícia (L3, L9), mensagem pessoal (L4), narrativa curta "O guarda-chuva amarelo" (L5), artigo de opinião "Praça sem sombra é praça vazia" (L6), crônica "Escalas" (L7), carta de leitor sobre a ciclovia (L8) e reportagem "Córrego do Jacaré volta a ter peixes" (verificação). O cenário de ampliação de horário ou teste noturno não domina a unidade.
+- **Extensão crescente:** todos os textos têm vários parágrafos, separados por linha em branco. O texto principal de cada lição cresce de cerca de 100 palavras (L1) para cerca de 220 palavras (L10); a verificação usa texto novo de cerca de 250 palavras em 5 parágrafos.
+- **Termos ensinados no primeiro uso:** cada lição abre com explicação curta e exemplo do termo central (plano de leitura, foco do parágrafo, informação principal/secundária/detalhe, explícito, referente e cadeia de referência, as cinco relações, inferência e hipótese, fato/avaliação/ponto de vista, evidência, síntese) e dos gêneros novos (artigo de opinião, crônica, carta de leitor).
+- **Oralidade:** escuta antes da leitura (`audio-first-check`) em L2 (organização de um texto ouvido) e L7 (inferência a partir de narrativa ouvida); síntese oral opcional no ensaio de L10-P01.
+- **Ponte de sentido:** em L8, "perspectiva" é a posição de quem avalia um assunto; a lição avisa que, em narrativas, a palavra tem outro sentido (retomado em N2-U09-L01).
+
 ## Lição 1 — Ler textos de vários parágrafos com um plano de leitura
 
 - **Objetivo:** ajustar estratégia de leitura à finalidade em textos de 3–5 parágrafos, sem transformar rapidez ou memória em critério.
@@ -103,7 +111,7 @@ plano de leitura
 
 ## Verificação integrada — arquitetura
 
-A verificação usa **texto novo de 4–6 parágrafos**, disponível para releitura, e separa os agrupamentos:
+A verificação usa **texto novo de 4–6 parágrafos** (reportagem de cerca de 250 palavras, exibida na primeira atividade), disponível para releitura, e separa os agrupamentos:
 
 ```text
 estrutura/hierarquia

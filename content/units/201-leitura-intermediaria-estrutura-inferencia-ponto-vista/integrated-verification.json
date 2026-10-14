@@ -10,103 +10,16 @@
   "limits": ["sem conhecimento externo necessário", "sem ironia sofisticada", "sem intenção autoral secreta", "sem memória como alvo", "sem resposta aberta validada apenas por palavras-chave"],
   "media": {"tts": "opcional; texto pode ser lido sob demanda quando decodificação visual não é alvo", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
   "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "locations": ["texto-base", "instruções", "feedback"], "purpose": "apoio de acesso"}], "generatedVisualResources": [{"type": "UI_RENDERED_PARAGRAPH_READING_CARD", "locations": ["V01-T01", "V01-Q01", "V01-Q02", "V01-Q03", "V01-Q04", "V01-Q05", "V01-Q06", "V01-Q07", "V01-P01"], "purpose": "texto permanentemente consultável"}, {"type": "UI_RENDERED_MULTI_EVIDENCE_LINK", "locations": ["V01-Q02", "V01-Q05", "V01-Q06"], "purpose": "associar resposta a mais de um trecho"}, {"type": "UI_RENDERED_EVIDENCE_SELECTOR", "locations": ["V01-Q05", "V01-Q06"], "purpose": "selecionar evidência pertinente"}, {"type": "UI_RENDERED_OPEN_SUMMARY_EDITOR", "locations": ["V01-P01"], "purpose": "registrar síntese própria"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória; síntese aberta exige avaliador confiável para validação semântica plena", "decisionRationale": "todos os alvos são textuais e podem ser avaliados com texto acessível, seleção de evidência e produção registrada."},
-  "sourceText": {
-    "id": "V01-T01",
-    "title": "Ateliê aberto aos domingos",
-    "sourceLabel": "texto didático original do curso",
-    "paragraphs": [
-      "O Centro de Artes do bairro iniciou um projeto-piloto de ateliê aberto aos domingos. Durante oito semanas, pessoas cadastradas podem reservar gratuitamente uma bancada de cerâmica para praticar técnicas já conhecidas. O espaço não oferece aula nesse horário, mas um monitor permanece disponível para orientar sobre uso seguro dos equipamentos.",
-      "No primeiro mês, cada domingo teve uma sessão pela manhã e outra à tarde, com dezesseis vagas em cada horário. As sessões da tarde ocuparam todas as vagas nas quatro semanas. Pela manhã, a ocupação variou entre oito e dez participantes.",
-      "Para o segundo mês do teste, o centro decidiu transformar duas das quatro sessões da manhã em sessões adicionais à tarde. Pelo menos duas manhãs continuarão disponíveis. As regras de cadastro e o momento de abertura das reservas não mudaram.",
-      "A coordenadora do projeto afirmou que o ajuste permite oferecer mais vagas no período de maior procura sem eliminar completamente a opção matinal. Uma participante comentou que prefere a manhã porque o espaço fica mais tranquilo e disse esperar que esse horário continue existindo.",
-      "Ao fim das oito semanas, a equipe comparará ocupação, desistências e comentários dos usuários antes de decidir o formato do próximo semestre. Até agora, o centro não anunciou se manterá o projeto de forma permanente nem se comprará novos equipamentos."
-    ]
-  },
+  "sourceText": {"id": "V01-T01", "title": "Córrego do Jacaré volta a ter peixes", "sourceLabel": "texto didático original do curso", "paragraphs": ["Há dois anos, o córrego do Jacaré, que atravessa o bairro Vila Nova, era conhecido pelo mau cheiro e pelo lixo acumulado nas margens. Muitos moradores evitavam até passar pela rua que acompanha a água. Foi então que um grupo de moradores criou a Associação Amigos do Jacaré e passou a organizar mutirões de limpeza no último domingo de cada mês.", "Nos primeiros mutirões, os voluntários chegaram a retirar mais de cem sacos de lixo por encontro. Neste ano, a média caiu para quinze. Desde março, moradores contam ter visto pequenos peixes em trechos onde nenhum aparecia havia anos.", "Com menos lixo para recolher, a associação decidiu mudar o foco: metade dos mutirões passará a ser dedicada ao plantio de árvores nativas nas margens. Os outros continuarão sendo de limpeza. O ponto de encontro e o horário não mudam.", "Para a presidente da associação, Márcia Lopes, a troca é um passo natural. \"As árvores seguram a terra e fazem sombra na água. É isso que vai manter o córrego vivo\", afirma. Já o aposentado Jorge Amaral, que participa desde o primeiro mutirão, teme que o lixo volte a se acumular. \"Plantar é bom, mas a limpeza não pode parar\", diz ele.", "Uma universidade da região está analisando amostras da água do córrego, e o resultado deve sair em dezembro. A prefeitura ainda não informou se vai ajudar a pagar pelas mudas. Enquanto isso, os voluntários pretendem espalhar placas pedindo que ninguém jogue lixo no córrego."]},
   "items": [
-    {
-      "id": "V01-Q01",
-      "cluster": "structureHierarchy",
-      "type": "paragraph-function-and-main-information",
-      "items": [
-        {"question": "Qual é a função principal do primeiro parágrafo?", "options": ["apresentar o projeto-piloto e explicar como funciona", "informar a decisão para o próximo semestre", "comparar opiniões sobre o turno da manhã"], "correctIndex": 0},
-        {"question": "O que o segundo parágrafo acrescenta?", "options": ["dados de ocupação dos horários no primeiro mês", "uma regra nova de segurança", "a decisão definitiva do projeto"], "correctIndex": 0},
-        {"question": "Qual informação é central para compreender a mudança do segundo mês?", "options": ["as tardes lotaram e parte das manhãs será transferida para a tarde", "o monitor orienta sobre segurança", "a participante gosta de tranquilidade"], "correctIndex": 0}
-      ]
-    },
-    {
-      "id": "V01-Q02",
-      "cluster": "explicitIntegration",
-      "type": "multi-paragraph-explicit",
-      "question": "Uma pessoa quer usar o ateliê no segundo mês. O que o texto informa sobre custo, reserva e horários?",
-      "options": [
-        "o uso é gratuito para cadastrados; as regras e abertura das reservas não mudam; haverá mais sessões à tarde e pelo menos duas manhãs permanecerão",
-        "o uso passa a ser pago e todas as manhãs são canceladas",
-        "não será mais necessário cadastro e o centro funcionará apenas à noite"
-      ],
-      "correctIndex": 0,
-      "evidenceParagraphs": [1, 3],
-      "classification": "integração de informações explícitas"
-    },
-    {
-      "id": "V01-Q03",
-      "cluster": "reference",
-      "type": "reference-chain",
-      "items": [
-        {"target": "o ajuste", "paragraph": 4, "options": ["a transformação de parte das sessões da manhã em sessões adicionais à tarde", "a compra de novos equipamentos", "o encerramento do projeto"], "correctIndex": 0},
-        {"target": "esse horário", "paragraph": 4, "options": ["o horário da manhã", "o próximo semestre", "o horário de cadastro"], "correctIndex": 0},
-        {"target": "o formato", "paragraph": 5, "options": ["a organização futura do projeto/horários", "o formato físico das bancadas", "a forma do equipamento de cerâmica"], "correctIndex": 0}
-      ]
-    },
-    {
-      "id": "V01-Q04",
-      "cluster": "logicalRelations",
-      "type": "relation-set",
-      "items": [
-        {"question": "Qual relação existe entre os dados do segundo parágrafo e a mudança do terceiro?", "options": ["a procura maior à tarde funciona como motivo para redistribuir parte das sessões", "a mudança prova que as manhãs estavam sempre vazias", "não existe relação textual"], "correctIndex": 0},
-        {"text": "mais vagas no período de maior procura sem eliminar completamente a opção matinal", "relation": "contraste/equilíbrio entre ampliar tardes e manter manhãs", "options": ["contraste/equilíbrio", "sequência sem relação", "condição impossível"], "correctIndex": 0},
-        {"text": "antes de decidir o formato do próximo semestre", "question": "A decisão já está tomada?", "options": ["não; a equipe ainda avaliará dados", "sim; o próximo formato é definitivo"], "correctIndex": 0}
-      ]
-    },
-    {
-      "id": "V01-Q05",
-      "cluster": "distributedInference",
-      "type": "inference-with-evidence",
-      "question": "Qual inferência é mais bem sustentada sobre a procura pelos dois horários no primeiro mês?",
-      "options": ["o período da tarde teve procura maior do que o da manhã", "ninguém queria usar o ateliê pela manhã", "a equipe proibiu reservas matinais"],
-      "correctIndex": 0,
-      "requiredEvidence": ["tarde: 16/16 vagas nas quatro semanas", "manhã: 8 a 10 de 16 vagas"],
-      "guardRail": "maior procura não permite dizer que ninguém prefere manhã"
-    },
-    {
-      "id": "V01-Q06",
-      "cluster": "viewpointEvidence",
-      "type": "viewpoint-and-evidence",
-      "items": [
-        {"question": "Como a coordenadora apresenta a mudança?", "options": ["como ajuste para aumentar vagas no período mais procurado preservando opção matinal", "como cancelamento completo das manhãs", "como compra imediata de novos equipamentos"], "correctIndex": 0, "evidence": "'mais vagas no período de maior procura sem eliminar completamente a opção matinal'"},
-        {"question": "Qual é a perspectiva da participante?", "options": ["valoriza a manhã por considerar o espaço mais tranquilo e quer que ela continue", "é contra qualquer sessão à tarde", "quer encerrar o projeto"], "correctIndex": 0, "evidence": "prefere a manhã porque o espaço fica mais tranquilo"},
-        {"question": "As duas perspectivas são necessariamente incompatíveis?", "options": ["não; a coordenadora mantém manhãs e a participante pede justamente que a opção continue", "sim; qualquer diferença de ênfase é contradição"], "correctIndex": 0}
-      ]
-    },
-    {
-      "id": "V01-Q07",
-      "cluster": "insufficientInformation",
-      "type": "explicit-inference-insufficient",
-      "items": [
-        {"statement": "o centro manterá permanentemente o projeto no próximo semestre", "options": ["não há informação suficiente", "está confirmado", "está cancelado"], "correctIndex": 0},
-        {"statement": "serão comprados exatamente quatro novos equipamentos", "options": ["não há informação suficiente", "é inferência forte", "está explícito"], "correctIndex": 0},
-        {"statement": "as sessões da tarde ocuparam todas as vagas no primeiro mês", "options": ["está explícito", "é apenas inferência", "não é informado"], "correctIndex": 0}
-      ]
-    },
-    {
-      "id": "V01-P01",
-      "cluster": "ownSynthesis",
-      "type": "open-synthesis",
-      "prompt": "Escreva uma síntese curta explicando como funcionou o primeiro mês, qual mudança será testada no segundo e o que ainda não foi decidido para o futuro do projeto.",
-      "requiredContentSelection": ["projeto-piloto gratuito para cadastrados", "tarde teve ocupação maior que manhã", "duas manhãs viram sessões extras à tarde, mantendo pelo menos duas manhãs", "decisão do próximo semestre ainda depende de avaliação"],
-      "recordResponse": true,
-      "automaticValidation": false,
-      "selfCheck": ["preservei a mudança principal?", "liguei a mudança aos dados de procura sem exagerar?", "deixei claro o que ainda não foi decidido?", "usei formulação própria?", "não acrescentei informação externa?"]
-    }
+    {"id": "V01-Q01", "cluster": "structureHierarchy", "type": "paragraph-function-and-main-information", "title": "Córrego do Jacaré volta a ter peixes", "text": "Há dois anos, o córrego do Jacaré, que atravessa o bairro Vila Nova, era conhecido pelo mau cheiro e pelo lixo acumulado nas margens. Muitos moradores evitavam até passar pela rua que acompanha a água. Foi então que um grupo de moradores criou a Associação Amigos do Jacaré e passou a organizar mutirões de limpeza no último domingo de cada mês.\n\nNos primeiros mutirões, os voluntários chegaram a retirar mais de cem sacos de lixo por encontro. Neste ano, a média caiu para quinze. Desde março, moradores contam ter visto pequenos peixes em trechos onde nenhum aparecia havia anos.\n\nCom menos lixo para recolher, a associação decidiu mudar o foco: metade dos mutirões passará a ser dedicada ao plantio de árvores nativas nas margens. Os outros continuarão sendo de limpeza. O ponto de encontro e o horário não mudam.\n\nPara a presidente da associação, Márcia Lopes, a troca é um passo natural. \"As árvores seguram a terra e fazem sombra na água. É isso que vai manter o córrego vivo\", afirma. Já o aposentado Jorge Amaral, que participa desde o primeiro mutirão, teme que o lixo volte a se acumular. \"Plantar é bom, mas a limpeza não pode parar\", diz ele.\n\nUma universidade da região está analisando amostras da água do córrego, e o resultado deve sair em dezembro. A prefeitura ainda não informou se vai ajudar a pagar pelas mudas. Enquanto isso, os voluntários pretendem espalhar placas pedindo que ninguém jogue lixo no córrego.", "instruction": "Leia a reportagem. Ela fica disponível durante toda a verificação: volte a ela sempre que precisar.", "items": [{"question": "Qual é a função principal do primeiro parágrafo?", "options": ["anunciar o resultado da análise da água", "apresentar o problema do córrego e como a associação começou", "comparar as opiniões de dois moradores"], "correctIndex": 1}, {"question": "O que o segundo parágrafo acrescenta?", "options": ["sinais de melhora: menos lixo recolhido e peixes de volta", "a decisão de plantar árvores nas margens", "a opinião da presidente da associação"], "correctIndex": 0}, {"question": "Qual informação é central para entender a mudança de planos da associação?", "options": ["um aposentado participa desde o primeiro mutirão", "uma universidade está analisando a água", "com menos lixo, metade dos mutirões passará a ser de plantio"], "correctIndex": 2}]},
+    {"id": "V01-Q02", "cluster": "explicitIntegration", "type": "multi-paragraph-explicit", "instruction": "Use a reportagem \"Córrego do Jacaré volta a ter peixes\", no início da verificação.", "question": "Uma pessoa quer participar dos mutirões a partir de agora. O que o texto informa sobre quando eles acontecem e o que vai mudar?", "options": ["acontecem todo domingo, e a partir de agora serão só de plantio", "acontecem no último domingo de cada mês, no mesmo ponto e horário; metade será de plantio e a outra metade, de limpeza", "mudaram de ponto de encontro e de horário por causa do plantio"], "correctIndex": 1, "evidenceParagraphs": [1, 3]},
+    {"id": "V01-Q03", "cluster": "reference", "type": "reference-chain", "instruction": "Use a reportagem \"Córrego do Jacaré volta a ter peixes\", no início da verificação.", "items": [{"question": "No terceiro parágrafo, \"Os outros\" se refere a quê?", "options": ["aos moradores que não querem plantar", "aos mutirões que não serão de plantio", "aos peixes que voltaram ao córrego"], "correctIndex": 1}, {"question": "No quarto parágrafo, \"a troca\" se refere a quê?", "options": ["à dedicação de metade dos mutirões ao plantio", "à troca da presidente da associação", "à troca de amostras de água com a universidade"], "correctIndex": 0}, {"question": "No quinto parágrafo, \"o resultado\" se refere a quê?", "options": ["ao resultado dos mutirões de limpeza", "ao resultado de uma votação da associação", "ao resultado da análise das amostras de água"], "correctIndex": 2}]},
+    {"id": "V01-Q04", "cluster": "logicalRelations", "type": "relation-set", "instruction": "Use a reportagem \"Córrego do Jacaré volta a ter peixes\", no início da verificação.", "items": [{"question": "Que relação existe entre os dados do segundo parágrafo e a decisão do terceiro?", "options": ["a queda na quantidade de lixo é o motivo da mudança de foco", "a decisão de plantar árvores causou a queda do lixo", "não há relação entre os dois parágrafos"], "correctIndex": 0}, {"text": "\"As árvores seguram a terra e fazem sombra na água. É isso que vai manter o córrego vivo.\"", "question": "Que relação a presidente estabelece?", "options": ["contraste entre plantar árvores e limpar o córrego", "as árvores aparecem como causa da preservação do córrego", "uma condição que ainda não se sabe se vai acontecer"], "correctIndex": 1}, {"text": "\"Plantar é bom, mas a limpeza não pode parar.\"", "question": "Que relação a palavra \"mas\" marca?", "options": ["consequência: por causa do plantio, a limpeza para", "tempo: a limpeza vem depois do plantio", "contraste: reconhece o valor do plantio e defende que a limpeza continue"], "correctIndex": 2}]},
+    {"id": "V01-Q05", "cluster": "distributedInference", "type": "inference-with-evidence", "instruction": "Use a reportagem \"Córrego do Jacaré volta a ter peixes\", no início da verificação.", "question": "Qual conclusão é mais bem apoiada pelas pistas do primeiro e do segundo parágrafos?", "options": ["o córrego está totalmente limpo e sem poluição", "os peixes foram soltos no córrego pela associação", "o estado do córrego melhorou desde o início dos mutirões"], "correctIndex": 2, "requiredEvidence": ["de mais de cem sacos de lixo por mutirão para quinze", "peixes vistos em trechos onde não apareciam"]},
+    {"id": "V01-Q06", "cluster": "viewpointEvidence", "type": "viewpoint-and-evidence", "instruction": "Use a reportagem \"Córrego do Jacaré volta a ter peixes\", no início da verificação.", "items": [{"question": "Como a presidente, Márcia Lopes, avalia a mudança?", "options": ["como o passo certo para manter o córrego vivo", "como o fim dos mutirões de limpeza", "como uma decisão tomada pela prefeitura"], "correctIndex": 0}, {"question": "Qual é o ponto de vista de Jorge Amaral?", "options": ["é contra plantar árvores nas margens", "acha o plantio bom, mas teme que o lixo volte se a limpeza diminuir", "quer deixar de participar dos mutirões"], "correctIndex": 1}, {"question": "Os dois pontos de vista são necessariamente opostos?", "options": ["sim; Márcia defende o plantio, e Jorge defende a limpeza", "não; o plano mantém metade dos mutirões de limpeza, e Jorge pede justamente que a limpeza continue"], "correctIndex": 1}]},
+    {"id": "V01-Q07", "cluster": "insufficientInformation", "type": "explicit-inference-insufficient", "instruction": "Use a reportagem \"Córrego do Jacaré volta a ter peixes\", no início da verificação. Para cada afirmação, escolha a resposta que o texto permite dar.", "items": [{"question": "A água do córrego já está própria para banho.", "options": ["está escrito no texto", "pode ser concluído pelas pistas", "não há informação suficiente"], "correctIndex": 2}, {"question": "Neste ano, a média de lixo recolhido caiu para quinze sacos por mutirão.", "options": ["está escrito no texto", "pode ser concluído pelas pistas", "não há informação suficiente"], "correctIndex": 0}, {"question": "A prefeitura vai pagar pelas mudas.", "options": ["está escrito no texto", "pode ser concluído pelas pistas", "não há informação suficiente"], "correctIndex": 2}]},
+    {"id": "V01-P01", "cluster": "ownSynthesis", "type": "open-synthesis", "prompt": "Escreva uma síntese curta da reportagem \"Córrego do Jacaré volta a ter peixes\" explicando o que mudou no córrego, que mudança a associação fez nos mutirões e o que ainda não se sabe.", "requiredContentSelection": ["mutirões mensais de limpeza criados pela associação", "menos lixo recolhido e volta dos peixes", "metade dos mutirões passa a ser de plantio, e a outra metade continua de limpeza", "análise da água e ajuda da prefeitura ainda sem resposta"], "recordResponse": true, "automaticValidation": false, "selfCheck": ["Contei qual era o problema e o que a associação fez?", "Liguei a mudança de foco à queda do lixo, sem exagerar a melhora?", "Deixei claro o que ainda não se sabe?", "Usei minhas palavras?", "Evitei acrescentar informação que o texto não dá?"]}
   ],
   "assessmentBehavior": {"textVisibility": "sempre disponível", "rereading": "permitida", "evidenceRequired": ["V01-Q05", "V01-Q06"], "openSynthesisAutoValidated": false, "ttsPolicy": "opcional", "timeLimit": false},
   "completionEvidence": {
