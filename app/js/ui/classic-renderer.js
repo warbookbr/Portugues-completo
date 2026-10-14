@@ -347,9 +347,15 @@ function roundContext(entry, label) {
   return parts.join('');
 }
 
+function roundAudio(entry) {
+  const cue = [entry?.ttsCue, entry?.ttsText].find(value => typeof value === 'string' && value.trim());
+  if (!cue) return '';
+  return `<button type="button" class="secondary-button stimulus-button round-audio" data-tts="${esc(cue)}">Ouvir</button>`;
+}
+
 function renderCompositeRound(entry, index, block) {
   const key = entryKey(entry, index);
-  const localStimuli = renderItemStimuli(block.activity, key);
+  const localStimuli = roundAudio(entry) + renderItemStimuli(block.activity, key);
   const label = entryLabel(entry, index);
   const expected = block.activity?.evaluation?.answerKey?.items?.[key];
 
