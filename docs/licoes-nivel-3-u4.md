@@ -65,7 +65,7 @@ conjunto de fontes
 - **Objetivo:** registrar o que as fontes concordam, onde divergem e onde simplesmente enfatizam aspectos diferentes.
 - **Dependências:** L1–L3.
 - **Modalidade/recursos:** matriz `converge / diverge / complementa / não permite comparar`.
-- **Prática:** comparar afirmações equivalentes, parciais e incompatíveis.
+- **Prática:** comparar afirmações equivalentes, parciais e incompatíveis; distinguir divergência real de média geral contra caso de um subgrupo (dimensão nova em relação ao enquadramento da U01).
 - **Evidência:** classificar relações em conjunto novo e explicar com referência a cada fonte.
 - **Limites:** toda diferença não é contradição; síntese não deve apagar divergência.
 
@@ -74,7 +74,7 @@ conjunto de fontes
 - **Objetivo:** comparar que tipo de evidência cada fonte oferece e se ela sustenta a afirmação em discussão.
 - **Dependências:** L4 + N3-U02-L03/L04.
 - **Modalidade/recursos:** cartões `afirmação → evidência → origem → alcance`.
-- **Prática:** dado direto, relato, exemplo, estimativa, documento sem origem e afirmação sem apoio visível.
+- **Prática:** dado direto, relato, exemplo, estimativa, documento sem origem e afirmação sem apoio visível. Dados próprios (ônibus-biblioteca na zona rural), diferentes dos usados em N3-U02-L04.
 - **Evidência:** justificar qual apoio é mais pertinente/forte no recorte sem usar fama/aparência como atalho.
 - **Limites:** não criar score universal de credibilidade; evidência forte em uma questão pode ser irrelevante em outra.
 
@@ -82,7 +82,7 @@ conjunto de fontes
 
 - **Objetivo:** comparar seleção, ordem, título, foco e vocabulário usados para apresentar o mesmo conjunto de fatos.
 - **Dependências:** L1–L5 + N3-U01-L09.
-- **Modalidade/recursos:** fontes com fatos parcialmente compartilhados e enquadramentos distintos.
+- **Modalidade/recursos:** três ou quatro fontes com fatos parcialmente compartilhados, enquadramentos distintos e omissões cruzadas (o que uma deixa de fora, outra destaca).
 - **Prática:** identificar destaque de custo, benefício, conflito, continuidade ou novidade; separar fato omitido de fato desconhecido.
 - **Evidência:** explicar diferença de enquadramento com elementos concretos e sem atribuir intenção não demonstrada.
 - **Limites:** enquadramento não equivale automaticamente a manipulação.

@@ -58,7 +58,8 @@ R1.2 correções objetivas: CONCLUÍDO
 R1.3 N0 a partir de U3: CONCLUÍDO
 R1.4 N1: CONCLUÍDO (conteúdo); publicação do N1 segue no P7
 R1.5 N2: CONCLUÍDO (conteúdo); publicação do N2 segue no P7
-R1.6 N3: próximo
+R1.6 N3: CONCLUÍDO (conteúdo); publicação do N3 segue no P7
+R1.7 N4: em execução
 ```
 
 R1.2 aplicou:
@@ -109,6 +110,17 @@ R1.5 aplicou no N2 (nove unidades), preservando IDs:
 - retomada à distância entre parágrafos, quadro de conectores por relação, rascunhos e modelos completos;
 - itens de verificação que copiavam as lições substituídos por itens novos;
 - conteúdo que estava em campos não exibidos passou para campos visíveis; normalização do N2 passou de 53 para 88 documentos válidos (14 ainda pendentes para o P7).
+
+R1.6 aplicou no N3 (nove unidades), preservando IDs:
+
+- `studentObjective` em todas as lições;
+- U01 trabalha texto longo de verdade: textos completos de 311 a 587 palavras, em gêneros variados (reportagem, divulgação científica, editorial, conto, crônica, poema, ensaio), com retomada curta do que já estava no N2;
+- termos construídos no primeiro uso: posição central e tese, modalidade (distinta de multimodalidade), pressuposto e implicação, enquadramento, intertextualidade, concessão, consequência, comparação, proporção, conformidade, passiva com se, verbo impessoal, ponto e vírgula;
+- U03 aprofunda o que o N2 passou a ensinar e usa rótulos públicos para decisões normativas ("regra que sempre vale", "duas formas aceitas", "depende do manual", "escolha de estilo", "conferir em fonte");
+- modelos de gênero completos na U05; formas reais de variação e mudança na U08; contos e poemas escritos por inteiro na U09; soneto "Língua portuguesa" (Bilac) na U06 e "Canção do exílio" completa na U01;
+- U07 trata recursos próprios da fala formal em vez de repetir o N2;
+- repetições internas ("dois títulos, mesmos fatos", dados clonados, calibração de certeza) substituídas por variações com dimensão nova;
+- checagens sim/não convertidas em três opções plausíveis; verificações com itens novos.
 
 R1.3b corrigiu a apresentação de conteúdo já publicado (N0 e N4-U09):
 

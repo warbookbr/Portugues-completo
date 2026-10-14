@@ -35,7 +35,7 @@ tese delimitada
 
 - **Objetivo:** formular tese suficientemente precisa para ser sustentada e contestada sem ampliar artificialmente o alcance.
 - **Dependências:** N2-U07-V01 + N3-U01.
-- **Modalidade/recursos:** comparação de teses amplas, vagas e delimitadas.
+- **Modalidade/recursos:** comparação de teses amplas, vagas e delimitadas. A lição define "tese" com exemplo, nome e explicação, fazendo a ponte com "posição" (N2) e "posição central" (N3-U01).
 - **Prática:** restringir público, condição, período, ação ou alcance quando necessário.
 - **Evidência:** reformular questões novas em teses delimitadas e justificar o recorte.
 - **Limites:** tese mais categórica não é automaticamente melhor; opinião defendida não é avaliada por concordância.
@@ -71,7 +71,7 @@ tese delimitada
 
 - **Objetivo:** calibrar conclusão ao grau de evidência, usando limites e qualificadores quando o apoio não permite afirmação categórica.
 - **Dependências:** L3–L4 + N3-U01-L08.
-- **Modalidade/recursos:** escala `não basta → sugere → apoia conclusão limitada → apoio forte no recorte`.
+- **Modalidade/recursos:** escala `não basta → sugere → apoia conclusão limitada → apoio forte no recorte`. Diferença em relação a N3-U01-L08: lá se leem as marcas de compromisso na língua; aqui se decide quanto apoio cada conclusão exige e o que mais seria preciso medir. Trocar "comprova" por "talvez" não conserta conclusão sem apoio.
 - **Prática:** reescrever conclusões fortes demais; preservar incerteza real.
 - **Evidência:** reconhecer caso em que `a evidência disponível não basta` e produzir conclusão proporcional.
 - **Limites:** qualificador não serve para mascarar ausência total de apoio.
@@ -98,7 +98,7 @@ tese delimitada
 
 - **Objetivo:** analisar como vocabulário, exemplos, autoridade, emoção, ordem e enquadramento podem influenciar recepção sem confundir persuasão com falsidade automática.
 - **Dependências:** L1–L7 + N3-U01-L09.
-- **Modalidade/recursos:** versões do mesmo argumento com escolhas persuasivas diferentes.
+- **Modalidade/recursos:** versões do mesmo argumento com escolhas persuasivas diferentes. Dimensão nova em relação a N3-U01-L09: enquadramento numérico (total, valor por pessoa, porcentagem, comparação) num debate; não usa o exercício "dois títulos, mesmos fatos".
 - **Prática:** título, seleção de exemplo, intensidade lexical, apelo à autoridade, narrativas pessoais e destaque de custos/benefícios.
 - **Evidência:** apontar estratégia concreta, explicar efeito provável e separar efeito persuasivo de qualidade da evidência.
 - **Limites:** não ensinar manipulação; emoção não é automaticamente inválida; intenção não é inferida sem base.
@@ -108,7 +108,7 @@ tese delimitada
 - **Objetivo:** formular objeção que realmente atinja tese, razão ou evidência e construir contra-argumento sem mudar de assunto.
 - **Dependências:** L1–L8.
 - **Modalidade/recursos:** pares tese/objeção; mapa de ponto atacado.
-- **Prática:** objeção a alcance, premissa, evidência e consequência; distinguir desvio temático.
+- **Prática:** objeção a alcance, premissa, evidência e consequência; distinguir objeções plausíveis porém mal direcionadas (atacam o que o argumento não afirmou, falam de outro caso ou mudam de proposta).
 - **Evidência:** produzir contra-argumento relevante e indicar exatamente qual parte da cadeia ele questiona.
 - **Limites:** discordância não é automaticamente contra-argumento; ataque pessoal não conta.
 
@@ -117,7 +117,7 @@ tese delimitada
 - **Objetivo:** responder a objeção preservando o que ainda é defensável e ajustando tese quando a crítica revela limite real.
 - **Dependências:** L9.
 - **Modalidade/recursos:** versões antes/depois da tese; quadro `conceder → limitar → responder` quando funcional.
-- **Prática:** resposta direta, concessão parcial, reformulação de alcance, reconhecimento de insuficiência.
+- **Prática:** resposta direta, concessão parcial, reformulação de alcance, reconhecimento de insuficiência. Casos próprios desta lição (multa por atraso na biblioteca, horário das aulas), sem reaproveitar o caso de atendimento sem internet do N2-U07-L07.
 - **Evidência:** responder a objeção nova sem apagar evidência contrária nem abandonar a tese por reflexo.
 - **Limites:** concessão não é fórmula obrigatória; não exigir “vencer” o interlocutor.
 
