@@ -1,0 +1,537 @@
+{
+  "schemaVersion": 1,
+  "id": "N0-U08-L03",
+  "title": "CH, LH e NH: duas letras, um som",
+  "studentObjective": "Ler e escrever palavras com CH, LH e NH, como chave, filho e banho.",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Decodificar e codificar palavras com os dígrafos ch, lh e nh, reconhecendo-os como unidades de um só som e distinguindo-os, pela leitura, de sílabas com c, l e n sem h, com palavras inéditas e frases curtas.",
+  "competencies": [
+    "ler sílabas e palavras inéditas com ch, lh ou nh",
+    "distinguir pela leitura pares como MALA e MALHA, SONO e SONHO",
+    "escrever com fichas palavras ouvidas com ch, lh ou nh",
+    "reconhecer que o h nesses pares não tem som próprio e muda o som da letra anterior",
+    "compreender frases curtas formadas por palavras com as estruturas já estudadas"
+  ],
+  "prerequisites": [
+    "N0-U08-L02"
+  ],
+  "limits": [
+    "não usar áudio de som isolado de letra; o áudio é sempre de palavra inteira ou de frase",
+    "não tocar o áudio da palavra-alvo antes da tentativa de leitura; nas tarefas de leitura, o áudio só confere depois da tentativa",
+    "não usar velocidade de leitura ou tempo de resposta como critério",
+    "não exigir nomes técnicos como dígrafo, ditongo, encontro consonantal ou sílaba travada",
+    "não avaliar pronúncia, sotaque ou leitura em voz alta, que o aplicativo não observa",
+    "não transformar a lição em recitação de famílias silábicas",
+    "não ensinar nem cobrar a escolha entre x e ch; isso pertence ao N1",
+    "não usar, nas tarefas de leitura e escrita, palavras com r ou s entre vogais, qu, gu, til, cedilha ou duas vogais na mesma sílaba, exceto em opções só de áudio"
+  ],
+  "media": {
+    "tts": "palavra inteira como alvo de escuta na palavra-chave, na escrita com fichas e em achar a palavra ouvida; nas tarefas de leitura, só para conferir depois da tentativa; frases inteiras para conferência depois da leitura",
+    "controlledAudio": [],
+    "video": "nao necessario",
+    "images": "nao necessarias"
+  },
+  "supportMaterials": {
+    "curatedMedia": [],
+    "runtimeResources": [
+      {
+        "type": "TTS_OK",
+        "locations": [
+          "L03-B02",
+          "L03-B03",
+          "L03-C02",
+          "L03-A01",
+          "L03-A02",
+          "L03-A02",
+          "L03-A03",
+          "L03-B04"
+        ],
+        "purpose": "falar palavras inteiras e frases; nas tarefas de leitura, as opções de áudio só são liberadas depois da tentativa; pequenas diferenças de voz do dispositivo não mudam a resposta, porque o contraste avaliado está na escrita"
+      }
+    ],
+    "generatedVisualResources": [
+      {
+        "type": "UI_RENDERED_WORD_CARD",
+        "locations": [
+          "L03-B02",
+          "L03-B03",
+          "L03-C02"
+        ],
+        "purpose": "mostrar a palavra-chave e os exemplos como texto real, com a divisão em sílabas quando ajuda"
+      },
+      {
+        "type": "UI_RENDERED_AUDIO_CHOICE_CONTROLS",
+        "locations": [
+          "L03-A01",
+          "L03-A02"
+        ],
+        "purpose": "opções de áudio A, B e C sem texto, liberadas só depois de o aluno marcar que tentou ler"
+      },
+      {
+        "type": "UI_RENDERED_WORD_CHOICES",
+        "locations": [
+          "L03-A02"
+        ],
+        "purpose": "formas escritas parecidas para achar a palavra ouvida"
+      },
+      {
+        "type": "UI_RENDERED_LETTER_AND_SYLLABLE_TILES",
+        "locations": [
+          "L03-A03"
+        ],
+        "purpose": "fichas de letras e sílabas em ordem misturada, com sobras plausíveis, para escrever a palavra ouvida"
+      },
+      {
+        "type": "UI_RENDERED_SENTENCE_CARD",
+        "locations": [
+          "L03-A04"
+        ],
+        "purpose": "frase curta visível durante a pergunta de compreensão"
+      }
+    ],
+    "productionQueueRequired": false,
+    "publicationDependency": "nenhuma mídia humana obrigatória; texto, fichas da interface e TTS do dispositivo bastam",
+    "decisionRationale": "a competência é ligar escrita e som em palavras inteiras. O TTS de palavra inteira serve como alvo de escrita e como conferência depois da leitura; não há som isolado de letra, que o TTS produz mal. Imagem e vídeo não acrescentam informação a essas tarefas."
+  },
+  "sequence": [
+    {
+      "id": "L03-B01",
+      "type": "explanation",
+      "focus": "read-or-listen",
+      "title": "Duas letras, um som",
+      "text": "Até aqui, cada letra das sílabas que você leu tinha o seu próprio som.\n\nNesta lição, você vai ver três pares de letras que, juntos, representam um som só: CH, de CHAVE, LH, de FILHO, e NH, de BANHO."
+    },
+    {
+      "id": "L03-B02",
+      "type": "demonstration",
+      "focus": "listen-then-observe",
+      "title": "Palavra-chave: CHAVE",
+      "text": "Toque em Ouvir palavra e escute: chave.\n\nAgora veja como ela é escrita: CHAVE. No começo há duas letras, C e H, mas ouvimos um som só. Juntas, as letras CH representam esse som.",
+      "word": "CHAVE",
+      "segments": [
+        "CHA",
+        "VE"
+      ],
+      "ttsCue": "chave",
+      "note": "O mesmo som às vezes é escrito com X, como em XAMPU. Quando usar CH ou X é assunto para mais adiante."
+    },
+    {
+      "id": "L03-B03",
+      "type": "demonstration",
+      "focus": "listen-then-observe",
+      "title": "LH e NH",
+      "text": "O H também se junta ao L e ao N. LH soa como em FILHO e MALHA. NH soa como em BANHO e SONHO.\n\nNo começo da palavra, o H sozinho não tem som, como em HOJE. Em CH, LH e NH, ele se junta à letra de antes e forma um som novo.\n\nCompare os pares abaixo. A única diferença na escrita é o H, e o som muda.",
+      "examples": [
+        "CAPA e CHAPA",
+        "MALA e MALHA",
+        "SONO e SONHO"
+      ],
+      "ttsText": "capa. chapa. mala. malha. sono. sonho."
+    },
+    {
+      "id": "L03-C01",
+      "type": "quick-check",
+      "focus": "read-and-respond",
+      "interaction": "single-choice",
+      "prompt": "Em FILHO, quais duas letras juntas representam um som só?",
+      "options": [
+        "LH",
+        "FI",
+        "HO"
+      ],
+      "correctIndex": 0,
+      "feedback": "LH. As letras L e H juntas formam um som só: FI | LHO."
+    },
+    {
+      "id": "L03-C02",
+      "type": "quick-check",
+      "focus": "listen-and-respond",
+      "interaction": "single-choice",
+      "prompt": "Ouça a palavra e escolha a forma escrita.",
+      "ttsCue": "sonho",
+      "options": [
+        "SONO",
+        "SOLHO",
+        "SONHO"
+      ],
+      "correctIndex": 2,
+      "feedback": "SONHO, com NH. SONO, sem o H, é outra palavra."
+    },
+    {
+      "id": "L03-A01",
+      "type": "guided-activity",
+      "focus": "read-then-listen-and-respond",
+      "interaction": "composite",
+      "title": "Leia sílabas e palavras novas",
+      "instruction": "Leia cada sílaba ou palavra sozinho primeiro, sem pressa. Depois toque em Marcar que tentei ler, ouça os áudios A, B e C e escolha o que corresponde ao que você leu. Os áudios servem para conferir a sua leitura.",
+      "attemptGateRequired": true,
+      "ttsBeforeResponse": false,
+      "items": [
+        {
+          "prompt": "Leia a sílaba CHU. Em qual palavra ela aparece no começo?",
+          "attemptGateRequired": true,
+          "audioOptionTextVisible": false,
+          "audioOptions": [
+            {
+              "label": "A",
+              "ttsText": "cuba"
+            },
+            {
+              "label": "B",
+              "ttsText": "chuva"
+            },
+            {
+              "label": "C",
+              "ttsText": "luva"
+            }
+          ],
+          "correctIndex": 1
+        },
+        {
+          "prompt": "Leia a sílaba LHA. Em qual palavra ela aparece no fim?",
+          "attemptGateRequired": true,
+          "audioOptionTextVisible": false,
+          "audioOptions": [
+            {
+              "label": "A",
+              "ttsText": "telha"
+            },
+            {
+              "label": "B",
+              "ttsText": "tela"
+            },
+            {
+              "label": "C",
+              "ttsText": "teia"
+            }
+          ],
+          "correctIndex": 0
+        },
+        {
+          "prompt": "Leia: FICHA",
+          "attemptGateRequired": true,
+          "audioOptionTextVisible": false,
+          "audioOptions": [
+            {
+              "label": "A",
+              "ttsText": "fita"
+            },
+            {
+              "label": "B",
+              "ttsText": "filha"
+            },
+            {
+              "label": "C",
+              "ttsText": "ficha"
+            }
+          ],
+          "correctIndex": 2
+        },
+        {
+          "prompt": "Leia: VELHO",
+          "attemptGateRequired": true,
+          "audioOptionTextVisible": false,
+          "audioOptions": [
+            {
+              "label": "A",
+              "ttsText": "vela"
+            },
+            {
+              "label": "B",
+              "ttsText": "velho"
+            },
+            {
+              "label": "C",
+              "ttsText": "venho"
+            }
+          ],
+          "correctIndex": 1
+        },
+        {
+          "prompt": "Leia: UNHA",
+          "attemptGateRequired": true,
+          "audioOptionTextVisible": false,
+          "audioOptions": [
+            {
+              "label": "A",
+              "ttsText": "unha"
+            },
+            {
+              "label": "B",
+              "ttsText": "uva"
+            },
+            {
+              "label": "C",
+              "ttsText": "uma"
+            }
+          ],
+          "correctIndex": 0
+        },
+        {
+          "prompt": "Leia: MOLHO",
+          "attemptGateRequired": true,
+          "audioOptionTextVisible": false,
+          "audioOptions": [
+            {
+              "label": "A",
+              "ttsText": "mole"
+            },
+            {
+              "label": "B",
+              "ttsText": "moinho"
+            },
+            {
+              "label": "C",
+              "ttsText": "molho"
+            }
+          ],
+          "correctIndex": 2
+        }
+      ]
+    },
+    {
+      "id": "L03-A02",
+      "type": "guided-activity",
+      "focus": "listen-then-read-and-respond",
+      "interaction": "composite",
+      "title": "Ache a palavra que você ouviu",
+      "instruction": "Toque em Ouvir e escute a palavra. Depois leia as opções com atenção, porque elas são parecidas, e escolha a forma escrita da palavra que você ouviu. Você pode ouvir quantas vezes quiser.",
+      "items": [
+        {
+          "prompt": "Ouça e escolha a forma escrita.",
+          "ttsCue": "fecha",
+          "options": [
+            "FECHA",
+            "FECA",
+            "FELHA"
+          ],
+          "correctIndex": 0
+        },
+        {
+          "prompt": "Ouça e escolha a forma escrita.",
+          "ttsCue": "galho",
+          "options": [
+            "GALO",
+            "GALHO",
+            "GANHO"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "prompt": "Ouça e escolha a forma escrita.",
+          "ttsCue": "vinho",
+          "options": [
+            "VINO",
+            "VILHO",
+            "VINHO"
+          ],
+          "correctIndex": 2
+        },
+        {
+          "prompt": "Ouça e escolha a forma escrita.",
+          "ttsCue": "chama",
+          "options": [
+            "CAMA",
+            "CHAMA",
+            "LAMA"
+          ],
+          "correctIndex": 1
+        }
+      ]
+    },
+    {
+      "id": "L03-A03",
+      "type": "guided-activity",
+      "focus": "listen-and-write",
+      "interaction": "composite",
+      "title": "Escreva a palavra que você ouviu",
+      "instruction": "Toque em Ouvir e escute a palavra. Depois toque nas fichas na ordem certa para escrever a palavra. Algumas fichas sobram. Se errar, use Limpar sequência e tente de novo.",
+      "items": [
+        {
+          "prompt": "Ouça e monte a palavra com as fichas.",
+          "ttsCue": "chuva",
+          "availableTiles": [
+            "VA",
+            "CU",
+            "VO",
+            "CHU"
+          ],
+          "correctSequence": [
+            "CHU",
+            "VA"
+          ]
+        },
+        {
+          "prompt": "Ouça e monte a palavra com as fichas.",
+          "ttsCue": "folha",
+          "availableTiles": [
+            "LA",
+            "NHA",
+            "FO",
+            "LHA"
+          ],
+          "correctSequence": [
+            "FO",
+            "LHA"
+          ]
+        },
+        {
+          "prompt": "Ouça e monte a palavra com as fichas.",
+          "ttsCue": "senha",
+          "availableTiles": [
+            "LHA",
+            "SE",
+            "NA",
+            "NHA"
+          ],
+          "correctSequence": [
+            "SE",
+            "NHA"
+          ]
+        },
+        {
+          "prompt": "Ouça e monte a palavra com as fichas.",
+          "ttsCue": "chefe",
+          "availableTiles": [
+            "FI",
+            "CHE",
+            "LE",
+            "FE"
+          ],
+          "correctSequence": [
+            "CHE",
+            "FE"
+          ]
+        },
+        {
+          "prompt": "Ouça e monte a palavra com as fichas.",
+          "ttsCue": "trabalho",
+          "availableTiles": [
+            "LO",
+            "BA",
+            "TAR",
+            "LHO",
+            "TRA"
+          ],
+          "correctSequence": [
+            "TRA",
+            "BA",
+            "LHO"
+          ]
+        },
+        {
+          "prompt": "Ouça e monte a palavra com as fichas.",
+          "ttsCue": "cozinha",
+          "availableTiles": [
+            "NHA",
+            "CO",
+            "LHA",
+            "ZI",
+            "NA"
+          ],
+          "correctSequence": [
+            "CO",
+            "ZI",
+            "NHA"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "L03-A04",
+      "type": "guided-activity",
+      "focus": "read-sentence-and-respond",
+      "interaction": "composite",
+      "title": "Leia frases curtas",
+      "instruction": "Leia a frase sozinho, sem pressa, mais de uma vez se quiser. Depois responda à pergunta.",
+      "items": [
+        {
+          "sentence": "A chave fica na gaveta da cozinha.",
+          "prompt": "Onde fica a chave?",
+          "options": [
+            "na gaveta da cozinha",
+            "no bolso do chefe",
+            "na porta"
+          ],
+          "correctIndex": 0
+        },
+        {
+          "sentence": "Minha vizinha trabalha no domingo.",
+          "prompt": "Quem trabalha no domingo?",
+          "options": [
+            "minha filha",
+            "minha vizinha",
+            "o chefe"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "sentence": "Minha vizinha trabalha no domingo.",
+          "prompt": "Quando ela trabalha?",
+          "options": [
+            "de tarde",
+            "de madrugada",
+            "no domingo"
+          ],
+          "correctIndex": 2
+        }
+      ]
+    },
+    {
+      "id": "L03-B04",
+      "type": "demonstration",
+      "focus": "listen-after-reading",
+      "title": "Confira ouvindo",
+      "text": "Depois de responder, toque em Ouvir exemplo e escute as frases. Confira se você leu do mesmo jeito. Se quiser, leia de novo em voz alta junto com o áudio.",
+      "ttsText": "A chave fica na gaveta da cozinha. Minha vizinha trabalha no domingo."
+    },
+    {
+      "id": "L03-B05",
+      "type": "summary",
+      "focus": "read-or-listen",
+      "title": "Resumo",
+      "text": "CH, LH e NH são pares de letras que representam um som só: CHAVE, FILHO, BANHO.\n\nNesses pares, o H não tem som próprio. Ele se junta à letra de antes e muda o som: MALA e MALHA, SONO e SONHO, CAPA e CHAPA.\n\nPara ler, trate CH, LH e NH como um bloco só dentro da sílaba.",
+      "bridgeToNextLesson": "Na próxima lição, você vai ver como R, S, C e G mudam de som conforme o lugar na palavra, e como RR, SS, QU e GU ajudam na escrita."
+    }
+  ],
+  "assessmentBehavior": {
+    "pronunciationPolicy": "não avaliar sotaque nem pronúncia; variações regionais são aceitas",
+    "ttsPolicy": "nas tarefas de leitura, o áudio só fica disponível depois da marcação de tentativa; nas tarefas de escrita e de achar a palavra ouvida, o áudio pode ser repetido sem penalidade",
+    "supportPolicy": "nova tentativa permitida sem penalidade; apoio não é tratado como erro",
+    "timeLimit": false
+  },
+  "completionEvidence": {
+    "observablePerformance": "ler sílabas e palavras novas com a estrutura da lição, escrever palavras ouvidas com fichas e compreender frases curtas",
+    "clusters": {
+      "leituraDePalavras": {
+        "evidence": [
+          "L03-A01",
+          "L03-A02"
+        ],
+        "required": true,
+        "rule": "acertar todos os itens das atividades de leitura; novas tentativas são permitidas sem penalidade"
+      },
+      "escritaDePalavras": {
+        "evidence": [
+          "L03-A03"
+        ],
+        "required": true,
+        "rule": "montar corretamente todas as palavras ouvidas; novas tentativas são permitidas sem penalidade"
+      },
+      "leituraDeFrase": {
+        "evidence": [
+          "L03-A04"
+        ],
+        "required": true,
+        "rule": "responder corretamente a todas as perguntas sobre as frases lidas"
+      }
+    },
+    "nonCompensable": true,
+    "completionRule": "os três agrupamentos são obrigatórios; acerto na leitura não compensa falha na escrita, e vice-versa.",
+    "notSufficient": [
+      "acertar só depois de ouvir o áudio da palavra-alvo antes de tentar ler",
+      "decorar as palavras de exemplo da lição sem ler palavras novas",
+      "recitar famílias silábicas"
+    ]
+  }
+}

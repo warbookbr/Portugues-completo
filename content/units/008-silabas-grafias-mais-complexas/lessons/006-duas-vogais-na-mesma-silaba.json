@@ -1,0 +1,561 @@
+{
+  "schemaVersion": 1,
+  "id": "N0-U08-L06",
+  "title": "Duas vogais na mesma sílaba",
+  "studentObjective": "Ler e escrever palavras com duas vogais faladas de uma vez na mesma sílaba, como pai, leite, noite e ouro.",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Decodificar e codificar palavras com ditongos orais decrescentes frequentes (ai, ei, oi, ou, au, eu, ui), distinguindo-os de vogais em sílabas separadas e reconhecendo a redução de ou e ei na fala sem alterar a escrita, sem nomear ditongo, com palavras inéditas e frases curtas.",
+  "competencies": [
+    "ler palavras inéditas com ai, ei, oi, ou, au, eu ou ui na mesma sílaba",
+    "distinguir pela leitura palavras com e sem o par de vogais, como FERA e FEIRA",
+    "escrever com fichas palavras ouvidas com duas vogais na mesma sílaba, mantendo as duas vogais mesmo quando a fala as reduz",
+    "compreender frases curtas formadas por palavras com as estruturas já estudadas"
+  ],
+  "prerequisites": [
+    "N0-U08-L05"
+  ],
+  "limits": [
+    "não usar áudio de som isolado de letra; o áudio é sempre de palavra inteira ou de frase",
+    "não tocar o áudio da palavra-alvo antes da tentativa de leitura; nas tarefas de leitura, o áudio só confere depois da tentativa",
+    "não usar velocidade de leitura ou tempo de resposta como critério",
+    "não exigir nomes técnicos como dígrafo, ditongo, encontro consonantal ou sílaba travada",
+    "não avaliar pronúncia, sotaque ou leitura em voz alta, que o aplicativo não observa",
+    "não transformar a lição em recitação de famílias silábicas",
+    "não nomear nem classificar ditongo, tritongo ou hiato",
+    "não ensinar regras de acentuação; o acento de CÉU é apenas apresentado",
+    "não tratar a redução de ou e ei na fala como erro de fala"
+  ],
+  "media": {
+    "tts": "palavra inteira como alvo de escuta na palavra-chave, na escrita com fichas e em achar a palavra ouvida; nas tarefas de leitura, só para conferir depois da tentativa; frases inteiras para conferência depois da leitura",
+    "controlledAudio": [],
+    "video": "nao necessario",
+    "images": "nao necessarias"
+  },
+  "supportMaterials": {
+    "curatedMedia": [],
+    "runtimeResources": [
+      {
+        "type": "TTS_OK",
+        "locations": [
+          "L06-B02",
+          "L06-B03",
+          "L06-B04",
+          "L06-C02",
+          "L06-A01",
+          "L06-A02",
+          "L06-A02",
+          "L06-A03",
+          "L06-B05"
+        ],
+        "purpose": "falar palavras inteiras e frases; nas tarefas de leitura, as opções de áudio só são liberadas depois da tentativa; pequenas diferenças de voz do dispositivo não mudam a resposta, porque o contraste avaliado está na escrita"
+      }
+    ],
+    "generatedVisualResources": [
+      {
+        "type": "UI_RENDERED_WORD_CARD",
+        "locations": [
+          "L06-B02",
+          "L06-B03",
+          "L06-B04",
+          "L06-C02"
+        ],
+        "purpose": "mostrar a palavra-chave e os exemplos como texto real, com a divisão em sílabas quando ajuda"
+      },
+      {
+        "type": "UI_RENDERED_AUDIO_CHOICE_CONTROLS",
+        "locations": [
+          "L06-A01",
+          "L06-A02"
+        ],
+        "purpose": "opções de áudio A, B e C sem texto, liberadas só depois de o aluno marcar que tentou ler"
+      },
+      {
+        "type": "UI_RENDERED_WORD_CHOICES",
+        "locations": [
+          "L06-A02"
+        ],
+        "purpose": "formas escritas parecidas para achar a palavra ouvida"
+      },
+      {
+        "type": "UI_RENDERED_LETTER_AND_SYLLABLE_TILES",
+        "locations": [
+          "L06-A03"
+        ],
+        "purpose": "fichas de letras e sílabas em ordem misturada, com sobras plausíveis, para escrever a palavra ouvida"
+      },
+      {
+        "type": "UI_RENDERED_SENTENCE_CARD",
+        "locations": [
+          "L06-A04"
+        ],
+        "purpose": "frase curta visível durante a pergunta de compreensão"
+      }
+    ],
+    "productionQueueRequired": false,
+    "publicationDependency": "nenhuma mídia humana obrigatória; texto, fichas da interface e TTS do dispositivo bastam",
+    "decisionRationale": "a competência é ligar escrita e som em palavras inteiras. O TTS de palavra inteira serve como alvo de escrita e como conferência depois da leitura; não há som isolado de letra, que o TTS produz mal. Imagem e vídeo não acrescentam informação a essas tarefas."
+  },
+  "sequence": [
+    {
+      "id": "L06-B01",
+      "type": "explanation",
+      "focus": "read-or-listen",
+      "title": "Duas vogais de uma vez",
+      "text": "Na lição anterior, você viu ÃO e ÃE, que juntam duas vogais com som pelo nariz.\n\nNesta lição, você vai ler outras sílabas com duas vogais juntas, faladas de uma vez só, como em PAI, LEITE e NOITE."
+    },
+    {
+      "id": "L06-B02",
+      "type": "demonstration",
+      "focus": "listen-then-observe",
+      "title": "Palavra-chave: PAI",
+      "text": "Toque em Ouvir palavra e escute: pai.\n\nAgora veja como ela é escrita: PAI. Há duas vogais, A e I, mas falamos tudo de uma vez, sem parar no meio. PAI tem uma sílaba só.\n\nCompare com DIA. Nessa palavra, falamos DI e depois A, em duas sílabas: DI | A.",
+      "word": "PAI",
+      "ttsCue": "pai",
+      "examples": [
+        "PAI: uma sílaba",
+        "DIA: DI | A, duas sílabas"
+      ]
+    },
+    {
+      "id": "L06-B03",
+      "type": "demonstration",
+      "focus": "listen-then-observe",
+      "title": "Pares de vogais que aparecem muito",
+      "text": "Estes pares de vogais aparecem muito na mesma sílaba: AI, EI, OI, OU, AU, EU e UI.",
+      "examples": [
+        "AI: PAI, MAIS",
+        "EI: LEITE, SEIS",
+        "OI: NOITE, BOI",
+        "OU: OURO, SOU",
+        "AU: PAUTA, MAU",
+        "EU: CÉU, EU",
+        "UI: FUI"
+      ],
+      "note": "Em CÉU, o sinal sobre o E se chama acento. Ele mostra que o E soa aberto. Os acentos vão ser estudados mais adiante.",
+      "ttsText": "pai. mais. leite. seis. noite. boi. ouro. sou. pauta. mau. céu. eu. fui."
+    },
+    {
+      "id": "L06-B04",
+      "type": "explanation",
+      "focus": "read-or-listen",
+      "title": "Na fala, às vezes o par encurta",
+      "text": "Na fala, alguns desses pares podem soar como uma vogal só. Muita gente fala OURO como se fosse oro, e MANTEIGA como se fosse mantega.\n\nNa escrita, as duas vogais continuam lá: OURO, MANTEIGA. Quando for escrever, pense na palavra escrita que você já viu, e não só no som.",
+      "ttsText": "ouro. manteiga."
+    },
+    {
+      "id": "L06-C01",
+      "type": "quick-check",
+      "focus": "read-and-respond",
+      "interaction": "single-choice",
+      "prompt": "Em NOITE, qual é a primeira sílaba?",
+      "options": [
+        "NO",
+        "NOI",
+        "OI"
+      ],
+      "correctIndex": 1,
+      "feedback": "NOI: as vogais O e I ficam juntas na mesma sílaba. NOITE se divide em NOI | TE."
+    },
+    {
+      "id": "L06-C02",
+      "type": "quick-check",
+      "focus": "listen-and-respond",
+      "interaction": "single-choice",
+      "prompt": "Ouça a palavra e escolha a forma escrita.",
+      "ttsCue": "roupa",
+      "options": [
+        "ROPA",
+        "RUPA",
+        "ROUPA"
+      ],
+      "correctIndex": 2,
+      "feedback": "ROUPA, com OU. Mesmo quando a fala encurta o par, a escrita mantém as duas vogais."
+    },
+    {
+      "id": "L06-A01",
+      "type": "guided-activity",
+      "focus": "read-then-listen-and-respond",
+      "interaction": "composite",
+      "title": "Leia palavras novas",
+      "instruction": "Leia cada palavra sozinho primeiro, sem pressa. Depois toque em Marcar que tentei ler, ouça os áudios A, B e C e escolha o que corresponde ao que você leu. Os áudios servem para conferir a sua leitura.",
+      "attemptGateRequired": true,
+      "ttsBeforeResponse": false,
+      "items": [
+        {
+          "prompt": "Leia: BEIJO",
+          "attemptGateRequired": true,
+          "audioOptionTextVisible": false,
+          "audioOptions": [
+            {
+              "label": "A",
+              "ttsText": "beiço"
+            },
+            {
+              "label": "B",
+              "ttsText": "beijo"
+            },
+            {
+              "label": "C",
+              "ttsText": "bico"
+            }
+          ],
+          "correctIndex": 1
+        },
+        {
+          "prompt": "Leia: TOURO",
+          "attemptGateRequired": true,
+          "audioOptionTextVisible": false,
+          "audioOptions": [
+            {
+              "label": "A",
+              "ttsText": "touro"
+            },
+            {
+              "label": "B",
+              "ttsText": "tora"
+            },
+            {
+              "label": "C",
+              "ttsText": "torre"
+            }
+          ],
+          "correctIndex": 0
+        },
+        {
+          "prompt": "Leia: COISA",
+          "attemptGateRequired": true,
+          "audioOptionTextVisible": false,
+          "audioOptions": [
+            {
+              "label": "A",
+              "ttsText": "casa"
+            },
+            {
+              "label": "B",
+              "ttsText": "cozinha"
+            },
+            {
+              "label": "C",
+              "ttsText": "coisa"
+            }
+          ],
+          "correctIndex": 2
+        },
+        {
+          "prompt": "Leia: JAULA",
+          "attemptGateRequired": true,
+          "audioOptionTextVisible": false,
+          "audioOptions": [
+            {
+              "label": "A",
+              "ttsText": "jarra"
+            },
+            {
+              "label": "B",
+              "ttsText": "jaula"
+            },
+            {
+              "label": "C",
+              "ttsText": "janela"
+            }
+          ],
+          "correctIndex": 1
+        },
+        {
+          "prompt": "Leia: ADEUS",
+          "attemptGateRequired": true,
+          "audioOptionTextVisible": false,
+          "audioOptions": [
+            {
+              "label": "A",
+              "ttsText": "adeus"
+            },
+            {
+              "label": "B",
+              "ttsText": "ateu"
+            },
+            {
+              "label": "C",
+              "ttsText": "adega"
+            }
+          ],
+          "correctIndex": 0
+        },
+        {
+          "prompt": "Leia: CUIDA",
+          "attemptGateRequired": true,
+          "audioOptionTextVisible": false,
+          "audioOptions": [
+            {
+              "label": "A",
+              "ttsText": "cura"
+            },
+            {
+              "label": "B",
+              "ttsText": "cuia"
+            },
+            {
+              "label": "C",
+              "ttsText": "cuida"
+            }
+          ],
+          "correctIndex": 2
+        }
+      ]
+    },
+    {
+      "id": "L06-A02",
+      "type": "guided-activity",
+      "focus": "listen-then-read-and-respond",
+      "interaction": "composite",
+      "title": "Ache a palavra que você ouviu",
+      "instruction": "Toque em Ouvir e escute a palavra. Depois leia as opções com atenção, porque elas são parecidas, e escolha a forma escrita da palavra que você ouviu. Você pode ouvir quantas vezes quiser.",
+      "items": [
+        {
+          "prompt": "Ouça e escolha a forma escrita.",
+          "ttsCue": "feira",
+          "options": [
+            "FERA",
+            "FEIRA",
+            "FEIA"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "prompt": "Ouça e escolha a forma escrita.",
+          "ttsCue": "pouco",
+          "options": [
+            "POUCO",
+            "POCO",
+            "PAUCO"
+          ],
+          "correctIndex": 0
+        },
+        {
+          "prompt": "Ouça e escolha a forma escrita.",
+          "ttsCue": "pausa",
+          "options": [
+            "POUSA",
+            "PASA",
+            "PAUSA"
+          ],
+          "correctIndex": 2
+        },
+        {
+          "prompt": "Ouça e escolha a forma escrita.",
+          "ttsCue": "dois",
+          "options": [
+            "DOS",
+            "DOIS",
+            "DOUS"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "prompt": "Ouça e escolha a forma escrita.",
+          "ttsCue": "museu",
+          "options": [
+            "MUSEU",
+            "MUSEL",
+            "MUSEO"
+          ],
+          "correctIndex": 0
+        }
+      ]
+    },
+    {
+      "id": "L06-A03",
+      "type": "guided-activity",
+      "focus": "listen-and-write",
+      "interaction": "composite",
+      "title": "Escreva a palavra que você ouviu",
+      "instruction": "Toque em Ouvir e escute a palavra. Depois toque nas fichas na ordem certa para escrever a palavra. Algumas fichas sobram. Se errar, use Limpar sequência e tente de novo.",
+      "items": [
+        {
+          "prompt": "Ouça e monte a palavra com as fichas.",
+          "ttsCue": "peito",
+          "availableTiles": [
+            "TO",
+            "PE",
+            "PEI",
+            "TU"
+          ],
+          "correctSequence": [
+            "PEI",
+            "TO"
+          ]
+        },
+        {
+          "prompt": "Ouça e monte a palavra com as fichas.",
+          "ttsCue": "oito",
+          "availableTiles": [
+            "TO",
+            "OI",
+            "O",
+            "TU"
+          ],
+          "correctSequence": [
+            "OI",
+            "TO"
+          ]
+        },
+        {
+          "prompt": "Ouça e monte a palavra com as fichas.",
+          "ttsCue": "roubo",
+          "availableTiles": [
+            "BO",
+            "RO",
+            "ROU",
+            "BU"
+          ],
+          "correctSequence": [
+            "ROU",
+            "BO"
+          ]
+        },
+        {
+          "prompt": "Ouça e monte a palavra com as fichas.",
+          "ttsCue": "aula",
+          "availableTiles": [
+            "AL",
+            "LA",
+            "AU",
+            "A"
+          ],
+          "correctSequence": [
+            "AU",
+            "LA"
+          ]
+        },
+        {
+          "prompt": "Ouça e monte a palavra com as fichas.",
+          "ttsCue": "meu",
+          "availableTiles": [
+            "E",
+            "L",
+            "M",
+            "U",
+            "O"
+          ],
+          "correctSequence": [
+            "M",
+            "E",
+            "U"
+          ]
+        },
+        {
+          "prompt": "Ouça e monte a palavra com as fichas.",
+          "ttsCue": "dinheiro",
+          "availableTiles": [
+            "NHE",
+            "DI",
+            "RO",
+            "NHEI",
+            "RRO"
+          ],
+          "correctSequence": [
+            "DI",
+            "NHEI",
+            "RO"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "L06-A04",
+      "type": "guided-activity",
+      "focus": "read-sentence-and-respond",
+      "interaction": "composite",
+      "title": "Leia frases curtas",
+      "instruction": "Leia a frase sozinho, sem pressa, mais de uma vez se quiser. Depois responda à pergunta.",
+      "items": [
+        {
+          "sentence": "Meu pai compra leite e queijo na feira.",
+          "prompt": "Onde o pai compra leite e queijo?",
+          "options": [
+            "no mercado",
+            "na feira",
+            "na padaria"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "sentence": "Meu pai compra leite e queijo na feira.",
+          "prompt": "O que ele compra?",
+          "options": [
+            "sabão e pano",
+            "pão e limão",
+            "leite e queijo"
+          ],
+          "correctIndex": 2
+        },
+        {
+          "sentence": "A noite caiu e o céu ficou escuro.",
+          "prompt": "Como ficou o céu?",
+          "options": [
+            "escuro",
+            "claro",
+            "azul"
+          ],
+          "correctIndex": 0
+        }
+      ]
+    },
+    {
+      "id": "L06-B05",
+      "type": "demonstration",
+      "focus": "listen-after-reading",
+      "title": "Confira ouvindo",
+      "text": "Depois de responder, toque em Ouvir exemplo e escute as frases. Confira se você leu do mesmo jeito. Se quiser, leia de novo em voz alta junto com o áudio.",
+      "ttsText": "Meu pai compra leite e queijo na feira. A noite caiu e o céu ficou escuro."
+    },
+    {
+      "id": "L06-B06",
+      "type": "summary",
+      "focus": "read-or-listen",
+      "title": "Resumo",
+      "text": "Duas vogais podem ficar juntas na mesma sílaba e ser faladas de uma vez: PAI, LEITE, NOITE, OURO, PAUTA, CÉU, FUI.\n\nPara ler, junte as duas vogais no mesmo pedaço da palavra: NOI | TE, e não NO | I | TE.\n\nNa fala, alguns pares encurtam, como em OURO. Na escrita, as duas vogais continuam.",
+      "bridgeToNextLesson": "Na próxima lição, você vai juntar tudo o que viu nesta unidade para ler palavras longas e frases curtas."
+    }
+  ],
+  "assessmentBehavior": {
+    "pronunciationPolicy": "não avaliar sotaque nem pronúncia; variações regionais são aceitas",
+    "ttsPolicy": "nas tarefas de leitura, o áudio só fica disponível depois da marcação de tentativa; nas tarefas de escrita e de achar a palavra ouvida, o áudio pode ser repetido sem penalidade",
+    "supportPolicy": "nova tentativa permitida sem penalidade; apoio não é tratado como erro",
+    "timeLimit": false
+  },
+  "completionEvidence": {
+    "observablePerformance": "ler sílabas e palavras novas com a estrutura da lição, escrever palavras ouvidas com fichas e compreender frases curtas",
+    "clusters": {
+      "leituraDePalavras": {
+        "evidence": [
+          "L06-A01",
+          "L06-A02"
+        ],
+        "required": true,
+        "rule": "acertar todos os itens das atividades de leitura; novas tentativas são permitidas sem penalidade"
+      },
+      "escritaDePalavras": {
+        "evidence": [
+          "L06-A03"
+        ],
+        "required": true,
+        "rule": "montar corretamente todas as palavras ouvidas; novas tentativas são permitidas sem penalidade"
+      },
+      "leituraDeFrase": {
+        "evidence": [
+          "L06-A04"
+        ],
+        "required": true,
+        "rule": "responder corretamente a todas as perguntas sobre as frases lidas"
+      }
+    },
+    "nonCompensable": true,
+    "completionRule": "os três agrupamentos são obrigatórios; acerto na leitura não compensa falha na escrita, e vice-versa.",
+    "notSufficient": [
+      "acertar só depois de ouvir o áudio da palavra-alvo antes de tentar ler",
+      "decorar as palavras de exemplo da lição sem ler palavras novas",
+      "recitar famílias silábicas"
+    ]
+  }
+}

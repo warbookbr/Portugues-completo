@@ -1,0 +1,582 @@
+{
+  "schemaVersion": 1,
+  "id": "N0-U08-L04",
+  "title": "R e RR, S e SS, QU e GU",
+  "studentObjective": "Ler e escrever palavras com R e RR, S e SS, QU e GU, como caro e carro, casa e massa, quilo e guerra.",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Decodificar e codificar palavras em que o valor de r, s, c e g depende da posição (r e s entre vogais; c e g antes de e e i), usando rr, ss, qu e gu, e reconhecendo quando o u de qu e gu é pronunciado, com palavras inéditas e frases curtas.",
+  "competencies": [
+    "distinguir pela leitura r fraco e rr forte entre vogais, como em CARO e CARRO",
+    "distinguir pela leitura s com som de z e ss com som de s entre vogais, como em CASA e MASSA",
+    "ler c e g antes de e e i e usar qu e gu para o som de ca e ga antes dessas vogais",
+    "escrever com fichas palavras ouvidas com rr, ss, qu ou gu",
+    "compreender frases curtas formadas por palavras com as estruturas já estudadas"
+  ],
+  "prerequisites": [
+    "N0-U08-L03"
+  ],
+  "limits": [
+    "não usar áudio de som isolado de letra; o áudio é sempre de palavra inteira ou de frase",
+    "não tocar o áudio da palavra-alvo antes da tentativa de leitura; nas tarefas de leitura, o áudio só confere depois da tentativa",
+    "não usar velocidade de leitura ou tempo de resposta como critério",
+    "não exigir nomes técnicos como dígrafo, ditongo, encontro consonantal ou sílaba travada",
+    "não avaliar pronúncia, sotaque ou leitura em voz alta, que o aplicativo não observa",
+    "não transformar a lição em recitação de famílias silábicas",
+    "não cobrar a escolha entre ss, ç, s e z quando o som não decide; isso pertence ao N1",
+    "não cobrar a escolha entre g e j antes de e e i",
+    "não usar, nas tarefas de leitura e escrita, palavras com til, cedilha ou duas vogais na mesma sílaba, exceto em opções só de áudio"
+  ],
+  "media": {
+    "tts": "palavra inteira como alvo de escuta na palavra-chave, na escrita com fichas e em achar a palavra ouvida; nas tarefas de leitura, só para conferir depois da tentativa; frases inteiras para conferência depois da leitura",
+    "controlledAudio": [],
+    "video": "nao necessario",
+    "images": "nao necessarias"
+  },
+  "supportMaterials": {
+    "curatedMedia": [],
+    "runtimeResources": [
+      {
+        "type": "TTS_OK",
+        "locations": [
+          "L04-B02",
+          "L04-C01",
+          "L04-B03",
+          "L04-B04",
+          "L04-B05",
+          "L04-A01",
+          "L04-A02",
+          "L04-A02",
+          "L04-A03",
+          "L04-B06"
+        ],
+        "purpose": "falar palavras inteiras e frases; nas tarefas de leitura, as opções de áudio só são liberadas depois da tentativa; pequenas diferenças de voz do dispositivo não mudam a resposta, porque o contraste avaliado está na escrita"
+      }
+    ],
+    "generatedVisualResources": [
+      {
+        "type": "UI_RENDERED_WORD_CARD",
+        "locations": [
+          "L04-B02",
+          "L04-C01",
+          "L04-B03",
+          "L04-B04",
+          "L04-B05"
+        ],
+        "purpose": "mostrar a palavra-chave e os exemplos como texto real, com a divisão em sílabas quando ajuda"
+      },
+      {
+        "type": "UI_RENDERED_AUDIO_CHOICE_CONTROLS",
+        "locations": [
+          "L04-A01",
+          "L04-A02"
+        ],
+        "purpose": "opções de áudio A, B e C sem texto, liberadas só depois de o aluno marcar que tentou ler"
+      },
+      {
+        "type": "UI_RENDERED_WORD_CHOICES",
+        "locations": [
+          "L04-A02"
+        ],
+        "purpose": "formas escritas parecidas para achar a palavra ouvida"
+      },
+      {
+        "type": "UI_RENDERED_LETTER_AND_SYLLABLE_TILES",
+        "locations": [
+          "L04-A03"
+        ],
+        "purpose": "fichas de letras e sílabas em ordem misturada, com sobras plausíveis, para escrever a palavra ouvida"
+      },
+      {
+        "type": "UI_RENDERED_SENTENCE_CARD",
+        "locations": [
+          "L04-A04"
+        ],
+        "purpose": "frase curta visível durante a pergunta de compreensão"
+      }
+    ],
+    "productionQueueRequired": false,
+    "publicationDependency": "nenhuma mídia humana obrigatória; texto, fichas da interface e TTS do dispositivo bastam",
+    "decisionRationale": "a competência é ligar escrita e som em palavras inteiras. O TTS de palavra inteira serve como alvo de escrita e como conferência depois da leitura; não há som isolado de letra, que o TTS produz mal. Imagem e vídeo não acrescentam informação a essas tarefas."
+  },
+  "sequence": [
+    {
+      "id": "L04-B01",
+      "type": "explanation",
+      "focus": "read-or-listen",
+      "title": "O lugar da letra muda o som",
+      "text": "Algumas letras mudam de som conforme o lugar em que aparecem na palavra.\n\nNesta lição, você vai ver isso com R, S, C e G, e vai conhecer RR, SS, QU e GU, que ajudam a escrever o som certo."
+    },
+    {
+      "id": "L04-B02",
+      "type": "demonstration",
+      "focus": "listen-then-observe",
+      "title": "Palavra-chave: CARRO",
+      "text": "Toque em Ouvir palavra e escute: carro.\n\nAgora veja como ela é escrita: CARRO. Entre o A e o O há dois R.\n\nCompare com CARO, de preço alto. Entre duas vogais, um R só tem som fraco, como em CARO. Para o som forte, o mesmo do começo de RUA, escrevemos RR entre as vogais: CARRO.",
+      "word": "CARRO",
+      "segments": [
+        "CAR",
+        "RO"
+      ],
+      "ttsCue": "carro",
+      "examples": [
+        "CARO: CA | RO",
+        "CARRO: CAR | RO"
+      ],
+      "note": "Na divisão em sílabas, os dois R ficam separados: CAR | RO. O som forte do R muda de região para região; o que importa é a diferença entre o som forte e o som fraco."
+    },
+    {
+      "id": "L04-C01",
+      "type": "quick-check",
+      "focus": "listen-and-respond",
+      "interaction": "single-choice",
+      "prompt": "Ouça a palavra e escolha a forma escrita.",
+      "ttsCue": "caro",
+      "options": [
+        "CARRO",
+        "CARO",
+        "CAO"
+      ],
+      "correctIndex": 1,
+      "feedback": "CARO, com um R só: entre vogais, um R só tem som fraco."
+    },
+    {
+      "id": "L04-B03",
+      "type": "demonstration",
+      "focus": "listen-then-observe",
+      "title": "S e SS",
+      "text": "Entre duas vogais, um S só tem som de Z: CASA, MESA.\n\nPara ter o som de S, o mesmo do começo de SAPO, entre duas vogais, escrevemos SS: MASSA, OSSO.\n\nCompare CASA e MASSA.",
+      "examples": [
+        "CASA: CA | SA",
+        "MESA: ME | SA",
+        "MASSA: MAS | SA",
+        "OSSO: OS | SO"
+      ],
+      "note": "RR e SS só aparecem entre duas vogais e nunca começam uma palavra. Depois de consoante, um S só já tem som de S, como em BOLSA.",
+      "ttsText": "casa. mesa. massa. osso."
+    },
+    {
+      "id": "L04-B04",
+      "type": "demonstration",
+      "focus": "listen-then-observe",
+      "title": "C antes de E e I, e o QU",
+      "text": "Antes de E e de I, a letra C tem som de S: CEDO, CINEMA.\n\nPor isso, para escrever o som de CA antes de E e de I, usamos QU: PEQUENO, QUILO. Nesses casos, o U não é falado.\n\nAntes de A, o U de QU é falado: QUATRO, QUANDO.",
+      "examples": [
+        "CE e CI: CEDO, CINEMA",
+        "QUE e QUI: PEQUENO, QUILO",
+        "QUA: QUATRO, QUANDO"
+      ],
+      "ttsText": "cedo. cinema. pequeno. quilo. quatro. quando."
+    },
+    {
+      "id": "L04-B05",
+      "type": "demonstration",
+      "focus": "listen-then-observe",
+      "title": "G antes de E e I, e o GU",
+      "text": "Antes de E e de I, a letra G tem som de J: GENTE, GELO.\n\nPara escrever o som de GA antes de E e de I, usamos GU: GUERRA, GUIA. Nesses casos, o U não é falado.\n\nAntes de A, o U de GU é falado: GUARDA.",
+      "examples": [
+        "GE e GI: GENTE, GELO",
+        "GUE e GUI: GUERRA, GUIA",
+        "GUA: GUARDA"
+      ],
+      "ttsText": "gente. gelo. guerra. guia. guarda."
+    },
+    {
+      "id": "L04-C02",
+      "type": "quick-check",
+      "focus": "read-and-respond",
+      "interaction": "single-choice",
+      "prompt": "Em GUERRA, o U é falado?",
+      "options": [
+        "Não. O U só mostra que o G tem o som de GA.",
+        "Sim, o U é falado como em GUARDA.",
+        "Não, e o G tem som de J."
+      ],
+      "correctIndex": 0,
+      "feedback": "Antes de E e de I, o U de GU não é falado. Ele mostra que o G tem o som de GA: GUERRA."
+    },
+    {
+      "id": "L04-A01",
+      "type": "guided-activity",
+      "focus": "read-then-listen-and-respond",
+      "interaction": "composite",
+      "title": "Leia palavras novas",
+      "instruction": "Leia cada palavra sozinho primeiro, sem pressa. Depois toque em Marcar que tentei ler, ouça os áudios A, B e C e escolha o que corresponde ao que você leu. Os áudios servem para conferir a sua leitura.",
+      "attemptGateRequired": true,
+      "ttsBeforeResponse": false,
+      "items": [
+        {
+          "prompt": "Leia: MURO",
+          "attemptGateRequired": true,
+          "audioOptionTextVisible": false,
+          "audioOptions": [
+            {
+              "label": "A",
+              "ttsText": "muro"
+            },
+            {
+              "label": "B",
+              "ttsText": "murro"
+            },
+            {
+              "label": "C",
+              "ttsText": "mudo"
+            }
+          ],
+          "correctIndex": 0
+        },
+        {
+          "prompt": "Leia: FERRO",
+          "attemptGateRequired": true,
+          "audioOptionTextVisible": false,
+          "audioOptions": [
+            {
+              "label": "A",
+              "ttsText": "feto"
+            },
+            {
+              "label": "B",
+              "ttsText": "ferro"
+            },
+            {
+              "label": "C",
+              "ttsText": "fera"
+            }
+          ],
+          "correctIndex": 1
+        },
+        {
+          "prompt": "Leia: VASO",
+          "attemptGateRequired": true,
+          "audioOptionTextVisible": false,
+          "audioOptions": [
+            {
+              "label": "A",
+              "ttsText": "vago"
+            },
+            {
+              "label": "B",
+              "ttsText": "vaso"
+            },
+            {
+              "label": "C",
+              "ttsText": "vale"
+            }
+          ],
+          "correctIndex": 1
+        },
+        {
+          "prompt": "Leia: TOSSE",
+          "attemptGateRequired": true,
+          "audioOptionTextVisible": false,
+          "audioOptions": [
+            {
+              "label": "A",
+              "ttsText": "toque"
+            },
+            {
+              "label": "B",
+              "ttsText": "doce"
+            },
+            {
+              "label": "C",
+              "ttsText": "tosse"
+            }
+          ],
+          "correctIndex": 2
+        },
+        {
+          "prompt": "Leia: TANQUE",
+          "attemptGateRequired": true,
+          "audioOptionTextVisible": false,
+          "audioOptions": [
+            {
+              "label": "A",
+              "ttsText": "tanque"
+            },
+            {
+              "label": "B",
+              "ttsText": "tango"
+            },
+            {
+              "label": "C",
+              "ttsText": "tanga"
+            }
+          ],
+          "correctIndex": 0
+        },
+        {
+          "prompt": "Leia: FOGUETE",
+          "attemptGateRequired": true,
+          "audioOptionTextVisible": false,
+          "audioOptions": [
+            {
+              "label": "A",
+              "ttsText": "fofoca"
+            },
+            {
+              "label": "B",
+              "ttsText": "fogo"
+            },
+            {
+              "label": "C",
+              "ttsText": "foguete"
+            }
+          ],
+          "correctIndex": 2
+        }
+      ]
+    },
+    {
+      "id": "L04-A02",
+      "type": "guided-activity",
+      "focus": "listen-then-read-and-respond",
+      "interaction": "composite",
+      "title": "Ache a palavra que você ouviu",
+      "instruction": "Toque em Ouvir e escute a palavra. Depois leia as opções com atenção, porque elas são parecidas, e escolha a forma escrita da palavra que você ouviu. Você pode ouvir quantas vezes quiser.",
+      "items": [
+        {
+          "prompt": "Ouça e escolha a forma escrita.",
+          "ttsCue": "terra",
+          "options": [
+            "TERA",
+            "TERRA",
+            "TARRA"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "prompt": "Ouça e escolha a forma escrita.",
+          "ttsCue": "pessoa",
+          "options": [
+            "PESSOA",
+            "PESOA",
+            "PEZOA"
+          ],
+          "correctIndex": 0
+        },
+        {
+          "prompt": "Ouça e escolha a forma escrita.",
+          "ttsCue": "quente",
+          "options": [
+            "CENTE",
+            "GUENTE",
+            "QUENTE"
+          ],
+          "correctIndex": 2
+        },
+        {
+          "prompt": "Ouça e escolha a forma escrita.",
+          "ttsCue": "sangue",
+          "options": [
+            "SANGE",
+            "SANGUE",
+            "SANQUE"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "prompt": "Ouça e escolha a forma escrita.",
+          "ttsCue": "casaco",
+          "options": [
+            "CASACO",
+            "CASSACO",
+            "CARACO"
+          ],
+          "correctIndex": 0
+        }
+      ]
+    },
+    {
+      "id": "L04-A03",
+      "type": "guided-activity",
+      "focus": "listen-and-write",
+      "interaction": "composite",
+      "title": "Escreva a palavra que você ouviu",
+      "instruction": "Toque em Ouvir e escute a palavra. Depois toque nas fichas na ordem certa para escrever a palavra. Algumas fichas sobram. Se errar, use Limpar sequência e tente de novo.",
+      "items": [
+        {
+          "prompt": "Ouça e monte a palavra com as fichas.",
+          "ttsCue": "barraca",
+          "availableTiles": [
+            "BA",
+            "CA",
+            "BAR",
+            "RA"
+          ],
+          "correctSequence": [
+            "BAR",
+            "RA",
+            "CA"
+          ]
+        },
+        {
+          "prompt": "Ouça e monte a palavra com as fichas.",
+          "ttsCue": "nosso",
+          "availableTiles": [
+            "SO",
+            "NO",
+            "NOS",
+            "ZO"
+          ],
+          "correctSequence": [
+            "NOS",
+            "SO"
+          ]
+        },
+        {
+          "prompt": "Ouça e monte a palavra com as fichas.",
+          "ttsCue": "queda",
+          "availableTiles": [
+            "DA",
+            "CE",
+            "QUE",
+            "GUE"
+          ],
+          "correctSequence": [
+            "QUE",
+            "DA"
+          ]
+        },
+        {
+          "prompt": "Ouça e monte a palavra com as fichas.",
+          "ttsCue": "seguinte",
+          "availableTiles": [
+            "GIN",
+            "SE",
+            "TE",
+            "GUIN"
+          ],
+          "correctSequence": [
+            "SE",
+            "GUIN",
+            "TE"
+          ]
+        },
+        {
+          "prompt": "Ouça e monte a palavra com as fichas.",
+          "ttsCue": "parque",
+          "availableTiles": [
+            "CE",
+            "PAR",
+            "QUE",
+            "PA"
+          ],
+          "correctSequence": [
+            "PAR",
+            "QUE"
+          ]
+        },
+        {
+          "prompt": "Ouça e monte a palavra com as fichas.",
+          "ttsCue": "hora",
+          "availableTiles": [
+            "RRA",
+            "O",
+            "RA",
+            "HO"
+          ],
+          "correctSequence": [
+            "HO",
+            "RA"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "L04-A04",
+      "type": "guided-activity",
+      "focus": "read-sentence-and-respond",
+      "interaction": "composite",
+      "title": "Leia frases curtas",
+      "instruction": "Leia a frase sozinho, sem pressa, mais de uma vez se quiser. Depois responda à pergunta.",
+      "items": [
+        {
+          "sentence": "Rosa esquenta a massa no forno.",
+          "prompt": "O que Rosa esquenta?",
+          "options": [
+            "o molho",
+            "a massa",
+            "a sopa"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "sentence": "Rosa esquenta a massa no forno.",
+          "prompt": "Onde Rosa esquenta a massa?",
+          "options": [
+            "no forno",
+            "na chapa",
+            "na panela"
+          ],
+          "correctIndex": 0
+        },
+        {
+          "sentence": "Gustavo carrega o saco de batata.",
+          "prompt": "O que tem no saco?",
+          "options": [
+            "cebola",
+            "farinha",
+            "batata"
+          ],
+          "correctIndex": 2
+        }
+      ]
+    },
+    {
+      "id": "L04-B06",
+      "type": "demonstration",
+      "focus": "listen-after-reading",
+      "title": "Confira ouvindo",
+      "text": "Depois de responder, toque em Ouvir exemplo e escute as frases. Confira se você leu do mesmo jeito. Se quiser, leia de novo em voz alta junto com o áudio.",
+      "ttsText": "Rosa esquenta a massa no forno. Gustavo carrega o saco de batata."
+    },
+    {
+      "id": "L04-B07",
+      "type": "summary",
+      "focus": "read-or-listen",
+      "title": "Resumo",
+      "text": "Entre duas vogais, um R só tem som fraco (CARO) e RR tem som forte (CARRO). Um S só tem som de Z (CASA) e SS tem som de S (MASSA).\n\nAntes de E e de I, o C soa como S e o G soa como J. Para o som de CA e de GA antes de E e de I, escrevemos QU e GU: QUILO, GUERRA. Nesses casos, o U não é falado. Antes de A, ele é falado: QUANDO, GUARDA.",
+      "bridgeToNextLesson": "Na próxima lição, você vai conhecer o til, os sons que saem também pelo nariz e a cedilha."
+    }
+  ],
+  "assessmentBehavior": {
+    "pronunciationPolicy": "não avaliar sotaque nem pronúncia; variações regionais são aceitas",
+    "ttsPolicy": "nas tarefas de leitura, o áudio só fica disponível depois da marcação de tentativa; nas tarefas de escrita e de achar a palavra ouvida, o áudio pode ser repetido sem penalidade",
+    "supportPolicy": "nova tentativa permitida sem penalidade; apoio não é tratado como erro",
+    "timeLimit": false
+  },
+  "completionEvidence": {
+    "observablePerformance": "ler sílabas e palavras novas com a estrutura da lição, escrever palavras ouvidas com fichas e compreender frases curtas",
+    "clusters": {
+      "leituraDePalavras": {
+        "evidence": [
+          "L04-A01",
+          "L04-A02"
+        ],
+        "required": true,
+        "rule": "acertar todos os itens das atividades de leitura; novas tentativas são permitidas sem penalidade"
+      },
+      "escritaDePalavras": {
+        "evidence": [
+          "L04-A03"
+        ],
+        "required": true,
+        "rule": "montar corretamente todas as palavras ouvidas; novas tentativas são permitidas sem penalidade"
+      },
+      "leituraDeFrase": {
+        "evidence": [
+          "L04-A04"
+        ],
+        "required": true,
+        "rule": "responder corretamente a todas as perguntas sobre as frases lidas"
+      }
+    },
+    "nonCompensable": true,
+    "completionRule": "os três agrupamentos são obrigatórios; acerto na leitura não compensa falha na escrita, e vice-versa.",
+    "notSufficient": [
+      "acertar só depois de ouvir o áudio da palavra-alvo antes de tentar ler",
+      "decorar as palavras de exemplo da lição sem ler palavras novas",
+      "recitar famílias silábicas"
+    ]
+  }
+}

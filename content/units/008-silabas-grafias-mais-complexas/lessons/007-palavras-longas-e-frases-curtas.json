@@ -1,0 +1,606 @@
+{
+  "schemaVersion": 1,
+  "id": "N0-U08-L07",
+  "title": "Palavras longas e frases curtas",
+  "studentObjective": "Juntar tudo o que você aprendeu para ler e escrever palavras longas e ler frases curtas do dia a dia.",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Integrar as estruturas silábicas e grafias da unidade (consoante em fim de sílaba, grupos consonantais, dígrafos, rr/ss/qu/gu, nasalidade, cedilha e ditongos) na decodificação de palavras polissílabas inéditas, na escrita de palavras ouvidas e na compreensão de frases curtas, com estratégia explícita de leitura por sílabas.",
+  "competencies": [
+    "usar a leitura por sílabas como estratégia para ler palavras longas inéditas",
+    "ler palavras longas inéditas que combinam várias estruturas da unidade",
+    "escrever com fichas palavras longas ouvidas que combinam várias estruturas",
+    "compreender frases curtas do cotidiano formadas por palavras com todas as estruturas estudadas",
+    "escrever palavras próprias com o teclado e revisá-las por leitura em voz alta"
+  ],
+  "prerequisites": [
+    "N0-U08-L06"
+  ],
+  "limits": [
+    "não usar áudio de som isolado de letra; o áudio é sempre de palavra inteira ou de frase",
+    "não tocar o áudio da palavra-alvo antes da tentativa de leitura; nas tarefas de leitura, o áudio só confere depois da tentativa",
+    "não usar velocidade de leitura ou tempo de resposta como critério",
+    "não exigir nomes técnicos como dígrafo, ditongo, encontro consonantal ou sílaba travada",
+    "não avaliar pronúncia, sotaque ou leitura em voz alta, que o aplicativo não observa",
+    "não transformar a lição em recitação de famílias silábicas",
+    "não exigir leitura de textos com mais de uma frase como evidência",
+    "não validar automaticamente a ortografia da escrita própria; ela é registrada e autorrevisada"
+  ],
+  "media": {
+    "tts": "palavra inteira como alvo de escuta na palavra-chave, na escrita com fichas e em achar a palavra ouvida; nas tarefas de leitura, só para conferir depois da tentativa; frases inteiras para conferência depois da leitura",
+    "controlledAudio": [],
+    "video": "nao necessario",
+    "images": "nao necessarias"
+  },
+  "supportMaterials": {
+    "curatedMedia": [],
+    "runtimeResources": [
+      {
+        "type": "TTS_OK",
+        "locations": [
+          "L07-B01",
+          "L07-B03",
+          "L07-B05",
+          "L07-A01",
+          "L07-A02",
+          "L07-A02",
+          "L07-A03",
+          "L07-B04"
+        ],
+        "purpose": "falar palavras inteiras e frases; nas tarefas de leitura, as opções de áudio só são liberadas depois da tentativa; pequenas diferenças de voz do dispositivo não mudam a resposta, porque o contraste avaliado está na escrita"
+      }
+    ],
+    "generatedVisualResources": [
+      {
+        "type": "UI_RENDERED_WORD_CARD",
+        "locations": [
+          "L07-B01",
+          "L07-B03",
+          "L07-B05"
+        ],
+        "purpose": "mostrar a palavra-chave e os exemplos como texto real, com a divisão em sílabas quando ajuda"
+      },
+      {
+        "type": "UI_RENDERED_AUDIO_CHOICE_CONTROLS",
+        "locations": [
+          "L07-A01",
+          "L07-A02"
+        ],
+        "purpose": "opções de áudio A, B e C sem texto, liberadas só depois de o aluno marcar que tentou ler"
+      },
+      {
+        "type": "UI_RENDERED_WORD_CHOICES",
+        "locations": [
+          "L07-A02"
+        ],
+        "purpose": "formas escritas parecidas para achar a palavra ouvida"
+      },
+      {
+        "type": "UI_RENDERED_LETTER_AND_SYLLABLE_TILES",
+        "locations": [
+          "L07-A03"
+        ],
+        "purpose": "fichas de letras e sílabas em ordem misturada, com sobras plausíveis, para escrever a palavra ouvida"
+      },
+      {
+        "type": "UI_RENDERED_SENTENCE_CARD",
+        "locations": [
+          "L07-A04"
+        ],
+        "purpose": "frase curta visível durante a pergunta de compreensão"
+      }
+    ],
+    "productionQueueRequired": false,
+    "publicationDependency": "nenhuma mídia humana obrigatória; texto, fichas da interface e TTS do dispositivo bastam",
+    "decisionRationale": "a competência é ligar escrita e som em palavras inteiras. O TTS de palavra inteira serve como alvo de escrita e como conferência depois da leitura; não há som isolado de letra, que o TTS produz mal. Imagem e vídeo não acrescentam informação a essas tarefas. A escrita própria com teclado é registrada sem correção automática, e o poema curto autoral é lido antes de ser ouvido."
+  },
+  "sequence": [
+    {
+      "id": "L07-B01",
+      "type": "explanation",
+      "focus": "read-or-listen",
+      "title": "O que você já sabe ler",
+      "text": "Nesta unidade, você aprendeu a ler e escrever sílabas de vários tipos. Veja um exemplo de cada um. Agora você vai juntar tudo para ler palavras longas e frases curtas.",
+      "examples": [
+        "sílaba que termina com consoante: POR | TA, SOL",
+        "duas consoantes no começo: PRA | TO, FLOR",
+        "duas letras com um som só: CHA | VE, FI | LHO, BA | NHO",
+        "R e RR, S e SS, QU e GU: CA | RO, CAR | RO, CA | SA, MAS | SA, GUER | RA",
+        "til, M e N depois da vogal, e cedilha: MÃO, CAM | PO, CA | BE | ÇA",
+        "duas vogais juntas: PAI, LEI | TE, NOI | TE"
+      ]
+    },
+    {
+      "id": "L07-B02",
+      "type": "strategy",
+      "focus": "read-or-listen",
+      "title": "Como ler uma palavra longa",
+      "text": "Palavras longas parecem difíceis, mas são feitas das mesmas sílabas que você já conhece. Siga estes passos:",
+      "steps": [
+        "Olhe a palavra inteira.",
+        "Leia uma sílaba de cada vez, da esquerda para a direita.",
+        "Repare nos pedaços que você estudou: consoante no fim da sílaba, duas consoantes no começo, CH, LH, NH, RR, SS, QU, GU, til, Ç e vogais juntas.",
+        "Junte as sílabas e diga a palavra inteira.",
+        "Pergunte a si mesmo: essa palavra existe? Faz sentido aqui?"
+      ]
+    },
+    {
+      "id": "L07-B03",
+      "type": "demonstration",
+      "focus": "read-then-listen",
+      "title": "Exemplo: PLANEJAMENTO",
+      "text": "Leia por partes: PLA, NE, JA, MEN, TO. Em PLA há duas consoantes no começo. Em MEN, o N fecha a sílaba e a vogal soa também pelo nariz. Agora junte tudo e diga a palavra inteira.\n\nDepois de tentar, toque em Ouvir palavra para conferir.",
+      "word": "PLANEJAMENTO",
+      "segments": [
+        "PLA",
+        "NE",
+        "JA",
+        "MEN",
+        "TO"
+      ],
+      "ttsCue": "planejamento"
+    },
+    {
+      "id": "L07-C01",
+      "type": "quick-check",
+      "focus": "read-and-respond",
+      "interaction": "single-choice",
+      "prompt": "Leia por partes: CO | ZI | NHEI | RO. Qual é a palavra inteira?",
+      "options": [
+        "COZINHERO",
+        "COZINHEIRO",
+        "CONZINHEIRO"
+      ],
+      "correctIndex": 1,
+      "feedback": "COZINHEIRO: CO, ZI, NHEI e RO. Em NHEI, há o NH e as vogais E e I juntas."
+    },
+    {
+      "id": "L07-A01",
+      "type": "guided-activity",
+      "focus": "read-then-listen-and-respond",
+      "interaction": "composite",
+      "title": "Leia palavras longas",
+      "instruction": "Leia cada palavra sozinho primeiro, sem pressa. Depois toque em Marcar que tentei ler, ouça os áudios A, B e C e escolha o que corresponde ao que você leu. Os áudios servem para conferir a sua leitura.",
+      "attemptGateRequired": true,
+      "ttsBeforeResponse": false,
+      "items": [
+        {
+          "prompt": "Leia: PASSAGEIRO",
+          "attemptGateRequired": true,
+          "audioOptionTextVisible": false,
+          "audioOptions": [
+            {
+              "label": "A",
+              "ttsText": "passarinho"
+            },
+            {
+              "label": "B",
+              "ttsText": "passeio"
+            },
+            {
+              "label": "C",
+              "ttsText": "passageiro"
+            }
+          ],
+          "correctIndex": 2
+        },
+        {
+          "prompt": "Leia: ORÇAMENTO",
+          "attemptGateRequired": true,
+          "audioOptionTextVisible": false,
+          "audioOptions": [
+            {
+              "label": "A",
+              "ttsText": "ornamento"
+            },
+            {
+              "label": "B",
+              "ttsText": "orçamento"
+            },
+            {
+              "label": "C",
+              "ttsText": "argumento"
+            }
+          ],
+          "correctIndex": 1
+        },
+        {
+          "prompt": "Leia: PRESTAÇÃO",
+          "attemptGateRequired": true,
+          "audioOptionTextVisible": false,
+          "audioOptions": [
+            {
+              "label": "A",
+              "ttsText": "proteção"
+            },
+            {
+              "label": "B",
+              "ttsText": "prestador"
+            },
+            {
+              "label": "C",
+              "ttsText": "prestação"
+            }
+          ],
+          "correctIndex": 2
+        },
+        {
+          "prompt": "Leia: CHUVEIRO",
+          "attemptGateRequired": true,
+          "audioOptionTextVisible": false,
+          "audioOptions": [
+            {
+              "label": "A",
+              "ttsText": "chuveiro"
+            },
+            {
+              "label": "B",
+              "ttsText": "chuvoso"
+            },
+            {
+              "label": "C",
+              "ttsText": "cheiro"
+            }
+          ],
+          "correctIndex": 0
+        },
+        {
+          "prompt": "Leia: ESTACIONAMENTO",
+          "attemptGateRequired": true,
+          "audioOptionTextVisible": false,
+          "audioOptions": [
+            {
+              "label": "A",
+              "ttsText": "estação"
+            },
+            {
+              "label": "B",
+              "ttsText": "estacionamento"
+            },
+            {
+              "label": "C",
+              "ttsText": "estacionar"
+            }
+          ],
+          "correctIndex": 1
+        },
+        {
+          "prompt": "Leia: MERCADORIA",
+          "attemptGateRequired": true,
+          "audioOptionTextVisible": false,
+          "audioOptions": [
+            {
+              "label": "A",
+              "ttsText": "mercadoria"
+            },
+            {
+              "label": "B",
+              "ttsText": "mercado"
+            },
+            {
+              "label": "C",
+              "ttsText": "mercearia"
+            }
+          ],
+          "correctIndex": 0
+        }
+      ]
+    },
+    {
+      "id": "L07-A02",
+      "type": "guided-activity",
+      "focus": "listen-then-read-and-respond",
+      "interaction": "composite",
+      "title": "Ache a palavra que você ouviu",
+      "instruction": "Toque em Ouvir e escute a palavra. Depois leia as opções com atenção, porque elas são parecidas, e escolha a forma escrita da palavra que você ouviu. Você pode ouvir quantas vezes quiser.",
+      "items": [
+        {
+          "prompt": "Ouça e escolha a forma escrita.",
+          "ttsCue": "assinatura",
+          "options": [
+            "ASINATURA",
+            "ASSINATURA",
+            "ASSINADURA"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "prompt": "Ouça e escolha a forma escrita.",
+          "ttsCue": "endereço",
+          "options": [
+            "EMDEREÇO",
+            "ENDERECO",
+            "ENDEREÇO"
+          ],
+          "correctIndex": 2
+        },
+        {
+          "prompt": "Ouça e escolha a forma escrita.",
+          "ttsCue": "trabalhador",
+          "options": [
+            "TRABALHADOR",
+            "TRABALADOR",
+            "TRABALHADO"
+          ],
+          "correctIndex": 0
+        },
+        {
+          "prompt": "Ouça e escolha a forma escrita.",
+          "ttsCue": "hospital",
+          "options": [
+            "HOSPITAU",
+            "HOSPITAL",
+            "HOPITAL"
+          ],
+          "correctIndex": 1
+        }
+      ]
+    },
+    {
+      "id": "L07-A03",
+      "type": "guided-activity",
+      "focus": "listen-and-write",
+      "interaction": "composite",
+      "title": "Escreva a palavra que você ouviu",
+      "instruction": "Toque em Ouvir e escute a palavra. Depois toque nas fichas na ordem certa para escrever a palavra. Algumas fichas sobram. Se errar, use Limpar sequência e tente de novo.",
+      "items": [
+        {
+          "prompt": "Ouça e monte a palavra com as fichas.",
+          "ttsCue": "passagem",
+          "availableTiles": [
+            "GEN",
+            "PAS",
+            "SA",
+            "GEM",
+            "PA"
+          ],
+          "correctSequence": [
+            "PAS",
+            "SA",
+            "GEM"
+          ]
+        },
+        {
+          "prompt": "Ouça e monte a palavra com as fichas.",
+          "ttsCue": "caminhão",
+          "availableTiles": [
+            "NHÃO",
+            "MI",
+            "CA",
+            "NÃO",
+            "LHÃO"
+          ],
+          "correctSequence": [
+            "CA",
+            "MI",
+            "NHÃO"
+          ]
+        },
+        {
+          "prompt": "Ouça e monte a palavra com as fichas.",
+          "ttsCue": "esquina",
+          "availableTiles": [
+            "CI",
+            "NA",
+            "ES",
+            "QUI"
+          ],
+          "correctSequence": [
+            "ES",
+            "QUI",
+            "NA"
+          ]
+        },
+        {
+          "prompt": "Ouça e monte a palavra com as fichas.",
+          "ttsCue": "brincadeira",
+          "availableTiles": [
+            "DEI",
+            "BIN",
+            "RA",
+            "BRIN",
+            "CA",
+            "DE"
+          ],
+          "correctSequence": [
+            "BRIN",
+            "CA",
+            "DEI",
+            "RA"
+          ]
+        },
+        {
+          "prompt": "Ouça e monte a palavra com as fichas.",
+          "ttsCue": "pescoço",
+          "availableTiles": [
+            "ÇO",
+            "PES",
+            "CO",
+            "PE",
+            "SO"
+          ],
+          "correctSequence": [
+            "PES",
+            "CO",
+            "ÇO"
+          ]
+        },
+        {
+          "prompt": "Ouça e monte a palavra com as fichas.",
+          "ttsCue": "segurança",
+          "availableTiles": [
+            "RAN",
+            "ÇA",
+            "SE",
+            "RRAN",
+            "GU"
+          ],
+          "correctSequence": [
+            "SE",
+            "GU",
+            "RAN",
+            "ÇA"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "L07-A04",
+      "type": "guided-activity",
+      "focus": "read-sentence-and-respond",
+      "interaction": "composite",
+      "title": "Leia frases curtas",
+      "instruction": "Leia a frase sozinho, sem pressa, mais de uma vez se quiser. Depois responda à pergunta.",
+      "items": [
+        {
+          "sentence": "A consulta no posto ficou para quinta-feira.",
+          "prompt": "Para quando ficou a consulta?",
+          "options": [
+            "segunda-feira",
+            "quinta-feira",
+            "sexta-feira"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "sentence": "A consulta no posto ficou para quinta-feira.",
+          "prompt": "Onde vai ser a consulta?",
+          "options": [
+            "no banco",
+            "na escola",
+            "no posto"
+          ],
+          "correctIndex": 2
+        },
+        {
+          "sentence": "Joana guardou o dinheiro da passagem na carteira.",
+          "prompt": "Onde Joana guardou o dinheiro?",
+          "options": [
+            "na carteira",
+            "na bolsa",
+            "no bolso"
+          ],
+          "correctIndex": 0
+        },
+        {
+          "sentence": "Joana guardou o dinheiro da passagem na carteira.",
+          "prompt": "Para que é o dinheiro?",
+          "options": [
+            "para o almoço",
+            "para a passagem",
+            "para o pão"
+          ],
+          "correctIndex": 1
+        }
+      ]
+    },
+    {
+      "id": "L07-B04",
+      "type": "demonstration",
+      "focus": "listen-after-reading",
+      "title": "Confira ouvindo",
+      "text": "Depois de responder, toque em Ouvir exemplo e escute as frases. Confira se você leu do mesmo jeito. Se quiser, leia de novo em voz alta junto com o áudio.",
+      "ttsText": "A consulta no posto ficou para quinta-feira. Joana guardou o dinheiro da passagem na carteira."
+    },
+    {
+      "id": "L07-B05",
+      "type": "authored-poem",
+      "focus": "read-then-listen",
+      "title": "Um poema curto para ler",
+      "text": "Leia o poema devagar, verso por verso. Cada linha do poema se chama verso. Depois toque em Ouvir exemplo e leia de novo, junto com o áudio. Repare nas palavras que terminam com o mesmo som: FOGÃO e MÃO.",
+      "lines": [
+        "Chuva fina na janela,",
+        "o café ferve no fogão.",
+        "Quem trabalha desde cedo",
+        "leva o sonho pela mão."
+      ],
+      "ttsText": "Chuva fina na janela, o café ferve no fogão. Quem trabalha desde cedo leva o sonho pela mão."
+    },
+    {
+      "id": "L07-A05",
+      "type": "short-open-production",
+      "focus": "write-and-review",
+      "title": "Agora escreva você",
+      "prompt": "Use o teclado para escrever o nome de três coisas que você compra ou usa no dia a dia. Tente escolher palavras com os tipos de sílaba desta unidade. Depois leia em voz alta o que escreveu, sílaba por sílaba.",
+      "responseMode": "free-text",
+      "recordResponse": true,
+      "automaticValidation": false,
+      "optionalScaffold": {
+        "wordBank": [
+          "sabão",
+          "escova",
+          "chinelo",
+          "creme",
+          "pão",
+          "leite",
+          "carne",
+          "biscoito",
+          "sabonete",
+          "travesseiro"
+        ],
+        "availableOnDemand": true
+      },
+      "selfReviewQuestions": [
+        "Li cada palavra em voz alta, sílaba por sílaba?",
+        "Cada som que ouvi ao ler tem letras na escrita?",
+        "Corrigi o que precisava ser corrigido?"
+      ],
+      "automaticObservations": [
+        "há texto além de espaços ou sinais",
+        "a autochecagem foi concluída",
+        "o apoio opcional foi ou não aberto"
+      ],
+      "notAutomaticallyJudged": [
+        "ortografia de cada palavra",
+        "leitura em voz alta"
+      ]
+    },
+    {
+      "id": "L07-B06",
+      "type": "summary",
+      "focus": "read-or-listen",
+      "title": "Resumo",
+      "text": "Palavras longas são feitas das mesmas sílabas que você já conhece. Leia uma sílaba de cada vez, repare nos pedaços estudados nesta unidade e depois junte tudo.\n\nAo ler uma frase, leia palavra por palavra e depois a frase inteira. Pergunte a si mesmo o que ela diz.",
+      "bridgeToUnitVerification": "Na verificação da unidade, você vai ler e escrever palavras novas de todos esses tipos e ler duas frases curtas."
+    }
+  ],
+  "assessmentBehavior": {
+    "pronunciationPolicy": "não avaliar sotaque nem pronúncia; variações regionais são aceitas",
+    "ttsPolicy": "nas tarefas de leitura, o áudio só fica disponível depois da marcação de tentativa; nas tarefas de escrita e de achar a palavra ouvida, o áudio pode ser repetido sem penalidade",
+    "supportPolicy": "nova tentativa permitida sem penalidade; apoio não é tratado como erro",
+    "timeLimit": false
+  },
+  "completionEvidence": {
+    "observablePerformance": "ler sílabas e palavras novas com a estrutura da lição, escrever palavras ouvidas com fichas e compreender frases curtas",
+    "clusters": {
+      "leituraDePalavras": {
+        "evidence": [
+          "L07-A01",
+          "L07-A02"
+        ],
+        "required": true,
+        "rule": "acertar todos os itens das atividades de leitura; novas tentativas são permitidas sem penalidade"
+      },
+      "escritaDePalavras": {
+        "evidence": [
+          "L07-A03"
+        ],
+        "required": true,
+        "rule": "montar corretamente todas as palavras ouvidas; novas tentativas são permitidas sem penalidade"
+      },
+      "leituraDeFrase": {
+        "evidence": [
+          "L07-A04"
+        ],
+        "required": true,
+        "rule": "responder corretamente a todas as perguntas sobre as frases lidas"
+      }
+    },
+    "nonCompensable": true,
+    "completionRule": "os três agrupamentos são obrigatórios; acerto na leitura não compensa falha na escrita, e vice-versa. A escrita própria (L07-A05) é prática registrada e autorrevisada, sem validação automática, e não bloqueia a conclusão.",
+    "notSufficient": [
+      "acertar só depois de ouvir o áudio da palavra-alvo antes de tentar ler",
+      "decorar as palavras de exemplo da lição sem ler palavras novas",
+      "recitar famílias silábicas"
+    ]
+  }
+}

@@ -1,0 +1,558 @@
+{
+  "schemaVersion": 1,
+  "id": "N0-U08-L01",
+  "title": "Sílabas que terminam com consoante",
+  "studentObjective": "Ler e escrever palavras em que uma sílaba termina com consoante, como mar, sol e pasta.",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Decodificar e codificar palavras com sílabas de estrutura consoante-vogal-consoante (codas r, s, l, m, n), reconhecendo a vocalização frequente do l em coda e a nasalização da vogal diante de m e n, com palavras inéditas e frases curtas.",
+  "competencies": [
+    "ler sílabas e palavras inéditas com r, s, l, m ou n no fim da sílaba",
+    "distinguir pela leitura palavras que diferem pela consoante no fim da sílaba, como PATA e PASTA",
+    "escrever com fichas palavras ouvidas com consoante no fim da sílaba",
+    "reconhecer que o l no fim da sílaba costuma soar como u sem mudar a escrita",
+    "compreender frases curtas formadas por palavras com as estruturas já estudadas"
+  ],
+  "prerequisites": [
+    "N0-U07-V01"
+  ],
+  "limits": [
+    "não usar áudio de som isolado de letra; o áudio é sempre de palavra inteira ou de frase",
+    "não tocar o áudio da palavra-alvo antes da tentativa de leitura; nas tarefas de leitura, o áudio só confere depois da tentativa",
+    "não usar velocidade de leitura ou tempo de resposta como critério",
+    "não exigir nomes técnicos como dígrafo, ditongo, encontro consonantal ou sílaba travada",
+    "não avaliar pronúncia, sotaque ou leitura em voz alta, que o aplicativo não observa",
+    "não transformar a lição em recitação de famílias silábicas",
+    "não cobrar a escolha entre m e n antes de consoante; essa regra pertence à Lição 5 desta unidade",
+    "não usar, nas tarefas de leitura e escrita, palavras com r ou s entre vogais, ch, lh, nh, qu, gu, til, cedilha ou duas vogais na mesma sílaba",
+    "não tratar pronúncias regionais do r e do s no fim da sílaba como erro"
+  ],
+  "media": {
+    "tts": "palavra inteira como alvo de escuta na palavra-chave, na escrita com fichas e em achar a palavra ouvida; nas tarefas de leitura, só para conferir depois da tentativa; frases inteiras para conferência depois da leitura",
+    "controlledAudio": [],
+    "video": "nao necessario",
+    "images": "nao necessarias"
+  },
+  "supportMaterials": {
+    "curatedMedia": [],
+    "runtimeResources": [
+      {
+        "type": "TTS_OK",
+        "locations": [
+          "L01-B02",
+          "L01-B03",
+          "L01-B04",
+          "L01-B05",
+          "L01-A01",
+          "L01-A02",
+          "L01-A02",
+          "L01-A03",
+          "L01-B06"
+        ],
+        "purpose": "falar palavras inteiras e frases; nas tarefas de leitura, as opções de áudio só são liberadas depois da tentativa; pequenas diferenças de voz do dispositivo não mudam a resposta, porque o contraste avaliado está na escrita"
+      }
+    ],
+    "generatedVisualResources": [
+      {
+        "type": "UI_RENDERED_WORD_CARD",
+        "locations": [
+          "L01-B02",
+          "L01-B03",
+          "L01-B04",
+          "L01-B05"
+        ],
+        "purpose": "mostrar a palavra-chave e os exemplos como texto real, com a divisão em sílabas quando ajuda"
+      },
+      {
+        "type": "UI_RENDERED_AUDIO_CHOICE_CONTROLS",
+        "locations": [
+          "L01-A01",
+          "L01-A02"
+        ],
+        "purpose": "opções de áudio A, B e C sem texto, liberadas só depois de o aluno marcar que tentou ler"
+      },
+      {
+        "type": "UI_RENDERED_WORD_CHOICES",
+        "locations": [
+          "L01-A02"
+        ],
+        "purpose": "formas escritas parecidas para achar a palavra ouvida"
+      },
+      {
+        "type": "UI_RENDERED_LETTER_AND_SYLLABLE_TILES",
+        "locations": [
+          "L01-A03"
+        ],
+        "purpose": "fichas de letras e sílabas em ordem misturada, com sobras plausíveis, para escrever a palavra ouvida"
+      },
+      {
+        "type": "UI_RENDERED_SENTENCE_CARD",
+        "locations": [
+          "L01-A04"
+        ],
+        "purpose": "frase curta visível durante a pergunta de compreensão"
+      }
+    ],
+    "productionQueueRequired": false,
+    "publicationDependency": "nenhuma mídia humana obrigatória; texto, fichas da interface e TTS do dispositivo bastam",
+    "decisionRationale": "a competência é ligar escrita e som em palavras inteiras. O TTS de palavra inteira serve como alvo de escrita e como conferência depois da leitura; não há som isolado de letra, que o TTS produz mal. Imagem e vídeo não acrescentam informação a essas tarefas."
+  },
+  "sequence": [
+    {
+      "id": "L01-B01",
+      "type": "explanation",
+      "focus": "read-or-listen",
+      "title": "Um novo tipo de sílaba",
+      "text": "Até aqui, você leu e escreveu sílabas formadas por uma consoante e uma vogal, como PA e TO em PATO, ou só por uma vogal, como o U de UVA.\n\nAgora você vai conhecer sílabas que terminam com uma consoante, como MAR, SOL e o PAS de PASTA. Elas aparecem em muitas palavras do dia a dia."
+    },
+    {
+      "id": "L01-B02",
+      "type": "demonstration",
+      "focus": "listen-then-observe",
+      "title": "Palavra-chave: MAR",
+      "text": "Toque em Ouvir palavra e escute: mar.\n\nAgora veja como ela é escrita: MAR. Primeiro vem o M, depois a vogal A e, no fim, a consoante R. MAR tem uma sílaba só, e essa sílaba termina com consoante.",
+      "word": "MAR",
+      "ttsCue": "mar"
+    },
+    {
+      "id": "L01-B03",
+      "type": "demonstration",
+      "focus": "observe",
+      "title": "R e S no fim da sílaba",
+      "text": "O R e o S também podem fechar uma sílaba no meio da palavra. Em PORTA, a primeira sílaba é POR: o R vem depois da vogal O. Em PASTA, a primeira sílaba é PAS: o S vem depois da vogal A.\n\nCompare PATA e PASTA. A diferença está no S que fecha a primeira sílaba de PASTA.",
+      "examples": [
+        "PORTA: POR | TA",
+        "PASTA: PAS | TA",
+        "PATA: PA | TA"
+      ],
+      "note": "O som do R no fim da sílaba muda de uma região para outra. Todos esses jeitos de falar estão certos, e a escrita é sempre com R. Com o S acontece algo parecido: em algumas regiões ele soa mais chiado, mas a escrita continua com S.",
+      "ttsText": "porta. pasta. pata."
+    },
+    {
+      "id": "L01-C01",
+      "type": "quick-check",
+      "focus": "read-and-respond",
+      "interaction": "single-choice",
+      "prompt": "Em PORTA, qual é a primeira sílaba?",
+      "options": [
+        "PO",
+        "POR",
+        "PRO"
+      ],
+      "correctIndex": 1,
+      "feedback": "POR: o R fecha a primeira sílaba. PORTA se divide em POR | TA."
+    },
+    {
+      "id": "L01-B04",
+      "type": "demonstration",
+      "focus": "listen-then-observe",
+      "title": "L no fim da sílaba",
+      "text": "Ouça SOL e MEL. Nas duas palavras, a sílaba termina com L.\n\nNo fim da sílaba, o L costuma soar parecido com U. Mesmo assim, a escrita é com L: SOL, MEL, PAPEL.",
+      "examples": [
+        "SOL",
+        "MEL",
+        "PAPEL: PA | PEL"
+      ],
+      "ttsText": "sol. mel. papel."
+    },
+    {
+      "id": "L01-C02",
+      "type": "quick-check",
+      "focus": "read-and-respond",
+      "interaction": "single-choice",
+      "prompt": "No fim da sílaba, o L de SOL soa parecido com qual vogal?",
+      "options": [
+        "A",
+        "U",
+        "E"
+      ],
+      "correctIndex": 1,
+      "feedback": "Parecido com U. Por isso é preciso lembrar que, na escrita, SOL termina com L."
+    },
+    {
+      "id": "L01-B05",
+      "type": "demonstration",
+      "focus": "listen-then-observe",
+      "title": "M e N no fim da sílaba",
+      "text": "M e N também podem fechar a sílaba. CAMPO tem CAM e PO. FUNDO tem FUN e DO.\n\nQuando M ou N fecham a sílaba, a vogal de antes soa também pelo nariz. Faça o teste: fale CAMPO devagar e repare no ar que sai pelo nariz em CAM. Mais adiante nesta unidade, você vai estudar esse som com mais detalhes.",
+      "examples": [
+        "CAMPO: CAM | PO",
+        "FUNDO: FUN | DO"
+      ],
+      "ttsText": "campo. fundo."
+    },
+    {
+      "id": "L01-A01",
+      "type": "guided-activity",
+      "focus": "read-then-listen-and-respond",
+      "interaction": "composite",
+      "title": "Leia sílabas e palavras novas",
+      "instruction": "Leia cada sílaba ou palavra sozinho primeiro, sem pressa. Depois toque em Marcar que tentei ler, ouça os áudios A, B e C e escolha o que corresponde ao que você leu. Os áudios servem para conferir a sua leitura.",
+      "attemptGateRequired": true,
+      "ttsBeforeResponse": false,
+      "items": [
+        {
+          "prompt": "Leia a sílaba PAR. Em qual palavra ela aparece no começo?",
+          "attemptGateRequired": true,
+          "audioOptionTextVisible": false,
+          "audioOptions": [
+            {
+              "label": "A",
+              "ttsText": "pato"
+            },
+            {
+              "label": "B",
+              "ttsText": "parte"
+            },
+            {
+              "label": "C",
+              "ttsText": "prato"
+            }
+          ],
+          "correctIndex": 1
+        },
+        {
+          "prompt": "Leia a sílaba SAL. Em qual palavra ela aparece no começo?",
+          "attemptGateRequired": true,
+          "audioOptionTextVisible": false,
+          "audioOptions": [
+            {
+              "label": "A",
+              "ttsText": "salto"
+            },
+            {
+              "label": "B",
+              "ttsText": "sala"
+            },
+            {
+              "label": "C",
+              "ttsText": "sapo"
+            }
+          ],
+          "correctIndex": 0
+        },
+        {
+          "prompt": "Leia: CALMA",
+          "attemptGateRequired": true,
+          "audioOptionTextVisible": false,
+          "audioOptions": [
+            {
+              "label": "A",
+              "ttsText": "cama"
+            },
+            {
+              "label": "B",
+              "ttsText": "calda"
+            },
+            {
+              "label": "C",
+              "ttsText": "calma"
+            }
+          ],
+          "correctIndex": 2
+        },
+        {
+          "prompt": "Leia: MARCA",
+          "attemptGateRequired": true,
+          "audioOptionTextVisible": false,
+          "audioOptions": [
+            {
+              "label": "A",
+              "ttsText": "marca"
+            },
+            {
+              "label": "B",
+              "ttsText": "maca"
+            },
+            {
+              "label": "C",
+              "ttsText": "manca"
+            }
+          ],
+          "correctIndex": 0
+        },
+        {
+          "prompt": "Leia: LISTA",
+          "attemptGateRequired": true,
+          "audioOptionTextVisible": false,
+          "audioOptions": [
+            {
+              "label": "A",
+              "ttsText": "lata"
+            },
+            {
+              "label": "B",
+              "ttsText": "lista"
+            },
+            {
+              "label": "C",
+              "ttsText": "lixa"
+            }
+          ],
+          "correctIndex": 1
+        },
+        {
+          "prompt": "Leia: VENTO",
+          "attemptGateRequired": true,
+          "audioOptionTextVisible": false,
+          "audioOptions": [
+            {
+              "label": "A",
+              "ttsText": "veto"
+            },
+            {
+              "label": "B",
+              "ttsText": "venda"
+            },
+            {
+              "label": "C",
+              "ttsText": "vento"
+            }
+          ],
+          "correctIndex": 2
+        }
+      ]
+    },
+    {
+      "id": "L01-A02",
+      "type": "guided-activity",
+      "focus": "listen-then-read-and-respond",
+      "interaction": "composite",
+      "title": "Ache a palavra que você ouviu",
+      "instruction": "Toque em Ouvir e escute a palavra. Depois leia as opções com atenção, porque elas são parecidas, e escolha a forma escrita da palavra que você ouviu. Você pode ouvir quantas vezes quiser.",
+      "items": [
+        {
+          "prompt": "Ouça e escolha a forma escrita.",
+          "ttsCue": "carta",
+          "options": [
+            "CARTA",
+            "CATA",
+            "CANTA"
+          ],
+          "correctIndex": 0
+        },
+        {
+          "prompt": "Ouça e escolha a forma escrita.",
+          "ttsCue": "festa",
+          "options": [
+            "FETA",
+            "FESTA",
+            "FERTA"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "prompt": "Ouça e escolha a forma escrita.",
+          "ttsCue": "dente",
+          "options": [
+            "DETE",
+            "DESTE",
+            "DENTE"
+          ],
+          "correctIndex": 2
+        },
+        {
+          "prompt": "Ouça e escolha a forma escrita.",
+          "ttsCue": "filme",
+          "options": [
+            "FIRME",
+            "FILME",
+            "FIME"
+          ],
+          "correctIndex": 1
+        }
+      ]
+    },
+    {
+      "id": "L01-A03",
+      "type": "guided-activity",
+      "focus": "listen-and-write",
+      "interaction": "composite",
+      "title": "Escreva a palavra que você ouviu",
+      "instruction": "Toque em Ouvir e escute a palavra. Depois toque nas fichas na ordem certa para escrever a palavra. Algumas fichas sobram. Se errar, use Limpar sequência e tente de novo.",
+      "items": [
+        {
+          "prompt": "Ouça e monte a palavra com as fichas.",
+          "ttsCue": "sul",
+          "availableTiles": [
+            "U",
+            "L",
+            "S",
+            "O"
+          ],
+          "correctSequence": [
+            "S",
+            "U",
+            "L"
+          ]
+        },
+        {
+          "prompt": "Ouça e monte a palavra com as fichas.",
+          "ttsCue": "dor",
+          "availableTiles": [
+            "R",
+            "D",
+            "L",
+            "O"
+          ],
+          "correctSequence": [
+            "D",
+            "O",
+            "R"
+          ]
+        },
+        {
+          "prompt": "Ouça e monte a palavra com as fichas.",
+          "ttsCue": "tarde",
+          "availableTiles": [
+            "DE",
+            "TA",
+            "DI",
+            "TAR"
+          ],
+          "correctSequence": [
+            "TAR",
+            "DE"
+          ]
+        },
+        {
+          "prompt": "Ouça e monte a palavra com as fichas.",
+          "ttsCue": "tampa",
+          "availableTiles": [
+            "PA",
+            "TA",
+            "PO",
+            "TAM"
+          ],
+          "correctSequence": [
+            "TAM",
+            "PA"
+          ]
+        },
+        {
+          "prompt": "Ouça e monte a palavra com as fichas.",
+          "ttsCue": "gosto",
+          "availableTiles": [
+            "TO",
+            "GO",
+            "GOS",
+            "TA"
+          ],
+          "correctSequence": [
+            "GOS",
+            "TO"
+          ]
+        },
+        {
+          "prompt": "Ouça e monte a palavra com as fichas.",
+          "ttsCue": "jornal",
+          "availableTiles": [
+            "NAU",
+            "JO",
+            "NAL",
+            "JOR"
+          ],
+          "correctSequence": [
+            "JOR",
+            "NAL"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "L01-A04",
+      "type": "guided-activity",
+      "focus": "read-sentence-and-respond",
+      "interaction": "composite",
+      "title": "Leia frases curtas",
+      "instruction": "Uma frase é um grupo de palavras que diz uma ideia completa, como: Ana toma sopa. Ela começa com letra maiúscula e termina com um sinal, como o ponto. Leia a frase sozinho, sem pressa, mais de uma vez se quiser. Depois responda à pergunta.",
+      "items": [
+        {
+          "sentence": "O vento forte bate na porta.",
+          "prompt": "O que bate na porta?",
+          "options": [
+            "o vento",
+            "o sol",
+            "a mosca"
+          ],
+          "correctIndex": 0
+        },
+        {
+          "sentence": "Falta pasta de dente na pia.",
+          "prompt": "O que falta na pia?",
+          "options": [
+            "papel",
+            "pasta de dente",
+            "sabonete"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "sentence": "Marta canta no domingo.",
+          "prompt": "Quando Marta canta?",
+          "options": [
+            "de tarde",
+            "no fim do dia",
+            "no domingo"
+          ],
+          "correctIndex": 2
+        }
+      ]
+    },
+    {
+      "id": "L01-B06",
+      "type": "demonstration",
+      "focus": "listen-after-reading",
+      "title": "Confira ouvindo",
+      "text": "Depois de responder, toque em Ouvir exemplo e escute as frases. Confira se você leu do mesmo jeito. Se quiser, leia de novo em voz alta junto com o áudio.",
+      "ttsText": "O vento forte bate na porta. Falta pasta de dente na pia. Marta canta no domingo."
+    },
+    {
+      "id": "L01-B07",
+      "type": "summary",
+      "focus": "read-or-listen",
+      "title": "Resumo",
+      "text": "Uma sílaba pode terminar com consoante. As consoantes que mais aparecem no fim da sílaba são R, S, L, M e N: MAR, PASTA, SOL, CAMPO, FUNDO.\n\nNo fim da sílaba, o L costuma soar parecido com U, mas a escrita é com L. Com M e N no fim da sílaba, a vogal soa também pelo nariz.\n\nPara ler bem, repare se a sílaba continua depois da vogal: PAS | TA é diferente de PA | TA.",
+      "bridgeToNextLesson": "Na próxima lição, você vai ver sílabas que começam com duas consoantes, como PRA em PRATO."
+    }
+  ],
+  "assessmentBehavior": {
+    "pronunciationPolicy": "não avaliar sotaque nem pronúncia; variações regionais são aceitas",
+    "ttsPolicy": "nas tarefas de leitura, o áudio só fica disponível depois da marcação de tentativa; nas tarefas de escrita e de achar a palavra ouvida, o áudio pode ser repetido sem penalidade",
+    "supportPolicy": "nova tentativa permitida sem penalidade; apoio não é tratado como erro",
+    "timeLimit": false
+  },
+  "completionEvidence": {
+    "observablePerformance": "ler sílabas e palavras novas com a estrutura da lição, escrever palavras ouvidas com fichas e compreender frases curtas",
+    "clusters": {
+      "leituraDePalavras": {
+        "evidence": [
+          "L01-A01",
+          "L01-A02"
+        ],
+        "required": true,
+        "rule": "acertar todos os itens das atividades de leitura; novas tentativas são permitidas sem penalidade"
+      },
+      "escritaDePalavras": {
+        "evidence": [
+          "L01-A03"
+        ],
+        "required": true,
+        "rule": "montar corretamente todas as palavras ouvidas; novas tentativas são permitidas sem penalidade"
+      },
+      "leituraDeFrase": {
+        "evidence": [
+          "L01-A04"
+        ],
+        "required": true,
+        "rule": "responder corretamente a todas as perguntas sobre as frases lidas"
+      }
+    },
+    "nonCompensable": true,
+    "completionRule": "os três agrupamentos são obrigatórios; acerto na leitura não compensa falha na escrita, e vice-versa.",
+    "notSufficient": [
+      "acertar só depois de ouvir o áudio da palavra-alvo antes de tentar ler",
+      "decorar as palavras de exemplo da lição sem ler palavras novas",
+      "recitar famílias silábicas"
+    ]
+  }
+}

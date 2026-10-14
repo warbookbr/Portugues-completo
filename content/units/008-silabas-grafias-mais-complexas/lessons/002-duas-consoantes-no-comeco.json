@@ -1,0 +1,554 @@
+{
+  "schemaVersion": 1,
+  "id": "N0-U08-L02",
+  "title": "Sílabas que começam com duas consoantes",
+  "studentObjective": "Ler e escrever palavras com sílabas que começam com duas consoantes, como prato, branco, livro e flor.",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Decodificar e codificar palavras com sílabas de estrutura consoante-consoante-vogal (consoante seguida de r ou l), distinguindo-as das sílabas com consoante no fim e reconhecendo a variação de l para r nesses grupos sem estigmatizá-la, com palavras inéditas e frases curtas.",
+  "competencies": [
+    "ler sílabas e palavras inéditas com pr, br, tr, dr, cr, gr, fr, vr, pl, bl, cl ou fl",
+    "distinguir pela leitura e pela escrita a ordem das letras em sílabas como PRE e PER",
+    "escrever com fichas palavras ouvidas com duas consoantes no começo da sílaba",
+    "reconhecer que a escrita mantém o l em grupos como pl mesmo quando a fala o troca por r",
+    "compreender frases curtas formadas por palavras com as estruturas já estudadas"
+  ],
+  "prerequisites": [
+    "N0-U08-L01"
+  ],
+  "limits": [
+    "não usar áudio de som isolado de letra; o áudio é sempre de palavra inteira ou de frase",
+    "não tocar o áudio da palavra-alvo antes da tentativa de leitura; nas tarefas de leitura, o áudio só confere depois da tentativa",
+    "não usar velocidade de leitura ou tempo de resposta como critério",
+    "não exigir nomes técnicos como dígrafo, ditongo, encontro consonantal ou sílaba travada",
+    "não avaliar pronúncia, sotaque ou leitura em voz alta, que o aplicativo não observa",
+    "não transformar a lição em recitação de famílias silábicas",
+    "não usar, nas tarefas de leitura e escrita, palavras com r ou s entre vogais, ch, lh, nh, qu, gu, til, cedilha ou duas vogais na mesma sílaba",
+    "não tratar a troca de l por r na fala como erro de fala; o foco é a forma escrita"
+  ],
+  "media": {
+    "tts": "palavra inteira como alvo de escuta na palavra-chave, na escrita com fichas e em achar a palavra ouvida; nas tarefas de leitura, só para conferir depois da tentativa; frases inteiras para conferência depois da leitura",
+    "controlledAudio": [],
+    "video": "nao necessario",
+    "images": "nao necessarias"
+  },
+  "supportMaterials": {
+    "curatedMedia": [],
+    "runtimeResources": [
+      {
+        "type": "TTS_OK",
+        "locations": [
+          "L02-B02",
+          "L02-B03",
+          "L02-B04",
+          "L02-C02",
+          "L02-A01",
+          "L02-A02",
+          "L02-A02",
+          "L02-A03",
+          "L02-B05"
+        ],
+        "purpose": "falar palavras inteiras e frases; nas tarefas de leitura, as opções de áudio só são liberadas depois da tentativa; pequenas diferenças de voz do dispositivo não mudam a resposta, porque o contraste avaliado está na escrita"
+      }
+    ],
+    "generatedVisualResources": [
+      {
+        "type": "UI_RENDERED_WORD_CARD",
+        "locations": [
+          "L02-B02",
+          "L02-B03",
+          "L02-B04",
+          "L02-C02"
+        ],
+        "purpose": "mostrar a palavra-chave e os exemplos como texto real, com a divisão em sílabas quando ajuda"
+      },
+      {
+        "type": "UI_RENDERED_AUDIO_CHOICE_CONTROLS",
+        "locations": [
+          "L02-A01",
+          "L02-A02"
+        ],
+        "purpose": "opções de áudio A, B e C sem texto, liberadas só depois de o aluno marcar que tentou ler"
+      },
+      {
+        "type": "UI_RENDERED_WORD_CHOICES",
+        "locations": [
+          "L02-A02"
+        ],
+        "purpose": "formas escritas parecidas para achar a palavra ouvida"
+      },
+      {
+        "type": "UI_RENDERED_LETTER_AND_SYLLABLE_TILES",
+        "locations": [
+          "L02-A03"
+        ],
+        "purpose": "fichas de letras e sílabas em ordem misturada, com sobras plausíveis, para escrever a palavra ouvida"
+      },
+      {
+        "type": "UI_RENDERED_SENTENCE_CARD",
+        "locations": [
+          "L02-A04"
+        ],
+        "purpose": "frase curta visível durante a pergunta de compreensão"
+      }
+    ],
+    "productionQueueRequired": false,
+    "publicationDependency": "nenhuma mídia humana obrigatória; texto, fichas da interface e TTS do dispositivo bastam",
+    "decisionRationale": "a competência é ligar escrita e som em palavras inteiras. O TTS de palavra inteira serve como alvo de escrita e como conferência depois da leitura; não há som isolado de letra, que o TTS produz mal. Imagem e vídeo não acrescentam informação a essas tarefas."
+  },
+  "sequence": [
+    {
+      "id": "L02-B01",
+      "type": "explanation",
+      "focus": "read-or-listen",
+      "title": "Duas consoantes antes da vogal",
+      "text": "Na lição anterior, você leu sílabas que terminam com consoante, como POR em PORTA.\n\nAgora vai ver sílabas que começam com duas consoantes seguidas, antes da vogal, como PRA em PRATO e FLOR."
+    },
+    {
+      "id": "L02-B02",
+      "type": "demonstration",
+      "focus": "listen-then-observe",
+      "title": "Palavra-chave: PRATO",
+      "text": "Toque em Ouvir palavra e escute: prato.\n\nAgora veja como ela é escrita: PRATO. A primeira sílaba é PRA. O P e o R vêm juntos, antes da vogal A.\n\nCompare com PATO. Sem o R, a palavra muda.",
+      "word": "PRATO",
+      "segments": [
+        "PRA",
+        "TO"
+      ],
+      "ttsCue": "prato"
+    },
+    {
+      "id": "L02-B03",
+      "type": "demonstration",
+      "focus": "listen-then-observe",
+      "title": "Consoante com R",
+      "text": "O R aparece logo depois de várias consoantes, no começo da sílaba: PR, BR, TR, DR, CR, GR, FR e VR.\n\nPara ler, diga as duas consoantes juntas, sem pôr uma vogal entre elas. Em PRATO, dizemos PRA, e não PE-RA.",
+      "examples": [
+        "PR: PRATO",
+        "BR: BRANCO",
+        "TR: TREM",
+        "DR: PADRE",
+        "CR: CRAVO",
+        "GR: TIGRE",
+        "FR: FRIO",
+        "VR: LIVRO"
+      ],
+      "ttsText": "prato. branco. trem. padre. cravo. tigre. frio. livro."
+    },
+    {
+      "id": "L02-C01",
+      "type": "quick-check",
+      "focus": "read-and-respond",
+      "interaction": "single-choice",
+      "prompt": "Em PRIMO, qual é a primeira sílaba?",
+      "options": [
+        "PRI",
+        "PIR",
+        "PI"
+      ],
+      "correctIndex": 0,
+      "feedback": "PRI: o P e o R vêm juntos antes da vogal. Em PIR, o R estaria depois da vogal."
+    },
+    {
+      "id": "L02-B04",
+      "type": "demonstration",
+      "focus": "listen-then-observe",
+      "title": "Consoante com L",
+      "text": "O L também aparece logo depois de algumas consoantes, no começo da sílaba: PL, BL, CL e FL.",
+      "examples": [
+        "PL: PLANO",
+        "BL: BLOCO",
+        "CL: CLUBE",
+        "FL: FLOR"
+      ],
+      "note": "Na fala de muitas pessoas, o L desses grupos às vezes soa como R, por exemplo pranta no lugar de PLANTA. Na escrita, a forma usada é com L: PLANTA.",
+      "ttsText": "plano. bloco. clube. flor."
+    },
+    {
+      "id": "L02-C02",
+      "type": "quick-check",
+      "focus": "listen-and-respond",
+      "interaction": "single-choice",
+      "prompt": "Ouça a palavra e escolha a forma escrita.",
+      "ttsCue": "fruta",
+      "options": [
+        "FURTA",
+        "FRUTA",
+        "FUTA"
+      ],
+      "correctIndex": 1,
+      "feedback": "FRUTA: o R vem logo depois do F, antes da vogal U."
+    },
+    {
+      "id": "L02-A01",
+      "type": "guided-activity",
+      "focus": "read-then-listen-and-respond",
+      "interaction": "composite",
+      "title": "Leia sílabas e palavras novas",
+      "instruction": "Leia cada sílaba ou palavra sozinho primeiro, sem pressa. Depois toque em Marcar que tentei ler, ouça os áudios A, B e C e escolha o que corresponde ao que você leu. Os áudios servem para conferir a sua leitura.",
+      "attemptGateRequired": true,
+      "ttsBeforeResponse": false,
+      "items": [
+        {
+          "prompt": "Leia a sílaba BRA. Em qual palavra ela aparece no começo?",
+          "attemptGateRequired": true,
+          "audioOptionTextVisible": false,
+          "audioOptions": [
+            {
+              "label": "A",
+              "ttsText": "braço"
+            },
+            {
+              "label": "B",
+              "ttsText": "barco"
+            },
+            {
+              "label": "C",
+              "ttsText": "bala"
+            }
+          ],
+          "correctIndex": 0
+        },
+        {
+          "prompt": "Leia a sílaba FLO. Em qual palavra ela aparece no começo?",
+          "attemptGateRequired": true,
+          "audioOptionTextVisible": false,
+          "audioOptions": [
+            {
+              "label": "A",
+              "ttsText": "fogo"
+            },
+            {
+              "label": "B",
+              "ttsText": "floresta"
+            },
+            {
+              "label": "C",
+              "ttsText": "forte"
+            }
+          ],
+          "correctIndex": 1
+        },
+        {
+          "prompt": "Leia: TRIGO",
+          "attemptGateRequired": true,
+          "audioOptionTextVisible": false,
+          "audioOptions": [
+            {
+              "label": "A",
+              "ttsText": "tigre"
+            },
+            {
+              "label": "B",
+              "ttsText": "tiro"
+            },
+            {
+              "label": "C",
+              "ttsText": "trigo"
+            }
+          ],
+          "correctIndex": 2
+        },
+        {
+          "prompt": "Leia: DUPLA",
+          "attemptGateRequired": true,
+          "audioOptionTextVisible": false,
+          "audioOptions": [
+            {
+              "label": "A",
+              "ttsText": "dupla"
+            },
+            {
+              "label": "B",
+              "ttsText": "duna"
+            },
+            {
+              "label": "C",
+              "ttsText": "dúvida"
+            }
+          ],
+          "correctIndex": 0
+        },
+        {
+          "prompt": "Leia: GRUPO",
+          "attemptGateRequired": true,
+          "audioOptionTextVisible": false,
+          "audioOptions": [
+            {
+              "label": "A",
+              "ttsText": "gula"
+            },
+            {
+              "label": "B",
+              "ttsText": "grupo"
+            },
+            {
+              "label": "C",
+              "ttsText": "gruta"
+            }
+          ],
+          "correctIndex": 1
+        },
+        {
+          "prompt": "Leia: CLIMA",
+          "attemptGateRequired": true,
+          "audioOptionTextVisible": false,
+          "audioOptions": [
+            {
+              "label": "A",
+              "ttsText": "calma"
+            },
+            {
+              "label": "B",
+              "ttsText": "cima"
+            },
+            {
+              "label": "C",
+              "ttsText": "clima"
+            }
+          ],
+          "correctIndex": 2
+        }
+      ]
+    },
+    {
+      "id": "L02-A02",
+      "type": "guided-activity",
+      "focus": "listen-then-read-and-respond",
+      "interaction": "composite",
+      "title": "Ache a palavra que você ouviu",
+      "instruction": "Toque em Ouvir e escute a palavra. Depois leia as opções com atenção, porque elas são parecidas, e escolha a forma escrita da palavra que você ouviu. Você pode ouvir quantas vezes quiser.",
+      "items": [
+        {
+          "prompt": "Ouça e escolha a forma escrita.",
+          "ttsCue": "cobra",
+          "options": [
+            "COBRA",
+            "CORBA",
+            "COBA"
+          ],
+          "correctIndex": 0
+        },
+        {
+          "prompt": "Ouça e escolha a forma escrita.",
+          "ttsCue": "bruto",
+          "options": [
+            "BURTO",
+            "BRUTO",
+            "BUTO"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "prompt": "Ouça e escolha a forma escrita.",
+          "ttsCue": "febre",
+          "options": [
+            "FEBE",
+            "FERBE",
+            "FEBRE"
+          ],
+          "correctIndex": 2
+        },
+        {
+          "prompt": "Ouça e escolha a forma escrita.",
+          "ttsCue": "teclado",
+          "options": [
+            "TECLADO",
+            "TELCADO",
+            "TECADO"
+          ],
+          "correctIndex": 0
+        }
+      ]
+    },
+    {
+      "id": "L02-A03",
+      "type": "guided-activity",
+      "focus": "listen-and-write",
+      "interaction": "composite",
+      "title": "Escreva a palavra que você ouviu",
+      "instruction": "Toque em Ouvir e escute a palavra. Depois toque nas fichas na ordem certa para escrever a palavra. Algumas fichas sobram. Se errar, use Limpar sequência e tente de novo.",
+      "items": [
+        {
+          "prompt": "Ouça e monte a palavra com as fichas.",
+          "ttsCue": "preto",
+          "availableTiles": [
+            "PE",
+            "TO",
+            "PRE",
+            "PER"
+          ],
+          "correctSequence": [
+            "PRE",
+            "TO"
+          ]
+        },
+        {
+          "prompt": "Ouça e monte a palavra com as fichas.",
+          "ttsCue": "creme",
+          "availableTiles": [
+            "ME",
+            "CER",
+            "MI",
+            "CRE"
+          ],
+          "correctSequence": [
+            "CRE",
+            "ME"
+          ]
+        },
+        {
+          "prompt": "Ouça e monte a palavra com as fichas.",
+          "ttsCue": "pedra",
+          "availableTiles": [
+            "DAR",
+            "DRA",
+            "PE",
+            "DA"
+          ],
+          "correctSequence": [
+            "PE",
+            "DRA"
+          ]
+        },
+        {
+          "prompt": "Ouça e monte a palavra com as fichas.",
+          "ttsCue": "frasco",
+          "availableTiles": [
+            "CO",
+            "FRA",
+            "FAR",
+            "FRAS"
+          ],
+          "correctSequence": [
+            "FRAS",
+            "CO"
+          ]
+        },
+        {
+          "prompt": "Ouça e monte a palavra com as fichas.",
+          "ttsCue": "placa",
+          "availableTiles": [
+            "PAL",
+            "CA",
+            "PA",
+            "PLA"
+          ],
+          "correctSequence": [
+            "PLA",
+            "CA"
+          ]
+        },
+        {
+          "prompt": "Ouça e monte a palavra com as fichas.",
+          "ttsCue": "letra",
+          "availableTiles": [
+            "TAR",
+            "LE",
+            "TA",
+            "TRA"
+          ],
+          "correctSequence": [
+            "LE",
+            "TRA"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "L02-A04",
+      "type": "guided-activity",
+      "focus": "read-sentence-and-respond",
+      "interaction": "composite",
+      "title": "Leia frases curtas",
+      "instruction": "Leia a frase sozinho, sem pressa, mais de uma vez se quiser. Depois responda à pergunta.",
+      "items": [
+        {
+          "sentence": "Pedro planta trigo no campo.",
+          "prompt": "O que Pedro planta?",
+          "options": [
+            "trigo",
+            "fruta",
+            "flor"
+          ],
+          "correctIndex": 0
+        },
+        {
+          "sentence": "Pedro planta trigo no campo.",
+          "prompt": "Onde Pedro planta?",
+          "options": [
+            "no bloco",
+            "no campo",
+            "no prato"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "sentence": "Bruna compra fruta e creme.",
+          "prompt": "O que Bruna compra?",
+          "options": [
+            "pedra e trigo",
+            "prato e copo",
+            "fruta e creme"
+          ],
+          "correctIndex": 2
+        }
+      ]
+    },
+    {
+      "id": "L02-B05",
+      "type": "demonstration",
+      "focus": "listen-after-reading",
+      "title": "Confira ouvindo",
+      "text": "Depois de responder, toque em Ouvir exemplo e escute as frases. Confira se você leu do mesmo jeito. Se quiser, leia de novo em voz alta junto com o áudio.",
+      "ttsText": "Pedro planta trigo no campo. Bruna compra fruta e creme."
+    },
+    {
+      "id": "L02-B06",
+      "type": "summary",
+      "focus": "read-or-listen",
+      "title": "Resumo",
+      "text": "Uma sílaba pode começar com duas consoantes seguidas. A segunda é R ou L: PRATO, BRANCO, TREM, LIVRO, FLOR, CLUBE.\n\nPara ler, diga as duas consoantes juntas, sem pôr uma vogal no meio.\n\nRepare na ordem das letras: PRE, de PRETO, é diferente de PER, de PERNA. Na primeira, o R vem antes da vogal; na segunda, depois.",
+      "bridgeToNextLesson": "Na próxima lição, você vai ver pares de letras que representam um som só: CH, LH e NH."
+    }
+  ],
+  "assessmentBehavior": {
+    "pronunciationPolicy": "não avaliar sotaque nem pronúncia; variações regionais são aceitas",
+    "ttsPolicy": "nas tarefas de leitura, o áudio só fica disponível depois da marcação de tentativa; nas tarefas de escrita e de achar a palavra ouvida, o áudio pode ser repetido sem penalidade",
+    "supportPolicy": "nova tentativa permitida sem penalidade; apoio não é tratado como erro",
+    "timeLimit": false
+  },
+  "completionEvidence": {
+    "observablePerformance": "ler sílabas e palavras novas com a estrutura da lição, escrever palavras ouvidas com fichas e compreender frases curtas",
+    "clusters": {
+      "leituraDePalavras": {
+        "evidence": [
+          "L02-A01",
+          "L02-A02"
+        ],
+        "required": true,
+        "rule": "acertar todos os itens das atividades de leitura; novas tentativas são permitidas sem penalidade"
+      },
+      "escritaDePalavras": {
+        "evidence": [
+          "L02-A03"
+        ],
+        "required": true,
+        "rule": "montar corretamente todas as palavras ouvidas; novas tentativas são permitidas sem penalidade"
+      },
+      "leituraDeFrase": {
+        "evidence": [
+          "L02-A04"
+        ],
+        "required": true,
+        "rule": "responder corretamente a todas as perguntas sobre as frases lidas"
+      }
+    },
+    "nonCompensable": true,
+    "completionRule": "os três agrupamentos são obrigatórios; acerto na leitura não compensa falha na escrita, e vice-versa.",
+    "notSufficient": [
+      "acertar só depois de ouvir o áudio da palavra-alvo antes de tentar ler",
+      "decorar as palavras de exemplo da lição sem ler palavras novas",
+      "recitar famílias silábicas"
+    ]
+  }
+}

@@ -1,0 +1,588 @@
+{
+  "schemaVersion": 1,
+  "id": "N0-U08-L05",
+  "title": "Til, sons pelo nariz e Ç",
+  "studentObjective": "Ler e escrever palavras com til, com sons que saem também pelo nariz e com Ç, como mão, limões, campo e cabeça.",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Decodificar e codificar palavras com vogais nasais marcadas por til (ã, ão, ãe, õe) e por m e n em fim de sílaba, aplicando a regra de m antes de p e b, e com ç antes de a, o e u, apresentando os nomes til e cedilha, com palavras inéditas e frases curtas.",
+  "competencies": [
+    "ler palavras inéditas com ã, ão, ãe ou ões",
+    "ler palavras com vogal seguida de m ou n na mesma sílaba e escrever m antes de p e b",
+    "ler e escrever palavras com ç antes de a, o e u",
+    "escrever com fichas palavras ouvidas com til, m ou n depois da vogal e ç",
+    "compreender frases curtas formadas por palavras com as estruturas já estudadas"
+  ],
+  "prerequisites": [
+    "N0-U08-L04"
+  ],
+  "limits": [
+    "não usar áudio de som isolado de letra; o áudio é sempre de palavra inteira ou de frase",
+    "não tocar o áudio da palavra-alvo antes da tentativa de leitura; nas tarefas de leitura, o áudio só confere depois da tentativa",
+    "não usar velocidade de leitura ou tempo de resposta como critério",
+    "não exigir nomes técnicos como dígrafo, ditongo, encontro consonantal ou sílaba travada",
+    "não avaliar pronúncia, sotaque ou leitura em voz alta, que o aplicativo não observa",
+    "não transformar a lição em recitação de famílias silábicas",
+    "não cobrar a escolha entre ç e ss quando o som não decide; isso pertence ao N1",
+    "não ensinar a diferença entre -am e -ão nos verbos; isso pertence ao N1",
+    "não cobrar todas as formas de plural de palavras terminadas em ão",
+    "não usar, nas tarefas de leitura e escrita, palavras com duas vogais na mesma sílaba além de ão, ãe e õe, exceto em opções só de áudio"
+  ],
+  "media": {
+    "tts": "palavra inteira como alvo de escuta na palavra-chave, na escrita com fichas e em achar a palavra ouvida; nas tarefas de leitura, só para conferir depois da tentativa; frases inteiras para conferência depois da leitura",
+    "controlledAudio": [],
+    "video": "nao necessario",
+    "images": "nao necessarias"
+  },
+  "supportMaterials": {
+    "curatedMedia": [],
+    "runtimeResources": [
+      {
+        "type": "TTS_OK",
+        "locations": [
+          "L05-B02",
+          "L05-B03",
+          "L05-B04",
+          "L05-C01",
+          "L05-B05",
+          "L05-C02",
+          "L05-A01",
+          "L05-A02",
+          "L05-A02",
+          "L05-A03",
+          "L05-B06"
+        ],
+        "purpose": "falar palavras inteiras e frases; nas tarefas de leitura, as opções de áudio só são liberadas depois da tentativa; pequenas diferenças de voz do dispositivo não mudam a resposta, porque o contraste avaliado está na escrita"
+      }
+    ],
+    "generatedVisualResources": [
+      {
+        "type": "UI_RENDERED_WORD_CARD",
+        "locations": [
+          "L05-B02",
+          "L05-B03",
+          "L05-B04",
+          "L05-C01",
+          "L05-B05",
+          "L05-C02"
+        ],
+        "purpose": "mostrar a palavra-chave e os exemplos como texto real, com a divisão em sílabas quando ajuda"
+      },
+      {
+        "type": "UI_RENDERED_AUDIO_CHOICE_CONTROLS",
+        "locations": [
+          "L05-A01",
+          "L05-A02"
+        ],
+        "purpose": "opções de áudio A, B e C sem texto, liberadas só depois de o aluno marcar que tentou ler"
+      },
+      {
+        "type": "UI_RENDERED_WORD_CHOICES",
+        "locations": [
+          "L05-A02"
+        ],
+        "purpose": "formas escritas parecidas para achar a palavra ouvida"
+      },
+      {
+        "type": "UI_RENDERED_LETTER_AND_SYLLABLE_TILES",
+        "locations": [
+          "L05-A03"
+        ],
+        "purpose": "fichas de letras e sílabas em ordem misturada, com sobras plausíveis, para escrever a palavra ouvida"
+      },
+      {
+        "type": "UI_RENDERED_SENTENCE_CARD",
+        "locations": [
+          "L05-A04"
+        ],
+        "purpose": "frase curta visível durante a pergunta de compreensão"
+      }
+    ],
+    "productionQueueRequired": false,
+    "publicationDependency": "nenhuma mídia humana obrigatória; texto, fichas da interface e TTS do dispositivo bastam",
+    "decisionRationale": "a competência é ligar escrita e som em palavras inteiras. O TTS de palavra inteira serve como alvo de escrita e como conferência depois da leitura; não há som isolado de letra, que o TTS produz mal. Imagem e vídeo não acrescentam informação a essas tarefas."
+  },
+  "sequence": [
+    {
+      "id": "L05-B01",
+      "type": "explanation",
+      "focus": "read-or-listen",
+      "title": "Sinais em cima e embaixo das letras",
+      "text": "Nesta lição, você vai conhecer dois sinais que aparecem junto de algumas letras: o til, em cima do A de MÃO, e a cedilha, embaixo do C de CABEÇA.\n\nVocê também vai ver de novo o M e o N depois da vogal, agora com uma regra de escrita."
+    },
+    {
+      "id": "L05-B02",
+      "type": "demonstration",
+      "focus": "listen-then-observe",
+      "title": "Palavra-chave: MÃO",
+      "text": "Toque em Ouvir palavra e escute: mão.\n\nAgora veja como ela é escrita: MÃO. Em cima do A há um sinal: ~. Esse sinal se chama til. Ele mostra que a vogal soa também pelo nariz.\n\nFale MÃO devagar e repare no ar que sai pelo nariz.",
+      "word": "MÃO",
+      "ttsCue": "mão"
+    },
+    {
+      "id": "L05-B03",
+      "type": "demonstration",
+      "focus": "listen-then-observe",
+      "title": "Onde aparece o til",
+      "text": "O til aparece sobre o A e sobre o O, sozinhos ou junto de outra vogal: Ã, ÃO, ÃE e ÕE.\n\nMuitas palavras terminadas em ÃO trocam essa parte por ÕES quando falamos de mais de um: LIMÃO, LIMÕES. Outras mudam de outro jeito: MÃO, MÃOS; PÃO, PÃES. Com o uso, essas formas vão ficando conhecidas.",
+      "examples": [
+        "Ã: LÃ, AMANHÃ",
+        "ÃO: MÃO, PÃO",
+        "ÃE: MÃE, PÃES",
+        "ÕES: LIMÕES"
+      ],
+      "ttsText": "lã. amanhã. mão. pão. mãe. pães. limão. limões."
+    },
+    {
+      "id": "L05-B04",
+      "type": "demonstration",
+      "focus": "listen-then-observe",
+      "title": "M e N depois da vogal",
+      "text": "Você já viu que M e N podem fechar a sílaba, como em CAMPO e FUNDO. Nesses casos, a vogal também soa pelo nariz, mesmo sem til.\n\nNa escrita, há uma regra: antes de P e de B, usamos M. Antes das outras consoantes, usamos N.\n\nNo fim da palavra, costuma aparecer M: SOM, UM, BEM. O EM no fim da palavra soa parecido com EIN: BEM, TEM, TREM.",
+      "examples": [
+        "antes de P e B, M: CAMPO, TEMPO, SAMBA",
+        "antes de outras consoantes, N: CANTO, VENTO, MUNDO",
+        "no fim da palavra, M: SOM, UM, BEM"
+      ],
+      "ttsText": "campo. tempo. samba. canto. vento. mundo. som. um. bem."
+    },
+    {
+      "id": "L05-C01",
+      "type": "quick-check",
+      "focus": "listen-and-respond",
+      "interaction": "single-choice",
+      "prompt": "Ouça a palavra e escolha a forma escrita.",
+      "ttsCue": "bomba",
+      "options": [
+        "BONBA",
+        "BOMBA",
+        "BOBA"
+      ],
+      "correctIndex": 1,
+      "feedback": "BOMBA: antes de B, usamos M."
+    },
+    {
+      "id": "L05-B05",
+      "type": "demonstration",
+      "focus": "listen-then-observe",
+      "title": "A cedilha: Ç",
+      "text": "Na lição anterior, você viu que o C antes de E e de I tem som de S: CEDO, CINEMA. Antes de A, de O e de U, o C tem outro som, o de CASA, COPO e CUBO.\n\nPara ter o som de S antes de A, de O e de U, colocamos um sinal embaixo do C: Ç. Esse sinal se chama cedilha. Veja: CABEÇA, MAÇÃ, AÇO.\n\nO Ç nunca começa uma palavra e não aparece antes de E e de I.",
+      "examples": [
+        "ÇA: CABEÇA, MAÇÃ",
+        "ÇO: AÇO",
+        "ÇU: AÇUDE"
+      ],
+      "note": "Entre vogais, o mesmo som também pode ser escrito com SS, como em MASSA. Não há uma regra simples para escolher entre Ç e SS; isso vai ser estudado mais adiante.",
+      "ttsText": "cabeça. maçã. aço. açude."
+    },
+    {
+      "id": "L05-C02",
+      "type": "quick-check",
+      "focus": "listen-and-respond",
+      "interaction": "single-choice",
+      "prompt": "Ouça a palavra e escolha a forma escrita.",
+      "ttsCue": "praça",
+      "options": [
+        "PRACA",
+        "PRAÇA",
+        "PRAZA"
+      ],
+      "correctIndex": 1,
+      "feedback": "PRAÇA: antes de A, o som de S com a letra C precisa da cedilha."
+    },
+    {
+      "id": "L05-A01",
+      "type": "guided-activity",
+      "focus": "read-then-listen-and-respond",
+      "interaction": "composite",
+      "title": "Leia palavras novas",
+      "instruction": "Leia cada palavra sozinho primeiro, sem pressa. Depois toque em Marcar que tentei ler, ouça os áudios A, B e C e escolha o que corresponde ao que você leu. Os áudios servem para conferir a sua leitura.",
+      "attemptGateRequired": true,
+      "ttsBeforeResponse": false,
+      "items": [
+        {
+          "prompt": "Leia: FOGÃO",
+          "attemptGateRequired": true,
+          "audioOptionTextVisible": false,
+          "audioOptions": [
+            {
+              "label": "A",
+              "ttsText": "fogo"
+            },
+            {
+              "label": "B",
+              "ttsText": "fogão"
+            },
+            {
+              "label": "C",
+              "ttsText": "fofo"
+            }
+          ],
+          "correctIndex": 1
+        },
+        {
+          "prompt": "Leia: BOTÕES",
+          "attemptGateRequired": true,
+          "audioOptionTextVisible": false,
+          "audioOptions": [
+            {
+              "label": "A",
+              "ttsText": "botões"
+            },
+            {
+              "label": "B",
+              "ttsText": "botas"
+            },
+            {
+              "label": "C",
+              "ttsText": "botão"
+            }
+          ],
+          "correctIndex": 0
+        },
+        {
+          "prompt": "Leia: IRMÃ",
+          "attemptGateRequired": true,
+          "audioOptionTextVisible": false,
+          "audioOptions": [
+            {
+              "label": "A",
+              "ttsText": "irmão"
+            },
+            {
+              "label": "B",
+              "ttsText": "firma"
+            },
+            {
+              "label": "C",
+              "ttsText": "irmã"
+            }
+          ],
+          "correctIndex": 2
+        },
+        {
+          "prompt": "Leia: LIMPO",
+          "attemptGateRequired": true,
+          "audioOptionTextVisible": false,
+          "audioOptions": [
+            {
+              "label": "A",
+              "ttsText": "lindo"
+            },
+            {
+              "label": "B",
+              "ttsText": "limpo"
+            },
+            {
+              "label": "C",
+              "ttsText": "lixo"
+            }
+          ],
+          "correctIndex": 1
+        },
+        {
+          "prompt": "Leia: LAÇO",
+          "attemptGateRequired": true,
+          "audioOptionTextVisible": false,
+          "audioOptions": [
+            {
+              "label": "A",
+              "ttsText": "lado"
+            },
+            {
+              "label": "B",
+              "ttsText": "lago"
+            },
+            {
+              "label": "C",
+              "ttsText": "laço"
+            }
+          ],
+          "correctIndex": 2
+        },
+        {
+          "prompt": "Leia: TERÇA",
+          "attemptGateRequired": true,
+          "audioOptionTextVisible": false,
+          "audioOptions": [
+            {
+              "label": "A",
+              "ttsText": "terça"
+            },
+            {
+              "label": "B",
+              "ttsText": "terra"
+            },
+            {
+              "label": "C",
+              "ttsText": "cerca"
+            }
+          ],
+          "correctIndex": 0
+        }
+      ]
+    },
+    {
+      "id": "L05-A02",
+      "type": "guided-activity",
+      "focus": "listen-then-read-and-respond",
+      "interaction": "composite",
+      "title": "Ache a palavra que você ouviu",
+      "instruction": "Toque em Ouvir e escute a palavra. Depois leia as opções com atenção, porque elas são parecidas, e escolha a forma escrita da palavra que você ouviu. Você pode ouvir quantas vezes quiser.",
+      "items": [
+        {
+          "prompt": "Ouça e escolha a forma escrita.",
+          "ttsCue": "sabão",
+          "options": [
+            "SABA",
+            "SABÃO",
+            "SABOR"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "prompt": "Ouça e escolha a forma escrita.",
+          "ttsCue": "pulmão",
+          "options": [
+            "PULMÃO",
+            "PUMÃO",
+            "PULMA"
+          ],
+          "correctIndex": 0
+        },
+        {
+          "prompt": "Ouça e escolha a forma escrita.",
+          "ttsCue": "onda",
+          "options": [
+            "ODA",
+            "OMDA",
+            "ONDA"
+          ],
+          "correctIndex": 2
+        },
+        {
+          "prompt": "Ouça e escolha a forma escrita.",
+          "ttsCue": "tombo",
+          "options": [
+            "TOBO",
+            "TOMBO",
+            "TONBO"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "prompt": "Ouça e escolha a forma escrita.",
+          "ttsCue": "moço",
+          "options": [
+            "MOÇO",
+            "MOCO",
+            "MOZO"
+          ],
+          "correctIndex": 0
+        }
+      ]
+    },
+    {
+      "id": "L05-A03",
+      "type": "guided-activity",
+      "focus": "listen-and-write",
+      "interaction": "composite",
+      "title": "Escreva a palavra que você ouviu",
+      "instruction": "Toque em Ouvir e escute a palavra. Depois toque nas fichas na ordem certa para escrever a palavra. Algumas fichas sobram. Se errar, use Limpar sequência e tente de novo.",
+      "items": [
+        {
+          "prompt": "Ouça e monte a palavra com as fichas.",
+          "ttsCue": "balão",
+          "availableTiles": [
+            "LAO",
+            "BA",
+            "LÃO",
+            "LA"
+          ],
+          "correctSequence": [
+            "BA",
+            "LÃO"
+          ]
+        },
+        {
+          "prompt": "Ouça e monte a palavra com as fichas.",
+          "ttsCue": "aviões",
+          "availableTiles": [
+            "VI",
+            "ÕES",
+            "A",
+            "OES",
+            "ÃO"
+          ],
+          "correctSequence": [
+            "A",
+            "VI",
+            "ÕES"
+          ]
+        },
+        {
+          "prompt": "Ouça e monte a palavra com as fichas.",
+          "ttsCue": "sempre",
+          "availableTiles": [
+            "SEN",
+            "PRE",
+            "SEM",
+            "PE"
+          ],
+          "correctSequence": [
+            "SEM",
+            "PRE"
+          ]
+        },
+        {
+          "prompt": "Ouça e monte a palavra com as fichas.",
+          "ttsCue": "pedaço",
+          "availableTiles": [
+            "ÇO",
+            "PE",
+            "DA",
+            "SO"
+          ],
+          "correctSequence": [
+            "PE",
+            "DA",
+            "ÇO"
+          ]
+        },
+        {
+          "prompt": "Ouça e monte a palavra com as fichas.",
+          "ttsCue": "atum",
+          "availableTiles": [
+            "TUN",
+            "A",
+            "TUM",
+            "TU"
+          ],
+          "correctSequence": [
+            "A",
+            "TUM"
+          ]
+        },
+        {
+          "prompt": "Ouça e monte a palavra com as fichas.",
+          "ttsCue": "dança",
+          "availableTiles": [
+            "ÇA",
+            "DAM",
+            "DAN",
+            "CA"
+          ],
+          "correctSequence": [
+            "DAN",
+            "ÇA"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "L05-A04",
+      "type": "guided-activity",
+      "focus": "read-sentence-and-respond",
+      "interaction": "composite",
+      "title": "Leia frases curtas",
+      "instruction": "Leia a frase sozinho, sem pressa, mais de uma vez se quiser. Depois responda à pergunta.",
+      "items": [
+        {
+          "sentence": "Minha mãe compra pão e maçã na padaria.",
+          "prompt": "O que a mãe compra?",
+          "options": [
+            "limão e melão",
+            "pão e maçã",
+            "sabão e pano"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "sentence": "Minha mãe compra pão e maçã na padaria.",
+          "prompt": "Onde ela compra?",
+          "options": [
+            "na padaria",
+            "na praça",
+            "no mercado"
+          ],
+          "correctIndex": 0
+        },
+        {
+          "sentence": "Antes do almoço, Lucas lava a mão com sabão.",
+          "prompt": "Com o que Lucas lava a mão?",
+          "options": [
+            "com limão",
+            "com algodão",
+            "com sabão"
+          ],
+          "correctIndex": 2
+        },
+        {
+          "sentence": "Antes do almoço, Lucas lava a mão com sabão.",
+          "prompt": "Quando Lucas lava a mão?",
+          "options": [
+            "no fim da tarde",
+            "antes do almoço",
+            "na hora do banho"
+          ],
+          "correctIndex": 1
+        }
+      ]
+    },
+    {
+      "id": "L05-B06",
+      "type": "demonstration",
+      "focus": "listen-after-reading",
+      "title": "Confira ouvindo",
+      "text": "Depois de responder, toque em Ouvir exemplo e escute as frases. Confira se você leu do mesmo jeito. Se quiser, leia de novo em voz alta junto com o áudio.",
+      "ttsText": "Minha mãe compra pão e maçã na padaria. Antes do almoço, Lucas lava a mão com sabão."
+    },
+    {
+      "id": "L05-B07",
+      "type": "summary",
+      "focus": "read-or-listen",
+      "title": "Resumo",
+      "text": "O til (~) aparece sobre o A e o O e mostra que a vogal soa também pelo nariz: MÃO, MAÇÃ, MÃE, LIMÕES.\n\nM e N depois da vogal também fazem a vogal soar pelo nariz. Antes de P e de B, usamos M (CAMPO); antes das outras consoantes, N (CANTO).\n\nA cedilha (Ç) dá ao C o som de S antes de A, O e U: CABEÇA, AÇO, AÇUDE.",
+      "bridgeToNextLesson": "Na próxima lição, você vai ler sílabas com duas vogais juntas, como em PAI, LEITE e NOITE."
+    }
+  ],
+  "assessmentBehavior": {
+    "pronunciationPolicy": "não avaliar sotaque nem pronúncia; variações regionais são aceitas",
+    "ttsPolicy": "nas tarefas de leitura, o áudio só fica disponível depois da marcação de tentativa; nas tarefas de escrita e de achar a palavra ouvida, o áudio pode ser repetido sem penalidade",
+    "supportPolicy": "nova tentativa permitida sem penalidade; apoio não é tratado como erro",
+    "timeLimit": false
+  },
+  "completionEvidence": {
+    "observablePerformance": "ler sílabas e palavras novas com a estrutura da lição, escrever palavras ouvidas com fichas e compreender frases curtas",
+    "clusters": {
+      "leituraDePalavras": {
+        "evidence": [
+          "L05-A01",
+          "L05-A02"
+        ],
+        "required": true,
+        "rule": "acertar todos os itens das atividades de leitura; novas tentativas são permitidas sem penalidade"
+      },
+      "escritaDePalavras": {
+        "evidence": [
+          "L05-A03"
+        ],
+        "required": true,
+        "rule": "montar corretamente todas as palavras ouvidas; novas tentativas são permitidas sem penalidade"
+      },
+      "leituraDeFrase": {
+        "evidence": [
+          "L05-A04"
+        ],
+        "required": true,
+        "rule": "responder corretamente a todas as perguntas sobre as frases lidas"
+      }
+    },
+    "nonCompensable": true,
+    "completionRule": "os três agrupamentos são obrigatórios; acerto na leitura não compensa falha na escrita, e vice-versa.",
+    "notSufficient": [
+      "acertar só depois de ouvir o áudio da palavra-alvo antes de tentar ler",
+      "decorar as palavras de exemplo da lição sem ler palavras novas",
+      "recitar famílias silábicas"
+    ]
+  }
+}
