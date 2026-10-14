@@ -41,13 +41,7 @@
       "examples": ["Oi.", "Olá.", "Bom dia."],
       "explanation": "São maneiras diferentes de cumprimentar. A escolha pode depender do momento e da situação."
     },
-    {
-      "id": "L08-B03",
-      "type": "demonstration",
-      "focus": "lexical-variation",
-      "examples": ["Em diferentes lugares e grupos, uma mesma coisa pode receber palavras diferentes.", "O curso não exige que uma palavra regional seja abandonada para reconhecer outra forma usada em outro contexto."],
-      "explanation": "Aprender outras formas amplia a compreensão; não precisa transformar a forma familiar em defeito."
-    },
+    {"id": "L08-B03", "type": "demonstration", "focus": "lexical-variation", "examples": ["mandioca, aipim e macaxeira: a mesma raiz, com nomes diferentes em várias regiões", "tangerina, mexerica e bergamota: a mesma fruta", "semáforo, sinal e sinaleira: o mesmo equipamento de trânsito"], "explanation": "Aprender outras formas amplia a compreensão; não precisa transformar a forma familiar em defeito."},
     {
       "id": "L08-C01",
       "type": "quick-check",
@@ -82,7 +76,8 @@
         "Como existe variação, qualquer forma serve igualmente em toda situação."
       ],
       "correctIndex": 0
-    }
+    },
+    {"id": "L08-B05", "type": "authored-poem", "focus": "read-or-listen", "title": "Para apreciar: a variação também vira arte", "lines": ["Não há, ó gente, ó não,", "Luar como esse do sertão."], "ttsText": "Não há, ó gente, ó não, luar como esse do sertão.", "note": "Catulo da Paixão Cearense, Luar do sertão (1914), refrão.", "explanation": "A canção usa um jeito de falar próximo da conversa do interior, como em ó gente. Na arte, essas escolhas criam proximidade e mostram de onde a voz vem. Elas são recursos, não erros."}
   ],
   "completionEvidence": {
     "clusters": {

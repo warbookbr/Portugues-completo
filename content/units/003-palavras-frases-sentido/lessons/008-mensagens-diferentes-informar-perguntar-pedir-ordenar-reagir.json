@@ -612,6 +612,7 @@
       "ttsAvailable": true,
       "exactIntonationRequired": false
     },
+    {"id": "L08-C05", "type": "audio-first-check", "focus": "listen-and-respond", "instruction": "Ouça a mensagem antes de ler. Depois escolha o que a pessoa está fazendo com ela.", "ttsText": "Você pode me emprestar sua caneta, por favor?", "transcriptHiddenUntilAttempt": true, "question": "O que a pessoa está fazendo principalmente com essa mensagem?", "options": ["pedindo algo", "informando um horário", "reagindo a uma surpresa"], "correctIndex": 0, "replayAllowed": true, "transcriptAfterAttempt": "Você pode me emprestar sua caneta, por favor?"},
     {
       "id": "L08-B07",
       "type": "summary",

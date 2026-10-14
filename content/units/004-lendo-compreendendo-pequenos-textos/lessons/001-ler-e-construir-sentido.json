@@ -44,7 +44,7 @@
       "id": "L01-B01",
       "type": "objective",
       "focus": "read-or-listen",
-      "text": "Reconhecer palavras ajuda a ler, mas compreender um texto exige perceber o que suas partes comunicam juntas. Você poderá voltar ao texto sempre que precisar."
+      "text": "Quando várias frases se juntam para formar uma mensagem sobre o mesmo assunto, chamamos esse conjunto de texto. Um texto pode ser curto, como um aviso de três frases. Reconhecer palavras ajuda a ler, mas compreender um texto exige perceber o que suas partes comunicam juntas. Você poderá voltar ao texto sempre que precisar."
     },
     {
       "id": "L01-B02",
@@ -104,7 +104,8 @@
       "followUp": "Volte ao texto e marque uma parte que confirma sua escolha.",
       "acceptableEvidence": ["Marta lavou a roupa pela manhã.", "À tarde, as roupas já estavam secas.", "Marta então as guardou."],
       "textRemainsVisible": true
-    }
+    },
+    {"id": "L01-B05", "type": "authored-poem", "focus": "read-or-listen", "title": "Para apreciar: um poema também é um texto", "lines": ["Minha terra tem palmeiras,", "Onde canta o Sabiá;", "As aves, que aqui gorjeiam,", "Não gorjeiam como lá."], "ttsText": "Minha terra tem palmeiras, onde canta o Sabiá; as aves, que aqui gorjeiam, não gorjeiam como lá.", "note": "Gonçalves Dias, Canção do exílio (1843), primeira estrofe. Gorjeiam quer dizer cantam, como cantam os pássaros.", "explanation": "No poema, as linhas se chamam versos. O poeta escreveu longe do Brasil. Juntos, os versos comunicam saudade: os pássaros do lugar onde ele está não cantam como os da sua terra. Aqui não há resposta certa para decorar; leia ou ouça e perceba o sentimento."}
   ],
   "assessmentBehavior": {
     "textVisibility": "o texto permanece disponível durante as respostas",

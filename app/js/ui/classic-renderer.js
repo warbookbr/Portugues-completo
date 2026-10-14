@@ -84,6 +84,9 @@ function renderKnownContent(content = {}) {
   if (content.text) lead.push(`<p>${esc(content.text)}</p>`);
   if (content.prompt) lead.push(`<p class="activity-prompt">${esc(content.prompt)}</p>`);
   if (content.instruction && !content.oralRehearsal?.enabled) lead.push(`<p class="activity-instruction">${esc(content.instruction)}</p>`);
+  if (Array.isArray(content.lines) && content.lines.length && content.lines.every(line => typeof line === 'string')) {
+    lead.push(`<div class="poem-lines">${content.lines.map(line => `<span>${esc(line)}</span>`).join('')}</div>`);
+  }
   if (content.model !== undefined) lead.push(`<div class="model-box"><span>Modelo</span><strong>${valueText(content.model)}</strong></div>`);
   if (content.letter) lead.push(`<div class="model-box"><span>Letra</span><strong>${esc(content.letter)}</strong></div>`);
 
@@ -115,6 +118,7 @@ function renderKnownContent(content = {}) {
 
   for (const [key, value] of Object.entries(content)) {
     if (['title', 'text', 'prompt', 'instruction', 'model', 'letter', 'nonVisualMeaning'].includes(key) || hiddenKeys.has(key)) continue;
+    if (key === 'lines' && Array.isArray(value) && value.every(line => typeof line === 'string')) continue;
     const lower = key.toLowerCase();
     if (lower.includes('guard') || lower.includes('correct') || lower.includes('feedback') || lower.includes('available') || lower.includes('support') || lower.includes('tts') || lower.includes('media') || lower.includes('audio') || key === 'feedback') continue;
     if (value === null || value === undefined || value === false || value === '') continue;

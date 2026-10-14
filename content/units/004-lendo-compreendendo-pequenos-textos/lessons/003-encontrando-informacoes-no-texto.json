@@ -92,7 +92,8 @@
       "correctIndex": 0,
       "requiredEvidence": "Aos domingos, fecha às seis.",
       "followUp": "Selecione a parte que mostra por que a afirmação precisa ser corrigida."
-    }
+    },
+    {"id": "L03-C02", "type": "audio-first-check", "focus": "listen-and-respond", "instruction": "Ouça o aviso antes de ler. Depois responda.", "ttsText": "Sua consulta foi marcada para quinta-feira, às nove horas, no posto de saúde do bairro.", "transcriptHiddenUntilAttempt": true, "question": "Quando é a consulta?", "options": ["quinta-feira, às nove horas", "quinta-feira, às dez horas", "o aviso não informa"], "correctIndex": 0, "replayAllowed": true, "transcriptAfterAttempt": "Sua consulta foi marcada para quinta-feira, às nove horas, no posto de saúde do bairro."}
   ],
   "assessmentBehavior": {"textVisibility": "sempre disponível", "evidenceSelection": "parte da resposta em itens-chave", "readingSupport": "TTS opcional", "timeLimit": false},
   "completionEvidence": {

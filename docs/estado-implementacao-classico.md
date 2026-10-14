@@ -55,7 +55,8 @@ Estado consolidado: ATIVO
 Fonte: docs/auditoria-plano-ensino.md
 R1.1 documentação, roadmap e regras de método: CONCLUÍDO
 R1.2 correções objetivas: CONCLUÍDO
-R1.3 N0 a partir de U3: em execução
+R1.3 N0 a partir de U3: CONCLUÍDO
+R1.4 N1: em execução
 ```
 
 R1.2 aplicou:
@@ -63,6 +64,19 @@ R1.2 aplicou:
 - pré-requisitos com IDs aposentados trocados pelas V02 vigentes em N0-U03-L01, N1-U02-L01 e N1-U02-L06;
 - N1-U01-L04: "caixas de coleta" (feminino) com retomada "Eles" substituído por "coletores", preservando a pista de gênero sem criar ambiguidade com "pilhas";
 - N0-U02-L08: ponte final apontava para a verificação, mas L09 e L10 vêm depois; agora aponta para L09.
+
+R1.3 aplicou no N0 (U3 a U6), sem mudar IDs, competências nem regras de conclusão:
+
+- U3-L03 deixa de usar "frase" antes de U3-L04, que ensina o conceito;
+- U3-L04 ensina espaço entre palavras, maiúscula inicial e sinal final antes da primeira escrita livre (U3-L10);
+- U4-L01 define "texto" no primeiro uso;
+- oralidade distribuída: escuta antes da leitura em U3-L08 e U4-L03; leitura em voz alta como estratégia de revisão em U5-L06;
+- literatura e linguagem artística popular: ditado em U3-L05, primeira estrofe de "Canção do exílio" em U4-L01, refrão de "Luar do sertão" em U6-L08 (todos em domínio público);
+- U5-L06-A01 e U5-L07-A02 deixam de repetir o problema "falta horário/local"; agora tratam mensagem contraditória e documento sem a característica pedida;
+- U6-L08-B03 passa a mostrar exemplos reais de variação regional (mandioca/aipim/macaxeira, tangerina/mexerica/bergamota, semáforo/sinal/sinaleira) em vez de descrevê-los;
+- renderer: o campo `lines` passa a ser exibido como versos, um por linha, também nos poemas já publicados do N4-U09.
+
+Validação: 35 checagens Node do CI e os seis smokes visuais verdes; capturas inspecionadas em 1280px e 390px.
 
 ## Remover o título redundante do primeiro acesso
 

@@ -369,6 +369,7 @@
       "wordTtsAvailable": true,
       "supportUseIsError": false
     },
+    {"id": "L05-B08", "type": "authored-literary-text", "focus": "read-or-listen", "title": "Para apreciar: um ditado popular", "text": "Água mole em pedra dura, tanto bate até que fura.", "ttsText": "Água mole em pedra dura, tanto bate até que fura.", "explanation": "Ditados são frases que o povo repete há muito tempo. Neste, as palavras foram organizadas para soar bem: dura e fura terminam com o mesmo som. A mensagem é que, com insistência, até o que parece difícil acaba acontecendo."},
     {
       "id": "L05-B07",
       "type": "summary",

@@ -346,6 +346,7 @@
       ],
       "ttsAvailableBeforeResponse": true
     },
+    {"id": "L04-B07", "type": "explanation", "focus": "read-or-listen", "title": "Como a frase aparece na escrita", "text": "Na escrita, cada palavra fica separada da seguinte por um espaço. Uma frase escrita começa com letra maiúscula e termina com um sinal: ponto final (.), ponto de interrogação (?) ou ponto de exclamação (!). Você vai estudar esses sinais com mais calma depois. Por enquanto, use-os como pistas de onde cada frase começa e termina.", "examples": ["A loja abriu.", "Você vem hoje?", "Que bom!"]},
     {
       "id": "L04-B06",
       "type": "summary",

@@ -182,7 +182,7 @@
       "title": "Às vezes ainda não há informação suficiente",
       "targetWord": "PONTO",
       "targetSegments": ["PON", "TO"],
-      "stage1": {"context": "Ana chegou ao PONTO.", "question": "Só com essa frase, qual é a decisão mais segura?", "options": ["PONTO certamente é um local de ônibus.", "PONTO certamente é uma pequena marca feita em uma superfície.", "Ainda não há pista suficiente para ter certeza."], "correctIndex": 2},
+      "stage1": {"context": "Ana chegou ao PONTO.", "question": "Só com essa informação, qual é a decisão mais segura?", "options": ["PONTO certamente é um local de ônibus.", "PONTO certamente é uma pequena marca feita em uma superfície.", "Ainda não há pista suficiente para ter certeza."], "correctIndex": 2},
       "stage2": {"additionalClue": "Ela ficou esperando o ônibus.", "question": "Com a nova pista, qual sentido fica mais provável?", "options": ["local onde passageiros esperam o ônibus", "pequena marca feita em uma superfície"], "correctIndex": 0, "strongClue": "esperando o ônibus"},
       "contextTtsAvailableBeforeResponse": true,
       "explanation": "Usar contexto também significa reconhecer quando ainda não sabemos. Uma hipótese pode ficar provisória até aparecer uma pista suficiente. Isso é melhor do que escolher um sentido sem evidência."

@@ -87,18 +87,7 @@
       "correctIndex": 0,
       "question": "Qual versão comunica o objetivo com mais clareza?"
     },
-    {
-      "id": "L07-A02",
-      "type": "assessment-edit",
-      "focus": "focused-edit-transfer",
-      "reviewFocus": "informação essencial",
-      "goal": "avisar que o ônibus sai às sete da plataforma 4",
-      "before": "O ônibus sai às sete.",
-      "question": "O que precisa ser acrescentado para cumprir todo o objetivo?",
-      "options": ["da plataforma 4", "o ônibus é grande", "a estação tem bancos"],
-      "correctIndex": 0,
-      "afterExample": "O ônibus sai às sete da plataforma 4."
-    }
+    {"id": "L07-A02", "type": "assessment-edit", "focus": "focused-edit-transfer", "reviewFocus": "informação essencial", "goal": "pedir que tragam um documento com foto para a matrícula", "before": "Traga um documento para a matrícula.", "question": "O que precisa ser acrescentado para cumprir todo o objetivo?", "options": ["com foto", "de cor azul", "dobrado ao meio"], "correctIndex": 0, "afterExample": "Traga um documento com foto para a matrícula."}
   ],
   "completionEvidence": {
     "clusters": {

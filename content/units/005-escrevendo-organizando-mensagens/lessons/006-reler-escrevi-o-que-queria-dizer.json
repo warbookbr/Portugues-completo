@@ -65,17 +65,8 @@
       "reviewPrompts": ["A informação principal aparece?", "Há algo que comunica o contrário?", "Falta um dado necessário para esta tarefa?"],
       "explanation": "Nesta etapa, o foco é a mensagem. Outros aspectos serão revisados em lições próprias."
     },
-    {
-      "id": "L06-A01",
-      "type": "assessment-revision",
-      "focus": "revise-missing-information",
-      "goal": "avisar que a consulta mudou para sexta-feira às três",
-      "firstDraft": "A consulta mudou para sexta-feira.",
-      "question": "O rascunho cumpre todo o objetivo?",
-      "options": ["não; falta o horário", "sim; não falta nada", "não; falta dizer a cor da sala"],
-      "correctIndex": 0,
-      "revisedExample": "A consulta mudou para sexta-feira às três."
-    },
+    {"id": "L06-B04", "type": "strategy", "focus": "read-aloud", "title": "Ler em voz alta ajuda a revisar", "text": "Ler a própria mensagem em voz alta, mesmo baixinho, ajuda a perceber uma palavra que faltou, uma palavra trocada ou uma frase confusa. O ouvido percebe coisas que os olhos às vezes deixam passar."},
+    {"id": "L06-A01", "type": "assessment-revision", "focus": "revise-contradiction", "goal": "avisar que a loja abre às nove amanhã", "firstDraft": "A loja fecha às nove amanhã.", "question": "O rascunho cumpre todo o objetivo?", "options": ["não; a mensagem diz o contrário do objetivo", "sim; está tudo certo", "não; falta dizer a cor da loja"], "correctIndex": 0, "revisedExample": "A loja abre às nove amanhã."},
     {
       "id": "L06-A02",
       "type": "assessment-confirmation",
