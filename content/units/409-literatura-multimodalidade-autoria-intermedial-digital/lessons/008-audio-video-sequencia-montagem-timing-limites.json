@@ -2,6 +2,7 @@
   "schemaVersion": 1,
   "id": "N4-U09-L08",
   "title": "Áudio/vídeo: sequência, montagem, timing e limite de representação",
+  "studentObjective": "Analisar como ordem, corte, pausa e duração mudam o sentido de áudios e vídeos, e reconhecer quando uma descrição não substitui a mídia real.",
   "status": "conteudo-pronto-para-implementacao",
   "objective": "Analisar efeitos de ordem, corte, elipse, duração informada e relação verbal/visual, reconhecendo quando uma representação semântica é suficiente e quando o fenômeno exigiria mídia real.",
   "competencies": ["analisar ordem de quadros", "interpretar corte e elipse", "comparar montagens", "usar duração informada sem fingir percepção", "reconhecer limite sensorial da simulação"],

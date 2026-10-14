@@ -2,6 +2,7 @@
   "schemaVersion": 1,
   "id": "N4-U09-L07",
   "title": "Multimodalidade: verbal, imagem, dados e interface",
+  "studentObjective": "Analisar como texto, imagem, dados e a organização de uma tela dividem a informação e orientam o caminho de quem lê.",
   "status": "conteudo-pronto-para-implementacao",
   "objective": "Analisar como texto, elementos visuais descritos, dados e interface distribuem informação, orientam percurso e podem repetir, complementar, tensionar ou omitir conteúdo.",
   "competencies": ["mapear função de modalidade", "comparar informação repetida e complementar", "ler dados com legenda e valores", "analisar ordem de navegação", "reconstruir mensagem de forma acessível"],

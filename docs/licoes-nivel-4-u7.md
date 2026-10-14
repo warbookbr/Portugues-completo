@@ -33,6 +33,16 @@ L1, L2, L8 e L9 exigem cuidado especial no M5. Nenhuma afirmação normativa/des
 - nenhuma caricatura de sotaque, classe, região ou grupo;
 - adaptação de repertório sem exigir abandono da variedade pessoal.
 
+### Revisão R1 (método)
+
+- N3-U08 já ensina variação nas quatro direções, prestígio e estigma, identidade, repertório, mudança (vossa mercê > você, nós > a gente, haver > ter) e preconceito linguístico. Aqui esses pontos entram como retomada curta no início de L03, L04, L05, L06 e L07, e cada lição acrescenta o que é próprio do N4: a mesma marca em várias dimensões e limite de inferência (L03); tendência, oscilação e coexistência em dados reais (L04); legitimidade de uma exigência, isto é, anunciada, ligada à tarefa e dirigida ao texto (L05); alternância consciente com marca de identidade mantida de propósito (L06); tipos de comentário: exigência declarada, preferência pessoal, consequência institucional e insulto (L07).
+- L01 abre com retomada explícita: as distinções entre regra, variante e convenção e a adaptação a públicos já foram usadas em N4-U05 e N4-U06; a lição sistematiza e nomeia uso, descrição, normatização e julgamento social. "Normatização", "descrição" e "corpus" são definidos no primeiro uso, com exemplo.
+- L04 deixa de usar série simulada "forma A/forma B". Casos documentados, com fonte dita ao aluno: CALLOU, D.; LOPES, C. R. S. Contribuições da Sociolinguística para o ensino e a pesquisa: a questão da variação e mudança linguística. Revista do GELNE, v. 5, p. 63-74, 2004 (nós/a gente no NURC-RJ, anos 1970 e 1990, cerca de 42% para 75-80%, e no PEUL, anos 1980 e 2000, estável em torno de 73-80%; painel com idas e vindas individuais; haver existencial de 35% para 24% no NURC-RJ, ter categórico entre 25 e 35 anos nos anos 1990; 78% de haver em anúncios de jornal do século XIX, Callou e Avelar); retorno do tu na fala carioca (Paredes Silva, início dos anos 2000).
+- L02 e L08 usam os casos verificados em `docs/referencias-gramatica-nivel-4-u5-u7.md`: haver impessoal (regra), partitivas (variante documentada), atender no Manual de Comunicação do Senado (norma editorial), VOLP, Manual de Redação da Presidência (3ª ed., 2018), pesquisa descritiva sobre próclise.
+- Todas as lições: `studentObjective`, bloco de conteúdo com exemplos mostrados inteiros, checagem com três opções plausíveis antes da produção aberta, enunciado completo (`prompt`) e materiais reais nas atividades abertas, com autochecagem curta. Categorias internas deixaram de aparecer como opções.
+- Pendência: a verificação integrada ainda usa série temporal simulada (V01-A03) e V01-Q01 não normaliza; ficam para o P7.
+
+
 ---
 
 ## Lição 1 — Língua como sistema: uso, descrição e normatização
@@ -66,7 +76,7 @@ L1, L2, L8 e L9 exigem cuidado especial no M5. Nenhuma afirmação normativa/des
 
 - **Objetivo:** interpretar mudança como processo histórico/social que exige evidência temporal e contextual.
 - **Dependências:** L3.
-- **Modalidade/recursos:** séries didáticas de usos em períodos diferentes; contexto fornecido.
+- **Modalidade/recursos:** dados documentados de pesquisas em tempo real (nós/a gente, haver/ter, retorno do tu), com fonte declarada ao aluno; contexto fornecido.
 - **Prática:** inovação, expansão/retração de uso, mudança de significado, estabilização parcial e coexistência de formas.
 - **Evidência:** explicar tendência observável sem concluir “a língua piorou” nem generalizar além dos dados.
 - **Limites:** historiografia detalhada do português fica fora; exemplo isolado não prova mudança geral.

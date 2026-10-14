@@ -2,6 +2,7 @@
   "schemaVersion": 1,
   "id": "N4-U09-L09",
   "title": "Autoria, edição, proveniência, circulação e contexto de plataforma",
+  "studentObjective": "Rastrear quem criou, editou e fez circular um conteúdo digital, separando o que dá para comprovar do que é suposição.",
   "status": "conteudo-pronto-para-implementacao",
   "objective": "Rastrear versões, autoria, edição e circulação de material digital, distinguindo proveniência observável de hipóteses não sustentadas sobre intenção ou funcionamento de plataforma.",
   "competencies": ["reconstruir cadeia de publicação", "distinguir original, edição e repostagem", "identificar contexto perdido", "preservar metadados relevantes", "evitar causalidade algorítmica inventada"],

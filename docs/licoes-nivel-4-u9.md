@@ -38,6 +38,12 @@ Se o M5 passar a exigir percepção real de timbre, prosódia, movimento, atuaç
 - equivalentes acessíveis para toda pista decisiva;
 - nenhuma mídia decorativa obrigatória.
 
+### Revisão R1 (método)
+
+- L05 e L10 deixaram de trabalhar sobre resumos de uma frase. L05 traz os dois contos completos, escritos para a lição ("A mesa posta" e "Mesa para um", este como resposta explícita ao primeiro); L10 traz o conto completo "O relógio da praça", com a revelação só no último parágrafo. Os blocos avaliados, as interações e a evidência de conclusão foram preservados; só os enunciados passaram a citar os contos.
+- `studentObjective` incluído em L02 a L12. L01 continua sem ele porque é caso-âncora do fallback público nos testes de CI.
+
+
 ---
 
 ## Lição 1 — Interpretação literária autônoma e evidência

@@ -29,6 +29,14 @@ escuta estratégica
 - apoio visual/textual acessível;
 - inteligibilidade/prosódia global não são validadas automaticamente.
 
+### Revisão R1 (método)
+
+- N3-U07 já trata exposição formal, notas com fonte e limite, plano com tempo, apoio acessível, sessão de perguntas e objeção com concessão. Aqui esses pontos entram como retomada curta, e cada lição acrescenta o que é próprio do N4: foco de escuta escolhido antes e atenção às ressalvas (L01); síntese fiel de várias vozes, com erros típicos e modelo (L02); plano para uma audiência que vai decidir, com o que fica de fora (L03); graus de certeza na fala: fato, inferência, hipótese e lacuna (L04); adaptação a públicos diferentes e em tempo real, durante a fala (L05); diagnóstico do tipo de falha antes do reparo (L06); efeito da objeção na própria posição: manter, delimitar ou alterar (L07). L08, negociação de definições e escopo, foi preservada como ganho real e recebeu definições de "definição operacional", "escopo", "convergência" e "divergência".
+- O cenário único do teste de horário estendido deixou as lições: cada lição tem cenário próprio (saneamento, horta comunitária e biblioteca escolar, cooperativa de reciclagem e programa de visitas a idosos, livros no terminal de ônibus, linhas de ônibus, orçamento participativo, avaliação escolar e feira de livros, festa junina e celular em sala, caminho seguro até a escola). A verificação integrada mantém o cenário do teste de horário, que agora é novo em relação às lições.
+- Discussões e exposições aparecem inteiras, com áudio (TTS) e, na L01, escuta antes da leitura. Checagens com três opções plausíveis antes das produções; checagens de L02 a L06 passaram a normalizar.
+- `studentObjective` em todas as lições; enunciados das atividades sem linguagem interna ("observável pelo sistema" virou "o que ficou registrado aqui").
+
+
 ---
 
 ## Lição 1 — Escuta estratégica de exposição/discussão complexa

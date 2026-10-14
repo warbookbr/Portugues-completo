@@ -2,6 +2,7 @@
   "schemaVersion": 1,
   "id": "N4-U09-L11",
   "title": "Autoria multimodal/digital acessível",
+  "studentObjective": "Planejar uma produção que combine texto, imagem ou som, em que cada parte tenha uma função, as fontes sejam citadas e todos possam acessar a informação.",
   "status": "conteudo-pronto-para-implementacao",
   "objective": "Planejar e produzir composição multimodal em que cada modalidade tenha função explícita, fontes permaneçam atribuíveis e toda informação decisiva possua equivalente textual ou semântico acessível.",
   "competencies": ["distribuir informação entre modalidades", "planejar hierarquia semântica", "atribuir fontes", "criar equivalentes acessíveis", "auditar dependência sensorial"],

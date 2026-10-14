@@ -2,6 +2,7 @@
   "schemaVersion": 1,
   "id": "N4-U09-L03",
   "title": "Poesia: forma, ritmo, sintaxe e efeito",
+  "studentObjective": "Explicar como o corte dos versos, as repetições, a ordem das palavras e as pausas de um poema produzem sentido, sem reduzir a análise a contar sílabas ou rimas.",
   "status": "conteudo-pronto-para-implementacao",
   "objective": "Relacionar organização formal de um poema a efeitos de sentido, comparando quebras de verso, repetição, sintaxe, ordem e pausa sem reduzir poesia a métrica ou rima.",
   "competencies": ["analisar quebra de verso", "relacionar repetição a efeito", "comparar sintaxe e disposição", "testar reconfiguração formal", "justificar efeito por evidência"],
