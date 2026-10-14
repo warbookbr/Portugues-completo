@@ -2,6 +2,7 @@
   "schemaVersion": 1,
   "id": "N3-U06-L02",
   "title": "Precisão lexical, vagueza e ambiguidade",
+  "studentObjective": "Trocar palavras vagas ou exageradas por outras mais exatas, sem prometer mais certeza do que as informações permitem.",
   "status": "conteudo-pronto-para-implementacao",
   "objective": "Escolher palavras e expressões suficientemente precisas para a finalidade, reconhecendo quando vagueza ou ambiguidade prejudica a compreensão e quando permanece legítima ou deliberada.",
   "competencies": [
@@ -38,13 +39,9 @@
       {"source": "27 usuários aguardaram mais de 40 minutos", "bad": "muitos usuários sofreram demora enorme", "issue": "troca medida por avaliação vaga/intensificada"},
       {"source": "A coordenadora falou com a pesquisadora quando ela saiu da sala.", "issue": "o pronome pode ter dois referentes plausíveis", "task": "reformular apenas se o contexto exigir desambiguação"}
     ]},
-    {"id": "L02-C01", "type": "quick-check", "items": [
-      {"question": "'possível' e 'confirmado' expressam o mesmo grau de compromisso?", "correct": false},
-      {"question": "Uma palavra comum pode ser mais precisa que uma palavra rara?", "correct": true},
-      {"question": "Toda ambiguidade precisa ser eliminada mesmo em uso deliberado?", "correct": false}
-    ]},
+    {"id": "L02-C01", "type": "quick-check-set", "instruction": "Responda pensando em precisão e grau de certeza.", "items": [{"question": "Um relatório diz que uma redução é 'possível'. Um revisor troca por 'confirmada'. O que aconteceu?", "options": ["o revisor só trocou a palavra por um sinônimo", "o revisor deixou a frase mais precisa", "o revisor aumentou a certeza sem apoio nos dados"], "correctIndex": 2}, {"question": "Dados: 12 dos 30 ônibus atrasaram mais de 15 minutos. Qual frase é mais precisa para um relatório?", "options": ["Doze dos 30 ônibus atrasaram mais de 15 minutos.", "Muitos ônibus atrasaram bastante.", "Os ônibus enfrentaram atrasos consideráveis e preocupantes."], "correctIndex": 0}, {"question": "Num poema, um verso pode ser lido de dois jeitos. O que considerar na revisão?", "options": ["que a ambiguidade atrapalha o leitor e deve ser eliminada", "que a ambiguidade pode ser intencional e fazer parte do efeito", "que o verso ficaria melhor com palavras mais raras"], "correctIndex": 1}]},
     {"id": "L02-A01", "type": "assessment-precision", "context": "um piloto curto mostrou associação, sem desenho causal e sem informação sobre outras unidades", "sentences": ["A medida causou melhora em toda a rede.", "A medida coincidiu com redução de 12% no período observado."], "task": "revisar a formulação para preservar alcance, referente e grau de certeza sem acrescentar dado inexistente"},
-    {"id": "L02-P01", "type": "open-edit", "prompt": "Revise um parágrafo quanto a precisão lexical, vagueza e ambiguidade. Faça apenas alterações justificadas e registre ao menos uma expressão que decidiu manter.", "recordResponse": true, "automaticValidation": false}
+    {"id": "L02-P01", "type": "open-edit", "prompt": "Escolha um texto seu com pelo menos dois parágrafos, por exemplo um dos textos longos que você escreveu na unidade anterior (relatório, resenha, artigo ou análise). Guarde a versão original. Revise um parágrafo dele quanto a precisão das palavras, vagueza e ambiguidade. Faça apenas alterações justificadas e registre ao menos uma expressão que decidiu manter.", "recordResponse": true, "automaticValidation": false}
   ],
   "assessmentBehavior": {"rareVocabularyScored": false, "uncertaintyMustBePreserved": true, "ambiguityAsAutomaticError": false, "openResponseAutoValidated": false},
   "completionEvidence": {

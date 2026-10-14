@@ -2,6 +2,7 @@
   "schemaVersion": 1,
   "id": "N3-U06-L03",
   "title": "Concisão x explicitação necessária",
+  "studentObjective": "Cortar o que sobra num texto sem cortar condições, números e ressalvas de que o leitor precisa.",
   "status": "conteudo-pronto-para-implementacao",
   "objective": "Reduzir excesso, redundância e perífrases quando houver ganho funcional, preservando condições, evidências, relações e contexto que o leitor precisa.",
   "competencies": [
@@ -32,12 +33,9 @@
   "sequence": [
     {"id": "L03-B01", "type": "before-after", "before": "A equipe procedeu à realização de uma revisão dos dados antes da publicação do relatório.", "after": "A equipe revisou os dados antes de publicar o relatório.", "preserved": "ação e ordem temporal"},
     {"id": "L03-B02", "type": "loss-detection", "before": "Caso o sistema permaneça indisponível após as 18h, o prazo poderá ser prorrogado, mas a decisão depende de confirmação técnica.", "badShortening": "O prazo será prorrogado.", "lost": ["condição", "possibilidade", "dependência de confirmação"]},
-    {"id": "L03-C01", "type": "quick-check", "items": [
-      {"question": "Cortar uma condição importante para encurtar é boa concisão?", "correct": false},
-      {"question": "Um detalhe pode precisar permanecer porque muda a interpretação da conclusão?", "correct": true}
-    ]},
+    {"id": "L03-C01", "type": "quick-check-set", "instruction": "Responda pensando no que pode e no que não pode ser cortado.", "items": [{"question": "Original: 'Caso chova, o show poderá ser transferido para o ginásio.' Qual versão curta mantém o sentido?", "options": ["Se chover, o show poderá ir para o ginásio.", "O show será no ginásio.", "Show: ginásio."], "correctIndex": 0}, {"question": "Num resumo sobre um remédio, por que a frase 'o teste foi feito só com adultos' deve ficar?", "options": ["porque frases curtas devem ser mantidas", "porque muda o alcance da conclusão: não se sabe o efeito em crianças", "porque o resumo precisa ter o mesmo tamanho do original"], "correctIndex": 1}]},
     {"id": "L03-A01", "type": "assessment-cut", "original": "No levantamento realizado durante quatro semanas, 68% dos respondentes disseram preferir o novo horário, mas a pesquisa era voluntária e não representa automaticamente todos os usuários.", "task": "produzir versão mais concisa preservando período, porcentagem e limite da amostra"},
-    {"id": "L03-P01", "type": "open-edit", "prompt": "Edite um trecho longo para reduzir excesso. Registre um corte feito, uma informação deliberadamente mantida e um caso em que uma versão curta demais prejudicaria o leitor.", "recordResponse": true, "automaticValidation": false}
+    {"id": "L03-P01", "type": "open-edit", "prompt": "Escolha um texto seu com pelo menos dois parágrafos, por exemplo um dos textos longos que você escreveu na unidade anterior (relatório, resenha, artigo ou análise). Guarde a versão original. Edite um trecho para reduzir excesso. Registre um corte feito, uma informação que você manteve de propósito e um caso em que uma versão curta demais prejudicaria o leitor.", "recordResponse": true, "automaticValidation": false}
   ],
   "assessmentBehavior": {"shorterAlwaysBetter": false, "wordReductionScored": false, "openResponseAutoValidated": false},
   "completionEvidence": {

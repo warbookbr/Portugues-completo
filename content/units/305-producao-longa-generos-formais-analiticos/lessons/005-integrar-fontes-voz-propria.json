@@ -2,6 +2,7 @@
   "schemaVersion": 1,
   "id": "N3-U05-L05",
   "title": "Integrar fontes sem apagar a voz própria",
+  "studentObjective": "Usar dados, resumos e citações de outras fontes num texto longo deixando claro de onde vem cada informação e o que é análise sua.",
   "status": "conteudo-pronto-para-implementacao",
   "objective": "Incorporar síntese, paráfrase, dados e citações curtas em texto longo mantendo atribuição, função e análise própria identificáveis.",
   "competencies": ["introduzir fonte pela função", "atribuir corretamente", "parafrasear com fidelidade", "ligar evidência ao ponto", "comentar limite/relevância", "evitar colagem de citações", "separar análise própria"],
@@ -11,7 +12,7 @@
   "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "purpose": "apoio"}], "generatedVisualResources": [{"type": "UI_RENDERED_SOURCE_USE_WORKSPACE", "purpose": "ligar fonte, uso e comentário próprio"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "workspace textual registra origem e função."},
   "sequence": [
     {"id": "L05-B01", "type": "contrast", "weak": "Segundo A, 71%. B diz 62%. C diz que houve melhora.", "developed": "O registro A mostra ocupação de 71% no teste; a pesquisa B, com amostra diferente, registra 62% de avaliações positivas. Os números não medem a mesma coisa, por isso sustentam aspectos distintos da análise."},
-    {"id": "L05-C01", "type": "quick-check", "items": [{"question": "Uma citação precisa ter função no argumento/análise?", "correct": true}, {"question": "Misturar comentário próprio como se fosse da fonte é aceitável?", "correct": false}]},
+    {"id": "L05-C01", "type": "quick-check-set", "instruction": "Responda pensando na relação entre fonte e análise.", "items": [{"question": "Num texto com fontes, para que serve uma citação?", "options": ["para aumentar o tamanho do texto", "para apoiar ou ilustrar um ponto da análise", "para substituir a opinião de quem escreve"], "correctIndex": 1}, {"question": "Qual frase separa a fonte da análise de quem escreve?", "options": ["62% aprovaram o horário, e portanto todos os moradores aprovam.", "A pesquisa diz que o horário é ótimo e deve ser permanente.", "Segundo a pesquisa da associação, 62% aprovaram o horário; esse número, porém, vem só de quem respondeu."], "correctIndex": 2}]},
     {"id": "L05-A01", "type": "assessment-integration", "sources": [{"id": "A", "fact": "342 atendimentos noturnos"}, {"id": "B", "fact": "79% dos respondentes avaliaram positivamente"}], "task": "escrever bloco que use as duas fontes, preserve escopos e acrescente análise própria"},
     {"id": "L05-P01", "type": "open-source-block", "prompt": "Escreva um bloco do seu texto com pelo menos duas fontes e marque a função de cada uso e sua análise própria.", "recordResponse": true, "automaticValidation": false}
   ],

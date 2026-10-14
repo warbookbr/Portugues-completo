@@ -2,6 +2,7 @@
   "schemaVersion": 1,
   "id": "N3-U05-L04",
   "title": "Desenvolver análise e exposição sem girar em círculo",
+  "studentObjective": "Desenvolver uma ideia em vários parágrafos com explicação, exemplo e dados comentados, sem repetir a mesma coisa com outras palavras.",
   "status": "conteudo-pronto-para-implementacao",
   "objective": "Desenvolver ideias em extensão proporcional por explicação, relação, exemplo, evidência e interpretação, distinguindo aprofundamento de repetição e detalhe lateral.",
   "competencies": ["detectar paráfrase repetitiva", "expandir ponto insuficiente", "ligar afirmação a evidência", "interpretar relevância do apoio", "condensar repetição", "controlar detalhe lateral"],
@@ -11,7 +12,7 @@
   "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "purpose": "apoio"}], "generatedVisualResources": [{"type": "UI_RENDERED_ANALYTIC_DEVELOPMENT", "purpose": "comparar afirmação, evidência, explicação e repetição"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "blocos textuais comparáveis bastam."},
   "sequence": [
     {"id": "L04-B01", "type": "contrast", "claim": "O piloto mostrou procura relevante.", "weak": "Houve procura. A procura foi relevante. Isso mostra que as pessoas procuraram.", "developed": "O registro contabilizou ocupação acima de 70% em todas as sessões; isso não prova demanda permanente, mas sustenta que houve procura consistente durante o período testado."},
-    {"id": "L04-C01", "type": "quick-check", "items": [{"question": "Repetir a tese com sinônimos conta como desenvolvimento?", "correct": false}, {"question": "Interpretar o alcance da evidência pode aprofundar o bloco?", "correct": true}]},
+    {"id": "L04-C01", "type": "quick-check-set", "instruction": "Responda pensando no que faz um parágrafo avançar.", "items": [{"question": "Qual trecho desenvolve a ideia 'O sábado atraiu um público novo', em vez de só repeti-la?", "options": ["Dos 151 novos cadastros, 98 eram de pessoas que trabalham durante a semana, o que sugere que o sábado alcançou quem não podia vir em outros dias.", "O sábado atraiu um público novo. Esse público era novo. Muitas pessoas novas vieram.", "O sábado foi muito bom e atraiu muita gente nova, muita mesmo."], "correctIndex": 0}, {"question": "Depois de citar um dado, o que aprofunda o parágrafo?", "options": ["repetir o dado com outras palavras", "explicar o que o dado mostra e até onde ele vale", "acrescentar mais três dados sem comentário"], "correctIndex": 1}]},
     {"id": "L04-A01", "type": "assessment-development", "seed": "A pesquisa tem limite porque foi voluntária.", "sourceFact": "96 de 214 atendidos responderam; 78 avaliaram positivamente", "task": "desenvolver em 2–3 parágrafos explicando utilidade do dado e limite de generalização, sem repetir a mesma ideia"},
     {"id": "L04-P01", "type": "open-development", "prompt": "Desenvolva um núcleo do seu plano em vários parágrafos e marque onde explica, evidencia, interpreta e faz transição.", "recordResponse": true, "automaticValidation": false}
   ],

@@ -2,6 +2,7 @@
   "schemaVersion": 1,
   "id": "N3-U05-L03",
   "title": "Arquitetura de seções e parágrafos em escala longa",
+  "studentObjective": "Dividir um texto longo em seções e parágrafos com funções claras e ligar essas partes para que o leitor acompanhe o raciocínio.",
   "status": "conteudo-pronto-para-implementacao",
   "objective": "Distribuir conteúdo em seções e parágrafos com funções recuperáveis, progressão e transições, sem impor número fixo de partes ou subtítulos.",
   "competencies": ["agrupar conteúdo por função", "dividir seção sobrecarregada", "unir blocos redundantes", "decidir quando subtítulo ajuda", "planejar transições", "justificar arquitetura"],
@@ -11,7 +12,7 @@
   "supportMaterials": {"curatedMedia": [], "runtimeResources": [{"type": "TTS_OK", "purpose": "apoio"}], "generatedVisualResources": [{"type": "UI_RENDERED_LONG_TEXT_ARCHITECTURE", "purpose": "organizar seções, parágrafos e transições"}], "productionQueueRequired": false, "publicationDependency": "nenhuma nova mídia humana obrigatória", "decisionRationale": "arquitetura pode ser manipulada em UI textual."},
   "sequence": [
     {"id": "L03-B01", "type": "architecture-compare", "content": ["objetivo do teste", "dados de acesso", "dados de espera", "limites metodológicos", "recomendação condicional"], "architectures": [{"sections": ["contexto", "resultados", "limites e próximos passos"], "status": "uma organização plausível"}, {"sections": ["introdução", "desenvolvimento", "conclusão"], "status": "rótulos genéricos não mostram função suficiente neste caso"}]},
-    {"id": "L03-C01", "type": "quick-check", "items": [{"question": "Toda seção precisa do mesmo tamanho?", "correct": false}, {"question": "Um subtítulo deve existir só para aumentar aparência de formalidade?", "correct": false}]},
+    {"id": "L03-C01", "type": "quick-check-set", "instruction": "Responda pensando na função de cada parte.", "items": [{"question": "Num relatório, a seção de resultados ficou com o dobro do tamanho da seção de limites. O que fazer?", "options": ["cortar resultados até as seções ficarem iguais", "acrescentar limites para equilibrar as seções", "nada, necessariamente: o tamanho de cada seção depende do conteúdo"], "correctIndex": 2}, {"question": "Quando um subtítulo ajuda num texto longo?", "options": ["quando ajuda o leitor a localizar partes com funções diferentes", "quando o texto precisa parecer mais formal", "só quando o texto tem mais de dez páginas"], "correctIndex": 0}]},
     {"id": "L03-A01", "type": "assessment-architecture", "planItems": ["problema", "fontes", "resultados convergentes", "divergência não resolvida", "limites", "resposta própria"], "tasks": ["agrupar em arquitetura", "marcar função de cada seção", "propor duas transições importantes"]},
     {"id": "L03-P01", "type": "open-architecture", "prompt": "Transforme seu macroplano em arquitetura de texto longo e justifique uma divisão, uma união e uma transição.", "recordResponse": true, "automaticValidation": false}
   ],

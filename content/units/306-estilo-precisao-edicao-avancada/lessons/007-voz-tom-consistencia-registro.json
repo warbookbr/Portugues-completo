@@ -2,6 +2,7 @@
   "schemaVersion": 1,
   "id": "N3-U06-L07",
   "title": "Voz, tom e consistência de registro",
+  "studentObjective": "Manter o tom de um texto coerente com a situação e ajustar o grau de certeza ao que a informação permite afirmar.",
   "status": "conteudo-pronto-para-implementacao",
   "objective": "Reconhecer e controlar como escolhas recorrentes, modalidade, tratamento, formalidade e posição do autor constroem voz e tom ao longo de textos extensos, preservando mudanças deliberadas.",
   "competencies": [
@@ -35,13 +36,10 @@
   },
   "sequence": [
     {"id": "L07-B01", "type": "tone-shift", "text": "O relatório descreve três limitações do piloto. Agora, vamos combinar: esse negócio ficou meio bagunçado, né? Por isso, recomenda-se novo teste.", "analysis": "a mudança de registro destoa do gênero estabelecido; não implica que a linguagem coloquial seja inferior fora desse contexto"},
-    {"id": "L07-B02", "type": "modality-voice", "evidence": "um teste local de seis semanas mostrou melhora", "versions": ["A medida resolve o problema.", "Os resultados sugerem que a medida pode contribuir para reduzir o problema no contexto observado."], "teachingPoint": "grau de compromisso participa da voz e deve acompanhar a evidência"},
-    {"id": "L07-C01", "type": "quick-check", "items": [
-      {"question": "Consistência exige o mesmo tom em todas as seções, mesmo quando a função muda?", "correct": false},
-      {"question": "Uma mudança deliberada de tom pode ser adequada quando sua função é clara?", "correct": true}
-    ]},
+    {"id": "L07-B02", "type": "modality-voice", "evidence": "Três cartas de uma escritora, guardadas num arquivo, mostram que ela reescreveu dois contos mais de uma vez antes de publicá-los.", "versions": ["A escritora era obcecada pela perfeição e reescrevia tudo o que escrevia.", "As três cartas indicam que ela reescreveu ao menos dois contos antes de publicá-los; não sabemos se fazia o mesmo com o resto da obra."], "teachingPoint": "grau de compromisso participa da voz e deve acompanhar a evidência", "title": "Certeza na medida das provas", "explanation": "Num ensaio sobre literatura, o grau de certeza também faz parte da voz de quem escreve. A primeira versão soa segura, mas afirma muito mais do que as cartas mostram. A segunda continua firme e diz exatamente até onde as cartas permitem ir."},
+    {"id": "L07-C01", "type": "quick-check-set", "instruction": "Responda pensando em tom e consistência.", "items": [{"question": "Um relatório formal muda para um tom pessoal só na seção de agradecimentos. Isso quebra a consistência?", "options": ["sim: o tom precisa ser idêntico em todo o texto", "sim: agradecimentos não podem aparecer em relatórios", "não necessariamente: a mudança tem uma função clara nessa seção"], "correctIndex": 2}, {"question": "Qual destas mudanças de tom é inadequada?", "options": ["passar da linguagem do relatório para gíria no meio da análise dos dados", "usar um exemplo do dia a dia para explicar um conceito difícil", "adotar um tom mais direto nas instruções finais ao leitor"], "correctIndex": 0}]},
     {"id": "L07-A01", "type": "assessment-register", "source": "Pedimos que você mande os documentos logo, beleza? A medida certamente resolverá todos os atrasos.", "targetContext": "comunicado institucional a usuários; evidência ainda preliminar", "task": "ajustar tratamento, tom e compromisso sem transformar formalidade máxima em objetivo"},
-    {"id": "L07-P01", "type": "open-consistency", "prompt": "Revise um trecho longo quanto a voz, tom e registro. Identifique uma ruptura inadequada, uma escolha recorrente a preservar e uma mudança de tom que seria aceitável se tivesse função explícita.", "recordResponse": true, "automaticValidation": false}
+    {"id": "L07-P01", "type": "open-consistency", "prompt": "Escolha um texto seu com pelo menos dois parágrafos, por exemplo um dos textos longos que você escreveu na unidade anterior (relatório, resenha, artigo ou análise). Guarde a versão original. Revise o texto quanto a voz, tom e registro. Identifique uma mudança de tom inadequada (se houver), uma escolha que se repete e deve ser preservada e uma mudança de tom que seria aceitável se tivesse função clara.", "recordResponse": true, "automaticValidation": false}
   ],
   "assessmentBehavior": {"formalityAsQuality": false, "monotonyRequired": false, "categoricalLanguageScored": false, "openResponseAutoValidated": false},
   "completionEvidence": {

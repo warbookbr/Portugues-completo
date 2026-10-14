@@ -50,6 +50,7 @@ situação de produção
 - **Prática:** separar essencial, apoio, exemplo, dado e conteúdo lateral; cortar escopo amplo demais.
 - **Evidência:** plano próprio com foco coerente e conteúdo suficiente, sem escrever todas as frases antecipadamente.
 - **Limites:** tese não é obrigatória em todo gênero; quantidade de tópicos não mede qualidade.
+- **Revisão R1.6:** macroplanejamento ganha bloco de construção; a atividade de plano traz as quatro fontes por extenso (horta escolar).
 
 ## Lição 3 — Arquitetura de seções e parágrafos em escala longa
 
@@ -86,6 +87,7 @@ situação de produção
 - **Prática:** separar fato registrado, interpretação e recomendação; organizar seções conforme finalidade.
 - **Evidência:** produzir relatório de situação controlada sem inventar dado e sem transformar modelo em formulário universal.
 - **Limites:** não exigir relatório técnico de profissão específica; recomendação não é obrigatória quando o gênero/situação não a pede.
+- **Revisão R1.6:** modelo completo de relatório (biblioteca comunitária aos sábados, cerca de 390 palavras) com objetivo, registro, análise, limites e recomendação.
 
 ## Lição 7 — Resenha crítica: resumir, analisar e avaliar com critérios
 
@@ -95,6 +97,7 @@ situação de produção
 - **Prática:** evitar resumo integral; escolher critérios pertinentes; sustentar avaliação com elementos concretos.
 - **Evidência:** resenha própria em que julgamento não dependa apenas de gosto pessoal.
 - **Limites:** avaliação diferente pode ser válida; não exigir jargão crítico especializado.
+- **Revisão R1.6:** o ensaio avaliado e uma resenha crítica completa (cerca de 350 palavras) são mostrados por extenso; a atividade usa uma crônica autoral completa.
 
 ## Lição 8 — Artigo de opinião, proposta e recomendação fundamentada
 
@@ -104,6 +107,7 @@ situação de produção
 - **Prática:** artigo de opinião, recomendação, proposta; selecionar evidência e antecipar objeção proporcional.
 - **Evidência:** produção própria com tese/proposta, apoio e resposta a pelo menos uma objeção relevante.
 - **Limites:** posição não é pontuada ideologicamente; não exigir linguagem inflamada para parecer persuasivo.
+- **Revisão R1.6:** modelo completo de artigo de opinião (bebedouros públicos, cerca de 380 palavras) com tese, argumentos, objeções e proposta limitada.
 
 ## Lição 9 — Comunicação institucional, profissional geral e pública
 
@@ -113,6 +117,7 @@ situação de produção
 - **Prática:** identificar propósito/ação; explicitar contexto suficiente; ajustar tratamento e concisão.
 - **Evidência:** produzir duas comunicações de situações diferentes preservando fatos e adequando registro.
 - **Limites:** não exigir linguagem jurídica/burocrática; formal não significa impessoalidade extrema.
+- **Revisão R1.6:** os mesmos fatos aparecem por extenso em comunicado público, e-mail à equipe e nota explicativa.
 
 ## Lição 10 — Retextualização: a mesma informação em gêneros diferentes
 
@@ -122,6 +127,7 @@ situação de produção
 - **Prática:** relatório → comunicado; síntese de estudo → apresentação; análise → recomendação; comparar o que precisa entrar/sair.
 - **Evidência:** produzir duas versões funcionalmente diferentes da mesma base informacional e justificar transformações.
 - **Limites:** não tratar gênero como decoração superficial; fatos centrais não podem mudar sem motivo/fonte.
+- **Revisão R1.6:** retextualização mostrada com o relatório da L6 transformado em comunicado aos moradores, com registro do que saiu, ficou, entrou e mudou.
 
 ## Lição 11 — Produção longa A: texto analítico/de estudo com fontes
 
@@ -131,6 +137,7 @@ situação de produção
 - **Prática:** planejar, redigir, revisar conteúdo/arquitetura/coesão/fontes/norma, reescrever.
 - **Evidência:** produção própria longa com fontes e duas versões, incluindo justificativa de mudança global e local.
 - **Limites:** qualidade global exige avaliador confiável; extensão mínima rígida não é critério.
+- **Revisão R1.6:** as quatro fontes da produção A (cozinha comunitária) aparecem por extenso.
 
 ## Lição 12 — Produção longa B: gênero formal/público + revisão cruzada
 

@@ -44,6 +44,7 @@ Antes de desenvolver L8–L11 em M5:
 - **Prática:** reconhecer proposições/relações, locuções verbais, encaixes e reformulações em frases mais simples.
 - **Evidência:** reconstruir arquitetura de período novo e explicar relação central sem depender de taxonomia completa.
 - **Limites:** número de formas verbais não determina mecanicamente número de orações; análise exaustiva não é objetivo.
+- **Revisão R1.6:** abre com retomada do N2 (coordenação, subordinação, oração principal, locução verbal) e define período complexo; a atividade de arquitetura usa só relações ensinadas no N2 (condição, finalidade, causa). Concessão passa a ser cobrada depois da L3.
 
 ## Lição 2 — Coordenação ampliada: relação, paralelismo e alcance
 
@@ -53,6 +54,7 @@ Antes de desenvolver L8–L11 em M5:
 - **Prática:** adição, oposição, alternativa, conclusão/explicação quando pertinentes; listas e estruturas paralelas.
 - **Evidência:** revisar coordenação complexa e justificar conectivo/pontuação/estrutura.
 - **Limites:** não ensinar lista fechada de conjunções como finalidade; paralelismo não exige repetição artificial.
+- **Revisão R1.6:** paralelismo e alcance de conectores ganham bloco de construção; a prática de paralelismo usa par correlativo (não só... mas também), diferente da série de infinitivos e nomes usada na N3-U06-L05.
 
 ## Lição 3 — Subordinação e relações de sentido em escala avançada
 
@@ -62,6 +64,7 @@ Antes de desenvolver L8–L11 em M5:
 - **Prática:** escolher relação; mover oração; comparar explícito/implícito; observar mudança de foco.
 - **Evidência:** construir/revisar períodos novos em que a relação lógica fique compatível com a intenção.
 - **Limites:** nome da classe não substitui compreensão; não exigir catálogo completo de subordinadas.
+- **Revisão R1.6:** causa, condição, tempo e finalidade são retomadas do N2; concessão, consequência, comparação, proporção e conformidade são construídas uma a uma (exemplo, nome, explicação, marcadores) antes das checagens.
 
 ## Lição 4 — Orações relativas: referência, restrição e informação adicional
 
@@ -71,6 +74,7 @@ Antes de desenvolver L8–L11 em M5:
 - **Prática:** antecedente, ambiguidade, informação delimitadora x adicional em casos transparentes, reescrita para clareza.
 - **Evidência:** interpretar e reparar construção relativa nova, explicando efeito sobre referência/alcance.
 - **Limites:** não reduzir a lição a classificação terminológica; casos normativos específicos de pronome relativo dependem do gate de fontes quando necessários.
+- **Revisão R1.6:** antecedente e restrição ganham definição em bloco próprio, ligado à N2-U04-L12.
 
 ## Lição 5 — Formas reduzidas e reformulações de estrutura
 
@@ -80,6 +84,7 @@ Antes de desenvolver L8–L11 em M5:
 - **Prática:** expandir para tornar relação explícita; condensar quando referente/relação permanecem claros; detectar ambiguidade.
 - **Evidência:** escolher/reformular estrutura nova conforme clareza e efeito pretendido.
 - **Limites:** não ensinar redução como sinal de escrita superior; não aceitar referente implícito ambíguo por concisão.
+- **Revisão R1.6:** forma desenvolvida e forma reduzida são definidas a partir de infinitivo, gerúndio e particípio da N2-U04-L13.
 
 ## Lição 6 — Ordem, foco, topicalização e ambiguidade
 
@@ -89,6 +94,7 @@ Antes de desenvolver L8–L11 em M5:
 - **Prática:** ordem canônica/não canônica clara; elementos deslocados; referentes concorrentes; posição de modificadores.
 - **Evidência:** comparar versões e escolher/revisar ordem justificando clareza ou foco.
 - **Limites:** ordem não canônica não é erro automático; preferência estilística isolada não vira regra.
+- **Revisão R1.6:** topicalização ganha bloco de construção.
 
 ## Lição 7 — Voz, agente e visibilidade no texto
 
@@ -98,6 +104,7 @@ Antes de desenvolver L8–L11 em M5:
 - **Prática:** identificar agente explícito/omitido, foco no processo/resultado, nominalização quando útil para comparação.
 - **Evidência:** explicar o que uma reformulação torna mais/menos visível e escolher construção adequada à finalidade.
 - **Limites:** passiva não é automaticamente formal ou evasiva; não inferir intenção de esconder agente sem evidência contextual.
+- **Revisão R1.6:** passiva com ser + particípio é retomada da N2-U03-L11; passiva com se (sintética), sujeito indeterminado (3ª pessoa do plural e se com verbo que pede preposição) e nominalização são construídos em blocos próprios. A concordância da passiva com se não está no recorte normativo e não é cobrada como regra.
 
 ## Lição 8 — Concordância em estruturas de maior complexidade
 
@@ -107,6 +114,7 @@ Antes de desenvolver L8–L11 em M5:
 - **Prática:** identificar núcleo/relação relevante, resistir à concordância mecânica com termo mais próximo e comparar variantes aceitas quando houver.
 - **Evidência:** revisar casos novos do recorte e justificar a relação que orienta a forma.
 - **Limites:** apenas casos documentados no recorte M5; não usar exceções raras como medida de domínio.
+- **Revisão R1.6:** verbo impessoal (haver existir, haver/fazer tempo) ganha bloco de construção, com ponte explícita para o outro sentido de impessoal (tom de texto). A lição define os cinco rótulos públicos de decisão usados no restante do N3: regra que sempre vale (REGRA_PRODUTIVA), duas formas aceitas (VARIANTE_DOCUMENTADA), depende do manual (CONVENCAO_FORMAL_EDITORIAL), escolha de estilo (ESCOLHA_ESTILISTICA) e conferir em fonte (CASO_LEXICAL_DE_CONSULTA).
 
 ## Lição 9 — Regência e crase em escrita formal avançada
 
@@ -116,6 +124,7 @@ Antes de desenvolver L8–L11 em M5:
 - **Prática:** comparar sentidos/construções; completar/revisar preposição; decidir crase pela combinação estrutural.
 - **Evidência:** editar texto novo no recorte e reconhecer quando o caso exige consulta.
 - **Limites:** não congelar tradição normativa controversa sem fonte; crase não é decidida por “palavra feminina”.
+- **Revisão R1.6:** texto público usa os cinco rótulos da L8; nomes de manuais institucionais e termos de autoria saem do texto do aluno.
 
 ## Lição 10 — Colocação pronominal e escolhas formais
 
@@ -134,6 +143,7 @@ Antes de desenvolver L8–L11 em M5:
 - **Prática:** orações deslocadas, intercalações, coordenação extensa, enumerações complexas, explicações e fronteiras de período.
 - **Evidência:** pontuar/revisar trecho novo justificando decisões por estrutura e efeito.
 - **Limites:** vírgula não é “pausa para respirar”; pontuação estilística admite alternativas quando sustentáveis.
+- **Revisão R1.6:** ponto e vírgula (não sistematizado no N2) ganha bloco de construção antes de ser cobrado.
 
 ## Lição 12 — Revisão sintática integrada: estrutura, norma e efeito
 
@@ -163,3 +173,5 @@ revisão sintática integrada com consulta quando necessária
 ```
 
 A avaliação normativa só poderá ser finalizada no M5 após o documento de recorte normativo do N3. Classificação isolada não compensa incapacidade de revisar texto real.
+
+**Revisão R1.6:** itens reescritos com frases novas do mesmo padrão; nenhum item repete ou varia minimamente frases das lições.

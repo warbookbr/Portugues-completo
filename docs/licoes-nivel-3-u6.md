@@ -74,6 +74,7 @@ diagnóstico de revisão
 - **Prática:** listas paralelas, coordenações, sequências de frases muito uniformes ou excessivamente fragmentadas.
 - **Evidência:** revisar passagem nova e explicar o efeito de uma alteração de ritmo/paralelismo.
 - **Limites:** variedade rítmica não é regra obrigatória; não medir estilo por tamanho médio de frase.
+- **Revisão R1.6:** inclui texto literário completo em domínio público (Olavo Bilac, "Língua portuguesa") para observar escolha lexical, anáfora e paralelismo; o contraste de paralelismo passa a usar períodos antitéticos, diferente da série usada na N3-U03-L02.
 
 ## Lição 6 — Ordem, foco e ênfase como escolhas editoriais
 
@@ -92,6 +93,7 @@ diagnóstico de revisão
 - **Prática:** tom analítico, institucional, próximo, crítico ou cauteloso; consistência e mudança funcional.
 - **Evidência:** revisar texto que apresenta ruptura inadequada de voz/registro e justificar uma mudança de tom deliberada.
 - **Limites:** voz não é personalidade fixa; formal não é automaticamente melhor; preferências estéticas não viram erro.
+- **Revisão R1.6:** a calibração de certeza usa caso novo (ensaio sobre cartas de uma escritora), sem repetir os testes de serviço da N3-U01-L08 e da N3-U02-L05.
 
 ## Lição 8 — Consistência editorial, ortografia e consulta qualificada
 
@@ -101,6 +103,7 @@ diagnóstico de revisão
 - **Prática:** grafias incertas, padronização de termos, siglas, números, títulos e convenções ensinadas; registrar decisão consultada.
 - **Evidência:** editar texto novo, corrigir inconsistências reais e identificar pelo menos um caso em que consulta é a estratégia competente.
 - **Limites:** memorização de grafias raras não é medida de domínio; decisões editoriais institucionais podem variar.
+- **Revisão R1.6:** a classificação de decisões usa os cinco rótulos públicos definidos na N3-U03-L08; os casos de grafia, sigla, variante e consulta aparecem em textos completos.
 
 ## Lição 9 — Edição integrada: preservar intenção e melhorar o texto
 

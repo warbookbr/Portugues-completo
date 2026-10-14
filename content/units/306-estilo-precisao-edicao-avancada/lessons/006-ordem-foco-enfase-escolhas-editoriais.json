@@ -2,6 +2,7 @@
   "schemaVersion": 1,
   "id": "N3-U06-L06",
   "title": "Ordem, foco e ênfase como escolhas editoriais",
+  "studentObjective": "Escolher a ordem das informações para destacar o que importa, sem criar frases que possam ser lidas de dois jeitos.",
   "status": "conteudo-pronto-para-implementacao",
   "objective": "Usar ordem de informação, posição de elementos e estrutura de frase ou parágrafo para controlar foco e ênfase sem criar ambiguidade nem tratar uma ordem como universalmente superior.",
   "competencies": [
@@ -36,12 +37,9 @@
   "sequence": [
     {"id": "L06-B01", "type": "focus-contrast", "context": "o parágrafo responde à pergunta 'o que mudou no prazo?'", "versions": ["Na sexta-feira, a coordenação publicou o novo prazo.", "O novo prazo foi publicado na sexta-feira pela coordenação."], "task": "comparar foco, naturalidade e necessidade de explicitar agente sem declarar uma versão universalmente melhor"},
     {"id": "L06-B02", "type": "paragraph-order", "blocks": ["limitação da amostra", "resultado de 76% entre respondentes", "conclusão qualificada"], "task": "ordenar os blocos para uma síntese que não deixe a qualificação invisível"},
-    {"id": "L06-C01", "type": "quick-check", "items": [
-      {"question": "A voz passiva é sempre pior que a ativa?", "correct": false},
-      {"question": "A posição de uma informação pode alterar o destaque que ela recebe?", "correct": true}
-    ]},
+    {"id": "L06-C01", "type": "quick-check-set", "instruction": "Responda pensando em destaque e ordem.", "items": [{"question": "Em qual contexto 'O novo prazo foi publicado pela coordenação.' é uma boa escolha?", "options": ["quando é importante destacar primeiro quem publicou", "quando o texto vinha falando do prazo e ele deve ficar em destaque", "em qualquer texto formal, porque a voz passiva é mais formal"], "correctIndex": 1}, {"question": "Em 'Os resultados foram bons, mas a amostra foi pequena.', o que fica em destaque, no fim do período?", "options": ["os resultados bons", "as duas partes recebem o mesmo destaque", "a ressalva sobre a amostra"], "correctIndex": 2}]},
     {"id": "L06-A01", "type": "assessment-order", "scenario": "nota curta cujo objetivo é destacar uma mudança de procedimento e depois explicar quem a decidiu", "versions": ["A direção decidiu ontem que o formulário mudará em setembro.", "O formulário mudará em setembro, conforme decisão tomada ontem pela direção."], "task": "escolher ou produzir uma versão adequada ao foco solicitado e justificar a ordem"},
-    {"id": "L06-P01", "type": "open-reformulation", "prompt": "Reordene um trecho novo para uma finalidade explícita. Registre o que ganhou destaque, o que permaneceu igual e por que uma alternativa também poderia ser válida em outro contexto.", "recordResponse": true, "automaticValidation": false}
+    {"id": "L06-P01", "type": "open-reformulation", "prompt": "Escolha um texto seu com pelo menos dois parágrafos, por exemplo um dos textos longos que você escreveu na unidade anterior (relatório, resenha, artigo ou análise). Guarde a versão original. Reordene um trecho para uma finalidade que você deve dizer qual é. Registre o que ganhou destaque, o que permaneceu igual e por que outra ordem também poderia valer em outro contexto.", "recordResponse": true, "automaticValidation": false}
   ],
   "assessmentBehavior": {"activeVoiceAlwaysPreferred": false, "canonicalOrderRequired": false, "openResponseAutoValidated": false},
   "completionEvidence": {

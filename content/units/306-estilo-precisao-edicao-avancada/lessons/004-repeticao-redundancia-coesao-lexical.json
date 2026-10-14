@@ -2,6 +2,7 @@
   "schemaVersion": 1,
   "id": "N3-U06-L04",
   "title": "Repetição, redundância e coesão lexical",
+  "studentObjective": "Distinguir a repetição que ajuda o leitor da que só pesa, e revisar sem perder a clareza sobre quem ou o que está sendo retomado.",
   "status": "conteudo-pronto-para-implementacao",
   "objective": "Distinguir repetição funcional de repetição estagnada e revisar redundância sem destruir referência, precisão, coesão ou ênfase.",
   "competencies": [
@@ -35,12 +36,9 @@
       {"text": "O prazo mudou porque houve uma mudança no prazo, e essa mudança do prazo ocorreu após a mudança do sistema.", "analysis": "há redundância e repetição estagnada"},
       {"text": "Sem dados, não há conclusão forte; sem conclusão forte, não há base para expansão.", "analysis": "repetição deliberada cria paralelismo e ênfase"}
     ]},
-    {"id": "L04-C01", "type": "quick-check", "items": [
-      {"question": "Trocar um termo técnico por um sinônimo menos preciso só para variar é boa edição?", "correct": false},
-      {"question": "Repetição pode sustentar coesão ou ênfase?", "correct": true}
-    ]},
+    {"id": "L04-C01", "type": "quick-check-set", "instruction": "Responda pensando na função da repetição.", "items": [{"question": "Num manual, o termo 'senha provisória' aparece cinco vezes. Um revisor quer alternar com 'código', 'chave' e 'número'. O que pode acontecer?", "options": ["o texto fica mais preciso", "o leitor pode achar que são coisas diferentes", "nada: as quatro palavras querem dizer o mesmo"], "correctIndex": 1}, {"question": "Em 'Quem planta, colhe; quem não planta, compra.', a repetição de 'quem' e de 'planta' serve para:", "options": ["preencher espaço", "corrigir um erro de concordância", "criar ênfase e deixar o contraste visível"], "correctIndex": 2}]},
     {"id": "L04-A01", "type": "assessment-revision", "text": "A análise mostra um limite. Esse limite afeta a conclusão. O limite não invalida os dados, mas o limite precisa aparecer no resumo.", "task": "reduzir apenas a repetição prejudicial, preservando referência e pelo menos uma ocorrência funcional", "acceptMultipleValid": true},
-    {"id": "L04-P01", "type": "open-edit", "prompt": "Revise um trecho quanto a repetição e redundância. Marque uma repetição mantida por função e uma ocorrência removida ou reformulada por excesso.", "recordResponse": true, "automaticValidation": false}
+    {"id": "L04-P01", "type": "open-edit", "prompt": "Escolha um texto seu com pelo menos dois parágrafos, por exemplo um dos textos longos que você escreveu na unidade anterior (relatório, resenha, artigo ou análise). Guarde a versão original. Revise um trecho quanto a repetição e redundância. Marque uma repetição mantida por função e uma ocorrência removida ou reformulada por excesso.", "recordResponse": true, "automaticValidation": false}
   ],
   "assessmentBehavior": {"repetitionAsAutomaticError": false, "synonymCountScored": false, "openResponseAutoValidated": false},
   "completionEvidence": {

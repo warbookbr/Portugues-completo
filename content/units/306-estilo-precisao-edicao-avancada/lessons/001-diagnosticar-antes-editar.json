@@ -2,6 +2,7 @@
   "schemaVersion": 1,
   "id": "N3-U06-L01",
   "title": "Diagnosticar antes de editar: correção, clareza, adequação e estilo",
+  "studentObjective": "Antes de mexer num texto, descobrir que tipo de problema ele tem e o que resolver primeiro, sem tratar gosto pessoal como erro.",
   "status": "conteudo-pronto-para-implementacao",
   "objective": "Distinguir dimensões de revisão e estabelecer prioridades antes de editar, evitando tratar preferência estilística como erro ou polir frases quando ainda há problemas de conteúdo, estrutura ou adequação.",
   "competencies": [
@@ -43,13 +44,9 @@
       ],
       "teachingPoint": "corrigir primeiro o alcance da conclusão; polir vocabulário não resolve um problema de evidência"
     },
-    {"id": "L01-C01", "type": "quick-check", "items": [
-      {"question": "Uma frase gramaticalmente correta pode ainda ter problema de clareza ou adequação?", "correct": true},
-      {"question": "Toda escolha estilística diferente da preferência do revisor é erro?", "correct": false},
-      {"question": "Vale corrigir detalhes de superfície antes de resolver informação contraditória?", "correct": false}
-    ]},
-    {"id": "L01-A01", "type": "assessment-diagnostic", "scenario": "nota institucional com uma conclusão exagerada, um referente ambíguo, uma grafia duvidosa e uma escolha estilística válida", "task": "classificar cada ponto, justificar a prioridade e indicar pelo menos um trecho que deve ser preservado"},
-    {"id": "L01-P01", "type": "open-analysis", "prompt": "Diagnostique um texto novo em camadas e proponha uma ordem de revisão. Registre um problema prioritário, um problema local e uma escolha que não precisa ser alterada.", "recordResponse": true, "automaticValidation": false}
+    {"id": "L01-C01", "type": "quick-check-set", "instruction": "Responda pensando no tipo de problema e na prioridade.", "items": [{"question": "Um relatório diz: 'A pesquisa confirmou que todos os usuários aprovaram a mudança.' Os dados vêm de 40 voluntários. Qual é o problema principal?", "options": ["falta uma vírgula: é um problema de pontuação", "a conclusão vai além dos dados: é um problema de conteúdo", "a frase está gramaticalmente correta, então não há problema"], "correctIndex": 1}, {"question": "Um colega quer trocar 'Em suma' por 'Resumindo' só porque prefere essa expressão. Que tipo de decisão é essa?", "options": ["regra que sempre vale: 'Em suma' precisa ser corrigido", "conferir em fonte: não dá para decidir sem consultar", "escolha de estilo: as duas funcionam, e manter não é erro"], "correctIndex": 2}, {"question": "Um texto tem uma informação contraditória no segundo parágrafo e duas palavras com acento errado. O que revisar primeiro?", "options": ["a contradição, porque afeta o sentido do texto inteiro", "os acentos, porque são mais rápidos de corrigir", "nada, porque o leitor vai entender mesmo assim"], "correctIndex": 0}]},
+    {"id": "L01-A01", "type": "assessment-diagnostic", "task": "Leia a nota. Encontre uma conclusão exagerada, uma palavra que pode se referir a duas pessoas, uma grafia sobre a qual você teria dúvida e uma escolha de estilo que funciona. Classifique cada ponto, justifique a ordem em que revisaria e indique pelo menos um trecho que deve ser mantido.", "baseText": "Nota aos pais e responsáveis\n\nA oficina de robótica do contraturno terminou o semestre com ótimos resultados. Como 18 dos 20 alunos inscritos concluíram o curso, a oficina provou que todos os alunos da escola aprenderão programação com facilidade. Os professores conversaram com os monitores sobre o projeto final, e eles disseram que querem repetir a experiência.\n\nNo próximo semestre, as inscrições ficarão abertas de 3 a 14 de agosto, na secretaria. Agradecemos às famílias pela parceria, que foi, mais do que importante, decisiva."},
+    {"id": "L01-P01", "type": "open-analysis", "prompt": "Escolha um texto seu com pelo menos dois parágrafos, por exemplo um dos textos longos que você escreveu na unidade anterior (relatório, resenha, artigo ou análise). Guarde a versão original. Diagnostique o texto em camadas e proponha uma ordem de revisão. Registre um problema prioritário, um problema local e uma escolha que não precisa ser alterada.", "recordResponse": true, "automaticValidation": false}
   ],
   "assessmentBehavior": {"preferenceAsError": false, "surfaceFirstRequired": false, "changeCountScored": false, "openResponseAutoValidated": false},
   "completionEvidence": {
