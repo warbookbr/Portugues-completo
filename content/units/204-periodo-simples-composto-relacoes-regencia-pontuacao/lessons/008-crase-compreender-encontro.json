@@ -2,6 +2,7 @@
   "schemaVersion": 1,
   "id": "N2-U04-L08",
   "title": "Crase: compreender o encontro, não decorar um sinal",
+  "studentObjective": "Entender por que se escreve à, com acento, em casos como 'favorável à proposta': o acento marca o encontro de duas palavras a.",
   "status": "conteudo-pronto-para-implementacao",
   "objective": "Compreender a crase como resultado estrutural do encontro entre preposição a e artigo/determinante iniciado por a em casos centrais, incluindo aquele/aquela/aquilo, usando testes apenas como conferência secundária.",
   "competencies": ["identificar a preposição a exigida pela construção", "identificar artigo feminino a/as quando presente", "reconstruir a + a como à e a + as como às", "reconhecer a fusão com aquele/aquela/aquilo", "usar comparação masculina com ao como teste secundário", "rejeitar crase baseada apenas em palavra feminina ou som"],

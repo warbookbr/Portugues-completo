@@ -2,6 +2,7 @@
   "schemaVersion": 1,
   "id": "N2-U04-L04",
   "title": "Conectores: mesma forma, relações e efeitos diferentes",
+  "studentObjective": "Escolher palavras de ligação pelo sentido da frase, sabendo que a mesma palavra pode ter efeitos diferentes e que a relação às vezes existe sem palavra nenhuma.",
   "status": "conteudo-pronto-para-implementacao",
   "objective": "Interpretar conectores pelo contexto, reconhecendo que uma mesma forma pode participar de relações diferentes e que relações de sentido também podem existir sem marcador explícito.",
   "competencies": ["interpretar e como adição ou sequência conforme contexto", "interpretar porque conforme relação construída", "reconhecer relação sem conector explícito", "selecionar marcador compatível com o sentido pretendido", "rejeitar substituição que muda a relação", "não classificar conector isoladamente como prova de uma única relação"],
