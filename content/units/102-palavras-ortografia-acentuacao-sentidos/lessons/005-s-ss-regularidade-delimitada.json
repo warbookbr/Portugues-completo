@@ -1,7 +1,8 @@
 {
   "schemaVersion": 1,
   "id": "N1-U02-L05",
-  "title": "S e SS: uma regularidade útil, mas não a ortografia inteira do som /s/",
+  "title": "S e SS: um padrão útil, mas não o único jeito de escrever o som de s",
+  "studentObjective": "Escolher entre s e ss no meio das palavras e saber que o som do começo de sapo também pode ser escrito com outras letras.",
   "status": "conteudo-pronto-para-implementacao",
   "objective": "Aplicar o contraste gráfico frequente entre s e ss em posição intervocálica em palavras acessíveis, reconhecendo explicitamente que esse padrão não resolve todas as grafias associadas aos sons representados por essas letras.",
   "competencies": [
@@ -34,6 +35,7 @@
   },
   "sequence": [
     {"id": "L05-B01", "type": "objective", "text": "S e SS ajudam a escrever muitas palavras, mas não explicam sozinhos todas as grafias possíveis. Vamos aprender um contraste útil e saber onde ele termina."},
+    {"id": "L05-B04", "type": "explanation", "focus": "som-de-s", "title": "O som de s em sapo", "text": "Ouça ou fale: sapo, passo, cidade, poço. Nas quatro palavras aparece o mesmo som, o som do começo de sapo. Nesta lição, vamos chamá-lo de som de s em sapo. Ele pode ser escrito com s, ss, c ou ç. Hoje vamos olhar só o meio das palavras, entre duas vogais. Ali, ss tem o som de s em sapo: massa, passo. Um s sozinho entre vogais costuma ter outro som, o do começo de zebra: casa, mesa.", "examples": ["som de s em sapo, escrito com ss entre vogais: massa, passo", "s sozinho entre vogais, com som de z: casa, mesa", "o mesmo som de sapo com outras letras: cidade, poço"], "ttsText": "sapo, passo, cidade, poço. massa, casa."},
     {
       "id": "L05-B02",
       "type": "pattern-demonstration",

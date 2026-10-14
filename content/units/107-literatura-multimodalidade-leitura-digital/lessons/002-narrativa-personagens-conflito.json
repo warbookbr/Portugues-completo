@@ -2,6 +2,7 @@
   "schemaVersion": 1,
   "id": "N1-U07-L02",
   "title": "Narrativa: personagens, situação e conflito simples",
+  "studentObjective": "Acompanhar uma história curta percebendo quem participa, que problema aparece e como ele se resolve.",
   "status": "conteudo-pronto-para-implementacao",
   "objective": "Acompanhar uma narrativa curta identificando personagens, situação, mudança/problema e ações relevantes, usando esses elementos para compreender o texto sem reduzir toda narrativa a uma fórmula fixa.",
   "competencies": ["identificar participantes centrais", "localizar situação inicial", "perceber mudança/problema que movimenta a narrativa", "acompanhar ações e consequências", "distinguir informação textual de inferência", "resumir a sequência principal sem copiar tudo"],

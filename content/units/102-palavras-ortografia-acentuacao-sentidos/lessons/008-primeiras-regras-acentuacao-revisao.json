@@ -2,6 +2,7 @@
   "schemaVersion": 1,
   "id": "N1-U02-L08",
   "title": "Primeiras regras de acentuação e revisão",
+  "studentObjective": "Usar as três primeiras regras de acento para decidir quando uma palavra leva acento e revisar os acentos em frases escritas por você.",
   "status": "conteudo-pronto-para-implementacao",
   "objective": "Aplicar um conjunto deliberadamente limitado de regras de acentuação — proparoxítonas, oxítonas terminadas em a(s), e(s), o(s), em, ens e monossílabos tônicos terminados em a(s), e(s), o(s) — relacionando posição tônica, terminação e revisão sem supor que essas regras esgotam a acentuação do português.",
   "competencies": [
@@ -49,6 +50,7 @@
       "type": "bridge",
       "text": "Saber onde está a sílaba tônica ajuda, mas ainda precisamos olhar o tipo de palavra e sua terminação. Hoje entra apenas um primeiro conjunto de regras."
     },
+    {"id": "L08-B04", "type": "explanation", "focus": "monossilabo", "title": "Palavras de uma sílaba só", "text": "Algumas palavras têm uma sílaba só: pá, pé, pó, mar, sol, três. Uma palavra de uma sílaba só se chama monossílabo. Alguns monossílabos são falados com força própria, mesmo no meio da frase, como pé em Machuquei o pé e três em Comprei três pães. Esses são os monossílabos tônicos. Outros saem fracos e se apoiam na palavra vizinha, como o, de e nos em Ele nos deu o pé de alface. A regra desta lição vale só para os monossílabos tônicos.", "examples": ["monossílabos tônicos: pá, pé, pó, três", "monossílabos fracos, apoiados na palavra vizinha: o, de, nos"], "ttsText": "Machuquei o pé. Comprei três pães. Ele nos deu o pé de alface.", "note": "Nas regras abaixo, terminado em a(s) quer dizer terminado em a ou em as, como sofá e sofás. O mesmo vale para e(s) e o(s)."},
     {
       "id": "L08-B02",
       "type": "demonstration",
@@ -132,7 +134,8 @@
         {"word": "fácil", "question": "As três regras desta lição bastam para justificar o acento desta palavra?", "options": ["não; é preciso outra regra/consulta", "sim; toda paroxítona recebe acento"], "correctIndex": 0},
         {"word": "saída", "question": "As três regras desta lição bastam para justificar o acento desta palavra?", "options": ["não; é preciso outra regra/consulta", "sim; toda palavra com três sílabas recebe acento"], "correctIndex": 0}
       ]
-    }
+    },
+    {"id": "L08-C02", "type": "short-open-production", "focus": "escrever-e-revisar-acentos", "title": "Agora escreva você", "prompt": "Escreva duas ou três frases suas, sobre a sua comida preferida, a sua família ou o seu bairro. Use pelo menos três palavras com acento. Depois releia as frases e confira os acentos com a lista abaixo.", "responseMode": "free-text", "recordResponse": true, "automaticValidation": false, "optionalScaffold": {"wordBank": ["café", "você", "sofá", "também", "avó", "médico", "lâmpada", "pé", "três"], "availableOnDemand": true}, "selfReview": ["As palavras com a sílaba tônica na antepenúltima (proparoxítonas, como médico) estão com acento?", "As palavras com a sílaba tônica na última e terminadas em a, e, o (com ou sem s), em ou ens (como café e também) estão com acento?", "Os monossílabos tônicos terminados em a, e ou o, com ou sem s (como pé e três) estão com acento?", "Quando uma palavra não cabe nessas três regras, consultei antes de decidir?"], "automaticObservations": ["há texto além de espaços ou sinais", "o campo livre foi usado", "o apoio opcional foi ou não aberto", "a autochecagem foi concluída"], "notAutomaticallyJudged": ["acentuação de cada palavra", "ortografia geral", "correção gramatical global"]}
   ],
   "assessmentBehavior": {
     "ruleCardsVisibleDuringPractice": true,

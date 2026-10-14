@@ -98,3 +98,9 @@ interpretação/resposta própria
 ```
 
 A avaliação deve aceitar interpretações diferentes quando ambas forem sustentadas pelo material, e rejeitar apenas leituras incompatíveis com evidências disponíveis.
+
+## Revisão R1
+
+- Títulos publicados: L5 passa a "Literal e figurado: comparação e personificação"; L7 passa a "Páginas na tela: links, botões, menus e caminhos de leitura".
+- Termos ensinados no primeiro uso: sentido literal/figurado, comparação e personificação (L5), layout, rodapé e legenda (L6), gênero digital, menu, link e botão (L7), verso (L4).
+- Verificação: "recurso formal" trocado por linguagem comum; itens que copiavam lições (link confiável, página sem autor, site bonito, equivalente acessível) substituídos por itens novos do mesmo padrão.

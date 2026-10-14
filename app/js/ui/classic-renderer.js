@@ -291,12 +291,32 @@ function entryKey(entry, index) {
 }
 
 function entryLabel(entry, index) {
-  if (entry?.prompt) return entry.prompt;
+  for (const field of ['prompt', 'question', 'stem', 'statement', 'task']) if (typeof entry?.[field] === 'string' && entry[field].trim()) return entry[field];
   if (entry?.letter) return `Letra ${entry.letter}`;
   if (entry?.model !== undefined) return `Modelo: ${Array.isArray(entry.model) ? entry.model.join(' ') : entry.model}`;
   if (entry?.sequence) return `Complete: ${Array.isArray(entry.sequence) ? entry.sequence.join(' ') : entry.sequence}`;
   if (typeof entry?.stimulus === 'string' && !entry.stimulus.includes('AUD-')) return entry.stimulus;
   return `Rodada ${index + 1}`;
+}
+
+const ROUND_CONTEXT_FIELDS = [
+  ['situation', 'Situação'], ['goal', 'Objetivo'], ['context', ''], ['text', ''], ['sentence', ''], ['sentences', ''],
+  ['message', ''], ['messages', ''], ['expression', ''], ['claim', ''], ['base', ''], ['baseSentence', ''],
+  ['original', 'Original'], ['before', 'Antes'], ['draft', 'Rascunho'], ['firstDraft', 'Rascunho']
+];
+
+function roundContext(entry, label) {
+  const parts = [];
+  for (const [field, title] of ROUND_CONTEXT_FIELDS) {
+    const value = entry?.[field];
+    const values = typeof value === 'string' ? [value] : Array.isArray(value) && value.every(item => typeof item === 'string') ? value : [];
+    for (const item of values) {
+      if (!item.trim() || item === label) continue;
+      const quoted = ['expression', 'message', 'messages'].includes(field);
+      parts.push(`<p class="round-context${quoted ? ' round-quote' : ''}">${title ? `<strong>${esc(title)}:</strong> ` : ''}${quoted ? `“${esc(item)}”` : esc(item)}</p>`);
+    }
+  }
+  return parts.join('');
 }
 
 function renderCompositeRound(entry, index, block) {
@@ -314,16 +334,16 @@ function renderCompositeRound(entry, index, block) {
   }
 
   if (Array.isArray(entry.pieces) || Array.isArray(entry.tokens) || Array.isArray(entry.tiles) || Array.isArray(entry.availableAudioTokens) || Array.isArray(entry.availableWrittenChunks) || Array.isArray(entry.availableTiles)) {
-    return `<fieldset class="composite-round"><legend>${esc(label)}</legend>${localStimuli}${renderSequenceBuilder(entry.pieces || entry.tokens || entry.tiles || entry.availableAudioTokens || entry.availableWrittenChunks || entry.availableTiles, `round-sequence:${key}`)}</fieldset>`;
+    return `<fieldset class="composite-round"><legend>${esc(label)}</legend>${roundContext(entry, label)}${localStimuli}${renderSequenceBuilder(entry.pieces || entry.tokens || entry.tiles || entry.availableAudioTokens || entry.availableWrittenChunks || entry.availableTiles, `round-sequence:${key}`)}</fieldset>`;
   }
 
   if (expected && typeof expected === 'object' && (Object.prototype.hasOwnProperty.call(expected, 'acceptedResult') || Array.isArray(expected.acceptedResults))) {
-    return `<fieldset class="composite-round"><legend>${esc(label)}</legend>${localStimuli}<label class="response-field"><span>Sua transformação</span><input name="round-text:${esc(key)}" type="text" required></label></fieldset>`;
+    return `<fieldset class="composite-round"><legend>${esc(label)}</legend>${roundContext(entry, label)}${localStimuli}<label class="response-field"><span>Sua transformação</span><input name="round-text:${esc(key)}" type="text" required></label></fieldset>`;
   }
 
   if (Array.isArray(entry.options)) {
     const multiple = Boolean(expected && typeof expected === 'object' && Array.isArray(expected.correctIndexes) && expected.correctIndexes.length > 1);
-    return `<fieldset class="composite-round"><legend>${esc(label)}</legend>${localStimuli}${optionMarkup(entry.options, `round:${key}`, multiple)}${renderEvidenceSelector(entry, `round-evidence:${key}`)}</fieldset>`;
+    return `<fieldset class="composite-round"><legend>${esc(label)}</legend>${roundContext(entry, label)}${localStimuli}${optionMarkup(entry.options, `round:${key}`, multiple)}${renderEvidenceSelector(entry, `round-evidence:${key}`)}</fieldset>`;
   }
 
   if (Array.isArray(entry.nonVisualOptions)) {
@@ -344,11 +364,11 @@ function renderCompositeRound(entry, index, block) {
 
   const sharedOptions = sharedCompositeOptions(block);
   if (sharedOptions.length) {
-    return `<fieldset class="composite-round"><legend>${esc(label)}</legend>${localStimuli}${optionMarkup(sharedOptions, `round:${key}`)}</fieldset>`;
+    return `<fieldset class="composite-round"><legend>${esc(label)}</legend>${roundContext(entry, label)}${localStimuli}${optionMarkup(sharedOptions, `round:${key}`)}</fieldset>`;
   }
 
   if (block.activity?.evaluation?.mode === 'RELIABLE_EVALUATOR') {
-    return `<fieldset class="composite-round"><legend>${esc(label)}</legend>${localStimuli}<label class="response-field"><span>Sua resposta</span><textarea name="round-text:${esc(key)}" rows="4" required></textarea></label></fieldset>`;
+    return `<fieldset class="composite-round"><legend>${esc(label)}</legend>${roundContext(entry, label)}${localStimuli}<label class="response-field"><span>Sua resposta</span><textarea name="round-text:${esc(key)}" rows="4" required></textarea></label></fieldset>`;
   }
 
   return `<div class="composite-round">${localStimuli}${unsupported(`${block.id}: rodada ${key} sem controle determinístico`)}</div>`;

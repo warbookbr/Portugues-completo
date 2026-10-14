@@ -67,11 +67,11 @@
       "cluster": "registerVariationNorm",
       "type": "contextual-language-decisions",
       "items": [
-        {"situation": "comunicado institucional", "options": ["Por favor, confirme o recebimento até sexta-feira.", "E aí, me dá um toque depois."], "preferredIndex": 0, "reason": "registro mais adequado ao gênero"},
-        {"situation": "mensagem a amigo próximo", "options": ["Oi! Chego por volta das oito.", "Comunico que minha chegada ocorrerá aproximadamente às vinte horas."], "preferredIndex": 0, "reason": "registro compatível com relação próxima"},
-        {"statement": "Quem usa uma variedade regional é menos inteligente.", "options": ["preconceito linguístico", "orientação de adequação"], "correctIndex": 0},
-        {"statement": "Um relatório formal pode exigir convenções da norma-padrão.", "options": ["afirmação contextual adequada", "negação de toda variação"], "correctIndex": 0},
-        {"question": "Uma forma informal é automaticamente erro em toda situação?", "options": ["não", "sim"], "correctIndex": 0}
+        {"situation": "comunicado de uma instituição para o público", "options": ["Por favor, confirme o recebimento até sexta-feira.", "E aí, me dá um toque depois."], "preferredIndex": 0, "reason": "registro mais adequado a esse gênero de texto"},
+        {"situation": "Você precisa enviar à empresa onde trabalha um atestado, com seu nome completo e as datas da falta. A empresa vai guardar o documento.", "options": ["e-mail com assunto, saudação, as informações completas e o atestado anexado", "áudio rápido: 'Oi, tô mandando o atestado aí'", "mensagem escrita só com 'Segue o atestado.', sem nome nem datas"], "preferredIndex": 0, "reason": "o meio e a forma combinam com uma instituição que precisa registrar o pedido"},
+        {"statement": "Quem diz 'macaxeira' em vez de 'mandioca' está falando errado.", "options": ["afirmação preconceituosa: são nomes regionais da mesma raiz", "orientação de adequação", "regra da norma-padrão"], "correctIndex": 0},
+        {"statement": "Numa carta de apresentação para uma vaga de emprego, escrever 'nós vamos' em vez de 'a gente vai' é:", "options": ["uma escolha esperada nesse texto formal, sem que 'a gente vai' seja errado numa conversa", "obrigatório também em qualquer conversa", "sinal de que quem fala 'a gente vai' pensa pior"], "correctIndex": 0},
+        {"question": "Num áudio para uma amiga, você diz 'tô chegando'. No e-mail para a empresa, escreve 'estou a caminho'. O que isso mostra?", "options": ["você ajustou a forma ao meio e à pessoa, sem que uma das duas seja errada", "'tô chegando' é erro e deve ser evitado sempre", "áudio e e-mail pedem sempre as mesmas palavras"], "correctIndex": 0}
       ]
     }
   ],
@@ -93,7 +93,7 @@
     {"when": "relato oral", "review": ["N1-U06-L03"]},
     {"when": "explicação", "review": ["N1-U06-L04"]},
     {"when": "apresentação", "review": ["N1-U06-L05", "N1-U06-L06"]},
-    {"when": "registro", "review": ["N1-U06-L07"]},
+    {"when": "meio e registro", "review": ["N1-U06-L07"]},
     {"when": "variação/norma", "review": ["N1-U06-L08"]}
   ]
 }

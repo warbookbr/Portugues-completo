@@ -127,10 +127,10 @@
       "cluster": "localRevisionDecisions",
       "type": "closed-revision-set",
       "items": [
-        {"before": "O curso começa amanhã. Por isso leve documento caneta e caderno.", "question": "Se não há relação causal, qual revisão é adequada?", "options": ["O curso começa amanhã. Leve documento, caneta e caderno.", "manter Por isso e retirar a pontuação"], "correctIndex": 0},
-        {"before": "Carlos envie o formulário.", "options": ["Carlos, envie o formulário.", "Carlos, enviou o formulário."], "correctIndex": 0, "focus": "chamamento"},
-        {"text": "Marina falou com Ana. Ela enviou o arquivo.", "question": "Sem mais contexto, a referência de ela é plenamente clara?", "options": ["não", "sim"], "correctIndex": 0},
-        {"question": "Uma reescrita precisa alterar toda frase correta para contar como revisão?", "options": ["não", "sim"], "correctIndex": 0}
+        {"before": "A feira acontece no sábado. Por isso traga sacola garrafa de água e boné.", "question": "A primeira frase não é a causa do pedido. Qual revisão é adequada?", "options": ["A feira acontece no sábado. Traga sacola, garrafa de água e boné.", "A feira acontece no sábado. Por isso, traga sacola garrafa de água e boné.", "A feira acontece no sábado, por isso traga sacola, garrafa de água, e boné."], "correctIndex": 0},
+        {"before": "Dona Rosa traga o recibo amanhã.", "question": "A frase fala diretamente com Dona Rosa. Qual versão está pontuada de forma adequada?", "options": ["Dona Rosa, traga o recibo amanhã.", "Dona, Rosa traga o recibo amanhã.", "Dona Rosa traga, o recibo amanhã."], "correctIndex": 0, "focus": "chamamento"},
+        {"text": "Rui deixou o celular ao lado do carregador e esqueceu ele lá.", "question": "O que pode confundir o leitor nessa frase?", "options": ["'ele' pode ser o celular ou o carregador", "o nome Rui deveria vir depois do verbo", "falta um ponto de exclamação no final"], "correctIndex": 0},
+        {"question": "Ao revisar o seu aviso, você percebe que a primeira frase já está clara e correta. O que fazer com ela?", "options": ["mantê-la e usar a revisão para melhorar o que falta", "trocar as palavras por sinônimos para mostrar que revisou", "apagá-la, porque toda revisão precisa mudar o começo"], "correctIndex": 0}
       ]
     }
   ],

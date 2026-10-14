@@ -2,6 +2,7 @@
   "schemaVersion": 1,
   "id": "N1-U06-L01",
   "title": "Ouvindo explicações com mais de uma informação",
+  "studentObjective": "Ouvir avisos e explicações curtas e entender o assunto, a informação principal e os detalhes que importam.",
   "status": "conteudo-pronto-para-implementacao",
   "objective": "Compreender assunto, informação principal e um detalhe relevante em mensagens orais curtas um pouco mais densas que as do Nível 0, com replay permitido e sem transformar memória de todos os detalhes ou velocidade em critério.",
   "competencies": ["identificar assunto de mensagem oral curta", "identificar informação principal", "recuperar detalhe relevante para uma pergunta", "combinar duas informações ouvidas", "usar replay como estratégia", "consultar transcrição apenas depois da tentativa quando a atividade for de compreensão oral"],

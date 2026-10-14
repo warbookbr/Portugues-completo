@@ -2,6 +2,7 @@
   "schemaVersion": 1,
   "id": "N1-U02-L07",
   "title": "Oxítona, paroxítona e proparoxítona como ferramentas",
+  "studentObjective": "Descobrir em que lugar da palavra fica a sílaba tônica e usar essa posição para organizar as regras de acento.",
   "status": "conteudo-pronto-para-implementacao",
   "objective": "Classificar palavras pela posição da sílaba tônica usando oxítona, paroxítona e proparoxítona como ferramentas para organizar a acentuação, sem transformar a nomenclatura em objetivo isolado.",
   "competencies": [
@@ -34,7 +35,8 @@
     "decisionRationale": "a classificação só é introduzida porque prepara regras de acentuação; a atividade começa pela tonicidade percebida."
   },
   "sequence": [
-    {"id": "L07-B01", "type": "objective", "text": "Depois de encontrar a sílaba tônica, podemos dizer em que posição ela está. Esses três nomes ajudam a organizar regras de acentuação."},
+    {"id": "L07-B01", "type": "objective", "text": "Depois de encontrar a sílaba tônica, podemos observar em que lugar da palavra ela está. Contar as sílabas a partir do fim da palavra ajuda a organizar as regras de acento."},
+    {"id": "L07-B04", "type": "explanation", "focus": "posicao-e-nome", "title": "Contando do fim da palavra", "text": "Conte as sílabas de trás para a frente. A última sílaba é a do fim. A que vem antes dela é a penúltima. A que vem antes da penúltima é a antepenúltima. Agora veja: em ca-FÉ, a sílaba tônica é a última. Em ja-NE-la, é a penúltima. Em MÉ-di-co, é a antepenúltima. Cada posição tem um nome. Quando a sílaba tônica é a última, a palavra se chama oxítona (café, papel). Quando é a penúltima, a palavra se chama paroxítona (janela, caderno). Quando é a antepenúltima, a palavra se chama proparoxítona (médico, lâmpada).", "examples": ["ca-FÉ: tônica na última sílaba, oxítona", "ja-NE-la: tônica na penúltima sílaba, paroxítona", "MÉ-di-co: tônica na antepenúltima sílaba, proparoxítona"], "ttsText": "café, janela, médico", "note": "Primeiro encontre a sílaba tônica; só depois escolha o nome. Decorar os nomes sem achar a sílaba tônica não ajuda."},
     {
       "id": "L07-B02",
       "type": "demonstration",
@@ -77,7 +79,7 @@
       "id": "L07-A02",
       "type": "assessment-principle",
       "question": "Para que essas classificações serão úteis no curso?",
-      "options": ["para relacionar a posição tônica a regras de acentuação", "para decidir que toda oxítona recebe acento", "para medir velocidade de leitura"],
+      "options": ["para relacionar a posição da sílaba tônica a regras de acentuação", "para decidir que toda oxítona recebe acento", "para medir velocidade de leitura"],
       "correctIndex": 0
     }
   ],

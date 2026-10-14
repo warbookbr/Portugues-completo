@@ -2,6 +2,7 @@
   "schemaVersion": 1,
   "id": "N1-U05-L08",
   "title": "Resumo e anotação de estudo com palavras próprias",
+  "studentObjective": "Anotar o essencial de um texto curto e escrever um resumo com as suas palavras, sem copiar nem inventar.",
   "status": "conteudo-pronto-para-implementacao",
   "objective": "Transformar um texto curto fornecido em anotação e resumo breve que preservem as ideias essenciais sem copiar mecanicamente a fonte.",
   "competencies": ["selecionar ideia principal e informações essenciais", "usar palavras-chave como apoio e não como resumo final", "distinguir cópia de reformulação própria", "escrever resumo curto fiel", "evitar acrescentar opinião ou fato ausente", "comparar resumo com fonte e fazer autochecagem"],

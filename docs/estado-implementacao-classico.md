@@ -56,7 +56,8 @@ Fonte: docs/auditoria-plano-ensino.md
 R1.1 documentação, roadmap e regras de método: CONCLUÍDO
 R1.2 correções objetivas: CONCLUÍDO
 R1.3 N0 a partir de U3: CONCLUÍDO
-R1.4 N1: em execução
+R1.4 N1: CONCLUÍDO (conteúdo); publicação do N1 segue no P7
+R1.5 N2: próximo
 ```
 
 R1.2 aplicou:
@@ -77,6 +78,27 @@ R1.3 aplicou no N0 (U3 a U6), sem mudar IDs, competências nem regras de conclus
 - renderer: o campo `lines` passa a ser exibido como versos, um por linha, também nos poemas já publicados do N4-U09.
 
 Validação: 35 checagens Node do CI e os seis smokes visuais verdes; capturas inspecionadas em 1280px e 390px.
+
+R1.4 aplicou no N1 (sete unidades), preservando IDs:
+
+- `studentObjective` em todas as lições;
+- termos ensinados no primeiro uso: sílaba tônica, monossílabo, oxítona/paroxítona/proparoxítona, sinônimo, antônimo, polissemia, prefixo, sufixo, singular/plural, gênero da palavra, locução verbal, concordância, parágrafo, conector, gênero de texto, norma-padrão, comparação e personificação;
+- lacunas de ortografia: novas N1-U02-L11 (vogais finais e ditongos que a fala reduz) e N1-U02-L12 (s/z, g/j, x/ch, h inicial), cedilha em N1-U02-L03, -am × -ão em N1-U03-L05; verificação da U2 cobre as lições novas;
+- produção própria: frases com acento (U02-L08), parágrafo com conector (U04-L05), revisão do próprio parágrafo (U04-L09);
+- textos crescem: U01 chega a textos de dois e três parágrafos (80 a 110 palavras), inclusive na verificação;
+- exemplos mostrados: narrativa-modelo em U05-L04, fontes reais em U05-L07, roteiro e e-mail completos em U06;
+- repetições com o N0 reorientadas: N1-U04-L06 trata pontuação dentro do parágrafo; N1-U06-L07 trata áudio, mensagem e e-mail;
+- literatura e oralidade distribuídas (microconto autoral, cantiga popular, cena literária, escutas e ensaio oral opcionais);
+- itens de verificação que copiavam lições substituídos por itens novos.
+
+Renderer (afeta também conteúdo publicado):
+
+- linhas em branco dentro de um texto viram parágrafos;
+- exercícios com várias rodadas passam a mostrar a pergunta e o contexto de cada item (situação, frase, mensagem, rascunho). Antes, o aluno via apenas "Rodada N" e as opções; em N0-U03-L05, por exemplo, a situação a ser montada não aparecia.
+
+Pendências registradas para o P7 do N1: várias lições ainda não normalizam (mesmo estado de antes do R1); textos da verificação N1-U01-V01 usam um formato (`texts` como objeto) que o normalizador não exibe; ordem por nome de arquivo (`005a`, `005b`) deve ser respeitada no manifesto; respostas certas de itens antigos ficam sempre na primeira posição.
+
+Pendência transversal identificada: chaves internas em inglês (por exemplo `sequence`, `judgment`, `spoken content`, `answer`, `strong clue`) aparecem como rótulos em blocos de conteúdo publicados; algumas revelam a resposta. Tratamento em R1.3b.
 
 ## Remover o título redundante do primeiro acesso
 

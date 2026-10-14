@@ -1,7 +1,8 @@
 {
   "schemaVersion": 1,
   "id": "N1-U02-L04",
-  "title": "Marcas frequentes de nasalidade e grupos de letras",
+  "title": "M ou N antes de consoante, e grupos como NH, LH e CH",
+  "studentObjective": "Escolher entre m e n antes de outra consoante e escrever palavras comuns com nh, lh e ch.",
   "status": "conteudo-pronto-para-implementacao",
   "objective": "Reconhecer e aplicar regularidades frequentes de m/n em contextos consonantais selecionados e grupos gráficos como nh, lh e ch, usando-os para leitura, escrita e revisão sem transformar a lição em classificação fonológica.",
   "competencies": [
@@ -34,6 +35,7 @@
   },
   "sequence": [
     {"id": "L04-B01", "type": "objective", "text": "Alguns contextos da escrita oferecem pistas úteis. Vamos observar um padrão frequente de M/N e reconhecer grupos de letras que aparecem em muitas palavras."},
+    {"id": "L04-B04", "type": "explanation", "focus": "som-nasal", "title": "Um som que passa pelo nariz", "text": "Fale devagar: cam-po, can-to, ma-nhã. Na primeira sílaba de campo e de canto, parte do ar sai pelo nariz. Experimente tapar o nariz enquanto fala cam: o som muda. Um som assim, que passa também pelo nariz, se chama som nasal. Na escrita, ele pode ser marcado de vários jeitos: com m (campo), com n (canto) ou com o til (manhã, mãe). Nesta lição, vamos estudar só um desses jeitos: a escolha entre m e n antes de outra consoante.", "examples": ["com m: campo, tempo", "com n: canto, venda", "com til: manhã, mãe"], "ttsText": "campo, canto, manhã"},
     {
       "id": "L04-B02",
       "type": "pattern-demonstration",
@@ -77,8 +79,8 @@
       "type": "assessment-principle",
       "question": "Qual afirmação corresponde ao escopo da lição?",
       "options": [
-        "O padrão m antes de p/b ajuda em muitos casos, mas não explica todas as formas de nasalidade da escrita.",
-        "Toda nasalidade do português é sempre escrita apenas com m.",
+        "O padrão m antes de p/b ajuda em muitos casos, mas não explica todas as formas de escrever o som nasal.",
+        "O som nasal do português é escrito apenas com m.",
         "NH, LH e CH só servem para decorar nomes de classificação."
       ],
       "correctIndex": 0

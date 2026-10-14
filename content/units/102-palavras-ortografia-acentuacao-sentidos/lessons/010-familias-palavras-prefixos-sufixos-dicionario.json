@@ -2,6 +2,7 @@
   "schemaVersion": 1,
   "id": "N1-U02-L10",
   "title": "Famílias de palavras, prefixos, sufixos e uso do dicionário",
+  "studentObjective": "Reconhecer palavras ligadas pela forma e pelo sentido, entender pedaços como re- e des- que mudam o sentido e usar o dicionário para escolher o sentido certo de uma palavra.",
   "status": "conteudo-pronto-para-implementacao",
   "objective": "Reconhecer relações transparentes entre palavras da mesma família, perceber como alguns elementos acrescentados podem contribuir para o sentido e usar uma entrada simples de dicionário para confirmar grafia e escolher o significado adequado ao contexto.",
   "competencies": [
@@ -48,6 +49,7 @@
       ],
       "guardRail": "semelhança visual isolada não basta; é preciso relação de significado"
     },
+    {"id": "L10-B04", "type": "explanation", "focus": "nomear-familia", "title": "Família de palavras", "text": "Pintar, pintura e pintor têm uma parte em comum, pint, e sentidos ligados: todas falam da ação de pintar. Um grupo de palavras assim se chama família de palavras. Pipoca e pista começam parecido, mas não fazem parte dessa família, porque o sentido não tem ligação com pintar.", "examples": ["pintar, pintura, pintor", "trabalhar, trabalho, trabalhador"]},
     {
       "id": "L10-C01",
       "type": "quick-check-family",
@@ -68,6 +70,7 @@
       ],
       "guardRail": "o elemento acrescentado é pista; o sentido precisa ser confirmado na palavra e no contexto"
     },
+    {"id": "L10-B05", "type": "explanation", "focus": "nomear-prefixo-sufixo", "title": "Prefixos e sufixos", "text": "Em refazer e reabrir, o pedaço re- entrou no começo da palavra e trouxe a ideia de repetir: fazer de novo, abrir de novo. Em desligar, o pedaço des- trouxe a ideia de desfazer. Um pedaço que entra no começo de uma palavra e muda o sentido se chama prefixo. Em trabalhador e pintor, os pedaços -dor e -or entraram no fim e formaram palavras para a pessoa que faz a ação. Um pedaço que entra no fim de uma palavra e forma outra se chama sufixo. Prefixos e sufixos são pistas: confirme sempre o sentido na frase, porque um começo parecido nem sempre é prefixo. Em rede, por exemplo, re não quer dizer de novo.", "examples": ["prefixo re-: refazer, reabrir", "prefixo des-: desligar, desamarrar", "sufixo -dor: trabalhador", "sufixo -or: pintor"]},
     {
       "id": "L10-C02",
       "type": "guided-formation",
@@ -91,6 +94,7 @@
       "correctSense": 2,
       "teachingPoint": "consultar inclui escolher a acepção adequada ao contexto"
     },
+    {"id": "L10-B06", "type": "explanation", "focus": "nomear-verbete-acepcao", "title": "Verbete e acepção", "text": "No dicionário, o conjunto de informações sobre uma palavra se chama verbete. O verbete de ponto mostrado acima tem dois sentidos numerados. Cada sentido numerado de um verbete se chama acepção. Para escolher a acepção certa, leia a frase em que a palavra aparece. Em Encontre o ponto de ônibus mais próximo, ponto é um local: é a acepção 2. A primeira acepção nem sempre é a certa.", "examples": ["verbete: tudo o que o dicionário diz sobre ponto", "acepção 1: marca pequena ou sinal gráfico", "acepção 2: local determinado"]},
     {
       "id": "L10-C03",
       "type": "dictionary-sense-check",

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "id": "N1-U02-L12",
+  "title": "Letras que disputam o mesmo som",
+  "studentObjective": "Decidir entre s e z, g e j, x e ch, e quando a palavra começa com h, usando palavras da mesma família e a consulta quando o som não basta.",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Reconhecer casos frequentes em que letras diferentes representam o mesmo som (s/z entre vogais, g/j antes de e e i, x/ch) ou em que a letra não tem som (h inicial), usando família de palavras e consulta como estratégias, sem apresentar regra inexistente.",
+  "competencies": [
+    "reconhecer que s e z entre vogais podem representar o mesmo som",
+    "reconhecer que g e j representam o mesmo som antes de e e i, e que antes de a, o e u só j tem esse som",
+    "reconhecer que x e ch podem representar o mesmo som",
+    "reconhecer que o h no começo da palavra não tem som",
+    "usar palavras da mesma família para decidir a letra em palavras frequentes",
+    "consultar uma fonte confiável quando nem o som nem a família decidem"
+  ],
+  "prerequisites": ["N1-U02-L03", "N1-U02-L05", "N1-U02-L11"],
+  "limits": [
+    "não apresentar o sistema completo de s/z/c/ç/x/ch",
+    "não ensinar regras de sufixos, etimologia ou listas extensas de exceções",
+    "não prometer regra para casos que dependem de memória ou consulta",
+    "não usar transcrição fonética",
+    "não julgar pronúncia regional",
+    "não usar palavras raras como núcleo da aprendizagem"
+  ],
+  "normativeScopeRef": "docs/referencias-ortografia-nivel-1.md",
+  "media": {"tts": "apoio para ouvir palavras e frases; a decisão central é ortográfica", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {
+    "curatedMedia": [],
+    "runtimeResources": [
+      {"type": "TTS_OK", "locations": ["L12-B02", "L12-B03", "L12-B04", "L12-B05", "L12-C02", "instruções", "feedback"], "purpose": "ouvir que letras diferentes podem ter o mesmo som"}
+    ],
+    "generatedVisualResources": [
+      {"type": "UI_RENDERED_ORTHOGRAPHIC_PATTERN", "locations": ["L12-B02", "L12-B03", "L12-B04", "L12-B05"], "purpose": "mostrar palavras com o mesmo som e letras diferentes"},
+      {"type": "UI_RENDERED_WORD_FAMILY_MAP", "locations": ["L12-B06", "L12-A01"], "purpose": "usar a família para decidir a letra"}
+    ],
+    "productionQueueRequired": false,
+    "publicationDependency": "nenhuma nova mídia humana obrigatória",
+    "decisionRationale": "os contrastes são mostrados por texto e TTS opcional; a estratégia central é família de palavras e consulta, não regra sonora."
+  },
+  "sequence": [
+    {"id": "L12-B01", "type": "objective", "text": "Às vezes, letras diferentes têm o mesmo som. O som do começo de zebra aparece em casa, escrito com s, e em azedo, escrito com z. Nesta lição, você vai ver quatro casos assim e o que fazer quando o som não basta para decidir a letra."},
+    {"id": "L12-B02", "type": "demonstration", "focus": "s-ou-z", "title": "S ou Z entre vogais", "text": "Entre duas vogais, o som do começo de zebra pode ser escrito com s ou com z. Compare casa, mesa e blusa com azedo, prazer e buzina. O som é o mesmo; só a letra muda. Não há uma regra simples que resolva todas essas palavras.", "examples": ["com s: casa, mesa, blusa", "com z: azedo, prazer, buzina"], "ttsText": "casa, mesa, blusa. azedo, prazer, buzina."},
+    {"id": "L12-B03", "type": "demonstration", "focus": "g-ou-j", "title": "G ou J antes de E e I", "text": "Antes de e e de i, o g tem o mesmo som do j. Ouça: gente e jeito começam com o mesmo som; girafa e jipe também. Antes de a, o e u, a dúvida não existe: ga, go e gu soam como em gato, gota e gula, e para o som de jeito usamos j: janela, jogo, julho. Então a dúvida entre g e j aparece só antes de e e de i.", "examples": ["com g antes de e e i: gente, girafa, gesto", "com j antes de e e i: jeito, jipe, sujeira", "antes de a, o e u, só j: janela, jogo, julho"], "ttsText": "gente, girafa, jeito, jipe. janela, jogo, julho."},
+    {"id": "L12-B04", "type": "demonstration", "focus": "x-ou-ch", "title": "X ou CH", "text": "O som do começo de chave também aparece no começo de xícara. Ele pode ser escrito com x ou com ch: xícara, lixo e abacaxi; chave, chuva e bolacha. Não há regra que decida todos os casos. Uma pista ajuda em muitas palavras: depois de ai e ei, como você viu em caixa e peixe, quase sempre se usa x.", "examples": ["com x: xícara, lixo, abacaxi", "com ch: chave, chuva, bolacha", "depois de ai e ei, quase sempre x: caixa, peixe, ameixa"], "ttsText": "xícara, lixo, abacaxi. chave, chuva, bolacha."},
+    {"id": "L12-B05", "type": "demonstration", "focus": "h-inicial", "title": "H no começo da palavra", "text": "Fale hora, hoje e homem. A letra h no começo dessas palavras não tem som: hora soa como se começasse com o. Outras palavras começam direto com a vogal, sem h: ontem, ovo, ótimo. Só pela fala, não dá para saber se a palavra começa com h.", "examples": ["com h: hora, hoje, homem", "sem h: ontem, ovo, ótimo"], "ttsText": "hora, hoje, homem. ontem, ovo, ótimo."},
+    {"id": "L12-B06", "type": "strategy", "focus": "familia-e-consulta", "title": "Família de palavras e consulta", "text": "Nesses quatro casos, o som não decide. Duas ajudas funcionam. Primeira: palavras da mesma família quase sempre mantêm a mesma letra. Quem sabe escrever casa escreve casinha e casarão com s; quem sabe laranja escreve laranjeira com j; quem sabe chave escreve chaveiro com ch; quem sabe hora escreve horário com h. Segunda: quando nenhuma palavra da família ajuda, consulte um dicionário ou outra fonte confiável. Com a leitura e o uso, muitas dessas palavras ficam conhecidas de memória.", "examples": ["casa: casinha, casarão", "azedo: azedar", "jeito: ajeitar", "laranja: laranjeira", "chave: chaveiro", "hora: horário"]},
+    {"id": "L12-C01", "type": "quick-check-set", "focus": "conferir", "instruction": "Leia cada frase e escolha a forma escrita da palavra.", "items": [{"prompt": "Esse limão está ____.", "options": ["asedo", "azedo"], "correctIndex": 1}, {"prompt": "Muita ____ veio à festa.", "options": ["gente", "jente"], "correctIndex": 0}, {"prompt": "Que ____ são agora?", "options": ["oras", "horas"], "correctIndex": 1}, {"prompt": "Lavei a ____ depois do café.", "options": ["xícara", "chícara"], "correctIndex": 0}]},
+    {"id": "L12-C02", "type": "audio-first-check", "focus": "ouvir-antes-de-ler", "instruction": "Ouça a frase antes de ver as opções. Depois escolha como se escreve o nome da árvore.", "ttsText": "A laranjeira do quintal está cheia de frutas.", "transcriptHiddenUntilAttempt": true, "question": "Como se escreve o nome da árvore que dá laranja?", "options": ["larangeira", "laranjeira", "laranjera"], "correctIndex": 1, "replayAllowed": true, "transcriptAfterAttempt": "A laranjeira do quintal está cheia de frutas."},
+    {"id": "L12-A01", "type": "guided-activity", "focus": "aplicar-familia-e-consulta", "instruction": "Leia cada frase e escolha a forma escrita. Pense em uma palavra da mesma família antes de responder.", "items": [{"prompt": "O dia está ____; leve o guarda-chuva.", "options": ["xuvoso", "chuvoso"], "correctIndex": 1}, {"prompt": "Na feira, comprei uma ____ fresca para a salada.", "options": ["ortaliça", "hortaliça"], "correctIndex": 1}, {"prompt": "O menino é muito ____ para consertar coisas.", "options": ["jeitoso", "geitoso"], "correctIndex": 0}, {"prompt": "Ela vestiu uma ____ leve por causa do calor.", "options": ["bluzinha", "blusinha"], "correctIndex": 1}, {"prompt": "No trânsito parado, o motorista começou a ____.", "options": ["buzinar", "businar"], "correctIndex": 0}, {"prompt": "Você vai escrever uma palavra com o som de jeito antes de e e não lembra de nenhuma palavra da mesma família. O que fazer?", "options": ["consultar um dicionário ou outra fonte confiável", "usar g, porque antes de e a letra certa é g", "usar j, porque o som é o mesmo de jeito"], "correctIndex": 0}]},
+    {"id": "L12-A02", "type": "short-open-production", "focus": "escrever-e-revisar", "title": "Agora escreva você", "prompt": "Escreva duas ou três frases suas sobre a sua casa, a sua rua ou o seu bairro. Use pelo menos três palavras com s ou z entre vogais, g ou j, x ou ch, ou h no começo. Depois releia e confira com a lista abaixo.", "responseMode": "free-text", "recordResponse": true, "automaticValidation": false, "optionalScaffold": {"wordBank": ["casa", "mesa", "prazer", "gente", "jeito", "janela", "chave", "lixo", "hora", "hoje"], "availableOnDemand": true}, "selfReview": ["Encontrei nas minhas frases as palavras com s ou z, g ou j, x ou ch, ou h no começo?", "Para cada uma delas, pensei em uma palavra da mesma família?", "Quando a família não ajudou, consultei um dicionário ou outra fonte confiável?", "Corrigi o que precisava ser corrigido?"], "automaticObservations": ["há texto além de espaços ou sinais", "o campo livre foi usado", "o apoio opcional foi ou não aberto", "a autochecagem foi concluída"], "notAutomaticallyJudged": ["ortografia de cada palavra", "correção gramatical global", "veracidade pessoal da informação"]},
+    {"id": "L12-B07", "type": "summary", "title": "Resumo", "text": "Algumas letras disputam o mesmo som: s e z entre vogais (casa, azedo), g e j antes de e e i (gente, jeito), x e ch (xícara, chave). O h no começo da palavra não tem som (hora, ontem). Nesses casos, o som não decide. Use uma palavra da mesma família, que quase sempre mantém a letra, e consulte quando a família não ajudar."}
+  ],
+  "assessmentBehavior": {"pronunciationPolicy": "não avaliar sotaque", "ttsPolicy": "apoio opcional; a escuta antes da leitura não pune repetição", "openResponsePolicy": "registrar produção e autochecagem sem declarar automaticamente correção ortográfica plena", "timeLimit": false},
+  "completionEvidence": {
+    "clusters": {
+      "familyAndConsultation": {"evidence": ["L12-A01"], "rule": "acertar pelo menos cinco dos seis itens, incluindo o item de consulta"},
+      "ownWriting": {"evidence": ["L12-A02"], "rule": "escrever duas ou três frases próprias em campo livre e concluir a autochecagem"}
+    },
+    "completionRule": "os dois agrupamentos são obrigatórios; a produção própria conta como realizada e autorrevisada, não como ortografia validada.",
+    "requiresReliableEvaluatorFor": ["ortografia das frases próprias"],
+    "notSufficient": ["decidir só pelo som", "inventar regra para casos que dependem de memória ou consulta", "decorar a lista da lição sem aplicar em frase"]
+  }
+}

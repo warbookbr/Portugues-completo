@@ -2,6 +2,7 @@
   "schemaVersion": 1,
   "id": "N1-U05-L02",
   "title": "Organizando um texto curto e seus parágrafos",
+  "studentObjective": "Colocar as informações de um texto curto numa ordem que ajude o leitor e decidir quando vale a pena separar o texto em parágrafos.",
   "status": "conteudo-pronto-para-implementacao",
   "objective": "Transformar um plano em uma sequência coerente de informações e decidir quando um ou mais parágrafos ajudam a organizar o texto, sem impor começo–meio–fim ou número fixo de parágrafos a todo gênero.",
   "competencies": ["ordenar informações conforme finalidade", "agrupar informações relacionadas", "decidir quando mudança de foco justifica novo parágrafo", "usar abertura/desenvolvimento/fechamento quando úteis ao gênero", "rejeitar organização que esconde informação essencial", "preservar mais de uma organização quando igualmente plausível"],

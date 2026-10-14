@@ -2,6 +2,7 @@
   "schemaVersion": 1,
   "id": "N1-U02-L01",
   "title": "Ortografia: padrões, convenções e consulta",
+  "studentObjective": "Entender por que nem toda palavra pode ser escrita só pelo som que ouvimos e saber quando usar uma regra e quando consultar um dicionário.",
   "status": "conteudo-pronto-para-implementacao",
   "objective": "Compreender que a ortografia combina regularidades e convenções lexicais, aprendendo a aplicar padrões estudados e a consultar uma fonte quando a regra disponível não é suficiente.",
   "competencies": [
@@ -54,7 +55,7 @@
       "id": "L01-B03",
       "type": "lookup-demonstration",
       "queryWord": "exceção",
-      "simulatedEntry": {"headword": "exceção", "wordClass": "substantivo", "note": "a entrada confirma a grafia"},
+      "simulatedEntry": {"headword": "exceção", "note": "a consulta confirma a escrita: exceção se escreve com xc e com ç"},
       "explanation": "A consulta confirma uma convenção; não é necessário inventar uma explicação falsa para cada letra."
     },
     {

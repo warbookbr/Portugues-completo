@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 1,
+  "id": "N1-U02-L11",
+  "title": "Quando a fala e a escrita se afastam",
+  "studentObjective": "Perceber palavras em que a fala esconde uma letra que a escrita mantém, como leite e peixe, e saber o que fazer para escrevê-las sem depender só do ouvido.",
+  "status": "conteudo-pronto-para-implementacao",
+  "objective": "Reconhecer que a fala cotidiana pode reduzir vogais finais fracas (leite/leiti, bolo/bolu) e encontros de vogais na mesma sílaba (caixa, peixe, ouro, manteiga) que a escrita mantém, e decidir a grafia com pronúncia cuidadosa, família de palavras e consulta, sem tratar a pronúncia reduzida como erro de fala.",
+  "competencies": [
+    "reconhecer que a fala pode reduzir ou apagar vogais que a escrita mantém",
+    "escrever com e e o finais palavras frequentes em que a vogal final soa fraca",
+    "manter na escrita encontros de vogais como ai, ei e ou que a fala reduz em palavras frequentes",
+    "usar palavras da mesma família para confirmar uma grafia",
+    "consultar uma fonte confiável quando pronúncia e família não bastam",
+    "não tratar a pronúncia reduzida como erro de fala"
+  ],
+  "prerequisites": ["N1-U02-L01", "N1-U02-L05"],
+  "limits": [
+    "não ensinar escreva como fala como regra",
+    "não julgar sotaques nem tratar a pronúncia reduzida como erro de fala",
+    "não nomear nem sistematizar ditongos, vogais átonas ou hiatos",
+    "não ensinar regras de acentuação das paroxítonas terminadas em i ou u",
+    "não prometer regra que decida sozinha onde a fala esconde uma vogal",
+    "não usar palavras raras como núcleo da aprendizagem"
+  ],
+  "normativeScopeRef": "docs/referencias-ortografia-nivel-1.md",
+  "media": {"tts": "apoio para ouvir palavras e frases; a voz do dispositivo não é padrão de pronúncia correta", "controlledAudio": [], "video": "nao necessario", "images": "nao necessarias"},
+  "supportMaterials": {
+    "curatedMedia": [],
+    "runtimeResources": [
+      {"type": "TTS_OK", "locations": ["L11-B02", "L11-B04", "L11-C02", "instruções", "feedback"], "purpose": "ouvir antes de ler e comparar fala e escrita; não é padrão fonético normativo"}
+    ],
+    "generatedVisualResources": [
+      {"type": "UI_RENDERED_SPEECH_WRITING_COMPARISON", "locations": ["L11-B02", "L11-B04"], "purpose": "mostrar lado a lado a forma falada e a forma escrita"},
+      {"type": "UI_RENDERED_WORD_IN_SENTENCE", "locations": ["L11-C01", "L11-A01"], "purpose": "escolher a grafia em contexto"}
+    ],
+    "productionQueueRequired": false,
+    "publicationDependency": "nenhuma nova mídia humana obrigatória",
+    "decisionRationale": "o contraste entre fala e escrita é mostrado por texto e TTS opcional; a decisão central é ortográfica e não depende de uma pronúncia única."
+  },
+  "sequence": [
+    {"id": "L11-B01", "type": "objective", "text": "Na fala, algumas letras quase somem. Em boa parte do Brasil, leite soa como leiti, e muita gente diz pexe para peixe. A escrita, porém, mantém essas letras. Nesta lição, você vai conhecer esses casos e três ajudas para decidir como escrever."},
+    {"id": "L11-B02", "type": "demonstration", "focus": "vogal-final-fraca", "title": "A última vogal, falada mais fraca", "text": "Fale devagar: lei-te, pen-te, bo-lo, li-vro. Em muitas regiões, a última vogal sai fraca: leite pode soar como leiti, e bolo pode soar como bolu. Na escrita, essas palavras terminam com e e com o. Nas palavras sem acento escrito, esse som fraco no fim costuma ser escrito com e, quando lembra um i, e com o, quando lembra um u. As poucas palavras que terminam com i ou u fraco, como táxi e vírus, têm acento escrito; você vai estudar esse acento mais tarde.", "examples": ["leite: pode soar como leiti", "pente: pode soar como penti", "bolo: pode soar como bolu", "livro: pode soar como livru"], "ttsText": "leite, pente, bolo, livro", "note": "Nenhum desses jeitos de falar está errado. A diferença é entre a fala e a escrita."},
+    {"id": "L11-B03", "type": "strategy", "focus": "familia-de-palavras", "title": "Palavras da mesma família", "text": "Veja: leite, leiteiro, leiteira. Pente, pentear. Essas palavras têm uma parte em comum e sentidos ligados. Um grupo de palavras assim se chama família de palavras. Na palavra maior, a vogal que estava no fim passa para o meio e é falada com clareza: em lei-tei-ro, ouvimos bem o e. Por isso, uma palavra da mesma família pode confirmar a escrita.", "examples": ["leite: leiteiro, leiteira", "pente: pentear"]},
+    {"id": "L11-B04", "type": "demonstration", "focus": "vogais-juntas-reduzidas", "title": "Duas vogais juntas que a fala encurta", "text": "Agora observe: caixa, peixe, ouro, manteiga. Na escrita, cada uma tem duas vogais juntas na mesma sílaba: ai em cai-xa, ei em pei-xe e man-tei-ga, ou em ou-ro. Na fala do dia a dia, muita gente diz caxa, pexe, oro e mantega. A escrita mantém as duas vogais.", "examples": ["caixa: muita gente diz caxa", "peixe: muita gente diz pexe", "ouro: muita gente diz oro", "manteiga: muita gente diz mantega"], "ttsText": "caixa, peixe, ouro, manteiga"},
+    {"id": "L11-B05", "type": "strategy", "focus": "como-decidir", "title": "Como decidir quando a fala não mostra a letra", "text": "Primeiro, fale a palavra devagar, sílaba por sílaba: pei-xe, man-tei-ga. Às vezes a vogal escondida aparece. Depois, pense em uma palavra da mesma família que você já sabe escrever: quem sabe escrever peixe também escreve peixaria e peixeiro com ei. Se a dúvida continuar, consulte um dicionário ou outra fonte confiável. Não existe uma regra que diga sozinha onde a fala esconde uma vogal; por isso, consultar é um bom caminho, e não um sinal de que você não sabe escrever.", "examples": ["falar devagar: pei-xe, man-tei-ga", "lembrar a família: peixe, peixaria, peixeiro", "consultar quando a dúvida continuar"]},
+    {"id": "L11-C01", "type": "quick-check-set", "focus": "conferir", "instruction": "Leia cada frase e escolha a forma escrita da palavra.", "items": [{"prompt": "Passe ____ no pão.", "options": ["mantega", "manteiga"], "correctIndex": 1}, {"prompt": "Perdi o meu ____ de cabelo.", "options": ["pente", "penti"], "correctIndex": 0}, {"prompt": "O ____ nada no aquário.", "options": ["pexe", "peixe"], "correctIndex": 1}]},
+    {"id": "L11-C02", "type": "audio-first-check", "focus": "ouvir-antes-de-ler", "instruction": "Ouça a frase antes de ver as opções. Depois escolha como se escreve a palavra que nomeia o legume.", "ttsText": "A cenoura está fresca.", "transcriptHiddenUntilAttempt": true, "question": "Como se escreve o nome do legume?", "options": ["cenora", "cenoura", "cinora"], "correctIndex": 1, "replayAllowed": true, "transcriptAfterAttempt": "A cenoura está fresca."},
+    {"id": "L11-A01", "type": "guided-activity", "focus": "aplicar", "instruction": "Leia cada frase e escolha a forma escrita. Use as ajudas da lição: falar devagar e lembrar palavras da mesma família.", "items": [{"prompt": "Sente-se nesta ____.", "options": ["cadera", "cadeira", "cadêra"], "correctIndex": 1}, {"prompt": "Corte o papel com a ____.", "options": ["tesoura", "tesora", "tisoura"], "correctIndex": 0}, {"prompt": "Ela deu um ____ no rosto do filho.", "options": ["bejo", "beijo"], "correctIndex": 1}, {"prompt": "Coloque o ____ na salada.", "options": ["tomati", "tomate"], "correctIndex": 1}, {"prompt": "Qual palavra da mesma família confirma que tomate termina com e?", "options": ["tomada", "tomateiro", "temporada"], "correctIndex": 1}]},
+    {"id": "L11-A02", "type": "guided-activity", "focus": "estrategia", "instruction": "Escolha a resposta mais adequada para cada situação.", "items": [{"prompt": "Você falou a palavra devagar, pensou na família e ainda não sabe se ela tem um i escondido. O que fazer?", "options": ["consultar um dicionário ou outra fonte confiável", "escrever exatamente como você fala", "tirar a vogal, porque a palavra fica mais curta"], "correctIndex": 0}, {"prompt": "Uma pessoa diz pexe numa conversa. O que é correto afirmar?", "options": ["Ela está falando errado e precisa mudar a fala.", "É um jeito comum de falar; na escrita, usamos peixe.", "Como ela fala assim, também pode escrever pexe."], "correctIndex": 1}]},
+    {"id": "L11-A03", "type": "short-open-production", "focus": "escrever-e-revisar", "title": "Agora escreva você", "prompt": "Escreva duas ou três frases suas sobre a sua cozinha, uma comida de que você gosta ou o seu dia. Use pelo menos três palavras em que a fala esconde uma letra, desta lição ou outras que você conheça. Depois releia e confira com a lista abaixo.", "responseMode": "free-text", "recordResponse": true, "automaticValidation": false, "optionalScaffold": {"wordBank": ["leite", "bolo", "peixe", "manteiga", "caixa", "cadeira", "tomate", "cenoura", "queijo"], "availableOnDemand": true}, "selfReview": ["Nas palavras que terminam com som fraco de i ou de u, escrevi e ou o?", "Mantive as duas vogais em palavras como peixe, caixa e cenoura?", "Quando tive dúvida, falei devagar ou pensei em uma palavra da mesma família?", "Se a dúvida continuou, consultei antes de decidir?"], "automaticObservations": ["há texto além de espaços ou sinais", "o campo livre foi usado", "o apoio opcional foi ou não aberto", "a autochecagem foi concluída"], "notAutomaticallyJudged": ["ortografia de cada palavra", "correção gramatical global", "veracidade pessoal da informação"]},
+    {"id": "L11-B06", "type": "summary", "title": "Resumo", "text": "A fala pode esconder letras que a escrita mantém: leite, bolo, peixe, manteiga. Esses jeitos de falar não são erro; a diferença é entre fala e escrita. Para decidir como escrever: fale devagar, lembre de uma palavra da mesma família e, se a dúvida continuar, consulte. Família de palavras é um grupo de palavras com uma parte em comum e sentidos ligados, como leite e leiteiro."}
+  ],
+  "assessmentBehavior": {"pronunciationPolicy": "não avaliar sotaque; a forma reduzida é apresentada como fala legítima", "ttsPolicy": "apoio opcional; a escuta antes da leitura não pune repetição", "openResponsePolicy": "registrar produção e autochecagem sem declarar automaticamente correção ortográfica plena", "timeLimit": false},
+  "completionEvidence": {
+    "clusters": {
+      "spellingInContext": {"evidence": ["L11-A01"], "rule": "acertar pelo menos quatro dos cinco itens, incluindo o item de família de palavras"},
+      "strategy": {"evidence": ["L11-A02"], "rule": "escolher consulta quando pronúncia e família não bastam e não tratar a fala reduzida como erro"},
+      "ownWriting": {"evidence": ["L11-A03"], "rule": "escrever duas ou três frases próprias em campo livre e concluir a autochecagem"}
+    },
+    "completionRule": "os três agrupamentos são obrigatórios; a produção própria conta como realizada e autorrevisada, não como ortografia validada.",
+    "requiresReliableEvaluatorFor": ["ortografia das frases próprias"],
+    "notSufficient": ["escrever como fala", "decorar a lista da lição sem aplicar em frase", "tratar a fala reduzida como erro"]
+  }
+}

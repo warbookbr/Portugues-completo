@@ -2,6 +2,7 @@
   "schemaVersion": 1,
   "id": "N1-U05-L06",
   "title": "Instruções e procedimentos em etapas",
+  "studentObjective": "Escrever instruções em etapas que outra pessoa consiga seguir apenas lendo o seu texto.",
   "status": "conteudo-pronto-para-implementacao",
   "objective": "Escrever instruções curtas com ações, sequência e informação suficiente para execução em situações acessíveis, revisando o texto pela possibilidade de outra pessoa acompanhar as etapas.",
   "competencies": ["selecionar etapas necessárias", "ordenar ações", "usar verbos de orientação em formas acessíveis", "incluir condição/material quando necessário", "evitar etapa vaga que impede execução", "produzir instrução própria de duas a cinco etapas", "revisar pela executabilidade"],

@@ -2,6 +2,7 @@
   "schemaVersion": 1,
   "id": "N1-U02-L09",
   "title": "Sinônimos, antônimos, polissemia e precisão de palavra",
+  "studentObjective": "Perceber quando palavras têm sentido parecido ou oposto, notar que uma mesma palavra pode ter vários sentidos e escolher a palavra mais precisa para cada situação.",
   "status": "conteudo-pronto-para-implementacao",
   "objective": "Compreender relações básicas de sentido em contexto — proximidade, oposição e polissemia — e escolher palavras com maior precisão, reconhecendo que palavras próximas não são substitutas perfeitas em qualquer situação e iniciando a distinção entre uso literal e figurado em casos transparentes.",
   "competencies": [
@@ -46,6 +47,7 @@
       ],
       "conclusion": "o contexto decide se a proximidade entre palavras permite a substituição"
     },
+    {"id": "L09-B06", "type": "explanation", "focus": "nomear-sinonimo", "title": "Sinônimos", "text": "Na frase sobre a reunião, rápida e breve têm sentidos próximos. Palavras de sentido próximo são chamadas sinônimos. Mas um sinônimo não serve em qualquer frase: o corredor é rápido, e não breve. Antes de trocar uma palavra por um sinônimo, confira se a frase continua dizendo a mesma coisa.", "examples": ["rápida e breve: sinônimos na frase A reunião foi rápida", "contente e alegre: sinônimos na frase Ela ficou contente com a notícia"]},
     {
       "id": "L09-C01",
       "type": "quick-check-proximity",
@@ -63,6 +65,7 @@
       ],
       "guardRail": "o contexto continua importante: nem toda palavra possui um único oposto válido para qualquer uso"
     },
+    {"id": "L09-B07", "type": "explanation", "focus": "nomear-antonimo", "title": "Antônimos", "text": "Aberta e fechada, vazia e cheia têm sentidos opostos. Palavras de sentido oposto são chamadas antônimos. O oposto também depende da frase. Quando falamos de um carro, o antônimo de velho é novo: um carro velho, um carro novo. Quando falamos de uma pessoa, o oposto de velho costuma ser jovem: um homem velho, um homem jovem.", "examples": ["aberta e fechada", "vazia e cheia", "carro velho e carro novo", "homem velho e homem jovem"]},
     {
       "id": "L09-C02",
       "type": "quick-check-opposition",
@@ -81,6 +84,7 @@
       ],
       "conclusion": "o restante da mensagem ajuda a selecionar o sentido"
     },
+    {"id": "L09-B08", "type": "explanation", "focus": "nomear-polissemia", "title": "Uma palavra, vários sentidos: polissemia", "text": "Banco pode ser um assento da praça ou o lugar onde se guarda dinheiro e se pagam contas. Quando uma mesma palavra tem vários sentidos, dizemos que ela é polissêmica. Esse fato da língua se chama polissemia. Para saber qual sentido está em uso, leia o resto da frase.", "examples": ["Sentei no banco da praça. (assento)", "Fui ao banco pagar uma conta. (lugar onde se guarda dinheiro)"]},
     {
       "id": "L09-B04",
       "type": "precision-demonstration",
@@ -98,6 +102,9 @@
       ],
       "guardRail": "perceber o efeito contextual é o objetivo; não memorizar uma lista de figuras"
     },
+    {"id": "L09-B09", "type": "explanation", "focus": "nomear-literal-figurado", "title": "Sentido literal e sentido figurado", "text": "Em A porta está aberta, porta e aberta têm o sentido mais direto, ligado a uma porta de verdade. Esse é o sentido literal. Em A empresa abriu as portas para novas ideias, nenhuma porta foi aberta: a frase quer dizer que a empresa passou a aceitar ideias novas. Quando uma palavra ganha um sentido novo por comparação, como portas abertas para ideias, dizemos que ela está em sentido figurado.", "examples": ["literal: A porta está aberta.", "figurado: A empresa abriu as portas para novas ideias."]},
+    {"id": "L09-B10", "type": "authored-poem", "focus": "read-or-listen", "title": "Para apreciar: sentido figurado numa cantiga", "lines": ["Nesta rua, nesta rua tem um bosque", "Que se chama, que se chama solidão.", "Dentro dele, dentro dele mora um anjo", "Que roubou, que roubou meu coração."], "ttsText": "Nesta rua, nesta rua tem um bosque, que se chama, que se chama solidão. Dentro dele, dentro dele mora um anjo, que roubou, que roubou meu coração.", "note": "Cantiga popular brasileira, de domínio público. Há pequenas variações de uma região para outra; esta é a forma mais conhecida.", "explanation": "Ninguém tirou um coração do peito de outra pessoa. Roubou meu coração está em sentido figurado: quer dizer que a pessoa se apaixonou. Um bosque chamado solidão também é uma imagem: mostra alguém que se sente sozinho. Leia ou ouça mais de uma vez e perceba como o sentido figurado deixa a cantiga mais expressiva."},
+    {"id": "L09-C03", "type": "quick-check", "focus": "figurado-na-cantiga", "prompt": "Na cantiga, o que quer dizer 'o anjo roubou meu coração'?", "options": ["a pessoa que canta se apaixonou", "alguém levou embora um objeto da pessoa que canta", "a pessoa que canta machucou o peito"], "correctIndex": 0},
     {
       "id": "L09-A01",
       "type": "assessment-proximity",

@@ -2,6 +2,7 @@
   "schemaVersion": 1,
   "id": "N1-U06-L04",
   "title": "Explicar algo com palavras próprias",
+  "studentObjective": "Explicar uma informação a outra pessoa com as suas palavras, sem apenas repetir o texto.",
   "status": "conteudo-pronto-para-implementacao",
   "objective": "Organizar uma explicação oral curta com assunto, pontos centrais e ordem compreensível, reformulando uma informação com palavras próprias em vez de apenas recitá-la.",
   "competencies": ["identificar o que precisa ser explicado", "selecionar dois ou três pontos centrais", "ordenar explicação", "reformular informação fornecida", "usar exemplo simples quando ajuda", "pedir confirmação de entendimento", "ensaiar oralmente sem nota automática de pronúncia"],

@@ -188,6 +188,7 @@ O aluno deve conseguir:
 
 - aplicar regularidades ortográficas frequentes já estudadas;
 - usar contexto gráfico para resolver contrastes ortográficos selecionados;
+- reconhecer quando a fala esconde letras que a escrita mantém e quando letras diferentes disputam o mesmo som, decidindo por família de palavras e consulta;
 - reconhecer e escrever palavras frequentes com dígrafos ou marcas de nasalidade estudados;
 - identificar a sílaba tônica em palavras acessíveis;
 - distinguir tonicidade de acento gráfico;
@@ -205,16 +206,17 @@ O aluno deve conseguir:
 
 1. Ortografia como convenção do português.
 2. Regularidades diretas e contextuais de alta frequência.
-3. Contrastes gráficos frequentes selecionados por produtividade e dificuldade real.
-4. Marcas frequentes de nasalidade.
-5. Dígrafos úteis à leitura/escrita, sem taxonomia exaustiva.
-6. Sílaba tônica, tonicidade e acento gráfico.
-7. Oxítonas, paroxítonas e proparoxítonas quando necessárias para organizar acentuação.
-8. Regras básicas e produtivas de acentuação.
-9. Sinonímia, antonímia, polissemia, literal/figurado inicial.
-10. Família de palavras, prefixos e sufixos frequentes.
-11. Consulta a dicionário/recurso linguístico simples.
-12. Revisão ortográfica em palavras dentro de mensagens/textos.
+3. Contrastes gráficos frequentes selecionados por produtividade e dificuldade real (incluindo `ç` antes de `a/o/u`).
+4. Fala e escrita que se afastam (vogais finais fracas, vogais juntas reduzidas na fala) e letras que disputam o mesmo som (`s/z`, `g/j`, `x/ch`, `h` inicial), com família de palavras e consulta (L11 e L12).
+5. Marcas frequentes de nasalidade.
+6. Dígrafos úteis à leitura/escrita, sem taxonomia exaustiva.
+7. Sílaba tônica, tonicidade e acento gráfico.
+8. Oxítonas, paroxítonas e proparoxítonas quando necessárias para organizar acentuação.
+9. Regras básicas e produtivas de acentuação.
+10. Sinonímia, antonímia, polissemia, literal/figurado inicial.
+11. Família de palavras, prefixos e sufixos frequentes.
+12. Consulta a dicionário/recurso linguístico simples.
+13. Revisão ortográfica em palavras dentro de mensagens/textos.
 
 ## Retomadas e conexões
 

@@ -2,6 +2,7 @@
   "schemaVersion": 1,
   "id": "N1-U02-L03",
   "title": "C/QU e G/GU: quando o contexto gráfico orienta",
+  "studentObjective": "Escolher entre c e qu, g e gu, e usar o ç, olhando a letra que vem logo depois.",
   "status": "conteudo-pronto-para-implementacao",
   "objective": "Aplicar padrões ortográficos frequentes de c/qu e g/gu em palavras acessíveis, observando as letras seguintes e reconhecendo que a regularidade ensinada não cobre todas as relações entre som e grafia.",
   "competencies": [
@@ -50,6 +51,8 @@
       "type": "guard-rail",
       "text": "QU e GU não funcionam exatamente do mesmo jeito em todas as palavras; o U inclusive pode participar da pronúncia em outros casos. Aplique somente o padrão estudado e consulte quando ele não resolver a dúvida."
     },
+    {"id": "L03-B04", "type": "explanation", "focus": "cedilha", "title": "C com cedilha: ç", "text": "Veja estas palavras: praça, açúcar, moço. Nelas aparece o mesmo som do começo de sapo, escrito com ç. Esse sinal embaixo do c se chama cedilha. Antes de a, o e u, o c sozinho tem o som do começo de casa (casa, copo, cultura). Para ter o som do começo de sapo antes de a, o e u com a letra c, usamos ç: pra-ça, a-çú-car, mo-ço. Antes de e e i, o c sozinho já tem o som do começo de sapo (cedo, cidade). Por isso, não se usa ç antes de e e de i.", "examples": ["ç antes de a: praça, criança", "ç antes de o: moço, poço", "ç antes de u: açúcar", "c antes de e e i, sem cedilha: cedo, cidade"], "ttsText": "praça, açúcar, moço, cedo, cidade", "note": "O ç nunca começa uma palavra. Ele não resolve todas as dúvidas com o som do começo de sapo: em sapo e em passo, por exemplo, a letra é outra."},
+    {"id": "L03-C02", "type": "quick-check-set", "focus": "cedilha", "instruction": "Leia cada frase e escolha a letra que completa a palavra.", "items": [{"prompt": "A crian__a brinca no parque.", "options": ["ç", "c"], "correctIndex": 0, "result": "criança"}, {"prompt": "O __éu está azul hoje.", "options": ["ç", "c"], "correctIndex": 1, "result": "céu"}, {"prompt": "Ele bebeu um su__o de laranja.", "options": ["ç", "c"], "correctIndex": 1, "result": "suco"}, {"prompt": "O la__o do sapato desamarrou.", "options": ["c", "ç"], "correctIndex": 1, "result": "laço"}]},
     {
       "id": "L03-C01",
       "type": "quick-check-set",

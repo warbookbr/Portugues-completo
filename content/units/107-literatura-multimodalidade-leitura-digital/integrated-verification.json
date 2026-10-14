@@ -40,10 +40,10 @@
       "type": "poem-and-figurative-reading",
       "textLines": ["A noite bateu na janela,", "uma vez,", "duas vezes,", "e deixou a rua", "vestida de silêncio."],
       "items": [
-        {"question": "Que recurso formal é visível em 'uma vez / duas vezes'?", "options": ["repetição/progressão", "lista de endereços", "definição técnica"], "correctIndex": 0},
+        {"question": "O que acontece nos versos 'uma vez, / duas vezes,'?", "options": ["a batida se repete e a contagem avança, como quem bate e espera", "o poema faz uma lista de endereços da rua", "o poema explica o significado da palavra noite"], "correctIndex": 0},
         {"target": "A noite bateu na janela", "options": ["atribui ação humana à noite em imagem figurada", "afirma literalmente que a noite tem mãos"], "correctIndex": 0},
         {"target": "rua vestida de silêncio", "question": "Qual leitura é plausível?", "options": ["a rua é apresentada como tomada pelo silêncio", "a rua usa roupa física feita de silêncio"], "correctIndex": 0},
-        {"question": "Nomear um recurso basta para interpretar seu efeito?", "options": ["não", "sim"], "correctIndex": 0}
+        {"question": "Saber que 'A noite bateu na janela' é uma personificação já explica o que o verso faz no poema?", "options": ["não; é preciso dizer que efeito a imagem cria, como a sensação de que a noite chega e se anuncia", "sim; dar o nome já é a interpretação completa", "não, porque personificação só aparece em histórias, nunca em poemas"], "correctIndex": 0}
       ]
     },
     {
@@ -55,7 +55,7 @@
         {"question": "Quando ocorre?", "options": ["sábado 3 de outubro, 8h–12h", "domingo, 12h–18h", "não informado"], "correctIndex": 0},
         {"question": "O que deve ser levado?", "options": ["documento de identificação", "comprovante de vacinação obrigatoriamente", "nenhum documento"], "correctIndex": 0},
         {"claim": "Haverá emissão automática de todos os documentos.", "options": ["não sustentado", "sustentado"], "correctIndex": 0},
-        {"question": "A data/horário destacados precisam estar disponíveis também no equivalente acessível?", "options": ["sim", "não"], "correctIndex": 0}
+        {"question": "Uma pessoa que não enxerga ouve a descrição do cartaz pelo celular. Que informação essa descrição precisa trazer?", "options": ["a data e o horário, que no cartaz aparecem em destaque", "só o título, porque o resto é enfeite", "a cor do fundo do cartaz"], "correctIndex": 0}
       ]
     },
     {
@@ -66,7 +66,7 @@
       "items": [
         {"goal": "descobrir horários", "options": ["Consultar horários", "Fazer inscrição", "clicar no elemento maior independentemente do rótulo"], "correctIndex": 0},
         {"goal": "inscrever-se", "options": ["Fazer inscrição", "Contato obrigatoriamente", "Agenda sem ler rótulos"], "correctIndex": 0},
-        {"question": "Um link é automaticamente confiável apenas por ser clicável?", "options": ["não", "sim"], "correctIndex": 0}
+        {"question": "No pé da página aparece 'Centro de Formação — página da atividade'. Para que serve essa informação?", "options": ["mostrar quem publicou a página", "informar o horário do curso", "abrir o formulário de inscrição"], "correctIndex": 0}
       ]
     },
     {
@@ -79,19 +79,19 @@
         {"question": "As duas fontes concordam no horário?", "options": ["não", "sim"], "correctIndex": 0},
         {"question": "Qual contém atualização posterior?", "options": ["a de 6 de novembro", "a de 4 de novembro"], "correctIndex": 0},
         {"claim": "A aula foi cancelada.", "options": ["não sustentado por nenhuma das duas", "sustentado"], "correctIndex": 0},
-        {"statement": "Se uma página não mostra autor, isso prova automaticamente que é falsa.", "options": ["não", "sim"], "correctIndex": 0},
-        {"statement": "Uma página visualmente bonita é garantia de verdade.", "options": ["não", "sim"], "correctIndex": 0}
+        {"statement": "A mensagem de 4 de novembro foi encaminhada muitas vezes num grupo da turma. Isso a torna mais certa que a atualização de 6 de novembro?", "options": ["não; ser muito compartilhada não torna uma informação atual nem certa", "sim; quanto mais compartilhada, mais certa", "sim, porque a mensagem mais antiga sempre vale mais"], "correctIndex": 0},
+        {"question": "Para ter certeza do horário da aula, qual atitude é mais segura?", "options": ["conferir na página do próprio Centro de Formação", "escolher o horário que for mais conveniente", "seguir a primeira resposta que aparecer no grupo"], "correctIndex": 0}
       ]
     },
     {
       "id": "V01-P07",
       "cluster": "ownInterpretation",
       "type": "open-literary-response",
-      "prompt": "Escolha o texto literário de V01-Q01 ou o poema de V01-Q03. Registre uma interpretação/reação própria e indique um trecho que se relaciona à sua leitura.",
+      "prompt": "Escolha o texto sobre Davi ou o poema sobre a noite. Escreva o que você entendeu ou sentiu ao ler e copie um trecho que se liga à sua leitura.",
       "recordResponse": true,
       "automaticValidation": false,
       "personalReactionNotScored": true,
-      "note": "a resposta aberta é evidência de leitura; adequação da justificativa exige avaliador confiável para validação plena"
+      "note": "Não existe resposta certa sobre o que você sentiu. O importante é mostrar qual parte do texto se liga à sua leitura."
     }
   ],
   "assessmentBehavior": {"textVisible": true, "accessibleEquivalentRequired": true, "noLiveWeb": true, "openInterpretationAutoValidated": false, "personalTasteNotScored": true, "ttsPolicy": "permitido", "timeLimit": false},

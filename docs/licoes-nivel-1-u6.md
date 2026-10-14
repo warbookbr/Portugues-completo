@@ -69,9 +69,10 @@ compreender oralmente
 - **Evidência:** estrutura da resposta e prática registradas; fala compreensível requer observação externa para validação forte.
 - **Limite:** debate, refutação e retórica ficam para níveis seguintes.
 
-## Lição 7 — Registro: escolhas mais formais e mais informais
+## Lição 7 — Áudio, mensagem ou e-mail? Escolher o meio e o jeito de dizer
 
 - **Objetivo:** adaptar escolhas simples de vocabulário, tratamento e formulação conforme interlocutor, meio e finalidade.
+- **R1:** para não repetir N0-U06-L07, a lição parte de fala × escrita e do meio digital: a mesma situação em áudio, mensagem escrita e e-mail (com as partes do e-mail), passagem de áudio para mensagem escrita e produção de duas versões. A reformulação para pedido formal com prazo fica só na L8.
 - **Dependências:** N0-U06-L07 + experiências das lições anteriores.
 - **Prática:** amigo, instituição, mensagem digital, apresentação; comparar duas formas possíveis sem hierarquia automática.
 - **Evidência:** escolher formulação compatível e explicar funcionalmente por que combina com a situação.
@@ -91,6 +92,7 @@ variação ≠ qualquer forma adequada em qualquer situação
 ```
 
 - **Limite:** sociolinguística teórica, história linguística e protocolo formal avançado ficam depois.
+- **R1:** constrói **norma-padrão** a partir de exemplo (a gente vai / nós vamos; situação informal × formal), define **preconceito linguístico** e inclui cena literária curta autoral ("Na rodoviária") com três vozes: narração na norma-padrão, fala de família e aviso público.
 
 ## Verificação integrada — arquitetura
 

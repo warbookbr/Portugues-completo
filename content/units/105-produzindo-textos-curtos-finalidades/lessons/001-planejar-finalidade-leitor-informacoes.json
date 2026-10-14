@@ -2,6 +2,7 @@
   "schemaVersion": 1,
   "id": "N1-U05-L01",
   "title": "Planejar: finalidade, leitor e informações necessárias",
+  "studentObjective": "Antes de escrever, decidir para que serve o texto, quem vai ler e quais informações não podem faltar.",
   "status": "conteudo-pronto-para-implementacao",
   "objective": "Planejar um texto curto definindo finalidade, leitor e informações necessárias, distinguindo dado essencial de detalhe opcional sem transformar planejamento em formulário burocrático.",
   "competencies": ["identificar o que o texto precisa alcançar", "considerar para quem será escrito", "selecionar informações necessárias", "separar detalhe útil de informação dispensável", "registrar plano curto proporcional à tarefa", "ajustar o plano quando a finalidade muda"],

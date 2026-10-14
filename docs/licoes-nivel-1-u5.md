@@ -40,6 +40,7 @@ planejar
 - **Prática:** mudança de horário/local, lembrete, aviso, mensagem digital; revisão de suficiência e registro.
 - **Evidência:** produção própria funcional com autochecagem.
 - **Limite:** não reduzir gênero a molde fixo.
+- **R1:** apresenta o termo **gênero de texto** com quatro textos completos (bilhete, aviso, receita, notícia) e diferencia esse sentido do gênero das palavras (masculino/feminino, N1-U03-L03).
 
 ## Lição 4 — Relato e narrativa curta
 
@@ -48,6 +49,7 @@ planejar
 - **Prática:** selecionar acontecimentos, ordenar, manter participantes/referências, usar marcas temporais.
 - **Evidência:** relato/narrativa própria curta com continuidade e revisão.
 - **Limite:** teoria narrativa aprofundada fica para literatura e níveis posteriores.
+- **R1:** antes de escrever, o aluno ouve (escuta antes da leitura) e lê uma narrativa curta completa e autoral ("Rex fora do portão", cerca de 120 palavras); os termos narrativa e relato são construídos a partir dela. O plano avaliado usa cenário novo (bolo sem ovos) para não repetir o ônibus.
 
 ## Lição 5 — Descrever para informar melhor
 
