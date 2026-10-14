@@ -48,6 +48,22 @@ T1 e P6 estão homologados. P7 avança incrementalmente por unidade, preservando
 | P8 — Mídia/publicação | `NAO_INICIADO` | — |
 | P9 — E2E / Clássico homologado | `NAO_INICIADO` | — |
 
+## R1 — Revisão do plano de ensino
+
+```text
+Estado consolidado: ATIVO
+Fonte: docs/auditoria-plano-ensino.md
+R1.1 documentação, roadmap e regras de método: CONCLUÍDO
+R1.2 correções objetivas: CONCLUÍDO
+R1.3 N0 a partir de U3: em execução
+```
+
+R1.2 aplicou:
+
+- pré-requisitos com IDs aposentados trocados pelas V02 vigentes em N0-U03-L01, N1-U02-L01 e N1-U02-L06;
+- N1-U01-L04: "caixas de coleta" (feminino) com retomada "Eles" substituído por "coletores", preservando a pista de gênero sem criar ambiguidade com "pilhas";
+- N0-U02-L08: ponte final apontava para a verificação, mas L09 e L10 vêm depois; agora aponta para L09.
+
 ## Remover o título redundante do primeiro acesso
 
 ```text

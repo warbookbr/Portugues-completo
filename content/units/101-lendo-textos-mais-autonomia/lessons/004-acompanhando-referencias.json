@@ -65,10 +65,10 @@
     {
       "id": "L04-A01",
       "type": "assessment-set",
-      "text": "O mercado instalou caixas de coleta para pilhas usadas. Eles ficam perto da entrada principal. A iniciativa faz parte de um projeto ambiental do bairro.",
+      "text": "O mercado instalou coletores para pilhas usadas. Eles ficam perto da entrada principal. A iniciativa faz parte de um projeto ambiental do bairro.",
       "items": [
-        {"question": "A que 'Eles' se refere?", "options": ["aos caixas de coleta", "às pilhas usadas", "ao bairro"], "correctIndex": 0},
-        {"question": "A que 'A iniciativa' se refere principalmente?", "options": ["à instalação dos caixas de coleta", "à entrada principal", "ao horário do mercado"], "correctIndex": 0}
+        {"question": "A que 'Eles' se refere?", "options": ["aos coletores", "às pilhas usadas", "ao bairro"], "correctIndex": 0},
+        {"question": "A que 'A iniciativa' se refere principalmente?", "options": ["à instalação dos coletores", "à entrada principal", "ao horário do mercado"], "correctIndex": 0}
       ],
       "textRemainsVisible": true
     },

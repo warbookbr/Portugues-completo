@@ -11,7 +11,7 @@
     "reconhecer quando não possui regra suficiente para decidir uma grafia",
     "usar consulta simples como estratégia legítima de escrita e revisão"
   ],
-  "prerequisites": ["N0-U01-V01", "N0-U02-V01", "N1-U01-V01"],
+  "prerequisites": ["N0-U01-V02", "N0-U02-V02", "N1-U01-V01"],
   "limits": [
     "não ensinar escreva como fala como regra",
     "não prometer regra para toda palavra",
